@@ -96,9 +96,8 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
         opacity: 1;
 
     }
-    .default-background{
- background: #a3a3a3 0% 0% no-repeat padding-box;
-        
+    .default-bg {
+        background: #303030 !important;
     }
 
     .sub-text {
