@@ -9,38 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"end\" (click)=\"goToProfile()\">\r\n        <ng-container *ngIf=\"image == null || image == undefined; else showAvatar\">\r\n          <h1 class=\"img\" [style.background]=\"getRandomColor(i+3)\" \r\n               style=\"text-align: center; font-size: 16px; padding-top: 10px;\">\r\n            {{formData?.firstName | uppercase | slice:0:1}}{{formData?.lastName | uppercase | slice:0:1}}</h1>\r\n        </ng-container>\r\n        <ng-template #showAvatar>\r\n          <img class=\"img\" [src]=\"image\" alt=\"profile\">\r\n        </ng-template>\r\n      </ion-avatar>\r\n\r\n      <ion-label style=\"font-size: xx-large;\" class=\"font-black\">Hi {{firstName}}</ion-label>\r\n    </ion-item>\r\n  </ion-toolbar>\r\n  <ion-toolbar>\r\n    <ion-searchbar></ion-searchbar>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n   \r\n<ion-content>\r\n\r\n\r\n\r\n    <ion-slides pager=\"true\" [options]=\"slideOpts\">\r\n      <ion-slide  *ngFor=\"let card of cards; index as i;\" (click)=\"getAccountNumber(card)\">\r\n        <div class=\"slider1\">\r\n          <ion-grid>\r\n          <ion-row>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <img src=\"assets\\images\\BL2.png\" class=\"bankLogo\">\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-icon name=\"settings-outline\" class=\"settingicon\"></ion-icon> \r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col class=\"ion-align-self-end\" size=\"4\">\r\n            <p class=\"acc-type capitalize\" >{{ card.accountType + ' Account' }}</p>\r\n             <p class=\"acc-type capitalize\">{{ card.accountId }}</p>\r\n\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\" size=\"8\">\r\n              <p class=\"acc-balance leading-3 capitalize\">Account Balance</p><br>\r\n              <p class=\"acc-balance leading-3 capitalize\">{{ card.accountCurrency | currencySymbol  }} {{  card.amount | number: '1.'}}</p>\r\n\r\n              </ion-col>\r\n          </ion-row>\r\n          <!-- <ion-row class=\"ion-align-items-end\">\r\n            <ion-col class=\"ion-align-self-end\">\r\n              <p class=\"balance leading-3\">{{ card.accountCurrency | currencySymbol  }} {{  card.amount | number: '1.'}}</p>\r\n            </ion-col>\r\n          </ion-row> -->\r\n        </ion-grid>\r\n        </div>\r\n        \r\n      </ion-slide>\r\n    </ion-slides>\r\n \r\n  \r\n\r\n  \r\n\r\n  <div class=\"textCard mt-20\">\r\n    <ion-text style=\"font-size:x-large;\">All Transaction</ion-text>\r\n  </div>\r\n  <ion-grid class=\"mt-20\">\r\n    <ion-row>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToCashWithdrawal()\">\r\n          <div>\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashw.PNG\"  alt=\"Ionic logo\">\r\n            <p class=\"card-title\" >Cash Withdrawal</p>\r\n            <!-- <h5>Cash Withdrawal</h5> -->\r\n          </div>\r\n        </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToCashDeposit()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashdeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Cash Deposit</p>\r\n         </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToChequeDeposit()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\chequedeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Cheque Deposit</p>\r\n         </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToChequeWithdrawal()\">\r\n          <div>\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashw.PNG\"  alt=\"Ionic logo\">\r\n            <p class=\"card-title\" >Cheque Withdrawal</p>\r\n            <!-- <h5>Cash Withdrawal</h5> -->\r\n          </div>\r\n        </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToForexTransaction()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashdeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Forex Transaction</p>\r\n         </ion-card>\r\n      </ion-col>\r\n   \r\n      <!-- <ion-col>\r\n        <ion-card class=\"transactionCards\" (click)=\"goToChequeDeposit()\">\r\n            <img class=\"image3\" src=\"assets\\icon\\chequedeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"chequedepositcard\">Cheque Deposit</p>\r\n         </ion-card>\r\n      </ion-col> -->\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToLoanPayment()\">\r\n          <div>\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashw.PNG\"  alt=\"Ionic logo\">\r\n            <p class=\"card-title\" >Loan Payment</p>\r\n            <!-- <h5>Cash Withdrawal</h5> -->\r\n          </div>\r\n        </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n   \r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToUtilityPayment()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashdeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Utility Bill Payment</p>\r\n         </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToDepositTopUp()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\chequedeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Deposit Top Up</p>\r\n         </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n  \r\n</ion-content>\r\n");
-
-/***/ }),
-
-/***/ "X4wd":
-/*!****************************************!*\
-  !*** ./src/app/pipes/currency.pipe.ts ***!
-  \****************************************/
-/*! exports provided: CurrencyPipe */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrencyPipe", function() { return CurrencyPipe; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
-
-
-let CurrencyPipe = class CurrencyPipe {
-    transform(code, format = 'narrow', locale) {
-        return Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["getCurrencySymbol"])(code, format, locale);
-    }
-};
-CurrencyPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
-        name: 'currencySymbol'
-    })
-], CurrencyPipe);
-
-
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"end\" (click)=\"goToProfile()\">\r\n        <ng-container *ngIf=\"image == null || image == undefined; else showAvatar\">\r\n          <h1 class=\"img\" [style.background]=\"getRandomColor(i+3)\" \r\n               style=\"text-align: center; font-size: 16px; padding-top: 10px;\">\r\n            {{formData?.firstName | uppercase | slice:0:1}}{{formData?.lastName | uppercase | slice:0:1}}</h1>\r\n        </ng-container>\r\n        <ng-template #showAvatar>\r\n          <img class=\"img\" [src]=\"image\" alt=\"profile\">\r\n        </ng-template>\r\n      </ion-avatar>\r\n\r\n      <ion-label style=\"font-size: xx-large;\" class=\"font-black\">Hi {{firstName}}</ion-label>\r\n    </ion-item>\r\n  </ion-toolbar>\r\n  <ion-toolbar>\r\n    <ion-searchbar (click)=\"searchModal()\"></ion-searchbar>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n   \r\n<ion-content>\r\n\r\n\r\n\r\n    <ion-slides pager=\"true\" [options]=\"slideOpts\">\r\n      <ion-slide  *ngFor=\"let card of cards; index as i;\" (click)=\"getAccountNumber(card)\">\r\n        <div class=\"slider1\">\r\n          <ion-grid>\r\n          <ion-row>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <img src=\"assets\\images\\BL2.png\" class=\"bankLogo\">\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-icon name=\"settings-outline\" class=\"settingicon\"></ion-icon> \r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col class=\"ion-align-self-end\" size=\"4\">\r\n            <p class=\"acc-type capitalize\" >{{ card.accountType + ' Account' }}</p>\r\n             <p class=\"acc-type capitalize\">{{ card.accountId }}</p>\r\n\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\" size=\"8\">\r\n              <p class=\"acc-balance leading-3 capitalize\">Account Balance</p><br>\r\n              <p class=\"acc-balance leading-3 capitalize\">{{ card.accountCurrency | currencySymbol  }} {{  card.amount | number: '1.'}}</p>\r\n\r\n              </ion-col>\r\n          </ion-row>\r\n          <!-- <ion-row class=\"ion-align-items-end\">\r\n            <ion-col class=\"ion-align-self-end\">\r\n              <p class=\"balance leading-3\">{{ card.accountCurrency | currencySymbol  }} {{  card.amount | number: '1.'}}</p>\r\n            </ion-col>\r\n          </ion-row> -->\r\n        </ion-grid>\r\n        </div>\r\n        \r\n      </ion-slide>\r\n    </ion-slides>\r\n \r\n  \r\n\r\n  \r\n\r\n  <div class=\"textCard mt-20\">\r\n    <ion-text style=\"font-size:x-large;\">All Transaction</ion-text>\r\n  </div>\r\n  <ion-grid class=\"mt-20\">\r\n    <ion-row>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToCashWithdrawal()\">\r\n          <div>\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashw.PNG\"  alt=\"Ionic logo\">\r\n            <p class=\"card-title\" >Cash Withdrawal</p>\r\n            <!-- <h5>Cash Withdrawal</h5> -->\r\n          </div>\r\n        </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToCashDeposit()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashdeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Cash Deposit</p>\r\n         </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToChequeDeposit()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\chequedeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Cheque Deposit</p>\r\n         </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToChequeWithdrawal()\">\r\n          <div>\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashw.PNG\"  alt=\"Ionic logo\">\r\n            <p class=\"card-title\" >Cheque Withdrawal</p>\r\n            <!-- <h5>Cash Withdrawal</h5> -->\r\n          </div>\r\n        </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToForexTransaction()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashdeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Forex Transaction</p>\r\n         </ion-card>\r\n      </ion-col>\r\n   \r\n      <!-- <ion-col>\r\n        <ion-card class=\"transactionCards\" (click)=\"goToChequeDeposit()\">\r\n            <img class=\"image3\" src=\"assets\\icon\\chequedeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"chequedepositcard\">Cheque Deposit</p>\r\n         </ion-card>\r\n      </ion-col> -->\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToLoanPayment()\">\r\n          <div>\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashw.PNG\"  alt=\"Ionic logo\">\r\n            <p class=\"card-title\" >Loan Payment</p>\r\n            <!-- <h5>Cash Withdrawal</h5> -->\r\n          </div>\r\n        </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n   \r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToUtilityPayment()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\cashdeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Utility Bill Payment</p>\r\n         </ion-card>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-card class=\"transactionCards\" (click)=\"goToDepositTopUp()\">\r\n            <img class=\"grid-icon\" src=\"assets\\icon\\chequedeposit.PNG\" alt=\"Ionic logo\">\r\n            <p class=\"card-title\">Deposit Top Up</p>\r\n         </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n  \r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -102,42 +71,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "iTUp":
-/*!***************************************!*\
-  !*** ./src/app/pipes/pipes.module.ts ***!
-  \***************************************/
-/*! exports provided: PipesModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PipesModule", function() { return PipesModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _currency_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./currency.pipe */ "X4wd");
-
-
-
-
-let PipesModule = class PipesModule {
-};
-PipesModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_currency_pipe__WEBPACK_IMPORTED_MODULE_3__["CurrencyPipe"]],
-        exports: [
-            _currency_pipe__WEBPACK_IMPORTED_MODULE_3__["CurrencyPipe"]
-        ],
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
-        ],
-    })
-], PipesModule);
-
-
-
-/***/ }),
-
 /***/ "ysP3":
 /*!*****************************************!*\
   !*** ./src/app/views/home/home.page.ts ***!
@@ -154,8 +87,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/api.service */ "H+bZ");
-/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/data.service */ "EnSQ");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/search/search.component */ "RZmA");
+/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/api.service */ "H+bZ");
+/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/data.service */ "EnSQ");
+
+
 
 
 
@@ -165,12 +102,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let HomePage = class HomePage {
-    constructor(router, api, sanitizer, cdr, dataService) {
+    constructor(router, api, sanitizer, cdr, dataService, modalController) {
         this.router = router;
         this.api = api;
         this.sanitizer = sanitizer;
         this.cdr = cdr;
         this.dataService = dataService;
+        this.modalController = modalController;
         this.slideOpts = {
             initialSlide: 1,
             speed: 400,
@@ -224,6 +162,14 @@ let HomePage = class HomePage {
             this.cdr.markForCheck();
         }, (error) => {
             console.log(error);
+        });
+    }
+    searchModal() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalController.create({
+                component: src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_7__["SearchComponent"],
+            });
+            return yield modal.present();
         });
     }
     goToCashWithdrawal() {
@@ -297,10 +243,11 @@ let HomePage = class HomePage {
 };
 HomePage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
-    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] },
+    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_8__["ApiService"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"] },
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
-    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"] }
+    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_9__["DataService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] }
 ];
 HomePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({

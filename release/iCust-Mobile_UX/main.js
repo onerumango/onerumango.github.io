@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\workspace\IcustMobile\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! D:\iCust\IcustMobile\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -1512,6 +1512,148 @@ AvatarPhotoComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])(
 
 /***/ }),
 
+/***/ "KyFs":
+/*!*********************************************!*\
+  !*** ./src/app/pipes/search-filter.pipe.ts ***!
+  \*********************************************/
+/*! exports provided: SearchFilterPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchFilterPipe", function() { return SearchFilterPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+let SearchFilterPipe = class SearchFilterPipe {
+    transform(value, args) {
+        if (!value)
+            return null;
+        if (!args)
+            return value;
+        args = args.toLowerCase();
+        return value.filter(function (data) {
+            return JSON.stringify(data).toLowerCase().includes(args);
+        });
+    }
+};
+SearchFilterPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'searchFilter'
+    })
+], SearchFilterPipe);
+
+
+
+/***/ }),
+
+/***/ "RZmA":
+/*!*******************************************************!*\
+  !*** ./src/app/components/search/search.component.ts ***!
+  \*******************************************************/
+/*! exports provided: SearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchComponent", function() { return SearchComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_search_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./search.component.html */ "qDKi");
+/* harmony import */ var _search_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search.component.scss */ "Y0ZZ");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+let SearchComponent = class SearchComponent {
+    constructor(modalController, toastController) {
+        this.modalController = modalController;
+        this.toastController = toastController;
+        this.items = [
+            {
+                id: 1,
+                title: "Cash Withdrawal",
+                state: ""
+            }, {
+                id: 2,
+                title: "Cash Deposit",
+                state: ""
+            }, {
+                id: 3,
+                title: "Cheque Deposit",
+                state: ""
+            }, {
+                id: 4,
+                title: "Cheque Withdrawal",
+                state: ""
+            }, {
+                id: 5,
+                title: "Forex Transaction",
+                state: ""
+            }, {
+                id: 6,
+                title: "Bill Payment",
+                state: ""
+            }
+        ];
+        this.trendingRecords = [{
+                "id": 1,
+                "name": "Account Settings",
+            },
+            {
+                "id": 2,
+                "name": "Notification",
+            },
+            {
+                "id": 3,
+                "name": "Help",
+            },
+            {
+                "id": 4,
+                "name": "Loan Payment",
+                "email": "Julianne.OConner@kory.org"
+            },
+            {
+                "id": 5,
+                "name": "Recharge",
+            }
+        ];
+    }
+    ngOnInit() { }
+    closeModel() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            yield this.modalController.dismiss(close);
+        });
+    }
+    openToast(name) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: `${name} clicked`,
+                duration: 2000
+            });
+            toast.present();
+        });
+    }
+};
+SearchComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] }
+];
+SearchComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-search',
+        template: _raw_loader_search_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_search_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], SearchComponent);
+
+
+
+/***/ }),
+
 /***/ "RnhZ":
 /*!**************************************************!*\
   !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
@@ -1929,6 +2071,50 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "X4wd":
+/*!****************************************!*\
+  !*** ./src/app/pipes/currency.pipe.ts ***!
+  \****************************************/
+/*! exports provided: CurrencyPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrencyPipe", function() { return CurrencyPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
+
+
+let CurrencyPipe = class CurrencyPipe {
+    transform(code, format = 'narrow', locale) {
+        return Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["getCurrencySymbol"])(code, format, locale);
+    }
+};
+CurrencyPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'currencySymbol'
+    })
+], CurrencyPipe);
+
+
+
+/***/ }),
+
+/***/ "Y0ZZ":
+/*!*********************************************************!*\
+  !*** ./src/app/components/search/search.component.scss ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("div[scrollx=true] {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\ndiv[scrollx=true]::-webkit-scrollbar {\n  display: none;\n}\ndiv[scrollx=true] .scroll-item {\n  flex: 0 0 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxzZWFyY2guY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNKO0FBQUk7RUFDRyxhQUFBO0FBRVA7QUFBSztFQUNFLGNBQUE7QUFFUCIsImZpbGUiOiJzZWFyY2guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXZbc2Nyb2xseD10cnVlXSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC13cmFwOiBub3dyYXA7XHJcbiAgICBvdmVyZmxvdy14OiBhdXRvO1xyXG4gICAgJjo6LXdlYmtpdC1zY3JvbGxiYXIge1xyXG4gICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgIH1cclxuICAgICAuc2Nyb2xsLWl0ZW0ge1xyXG4gICAgICAgZmxleDogMCAwIGF1dG87XHJcbiAgICB9XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
 /***/ "ZAI4":
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
@@ -2063,6 +2249,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "iTUp":
+/*!***************************************!*\
+  !*** ./src/app/pipes/pipes.module.ts ***!
+  \***************************************/
+/*! exports provided: PipesModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PipesModule", function() { return PipesModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _currency_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./currency.pipe */ "X4wd");
+/* harmony import */ var _search_filter_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./search-filter.pipe */ "KyFs");
+
+
+
+
+
+let PipesModule = class PipesModule {
+};
+PipesModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_currency_pipe__WEBPACK_IMPORTED_MODULE_3__["CurrencyPipe"], _search_filter_pipe__WEBPACK_IMPORTED_MODULE_4__["SearchFilterPipe"]],
+        exports: [
+            _currency_pipe__WEBPACK_IMPORTED_MODULE_3__["CurrencyPipe"],
+            _search_filter_pipe__WEBPACK_IMPORTED_MODULE_4__["SearchFilterPipe"]
+        ],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+        ],
+    })
+], PipesModule);
+
+
+
+/***/ }),
+
 /***/ "j1ZV":
 /*!*************************************************!*\
   !*** ./src/app/components/components.module.ts ***!
@@ -2082,6 +2307,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./avatar-photo/avatar-photo.component */ "IOth");
 /* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./map/map.component */ "EZtS");
 /* harmony import */ var _time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./time-slots/time-slots.component */ "5aLK");
+/* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./search/search.component */ "RZmA");
+/* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pipes/pipes.module */ "iTUp");
+
+
 
 
 
@@ -2099,20 +2328,23 @@ ComponentsModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_5__["BranchComponent"],
             _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_6__["AvatarPhotoComponent"],
             _time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_8__["TimeSlotsComponent"],
-            _map_map_component__WEBPACK_IMPORTED_MODULE_7__["MapComponent"]
+            _map_map_component__WEBPACK_IMPORTED_MODULE_7__["MapComponent"],
+            _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"]
         ],
         exports: [],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_10__["PipesModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
         ],
         entryComponents: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_5__["BranchComponent"],
             _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_6__["AvatarPhotoComponent"],
             _map_map_component__WEBPACK_IMPORTED_MODULE_7__["MapComponent"],
-            _time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_8__["TimeSlotsComponent"]
+            _time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_8__["TimeSlotsComponent"],
+            _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"]
         ]
     })
 ], ComponentsModule);
@@ -2369,6 +2601,19 @@ module.exports = webpackAsyncContext;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("#map {\n  width: 100%;\n  height: 100%;\n}\n\n.info_window_container {\n  padding: 1rem;\n  overflow: scroll;\n}\n\n.info_window_container p {\n  font-size: 1.4rem;\n}\n\n.info_window_container h4 {\n  text-transform: capitalize;\n  font-size: 1.8rem;\n  margin: 1rem 0rem;\n}\n\n.info_window_container h5, .info_window_container span {\n  font-size: 1rem;\n  font-weight: 700;\n  line-height: 1.3;\n  letter-spacing: 1.5px;\n  text-transform: uppercase;\n  margin: 0.2rem 0 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxtYXAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksYUFBQTtFQUNBLGdCQUFBO0FBQ0o7O0FBQ0k7RUFDRSxpQkFBQTtBQUNOOztBQUVJO0VBQ0UsMEJBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0FBQU47O0FBR0k7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0EseUJBQUE7RUFDQSwyQkFBQTtBQUROIiwiZmlsZSI6Im1hcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNtYXAge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5pbmZvX3dpbmRvd19jb250YWluZXIge1xyXG4gICAgcGFkZGluZzogMXJlbTtcclxuICAgIG92ZXJmbG93OiBzY3JvbGw7XHJcblxyXG4gICAgcCB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMS40cmVtO1xyXG4gICAgfVxyXG5cclxuICAgIGg0IHtcclxuICAgICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbiAgICAgIGZvbnQtc2l6ZTogMS44cmVtO1xyXG4gICAgICBtYXJnaW46IDFyZW0gMHJlbTtcclxuICAgIH1cclxuXHJcbiAgICBoNSwgc3BhbiB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMXJlbTtcclxuICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgICAgbGluZS1oZWlnaHQ6IDEuMztcclxuICAgICAgbGV0dGVyLXNwYWNpbmc6IDEuNXB4O1xyXG4gICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgICBtYXJnaW46IDAuMnJlbSAwICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcblxyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "qDKi":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/search/search.component.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header collapse=\"condense\" [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button (click)=\"closeModel()\">\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-searchbar placeholder=\"Search...\" [(ngModel)]=\"filterTerm\" animated=\"true\"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-list-header>\n    <ion-label>Popular Service</ion-label>\n  </ion-list-header>\n  <div class=\"container\">\n    <div class=\"scroll\" scrollX=\"true\">\n      <ion-row>\n        <ion-item lines=\"none\">\n          <ion-chip *ngFor=\"let item of items | searchFilter:filterTerm\" color=\"secondary\" (click)=\"openToast(item.title)\">\n            <ion-icon color=\"primary\" name=\"trending-up-outline\"></ion-icon>\n            <ion-label>{{ item.title }}</ion-label>\n          </ion-chip>\n        </ion-item>\n      </ion-row>\n    </div>\n</div>\n<ion-list>\n  <ion-list-header lines=\"inset\">\n    <ion-label>Setting Service</ion-label>\n  </ion-list-header>\n  <ion-item *ngFor=\"let item of trendingRecords | searchFilter:filterTerm\" (click)=\"openToast(item.name)\">\n    <ion-label color=\"primary\">\n      <h1>{{ item.name }}</h1>\n    </ion-label>\n    <ion-icon name=\"trending-up-outline\"></ion-icon>\n  </ion-item>\n</ion-list>\n\n</ion-content>\n");
 
 /***/ }),
 
