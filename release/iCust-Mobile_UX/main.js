@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\iCust\IcustMobile\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! E:\workspace\IcustMobile\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -2591,7 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button (click)=\"closeModel()\">\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-searchbar placeholder=\"Search...\" [(ngModel)]=\"filterTerm\" animated=\"true\" class=\"mt-5\"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <!-- <ion-list-header>\n    <ion-label>Popular Service</ion-label>\n  </ion-list-header>\n  <div class=\"container\">\n    <div class=\"scroll\" scrollX=\"true\">\n      <ion-row>\n        <ion-item lines=\"none\">\n          <ion-chip *ngFor=\"let item of items | searchFilter:filterTerm\" color=\"secondary\" (click)=\"openToast(item.title)\">\n            <ion-icon color=\"primary\" name=\"trending-up-outline\"></ion-icon>\n            <ion-label>{{ item.title }}</ion-label>\n          </ion-chip>\n        </ion-item>\n      </ion-row>\n    </div>\n</div> -->\n<ion-list>\n  <ion-list-header lines=\"inset\">\n    <ion-label>Quick Services</ion-label>\n  </ion-list-header>\n  <ion-item *ngFor=\"let item of trendingRecords | searchFilter:filterTerm\" (click)=\"openPage(item)\">\n    <ion-label color=\"primary\">\n      <h1>{{ item.name }}</h1>\n    </ion-label>\n    <ion-icon name=\"trending-up-outline\"></ion-icon>\n  </ion-item>\n</ion-list>\n\n</ion-content>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"closeModel()\">\r\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-searchbar placeholder=\"Search...\" [(ngModel)]=\"filterTerm\" animated=\"true\" class=\"mt-5\"></ion-searchbar>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <!-- <ion-list-header>\r\n    <ion-label>Popular Service</ion-label>\r\n  </ion-list-header>\r\n  <div class=\"container\">\r\n    <div class=\"scroll\" scrollX=\"true\">\r\n      <ion-row>\r\n        <ion-item lines=\"none\">\r\n          <ion-chip *ngFor=\"let item of items | searchFilter:filterTerm\" color=\"secondary\" (click)=\"openToast(item.title)\">\r\n            <ion-icon color=\"primary\" name=\"trending-up-outline\"></ion-icon>\r\n            <ion-label>{{ item.title }}</ion-label>\r\n          </ion-chip>\r\n        </ion-item>\r\n      </ion-row>\r\n    </div>\r\n</div> -->\r\n<ion-list>\r\n  <ion-list-header lines=\"inset\">\r\n    <ion-label>Quick Services</ion-label>\r\n  </ion-list-header>\r\n  <ion-item *ngFor=\"let item of trendingRecords | searchFilter:filterTerm\" (click)=\"openPage(item)\">\r\n    <ion-label color=\"primary\">\r\n      <h1>{{ item.name }}</h1>\r\n    </ion-label>\r\n    <ion-icon name=\"trending-up-outline\"></ion-icon>\r\n  </ion-item>\r\n</ion-list>\r\n\r\n</ion-content>\r\n\r\n\r\n");
 
 /***/ }),
 
