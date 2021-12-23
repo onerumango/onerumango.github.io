@@ -1562,63 +1562,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_search_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./search.component.html */ "qDKi");
 /* harmony import */ var _search_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search.component.scss */ "Y0ZZ");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
 
 
 
 
 
 let SearchComponent = class SearchComponent {
-    constructor(modalController, toastController) {
+    constructor(modalController, toastController, router) {
         this.modalController = modalController;
         this.toastController = toastController;
-        this.items = [
-            {
+        this.router = router;
+        this.items = [];
+        this.trendingRecords = [{
                 id: 1,
-                title: "Cash Withdrawal",
-                state: ""
+                name: "Cash Withdrawal",
+                state: "/cashwithdrawal"
             }, {
                 id: 2,
-                title: "Cash Deposit",
-                state: ""
+                name: "Cash Deposit",
+                state: "/cashdeposit"
             }, {
                 id: 3,
-                title: "Cheque Deposit",
-                state: ""
+                name: "Cheque Deposit",
+                state: "/chequedeposit"
             }, {
                 id: 4,
-                title: "Cheque Withdrawal",
-                state: ""
+                name: "Cheque Withdrawal",
+                state: "/chequewithdrawal"
             }, {
                 id: 5,
-                title: "Forex Transaction",
-                state: ""
+                name: "Forex Transaction",
+                state: "/forex-transaction"
             }, {
                 id: 6,
-                title: "Bill Payment",
-                state: ""
-            }
-        ];
-        this.trendingRecords = [{
-                "id": 1,
-                "name": "Account Settings",
-            },
-            {
-                "id": 2,
-                "name": "Notification",
-            },
-            {
-                "id": 3,
-                "name": "Help",
-            },
-            {
-                "id": 4,
-                "name": "Loan Payment",
-                "email": "Julianne.OConner@kory.org"
-            },
-            {
-                "id": 5,
-                "name": "Recharge",
+                name: "Loan Payment",
+                state: "/loan-payment"
             }
         ];
     }
@@ -1628,19 +1609,16 @@ let SearchComponent = class SearchComponent {
             yield this.modalController.dismiss(close);
         });
     }
-    openToast(name) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const toast = yield this.toastController.create({
-                message: `${name} clicked`,
-                duration: 2000
-            });
-            toast.present();
+    openPage(item) {
+        this.router.navigate([`${item.state}`]).then(_ => {
+            this.closeModel();
         });
     }
 };
 SearchComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
 ];
 SearchComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -2111,7 +2089,7 @@ CurrencyPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("div[scrollx=true] {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\ndiv[scrollx=true]::-webkit-scrollbar {\n  display: none;\n}\ndiv[scrollx=true] .scroll-item {\n  flex: 0 0 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxzZWFyY2guY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNKO0FBQUk7RUFDRyxhQUFBO0FBRVA7QUFBSztFQUNFLGNBQUE7QUFFUCIsImZpbGUiOiJzZWFyY2guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXZbc2Nyb2xseD10cnVlXSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC13cmFwOiBub3dyYXA7XHJcbiAgICBvdmVyZmxvdy14OiBhdXRvO1xyXG4gICAgJjo6LXdlYmtpdC1zY3JvbGxiYXIge1xyXG4gICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgIH1cclxuICAgICAuc2Nyb2xsLWl0ZW0ge1xyXG4gICAgICAgZmxleDogMCAwIGF1dG87XHJcbiAgICB9XHJcbiAgfSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("div[scrollx=true] {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\ndiv[scrollx=true]::-webkit-scrollbar {\n  display: none;\n}\ndiv[scrollx=true] .scroll-item {\n  flex: 0 0 auto;\n}\n.mt-5 {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxzZWFyY2guY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNKO0FBQUk7RUFDRyxhQUFBO0FBRVA7QUFBSztFQUNFLGNBQUE7QUFFUDtBQUVFO0VBQ0MsZUFBQTtFQUNBLGtCQUFBO0FBQ0giLCJmaWxlIjoic2VhcmNoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2W3Njcm9sbHg9dHJ1ZV0ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtd3JhcDogbm93cmFwO1xyXG4gICAgb3ZlcmZsb3cteDogYXV0bztcclxuICAgICY6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcclxuICAgICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICB9XHJcbiAgICAgLnNjcm9sbC1pdGVtIHtcclxuICAgICAgIGZsZXg6IDAgMCBhdXRvO1xyXG4gICAgfVxyXG4gIH1cclxuXHJcbiAgLm10LTV7XHJcbiAgIG1hcmdpbi10b3A6IDVweDtcclxuICAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG4gIH0iXX0= */");
 
 /***/ }),
 
@@ -2613,7 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button (click)=\"closeModel()\">\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-searchbar placeholder=\"Search...\" [(ngModel)]=\"filterTerm\" animated=\"true\"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-list-header>\n    <ion-label>Popular Service</ion-label>\n  </ion-list-header>\n  <div class=\"container\">\n    <div class=\"scroll\" scrollX=\"true\">\n      <ion-row>\n        <ion-item lines=\"none\">\n          <ion-chip *ngFor=\"let item of items | searchFilter:filterTerm\" color=\"secondary\" (click)=\"openToast(item.title)\">\n            <ion-icon color=\"primary\" name=\"trending-up-outline\"></ion-icon>\n            <ion-label>{{ item.title }}</ion-label>\n          </ion-chip>\n        </ion-item>\n      </ion-row>\n    </div>\n</div>\n<ion-list>\n  <ion-list-header lines=\"inset\">\n    <ion-label>General Service</ion-label>\n  </ion-list-header>\n  <ion-item *ngFor=\"let item of trendingRecords | searchFilter:filterTerm\" (click)=\"openToast(item.name)\">\n    <ion-label color=\"primary\">\n      <h1>{{ item.name }}</h1>\n    </ion-label>\n    <ion-icon name=\"trending-up-outline\"></ion-icon>\n  </ion-item>\n</ion-list>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button (click)=\"closeModel()\">\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-searchbar placeholder=\"Search...\" [(ngModel)]=\"filterTerm\" animated=\"true\" class=\"mt-5\"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <!-- <ion-list-header>\n    <ion-label>Popular Service</ion-label>\n  </ion-list-header>\n  <div class=\"container\">\n    <div class=\"scroll\" scrollX=\"true\">\n      <ion-row>\n        <ion-item lines=\"none\">\n          <ion-chip *ngFor=\"let item of items | searchFilter:filterTerm\" color=\"secondary\" (click)=\"openToast(item.title)\">\n            <ion-icon color=\"primary\" name=\"trending-up-outline\"></ion-icon>\n            <ion-label>{{ item.title }}</ion-label>\n          </ion-chip>\n        </ion-item>\n      </ion-row>\n    </div>\n</div> -->\n<ion-list>\n  <ion-list-header lines=\"inset\">\n    <ion-label>Quick Services</ion-label>\n  </ion-list-header>\n  <ion-item *ngFor=\"let item of trendingRecords | searchFilter:filterTerm\" (click)=\"openPage(item)\">\n    <ion-label color=\"primary\">\n      <h1>{{ item.name }}</h1>\n    </ion-label>\n    <ion-icon name=\"trending-up-outline\"></ion-icon>\n  </ion-item>\n</ion-list>\n\n</ion-content>\n\n\n");
 
 /***/ }),
 
