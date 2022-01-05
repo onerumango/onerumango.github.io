@@ -403,9 +403,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 ng2-charts
 ISC
 
-ngx-custom-validators
-MIT
-
 ngx-infinite-scroll
 MIT
 MIT License
@@ -432,6 +429,9 @@ SOFTWARE.
 
 
 ngx-perfect-scrollbar
+MIT
+
+ngx-spinner
 MIT
 
 ngx-toastr
