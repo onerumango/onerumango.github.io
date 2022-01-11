@@ -2208,7 +2208,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: true,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
-    ICUST_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
+    ICUST_URL: 'http://192.168.0.14:8089/Icust-Digital-Banking'
 };
 
 
@@ -2651,10 +2651,10 @@ const rootRouterConfig = [
         path: 'tabs',
         loadChildren: () => __webpack_require__.e(/*! import() | views-tabs-tabs-module */ "views-tabs-tabs-module").then(__webpack_require__.bind(null, /*! ./views/tabs/tabs.module */ "KRWn")).then(m => m.TabsPageModule)
     },
-    // {
-    //   path: 'transaction',
-    //   loadChildren: () => import('./views/transaction/transaction.module').then( m => m.TransactionPageModule)
-    // },
+    {
+        path: 'transaction-popup',
+        loadChildren: () => Promise.all(/*! import() | views-transaction-popup-transaction-popup-module */[__webpack_require__.e("default~transaction-transaction-module~views-transaction-popup-transaction-popup-module"), __webpack_require__.e("views-transaction-popup-transaction-popup-module")]).then(__webpack_require__.bind(null, /*! ./views/transaction-popup/transaction-popup.module */ "rf77")).then(m => m.TransactionPopupPageModule)
+    },
     // {
     //   path: 'profile',
     //   loadChildren: () => import('./views/profile/profile.module').then( m => m.ProfilePageModule)
@@ -2677,7 +2677,7 @@ const rootRouterConfig = [
     },
     {
         path: 'token-generation',
-        loadChildren: () => Promise.all(/*! import() | views-token-generation-token-generation-module */[__webpack_require__.e("common"), __webpack_require__.e("views-token-generation-token-generation-module")]).then(__webpack_require__.bind(null, /*! ./views/token-generation/token-generation.module */ "POVk")).then(m => m.TokenGenerationPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | views-token-generation-token-generation-module */ "views-token-generation-token-generation-module").then(__webpack_require__.bind(null, /*! ./views/token-generation/token-generation.module */ "POVk")).then(m => m.TokenGenerationPageModule)
     },
     {
         path: 'loginactivity',

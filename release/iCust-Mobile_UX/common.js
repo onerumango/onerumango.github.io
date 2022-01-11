@@ -1,50 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "2g2N":
-/*!*******************************************!*\
-  !*** ./src/app/services/toast.service.ts ***!
-  \*******************************************/
-/*! exports provided: ToastService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToastService", function() { return ToastService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-
-
-
-let ToastService = class ToastService {
-    constructor(toast) {
-        this.toast = toast;
-    }
-    showToast(msg) {
-        this.myToast = this.toast.create({
-            message: msg,
-            duration: 3000
-        }).then((toastData) => {
-            toastData.present();
-        });
-    }
-    dismissToast() {
-        this.myToast = this.toast.dismiss();
-    }
-};
-ToastService.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] }
-];
-ToastService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], ToastService);
-
-
-
-/***/ }),
-
 /***/ "74mu":
 /*!*************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js ***!
