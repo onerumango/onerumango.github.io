@@ -117,6 +117,7 @@ let TransactionPopupPage = class TransactionPopupPage {
         this.shareDataService.getAccountInfo.subscribe(data => {
             console.log("Data", data);
             this.accountInfo = data;
+            console.log("working fine sucessfull");
         });
         this.apiService.getByTransactionId(this.value).subscribe(response => {
             this.data = JSON.stringify(response);
