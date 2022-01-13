@@ -113,10 +113,10 @@ let TransactionPage = class TransactionPage {
                     value: event.transactionId
                 }
             });
-            modal.onDidDismiss()
-                .then((data) => {
-                const foo = data['data'];
-            });
+            //   modal.onDidDismiss()
+            //   .then((data) => {
+            //     const foo = data['data'];
+            // });
             return yield modal.present();
         });
     }

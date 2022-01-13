@@ -117,7 +117,6 @@ let TransactionPopupPage = class TransactionPopupPage {
         this.shareDataService.getAccountInfo.subscribe(data => {
             console.log("Data", data);
             this.accountInfo = data;
-            console.log("working fine sucessfull");
         });
         this.apiService.getByTransactionId(this.value).subscribe(response => {
             this.trans = JSON.stringify(response);
@@ -125,6 +124,7 @@ let TransactionPopupPage = class TransactionPopupPage {
             // console.log(JSON.parse(this.trans));
             this.trans = JSON.parse(this.trans);
             console.log('trans', this.trans);
+            console.log("working fine sucessfull");
             let objectURL = 'data:image/jpeg;base64,' + this.trans.qrCodeImage;
             this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
             console.log(this.image);
