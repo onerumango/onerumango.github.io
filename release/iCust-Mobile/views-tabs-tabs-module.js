@@ -53,7 +53,7 @@ const routes = [
                     {
                         path: '',
                         // loadChildren: '../tab1/tab1.module#Tab1PageModule'
-                        loadChildren: () => Promise.all(/*! import() | transaction-transaction-module */[__webpack_require__.e("common"), __webpack_require__.e("transaction-transaction-module")]).then(__webpack_require__.bind(null, /*! ../transaction/transaction.module */ "rHaX")).then(m => m.TransactionPageModule)
+                        loadChildren: () => Promise.all(/*! import() | transaction-transaction-module */[__webpack_require__.e("default~transaction-transaction-module~views-transaction-popup-transaction-popup-module"), __webpack_require__.e("common"), __webpack_require__.e("transaction-transaction-module")]).then(__webpack_require__.bind(null, /*! ../transaction/transaction.module */ "rHaX")).then(m => m.TransactionPageModule)
                     }
                 ]
             },

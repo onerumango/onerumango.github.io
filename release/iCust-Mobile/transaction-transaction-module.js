@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>My Transaction</ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar *ngIf=\"accountInfo.accountType != undefined\">\r\n    <div class=\"toolbar-bg\">\r\n      <h5 class=\"capitalize secondary-text\">{{ accountInfo?.accountType + ' Account' }}</h5>\r\n      <p class=\"capitalize secondary-text\">{{ accountInfo?.accountId }}</p>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n   \r\n      <ion-list>\r\n        <ion-item *ngFor=\"let trans of transactionDataArr;trackBy: trackByFn\" (click)=\"onClick(trans)\">\r\n          <ion-button slot=\"start\">\r\n            <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n          </ion-button>\r\n      \r\n            <ion-grid>\r\n              <ion-row>\r\n                <ion-col>\r\n                  <ion-label>\r\n                  <h3>\r\n                    {{trans.trnType}} \r\n                  </h3>\r\n                  <p> \r\n                   \r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{ trans.transactionTime }}\r\n                    \r\n                  </p>\r\n                </ion-label>\r\n                </ion-col>\r\n                <ion-col class=\"ion-align-self-center\">\r\n                  <ion-label [color]=\"trans.trnType == 'Cash Withdrawal' || trans.trnType == 'Cheque Withdrawal' ? 'danger' : 'success'\" class=\"text-xs text-right\">{{trans.transactionAmount | currency:trans.transactionCurrency:'symbol':'1.0-1'}} </ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n           \r\n          \r\n    \r\n        </ion-item>\r\n      </ion-list>\r\n   \r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("   <ion-header class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>My Transaction</ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar *ngIf=\"accountInfo.accountType != undefined\">\r\n    <div class=\"toolbar-bg\">\r\n      <h5 class=\"capitalize secondary-text\">{{ accountInfo?.accountType + ' Account' }}</h5>\r\n      <p class=\"capitalize secondary-text\">{{ accountInfo?.accountId }}</p>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n   \r\n      <ion-list>\r\n        <ion-item *ngFor=\"let trans of transactionDataArr;trackBy: trackByFn\" (click)=\"onClick(trans)\">\r\n          <ion-button slot=\"start\">\r\n            <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n          </ion-button>\r\n      \r\n            <ion-grid>\r\n              <ion-row>\r\n                <ion-col>\r\n                  <ion-label>\r\n                  <h3>\r\n                    {{trans.trnType}} \r\n                  </h3>\r\n                  <p> \r\n                   \r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{ trans.transactionTime }}\r\n                    \r\n                  </p>\r\n                </ion-label>\r\n                </ion-col>\r\n                <ion-col class=\"ion-align-self-center\">\r\n                  <ion-label [color]=\"trans.trnType == 'Cash Withdrawal' || trans.trnType == 'Cheque Withdrawal' ? 'danger' : 'success'\" class=\"text-xs text-right\">{{trans.transactionAmount | currency:trans.transactionCurrency:'symbol':'1.0-1'}} </ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n           \r\n          \r\n    \r\n        </ion-item>\r\n      </ion-list>\r\n   \r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -33,6 +33,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/data.service */ "EnSQ");
 /* harmony import */ var src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/loading.service */ "7ch9");
+/* harmony import */ var _transaction_popup_transaction_popup_page__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../transaction-popup/transaction-popup.page */ "COR3");
+
+
+
 
 
 
@@ -44,10 +48,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let TransactionPage = class TransactionPage {
-    constructor(router, alertController, loadingService, apiService, cdr, location, shareDataService) {
+    constructor(router, alertController, navCtrl, loadingService, modalCtrl, apiService, cdr, location, shareDataService) {
         this.router = router;
         this.alertController = alertController;
+        this.navCtrl = navCtrl;
         this.loadingService = loadingService;
+        this.modalCtrl = modalCtrl;
         this.apiService = apiService;
         this.cdr = cdr;
         this.location = location;
@@ -84,76 +90,43 @@ let TransactionPage = class TransactionPage {
         }, (err) => {
         });
     }
-    onClick(event) {
-        console.log("Event = ", event);
-        this.loadingService.present();
-        this.apiService.getByTransactionId(event.transactionId).subscribe(response => {
-            console.log("response -- " + response);
-            this.data = JSON.parse(JSON.stringify(response));
-            console.log("response -- " + this.data);
-        });
-        setTimeout(() => {
-            this.loadingService.dismiss();
-            this.dialog(this.data);
-        }, 3000);
-    }
-    dialog(data) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const alert = yield this.alertController.create({
-                header: data.trnType,
-                inputs: [
-                    {
-                        name: 'Transaction ID',
-                        type: 'text',
-                        value: 'Transaction ID: ' + data.transactionId,
-                        disabled: true
-                    },
-                    {
-                        name: 'Account Number',
-                        type: 'text',
-                        value: 'Account Number: ' + data.accountNumber,
-                        disabled: true
-                    },
-                    {
-                        name: 'Account Type',
-                        type: 'text',
-                        value: 'Account Type: ' + this.accountInfo.accountType,
-                        disabled: true
-                    },
-                    {
-                        name: 'Account Currency',
-                        type: 'text',
-                        value: 'Account Currency: ' + data.transactionCurrency,
-                        disabled: true
-                    },
-                    {
-                        name: 'Transaction Amount',
-                        type: 'text',
-                        value: 'Transaction Amount: ' + data.transactionAmount,
-                        disabled: true
-                    },
-                    {
-                        name: 'Balance',
-                        type: 'text',
-                        value: 'Balance: ' + data.accountBalance,
-                        disabled: true
-                    },
-                ],
-                buttons: ['OK']
-            });
-            yield alert.present();
-            let result = yield alert.onDidDismiss();
-            console.log(result);
-        });
-    }
     goBack() {
         this.location.back();
+    }
+    onClick(event) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log("Inside onClick", event.transactionId);
+            // this.loadingService.present();
+            // this.apiService.getByTransactionId(event.transactionId).subscribe(response =>{
+            //   console.log("response -- "+response);
+            //   this.data = JSON.parse(JSON.stringify(response));
+            //   console.log("response -- "+this.data);
+            // });
+            // let modal = await this.modalCtrl.create({component: TransactionPopupPage,
+            //   componentProps: { 
+            //     foo: 'hello',
+            //     bar: 'world'
+            // )},
+            let modal = yield this.modalCtrl.create({
+                component: _transaction_popup_transaction_popup_page__WEBPACK_IMPORTED_MODULE_10__["TransactionPopupPage"],
+                componentProps: {
+                    value: event.transactionId
+                }
+            });
+            //   modal.onDidDismiss()
+            //   .then((data) => {
+            //     const foo = data['data'];
+            // });
+            return yield modal.present();
+        });
     }
 };
 TransactionPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"] },
     { type: src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_9__["LoadingService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"] },
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"] },
