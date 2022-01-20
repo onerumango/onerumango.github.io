@@ -151,7 +151,7 @@ let TransactionPopupPage = class TransactionPopupPage {
     next() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             console.log("before");
-            this.router.navigate(['tabs']);
+            this.router.navigate(['/tabs/transaction']);
             yield this.modalCtrl.dismiss();
             console.log("after", this.router);
         });
