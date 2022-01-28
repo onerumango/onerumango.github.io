@@ -4851,9 +4851,8 @@
 
               console.log("this.branchName::", _this16.branchName, _this16.arrayAccountBranch);
               _this16.currencyData = _this16.arrayAccountBranch.find(function (x) {
-                return console.log(x.branchName);
-              }); // == this.branchName);
-
+                return x.branchName == _this16.branchName;
+              });
               console.log("Currency", _this16.currencyData);
 
               if (_this16.currencyData != null || _this16.currencyData != undefined) {

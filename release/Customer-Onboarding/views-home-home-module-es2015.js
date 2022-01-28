@@ -2515,7 +2515,7 @@ class AccountComponent {
                 this.arrayAccountBranch.push(this.branchName);
             }
             console.log("this.branchName::", this.branchName, this.arrayAccountBranch);
-            this.currencyData = this.arrayAccountBranch.find(x => console.log(x.branchName)); // == this.branchName);
+            this.currencyData = this.arrayAccountBranch.find(x => x.branchName == this.branchName);
             console.log("Currency", this.currencyData);
             if (this.currencyData != null || this.currencyData != undefined) {
                 this.accountForm.get('accountCurrency').setValue(this.currencyData.branchCcy);
