@@ -1486,6 +1486,11 @@ ul.nav.nav-tabs li+li {
 	margin: 0 auto;
 	padding: 30px 100px;
 }
+.dbCardStyle.fieldwidth {
+	max-width: 585px;
+	margin: 0 auto;
+	padding: 30px 65px;
+}
 .fileUpload {
   border: 1px dashed var(--secondaryColor);
   border-radius: 4px;
