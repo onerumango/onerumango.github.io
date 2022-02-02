@@ -739,8 +739,8 @@ img {
 	padding: 5px 0 5px 30px;
   font-size: 13px;
 }
-.ddOptions a:hover {
-}
+/* .ddOptions a:hover {
+} */
 .ddOptions a:hover .ddIcon {
   -webkit-filter: none;
   filter: none;
@@ -1476,7 +1476,7 @@ ul.nav.nav-tabs li+li {
 	background: var(--lightColor);
 }
 .deleteIcon {
-	background: var(--themeColor);
+	background: var(--primaryColor);
 }
 .primarybg {
 	background: var(--primaryColor);
