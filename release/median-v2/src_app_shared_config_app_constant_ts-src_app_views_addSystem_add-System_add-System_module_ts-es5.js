@@ -951,7 +951,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "h2", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4, "Basic Information");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4, "System Information");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 

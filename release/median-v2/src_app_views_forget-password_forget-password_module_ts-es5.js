@@ -863,7 +863,7 @@
               return ctx.getOtp(_r0.value);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](28, "Get Otp");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](28, "Get OTP");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
