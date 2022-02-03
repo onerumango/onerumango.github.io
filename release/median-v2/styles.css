@@ -14402,6 +14402,29 @@ img {
     border-radius: 30px;
   }
 
+.btnAuth{
+    background-color: #3E54B8;
+    color: var(--bs-white);
+  }
+
+.btnAuth:hover {
+    color: var(--bs-white);
+    background-color: var(--secondaryHoverColor);
+    border-color: var(--secondaryHoverColor);
+  }
+
+.btnUpdate {
+    background-color:  var(--navBadgeBg);
+    color: var(--bs-white);
+    border-color: var(--navBadgeBg);
+  }
+
+.btnUpdate:hover {
+    background-color: var(--primaryHoverColor);
+    color: var(--bs-white);
+    border-color: var(--navBadgeBgHoverColor);
+   }
+
 .btnPrimary {
     color: var(--bs-white);
     background-color: var(--primaryColor);
@@ -15453,11 +15476,19 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 /* role page */
 
 .pageTitle {
-	font-size: 14px;
+	font-size: 20px;
 	font-family: var(--bold);
 	color: var(--primaryColor);
 	letter-spacing: 1px;
 	margin: 0;
+}
+
+.pageTitle1{
+	font-size: 20px;
+	font-family: var(--bold);
+	color: var(--primaryColor);
+	letter-spacing: 1px;
+	margin-bottom: 2px;
 }
 
 .pageTitleCol {

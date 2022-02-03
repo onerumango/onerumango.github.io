@@ -354,7 +354,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "button", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "button", 11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_tr_25_Template_button_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r5);
@@ -430,7 +430,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind1"](12, 6, data_r3 == null ? null : data_r3.processingDate));
+          _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](12, 6, data_r3 == null ? null : data_r3.processingDate, "medium"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
 
@@ -558,7 +558,7 @@
         if (rf & 1) {
           var _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_button_55_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r8);
@@ -584,7 +584,8 @@
           this.excelService = excelService;
           this.respArray = [];
           this.dtOptions = {};
-          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_10__.Subject();
+          this.dtTrigger1 = new rxjs__WEBPACK_IMPORTED_MODULE_10__.Subject();
+          this.dtTrigger2 = new rxjs__WEBPACK_IMPORTED_MODULE_10__.Subject();
           this.pendingForAuthData = [];
           this.pendingForAuthDetailsListAll = [];
           this.excelDataAuthSecondAuditlog = new src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_2__.User();
@@ -612,7 +613,7 @@
             this.user_id = sessionStorage.getItem('user_id');
             this.role = sessionStorage.getItem('user_role');
             this.getPendingForAuthData();
-            this.dtOptions = {
+            this.dtOptions[0] = {
               pagingType: 'full_numbers',
               pageLength: 5,
               columnDefs: [{
@@ -623,11 +624,19 @@
               processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
+            this.dtOptions[1] = {
+              pagingType: 'full_numbers',
+              pageLength: 5,
+              processing: true,
+              retrieve: true,
+              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            };
           }
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            this.dtTrigger.unsubscribe();
+            this.dtTrigger1.unsubscribe();
+            this.dtTrigger2.unsubscribe();
           }
         }, {
           key: "screenpermission",
@@ -706,7 +715,7 @@
             this.api.getSecondLevelAuthDetailsData().subscribe(function (resp) {
               _this4.pendingForAuthDetailsListAll = resp;
 
-              _this4.dtTrigger.next();
+              _this4.dtTrigger2.next();
             });
           }
         }, {
@@ -726,7 +735,7 @@
             this.api.queryDetailsDataByParamServiceSecond(this.getDetailsQueryToggleReqDTO).subscribe(function (resp) {
               _this5.pendingForAuthDetailsListAll = resp;
 
-              _this5.dtTrigger.next();
+              _this5.dtTrigger2.next();
 
               console.log(_this5.pendingForAuthDetailsListAll);
 
@@ -801,7 +810,7 @@
               // console.log(resp);
               _this8.pendingForAuthData = resp;
 
-              _this8.dtTrigger.next();
+              _this8.dtTrigger1.next();
 
               console.log(_this8.pendingForAuthData);
             });
@@ -921,7 +930,7 @@
         selectors: [["npr-authorize-modification"]],
         decls: 56,
         vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "pageTitle", "my-3", "text-center"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btnCol", "mt-md-4", "mt-3"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "btnDarkGrey"], ["class", "btn smBtn btnPrimary ", "style", "height : 90%", 3, "click", 4, "ngIf"], [3, "click"], [1, "btn", "smBtn", "btnPrimary", 2, "height", "90%", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "pageTitle", "my-3", "text-center"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btnCol", "mt-md-4", "mt-3"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "btnDarkGrey"], ["class", "btn smBtn btnPrimary ", "style", "height : 90%", 3, "click", 4, "ngIf"], [3, "click"], [1, "btn", "smBtn", "btnPrimary", 2, "height", "90%", 3, "click"]],
         template: function AuthorizeModificationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 0);
@@ -998,7 +1007,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](24, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](25, AuthorizeModificationComponent_tr_25_Template, 17, 8, "tr", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](25, AuthorizeModificationComponent_tr_25_Template, 17, 9, "tr", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 
@@ -1008,7 +1017,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](26, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](27, "table", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](27, "table", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](28, "thead");
 
@@ -1088,15 +1097,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](52, "div", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](52, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](53, "a", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](53, "a", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](54, "Export +");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](55, AuthorizeModificationComponent_button_55_Template, 2, 0, "button", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](55, AuthorizeModificationComponent_button_55_Template, 2, 0, "button", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 
@@ -1106,7 +1115,7 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("dtOptions", ctx.dtOptions[0])("dtTrigger", ctx.dtTrigger1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](18);
 
@@ -1114,7 +1123,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+            _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("dtOptions", ctx.dtOptions[1])("dtTrigger", ctx.dtTrigger2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](24);
 
