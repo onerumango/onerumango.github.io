@@ -1,33 +1,6 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_process-account-closure_process-account-closure_module_ts"],{
 
-/***/ 91486:
-/*!***********************************************!*\
-  !*** ./src/app/shared/config/app.constant.ts ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AppConstants": function() { return /* binding */ AppConstants; }
-/* harmony export */ });
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 93963);
-
-class AppConstants {
-    /*
-    *Base URL is not used anywhere so dont change it and dont delete it
-    */
-    static get baseURL() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.MEDIAN_URL;
-    }
-    static get acctCloserUrl() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.ACC_CLOSER_URL;
-    }
-}
-
-
-/***/ }),
-
 /***/ 57814:
 /*!*******************************************************************!*\
   !*** ./src/app/shared/models/process-account-closure-resp-dto.ts ***!
@@ -747,37 +720,6 @@ ProcessAccountClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPO
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](22);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.process);
     } }, directives: [angular_datatables__WEBPACK_IMPORTED_MODULE_3__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9jZXNzLWFjY291bnQtY2xvc3VyZS5jb21wb25lbnQuc2NzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ 93963:
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "environment": function() { return /* binding */ environment; }
-/* harmony export */ });
-const environment = {
-    production: true,
-    //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-    //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
-    // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-    // MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-};
 
 
 /***/ })

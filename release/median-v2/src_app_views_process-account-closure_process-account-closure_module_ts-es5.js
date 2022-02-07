@@ -1,70 +1,13 @@
 (function () {
   "use strict";
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_process-account-closure_process-account-closure_module_ts"], {
-    /***/
-    91486:
-    /*!***********************************************!*\
-      !*** ./src/app/shared/config/app.constant.ts ***!
-      \***********************************************/
-
-    /***/
-    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export */
-
-
-      __webpack_require__.d(__webpack_exports__, {
-        /* harmony export */
-        "AppConstants": function AppConstants() {
-          return (
-            /* binding */
-            _AppConstants
-          );
-        }
-        /* harmony export */
-
-      });
-      /* harmony import */
-
-
-      var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! src/environments/environment.prod */
-      93963);
-
-      var _AppConstants = /*#__PURE__*/function () {
-        function _AppConstants() {
-          _classCallCheck(this, _AppConstants);
-        }
-
-        _createClass(_AppConstants, null, [{
-          key: "baseURL",
-          get:
-          /*
-          *Base URL is not used anywhere so dont change it and dont delete it
-          */
-          function get() {
-            return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.MEDIAN_URL;
-          }
-        }, {
-          key: "acctCloserUrl",
-          get: function get() {
-            return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.ACC_CLOSER_URL;
-          }
-        }]);
-
-        return _AppConstants;
-      }();
-      /***/
-
-    },
-
     /***/
     57814:
     /*!*******************************************************************!*\
@@ -1278,50 +1221,6 @@
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9jZXNzLWFjY291bnQtY2xvc3VyZS5jb21wb25lbnQuc2NzcyJ9 */"]
       });
-      /***/
-    },
-
-    /***/
-    93963:
-    /*!**********************************************!*\
-      !*** ./src/environments/environment.prod.ts ***!
-      \**********************************************/
-
-    /***/
-    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export */
-
-
-      __webpack_require__.d(__webpack_exports__, {
-        /* harmony export */
-        "environment": function environment() {
-          return (
-            /* binding */
-            _environment
-          );
-        }
-        /* harmony export */
-
-      });
-
-      var _environment = {
-        production: true,
-        //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-        //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
-        //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
-        //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
-        // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
-        //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-        //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-        //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-        // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-        // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-        // MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-        // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-        MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-        ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-      };
       /***/
     }
   }]);

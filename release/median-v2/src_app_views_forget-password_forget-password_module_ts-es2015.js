@@ -1,33 +1,6 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_forget-password_forget-password_module_ts"],{
 
-/***/ 91486:
-/*!***********************************************!*\
-  !*** ./src/app/shared/config/app.constant.ts ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AppConstants": function() { return /* binding */ AppConstants; }
-/* harmony export */ });
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 93963);
-
-class AppConstants {
-    /*
-    *Base URL is not used anywhere so dont change it and dont delete it
-    */
-    static get baseURL() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.MEDIAN_URL;
-    }
-    static get acctCloserUrl() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.ACC_CLOSER_URL;
-    }
-}
-
-
-/***/ }),
-
 /***/ 74987:
 /*!**************************************************!*\
   !*** ./src/app/shared/services/login.service.ts ***!
@@ -590,37 +563,6 @@ ForgetPasswordModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](ForgetPasswordModule, { declarations: [_forget_password_component__WEBPACK_IMPORTED_MODULE_1__.ForgetPasswordComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule,
         _forget_password_routing_module__WEBPACK_IMPORTED_MODULE_0__.ForgetPasswordRoutingModule,
         _angular_forms__WEBPACK_IMPORTED_MODULE_4__.ReactiveFormsModule] }); })();
-
-
-/***/ }),
-
-/***/ 93963:
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "environment": function() { return /* binding */ environment; }
-/* harmony export */ });
-const environment = {
-    production: true,
-    //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-    //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
-    // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-    // MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-};
 
 
 /***/ })

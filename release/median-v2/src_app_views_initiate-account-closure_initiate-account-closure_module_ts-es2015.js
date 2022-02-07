@@ -1,33 +1,6 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_initiate-account-closure_initiate-account-closure_module_ts"],{
 
-/***/ 91486:
-/*!***********************************************!*\
-  !*** ./src/app/shared/config/app.constant.ts ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AppConstants": function() { return /* binding */ AppConstants; }
-/* harmony export */ });
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 93963);
-
-class AppConstants {
-    /*
-    *Base URL is not used anywhere so dont change it and dont delete it
-    */
-    static get baseURL() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.MEDIAN_URL;
-    }
-    static get acctCloserUrl() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.ACC_CLOSER_URL;
-    }
-}
-
-
-/***/ }),
-
 /***/ 79434:
 /*!*********************************************************************!*\
   !*** ./src/app/shared/models/FetchUserForSingleAccClosureReqDTO.ts ***!
@@ -43,130 +16,6 @@ class FetchUserForSingleAccClosureReqDTO {
         throw new Error("Method not implemented.");
     }
 }
-
-
-/***/ }),
-
-/***/ 30686:
-/*!********************************************************************!*\
-  !*** ./src/app/shared/services/account-closure-service.service.ts ***!
-  \********************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "API_URL": function() { return /* binding */ API_URL; },
-/* harmony export */   "AccountClosureServiceService": function() { return /* binding */ AccountClosureServiceService; }
-/* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 97361);
-/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! file-saver */ 28461);
-/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! xlsx */ 71723);
-/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/config/app.constant */ 91486);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 33549);
-
-
-
-
-
-
-const API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__.AppConstants.acctCloserUrl;
-const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-const EXCEL_EXTENSION = '.xlsx';
-class AccountClosureServiceService {
-    constructor(http) {
-        this.http = http;
-        this.datafinal = [];
-        this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({});
-        this.getNavParam = this.paramSource.asObservable();
-        this.excel = [];
-    }
-    sendNavParam(params) {
-        this.paramSource.next(params);
-    }
-    onSingleClosure(data, inputby) {
-        console.log(data);
-        return this.http.post(`${API_URL}/api2/createAccountClosure/${inputby}`, data);
-    }
-    onViewOfSingleClsureType(accType, closureType, accountNumber) {
-        console.log("this is in service of ");
-        return this.http.get(`${API_URL}/api2/getDetailsSingleReport/${accType}/${closureType}/${accountNumber}`);
-    }
-    gettingAccountClosureSummary(currentUser) {
-        return this.http.get(`${API_URL}/api2/getSummary/${currentUser}`);
-    }
-    // -------------After Edit of Bulk Closure----------
-    gettingEditData(inputBy) {
-        return this.http.get(`${API_URL}/api2/modify/${inputBy}`);
-    }
-    //--------------file upload-------------
-    onFileUpload(file, accountType, closure, inputBy) {
-        console.log("this is in service", file);
-        console.log("checing null or not", accountType);
-        console.log(closure);
-        const formData = new FormData();
-        formData.append('file', file);
-        return this.http.post(`${API_URL}/file/saveFileDataToDB/${accountType}/${closure}/${inputBy}`, formData);
-        // ------------For upload Percentage------
-        // return this.http.post(`${API_URL}/api2/fileUpload`, formData,{reportProgress: true, observe: 'events'})
-    }
-    // ------------- Excel Download without header color------------
-    exportAsExcelFile(json, excelFileName) {
-        console.log(excelFileName);
-        console.log(json);
-        const worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
-        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-        const excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, { bookType: 'xlsx', type: 'array', });
-        this.saveAsExcelFile(excelBuffer, excelFileName);
-    }
-    saveAsExcelFile(buffer, fileName) {
-        const data = new Blob([buffer], { type: EXCEL_TYPE });
-        file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
-    }
-    // --------------Excel Download for Single---------------
-    exportAsExcelForSingleAccount(json, excelFileName) {
-        console.log(excelFileName);
-        console.log(json);
-        const worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
-        worksheet.blankRows = false;
-        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-        const excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, { bookType: 'xlsx', type: 'array' });
-        this.saveAsExcelSingle(excelBuffer, excelFileName);
-    }
-    saveAsExcelSingle(buffer, fileName) {
-        const data = new Blob([buffer], { type: EXCEL_TYPE });
-        file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
-    }
-    // -------------------Excel Download color---------------------------
-    //getting excel for bulk
-    getExcel(filename, accountType) {
-        console.log("this is send fileName and getFile", accountType);
-        console.log(filename);
-        return this.http.get(`${API_URL}/file/download/${filename}/${accountType}`);
-    }
-    onDeletingTheReocrd(fileName, accountType, inputBy) {
-        console.log("file", fileName, "accType", accountType, "maker", inputBy);
-        return this.http.get(`${API_URL}/file/cancelProcess/${accountType}/${fileName}/${inputBy}`);
-    }
-    onDeletingSingle(accountNumber, accntType, closure, maker) {
-        console.log("in service", accountNumber, accntType, closure, maker);
-        return this.http.get(`${API_URL}/api2/cancelProcess/${accountNumber}/${accntType}/${closure}/${maker}`);
-    }
-    // -----------Process the Bulk record---------
-    processTheBulkRecord(fileName, accountType, inputBy) {
-        console.log("file", fileName, "accType", accountType, "maker", inputBy);
-        return this.http.get(`${API_URL}/api2/process/${fileName}/${accountType}/${inputBy}`);
-    }
-    // -----------Process the Single record---------
-    processTheSingleRecord(accountNumber, inputBy) {
-        console.log(accountNumber, "maker", inputBy);
-        return this.http.get(`${API_URL}/api2/processStatus/${accountNumber}/${inputBy}`);
-    }
-}
-AccountClosureServiceService.ɵfac = function AccountClosureServiceService_Factory(t) { return new (t || AccountClosureServiceService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient)); };
-AccountClosureServiceService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: AccountClosureServiceService, factory: AccountClosureServiceService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -2000,37 +1849,6 @@ ViewReportAccClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPOR
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.fetchUserSingle.closureType == "SINGLE");
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_10__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgControlStatusGroup, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ɵNgSelectMultipleOption"], _angular_router__WEBPACK_IMPORTED_MODULE_12__.RouterLink, angular_datatables__WEBPACK_IMPORTED_MODULE_7__.DataTableDirective], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2aWV3LXJlcG9ydC1hY2MtY2xvc3VyZS5jb21wb25lbnQuc2NzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ 93963:
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "environment": function() { return /* binding */ environment; }
-/* harmony export */ });
-const environment = {
-    production: true,
-    //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-    //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
-    // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-    // MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-};
 
 
 /***/ })
