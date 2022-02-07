@@ -143,6 +143,130 @@ class User {
 
 /***/ }),
 
+/***/ 30686:
+/*!********************************************************************!*\
+  !*** ./src/app/shared/services/account-closure-service.service.ts ***!
+  \********************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": function() { return /* binding */ API_URL; },
+/* harmony export */   "AccountClosureServiceService": function() { return /* binding */ AccountClosureServiceService; }
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 97361);
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! file-saver */ 28461);
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! xlsx */ 71723);
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/config/app.constant */ 91486);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 33549);
+
+
+
+
+
+
+const API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__.AppConstants.acctCloserUrl;
+const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+const EXCEL_EXTENSION = '.xlsx';
+class AccountClosureServiceService {
+    constructor(http) {
+        this.http = http;
+        this.datafinal = [];
+        this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({});
+        this.getNavParam = this.paramSource.asObservable();
+        this.excel = [];
+    }
+    sendNavParam(params) {
+        this.paramSource.next(params);
+    }
+    onSingleClosure(data, inputby) {
+        console.log(data);
+        return this.http.post(`${API_URL}/api2/createAccountClosure/${inputby}`, data);
+    }
+    onViewOfSingleClsureType(accType, closureType, accountNumber) {
+        console.log("this is in service of ");
+        return this.http.get(`${API_URL}/api2/getDetailsSingleReport/${accType}/${closureType}/${accountNumber}`);
+    }
+    gettingAccountClosureSummary(currentUser) {
+        return this.http.get(`${API_URL}/api2/getSummary/${currentUser}`);
+    }
+    // -------------After Edit of Bulk Closure----------
+    gettingEditData(inputBy) {
+        return this.http.get(`${API_URL}/api2/modify/${inputBy}`);
+    }
+    //--------------file upload-------------
+    onFileUpload(file, accountType, closure, inputBy) {
+        console.log("this is in service", file);
+        console.log("checing null or not", accountType);
+        console.log(closure);
+        const formData = new FormData();
+        formData.append('file', file);
+        return this.http.post(`${API_URL}/file/saveFileDataToDB/${accountType}/${closure}/${inputBy}`, formData);
+        // ------------For upload Percentage------
+        // return this.http.post(`${API_URL}/api2/fileUpload`, formData,{reportProgress: true, observe: 'events'})
+    }
+    // ------------- Excel Download without header color------------
+    exportAsExcelFile(json, excelFileName) {
+        console.log(excelFileName);
+        console.log(json);
+        const worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, { bookType: 'xlsx', type: 'array', });
+        this.saveAsExcelFile(excelBuffer, excelFileName);
+    }
+    saveAsExcelFile(buffer, fileName) {
+        const data = new Blob([buffer], { type: EXCEL_TYPE });
+        file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+    }
+    // --------------Excel Download for Single---------------
+    exportAsExcelForSingleAccount(json, excelFileName) {
+        console.log(excelFileName);
+        console.log(json);
+        const worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
+        worksheet.blankRows = false;
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, { bookType: 'xlsx', type: 'array' });
+        this.saveAsExcelSingle(excelBuffer, excelFileName);
+    }
+    saveAsExcelSingle(buffer, fileName) {
+        const data = new Blob([buffer], { type: EXCEL_TYPE });
+        file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+    }
+    // -------------------Excel Download color---------------------------
+    //getting excel for bulk
+    getExcel(filename, accountType) {
+        console.log("this is send fileName and getFile", accountType);
+        console.log(filename);
+        return this.http.get(`${API_URL}/file/download/${filename}/${accountType}`);
+    }
+    onDeletingTheReocrd(fileName, accountType, inputBy) {
+        console.log("file", fileName, "accType", accountType, "maker", inputBy);
+        return this.http.get(`${API_URL}/file/cancelProcess/${accountType}/${fileName}/${inputBy}`);
+    }
+    onDeletingSingle(accountNumber, accntType, closure, maker) {
+        console.log("in service", accountNumber, accntType, closure, maker);
+        return this.http.get(`${API_URL}/api2/cancelProcess/${accountNumber}/${accntType}/${closure}/${maker}`);
+    }
+    // -----------Process the Bulk record---------
+    processTheBulkRecord(fileName, accountType, inputBy) {
+        console.log("file", fileName, "accType", accountType, "maker", inputBy);
+        return this.http.get(`${API_URL}/api2/process/${fileName}/${accountType}/${inputBy}`);
+    }
+    // -----------Process the Single record---------
+    processTheSingleRecord(accountNumber, inputBy) {
+        console.log(accountNumber, "maker", inputBy);
+        return this.http.get(`${API_URL}/api2/processStatus/${accountNumber}/${inputBy}`);
+    }
+}
+AccountClosureServiceService.ɵfac = function AccountClosureServiceService_Factory(t) { return new (t || AccountClosureServiceService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient)); };
+AccountClosureServiceService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: AccountClosureServiceService, factory: AccountClosureServiceService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ 5362:
 /*!**************************************************!*\
   !*** ./src/app/shared/services/excel.service.ts ***!
@@ -184,207 +308,6 @@ class ExcelService {
 }
 ExcelService.ɵfac = function ExcelService_Factory(t) { return new (t || ExcelService)(); };
 ExcelService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: ExcelService, factory: ExcelService.ɵfac, providedIn: 'root' });
-
-
-/***/ }),
-
-/***/ 93135:
-/*!*************************************************!*\
-  !*** ./src/app/shared/services/role.service.ts ***!
-  \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "RoleService": function() { return /* binding */ RoleService; }
-/* harmony export */ });
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 33549);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 97361);
-/* harmony import */ var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/config/app.constant */ 91486);
-/* harmony import */ var _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/fmosNewRolePermissions */ 91024);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 1858);
-
-//import { AppConstants } from 'app/config/app.constant';
-
-
-
-
-
-class RoleService {
-    constructor(http) {
-        this.http = http;
-        this.username = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject('');
-        this.tabData = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
-        this.screenLabelList = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels());
-        this.screenData = new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
-        //public screenLabelList = new BehaviorSubject([]);
-        this.screenwisePermissions = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
-        this.httpHeader = { header: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders({ 'Content-type': 'application/json' }) };
-        this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({});
-        this.getNavParam = this.paramSource.asObservable();
-        this._baseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/role';
-        this._fmosbaseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles';
-        this.baseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
-    }
-    sendNavParam(params) {
-        this.paramSource.next(params);
-    }
-    createRoles(role) {
-        // return this.http.delete(`${this._baseURL}/${userId}/${userIdLoggedIn}`, { responseType: 'text' });
-        return this.http.post(`${this._baseURL}` + '/createRole', role);
-    }
-    getRoleByRoleName(roleName) {
-        return this.http.get(`${this._baseURL}/${roleName}`);
-    }
-    getAllRoles() {
-        //return this.http.get(`${this._baseURL}` + '/roles');
-        return this.http.get(`${this.baseURL}` + '/users' + '/getAllAuthRole');
-    }
-    getAllDept() {
-        //return this.http.get(`${this._baseURL}` + '/roles');
-        return this.http.get(`${this.baseURL}` + '/users' + '/getAllAuthDepts');
-    }
-    getAllRolesSummary() {
-        //return this.http.get(`${this._baseURL}` + '/roles');
-        return this.http.get(`${this._fmosbaseURL}` + '/fetchAllRolesSummary');
-    }
-    fetchAllAuthRoles() {
-        return this.http.get(`${this._baseURL}` + '/fetchAuthRoles');
-    }
-    modifyRoleService(modifyRole) {
-        return this.http.put(`${this._baseURL}` + `/modifyRole`, modifyRole);
-    }
-    newmodifyRoleService(modifyRole) {
-        return this.http.put(`${this._fmosbaseURL}` + `/modifyRole`, modifyRole);
-    }
-    verifyRole(roleName, userIdLoggedIn) {
-        // return this.http.get(`${this._baseURL}/${roleName}/${userIdLoggedIn}`);
-        return this.http.get(`${this._fmosbaseURL}/authorize/${roleName}/${userIdLoggedIn}`);
-    }
-    deleteRole(roleName, userIdLoggedIn) {
-        return this.http.delete(`${this._fmosbaseURL}/${roleName}/${userIdLoggedIn}`, { responseType: 'text' });
-    }
-    closelockRecord(roleName, userIdLoggedIn) {
-        return this.http.get(`${this._fmosbaseURL}/close/${roleName}/${userIdLoggedIn}`);
-    }
-    reopenRecord(roleName, userIdLoggedIn) {
-        return this.http.get(`${this._fmosbaseURL}/reopen/${roleName}/${userIdLoggedIn}`);
-    }
-    //permission
-    getAllPermission() {
-        return this.http.get(`${this._baseURL}` + '/permission');
-    }
-    fetchScreenData() {
-        const userIdLoggedIn = localStorage.getItem('userFromLogin');
-        return this.http.get(`${this._fmosbaseURL}/allScreenUser/${userIdLoggedIn}`);
-    }
-    fetchnewscreenlabels() {
-        return this.http.get(`${this._fmosbaseURL}` + '/fetchTabLabelAndScreen');
-    }
-    createnewrole(roledata) {
-        return this.http.post(`${this._fmosbaseURL}` + '/saveRoleDetails', roledata);
-    }
-    fetchfmosroles() {
-        const userIdLoggedIn = localStorage.getItem('userFromLogin');
-        return this.http.get(`${this._fmosbaseURL}/allRolePermissionForUser/${userIdLoggedIn}`);
-    }
-    fetchScreenPermissions(screenName) {
-        let userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
-        console.log('scr', screenName, userPermissions);
-        let labellist = [];
-        this.screenData = new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
-        if (userPermissions) {
-            let labelList = userPermissions.labels;
-            if (labelList) {
-                labelList.sort((a, b) => a.labelId - b.labelId);
-            }
-            let permissionList = userPermissions.screenAndPermissionsDTO;
-            console.log(permissionList);
-            if (permissionList) {
-                let idexist = permissionList.findIndex(function (item) { return item.screenName.toLowerCase() == screenName.toLowerCase(); });
-                if (idexist >= 0) {
-                    let rolelist = permissionList[idexist];
-                    let screenvisibility = rolelist.permissions.toString();
-                    for (let i = 0; i < screenvisibility.length; i++) {
-                        if (screenvisibility.charAt(i) == 1) {
-                            labelList[i].exist = true;
-                            labelList[i].labellowercase = labelList[i].labelName.toLowerCase();
-                            labellist.push(labelList[i]);
-                            this.screenData[labelList[i].labellowercase] = labelList[i];
-                        }
-                    } //for loop endng
-                } //if screen data exist
-            } //if permission list exist
-        } //if permissions exist
-        console.log('scr', this.screenData);
-        this.screenLabelList.next(this.screenData);
-    }
-    fetchNewRolePermissions(userIdLoggedIn) {
-        this.http.get(`${this._fmosbaseURL}/allRolePermissionForUser/${userIdLoggedIn}`).subscribe(data => {
-            localStorage.setItem('userPermissions', JSON.stringify(data));
-            this.storeuserpermissions = data;
-        });
-    }
-    //dynamic roles
-    fetchdynamicrolesdata(roleName) {
-        return this.http.get(`${this._fmosbaseURL}/fetchRoleData/${roleName}`);
-    }
-    //end of dynamic roles
-    preparingrolesdata(data) {
-        let arrayC = [];
-        let arrayB = data.screenDto;
-        let labelsarray = data.labelDto;
-        let permissionsarray = data.permissionDto;
-        //fetch screens for tabs
-        data.tabDto.forEach(function (element) {
-            let screen = [];
-            let screenslist = [];
-            //fetching screen list 
-            arrayB.forEach((items) => {
-                if (element.tabId == items.screensId.tabId) {
-                    let idexist = permissionsarray.findIndex(function (item) { return item.permissionId.screenId == items.screensId.screenId; });
-                    screen.push(items.screenName);
-                    screenslist.push({ screenname: items.screenName, screenid: items.screensId.screenId, permission: permissionsarray[idexist].permissions });
-                }
-            });
-            //end of fetching screen list
-            //fetching labels for screen
-            let screenvisibility = element.visibility.toString();
-            let label = [];
-            let labellist = [];
-            for (let i = 0; i < screenvisibility.length; i++) {
-                if (screenvisibility.charAt(i) == 1) {
-                    label.push(labelsarray[i].labelName);
-                    labellist.push(labelsarray[i]);
-                }
-            }
-            //end of fetching labels for screen
-            arrayC.push({ tabname: element.tabName, screens: screen, screenlist: screenslist, labels: label, labelslist: labellist });
-        });
-        this.tabData.next(arrayC);
-    }
-    EnablescreenPermissions() {
-        let userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
-        let permissionlist = [];
-        if (userPermissions) {
-            let labelsdata = userPermissions.labels;
-            labelsdata.sort((a, b) => a.labelId - b.labelId);
-            let screensdata = userPermissions.screenAndPermissionsDTO;
-            let viewindex = labelsdata.findIndex(function (item) { return item.labelName.toLowerCase() == 'view'; });
-            ;
-            for (let i = 0; i < screensdata.length; i++) {
-                let data = screensdata[i].permissions.toString();
-                if (data.charAt(viewindex) == 1 || data.charAt(viewindex) == "1") {
-                    permissionlist.push(screensdata[i].screenName);
-                }
-            } //for loop endng
-        } //if
-        console.log("methods are ", permissionlist);
-        this.screenwisePermissions.next(permissionlist);
-    }
-}
-RoleService.ɵfac = function RoleService_Factory(t) { return new (t || RoleService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient)); };
-RoleService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: RoleService, factory: RoleService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -583,6 +506,102 @@ class SecurityPolicyService {
 }
 SecurityPolicyService.ɵfac = function SecurityPolicyService_Factory(t) { return new (t || SecurityPolicyService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
 SecurityPolicyService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: SecurityPolicyService, factory: SecurityPolicyService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
+/***/ 18736:
+/*!*************************************************!*\
+  !*** ./src/app/shared/services/user.service.ts ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": function() { return /* binding */ API_URL; },
+/* harmony export */   "rolepermission": function() { return /* binding */ rolepermission; },
+/* harmony export */   "UsersService": function() { return /* binding */ UsersService; }
+/* harmony export */ });
+/* harmony import */ var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/config/app.constant */ 91486);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 97361);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 33549);
+
+
+
+
+const API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
+const rolepermission = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/rolePermission';
+//export const rolepermission1 = AppConstants.baseURL + '/fmsRoles';
+//export const API_URL = 'http://192.168.0.142:8010';
+//export const API_URL = 'http://localhost:8010';
+//export const API_URL = 'http://192.168.0.113:8010';
+class UsersService {
+    constructor(http) {
+        this.http = http;
+        this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({});
+        this.getNavParam = this.paramSource.asObservable();
+    }
+    sendNavParam(params) {
+        this.paramSource.next(params);
+    }
+    getRoleScreenPermission(userId, screenName, roleName) {
+        return this.http.get(`${rolepermission}/getRolePermission/${userId}/${screenName}/${roleName}`);
+    }
+    getUserAuditService(userId) {
+        return this.http.get(`${API_URL}/users/getModifiedUser/${userId}`);
+    }
+    getUserObjModified(userId) {
+        return this.http.get(`${API_URL}/users/getModifiedUser/${userId}`);
+    }
+    createUserService(user) {
+        return this.http.post(`${API_URL}/users/createUser`, user);
+    }
+    modifyUserService(user) {
+        return this.http.post(`${API_URL}/users/modifyUser`, user);
+    }
+    getAllUsersListService() {
+        return this.http.get(`${API_URL}/users/getAllUsers`);
+    }
+    getAllRoleNameService() {
+        return this.http.get(`${API_URL}/users/getAllRoleNames`);
+    }
+    getAllRoleNameServiceU() {
+        return this.http.get(`${API_URL}/users/getAllRoleNamesU`);
+    }
+    getAllAuthRole() {
+        return this.http.get(`${API_URL}/fmsRoles/fetchAllRolesSummary`);
+    }
+    // audit log starts
+    onClickOfAuthOfUsers(authUser) {
+        return this.http.get(`${API_URL}/users/getAllRoleNames`);
+    }
+    onClickOfOpenOfUsers() {
+    }
+    // Audit log  ends for User creatrion
+    // -------------------User Modification-------------
+    // audit log for User Modification Starts
+    onClickOfAuthOfModifyUsers(userId, makerId) {
+        return this.http.get(`${API_URL}/users/authorizeUser/${userId}/${makerId}`);
+    }
+    onClickOfCloseOfModifyUsers(userId, makerId) {
+        return this.http.get(`${API_URL}/users/closeUser/${userId}/${makerId}`);
+    }
+    onClickOfReopenOfModifyUser(userId, makerId) {
+        return this.http.get(`${API_URL}/users/reopenUser/${userId}/${makerId}`);
+    }
+    onClickOfDeleteOfModifyUser(userobjForDelete) {
+        return this.http.get(`${API_URL}/users/deleteUser/${userobjForDelete}`);
+    }
+    statusChangeUser(user_id) {
+        return this.http.get(`${API_URL}/users/statusUser/${user_id}`);
+    }
+    refreshGl() {
+        return this.http.get(`${API_URL}/refxch`);
+    }
+}
+UsersService.ɵfac = function UsersService_Factory(t) { return new (t || UsersService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient)); };
+UsersService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: UsersService, factory: UsersService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

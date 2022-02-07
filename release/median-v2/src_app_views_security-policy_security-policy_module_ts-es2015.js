@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_security-policy_security-policy_module_ts-src_environments_environment_prod_ts"],{
+(self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_security-policy_security-policy_module_ts"],{
 
 /***/ 98546:
 /*!**************************************************!*\
@@ -602,10 +602,44 @@ class SecurityPolicyComponent {
         this.formBuilder = formBuilder;
         this.secuityService = secuityService;
         this.enablesubmit = true;
+        this.submitSecurity = false;
     }
     ngOnInit() {
         this.buildForm("");
         this.fetchSecurityPolicyService();
+    }
+    invalidLogin(event, type) {
+        this.submitSecurity = false;
+        if (type == "invalid" && this.securityForm.value.maxInvLogins != this.securityData.maxInvLogins) {
+            this.submitSecurity = true;
+        }
+        else if (type == "length" && this.securityForm.value.maxPswdLength != this.securityData.maxPswdLength) {
+            this.submitSecurity = true;
+        }
+        else if (type == "minlength" && this.securityForm.value.minPswdLength != this.securityData.minPswdLength) {
+            this.submitSecurity = true;
+        }
+        else if (type == "expiry" && this.securityForm.value.pswdExpiry != this.securityData.pswdExpiry) {
+            this.submitSecurity = true;
+        }
+        else if (type == "notification" && this.securityForm.value.notifyPasswordExpiryInDays != this.securityData.notifyPasswordExpiryInDays) {
+            this.submitSecurity = true;
+        }
+        else if (type == "reuse" && this.securityForm.value.pswdReuseAft != this.securityData.pswdReuseAft) {
+            this.submitSecurity = true;
+        }
+        else if (type === "uppercaseCheck") {
+            this.submitSecurity = true;
+        }
+        else if (type === "lowercaseCheck") {
+            this.submitSecurity = true;
+        }
+        else if (type === "numberCheck") {
+            this.submitSecurity = true;
+        }
+        else if (type === "charactersCheck") {
+            this.submitSecurity = true;
+        }
     }
     buildForm(item) {
         this.securityForm = this.formBuilder.group({
@@ -704,7 +738,7 @@ class SecurityPolicyComponent {
     }
 }
 SecurityPolicyComponent.ɵfac = function SecurityPolicyComponent_Factory(t) { return new (t || SecurityPolicyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_1__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_2__.SecurityPolicyService)); };
-SecurityPolicyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: SecurityPolicyComponent, selectors: [["npr-security-policy"]], decls: 59, vars: 3, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "securityLogins", 1, "formLbl"], ["id", "securityLogins", "type", "text", "formControlName", "maxInvLogins", "placeholder", "Maximum Invalid Logins", "value", "", 1, "form-control"], ["for", "maxPassword", 1, "formLbl"], ["id", "maxPassword", "type", "number", "formControlName", "maxPswdLength", "placeholder", "Maximum Password Length", "value", "", 1, "form-control"], ["for", "minPassword", 1, "formLbl"], ["id", "minPassword", "type", "number", "formControlName", "minPswdLength", "placeholder", "Minimum Password Length", "value", "", 1, "form-control"], ["for", "passExpiry", 1, "formLbl"], ["id", "passExpiry", "type", "number", "formControlName", "pswdExpiry", "placeholder", "Password Expiry (In days)", "value", "", 1, "form-control"], ["for", "expiryReminder", 1, "formLbl"], ["id", "expiryReminder", "type", "number", "formControlName", "notifyPasswordExpiryInDays", "placeholder", "Password Expiry Reminder (In days)", "value", "", 1, "form-control"], ["for", "reuseLimit", 1, "formLbl"], ["id", "reuseLimit", "type", "number", "formControlName", "pswdReuseAft", "placeholder", "Password Reuse Limit", "value", "", 1, "form-control"], [1, "col-12"], ["for", "", 1, "formLbl"], [1, "checkListCol"], [1, "checkStyle"], ["type", "checkbox", "formControlName", "pswdComplexUcase", "id", "uppercaseCheck"], ["for", "uppercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexLcase", "id", "lowercaseCheck"], ["for", "lowercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexNum", "id", "numberCheck"], ["for", "numberCheck"], ["type", "checkbox", "formControlName", "pswdComplexSplc", "id", "charactersCheck"], ["for", "charactersCheck"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"], ["class", "dbCardStyle", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function SecurityPolicyComponent_Template(rf, ctx) { if (rf & 1) {
+SecurityPolicyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: SecurityPolicyComponent, selectors: [["npr-security-policy"]], decls: 59, vars: 3, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "securityLogins", 1, "formLbl"], ["id", "securityLogins", "type", "text", "formControlName", "maxInvLogins", "placeholder", "Maximum Invalid Logins", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "maxPassword", 1, "formLbl"], ["id", "maxPassword", "type", "number", "formControlName", "maxPswdLength", "placeholder", "Maximum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "minPassword", 1, "formLbl"], ["id", "minPassword", "type", "number", "formControlName", "minPswdLength", "placeholder", "Minimum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "passExpiry", 1, "formLbl"], ["id", "passExpiry", "type", "number", "formControlName", "pswdExpiry", "placeholder", "Password Expiry (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "expiryReminder", 1, "formLbl"], ["id", "expiryReminder", "type", "number", "formControlName", "notifyPasswordExpiryInDays", "placeholder", "Password Expiry Reminder (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "reuseLimit", 1, "formLbl"], ["id", "reuseLimit", "type", "number", "formControlName", "pswdReuseAft", "placeholder", "Password Reuse Limit", "value", "", 1, "form-control", 3, "ngModelChange"], [1, "col-12"], ["for", "", 1, "formLbl"], [1, "checkListCol"], [1, "checkStyle"], ["type", "checkbox", "formControlName", "pswdComplexUcase", "id", "uppercaseCheck", 3, "ngModelChange"], ["for", "uppercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexLcase", "id", "lowercaseCheck", 3, "ngModelChange"], ["for", "lowercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexNum", "id", "numberCheck", 3, "ngModelChange"], ["for", "numberCheck"], ["type", "checkbox", "formControlName", "pswdComplexSplc", "id", "charactersCheck", 3, "ngModelChange"], ["for", "charactersCheck"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"], ["class", "dbCardStyle", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function SecurityPolicyComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
@@ -718,37 +752,49 @@ SecurityPolicyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "label", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, "Maximum Invalid Logins");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](10, "input", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "input", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_10_listener($event) { return ctx.invalidLogin($event, "invalid"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "label", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](13, "Maximum Password Length");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](14, "input", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "input", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_14_listener($event) { return ctx.invalidLogin($event, "length"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](16, "label", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](17, "Minimum Password Length");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](18, "input", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "input", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_18_listener($event) { return ctx.invalidLogin($event, "minlength"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](19, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](20, "label", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](21, "Password Expiry (In days)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](22, "input", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](22, "input", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_22_listener($event) { return ctx.invalidLogin($event, "expiry"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](23, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](24, "label", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](25, "Password Expiry Reminder (In days)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](26, "input", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](26, "input", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_26_listener($event) { return ctx.invalidLogin($event, "notification"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](27, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](28, "label", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](29, "Password Reuse Limit");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](30, "input", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](30, "input", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_30_listener($event) { return ctx.invalidLogin($event, "reuse"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](31, "div", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](32, "label", 20);
@@ -756,25 +802,33 @@ SecurityPolicyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](34, "div", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](35, "div", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](36, "input", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](36, "input", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_36_listener($event) { return ctx.invalidLogin($event, "uppercaseCheck"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](37, "label", 24);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](38, "Require atleast one Uppercase (A-Z)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](39, "div", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](40, "input", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](40, "input", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_40_listener($event) { return ctx.invalidLogin($event, "lowercaseCheck"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](41, "label", 26);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](42, "Require atleast one Lowercase (a-z)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](43, "div", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](44, "input", 27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](44, "input", 27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_44_listener($event) { return ctx.invalidLogin($event, "numberCheck"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](45, "label", 28);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](46, "Require atleast one Number (0-9)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](47, "div", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](48, "input", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](48, "input", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function SecurityPolicyComponent_Template_input_ngModelChange_48_listener($event) { return ctx.invalidLogin($event, "charactersCheck"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](49, "label", 30);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](50, "Require atleast one Special Characters (@#$%!?.)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -804,7 +858,7 @@ SecurityPolicyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formGroup", ctx.securityForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](49);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx.enablesubmit || !ctx.securityForm.valid);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx.enablesubmit || !ctx.securityForm.valid || !ctx.submitSecurity);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.securityData);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.CheckboxControlValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzZWN1cml0eS1wb2xpY3kuY29tcG9uZW50LnNjc3MifQ== */"] });
@@ -850,38 +904,7 @@ SecurityPolicyModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule] }); })();
 
 
-/***/ }),
-
-/***/ 93963:
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "environment": function() { return /* binding */ environment; }
-/* harmony export */ });
-const environment = {
-    production: true,
-    //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-    //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
-    // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-    // MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-};
-
-
 /***/ })
 
 }]);
-//# sourceMappingURL=src_app_views_security-policy_security-policy_module_ts-src_environments_environment_prod_ts-es2015.js.map
+//# sourceMappingURL=src_app_views_security-policy_security-policy_module_ts-es2015.js.map

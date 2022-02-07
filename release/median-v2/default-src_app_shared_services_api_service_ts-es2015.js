@@ -1,33 +1,6 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["default-src_app_shared_services_api_service_ts"],{
 
-/***/ 91486:
-/*!***********************************************!*\
-  !*** ./src/app/shared/config/app.constant.ts ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AppConstants": function() { return /* binding */ AppConstants; }
-/* harmony export */ });
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 93963);
-
-class AppConstants {
-    /*
-    *Base URL is not used anywhere so dont change it and dont delete it
-    */
-    static get baseURL() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.MEDIAN_URL;
-    }
-    static get acctCloserUrl() {
-        return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.ACC_CLOSER_URL;
-    }
-}
-
-
-/***/ }),
-
 /***/ 31781:
 /*!************************************************!*\
   !*** ./src/app/shared/services/api.service.ts ***!
@@ -503,42 +476,12 @@ class ApiService {
         return this.http.put(`${this.uriForMap}/reOpenOfRecord/${extNameValue}/${processCode}/${extSysCode}/${ccy}`, model);
     }
     sendingBatchNumber(batchNo) {
+        console.log(batchNo);
         return this.http.get(`${API_URL}/medUpload/get/${batchNo}`);
     }
 }
 ApiService.ɵfac = function ApiService_Factory(t) { return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
 ApiService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: ApiService, factory: ApiService.ɵfac, providedIn: 'root' });
-
-
-/***/ }),
-
-/***/ 93963:
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "environment": function() { return /* binding */ environment; }
-/* harmony export */ });
-const environment = {
-    production: true,
-    //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-    //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
-    // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
-    //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-    //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-    //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-    // MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-};
 
 
 /***/ })
