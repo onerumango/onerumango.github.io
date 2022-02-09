@@ -1125,8 +1125,27 @@
             this.secuityService.fetchSecurityPolicyService().subscribe(function (resp) {
               if (resp) {
                 _this3.securityData = resp;
+                console.log(_this3.securityData);
 
                 _this3.assignCheckValue(_this3.securityData);
+
+                if (_this3.securityData.recordStatus == 'O') {
+                  _this3.securityData.recordStatus = "OPEN";
+                } else if (_this3.securityData.recordStatus == 'C') {
+                  _this3.securityData.recordStatus = "CLOSE";
+                }
+
+                if (_this3.securityData.authStatus == 'A') {
+                  _this3.securityData.authStatus = "AUTHORIZED";
+                } else if (_this3.securityData.authStatus == 'U') {
+                  _this3.securityData.authStatus = "UNAUTHORIZED";
+                }
+
+                if (_this3.securityData.firstTimeAuth == 'Y') {
+                  _this3.securityData.firstTimeAuth = "YES";
+                } else if (_this3.securityData.firstTimeAuth == 'N') {
+                  _this3.securityData.firstTimeAuth = "NO";
+                }
               }
             });
           }

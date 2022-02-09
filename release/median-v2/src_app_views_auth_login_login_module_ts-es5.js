@@ -1143,13 +1143,13 @@
 
       var _c0 = ["ngOtpInput"];
 
-      function LoginComponent_div_7_img_24_Template(rf, ctx) {
+      function LoginComponent_div_7_img_21_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](0, "img", 36);
         }
       }
 
-      function LoginComponent_div_7_img_25_Template(rf, ctx) {
+      function LoginComponent_div_7_img_22_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](0, "img", 37);
         }
@@ -1209,27 +1209,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](17, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](18, "a", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](18, "div", 25);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](19, "forgot password?");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](19, "input", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "span", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "div", 26);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](21, "div", 27);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](22, "input", 28);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "span", 29);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_span_click_23_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_span_click_20_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5);
 
             var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
@@ -1237,11 +1227,9 @@
             return ctx_r4.hide = !ctx_r4.hide;
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](24, LoginComponent_div_7_img_24_Template, 1, 0, "img", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](21, LoginComponent_div_7_img_21_Template, 1, 0, "img", 28);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](25, LoginComponent_div_7_img_25_Template, 1, 0, "img", 31);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](22, LoginComponent_div_7_img_22_Template, 1, 0, "img", 29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -1249,11 +1237,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](26, "div", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](27, "button", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "div", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_button_click_27_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](24, "button", 30);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_button_click_24_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5);
 
             var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
@@ -1261,9 +1251,19 @@
             return ctx_r6.getOtp();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](28, "Get OTP");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](25, "Get OTP");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](26, "div", 31);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](27, "a", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](28, "Forgot Password?");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -1295,11 +1295,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("formGroup", ctx_r0.signinForm);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](6, _c1));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("type", ctx_r0.hide ? "password" : "text");
 
@@ -1314,6 +1310,10 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", !ctx_r0.signinForm.valid);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](6, _c1));
         }
       }
 
@@ -1391,11 +1391,35 @@
             return ctx_r10.signin();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](19, "span", 51);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](20, "Verify");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](19, " Verify ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "button", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_9_Template_button_click_20_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9);
+
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+
+            return ctx_r11.resendOtpMethod();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](21, " Resend OTP ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](22, "button", 52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_9_Template_button_click_22_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9);
+
+            var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+
+            return ctx_r12.backToLogin();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](23, " Exit ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -1500,7 +1524,9 @@
             // this.jwtAuth.setUserAndToken("affsff", {}, true);
             // Skip login Section end
 
+            console.log("jygjh");
             this.apiService.fetchMedUser(this.signinForm.value.username).subscribe(function (response) {
+              console.log(response);
               _this6.user = response;
               _this6.email = _this6.user.email;
               localStorage.setItem("userFromLogin", _this6.user.userId);
@@ -1571,6 +1597,8 @@
 
                               _this6.toggle();
 
+                              _this6.toastService.successMessage("OTP sent successfully to " + _this6.email, "");
+
                               _this6.loginProcessing = false;
                               _this6.verifyOTP = true;
                             } else {}
@@ -1588,85 +1616,195 @@
             });
           }
         }, {
+          key: "resendOtpMethod",
+          value: function resendOtpMethod() {
+            var _this7 = this;
+
+            var login = {};
+            login.username = this.signinForm.value.username;
+            login.password = this.signinForm.value.password;
+            var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.password, "@12#90!^*NPR*g&*()$34#$");
+            var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.username, "@12#90!^*NPR*g&*()$34#$");
+            var data = encryptedAES.toString();
+            var uname = USERNAME.toString(); // Skip login Section start
+            // this.signinForm.value.password = data;
+            // this.ls.setItem("currentUser", this.demoUser.currentUser);
+            // this.ls.setItem("userPermissions", this.demoUser.userPermissions);
+            // this.ls.setItem("department", this.demoUser.department);
+            // this.ls.setItem("LoggedInUser", this.demoUser.LoggedInUser);
+            // this.ls.setItem("userobj", this.demoUser.userobj);
+            // this.ls.setItem("usercompleteobj", this.demoUser.usercompleteobj);
+            // this.router.navigate(["/dashboard"]);
+            // this.jwtAuth.setUserAndToken("affsff", {}, true);
+            // Skip login Section end
+
+            this.apiService.fetchMedUser(this.signinForm.value.username).subscribe(function (response) {
+              _this7.user = response;
+              _this7.email = _this7.user.email;
+              localStorage.setItem("userFromLogin", _this7.user.userId);
+              sessionStorage.setItem("user_id", _this7.user.userId);
+
+              if (_this7.user.statusForUser === "Enable" && _this7.user.verifiedStatus === "A") {
+                //---------- Password Policy Implementation (BEGIN) ----------
+                _this7.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                  _this7.security = resp;
+                  _this7.notifyPswdExpry = _this7.security.notifyPasswordExpiryInDays;
+                  _this7.pswdExpiry = _this7.security.pswdExpiry;
+
+                  if (_this7.pswdExpiry === 0 && _this7.notifyPswdExpry === 0) {
+                    console.log("Hitting dashboard");
+
+                    _this7.router.navigate(["/dashboard"]).then(function (data) {
+                      return console.log("dashboard hit", data);
+                    });
+                  } else {
+                    _this7.currentDate = new Date();
+                    _this7.changePwdDate = new Date(_this7.user.pwdChangeDate);
+                    _this7.differnceInTime = _this7.currentDate - _this7.changePwdDate;
+                    _this7.differnceInDays = Math.floor(_this7.differnceInTime / (1000 * 3600 * 24));
+                    _this7.finalDiff = _this7.pswdExpiry - _this7.differnceInDays;
+
+                    if (_this7.finalDiff === 0 || _this7.finalDiff <= 0) {
+                      _this7.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
+                    } else {
+                      _this7.check = true;
+
+                      if (_this7.signinForm.value.password === "" || _this7.signinForm.value.username === "") {
+                        _this7.toastService.errorMessage("Please enter login credentials.", "");
+                      } else {
+                        var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.password, "@12#90!^*NPR*g&*()$34#$");
+                        var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.username, "@12#90!^*NPR*g&*()$34#$");
+                        var data = encryptedAES.toString();
+                        var uname = USERNAME.toString();
+                        login.password = data;
+                        login.username = uname;
+
+                        _this7.apiService.getOtp(login).subscribe(function (res) {
+                          _this7.variable = res;
+                          _this7.otpreceivedtime = new Date();
+
+                          if (_this7.variable) {
+                            if (_this7.variable[0] === "Username or password wrong") {
+                              _this7.toastService.errorMessage("Invalid Username or Password !!!", "");
+                            }
+
+                            if (res.failLgnCounter != 0) {
+                              _this7.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
+                                _this7.security = sp;
+                                _this7.invLogins = _this7.security.maxInvLogins;
+
+                                if (_this7.invLogins !== 0) {
+                                  _this7.invLogins = _this7.invLogins - 1;
+
+                                  if (_this7.invLogins === res.failLgnCounter) {
+                                    _this7.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
+                                  }
+                                }
+                              });
+                            } // ---------- Password Policy Implementation (END) ----------
+
+
+                            if (_this7.variable[0] === "true") {
+                              _this7.progress = true;
+
+                              _this7.toastService.successMessage("OTP sent successfully to " + _this7.email, "");
+
+                              _this7.loginProcessing = false;
+                              _this7.verifyOTP = true;
+                            } else {}
+                          }
+                        }, function (err) {
+                          _this7.toastService.errorMessage("Server Error", "");
+
+                          _this7.loginProcessing = false;
+                        });
+                      }
+                    }
+                  }
+                });
+              }
+            });
+          }
+        }, {
           key: "signin",
           value: function signin() {
-            var _this7 = this;
+            var _this8 = this;
 
             var otp = {};
             otp.username = this.signinForm.value.username;
             otp.otp = this.otp;
             this.apiService.loginService(otp).subscribe(function (res) {
-              _this7.responseforotp = res;
+              _this8.responseforotp = res;
 
-              if (_this7.responseforotp[0] == "OTP is invalid") {
-                _this7.toastService.errorMessage("Enter the Valid OTP.", "");
+              if (_this8.responseforotp[0] == "OTP is invalid") {
+                _this8.toastService.errorMessage("Enter the Valid OTP.", "");
               }
 
-              _this7.apiService.fetchMedUser(otp.username).subscribe(function (response) {
-                _this7.user = response; // if (this.responseforotp) {
+              _this8.apiService.fetchMedUser(otp.username).subscribe(function (response) {
+                _this8.user = response; // if (this.responseforotp) {
 
-                if (_this7.user != null) {
-                  if (_this7.responseforotp[0] == "Time Expired") {
-                    _this7.toastService.errorMessage("This OTP is expired. Please click on Resend OTP to get a new OTP.", "");
+                if (_this8.user != null) {
+                  if (_this8.responseforotp[0] == "Time Expired") {
+                    _this8.toastService.errorMessage("This OTP is expired. Please click on Resend OTP to get a new OTP.", "");
 
-                    _this7.check = false;
+                    _this8.check = false;
                   }
 
-                  _this7.loginProcessing = false;
-                  _this7.user = _this7.responseforotp[1];
-                  _this7.loginProcessing = false;
-                  localStorage.setItem("userFromLogin", _this7.user.userId);
-                  sessionStorage.setItem("user_id", _this7.user.userId);
+                  _this8.loginProcessing = false;
+                  _this8.user = _this8.responseforotp[1];
+                  _this8.loginProcessing = false;
+                  localStorage.setItem("userFromLogin", _this8.user.userId);
+                  sessionStorage.setItem("user_id", _this8.user.userId);
 
-                  if (_this7.user.statusForUser === "Enable" && _this7.user.verifiedStatus === "A") {
+                  if (_this8.user.statusForUser === "Enable" && _this8.user.verifiedStatus === "A") {
                     //---------- Password Policy Implementation (BEGIN) ----------
-                    _this7.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                      _this7.security = resp;
-                      _this7.notifyPswdExpry = _this7.security.notifyPasswordExpiryInDays;
-                      _this7.pswdExpiry = _this7.security.pswdExpiry;
+                    _this8.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                      _this8.security = resp;
+                      _this8.notifyPswdExpry = _this8.security.notifyPasswordExpiryInDays;
+                      _this8.pswdExpiry = _this8.security.pswdExpiry;
 
-                      if (_this7.pswdExpiry === 0 && _this7.notifyPswdExpry === 0) {
-                        _this7.router.navigate(["/dashboard"]).then(function (data) {
+                      if (_this8.pswdExpiry === 0 && _this8.notifyPswdExpry === 0) {
+                        _this8.router.navigate(["/dashboard"]).then(function (data) {
                           return console.log("dashboard hit", data);
                         });
                       } else {
-                        _this7.currentDate = new Date();
-                        _this7.changePwdDate = new Date(_this7.user.pwdChangeDate);
-                        _this7.differnceInTime = _this7.currentDate - _this7.changePwdDate;
-                        _this7.differnceInDays = Math.floor(_this7.differnceInTime / (1000 * 3600 * 24));
-                        _this7.finalDiff = _this7.pswdExpiry - _this7.differnceInDays;
+                        _this8.currentDate = new Date();
+                        _this8.changePwdDate = new Date(_this8.user.pwdChangeDate);
+                        _this8.differnceInTime = _this8.currentDate - _this8.changePwdDate;
+                        _this8.differnceInDays = Math.floor(_this8.differnceInTime / (1000 * 3600 * 24));
+                        _this8.finalDiff = _this8.pswdExpiry - _this8.differnceInDays;
 
-                        if (_this7.finalDiff === 0 || _this7.finalDiff <= 0) {
-                          _this7.toastService.errorMessage("Your password expired, Please change your password", "");
+                        if (_this8.finalDiff === 0 || _this8.finalDiff <= 0) {
+                          _this8.toastService.errorMessage("Your password expired, Please change your password", "");
 
-                          _this7.router.navigate(["/forget-password"]).then(function (data) {
+                          _this8.router.navigate(["/forget-password"]).then(function (data) {
                             return console.log("Forget password hit", data);
                           });
                         } else {
                           //---------- Password Policy Implementation (END) ----------
-                          _this7.router.navigate(["/dashboard"]); //---------- Password Policy Implementation (BEGIN) ----------
+                          _this8.router.navigate(["/dashboard"]); //---------- Password Policy Implementation (BEGIN) ----------
 
 
-                          _this7.currentUser = localStorage.getItem("currentUser");
+                          _this8.currentUser = localStorage.getItem("currentUser");
 
-                          _this7.apiService.fetchMedUser(otp.username).subscribe(function (response) {
-                            _this7.userEntity = response;
-                            console.log("userEntity ", _this7.userEntity);
+                          _this8.apiService.fetchMedUser(otp.username).subscribe(function (response) {
+                            _this8.userEntity = response;
+                            console.log("userEntity ", _this8.userEntity);
 
-                            _this7.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                              _this7.security = resp;
-                              _this7.notifyPswdExpry = _this7.security.notifyPasswordExpiryInDays;
-                              _this7.pswdExpiry = _this7.security.pswdExpiry;
+                            _this8.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                              _this8.security = resp;
+                              _this8.notifyPswdExpry = _this8.security.notifyPasswordExpiryInDays;
+                              _this8.pswdExpiry = _this8.security.pswdExpiry;
 
-                              if (_this7.pswdExpiry !== 0 && _this7.notifyPswdExpry !== 0) {
-                                _this7.currentDate = new Date();
-                                _this7.changePwdDate = new Date(_this7.userEntity.pwdChangeDate);
-                                _this7.differnceInTime = _this7.currentDate - _this7.changePwdDate;
-                                _this7.differnceInDays = Math.floor(_this7.differnceInTime / (1000 * 3600 * 24));
-                                _this7.finalDiff = _this7.pswdExpiry - _this7.differnceInDays;
+                              if (_this8.pswdExpiry !== 0 && _this8.notifyPswdExpry !== 0) {
+                                _this8.currentDate = new Date();
+                                _this8.changePwdDate = new Date(_this8.userEntity.pwdChangeDate);
+                                _this8.differnceInTime = _this8.currentDate - _this8.changePwdDate;
+                                _this8.differnceInDays = Math.floor(_this8.differnceInTime / (1000 * 3600 * 24));
+                                _this8.finalDiff = _this8.pswdExpiry - _this8.differnceInDays;
 
-                                if (_this7.finalDiff > 0 && _this7.finalDiff <= _this7.notifyPswdExpry) {
-                                  _this7.toastService.errorMessage("Your password will expire in " + "".concat(_this7.finalDiff) + " day(s)", "");
+                                if (_this8.finalDiff > 0 && _this8.finalDiff <= _this8.notifyPswdExpry) {
+                                  _this8.toastService.errorMessage("Your password will expire in " + "".concat(_this8.finalDiff) + " day(s)", "");
                                 }
                               }
                             });
@@ -1677,40 +1815,40 @@
                     });
                   }
 
-                  _this7.routing();
+                  _this8.routing();
                 }
               });
             }, function (err) {
-              _this7.loginProcessing = false;
+              _this8.loginProcessing = false;
 
-              _this7.toastService.errorMessage("Server Error ", "");
+              _this8.toastService.errorMessage("Server Error ", "");
             });
           }
         }, {
           key: "routing",
           value: function routing() {
-            var _this8 = this;
+            var _this9 = this;
 
             console.log(this.userEntity);
             this.jwtAuth.signin().subscribe(function (response) {
               setTimeout(function () {
-                _this8.ls.setItem("currentUser", _this8.userEntity.userId);
+                _this9.ls.setItem("currentUser", _this9.userEntity.userId);
 
-                _this8.ls.setItem("userPermissions", _this8.demoUser.userPermissions);
+                _this9.ls.setItem("userPermissions", _this9.demoUser.userPermissions);
 
-                _this8.ls.setItem("department", _this8.userEntity.department);
+                _this9.ls.setItem("department", _this9.userEntity.department);
 
-                _this8.ls.setItem("LoggedInUser", _this8.userEntity.userId);
+                _this9.ls.setItem("LoggedInUser", _this9.userEntity.userId);
 
-                _this8.ls.setItem("userobj", _this8.userEntity);
+                _this9.ls.setItem("userobj", _this9.userEntity);
 
-                _this8.ls.setItem("usercompleteobj", _this8.userEntity);
+                _this9.ls.setItem("usercompleteobj", _this9.userEntity);
 
-                _this8.router.navigate(['/dashboard']);
+                _this9.router.navigate(['/dashboard']);
 
-                _this8.iziToast.show({
+                _this9.iziToast.show({
                   title: "DTB Bank - Median!",
-                  message: "Welcome, ".concat(_this8.userEntity.userId, "!"),
+                  message: "Welcome, ".concat(_this9.userEntity.userId, "!"),
                   image: "assets/images/user.png",
                   icon: 'ico ico-success',
                   // theme:"dark",
@@ -1724,6 +1862,11 @@
               }, 2500);
             }, function (err) {// console.log(err);
             });
+          }
+        }, {
+          key: "backToLogin",
+          value: function backToLogin() {
+            this.showOtpComponent = false;
           }
         }, {
           key: "onOtpChange",
@@ -1775,7 +1918,7 @@
         }, {
           key: "showTimer",
           value: function showTimer(remaining) {
-            var _this9 = this;
+            var _this10 = this;
 
             var timerOn = true;
             this.m = Math.floor(remaining / 60);
@@ -1787,7 +1930,7 @@
 
             if (remaining >= 0 && timerOn) {
               setTimeout(function () {
-                _this9.showTimer(remaining);
+                _this10.showTimer(remaining);
               }, 1000);
               return;
             }
@@ -1857,7 +2000,7 @@
         },
         decls: 14,
         vars: 2,
-        consts: [[1, "bg-white"], [1, "loginLogoCol", "text-center", "text-lg-start"], ["href", "JavaScript:void(0)"], ["src", "assets/images/logo.png", "alt", "logo"], [1, "container"], [1, "row", "g-0", "loginRow", "align-items-center"], [1, "col-lg-6"], ["class", "loginFormCol", 4, "ngIf"], [1, "loginFormCol"], ["class", "loginCol", 4, "ngIf"], [1, "loginImgCol", "d-none", "d-lg-block"], ["src", "assets/images/login-img.svg", "alt", "loginimg"], ["size", "small", "type", "square-loader"], [1, "loginCol"], [1, "lgTitle", "secondaryColor"], [1, "lightColor"], [1, "loginFormStyle"], [1, "row", "g-4", 3, "formGroup"], [1, "col-12"], ["for", "exampleInputEmail1", 1, "form-label", "lblStyles"], ["type", "text", "oninput", "this.value = this.value.toUpperCase()", "formControlName", "username", "id", "exampleInputEmail1", "placeholder", "you@example.com", 1, "form-control", "lineField"], [1, "row"], [1, "col"], ["for", "exampleInputPassword1", 1, "form-label", "lblStyles"], [1, "col-auto"], [1, "primaryColor", "fpLink", 3, "routerLink"], [1, "inputField"], [1, "inputField", "pwdFldCol", "d-flex"], ["type", "password", "formControlName", "password", "id", "pwdFld", "placeholder", "Your Password", 1, "form-control", "lineField", 3, "type"], ["toggle", "#pwdFld", 1, "fieldIcon", "toggle-password", "fa-eye", "mt-2", 3, "click"], ["class", "showPwd", "src", "assets/images/show-icon.svg", "alt", "...", 4, "ngIf"], ["class", "hidePwd", "src", "assets/images/hide-icon.svg", "alt", "...", 4, "ngIf"], ["type", "submit", 1, "btn", "btnPrimary", "w-100", "btnLg", "roundedBorder", 3, "disabled", "click"], [1, "rumanogoCol", "text-center", "pt-3"], ["src", "assets/images/rumango-img.png", "alt", "rumango-img"], [1, "medainStyle", "mt-3"], ["src", "assets/images/show-icon.svg", "alt", "...", 1, "showPwd"], ["src", "assets/images/hide-icon.svg", "alt", "...", 1, "hidePwd"], [1, "form", "w-100", "mb-10"], [1, "text-center", "mb-10"], ["alt", "Logo", "src", "assets/images/smartphone.svg", 1, "mh-125px"], [1, "text-dark", "mb-3"], [1, "text-muted", "fw-bold", "fs-5", "mb-5"], [1, "fw-bolder", "text-dark", "fs-3"], [1, "mb-10", "px-md-10"], [1, "fw-bolder", "text-start", "text-dark", "fs-6", "mb-1", "ms-1"], [1, "d-flex", "flex-wrap", "flex-stack"], ["inputControls", "6", 3, "config", "onInputChange"], ["ngOtpInput", ""], [1, "d-flex", "flex-center"], ["type", "button", 1, "btn", "btn-lg", "btnPrimary", "fw-bolder", "text-center", 3, "disabled", "click"], [1, "indicator-label"]],
+        consts: [[1, "bg-white"], [1, "loginLogoCol", "text-center", "text-lg-start"], ["href", "JavaScript:void(0)"], ["src", "assets/images/logo.png", "alt", "logo"], [1, "container"], [1, "row", "g-0", "loginRow", "align-items-center"], [1, "col-lg-6"], ["class", "loginFormCol", 4, "ngIf"], [1, "loginFormCol"], ["class", "loginCol", 4, "ngIf"], [1, "loginImgCol", "d-none", "d-lg-block"], ["src", "assets/images/login-img.svg", "alt", "loginimg"], ["size", "small", "type", "square-loader"], [1, "loginCol"], [1, "lgTitle", "secondaryColor"], [1, "lightColor"], [1, "loginFormStyle"], [1, "row", "g-4", 3, "formGroup"], [1, "col-12"], ["for", "exampleInputEmail1", 1, "form-label", "lblStyles"], ["type", "text", "autofocus", "autofocus", "oninput", "this.value = this.value.toUpperCase()", "formControlName", "username", "id", "exampleInputEmail1", "placeholder", "you@example.com", 1, "form-control", "lineField"], [1, "row"], [1, "col"], ["for", "exampleInputPassword1", 1, "form-label", "lblStyles"], [1, "inputField"], [1, "inputField", "pwdFldCol", "d-flex"], ["type", "password", "formControlName", "password", "id", "pwdFld", "placeholder", "Your Password", 1, "form-control", "lineField", 3, "type"], ["toggle", "#pwdFld", 1, "fieldIcon", "toggle-password", "fa-eye", "mt-2", 3, "click"], ["class", "showPwd", "src", "assets/images/show-icon.svg", "alt", "...", 4, "ngIf"], ["class", "hidePwd", "src", "assets/images/hide-icon.svg", "alt", "...", 4, "ngIf"], ["type", "submit", 1, "btn", "btnPrimary", "w-100", "btnLg", "roundedBorder", 3, "disabled", "click"], [1, "float"], [1, "primaryColor", "fpLink", 3, "routerLink"], [1, "rumanogoCol", "text-center", "pt-3"], ["src", "assets/images/rumango-img.png", "alt", "rumango-img"], [1, "medainStyle", "mt-3"], ["src", "assets/images/show-icon.svg", "alt", "...", 1, "showPwd"], ["src", "assets/images/hide-icon.svg", "alt", "...", 1, "hidePwd"], [1, "form", "w-100", "mb-10"], [1, "text-center", "mb-10"], ["alt", "Logo", "src", "assets/images/smartphone.svg", 1, "mh-125px"], [1, "text-dark", "mb-3"], [1, "text-muted", "fw-bold", "fs-5", "mb-5"], [1, "fw-bolder", "text-dark", "fs-3"], [1, "mb-10", "px-md-10"], [1, "fw-bolder", "text-start", "text-dark", "fs-6", "mb-1", "ms-1"], [1, "d-flex", "flex-wrap", "flex-stack"], ["inputControls", "6", 3, "config", "onInputChange"], ["ngOtpInput", ""], [1, "d-flex", 2, "gap", "10px"], ["type", "button", 1, "btn", "btn-lg", "btnPrimary", "fw-bolder", 3, "disabled", "click"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"]],
         template: function LoginComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "section", 0);
@@ -1882,7 +2025,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](8, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](9, LoginComponent_div_9_Template, 21, 3, "div", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](9, LoginComponent_div_9_Template, 24, 3, "div", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
