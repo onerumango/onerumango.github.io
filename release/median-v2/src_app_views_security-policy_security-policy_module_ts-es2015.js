@@ -729,7 +729,26 @@ class SecurityPolicyComponent {
         this.secuityService.fetchSecurityPolicyService().subscribe((resp) => {
             if (resp) {
                 this.securityData = resp;
+                console.log(this.securityData);
                 this.assignCheckValue(this.securityData);
+                if (this.securityData.recordStatus == 'O') {
+                    this.securityData.recordStatus = "OPEN";
+                }
+                else if (this.securityData.recordStatus == 'C') {
+                    this.securityData.recordStatus = "CLOSE";
+                }
+                if (this.securityData.authStatus == 'A') {
+                    this.securityData.authStatus = "AUTHORIZED";
+                }
+                else if (this.securityData.authStatus == 'U') {
+                    this.securityData.authStatus = "UNAUTHORIZED";
+                }
+                if (this.securityData.firstTimeAuth == 'Y') {
+                    this.securityData.firstTimeAuth = "YES";
+                }
+                else if (this.securityData.firstTimeAuth == 'N') {
+                    this.securityData.firstTimeAuth = "NO";
+                }
             }
         });
     }

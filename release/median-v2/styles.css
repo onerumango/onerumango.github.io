@@ -13976,8 +13976,15 @@ background-color: lightgray;
 #chFile{
   display: none;
 }
+.float{
+ margin-left: 40%;
+  margin-top: 10px;
+}
 .borderStyle{
   border-style: none;
+}
+.flex{
+margin-top: 7%;
 }
 .btnFile{
   border-color: #f6f2f2;

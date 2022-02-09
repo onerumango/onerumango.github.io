@@ -509,10 +509,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["ngOtpInput"];
-function LoginComponent_div_7_img_24_Template(rf, ctx) { if (rf & 1) {
+function LoginComponent_div_7_img_21_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](0, "img", 36);
 } }
-function LoginComponent_div_7_img_25_Template(rf, ctx) { if (rf & 1) {
+function LoginComponent_div_7_img_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](0, "img", 37);
 } }
 const _c1 = function () { return ["/forget-password"]; };
@@ -541,28 +541,28 @@ function LoginComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](16, "Password");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](17, "div", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](18, "a", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](19, "forgot password?");
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](21, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](22, "input", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "span", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_span_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r4.hide = !ctx_r4.hide; });
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](24, LoginComponent_div_7_img_24_Template, 1, 0, "img", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](25, LoginComponent_div_7_img_25_Template, 1, 0, "img", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](18, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](19, "input", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "span", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_span_click_20_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r4.hide = !ctx_r4.hide; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](21, LoginComponent_div_7_img_21_Template, 1, 0, "img", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](22, LoginComponent_div_7_img_22_Template, 1, 0, "img", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](26, "div", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](27, "button", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_button_click_27_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r6.getOtp(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](28, "Get OTP");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](24, "button", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_7_Template_button_click_24_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r6.getOtp(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](25, "Get OTP");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](26, "div", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](27, "a", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](28, "Forgot Password?");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](29, "div", 33);
@@ -578,9 +578,7 @@ function LoginComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("formGroup", ctx_r0.signinForm);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](6, _c1));
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("type", ctx_r0.hide ? "password" : "text");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", !ctx_r0.hide);
@@ -588,6 +586,8 @@ function LoginComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r0.hide);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", !ctx_r0.signinForm.valid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](6, _c1));
 } }
 function LoginComponent_div_9_Template(rf, ctx) { if (rf & 1) {
     const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
@@ -620,9 +620,15 @@ function LoginComponent_div_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](17, "div", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](18, "button", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_9_Template_button_click_18_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r10.signin(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](19, "span", 51);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](20, "Verify");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](19, " Verify ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "button", 51);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_9_Template_button_click_20_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r11.resendOtpMethod(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](21, " Resend OTP ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](22, "button", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function LoginComponent_div_9_Template_button_click_22_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r12.backToLogin(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](23, " Exit ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
@@ -678,6 +684,112 @@ class LoginComponent {
     }
     getOtp() {
         //  this.spinner.show();
+        let login = {};
+        login.username = this.signinForm.value.username;
+        login.password = this.signinForm.value.password;
+        var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.password, "@12#90!^*NPR*g&*()$34#$");
+        var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.username, "@12#90!^*NPR*g&*()$34#$");
+        var data = encryptedAES.toString();
+        var uname = USERNAME.toString();
+        // Skip login Section start
+        // this.signinForm.value.password = data;
+        // this.ls.setItem("currentUser", this.demoUser.currentUser);
+        // this.ls.setItem("userPermissions", this.demoUser.userPermissions);
+        // this.ls.setItem("department", this.demoUser.department);
+        // this.ls.setItem("LoggedInUser", this.demoUser.LoggedInUser);
+        // this.ls.setItem("userobj", this.demoUser.userobj);
+        // this.ls.setItem("usercompleteobj", this.demoUser.usercompleteobj);
+        // this.router.navigate(["/dashboard"]);
+        // this.jwtAuth.setUserAndToken("affsff", {}, true);
+        // Skip login Section end
+        console.log("jygjh");
+        this.apiService.fetchMedUser(this.signinForm.value.username).subscribe((response) => {
+            console.log(response);
+            this.user = response;
+            this.email = this.user.email;
+            localStorage.setItem("userFromLogin", this.user.userId);
+            sessionStorage.setItem("user_id", this.user.userId);
+            if (this.user.statusForUser === "Enable" &&
+                this.user.verifiedStatus === "A") {
+                //---------- Password Policy Implementation (BEGIN) ----------
+                this.apiService.fetchSecurityPolicyService().subscribe((resp) => {
+                    this.security = resp;
+                    this.notifyPswdExpry = this.security.notifyPasswordExpiryInDays;
+                    this.pswdExpiry = this.security.pswdExpiry;
+                    if (this.pswdExpiry === 0 && this.notifyPswdExpry === 0) {
+                        console.log("Hitting dashboard");
+                        this.router
+                            .navigate(["/dashboard"])
+                            .then((data) => console.log("dashboard hit", data));
+                    }
+                    else {
+                        this.currentDate = new Date();
+                        this.changePwdDate = new Date(this.user.pwdChangeDate);
+                        this.differnceInTime = this.currentDate - this.changePwdDate;
+                        this.differnceInDays = Math.floor(this.differnceInTime / (1000 * 3600 * 24));
+                        this.finalDiff = this.pswdExpiry - this.differnceInDays;
+                        if (this.finalDiff === 0 || this.finalDiff <= 0) {
+                            this.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
+                        }
+                        else {
+                            this.check = true;
+                            if (this.signinForm.value.password === "" ||
+                                this.signinForm.value.username === "") {
+                                this.toastService.errorMessage("Please enter login credentials.", "");
+                            }
+                            else {
+                                var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.password, "@12#90!^*NPR*g&*()$34#$");
+                                var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.username, "@12#90!^*NPR*g&*()$34#$");
+                                var data = encryptedAES.toString();
+                                var uname = USERNAME.toString();
+                                login.password = data;
+                                login.username = uname;
+                                this.apiService.getOtp(login).subscribe((res) => {
+                                    this.variable = res;
+                                    this.otpreceivedtime = new Date();
+                                    if (this.variable) {
+                                        if (this.variable[0] === "Username or password wrong") {
+                                            this.toastService.errorMessage("Invalid Username or Password !!!", "");
+                                        }
+                                        if (res.failLgnCounter != 0) {
+                                            this.apiService
+                                                .fetchSecurityPolicyService()
+                                                .subscribe((sp) => {
+                                                this.security = sp;
+                                                this.invLogins = this.security.maxInvLogins;
+                                                if (this.invLogins !== 0) {
+                                                    this.invLogins = this.invLogins - 1;
+                                                    if (this.invLogins === res.failLgnCounter) {
+                                                        this.toastService.errorMessage("Contact Admin, User Account locked after " +
+                                                            `${res.failLgnCounter + 1}` +
+                                                            " wrong attempts.", "");
+                                                    }
+                                                }
+                                            });
+                                        }
+                                        // ---------- Password Policy Implementation (END) ----------
+                                        if (this.variable[0] === "true") {
+                                            this.progress = true;
+                                            this.toggle();
+                                            this.toastService.successMessage("OTP sent successfully to " + this.email, "");
+                                            this.loginProcessing = false;
+                                            this.verifyOTP = true;
+                                        }
+                                        else {
+                                        }
+                                    }
+                                }, (err) => {
+                                    this.toastService.errorMessage("Server Error", "");
+                                    this.loginProcessing = false;
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    }
+    resendOtpMethod() {
         let login = {};
         login.username = this.signinForm.value.username;
         login.password = this.signinForm.value.password;
@@ -762,7 +874,7 @@ class LoginComponent {
                                         // ---------- Password Policy Implementation (END) ----------
                                         if (this.variable[0] === "true") {
                                             this.progress = true;
-                                            this.toggle();
+                                            this.toastService.successMessage("OTP sent successfully to " + this.email, "");
                                             this.loginProcessing = false;
                                             this.verifyOTP = true;
                                         }
@@ -904,6 +1016,9 @@ class LoginComponent {
             // console.log(err);
         });
     }
+    backToLogin() {
+        this.showOtpComponent = false;
+    }
     onOtpChange(otp) {
         this.otp = otp;
         if (this.otp.length === 6) {
@@ -999,7 +1114,7 @@ LoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8__[
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵloadQuery"]()) && (ctx.ngOtpInput = _t.first);
-    } }, decls: 14, vars: 2, consts: [[1, "bg-white"], [1, "loginLogoCol", "text-center", "text-lg-start"], ["href", "JavaScript:void(0)"], ["src", "assets/images/logo.png", "alt", "logo"], [1, "container"], [1, "row", "g-0", "loginRow", "align-items-center"], [1, "col-lg-6"], ["class", "loginFormCol", 4, "ngIf"], [1, "loginFormCol"], ["class", "loginCol", 4, "ngIf"], [1, "loginImgCol", "d-none", "d-lg-block"], ["src", "assets/images/login-img.svg", "alt", "loginimg"], ["size", "small", "type", "square-loader"], [1, "loginCol"], [1, "lgTitle", "secondaryColor"], [1, "lightColor"], [1, "loginFormStyle"], [1, "row", "g-4", 3, "formGroup"], [1, "col-12"], ["for", "exampleInputEmail1", 1, "form-label", "lblStyles"], ["type", "text", "oninput", "this.value = this.value.toUpperCase()", "formControlName", "username", "id", "exampleInputEmail1", "placeholder", "you@example.com", 1, "form-control", "lineField"], [1, "row"], [1, "col"], ["for", "exampleInputPassword1", 1, "form-label", "lblStyles"], [1, "col-auto"], [1, "primaryColor", "fpLink", 3, "routerLink"], [1, "inputField"], [1, "inputField", "pwdFldCol", "d-flex"], ["type", "password", "formControlName", "password", "id", "pwdFld", "placeholder", "Your Password", 1, "form-control", "lineField", 3, "type"], ["toggle", "#pwdFld", 1, "fieldIcon", "toggle-password", "fa-eye", "mt-2", 3, "click"], ["class", "showPwd", "src", "assets/images/show-icon.svg", "alt", "...", 4, "ngIf"], ["class", "hidePwd", "src", "assets/images/hide-icon.svg", "alt", "...", 4, "ngIf"], ["type", "submit", 1, "btn", "btnPrimary", "w-100", "btnLg", "roundedBorder", 3, "disabled", "click"], [1, "rumanogoCol", "text-center", "pt-3"], ["src", "assets/images/rumango-img.png", "alt", "rumango-img"], [1, "medainStyle", "mt-3"], ["src", "assets/images/show-icon.svg", "alt", "...", 1, "showPwd"], ["src", "assets/images/hide-icon.svg", "alt", "...", 1, "hidePwd"], [1, "form", "w-100", "mb-10"], [1, "text-center", "mb-10"], ["alt", "Logo", "src", "assets/images/smartphone.svg", 1, "mh-125px"], [1, "text-dark", "mb-3"], [1, "text-muted", "fw-bold", "fs-5", "mb-5"], [1, "fw-bolder", "text-dark", "fs-3"], [1, "mb-10", "px-md-10"], [1, "fw-bolder", "text-start", "text-dark", "fs-6", "mb-1", "ms-1"], [1, "d-flex", "flex-wrap", "flex-stack"], ["inputControls", "6", 3, "config", "onInputChange"], ["ngOtpInput", ""], [1, "d-flex", "flex-center"], ["type", "button", 1, "btn", "btn-lg", "btnPrimary", "fw-bolder", "text-center", 3, "disabled", "click"], [1, "indicator-label"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 14, vars: 2, consts: [[1, "bg-white"], [1, "loginLogoCol", "text-center", "text-lg-start"], ["href", "JavaScript:void(0)"], ["src", "assets/images/logo.png", "alt", "logo"], [1, "container"], [1, "row", "g-0", "loginRow", "align-items-center"], [1, "col-lg-6"], ["class", "loginFormCol", 4, "ngIf"], [1, "loginFormCol"], ["class", "loginCol", 4, "ngIf"], [1, "loginImgCol", "d-none", "d-lg-block"], ["src", "assets/images/login-img.svg", "alt", "loginimg"], ["size", "small", "type", "square-loader"], [1, "loginCol"], [1, "lgTitle", "secondaryColor"], [1, "lightColor"], [1, "loginFormStyle"], [1, "row", "g-4", 3, "formGroup"], [1, "col-12"], ["for", "exampleInputEmail1", 1, "form-label", "lblStyles"], ["type", "text", "autofocus", "autofocus", "oninput", "this.value = this.value.toUpperCase()", "formControlName", "username", "id", "exampleInputEmail1", "placeholder", "you@example.com", 1, "form-control", "lineField"], [1, "row"], [1, "col"], ["for", "exampleInputPassword1", 1, "form-label", "lblStyles"], [1, "inputField"], [1, "inputField", "pwdFldCol", "d-flex"], ["type", "password", "formControlName", "password", "id", "pwdFld", "placeholder", "Your Password", 1, "form-control", "lineField", 3, "type"], ["toggle", "#pwdFld", 1, "fieldIcon", "toggle-password", "fa-eye", "mt-2", 3, "click"], ["class", "showPwd", "src", "assets/images/show-icon.svg", "alt", "...", 4, "ngIf"], ["class", "hidePwd", "src", "assets/images/hide-icon.svg", "alt", "...", 4, "ngIf"], ["type", "submit", 1, "btn", "btnPrimary", "w-100", "btnLg", "roundedBorder", 3, "disabled", "click"], [1, "float"], [1, "primaryColor", "fpLink", 3, "routerLink"], [1, "rumanogoCol", "text-center", "pt-3"], ["src", "assets/images/rumango-img.png", "alt", "rumango-img"], [1, "medainStyle", "mt-3"], ["src", "assets/images/show-icon.svg", "alt", "...", 1, "showPwd"], ["src", "assets/images/hide-icon.svg", "alt", "...", 1, "hidePwd"], [1, "form", "w-100", "mb-10"], [1, "text-center", "mb-10"], ["alt", "Logo", "src", "assets/images/smartphone.svg", 1, "mh-125px"], [1, "text-dark", "mb-3"], [1, "text-muted", "fw-bold", "fs-5", "mb-5"], [1, "fw-bolder", "text-dark", "fs-3"], [1, "mb-10", "px-md-10"], [1, "fw-bolder", "text-start", "text-dark", "fs-6", "mb-1", "ms-1"], [1, "d-flex", "flex-wrap", "flex-stack"], ["inputControls", "6", 3, "config", "onInputChange"], ["ngOtpInput", ""], [1, "d-flex", 2, "gap", "10px"], ["type", "button", 1, "btn", "btn-lg", "btnPrimary", "fw-bolder", 3, "disabled", "click"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](2, "a", 2);
@@ -1011,7 +1126,7 @@ LoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8__[
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](6, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](7, LoginComponent_div_7_Template, 33, 7, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](8, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](9, LoginComponent_div_9_Template, 21, 3, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](9, LoginComponent_div_9_Template, 24, 3, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](10, "div", 6);
