@@ -23,13 +23,16 @@
   left: 0;
   min-height: 100vh;
   z-index: 10001;
-  width: $sidebar-width;
+  width: 17rem; //$sidebar-width;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   -webkit-transition: all $sidebarTrnTime $transitionTiming;
   transition: all $sidebarTrnTime $transitionTiming;
   overflow: hidden;
   background: #ffffff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
   .sidebar-hold {
     width: $sidebar-width;
   }
