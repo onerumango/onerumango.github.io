@@ -21,7 +21,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_system-param-maintenance_system-param-maintenance_module_ts"], {
     /***/
-    98546:
+    50481:
     /*!**************************************************!*\
       !*** ./node_modules/angular-datatables/index.js ***!
       \**************************************************/
@@ -56,13 +56,13 @@
 
       var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./src/angular-datatables.directive */
-      46627);
+      9301);
       /* harmony import */
 
 
       var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./src/angular-datatables.module */
-      77003);
+      9368);
       /**
        * @license
        *
@@ -81,7 +81,7 @@
     },
 
     /***/
-    46627:
+    9301:
     /*!*****************************************************************************!*\
       !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
       \*****************************************************************************/
@@ -108,7 +108,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /**
        * @license
        *
@@ -293,7 +293,7 @@
     },
 
     /***/
-    77003:
+    9368:
     /*!**************************************************************************!*\
       !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
       \**************************************************************************/
@@ -320,19 +320,19 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./angular-datatables.directive */
-      46627);
+      9301);
       /**
        * @license
        *
@@ -380,7 +380,7 @@
     },
 
     /***/
-    56574:
+    2803:
     /*!***********************************************************************************************!*\
       !*** ./node_modules/angular-ng-autocomplete/__ivy_ngcc__/fesm2015/angular-ng-autocomplete.js ***!
       \***********************************************************************************************/
@@ -431,43 +431,43 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! rxjs */
-      54302);
+      82516);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs/operators */
-      64058);
+      33927);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs/operators */
-      57518);
+      9170);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs/operators */
-      95280);
+      80639);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /**
        * @fileoverview added by tsickle
        * Generated from: lib/autocomplete-lib.component.ts
@@ -2799,7 +2799,7 @@
     },
 
     /***/
-    54302:
+    82516:
     /*!*********************************************************************!*\
       !*** ./node_modules/rxjs/_esm2015/internal/observable/fromEvent.js ***!
       \*********************************************************************/
@@ -2826,25 +2826,25 @@
 
       var _Observable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../Observable */
-      93428);
+      25160);
       /* harmony import */
 
 
       var _util_isArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../util/isArray */
-      67815);
+      49861);
       /* harmony import */
 
 
       var _util_isFunction__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../util/isFunction */
-      95678);
+      80018);
       /* harmony import */
 
 
       var _operators_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../operators/map */
-      64058);
+      33927);
 
       var toString = function () {
         return Object.prototype.toString;
@@ -2926,7 +2926,7 @@
     },
 
     /***/
-    71870:
+    11864:
     /*!********************************************************!*\
       !*** ./src/app/shared/services/maintenance.service.ts ***!
       \********************************************************/
@@ -2953,25 +2953,25 @@
 
       var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/environments/environment.prod */
-      93963);
+      89019);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! rxjs */
-      97361);
+      76491);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _MaintenanceService = /*#__PURE__*/function () {
         function _MaintenanceService(http) {
@@ -3146,7 +3146,7 @@
     },
 
     /***/
-    78735:
+    31443:
     /*!**************************************************!*\
       !*** ./src/app/shared/services/toast.service.ts ***!
       \**************************************************/
@@ -3173,13 +3173,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var ng2_izitoast__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ng2-izitoast */
-      97385);
+      27218);
 
       var _ToastService = /*#__PURE__*/function () {
         function _ToastService(iziToast) {
@@ -3245,7 +3245,7 @@
     },
 
     /***/
-    60593:
+    64729:
     /*!*****************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/department-id-maintenance/departmenrt-id-new/departmenrt-id-new.component.ts ***!
       \*****************************************************************************************************************************/
@@ -3272,19 +3272,19 @@
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -3294,31 +3294,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var src_app_shared_services_maintenance_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/maintenance.service */
-      71870);
+      11864);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function DepartmenrtIdNewComponent_div_25_Template(rf, ctx) {
         if (rf & 1) {
@@ -4039,7 +4039,7 @@
           key: "getChargeMaintainenceSummary",
           value: function getChargeMaintainenceSummary() {
             this.departmentService.gettingDepartmentDataInSummary().subscribe(function (dataresp) {
-              console.log(dataresp); // this.respArray = dataresp;
+              console.log("summry", dataresp); // this.respArray = dataresp;
               // this.dtTrigger.next();
             });
           }
@@ -4130,12 +4130,13 @@
             var _this12 = this;
 
             this.departmentForm.value.inputBy = this.currentUser;
+            this.departmentForm.value.id = this.respData.id;
             console.log("this is delete", this.departmentForm.value);
             this.departmentService.onDeleteOfDepartment(this.departmentForm.value).subscribe(function (deleteResp) {
-              console.log(deleteResp);
+              console.log(deleteResp.status);
               _this12.respData = deleteResp;
 
-              if (_this12.respData == true) {
+              if (_this12.respData.respMsg == "Deleted Successfully") {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Record Deleted Successfully!',
                   icon: 'success'
@@ -4151,7 +4152,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -4366,7 +4367,7 @@
     },
 
     /***/
-    65445:
+    22263:
     /*!*******************************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/department-id-maintenance/department-id-maintenance/department-id-maintenance.component.ts ***!
       \*******************************************************************************************************************************************/
@@ -4393,37 +4394,37 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_maintenance_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/maintenance.service */
-      71870);
+      11864);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function DepartmentIdMaintenanceComponent_tr_24_Template(rf, ctx) {
         if (rf & 1) {
@@ -4529,7 +4530,6 @@
             var _this13 = this;
 
             this.apiService.gettingDepartmentDataInSummary().subscribe(function (dataresp) {
-              console.log(dataresp);
               _this13.respArray = dataresp;
 
               _this13.dtTrigger.next();
@@ -4687,7 +4687,7 @@
     },
 
     /***/
-    35498:
+    23367:
     /*!*******************************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/global-gcc-ac-maintenance/global-gcc-ac-maintenance/global-gcc-ac-maintenance.component.ts ***!
       \*******************************************************************************************************************************************/
@@ -4714,19 +4714,19 @@
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -4736,31 +4736,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function GlobalGccAcMaintenanceComponent_tr_27_Template(rf, ctx) {
         if (rf & 1) {
@@ -5223,7 +5223,7 @@
     },
 
     /***/
-    2275:
+    65252:
     /*!***************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/global-gcc-ac-maintenance/global-gcc-ac-new/global-gcc-ac-new.component.ts ***!
       \***************************************************************************************************************************/
@@ -5250,19 +5250,19 @@
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -5272,31 +5272,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
 
       function GlobalGccAcNewComponent_option_24_Template(rf, ctx) {
         if (rf & 1) {
@@ -5638,7 +5638,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -5677,7 +5677,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -6024,7 +6024,7 @@
     },
 
     /***/
-    95904:
+    84889:
     /*!*******************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/system-param-maintenance-routing.module.ts ***!
       \*******************************************************************************************/
@@ -6051,67 +6051,67 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _department_id_maintenance_departmenrt_id_new_departmenrt_id_new_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./department-id-maintenance/departmenrt-id-new/departmenrt-id-new.component */
-      60593);
+      64729);
       /* harmony import */
 
 
       var _department_id_maintenance_department_id_maintenance_department_id_maintenance_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./department-id-maintenance/department-id-maintenance/department-id-maintenance.component */
-      65445);
+      22263);
       /* harmony import */
 
 
       var _global_gcc_ac_maintenance_global_gcc_ac_maintenance_global_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./global-gcc-ac-maintenance/global-gcc-ac-maintenance/global-gcc-ac-maintenance.component */
-      35498);
+      23367);
       /* harmony import */
 
 
       var _global_gcc_ac_maintenance_global_gcc_ac_new_global_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./global-gcc-ac-maintenance/global-gcc-ac-new/global-gcc-ac-new.component */
-      2275);
+      65252);
       /* harmony import */
 
 
       var _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./transaction-code-maintenance/transaction-code-edit/transaction-code-edit.component */
-      76377);
+      69287);
       /* harmony import */
 
 
       var _transaction_code_maintenance_transaction_code_maintenance_transaction_code_maintenance_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./transaction-code-maintenance/transaction-code-maintenance/transaction-code-maintenance.component */
-      13151);
+      19926);
       /* harmony import */
 
 
       var _transaction_code_maintenance_transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./transaction-code-maintenance/transaction-code-new/transaction-code-new.component */
-      22874);
+      90223);
       /* harmony import */
 
 
       var _user_gcc_ac_maintenance_user_gcc_ac_maintenance_user_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./user-gcc-ac-maintenance/user-gcc-ac-maintenance/user-gcc-ac-maintenance.component */
-      86593);
+      51619);
       /* harmony import */
 
 
       var _user_gcc_ac_maintenance_user_gcc_ac_new_user_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./user-gcc-ac-maintenance/user-gcc-ac-new/user-gcc-ac-new.component */
-      17074);
+      14438);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var routes = [{
         path: 'transaction-code-summary',
@@ -6171,7 +6171,7 @@
     },
 
     /***/
-    60898:
+    76464:
     /*!***********************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/system-param-maintenance.module.ts ***!
       \***********************************************************************************/
@@ -6198,91 +6198,91 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _system_param_maintenance_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./system-param-maintenance-routing.module */
-      95904);
+      84889);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var angular_ng_autocomplete__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! angular-ng-autocomplete */
-      56574);
+      2803);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _department_id_maintenance_department_id_maintenance_department_id_maintenance_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./department-id-maintenance/department-id-maintenance/department-id-maintenance.component */
-      65445);
+      22263);
       /* harmony import */
 
 
       var _global_gcc_ac_maintenance_global_gcc_ac_maintenance_global_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./global-gcc-ac-maintenance/global-gcc-ac-maintenance/global-gcc-ac-maintenance.component */
-      35498);
+      23367);
       /* harmony import */
 
 
       var _global_gcc_ac_maintenance_global_gcc_ac_new_global_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./global-gcc-ac-maintenance/global-gcc-ac-new/global-gcc-ac-new.component */
-      2275);
+      65252);
       /* harmony import */
 
 
       var _transaction_code_maintenance_transaction_code_maintenance_transaction_code_maintenance_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./transaction-code-maintenance/transaction-code-maintenance/transaction-code-maintenance.component */
-      13151);
+      19926);
       /* harmony import */
 
 
       var _transaction_code_maintenance_transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./transaction-code-maintenance/transaction-code-new/transaction-code-new.component */
-      22874);
+      90223);
       /* harmony import */
 
 
       var _user_gcc_ac_maintenance_user_gcc_ac_maintenance_user_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./user-gcc-ac-maintenance/user-gcc-ac-maintenance/user-gcc-ac-maintenance.component */
-      86593);
+      51619);
       /* harmony import */
 
 
       var _user_gcc_ac_maintenance_user_gcc_ac_new_user_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./user-gcc-ac-maintenance/user-gcc-ac-new/user-gcc-ac-new.component */
-      17074);
+      14438);
       /* harmony import */
 
 
       var _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./transaction-code-maintenance/transaction-code-edit/transaction-code-edit.component */
-      76377);
+      69287);
       /* harmony import */
 
 
       var _department_id_maintenance_departmenrt_id_new_departmenrt_id_new_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ./department-id-maintenance/departmenrt-id-new/departmenrt-id-new.component */
-      60593);
+      64729);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _SystemParamMaintenanceModule = /*#__PURE__*/_createClass(function _SystemParamMaintenanceModule() {
         _classCallCheck(this, _SystemParamMaintenanceModule);
@@ -6310,7 +6310,7 @@
     },
 
     /***/
-    76377:
+    69287:
     /*!**************************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/transaction-code-maintenance/transaction-code-edit/transaction-code-edit.component.ts ***!
       \**************************************************************************************************************************************/
@@ -6337,19 +6337,19 @@
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -6359,31 +6359,37 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
+
+      var _c0 = function _c0(a0) {
+        return {
+          "isDisabled": a0
+        };
+      };
 
       function TransactionCodeEditComponent_div_12_Template(rf, ctx) {
         if (rf & 1) {
@@ -6431,9 +6437,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "button", 45);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "a", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_div_12_Template_button_click_9_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_div_12_Template_a_click_9_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10);
 
             var data_r7 = restoredCtx.$implicit;
@@ -6441,14 +6447,6 @@
             var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
             return ctx_r12.deleteRowData(data_r7.value);
-          })("click", function TransactionCodeEditComponent_div_12_Template_button_click_9_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10);
-
-            var i_r8 = restoredCtx.index;
-
-            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-
-            return ctx_r13.removeData(i_r8);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](10, "img", 46);
@@ -6477,22 +6475,22 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r0.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](4, _c0, !ctx_r0.editFlag));
         }
       }
 
       function TransactionCodeEditComponent_button_22_Template(rf, ctx) {
         if (rf & 1) {
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 47);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_button_22_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r14);
 
-            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-            return ctx_r14.enableEditFlag();
+            return ctx_r13.enableEditFlag();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Edit");
@@ -6503,16 +6501,16 @@
 
       function TransactionCodeEditComponent_button_24_Template(rf, ctx) {
         if (rf & 1) {
-          var _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 48);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_button_24_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r16);
 
-            var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-            return ctx_r16.onSubmitofForm(ctx_r16.transactionCodeEditForm.value, ctx_r16.transactionCodeSummryData);
+            return ctx_r15.onSubmitofForm(ctx_r15.transactionCodeEditForm.value, ctx_r15.transactionCodeSummryData);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Submit");
@@ -6523,22 +6521,22 @@
         if (rf & 2) {
           var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r2.submitFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx_r2.transactionCodeEditForm.invalid && !ctx_r2.submitFlag);
         }
       }
 
       function TransactionCodeEditComponent_button_26_Template(rf, ctx) {
         if (rf & 1) {
-          var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_button_26_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r18);
 
-            var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-            return ctx_r18.onClickOfAuth();
+            return ctx_r17.onClickOfAuth();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Auth");
@@ -6549,16 +6547,16 @@
 
       function TransactionCodeEditComponent_button_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_button_28_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r20);
 
-            var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-            return ctx_r20.onClickOfClose();
+            return ctx_r19.onClickOfClose();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Close");
@@ -6569,16 +6567,16 @@
 
       function TransactionCodeEditComponent_button_30_Template(rf, ctx) {
         if (rf & 1) {
-          var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_button_30_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r22);
 
-            var ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+            var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-            return ctx_r22.onClickOfReopen();
+            return ctx_r21.onClickOfReopen();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Reopen");
@@ -6589,16 +6587,16 @@
 
       function TransactionCodeEditComponent_button_32_Template(rf, ctx) {
         if (rf & 1) {
-          var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeEditComponent_button_32_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r24);
 
-            var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+            var ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-            return ctx_r24.OndeleteofUser(ctx_r24.transactionCodeSummryData.userID);
+            return ctx_r23.OndeleteofUser(ctx_r23.transactionCodeSummryData.userID);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Delete");
@@ -6607,10 +6605,10 @@
         }
       }
 
-      var _c0 = "/system-param-maintenance/transaction-code-summary";
+      var _c1 = "/system-param-maintenance/transaction-code-summary";
 
-      var _c1 = function _c1() {
-        return [_c0];
+      var _c2 = function _c2() {
+        return [_c1];
       };
 
       var _TransactionCodeEditComponent = /*#__PURE__*/function () {
@@ -6659,8 +6657,7 @@
         _createClass(_TransactionCodeEditComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.currentUser = localStorage.getItem("userFromLogin"); // this.loggedInuser = localStorage.getItem("userFromLogin");
-
+            this.currentUser = localStorage.getItem("userFromLogin");
             this.transactionCodeEditForm = this.formBuilder.group({
               userId: [""],
               transactionData: this.formBuilder.array([this.createtransactionCodeGroup()])
@@ -6708,10 +6705,33 @@
           value: function deleteRowData(data) {
             var _this22 = this;
 
+            console.log("this.transactionCodeSummryData.formValues", this.transactionCodeSummryData.formValues);
+            this.transactionCodeSummryData.formValues.splice(data, 1);
             this.apiService.deleteRow(data.id).subscribe(function (resp) {
               _this22.deleteRowResp = resp;
 
               if (_this22.deleteRowResp == true) {
+                _this22.submitFlag = true;
+
+                _this22.transactionCodeSummryData.formValues.forEach(function (element) {
+                  var row = _this22.formBuilder.group({
+                    trnDesc: [element.trnDesc, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    trnCode: [element.trnCode, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    id: [element.id, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    userId: [element.userId, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    creatorDtStamp: [element.creatorDtStamp, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    creatorId: [element.creatorId, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    modNo: [element.modNo, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    recordStatus: [element.recordStatus, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    verifiedBy: [element.verifiedBy, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    verifiedOnce: [element.verifiedOnce, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    verifiedStatus: [element.verifiedStatus, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+                    verifiedTime: [element.verifiedTime, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]]
+                  });
+
+                  _this22.addtrnDec.push(row);
+                });
+
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Row Deleted Successfully!',
                   icon: 'success'
@@ -6725,7 +6745,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -6774,6 +6794,7 @@
 
             this.apiService.getSummaryDataTransactionCode().subscribe(function (summaryData) {
               _this24.transactionCodeSummryData = summaryData;
+              console.log("this.transactionCodeSummryData", _this24.transactionCodeSummryData.formValues);
 
               _this24.auditLog();
 
@@ -6891,7 +6912,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -6924,7 +6945,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -6953,7 +6974,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -7017,7 +7038,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -7037,7 +7058,7 @@
         selectors: [["npr-transaction-code-edit"]],
         decls: 124,
         vars: 22,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-12"], [1, "col-lg-4"], ["id", "usersId", "type", "text", "oninput", "this.value = this.value.toUpperCase()", "readonly", "", "formControlName", "userId", "placeholder", "User Id", "value", "", 1, "form-control"], ["formArrayName", "transactionData", 1, "row", "gy-4"], ["class", "row", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "addIcon", 3, "disabled", "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "btn smBtn minWdSmBtn btnUpdate", 3, "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "disabled", "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnAuth", 3, "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."], [1, "row", 3, "formGroupName"], ["id", "transactionDes", "formControlName", "trnDesc", "type", "text", "placeholder", "Transaction Description", 1, "form-control", 3, "readonly", "ngModelChange"], ["id", "transactionCode", "formControlName", "trnCode", "placeholder", "Transaction Code", "required", "", 1, "form-control", 3, "readonly", "ngModelChange"], ["href", "javascript:void(0)", 1, "addIcon", "deleteIcon", 3, "disabled", "click"], ["src", "assets/images/delete-icon.png", "alt", "..."], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-12"], [1, "col-lg-4"], ["id", "usersId", "type", "text", "oninput", "this.value = this.value.toUpperCase()", "readonly", "", "formControlName", "userId", "placeholder", "User Id", "value", "", 1, "form-control"], ["formArrayName", "transactionData", 1, "row", "gy-4"], ["class", "row", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "addIcon", 3, "disabled", "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "btn smBtn minWdSmBtn btnUpdate", 3, "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "disabled", "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnAuth", 3, "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."], [1, "row", 3, "formGroupName"], ["id", "transactionDes", "formControlName", "trnDesc", "type", "text", "placeholder", "Transaction Description", 1, "form-control", 3, "readonly", "ngModelChange"], ["id", "transactionCode", "formControlName", "trnCode", "placeholder", "Transaction Code", "required", "", 1, "form-control", 3, "readonly", "ngModelChange"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"]],
         template: function TransactionCodeEditComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -7046,7 +7067,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "User Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Transaction Code Maintenance");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -7072,7 +7093,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, TransactionCodeEditComponent_div_12_Template, 11, 4, "div", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, TransactionCodeEditComponent_div_12_Template, 11, 6, "div", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -7508,7 +7529,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](21, _c1));
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](21, _c2));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](15);
 
@@ -7539,15 +7560,15 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.transactionCodeSummryData.verifiedStatus);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.RequiredValidator],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.RequiredValidator, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgClass],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0cmFuc2FjdGlvbi1jb2RlLWVkaXQuY29tcG9uZW50LnNjc3MifQ== */"]
+        styles: [".isDisabled[_ngcontent-%COMP%] {\n  color: currentColor;\n  cursor: not-allowed;\n  pointer-events: none;\n  opacity: 0.5;\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRyYW5zYWN0aW9uLWNvZGUtZWRpdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtBQUNKIiwiZmlsZSI6InRyYW5zYWN0aW9uLWNvZGUtZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pc0Rpc2FibGVkIHtcclxuICAgIGNvbG9yOiBjdXJyZW50Q29sb3I7XHJcbiAgICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICBvcGFjaXR5OiAwLjU7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgXHJcbiAgfSJdfQ== */"]
       });
       /***/
     },
 
     /***/
-    13151:
+    19926:
     /*!****************************************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/transaction-code-maintenance/transaction-code-maintenance/transaction-code-maintenance.component.ts ***!
       \****************************************************************************************************************************************************/
@@ -7574,43 +7595,43 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function TransactionCodeMaintenanceComponent_tr_22_Template(rf, ctx) {
         if (rf & 1) {
@@ -7880,7 +7901,7 @@
     },
 
     /***/
-    22874:
+    90223:
     /*!************************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/transaction-code-maintenance/transaction-code-new/transaction-code-new.component.ts ***!
       \************************************************************************************************************************************/
@@ -7915,19 +7936,19 @@
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -7937,31 +7958,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
 
       function TransactionCodeNewComponent_div_15_Template(rf, ctx) {
         if (rf & 1) {
@@ -8136,7 +8157,7 @@
                 }, function (error) {
                   if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      text: 'Server Error',
+                      text: 'Server Error!',
                       icon: 'error'
                     });
                   }
@@ -8304,7 +8325,7 @@
     },
 
     /***/
-    86593:
+    51619:
     /*!*************************************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/user-gcc-ac-maintenance/user-gcc-ac-maintenance/user-gcc-ac-maintenance.component.ts ***!
       \*************************************************************************************************************************************/
@@ -8331,25 +8352,25 @@
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -8359,37 +8380,37 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function UserGccAcMaintenanceComponent_tr_41_Template(rf, ctx) {
         if (rf & 1) {
@@ -8710,7 +8731,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -8744,7 +8765,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -9034,7 +9055,7 @@
     },
 
     /***/
-    17074:
+    14438:
     /*!*********************************************************************************************************************!*\
       !*** ./src/app/views/system-param-maintenance/user-gcc-ac-maintenance/user-gcc-ac-new/user-gcc-ac-new.component.ts ***!
       \*********************************************************************************************************************/
@@ -9061,19 +9082,19 @@
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -9083,31 +9104,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
 
       function UserGccAcNewComponent_option_29_Template(rf, ctx) {
         if (rf & 1) {
@@ -9520,7 +9541,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }
@@ -9556,7 +9577,7 @@
             }, function (error) {
               if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error',
+                  text: 'Server Error!',
                   icon: 'error'
                 });
               }

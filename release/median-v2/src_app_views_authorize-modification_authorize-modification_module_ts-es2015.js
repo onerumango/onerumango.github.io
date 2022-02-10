@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_authorize-modification_authorize-modification_module_ts"],{
 
-/***/ 43684:
+/***/ 12291:
 /*!***************************************************************!*\
   !*** ./src/app/shared/models/pending-for-auth-details-dto.ts ***!
   \***************************************************************/
@@ -26,7 +26,7 @@ class PendingForAuthDetailsHistEntity {
 
 /***/ }),
 
-/***/ 66455:
+/***/ 28840:
 /*!***************************************************************************************!*\
   !*** ./src/app/views/authorize-modification/authorize-modification-routing.module.ts ***!
   \***************************************************************************************/
@@ -36,9 +36,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthorizeModificationRoutingModule": function() { return /* binding */ AuthorizeModificationRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 869);
-/* harmony import */ var _authorize_modification_authorize_modification_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authorize-modification/authorize-modification.component */ 19668);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _authorize_modification_authorize_modification_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authorize-modification/authorize-modification.component */ 95938);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 
@@ -59,7 +59,7 @@ AuthorizeModificationRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_
 
 /***/ }),
 
-/***/ 90523:
+/***/ 49136:
 /*!*******************************************************************************!*\
   !*** ./src/app/views/authorize-modification/authorize-modification.module.ts ***!
   \*******************************************************************************/
@@ -69,11 +69,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthorizeModificationModule": function() { return /* binding */ AuthorizeModificationModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _authorize_modification_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authorize-modification-routing.module */ 66455);
-/* harmony import */ var _authorize_modification_authorize_modification_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./authorize-modification/authorize-modification.component */ 19668);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 98546);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _authorize_modification_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authorize-modification-routing.module */ 28840);
+/* harmony import */ var _authorize_modification_authorize_modification_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./authorize-modification/authorize-modification.component */ 95938);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 
@@ -95,7 +95,7 @@ AuthorizeModificationModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTE
 
 /***/ }),
 
-/***/ 19668:
+/***/ 95938:
 /*!*********************************************************************************************************!*\
   !*** ./src/app/views/authorize-modification/authorize-modification/authorize-modification.component.ts ***!
   \*********************************************************************************************************/
@@ -105,21 +105,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthorizeModificationComponent": function() { return /* binding */ AuthorizeModificationComponent; }
 /* harmony export */ });
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 68465);
-/* harmony import */ var src_app_shared_models_pending_for_auth_details_dto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/pending-for-auth-details-dto */ 43684);
-/* harmony import */ var src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/pending-for-auth-dto */ 26193);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 33549);
-/* harmony import */ var src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/models/users */ 19307);
-/* harmony import */ var src_app_shared_models_audit_logs_dto_first_second__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/models/audit-logs-dto-first-second */ 35249);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 30759);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ 73696);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var src_app_shared_models_pending_for_auth_details_dto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/pending-for-auth-details-dto */ 12291);
+/* harmony import */ var src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/pending-for-auth-dto */ 27721);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 53882);
+/* harmony import */ var src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/models/users */ 92803);
+/* harmony import */ var src_app_shared_models_audit_logs_dto_first_second__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/models/audit-logs-dto-first-second */ 17283);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 79441);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ 18190);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/services/api.service */ 31781);
-/* harmony import */ var src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/views/users/users.service */ 69358);
-/* harmony import */ var src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/services/excel.service */ 5362);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angular-datatables */ 98546);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/services/api.service */ 94761);
+/* harmony import */ var src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/views/users/users.service */ 59119);
+/* harmony import */ var src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/services/excel.service */ 58219);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angular-datatables */ 50481);
 
 
 

@@ -9,7 +9,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["common"], {
     /***/
-    77310:
+    39330:
     /*!**********************************************************************************!*\
       !*** ./src/app/shared/components/audit-log-status/audit-log-status.component.ts ***!
       \**********************************************************************************/
@@ -36,7 +36,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _AuditLogStatusComponent = /*#__PURE__*/function () {
         function _AuditLogStatusComponent() {
@@ -72,7 +72,7 @@
     },
 
     /***/
-    60795:
+    15626:
     /*!********************************************************!*\
       !*** ./src/app/shared/components/components.module.ts ***!
       \********************************************************/
@@ -99,25 +99,25 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _audit_log_status_audit_log_status_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./audit-log-status/audit-log-status.component */
-      77310);
+      39330);
       /* harmony import */
 
 
       var _otp_otp_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./otp/otp.component */
-      55798);
+      51492);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _ComponentsModule = /*#__PURE__*/_createClass(function _ComponentsModule() {
         _classCallCheck(this, _ComponentsModule);
@@ -146,7 +146,7 @@
     },
 
     /***/
-    55798:
+    51492:
     /*!********************************************************!*\
       !*** ./src/app/shared/components/otp/otp.component.ts ***!
       \********************************************************/
@@ -173,7 +173,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _OtpComponent = /*#__PURE__*/function () {
         function _OtpComponent() {
@@ -212,7 +212,7 @@
     },
 
     /***/
-    35249:
+    17283:
     /*!**************************************************************!*\
       !*** ./src/app/shared/models/audit-logs-dto-first-second.ts ***!
       \**************************************************************/
@@ -255,7 +255,7 @@
     },
 
     /***/
-    26193:
+    27721:
     /*!*******************************************************!*\
       !*** ./src/app/shared/models/pending-for-auth-dto.ts ***!
       \*******************************************************/
@@ -322,7 +322,7 @@
     },
 
     /***/
-    19307:
+    92803:
     /*!****************************************!*\
       !*** ./src/app/shared/models/users.ts ***!
       \****************************************/
@@ -353,7 +353,7 @@
     },
 
     /***/
-    30686:
+    60965:
     /*!********************************************************************!*\
       !*** ./src/app/shared/services/account-closure-service.service.ts ***!
       \********************************************************************/
@@ -388,13 +388,13 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs */
-      97361);
+      76491);
       /* harmony import */
 
 
       var file_saver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! file-saver */
-      28461);
+      97797);
       /* harmony import */
 
 
@@ -404,7 +404,7 @@
 
       var xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! xlsx */
-      71723);
+      88031);
       /* harmony import */
 
 
@@ -414,19 +414,19 @@
 
       var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/config/app.constant */
-      91486);
+      3118);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__.AppConstants.acctCloserUrl;
       var EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
@@ -591,7 +591,7 @@
     },
 
     /***/
-    5362:
+    58219:
     /*!**************************************************!*\
       !*** ./src/app/shared/services/excel.service.ts ***!
       \**************************************************/
@@ -618,7 +618,7 @@
 
       var file_saver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! file-saver */
-      28461);
+      97797);
       /* harmony import */
 
 
@@ -628,7 +628,7 @@
 
       var xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! xlsx */
-      71723);
+      88031);
       /* harmony import */
 
 
@@ -638,7 +638,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
       var EXCEL_EXTENSION = '.xlsx';
@@ -694,7 +694,7 @@
     },
 
     /***/
-    47819:
+    50511:
     /*!*************************************************!*\
       !*** ./src/app/shared/services/rule.service.ts ***!
       \*************************************************/
@@ -721,19 +721,19 @@
 
       var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _RuleService = /*#__PURE__*/function () {
         function _RuleService(http) {
@@ -950,7 +950,7 @@
     },
 
     /***/
-    67525:
+    10402:
     /*!************************************************************!*\
       !*** ./src/app/shared/services/security-policy.service.ts ***!
       \************************************************************/
@@ -977,19 +977,19 @@
 
       var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/environments/environment.prod */
-      93963);
+      89019);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _SecurityPolicyService = /*#__PURE__*/function () {
         function _SecurityPolicyService(httpClient) {
@@ -1046,7 +1046,7 @@
     },
 
     /***/
-    18736:
+    98613:
     /*!*************************************************!*\
       !*** ./src/app/shared/services/user.service.ts ***!
       \*************************************************/
@@ -1089,25 +1089,25 @@
 
       var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/config/app.constant */
-      91486);
+      3118);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! rxjs */
-      97361);
+      76491);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _API_URL2 = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
 
@@ -1236,7 +1236,7 @@
     },
 
     /***/
-    69358:
+    59119:
     /*!**********************************************!*\
       !*** ./src/app/views/users/users.service.ts ***!
       \**********************************************/
@@ -1279,19 +1279,19 @@
 
       var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/config/app.constant */
-      91486);
+      3118);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _API_URL3 = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
 

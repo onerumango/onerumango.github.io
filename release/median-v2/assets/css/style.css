@@ -1272,6 +1272,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 	margin-bottom: 2px;
 }
 
+.colorRed{
+  color: red !important;
+}
+
 .pageTitleCol {
 	background-color: #F6F7F9;
 	padding: 15px 30px;
