@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_dashboard_dashboard-analytics_module_ts"],{
 
-/***/ 98546:
+/***/ 50481:
 /*!**************************************************!*\
   !*** ./node_modules/angular-datatables/index.js ***!
   \**************************************************/
@@ -12,8 +12,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DataTableDirective": function() { return /* reexport safe */ _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective; },
 /* harmony export */   "DataTablesModule": function() { return /* reexport safe */ _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__.DataTablesModule; }
 /* harmony export */ });
-/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 46627);
-/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 77003);
+/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 9301);
+/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 9368);
 /**
  * @license
  *
@@ -31,7 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 46627:
+/***/ 9301:
 /*!*****************************************************************************!*\
   !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
   \*****************************************************************************/
@@ -41,7 +41,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataTableDirective": function() { return /* binding */ DataTableDirective; }
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
 /**
  * @license
  *
@@ -228,7 +228,7 @@ function () {
 
 /***/ }),
 
-/***/ 77003:
+/***/ 9368:
 /*!**************************************************************************!*\
   !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
   \**************************************************************************/
@@ -238,9 +238,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataTablesModule": function() { return /* binding */ DataTablesModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 46627);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 9301);
 /**
  * @license
  *
@@ -291,7 +291,7 @@ function () {
 
 /***/ }),
 
-/***/ 51069:
+/***/ 55141:
 /*!****************************************************!*\
   !*** ./node_modules/highcharts/highcharts-more.js ***!
   \****************************************************/
@@ -304,7 +304,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 
  License: www.highcharts.com/license
 */
-(function(d){ true&&module.exports?(d["default"]=d,module.exports=d): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! highcharts */ 1290)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(A){d(A);d.Highcharts=A;return d}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+(function(d){ true&&module.exports?(d["default"]=d,module.exports=d): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! highcharts */ 54668)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(A){d(A);d.Highcharts=A;return d}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(function(d){function A(d,e,l,a){d.hasOwnProperty(e)||(d[e]=a.apply(null,l))}d=d?d._modules:{};A(d,"Extensions/Pane.js",[d["Core/Chart/Chart.js"],d["Series/CenteredUtilities.js"],d["Core/Globals.js"],d["Core/Pointer.js"],
 d["Core/Utilities.js"]],function(d,e,l,a,c){function t(b,m,n){return Math.sqrt(Math.pow(b-n[0],2)+Math.pow(m-n[1],2))<=n[2]/2}var p=c.addEvent,k=c.extend,x=c.merge,w=c.pick,b=c.splat;d.prototype.collectionsWithUpdate.push("pane");c=function(){function g(b,g){this.options=this.chart=this.center=this.background=void 0;this.coll="pane";this.defaultOptions={center:["50%","50%"],size:"85%",innerSize:"0%",startAngle:0};this.defaultBackgroundOptions={shape:"circle",borderWidth:1,borderColor:"#cccccc",backgroundColor:{linearGradient:{x1:0,
 y1:0,x2:0,y2:1},stops:[[0,"#ffffff"],[1,"#e6e6e6"]]},from:-Number.MAX_VALUE,innerRadius:0,to:Number.MAX_VALUE,outerRadius:"105%"};this.init(b,g)}g.prototype.init=function(b,g){this.chart=g;this.background=[];g.pane.push(this);this.setOptions(b)};g.prototype.setOptions=function(b){this.options=x(this.defaultOptions,this.chart.angular?{background:{}}:void 0,b)};g.prototype.render=function(){var g=this.options,n=this.options.background,q=this.chart.renderer;this.group||(this.group=q.g("pane-group").attr({zIndex:g.zIndex||
@@ -502,7 +502,7 @@ function(){var a=this.chart;a.inverted&&a.polar&&(this.isRadialSeries=!0,this.is
 
 /***/ }),
 
-/***/ 1290:
+/***/ 54668:
 /*!***********************************************!*\
   !*** ./node_modules/highcharts/highcharts.js ***!
   \***********************************************/
@@ -1105,7 +1105,7 @@ a.objectEach=u.objectEach;a.offset=u.offset;a.pad=u.pad;a.pick=u.pick;a.pInt=u.p
 
 /***/ }),
 
-/***/ 27380:
+/***/ 33995:
 /*!**************************************************!*\
   !*** ./node_modules/highcharts/modules/boost.js ***!
   \**************************************************/
@@ -1122,7 +1122,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
  License: www.highcharts.com/license
 
 */
-(function(a){ true&&module.exports?(a["default"]=a,module.exports=a): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! highcharts */ 1290)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(u){a(u);a.Highcharts=u;return a}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+(function(a){ true&&module.exports?(a["default"]=a,module.exports=a): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! highcharts */ 54668)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(u){a(u);a.Highcharts=u;return a}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(function(a){function u(a,z,v,k){a.hasOwnProperty(z)||(a[z]=k.apply(null,v))}a=a?a._modules:{};u(a,"Extensions/Boost/Boostables.js",[],function(){return"area arearange column columnrange bar line scatter heatmap bubble treemap".split(" ")});
 u(a,"Extensions/Boost/BoostableMap.js",[a["Extensions/Boost/Boostables.js"]],function(a){var q={};a.forEach(function(a){q[a]=1});return q});u(a,"Extensions/Boost/WGLShader.js",[a["Core/Utilities.js"]],function(a){var q=a.clamp,v=a.error,k=a.pick;return function(d){function a(){t.length&&v("[highcharts boost] shader error - "+t.join("\n"))}function C(b,c){var h=d.createShader("vertex"===c?d.VERTEX_SHADER:d.FRAGMENT_SHADER);d.shaderSource(h,b);d.compileShader(h);return d.getShaderParameter(h,d.COMPILE_STATUS)?
 h:(t.push("when compiling "+c+" shader:\n"+d.getShaderInfoLog(h)),!1)}function p(){function b(b){return d.getUniformLocation(f,b)}var O=C("#version 100\n#define LN10 2.302585092994046\nprecision highp float;\nattribute vec4 aVertexPosition;\nattribute vec4 aColor;\nvarying highp vec2 position;\nvarying highp vec4 vColor;\nuniform mat4 uPMatrix;\nuniform float pSize;\nuniform float translatedThreshold;\nuniform bool hasThreshold;\nuniform bool skipTranslation;\nuniform float xAxisTrans;\nuniform float xAxisMin;\nuniform float xAxisMinPad;\nuniform float xAxisPointRange;\nuniform float xAxisLen;\nuniform bool  xAxisPostTranslate;\nuniform float xAxisOrdinalSlope;\nuniform float xAxisOrdinalOffset;\nuniform float xAxisPos;\nuniform bool  xAxisCVSCoord;\nuniform bool  xAxisIsLog;\nuniform bool  xAxisReversed;\nuniform float yAxisTrans;\nuniform float yAxisMin;\nuniform float yAxisMinPad;\nuniform float yAxisPointRange;\nuniform float yAxisLen;\nuniform bool  yAxisPostTranslate;\nuniform float yAxisOrdinalSlope;\nuniform float yAxisOrdinalOffset;\nuniform float yAxisPos;\nuniform bool  yAxisCVSCoord;\nuniform bool  yAxisIsLog;\nuniform bool  yAxisReversed;\nuniform bool  isBubble;\nuniform bool  bubbleSizeByArea;\nuniform float bubbleZMin;\nuniform float bubbleZMax;\nuniform float bubbleZThreshold;\nuniform float bubbleMinSize;\nuniform float bubbleMaxSize;\nuniform bool  bubbleSizeAbs;\nuniform bool  isInverted;\nfloat bubbleRadius(){\nfloat value = aVertexPosition.w;\nfloat zMax = bubbleZMax;\nfloat zMin = bubbleZMin;\nfloat radius = 0.0;\nfloat pos = 0.0;\nfloat zRange = zMax - zMin;\nif (bubbleSizeAbs){\nvalue = value - bubbleZThreshold;\nzMax = max(zMax - bubbleZThreshold, zMin - bubbleZThreshold);\nzMin = 0.0;\n}\nif (value < zMin){\nradius = bubbleZMin / 2.0 - 1.0;\n} else {\npos = zRange > 0.0 ? (value - zMin) / zRange : 0.5;\nif (bubbleSizeByArea && pos > 0.0){\npos = sqrt(pos);\n}\nradius = ceil(bubbleMinSize + pos * (bubbleMaxSize - bubbleMinSize)) / 2.0;\n}\nreturn radius * 2.0;\n}\nfloat translate(float val,\nfloat pointPlacement,\nfloat localA,\nfloat localMin,\nfloat minPixelPadding,\nfloat pointRange,\nfloat len,\nbool  cvsCoord,\nbool  isLog,\nbool  reversed\n){\nfloat sign = 1.0;\nfloat cvsOffset = 0.0;\nif (cvsCoord) {\nsign *= -1.0;\ncvsOffset = len;\n}\nif (isLog) {\nval = log(val) / LN10;\n}\nif (reversed) {\nsign *= -1.0;\ncvsOffset -= sign * len;\n}\nreturn sign * (val - localMin) * localA + cvsOffset + \n(sign * minPixelPadding);\n}\nfloat xToPixels(float value) {\nif (skipTranslation){\nreturn value;// + xAxisPos;\n}\nreturn translate(value, 0.0, xAxisTrans, xAxisMin, xAxisMinPad, xAxisPointRange, xAxisLen, xAxisCVSCoord, xAxisIsLog, xAxisReversed);// + xAxisPos;\n}\nfloat yToPixels(float value, float checkTreshold) {\nfloat v;\nif (skipTranslation){\nv = value;// + yAxisPos;\n} else {\nv = translate(value, 0.0, yAxisTrans, yAxisMin, yAxisMinPad, yAxisPointRange, yAxisLen, yAxisCVSCoord, yAxisIsLog, yAxisReversed);// + yAxisPos;\nif (v > yAxisLen) {\nv = yAxisLen;\n}\n}\nif (checkTreshold > 0.0 && hasThreshold) {\nv = min(v, translatedThreshold);\n}\nreturn v;\n}\nvoid main(void) {\nif (isBubble){\ngl_PointSize = bubbleRadius();\n} else {\ngl_PointSize = pSize;\n}\nvColor = aColor;\nif (skipTranslation && isInverted) {\ngl_Position = uPMatrix * vec4(aVertexPosition.y + yAxisPos, aVertexPosition.x + xAxisPos, 0.0, 1.0);\n} else if (isInverted) {\ngl_Position = uPMatrix * vec4(yToPixels(aVertexPosition.y, aVertexPosition.z) + yAxisPos, xToPixels(aVertexPosition.x) + xAxisPos, 0.0, 1.0);\n} else {\ngl_Position = uPMatrix * vec4(xToPixels(aVertexPosition.x) + xAxisPos, yToPixels(aVertexPosition.y, aVertexPosition.z) + yAxisPos, 0.0, 1.0);\n}\n}",
@@ -1205,7 +1205,7 @@ turquoise:"#40e0d0",violet:"#ee82ee",violetred:"#d02090",wheat:"#f5deb3",white:"
 
 /***/ }),
 
-/***/ 54296:
+/***/ 61394:
 /*!***************************************************************!*\
   !*** ./node_modules/highcharts/modules/no-data-to-display.js ***!
   \***************************************************************/
@@ -1221,7 +1221,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 
  License: www.highcharts.com/license
 */
-(function(a){ true&&module.exports?(a["default"]=a,module.exports=a): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! highcharts */ 1290)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(b){a(b);a.Highcharts=b;return a}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+(function(a){ true&&module.exports?(a["default"]=a,module.exports=a): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! highcharts */ 54668)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(b){a(b);a.Highcharts=b;return a}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(function(a){function b(a,b,e,d){a.hasOwnProperty(b)||(a[b]=d.apply(null,e))}a=a?a._modules:{};b(a,"Extensions/NoDataToDisplay.js",[a["Core/Renderer/HTML/AST.js"],a["Core/Chart/Chart.js"],a["Core/DefaultOptions.js"],
 a["Core/Utilities.js"]],function(a,b,e,d){var f=e.getOptions;e=d.addEvent;var g=d.extend;d=b.prototype;f=f();g(f.lang,{noData:"No data to display"});f.noData={attr:{zIndex:1},position:{x:0,y:0,align:"center",verticalAlign:"middle"},style:{fontWeight:"bold",fontSize:"12px",color:"#666666"}};d.showNoData=function(b){var c=this.options;b=b||c&&c.lang.noData||"";c=c&&(c.noData||{});this.renderer&&(this.noDataLabel||(this.noDataLabel=this.renderer.label(b,0,0,void 0,void 0,void 0,c.useHTML,void 0,"no-data").add()),
 this.styledMode||this.noDataLabel.attr(a.filterUserAttributes(c.attr||{})).css(c.style||{}),this.noDataLabel.align(g(this.noDataLabel.getBBox(),c.position||{}),!1,"plotBox"))};d.hideNoData=function(){this.noDataLabel&&(this.noDataLabel=this.noDataLabel.destroy())};d.hasData=function(){for(var a=this.series||[],b=a.length;b--;)if(a[b].hasData()&&!a[b].options.isInternal)return!0;return this.loadingShown};e(b,"render",function(){this.hasData()?this.hideNoData():this.showNoData()})});b(a,"masters/modules/no-data-to-display.src.js",
@@ -1230,7 +1230,7 @@ this.styledMode||this.noDataLabel.attr(a.filterUserAttributes(c.attr||{})).css(c
 
 /***/ }),
 
-/***/ 25740:
+/***/ 7598:
 /*!***********************************************************************!*\
   !*** ./src/app/views/dashboard/dashboard-analytics-routing.module.ts ***!
   \***********************************************************************/
@@ -1240,9 +1240,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DashboardAnalyticsRoutingModule": function() { return /* binding */ DashboardAnalyticsRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 869);
-/* harmony import */ var _dashboard_analytics_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard-analytics.component */ 76163);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _dashboard_analytics_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard-analytics.component */ 79730);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 
@@ -1263,7 +1263,7 @@ DashboardAnalyticsRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMP
 
 /***/ }),
 
-/***/ 76163:
+/***/ 79730:
 /*!******************************************************************!*\
   !*** ./src/app/views/dashboard/dashboard-analytics.component.ts ***!
   \******************************************************************/
@@ -1274,13 +1274,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DashboardAnalyticsComponent": function() { return /* binding */ DashboardAnalyticsComponent; },
 /* harmony export */   "DashboardData": function() { return /* binding */ DashboardData; }
 /* harmony export */ });
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts */ 1290);
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts */ 54668);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 30759);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/services/api.service */ 31781);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 98546);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 79441);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/services/api.service */ 94761);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 50481);
 
 
 
@@ -1353,9 +1353,9 @@ function DashboardAnalyticsComponent_tr_85_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](14, 6, users_r4.verifierDtStamp));
 } }
-let Boost = __webpack_require__(/*! highcharts/modules/boost */ 27380);
-let noData = __webpack_require__(/*! highcharts/modules/no-data-to-display */ 54296);
-let More = __webpack_require__(/*! highcharts/highcharts-more */ 51069);
+let Boost = __webpack_require__(/*! highcharts/modules/boost */ 33995);
+let noData = __webpack_require__(/*! highcharts/modules/no-data-to-display */ 61394);
+let More = __webpack_require__(/*! highcharts/highcharts-more */ 55141);
 Boost(highcharts__WEBPACK_IMPORTED_MODULE_0__);
 noData(highcharts__WEBPACK_IMPORTED_MODULE_0__);
 More(highcharts__WEBPACK_IMPORTED_MODULE_0__);
@@ -1669,7 +1669,7 @@ class DashboardData {
 
 /***/ }),
 
-/***/ 12870:
+/***/ 11164:
 /*!***************************************************************!*\
   !*** ./src/app/views/dashboard/dashboard-analytics.module.ts ***!
   \***************************************************************/
@@ -1679,11 +1679,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DashboardAnalyticsModule": function() { return /* binding */ DashboardAnalyticsModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _dashboard_analytics_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard-analytics-routing.module */ 25740);
-/* harmony import */ var _dashboard_analytics_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-analytics.component */ 76163);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 98546);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _dashboard_analytics_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard-analytics-routing.module */ 7598);
+/* harmony import */ var _dashboard_analytics_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-analytics.component */ 79730);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 

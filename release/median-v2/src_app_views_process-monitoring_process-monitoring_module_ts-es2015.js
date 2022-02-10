@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_process-monitoring_process-monitoring_module_ts"],{
 
-/***/ 98546:
+/***/ 50481:
 /*!**************************************************!*\
   !*** ./node_modules/angular-datatables/index.js ***!
   \**************************************************/
@@ -12,8 +12,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DataTableDirective": function() { return /* reexport safe */ _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective; },
 /* harmony export */   "DataTablesModule": function() { return /* reexport safe */ _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__.DataTablesModule; }
 /* harmony export */ });
-/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 46627);
-/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 77003);
+/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 9301);
+/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 9368);
 /**
  * @license
  *
@@ -31,7 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 46627:
+/***/ 9301:
 /*!*****************************************************************************!*\
   !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
   \*****************************************************************************/
@@ -41,7 +41,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataTableDirective": function() { return /* binding */ DataTableDirective; }
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
 /**
  * @license
  *
@@ -228,7 +228,7 @@ function () {
 
 /***/ }),
 
-/***/ 77003:
+/***/ 9368:
 /*!**************************************************************************!*\
   !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
   \**************************************************************************/
@@ -238,9 +238,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataTablesModule": function() { return /* binding */ DataTablesModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 46627);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 9301);
 /**
  * @license
  *
@@ -291,7 +291,7 @@ function () {
 
 /***/ }),
 
-/***/ 35098:
+/***/ 46895:
 /*!*******************************************************************************!*\
   !*** ./src/app/views/process-monitoring/process-monitoring-routing.module.ts ***!
   \*******************************************************************************/
@@ -301,9 +301,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProcessMonitoringRoutingModule": function() { return /* binding */ ProcessMonitoringRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 869);
-/* harmony import */ var _process_monitoring_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./process-monitoring.component */ 83471);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _process_monitoring_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./process-monitoring.component */ 27658);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 
@@ -324,7 +324,7 @@ ProcessMonitoringRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPO
 
 /***/ }),
 
-/***/ 83471:
+/***/ 27658:
 /*!**************************************************************************!*\
   !*** ./src/app/views/process-monitoring/process-monitoring.component.ts ***!
   \**************************************************************************/
@@ -334,11 +334,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProcessMonitoringComponent": function() { return /* binding */ ProcessMonitoringComponent; }
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 30759);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/services/api.service */ 31781);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-datatables */ 98546);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 7005);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 79441);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/services/api.service */ 94761);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 54364);
 
 
 
@@ -473,7 +473,7 @@ ProcessMonitoringComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED
 
 /***/ }),
 
-/***/ 88803:
+/***/ 63420:
 /*!***********************************************************************!*\
   !*** ./src/app/views/process-monitoring/process-monitoring.module.ts ***!
   \***********************************************************************/
@@ -483,11 +483,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProcessMonitoringModule": function() { return /* binding */ ProcessMonitoringModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _process_monitoring_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./process-monitoring-routing.module */ 35098);
-/* harmony import */ var _process_monitoring_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./process-monitoring.component */ 83471);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 98546);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _process_monitoring_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./process-monitoring-routing.module */ 46895);
+/* harmony import */ var _process_monitoring_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./process-monitoring.component */ 27658);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 

@@ -9,7 +9,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_forget-password_forget-password_module_ts"], {
     /***/
-    74987:
+    68264:
     /*!**************************************************!*\
       !*** ./src/app/shared/services/login.service.ts ***!
       \**************************************************/
@@ -36,25 +36,25 @@
 
       var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/config/app.constant */
-      91486);
+      3118);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! rxjs */
-      97361);
+      76491);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common/http */
-      33549); // import { any } from 'src/app/shared/models/user';
+      53882); // import { any } from 'src/app/shared/models/user';
       // import  } from 'src/app/shared/models/login';
       // import { any } from '../security-policy/security-policy/security-dto';
 
@@ -140,7 +140,7 @@
     },
 
     /***/
-    85544:
+    14020:
     /*!*************************************************************************!*\
       !*** ./src/app/views/forget-password/forget-password-routing.module.ts ***!
       \*************************************************************************/
@@ -167,19 +167,19 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _forget_password_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./forget-password.component */
-      90413);
+      28241);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var routes = [{
         path: '',
@@ -212,7 +212,7 @@
     },
 
     /***/
-    90413:
+    28241:
     /*!********************************************************************!*\
       !*** ./src/app/views/forget-password/forget-password.component.ts ***!
       \********************************************************************/
@@ -247,13 +247,13 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! crypto-js */
-      42652);
+      95373);
       /* harmony import */
 
 
@@ -263,7 +263,7 @@
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -273,37 +273,37 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var src_app_shared_services_login_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/login.service */
-      74987);
+      68264);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! src/app/shared/services/security-policy.service */
-      67525);
+      10402);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function ForgetPasswordComponent_div_15_div_1_Template(rf, ctx) {
         if (rf & 1) {
@@ -923,7 +923,7 @@
     },
 
     /***/
-    97778:
+    82352:
     /*!*****************************************************************!*\
       !*** ./src/app/views/forget-password/forget-password.module.ts ***!
       \*****************************************************************/
@@ -950,31 +950,31 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _forget_password_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./forget-password-routing.module */
-      85544);
+      14020);
       /* harmony import */
 
 
       var _forget_password_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./forget-password.component */
-      90413);
+      28241);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _ForgetPasswordModule = /*#__PURE__*/_createClass(function _ForgetPasswordModule() {
         _classCallCheck(this, _ForgetPasswordModule);

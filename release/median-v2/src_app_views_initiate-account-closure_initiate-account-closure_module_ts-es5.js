@@ -9,7 +9,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_initiate-account-closure_initiate-account-closure_module_ts"], {
     /***/
-    79434:
+    58179:
     /*!*********************************************************************!*\
       !*** ./src/app/shared/models/FetchUserForSingleAccClosureReqDTO.ts ***!
       \*********************************************************************/
@@ -51,7 +51,7 @@
     },
 
     /***/
-    14819:
+    47833:
     /*!*************************************************************************************************************!*\
       !*** ./src/app/views/initiate-account-closure/account-closure-details/account-closure-details.component.ts ***!
       \*************************************************************************************************************/
@@ -78,19 +78,19 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var src_app_shared_models_FetchUserForSingleAccClosureReqDTO__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/models/FetchUserForSingleAccClosureReqDTO */
-      79434);
+      58179);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -100,37 +100,37 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var src_app_shared_services_account_closure_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/account-closure-service.service */
-      30686);
+      60965);
       /* harmony import */
 
 
       var ng2_izitoast__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ng2-izitoast */
-      97385);
+      27218);
       /* harmony import */
 
 
       var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! src/app/shared/services/role.service */
-      93135);
+      77382);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function AccountClosureDetailsComponent_div_31_div_1_Template(rf, ctx) {
         if (rf & 1) {
@@ -1468,7 +1468,7 @@
     },
 
     /***/
-    19886:
+    32291:
     /*!*******************************************************************************************!*\
       !*** ./src/app/views/initiate-account-closure/initiate-account-closure-routing.module.ts ***!
       \*******************************************************************************************/
@@ -1495,31 +1495,31 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _account_closure_details_account_closure_details_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./account-closure-details/account-closure-details.component */
-      14819);
+      47833);
       /* harmony import */
 
 
       var _initiate_account_closure_initiate_account_closure_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./initiate-account-closure/initiate-account-closure.component */
-      3059);
+      65355);
       /* harmony import */
 
 
       var _view_report_acc_closure_view_report_acc_closure_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./view-report-acc-closure/view-report-acc-closure.component */
-      19954);
+      17272);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var routes = [{
         path: "",
@@ -1558,7 +1558,7 @@
     },
 
     /***/
-    24380:
+    69628:
     /*!***********************************************************************************!*\
       !*** ./src/app/views/initiate-account-closure/initiate-account-closure.module.ts ***!
       \***********************************************************************************/
@@ -1585,49 +1585,49 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _initiate_account_closure_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./initiate-account-closure-routing.module */
-      19886);
+      32291);
       /* harmony import */
 
 
       var _initiate_account_closure_initiate_account_closure_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./initiate-account-closure/initiate-account-closure.component */
-      3059);
+      65355);
       /* harmony import */
 
 
       var _account_closure_details_account_closure_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./account-closure-details/account-closure-details.component */
-      14819);
+      47833);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _view_report_acc_closure_view_report_acc_closure_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./view-report-acc-closure/view-report-acc-closure.component */
-      19954);
+      17272);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _InitiateAccountClosureModule = /*#__PURE__*/_createClass(function _InitiateAccountClosureModule() {
         _classCallCheck(this, _InitiateAccountClosureModule);
@@ -1655,7 +1655,7 @@
     },
 
     /***/
-    3059:
+    65355:
     /*!***************************************************************************************************************!*\
       !*** ./src/app/views/initiate-account-closure/initiate-account-closure/initiate-account-closure.component.ts ***!
       \***************************************************************************************************************/
@@ -1682,43 +1682,43 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_account_closure_service_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/account-closure-service.service */
-      30686);
+      60965);
       /* harmony import */
 
 
       var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/role.service */
-      93135);
+      77382);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function InitiateAccountClosureComponent_tr_28_Template(rf, ctx) {
         if (rf & 1) {
@@ -2069,7 +2069,7 @@
     },
 
     /***/
-    19954:
+    17272:
     /*!*************************************************************************************************************!*\
       !*** ./src/app/views/initiate-account-closure/view-report-acc-closure/view-report-acc-closure.component.ts ***!
       \*************************************************************************************************************/
@@ -2096,13 +2096,13 @@
 
       var src_app_shared_models_FetchUserForSingleAccClosureReqDTO__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/models/FetchUserForSingleAccClosureReqDTO */
-      79434);
+      58179);
       /* harmony import */
 
 
       var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! jspdf */
-      73112);
+      75585);
       /* harmony import */
 
 
@@ -2112,7 +2112,7 @@
 
       var jspdf_autotable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! jspdf-autotable */
-      82011);
+      56587);
       /* harmony import */
 
 
@@ -2122,13 +2122,13 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var sweetalert2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! sweetalert2 */
-      73696);
+      18190);
       /* harmony import */
 
 
@@ -2138,49 +2138,49 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_account_closure_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! src/app/shared/services/account-closure-service.service */
-      30686);
+      60965);
       /* harmony import */
 
 
       var ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ng2-izitoast */
-      97385);
+      27218);
       /* harmony import */
 
 
       var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! src/app/shared/services/role.service */
-      93135);
+      77382);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
 
       function ViewReportAccClosureComponent_div_5_Template(rf, ctx) {
         if (rf & 1) {

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_roles_roles_module_ts"],{
 
-/***/ 98546:
+/***/ 50481:
 /*!**************************************************!*\
   !*** ./node_modules/angular-datatables/index.js ***!
   \**************************************************/
@@ -12,8 +12,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DataTableDirective": function() { return /* reexport safe */ _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective; },
 /* harmony export */   "DataTablesModule": function() { return /* reexport safe */ _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__.DataTablesModule; }
 /* harmony export */ });
-/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 46627);
-/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 77003);
+/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 9301);
+/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 9368);
 /**
  * @license
  *
@@ -31,7 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 46627:
+/***/ 9301:
 /*!*****************************************************************************!*\
   !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
   \*****************************************************************************/
@@ -41,7 +41,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataTableDirective": function() { return /* binding */ DataTableDirective; }
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
 /**
  * @license
  *
@@ -228,7 +228,7 @@ function () {
 
 /***/ }),
 
-/***/ 77003:
+/***/ 9368:
 /*!**************************************************************************!*\
   !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
   \**************************************************************************/
@@ -238,9 +238,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataTablesModule": function() { return /* binding */ DataTablesModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 46627);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 9301);
 /**
  * @license
  *
@@ -291,7 +291,7 @@ function () {
 
 /***/ }),
 
-/***/ 61261:
+/***/ 56900:
 /*!***********************************************!*\
   !*** ./src/app/shared/models/fmosroledata.ts ***!
   \***********************************************/
@@ -307,7 +307,7 @@ class fmosrolesdata {
 
 /***/ }),
 
-/***/ 81698:
+/***/ 82899:
 /*!***************************************!*\
   !*** ./src/app/shared/models/role.ts ***!
   \***************************************/
@@ -323,7 +323,7 @@ class Roles {
 
 /***/ }),
 
-/***/ 77021:
+/***/ 54672:
 /*!********************************************************************!*\
   !*** ./src/app/views/roles/role-details/role-details.component.ts ***!
   \********************************************************************/
@@ -333,17 +333,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RoleDetailsComponent": function() { return /* binding */ RoleDetailsComponent; }
 /* harmony export */ });
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 68465);
-/* harmony import */ var src_app_shared_models_fmosroledata__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/fmosroledata */ 61261);
-/* harmony import */ var src_app_shared_models_role__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/role */ 81698);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ 73696);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var src_app_shared_models_fmosroledata__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/fmosroledata */ 56900);
+/* harmony import */ var src_app_shared_models_role__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/role */ 82899);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ 18190);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/role.service */ 93135);
-/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/api.service */ 31781);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 869);
-/* harmony import */ var ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng2-izitoast */ 97385);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 7005);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/role.service */ 77382);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/api.service */ 94761);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng2-izitoast */ 27218);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 54364);
 
 
 
@@ -619,11 +619,11 @@ function RoleDetailsComponent_div_51_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r6.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.authStatus == "U");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.authStatus == "UNAUTHORIZED");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "C");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "CLOSE");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "O");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "OPEN");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](6, _c0));
 } }
@@ -806,16 +806,13 @@ class RoleDetailsComponent {
         this.router = router;
         this.cdr = cdr;
         this.iziToast = iziToast;
-        this.fmosRolesData = new src_app_shared_models_fmosroledata__WEBPACK_IMPORTED_MODULE_0__.fmosrolesdata();
         this.modifyRoleObject = new src_app_shared_models_role__WEBPACK_IMPORTED_MODULE_1__.Roles();
-        this.newfmostabsdata = { tabslist: [] };
         this.previouschecklist = [];
         this.checkedlist = [];
         this.screenName = [];
         this.modifyScreen = false;
         this.editFlag = false;
         this.newRolesData = new src_app_shared_models_fmosroledata__WEBPACK_IMPORTED_MODULE_0__.fmosrolesdata();
-        this.newRolestabsdata = { tabslist: [] };
         this.openBtn = true;
         this.closeBtn = true;
         this.authBtn = false;
@@ -833,7 +830,7 @@ class RoleDetailsComponent {
         this.username = localStorage.getItem('LoggedInUser').replace(/['"]+/g, '');
         this.navSubscription = this.roleService.getNavParam.subscribe(data => this.editRoleScreen = data);
         console.log(this.username);
-        this.getPermission(1, 'System Maintenance');
+        //this.getPermission(1,'System Maintenance');
         this.editFlag = false;
         this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
         console.log(this.editRoleScreen);
@@ -883,6 +880,7 @@ class RoleDetailsComponent {
             this.editFlag = true;
         }
         this.fetchdynamicroles();
+        this.roleService.fetchScreenPermissions('Roles');
     }
     preparingPermissiondto(screenlist, permissionlength) {
         let permissionlist = [];
@@ -906,73 +904,82 @@ class RoleDetailsComponent {
     getPermission(num, event) {
         console.log(num, event);
         this.btnNameSelected = event;
-        this.roleService.fetchnewscreenlabels().subscribe(data => {
-            console.log(data);
-            let permissionsarray = this.preparingPermissiondto(data.screenDto, data.labelDto.length);
-            // let permissionsarray = data.permissionDto ; // Added - Gayathri
-            this.fmosRolesData.roleDto = data.roleDto;
-            this.fmosRolesData.permissionDto = permissionsarray;
-            this.fmosRolesData.tabDto = data.tabDto;
-            this.fmosRolesData.labelDto = data.labelDto;
-            this.fmosRolesData.screenDto = data.screenDto;
-            let arrayC = [];
-            let arrayB = data.screenDto;
-            let labelsarray = data.labelDto;
-            this.screenName = this.fmosRolesData.tabDto;
-            let scrnm = [];
-            for (let n = 0; n < this.screenName.length; n++) {
-                scrnm[this.screenName[n].tabId - 1] = this.screenName[n];
-            }
-            console.log("scrnm: ", scrnm);
-            this.screenName = [];
-            console.log("scrnm 1: ", this.screenName);
-            for (let n = 0; n < scrnm.length; n++) {
-                if (scrnm[n] != undefined) {
-                    this.screenName[this.screenName.length] = scrnm[n];
-                }
-            }
-            console.log("scrName 2: ", this.screenName);
-            console.log(this.btnNameSelected);
-            if (this.btnNameSelected == null || this.btnNameSelected == undefined) {
-                this.btnNameSelected = this.screenName[0].tabName;
-            }
-            for (let tabindex = 0; tabindex < data.tabDto.length; tabindex++) {
-                let screen = [];
-                let screenslist = [];
-                let element = data.tabDto[tabindex];
-                console.log(element);
-                screenslist = this.getscreenlist(arrayB, element, permissionsarray, screen, screenslist);
-                console.log(screenslist);
-                //fetching screen list 
-                //end of fetching screen list
-                //fetching labels for screen
-                let screenvisibility = element.visibility.toString();
-                let label = [];
-                let labellist = [];
-                for (let i = 0; i < screenvisibility.length; i++) {
-                    if (screenvisibility.charAt(i) == 1) {
-                        label.push(labelsarray[i].labelName);
-                        labellist.push(labelsarray[i]);
-                    }
-                }
-                //end of fetching labels for screen
-                arrayC.push({ tabId: element.tabId, tabname: element.tabName, screens: screen, screenlist: screenslist, labels: label, labelslist: labellist });
-            }
-            console.log(arrayC);
-            this.rolessorteddata = arrayC;
-            this.newfmostabsdata.tabslist = arrayC;
-            console.log(this.newfmostabsdata.tabslist);
-            console.log(num);
-            if (num != null || num != undefined) {
-                this.rolestype(num);
-                console.log("inside If");
-            }
-            else {
-                this.rolestype(1);
-                console.log("Else");
-            }
-            //end of fetching screen for tabs
-        });
+        // this.roleService.fetchnewscreenlabels().subscribe(data => {
+        //   console.log(data);
+        //   let permissionsarray = this.preparingPermissiondto(data.screenDto, data.labelDto.length);
+        //   // let permissionsarray = data.permissionDto ; // Added - Gayathri
+        //   this.fmosRolesData.roleDto = data.roleDto;
+        //   this.fmosRolesData.permissionDto = permissionsarray;
+        //   this.fmosRolesData.tabDto = data.tabDto;
+        //   this.fmosRolesData.labelDto = data.labelDto;
+        //   this.fmosRolesData.screenDto = data.screenDto;
+        //   let arrayC = [];
+        //   let arrayB = data.screenDto;
+        //   let labelsarray = data.labelDto;
+        //   this.screenName=this.fmosRolesData.tabDto;
+        //   let scrnm :any = [];
+        //   for (let n=0; n < this.screenName.length; n++) {
+        //     scrnm[this.screenName[n].tabId-1] = this.screenName[n] ;
+        //   }
+        //   console.log("scrnm: ", scrnm);
+        //   this.screenName = [] ;
+        //   console.log("scrnm 1: ", this.screenName);
+        //   for (let n=0; n < scrnm.length; n++) {
+        //     if (scrnm[n] != undefined) {
+        //       this.screenName[this.screenName.length] = scrnm[n] ;
+        //     }
+        //   }
+        //   console.log("scrName 2: ", this.screenName);
+        //    console.log(this.btnNameSelected)
+        //    if(this.btnNameSelected==null || this.btnNameSelected==undefined){
+        //      this.btnNameSelected=this.screenName[0].tabName;
+        //    }
+        //   for (let tabindex = 0; tabindex < data.tabDto.length; tabindex++) {
+        //     let screen = [];
+        //     let screenslist = [];
+        //     let element = data.tabDto[tabindex];
+        //     console.log(element);
+        //     screenslist = this.getscreenlist(arrayB, element, permissionsarray, screen, screenslist);
+        //     console.log(screenslist);
+        //     //fetching screen list 
+        //     //end of fetching screen list
+        //     //fetching labels for screen
+        //     let screenvisibility = element.visibility.toString();
+        //     let label = [];
+        //     let labellist = [];
+        //     for (let i = 0; i < screenvisibility.length; i++) {
+        //       if (screenvisibility.charAt(i) == 1) {
+        //         label.push(labelsarray[i].labelName);
+        //         labellist.push(labelsarray[i]);
+        //       }
+        //     }
+        //     //end of fetching labels for screen
+        //     arrayC.push({tabId:element.tabId, tabname: element.tabName, screens: screen, screenlist: screenslist, labels: label, labelslist: labellist });
+        //   }
+        //   console.log(arrayC);
+        //   this.rolessorteddata = arrayC;
+        //   this.newfmostabsdata.tabslist = arrayC;
+        //   console.log( this.newfmostabsdata.tabslist)
+        //   console.log(num);
+        //   if(num!=null || num!= undefined){
+        //     this.rolestype(num);
+        //     console.log("inside If");
+        //   }
+        //   else{
+        //     this.rolestype(1);
+        //     console.log("Else");
+        //   }
+        //   //end of fetching screen for tabs
+        // });
+        console.log(num);
+        if (num != null || num != undefined) {
+            this.rolestype(num);
+            console.log("inside If");
+        }
+        else {
+            this.rolestype(1);
+            console.log("Else");
+        }
         this.roleService.fetchScreenPermissions('Roles');
     }
     // verify/authorize a user
@@ -1144,71 +1151,149 @@ class RoleDetailsComponent {
         });
     }
     fetchdynamicroles() {
-        this.roleService.fetchdynamicrolesdata(this.modifyRoleObject.roleName).subscribe(data => {
-            console.log('fetch', data);
-            this.newRolesData.roleDto = data.roleDto;
-            this.newRolesData.permissionDto = data.permissionDto;
-            this.newRolesData.tabDto = data.tabDto;
-            this.newRolesData.labelDto = data.labelDto;
-            this.newRolesData.screenDto = data.screenDto;
-            let arrayC = [];
-            let arrayB = data.screenDto;
-            let labelsarray = data.labelDto;
-            let permissionsarray = data.permissionDto;
-            console.log(this.newRolesData, "New roles Data");
-            //new code regarding old roles screens 04/08
-            if (permissionsarray && permissionsarray.length < data.screenDto.length) {
-                let initalizepermissions = '';
-                if (data.labelDto) {
-                    let labelarray = [];
-                    for (let i = 0; i < data.labelDto.length; i++) {
-                        labelarray.push(0);
+        if (this.modifyRoleObject.roleName != null) {
+            this.roleService.fetchdynamicrolesdata(this.modifyRoleObject.roleName).subscribe(data => {
+                console.log('fetch', data);
+                this.newRolesData.roleDto = data.roleDto;
+                this.newRolesData.permissionDto = data.permissionDto;
+                this.newRolesData.tabDto = data.tabDto;
+                this.newRolesData.labelDto = data.labelDto;
+                this.newRolesData.screenDto = data.screenDto;
+                let arrayC = [];
+                let arrayB = data.screenDto;
+                let labelsarray = data.labelDto;
+                let permissionsarray = data.permissionDto;
+                console.log(this.newRolesData, "New roles Data");
+                //new code regarding old roles screens 04/08
+                if (permissionsarray && permissionsarray.length < data.screenDto.length) {
+                    let initalizepermissions = '';
+                    if (data.labelDto) {
+                        let labelarray = [];
+                        for (let i = 0; i < data.labelDto.length; i++) {
+                            labelarray.push(0);
+                        }
+                        let missiongpermissions = labelarray.join("");
+                        initalizepermissions = missiongpermissions;
                     }
-                    let missiongpermissions = labelarray.join("");
-                    initalizepermissions = missiongpermissions;
-                }
-                for (let i = 0; i < data.screenDto.length; i++) {
-                    let items = data.screenDto[i];
-                    let screenindex = permissionsarray.findIndex(function (item) { return item.permissionId.screenId == items.screensId.screenId; });
-                    if (screenindex == -1) {
-                        let permissionobj = { roleName: this.modifyRoleObject.roleName, screenId: items.screensId.screenId };
-                        let obj = { permissionId: permissionobj, permissions: initalizepermissions };
-                        permissionsarray.push(obj);
-                    }
-                }
-            }
-            //end of new code regarding old roles screens 04/08
-            //fetch screens for tabs
-            // data.tabDto.forEach(function(element){
-            for (let tabindex = 0; tabindex < data.tabDto.length; tabindex++) {
-                let screen = [];
-                let screenslist = [];
-                let element = data.tabDto[tabindex];
-                screenslist = this.getscreenlist(arrayB, element, permissionsarray, screen, screenslist);
-                //fetching screen list 
-                // console.log('arrayc', screenslist);
-                //  arrayB.forEach((items) => {
-                // }) //arrayb fntn endng
-                //end of fetching screen list
-                //fetching labels for screen
-                let screenvisibility = element.visibility.toString();
-                let label = [];
-                let labellist = [];
-                for (let i = 0; i < screenvisibility.length; i++) {
-                    if (screenvisibility.charAt(i) == 1) {
-                        label.push(labelsarray[i].labelName);
-                        labellist.push(labelsarray[i]);
+                    for (let i = 0; i < data.screenDto.length; i++) {
+                        let items = data.screenDto[i];
+                        let screenindex = permissionsarray.findIndex(function (item) { return item.permissionId.screenId == items.screensId.screenId; });
+                        if (screenindex == -1) {
+                            let permissionobj = { roleName: this.modifyRoleObject.roleName, screenId: items.screensId.screenId };
+                            let obj = { permissionId: permissionobj, permissions: initalizepermissions };
+                            permissionsarray.push(obj);
+                        }
                     }
                 }
-                //end of fetching labels for screen
-                arrayC.push({ tabId: element.tabId, tabname: element.tabName, screens: screen, screenlist: screenslist, labels: label, labelslist: labellist });
-            }
-            this.rolessorteddata = arrayC;
-            this.newRolestabsdata.tabslist = arrayC;
-            this.rolestype(1);
-            console.log('arrayc', arrayC);
-            //end of fetching screen for tabs
-        });
+                this.screenName = this.newRolesData.tabDto;
+                let scrnm = [];
+                for (let n = 0; n < this.screenName.length; n++) {
+                    scrnm[this.screenName[n].tabId - 1] = this.screenName[n];
+                }
+                this.screenName = [];
+                for (let n = 0; n < scrnm.length; n++) {
+                    if (scrnm[n] != undefined) {
+                        this.screenName[this.screenName.length] = scrnm[n];
+                    }
+                }
+                console.log(this.btnNameSelected);
+                if (this.btnNameSelected == null || this.btnNameSelected == undefined) {
+                    this.btnNameSelected = this.screenName[0].tabName;
+                }
+                //end of new code regarding old roles screens 04/08
+                //fetch screens for tabs
+                // data.tabDto.forEach(function(element){
+                for (let tabindex = 0; tabindex < data.tabDto.length; tabindex++) {
+                    let screen = [];
+                    let screenslist = [];
+                    let element = data.tabDto[tabindex];
+                    screenslist = this.getscreenlist(arrayB, element, permissionsarray, screen, screenslist);
+                    //fetching screen list 
+                    // console.log('arrayc', screenslist);
+                    //  arrayB.forEach((items) => {
+                    // }) //arrayb fntn endng
+                    //end of fetching screen list
+                    //fetching labels for screen
+                    let screenvisibility = element.visibility.toString();
+                    let label = [];
+                    let labellist = [];
+                    for (let i = 0; i < screenvisibility.length; i++) {
+                        if (screenvisibility.charAt(i) == 1) {
+                            label.push(labelsarray[i].labelName);
+                            labellist.push(labelsarray[i]);
+                        }
+                    }
+                    //end of fetching labels for screen
+                    arrayC.push({ tabId: element.tabId, tabname: element.tabName, screens: screen, screenlist: screenslist, labels: label, labelslist: labellist });
+                }
+                this.rolessorteddata = arrayC;
+                // this.newRolestabsdata.tabslist = arrayC;
+                this.rolestype(1);
+                console.log('arrayc', arrayC);
+                //end of fetching screen for tabs
+            });
+        }
+        else {
+            this.roleService.fetchnewscreenlabels().subscribe(data => {
+                console.log(data);
+                let permissionsarray = this.preparingPermissiondto(data.screenDto, data.labelDto.length);
+                // let permissionsarray = data.permissionDto ; // Added - Gayathri
+                this.newRolesData.roleDto = data.roleDto;
+                this.newRolesData.permissionDto = permissionsarray;
+                this.newRolesData.tabDto = data.tabDto;
+                this.newRolesData.labelDto = data.labelDto;
+                this.newRolesData.screenDto = data.screenDto;
+                let arrayC = [];
+                let arrayB = data.screenDto;
+                let labelsarray = data.labelDto;
+                this.screenName = this.newRolesData.tabDto;
+                let scrnm = [];
+                for (let n = 0; n < this.screenName.length; n++) {
+                    scrnm[this.screenName[n].tabId - 1] = this.screenName[n];
+                }
+                console.log("scrnm: ", scrnm);
+                this.screenName = [];
+                console.log("scrnm 1: ", this.screenName);
+                for (let n = 0; n < scrnm.length; n++) {
+                    if (scrnm[n] != undefined) {
+                        this.screenName[this.screenName.length] = scrnm[n];
+                    }
+                }
+                console.log("scrName 2: ", this.screenName);
+                console.log(this.btnNameSelected);
+                if (this.btnNameSelected == null || this.btnNameSelected == undefined) {
+                    this.btnNameSelected = this.screenName[0].tabName;
+                }
+                for (let tabindex = 0; tabindex < data.tabDto.length; tabindex++) {
+                    let screen = [];
+                    let screenslist = [];
+                    let element = data.tabDto[tabindex];
+                    console.log(element);
+                    screenslist = this.getscreenlist(arrayB, element, permissionsarray, screen, screenslist);
+                    console.log(screenslist);
+                    //fetching screen list 
+                    //end of fetching screen list
+                    //fetching labels for screen
+                    let screenvisibility = element.visibility.toString();
+                    let label = [];
+                    let labellist = [];
+                    for (let i = 0; i < screenvisibility.length; i++) {
+                        if (screenvisibility.charAt(i) == 1) {
+                            label.push(labelsarray[i].labelName);
+                            labellist.push(labelsarray[i]);
+                        }
+                    }
+                    //end of fetching labels for screen
+                    arrayC.push({ tabId: element.tabId, tabname: element.tabName, screens: screen, screenlist: screenslist, labels: label, labelslist: labellist });
+                }
+                console.log(arrayC);
+                this.rolessorteddata = arrayC;
+                // this.newfmostabsdata.tabslist = arrayC;
+                // console.log( this.newfmostabsdata.tabslist);
+                this.rolestype(1);
+                //end of fetching screen for tabs
+            });
+        }
     }
     getscreenlist(arrayB, element, permissionsarray, screen, screenslist) {
         /* arrayB.forEach((items) => {
@@ -1237,20 +1322,24 @@ class RoleDetailsComponent {
     rolestype(tabId) {
         console.log(tabId);
         console.log(this.modifyRoleObject.roleName);
-        console.log(this.newRolestabsdata.tabslist);
+        console.log(this.rolessorteddata);
         let index;
-        if (this.modifyRoleObject.roleName != null) {
-            index = this.newRolestabsdata.tabslist.findIndex(function (item) { return item.tabId == tabId; });
-            console.log(index);
-            this.selectedtab = this.newRolestabsdata.tabslist[index].tabname;
-            this.indexdata = this.newRolestabsdata.tabslist[index];
-        }
-        else {
-            index = this.newfmostabsdata.tabslist.findIndex(function (item) { return item.tabId == tabId; });
-            console.log(index);
-            this.selectedtab = this.newfmostabsdata.tabslist[index].tabname;
-            this.indexdata = this.newfmostabsdata.tabslist[index];
-        }
+        //   if(this.modifyRoleObject.roleName!=null ){
+        //     index = this.newRolestabsdata.tabslist.findIndex(function (item) { return item.tabId == tabId });
+        //     console.log(index);
+        //     this.selectedtab = this.newRolestabsdata.tabslist[index].tabname;
+        //     this.indexdata = this.newRolestabsdata.tabslist[index];
+        //     }
+        //  else{
+        //     index = this.newfmostabsdata.tabslist.findIndex(function (item) { return item.tabId == tabId });
+        //     console.log(index);
+        //     this.selectedtab = this.newfmostabsdata.tabslist[index].tabname;
+        //     this.indexdata = this.newfmostabsdata.tabslist[index];
+        //     }
+        index = this.rolessorteddata.findIndex(function (item) { return item.tabId == tabId; });
+        console.log(index);
+        this.selectedtab = this.rolessorteddata[index].tabname;
+        this.indexdata = this.rolessorteddata[index];
         let tabheaders = this.indexdata.labels;
         let indexval = tabheaders.indexOf('Screens');
         this.previouschecklist.splice(index, 0, this.checkedlist);
@@ -1339,11 +1428,14 @@ class RoleDetailsComponent {
             let screenoccurence = this.rolessorteddata[i].screenlist;
             for (let ind = 0; ind < screenoccurence.length; ind++) {
                 //if (screenoccurence[ind].permission.toString() != screenoccurence[ind].newpermission.toString()) {
-                let gettabindex = this.fmosRolesData.permissionDto.findIndex(function (item) { return item.permissionId.screenId == screenoccurence[ind].screenid; });
+                // let gettabindex = this.fmosRolesData.permissionDto.findIndex(function (item) { return item.permissionId.screenId == screenoccurence[ind].screenid });
+                let gettabindex = this.newRolesData.permissionDto.findIndex(function (item) { return item.permissionId.screenId == screenoccurence[ind].screenid; });
                 // console.log(gettabindex);
                 if (gettabindex >= 0) {
-                    this.fmosRolesData.permissionDto[gettabindex].permissionId.roleName = this.modifyRoleObject.roleName;
-                    let obj = { 'permissionId': this.fmosRolesData.permissionDto[gettabindex].permissionId };
+                    // this.fmosRolesData.permissionDto[gettabindex].permissionId.roleName =  this.modifyRoleObject.roleName;
+                    // let obj = { 'permissionId': this.fmosRolesData.permissionDto[gettabindex].permissionId };
+                    this.newRolesData.permissionDto[gettabindex].permissionId.roleName = this.modifyRoleObject.roleName;
+                    let obj = { 'permissionId': this.newRolesData.permissionDto[gettabindex].permissionId };
                     obj["permissions"] = screenoccurence[ind].newpermission;
                     permissionslist.push(obj);
                     // console.log(permissionslist);
@@ -1471,6 +1563,7 @@ class RoleDetailsComponent {
                 console.log(roles, "Roles");
                 console.log(action, "action");
                 console.log(event, "event");
+                console.log(this.rolessorteddata);
             }
         }
     }
@@ -1595,7 +1688,7 @@ RoleDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 88094:
+/***/ 19694:
 /*!**************************************************************!*\
   !*** ./src/app/views/roles/role-list/role-list.component.ts ***!
   \**************************************************************/
@@ -1605,14 +1698,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RoleListComponent": function() { return /* binding */ RoleListComponent; }
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 30759);
-/* harmony import */ var src_app_shared_models_role__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/role */ 81698);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 1858);
-/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/services/api.service */ 31781);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 869);
-/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/role.service */ 93135);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-datatables */ 98546);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 7005);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 79441);
+/* harmony import */ var src_app_shared_models_role__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/role */ 82899);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/services/api.service */ 94761);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/role.service */ 77382);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 54364);
 
 
 
@@ -1791,7 +1884,7 @@ RoleListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4
 
 /***/ }),
 
-/***/ 83292:
+/***/ 47236:
 /*!*****************************************************!*\
   !*** ./src/app/views/roles/roles-routing.module.ts ***!
   \*****************************************************/
@@ -1801,10 +1894,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RolesRoutingModule": function() { return /* binding */ RolesRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 869);
-/* harmony import */ var _role_details_role_details_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./role-details/role-details.component */ 77021);
-/* harmony import */ var _role_list_role_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./role-list/role-list.component */ 88094);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _role_details_role_details_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./role-details/role-details.component */ 54672);
+/* harmony import */ var _role_list_role_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./role-list/role-list.component */ 19694);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 
@@ -1832,7 +1925,7 @@ RolesRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 30788:
+/***/ 57445:
 /*!*********************************************!*\
   !*** ./src/app/views/roles/roles.module.ts ***!
   \*********************************************/
@@ -1842,14 +1935,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RolesModule": function() { return /* binding */ RolesModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 7005);
-/* harmony import */ var _roles_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./roles-routing.module */ 83292);
-/* harmony import */ var _role_list_role_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./role-list/role-list.component */ 88094);
-/* harmony import */ var _role_details_role_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./role-details/role-details.component */ 77021);
-/* harmony import */ var src_app_shared_components_components_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/components/components.module */ 60795);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-datatables */ 98546);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 68465);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 1858);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _roles_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./roles-routing.module */ 47236);
+/* harmony import */ var _role_list_role_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./role-list/role-list.component */ 19694);
+/* harmony import */ var _role_details_role_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./role-details/role-details.component */ 54672);
+/* harmony import */ var src_app_shared_components_components_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/components/components.module */ 15626);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
 

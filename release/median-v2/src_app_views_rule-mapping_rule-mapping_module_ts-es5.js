@@ -9,7 +9,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_rule-mapping_rule-mapping_module_ts"], {
     /***/
-    5999:
+    7622:
     /*!*****************************************************************************************!*\
       !*** ./src/app/views/rule-mapping/rule-mapping-create/rule-mapping-create.component.ts ***!
       \*****************************************************************************************/
@@ -60,37 +60,37 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/rule.service */
-      47819);
+      50511);
       /* harmony import */
 
 
       var src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/add-system.service */
-      96119);
+      91973);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function RuleMappingCreateComponent_option_17_Template(rf, ctx) {
         if (rf & 1) {
@@ -1250,7 +1250,7 @@
     },
 
     /***/
-    92421:
+    50531:
     /*!*******************************************************************************************!*\
       !*** ./src/app/views/rule-mapping/rule-mapping-details/rule-mapping-details.component.ts ***!
       \*******************************************************************************************/
@@ -1301,43 +1301,43 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/rule.service */
-      47819);
+      50511);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/add-system.service */
-      96119);
+      91973);
       /* harmony import */
 
 
       var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
-      78735);
+      31443);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function RuleMappingDetailsComponent_div_63_ng_container_2_ng_container_10_option_4_Template(rf, ctx) {
         if (rf & 1) {
@@ -2981,7 +2981,7 @@
     },
 
     /***/
-    28785:
+    9216:
     /*!*******************************************************************!*\
       !*** ./src/app/views/rule-mapping/rule-mapping-routing.module.ts ***!
       \*******************************************************************/
@@ -3008,31 +3008,31 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./rule-mapping-create/rule-mapping-create.component */
-      5999);
+      7622);
       /* harmony import */
 
 
       var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./rule-mapping-details/rule-mapping-details.component */
-      92421);
+      50531);
       /* harmony import */
 
 
       var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./rule-mapping/rule-mapping.component */
-      75088);
+      10245);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var routes = [{
         path: 'create',
@@ -3071,7 +3071,7 @@
     },
 
     /***/
-    91079:
+    8690:
     /*!***********************************************************!*\
       !*** ./src/app/views/rule-mapping/rule-mapping.module.ts ***!
       \***********************************************************/
@@ -3098,49 +3098,49 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _rule_mapping_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./rule-mapping-routing.module */
-      28785);
+      9216);
       /* harmony import */
 
 
       var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./rule-mapping/rule-mapping.component */
-      75088);
+      10245);
       /* harmony import */
 
 
       var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./rule-mapping-details/rule-mapping-details.component */
-      92421);
+      50531);
       /* harmony import */
 
 
       var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./rule-mapping-create/rule-mapping-create.component */
-      5999);
+      7622);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _RuleMappingModule = /*#__PURE__*/_createClass(function _RuleMappingModule() {
         _classCallCheck(this, _RuleMappingModule);
@@ -3168,7 +3168,7 @@
     },
 
     /***/
-    75088:
+    10245:
     /*!***************************************************************************!*\
       !*** ./src/app/views/rule-mapping/rule-mapping/rule-mapping.component.ts ***!
       \***************************************************************************/
@@ -3195,43 +3195,43 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/rule.service */
-      47819);
+      50511);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/add-system.service */
-      96119);
+      91973);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function RuleMappingComponent_tr_26_Template(rf, ctx) {
         if (rf & 1) {

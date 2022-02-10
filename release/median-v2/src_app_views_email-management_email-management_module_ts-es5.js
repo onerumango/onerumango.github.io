@@ -9,7 +9,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_email-management_email-management_module_ts"], {
     /***/
-    98546:
+    50481:
     /*!**************************************************!*\
       !*** ./node_modules/angular-datatables/index.js ***!
       \**************************************************/
@@ -44,13 +44,13 @@
 
       var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./src/angular-datatables.directive */
-      46627);
+      9301);
       /* harmony import */
 
 
       var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./src/angular-datatables.module */
-      77003);
+      9368);
       /**
        * @license
        *
@@ -69,7 +69,7 @@
     },
 
     /***/
-    46627:
+    9301:
     /*!*****************************************************************************!*\
       !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
       \*****************************************************************************/
@@ -96,7 +96,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /**
        * @license
        *
@@ -281,7 +281,7 @@
     },
 
     /***/
-    77003:
+    9368:
     /*!**************************************************************************!*\
       !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
       \**************************************************************************/
@@ -308,19 +308,19 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./angular-datatables.directive */
-      46627);
+      9301);
       /**
        * @license
        *
@@ -368,7 +368,7 @@
     },
 
     /***/
-    26834:
+    53933:
     /*!************************************************!*\
       !*** ./src/app/shared/models/EmailAuditLog.ts ***!
       \************************************************/
@@ -399,7 +399,7 @@
     },
 
     /***/
-    5074:
+    5515:
     /*!*********************************************************************!*\
       !*** ./src/app/shared/services/account-blocking-service.service.ts ***!
       \*********************************************************************/
@@ -434,25 +434,25 @@
 
       var _config_app_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../config/app.constant */
-      91486);
+      3118);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! rxjs */
-      97361);
+      76491);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common/http */
-      33549);
+      53882);
 
       var _API_URL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
 
@@ -539,7 +539,7 @@
     },
 
     /***/
-    14234:
+    60664:
     /*!*****************************************************************************************************!*\
       !*** ./src/app/views/email-management/email-management-create/email-management-create.component.ts ***!
       \*****************************************************************************************************/
@@ -566,49 +566,49 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var src_app_shared_models_EmailAuditLog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/models/EmailAuditLog */
-      26834);
+      53933);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_account_blocking_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/account-blocking-service.service */
-      5074);
+      5515);
       /* harmony import */
 
 
       var _users_users_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../../users/users.service */
-      69358);
+      59119);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var ng2_izitoast__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ng2-izitoast */
-      97385);
+      27218);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function EmailManagementCreateComponent_div_15_div_1_Template(rf, ctx) {
         if (rf & 1) {
@@ -1968,7 +1968,7 @@
     },
 
     /***/
-    20829:
+    1232:
     /*!***************************************************************************!*\
       !*** ./src/app/views/email-management/email-management-routing.module.ts ***!
       \***************************************************************************/
@@ -1995,25 +1995,25 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _email_management_create_email_management_create_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./email-management-create/email-management-create.component */
-      14234);
+      60664);
       /* harmony import */
 
 
       var _email_management_email_management_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./email-management/email-management.component */
-      78157);
+      33753);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var routes = [{
         path: "",
@@ -2049,7 +2049,7 @@
     },
 
     /***/
-    23505:
+    81089:
     /*!*******************************************************************!*\
       !*** ./src/app/views/email-management/email-management.module.ts ***!
       \*******************************************************************/
@@ -2076,43 +2076,43 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _email_management_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./email-management-routing.module */
-      20829);
+      1232);
       /* harmony import */
 
 
       var _email_management_email_management_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./email-management/email-management.component */
-      78157);
+      33753);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _email_management_create_email_management_create_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./email-management-create/email-management-create.component */
-      14234);
+      60664);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
-      68465);
+      1707);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _EmailManagementModule = /*#__PURE__*/_createClass(function _EmailManagementModule() {
         _classCallCheck(this, _EmailManagementModule);
@@ -2140,7 +2140,7 @@
     },
 
     /***/
-    78157:
+    33753:
     /*!***************************************************************************************!*\
       !*** ./src/app/views/email-management/email-management/email-management.component.ts ***!
       \***************************************************************************************/
@@ -2167,43 +2167,43 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_account_blocking_service_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! src/app/shared/services/account-blocking-service.service */
-      5074);
+      5515);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/user.service */
-      18736);
+      98613);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
 
       function EmailManagementComponent_tr_20_Template(rf, ctx) {
         if (rf & 1) {

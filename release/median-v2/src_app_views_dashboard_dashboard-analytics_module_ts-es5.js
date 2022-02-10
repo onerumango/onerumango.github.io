@@ -9,7 +9,7 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_dashboard_dashboard-analytics_module_ts"], {
     /***/
-    98546:
+    50481:
     /*!**************************************************!*\
       !*** ./node_modules/angular-datatables/index.js ***!
       \**************************************************/
@@ -44,13 +44,13 @@
 
       var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./src/angular-datatables.directive */
-      46627);
+      9301);
       /* harmony import */
 
 
       var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./src/angular-datatables.module */
-      77003);
+      9368);
       /**
        * @license
        *
@@ -69,7 +69,7 @@
     },
 
     /***/
-    46627:
+    9301:
     /*!*****************************************************************************!*\
       !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
       \*****************************************************************************/
@@ -96,7 +96,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /**
        * @license
        *
@@ -281,7 +281,7 @@
     },
 
     /***/
-    77003:
+    9368:
     /*!**************************************************************************!*\
       !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
       \**************************************************************************/
@@ -308,19 +308,19 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./angular-datatables.directive */
-      46627);
+      9301);
       /**
        * @license
        *
@@ -368,7 +368,7 @@
     },
 
     /***/
-    51069:
+    55141:
     /*!****************************************************!*\
       !*** ./node_modules/highcharts/highcharts-more.js ***!
       \****************************************************/
@@ -386,7 +386,7 @@
       (function (d) {
         true && module.exports ? (d["default"] = d, module.exports = d) : true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(
         /*! highcharts */
-        1290)], __WEBPACK_AMD_DEFINE_RESULT__ = function (A) {
+        54668)], __WEBPACK_AMD_DEFINE_RESULT__ = function (A) {
           d(A);
           d.Highcharts = A;
           return d;
@@ -4920,7 +4920,7 @@
     },
 
     /***/
-    1290:
+    54668:
     /*!***********************************************!*\
       !*** ./node_modules/highcharts/highcharts.js ***!
       \***********************************************/
@@ -18488,7 +18488,7 @@
     },
 
     /***/
-    27380:
+    33995:
     /*!**************************************************!*\
       !*** ./node_modules/highcharts/modules/boost.js ***!
       \**************************************************/
@@ -18508,7 +18508,7 @@
       (function (a) {
         true && module.exports ? (a["default"] = a, module.exports = a) : true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(
         /*! highcharts */
-        1290)], __WEBPACK_AMD_DEFINE_RESULT__ = function (u) {
+        54668)], __WEBPACK_AMD_DEFINE_RESULT__ = function (u) {
           a(u);
           a.Highcharts = u;
           return a;
@@ -20106,7 +20106,7 @@
     },
 
     /***/
-    54296:
+    61394:
     /*!***************************************************************!*\
       !*** ./node_modules/highcharts/modules/no-data-to-display.js ***!
       \***************************************************************/
@@ -20126,7 +20126,7 @@
       (function (a) {
         true && module.exports ? (a["default"] = a, module.exports = a) : true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(
         /*! highcharts */
-        1290)], __WEBPACK_AMD_DEFINE_RESULT__ = function (b) {
+        54668)], __WEBPACK_AMD_DEFINE_RESULT__ = function (b) {
           a(b);
           a.Highcharts = b;
           return a;
@@ -20193,7 +20193,7 @@
     },
 
     /***/
-    25740:
+    7598:
     /*!***********************************************************************!*\
       !*** ./src/app/views/dashboard/dashboard-analytics-routing.module.ts ***!
       \***********************************************************************/
@@ -20220,19 +20220,19 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/router */
-      869);
+      71258);
       /* harmony import */
 
 
       var _dashboard_analytics_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./dashboard-analytics.component */
-      76163);
+      79730);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var routes = [{
         path: '',
@@ -20265,7 +20265,7 @@
     },
 
     /***/
-    76163:
+    79730:
     /*!******************************************************************!*\
       !*** ./src/app/views/dashboard/dashboard-analytics.component.ts ***!
       \******************************************************************/
@@ -20300,7 +20300,7 @@
 
       var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! highcharts */
-      1290);
+      54668);
       /* harmony import */
 
 
@@ -20310,31 +20310,31 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs */
-      30759);
+      79441);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
       /* harmony import */
 
 
       var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
-      31781);
+      94761);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
 
       function DashboardAnalyticsComponent_span_21_Template(rf, ctx) {
         if (rf & 1) {
@@ -20470,15 +20470,15 @@
 
       var Boost = __webpack_require__(
       /*! highcharts/modules/boost */
-      27380);
+      33995);
 
       var noData = __webpack_require__(
       /*! highcharts/modules/no-data-to-display */
-      54296);
+      61394);
 
       var More = __webpack_require__(
       /*! highcharts/highcharts-more */
-      51069);
+      55141);
 
       Boost(highcharts__WEBPACK_IMPORTED_MODULE_0__);
       noData(highcharts__WEBPACK_IMPORTED_MODULE_0__);
@@ -21025,7 +21025,7 @@
     },
 
     /***/
-    12870:
+    11164:
     /*!***************************************************************!*\
       !*** ./src/app/views/dashboard/dashboard-analytics.module.ts ***!
       \***************************************************************/
@@ -21052,31 +21052,31 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/common */
-      7005);
+      54364);
       /* harmony import */
 
 
       var _dashboard_analytics_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./dashboard-analytics-routing.module */
-      25740);
+      7598);
       /* harmony import */
 
 
       var _dashboard_analytics_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./dashboard-analytics.component */
-      76163);
+      79730);
       /* harmony import */
 
 
       var angular_datatables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! angular-datatables */
-      98546);
+      50481);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      1858);
+      2316);
 
       var _DashboardAnalyticsModule = /*#__PURE__*/_createClass(function _DashboardAnalyticsModule() {
         _classCallCheck(this, _DashboardAnalyticsModule);
