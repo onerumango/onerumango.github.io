@@ -4771,22 +4771,38 @@
         }, {
           key: "next",
           value: function next(value) {
+            var _this3 = this;
+
             if (value === "basicConfiguration") {
-              if (this.basicInfoForm.value.messsageType == 'I') {
-                this.messageType = "Incoming";
-              }
+              this.addSystem.validateCode(this.basicInfoForm.value.systemCode).subscribe(function (result) {
+                console.log(result);
+                _this3.isSysCodeAlreadyExist = result.exists;
+                _this3.sysCodeError = result.response;
 
-              if (this.basicInfoForm.value.messsageType == 'O') {
-                this.messageType = "Outgoing";
-              }
+                if (_this3.isSysCodeAlreadyExist === true) {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                    title: _this3.sysCodeError + ' !',
+                    icon: 'error'
+                  });
+                  return;
+                } else {
+                  if (_this3.basicInfoForm.value.messsageType == 'I') {
+                    _this3.messageType = "Incoming";
+                  }
 
-              this.basicConfiguration = false;
-              this.messageConfiguration = true;
-              this.incomingMessageConfiguration = false;
-              this.xml = false;
-              this.mdbXml = false;
-              this.incomingMdbXml = false;
-              this.dbConnection = false;
+                  if (_this3.basicInfoForm.value.messsageType == 'O') {
+                    _this3.messageType = "Outgoing";
+                  }
+
+                  _this3.basicConfiguration = false;
+                  _this3.messageConfiguration = true;
+                  _this3.incomingMessageConfiguration = false;
+                  _this3.xml = false;
+                  _this3.mdbXml = false;
+                  _this3.incomingMdbXml = false;
+                  _this3.dbConnection = false;
+                }
+              });
             }
 
             if (value === "messageConfiguration" && this.basicInfoForm.value.messsageType !== 'A') {
@@ -5072,7 +5088,7 @@
         }, {
           key: "submit2",
           value: function submit2() {
-            var _this3 = this;
+            var _this4 = this;
 
             if (this.tcpForm.value.sysService.some(function (sysService) {
               return sysService['headerTag'] === 'OPERATION';
@@ -5090,7 +5106,7 @@
               if (this.index) {
                 this.addSystem.editaddsystem("update", this.currentUser, obj_test).subscribe(function (addSysResp) {
                   if (addSysResp) {
-                    _this3.submitFlag = false;
+                    _this4.submitFlag = false;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       text: 'Data Updated Successfully!'
                     });
@@ -5099,7 +5115,7 @@
               } else {
                 this.addSystem.submittingAddSystem(obj_test, this.currentUser).subscribe(function (addSysResp) {
                   if (addSysResp) {
-                    _this3.submitFlag = false;
+                    _this4.submitFlag = false;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       text: 'Record saved successfully'
                     });
@@ -5115,23 +5131,23 @@
         }, {
           key: "fetchingIso",
           value: function fetchingIso() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.addSystem.fetchingIsoForTcp().subscribe(function (isoResp) {
-              _this4.isoRespData = isoResp;
+              _this5.isoRespData = isoResp;
 
               if (isoResp) {
-                _this4.messageBasisIso = isoResp.map(function (data) {
+                _this5.messageBasisIso = isoResp.map(function (data) {
                   return data.fieldName;
                 }); // for dropdown 1
 
-                _this4.messageKeyIso = isoResp.map(function (data) {
+                _this5.messageKeyIso = isoResp.map(function (data) {
                   return data.fieldNo;
                 });
-                _this4.typeDataIso = isoResp.map(function (data) {
+                _this5.typeDataIso = isoResp.map(function (data) {
                   return data.dataType;
                 });
-                _this4.headerValueIso = isoResp.map(function (data) {
+                _this5.headerValueIso = isoResp.map(function (data) {
                   return data.headerValue;
                 });
               }
@@ -5140,23 +5156,23 @@
         }, {
           key: "fetchingIso1",
           value: function fetchingIso1() {
-            var _this5 = this;
+            var _this6 = this;
 
             this.addSystem.fetchingIsoForTcp().subscribe(function (isoResp) {
-              _this5.isoRespData1 = isoResp;
+              _this6.isoRespData1 = isoResp;
 
               if (isoResp) {
-                _this5.messageBasisIso1 = isoResp.map(function (data) {
+                _this6.messageBasisIso1 = isoResp.map(function (data) {
                   return data.fieldName;
                 }); // for dropdown 1
 
-                _this5.messageKeyIso1 = isoResp.map(function (data) {
+                _this6.messageKeyIso1 = isoResp.map(function (data) {
                   return data.fieldNo;
                 });
-                _this5.typeDataIso1 = isoResp.map(function (data) {
+                _this6.typeDataIso1 = isoResp.map(function (data) {
                   return data.dataType;
                 });
-                _this5.headerValueIso1 = isoResp.map(function (data) {
+                _this6.headerValueIso1 = isoResp.map(function (data) {
                   return data.headerValue;
                 });
               }
@@ -5165,22 +5181,22 @@
         }, {
           key: "fetchingXMl",
           value: function fetchingXMl() {
-            var _this6 = this;
+            var _this7 = this;
 
             this.addSystem.gettinXMLmsgIncoming().subscribe(function (xmlResp) {
-              _this6.xmlRespData = xmlResp;
+              _this7.xmlRespData = xmlResp;
 
               if (xmlResp) {
-                _this6.messageBasisIso = xmlResp.map(function (data) {
+                _this7.messageBasisIso = xmlResp.map(function (data) {
                   return data.messageBasis;
                 });
-                _this6.messageKeyIso = xmlResp.map(function (data) {
+                _this7.messageKeyIso = xmlResp.map(function (data) {
                   return data.messageKey;
                 });
-                _this6.typeDataIso = xmlResp.map(function (data) {
+                _this7.typeDataIso = xmlResp.map(function (data) {
                   return data.dataType;
                 });
-                _this6.headerValueIso = xmlResp.map(function (data) {
+                _this7.headerValueIso = xmlResp.map(function (data) {
                   return data.headerValue;
                 });
               }
@@ -5196,22 +5212,22 @@
         }, {
           key: "fetchingXMl1",
           value: function fetchingXMl1() {
-            var _this7 = this;
+            var _this8 = this;
 
             this.addSystem.gettinXMLmsgIncoming().subscribe(function (xmlResp) {
-              _this7.xmlRespData1 = xmlResp;
+              _this8.xmlRespData1 = xmlResp;
 
               if (xmlResp) {
-                _this7.messageBasisIso = xmlResp.map(function (data) {
+                _this8.messageBasisIso = xmlResp.map(function (data) {
                   return data.messageBasis;
                 });
-                _this7.messageKeyIso = xmlResp.map(function (data) {
+                _this8.messageKeyIso = xmlResp.map(function (data) {
                   return data.messageKey;
                 });
-                _this7.typeDataIso = xmlResp.map(function (data) {
+                _this8.typeDataIso = xmlResp.map(function (data) {
                   return data.dataType;
                 });
-                _this7.headerValueIso = xmlResp.map(function (data) {
+                _this8.headerValueIso = xmlResp.map(function (data) {
                   return data.headerValue;
                 });
               }
@@ -5238,10 +5254,10 @@
         }, {
           key: "fetchingHeadertag",
           value: function fetchingHeadertag() {
-            var _this8 = this;
+            var _this9 = this;
 
             this.addSystem.fetchingHeaderTag().subscribe(function (resp) {
-              _this8.headerTagData = resp;
+              _this9.headerTagData = resp;
             });
           }
         }, {
@@ -5257,7 +5273,7 @@
         }, {
           key: "uploadFileXml",
           value: function uploadFileXml(event) {
-            var _this9 = this;
+            var _this10 = this;
 
             this.selectedFiles = event.target.files;
             this.sizeOfFile = this.selectedFiles.item(0).size;
@@ -5265,20 +5281,20 @@
             this.fileName = this.currentFileUpload.name;
             this.addSystem.gettingHederofXMl(this.currentFileUpload).subscribe(function (xmlResp) {
               if (xmlResp) {
-                _this9.uploadXmlResp = xmlResp;
-                _this9.messageBasisIso = xmlResp.nodeTagList;
-                _this9.xmlRespData = xmlResp.nodeTagList;
+                _this10.uploadXmlResp = xmlResp;
+                _this10.messageBasisIso = xmlResp.nodeTagList;
+                _this10.xmlRespData = xmlResp.nodeTagList;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: 'File Uploaded Successfully'
                 });
-                _this9.fileUploadClick = false;
+                _this10.fileUploadClick = false;
               }
             });
           }
         }, {
           key: "uploadFileXml1",
           value: function uploadFileXml1(event) {
-            var _this10 = this;
+            var _this11 = this;
 
             this.selectedFiles1 = event.target.files;
             this.sizeOfFile1 = this.selectedFiles1.item(0).size;
@@ -5286,23 +5302,23 @@
             this.fileName1 = this.currentFileUpload1.name;
             this.addSystem.gettingHederofXMl(this.currentFileUpload1).subscribe(function (xmlResp) {
               if (xmlResp) {
-                _this10.uploadXmlResp1 = xmlResp;
-                _this10.messageBasisIso1 = xmlResp.nodeTagList;
-                _this10.xmlRespData1 = xmlResp.nodeTagList;
+                _this11.uploadXmlResp1 = xmlResp;
+                _this11.messageBasisIso1 = xmlResp.nodeTagList;
+                _this11.xmlRespData1 = xmlResp.nodeTagList;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: 'File Uploaded Successfully'
                 });
-                _this10.fileUploadClickAll = false;
+                _this11.fileUploadClickAll = false;
               }
             });
           }
         }, {
           key: "onselectingTag",
           value: function onselectingTag(event, i) {
-            var _this11 = this;
+            var _this12 = this;
 
             var result = Object.keys(this.uploadXmlResp.nodeValueMap).map(function (key) {
-              return [key, _this11.uploadXmlResp.nodeValueMap[key]];
+              return [key, _this12.uploadXmlResp.nodeValueMap[key]];
             });
             var x = result.find(function (item) {
               return item[0] == event.target.value;
@@ -5312,10 +5328,10 @@
         }, {
           key: "onselectingTag1",
           value: function onselectingTag1(event, i) {
-            var _this12 = this;
+            var _this13 = this;
 
             var result = Object.keys(this.uploadXmlResp1.nodeValueMap).map(function (key) {
-              return [key, _this12.uploadXmlResp1.nodeValueMap[key]];
+              return [key, _this13.uploadXmlResp1.nodeValueMap[key]];
             });
             var x = result.find(function (item) {
               return item[0] == event.target.value;
@@ -5325,7 +5341,7 @@
         }, {
           key: "uploadFileXmlOut",
           value: function uploadFileXmlOut(event) {
-            var _this13 = this;
+            var _this14 = this;
 
             this.selectedFiles = event.target.files;
             this.sizeOfFile = this.selectedFiles.item(0).size;
@@ -5333,15 +5349,15 @@
             this.fileNameOut = this.currentFileUpload.name;
             this.addSystem.gettingHederofXMl(this.currentFileUpload).subscribe(function (xmlResp) {
               if (xmlResp) {
-                _this13.uploadXmlResp = xmlResp;
-                _this13.messageBasisIso = xmlResp.nodeTagList;
+                _this14.uploadXmlResp = xmlResp;
+                _this14.messageBasisIso = xmlResp.nodeTagList;
               }
             }, function (err) {});
           }
         }, {
           key: "submitAll",
           value: function submitAll() {
-            var _this14 = this;
+            var _this15 = this;
 
             if (this.tcpForm.value.sysService.some(function (sysService) {
               return sysService['headerTag'] === 'OPERATION';
@@ -5363,7 +5379,7 @@
               console.log("obj_test ", obj_test);
               this.addSystem.submittingAddSystem(obj_test, this.currentUser).subscribe(function (addSysResp) {
                 if (addSysResp) {
-                  _this14.submitFlagAll = false;
+                  _this15.submitFlagAll = false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                     text: 'Data Saved Successfully!.'
                   });
@@ -5595,21 +5611,27 @@
             this.dtOptions = {
               pagingType: 'full_numbers',
               pageLength: 5,
+              columnDefs: [{
+                type: 'date',
+                'targets': [5]
+              }],
+              order: [[5, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
+              // order: [[5, 'desc']],
+
             };
             this.getDataForMonitor();
           }
         }, {
           key: "getDataForMonitor",
           value: function getDataForMonitor() {
-            var _this15 = this;
+            var _this16 = this;
 
             this.apiService.fecthingAddSystem().subscribe(function (dataresp) {
-              console.log(dataresp);
-              _this15.respArray = dataresp;
+              _this16.respArray = dataresp;
 
-              _this15.dtTrigger.next();
+              _this16.dtTrigger.next();
             });
           }
         }, {

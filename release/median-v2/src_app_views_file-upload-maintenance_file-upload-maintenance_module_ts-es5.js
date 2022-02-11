@@ -2020,6 +2020,10 @@
             if (this.externalSystemResponse.verifiedOnce === 'N') {
               this.externalSystemResponse.verifiedOnce = 'NO';
             }
+
+            if (this.externalSystemResponse.verifiedOnce === 'Y') {
+              this.externalSystemResponse.verifiedOnce = 'YES';
+            }
           }
         }, {
           key: "onSubmit",
@@ -2040,10 +2044,12 @@
                 });
 
                 _this10.auditLog();
+
+                _this10.externalSystemForm.reset();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Failed to Save Data!',
-                  icon: 'error'
+                  text: 'Given External System Code/External System Already Present!',
+                  icon: 'warning'
                 });
               }
             }, function (error) {

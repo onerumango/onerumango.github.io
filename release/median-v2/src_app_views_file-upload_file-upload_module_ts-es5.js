@@ -2098,9 +2098,23 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](5, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](6);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtextInterpolate"](ctx_r5.selectedFiles[0].name);
         }
       }
 
@@ -3053,7 +3067,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](35, FileUploadComponent_div_35_Template, 4, 0, "div", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](36, FileUploadComponent_div_36_Template, 5, 0, "div", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](36, FileUploadComponent_div_36_Template, 7, 1, "div", 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 

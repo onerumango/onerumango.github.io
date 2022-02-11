@@ -1179,6 +1179,9 @@ class ExternalSystemNewComponent {
         if (this.externalSystemResponse.verifiedOnce === 'N') {
             this.externalSystemResponse.verifiedOnce = 'NO';
         }
+        if (this.externalSystemResponse.verifiedOnce === 'Y') {
+            this.externalSystemResponse.verifiedOnce = 'YES';
+        }
     }
     onSubmit(externalSystemFormValue) {
         this.externalSystem.extSysCode = externalSystemFormValue.extSysCode;
@@ -1193,11 +1196,12 @@ class ExternalSystemNewComponent {
                     icon: 'success'
                 });
                 this.auditLog();
+                this.externalSystemForm.reset();
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'Failed to Save Data!',
-                    icon: 'error'
+                    text: 'Given External System Code/External System Already Present!',
+                    icon: 'warning'
                 });
             }
         }, error => {

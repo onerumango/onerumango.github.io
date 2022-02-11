@@ -1066,7 +1066,7 @@ function RuleTranslationSummaryComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](data_r1.creatorId);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](14, 6, data_r1.createdTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](14, 6, data_r1.createdTime, "medium"));
 } }
 const _c0 = function () { return ["/rule-translation/create"]; };
 const _c1 = function () { return ["active"]; };
@@ -1083,8 +1083,12 @@ class RuleTranslationSummaryComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
+            columnDefs: [{ type: 'date', 'targets': [5] }],
+            order: [[5, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            // columnDefs: [ { type: 'date', 'targets': [5] } ],
+            // order: [[5, 'desc']],
         };
         this.fetchRuleTranslationSummary();
     }
@@ -1150,7 +1154,7 @@ RuleTranslationSummaryComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMP
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](27, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](28, RuleTranslationSummaryComponent_tr_28_Template, 15, 8, "tr", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](28, RuleTranslationSummaryComponent_tr_28_Template, 15, 9, "tr", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();

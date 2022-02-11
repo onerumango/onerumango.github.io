@@ -4402,6 +4402,8 @@
 
                 _this22.submit = false;
                 _this22.auditShowStatus = true;
+
+                _this22.ruleForm.reset();
               }
             }, function (err) {
               _this22.toastService.errorMessage('Failed To Save the Record', '');
@@ -4690,7 +4692,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](14, 6, data_r1.createdTime));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](14, 6, data_r1.createdTime, "medium"));
         }
       }
 
@@ -4725,8 +4727,15 @@
             this.dtOptions = {
               pagingType: 'full_numbers',
               pageLength: 5,
+              columnDefs: [{
+                type: 'date',
+                'targets': [5]
+              }],
+              order: [[5, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
+              // order: [[5, 'desc']],
+
             };
             this.fetchRules();
           }
@@ -4860,7 +4869,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, RuleListComponent_tr_28_Template, 15, 8, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, RuleListComponent_tr_28_Template, 15, 9, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

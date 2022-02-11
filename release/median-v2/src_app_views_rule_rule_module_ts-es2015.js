@@ -2334,6 +2334,7 @@ class RuleDetailsComponent {
                 this.toastService.successMessage('Record Saved Successfully!', '');
                 this.submit = false;
                 this.auditShowStatus = true;
+                this.ruleForm.reset();
             }
         }, err => {
             this.toastService.errorMessage('Failed To Save the Record', '');
@@ -2469,7 +2470,7 @@ function RuleListComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r1.creatorId);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](14, 6, data_r1.createdTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](14, 6, data_r1.createdTime, "medium"));
 } }
 const _c0 = function () { return ["/rule/create"]; };
 const _c1 = function () { return ["active"]; };
@@ -2488,8 +2489,12 @@ class RuleListComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
+            columnDefs: [{ type: 'date', 'targets': [5] }],
+            order: [[5, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            // columnDefs: [ { type: 'date', 'targets': [5] } ],
+            // order: [[5, 'desc']],
         };
         this.fetchRules();
     }
@@ -2559,7 +2564,7 @@ RuleListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, RuleListComponent_tr_28_Template, 15, 8, "tr", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, RuleListComponent_tr_28_Template, 15, 9, "tr", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
