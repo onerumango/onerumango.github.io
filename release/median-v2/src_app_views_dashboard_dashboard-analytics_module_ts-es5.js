@@ -20657,7 +20657,7 @@
         type: _DashboardAnalyticsComponent,
         selectors: [["npr-dashboard-analytics"]],
         decls: 103,
-        vars: 7,
+        vars: 10,
         consts: [[1, "pageContentMain"], [1, "dbTopCard"], [1, "xlTitle", "py-2", "py-xxl-3"], [1, "primaryColor", "eBold"], [1, "row", "g-3", "g-lg-4"], [1, "col-sm-6", "col-xxl-3"], [1, "cardStyle1", "cardBg1"], [1, "cardOptionDots"], ["href", "javascript:void(0)"], ["src", "assets/images/option-dots.svg", "alt", "..."], [1, "cs1IconCol"], ["src", "assets/images/card-icon-1.png", "alt", "...", 1, "cs1Icon"], [1, "cs1ContentCol"], [1, "mdTitle", "secondaryColor"], ["class", "cardCounter", 4, "ngIf"], [1, "cardStyle1", "cardBg2"], ["src", "assets/images/card-icon-2.png", "alt", "...", 1, "cs1Icon"], [1, "cardStyle1", "cardBg3"], ["src", "assets/images/card-icon-3.png", "alt", "...", 1, "cs1Icon"], [1, "cardStyle1", "cardBg4"], ["src", "assets/images/card-icon-4.png", "alt", "...", 1, "cs1Icon"], [1, "cardCounter"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "display1", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "cardListStyle"], [1, "orderList1"], [1, "orderList2"], [1, "orderList3"], [1, "highchartsCol"], ["id", "highcharts"], ["href", "javascript:void(0)", 1, "primaryColor"]],
         template: function DashboardAnalyticsComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -20939,7 +20939,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](90, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](91, "0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](91);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -20951,7 +20951,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](94, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](95, "0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](95);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -20963,7 +20963,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](98, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](99, "0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](99);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -21010,6 +21010,18 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.allUsersList);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.uploadedBatches);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.pendingUnauthBatch);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.authBatches);
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, angular_datatables__WEBPACK_IMPORTED_MODULE_2__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf],

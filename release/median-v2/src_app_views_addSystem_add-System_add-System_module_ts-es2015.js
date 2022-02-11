@@ -2327,19 +2327,32 @@ class AddSystemComponent {
     }
     next(value) {
         if (value === "basicConfiguration") {
-            if (this.basicInfoForm.value.messsageType == 'I') {
-                this.messageType = "Incoming";
-            }
-            if (this.basicInfoForm.value.messsageType == 'O') {
-                this.messageType = "Outgoing";
-            }
-            this.basicConfiguration = false;
-            this.messageConfiguration = true;
-            this.incomingMessageConfiguration = false;
-            this.xml = false;
-            this.mdbXml = false;
-            this.incomingMdbXml = false;
-            this.dbConnection = false;
+            this.addSystem.validateCode(this.basicInfoForm.value.systemCode).subscribe((result) => {
+                console.log(result);
+                this.isSysCodeAlreadyExist = result.exists;
+                this.sysCodeError = result.response;
+                if (this.isSysCodeAlreadyExist === true) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ title: this.sysCodeError + ' !',
+                        icon: 'error'
+                    });
+                    return;
+                }
+                else {
+                    if (this.basicInfoForm.value.messsageType == 'I') {
+                        this.messageType = "Incoming";
+                    }
+                    if (this.basicInfoForm.value.messsageType == 'O') {
+                        this.messageType = "Outgoing";
+                    }
+                    this.basicConfiguration = false;
+                    this.messageConfiguration = true;
+                    this.incomingMessageConfiguration = false;
+                    this.xml = false;
+                    this.mdbXml = false;
+                    this.incomingMdbXml = false;
+                    this.dbConnection = false;
+                }
+            });
         }
         if (value === "messageConfiguration" && this.basicInfoForm.value.messsageType !== 'A') {
             if ((this.messageConfigurationForm.value.sysChannel[0].messageChannel === "TCP/IP" || this.messageConfigurationForm.value.sysChannel[0].messageFormat === "JSON" || this.messageConfigurationForm.value.sysChannel[0].messageFormat === "XML") && this.basicInfoForm.value.messsageType != 'A') {
@@ -2887,14 +2900,17 @@ class AddSystemSummaryComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
+            columnDefs: [{ type: 'date', 'targets': [5] }],
+            order: [[5, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            // columnDefs: [ { type: 'date', 'targets': [5] } ],
+            // order: [[5, 'desc']],
         };
         this.getDataForMonitor();
     }
     getDataForMonitor() {
-        this.apiService.fecthingAddSystem().subscribe((dataresp) => {
-            console.log(dataresp);
+        this.apiService.fecthingAddSystem().subscribe(dataresp => {
             this.respArray = dataresp;
             this.dtTrigger.next();
         });
