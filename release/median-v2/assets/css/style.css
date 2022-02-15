@@ -1405,7 +1405,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 }
 .radioStyle input[type=radio]:disabled + .radio-label:before {
   border-color: var(--primaryColor);
-  background: var(--primaryColor);
 }
 .radioStyle input[type=radio] + .radio-label:empty:before {
   margin-right: 0;
