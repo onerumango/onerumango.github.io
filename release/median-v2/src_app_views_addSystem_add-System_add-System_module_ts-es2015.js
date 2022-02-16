@@ -2337,11 +2337,12 @@ class AddSystemComponent {
     }
     next(value) {
         if (value === "basicConfiguration") {
+            console.log(this.index);
             this.addSystem.validateCode(this.basicInfoForm.value.systemCode).subscribe((result) => {
                 console.log(result);
                 this.isSysCodeAlreadyExist = result.exists;
                 this.sysCodeError = result.response;
-                if (this.isSysCodeAlreadyExist === true) {
+                if (this.isSysCodeAlreadyExist === true && this.index === undefined) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ title: this.sysCodeError + ' !',
                         icon: 'error'
                     });

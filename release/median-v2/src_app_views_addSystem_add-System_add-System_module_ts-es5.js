@@ -4792,12 +4792,13 @@
             var _this3 = this;
 
             if (value === "basicConfiguration") {
+              console.log(this.index);
               this.addSystem.validateCode(this.basicInfoForm.value.systemCode).subscribe(function (result) {
                 console.log(result);
                 _this3.isSysCodeAlreadyExist = result.exists;
                 _this3.sysCodeError = result.response;
 
-                if (_this3.isSysCodeAlreadyExist === true) {
+                if (_this3.isSysCodeAlreadyExist === true && _this3.index === undefined) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                     title: _this3.sysCodeError + ' !',
                     icon: 'error'

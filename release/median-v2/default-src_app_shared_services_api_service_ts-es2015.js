@@ -415,8 +415,11 @@ class ApiService {
     updateexternalSystemEdit(formData) {
         return this.http.put(`${this.ext}` + `/update`, formData);
     }
-    authorizingTheRecord(formData, name) {
-        return this.http.put(`${this.ext}` + `/authorizetherecord/${name}`, formData);
+    // authorizingTheRecord(formData: object, name: string) {
+    //   return this.http.put(`${this.ext}` + `/authorizetherecord/${name}`, formData)
+    // }
+    authorizingTheRecord(extsobj, name) {
+        return this.http.put(`${this.uriForExt}` + `/authorizetherecordOfExteranlSystem/${name}`, extsobj);
     }
     closingTheRecord(formData) {
         return this.http.put(`${this.ext}` + `/toClosingTheRecord`, formData);

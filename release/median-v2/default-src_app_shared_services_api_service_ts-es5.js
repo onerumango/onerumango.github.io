@@ -631,11 +631,14 @@
           key: "updateexternalSystemEdit",
           value: function updateexternalSystemEdit(formData) {
             return this.http.put("".concat(this.ext) + "/update", formData);
-          }
+          } // authorizingTheRecord(formData: object, name: string) {
+          //   return this.http.put(`${this.ext}` + `/authorizetherecord/${name}`, formData)
+          // }
+
         }, {
           key: "authorizingTheRecord",
-          value: function authorizingTheRecord(formData, name) {
-            return this.http.put("".concat(this.ext) + "/authorizetherecord/".concat(name), formData);
+          value: function authorizingTheRecord(extsobj, name) {
+            return this.http.put("".concat(this.uriForExt) + "/authorizetherecordOfExteranlSystem/".concat(name), extsobj);
           }
         }, {
           key: "closingTheRecord",

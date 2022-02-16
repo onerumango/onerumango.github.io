@@ -1142,15 +1142,15 @@
       /* harmony import */
 
 
-      var angular_datatables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! angular-datatables */
-      50481);
-      /* harmony import */
-
-
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
       71258);
+      /* harmony import */
+
+
+      var angular_datatables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! angular-datatables */
+      50481);
 
       function CustomerSearchComponent_div_23_Template(rf, ctx) {
         if (rf & 1) {
@@ -1812,6 +1812,10 @@
         }
       }
 
+      var _c1 = function _c1() {
+        return ["/dashboard"];
+      };
+
       var _CustomerSearchComponent = /*#__PURE__*/function () {
         function _CustomerSearchComponent(formBuilder) {
           _classCallCheck(this, _CustomerSearchComponent);
@@ -1955,8 +1959,8 @@
         type: _CustomerSearchComponent,
         selectors: [["npr-customer-search"]],
         decls: 59,
-        vars: 14,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "", 1, "formLbl"], ["id", "fname", "formControlName", "customerName", "type", "text", "placeholder", "First Name", "value", "", 1, "form-control"], ["id", "lname", "type", "text", "formControlName", "lastName", "placeholder", "Last Name", "value", "", 1, "form-control"], ["id", "cNumber", "type", "text", "formControlName", "customerNumber", "placeholder", "Customer Number", "value", "", 1, "form-control"], ["id", "accNumber", "type", "number", "formControlName", "accountNumber", "name", "accountNumber", "placeholder", "Account Number", 1, "form-control"], ["class", "invalid-feedback", 4, "ngIf"], ["id", "cName", "type", "text", "formControlName", "customerName", "placeholder", "Customer Name", "value", "", 1, "form-control"], ["id", "nationalID", "formControlName", "nationalId", "type", "text", "placeholder", "National ID", "value", "", 1, "form-control"], ["id", "MobNumber", "formControlName", "mobileNo", "type", "number", "placeholder", "Mobile Number", 1, "form-control"], ["id", "branchCode", "formControlName", "branchCode", "type", "text", "placeholder", "Branch Code", "value", "", 1, "form-control"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], ["class", "pageContentMain mt-4 mb-4", 4, "ngIf"], [1, "invalid-feedback"], [1, "pageContentMain", "mt-4", "mb-4"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%"], [1, "btn", "smBtn", "minWdSmBtn", "btnInfo", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"]],
+        vars: 16,
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "", 1, "formLbl"], ["id", "fname", "formControlName", "customerName", "type", "text", "placeholder", "First Name", "value", "", 1, "form-control"], ["id", "lname", "type", "text", "formControlName", "lastName", "placeholder", "Last Name", "value", "", 1, "form-control"], ["id", "cNumber", "type", "text", "formControlName", "customerNumber", "placeholder", "Customer Number", "value", "", 1, "form-control"], ["id", "accNumber", "type", "number", "formControlName", "accountNumber", "name", "accountNumber", "placeholder", "Account Number", 1, "form-control"], ["class", "invalid-feedback", 4, "ngIf"], ["id", "cName", "type", "text", "formControlName", "customerName", "placeholder", "Customer Name", "value", "", 1, "form-control"], ["id", "nationalID", "formControlName", "nationalId", "type", "text", "placeholder", "National ID", "value", "", 1, "form-control"], ["id", "MobNumber", "formControlName", "mobileNo", "type", "number", "placeholder", "Mobile Number", 1, "form-control"], ["id", "branchCode", "formControlName", "branchCode", "type", "text", "placeholder", "Branch Code", "value", "", 1, "form-control"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "pageContentMain mt-4 mb-4", 4, "ngIf"], [1, "invalid-feedback"], [1, "pageContentMain", "mt-4", "mb-4"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%"], [1, "btn", "smBtn", "minWdSmBtn", "btnInfo", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"]],
         template: function CustomerSearchComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -2183,7 +2187,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("disabled", !ctx.accountForm.valid);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction0"](15, _c1));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.showtable);
 
@@ -2196,7 +2204,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.showtable2);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NumberValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, angular_datatables__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLink],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NumberValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLinkActive, angular_datatables__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLink],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjdXN0b21lci1zZWFyY2guY29tcG9uZW50LnNjc3MifQ== */"]
       });
       /***/
