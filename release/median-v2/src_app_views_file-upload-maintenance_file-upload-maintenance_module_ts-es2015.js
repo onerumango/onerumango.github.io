@@ -2756,10 +2756,9 @@ class ProcessCodeMappingNewComponent {
     onOptionsChange(event) {
         const value = event.target.value;
         console.log("Value", value);
-        debugger;
         if (value) {
             this.processCodeForm.controls.extSysCode.setValue(value);
-            this.processCodeForm.controls.extSysName.setValue(this.extSysCodeData.filter(item => item.extSysCode === '!Q')[0].extSysName);
+            this.processCodeForm.controls.extSysName.setValue(this.extSysCodeData.filter(item => item.extSysCode === value)[0].extSysName);
         }
     }
     treasuryRequired(values) {
