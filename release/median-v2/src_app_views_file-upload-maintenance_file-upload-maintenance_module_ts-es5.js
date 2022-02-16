@@ -4975,12 +4975,11 @@
           value: function onOptionsChange(event) {
             var value = event.target.value;
             console.log("Value", value);
-            debugger;
 
             if (value) {
               this.processCodeForm.controls.extSysCode.setValue(value);
               this.processCodeForm.controls.extSysName.setValue(this.extSysCodeData.filter(function (item) {
-                return item.extSysCode === '!Q';
+                return item.extSysCode === value;
               })[0].extSysName);
             }
           }
