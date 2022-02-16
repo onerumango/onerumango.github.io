@@ -1193,7 +1193,7 @@ function UserNewComponent_div_73_div_5_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r32.openBtn)("hidden", !ctx_r32.openHide);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r32.openBtn)("hidden", !ctx_r32.openHide);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r32.roleCodes.reopen.labelDescription);
 } }
@@ -1208,7 +1208,7 @@ function UserNewComponent_div_73_div_6_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r33.closeBtn)("hidden", !ctx_r33.closeHide);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r33.closeBtn)("hidden", !ctx_r33.closeHide);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r33.roleCodes.close.labelDescription);
 } }
@@ -1610,18 +1610,6 @@ class UserNewComponent {
                 this.getUpdatedModifiedObject();
                 // this.cdr.markForCheck();
                 this.getUserAuditData();
-                // this.iziToast.show({
-                //   message: `You closed the user record`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
             }
             if (this.statusFlag === false) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -1641,21 +1629,11 @@ class UserNewComponent {
             this.closeBtn = false;
             //console.log(this.modifyUserObject);
             if (this.statusFlag === true) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('Record is opened ');
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: 'Record is opened',
+                    icon: 'success',
+                });
                 this.openHide = true;
-                // this.iziToast.show({
-                //   message: `Record is opened`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
-                //console.log('coming or not');
                 this.getUpdatedModifiedObject();
                 // this.cdr.markForCheck();
                 this.getUserAuditData();
@@ -1665,18 +1643,6 @@ class UserNewComponent {
                     icon: 'error',
                     text: 'Failed to open user '
                 });
-                // this.iziToast.show({
-                //   message: `Failed to create user`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
             }
         });
     }
@@ -1688,19 +1654,10 @@ class UserNewComponent {
             //console.log('deleteData', datafrombackendtoDelete);
             this.deleteStatusFlag = datafrombackendtoDelete;
             if (this.deleteStatusFlag === true) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('User Deleted ');
-                // this.iziToast.show({
-                //   message: `User Deleted`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: 'User Deleted ',
+                    icon: 'success'
+                });
                 this.getUserAuditData();
             }
             if (this.deleteStatusFlag === false) {
@@ -1708,18 +1665,6 @@ class UserNewComponent {
                     icon: 'error',
                     text: 'Failed to delete user'
                 });
-                // this.iziToast.show({
-                //   message: `Failed to delete user`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
             }
             // this.router.navigateByUrl('users');
         });
@@ -1773,37 +1718,19 @@ class UserNewComponent {
         //console.log(this.modifyUserObject);
         //console.log('Creator', this.modifyUserObject.creatorId);
         if (this.modifyUserObject.intime > this.modifyUserObject.outtime) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire("From time should be lower and to time should be higher");
-            // this.iziToast.show({
-            //   message: `From time should be lower and to time should be higher`,
-            //   image: "assets/images/user.png",
-            //   icon: 'ico ico-success',
-            //   theme:"dark",
-            //   layout: 2,
-            //   // imageWidth:50,
-            //   balloon: false,
-            //   position: "topRight",
-            //   progressBarColor: "green",
-            //   pauseOnHover: true,
-            // });
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: "From time should be lower and to time should be higher",
+                icon: 'error'
+            });
         }
         this.userApi.modifyUserService(this.modifyUserObject).subscribe(data => {
             this.statusFlag = data;
             if (this.statusFlag === true) {
                 this.submit = false;
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('You modified the user.');
-                // this.iziToast.show({
-                //   message: `You modified the user.`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: 'You modified the user.',
+                    icon: 'success'
+                });
                 this.getUserAuditData();
                 this.editFlag = false;
             }
@@ -1812,18 +1739,6 @@ class UserNewComponent {
                     icon: 'error',
                     text: 'Failed to modify user '
                 });
-                // this.iziToast.show({
-                //   message: `Failed to modify user.`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-error',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "red",
-                //   pauseOnHover: true,
-                // });
             }
         });
     }
@@ -1891,19 +1806,10 @@ class UserNewComponent {
                 this.editFlag = true;
                 this.submit = false;
                 this.getUserAuditData();
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('You Created the user ');
-                // this.iziToast.show({
-                //   message: `You Created the user`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: 'You Created the user ',
+                    icon: 'success'
+                });
                 // /added by vidya for issue id 583
                 // this.enableSubmit=true
                 //console.log("this is to confirm", this.userObj);
@@ -1914,18 +1820,6 @@ class UserNewComponent {
                     icon: 'error',
                     text: 'Failed to create user ',
                 });
-                // this.iziToast.show({
-                //   message: `Failed to create user`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-error',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "red",
-                //   pauseOnHover: true,
-                // });
             }
         });
         // }
@@ -1936,8 +1830,8 @@ class UserNewComponent {
     editValues() {
         this.editFlag = false;
         this.authBtn = false;
-        this.openBtn = false;
-        this.closeBtn = false;
+        // this.openBtn=false;
+        // this.closeBtn=false;
     }
 }
 UserNewComponent.ɵfac = function UserNewComponent_Factory(t) { return new (t || UserNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_3__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_4__.Ng2IzitoastService)); };
