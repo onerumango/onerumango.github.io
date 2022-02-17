@@ -3371,13 +3371,13 @@
         }
 
         if (rf & 2) {
-          var i_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2).index;
+          var idx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
 
-          var ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+          var ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate1"]("name", "messageKey_", i_r35, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate1"]("name", "messageKey_", idx_r46, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
@@ -4689,7 +4689,7 @@
       }
 
       var _c0 = function _c0() {
-        return ["/rule/create"];
+        return ["/createrule/create"];
       };
 
       var _c1 = function _c1() {
@@ -4750,7 +4750,7 @@
           key: "editRule",
           value: function editRule(row) {
             console.log(row);
-            this.router.navigate(["/rule/edit", row.ruleId]);
+            this.router.navigate(["/createrule/edit", row.ruleId]);
           }
         }, {
           key: "ngOnDestroy",

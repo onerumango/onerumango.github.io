@@ -1697,7 +1697,7 @@
       2316);
 
       var routes = [{
-        path: "",
+        path: "upload-excel",
         component: _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_0__.FileUploadComponent
       }, {
         path: "rejection_queue",
