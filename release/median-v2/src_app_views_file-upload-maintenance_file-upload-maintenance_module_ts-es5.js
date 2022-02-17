@@ -1051,7 +1051,7 @@
       }
 
       var _c0 = function _c0() {
-        return ["/external-system/external-system-summary"];
+        return ["/external-system/extSys-summary"];
       };
 
       var _ExternalSystemEditComponent = /*#__PURE__*/function () {
@@ -1315,7 +1315,7 @@
                   icon: 'success'
                 });
 
-                _this8.router.navigateByUrl('/external-system/external-system-summary');
+                _this8.router.navigateByUrl('/external-system/extSys-summary');
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Failed to Delete User Data!',
@@ -1956,7 +1956,7 @@
       }
 
       var _c0 = function _c0() {
-        return ["/external-system/external-system-summary"];
+        return ["/external-system/extSys-summary"];
       };
 
       var _ExternalSystemNewComponent = /*#__PURE__*/function () {
@@ -2389,7 +2389,7 @@
       }
 
       var _c0 = function _c0() {
-        return ["/external-system/external-system-new"];
+        return ["/external-system/extSys-new"];
       };
 
       var _c1 = function _c1() {
@@ -2465,7 +2465,7 @@
                 verifiedOnce: dataForEdit.verifiedOnce,
                 version: dataForEdit.version
               });
-              this.router.navigate(['/external-system/external-system-edit']);
+              this.router.navigate(['/external-system/extSys-edit']);
             }
           }
         }]);
@@ -2543,7 +2543,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](19, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Auth Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -2670,13 +2670,13 @@
       2316);
 
       var routes = [{
-        path: 'external-system-summary',
+        path: 'extSys-summary',
         component: _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_2__.ExternalSystemComponent
       }, {
-        path: 'external-system-new',
+        path: 'extSys-new',
         component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_1__.ExternalSystemNewComponent
       }, {
-        path: 'external-system-edit',
+        path: 'extSys-edit',
         component: _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_0__.ExternalSystemEditComponent
       }, {
         path: 'processCodeMapping',
@@ -6036,7 +6036,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](22, "Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](22, "Auth Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 

@@ -1777,10 +1777,10 @@ function RuleDetailsComponent_ng_container_7_tr_21_td_6_ng_container_1_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
-    const i_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2).index;
-    const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+    const idx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
+    const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate1"]("name", "messageKey_", i_r35, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate1"]("name", "messageKey_", idx_r46, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("selected", ctx_r47.isSelected);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
@@ -2476,7 +2476,7 @@ function RuleListComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](14, 6, data_r1.createdTime, "medium"));
 } }
-const _c0 = function () { return ["/rule/create"]; };
+const _c0 = function () { return ["/createrule/create"]; };
 const _c1 = function () { return ["active"]; };
 const _c2 = function () { return ["/dashboard"]; };
 class RuleListComponent {
@@ -2516,7 +2516,7 @@ class RuleListComponent {
     }
     editRule(row) {
         console.log(row);
-        this.router.navigate(["/rule/edit", row.ruleId]);
+        this.router.navigate(["/createrule/edit", row.ruleId]);
     }
     ngOnDestroy() {
         // Do not forget to unsubscribe the event

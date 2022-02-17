@@ -994,7 +994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: "",
+        path: "upload-excel",
         component: _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_0__.FileUploadComponent
     },
     {

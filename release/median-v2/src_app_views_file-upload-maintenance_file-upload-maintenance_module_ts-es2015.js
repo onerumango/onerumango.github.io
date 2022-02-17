@@ -613,7 +613,7 @@ function ExternalSystemEditComponent_div_34_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r7.externalSystemSummry.authStatus);
 } }
-const _c0 = function () { return ["/external-system/external-system-summary"]; };
+const _c0 = function () { return ["/external-system/extSys-summary"]; };
 class ExternalSystemEditComponent {
     constructor(apiService, router, formBuilder, toastService) {
         this.apiService = apiService;
@@ -818,7 +818,7 @@ class ExternalSystemEditComponent {
                     title: 'User Deleted Successfully!',
                     icon: 'success'
                 });
-                this.router.navigateByUrl('/external-system/external-system-summary');
+                this.router.navigateByUrl('/external-system/extSys-summary');
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -1128,7 +1128,7 @@ function ExternalSystemNewComponent_div_30_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r1.externalSystemResponse.authStatus);
 } }
-const _c0 = function () { return ["/external-system/external-system-summary"]; };
+const _c0 = function () { return ["/external-system/extSys-summary"]; };
 class ExternalSystemNewComponent {
     constructor(apiService, formBuilder, toastService) {
         this.apiService = apiService;
@@ -1360,7 +1360,7 @@ function ExternalSystemComponent_tr_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](10, 4, item_r1.modifiedTime, "medium"));
 } }
-const _c0 = function () { return ["/external-system/external-system-new"]; };
+const _c0 = function () { return ["/external-system/extSys-new"]; };
 const _c1 = function () { return ["active"]; };
 class ExternalSystemComponent {
     constructor(apiService, toastService, router) {
@@ -1414,7 +1414,7 @@ class ExternalSystemComponent {
                 verifiedOnce: dataForEdit.verifiedOnce,
                 version: dataForEdit.version,
             });
-            this.router.navigate(['/external-system/external-system-edit']);
+            this.router.navigate(['/external-system/extSys-edit']);
         }
     }
 }
@@ -1449,7 +1449,7 @@ ExternalSystemComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](18, "External System Name");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](19, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Auth Status");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "th");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](22, "Date");
@@ -1505,15 +1505,15 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: 'external-system-summary',
+        path: 'extSys-summary',
         component: _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_2__.ExternalSystemComponent
     },
     {
-        path: 'external-system-new',
+        path: 'extSys-new',
         component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_1__.ExternalSystemNewComponent
     },
     {
-        path: 'external-system-edit',
+        path: 'extSys-edit',
         component: _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_0__.ExternalSystemEditComponent
     },
     {
@@ -3341,7 +3341,7 @@ ProcessCodeMappingComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTE
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Process Code");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](22, "Status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](22, "Auth Status");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](23, "th");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](24, "Date");
