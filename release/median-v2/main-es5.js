@@ -5146,7 +5146,8 @@
           this.username = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject('');
           this.tabData = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
           this.screenLabelList = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels());
-          this.screenData = new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels(); //public screenLabelList = new BehaviorSubject([]);
+          this.screenData = new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+          this.screenpermissions = []; //public screenLabelList = new BehaviorSubject([]);
 
           this.screenwisePermissions = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
           this.httpHeader = {
@@ -5315,8 +5316,8 @@
             var _this11 = this;
 
             this.http.get("".concat(this._fmosbaseURL, "/allRolePermissionForUser/").concat(userIdLoggedIn)).subscribe(function (data) {
-              localStorage.setItem('userPermissions', JSON.stringify(data));
               _this11.storeuserpermissions = data;
+              localStorage.setItem('userPermissions', JSON.stringify(_this11.storeuserpermissions));
             });
           } //dynamic roles
 
@@ -5378,7 +5379,11 @@
         }, {
           key: "EnablescreenPermissions",
           value: function EnablescreenPermissions() {
+            var _this12 = this;
+
+            console.log(localStorage.getItem('userPermissions'));
             var userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
+            console.log(userPermissions);
             var permissionlist = [];
 
             if (userPermissions) {
@@ -5401,10 +5406,13 @@
               } //for loop endng
 
             } //if
+            //console.log("methods are ",permissionlist);
 
 
-            console.log("methods are ", permissionlist);
             this.screenwisePermissions.next(permissionlist);
+            this.screenwisePermissions.subscribe(function (message) {
+              return _this12.screenpermissions = message;
+            }); // console.log("screen permissions final", this.screenpermissions);
           }
         }]);
 

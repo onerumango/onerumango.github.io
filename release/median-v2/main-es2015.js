@@ -2490,6 +2490,7 @@ class RoleService {
         this.tabData = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
         this.screenLabelList = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels());
         this.screenData = new _models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+        this.screenpermissions = [];
         //public screenLabelList = new BehaviorSubject([]);
         this.screenwisePermissions = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
         this.httpHeader = { header: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders({ 'Content-type': 'application/json' }) };
@@ -2594,8 +2595,8 @@ class RoleService {
     }
     fetchNewRolePermissions(userIdLoggedIn) {
         this.http.get(`${this._fmosbaseURL}/allRolePermissionForUser/${userIdLoggedIn}`).subscribe(data => {
-            localStorage.setItem('userPermissions', JSON.stringify(data));
             this.storeuserpermissions = data;
+            localStorage.setItem('userPermissions', JSON.stringify(this.storeuserpermissions));
         });
     }
     //dynamic roles
@@ -2637,7 +2638,9 @@ class RoleService {
         this.tabData.next(arrayC);
     }
     EnablescreenPermissions() {
+        console.log(localStorage.getItem('userPermissions'));
         let userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
+        console.log(userPermissions);
         let permissionlist = [];
         if (userPermissions) {
             let labelsdata = userPermissions.labels;
@@ -2652,8 +2655,10 @@ class RoleService {
                 }
             } //for loop endng
         } //if
-        console.log("methods are ", permissionlist);
+        //console.log("methods are ",permissionlist);
         this.screenwisePermissions.next(permissionlist);
+        this.screenwisePermissions.subscribe(message => this.screenpermissions = message);
+        // console.log("screen permissions final", this.screenpermissions);
     }
 }
 RoleService.ɵfac = function RoleService_Factory(t) { return new (t || RoleService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient)); };
