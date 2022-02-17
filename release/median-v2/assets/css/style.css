@@ -671,9 +671,16 @@ img {
 .ddParent {
   position: relative;
 }
+.ddParentM {
+  position: relative;
+}
+
+.ddParentN {
+  position: relative;
+}
 .ddContent {
 	position: absolute;
-  min-width: 170px;
+  min-width: 190px;
   background-color: var(--bs-white);
   padding: 10px;
   border-radius: 10px;
@@ -687,7 +694,8 @@ img {
   opacity: 0;
   visibility: hidden;
   z-index: 4;
-  border: 1px solid rgba(0,0,0,0.05)
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 150px;
 }
 .msgDDCol .ddContent {
   right: 0;
