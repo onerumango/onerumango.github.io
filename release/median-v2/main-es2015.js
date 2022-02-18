@@ -2403,11 +2403,10 @@ class JwtAuthService {
         this.user$.next(user);
         this.ls.setItem(this.JWT_TOKEN, token);
         this.ls.setItem(this.APP_USER, user);
-        sessionStorage.clear();
+        // sessionStorage.clear();
     }
     check() {
-        // Check if the user is logged in
-        if (this.accessToken) {
+        if (sessionStorage.getItem('user_id') != null || sessionStorage.getItem('user_id') === '') {
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(true);
         }
         else {
