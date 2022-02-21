@@ -12,7 +12,6 @@ $primary-dark: darken( map-get($mat-primary, 500), 8% );
 // Material theme is wrapped by a parent class
 .egret-navy {
     @include angular-material-theme($egret-theme);
-    
 
     .mat-bg-primary,
     .topbar:not(.topbar-white),
@@ -54,7 +53,7 @@ $primary-dark: darken( map-get($mat-primary, 500), 8% );
     }
     /* White Background */ 
     .topbar-white {
-        // background: #ffffff;
+        background: #ffffff;
         // .mat-icon {
         //     color: rgba(0, 0, 0, 0.87);
         // }

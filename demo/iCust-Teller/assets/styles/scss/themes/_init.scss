@@ -198,11 +198,4 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   @include egret-theme($default-theme);
 }
 
-// DARK THEME INIT
-.egret-navy-dark {
-  @include angular-material-theme($altTheme);
-  @include egret-theme($altTheme);
-}
-
-
 

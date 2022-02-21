@@ -76,6 +76,10 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
     .check-circle {
         color: #24CCA7;
+    } 
+    .mat-input-element {
+        
+        color: white;
     }
 
     .active {
