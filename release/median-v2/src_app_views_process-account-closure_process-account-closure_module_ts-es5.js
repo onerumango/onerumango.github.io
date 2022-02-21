@@ -801,12 +801,13 @@
             this.dtOptions = {
               pagingType: 'full_numbers',
               pageLength: 5,
+              processing: true,
+              retrieve: true,
+              order: [[3, 'desc']],
               columnDefs: [{
                 type: 'date',
                 'targets': [3]
               }],
-              order: [[3, 'desc']],
-              processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
           }

@@ -1487,6 +1487,11 @@
             this.apiService.fetchMedUser(this.signinForm.value.username).subscribe(function (response) {
               console.log(response);
               _this6.user = response;
+
+              _this6.ls.setItem("departmentHeader", _this6.user.department);
+
+              _this6.ls.setItem('LoggedInUserHeader', _this6.user.logoutTime);
+
               _this6.email = _this6.user.email;
               localStorage.setItem("userFromLogin", _this6.user.userId);
               sessionStorage.setItem("user_id", _this6.user.userId);
@@ -1798,10 +1803,6 @@
               setTimeout(function () {
                 _this9.ls.setItem("currentUser", _this9.userEntity.userId); // this.ls.setItem("userPermissions", this.demoUser.userPermissions);
 
-
-                _this9.ls.setItem("department", _this9.userEntity.department);
-
-                _this9.ls.setItem("LoggedInUser", _this9.userEntity.userId);
 
                 _this9.ls.setItem("userobj", _this9.userEntity);
 

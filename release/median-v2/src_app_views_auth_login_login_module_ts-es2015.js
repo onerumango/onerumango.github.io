@@ -770,6 +770,8 @@ class LoginComponent {
         this.apiService.fetchMedUser(this.signinForm.value.username).subscribe((response) => {
             console.log(response);
             this.user = response;
+            this.ls.setItem("departmentHeader", this.user.department);
+            this.ls.setItem('LoggedInUserHeader', this.user.logoutTime);
             this.email = this.user.email;
             localStorage.setItem("userFromLogin", this.user.userId);
             sessionStorage.setItem("user_id", this.user.userId);
@@ -1062,8 +1064,6 @@ class LoginComponent {
             setTimeout(() => {
                 this.ls.setItem("currentUser", this.userEntity.userId);
                 // this.ls.setItem("userPermissions", this.demoUser.userPermissions);
-                this.ls.setItem("department", this.userEntity.department);
-                this.ls.setItem("LoggedInUser", this.userEntity.userId);
                 this.ls.setItem("userobj", this.userEntity);
                 this.ls.setItem("usercompleteobj", this.userEntity);
                 this.router.navigate(['/dashboard']);
