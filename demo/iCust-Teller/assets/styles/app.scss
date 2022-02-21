@@ -25,7 +25,7 @@
 @import "scss/main/main";
 
 // Angular material theme files
-@import "scss/themes/themes";
+@import "scss/themes/init";
 
 @import "scss/utilities/utilities";
 @import "scss/components/components";
@@ -38,11 +38,3 @@
 @import "scss/views/views";
 
 
-.tabhd
-{
-    font-size:24px;
-}
-.tbgrp >mat-tab-header>div:nth-child(2)>div>mat-ink-bar
-{
-   color:black;
-}
