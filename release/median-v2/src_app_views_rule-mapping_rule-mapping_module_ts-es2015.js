@@ -306,7 +306,7 @@ class RuleMappingCreateComponent {
         this.submit = true;
     }
     ngOnInit() {
-        this.currentUser = localStorage.getItem('LoggedInUser');
+        this.currentUser = localStorage.getItem('userFromLogin');
         this.ruleMappingForm = this.formBuilder.group({
             systemCode: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             messageType: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
@@ -1092,7 +1092,7 @@ class RuleMappingDetailsComponent {
         this.hideSubmit = false;
     }
     ngOnInit() {
-        this.currentUser = localStorage.getItem('LoggedInUser');
+        this.currentUser = localStorage.getItem('userFromLogin');
         this.ruleMappingForm = this.formBuilder.group({
             systemCode: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             messageType: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],

@@ -4439,7 +4439,7 @@
         }, {
           key: "logout",
           value: function logout() {
-            if (localStorage.getItem("LoggedInUser")) {
+            if (localStorage.getItem("userFromLogin")) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire("Session Expired", "Kindly Login to continue.");
             }
 

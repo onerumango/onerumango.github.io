@@ -846,7 +846,7 @@ class RoleDetailsComponent {
         });
     }
     ngOnInit() {
-        this.username = localStorage.getItem('LoggedInUser').replace(/['"]+/g, '');
+        this.username = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
         this.navSubscription = this.roleService.getNavParam.subscribe(data => this.editRoleScreen = data);
         console.log(this.username);
         //this.getPermission(1,'System Maintenance');

@@ -2793,7 +2793,7 @@
             });
             console.log(this.roleCodes);
             this.editFlag = false;
-            this.user_id = localStorage.getItem('LoggedInUser').replace(/['"]+/g, '');
+            this.user_id = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.role = sessionStorage.getItem('user_role');
             console.log(this.editUserScreen);
             this.modifyUserObject.userId = this.editUserScreen.queryParams.userId;

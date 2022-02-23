@@ -1613,7 +1613,7 @@
           value: function ngOnInit() {
             var _this2 = this;
 
-            this.username = localStorage.getItem('LoggedInUser').replace(/['"]+/g, '');
+            this.username = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.navSubscription = this.roleService.getNavParam.subscribe(function (data) {
               return _this2.editRoleScreen = data;
             });

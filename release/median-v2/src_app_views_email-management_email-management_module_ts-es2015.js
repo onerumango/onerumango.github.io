@@ -784,7 +784,7 @@ class EmailManagementCreateComponent {
     ngOnInit() {
         this.navSubscription = this.accountBlockingService.getNavParam.subscribe(data => this.editAddSysResp = data);
         console.log(this.editAddSysResp);
-        this.loggedInUser = localStorage.getItem('LoggedInUser').replace(/['"]+/g, '');
+        this.loggedInUser = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
         this.emailForm = this.formBuilder.group({
             accountType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
             emails: this.formBuilder.array([])
