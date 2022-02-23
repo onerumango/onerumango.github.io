@@ -4018,6 +4018,12 @@
                     text: 'Department Updation failed'
                   });
                 }
+              }, function (error) {
+                console.log('error resp :: ', error);
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                  text: error.error.message,
+                  icon: 'error'
+                });
               });
             }
           }
