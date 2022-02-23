@@ -2436,6 +2436,10 @@ class DepartmenrtIdNewComponent {
                     this.editFlag = false;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: deptMaintenanceResp.respMsg });
                 }
+            }, error => {
+                console.log('error resp :: ', error);
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: error.error.message,
+                    icon: 'error' });
             });
         }
         if (value === "edit") {
