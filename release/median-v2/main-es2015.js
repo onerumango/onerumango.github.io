@@ -2129,7 +2129,7 @@ class AppComponent {
         this.userActivity = setTimeout(() => this.userInactive.next(undefined), 600 * 1000);
     }
     logout() {
-        if (localStorage.getItem("LoggedInUser")) {
+        if (localStorage.getItem("userFromLogin")) {
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire("Session Expired", "Kindly Login to continue.");
         }
         localStorage.removeItem("userFromLogin");

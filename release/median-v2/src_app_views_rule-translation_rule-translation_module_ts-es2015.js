@@ -659,7 +659,7 @@ class RuleTranslationDetailsComponent {
         this.isSelected = true;
     }
     ngOnInit() {
-        this.currentUser = localStorage.getItem('LoggedInUser');
+        this.currentUser = localStorage.getItem('userFromLogin');
         this.ruleTransForm = this.formBuilder.group({
             transId: this.transId,
             systemCode: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
@@ -1929,7 +1929,7 @@ class RuleTranslationComponent {
         this.fieldNoList = [];
     }
     ngOnInit() {
-        this.currentUser = localStorage.getItem('LoggedInUser');
+        this.currentUser = localStorage.getItem('userFromLogin');
         this.ruleTransForm = this.formBuilder.group({
             systemCode: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             messageType: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],

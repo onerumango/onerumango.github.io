@@ -1059,7 +1059,7 @@
             this.flag = false;
             this.firstLevelAuthorizationStatus = {};
             this.approveButtonStatus = false;
-            this.user_id = localStorage.getItem('LoggedInUser').replace(/['"]+/g, '');
+            this.user_id = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.role = sessionStorage.getItem('user_role');
             this.getPendingForAuthData();
             this.dummyQenPMJNuqUwhg5W8UMFs66YBXrBVhhZzMFt = new Array();

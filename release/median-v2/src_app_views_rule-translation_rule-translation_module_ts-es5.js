@@ -1428,7 +1428,7 @@
         _createClass(_RuleTranslationDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.currentUser = localStorage.getItem('LoggedInUser');
+            this.currentUser = localStorage.getItem('userFromLogin');
             this.ruleTransForm = this.formBuilder.group({
               transId: this.transId,
               systemCode: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
@@ -3832,7 +3832,7 @@
         _createClass(_RuleTranslationComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.currentUser = localStorage.getItem('LoggedInUser');
+            this.currentUser = localStorage.getItem('userFromLogin');
             this.ruleTransForm = this.formBuilder.group({
               systemCode: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               messageType: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
