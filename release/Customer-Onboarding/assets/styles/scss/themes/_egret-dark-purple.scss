@@ -81,7 +81,9 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
         
         color: white;
     }
-
+     .button{
+        background: #0C0B0F ;
+    }
     .active {
         color: #FE6700 !important;
         background: linear-gradient(221deg, #232228 0%, #232228 100%) 0% 0% no-repeat padding-box;
