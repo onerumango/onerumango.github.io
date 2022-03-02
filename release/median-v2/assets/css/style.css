@@ -1545,6 +1545,7 @@ ul.nav.nav-tabs li+li {
 .fileUpload .file-upload-wrapper:after {
 	content: attr(data-text);
   font-size: 13px;
+  text-align: end;
   position: absolute;
   top: 50%;
   left: 58%;
@@ -1584,6 +1585,7 @@ ul.nav.nav-tabs li+li {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+
 .titleStyle > p {
 	font-size: 13px;
 	color: var(--themeColor);
