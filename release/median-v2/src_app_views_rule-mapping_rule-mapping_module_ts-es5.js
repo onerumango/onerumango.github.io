@@ -96,6 +96,45 @@
             this.addSystem.conversionApi(this.conversionForm.value).subscribe(function (resp) {});
           }
         }, {
+          key: "fetchinglistRuleMapping",
+          value: function fetchinglistRuleMapping() {
+            var _this = this;
+
+            this.rulelist.fetchingruleMapping().subscribe(function (resp) {
+              console.log(resp);
+              _this.ruleMappingListResp = resp;
+
+              _this.dtTrigger.next();
+            });
+          }
+        }, {
+          key: "getById",
+          value: function getById(data) {
+            var _this2 = this;
+
+            console.log("OnClick", data);
+            var id = 0;
+
+            if (data.msgMappingDetails.length > 0) {
+              id = data.msgMappingDetails[0].messageMappingId;
+            }
+
+            this.rulelist.getruleMappingById(id, data.mappingId).subscribe(function (resp) {
+              console.log(resp);
+              var queryParams = {
+                'sourceTransDetId': resp.sourceTransDetId,
+                'targetTransDetId': resp.targetTransDetId,
+                'mdmtMessageMappingDet': resp.mdmtMessageMappingDet,
+                'responseData': data
+              };
+              console.log(queryParams);
+
+              _this2.addSystem.sendNavParam(queryParams);
+
+              _this2.router.navigate(['/rule-mapping/edit', data.mappingId]);
+            });
+          }
+        }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
             // Do not forget to unsubscribe the event
@@ -1017,13 +1056,13 @@
         }, {
           key: "gettingExternalsystem",
           value: function gettingExternalsystem() {
-            var _this = this;
+            var _this3 = this;
 
             this.rulemap.gettingExternalsystem().subscribe(function (extSysResp) {
               console.log(extSysResp);
-              _this.externalSystem = extSysResp;
-              _this.sourcesysdata = _this.externalSystem;
-              _this.temparray = _this.externalSystem;
+              _this3.externalSystem = extSysResp;
+              _this3.sourcesysdata = _this3.externalSystem;
+              _this3.temparray = _this3.externalSystem;
             }, function (err) {
               console.log("err", err);
             });
@@ -1056,19 +1095,19 @@
         }, {
           key: "fetchingIso",
           value: function fetchingIso() {
-            var _this2 = this;
+            var _this4 = this;
 
             this.addSystem.fetchingIsoForTcp().subscribe(function (isoResp) {
               console.log("iss", isoResp);
-              _this2.isoRespData = isoResp; // this.fieldNoData=isoResp;
+              _this4.isoRespData = isoResp; // this.fieldNoData=isoResp;
 
-              _this2.messageBasisIso = isoResp.map(function (data) {
+              _this4.messageBasisIso = isoResp.map(function (data) {
                 return data.messageBasis;
               });
-              _this2.fieldNoData = isoResp.map(function (data) {
+              _this4.fieldNoData = isoResp.map(function (data) {
                 return data.messageBasis;
               });
-              _this2.fieldValueData = isoResp.map(function (data) {
+              _this4.fieldValueData = isoResp.map(function (data) {
                 return data.messageKey;
               });
             });
@@ -1076,7 +1115,7 @@
         }, {
           key: "onSourseSelection",
           value: function onSourseSelection(event) {
-            var _this3 = this;
+            var _this5 = this;
 
             console.log(event);
             this.sourseSys = event.target.value;
@@ -1086,25 +1125,25 @@
               console.log(resp);
 
               if (resp != null) {
-                _this3.showfetchAll = false;
-                _this3.rulemapping = resp;
-                _this3.sourcesysdata = resp;
-                console.log("RuleMapping Res::", _this3.rulemapping);
+                _this5.showfetchAll = false;
+                _this5.rulemapping = resp;
+                _this5.sourcesysdata = resp;
+                console.log("RuleMapping Res::", _this5.rulemapping);
 
-                _this3.ruleMappingForm.patchValue(_this3.rulemapping);
+                _this5.ruleMappingForm.patchValue(_this5.rulemapping);
 
-                _this3.gettingoperationAandserv(resp.systemCode, resp.messageType);
+                _this5.gettingoperationAandserv(resp.systemCode, resp.messageType);
 
-                _this3.rulemapping.sourceTranslationId = resp.transId; // this.rulemappingDetail=resp.msgTransDetails;
+                _this5.rulemapping.sourceTranslationId = resp.transId; // this.rulemappingDetail=resp.msgTransDetails;
 
                 resp.msgTransDetails.map(function (el) {
-                  _this3.sourceTransDetId = el.translationId;
+                  _this5.sourceTransDetId = el.translationId;
                 });
               } else {
-                _this3.showfetchAll = true;
+                _this5.showfetchAll = true;
               }
             }, function (err) {
-              _this3.showfetchAll = true;
+              _this5.showfetchAll = true;
             });
             this.externalSystem = this.temparray;
           }
@@ -1137,37 +1176,37 @@
         }, {
           key: "gettingoperationAandserv",
           value: function gettingoperationAandserv(system, msgtype) {
-            var _this4 = this;
+            var _this6 = this;
 
             console.log(system);
             this.rulemap.gettingoperationAndService(system, msgtype, this.currentUser).subscribe(function (sourceResp) {
               console.log(sourceResp);
-              _this4.showfetchAll = false;
-              _this4.sourceoperation = sourceResp.OPERATION;
-              _this4.sourceService = sourceResp.SERVICE;
-              _this4.sourceData = sourceResp.MdmtSystemService;
-              _this4.sourceLabel = sourceResp.MdmtSystemChannel[0].messageChannel;
+              _this6.showfetchAll = false;
+              _this6.sourceoperation = sourceResp.OPERATION;
+              _this6.sourceService = sourceResp.SERVICE;
+              _this6.sourceData = sourceResp.MdmtSystemService;
+              _this6.sourceLabel = sourceResp.MdmtSystemChannel[0].messageChannel;
 
-              if (_this4.sourceLabel == 'Https/Http') {
-                _this4.matlabelSource1 = "Tag";
-                _this4.matlabelSource2 = null;
+              if (_this6.sourceLabel == 'Https/Http') {
+                _this6.matlabelSource1 = "Tag";
+                _this6.matlabelSource2 = null;
               }
 
-              if (_this4.sourceLabel == 'TCP/IP') {
-                _this4.matlabelSource1 = "Filed No";
-                _this4.matlabelSource2 = "Filed Name";
+              if (_this6.sourceLabel == 'TCP/IP') {
+                _this6.matlabelSource1 = "Filed No";
+                _this6.matlabelSource2 = "Filed Name";
               } // this.translationData=translationResp;
 
             }, function (err) {
               console.log(err); // Swal.fire({ text: 'External system data not present.' });
 
-              _this4.showfetchAll = true;
+              _this6.showfetchAll = true;
             });
           }
         }, {
           key: "ondestinationSource",
           value: function ondestinationSource(event) {
-            var _this5 = this;
+            var _this7 = this;
 
             console.log(event.value);
             this.showSource = false;
@@ -1177,22 +1216,22 @@
               console.log(resp);
 
               if (resp != null) {
-                _this5.showfetchAll = false;
-                _this5.rulemappingDest = resp;
-                _this5.rulemapping.targetTranslationId = resp.transId;
+                _this7.showfetchAll = false;
+                _this7.rulemappingDest = resp;
+                _this7.rulemapping.targetTranslationId = resp.transId;
 
-                _this5.ruleMappingForm.get('destinationSystems').patchValue(_this5.rulemappingDest);
+                _this7.ruleMappingForm.get('destinationSystems').patchValue(_this7.rulemappingDest);
 
                 resp.msgTransDetails.map(function (el) {
-                  _this5.targetTransDetId = el.translationId;
+                  _this7.targetTransDetId = el.translationId;
                 });
 
-                _this5.gettingmsgTypeAndDestination(resp.systemCode, resp.messageType);
+                _this7.gettingmsgTypeAndDestination(resp.systemCode, resp.messageType);
               } else {
-                _this5.showfetchAll = true;
+                _this7.showfetchAll = true;
               }
             }, function (err) {
-              _this5.showfetchAll = true;
+              _this7.showfetchAll = true;
             });
             this.externalSystem = this.temparray;
           }
@@ -1207,30 +1246,30 @@
         }, {
           key: "gettingmsgTypeAndDestination",
           value: function gettingmsgTypeAndDestination(destinationSource, msgtype) {
-            var _this6 = this;
+            var _this8 = this;
 
             this.rulemap.gettingoperationAndService(destinationSource, msgtype, this.currentUser).subscribe(function (destinationResp) {
               console.log(destinationResp);
-              _this6.showfetchAll = false;
-              _this6.destinationOperation = destinationResp.OPERATION;
-              _this6.destinationService = destinationResp.SERVICE;
-              _this6.destinationData = destinationResp.MdmtSystemService;
-              _this6.labelsDestination = destinationResp.MdmtSystemChannel[0].messageChannel;
+              _this8.showfetchAll = false;
+              _this8.destinationOperation = destinationResp.OPERATION;
+              _this8.destinationService = destinationResp.SERVICE;
+              _this8.destinationData = destinationResp.MdmtSystemService;
+              _this8.labelsDestination = destinationResp.MdmtSystemChannel[0].messageChannel;
 
-              if (_this6.labelsDestination == 'Https/Http') {
-                _this6.matLabel = "Tag";
-                _this6.matLabel2 = null;
-              } else if (_this6.labelsDestination == 'TCP/IP') {
-                _this6.matLabel = "Filed No";
-                _this6.matLabel2 = "Filed Name";
+              if (_this8.labelsDestination == 'Https/Http') {
+                _this8.matLabel = "Tag";
+                _this8.matLabel2 = null;
+              } else if (_this8.labelsDestination == 'TCP/IP') {
+                _this8.matLabel = "Filed No";
+                _this8.matLabel2 = "Filed Name";
               } // this.rulemappingData=[...this.sourceData,...this.destinationData]
 
 
-              console.log(_this6.rulemappingData); // this.translationData=translationResp;
+              console.log(_this8.rulemappingData); // this.translationData=translationResp;
             }, function (err) {
               console.log(err); // Swal.fire({ text: 'External system data not present.' });
 
-              _this6.showfetchAll = true;
+              _this8.showfetchAll = true;
             });
           }
         }, {
@@ -1288,7 +1327,7 @@
         }, {
           key: "onsaveRuleMapping",
           value: function onsaveRuleMapping() {
-            var _this7 = this;
+            var _this9 = this;
 
             console.log(this.rulemappingDetail); // 
             // console.log(this.rulemapping);
@@ -1302,12 +1341,12 @@
               console.log(resp);
 
               if (resp) {
-                _this7.addSysRespData = resp;
-                _this7.showAuditLog = true;
-                _this7.afterSubmit = true;
-                _this7.disableSubmitBtn = true;
-                _this7.disableResetBtn = true;
-                _this7.submit = false;
+                _this9.addSysRespData = resp;
+                _this9.showAuditLog = true;
+                _this9.afterSubmit = true;
+                _this9.disableSubmitBtn = true;
+                _this9.disableResetBtn = true;
+                _this9.submit = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: "Record Saved SuccessFully!",
                   icon: 'success'
@@ -2435,7 +2474,7 @@
         _createClass(_RuleMappingDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this8 = this;
+            var _this10 = this;
 
             this.currentUser = localStorage.getItem('userFromLogin');
             this.ruleMappingForm = this.formBuilder.group({
@@ -2447,7 +2486,7 @@
               rulemappingDetails: this.formBuilder.array([])
             });
             this.navSubscription = this.addSystem.getNavParam.subscribe(function (data) {
-              return _this8.editruleMappingResp = data;
+              return _this10.editruleMappingResp = data;
             });
             console.log("Response ??", this.editruleMappingResp);
             this.ruleMappingDataForPayload = this.editruleMappingResp["responseData"];
@@ -2557,11 +2596,11 @@
         }, {
           key: "gettingExternalsystem",
           value: function gettingExternalsystem() {
-            var _this9 = this;
+            var _this11 = this;
 
             this.rulemap.gettingExternalsystem().subscribe(function (extSysResp) {
               console.log("extSysResp", extSysResp);
-              _this9.externalSystem = extSysResp;
+              _this11.externalSystem = extSysResp;
             }, function (err) {
               console.log("err", err);
             });
@@ -2600,40 +2639,40 @@
         }, {
           key: "gettingTranslationData",
           value: function gettingTranslationData(sourseSys) {
-            var _this10 = this;
+            var _this12 = this;
 
             this.sourseSys = sourseSys;
             this.rulemap.gettingTranslationData(this.sourseSys).subscribe(function (resp) {
               console.log("trans ?", resp);
-              _this10.rulemapping = resp;
+              _this12.rulemapping = resp;
 
-              _this10.ruleMappingForm.patchValue(resp);
+              _this12.ruleMappingForm.patchValue(resp);
 
-              _this10.gettingoperationAandserv(resp.systemCode, resp.messageType);
+              _this12.gettingoperationAandserv(resp.systemCode, resp.messageType);
 
-              _this10.rulemapping.sourceTranslationId = resp.systemCode;
+              _this12.rulemapping.sourceTranslationId = resp.systemCode;
             });
           }
         }, {
           key: "gettingTranslationDataForDest",
           value: function gettingTranslationDataForDest(destSys) {
-            var _this11 = this;
+            var _this13 = this;
 
             this.rulemap.gettingTranslationData(destSys).subscribe(function (resp) {
               console.log("Dset", resp);
-              _this11.rulemappingdest = resp;
+              _this13.rulemappingdest = resp;
 
-              _this11.ruleMappingForm.get('destinationSystems').patchValue(resp);
+              _this13.ruleMappingForm.get('destinationSystems').patchValue(resp);
 
-              _this11.gettingmsgTypeAndDestination(resp.systemCode, resp.messageType);
+              _this13.gettingmsgTypeAndDestination(resp.systemCode, resp.messageType);
 
-              _this11.rulemappingdest.targetTranslationId = resp.systemCode;
+              _this13.rulemappingdest.targetTranslationId = resp.systemCode;
             });
           }
         }, {
           key: "onAuthOfRuleMapping",
           value: function onAuthOfRuleMapping() {
-            var _this12 = this;
+            var _this14 = this;
 
             if (this.currentUser == this.addSysRespData.creatorId) {
               // Swal.fire('Maker cannot authorize!');
@@ -2643,61 +2682,61 @@
               payloadObj = this.ruleMappingDataForPayload;
               payloadObj.msgMappingDetails = this.rulemappingDetail;
               this.rulemap.editRuleMapping("auth", this.currentUser, payloadObj).subscribe(function (resp) {
-                _this12.authorizeDone = true;
-                _this12.addSysRespData = resp; // Swal.fire({ text: 'Record Authorized!' });
+                _this14.authorizeDone = true;
+                _this14.addSysRespData = resp; // Swal.fire({ text: 'Record Authorized!' });
 
-                _this12.toastService.successMessage('Record Authorized!', '');
+                _this14.toastService.successMessage('Record Authorized!', '');
               });
             }
           }
         }, {
           key: "onCloseOfRuleMapping",
           value: function onCloseOfRuleMapping() {
-            var _this13 = this;
+            var _this15 = this;
 
             var payloadObj = {};
             payloadObj = this.ruleMappingDataForPayload;
             payloadObj.msgMappingDetails = this.rulemappingDetail;
             this.rulemap.editRuleMapping("close", this.currentUser, payloadObj).subscribe(function (resp) {
-              _this13.addSysRespData = resp;
-              _this13.editBtn = true;
-              _this13.authBtn = true;
-              _this13.deleted = false;
-              _this13.reopenBtn = false; // Swal.fire({ text: 'Record Closed!' });
+              _this15.addSysRespData = resp;
+              _this15.editBtn = true;
+              _this15.authBtn = true;
+              _this15.deleted = false;
+              _this15.reopenBtn = false; // Swal.fire({ text: 'Record Closed!' });
 
-              _this13.toastService.successMessage('Record Closed!', '');
+              _this15.toastService.successMessage('Record Closed!', '');
             });
           }
         }, {
           key: "onOpenRuleMapping",
           value: function onOpenRuleMapping() {
-            var _this14 = this;
+            var _this16 = this;
 
             var payloadObj = {};
             payloadObj = this.ruleMappingDataForPayload;
             payloadObj.msgMappingDetails = this.rulemappingDetail;
             this.rulemap.editRuleMapping("open", this.currentUser, payloadObj).subscribe(function (resp) {
-              _this14.addSysRespData = resp;
-              _this14.authBtnHide = false;
-              _this14.editBtn = false;
-              _this14.authBtn = false; // Swal.fire({ text: 'Record Opened!' });
+              _this16.addSysRespData = resp;
+              _this16.authBtnHide = false;
+              _this16.editBtn = false;
+              _this16.authBtn = false; // Swal.fire({ text: 'Record Opened!' });
 
-              _this14.toastService.successMessage('Record Opened!', '');
+              _this16.toastService.successMessage('Record Opened!', '');
             });
           }
         }, {
           key: "deleteRuleMapping",
           value: function deleteRuleMapping() {
-            var _this15 = this;
+            var _this17 = this;
 
             this.rulemap.ondeleteMapping(this.addSysRespData.mappingId, this.currentUser).subscribe(function (resp) {
               if (resp) {
-                _this15.deleted = true;
-                _this15.editBtn = true;
-                _this15.authBtn = true;
-                _this15.closeBtn = true;
+                _this17.deleted = true;
+                _this17.editBtn = true;
+                _this17.authBtn = true;
+                _this17.closeBtn = true;
 
-                _this15.toastService.successMessage('Deleted Successfully!', ''); // Swal.fire({
+                _this17.toastService.successMessage('Deleted Successfully!', ''); // Swal.fire({
                 //   title: 'Deleted Successfully!',
                 //   confirmButtonText: 'Ok'
                 // }).then((result) => {
@@ -2751,19 +2790,19 @@
         }, {
           key: "fetchingIso",
           value: function fetchingIso() {
-            var _this16 = this;
+            var _this18 = this;
 
             this.addSystem.fetchingIsoForTcp().subscribe(function (isoResp) {
               console.log("iss", isoResp);
-              _this16.isoRespData = isoResp; // this.fieldNoData=isoResp;
+              _this18.isoRespData = isoResp; // this.fieldNoData=isoResp;
 
-              _this16.messageBasisIso = isoResp.map(function (data) {
+              _this18.messageBasisIso = isoResp.map(function (data) {
                 return data.messageBasis;
               });
-              _this16.fieldNoData = isoResp.map(function (data) {
+              _this18.fieldNoData = isoResp.map(function (data) {
                 return data.messageBasis;
               });
-              _this16.fieldValueData = isoResp.map(function (data) {
+              _this18.fieldValueData = isoResp.map(function (data) {
                 return data.messageKey;
               });
             });
@@ -2784,25 +2823,25 @@
         }, {
           key: "gettingoperationAandserv",
           value: function gettingoperationAandserv(system, msgtype) {
-            var _this17 = this;
+            var _this19 = this;
 
             console.log(system);
             this.rulemap.gettingoperationAndService(system, msgtype, this.currentUser).subscribe(function (sourceResp) {
               console.log("sourceResp", sourceResp);
-              _this17.sourceoperation = sourceResp.OPERATION;
-              _this17.sourceService = sourceResp.SERVICE;
-              _this17.sourceData = sourceResp.MdmtSystemService;
-              _this17.sourceLabel = sourceResp.MdmtSystemChannel[0].messageChannel;
-              console.log(_this17.sourceLabel);
+              _this19.sourceoperation = sourceResp.OPERATION;
+              _this19.sourceService = sourceResp.SERVICE;
+              _this19.sourceData = sourceResp.MdmtSystemService;
+              _this19.sourceLabel = sourceResp.MdmtSystemChannel[0].messageChannel;
+              console.log(_this19.sourceLabel);
 
-              if (_this17.sourceLabel == 'Https/Http') {
-                _this17.matlabelSource1 = "Node";
-                _this17.matlabelSource2 = "TagName";
+              if (_this19.sourceLabel == 'Https/Http') {
+                _this19.matlabelSource1 = "Node";
+                _this19.matlabelSource2 = "TagName";
               }
 
-              if (_this17.sourceLabel == 'TCP/IP') {
-                _this17.matlabelSource1 = "Filed No";
-                _this17.matlabelSource2 = "Filed Name";
+              if (_this19.sourceLabel == 'TCP/IP') {
+                _this19.matlabelSource1 = "Filed No";
+                _this19.matlabelSource2 = "Filed Name";
               } // this.translationData=translationResp;
 
             }, function (err) {
@@ -2824,26 +2863,26 @@
         }, {
           key: "gettingmsgTypeAndDestination",
           value: function gettingmsgTypeAndDestination(destinationSource, msgtype) {
-            var _this18 = this;
+            var _this20 = this;
 
             this.rulemap.gettingoperationAndService(destinationSource, msgtype, this.currentUser).subscribe(function (destinationResp) {
               console.log(destinationResp);
-              _this18.destinationOperation = destinationResp.OPERATION;
-              _this18.destinationService = destinationResp.SERVICE;
-              _this18.destinationData = destinationResp.MdmtSystemService;
-              _this18.labelsDestination = destinationResp.MdmtSystemChannel[0].messageChannel;
-              console.log(_this18.labelsDestination);
+              _this20.destinationOperation = destinationResp.OPERATION;
+              _this20.destinationService = destinationResp.SERVICE;
+              _this20.destinationData = destinationResp.MdmtSystemService;
+              _this20.labelsDestination = destinationResp.MdmtSystemChannel[0].messageChannel;
+              console.log(_this20.labelsDestination);
 
-              if (_this18.labelsDestination == 'Https/Http') {
-                _this18.matLabel = "Node";
-                _this18.matLabel2 = "Tag Name";
-              } else if (_this18.labelsDestination == 'TCP/IP') {
-                _this18.matLabel = "Filed No";
-                _this18.matLabel2 = "Filed Name";
+              if (_this20.labelsDestination == 'Https/Http') {
+                _this20.matLabel = "Node";
+                _this20.matLabel2 = "Tag Name";
+              } else if (_this20.labelsDestination == 'TCP/IP') {
+                _this20.matLabel = "Filed No";
+                _this20.matLabel2 = "Filed Name";
               } // this.rulemappingData=[...this.sourceData,...this.destinationData]
 
 
-              console.log(_this18.rulemappingData); // this.translationData=translationResp;
+              console.log(_this20.rulemappingData); // this.translationData=translationResp;
             }, function (err) {
               console.log(err);
             });
@@ -2851,7 +2890,7 @@
         }, {
           key: "onSelectingMessageBasis",
           value: function onSelectingMessageBasis(event) {
-            var _this19 = this;
+            var _this21 = this;
 
             console.log("option for fieldno", event.value);
             console.log(event.value);
@@ -2860,14 +2899,14 @@
             });
             this.isoRespData.forEach(function (data) {
               data.messageKey = x.messageKey;
-              _this19.tagName = data.messageKey;
+              _this21.tagName = data.messageKey;
               data.dataType = x.dataType;
             });
           }
         }, {
           key: "onsaveRuleMapping",
           value: function onsaveRuleMapping() {
-            var _this20 = this;
+            var _this22 = this;
 
             var payloadObj = {};
             payloadObj = this.ruleMappingDataForPayload;
@@ -2877,17 +2916,17 @@
               console.log(resp);
 
               if (resp) {
-                _this20.addSysRespData = resp;
-                _this20.disableSubmitBtn = true;
+                _this22.addSysRespData = resp;
+                _this22.disableSubmitBtn = true;
 
-                _this20.toastService.successMessage('Record Updated SuccessFully!', '');
+                _this22.toastService.successMessage('Record Updated SuccessFully!', '');
 
-                _this20.submit = false;
+                _this22.submit = false;
               }
             }, function (err) {
               console.log(err.error.text);
 
-              _this20.toastService.errorMessage('Unable to update the record, server error!', '');
+              _this22.toastService.errorMessage('Unable to update the record, server error!', '');
             });
           }
         }]);
@@ -4055,19 +4094,19 @@
         }, {
           key: "fetchinglistRuleMapping",
           value: function fetchinglistRuleMapping() {
-            var _this21 = this;
+            var _this23 = this;
 
             this.rulelist.fetchingruleMapping().subscribe(function (resp) {
               console.log(resp);
-              _this21.ruleMappingListResp = resp;
+              _this23.ruleMappingListResp = resp;
 
-              _this21.dtTrigger.next();
+              _this23.dtTrigger.next();
             });
           }
         }, {
           key: "getById",
           value: function getById(data) {
-            var _this22 = this;
+            var _this24 = this;
 
             console.log("OnClick", data);
             var id = 0;
@@ -4086,9 +4125,9 @@
               };
               console.log(queryParams);
 
-              _this22.addSystem.sendNavParam(queryParams);
+              _this24.addSystem.sendNavParam(queryParams);
 
-              _this22.router.navigate(['/rule-mapping/edit', data.mappingId]);
+              _this24.router.navigate(['/rule-mapping/edit', data.mappingId]);
             });
           }
         }, {

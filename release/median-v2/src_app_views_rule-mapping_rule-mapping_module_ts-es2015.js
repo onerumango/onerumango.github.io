@@ -45,6 +45,32 @@ class ConversionComponent {
         this.addSystem.conversionApi(this.conversionForm.value).subscribe(resp => {
         });
     }
+    fetchinglistRuleMapping() {
+        this.rulelist.fetchingruleMapping().subscribe((resp) => {
+            console.log(resp);
+            this.ruleMappingListResp = resp;
+            this.dtTrigger.next();
+        });
+    }
+    getById(data) {
+        console.log("OnClick", data);
+        let id = 0;
+        if (data.msgMappingDetails.length > 0) {
+            id = data.msgMappingDetails[0].messageMappingId;
+        }
+        this.rulelist.getruleMappingById(id, data.mappingId).subscribe(resp => {
+            console.log(resp);
+            let queryParams = {
+                'sourceTransDetId': resp.sourceTransDetId,
+                'targetTransDetId': resp.targetTransDetId,
+                'mdmtMessageMappingDet': resp.mdmtMessageMappingDet,
+                'responseData': data
+            };
+            console.log(queryParams);
+            this.addSystem.sendNavParam(queryParams);
+            this.router.navigate(['/rule-mapping/edit', data.mappingId]);
+        });
+    }
     ngOnDestroy() {
         // Do not forget to unsubscribe the event
         this.dtTrigger.unsubscribe();
