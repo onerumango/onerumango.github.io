@@ -977,7 +977,14 @@ ul.msgList > li:hover, ul.msgList > li.visited {
 	display: block;
 }
 
+.form-control:disabled, .form-control[readonly] {
+  background-color: #f8f9fa !important;
+  opacity: 1;
+}
 
+.form-select:disabled {
+  background-color: #f8f9fa !important;
+}
 
 
 .cardStyle1 {
