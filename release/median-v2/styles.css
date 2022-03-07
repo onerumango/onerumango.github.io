@@ -15572,6 +15572,9 @@ ul.nav.nav-tabs li+li {
   vertical-align: middle;
   margin-right: 10px;
 }
+.alignSelf{
+  align-self:center
+}
 .fileUpload .file-upload-wrapper:after {
   content: attr(data-text);
   font-size: 13px;
