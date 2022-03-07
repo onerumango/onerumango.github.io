@@ -3122,8 +3122,8 @@ class AddSystemSummaryComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [5] }],
-            order: [[5, 'desc']],
+            columnDefs: [{ type: 'date', 'targets': [6] }],
+            order: [[6, 'desc']],
             processing: true,
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
             // columnDefs: [ { type: 'date', 'targets': [5] } ],
