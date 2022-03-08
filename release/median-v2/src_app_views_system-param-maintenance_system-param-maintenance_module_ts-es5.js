@@ -4258,10 +4258,11 @@
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10);
 
             var data_r7 = restoredCtx.$implicit;
+            var i_r8 = restoredCtx.index;
 
             var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
 
-            return ctx_r12.deleteRowData(data_r7.value);
+            return ctx_r12.deleteRowData(data_r7.value, i_r8);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](11, "img", 47);
@@ -4495,10 +4496,10 @@
           }
         }, {
           key: "deleteRowData",
-          value: function deleteRowData(data) {
+          value: function deleteRowData(data, i) {
             var _this17 = this;
 
-            console.log("this.transactionCodeSummryData.formValues", this.transactionCodeSummryData.formValues);
+            console.log("this.transactionCodeSummryData.formValues", data, this.transactionCodeSummryData.formValues);
             this.apiService.deleteRow(data.id).subscribe(function (resp) {
               _this17.deleteRowResp = resp;
 

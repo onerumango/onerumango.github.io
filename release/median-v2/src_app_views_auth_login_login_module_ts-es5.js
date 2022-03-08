@@ -1465,6 +1465,10 @@
             var _this6 = this;
 
             //  this.spinner.show();
+            localStorage.removeItem('user_id');
+            localStorage.clear();
+            sessionStorage.clear();
+            sessionStorage.removeItem('user_id');
             var login = {};
             login.username = this.signinForm.value.username;
             login.password = this.signinForm.value.password;
