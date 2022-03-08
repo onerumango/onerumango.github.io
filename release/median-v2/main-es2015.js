@@ -93,6 +93,7 @@ class HeaderComponent {
         jquery__WEBPACK_IMPORTED_MODULE_0__(".ddParent").removeClass("actDD");
         this.localStoreService.clear();
         sessionStorage.clear();
+        localStorage.clear();
         this.router.navigate(['session/login']);
     }
     changePassword() {
@@ -2137,10 +2138,16 @@ class AppComponent {
         clearTimeout(this.userActivity);
         this.setTimeout();
     }
+    onUpdateStorage() {
+        const loggedInUserId = localStorage.getItem("userFromLogin");
+        if (!loggedInUserId) {
+            this.router.navigate(['/session/login']);
+        }
+    }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.Renderer2), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_3__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_4__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router)); };
 AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], hostBindings: function AppComponent_HostBindings(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("mousemove", function AppComponent_mousemove_HostBindingHandler() { return ctx.refreshUserState(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("mousemove", function AppComponent_mousemove_HostBindingHandler() { return ctx.refreshUserState(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"])("storage", function AppComponent_storage_HostBindingHandler() { return ctx.onUpdateStorage(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"]);
     } }, decls: 1, vars: 0, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "router-outlet");
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterOutlet], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MifQ== */"] });
@@ -2274,6 +2281,8 @@ class AuthGuard {
             // If the user is not authenticated...
             if (!authenticated) {
                 // Redirect to the sign-in page
+                localStorage.clear();
+                sessionStorage.clear();
                 this.router.navigate(["session/login"]);
                 // Prevent the access
                 return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(false);
@@ -2398,6 +2407,8 @@ class JwtAuthService {
     signout() {
         this.ls.clear();
         sessionStorage.clear();
+        localStorage.removeItem('userFromLogin');
+        localStorage.clear();
         this.signingIn = false;
         this.router.navigate(["/login"]);
     }
@@ -2425,6 +2436,8 @@ class JwtAuthService {
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(true);
         }
         else {
+            localStorage.clear();
+            sessionStorage.clear();
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(false);
         }
     }

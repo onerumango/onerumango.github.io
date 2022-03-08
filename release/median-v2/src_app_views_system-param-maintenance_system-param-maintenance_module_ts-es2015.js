@@ -2351,7 +2351,7 @@ function TransactionCodeEditComponent_div_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 45);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "a", 46);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function TransactionCodeEditComponent_div_12_Template_a_click_10_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10); const data_r7 = restoredCtx.$implicit; const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r12.deleteRowData(data_r7.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function TransactionCodeEditComponent_div_12_Template_a_click_10_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10); const data_r7 = restoredCtx.$implicit; const i_r8 = restoredCtx.index; const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r12.deleteRowData(data_r7.value, i_r8); });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](11, "img", 47);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -2466,8 +2466,8 @@ class TransactionCodeEditComponent {
             transactionData.reset();
         }
     }
-    deleteRowData(data) {
-        console.log("this.transactionCodeSummryData.formValues", this.transactionCodeSummryData.formValues);
+    deleteRowData(data, i) {
+        console.log("this.transactionCodeSummryData.formValues", data, this.transactionCodeSummryData.formValues);
         this.apiService.deleteRow(data.id).subscribe(resp => {
             this.deleteRowResp = resp;
             if (this.deleteRowResp == true) {

@@ -20492,7 +20492,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](14, 7, users_r4.verifierDtStamp));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](14, 7, users_r4.creatorDtStamp, "medium"));
         }
       }
 
@@ -20564,12 +20564,12 @@
             this.dtOptions = {
               pagingType: 'full_numbers',
               pageLength: 5,
-              processing: true,
               columnDefs: [{
                 type: 'date',
                 'targets': [5]
               }],
               order: [[5, 'desc']],
+              processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
           }
@@ -21039,7 +21039,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](98, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](99, DashboardAnalyticsComponent_tr_99_Template, 15, 9, "tr", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](99, DashboardAnalyticsComponent_tr_99_Template, 15, 10, "tr", 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

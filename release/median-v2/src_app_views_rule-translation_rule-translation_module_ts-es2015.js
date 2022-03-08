@@ -1567,7 +1567,7 @@ function RuleTranslationComponent_form_4_div_40_tr_7_ng_container_4_option_4_Tem
 } if (rf & 2) {
     const data_r41 = ctx.$implicit;
     const ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", ctx_r40.try(data_r41))("value", data_r41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", ctx_r40.shouldDisableTagOption(data_r41))("value", data_r41);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", data_r41, "");
 } }
@@ -1577,7 +1577,7 @@ function RuleTranslationComponent_form_4_div_40_tr_7_ng_container_4_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "select", 52);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function RuleTranslationComponent_form_4_div_40_tr_7_ng_container_4_Template_select_change_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r44); const i_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index; const ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3); return ctx_r42.onselectingTag($event, i_r28); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "option", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "--Please Select---");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "---Please Select---");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](4, RuleTranslationComponent_form_4_div_40_tr_7_ng_container_4_option_4_Template, 2, 3, "option", 53);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -2327,14 +2327,13 @@ class RuleTranslationComponent {
         // else{
         //   this.tempArrayList.push(event.target.value);
         // }
-        console.log(event);
         console.log(this.uploadXmlResp);
         var result = Object.keys(this.uploadXmlResp.nodeValueMap).map((key) => [(key), this.uploadXmlResp.nodeValueMap[key]]);
         console.log("result", result);
         var x = result.find(item => item[0] == event.target.value);
         console.log(x);
         this.msgTransDetails.at(i).get('defaultValue').patchValue(x[1]);
-        this.desSystem.push(event.value);
+        this.desSystem.push(event.target.value);
         //   this.mdmtSystemService[i].dataType=x.dataType;
     }
     fetchingIso() {

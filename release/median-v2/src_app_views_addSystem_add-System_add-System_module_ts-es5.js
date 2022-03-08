@@ -4832,7 +4832,8 @@
             this.respData = resp.find(function (item) {
               return item.systemId == arg0;
             });
-            this.loading = false; //messageConfiguration
+            this.loading = false;
+            this.auditLog(); //messageConfiguration
 
             this.editFlag = false;
             this.arrayMessageConfig = this.respData.sysChannel;
@@ -5012,12 +5013,20 @@
         }, {
           key: "auditLog",
           value: function auditLog() {
-            if (this.respData.approvedStatus === 'U') {
+            if (this.respData.approvedStatus === 'N') {
               this.respData.approvedStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.respData.approvedStatus === 'Y') {
+              this.respData.approvedStatus = 'AUTHORIZED';
             }
 
             if (this.respData.approvedStatus === 'A') {
               this.respData.approvedStatus = 'AUTHORIZED';
+            }
+
+            if (this.respData.approvedStatus === 'U') {
+              this.respData.approvedStatus = 'UNAUTHORIZED';
             }
 
             if (this.respData.recordStatus === 'O') {

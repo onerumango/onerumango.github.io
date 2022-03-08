@@ -748,6 +748,10 @@ class LoginComponent {
     }
     getOtp() {
         //  this.spinner.show();
+        localStorage.removeItem('user_id');
+        localStorage.clear();
+        sessionStorage.clear();
+        sessionStorage.removeItem('user_id');
         let login = {};
         login.username = this.signinForm.value.username;
         login.password = this.signinForm.value.password;

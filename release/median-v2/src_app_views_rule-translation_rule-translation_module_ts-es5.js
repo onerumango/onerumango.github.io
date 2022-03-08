@@ -3066,7 +3066,7 @@
 
           var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", ctx_r40["try"](data_r41))("value", data_r41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", ctx_r40.shouldDisableTagOption(data_r41))("value", data_r41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
@@ -3094,7 +3094,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "option", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "--Please Select---");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "---Please Select---");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -4454,7 +4454,6 @@
             // else{
             //   this.tempArrayList.push(event.target.value);
             // }
-            console.log(event);
             console.log(this.uploadXmlResp);
             var result = Object.keys(this.uploadXmlResp.nodeValueMap).map(function (key) {
               return [key, _this20.uploadXmlResp.nodeValueMap[key]];
@@ -4465,7 +4464,7 @@
             });
             console.log(x);
             this.msgTransDetails.at(i).get('defaultValue').patchValue(x[1]);
-            this.desSystem.push(event.value); //   this.mdmtSystemService[i].dataType=x.dataType;
+            this.desSystem.push(event.target.value); //   this.mdmtSystemService[i].dataType=x.dataType;
           }
         }, {
           key: "fetchingIso",

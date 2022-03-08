@@ -162,6 +162,7 @@
             jquery__WEBPACK_IMPORTED_MODULE_0__(".ddParent").removeClass("actDD");
             this.localStoreService.clear();
             sessionStorage.clear();
+            localStorage.clear();
             this.router.navigate(['session/login']);
           }
         }, {
@@ -4423,6 +4424,15 @@
             clearTimeout(this.userActivity);
             this.setTimeout();
           }
+        }, {
+          key: "onUpdateStorage",
+          value: function onUpdateStorage() {
+            var loggedInUserId = localStorage.getItem("userFromLogin");
+
+            if (!loggedInUserId) {
+              this.router.navigate(['/session/login']);
+            }
+          }
         }]);
 
         return _AppComponent;
@@ -4439,6 +4449,8 @@
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("mousemove", function AppComponent_mousemove_HostBindingHandler() {
               return ctx.refreshUserState();
+            }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"])("storage", function AppComponent_storage_HostBindingHandler() {
+              return ctx.onUpdateStorage();
             }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"]);
           }
         },
@@ -4709,6 +4721,9 @@
 
               if (!authenticated) {
                 // Redirect to the sign-in page
+                localStorage.clear();
+                sessionStorage.clear();
+
                 _this8.router.navigate(["session/login"]); // Prevent the access
 
 
@@ -4973,6 +4988,8 @@
           value: function signout() {
             this.ls.clear();
             sessionStorage.clear();
+            localStorage.removeItem('userFromLogin');
+            localStorage.clear();
             this.signingIn = false;
             this.router.navigate(["/login"]);
           }
@@ -5008,6 +5025,8 @@
             if (sessionStorage.getItem('user_id') != null || sessionStorage.getItem('user_id') === '') {
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(true);
             } else {
+              localStorage.clear();
+              sessionStorage.clear();
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(false);
             }
           }

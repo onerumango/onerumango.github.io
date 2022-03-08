@@ -2289,6 +2289,7 @@ class AddSystemComponent {
         this.fileUploadClick = true;
         this.respData = resp.find(item => item.systemId == arg0);
         this.loading = false;
+        this.auditLog();
         //messageConfiguration
         this.editFlag = false;
         this.arrayMessageConfig = this.respData.sysChannel;
@@ -2427,11 +2428,17 @@ class AddSystemComponent {
         this.tab22 = false;
     }
     auditLog() {
-        if (this.respData.approvedStatus === 'U') {
+        if (this.respData.approvedStatus === 'N') {
             this.respData.approvedStatus = 'UNAUTHORIZED';
+        }
+        if (this.respData.approvedStatus === 'Y') {
+            this.respData.approvedStatus = 'AUTHORIZED';
         }
         if (this.respData.approvedStatus === 'A') {
             this.respData.approvedStatus = 'AUTHORIZED';
+        }
+        if (this.respData.approvedStatus === 'U') {
+            this.respData.approvedStatus = 'UNAUTHORIZED';
         }
         if (this.respData.recordStatus === 'O') {
             this.respData.recordStatus = 'OPEN';
