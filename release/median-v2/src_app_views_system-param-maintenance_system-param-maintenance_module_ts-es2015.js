@@ -901,6 +901,11 @@ class DepartmenrtIdNewComponent {
         });
     }
     onSubmittingofChargeMaintenance(value) {
+        if (this.departmentForm.value.toSeries < this.departmentForm.value.fromSeries) {
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: 'Batch No To should not be less than Batch No From',
+                'icon': 'error' });
+            return;
+        }
         if (value === "submit") {
             this.departmentForm.value.inputBy = this.currentUser;
             this.departmentService
@@ -995,7 +1000,7 @@ class DepartmenrtIdNewComponent {
             this.respData = authResp;
             this.auditLog();
             if (this.respData) {
-                if (this.respData.inputBy != null) {
+                if (this.respData.verifiedBy != null) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: "You authorized the Record!" }
                     // type: "success"
                     );
@@ -1020,10 +1025,10 @@ class DepartmenrtIdNewComponent {
             .subscribe((closeResp) => {
             console.log(closeResp);
             this.respData = closeResp;
-            this.auditLog();
             if (this.respData) {
-                if (this.respData.verifiedStatus == "U") {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: "Unauthorize Record Cannot be Closed" });
+                if (this.respData.recordStatus == "C") {
+                    this.auditLog();
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: "Record closed successfully" });
                 }
                 else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -1043,10 +1048,10 @@ class DepartmenrtIdNewComponent {
             .subscribe((reopnResp) => {
             console.log(reopnResp);
             this.respData = reopnResp;
-            this.auditLog();
             if (this.respData) {
                 if (this.respData.recordStatus == "O") {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: "Record opened succefully" }
+                    this.auditLog();
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: "Record opened successfully" }
                     // type: "success"
                     );
                 }
@@ -1179,13 +1184,13 @@ DepartmenrtIdNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "OPEN" && !ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedStatus == "UNAUTHORIZED");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedStatus == "UNAUTHORIZED" && !ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "OPEN" && ctx.respData.verifiedOnce == "YES");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "OPEN" && ctx.respData.verifiedOnce == "YES" && !ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "CLOSED" && ctx.respData.verifiedOnce == "YES");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "CLOSED" && ctx.respData.verifiedOnce == "YES" && !ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedOnce == "NO");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedOnce == "NO" && !ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx.index);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);

@@ -675,7 +675,7 @@ function ChargeMaintaineneceComponent_div_31_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintaineneceComponent_div_31_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r10.onSubmittingofChargeMaintenance("edit"); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Update");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Submit");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -1016,6 +1016,8 @@ class ChargeMaintaineneceComponent {
                     this.submitDisab = true;
                 }
                 else {
+                    this.respData = chargeMaintenanceResp;
+                    this.auditLog();
                     this.submitDisab = true;
                     this.editFlag = false;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record Saved SuccessFully!",
@@ -1034,6 +1036,8 @@ class ChargeMaintaineneceComponent {
                 }
                 else {
                     this.submitDisab = true;
+                    this.respData = chargeMaintenanceResp;
+                    this.auditLog();
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record Updated SuccessFully!" });
                 }
             });
@@ -1074,21 +1078,41 @@ class ChargeMaintaineneceComponent {
         this.roleService.fetchScreenPermissions('Charge Maintenance');
     }
     onAuthorizingTheRecord() {
-        console.log("this is authorzation");
-        this.chargeMaintenanceService
-            .onAuthofChargeMaintenance(this.currentUser, this.chargeForm.value.id)
-            .subscribe((authResp) => {
-            console.log(authResp);
-            this.respData = authResp;
-            if (this.respData.inputBy != null) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "You authorized the Record!" }
-                // type: "success"
-                );
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                if (this.currentUser === this.respData.inputBy) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Maker Cannot Authorize Record!',
+                        icon: 'error' });
+                    return;
+                }
+                console.log("this is authorzation");
+                this.chargeMaintenanceService
+                    .onAuthofChargeMaintenance(this.currentUser, this.chargeForm.value.id)
+                    .subscribe((authResp) => {
+                    console.log(authResp);
+                    this.respData = authResp;
+                    this.auditLog();
+                    if (this.respData.verifiedBy != null) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "You authorized the Record!" }
+                        // type: "success"
+                        );
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Maker cannot authorize the record" });
+                    }
+                });
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Maker cannot authorize the record" });
-            }
-        });
+        }));
     }
     onSubmitEditChargeMaintenance() {
         console.log("This is Edit Charge Maintenance");
@@ -1096,43 +1120,100 @@ class ChargeMaintaineneceComponent {
         console.log(this.editFlag);
     }
     onClosingTheRecord() {
-        console.log("this is close");
-        this.chargeMaintenanceService
-            .onClosingTheRecord(this.currentUser, this.chargeForm.value.id.id)
-            .subscribe((closeResp) => {
-            console.log(closeResp);
-            this.respData = closeResp;
-            if (this.respData.verifiedStatus == "U") {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Unauthorize Record Cannot be Closed" });
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Close record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info',
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                console.log("this is close");
+                this.chargeMaintenanceService
+                    .onClosingTheRecord(this.currentUser, this.chargeForm.value.id)
+                    .subscribe((closeResp) => {
+                    console.log(closeResp);
+                    this.respData = closeResp;
+                    this.auditLog();
+                    if (this.respData) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record closed succefully" });
+                    }
+                });
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record closed succefully" }
-                // type: "success"
-                );
-            }
-        });
+        }));
     }
     onReopningTheRecord() {
-        console.log("this is reopen");
-        this.chargeMaintenanceService
-            .onReopningTheRecord(this.currentUser, this.chargeForm.value.id)
-            .subscribe((reopnResp) => {
-            console.log(reopnResp);
-            this.respData = reopnResp;
-            this.respData = reopnResp;
-            if (this.respData.recordStatus == "O") {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Record opened succefully"
-                }
-                // type: "success"
-                );
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to reopen record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES',
+            'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.chargeMaintenanceService
+                    .onReopningTheRecord(this.currentUser, this.chargeForm.value.id)
+                    .subscribe((reopnResp) => {
+                    console.log(reopnResp);
+                    this.respData = reopnResp;
+                    this.respData = reopnResp;
+                    if (this.respData.recordStatus == "O") {
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: "Record opened succefully"
+                        }
+                        // type: "success"
+                        );
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be opened " });
+                    }
+                });
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be opened " });
-            }
-        });
+        }));
     }
     onDeletingTheRecord() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Delete record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES.', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.chargeMaintenanceService
+                    .onReopningTheRecord(this.currentUser, this.chargeForm.value.id)
+                    .subscribe((reopnResp) => {
+                    console.log(reopnResp);
+                    this.respData = reopnResp;
+                    this.respData = reopnResp;
+                    if (this.respData.recordStatus == "O") {
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: "Record opened succefully"
+                        }
+                        // type: "success"
+                        );
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be opened " });
+                    }
+                });
+            }
+        }));
         console.log("this is delete");
         this.chargeMaintenanceService
             .onDeletTheRecord(this.currentUser, this.chargeForm.value.id)
@@ -1235,15 +1316,15 @@ ChargeMaintaineneceComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORT
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.editFlag && ctx.index);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && !ctx.editFlag && ctx.roleCodes.edit);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && !ctx.editFlag && ctx.respData.recordStatus == "OPEN" && ctx.roleCodes.edit);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedStatus == "U" && ctx.roleCodes.auth);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && !ctx.editFlag && ctx.respData.verifiedStatus == "UNAUTHORIZED" && ctx.roleCodes.auth);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "O" && ctx.respData.verifiedStatus == "A" && ctx.roleCodes.close);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "OPEN" && !ctx.editFlag && ctx.respData.verifiedOnce == "YES" && ctx.roleCodes.close);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "C" && ctx.respData.verifiedStatus == "A" && ctx.roleCodes.reopen);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "CLOSE" && !ctx.editFlag && ctx.respData.verifiedOnce == "YES" && ctx.roleCodes.reopen);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedOnce == "N" && ctx.roleCodes.delete);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData && !ctx.editFlag && ctx.respData.verifiedOnce == "NO" && ctx.roleCodes.delete);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.editFlag && !ctx.index);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
