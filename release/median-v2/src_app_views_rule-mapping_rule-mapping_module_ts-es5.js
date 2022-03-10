@@ -1019,12 +1019,12 @@
           value: function getRuleMappingDetail() {
             return this.formBuilder.group({
               id: [''],
-              defaultValue: [''],
+              defaultValue: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
               messageMappingId: [''],
               sourceTransDetId: [''],
               targetTransDetId: [''],
-              sourceKey: [''],
-              destinationKey: ['']
+              sourceKey: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
+              destinationKey: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]
             });
           }
         }, {
@@ -1378,8 +1378,8 @@
         type: _RuleMappingCreateComponent,
         selectors: [["npr-rule-mapping-create"]],
         decls: 82,
-        vars: 10,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["novalidate", "", 1, "formStyle", 3, "formGroup"], [3, "disabled"], [1, "dbCardStyle"], [1, "addformCol"], [1, "row", "g-4", "align-items-center"], [1, "col"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-3"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["formControlName", "systemCode", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["value", "", 3, "selected"], [3, "value", "hidden", 4, "ngFor", "ngForOf"], ["formControlName", "messageType", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["value", "I"], ["value", "O"], ["type", "text", "id", "ruleName", "name", "serviceNameS", "placeholder", "Service Name", "formControlName", "serviceName", "readonly", "", 1, "form-control"], ["type", "text", "id", "ruleName", "formControlName", "operationName", "name", "operationNameS", "placeholder", "Operation Name", "readonly", "", 1, "form-control"], ["formGroupName", "destinationSystems"], ["type", "text", "id", "ruleName", "name", "serviceNameD", "placeholder", "Service Name", "formControlName", "serviceName", "readonly", "", 1, "form-control"], ["type", "text", "id", "ruleName", "name", "operationNameD", "placeholder", "Service Name", "formControlName", "operationName", "readonly", "", 1, "form-control"], [1, "btn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["class", "dbCardStyle", 4, "ngIf"], [3, "value", "hidden"], ["formArrayName", "rulemappingDetail", 1, "addformCol"], [4, "ngFor", "ngForOf"], [1, "row", "g-3", "pt-4"], [1, "col-auto"], ["class", "addIcon primarybg", 3, "click", 4, "ngIf"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"], [3, "formGroupName"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], [1, "col-lg-12"], [4, "ngIf"], ["for", "defaultValue", 1, "formLbl"], ["type", "text", "id", "defaultVal", "formControlName", "defaultValue", "placeholder", "Default value", 1, "form-control", "m-10"], [1, "col-lg-4", 2, "margin-top", "80px"], ["href", "javascript:void(0);", "class", "deleteIcon2", 3, "click", 4, "ngIf"], ["formControlName", "sourceKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], [3, "hidden", "value", 4, "ngFor", "ngForOf"], [3, "hidden", "value"], ["formControlName", "destinationKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["href", "javascript:void(0);", 1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."]],
+        vars: 9,
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["novalidate", "", 1, "formStyle", 3, "formGroup"], [3, "disabled"], [1, "dbCardStyle"], [1, "addformCol"], [1, "row", "g-4", "align-items-center"], [1, "col"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-3"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["formControlName", "systemCode", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["value", "", 3, "selected"], [3, "value", "hidden", 4, "ngFor", "ngForOf"], ["formControlName", "messageType", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["value", "I"], ["value", "O"], ["type", "text", "id", "ruleName", "name", "serviceNameS", "placeholder", "Service Name", "formControlName", "serviceName", "readonly", "", 1, "form-control"], ["type", "text", "id", "ruleName", "formControlName", "operationName", "name", "operationNameS", "placeholder", "Operation Name", "readonly", "", 1, "form-control"], ["formGroupName", "destinationSystems"], ["type", "text", "id", "ruleName", "name", "serviceNameD", "placeholder", "Service Name", "formControlName", "serviceName", "readonly", "", 1, "form-control"], ["type", "text", "id", "ruleName", "name", "operationNameD", "placeholder", "Service Name", "formControlName", "operationName", "readonly", "", 1, "form-control"], [1, "btn", "minWdSmBtn", "btnPrimary", 3, "click"], ["class", "dbCardStyle", 4, "ngIf"], [3, "value", "hidden"], ["formArrayName", "rulemappingDetail", 1, "addformCol"], [4, "ngFor", "ngForOf"], [1, "row", "g-3", "pt-4"], [1, "col-auto"], ["class", "addIcon primarybg", 3, "click", 4, "ngIf"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"], [3, "formGroupName"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], [1, "col-lg-12"], [4, "ngIf"], ["for", "defaultValue", 1, "formLbl"], ["type", "text", "id", "defaultVal", "formControlName", "defaultValue", "placeholder", "Default value", 1, "form-control", "m-10"], [1, "col-lg-4", 2, "margin-top", "80px"], ["href", "javascript:void(0);", "class", "deleteIcon2", 3, "click", 4, "ngIf"], ["formControlName", "sourceKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], [3, "hidden", "value", 4, "ngFor", "ngForOf"], [3, "hidden", "value"], ["formControlName", "destinationKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["href", "javascript:void(0);", 1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."]],
         template: function RuleMappingCreateComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -1698,11 +1698,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("selected", ctx.isSelected);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](19);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx.ruleMappingForm.invalid);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.showSource || ctx.showDestination);
           }

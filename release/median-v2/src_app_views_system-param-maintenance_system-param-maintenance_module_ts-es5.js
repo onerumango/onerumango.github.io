@@ -1550,6 +1550,14 @@
           value: function onSubmittingofChargeMaintenance(value) {
             var _this3 = this;
 
+            if (this.departmentForm.value.toSeries < this.departmentForm.value.fromSeries) {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                text: 'Batch No To should not be less than Batch No From',
+                'icon': 'error'
+              });
+              return;
+            }
+
             if (value === "submit") {
               this.departmentForm.value.inputBy = this.currentUser;
               this.departmentService.onSubmittingDepartment(this.departmentForm.value).subscribe(function (deptMaintenanceResp) {
@@ -1666,7 +1674,7 @@
               _this4.auditLog();
 
               if (_this4.respData) {
-                if (_this4.respData.inputBy != null) {
+                if (_this4.respData.verifiedBy != null) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                     text: "You authorized the Record!"
                   } // type: "success"
@@ -1696,12 +1704,12 @@
               console.log(closeResp);
               _this5.respData = closeResp;
 
-              _this5.auditLog();
-
               if (_this5.respData) {
-                if (_this5.respData.verifiedStatus == "U") {
+                if (_this5.respData.recordStatus == "C") {
+                  _this5.auditLog();
+
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    text: "Unauthorize Record Cannot be Closed"
+                    text: "Record closed successfully"
                   });
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -1723,12 +1731,12 @@
               console.log(reopnResp);
               _this6.respData = reopnResp;
 
-              _this6.auditLog();
-
               if (_this6.respData) {
                 if (_this6.respData.recordStatus == "O") {
+                  _this6.auditLog();
+
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    text: "Record opened succefully"
+                    text: "Record opened successfully"
                   } // type: "success"
                   );
                 } else {
@@ -1971,19 +1979,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedStatus == "UNAUTHORIZED");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedStatus == "UNAUTHORIZED" && !ctx.editFlag);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "OPEN" && ctx.respData.verifiedOnce == "YES");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "OPEN" && ctx.respData.verifiedOnce == "YES" && !ctx.editFlag);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "CLOSED" && ctx.respData.verifiedOnce == "YES");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.recordStatus == "CLOSED" && ctx.respData.verifiedOnce == "YES" && !ctx.editFlag);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedOnce == "NO");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.respData && ctx.respData.verifiedOnce == "NO" && !ctx.editFlag);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
