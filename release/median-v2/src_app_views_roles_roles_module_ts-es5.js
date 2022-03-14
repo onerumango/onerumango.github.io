@@ -1864,47 +1864,47 @@
             //   console.log('role is closed',this.updatedRoleObject.recordStatus);
             //   this.openBtn=false;
             //   this.closeBtn=false;
-            if (this.updatedRoleObject.recordStatus == 'C') {
-              this.closeHide = true;
-              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                text: 'You are trying to Closed record. ' + ' Do you want to proceed?',
-                showCancelButton: true,
-                confirmButtonColor: '#E6224A',
-                cancelButtonColor: '#011945',
-                // confirmButtonText: 'PROCEED.'
-                cancelButtonText: 'NO',
-                confirmButtonText: 'YES',
-                icon: 'info'
-              }).then(function (result) {
-                if (result.isConfirmed === true) {
-                  _this4.roleService.closelockRecord(roleName, _this4.username).subscribe(function (data) {
-                    _this4.updatedRoleObject = data;
+            // if(this.updatedRoleObject.recordStatus=='C'){
+            // this.closeHide=true;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+              text: 'You are trying to Closed record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#E6224A',
+              cancelButtonColor: '#011945',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              icon: 'info'
+            }).then(function (result) {
+              if (result.isConfirmed === true) {
+                _this4.roleService.closelockRecord(roleName, _this4.username).subscribe(function (data) {
+                  _this4.updatedRoleObject = data;
 
-                    _this4.cdr.markForCheck();
+                  _this4.cdr.markForCheck();
 
-                    _this4.modifyRoleObject = _this4.updatedRoleObject;
-                    console.log('role is closed', _this4.updatedRoleObject.recordStatus);
-                    _this4.openBtn = false;
-                    _this4.closeBtn = false;
+                  _this4.modifyRoleObject = _this4.updatedRoleObject;
+                  console.log('role is closed', _this4.updatedRoleObject.recordStatus);
+                  _this4.openBtn = false;
+                  _this4.closeBtn = false;
 
-                    if (_this4.updatedRoleObject) {
-                      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                        text: "Record Closed succefully",
-                        icon: 'success'
-                      });
-                    }
-                  });
-                }
-              });
-
-              if (this.updatedRoleObject === false) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  icon: 'error',
-                  text: 'Failed to Closed Record '
+                  if (_this4.updatedRoleObject) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: "Role is Closed",
+                      icon: 'success'
+                    });
+                  }
                 });
-              } // Swal.fire("Role is Closed ");
+              }
+            });
 
-            } // });
+            if (this.updatedRoleObject === false) {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                icon: 'error',
+                text: 'Failed to Closed Record '
+              });
+            } // Swal.fire("Role is Closed ");
+            // }
+            // });
 
           } // reopen a user
           // reopen a user
@@ -1921,47 +1921,47 @@
             //   console.log('user is reopened');
             //   this.openBtn=false;
             //   this.closeBtn=false;
-            if (this.updatedRoleObject.recordStatus == 'O') {
-              this.openHide = true;
-              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                text: 'You are trying to Reopen record. ' + ' Do you want to proceed?',
-                showCancelButton: true,
-                confirmButtonColor: '#E6224A',
-                cancelButtonColor: '#011945',
-                // confirmButtonText: 'PROCEED.'
-                cancelButtonText: 'NO',
-                confirmButtonText: 'YES',
-                icon: 'info'
-              }).then(function (result) {
-                if (result.isConfirmed === true) {
-                  _this5.roleService.reopenRecord(userId, _this5.username).subscribe(function (data) {
-                    _this5.updatedRoleObject = data;
+            // if(this.updatedRoleObject.recordStatus=='O'){
+            // this.openHide=true;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+              text: 'You are trying to Reopen record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#E6224A',
+              cancelButtonColor: '#011945',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              icon: 'info'
+            }).then(function (result) {
+              if (result.isConfirmed === true) {
+                _this5.roleService.reopenRecord(userId, _this5.username).subscribe(function (data) {
+                  _this5.updatedRoleObject = data;
 
-                    _this5.cdr.markForCheck();
+                  _this5.cdr.markForCheck();
 
-                    _this5.modifyRoleObject = _this5.updatedRoleObject;
-                    console.log('user is reopened');
-                    _this5.openBtn = false;
-                    _this5.closeBtn = false;
+                  _this5.modifyRoleObject = _this5.updatedRoleObject;
+                  console.log('user is reopened');
+                  _this5.openBtn = false;
+                  _this5.closeBtn = false;
 
-                    if (_this5.modifyRoleObject) {
-                      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                        text: "Record Reopened succefully",
-                        icon: 'success'
-                      });
-                    }
-                  });
-                }
-              });
-
-              if (this.deleteStatusFlag === false) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  icon: 'error',
-                  text: 'Failed to Reopened Record '
+                  if (_this5.modifyRoleObject) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: "Role is Reopened",
+                      icon: 'success'
+                    });
+                  }
                 });
-              } // Swal.fire("Role is Reopened ");
+              }
+            });
 
-            } // });
+            if (this.deleteStatusFlag === false) {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                icon: 'error',
+                text: 'Failed to Reopened Record '
+              });
+            } // Swal.fire("Role is Reopened ");
+            // }
+            // });
 
           } // delete a user
 
@@ -1970,40 +1970,40 @@
           value: function deleteRole(roleName) {
             var _this6 = this;
 
-            this.roleService.deleteRole(roleName, this.username).subscribe(function (data) {
-              console.log('user is deleted');
-              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                text: 'You are trying to Delete record. ' + ' Do you want to proceed?',
-                showCancelButton: true,
-                confirmButtonColor: '#E6224A',
-                cancelButtonColor: '#011945',
-                // confirmButtonText: 'PROCEED.'
-                cancelButtonText: 'NO',
-                confirmButtonText: 'YES',
-                icon: 'info'
-              }).then(function (result) {
-                if (result.isConfirmed === true) {
-                  _this6.roleService.deleteRole(roleName, _this6.username).subscribe(function (data) {
-                    //console.log('deleteData', datafrombackendtoDelete);
-                    _this6.deleteStatusFlag = data;
+            // this.roleService.deleteRole(roleName, this.username).subscribe(data => {
+            //   console.log('user is deleted');
+            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+              text: 'You are trying to Delete record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#E6224A',
+              cancelButtonColor: '#011945',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              icon: 'info'
+            }).then(function (result) {
+              if (result.isConfirmed === true) {
+                _this6.roleService.deleteRole(roleName, _this6.username).subscribe(function (data) {
+                  //console.log('deleteData', datafrombackendtoDelete);
+                  _this6.deleteStatusFlag = data;
 
-                    if (_this6.deleteStatusFlag) {
-                      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                        text: "Record Deleted succefully",
-                        icon: 'success'
-                      });
-                    }
-                  });
-                }
-              });
-
-              if (_this6.deleteStatusFlag === false) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  icon: 'error',
-                  text: 'Failed to Delete Record '
+                  if (_this6.deleteStatusFlag) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: "Role is Deleted",
+                      icon: 'success'
+                    });
+                  }
                 });
               }
             });
+
+            if (this.deleteStatusFlag === false) {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                icon: 'error',
+                text: 'Failed to Delete Record '
+              });
+            } // });
+
           }
         }, {
           key: "modifyRoles",
@@ -2062,7 +2062,7 @@
 
               if (_this7.validationResponse) {
                 // this.responseError = 'success';
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is Modified "); // this.iziToast.show({
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is Updated "); // this.iziToast.show({
                 //   message: `Role is Modified`,
                 //   image: "assets/images/user.png",
                 //   icon: 'ico ico-success',
@@ -2527,7 +2527,7 @@
               if (role) {
                 _this9.editFlag = true;
                 _this9.submitBtn = true;
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Record Saved"); // this.iziToast.show({
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is Created"); // this.iziToast.show({
                 //             message: `Record Saved `,
                 //             image: "assets/images/user.png",
                 //             icon: 'ico ico-success',

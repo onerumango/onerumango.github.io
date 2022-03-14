@@ -1020,7 +1020,7 @@ class ChargeMaintaineneceComponent {
                     this.auditLog();
                     this.submitDisab = true;
                     this.editFlag = false;
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record Saved SuccessFully!",
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Created ",
                         icon: 'success' });
                 }
             });
@@ -1038,7 +1038,7 @@ class ChargeMaintaineneceComponent {
                     this.submitDisab = true;
                     this.respData = chargeMaintenanceResp;
                     this.auditLog();
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record Updated SuccessFully!" });
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Updated " });
                 }
             });
         }
@@ -1140,7 +1140,7 @@ class ChargeMaintaineneceComponent {
                     this.respData = closeResp;
                     this.auditLog();
                     if (this.respData) {
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record closed succefully" });
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Closed" });
                     }
                 });
             }
@@ -1169,7 +1169,7 @@ class ChargeMaintaineneceComponent {
                     if (this.respData.recordStatus == "O") {
                         this.auditLog();
                         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                            text: "Record opened succefully"
+                            text: "Record is Reopened"
                         }
                         // type: "success"
                         );
@@ -1195,41 +1195,41 @@ class ChargeMaintaineneceComponent {
             console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
                 this.chargeMaintenanceService
-                    .onReopningTheRecord(this.currentUser, this.chargeForm.value.id)
-                    .subscribe((reopnResp) => {
-                    console.log(reopnResp);
-                    this.respData = reopnResp;
-                    this.respData = reopnResp;
-                    if (this.respData.recordStatus == "O") {
+                    .onDeletTheRecord(this.currentUser, this.chargeForm.value.id)
+                    .subscribe((deleteResp) => {
+                    console.log(deleteResp);
+                    this.respData = deleteResp;
+                    this.respData = deleteResp;
+                    if (this.respData.chargeAmount == null) {
                         this.auditLog();
                         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                            text: "Record opened succefully"
+                            text: "Record is Deleted"
                         }
                         // type: "success"
                         );
                     }
                     else {
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be opened " });
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be delete " });
                     }
                 });
             }
         }));
         console.log("this is delete");
-        this.chargeMaintenanceService
-            .onDeletTheRecord(this.currentUser, this.chargeForm.value.id)
-            .subscribe((deleteResp) => {
-            console.log(deleteResp);
-            this.respData = deleteResp;
-            // console.log(this.chargeMaintenanceDTO.currency);
-            if (this.respData.chargeAmount == null) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record deleted succefully" }
-                // type: "success"
-                );
-            }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be Deleted " });
-            }
-        });
+        // this.chargeMaintenanceService
+        //   .onDeletTheRecord(this.currentUser, this.chargeForm.value.id)
+        //   .subscribe((deleteResp) => {
+        //     console.log(deleteResp);
+        //     this.respData = deleteResp;
+        //     // console.log(this.chargeMaintenanceDTO.currency);
+        //     if (this.respData.chargeAmount == null) {
+        // Swal.fire(
+        //        { text:"Record deleted succefully"}
+        //         // type: "success"
+        //       );
+        //     } else {
+        // Swal.fire({text:"Record cannot be Deleted "});
+        //     }
+        //   });
     }
 }
 ChargeMaintaineneceComponent.ɵfac = function ChargeMaintaineneceComponent_Factory(t) { return new (t || ChargeMaintaineneceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_charge_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__.ChargeMaintenanceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService)); };

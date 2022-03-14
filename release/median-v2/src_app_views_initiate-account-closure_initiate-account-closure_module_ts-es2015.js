@@ -1563,7 +1563,7 @@ class ViewReportAccClosureComponent {
                 this.process = true;
                 this.ref.markForCheck();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                    text: 'Record Processed  SuccessFully',
+                    text: 'Record Processed SuccessFully',
                     // type: "success"
                 });
                 // this.iziToast.show({
@@ -1619,7 +1619,7 @@ class ViewReportAccClosureComponent {
                 //   pauseOnHover: true,
                 // });
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                    text: 'Record Deleted SuccessFully',
+                    text: 'Record is Deleted',
                     icon: "success"
                 });
             }
@@ -1710,7 +1710,7 @@ class ViewReportAccClosureComponent {
                 //   pauseOnHover: true,
                 // });
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                    text: 'Record Deleted successFully',
+                    text: 'Record is Deleted',
                     icon: "success"
                 });
             }

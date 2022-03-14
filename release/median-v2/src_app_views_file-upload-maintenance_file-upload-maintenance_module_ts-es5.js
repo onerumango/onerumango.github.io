@@ -1238,7 +1238,7 @@
 
               if (_this4.externalSystemSummry) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Updated Successfully!',
+                  title: 'Record is Updated',
                   icon: 'success'
                 });
                 _this4.submitDisable = true;
@@ -1295,7 +1295,7 @@
 
               if (_this6.externalSystemSummry) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Closed the Record!',
+                  title: 'Record is  Closed',
                   icon: 'success'
                 });
 
@@ -1326,7 +1326,7 @@
 
               if (_this7.externalSystemSummry) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Re-Opened the Record!',
+                  title: 'Record is Reopened',
                   icon: 'success'
                 });
 
@@ -1356,7 +1356,7 @@
 
               if (resp === true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'User Deleted Successfully!',
+                  title: 'Record is Deleted',
                   icon: 'success'
                 });
 
@@ -2017,7 +2017,7 @@
       }
 
       var _c0 = function _c0() {
-        return ["/external-system/external-system-summary"];
+        return ["/external-system/extSys-summary"];
       };
 
       var _ExternalSystemNewComponent = /*#__PURE__*/function () {
@@ -2119,7 +2119,7 @@
                 _this10.editFlag = true;
                 _this10.submitBtn = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Saved Successfully!',
+                  title: 'Record is Created',
                   icon: 'success'
                 });
 
@@ -4075,7 +4075,7 @@
 
               if (_this14.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Updated Successfully!',
+                  title: 'Record is Updated',
                   icon: 'success'
                 });
                 _this14.submitEdit = true;
@@ -4135,7 +4135,7 @@
 
               if (_this16.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Closed the Record!',
+                  title: 'Record is Closed',
                   icon: 'success'
                 });
 
@@ -4167,7 +4167,7 @@
 
               if (_this17.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Re-opend the Record!',
+                  title: 'Record is Reopened',
                   icon: 'success'
                 });
 
@@ -4198,7 +4198,7 @@
 
               if (resp === true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'User Deleted Successfully!',
+                  title: 'Record is Deleted',
                   icon: 'success'
                 });
 
@@ -5757,7 +5757,7 @@
             this.apiService.createExtSys(this.processCodeForm.value).subscribe(function (resp) {
               if (resp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Saved Successfully!',
+                  title: 'Record is Created!',
                   icon: 'success'
                 });
                 _this20.submit = true; // this.processCodeForm.reset();

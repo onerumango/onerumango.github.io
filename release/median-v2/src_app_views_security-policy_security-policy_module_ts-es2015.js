@@ -716,7 +716,7 @@ class SecurityPolicyComponent {
                 .saveDataSecurity(this.securityForm.value)
                 .subscribe((response) => {
                 if (response == true) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: `Save Successful` });
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: `Record is Created` });
                     this.enablesubmit = false;
                 }
                 else {
