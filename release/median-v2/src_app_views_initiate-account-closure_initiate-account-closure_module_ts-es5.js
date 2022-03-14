@@ -2769,7 +2769,7 @@
                 _this10.ref.markForCheck();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                  text: 'Record Processed  SuccessFully' // type: "success"
+                  text: 'Record Processed SuccessFully' // type: "success"
 
                 }); // this.iziToast.show({
                 //   message: `Record Processed  SuccessFully`,
@@ -2827,7 +2827,7 @@
                 // });
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                  text: 'Record Deleted SuccessFully',
+                  text: 'Record is Deleted',
                   icon: "success"
                 });
               } else {
@@ -2926,7 +2926,7 @@
                 //   pauseOnHover: true,
                 // });
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                  text: 'Record Deleted successFully',
+                  text: 'Record is Deleted',
                   icon: "success"
                 });
               } else {

@@ -1851,7 +1851,7 @@
                   _this5.submitDisab = true;
                   _this5.editFlag = false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Record Saved SuccessFully!",
+                    text: "Record is Created ",
                     icon: 'success'
                   });
                 }
@@ -1874,7 +1874,7 @@
                   _this5.auditLog();
 
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Record Updated SuccessFully!"
+                    text: "Record is Updated "
                   });
                 }
               });
@@ -2012,7 +2012,7 @@
 
                   if (_this8.respData) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record closed succefully"
+                      text: "Record is Closed"
                     });
                   }
                 });
@@ -2047,7 +2047,7 @@
                     _this9.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record opened succefully"
+                      text: "Record is Reopened"
                     } // type: "success"
                     );
                   } else {
@@ -2078,42 +2078,41 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this10.chargeMaintenanceService.onReopningTheRecord(_this10.currentUser, _this10.chargeForm.value.id).subscribe(function (reopnResp) {
-                  console.log(reopnResp);
-                  _this10.respData = reopnResp;
-                  _this10.respData = reopnResp;
+                _this10.chargeMaintenanceService.onDeletTheRecord(_this10.currentUser, _this10.chargeForm.value.id).subscribe(function (deleteResp) {
+                  console.log(deleteResp);
+                  _this10.respData = deleteResp;
+                  _this10.respData = deleteResp;
 
-                  if (_this10.respData.recordStatus == "O") {
+                  if (_this10.respData.chargeAmount == null) {
                     _this10.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record opened succefully"
+                      text: "Record is Deleted"
                     } // type: "success"
                     );
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record cannot be opened "
+                      text: "Record cannot be delete "
                     });
                   }
                 });
               }
             });
-            console.log("this is delete");
-            this.chargeMaintenanceService.onDeletTheRecord(this.currentUser, this.chargeForm.value.id).subscribe(function (deleteResp) {
-              console.log(deleteResp);
-              _this10.respData = deleteResp; // console.log(this.chargeMaintenanceDTO.currency);
-
-              if (_this10.respData.chargeAmount == null) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: "Record deleted succefully"
-                } // type: "success"
-                );
-              } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: "Record cannot be Deleted "
-                });
-              }
-            });
+            console.log("this is delete"); // this.chargeMaintenanceService
+            //   .onDeletTheRecord(this.currentUser, this.chargeForm.value.id)
+            //   .subscribe((deleteResp) => {
+            //     console.log(deleteResp);
+            //     this.respData = deleteResp;
+            //     // console.log(this.chargeMaintenanceDTO.currency);
+            //     if (this.respData.chargeAmount == null) {
+            // Swal.fire(
+            //        { text:"Record deleted succefully"}
+            //         // type: "success"
+            //       );
+            //     } else {
+            // Swal.fire({text:"Record cannot be Deleted "});
+            //     }
+            //   });
           }
         }]);
 

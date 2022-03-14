@@ -1106,7 +1106,7 @@
               this.secuityService.saveDataSecurity(this.securityForm.value).subscribe(function (response) {
                 if (response == true) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    text: "Save Successful"
+                    text: "Record is Created"
                   });
                   _this2.enablesubmit = false;
                 } else {

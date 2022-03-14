@@ -1980,7 +1980,7 @@
               console.log(_this8.mappingResponse);
 
               if (_this8.mappingResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Updated successfully');
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Record is Updated');
 
                 _this8.auditLog();
 
@@ -2003,7 +2003,7 @@
             this.proCodeValue = updateForm.proCode;
             this.currencyValue = updateForm.currency;
 
-            if (this.mappingResponse.modifiedBy === this.currentUser) {
+            if (this.modifiedBy === this.currentUser) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                 title: 'Maker Cannot Authorized the Record!',
                 icon: 'error'
@@ -2037,7 +2037,7 @@
 
               if (_this10.mappingResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Closed the Record!',
+                  title: 'Record is Closed',
                   icon: 'success'
                 });
 
@@ -2073,7 +2073,7 @@
 
               if (_this11.mappingResponse) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Re-Opened the Record!',
+                  title: 'Record is Reopened',
                   icon: 'success'
                 });
 
@@ -2114,7 +2114,7 @@
             this.apiService.deleteMappingRow(idx).subscribe(function (e) {
               if (e) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Record Deleted Successfully!',
+                  title: 'Record is Deleted',
                   icon: 'success'
                 });
               } else {

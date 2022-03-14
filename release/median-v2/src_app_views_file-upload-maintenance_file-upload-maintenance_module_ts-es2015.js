@@ -741,7 +741,7 @@ class ExternalSystemEditComponent {
             this.externalSystemSummry = data;
             if (this.externalSystemSummry) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'Data Updated Successfully!',
+                    title: 'Record is Updated',
                     icon: 'success'
                 });
                 this.submitDisable = true;
@@ -786,7 +786,7 @@ class ExternalSystemEditComponent {
             this.externalSystemSummry = closeResp;
             if (this.externalSystemSummry) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'You Closed the Record!',
+                    title: 'Record is  Closed',
                     icon: 'success'
                 });
                 this.auditLog();
@@ -812,7 +812,7 @@ class ExternalSystemEditComponent {
             this.externalSystemSummry = openResp;
             if (this.externalSystemSummry) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'You Re-Opened the Record!',
+                    title: 'Record is Reopened',
                     icon: 'success'
                 });
                 this.auditLog();
@@ -837,7 +837,7 @@ class ExternalSystemEditComponent {
             console.log(resp);
             if (resp === true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'User Deleted Successfully!',
+                    title: 'Record is Deleted',
                     icon: 'success'
                 });
                 this.router.navigateByUrl('/external-system/extSys-summary');
@@ -1158,7 +1158,7 @@ function ExternalSystemNewComponent_div_37_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r3.externalSystemResponse.authStatus);
 } }
-const _c0 = function () { return ["/external-system/external-system-summary"]; };
+const _c0 = function () { return ["/external-system/extSys-summary"]; };
 class ExternalSystemNewComponent {
     constructor(apiService, formBuilder, toastService) {
         this.apiService = apiService;
@@ -1234,7 +1234,7 @@ class ExternalSystemNewComponent {
                 this.editFlag = true;
                 this.submitBtn = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'Data Saved Successfully!',
+                    title: 'Record is Created',
                     icon: 'success'
                 });
                 this.auditLog();
@@ -2266,7 +2266,7 @@ class ProcessCodeMappingEditComponent {
             this.processCodeSummary = resp;
             if (this.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'Data Updated Successfully!',
+                    title: 'Record is Updated',
                     icon: 'success'
                 });
                 this.submitEdit = true;
@@ -2316,7 +2316,7 @@ class ProcessCodeMappingEditComponent {
             this.processCodeSummary = closeResp;
             if (this.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'You Closed the Record!',
+                    title: 'Record is Closed',
                     icon: 'success'
                 });
                 this.auditLog();
@@ -2343,7 +2343,7 @@ class ProcessCodeMappingEditComponent {
             this.processCodeSummary = openResp;
             if (this.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'You Re-opend the Record!',
+                    title: 'Record is Reopened',
                     icon: 'success'
                 });
                 this.auditLog();
@@ -2369,7 +2369,7 @@ class ProcessCodeMappingEditComponent {
             console.log(resp);
             if (resp === true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'User Deleted Successfully!',
+                    title: 'Record is Deleted',
                     icon: 'success'
                 });
                 this.router.navigateByUrl('/external-system/processCodeMappingEdit');
@@ -3194,7 +3194,7 @@ class ProcessCodeMappingNewComponent {
             .subscribe((resp) => {
             if (resp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'Data Saved Successfully!',
+                    title: 'Record is Created!',
                     icon: 'success'
                 });
                 this.submit = true;

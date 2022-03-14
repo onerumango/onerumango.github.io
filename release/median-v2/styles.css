@@ -15666,6 +15666,16 @@ table.tableStyle thead tr th.tblehead {
 .fa-eye-slash .hidePwd {
   opacity: 0;
 }
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:    #cecece !important;
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:    #cecece !important;
+}
+::placeholder { /* Most modern browsers support this now. */
+ color:    #cecece !important;
+}
 /***************************************
 *********** Media-quary *******
 **************************************/

@@ -1630,7 +1630,7 @@
                   _this3.submitDisab = true;
                   _this3.editFlag = true;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Department Saved Successfully",
+                    text: "Record is Created",
                     'icon': 'success'
                   });
                 } else {
@@ -1660,7 +1660,7 @@
                     _this3.submitDisab = true;
                     _this3.respData = deptMaintenanceResp;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Department Updated Successfully",
+                      text: "Record is Updated",
                       'icon': 'success'
                     });
                   } else {
@@ -1809,7 +1809,7 @@
                       _this5.auditLog();
 
                       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                        text: "Record closed successfully",
+                        text: "Record is Closed",
                         'icon': 'success'
                       });
                     } else {
@@ -1855,7 +1855,7 @@
                       _this6.auditLog();
 
                       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                        text: "Record opened successfully",
+                        text: "Record is Opened",
                         'icon': 'success'
                       } // type: "success"
                       );
@@ -1899,7 +1899,7 @@
 
                   if (_this7.respData.respMsg == "Deleted Successfully") {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      title: 'Record Deleted Successfully!',
+                      title: 'Record is Deleted',
                       icon: 'success'
                     });
 
@@ -2218,7 +2218,7 @@
       /*! @angular/common */
       54364);
 
-      function DepartmentIdMaintenanceComponent_tr_24_Template(rf, ctx) {
+      function DepartmentIdMaintenanceComponent_tr_26_Template(rf, ctx) {
         if (rf & 1) {
           var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
 
@@ -2228,7 +2228,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "a", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DepartmentIdMaintenanceComponent_tr_24_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DepartmentIdMaintenanceComponent_tr_26_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r3);
 
             var data_r1 = restoredCtx.$implicit;
@@ -2260,7 +2260,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](10, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](12, "date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
@@ -2284,7 +2290,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](10, 4, data_r1.inputTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](data_r1.verifiedStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](12, 5, data_r1.inputTime, "medium"));
         }
       }
 
@@ -2369,7 +2379,7 @@
       _DepartmentIdMaintenanceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: _DepartmentIdMaintenanceComponent,
         selectors: [["npr-department-id-maintenance"]],
-        decls: 25,
+        decls: 27,
         vars: 7,
         consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["href", "javascript:void(0)", 1, "primaryColor", 3, "click"]],
         template: function DepartmentIdMaintenanceComponent_Template(rf, ctx) {
@@ -2442,7 +2452,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Auth Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
@@ -2450,9 +2466,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](24, DepartmentIdMaintenanceComponent_tr_24_Template, 11, 7, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](26, DepartmentIdMaintenanceComponent_tr_26_Template, 13, 8, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
@@ -2476,7 +2492,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.respArray);
           }
@@ -3382,6 +3398,8 @@
           this.submitBtn = false;
           this.editAccFlag = false;
           this.submitAccBtn = false;
+          this.submit1 = true;
+          this.submit2 = true;
         }
 
         _createClass(_GlobalGccAcNewComponent, [{
@@ -3522,10 +3540,11 @@
 
               if (_this15.savegccResp == true) {
                 _this15.editFlag = true;
-                _this15.submitBtn = true; // this.toastService.successMessage('Data Saved Successfully!.', '');
+                _this15.submitBtn = true;
+                _this15.submit1 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Saved Successfully!',
+                  title: 'Record is Created',
                   icon: 'success'
                 }); // this.globalGccForm.reset();
               } else {
@@ -3561,10 +3580,11 @@
 
               if (_this16.saveaccResp == true) {
                 _this16.editAccFlag = true;
-                _this16.submitAccBtn = true; // this.toastService.successMessage('Data Saved Successfully!.', '');
+                _this16.submitAccBtn = true;
+                _this16.submit2 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Saved Successfully!',
+                  title: 'Record is created',
                   icon: 'success'
                 }); // this.accountMaintenanceForm.reset();
               } else {
@@ -3962,7 +3982,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.globalGccForm.controls.globalGccData.invalid);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.globalGccForm.controls.globalGccData.invalid || !ctx.submit1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
 
@@ -3978,7 +3998,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.accountMaintenanceForm.controls.accountMaintenanceData.invalid);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.accountMaintenanceForm.controls.accountMaintenanceData.invalid || !ctx.submit2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
 
@@ -4872,7 +4892,7 @@
 
               if (_this21.transactionCodeSummryData) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Closed the Record!',
+                  title: 'Record is Closed',
                   icon: 'success'
                 });
               } else {
@@ -4905,7 +4925,7 @@
 
               if (_this22.transactionCodeSummryData) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'You Re-Opened the Record!',
+                  title: 'Record Is Reopened',
                   icon: 'success'
                 });
               } else {
@@ -4932,7 +4952,7 @@
             this.apiService.deleteUserData(UserId).subscribe(function (resp) {
               if (resp == true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'User Deleted Successfully!',
+                  title: 'Record Is Deleted',
                   icon: 'success'
                 });
 
@@ -5009,7 +5029,7 @@
 
               if (_this25.updatetrnResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Updated Successfully!',
+                  title: 'Record is Updated',
                   icon: 'success'
                 });
               } else {
@@ -6205,7 +6225,7 @@
                     _this29.submitAccBtn = true; // this.toastService.successMessage('Data Saved Successfully!.', '');
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      title: 'Data Saved Successfully!',
+                      title: 'Record is Created',
                       icon: 'success'
                     });
                     _this29.editFlag = true;
@@ -7480,6 +7500,8 @@
           this.onbackSpace = false;
           this.permissionvalue = ['Allow', 'Disallow'];
           this.permissionvalue1 = ['Allow', 'Disallow'];
+          this.submit1 = true;
+          this.submit2 = true;
           this.userGLValues = [{
             permission: '',
             trnDesc: '',
@@ -7709,10 +7731,11 @@
 
               if (_this37.userGLResp == true) {
                 _this37.submitBtn = true;
-                _this37.editFlag = true; // this.toastService.successMessage('Data Saved Successfully!.', '');
+                _this37.editFlag = true;
+                _this37.submit1 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Saved Successfully!',
+                  title: 'Record is Created',
                   icon: 'success'
                 }); // this.userGLForm.reset();
               } else {
@@ -7745,10 +7768,11 @@
 
               if (_this38.accountClassResp == true) {
                 _this38.submitAccBtn = true;
-                _this38.editAccFlag = true; // this.toastService.successMessage('Data Saved Successfully!.', '');
+                _this38.editAccFlag = true;
+                _this38.submit2 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Data Saved Successfully!',
+                  title: 'Record is Created',
                   icon: 'success'
                 }); // this.accountClassForm.reset();
               } else {
@@ -8170,7 +8194,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.userGLForm.invalid);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.userGLForm.invalid || !ctx.submit1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
 
@@ -8190,7 +8214,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.accountClassForm.invalid || ctx.submitAccBtn);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.accountClassForm.invalid || ctx.submitAccBtn || !ctx.submit2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
 
