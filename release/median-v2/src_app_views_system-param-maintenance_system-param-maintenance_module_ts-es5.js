@@ -2664,39 +2664,35 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "a", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "td");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "td");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](10, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "td", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "a", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_48_Template_a_click_12_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](9, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_48_Template_a_click_11_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7);
 
             var accdata_r5 = restoredCtx.$implicit;
@@ -2706,7 +2702,7 @@
             return ctx_r6.deleteAccData(accdata_r5);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](13, "img", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2718,7 +2714,7 @@
         if (rf & 2) {
           var accdata_r5 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](accdata_r5.permission);
 
@@ -2732,7 +2728,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](10, 4, accdata_r5.inputTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](9, 4, accdata_r5.inputTime, "medium"));
         }
       }
 
@@ -2908,7 +2904,7 @@
         },
         decls: 49,
         vars: 10,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "tblIcon"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["href", "javascript:void(0)", 1, "primaryColor"], ["href", "javascript:void(0);", 1, "deleteIcon2", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "tblIcon"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["href", "javascript:void(0);", 1, "deleteIcon2", 3, "click"]],
         template: function GlobalGccAcMaintenanceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -2917,7 +2913,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Global GI/ACC Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Global Account Restriction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2953,7 +2949,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "h4");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "GL Code Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "General Ledger ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -3015,7 +3011,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](32, "h4");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](33, "Account Class Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](33, "Account Class ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -3063,7 +3059,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](47, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](48, GlobalGccAcMaintenanceComponent_tr_48_Template, 14, 7, "tr", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](48, GlobalGccAcMaintenanceComponent_tr_48_Template, 13, 7, "tr", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -3626,7 +3622,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "System GL/ACC Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Global Account Restriction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -3640,7 +3636,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "button", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "GL Code Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "General Ledger");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -3650,7 +3646,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "button", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, "Account Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, "Account Class");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -3672,7 +3668,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "h2", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](18, "GL Code Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](18, "General Ledger");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -3814,7 +3810,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](57, "h2", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](58, "Account Class Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](58, "Account Class");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -6974,7 +6970,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "User GL/ACC Maintenance Summary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "User Account Restriction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -7062,7 +7058,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "h4");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "GL Code Summary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "General Ledger");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -7130,7 +7126,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "h4");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](47, "Account Class Summary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](47, "Account Class ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -7814,7 +7810,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Gl/ ACC Code Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "User Account Restriction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -7832,7 +7828,7 @@
               return ctx.resetAllTabs();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "User GL Maintenace");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "User General Ledger");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -7846,7 +7842,7 @@
               return ctx.resetAllTabs();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, "Account Class Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, "Account Class");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -7868,7 +7864,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "h2", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](18, "GL Code Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](18, "General Ledger");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -8028,7 +8024,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](62, "h2", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](63, "Account Class Maintenance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](63, "Account Class");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 

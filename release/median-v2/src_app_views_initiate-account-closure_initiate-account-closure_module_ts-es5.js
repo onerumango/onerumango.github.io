@@ -132,7 +132,7 @@
       /*! @angular/common */
       54364);
 
-      function AccountClosureDetailsComponent_div_29_div_1_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_31_div_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
 
@@ -142,11 +142,11 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_29_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_31_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_29_div_1_Template, 2, 0, "div", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_31_div_1_Template, 2, 0, "div", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -160,7 +160,7 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_30_div_4_div_1_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_32_div_4_div_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
 
@@ -170,27 +170,27 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_30_div_4_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_32_div_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_30_div_4_div_1_Template, 2, 0, "div", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_32_div_4_div_1_Template, 2, 0, "div", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+          var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r8.accountClosureForm.controls["accountNumber"].errors.required);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r9.accountClosureForm.controls["accountNumber"].errors.required);
         }
       }
 
-      function AccountClosureDetailsComponent_div_30_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_32_Template(rf, ctx) {
         if (rf & 1) {
-          var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
 
@@ -200,19 +200,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "input", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "input", 25);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AccountClosureDetailsComponent_div_30_Template_input_ngModelChange_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AccountClosureDetailsComponent_div_32_Template_input_ngModelChange_3_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r12);
 
-            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r10.fetchUserSingle.accountNumber = $event;
+            return ctx_r11.fetchUserSingle.accountNumber = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_30_div_4_Template, 2, 1, "div", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_32_div_4_Template, 2, 1, "div", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -230,7 +230,7 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_31_div_4_div_1_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_33_div_4_div_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
 
@@ -240,27 +240,27 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_31_div_4_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_33_div_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_31_div_4_div_1_Template, 2, 0, "div", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_33_div_4_div_1_Template, 2, 0, "div", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+          var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r12.accountClosureForm.controls["branchCode"].errors.required);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r13.accountClosureForm.controls["branchCode"].errors.required);
         }
       }
 
-      function AccountClosureDetailsComponent_div_31_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_33_Template(rf, ctx) {
         if (rf & 1) {
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
 
@@ -270,19 +270,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "input", 24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "input", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AccountClosureDetailsComponent_div_31_Template_input_ngModelChange_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AccountClosureDetailsComponent_div_33_Template_input_ngModelChange_3_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r16);
 
-            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r14.fetchUserSingle.branchCode = $event;
+            return ctx_r15.fetchUserSingle.branchCode = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_31_div_4_Template, 2, 1, "div", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_33_div_4_Template, 2, 1, "div", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -300,7 +300,7 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_32_div_4_div_1_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_34_div_4_div_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
 
@@ -310,27 +310,27 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_32_div_4_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_34_div_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_32_div_4_div_1_Template, 2, 0, "div", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AccountClosureDetailsComponent_div_34_div_4_div_1_Template, 2, 0, "div", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+          var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r16.accountClosureForm.controls["reasonForClosure"].errors.required);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r17.accountClosureForm.controls["reasonForClosure"].errors.required);
         }
       }
 
-      function AccountClosureDetailsComponent_div_32_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_34_Template(rf, ctx) {
         if (rf & 1) {
-          var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
 
@@ -340,19 +340,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "input", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "input", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AccountClosureDetailsComponent_div_32_Template_input_ngModelChange_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AccountClosureDetailsComponent_div_34_Template_input_ngModelChange_3_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r20);
 
-            var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r18.fetchUserSingle.reasonForClosure = $event;
+            return ctx_r19.fetchUserSingle.reasonForClosure = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_32_div_4_Template, 2, 1, "div", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_34_div_4_Template, 2, 1, "div", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -370,26 +370,26 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_33_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_35_Template(rf, ctx) {
         if (rf & 1) {
-          var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 28);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 30);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "input", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "input", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AccountClosureDetailsComponent_div_33_Template_input_change_4_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AccountClosureDetailsComponent_div_35_Template_input_change_4_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r22);
 
-            var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r20.selectFile($event);
+            return ctx_r21.selectFile($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -400,7 +400,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "p", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "p", 32);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6);
 
@@ -422,55 +422,23 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_34_div_2_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_36_div_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 38);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_34_div_2_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_36_div_2_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r26);
 
-            var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+            var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
-            return ctx_r24.onSubmitFile();
+            return ctx_r25.onSubmitFile();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Submit File");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r22.submitFile && ctx_r22.accountClosureForm.controls["accountType"].invalid);
-        }
-      }
-
-      function AccountClosureDetailsComponent_div_34_div_3_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_34_div_3_Template_button_click_1_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r27);
-
-            var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-
-            return ctx_r26.onSubmitSingle($event);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Submit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -482,45 +450,77 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r23.accountClosureForm.invalid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r23.submitFile && ctx_r23.accountClosureForm.controls["accountType"].invalid);
         }
       }
 
-      function AccountClosureDetailsComponent_div_34_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_36_div_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_36_div_3_Template_button_click_1_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r28);
+
+            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r27.onSubmitSingle($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Submit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r24.accountClosureForm.invalid);
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_36_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, AccountClosureDetailsComponent_div_34_div_2_Template, 3, 1, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, AccountClosureDetailsComponent_div_36_div_2_Template, 3, 1, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, AccountClosureDetailsComponent_div_34_div_3_Template, 3, 1, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, AccountClosureDetailsComponent_div_36_div_3_Template, 3, 1, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "button", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "button", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Exit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_36_Template_button_click_5_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r30);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "button", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_34_Template_button_click_8_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r29);
-
-            var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-
-            return ctx_r28.generateExcel();
+            return ctx_r29.generateExcel();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "View Report");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "View Report");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "button", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Exit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -544,20 +544,20 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_35_div_8_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_37_div_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_35_div_8_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_2_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r41);
 
-            var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+            var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
-            return ctx_r34.editValues();
+            return ctx_r40.editValues();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Edit");
@@ -568,13 +568,87 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_35_div_9_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_37_div_3_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 33);
+          var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Update");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_3_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r43);
+
+            var ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r42.onSubmitFile();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Submit File");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r32.submitFile && ctx_r32.accountClosureForm.controls["accountType"].invalid);
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_37_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_4_Template_button_click_1_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r45);
+
+            var ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r44.onSubmitSingle($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Submit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r33.accountClosureForm.invalid);
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_37_div_5_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_5_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r47);
+
+            var ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r46.onclickOfAuth();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Auth");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -582,20 +656,82 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_35_div_10_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_37_div_6_Template(rf, ctx) {
         if (rf & 1) {
-          var _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r49 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_35_div_10_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_6_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r49);
 
-            var ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+            var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
-            return ctx_r36.onClickOfViewToData();
+            return ctx_r48.onclickOfReopen();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Reopen");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_37_div_7_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 39);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_7_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r51);
+
+            var ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r50.onclickOfClose();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Close");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_37_div_8_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 40);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_37_div_9_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_9_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r53);
+
+            var ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r52.onClickOfViewToData();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "View Report");
@@ -606,20 +742,20 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_35_div_11_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_37_div_10_Template(rf, ctx) {
         if (rf & 1) {
-          var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 41);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_35_div_11_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_37_div_10_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r55);
 
-            var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+            var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
-            return ctx_r38.onClickOfViewToDatabulk();
+            return ctx_r54.onClickOfViewToDatabulk();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "View Report");
@@ -630,49 +766,39 @@
         }
       }
 
-      function AccountClosureDetailsComponent_div_35_Template(rf, ctx) {
+      function AccountClosureDetailsComponent_div_37_Template(rf, ctx) {
         if (rf & 1) {
-          var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, AccountClosureDetailsComponent_div_37_div_2_Template, 3, 0, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "button", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, AccountClosureDetailsComponent_div_37_div_3_Template, 3, 1, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "Submit File");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_37_div_4_Template, 3, 1, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, AccountClosureDetailsComponent_div_37_div_5_Template, 3, 0, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, AccountClosureDetailsComponent_div_37_div_6_Template, 3, 0, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, AccountClosureDetailsComponent_div_37_div_7_Template, 3, 0, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "button", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, AccountClosureDetailsComponent_div_37_div_8_Template, 3, 0, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_35_Template_button_click_6_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, AccountClosureDetailsComponent_div_37_div_9_Template, 3, 0, "div", 34);
 
-            var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](10, AccountClosureDetailsComponent_div_37_div_10_Template, 3, 0, "div", 34);
 
-            return ctx_r40.editValues();
-          });
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7, "Exit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "button", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13, "Exit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, AccountClosureDetailsComponent_div_35_div_8_Template, 3, 0, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, AccountClosureDetailsComponent_div_35_div_9_Template, 3, 0, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](10, AccountClosureDetailsComponent_div_35_div_10_Template, 3, 0, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](11, AccountClosureDetailsComponent_div_35_div_11_Template, 3, 0, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -682,13 +808,33 @@
         if (rf & 2) {
           var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx_r6.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx_r6.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx_r6.singleCall && ctx_r6.editFlag);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.singleCall && ctx_r6.editFlag);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.fetchUserSingle.verifiedStatus == "UNAUTHORIZED");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.fetchUserSingle.recordStatus == "CLOSE" && ctx_r6.fetchUserSingle.verifiedOnce == "YES");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.fetchUserSingle.recordStatus == "OPEN" && ctx_r6.fetchUserSingle.verifiedOnce == "YES");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.fetchUserSingle.verifiedOnce == "NO" && ctx_r6.fetchUserSingle.verifiedStatus == "UNAUTHORIZED");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
@@ -697,6 +843,376 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.fetchUserSingle.closureType == "BULK");
+        }
+      }
+
+      function AccountClosureDetailsComponent_div_39_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 42);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 43);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 47);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "img", 48);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "Maker");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "div", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "img", 52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](23, "Maker Time Stamp");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](24, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](26, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "div", 53);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](32, "img", 54);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](35, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](36, "Record Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](37, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "div", 55);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](44, "img", 56);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](48, "Checker");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](49, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](51, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "div", 57);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](56, "img", 58);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](60, "Checker Time Stamp");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](61, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](63, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "div", 59);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](67, "img", 60);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](69, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](71, "First Time Auth");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](72, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](73);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](74, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](75, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](76, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](77, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "div", 61);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](79, "img", 62);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](80, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](81, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](82, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](83, "Auth Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](84, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](85);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](86, "div", 44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](87, "div", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](88, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](89, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](90, "div", 61);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](91, "img", 60);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "div", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](93, "div", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](94, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](95, "Modification Number");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](96, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.makerId);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](26, 6, ctx_r7.fetchUserSingle.makerInputTime, "MM/dd/yyyy, h:mm a"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.verifiedBy);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.verifiedOnce);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.verifiedStatus);
         }
       }
 
@@ -713,6 +1229,7 @@
           this.roleService = roleService;
           this.fetchUserSingle = new src_app_shared_models_FetchUserForSingleAccClosureReqDTO__WEBPACK_IMPORTED_MODULE_0__.FetchUserForSingleAccClosureReqDTO();
           this.fetch = new src_app_shared_models_FetchUserForSingleAccClosureReqDTO__WEBPACK_IMPORTED_MODULE_0__.FetchUserForSingleAccClosureReqDTO();
+          this.editFlag = false;
           this.selected = 'dormant';
           this.accountClosure = new src_app_shared_models_FetchUserForSingleAccClosureReqDTO__WEBPACK_IMPORTED_MODULE_0__.FetchUserForSingleAccClosureReqDTO();
           this.submitFile = true;
@@ -735,15 +1252,15 @@
               branchCode: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern('^[0-9 \-\']+')]],
               reasonForClosure: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]
             });
-            console.log(this.route.snapshot.queryParams);
+            this.accountClosureForm.get('closureType').setValue('BULK');
+            localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType); // console.log(this.route.snapshot.queryParams);
+            // if(this.route.snapshot.queryParams.closureType){
+            //   console.log("Query params");
+            //   this.modifyScreen=true;
+            //   this.editFlag = true;
+            // }
+            // this.fetchUserSingle.modNo =this.initiateAccClosure.queryParams.modNo;
 
-            if (this.route.snapshot.queryParams.closureType) {
-              console.log("Query params");
-              this.modifyScreen = true;
-              this.editFlag = true;
-            }
-
-            this.fetchUserSingle.modNo = this.initiateAccClosure.queryParams.modNo;
             this.fetchUserSingle.modNo = this.initiateAccClosure.queryParams.modNo;
             this.fetchUserSingle.closureType = this.initiateAccClosure.queryParams.closureType;
             this.fetchUserSingle.accountNumber = this.initiateAccClosure.queryParams.accountNumber;
@@ -831,6 +1348,7 @@
             console.log("this is bulk call");
             this.singleCall = false;
             this.accountClosureForm.get('closureType').setValue('BULK');
+            localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType);
           }
         }, {
           key: "onclickOfSingle",
@@ -838,6 +1356,7 @@
             console.log("this is single call");
             this.singleCall = true;
             this.accountClosureForm.get('closureType').setValue('SINGLE');
+            localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType);
           }
         }, {
           key: "selectFile",
@@ -952,7 +1471,7 @@
         }, {
           key: "editValues",
           value: function editValues() {
-            this.editFlag = false;
+            this.editFlag = true;
           }
         }, {
           key: "onClickOfViewToDatabulk",
@@ -963,124 +1482,119 @@
               console.log("insdie bulk", this.fetchUserSingle);
               console.log("accont Type", this.fetchUserSingle.accountType);
               console.log("closure Tpye", this.fetchUserSingle.closureType);
-              console.log("finle Name", this.fetchUserSingle.fileName); // console.log("fetch",this.fetch);
-              // this.bulkAuditData=JSON.stringify(this.fetchUserSingle);
-              // console.log(this.bulkAuditData);
-              // localStorage.setItem("bulkAudit",this.bulkAuditData);
-              // console.log("this should be in else of bulk",this.fetchUserSingle.closureType);
-
+              console.log("finle Name", this.fetchUserSingle.fileName);
               var navigationExtras = {
                 queryParams: {
-                  closureTypeViewBulk: this.fetchUserSingle.closureType,
-                  fileNmaeBulk: this.fetchUserSingle.fileName,
-                  accountTypeBulk: this.fetchUserSingle.accountType,
-                  record: this.fetchUserSingle.recordStatus,
-                  authorizer: this.fetchUserSingle.verifiedBy,
-                  authFirsTime: this.fetchUserSingle.verifiedOnce,
-                  authStatus: this.fetchUserSingle.verifiedStatus,
-                  authDate: this.fetchUserSingle.verifiedTime,
-                  creator: this.fetchUserSingle.inputBy,
-                  creatorDate: this.fetchUserSingle.inputTime,
-                  modficationNo: this.fetchUserSingle.modNo,
-                  processStatus: this.fetchUserSingle.processStatus,
-                  Desc: this.fetchUserSingle.accountLinkageDesc,
-                  //-------------------------------------
-                  closeStatusInputBy: this.fetchUserSingle.closeStatusInputBy,
-                  closeStatusInputTime: this.fetchUserSingle.closeStatusInputTime,
-                  closeStatus: this.fetchUserSingle.closeStatus,
-                  icliqAvlBal: this.fetchUserSingle.icliqAvlBal,
-                  icliqBalance: this.fetchUserSingle.icliqBalance,
-                  icliqStatus: this.fetchUserSingle.icliqStatus,
-                  makerId: this.fetchUserSingle.makerId,
-                  makerInputTime: this.fetchUserSingle.makerInputTime,
-                  accls: this.fetchUserSingle.accls,
-                  lastTransactionDetail: this.fetchUserSingle.lastTransactionDetail,
-                  blockedAmount: this.fetchUserSingle.blockedAmount,
-                  deStatus: this.fetchUserSingle.deStatus,
-                  linkedAccounts: this.fetchUserSingle.linkedAccounts,
-                  checkerId: this.fetchUserSingle.checkerId,
-                  checkerInputTime: this.fetchUserSingle.checkerInputTime //----------------------------------
+                  'closureTypeViewBulk': this.fetchUserSingle.closureType,
+                  'fileName': this.fetchUserSingle.fileName,
+                  'accountTypeBulk': this.fetchUserSingle.accountType,
+                  'record': this.fetchUserSingle.recordStatus,
+                  'authorizer': this.fetchUserSingle.verifiedBy,
+                  'authFirsTime': this.fetchUserSingle.verifiedOnce,
+                  'authStatus': this.fetchUserSingle.verifiedStatus,
+                  'authDate': this.fetchUserSingle.verifiedTime,
+                  'creator': this.fetchUserSingle.inputBy,
+                  'creatorDate': this.fetchUserSingle.inputTime,
+                  'modficationNo': this.fetchUserSingle.modNo,
+                  'processStatus': this.fetchUserSingle.processStatus,
+                  'Desc': this.fetchUserSingle.accountLinkageDesc,
+                  'closeStatusInputBy': this.fetchUserSingle.closeStatusInputBy,
+                  'closeStatusInputTime': this.fetchUserSingle.closeStatusInputTime,
+                  'closeStatus': this.fetchUserSingle.closeStatus,
+                  'icliqAvlBal': this.fetchUserSingle.icliqAvlBal,
+                  'icliqBalance': this.fetchUserSingle.icliqBalance,
+                  'icliqStatus': this.fetchUserSingle.icliqStatus,
+                  'makerId': this.fetchUserSingle.makerId,
+                  'makerInputTime': this.fetchUserSingle.makerInputTime,
+                  'accls': this.fetchUserSingle.accls,
+                  'lastTransactionDetail': this.fetchUserSingle.lastTransactionDetail,
+                  'blockedAmount': this.fetchUserSingle.blockedAmount,
+                  'deStatus': this.fetchUserSingle.deStatus,
+                  'linkedAccounts': this.fetchUserSingle.linkedAccounts,
+                  'checkerId': this.fetchUserSingle.checkerId,
+                  'checkerInputTime': this.fetchUserSingle.checkerInputTime //----------------------------------
 
                 }
               };
+              console.log(navigationExtras);
               this.accClosure.sendNavParam(navigationExtras);
-              this.router.navigate(['/account-closure/viewReportOfAccountClosure']); // this.router.navigate(['account-closure/viewReportOfAccountClosure'],navigationExtras);
+              console.log(navigationExtras);
+              this.router.navigate(['initiate-account-closure/viewReport']);
+              console.log(navigationExtras); // this.router.navigate(['account-closure/viewReportOfAccountClosure'],navigationExtras);
             }
           }
         }, {
           key: "onClickOfViewToData",
           value: function onClickOfViewToData() {
-            var _this3 = this;
-
             console.log("this is view", this.fetchUserSingle.closureType);
             localStorage.setItem("accountTypeForProcess", this.fetchUserSingle.accountType);
             localStorage.setItem("closureTypeForBulk", this.fetchUserSingle.closureType);
-            console.log("bulk", this.fetchUserSingle.closureType); // if(this.fetchUserSingle.closureType=="SINGLE")
-            // {
+            console.log("bulk", this.fetchUserSingle.closureType);
 
-            console.log("inisde if of single edit screnn");
-            this.accClosure.onViewOfSingleClsureType(this.fetchUserSingle.accountType, this.fetchUserSingle.closureType, this.fetchUserSingle.accountNumber).subscribe(function (viewReportOfSingleResp) {
-              console.log(viewReportOfSingleResp);
-              _this3.fetch = viewReportOfSingleResp;
-              console.log(_this3.fetchUserSingle);
-              console.log(_this3.fetch);
+            if (this.fetchUserSingle.closureType == "SINGLE") {
+              //   console.log("inisde if of single edit screnn");
+              // this.accClosure.onViewOfSingleClsureType(this.fetchUserSingle.accountType,this.fetchUserSingle.closureType,this.fetchUserSingle.accountNumber).subscribe(viewReportOfSingleResp=>{
+              //   console.log(viewReportOfSingleResp);
+              //   this.fetch=viewReportOfSingleResp;
+              //   console.log(this.fetchUserSingle);
+              //   console.log(this.fetch);
               var navigationExtras = {
                 queryParams: {
-                  closureTypeView: _this3.fetch.closureType,
-                  accountNumberView: _this3.fetch.accountNumber,
-                  accountTypeview: _this3.fetch.accountType,
-                  creator: _this3.fetch.inputBy,
-                  record: _this3.fetch.recordStatus,
-                  authStatus: _this3.fetch.verifiedStatus,
-                  modficationNo: _this3.fetch.modNo,
-                  creatorDate: _this3.fetch.inputTime,
-                  authDate: _this3.fetch.verifiedTime,
-                  authFirsTime: _this3.fetch.verifiedOnce,
-                  authorizer: _this3.fetch.verifiedBy,
-                  acyCurrBalance: _this3.fetch.acyCurrBalance,
-                  frozenView: _this3.fetch.frozen,
-                  branchCode: _this3.fetch.branchCode,
-                  dorm: _this3.fetch.dorm,
-                  lcyCurrBalance: _this3.fetch.lcyCurrBalance,
-                  acSatNoCr: _this3.fetch.acSatNoCr,
-                  acyAvlBal: _this3.fetch.acyAvlBal,
-                  fileName: _this3.fetch.fileName,
-                  accStatus: _this3.fetch.accountStatus,
-                  flexRecord: _this3.fetch.recordStatusFromFlexCube,
-                  custId: _this3.fetch.customerId,
-                  valueDate: _this3.fetch.valueDate,
-                  debit: _this3.fetch.acStatNoDr,
-                  file: _this3.fetch.fileName,
-                  processStatus: _this3.fetch.processStatus,
-                  Desc: _this3.fetch.accountLinkageDesc,
-                  //------------------------------
-                  closeStatusInputBy: _this3.fetch.closeStatusInputBy,
-                  closeStatusInputTime: _this3.fetch.closeStatusInputTime,
-                  closeStatus: _this3.fetch.closeStatus,
-                  icliqAvlBal: _this3.fetch.icliqAvlBal,
-                  icliqBalance: _this3.fetch.icliqBalance,
-                  icliqStatus: _this3.fetch.icliqStatus,
-                  makerId: _this3.fetch.makerId,
-                  makerInputTime: _this3.fetch.makerInputTime,
-                  accls: _this3.fetch.accls,
-                  lastTransactionDetail: _this3.fetch.lastTransactionDetail,
-                  blockedAmount: _this3.fetch.blockedAmount,
-                  deStatus: _this3.fetch.deStatus,
-                  linkedAccounts: _this3.fetch.linkedAccounts,
-                  checkerId: _this3.fetch.checkerId,
-                  checkerInputTime: _this3.fetch.checkerInputTime //------------------------------
+                  'closureTypeView': this.fetch.closureType,
+                  'accountNumberView': this.fetch.accountNumber,
+                  'accountTypeview': this.fetch.accountType,
+                  'creator': this.fetch.inputBy,
+                  'record': this.fetch.recordStatus,
+                  'authStatus': this.fetch.verifiedStatus,
+                  'modficationNo': this.fetch.modNo,
+                  'creatorDate': this.fetch.inputTime,
+                  'authDate': this.fetch.verifiedTime,
+                  'authFirsTime': this.fetch.verifiedOnce,
+                  'authorizer': this.fetch.verifiedBy,
+                  'acyCurrBalance': this.fetch.acyCurrBalance,
+                  'frozenView': this.fetch.frozen,
+                  'branchCode': this.fetch.branchCode,
+                  'dorm': this.fetch.dorm,
+                  'lcyCurrBalance': this.fetch.lcyCurrBalance,
+                  'acSatNoCr': this.fetch.acSatNoCr,
+                  'acyAvlBal': this.fetch.acyAvlBal,
+                  'fileName': this.fetch.fileName,
+                  'accStatus': this.fetch.accountStatus,
+                  'flexRecord': this.fetch.recordStatusFromFlexCube,
+                  'custId': this.fetch.customerId,
+                  'valueDate': this.fetch.valueDate,
+                  'debit': this.fetch.acStatNoDr,
+                  'file': this.fetch.fileName,
+                  'processStatus': this.fetch.processStatus,
+                  'Desc': this.fetch.accountLinkageDesc,
+                  'closeStatusInputBy': this.fetch.closeStatusInputBy,
+                  'closeStatusInputTime': this.fetch.closeStatusInputTime,
+                  'closeStatus': this.fetch.closeStatus,
+                  'icliqAvlBal': this.fetch.icliqAvlBal,
+                  'icliqBalance': this.fetch.icliqBalance,
+                  'icliqStatus': this.fetch.icliqStatus,
+                  'makerId': this.fetch.makerId,
+                  'makerInputTime': this.fetch.makerInputTime,
+                  'accls': this.fetch.accls,
+                  'lastTransactionDetail': this.fetch.lastTransactionDetail,
+                  'blockedAmount': this.fetch.blockedAmount,
+                  'deStatus': this.fetch.deStatus,
+                  'linkedAccounts': this.fetch.linkedAccounts,
+                  'checkerId': this.fetch.checkerId,
+                  'checkerInputTime': this.fetch.checkerInputTime //------------------------------
 
                 }
               }; // console.log("edit data",this.fetch);
               // localStorage.setItem('singledta',JSON.stringify(this.fetch));
+              // this.router.navigate(['account-closure/viewReportOfAccountClosure']);
 
-              _this3.router.navigate(['account-closure/viewReportOfAccountClosure'], navigationExtras);
-            }); // }
+              this.router.navigate(['initiate-account-closure/viewReport']);
+            }
           }
         }, {
           key: "onSubmitFile",
           value: function onSubmitFile() {
-            var _this4 = this;
+            var _this3 = this;
 
             console.log("on submit");
             this.accountClosureForm.get('closureType').setValue('BULK');
@@ -1119,11 +1633,11 @@
                 //   this.uploadSuccess = true;
                 // }
                 console.log(fileResp);
-                _this4.fetchUserSingle = fileResp;
+                _this3.fetchUserSingle = fileResp;
 
-                if (_this4.fetchUserSingle.errorDesc == 'S') {
-                  _this4.enableView = true;
-                  _this4.submitFile = true; // this.iziToast.show({
+                if (_this3.fetchUserSingle.errorDesc == 'S') {
+                  _this3.enableView = true;
+                  _this3.submitFile = true; // this.iziToast.show({
                   //   message: `File uploaded sucessfully`,
                   //   image: "assets/images/user.png",
                   //   icon: 'ico ico-success',
@@ -1140,13 +1654,13 @@
                     text: "File uploaded sucessfully",
                     icon: 'success'
                   });
-                  _this4.showSubmitProgressBar = false;
-                  _this4.showAuditlog = true;
+                  _this3.showSubmitProgressBar = false;
+                  _this3.showAuditlog = true;
                 } else {
-                  _this4.accountClosureForm.get('accountType').setValue(_this4.sendAccountType);
+                  _this3.accountClosureForm.get('accountType').setValue(_this3.sendAccountType);
 
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: _this4.fetchUserSingle.errorDesc,
+                    text: _this3.fetchUserSingle.errorDesc,
                     icon: 'error'
                   }); // this.iziToast.show({
                   //   message: this.fetchUserSingle.errorDesc,
@@ -1161,7 +1675,7 @@
                   //   pauseOnHover: true,
                   // });
 
-                  _this4.showSubmitProgressBar = false;
+                  _this3.showSubmitProgressBar = false;
                 }
               });
             }
@@ -1170,19 +1684,13 @@
           key: "generateExcel",
           value: function generateExcel() {
             this.router.navigate(['initiate-account-closure/viewReport']); // this.accClosure.generateExcel(this.excel);
-
-            console.log("bulk"); // else{
+            // else{
 
             if (this.fetchUserSingle.closureType == 'BULK') {
               console.log("insdie bulk", this.fetchUserSingle);
               console.log("accont Type", this.fetchUserSingle.accountType);
               console.log("closure Tpye", this.fetchUserSingle.closureType);
-              console.log("finle Name", this.fetchUserSingle.fileName); // console.log("fetch",this.fetch);
-              // this.bulkAuditData=JSON.stringify(this.fetchUserSingle);
-              // console.log(this.bulkAuditData);
-              // localStorage.setItem("bulkAudit",this.bulkAuditData);
-              // console.log("this should be in else of bulk",this.fetchUserSingle.closureType);
-
+              console.log("finle Name", this.fetchUserSingle.fileName);
               var navigationExtras = {
                 queryParams: {
                   closureTypeViewBulk: this.fetchUserSingle.closureType,
@@ -1202,6 +1710,80 @@
               this.router.navigate(['initiate-account-closure/viewReport'], navigationExtras);
             }
           }
+        }, {
+          key: "onclickOfAuth",
+          value: function onclickOfAuth() {
+            console.log("this is auth");
+            this.accClosure.onAuthorizingTheRecord(this.fetchUserSingle.accountNumber, this.currentUser).subscribe(function (authResp) {
+              console.log(authResp);
+
+              if (!authResp) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                  title: 'Maker Cannot Authorize The Record',
+                  icon: 'warning'
+                });
+              } else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                  title: 'You Authorize The Record' // type: 'success',
+
+                });
+              }
+            });
+          }
+        }, {
+          key: "onclickOfClose",
+          value: function onclickOfClose() {
+            var _this4 = this;
+
+            console.log("this is close");
+            this.accClosure.onClosingTheRecord(this.fetchUserSingle.accountNumber, this.currentUser).subscribe(function (recordStatusResp) {
+              console.log(recordStatusResp);
+              _this4.fetchUserSingle = recordStatusResp;
+
+              if (_this4.fetchUserSingle.recordStatus == 'C') {
+                _this4.fetchUserSingle.recordStatus = 'CLOSE';
+              }
+
+              if (_this4.fetchUserSingle.recordStatus == 'O') {
+                _this4.fetchUserSingle.recordStatus = 'OPEN';
+              }
+
+              if (_this4.fetchUserSingle.verifiedStatus == 'A') {
+                _this4.fetchUserSingle.verifiedStatus = 'AUTHORIZED';
+              }
+
+              if (_this4.fetchUserSingle.verifiedStatus == 'U') {
+                _this4.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
+              }
+
+              if (_this4.fetchUserSingle.verifiedOnce == 'Y') {
+                _this4.fetchUserSingle.verifiedOnce = 'YES';
+              }
+
+              if (_this4.fetchUserSingle.verifiedOnce == 'N') {
+                _this4.fetchUserSingle.verifiedOnce = 'NO';
+              }
+            });
+          }
+        }, {
+          key: "onclickOfReopen",
+          value: function onclickOfReopen() {
+            var _this5 = this;
+
+            console.log("this is reopen");
+            this.accClosure.onReopningTheRecord(this.fetchUserSingle.accountNumber, this.currentUser).subscribe(function (openResp) {
+              console.log(openResp);
+              _this5.fetchUserSingle = openResp;
+
+              if (_this5.fetchUserSingle.recordStatus == 'C') {
+                _this5.fetchUserSingle.recordStatus = 'CLOSE';
+              }
+
+              if (_this5.fetchUserSingle.recordStatus == 'O') {
+                _this5.fetchUserSingle.recordStatus = 'OPEN';
+              }
+            });
+          }
         }]);
 
         return _AccountClosureDetailsComponent;
@@ -1214,9 +1796,9 @@
       _AccountClosureDetailsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _AccountClosureDetailsComponent,
         selectors: [["npr-account-closure-details"]],
-        decls: 36,
-        vars: 11,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle", "cardWidth"], [1, "row", "gy-4", "justify-content-center"], [1, "col-12"], [1, "row", "g-2", "justify-content-center"], [1, "col-sm-4", "col-5"], [1, "radio", "radioStyle"], ["id", "radio-1", "name", "radio", "type", "radio", "checked", "", 3, "readonly", "click"], ["for", "radio-1", 1, "radio-label"], ["id", "radio-2", "name", "radio", "type", "radio", 3, "readonly", "click"], ["for", "radio-2", 1, "radio-label"], ["for", "roleName", 1, "formLbl"], ["formControlName", "accountType", "aria-label", "Default select example", 1, "form-select", 3, "ngModel", "ngModelChange"], ["value", "dormant"], ["value", "overDrawn"], ["value", "unclaimed"], ["class", "errorColor", 4, "ngIf"], ["class", "col-12", 4, "ngIf"], [1, "errorColor"], [4, "ngIf"], ["id", "accountNumber", "placeholder", "Account Number", "required", "", "formControlName", "accountNumber", "value", "", 1, "form-control", 3, "readonly", "ngModel", "ngModelChange"], ["id", "branchCode", "placeholder", "Branch Code", "required", "", "formControlName", "branchCode", "value", "", 1, "form-control", 3, "readonly", "ngModel", "ngModelChange"], ["id", "", "placeholder", "Reason For Closure", "required", "", "formControlName", "reasonForClosure", "value", "", 1, "form-control", 3, "readonly", "ngModel", "ngModelChange"], [1, "fileUpload"], [1, "formS"], ["data-text", "File Upload", 1, "file-upload-wrapper"], ["name", "file-upload-field", "type", "file", "value", "", 1, "file-upload-field", 3, "readonly", "change"], [2, "font-size", "11px", "color", "#a30202"], [1, "row", "g-3", "pb-3", "justify-content-center", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["routerLink", "/initiate-account-closure", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], ["routerLink", "/initiate-account-closure", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"]],
+        decls: 40,
+        vars: 12,
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle", "cardWidth"], [1, "row", "gy-4", "justify-content-center"], [1, "col-12"], [1, "row", "g-2", "justify-content-center"], [1, "col-sm-4", "col-5"], [1, "radio", "radioStyle"], ["id", "radio-1", "name", "radio", "type", "radio", "checked", "", 3, "readonly", "click"], ["for", "radio-1", 1, "radio-label"], ["id", "radio-2", "name", "radio", "type", "radio", 3, "readonly", "click"], ["for", "radio-2", 1, "radio-label"], ["for", "roleName", 1, "formLbl"], ["formControlName", "accountType", "aria-label", "Default select example", 1, "form-select", 3, "ngModel", "ngModelChange"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["value", "dormant"], ["value", "overDrawn"], ["value", "unclaimed"], ["class", "errorColor", 4, "ngIf"], ["class", "col-12", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "errorColor"], [4, "ngIf"], ["id", "accountNumber", "placeholder", "Account Number", "required", "", "formControlName", "accountNumber", "value", "", 1, "form-control", 3, "readonly", "ngModel", "ngModelChange"], ["id", "branchCode", "placeholder", "Branch Code", "required", "", "formControlName", "branchCode", "value", "", 1, "form-control", 3, "readonly", "ngModel", "ngModelChange"], ["id", "", "placeholder", "Reason For Closure", "required", "", "formControlName", "reasonForClosure", "value", "", 1, "form-control", 3, "readonly", "ngModel", "ngModelChange"], [1, "fileUpload"], [1, "formS"], ["data-text", "File Upload", 1, "file-upload-wrapper"], ["name", "file-upload-field", "type", "file", "value", "", 1, "file-upload-field", 3, "readonly", "change"], [2, "font-size", "11px", "color", "#a30202"], [1, "row", "g-3", "pb-3", "justify-content-center", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["routerLink", "/initiate-account-closure", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "dbCardStyle"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
         template: function AccountClosureDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -1305,47 +1887,57 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "option", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "Dormant ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "--Please select--");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "option", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "OverDrawn Accounts");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "Dormant ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "option", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](28, "Unclaimed ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](28, "OverDrawn Accounts");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "option", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](30, "Unclaimed ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](29, AccountClosureDetailsComponent_div_29_Template, 2, 1, "div", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, AccountClosureDetailsComponent_div_31_Template, 2, 1, "div", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](30, AccountClosureDetailsComponent_div_30_Template, 5, 3, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](32, AccountClosureDetailsComponent_div_32_Template, 5, 3, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, AccountClosureDetailsComponent_div_31_Template, 5, 3, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](33, AccountClosureDetailsComponent_div_33_Template, 5, 3, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](32, AccountClosureDetailsComponent_div_32_Template, 5, 3, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](34, AccountClosureDetailsComponent_div_34_Template, 5, 3, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](33, AccountClosureDetailsComponent_div_33_Template, 7, 2, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](35, AccountClosureDetailsComponent_div_35_Template, 7, 2, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](34, AccountClosureDetailsComponent_div_34_Template, 10, 2, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](36, AccountClosureDetailsComponent_div_36_Template, 10, 2, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](35, AccountClosureDetailsComponent_div_35_Template, 12, 4, "div", 20);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](37, AccountClosureDetailsComponent_div_37_Template, 14, 9, "div", 21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](38, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](39, AccountClosureDetailsComponent_div_39_Template, 97, 9, "div", 22);
           }
 
           if (rf & 2) {
@@ -1365,7 +1957,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.fetchUserSingle.accountType);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.accountClosureForm.controls["accountType"].invalid && (ctx.accountClosureForm.controls["accountType"].dirty || ctx.accountClosureForm.controls["accountType"].touched));
 
@@ -1387,14 +1979,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.modifyScreen);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.fetchUserSingle.closureType == null);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.modifyScreen || ctx.editFlag);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.fetchUserSingle.closureType != null);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.initiateAccClosure.queryParams.accountType != null);
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLink],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe],
         styles: [".errorColor[_ngcontent-%COMP%] {\n  color: #e6224a;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY291bnQtY2xvc3VyZS1kZXRhaWxzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtBQUNKIiwiZmlsZSI6ImFjY291bnQtY2xvc3VyZS1kZXRhaWxzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVycm9yQ29sb3J7XHJcbiAgICBjb2xvcjogI2U2MjI0YTtcclxufSJdfQ== */"]
       });
       /***/
@@ -1746,10 +2343,6 @@
       }
 
       var _c0 = function _c0() {
-        return ["/initiate-account-closure/create"];
-      };
-
-      var _c1 = function _c1() {
         return ["/dashboard"];
       };
 
@@ -1768,10 +2361,10 @@
         _createClass(_InitiateAccountClosureComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this5 = this;
+            var _this6 = this;
 
             setTimeout(function () {
-              _this5.newRolePermissions();
+              _this6.newRolePermissions();
             }, 2000);
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -1786,6 +2379,15 @@
             };
             this.currentUser = localStorage.getItem('currentUser').replace(/['"]+/g, '');
             this.gettingAccClosureSummary(this.currentUser);
+          }
+        }, {
+          key: "createAccClosure",
+          value: function createAccClosure() {
+            this.router.navigate(['/initiate-account-closure/create']);
+            var navigationExtras = {
+              queryParams: {}
+            };
+            this.roleService.sendNavParam(navigationExtras);
           }
         }, {
           key: "getDataFromSummary",
@@ -1853,12 +2455,12 @@
         }, {
           key: "gettingAccClosureSummary",
           value: function gettingAccClosureSummary(currentUser) {
-            var _this6 = this;
+            var _this7 = this;
 
             console.log("this account closure Summary");
             this.accClosureServiceSum.gettingAccountClosureSummary(currentUser).subscribe(function (backendResp) {
               console.log(backendResp);
-              _this6.summaryDetails = backendResp; // this.dataSource = new MatTableDataSource<FetchUserForSingleAccClosureReqDTO>(this.summaryDetails);
+              _this7.summaryDetails = backendResp; // this.dataSource = new MatTableDataSource<FetchUserForSingleAccClosureReqDTO>(this.summaryDetails);
               // this.dataSource.paginator = this.paginator.toArray()[0];;
               // console.log(this.summaryDetails);
             });
@@ -1876,8 +2478,8 @@
         type: _InitiateAccountClosureComponent,
         selectors: [["npr-initiate-account-closure"]],
         decls: 29,
-        vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "primaryColor", 3, "routerLink", "click"]],
+        vars: 5,
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "primaryColor", 3, "routerLink", "click"]],
         template: function InitiateAccountClosureComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -1899,6 +2501,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "div", 5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "a", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_Template_a_click_7_listener() {
+              return ctx.createAccClosure();
+            });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "New");
 
@@ -1978,13 +2584,9 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](5, _c0));
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](6, _c1));
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](4, _c0));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
 
@@ -2115,9 +2717,57 @@
       /*! angular-datatables */
       50481);
 
+      function ViewReportAccClosureComponent_div_5_div_11_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_5_div_11_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r5);
+
+            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](2);
+
+            return ctx_r4.onProcessingTheBulkAccount();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, "Process");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ViewReportAccClosureComponent_div_5_div_12_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_5_div_12_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r7);
+
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](2);
+
+            return ctx_r6.onProcessingTheSingleAccount();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, "Process");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        }
+      }
+
       function ViewReportAccClosureComponent_div_5_Template(rf, ctx) {
         if (rf & 1) {
-          var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
+          var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 6);
 
@@ -2132,11 +2782,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](4, "select", 9);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("change", function ViewReportAccClosureComponent_div_5_Template_select_change_4_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9);
 
-            var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
 
-            return ctx_r2.modo($event.target.value);
+            return ctx_r8.modo($event.target.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](5, "option", 10);
@@ -2159,47 +2809,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](10, "div", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](11, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](11, ViewReportAccClosureComponent_div_5_div_11_Template, 3, 0, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](12, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](12, ViewReportAccClosureComponent_div_5_div_12_Template, 3, 0, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_5_Template_button_click_12_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](13, "div", 14);
 
-            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](14, "a", 15);
 
-            return ctx_r4.onProcessingTheBulkAccount();
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_5_Template_a_click_14_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r9);
+
+            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+
+            return ctx_r10.onCancelingTheRecord();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](13, "Process");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](15, "Delete");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](14, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](16, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](15, "a", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](17, "button", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_5_Template_a_click_15_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r3);
-
-            var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
-
-            return ctx_r5.onCancelingTheRecord();
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](16, "Delet");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](17, "div", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](18, "button", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](19, "Exit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](18, "Exit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -2211,17 +2847,29 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
+
+        if (rf & 2) {
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r0.closureTypes == "BULK");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r0.closureTypes == "SINGLE");
+        }
       }
 
       function ViewReportAccClosureComponent_div_6_Template(rf, ctx) {
         if (rf & 1) {
-          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
+          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "div", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "div", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](2, "table", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](2, "table", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "thead");
 
@@ -2289,7 +2937,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "table", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "table", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](24, "thead");
 
@@ -2453,16 +3101,16 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](75, "div", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](76, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](76, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](77, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](77, "button", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_6_Template_button_click_77_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r12);
 
-            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
 
-            return ctx_r6.onProcessingTheSingleAccount();
+            return ctx_r11.onProcessingTheSingleAccount();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](78, "Process");
@@ -2471,16 +3119,16 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](79, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](79, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](80, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](80, "button", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_6_Template_button_click_80_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r12);
 
-            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
 
-            return ctx_r8.onCancelingTheSingleRecord();
+            return ctx_r13.onCancelingTheSingleRecord();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](81, "Delete");
@@ -2489,9 +3137,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](82, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](82, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](83, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](83, "button", 16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](84, "Exit");
 
@@ -2511,30 +3159,30 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](88, "select", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](88, "select", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](89, "option", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](89, "option", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_6_Template_option_click_89_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r12);
 
-            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
 
-            return ctx_r9.downloadReportForSingle();
+            return ctx_r14.downloadReportForSingle();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](90, "Excel");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](91, "option", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](91, "option", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReportAccClosureComponent_div_6_Template_option_click_91_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r12);
 
-            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
 
-            return ctx_r10.convertReportForSingle();
+            return ctx_r15.convertReportForSingle();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](92, "PDF");
@@ -2641,12 +3289,15 @@
         _createClass(_ViewReportAccClosureComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this7 = this;
+            var _this8 = this;
 
-            this.navSubscription = this.roleService.getNavParam.subscribe(function (data) {
-              return _this7.ViewAccClosure = data;
+            console.log("Inside View Report");
+            this.closureTypes = localStorage.getItem("CLOSURETYPE");
+            console.log(this.closureTypes);
+            this.navSubscription = this.excelService.getNavParam.subscribe(function (data) {
+              return _this8.ViewAccClosure = data;
             });
-            this.fetchUserSingle.modNo = this.ViewAccClosure.queryParams.modNo;
+            console.log(this.ViewAccClosure);
             this.fetchUserSingle.modNo = this.ViewAccClosure.queryParams.modNo;
             this.fetchUserSingle.closureType = this.ViewAccClosure.queryParams.closureType;
             this.fetchUserSingle.accountNumber = this.ViewAccClosure.queryParams.accountNumber;
@@ -2684,7 +3335,7 @@
         }, {
           key: "exportAsXLSX",
           value: function exportAsXLSX() {
-            var _this8 = this;
+            var _this9 = this;
 
             console.log("this is on click of download"); // this.showProgressBar = true;
 
@@ -2698,11 +3349,11 @@
             var fin = this.fetchUserSingle.fileName.split('.').slice(0, -1).join('.');
             this.excelService.getExcel(fin, this.fetchUserSingle.accountType).subscribe(function (data) {
               console.log("this is backend data for excel", data);
-              _this8.excel = data;
+              _this9.excel = data;
               data.forEach(function (element) {//this.excel.push(element);
               }); //console.log("vidya",this.excel);
 
-              _this8.excelService.exportAsExcelFile(_this8.excel, 'BULK_ACCOUNT_CLOSURE');
+              _this9.excelService.exportAsExcelFile(_this9.excel, 'BULK_ACCOUNT_CLOSURE');
             });
             console.log(this.excel); // --passing two arguments --1)is getting data from backend --i.e is excel data
             // 2)what name i should give for file
@@ -2711,19 +3362,20 @@
         }, {
           key: "convert",
           value: function convert() {
-            var _this9 = this;
+            var _this10 = this;
 
             var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_1___default())();
             var col = [["AccountNo", "branchCode", "closureReason", "customerId", "fileName", "frozen"]];
             var rows = [];
+            console.log(this.fetchUserSingle);
             /* The following array of object as response from the API req  */
 
             var fin = this.fetchUserSingle.fileName.split('.').slice(0, -1).join('.'); //let fin=this.fetchUserSingle.fileName.split('.').slice(0, -1).join('.');
 
             this.excelService.getExcel(fin, this.fetchUserSingle.accountType).subscribe(function (data) {
               console.log("this is backend data for excel");
-              _this9.excel = data;
-              var itemNew = _this9.excel;
+              _this10.excel = data;
+              var itemNew = _this10.excel;
               itemNew.forEach(function (element) {
                 var date = new Date(element.timeForExport).toLocaleDateString("en-us");
                 console.log(date);
@@ -2756,46 +3408,23 @@
         }, {
           key: "onProcessingTheBulkAccount",
           value: function onProcessingTheBulkAccount() {
-            var _this10 = this;
+            var _this11 = this;
 
-            console.log("this is bulk process", this.sendFileName);
-            this.excelService.processTheBulkRecord(this.sendFileName, this.accountTypeForBulk, this.creatorId).subscribe(function (processResp) {
+            console.log("this is bulk process", this.fetchUserSingle.fileName);
+            this.excelService.processTheBulkRecord(this.fetchUserSingle.fileName, this.fetchUserSingle.accountType, this.fetchUserSingle.inputBy).subscribe(function (processResp) {
               console.log(processResp);
               var msg = processResp.errorDesc;
 
               if (processResp.var1 == true) {
-                _this10.process = true;
+                _this11.process = true;
 
-                _this10.ref.markForCheck();
+                _this11.ref.markForCheck();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                  text: 'Record Processed SuccessFully' // type: "success"
-
-                }); // this.iziToast.show({
-                //   message: `Record Processed  SuccessFully`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+                  text: 'Record Processed SuccessFully',
+                  icon: "success"
+                });
               } else {
-                // this.iziToast.show({
-                //   message: msg,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-warning',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: msg,
                   icon: "warning"
@@ -2806,26 +3435,14 @@
         }, {
           key: "onCancelingTheRecord",
           value: function onCancelingTheRecord() {
-            var _this11 = this;
+            var _this12 = this;
 
             console.log("this is deleteing the record", this.fetchUserSingle.fileName);
-            this.excelService.onDeletingTheReocrd(this.fetchUserSingle.fileName, this.fetchUserSingle.accountType, this.creatorId).subscribe(function (deleteResp) {
+            this.excelService.onDeletingTheReocrd(this.fetchUserSingle.fileName, this.fetchUserSingle.accountType, this.fetchUserSingle.inputBy).subscribe(function (deleteResp) {
               console.log(deleteResp);
 
               if (deleteResp == true) {
-                _this11["delete"] = true; // this.iziToast.show({
-                //   message: "Record Deleted Successfully",
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-warning',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
-
+                _this12["delete"] = true;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Record is Deleted',
                   icon: "success"
@@ -2834,75 +3451,41 @@
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Failed To Delete The Record',
                   icon: "warning"
-                }); // this.iziToast.show({
-                //   message: "Failed To Delete The Record",
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-error',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+                });
               }
             });
           }
         }, {
           key: "onProcessingTheSingleAccount",
           value: function onProcessingTheSingleAccount() {
-            var _this12 = this;
+            var _this13 = this;
 
             console.log("this is single process", this.fetchUserSingle.accountNumber);
-            this.excelService.processTheSingleRecord(this.fetchUserSingle.accountNumber, this.creatorId).subscribe(function (processResp) {
+            this.excelService.processTheSingleRecord(this.fetchUserSingle.accountNumber, this.fetchUserSingle.inputBy).subscribe(function (processResp) {
               console.log(processResp);
               var msg = processResp.errorDesc;
 
-              if (processResp) {
-                // this.iziToast.show({
-                //   message: `Record Processed  SuccessFully`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+              if (processResp.var1 == true) {
+                _this13.process = true;
+
+                _this13.ref.markForCheck();
+
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Record Processed SuccessFully',
                   icon: "success"
                 });
-                _this12.processSingle = true;
-
-                _this12.ref.markForCheck();
               } else {
-                // this.iziToast.show({
-                //   message: msg,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-warning',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: msg,
                   icon: "warning"
-                });
+                }); // this.process=true;
               }
             });
           }
         }, {
           key: "onCancelingTheSingleRecord",
           value: function onCancelingTheSingleRecord() {
-            var _this13 = this;
+            var _this14 = this;
 
             console.log("deleting Single", this.fetchUserSingle.accountNumber);
             console.log("deleting Single", this.fetchUserSingle.accountType);
@@ -2910,7 +3493,7 @@
             console.log("deleting Single", this.fetchUserSingle.inputBy);
             this.excelService.onDeletingSingle(this.fetchUserSingle.accountNumber, this.fetchUserSingle.accountType, this.fetchUserSingle.closureType, this.fetchUserSingle.inputBy).subscribe(function (singledeleteResp) {
               console.log(singledeleteResp);
-              _this13.deleteSingle = true;
+              _this14.deleteSingle = true;
 
               if (singledeleteResp == true) {
                 // this.iziToast.show({
@@ -2964,7 +3547,7 @@
         }, {
           key: "convertReportForSingle",
           value: function convertReportForSingle() {
-            var _this14 = this;
+            var _this15 = this;
 
             console.log(this.fetchUserSingle);
             var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_1___default())();
@@ -2980,7 +3563,7 @@
             var mapped = Object.keys(this.fetchUserSingle).map(function (key) {
               return {
                 type: key,
-                value: _this14.fetchUserSingle[key]
+                value: _this15.fetchUserSingle[key]
               };
             });
             console.log(mapped);
@@ -3004,7 +3587,7 @@
         selectors: [["npr-view-report-acc-closure"]],
         decls: 7,
         vars: 2,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle"], ["class", "dbCardStyle cardWidth", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "dbCardStyle", "cardWidth"], [1, "col-12"], ["for", "roleName", 1, "formLbl"], ["aria-label", "Default select example", 1, "form-select", 3, "change"], ["value", "Excel"], ["value", "PDF"], [1, "row", "g-3", "pb-3", "justify-content-center", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["routerLink", "/initiate-account-closure", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 3, "dtOptions", "dtTrigger"], ["aria-label", "Default select example", 1, "form-select"], ["value", "1", 3, "click"], ["value", "2", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle"], ["class", "dbCardStyle cardWidth", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "dbCardStyle", "cardWidth"], [1, "col-12"], ["for", "roleName", 1, "formLbl"], ["aria-label", "Default select example", 1, "form-select", 3, "change"], ["value", "Excel"], ["value", "PDF"], [1, "row", "g-3", "pb-3", "justify-content-center", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["routerLink", "/initiate-account-closure", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 3, "dtOptions", "dtTrigger"], ["aria-label", "Default select example", 1, "form-select"], ["value", "1", 3, "click"], ["value", "2", 3, "click"]],
         template: function ViewReportAccClosureComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 0);
@@ -3021,7 +3604,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](4, "form", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](5, ViewReportAccClosureComponent_div_5_Template, 20, 0, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](5, ViewReportAccClosureComponent_div_5_Template, 19, 2, "div", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](6, ViewReportAccClosureComponent_div_6_Template, 93, 19, "div", 5);
 
