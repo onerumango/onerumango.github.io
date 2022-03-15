@@ -572,6 +572,24 @@
           value: function processTheSingleRecord(accountNumber, inputBy) {
             console.log(accountNumber, "maker", inputBy);
             return this.http.get("".concat(_API_URL, "/api2/processStatus/").concat(accountNumber, "/").concat(inputBy));
+          } // ----------------Adit Log Method-----------------
+
+        }, {
+          key: "onAuthorizingTheRecord",
+          value: function onAuthorizingTheRecord(accountNumber, authorizer) {
+            console.log("this is authorization");
+            return this.http.get("".concat(_API_URL, "/api2/verify/").concat(accountNumber, "/").concat(authorizer));
+          }
+        }, {
+          key: "onClosingTheRecord",
+          value: function onClosingTheRecord(accountNumber, inputBy) {
+            console.log("this is Closing Action");
+            return this.http.get("".concat(_API_URL, "/api2/close/").concat(accountNumber, "/").concat(inputBy));
+          }
+        }, {
+          key: "onReopningTheRecord",
+          value: function onReopningTheRecord(accountNumber, inputBy) {
+            return this.http.get("".concat(_API_URL, "/api2//").concat(accountNumber, "/").concat(inputBy));
           }
         }]);
 

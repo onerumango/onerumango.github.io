@@ -260,6 +260,18 @@ class AccountClosureServiceService {
         console.log(accountNumber, "maker", inputBy);
         return this.http.get(`${API_URL}/api2/processStatus/${accountNumber}/${inputBy}`);
     }
+    // ----------------Adit Log Method-----------------
+    onAuthorizingTheRecord(accountNumber, authorizer) {
+        console.log("this is authorization");
+        return this.http.get(`${API_URL}/api2/verify/${accountNumber}/${authorizer}`);
+    }
+    onClosingTheRecord(accountNumber, inputBy) {
+        console.log("this is Closing Action");
+        return this.http.get(`${API_URL}/api2/close/${accountNumber}/${inputBy}`);
+    }
+    onReopningTheRecord(accountNumber, inputBy) {
+        return this.http.get(`${API_URL}/api2//${accountNumber}/${inputBy}`);
+    }
 }
 AccountClosureServiceService.ɵfac = function AccountClosureServiceService_Factory(t) { return new (t || AccountClosureServiceService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient)); };
 AccountClosureServiceService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: AccountClosureServiceService, factory: AccountClosureServiceService.ɵfac, providedIn: 'root' });

@@ -3018,7 +3018,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Excel Mapping");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Template Mapping");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -3833,7 +3833,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Excel Mapping Summary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Template Mapping Summary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
