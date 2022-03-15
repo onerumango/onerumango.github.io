@@ -1858,7 +1858,7 @@ function RuleDetailsComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](26);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx_r0.validationSystems.controls);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx_r0.ruleForm.get("ruleName").invalid || ctx_r0.ruleForm.get("ruleId").invalid || ctx_r0.ruleForm.get("sourceSystems").invalid || ctx_r0.ruleForm.get("destinationSystems").invalid || ctx_r0.ruleForm.get("validationSystems").invalid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx_r0.ruleForm.get("ruleName").invalid || ctx_r0.ruleForm.get("ruleId").invalid || ctx_r0.ruleForm.get("sourceSystems").invalid || ctx_r0.ruleForm.get("destinationSystems").invalid);
 } }
 function RuleDetailsComponent_ng_container_7_th_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "th", 76);

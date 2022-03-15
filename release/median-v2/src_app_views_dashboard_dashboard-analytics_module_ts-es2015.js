@@ -1404,7 +1404,7 @@ class DashboardAnalyticsComponent {
         this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
     }
     ngOnInit() {
-        this.currentUser = localStorage.getItem('currentUser');
+        this.currentUser = localStorage.getItem('userFromLogin');
         highcharts__WEBPACK_IMPORTED_MODULE_0__.chart('highcharts', this.options);
         this.dtOptions = {
             pagingType: 'full_numbers',

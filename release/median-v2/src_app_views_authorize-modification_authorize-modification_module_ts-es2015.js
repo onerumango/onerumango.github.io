@@ -138,11 +138,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function AuthorizeModificationComponent_tr_25_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_tr_25_Template_button_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r5); const data_r3 = restoredCtx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r4.queryDetailsDataByParam(data_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_tr_25_Template_button_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r6); const data_r3 = restoredCtx.$implicit; const i_r4 = restoredCtx.index; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r5.queryDetailsDataByParam(data_r3, i_r4); });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3, " Get Details ");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
@@ -168,23 +168,26 @@ function AuthorizeModificationComponent_tr_25_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const data_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](5);
+    const i_r4 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpropertyInterpolate"]("id", "btnGetDetails" + i_r4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r3 == null ? null : data_r3.externalSysName);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r3 == null ? null : data_r3.batchNumber);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r3 == null ? null : data_r3.processName);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](12, 6, data_r3 == null ? null : data_r3.processingDate, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](12, 7, data_r3 == null ? null : data_r3.processingDate, "medium"));
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r3 == null ? null : data_r3.fileName);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r3 == null ? null : data_r3.currency);
 } }
 function AuthorizeModificationComponent_tr_53_button_22_Template(rf, ctx) { if (rf & 1) {
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_tr_53_button_22_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r10); const data_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]().$implicit; const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r8.viewOperation(data_r6); });
+    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_tr_53_button_22_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r11); const data_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]().$implicit; const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r9.viewOperation(data_r7); });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, " View ");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } }
@@ -225,34 +228,34 @@ function AuthorizeModificationComponent_tr_53_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const data_r6 = ctx.$implicit;
+    const data_r7 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.account);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.account);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.ccyCd);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.ccyCd);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.branchCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.branchCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.amount);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.amount);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.lcyEquivalent);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.lcyEquivalent);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.drCr);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.drCr);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.exchRate);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.exchRate);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.relatedAccount);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.relatedAccount);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.addlText);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.addlText);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6 == null ? null : data_r6.acumenJournal);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r7 == null ? null : data_r7.acumenJournal);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", data_r6.versionNo >= 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", data_r7.versionNo >= 1);
 } }
 function AuthorizeModificationComponent_button_57_Template(rf, ctx) { if (rf & 1) {
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_button_57_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r12); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r11.approveSecondLevel(); });
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuthorizeModificationComponent_button_57_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r12.approveSecondLevel(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, " Approve Data ");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } }
@@ -374,7 +377,9 @@ class AuthorizeModificationComponent {
             this.dtTrigger2.next();
         });
     }
-    queryDetailsDataByParam(pendingForAuthDTO) {
+    queryDetailsDataByParam(pendingForAuthDTO, i) {
+        var btn = document.getElementById("btnGetDetails" + i);
+        btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
         this.getDetailsQueryToggleReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_1__.GetDetailsQueryToggleReqDTO();
         this.getDetailsQueryToggleReqDTO.externalSysName =
             pendingForAuthDTO.externalSysName;
@@ -393,6 +398,7 @@ class AuthorizeModificationComponent {
             .queryDetailsDataByParamServiceSecond(this.getDetailsQueryToggleReqDTO)
             .subscribe(resp => {
             this.pendingForAuthDetailsListAll = resp;
+            btn.innerHTML = '<span>Get Details</span>';
             this.dtTrigger2.next();
             console.log(this.pendingForAuthDetailsListAll);
             if (this.pendingForAuthDetailsListAll.length > 0) {
@@ -539,7 +545,7 @@ class AuthorizeModificationComponent {
     }
 }
 AuthorizeModificationComponent.ɵfac = function AuthorizeModificationComponent_Factory(t) { return new (t || AuthorizeModificationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_6__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_7__.ExcelService)); };
-AuthorizeModificationComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({ type: AuthorizeModificationComponent, selectors: [["npr-authorize-modification"]], decls: 58, vars: 7, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "pageTitle", "my-3", "text-center"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btnCol", "mt-md-4", "mt-3"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "btnDarkGrey"], ["class", "btn smBtn btnPrimary ", "style", "height : 90%", 3, "click", 4, "ngIf"], [3, "click"], [3, "click", 4, "ngIf"], [1, "btn", "smBtn", "btnPrimary", 2, "height", "90%", 3, "click"]], template: function AuthorizeModificationComponent_Template(rf, ctx) { if (rf & 1) {
+AuthorizeModificationComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({ type: AuthorizeModificationComponent, selectors: [["npr-authorize-modification"]], decls: 58, vars: 7, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "pageTitle", "my-3", "text-center"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btnCol", "mt-md-4", "mt-3"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "btnDarkGrey"], ["class", "btn smBtn btnPrimary ", "style", "height : 90%", 3, "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "id", "click"], [3, "click", 4, "ngIf"], [3, "click"], [1, "btn", "smBtn", "btnPrimary", 2, "height", "90%", 3, "click"]], template: function AuthorizeModificationComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "h2", 2);
@@ -577,7 +583,7 @@ AuthorizeModificationComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPO
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](24, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](25, AuthorizeModificationComponent_tr_25_Template, 17, 9, "tr", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](25, AuthorizeModificationComponent_tr_25_Template, 17, 10, "tr", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();

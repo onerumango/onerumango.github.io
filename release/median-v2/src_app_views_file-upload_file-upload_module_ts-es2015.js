@@ -680,24 +680,61 @@ class AuthorizeExcelComponent {
         this.deUploadReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_0__.DeUploadReqDTO();
         this.deUploadReqDTO.pendingForAuthDTO = this.deUploadPendingForAuthDTO;
         this.deUploadReqDTO.pendingForAuthDetailsDTOList = this.pendingForAuthDetailsDTOList;
-        console.log('for authorization', this.deUploadReqDTO);
-        this.api.approveDetailsData(this.deUploadReqDTO, this.user_id).subscribe(resp => {
-            this.firstLevelAuthorizationStatus = resp;
-            console.log(this.firstLevelAuthorizationStatus);
-            this.authprocess = false;
-            if (!this.firstLevelAuthorizationStatus) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Data authorization is failed.');
-                return;
+        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
+            text: 'You are trying to Authorize Record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#E6224A',
+            cancelButtonColor: '#011945',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES',
+            icon: 'info'
+        }).then((result => {
+            if (result.isConfirmed === true) {
+                this.api.approveDetailsData(this.deUploadReqDTO, this.user_id).subscribe(resp => {
+                    this.firstLevelAuthorizationStatus = resp;
+                    console.log(this.firstLevelAuthorizationStatus);
+                    this.authprocess = false;
+                    if (!this.firstLevelAuthorizationStatus) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
+                            text: "Data authorization is failed",
+                            icon: 'error'
+                        });
+                    }
+                    if (this.firstLevelAuthorizationStatus) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
+                            text: "Record Authorized Successfully",
+                            icon: 'success'
+                        });
+                        this.process = true;
+                        this.getPendingForAuthData();
+                        this.approval = false;
+                        this.Process();
+                    }
+                }, error => {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Data authorization is failed.');
+                });
             }
-            if (this.firstLevelAuthorizationStatus) {
-                this.process = true;
-                this.getPendingForAuthData();
-                this.approval = false;
-                this.Process();
-            }
-        }, error => {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Data authorization is failed.');
-        });
+        }));
+        // console.log('for authorization', this.deUploadReqDTO);
+        // this.api.approveDetailsData(this.deUploadReqDTO, this.user_id).subscribe(resp => {
+        //   this.firstLevelAuthorizationStatus = resp;
+        //   console.log(this.firstLevelAuthorizationStatus);
+        //   this.authprocess = false;
+        //   if (!this.firstLevelAuthorizationStatus) {
+        //     Swal.fire('Data authorization is failed.');
+        //     return;
+        //   }
+        //   if (this.firstLevelAuthorizationStatus) {
+        //     this.process = true;
+        //     this.getPendingForAuthData();
+        //     this.approval = false;
+        //     this.Process();
+        //   }
+        // },
+        //   error => {
+        //     Swal.fire('Data authorization is failed.');
+        //   });
         this.getPendingForAuthData();
         this.dummyPendingForAuthDataDetails = [];
         this.dtTrigger2.next();
@@ -951,7 +988,7 @@ AuthorizeExcelComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵloadQuery"]()) && (ctx.dtElements = _t);
-    } }, decls: 51, vars: 9, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "pageTitle", "my-3", "text-center"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["class", "row", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "btnCol", "mt-md-4", "mt-3"], ["class", "btn smBtn btnDarkGrey", 3, "click", 4, "ngIf"], ["class", "btn smBtn btnPrimary ", 3, "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "id", "click"], [1, "row"], [1, "col-sm-6"], [2, "width", "100%"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btn", "smBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "btnDarkGrey", 3, "click"]], template: function AuthorizeExcelComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 51, vars: 9, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "pageTitle", "my-3", "text-center"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["class", "row", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "btnCol", "mt-md-4", "mt-3"], ["class", "btn smBtn btnDarkGrey", 3, "click", 4, "ngIf"], ["class", "btn smBtn btnPrimary ", 3, "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "id", "click"], [1, "row"], [1, "col-sm-6"], [2, "width", "100%"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btn", "smBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "btnDarkGrey", 3, "click"]], template: function AuthorizeExcelComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](2, "h2", 2);
@@ -1625,6 +1662,7 @@ class FileUploadComponent {
             }
             else {
                 this.enablefilebrowser = false;
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Permission denied! ', 'Try with some other external system or process name.');
             }
         });
     }
@@ -1978,11 +2016,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function RejectionQueueComponent_tr_27_Template(rf, ctx) { if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "button", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function RejectionQueueComponent_tr_27_Template_button_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r4); const data_r2 = restoredCtx.$implicit; const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r3.queryDetailsDataByParam(data_r2); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function RejectionQueueComponent_tr_27_Template_button_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r5); const data_r2 = restoredCtx.$implicit; const i_r3 = restoredCtx.index; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r4.queryDetailsDataByParam(data_r2, i_r3); });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3, " Get Details ");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
@@ -2014,14 +2052,17 @@ function RejectionQueueComponent_tr_27_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const data_r2 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](5);
+    const i_r3 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpropertyInterpolate"]("id", "btnGetDetails" + i_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r2.externalSysName);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r2.batchNumber);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r2.processName);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](12, 8, data_r2.processingDate, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](12, 9, data_r2.processingDate, "medium"));
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r2.fileName);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
@@ -2032,7 +2073,7 @@ function RejectionQueueComponent_tr_27_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r2.totalDebit);
 } }
 function RejectionQueueComponent_tr_61_Template(rf, ctx) { if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](2);
@@ -2072,37 +2113,37 @@ function RejectionQueueComponent_tr_61_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](25, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](26, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function RejectionQueueComponent_tr_61_Template_button_click_26_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r7); const data_r5 = restoredCtx.$implicit; const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r6.openDialog(data_r5); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function RejectionQueueComponent_tr_61_Template_button_click_26_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r8); const data_r6 = restoredCtx.$implicit; const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r7.openDialog(data_r6); });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](27, " Edit ");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const data_r5 = ctx.$implicit;
+    const data_r6 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.account);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.account);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.ccyCd);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.ccyCd);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.id.branchCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.id.branchCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.amount);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.amount);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.lcyEquivalent);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.lcyEquivalent);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.drCr);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.drCr);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.exchRate);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.exchRate);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.relatedAccount);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.relatedAccount);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.addlText);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.addlText);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.accDesc);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.accDesc);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.errorCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.errorCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r5.errorDesc);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](data_r6.errorDesc);
 } }
 class RejectionQueueComponent {
     constructor(api, 
@@ -2120,7 +2161,9 @@ class RejectionQueueComponent {
         this.flag = true;
         this.dataModificationDetailsAuditLog = new src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_1__.User();
     }
-    queryDetailsDataByParam(pendingForAuthDTO) {
+    queryDetailsDataByParam(pendingForAuthDTO, i) {
+        var btn = document.getElementById("btnGetDetails" + i);
+        btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
         this.spinner1 = true;
         this.getDetailsQueryToggleReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_0__.GetDetailsQueryToggleReqDTO();
         this.getDetailsQueryToggleReqDTO.externalSysName =
@@ -2136,6 +2179,7 @@ class RejectionQueueComponent {
             .queryFailedDetailsDataByParamService(this.getDetailsQueryToggleReqDTO)
             .subscribe(resp => {
             this.PendingForAuthDetailsDTOList = resp;
+            btn.innerHTML = '<span>Get Details</span>';
             this.dtTrigger2.next();
             console.log(this.PendingForAuthDetailsDTOList);
             if (this.PendingForAuthDetailsDTOList) {
@@ -2254,7 +2298,7 @@ class RejectionQueueComponent {
     }
 }
 RejectionQueueComponent.ɵfac = function RejectionQueueComponent_Factory(t) { return new (t || RejectionQueueComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_6__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_7__.ExcelService)); };
-RejectionQueueComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({ type: RejectionQueueComponent, selectors: [["npr-rejection-queue"]], decls: 69, vars: 6, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "pageTitle", "my-3", "text-center"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btnCol", "mt-md-4", "mt-3"], [1, "btn", "smBtn", "btnDarkGrey", 3, "click"], ["mat-raised-button", "", "color", "primary", 2, "height", "90%", 3, "click"], [3, "click"]], template: function RejectionQueueComponent_Template(rf, ctx) { if (rf & 1) {
+RejectionQueueComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({ type: RejectionQueueComponent, selectors: [["npr-rejection-queue"]], decls: 69, vars: 6, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], ["id", "dbTable1", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "pageTitle", "my-3", "text-center"], ["id", "dbTable2", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btnCol", "mt-md-4", "mt-3"], [1, "btn", "smBtn", "btnDarkGrey", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "id", "click"], [3, "click"]], template: function RejectionQueueComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "h2", 2);
@@ -2295,7 +2339,7 @@ RejectionQueueComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](26, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](27, RejectionQueueComponent_tr_27_Template, 21, 11, "tr", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](27, RejectionQueueComponent_tr_27_Template, 21, 12, "tr", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
