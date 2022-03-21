@@ -1,0 +1,41 @@
+
+// Sidebar Scroll
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+// Flag icon
+@import '~flag-icon-css/css/flag-icon.min.css';
+
+
+// Data Table
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+// Rich Text Editor
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+
+
+
+// Main Variables File
+@import "scss/variables";
+
+@import "scss/mixins/mixins";
+@import "scss/colors";
+
+@import "scss/animations";
+
+@import "scss/themes/themes";
+
+@import "scss/utilities/utilities";
+@import "scss/components/components";
+@import "scss/palette";
+
+
+@import "scss/page-layouts";
+
+@import "scss/main/main";
+
+
+@import "scss/views/views";
+
+
