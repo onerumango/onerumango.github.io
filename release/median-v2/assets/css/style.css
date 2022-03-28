@@ -8,11 +8,19 @@ html {
 }
 body {
   font-family: var(--medium);
-  color: var(--baseColor);
   overflow-x: hidden;
   font-size: 14px;
-  background-color: var(--bodyBg);
 }
+
+body.theme1 {
+  background-color: var(--bodyBg);
+  color: var(--baseColor);
+}
+body.theme2 {
+  background-color: #151521;
+  color: #92929f;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -72,9 +80,18 @@ img {
   font-family: var(--bold);
 }
 .smTitle {
-	font-size: 18px;
+  font-size: 18px;
 	font-family: var(--bold);
+}
+.theme1 .smTitle {
 	color: var(--secondaryColor);
+}
+.theme2 .smTitle {
+  color: #cdcdde !important;
+}
+
+.theme2 .list-bg {
+	background-color:#1b1b29 !important;;
 }
 
 .eBold {
@@ -83,20 +100,43 @@ img {
 .bold {
   font-family: var(--bold);
 }
+
+.theme1 .src-sys-style{
+  padding: 0 !important;
+  border-bottom-style: dashed;
+}
+
+.theme2 .src-sys-style{
+  padding: 0 !important;
+  border-bottom: 1px dashed #2b2b40 !important ;
+}
+
+
 .medium {
   font-family: var(--medium);
 }
 /* themeColor 2 start */
 .theme2 .sidebarCol{
-	background-color: var(--secondaryColor);
+	background-color: #1e1e2d;
 }
+
+.theme2 .dbTopCard::before{
+	background-color: #151521 !important;
+}
+
 .theme2 .sidebarLogo > a {
   -webkit-filter: brightness(10);
   filter: brightness(10);
 }
-.theme2 .navLbl{
-	color: var(--bs-white);
+
+.theme1 > .navLbl {
+  color: var(--bs-white);
 }
+
+.theme2 > .navLbl {
+  color: #565674 !important;
+}
+
 .theme2 .navLink:hover, .theme2 .activeSMenu .navLink {
   background-color: transparent;
   color: var(--bs-white);
@@ -225,13 +265,20 @@ img {
 .theme2 .pageTitle{
 	color: var(--secondaryColor);
 }
+
 .theme2 ul .nav-item .nav-link.active {
-  background: var(--secondaryColor);
+  background: #8d273c !important;
 }
-.theme2 .btnOutlinePrimary:hover, .theme2 .btnOutlinePrimary.active {
+
+.theme2 ul .nav-item .nav-link {
+   background: #323248;
+   color: #F6F7F9;
+}
+
+/* .theme2 .btnOutlinePrimary:hover, .theme2 .btnOutlinePrimary.active {
   background-color: var(--secondaryColor);
   border-color: var(--secondaryColor);
-}
+} */
 .theme2 .form-check .form-check-input:checked {
   background-color: var(--secondaryColor);
   border-color: var(--secondaryColor);
@@ -325,10 +372,15 @@ img {
     background-color: var(--secondaryHoverColor);
     border-color: var(--secondaryHoverColor);
   }
-  .btnOutlinePrimary {
+
+  .theme1 .btnOutlinePrimary {
       border-color: #A6AAB5;
       color: #A6AAB5;
   }
+  .theme2 .btnOutlinePrimary {
+    border-color: #323248;
+    color: #A6AAB5;
+}
   .btnOutlinePrimary:hover, .btnOutlinePrimary.active {
       background-color: var(--primaryColor);
     border-color: var(--primaryColor);
@@ -384,7 +436,48 @@ img {
   .loginRow {
     min-height: 100vh;
   }
-  
+
+  .theme2 .form-check-input {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    margin-top: -0.125rem;
+    vertical-align: top;
+    background-color: #1e1e2d;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0,0,0,.25);
+    transition: background-color .15s ease-in-out,background-position .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.theme2 .form-check-input[type=checkbox] {
+  border-radius: 0.45em;
+}
+
+.theme2 .form-check:not(.form-switch) .form-check-input[type=checkbox] {
+  background-size: 60% 60%;
+}
+.theme2 .form-check.form-check-solid .form-check-input {
+  border: 0;
+  background-color: #2b2b40;
+}
+
+.theme1 .link-color{
+  color: var(--primaryColor);
+}
+
+.theme2 .link-color{
+  color: #cdcdde;
+}
+
+.theme2 .titleCol {
+  background-color: #A6AAB5;
+}
+.theme2 .titleCol {
+  background-color: #1e1e2d;
+}
+
+
 
 /* dashboard-page */
 
@@ -415,16 +508,7 @@ img {
 .sidebarLogo img {
 	max-width: initial;
 }
-.navLbl {
-	font-size: 12px;
-	color: var(--secondaryColor);
-	text-transform: uppercase;
-	padding: 15px 0 10px;
-	letter-spacing: 1px;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
+
 .navOverlay {
 	position: fixed;
 	left: 0;
@@ -620,7 +704,6 @@ img {
   left: 280px;
   right: 0;
   top: 0;
-  background-color: var(--bs-white);
   padding: 15px 20px;
   z-index: 99;
   -webkit-transition: all 400ms ease-in-out 0s;
@@ -629,6 +712,15 @@ img {
   -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.05);
   box-shadow: 0 0 30px rgba(0,0,0,0.05);
 }
+
+.theme1 .topBar {
+  background-color: var(--bs-white);
+}
+
+.theme2 .topBar{
+  background-color: #1e1e2d;
+}
+
 .fixedHeader .topBar {
 	-webkit-box-shadow: 20px 0 20px rgba(0,0,0,0.1);
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -706,7 +798,6 @@ img {
   margin-top: 0;
 }
 .headerRightOptions .ddTrigger {
-	background-color: #F6F7F9;
 	border-radius: 4px;
 	padding: 5px 10px;
 	height: 44px;
@@ -718,6 +809,16 @@ img {
 	-ms-flex-align: center;
 	align-items: center;
 }
+
+.theme1 .headerRightOptions .ddTrigger{
+  background-color: #F6F7F9;
+}
+
+.theme2 .headerRightOptions .ddTrigger{
+  background-color: #323248;
+  color:#cdcdde !important;
+}
+
 .ddTriggerContent {
   position: relative;
   -webkit-transition: all 300ms ease-in-out 0s;
@@ -977,7 +1078,7 @@ ul.msgList > li:hover, ul.msgList > li.visited {
 	display: block;
 }
 
-.form-control:disabled, .form-control[readonly] {
+.theme1 .form-control[readonly] {
   background-color: #f8f9fa !important;
   opacity: 1;
 }
@@ -1079,10 +1180,19 @@ ul.msgList > li:hover, ul.msgList > li.visited {
 
 .dbCardStyle {
   border-radius: 20px;
-  background-color: var(--bs-white);
   padding: 30px;
   border: 1px solid #EDEDED;
 }
+
+.theme1 .dbCardStyle {
+  background-color: var(--bs-white);
+}
+
+.theme2 .dbCardStyle {
+  background-color: #1e1e2d;
+  border: unset;
+}
+
 
 /* dataTable */
 .table.tableStyle > :not(:last-child) > :last-child > * {
@@ -1180,6 +1290,269 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
   font-size: 16px;
 	position: relative;
 }
+
+.theme1 .cardListStyle > li {
+  color: var(--secondaryColor);
+}
+
+.theme2 .cardListStyle > li {
+  color: #cdcdde !important;
+}
+
+.pageTitle1 {
+  font-size: 20px;
+  font-family: var(--bold);
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.theme1 .pageTitle1 {
+  color: var(--primaryColor);
+}
+
+.theme2 .pageTitle1 {
+  color: #cdcdde;
+}
+
+.theme1 .highcharts-background{
+  fill: #ffffff;
+}
+
+.theme2 .highcharts-background{
+  fill: #1e1e2d;
+}
+
+.theme1 table.tableStyle thead tr th {
+  color: #A6AAB5;
+}
+
+.theme2 table.tableStyle thead tr th {
+  color: #565674 !important;
+}
+
+.theme2 table.dataTable tbody tr {
+  background-color: transparent ;
+}
+
+.theme1 table.tableStyle tbody td {
+  border-bottom-color: #F5F5F5;
+  border-style: solid;
+}
+
+.theme2 table.tableStyle tbody td {
+  color: #6d6d80 !important;
+  border-style: unset;
+}
+
+.theme1 .table>:not(caption)>*>* {
+  border-bottom-width: 1px;
+}
+
+.theme2 .table>:not(caption)>*>* {
+  border-bottom: 1px dashed #2b2b40 !important ;
+}
+
+.theme1 .greet{
+  color: var(--primaryColor);
+}
+
+.theme2 .greet{
+  color: #cdcdde;
+}
+
+.theme2 .pageTitleCol {
+  background-color: #1a1a27 !important;
+}
+
+.theme2 .pageTitle {
+  color: #cdcdde !important;
+}
+
+.theme1 table.tableStyle tbody td a, a:hover{
+  color: var(--primaryColor);
+}
+
+.theme2 table.tableStyle tbody td a, a:hover{
+  color: #cdcdde;
+  transition: color .2s ease,background-color .2s ease;
+}
+
+.theme2 table.tableStyle tbody td a:hover{
+  color: var(--primaryColor);
+  transition: color .2s ease,background-color .2s ease;
+}
+
+.theme2 .table.tableStyle > :not(:last-child) > :last-child > * {
+  border-bottom-color: transparent;
+}
+
+.theme2 .dataTables_wrapper .dataTables_filter input {
+  border: unset;
+  background-color: #323248;
+  color: #cdcdde;
+}
+
+.theme2 .dataTables_wrapper .dataTables_length select {
+  background-color: #323248;
+  color: #cdcdde;
+  border: unset;
+}
+
+.theme2 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .theme2 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .theme2 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--primaryColor);
+  color: var(--bs-white);
+}
+
+.theme2 .dataTables_wrapper .dataTables_paginate span > .paginate_button {
+  background-color: #27273a;
+  color: #cdcdde !important;
+}
+
+.theme2 .cardBg1 {
+  background-color: #682857 !important;
+  color: #f64e60 !important;
+}
+.theme2 .cardBg1 .cardCounter {
+  color: #f64e60 !important;
+}
+
+.theme2 .cardBg2 {
+  background-color: #74492a !important;
+  color: #ffa800 !important;
+}
+.theme2 .cardBg2 .cardCounter {
+  color: #ffa800!important;
+}
+
+.theme2 .cardBg3 {
+  background-color: #293a5c !important;
+  color: #3699ff !important
+}
+.theme2 .cardBg3 .cardCounter {
+  color: #3699ff !important
+}
+
+.theme2 .cardBg4 {
+  background-color: #315862 !important;
+  color: #0bb783!important;
+}
+.theme2 .cardBg4 .cardCounter {
+  color: #0bb783!important;
+}
+
+.theme2 .cardCounter::before {
+  background-color: #1e1e2d;
+}
+
+.theme2 .ddContent {
+  background-color: #1e1e2d;
+}
+.theme2 .navLink {
+  color: #9899ac;
+}
+
+
+.theme2 .csCardStyleIconBg1 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleText > h2 {
+  color: #cdcdde;
+  font-size: .925rem;
+}
+
+.theme2 .csCardStyleIconBg2 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleIconBg3 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleIconBg4 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleIconBg5 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleIconBg6 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleIconBg7 {
+  background-color: #323248;
+}
+
+.theme2 .csCardStyleIconBg8 {
+  background-color: #323248;
+}
+
+.theme2 .form-control {
+  background-color: #1b1b29 !important;
+  border-color: #1b1b29 !important;
+  color: #92929f !important;
+}
+
+.theme2 .form-select {
+  background-color: #1b1b29 !important;
+  border-color: #1b1b29 !important;
+  color: #92929f !important;
+}
+
+.theme2 input {
+  background-color: #1b1b29 !important;
+  border-color: #1b1b29 !important;
+  color: #92929f !important;
+}
+
+.theme2 .form-control[readonly] {
+  background-color: #1b1b29 !important;
+  border-color: #1b1b29 !important;
+  color: #92929f !important;
+}
+
+.theme2 .multiselect-dropdown .dropdown-btn {
+  border: 1px solid #1b1b29 !important;
+}
+
+.theme2 .multiselect-dropdown .disabled > span {
+  background-color: #1b1b29 !important;
+  border-color: #1b1b29 !important;
+}
+.theme2 .dropdown-list {
+  border: unset !important;
+  background: #323248 !important;
+  box-shadow: unset !important;
+}
+
+.theme2 .dropdown-list .filter-textbox {
+  border-bottom: unset !important;
+  background: #383854 !important;
+}
+
+.theme2 .multiselect-item-checkbox input[type=checkbox]  + div {
+  color: #cdcdde !important;
+}
+
+.theme2 .multiselect-dropdown input {
+  background: #383854 !important;
+}
+
+.theme2 .multiselect-item-checkbox:hover {
+  background-color: #383854 !important;
+}
+
+.theme2 .btnOutlinePrimary:hover, .theme2 .btnOutlinePrimary.active {
+  background-color: #323248;
+  border-color: #323248;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
 .cardListStyle > li + li {
   margin-top: 10px;
 }
@@ -1538,12 +1911,22 @@ ul.nav.nav-tabs li+li {
 	margin: 0 auto;
 	padding: 30px 65px;
 }
+
 .fileUpload {
-  border: 1px dashed var(--secondaryColor);
   border-radius: 4px;
 	position: relative;
 	cursor: pointer;
 }
+
+.theme1 .fileUpload {
+  border: 1px dashed var(--secondaryColor);
+}
+
+.theme2 .fileUpload {
+  border: 1px dashed #4c4c56;
+  color: #cdcdde !important;
+}
+
 .fileUpload .file-upload-wrapper {
   position: relative;
   width: 100%;
@@ -1562,7 +1945,14 @@ ul.nav.nav-tabs li+li {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 20;
+}
+
+.theme1 .fileUpload .file-upload-wrapper:after {
   color: var(--secondaryColor);
+}
+
+.theme2 .fileUpload .file-upload-wrapper:after {
+  color: #cdcdde;
 }
 .fileUpload .file-upload-wrapper input {
   opacity: 0;
@@ -1578,10 +1968,14 @@ ul.nav.nav-tabs li+li {
   cursor: pointer;
   width: 100%;
 }
+.theme2 ::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+}
+
 .fileUpload .file-upload-wrapper:before {
   position: absolute;
   content: '';
-  background-image: url('/assets/images/upload-cloud.svg');
+  background-image: url('/assets/images/upload.png');
   height: 25px;
   width: 25px;
 	background-repeat: no-repeat;
