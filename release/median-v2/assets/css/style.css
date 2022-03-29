@@ -174,10 +174,13 @@ img {
 	margin-right: 0px;
   padding-right: 20px;
 }
+.ml-3{
+  margin-left: 3px;
+}
 .tColor {
 	display: block;
-	width: 18px;
-	height: 18px;
+	width: 25px;
+	height: 25px;
 	border-radius: 50%;
 	border: 1px solid rgba(0,0,0,0.1);
 	cursor: pointer;
@@ -189,12 +192,12 @@ img {
 .tColor::before {
   content: "";
   position: absolute;
-  background-image: url('/assets/images/check-white.svg');
+  background-image: url('/assets/images/check.png');
   -webkit-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 10px;
-  height: 7px;
+  width: 12px;
+  height: 12px;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -229,11 +232,13 @@ img {
 .tColor:hover .themeText, .tColor.active .themeText {
   color: var(--primary-color);
 }
+
 .tColor.theme1 {
-	background-color: var(--primaryColor);
+  background-color: #F8F7F5;
 }
 .tColor.theme2 {
-	background-color: var(--secondaryColor);
+  background-color: #323248;
+  border: 1px solid rgba(63,66,84,.35);
 }
 .tColor.theme3 {
 	background-color: var(--theme3);
@@ -1409,7 +1414,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 }
 
 .theme2 .cardBg1 {
-  background-color: #682857 !important;
+  background-color: #3a2434 !important;
   color: #f64e60 !important;
 }
 .theme2 .cardBg1 .cardCounter {
@@ -1417,7 +1422,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 }
 
 .theme2 .cardBg2 {
-  background-color: #74492a !important;
+  background-color: #392f28 !important;
   color: #ffa800 !important;
 }
 .theme2 .cardBg2 .cardCounter {
@@ -1425,7 +1430,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 }
 
 .theme2 .cardBg3 {
-  background-color: #293a5c !important;
+  background-color: #2f264f !important;
   color: #3699ff !important
 }
 .theme2 .cardBg3 .cardCounter {
@@ -1433,7 +1438,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before, tabl
 }
 
 .theme2 .cardBg4 {
-  background-color: #315862 !important;
+  background-color: #1c3238 !important;
   color: #0bb783!important;
 }
 .theme2 .cardBg4 .cardCounter {
