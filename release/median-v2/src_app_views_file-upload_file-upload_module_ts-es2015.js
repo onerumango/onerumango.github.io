@@ -705,7 +705,7 @@ class AuthorizeExcelComponent {
                     }
                     if (this.firstLevelAuthorizationStatus) {
                         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                            text: "Record is Authorized",
+                            text: "Record is Approved and Processed",
                             icon: 'success'
                         });
                         this.process = true;

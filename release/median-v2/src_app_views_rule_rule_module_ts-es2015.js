@@ -836,6 +836,7 @@ class RuleDetails2Component {
             // this.validationSystems.patchValue(this.multipleValidationData);
             // this.sysRuleDetails.patchValue(this.arrRuleValidation);
             console.log(this.arrRuleValidation);
+            console.log(this.ruleConfig);
             if (this.ruleConfig.recordStatus == "C") {
                 console.log(this.ruleConfig.recordStatus);
                 this.authBtnHide = true;
@@ -886,23 +887,23 @@ class RuleDetails2Component {
         });
     }
     auditLog() {
-        // if (this.ruleConfig.verifiedStatus === 'U') {
-        //   this.ruleConfig.verifiedStatus = 'UNAUTHORIZED'
-        // }
-        // if (this.ruleConfig.verifiedStatus === 'A') {
-        //   this.ruleConfig.verifiedStatus = 'AUTHORIZED'
-        // }
+        if (this.ruleConfig.approvedStatus === 'U') {
+            this.ruleConfig.approvedStatus = 'UNAUTHORIZED';
+        }
+        if (this.ruleConfig.approvedStatus === 'A') {
+            this.ruleConfig.approvedStatus = 'AUTHORIZED';
+        }
         if (this.ruleConfig.recordStatus === 'O') {
-            this.ruleConfig.recordStatus = 'O';
+            this.ruleConfig.recordStatus = 'OPEN';
         }
         if (this.ruleConfig.recordStatus === 'C') {
-            this.ruleConfig.recordStatus = 'C';
+            this.ruleConfig.recordStatus = 'CLOSE';
         }
         if (this.ruleConfig.approvedEver === 'N') {
-            this.ruleConfig.approvedEver = 'N';
+            this.ruleConfig.approvedEver = 'NO';
         }
         if (this.ruleConfig.approvedEver === 'Y') {
-            this.ruleConfig.approvedEver = 'Y';
+            this.ruleConfig.approvedEver = 'YES';
         }
     }
     getDestinationItem() {
@@ -1308,7 +1309,7 @@ class RuleDetails2Component {
                             icon: 'success'
                         }).then((result) => {
                             if (result) {
-                                this.router.navigateByUrl('/sias-v2/ruleSummary');
+                                this.router.navigateByUrl('/createrule/list');
                             }
                         });
                     }
@@ -1995,7 +1996,7 @@ function RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_option_4_
     const ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", data_r55.messageKey)("hidden", ctx_r54.try2(data_r55.messageKey))("disabled", !ctx_r54.submit);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r55.messageKey, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate2"](" ", data_r55.messageKey, " ", data_r55.messageBasis, " ");
 } }
 function RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_Template(rf, ctx) { if (rf & 1) {
     const _r58 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
@@ -2005,7 +2006,7 @@ function RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "option", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "--Please select--");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_option_4_Template, 2, 4, "option", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_option_4_Template, 2, 5, "option", 80);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
@@ -2025,7 +2026,7 @@ function RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_option_5_
     const ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", !ctx_r61.submit)("value", data_r62.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate2"](" ", data_r62.messageKey, " ", data_r62.messageBasis, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r62.messageKey, " ");
 } }
 const _c1 = function () { return { standalone: true }; };
 function RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_Template(rf, ctx) { if (rf & 1) {
@@ -2036,7 +2037,7 @@ function RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "option", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "--Please select--");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](5, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_option_5_Template, 2, 4, "option", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](5, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_option_5_Template, 2, 3, "option", 88);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
@@ -2658,10 +2659,31 @@ class RuleDetailsComponent {
                 this.auditShowStatus = true;
                 this.editFlag = false;
                 // this.ruleForm.reset();
+                this.auditLog();
             }
         }, err => {
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Failed To Save the Record', icon: 'error' });
         });
+    }
+    auditLog() {
+        if (this.ruleConfig.approvedStatus === 'U') {
+            this.ruleConfig.approvedStatus = 'UNAUTHORIZED';
+        }
+        if (this.ruleConfig.approvedStatus === 'A') {
+            this.ruleConfig.approvedStatus = 'AUTHORIZED';
+        }
+        if (this.ruleConfig.recordStatus === 'O') {
+            this.ruleConfig.recordStatus = 'OPEN';
+        }
+        if (this.ruleConfig.recordStatus === 'C') {
+            this.ruleConfig.recordStatus = 'CLOSE';
+        }
+        if (this.ruleConfig.approvedEver === 'N') {
+            this.ruleConfig.approvedEver = 'NO';
+        }
+        if (this.ruleConfig.approvedEver === 'Y') {
+            this.ruleConfig.approvedEver = 'YES';
+        }
     }
     Previous() {
         this.showRuleValidation = !this.showRuleValidation;
