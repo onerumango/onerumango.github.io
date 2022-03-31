@@ -1777,6 +1777,7 @@
 
 
               console.log(_this.arrRuleValidation);
+              console.log(_this.ruleConfig);
 
               if (_this.ruleConfig.recordStatus == "C") {
                 console.log(_this.ruleConfig.recordStatus);
@@ -1843,26 +1844,28 @@
         }, {
           key: "auditLog",
           value: function auditLog() {
-            // if (this.ruleConfig.verifiedStatus === 'U') {
-            //   this.ruleConfig.verifiedStatus = 'UNAUTHORIZED'
-            // }
-            // if (this.ruleConfig.verifiedStatus === 'A') {
-            //   this.ruleConfig.verifiedStatus = 'AUTHORIZED'
-            // }
+            if (this.ruleConfig.approvedStatus === 'U') {
+              this.ruleConfig.approvedStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.ruleConfig.approvedStatus === 'A') {
+              this.ruleConfig.approvedStatus = 'AUTHORIZED';
+            }
+
             if (this.ruleConfig.recordStatus === 'O') {
-              this.ruleConfig.recordStatus = 'O';
+              this.ruleConfig.recordStatus = 'OPEN';
             }
 
             if (this.ruleConfig.recordStatus === 'C') {
-              this.ruleConfig.recordStatus = 'C';
+              this.ruleConfig.recordStatus = 'CLOSE';
             }
 
             if (this.ruleConfig.approvedEver === 'N') {
-              this.ruleConfig.approvedEver = 'N';
+              this.ruleConfig.approvedEver = 'NO';
             }
 
             if (this.ruleConfig.approvedEver === 'Y') {
-              this.ruleConfig.approvedEver = 'Y';
+              this.ruleConfig.approvedEver = 'YES';
             }
           }
         }, {
@@ -2441,7 +2444,7 @@
                       icon: 'success'
                     }).then(function (result) {
                       if (result) {
-                        _this15.router.navigateByUrl('/sias-v2/ruleSummary');
+                        _this15.router.navigateByUrl('/createrule/list');
                       }
                     });
                   } else {
@@ -3901,7 +3904,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r55.messageKey, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate2"](" ", data_r55.messageKey, " ", data_r55.messageBasis, " ");
         }
       }
 
@@ -3929,7 +3932,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_option_4_Template, 2, 4, "option", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_1_option_4_Template, 2, 5, "option", 80);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -3969,7 +3972,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate2"](" ", data_r62.messageKey, " ", data_r62.messageBasis, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r62.messageKey, " ");
         }
       }
 
@@ -4001,7 +4004,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](5, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_option_5_Template, 2, 4, "option", 88);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](5, RuleDetailsComponent_ng_container_7_tr_26_td_5_ng_container_2_option_5_Template, 2, 3, "option", 88);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -5105,6 +5108,8 @@
                 _this23.submit = false;
                 _this23.auditShowStatus = true;
                 _this23.editFlag = false; // this.ruleForm.reset();
+
+                _this23.auditLog();
               }
             }, function (err) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -5112,6 +5117,33 @@
                 icon: 'error'
               });
             });
+          }
+        }, {
+          key: "auditLog",
+          value: function auditLog() {
+            if (this.ruleConfig.approvedStatus === 'U') {
+              this.ruleConfig.approvedStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.ruleConfig.approvedStatus === 'A') {
+              this.ruleConfig.approvedStatus = 'AUTHORIZED';
+            }
+
+            if (this.ruleConfig.recordStatus === 'O') {
+              this.ruleConfig.recordStatus = 'OPEN';
+            }
+
+            if (this.ruleConfig.recordStatus === 'C') {
+              this.ruleConfig.recordStatus = 'CLOSE';
+            }
+
+            if (this.ruleConfig.approvedEver === 'N') {
+              this.ruleConfig.approvedEver = 'NO';
+            }
+
+            if (this.ruleConfig.approvedEver === 'Y') {
+              this.ruleConfig.approvedEver = 'YES';
+            }
           }
         }, {
           key: "Previous",

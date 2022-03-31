@@ -2252,27 +2252,29 @@ class ProcessCodeMappingEditComponent {
             wuFile: [""],
         });
         this.gettingProcessCode();
+        // this.auditLog();
     }
     newRolePermissions() {
         this.roleService.fetchScreenPermissions('Process Code Mapping');
     }
     auditLog() {
-        if (this.processCodeSummary.authStatus === 'U') {
+        if (this.processCodeSummary.authStatus == 'U') {
             this.processCodeSummary.authStatus = 'UNAUTHORIZED';
         }
-        if (this.processCodeSummary.authStatus === 'A') {
+        if (this.processCodeSummary.authStatus == 'A') {
             this.processCodeSummary.authStatus = 'AUTHORIZED';
         }
-        if (this.processCodeSummary.recordStatus === 'O') {
+        if (this.processCodeSummary.recordStatus == 'O') {
             this.processCodeSummary.recordStatus = 'OPEN';
         }
-        if (this.processCodeSummary.recordStatus === 'C') {
+        if (this.processCodeSummary.recordStatus == 'C') {
             this.processCodeSummary.recordStatus = 'CLOSED';
         }
-        if (this.processCodeSummary.verifiedOnce === 'NO') {
+        if (this.processCodeSummary.verifiedOnce == 'N') {
+            console.log("NO");
             this.processCodeSummary.verifiedOnce = 'NO';
         }
-        if (this.processCodeSummary.verifiedOnce === 'Y') {
+        if (this.processCodeSummary.verifiedOnce == 'Y') {
             this.processCodeSummary.verifiedOnce = 'YES';
         }
     }
@@ -2538,7 +2540,7 @@ class ProcessCodeMappingEditComponent {
                     title: 'Record is Deleted',
                     icon: 'success'
                 });
-                this.router.navigateByUrl('/external-system/processCodeMappingEdit');
+                this.router.navigateByUrl('/external-system/processCodeMapping');
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({

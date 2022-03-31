@@ -4106,7 +4106,7 @@
               treasuryrefRequired: [""],
               wuFile: [""]
             });
-            this.gettingProcessCode();
+            this.gettingProcessCode(); // this.auditLog();
           }
         }, {
           key: "newRolePermissions",
@@ -4116,27 +4116,28 @@
         }, {
           key: "auditLog",
           value: function auditLog() {
-            if (this.processCodeSummary.authStatus === 'U') {
+            if (this.processCodeSummary.authStatus == 'U') {
               this.processCodeSummary.authStatus = 'UNAUTHORIZED';
             }
 
-            if (this.processCodeSummary.authStatus === 'A') {
+            if (this.processCodeSummary.authStatus == 'A') {
               this.processCodeSummary.authStatus = 'AUTHORIZED';
             }
 
-            if (this.processCodeSummary.recordStatus === 'O') {
+            if (this.processCodeSummary.recordStatus == 'O') {
               this.processCodeSummary.recordStatus = 'OPEN';
             }
 
-            if (this.processCodeSummary.recordStatus === 'C') {
+            if (this.processCodeSummary.recordStatus == 'C') {
               this.processCodeSummary.recordStatus = 'CLOSED';
             }
 
-            if (this.processCodeSummary.verifiedOnce === 'NO') {
+            if (this.processCodeSummary.verifiedOnce == 'N') {
+              console.log("NO");
               this.processCodeSummary.verifiedOnce = 'NO';
             }
 
-            if (this.processCodeSummary.verifiedOnce === 'Y') {
+            if (this.processCodeSummary.verifiedOnce == 'Y') {
               this.processCodeSummary.verifiedOnce = 'YES';
             }
           }
@@ -4486,7 +4487,7 @@
                   icon: 'success'
                 });
 
-                _this20.router.navigateByUrl('/external-system/processCodeMappingEdit');
+                _this20.router.navigateByUrl('/external-system/processCodeMapping');
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: 'Failed to Delete User Data!',
