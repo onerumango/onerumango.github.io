@@ -1527,7 +1527,7 @@
 
                           if (_this6.variable) {
                             if (_this6.variable[0] === "Username or password wrong") {
-                              _this6.toastService.errorMessage("Invalid Username or Password !!!", "");
+                              _this6.toastService.errorMessage("Invalid UserId or Password !!!", "");
                             }
 
                             if (res.failLgnCounter != 0) {
@@ -1654,7 +1654,7 @@
 
                           if (_this7.variable) {
                             if (_this7.variable[0] === "Username or password wrong") {
-                              _this7.toastService.errorMessage("Invalid Username or Password !!!", "");
+                              _this7.toastService.errorMessage("Invalid UserId or Password !!!", "");
                             }
 
                             if (res.failLgnCounter != 0) {
@@ -1770,7 +1770,7 @@
                                 _this8.differnceInDays = Math.floor(_this8.differnceInTime / (1000 * 3600 * 24));
                                 _this8.finalDiff = _this8.pswdExpiry - _this8.differnceInDays;
 
-                                if (_this8.finalDiff > 0 && _this8.finalDiff <= _this8.notifyPswdExpry) {
+                                if (_this8.finalDiff > 0) {
                                   _this8.toastService.errorMessage("Your password will expire in " + "".concat(_this8.finalDiff) + " day(s)", "");
 
                                   _this8.showToast();

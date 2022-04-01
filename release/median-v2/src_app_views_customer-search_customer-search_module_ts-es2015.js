@@ -1231,7 +1231,7 @@ class CustomerSearchComponent {
     openDialog(content, data) {
         this.trndata = [
             {
-                refNo: "5678910",
+                refNo: "578910",
                 accBranch: "Edavannapara",
                 accNo: "360000",
                 drBrIndicator: "y",
@@ -1240,40 +1240,13 @@ class CustomerSearchComponent {
                 transDate: "7437777",
             },
             {
-                refNo: "5678910",
-                accBranch: "Edavannapara",
-                accNo: "360000",
-                drBrIndicator: "y",
-                fCurrAmt: "9656849",
-                ICurrAmt: "8999",
-                transDate: "7437777",
-            },
-            {
-                refNo: "5678910",
-                accBranch: "Edavannapara",
-                accNo: "360000",
-                drBrIndicator: "y",
-                fCurrAmt: "9656849",
-                ICurrAmt: "8999",
-                transDate: "7437777",
-            },
-            {
-                refNo: "5678910",
-                accBranch: "Edavannapara",
-                accNo: "360000",
-                drBrIndicator: "y",
-                fCurrAmt: "9656849",
-                ICurrAmt: "8999",
-                transDate: "7437777",
-            },
-            {
-                refNo: "998910",
+                refNo: "568891",
                 accBranch: "Vazhakkad",
-                accNo: "3656470",
-                drBrIndicator: "n",
-                fCurrAmt: "67567",
-                ICurrAmt: "899966",
-                transDate: "544546",
+                accNo: "360007",
+                drBrIndicator: "y",
+                fCurrAmt: "9659899",
+                ICurrAmt: "822",
+                transDate: "746777",
             },
         ];
         this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'xl' }).result.then((result) => {

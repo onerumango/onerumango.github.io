@@ -381,298 +381,387 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ExcelMappingEditComponent_option_17_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const data_r6 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", data_r6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6);
-} }
-function ExcelMappingEditComponent_option_26_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const data_r7 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", data_r7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r7);
-} }
-function ExcelMappingEditComponent_option_35_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const data_r8 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", data_r8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r8);
-} }
-function ExcelMappingEditComponent_div_49_Template(rf, ctx) { if (rf & 1) {
+function ExcelMappingEditComponent_div_19_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "label", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Data Starting Row");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "label", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Currency");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "span", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "*");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "input", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "input", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r0.editFlag);
+} }
+function ExcelMappingEditComponent_div_20_option_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const data_r9 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", data_r9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r9);
+} }
+function ExcelMappingEditComponent_div_20_Template(rf, ctx) { if (rf & 1) {
+    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "label", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Currency");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "span", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "select", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_div_20_Template_select_change_5_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r10.getCurrencyData($event, "currency"); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "option", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7, "--Please select--");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, ExcelMappingEditComponent_div_20_option_8_Template, 2, 2, "option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r1.ccyData);
+} }
+function ExcelMappingEditComponent_div_21_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "label", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Sheet Number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "span", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "input", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r2.editFlag);
+} }
+function ExcelMappingEditComponent_div_22_option_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const data_r13 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", data_r13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r13);
+} }
+function ExcelMappingEditComponent_div_22_Template(rf, ctx) { if (rf & 1) {
+    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "label", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Sheet Number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "span", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "select", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_div_22_Template_select_change_5_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r15); const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r14.getsheetNumData($event, "sheetNumber"); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "option", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7, "--Please select--");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, ExcelMappingEditComponent_div_22_option_8_Template, 2, 2, "option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r3.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r3.sheetData);
 } }
-function ExcelMappingEditComponent_div_50_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "input", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "label", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "Is Header Present");
+const _c0 = function () { return ["/excel-mapping"]; };
+function ExcelMappingEditComponent_div_23_Template(rf, ctx) { if (rf & 1) {
+    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "button", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_23_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r17); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r16.getAllMappingData(ctx_r16.updateMappingForm.get("extCode").value, ctx_r16.updateMappingForm.get("proCode").value, ctx_r16.updateMappingForm.get("currency").value, ctx_r16.updateMappingForm.get("sheetNumber").value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Fetch ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "a", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Exit");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r4.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r4.updateMappingForm.invalid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](2, _c0));
 } }
-function ExcelMappingEditComponent_div_51_tr_28_option_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 53);
+function ExcelMappingEditComponent_div_24_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "label", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Data Starting Row");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "input", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r5.editFlag);
+} }
+function ExcelMappingEditComponent_div_25_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "label", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "Is Header Present");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r6.editFlag);
+} }
+function ExcelMappingEditComponent_div_26_tr_28_option_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "option", 55);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const item_r17 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", item_r17.type);
+    const item_r26 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", item_r26.type);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r17.type);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r26.type);
 } }
-function ExcelMappingEditComponent_div_51_tr_28_a_26_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "a", 54);
+function ExcelMappingEditComponent_div_26_tr_28_a_26_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "a", 56);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "img", 55);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "img", 57);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } }
-function ExcelMappingEditComponent_div_51_tr_28_Template(rf, ctx) { if (rf & 1) {
-    const _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr", 38);
+function ExcelMappingEditComponent_div_26_tr_28_Template(rf, ctx) { if (rf & 1) {
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "input", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "input", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "select", 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_div_51_tr_28_Template_select_change_4_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19); const i_r14 = restoredCtx.index; const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r18.checkTypeStatus(i_r14); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "option", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "\u00A0 Select DataType \u00A0 ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "select", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_div_26_tr_28_Template_select_change_4_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r28); const i_r23 = restoredCtx.index; const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r27.checkTypeStatus(i_r23); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "option", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "--Please select--");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_51_tr_28_option_7_Template, 2, 2, "option", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_26_tr_28_option_7_Template, 2, 2, "option", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](11, "input", 44);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](12, "label", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](11, "input", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](12, "label", 47);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](14, "input", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](14, "input", 48);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "input", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "input", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](18, "input", 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](18, "input", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](20, "input", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](20, "input", 51);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](22, "input", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](22, "input", 52);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](24, "input", 51);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](24, "input", 53);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, ExcelMappingEditComponent_div_51_tr_28_a_26_Template, 3, 0, "a", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, ExcelMappingEditComponent_div_26_tr_28_a_26_Template, 3, 0, "a", 54);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r14 = ctx.index;
-    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroupName", i_r14);
+    const i_r23 = ctx.index;
+    const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroupName", i_r23);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r9.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx_r18.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵattribute"]("disabled", !ctx_r9.editFlag ? "" : null);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵattribute"]("disabled", !ctx_r18.editFlag ? "" : null);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r9.dataTypes);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r18.dataTypes);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "mandatoryCheck_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "mandatoryCheck_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("for", "mandatoryCheck_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("for", "mandatoryCheck_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "headerName_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "headerName_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "dateFormat_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "dateFormat_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "mappingColumn_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "mappingColumn_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "delimeter_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "delimeter_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "defaultValue_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "defaultValue_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "repeatedTillNextValue_", i_r14, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpropertyInterpolate1"]("id", "repeatedTillNextValue_", i_r23, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r9.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r18.editFlag);
 } }
-function ExcelMappingEditComponent_div_51_a_31_Template(rf, ctx) { if (rf & 1) {
-    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "a", 56);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "span", 57);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_a_31_Template_span_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r21); const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r20.addSubArray(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "img", 58);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} }
-function ExcelMappingEditComponent_div_51_div_32_button_3_Template(rf, ctx) { if (rf & 1) {
+function ExcelMappingEditComponent_div_26_a_31_Template(rf, ctx) { if (rf & 1) {
     const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 65);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_button_3_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r30); const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r29.copyMaping(ctx_r29.addForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "a", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "span", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_a_31_Template_span_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r30); const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r29.addSubArray(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "img", 60);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} }
+function ExcelMappingEditComponent_div_26_div_32_button_3_Template(rf, ctx) { if (rf & 1) {
+    const _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 67);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_button_3_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r39); const ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r38.copyMaping(ctx_r38.addForm.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Copy");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } }
-function ExcelMappingEditComponent_div_51_div_32_button_5_Template(rf, ctx) { if (rf & 1) {
-    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 66);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_button_5_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r32); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r31.updateMappingData(ctx_r31.addForm.value, ctx_r31.updateMappingForm.value); });
+function ExcelMappingEditComponent_div_26_div_32_button_5_Template(rf, ctx) { if (rf & 1) {
+    const _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 68);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_button_5_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r41); const ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r40.updateMappingData(ctx_r40.addForm.value, ctx_r40.updateMappingForm.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Save ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} }
-function ExcelMappingEditComponent_div_51_div_32_div_6_Template(rf, ctx) { if (rf & 1) {
-    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 67);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_div_6_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r34); const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r33.enableEditFlag(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r24.roleCodes.edit.labelDescription);
+    const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r32.dataSaved);
 } }
-function ExcelMappingEditComponent_div_51_div_32_div_7_Template(rf, ctx) { if (rf & 1) {
-    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 68);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_div_7_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r36); const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r35.onClickOfAuth(ctx_r35.addForm.value, ctx_r35.updateMappingForm.value); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r25.roleCodes.auth.labelDescription);
-} }
-function ExcelMappingEditComponent_div_51_div_32_div_8_Template(rf, ctx) { if (rf & 1) {
-    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 69);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_div_8_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r38); const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r37.onClickOfClose(ctx_r37.addForm.value, ctx_r37.updateMappingForm.value); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r26.roleCodes.close.labelDescription);
-} }
-function ExcelMappingEditComponent_div_51_div_32_div_9_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 70);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_div_9_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r40); const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r39.onClickOfReopen(ctx_r39.addForm.value, ctx_r39.updateMappingForm.value); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r27.roleCodes.reopen.labelDescription);
-} }
-function ExcelMappingEditComponent_div_51_div_32_div_10_button_1_Template(rf, ctx) { if (rf & 1) {
+function ExcelMappingEditComponent_div_26_div_32_div_6_Template(rf, ctx) { if (rf & 1) {
     const _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 67);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_51_div_32_div_10_button_1_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r43); const ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](4); return ctx_r42.finalSubmit(ctx_r42.updateMappingForm.value, ctx_r42.addForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_6_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r43); const ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r42.enableEditFlag(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r33.roleCodes.edit.labelDescription);
+} }
+function ExcelMappingEditComponent_div_26_div_32_div_7_Template(rf, ctx) { if (rf & 1) {
+    const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 70);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_7_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r45); const ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r44.onClickOfAuth(ctx_r44.addForm.value, ctx_r44.updateMappingForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r34.roleCodes.auth.labelDescription);
+} }
+function ExcelMappingEditComponent_div_26_div_32_div_8_Template(rf, ctx) { if (rf & 1) {
+    const _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_8_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r47); const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r46.onClickOfClose(ctx_r46.addForm.value, ctx_r46.updateMappingForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r35.roleCodes.close.labelDescription);
+} }
+function ExcelMappingEditComponent_div_26_div_32_div_9_Template(rf, ctx) { if (rf & 1) {
+    const _r49 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "button", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_9_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r49); const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3); return ctx_r48.onClickOfReopen(ctx_r48.addForm.value, ctx_r48.updateMappingForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r36.roleCodes.reopen.labelDescription);
+} }
+function ExcelMappingEditComponent_div_26_div_32_div_10_button_1_Template(rf, ctx) { if (rf & 1) {
+    const _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_10_button_1_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r52); const ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](4); return ctx_r51.finalSubmit(ctx_r51.updateMappingForm.value, ctx_r51.addForm.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Submit");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } }
-function ExcelMappingEditComponent_div_51_div_32_div_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, ExcelMappingEditComponent_div_51_div_32_div_10_button_1_Template, 2, 0, "button", 71);
+function ExcelMappingEditComponent_div_26_div_32_div_10_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, ExcelMappingEditComponent_div_26_div_32_div_10_button_1_Template, 2, 0, "button", 73);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
+    const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx_r28.editFlag && !ctx_r28.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx_r37.editFlag && !ctx_r37.copyData);
 } }
-const _c0 = function () { return ["/excel-mapping"]; };
-function ExcelMappingEditComponent_div_51_div_32_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 60);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, ExcelMappingEditComponent_div_51_div_32_button_3_Template, 2, 0, "button", 62);
+function ExcelMappingEditComponent_div_26_div_32_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 61);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 62);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, ExcelMappingEditComponent_div_26_div_32_button_3_Template, 2, 0, "button", 64);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, ExcelMappingEditComponent_div_51_div_32_button_5_Template, 2, 0, "button", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, ExcelMappingEditComponent_div_26_div_32_button_5_Template, 2, 1, "button", 65);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, ExcelMappingEditComponent_div_51_div_32_div_6_Template, 3, 1, "div", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_51_div_32_div_7_Template, 3, 1, "div", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, ExcelMappingEditComponent_div_51_div_32_div_8_Template, 3, 1, "div", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, ExcelMappingEditComponent_div_51_div_32_div_9_Template, 3, 1, "div", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](10, ExcelMappingEditComponent_div_51_div_32_div_10_Template, 2, 1, "div", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "a", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, ExcelMappingEditComponent_div_26_div_32_div_6_Template, 3, 1, "div", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_26_div_32_div_7_Template, 3, 1, "div", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, ExcelMappingEditComponent_div_26_div_32_div_8_Template, 3, 1, "div", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, ExcelMappingEditComponent_div_26_div_32_div_9_Template, 3, 1, "div", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](10, ExcelMappingEditComponent_div_26_div_32_div_10_Template, 2, 1, "div", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "a", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13, "Exit");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.copyData);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.editFlag && ctx_r11.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.editFlag && ctx_r20.copyData);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.mappingResponse && !ctx_r11.editFlag && ctx_r11.recordStatus == "OPEN" && ctx_r11.roleCodes.edit && ctx_r11.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.mappingResponse && !ctx_r20.editFlag && ctx_r20.recordStatus == "OPEN" && ctx_r20.roleCodes.edit && ctx_r20.copyData);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.mappingResponse && !ctx_r11.editFlag && ctx_r11.authStatus == "UNAUTHORIZED" && ctx_r11.roleCodes.auth && ctx_r11.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.mappingResponse && !ctx_r20.editFlag && ctx_r20.authStatus == "UNAUTHORIZED" && ctx_r20.roleCodes.auth && ctx_r20.copyData);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.recordStatus == "OPEN" && !ctx_r11.editFlag && ctx_r11.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.recordStatus == "OPEN" && !ctx_r20.editFlag && ctx_r20.copyData);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.recordStatus == "CLOSED" && !ctx_r11.editFlag && ctx_r11.copyData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.recordStatus == "CLOSED" && !ctx_r20.editFlag && ctx_r20.copyData);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r11.mappingResponse && ctx_r11.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r20.mappingResponse && ctx_r20.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](8, _c0));
 } }
-function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1) {
+function ExcelMappingEditComponent_div_26_div_33_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 72);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 76);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "img", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 74);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "img", 79);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "Maker");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -684,16 +773,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "div", 80);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "img", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "div", 82);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "img", 83);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](23, "Maker Time Stamp");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -706,16 +795,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "div", 82);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](32, "img", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "div", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](32, "img", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](35, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](36, "Record Status");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -727,16 +816,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "div", 84);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](44, "img", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "div", 86);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](44, "img", 87);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](48, "Checker");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -748,16 +837,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](51, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "div", 86);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](56, "img", 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](51, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "div", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](56, "img", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](60, "Checker Time Stamp");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -770,16 +859,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](67, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "div", 88);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](69, "img", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](67, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "div", 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](69, "img", 91);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](71, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](71, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](72, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](73, "First Time Auth");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -791,16 +880,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](76, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](77, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](80, "div", 90);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](81, "img", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](76, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](77, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](80, "div", 92);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](81, "img", 93);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](82, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](82, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](84, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](85, "Auth Status");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -812,16 +901,16 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](88, "div", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](89, "div", 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](90, "div", 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](91, "div", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "div", 90);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](93, "img", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](88, "div", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](89, "div", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](90, "div", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](91, "div", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "div", 92);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](93, "img", 91);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](94, "div", 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](95, "div", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](94, "div", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](95, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](96, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](97, "Modification Number");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -836,30 +925,30 @@ function ExcelMappingEditComponent_div_51_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r12.modifiedBy);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.modifiedBy);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](26, 8, ctx_r12.modifiedTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](26, 8, ctx_r21.modifiedTime));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r12.recordStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.recordStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r12.authorizedBy);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.authorizedBy);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](63, 10, ctx_r12.authorizedTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](63, 10, ctx_r21.authorizedTime));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r12.authStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.authStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r12.authStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.authStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r12.version);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.version);
 } }
-function ExcelMappingEditComponent_div_51_Template(rf, ctx) { if (rf & 1) {
+function ExcelMappingEditComponent_div_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "form", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "fieldset", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "table", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "form", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "fieldset", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "table", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "thead");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "th");
@@ -894,35 +983,35 @@ function ExcelMappingEditComponent_div_51_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "tbody", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](28, ExcelMappingEditComponent_div_51_tr_28_Template, 27, 13, "tr", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "tbody", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](28, ExcelMappingEditComponent_div_26_tr_28_Template, 27, 13, "tr", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, ExcelMappingEditComponent_div_51_a_31_Template, 3, 0, "a", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, ExcelMappingEditComponent_div_26_a_31_Template, 3, 0, "a", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](32, ExcelMappingEditComponent_div_51_div_32_Template, 14, 9, "div", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](33, ExcelMappingEditComponent_div_51_div_33_Template, 100, 12, "div", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](32, ExcelMappingEditComponent_div_26_div_32_Template, 14, 9, "div", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](33, ExcelMappingEditComponent_div_26_div_33_Template, 100, 12, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx_r5.addForm);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx_r7.addForm);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r5.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r7.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r5.addForm.get("subArray")["controls"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r7.addForm.get("subArray")["controls"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r5.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r7.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r5.mappingResponse);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r7.mappingResponse);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r5.mappingResponse);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r7.mappingResponse);
 } }
 class ExcelMappingEditComponent {
     constructor(apiService, cdr, fb, toastService, router, roleService) {
@@ -934,11 +1023,15 @@ class ExcelMappingEditComponent {
         this.roleService = roleService;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
         this.editFlag = false;
+        this.showFieldCurrency = false;
+        this.showFieldsheetNum = false;
+        this.showFetch = true;
         this.extSysCode = null;
         this.excelprocess = null;
         this.submitted = false;
         this.tempStore = [];
         this.disablefetchbtn = false;
+        this.dataSaved = false;
         this.copyData = true;
         this.dataTypes = [
             { id: 3, type: 'Clob', isActive: false },
@@ -953,9 +1046,9 @@ class ExcelMappingEditComponent {
         }, 2000);
         this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
         setTimeout(() => {
-            console.log(this.roleCodes);
+            // console.log(this.roleCodes);
         }, 3000);
-        console.log("role codes", this.roleCodes);
+        //  console.log("role codes",this.roleCodes)
         this.updateMappingForm = this.fb.group({
             extCode: [""],
             proCode: [""],
@@ -998,14 +1091,84 @@ class ExcelMappingEditComponent {
     }
     gettingSummaryData() {
         this.apiService.getexcelSummaryData().subscribe((resp) => {
-            console.log("EXT summry for edit screen", resp);
             this.summryResponse = resp;
-            if (this.summryResponse) {
-                this.extCode = this.summryResponse.extCode;
-                this.updateMappingForm.controls.extCode.setValue(this.extCode);
-                this.getProcess(this.extCode);
+        });
+        if (this.summryResponse) {
+            this.extCode = this.summryResponse.extCode;
+            this.processNAme = this.summryResponse.processName;
+            this.extSys = this.summryResponse.extSysName;
+            this.updateMappingForm.controls.extCode.setValue(this.extCode);
+            this.updateMappingForm.controls.proCode.setValue(this.processNAme);
+            this.apiService.getExcelMappingDataforEdit(this.extCode, this.processNAme, this.extSys).subscribe((editResp) => {
+                console.log("This. is new Resp", editResp);
+                this.newDataResponse = editResp;
+                this.ccyData = this.newDataResponse.currency;
+                this.sheetData = this.newDataResponse.sheetNo;
+                if (this.newDataResponse.currency.length === 1) {
+                    this.currency = this.newDataResponse.currency[0];
+                    this.sheetNumb = this.newDataResponse.currencySheetMap[this.ccyData];
+                    this.showFieldCurrency = true;
+                    this.showFieldsheetNum = true;
+                    this.showFetch = false;
+                    this.updateMappingForm.controls.currency.setValue(this.currency);
+                    this.updateMappingForm.controls.sheetNumber.setValue(this.sheetNumb);
+                    this.getAllMappingData(this.extCode, this.processNAme, this.currency, this.sheetNumb);
+                }
+                else {
+                    this.showFetch = true;
+                }
+            });
+            // this.getProcess(this.extCode);
+        }
+    }
+    getAllMappingData(extCode, proCode, currenyVal, sheetNumber) {
+        console.log("Checking ?", extCode, proCode, currenyVal, sheetNumber);
+        this.apiService.fetchAllName(extCode, proCode, currenyVal).subscribe(filenames => {
+            this.fileNames = filenames;
+        });
+        this.apiService.getAllMappingByExtSysAndProcessCode(extCode, proCode, currenyVal, sheetNumber)
+            .subscribe(mappingResponse => {
+            this.mappingResponse = mappingResponse;
+            console.log("this.mappingResponse", this.mappingResponse);
+            if (this.mappingResponse == null) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    title: 'Excel mapping is not available with this sheet number!',
+                    text: 'Please enter the correct sheet number',
+                    icon: 'warning'
+                });
+            }
+            else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    title: 'Data Fetched Successfully!',
+                    icon: 'success'
+                });
+                const startingRow = this.mappingResponse[0].startingRow;
+                const headerRepeated = this.mappingResponse[0].headerRepeated;
+                this.updateMappingForm.controls.startingRow.setValue(startingRow);
+                this.updateMappingForm.controls.headerRepeated.setValue(headerRepeated);
+                this.auditLog();
+                this.patchData(this.mappingResponse);
+                this.cdr.markForCheck();
+                this.cdr.markForCheck();
             }
         });
+    }
+    getCurrencyData(event, type) {
+        const selectedCurrency = event.target.value;
+        const sheetNum = this.newDataResponse.currencySheetMap[selectedCurrency];
+        this.updateMappingForm.controls.sheetNumber.setValue(sheetNum);
+        this.showFieldsheetNum = true;
+        // if(data.sheetNumber != this.sheetNumber  && data.processCode != this.poojaprocess2 && data.currency != this.currency)
+        // {
+        //   this.disablefetchbtn = false;
+        // }
+        // if(data.sheetNumber != null  && data.processCode != null && data.currency != null)
+        // {
+        //   this.disablefetchbtn = false;
+        // }
+    }
+    getsheetNumData(event, type) {
+        console.log("event", event.target.value, type);
     }
     getExtCodeforDropdown() {
         this.apiService.getAllExtsysNameAndProcessCodeOnAuthStatus()
@@ -1038,53 +1201,6 @@ class ExcelMappingEditComponent {
                     icon: 'warning'
                 });
                 return;
-            }
-        });
-    }
-    getCurrencyData(event, type) {
-        console.log("event", event, type);
-        // if(data.sheetNumber != this.sheetNumber  && data.processCode != this.poojaprocess2 && data.currency != this.currency)
-        // {
-        //   this.disablefetchbtn = false;
-        // }
-        // if(data.sheetNumber != null  && data.processCode != null && data.currency != null)
-        // {
-        //   this.disablefetchbtn = false;
-        // }
-    }
-    getAllMappingData(formValue) {
-        console.log("Form", formValue);
-        const currenyVal = formValue.currency;
-        const extCode = formValue.extCode;
-        const proCode = formValue.proCode;
-        const sheetNumber = formValue.sheetNumber;
-        this.apiService.fetchAllName(extCode, proCode, currenyVal).subscribe(filenames => {
-            this.fileNames = filenames;
-        });
-        this.apiService.getAllMappingByExtSysAndProcessCode(extCode, proCode, currenyVal, sheetNumber)
-            .subscribe(mappingResponse => {
-            this.mappingResponse = mappingResponse;
-            console.log("this.mappingResponse", this.mappingResponse);
-            if (this.mappingResponse == null) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Excel mapping is not available with this sheet number!',
-                    text: 'Please enter the correct sheet number',
-                    icon: 'warning'
-                });
-            }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Data Fetched Successfully!',
-                    icon: 'success'
-                });
-                const startingRow = this.mappingResponse[0].startingRow;
-                const headerRepeated = this.mappingResponse[0].headerRepeated;
-                this.updateMappingForm.controls.startingRow.setValue(startingRow);
-                this.updateMappingForm.controls.headerRepeated.setValue(headerRepeated);
-                this.auditLog();
-                this.patchData(this.mappingResponse);
-                this.cdr.markForCheck();
-                this.cdr.markForCheck();
             }
         });
     }
@@ -1164,7 +1280,6 @@ class ExcelMappingEditComponent {
         console.log(excelCopyData.subArray);
     }
     updateMappingData(subArrayForm, excelForm) {
-        ;
         this.submitted = true;
         this.progress = true;
         this.extCodeValue = excelForm.extCode;
@@ -1187,6 +1302,7 @@ class ExcelMappingEditComponent {
             this.mappingResponse = updateData;
             console.log(this.mappingResponse);
             if (this.mappingResponse) {
+                this.dataSaved = true;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: 'Record is Updated!',
                     icon: 'success'
@@ -1216,36 +1332,49 @@ class ExcelMappingEditComponent {
             });
         }
         else {
-            this.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, this.extNameValue, this.proCodeValue, this.extCodeValue, this.currentUser, this.currencyValue)
-                .subscribe(authResp => {
-                var _a, _b, _c, _d, _e, _f, _g;
-                this.mappingResponse = authResp;
-                if (this.mappingResponse) {
-                    this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                    this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                    this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                    this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                    this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                    this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                    this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
-                    if (this.authStatus === 'U') {
-                        this.authStatus = 'UNAUTHORIZED';
-                    }
-                    if (this.authStatus === 'A') {
-                        this.authStatus = 'AUTHORIZED';
-                    }
-                    if (this.recordStatus === 'C') {
-                        this.recordStatus = 'CLOSED';
-                    }
-                    if (this.recordStatus === 'O') {
-                        this.recordStatus = 'OPEN';
-                    }
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                        title: 'Record is Authorized',
-                        icon: 'success'
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: 'You are trying to Authorize the record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+            }).then((result => {
+                if (result.isConfirmed === true) {
+                    this.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, this.extNameValue, this.proCodeValue, this.extCodeValue, this.currentUser, this.currencyValue)
+                        .subscribe(authResp => {
+                        var _a, _b, _c, _d, _e, _f, _g;
+                        this.mappingResponse = authResp;
+                        if (this.mappingResponse) {
+                            this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                            this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                            this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
+                            this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
+                            this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                            this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                            this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
+                            if (this.authStatus === 'U') {
+                                this.authStatus = 'UNAUTHORIZED';
+                            }
+                            if (this.authStatus === 'A') {
+                                this.authStatus = 'AUTHORIZED';
+                            }
+                            if (this.recordStatus === 'C') {
+                                this.recordStatus = 'CLOSED';
+                            }
+                            if (this.recordStatus === 'O') {
+                                this.recordStatus = 'OPEN';
+                            }
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                                title: 'Record is Authorized',
+                                icon: 'success'
+                            });
+                        }
                     });
                 }
-            });
+            }));
         }
     }
     onClickOfClose(addForm, updateForm) {
@@ -1254,50 +1383,63 @@ class ExcelMappingEditComponent {
         this.proCodeValue = updateForm.proCode;
         this.currencyValue = updateForm.currency;
         this.currentUser = this.mappingResponse.modifiedBy;
-        this.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm, this.extCodeValue, this.proCodeValue, this.extNameValue, this.currencyValue).subscribe(closeResp => {
-            var _a, _b, _c, _d, _e, _f, _g;
-            console.log(closeResp);
-            this.mappingResponse = closeResp;
-            if (this.mappingResponse) {
-                this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
-                if (this.authStatus === 'U') {
-                    this.authStatus = 'UNAUTHORIZED';
-                }
-                if (this.authStatus === 'A') {
-                    this.authStatus = 'AUTHORIZED';
-                }
-                if (this.recordStatus === 'C') {
-                    this.recordStatus = 'CLOSED';
-                }
-                if (this.recordStatus === 'O') {
-                    this.recordStatus = 'OPEN';
-                }
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Closed',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#E6224A',
+            cancelButtonColor: '#011945',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES',
+            icon: 'info'
+        }).then((result => {
+            if (result.isConfirmed === true) {
+                this.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm, this.extCodeValue, this.proCodeValue, this.extNameValue, this.currencyValue).subscribe(closeResp => {
+                    var _a, _b, _c, _d, _e, _f, _g;
+                    console.log(closeResp);
+                    this.mappingResponse = closeResp;
+                    if (this.mappingResponse) {
+                        this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                        this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                        this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
+                        this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
+                        this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                        this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                        this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
+                        if (this.authStatus === 'U') {
+                            this.authStatus = 'UNAUTHORIZED';
+                        }
+                        if (this.authStatus === 'A') {
+                            this.authStatus = 'AUTHORIZED';
+                        }
+                        if (this.recordStatus === 'C') {
+                            this.recordStatus = 'CLOSED';
+                        }
+                        if (this.recordStatus === 'O') {
+                            this.recordStatus = 'OPEN';
+                        }
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Closed',
+                            icon: 'success'
+                        });
+                        this.auditLog();
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Close the Recored!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
-                this.auditLog();
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Close the Recored!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     onClickOfReopen(addForm, updateForm) {
         this.extCodeValue = updateForm.extCode;
@@ -1305,50 +1447,64 @@ class ExcelMappingEditComponent {
         this.proCodeValue = updateForm.proCode;
         this.currencyValue = updateForm.currency;
         this.currentUser = this.mappingResponse.modifiedBy;
-        this.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm, this.extCodeValue, this.proCodeValue, this.extNameValue, this.currencyValue).subscribe(openResp => {
-            var _a, _b, _c, _d, _e, _f, _g;
-            console.log(openResp);
-            this.mappingResponse = openResp;
-            if (this.mappingResponse) {
-                this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
-                if (this.authStatus === 'U') {
-                    this.authStatus = 'UNAUTHORIZED';
-                }
-                if (this.authStatus === 'A') {
-                    this.authStatus = 'AUTHORIZED';
-                }
-                if (this.recordStatus === 'C') {
-                    this.recordStatus = 'CLOSED';
-                }
-                if (this.recordStatus === 'O') {
-                    this.recordStatus = 'OPEN';
-                }
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Reopened',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to re-open record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm, this.extCodeValue, this.proCodeValue, this.extNameValue, this.currencyValue).subscribe(openResp => {
+                    var _a, _b, _c, _d, _e, _f, _g;
+                    console.log(openResp);
+                    this.mappingResponse = openResp;
+                    if (this.mappingResponse) {
+                        this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                        this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                        this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
+                        this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
+                        this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                        this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                        this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
+                        if (this.authStatus === 'U') {
+                            this.authStatus = 'UNAUTHORIZED';
+                        }
+                        if (this.authStatus === 'A') {
+                            this.authStatus = 'AUTHORIZED';
+                        }
+                        if (this.recordStatus === 'C') {
+                            this.recordStatus = 'CLOSED';
+                        }
+                        if (this.recordStatus === 'O') {
+                            this.recordStatus = 'OPEN';
+                        }
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Reopened',
+                            icon: 'success'
+                        });
+                        this.auditLog();
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Reopen the Record!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
-                this.auditLog();
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Reopen the Record!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     removeSubArray(i, data) {
         // this.confirmService
@@ -1420,7 +1576,7 @@ class ExcelMappingEditComponent {
     }
 }
 ExcelMappingEditComponent.ɵfac = function ExcelMappingEditComponent_Factory(t) { return new (t || ExcelMappingEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService)); };
-ExcelMappingEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: ExcelMappingEditComponent, selectors: [["npr-excel-mapping-edit"]], decls: 52, vars: 11, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-2"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["formControlName", "extCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["selected", "", 1, "form-class"], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "proCode", 1, "formLbl"], ["formControlName", "proCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["for", "currency", 1, "formLbl"], ["formControlName", "currency", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "text", "required", "", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control"], [1, "row", "gy-4", "col-lg-4"], [1, "col-lg-4"], ["href", "excel-mapping-new.html", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "col-lg-2", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "form-class", 3, "value"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "text", "required", "", "formControlName", "startingRow", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "headerRepeated", "formControlName", "headerRepeated", 3, "readonly"], ["for", "headerRepeated"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], [3, "disabled"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "subArray"], [3, "formGroupName", 4, "ngFor", "ngForOf"], ["href", "javascript:void(0)", "class", "addIcon primarybg", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], ["value", "", "disabled", "", "selected", "", 1, "form-class"], [3, "value", 4, "ngFor", "ngForOf"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id"], ["href", "javascript:void(0)", "class", "deleteIcon2", 4, "ngIf"], [3, "value"], ["href", "javascript:void(0)", 1, "deleteIcon2"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["href", "javascript:void(0)", 1, "addIcon", "primarybg"], [3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", "class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnUpdate", 3, "click", 4, "ngIf"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["class", "btn smBtn minWdSmBtn btnUpdate", "color", "primary", 3, "click", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function ExcelMappingEditComponent_Template(rf, ctx) { if (rf & 1) {
+ExcelMappingEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: ExcelMappingEditComponent, selectors: [["npr-excel-mapping-edit"]], decls: 27, vars: 11, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-2"], ["for", "extCode", 1, "formLbl"], [1, "colorRed"], ["id", "extCode", "type", "text", "required", "", "formControlName", "extCode", "placeholder", "External System", "value", "", 1, "form-control", 3, "readonly"], ["for", "proCode", 1, "formLbl"], ["id", "proCode", "type", "text", "required", "", "formControlName", "proCode", "placeholder", "Process Code", "value", "", 1, "form-control", 3, "readonly"], ["class", "col-lg-2", 4, "ngIf"], ["class", "row gy-4  col-lg-4 ", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "required", "", "formControlName", "currency", "placeholder", "Currency ", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "currency", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], [1, "form-class", 3, "value"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "text", "required", "", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "sheetNumber", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], [1, "row", "gy-4", "col-lg-4"], [1, "col-lg-4"], ["href", "excel-mapping-new.html", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "text", "required", "", "formControlName", "startingRow", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "headerRepeated", "formControlName", "headerRepeated", 3, "readonly"], ["for", "headerRepeated"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], [3, "disabled"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "subArray"], [3, "formGroupName", 4, "ngFor", "ngForOf"], ["href", "javascript:void(0)", "class", "addIcon primarybg", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id"], ["href", "javascript:void(0)", "class", "deleteIcon2", 4, "ngIf"], [3, "value"], ["href", "javascript:void(0)", 1, "deleteIcon2"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["href", "javascript:void(0)", 1, "addIcon", "primarybg"], [3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", "class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], ["class", "btn smBtn minWdSmBtn btnUpdate", 3, "disabled", "click", 4, "ngIf"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["class", "btn smBtn minWdSmBtn btnUpdate", "color", "primary", 3, "click", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function ExcelMappingEditComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
@@ -1437,98 +1593,53 @@ ExcelMappingEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "select", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_Template_select_change_12_listener() { return ctx.getProcess(ctx.updateMappingForm.get("extCode").value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "option", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Select External System");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "span", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](12, "input", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](15, "Process Code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "span", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](17, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](17, ExcelMappingEditComponent_option_17_Template, 2, 2, "option", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](18, "input", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "label", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "Process Code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "span", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](22, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "select", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_Template_select_change_23_listener() { return ctx.getProcessName(ctx.updateMappingForm.get("proCode").value, ctx.updateMappingForm.get("extCode").value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](24, "option", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](25, "Select Process Code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, ExcelMappingEditComponent_option_26_Template, 2, 2, "option", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "label", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](29, "Currency");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "span", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](31, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "select", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function ExcelMappingEditComponent_Template_select_change_32_listener($event) { return ctx.getCurrencyData($event, "currency"); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "option", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](34, "Select Currency");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](35, ExcelMappingEditComponent_option_35_Template, 2, 2, "option", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](37, "label", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](38, "Sheet Number");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "span", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](40, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](41, "input", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "div", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "div", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "button", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExcelMappingEditComponent_Template_button_click_44_listener() { return ctx.getAllMappingData(ctx.updateMappingForm.value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](45, "Fetch ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "div", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "a", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](48, "Exit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](19, ExcelMappingEditComponent_div_19_Template, 6, 1, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, ExcelMappingEditComponent_div_20_Template, 9, 1, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, ExcelMappingEditComponent_div_21_Template, 6, 1, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](22, ExcelMappingEditComponent_div_22_Template, 9, 1, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](23, ExcelMappingEditComponent_div_23_Template, 7, 3, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](24, ExcelMappingEditComponent_div_24_Template, 4, 1, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](25, ExcelMappingEditComponent_div_25_Template, 5, 1, "div", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](49, ExcelMappingEditComponent_div_49_Template, 4, 1, "div", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](50, ExcelMappingEditComponent_div_50_Template, 5, 1, "div", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](51, ExcelMappingEditComponent_div_51_Template, 34, 6, "div", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, ExcelMappingEditComponent_div_26_Template, 34, 6, "div", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx.updateMappingForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵattribute"]("disabled", !ctx.editFlag ? "" : null);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.extSysData);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.processName);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.ccyData);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx.updateMappingForm.invalid);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](10, _c0));
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx.editFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", !ctx.editFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.showFieldCurrency);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.showFieldCurrency);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.showFieldsheetNum);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.showFieldsheetNum);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.showFetch);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe], styles: [".form-class[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #797979;\n  background-color: #fff;\n  background-clip: padding-box;\n  border-bottom: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-left: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-right: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\ntable.tableStyle1[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #A6AAB5;\n  font-size: 10px;\n  text-transform: uppercase;\n  border-bottom: 1px solid #F5F5F5;\n}\n\n.form-control1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\n.form-control1[_ngcontent-%COMP%]:disabled, .form-control1[readonly][_ngcontent-%COMP%] {\n  background-color: #e9ecef;\n  opacity: 1;\n}\n\n.form-select1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 2.25rem 0.375rem 0.75rem;\n  -moz-padding-start: calc(0.75rem - 3px);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right 0.75rem center;\n  background-size: 16px 12px;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n\n.checkboxdiv[_ngcontent-%COMP%] {\n  padding-left: 25px;\n  padding-bottom: 15px;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4Y2VsLW1hcHBpbmctZWRpdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxzQkFBQTtFQUNBLDRCQUFBO0VBQ0EsZ0NBQUE7RUFDQSx3QkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSw4QkFBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLCtCQUFBO0VBQ0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBRUEsd0VBQUE7QUFBSjs7QUFFQTtFQUNDLGNBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7RUFHRyxnQ0FBQTtBQURKOztBQUdBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSx5QkFBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLHNCQUFBO0VBQ0Esd0VBQUE7QUFBSjs7QUFFQTs7RUFFSSx5QkFBQTtFQUNBLFVBQUE7QUFDSjs7QUFDQTtFQUNJLGNBQUE7RUFDQSxXQUFBO0VBQ0EsMENBQUE7RUFDQSx1Q0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsaVBBQUE7RUFDQSw0QkFBQTtFQUNBLHlDQUFBO0VBQ0EsMEJBQUE7RUFDQSx5QkFBQTtFQUNBLHNCQUFBO0VBQ0Esd0VBQUE7RUFDQSx3QkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7QUFFSjs7QUFBQTtFQUNJLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxlQUFBO0FBR0oiLCJmaWxlIjoiZXhjZWwtbWFwcGluZy1lZGl0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0tY2xhc3Mge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IC4zNzVyZW0gLjc1cmVtO1xyXG4gICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgICBjb2xvcjogIzc5Nzk3OTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlYmViZWI7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjZWJlYmViO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNlYmViZWI7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLy8gYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsIGJveC1zaGFkb3cgLjE1cyBlYXNlLWluLW91dFxyXG59XHJcbnRhYmxlLnRhYmxlU3R5bGUxIHRoZWFkIHRyIHRoIHtcclxuXHRjb2xvcjogI0E2QUFCNTtcclxuXHRmb250LXNpemU6IDEwcHg7XHJcblx0dGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuXHQvLyBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG4gICAgLy8gcGFkZGluZzogMThweCAxNXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNGNUY1RjUgO1xyXG59XHJcbi5mb3JtLWNvbnRyb2wxIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAuMzc1cmVtIC43NXJlbTtcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBsaW5lLWhlaWdodDogMS41O1xyXG4gICAgY29sb3I6ICMyMTI1Mjk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjZWQ0ZGE7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsIGJveC1zaGFkb3cgLjE1cyBlYXNlLWluLW91dFxyXG59XHJcbi5mb3JtLWNvbnRyb2wxOmRpc2FibGVkLFxyXG4uZm9ybS1jb250cm9sMVtyZWFkb25seV0ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2U5ZWNlZjtcclxuICAgIG9wYWNpdHk6IDFcclxufVxyXG4uZm9ybS1zZWxlY3QxIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAuMzc1cmVtIDIuMjVyZW0gLjM3NXJlbSAuNzVyZW07XHJcbiAgICAtbW96LXBhZGRpbmctc3RhcnQ6IGNhbGMoMC43NXJlbSAtIDNweCk7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjMjEyNTI5O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM2NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTYgMTYnJTNlJTNjcGF0aCBmaWxsPSdub25lJyBzdHJva2U9JyUyMzM0M2E0MCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBzdHJva2Utd2lkdGg9JzInIGQ9J00yIDVsNiA2IDYtNicvJTNlJTNjL3N2ZyUzZVwiKTtcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodCAuNzVyZW0gY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiAxNnB4IDEycHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2VkNGRhO1xyXG4gICAgYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsIGJveC1zaGFkb3cgLjE1cyBlYXNlLWluLW91dDtcclxuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGFwcGVhcmFuY2U6IG5vbmVcclxufVxyXG4uY2hlY2tib3hkaXZ7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDI1cHg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMTVweDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIFxyXG59XHJcblxyXG4iXX0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe], styles: [".form-class[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #797979;\n  background-color: #fff;\n  background-clip: padding-box;\n  border-bottom: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-left: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-right: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\ntable.tableStyle1[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #A6AAB5;\n  font-size: 10px;\n  text-transform: uppercase;\n  border-bottom: 1px solid #F5F5F5;\n}\n\n.form-control1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\n.form-control1[_ngcontent-%COMP%]:disabled, .form-control1[readonly][_ngcontent-%COMP%] {\n  background-color: #e9ecef;\n  opacity: 1;\n}\n\n.form-select1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 2.25rem 0.375rem 0.75rem;\n  -moz-padding-start: calc(0.75rem - 3px);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right 0.75rem center;\n  background-size: 16px 12px;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n\n.checkboxdiv[_ngcontent-%COMP%] {\n  padding-left: 25px;\n  padding-bottom: 15px;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4Y2VsLW1hcHBpbmctZWRpdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxzQkFBQTtFQUNBLDRCQUFBO0VBQ0EsZ0NBQUE7RUFDQSx3QkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSw4QkFBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLCtCQUFBO0VBQ0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBRUEsd0VBQUE7QUFBSjs7QUFFQTtFQUNDLGNBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7RUFHRyxnQ0FBQTtBQURKOztBQUdBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSx5QkFBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLHNCQUFBO0VBQ0Esd0VBQUE7QUFBSjs7QUFFQTs7RUFFSSx5QkFBQTtFQUNBLFVBQUE7QUFDSjs7QUFDQTtFQUNJLGNBQUE7RUFDQSxXQUFBO0VBQ0EsMENBQUE7RUFDQSx1Q0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsaVBBQUE7RUFDQSw0QkFBQTtFQUNBLHlDQUFBO0VBQ0EsMEJBQUE7RUFDQSx5QkFBQTtFQUNBLHNCQUFBO0VBQ0Esd0VBQUE7RUFDQSx3QkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7QUFFSjs7QUFBQTtFQUNJLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxlQUFBO0FBR0oiLCJmaWxlIjoiZXhjZWwtbWFwcGluZy1lZGl0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0tY2xhc3Mge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IC4zNzVyZW0gLjc1cmVtO1xyXG4gICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgICBjb2xvcjogIzc5Nzk3OTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlYmViZWI7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjZWJlYmViO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNlYmViZWI7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLy8gYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsIGJveC1zaGFkb3cgLjE1cyBlYXNlLWluLW91dFxyXG59XHJcbnRhYmxlLnRhYmxlU3R5bGUxIHRoZWFkIHRyIHRoIHtcclxuXHRjb2xvcjogI0E2QUFCNTtcclxuXHRmb250LXNpemU6IDEwcHg7XHJcblx0dGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuXHQvLyBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG4gICAgLy8gcGFkZGluZzogMThweCAxNXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNGNUY1RjUgO1xyXG59XHJcbi5mb3JtLWNvbnRyb2wxIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAuMzc1cmVtIC43NXJlbTtcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBsaW5lLWhlaWdodDogMS41O1xyXG4gICAgY29sb3I6ICMyMTI1Mjk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjZWQ0ZGE7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsIGJveC1zaGFkb3cgLjE1cyBlYXNlLWluLW91dFxyXG59XHJcbi5mb3JtLWNvbnRyb2wxOmRpc2FibGVkLFxyXG4uZm9ybS1jb250cm9sMVtyZWFkb25seV0ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2U5ZWNlZjtcclxuICAgIG9wYWNpdHk6IDFcclxufVxyXG4uZm9ybS1zZWxlY3QxIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAuMzc1cmVtIDIuMjVyZW0gLjM3NXJlbSAuNzVyZW07XHJcbiAgICAtbW96LXBhZGRpbmctc3RhcnQ6IGNhbGMoMC43NXJlbSAtIDNweCk7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjMjEyNTI5O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM2NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTYgMTYnJTNlJTNjcGF0aCBmaWxsPSdub25lJyBzdHJva2U9JyUyMzM0M2E0MCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBzdHJva2Utd2lkdGg9JzInIGQ9J00yIDVsNiA2IDYtNicvJTNlJTNjL3N2ZyUzZVwiKTtcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodCAuNzVyZW0gY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiAxNnB4IDEycHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2VkNGRhO1xyXG4gICAgYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsIGJveC1zaGFkb3cgLjE1cyBlYXNlLWluLW91dDtcclxuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGFwcGVhcmFuY2U6IG5vbmVcclxufVxyXG4uY2hlY2tib3hkaXZ7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDI1cHg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMTVweDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIFxyXG59XHJcblxyXG4iXX0= */"] });
 
 
 /***/ }),
@@ -1599,43 +1710,43 @@ function ExcelMappingNewComponent_tr_85_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "select", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function ExcelMappingNewComponent_tr_85_Template_select_change_5_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10); const i_r6 = restoredCtx.index; const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r9.checkTypeStatus(i_r6); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "option", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7, "\u00A0 Select DataType \u00A0 ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "option", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7, "--Please select--");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](8, ExcelMappingNewComponent_tr_85_option_8_Template, 2, 2, "option", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "div", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "div", 43);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](12, "input", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](13, "label", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](12, "input", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](13, "label", 45);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](15, "input", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](15, "input", 46);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](16, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](17, "input", 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](17, "input", 47);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](19, "input", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](19, "input", 48);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](20, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](21, "input", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](21, "input", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](22, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](23, "input", 51);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](23, "input", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](24, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](25, "input", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](25, "input", 51);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](26, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](27, "a", 53);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](28, "span", 54);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](27, "a", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](28, "span", 53);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ExcelMappingNewComponent_tr_85_Template_span_click_28_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10); const i_r6 = restoredCtx.index; const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r11.removeSubArray(i_r6); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](29, "img", 55);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](29, "img", 54);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -1745,7 +1856,7 @@ class ExcelMappingNewComponent {
     getAllExtsysNameAndProcessCodeOnAuthStatus() {
         this.apiService.getAllExtsysNameAndProcessCodeOnAuthStatus()
             .subscribe(response => {
-            this.extSysData = response;
+            this.extSysData = response.sort();
         });
     }
     getExtSysNameByExtSysCode(extSysCode) {
@@ -1850,7 +1961,7 @@ class ExcelMappingNewComponent {
     }
 }
 ExcelMappingNewComponent.ɵfac = function ExcelMappingNewComponent_Factory(t) { return new (t || ExcelMappingNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService)); };
-ExcelMappingNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: ExcelMappingNewComponent, selectors: [["npr-excel-mapping-new"]], decls: 98, vars: 19, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["href", "excel-mapping-new.html", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mt-2", "mb-4"], [1, "pageTitle", "darkgreyClr"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-4"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["formControlName", "extCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["selected", "", 1, "form-class"], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "proCode", 1, "formLbl"], ["formControlName", "proCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "number", "formControlName", "startingRow", "required", "", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "formControlName", "currency", "name", "currency", "required", "", "placeholder", "Currency", "value", "", 1, "form-control", 3, "readonly"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "text", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "fcyRate", "formControlName", "headerRepeated"], ["for", "fcyRate"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "subArray"], [4, "ngFor", "ngForOf"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "form-class", 3, "value"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], ["value", "", "disabled", "", "selected", "", 1, "form-class"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "mappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id", "readonly"], [1, "deleteIcon2"], [3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."]], template: function ExcelMappingNewComponent_Template(rf, ctx) { if (rf & 1) {
+ExcelMappingNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: ExcelMappingNewComponent, selectors: [["npr-excel-mapping-new"]], decls: 98, vars: 19, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["href", "excel-mapping-new.html", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mt-2", "mb-4"], [1, "pageTitle", "darkgreyClr"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-4"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["formControlName", "extCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "proCode", 1, "formLbl"], ["formControlName", "proCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "number", "formControlName", "startingRow", "required", "", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "formControlName", "currency", "name", "currency", "required", "", "placeholder", "Currency", "value", "", 1, "form-control", 3, "readonly"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "text", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "fcyRate", "formControlName", "headerRepeated"], ["for", "fcyRate"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "subArray"], [4, "ngFor", "ngForOf"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "form-class", 3, "value"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "mappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id", "readonly"], [1, "deleteIcon2"], [3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."]], template: function ExcelMappingNewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
@@ -1887,7 +1998,7 @@ ExcelMappingNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](22, "select", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function ExcelMappingNewComponent_Template_select_change_22_listener() { return ctx.getProcess(ctx.excelMappingForm.get("extCode").value); });
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](23, "option", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](24, "Select External System ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](24, "--Please select--");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](25, ExcelMappingNewComponent_option_25_Template, 2, 2, "option", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -1902,7 +2013,7 @@ ExcelMappingNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](31, "select", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function ExcelMappingNewComponent_Template_select_change_31_listener() { return ctx.getProcessName(ctx.excelMappingForm.get("proCode").value, ctx.excelMappingForm.get("extCode").value); });
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](32, "option", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](33, "Process Code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](33, "--Please select--");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](34, ExcelMappingNewComponent_option_34_Template, 2, 2, "option", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -2247,6 +2358,8 @@ class ExcelMappingComponent {
         this.apiService.setexcelSummaryData({
             extCode: element.extSysCode,
             extSysName: element.extSys,
+            processName: element.processName,
+            authStatus: element.authStatus
         });
         this.router.navigate(['/excel-mapping/excel-mapping-edit']);
     }

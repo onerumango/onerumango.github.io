@@ -2223,9 +2223,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_29_Template_a_click_11_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6);
@@ -2237,7 +2237,7 @@
             return ctx_r5.deleteGLData(udata_r4);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2271,13 +2271,13 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2319,9 +2319,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_51_Template_a_click_11_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r9);
@@ -2333,7 +2333,7 @@
             return ctx_r8.deleteAccData(accdata_r7);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2367,13 +2367,13 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2414,22 +2414,28 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [3]
+                'targets': [4]
               }],
-              order: [[3, 'desc']],
+              order: [[4, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+              retrieve: true // columnDefs: [ { type: 'date', 'targets': [5] } ],
+              // order: [[5, 'desc']],
+
             };
             this.dtOptions[1] = {
               pagingType: 'full_numbers',
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [3]
+                'targets': [4]
               }],
-              order: [[3, 'desc']],
+              order: [[4, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+              retrieve: true // columnDefs: [ { type: 'date', 'targets': [5] } ],
+              // order: [[5, 'desc']],
+
             };
             this.getUFDData();
             this.getAccdata();
@@ -2541,7 +2547,7 @@
         },
         decls: 55,
         vars: 12,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "tblIcon"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "tblIcon"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function GlobalGccAcMaintenanceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -2660,7 +2666,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "table", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "table", 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](38, "thead");
 
@@ -4364,7 +4370,7 @@
             return ctx_r25.clicked = true;
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Submit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Save");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -4620,16 +4626,32 @@
                 icon: 'error'
               });
             } else {
-              this.apiService.onClckOfAuthTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(function (authResp) {
-                console.log(authResp);
-                _this20.transactionCodeSummryData = authResp;
+              sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+                text: 'You are trying to Authorize the record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                'icon': 'info'
+              }).then(function (result) {
+                console.log("this is reopen ", result);
 
-                _this20.auditLog();
+                if (result.isConfirmed === true) {
+                  _this20.apiService.onClckOfAuthTransactionCode(_this20.transactionCodeSummryData.userID, _this20.currentUser).subscribe(function (authResp) {
+                    console.log(authResp);
+                    _this20.transactionCodeSummryData = authResp;
 
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Record is Authorized',
-                  icon: 'success'
-                });
+                    _this20.auditLog();
+
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Authorized',
+                      icon: 'success'
+                    });
+                  });
+                }
               });
             }
           }
@@ -4638,30 +4660,46 @@
           value: function onClickOfClose() {
             var _this21 = this;
 
-            this.apiService.onclickOfCloseTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(function (closeResp) {
-              console.log(closeResp);
-              _this21.transactionCodeSummryData = closeResp;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
 
-              _this21.auditLog();
+              if (result.isConfirmed === true) {
+                _this21.apiService.onclickOfCloseTransactionCode(_this21.transactionCodeSummryData.userID, _this21.currentUser).subscribe(function (closeResp) {
+                  console.log(closeResp);
+                  _this21.transactionCodeSummryData = closeResp;
 
-              _this21.ref.markForCheck();
+                  _this21.auditLog();
 
-              if (_this21.transactionCodeSummryData) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Record is Closed',
-                  icon: 'success'
-                });
-              } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Failed to Close the Recored!',
-                  icon: 'error'
-                });
-              }
-            }, function (error) {
-              if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: 'Server Error!',
-                  icon: 'error'
+                  _this21.ref.markForCheck();
+
+                  if (_this21.transactionCodeSummryData) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Closed',
+                      icon: 'success'
+                    });
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Close the Recored!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
                 });
               }
             });
@@ -4671,30 +4709,46 @@
           value: function onClickOfReopen() {
             var _this22 = this;
 
-            this.apiService.onclickOfReopenTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(function (openResp) {
-              console.log(openResp);
-              _this22.transactionCodeSummryData = openResp;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Reopen the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
 
-              _this22.auditLog();
+              if (result.isConfirmed === true) {
+                _this22.apiService.onclickOfReopenTransactionCode(_this22.transactionCodeSummryData.userID, _this22.currentUser).subscribe(function (openResp) {
+                  console.log(openResp);
+                  _this22.transactionCodeSummryData = openResp;
 
-              _this22.ref.markForCheck();
+                  _this22.auditLog();
 
-              if (_this22.transactionCodeSummryData) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Record Is Reopened',
-                  icon: 'success'
-                });
-              } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Failed to Reopen the Record!',
-                  icon: 'error'
-                });
-              }
-            }, function (error) {
-              if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: 'Server Error!',
-                  icon: 'error'
+                  _this22.ref.markForCheck();
+
+                  if (_this22.transactionCodeSummryData) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record Is Reopened',
+                      icon: 'success'
+                    });
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Reopen the Record!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
                 });
               }
             });
@@ -5988,7 +6042,7 @@
             var _this28 = this;
 
             this.apiService.getUserName().subscribe(function (userName) {
-              _this28.userName = userName;
+              _this28.userName = userName.sort();
               _this28.usersList = [];
               var allUserID = _this28.userName;
               var list = document.getElementById('allusers');
@@ -6492,18 +6546,6 @@
         _createClass(_UserGccAcMaintenanceComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            // this.dtOptions[0] = {
-            //   pagingType: 'full_numbers',
-            //   pageLength: 5,
-            //   processing: true,
-            //   lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
-            // };
-            // this.dtOptions[1] = {
-            //   pagingType: 'full_numbers',
-            //   pageLength: 5,
-            //   processing: true,
-            //   lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
-            // };
             this.dtOptions[0] = {
               pagingType: 'full_numbers',
               pageLength: 5,
@@ -6514,9 +6556,7 @@
               order: [[4, 'desc']],
               processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
-              retrieve: true // columnDefs: [ { type: 'date', 'targets': [5] } ],
-              // order: [[5, 'desc']],
-
+              retrieve: true
             };
             this.dtOptions[1] = {
               pagingType: 'full_numbers',
@@ -6550,7 +6590,7 @@
             var _this30 = this;
 
             this.apiService.getUserName().subscribe(function (userName) {
-              _this30.userName = userName;
+              _this30.userName = userName.sort();
               _this30.usersList = [];
               var allUserID = _this30.userName;
               var list = document.getElementById('allusers');
@@ -7725,7 +7765,7 @@
             var _this34 = this;
 
             this.apiService.getUserName().subscribe(function (userName) {
-              _this34.userName = userName;
+              _this34.userName = userName.sort();
               _this34.usersList = [];
               var allUserID = _this34.userName;
               var list = document.getElementById('allusers');
