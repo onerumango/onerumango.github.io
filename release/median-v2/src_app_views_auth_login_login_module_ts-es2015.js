@@ -807,7 +807,7 @@ class LoginComponent {
                                     this.otpreceivedtime = new Date();
                                     if (this.variable) {
                                         if (this.variable[0] === "Username or password wrong") {
-                                            this.toastService.errorMessage("Invalid Username or Password !!!", "");
+                                            this.toastService.errorMessage("Invalid UserId or Password !!!", "");
                                         }
                                         if (res.failLgnCounter != 0) {
                                             this.apiService
@@ -930,7 +930,7 @@ class LoginComponent {
                                     this.otpreceivedtime = new Date();
                                     if (this.variable) {
                                         if (this.variable[0] === "Username or password wrong") {
-                                            this.toastService.errorMessage("Invalid Username or Password !!!", "");
+                                            this.toastService.errorMessage("Invalid UserId or Password !!!", "");
                                         }
                                         if (res.failLgnCounter != 0) {
                                             this.apiService
@@ -1041,8 +1041,7 @@ class LoginComponent {
                                                 this.differnceInDays = Math.floor(this.differnceInTime / (1000 * 3600 * 24));
                                                 this.finalDiff =
                                                     this.pswdExpiry - this.differnceInDays;
-                                                if (this.finalDiff > 0 &&
-                                                    this.finalDiff <= this.notifyPswdExpry) {
+                                                if (this.finalDiff > 0) {
                                                     this.toastService.errorMessage("Your password will expire in " +
                                                         `${this.finalDiff}` +
                                                         " day(s)", "");

@@ -4644,8 +4644,9 @@
 
           this.excelSummaryObject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
             extCode: '',
-            // processName: '',
-            extSysName: ''
+            processName: '',
+            extSysName: '',
+            authStatus: ''
           }); // this._baseURL = AppConstants.baseURL + '/role';
 
           this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles' + '/fetchAllRolesSummary';
@@ -5137,6 +5138,11 @@
           key: "getMappingSummary",
           value: function getMappingSummary() {
             return this.http.get("".concat(this.excelmap, "/fetchAllMappingData/"));
+          }
+        }, {
+          key: "getExcelMappingDataforEdit",
+          value: function getExcelMappingDataforEdit(extSysCode, processName, extSys) {
+            return this.http.get("".concat(this.excelmap, "/getExcelMappingInfo?extSysCode=").concat(extSysCode, "&processName=").concat(processName, "&extSys=").concat(extSys));
           }
         }, {
           key: "getAllExtsysNameAndProcessCodeOnAuthStatus",

@@ -2295,8 +2295,9 @@ class ApiService {
         // Excel Mapping
         this.excelSummaryObject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
             extCode: '',
-            // processName: '',
+            processName: '',
             extSysName: '',
+            authStatus: '',
         });
         // this._baseURL = AppConstants.baseURL + '/role';
         this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles' + '/fetchAllRolesSummary';
@@ -2609,6 +2610,9 @@ class ApiService {
     }
     getMappingSummary() {
         return this.http.get(`${this.excelmap}/fetchAllMappingData/`);
+    }
+    getExcelMappingDataforEdit(extSysCode, processName, extSys) {
+        return this.http.get(`${this.excelmap}/getExcelMappingInfo?extSysCode=${extSysCode}&processName=${processName}&extSys=${extSys}`);
     }
     getAllExtsysNameAndProcessCodeOnAuthStatus() {
         return this.http.get(`${this.uriForExt}/gettingExtsysNameAndProcessCodeOnAuthStatus`);

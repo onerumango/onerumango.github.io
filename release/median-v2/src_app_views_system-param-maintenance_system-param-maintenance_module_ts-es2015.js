@@ -1197,10 +1197,10 @@ function GlobalGccAcMaintenanceComponent_tr_29_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](9, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_29_Template_a_click_11_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6); const udata_r4 = restoredCtx.$implicit; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r5.deleteGLData(udata_r4); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -1217,10 +1217,10 @@ function GlobalGccAcMaintenanceComponent_tr_29_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcMaintenanceComponent_ng_container_30_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
@@ -1241,10 +1241,10 @@ function GlobalGccAcMaintenanceComponent_tr_51_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](9, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "a", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_51_Template_a_click_11_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r9); const accdata_r7 = restoredCtx.$implicit; const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r8.deleteAccData(accdata_r7); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "img", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -1261,10 +1261,10 @@ function GlobalGccAcMaintenanceComponent_tr_51_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcMaintenanceComponent_ng_container_52_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
@@ -1286,18 +1286,24 @@ class GlobalGccAcMaintenanceComponent {
         this.dtOptions[0] = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [3] }],
-            order: [[3, 'desc']],
+            columnDefs: [{ type: 'date', 'targets': [4] }],
+            order: [[4, 'desc']],
             processing: true,
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            retrieve: true
+            // columnDefs: [ { type: 'date', 'targets': [5] } ],
+            // order: [[5, 'desc']],
         };
         this.dtOptions[1] = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [3] }],
-            order: [[3, 'desc']],
+            columnDefs: [{ type: 'date', 'targets': [4] }],
+            order: [[4, 'desc']],
             processing: true,
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            retrieve: true
+            // columnDefs: [ { type: 'date', 'targets': [5] } ],
+            // order: [[5, 'desc']],
         };
         this.getUFDData();
         this.getAccdata();
@@ -1364,7 +1370,7 @@ GlobalGccAcMaintenanceComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMP
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.dtElements = _t);
-    } }, decls: 55, vars: 12, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "tblIcon"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function GlobalGccAcMaintenanceComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 55, vars: 12, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "tblIcon"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function GlobalGccAcMaintenanceComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
@@ -1423,7 +1429,7 @@ GlobalGccAcMaintenanceComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMP
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](36, "Account Class ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "table", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "table", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](38, "thead");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](39, "tr");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](40, "th");
@@ -2287,7 +2293,7 @@ function TransactionCodeEditComponent_div_30_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function TransactionCodeEditComponent_div_30_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r26); const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); ctx_r25.onSubmitofForm(ctx_r25.transactionCodeEditForm.value, ctx_r25.transactionCodeSummryData); return ctx_r25.clicked = true; });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Submit");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Save");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -2474,70 +2480,112 @@ class TransactionCodeEditComponent {
             });
         }
         else {
-            this.apiService.onClckOfAuthTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(authResp => {
-                console.log(authResp);
-                this.transactionCodeSummryData = authResp;
-                this.auditLog();
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Authorized',
-                    icon: 'success'
-                });
-            });
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+                text: 'You are trying to Authorize the record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES', 'icon': 'info'
+            }).then((result => {
+                console.log("this is reopen ", result);
+                if (result.isConfirmed === true) {
+                    this.apiService.onClckOfAuthTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(authResp => {
+                        console.log(authResp);
+                        this.transactionCodeSummryData = authResp;
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Authorized',
+                            icon: 'success'
+                        });
+                    });
+                }
+            }));
         }
     }
     onClickOfClose() {
-        this.apiService.onclickOfCloseTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(closeResp => {
-            console.log(closeResp);
-            this.transactionCodeSummryData = closeResp;
-            this.auditLog();
-            this.ref.markForCheck();
-            if (this.transactionCodeSummryData) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Closed',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.apiService.onclickOfCloseTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(closeResp => {
+                    console.log(closeResp);
+                    this.transactionCodeSummryData = closeResp;
+                    this.auditLog();
+                    this.ref.markForCheck();
+                    if (this.transactionCodeSummryData) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Closed',
+                            icon: 'success'
+                        });
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Close the Recored!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Close the Recored!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     onClickOfReopen() {
-        this.apiService.onclickOfReopenTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(openResp => {
-            console.log(openResp);
-            this.transactionCodeSummryData = openResp;
-            this.auditLog();
-            this.ref.markForCheck();
-            if (this.transactionCodeSummryData) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record Is Reopened',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Reopen the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.apiService.onclickOfReopenTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(openResp => {
+                    console.log(openResp);
+                    this.transactionCodeSummryData = openResp;
+                    this.auditLog();
+                    this.ref.markForCheck();
+                    if (this.transactionCodeSummryData) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record Is Reopened',
+                            icon: 'success'
+                        });
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Reopen the Record!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Reopen the Record!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     OndeleteofUser(UserId) {
         console.log("USer", UserId);
@@ -3205,7 +3253,7 @@ class TransactionCodeNewComponent {
     }
     getUserName() {
         this.apiService.getUserName().subscribe(userName => {
-            this.userName = userName;
+            this.userName = userName.sort();
             this.usersList = [];
             var allUserID = this.userName;
             var list = document.getElementById('allusers');
@@ -3457,18 +3505,6 @@ class UserGccAcMaintenanceComponent {
         this.dtTrigger2 = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
     }
     ngOnInit() {
-        // this.dtOptions[0] = {
-        //   pagingType: 'full_numbers',
-        //   pageLength: 5,
-        //   processing: true,
-        //   lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
-        // };
-        // this.dtOptions[1] = {
-        //   pagingType: 'full_numbers',
-        //   pageLength: 5,
-        //   processing: true,
-        //   lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
-        // };
         this.dtOptions[0] = {
             pagingType: 'full_numbers',
             pageLength: 5,
@@ -3477,8 +3513,6 @@ class UserGccAcMaintenanceComponent {
             processing: true,
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
             retrieve: true
-            // columnDefs: [ { type: 'date', 'targets': [5] } ],
-            // order: [[5, 'desc']],
         };
         this.dtOptions[1] = {
             pagingType: 'full_numbers',
@@ -3503,7 +3537,7 @@ class UserGccAcMaintenanceComponent {
     }
     getUserName() {
         this.apiService.getUserName().subscribe(userName => {
-            this.userName = userName;
+            this.userName = userName.sort();
             this.usersList = [];
             var allUserID = this.userName;
             var list = document.getElementById('allusers');
@@ -4130,7 +4164,7 @@ class UserGccAcNewComponent {
     }
     getUserName() {
         this.apiService.getUserName().subscribe(userName => {
-            this.userName = userName;
+            this.userName = userName.sort();
             this.usersList = [];
             var allUserID = this.userName;
             var list = document.getElementById('allusers');
