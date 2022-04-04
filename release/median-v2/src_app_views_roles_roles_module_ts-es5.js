@@ -1215,7 +1215,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "CLOSE" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES" && ctx_r6.roleCodes.reopen);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "CLOSED" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES" && ctx_r6.roleCodes.reopen);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -1671,7 +1671,7 @@
             if (this.modifyRoleObject.recordStatus == 'O') {
               this.modifyRoleObject.recordStatus = "OPEN";
             } else if (this.modifyRoleObject.recordStatus == 'C') {
-              this.modifyRoleObject.recordStatus = "CLOSE";
+              this.modifyRoleObject.recordStatus = "CLOSED";
             } else {
               this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
             }
@@ -1798,6 +1798,8 @@
                     _this3.modifyRoleObject = _this3.updatedRoleObject;
 
                     if (_this3.modifyRoleObject) {
+                      _this3.auditLog();
+
                       sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                         text: "Role is Authorized",
                         icon: 'success'
@@ -1846,6 +1848,8 @@
                   _this4.closeBtn = false;
 
                   if (_this4.updatedRoleObject) {
+                    _this4.auditLog();
+
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                       text: "Role is Closed",
                       icon: 'success'
@@ -1903,6 +1907,8 @@
                   _this5.closeBtn = false;
 
                   if (_this5.modifyRoleObject) {
+                    _this5.auditLog();
+
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                       text: "Role is Reopened",
                       icon: 'success'
@@ -2709,6 +2715,34 @@
             this.modifyRoleObject = new src_app_shared_models_role__WEBPACK_IMPORTED_MODULE_1__.Roles();
             this.roleScreenList = null;
             this.rolestype(1); // this.router.navigate(['/dashboard']);
+          }
+        }, {
+          key: "auditLog",
+          value: function auditLog() {
+            if (this.modifyRoleObject.authStatus == 'U') {
+              this.modifyRoleObject.authStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.modifyRoleObject.authStatus == 'A') {
+              this.modifyRoleObject.authStatus = 'AUTHORIZED';
+            }
+
+            if (this.modifyRoleObject.recordStatus == 'O') {
+              this.modifyRoleObject.recordStatus = 'OPEN';
+            }
+
+            if (this.modifyRoleObject.recordStatus == 'C') {
+              this.modifyRoleObject.recordStatus = 'CLOSED';
+            }
+
+            if (this.modifyRoleObject.firstTimeAuth == 'N') {
+              console.log("NO");
+              this.modifyRoleObject.firstTimeAuth = 'NO';
+            }
+
+            if (this.modifyRoleObject.firstTimeAuth == 'Y') {
+              this.modifyRoleObject.firstTimeAuth = 'YES';
+            }
           }
         }]);
 

@@ -635,7 +635,7 @@ function RoleDetailsComponent_div_59_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.authStatus == "UNAUTHORIZED" && ctx_r6.roleCodes.auth);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "CLOSE" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES" && ctx_r6.roleCodes.reopen);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "CLOSED" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES" && ctx_r6.roleCodes.reopen);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "OPEN" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
@@ -884,7 +884,7 @@ class RoleDetailsComponent {
             this.modifyRoleObject.recordStatus = "OPEN";
         }
         else if (this.modifyRoleObject.recordStatus == 'C') {
-            this.modifyRoleObject.recordStatus = "CLOSE";
+            this.modifyRoleObject.recordStatus = "CLOSED";
         }
         else {
             this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
@@ -983,6 +983,7 @@ class RoleDetailsComponent {
                         this.cdr.markForCheck();
                         this.modifyRoleObject = this.updatedRoleObject;
                         if (this.modifyRoleObject) {
+                            this.auditLog();
                             sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                                 text: "Role is Authorized",
                                 icon: 'success'
@@ -1025,6 +1026,7 @@ class RoleDetailsComponent {
                     this.openBtn = false;
                     this.closeBtn = false;
                     if (this.updatedRoleObject) {
+                        this.auditLog();
                         sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                             text: "Role is Closed",
                             icon: 'success'
@@ -1074,6 +1076,7 @@ class RoleDetailsComponent {
                     this.openBtn = false;
                     this.closeBtn = false;
                     if (this.modifyRoleObject) {
+                        this.auditLog();
                         sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                             text: "Role is Reopened",
                             icon: 'success'
@@ -1682,6 +1685,27 @@ class RoleDetailsComponent {
         this.roleScreenList = null;
         this.rolestype(1);
         // this.router.navigate(['/dashboard']);
+    }
+    auditLog() {
+        if (this.modifyRoleObject.authStatus == 'U') {
+            this.modifyRoleObject.authStatus = 'UNAUTHORIZED';
+        }
+        if (this.modifyRoleObject.authStatus == 'A') {
+            this.modifyRoleObject.authStatus = 'AUTHORIZED';
+        }
+        if (this.modifyRoleObject.recordStatus == 'O') {
+            this.modifyRoleObject.recordStatus = 'OPEN';
+        }
+        if (this.modifyRoleObject.recordStatus == 'C') {
+            this.modifyRoleObject.recordStatus = 'CLOSED';
+        }
+        if (this.modifyRoleObject.firstTimeAuth == 'N') {
+            console.log("NO");
+            this.modifyRoleObject.firstTimeAuth = 'NO';
+        }
+        if (this.modifyRoleObject.firstTimeAuth == 'Y') {
+            this.modifyRoleObject.firstTimeAuth = 'YES';
+        }
     }
 }
 RoleDetailsComponent.ɵfac = function RoleDetailsComponent_Factory(t) { return new (t || RoleDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService)); };
