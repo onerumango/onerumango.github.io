@@ -3686,25 +3686,7 @@
         }
       }
 
-      function FileUploadComponent_div_57_p_34_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "p", 46);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtextInterpolate"](ctx_r23.valueDate);
-        }
-      }
-
-      function FileUploadComponent_div_57_ng_container_47_Template(rf, ctx) {
+      function FileUploadComponent_div_57_ng_container_46_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementContainerStart"](0);
 
@@ -3720,7 +3702,7 @@
         }
       }
 
-      function FileUploadComponent_div_57_ng_template_48_Template(rf, ctx) {
+      function FileUploadComponent_div_57_ng_template_47_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "span", 41);
 
@@ -3732,7 +3714,7 @@
 
       function FileUploadComponent_div_57_Template(rf, ctx) {
         if (rf & 1) {
-          var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵgetCurrentView"]();
+          var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "div", 4);
 
@@ -3838,111 +3820,109 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](33, FileUploadComponent_div_57_p_33_Template, 2, 1, "p", 47);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](34, FileUploadComponent_div_57_p_34_Template, 2, 1, "p", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](34, "div", 48);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](35, "label", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](36, "Remarks *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](35, "div", 48);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](36, "label", 49);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](37, "Remarks *");
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](37, "textarea", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](38, "textarea", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](38, "div", 48);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](39, "label", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](40, "Overrides");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](39, "div", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](41, "textarea", 52);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](40, "label", 51);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](41, "Overrides");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](42, "textarea", 52);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](43);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](42);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](44, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](45, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](43, "div", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](46, "button", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](44, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_button_click_46_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](45, "button", 22);
 
-            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_button_click_45_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r27);
 
-            return ctx_r27.Datacheck();
+            var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
+
+            return ctx_r26.Datacheck();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](47, FileUploadComponent_div_57_ng_container_47_Template, 4, 0, "ng-container", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](46, FileUploadComponent_div_57_ng_container_46_Template, 4, 0, "ng-container", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](48, FileUploadComponent_div_57_ng_template_48_Template, 2, 0, "ng-template", null, 54, _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](47, FileUploadComponent_div_57_ng_template_47_Template, 2, 0, "ng-template", null, 54, _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplateRefExtractor"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](49, "div", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](50, "button", 29);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_button_click_50_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r27);
+
+            var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
+
+            return ctx_r28.deleteDataService(ctx_r28.uploadExcelForm.get("remarks").value);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](51, "Delete");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](50, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](52, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](51, "button", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](53, "a", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_button_click_51_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_a_click_53_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r27);
 
             var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
 
-            return ctx_r29.deleteDataService(ctx_r29.uploadExcelForm.get("remarks").value);
+            return ctx_r29.downloadData();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](52, "Delete");
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](54, "View Excel");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](53, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](55, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](54, "a", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](56, "button", 56);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_a_click_54_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_button_click_56_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r27);
 
             var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
 
-            return ctx_r30.downloadData();
+            return ctx_r30.exit();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](55, "View Excel");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](56, "div", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](57, "button", 56);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function FileUploadComponent_div_57_Template_button_click_57_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵrestoreView"](_r28);
-
-            var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
-
-            return ctx_r31.exit();
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](58, "Hide");
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](57, "Hide");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
@@ -3954,7 +3934,7 @@
         }
 
         if (rf & 2) {
-          var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵreference"](49);
+          var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵreference"](48);
 
           var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
 
@@ -3980,11 +3960,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r9.valueDate === "Today");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r9.valueDate != "Today");
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r9.valueDate === "Today" || ctx_r9.valueDate != "Today");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](9);
 
@@ -3996,7 +3972,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r9.isProcessing)("ngIfElse", _r25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r9.isProcessing)("ngIfElse", _r24);
         }
       }
 
@@ -4183,6 +4159,9 @@
                           // this.valueDate = this.responseforfileupload.valueDate == "Today" ?  this.date : "not Today";
 
                           _this18.responsebutton = true;
+                          setTimeout(function () {
+                            window.scrollTo(0, document.body.scrollHeight);
+                          });
                           _this18.responseDto = _this18.responseforfileupload;
 
                           if (_this18.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
@@ -4219,6 +4198,9 @@
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                     title: "Data uploaded successfully ",
                     text: "For the Batch " + _this18.responseDto.batchNo
+                  });
+                  setTimeout(function () {
+                    window.scrollTo(0, document.body.scrollHeight);
                   });
                   _this18.excelFileFlag = true;
                   _this18.flag = false;
@@ -4721,7 +4703,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](57, FileUploadComponent_div_57_Template, 59, 11, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](57, FileUploadComponent_div_57_Template, 58, 10, "div", 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
