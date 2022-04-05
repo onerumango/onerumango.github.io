@@ -392,7 +392,7 @@ function AccountBlockingComponent_div_42_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Please enter valid Phone Number! ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } }
-const _c0 = function () { return ["/dashboard"]; };
+const _c0 = function () { return ["/customer-search"]; };
 class AccountBlockingComponent {
     constructor(toastService, formBuilder, apiService) {
         this.toastService = toastService;
@@ -496,9 +496,14 @@ class AccountBlockingComponent {
             this.toastService.errorMessage("All fields are mandatory", "Ensure all fields are captured correctly.");
         }
     }
+    exit() {
+        this.apiService.setAccountBlocking({
+            exit: 'clickedOnExitFromAccountBlocking'
+        });
+    }
 }
 AccountBlockingComponent.ɵfac = function AccountBlockingComponent_Factory(t) { return new (t || AccountBlockingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_1__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService)); };
-AccountBlockingComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AccountBlockingComponent, selectors: [["npr-account-blocking"]], decls: 67, vars: 7, consts: [["action", "", 1, "formStyle", 3, "formGroup"], [1, "pageContentMain"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "", 1, "formLbl"], ["id", "fname", "type", "text", "formControlName", "customerName", "placeholder", "Customer Name", "value", "", 1, "form-control"], ["id", "cNumber", "formControlName", "customerNumber", "type", "number", "placeholder", "Customer Number", "value", "", 1, "form-control"], ["id", "accNumber", "formControlName", "customerAccountNumber", "type", "number", "placeholder", "Account Number", "value", "", 1, "form-control"], ["id", "cName", "formControlName", "branchCode", "type", "text", "placeholder", "Branch Code", "value", "", 1, "form-control"], ["id", "nationalID", "maxlength", "10", "formControlName", "customerMobileNumber", "type", "number", "placeholder", "Mobile Number", "value", "", 1, "form-control"], ["class", "invalid-feedback", 4, "ngIf"], ["id", "accNumber", "formControlName", "emailid", "type", "text", "placeholder", "Email Id", "value", "", 1, "form-control"], [1, "pageContentMain", "mt-4", "mb-4"], ["action", "", 1, "formStyle"], ["id", "fname", "formControlName", "nameOfCustomer", "type", "text", "placeholder", "Customer Name", "value", "", 1, "form-control"], ["id", "cNumber", "formControlName", "mobileNumber", "maxlength", "10", "type", "number", "placeholder", "Mobile Number", "value", "", 1, "form-control"], ["id", "MobNumber", "formControlName", "nameOfOperator", "type", "text", "placeholder", "Name of the Operator", "value", "", 1, "form-control"], ["rows", "8", "id", "cName", "formControlName", "dueDeligenceInfo", "type", "text", "placeholder", "Due Diligence", "value", "", 1, "form-control", "rounded-0"], ["rows", "8", "id", "nationalID", "formControlName", "reasonForBlocking", "type", "text", "placeholder", "Reason", "value", "", 1, "form-control", "rounded-0"], ["rows", "8", "formControlName", "commentsByOperator", "id", "MobNumber", "type", "text", "placeholder", "Comments", "value", "", 1, "form-control", "rounded-0"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "invalid-feedback"]], template: function AccountBlockingComponent_Template(rf, ctx) { if (rf & 1) {
+AccountBlockingComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AccountBlockingComponent, selectors: [["npr-account-blocking"]], decls: 67, vars: 7, consts: [["action", "", 1, "formStyle", 3, "formGroup"], [1, "pageContentMain"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "", 1, "formLbl"], ["id", "fname", "type", "text", "formControlName", "customerName", "placeholder", "Customer Name", "value", "", 1, "form-control"], ["id", "cNumber", "formControlName", "customerNumber", "type", "number", "placeholder", "Customer Number", "value", "", 1, "form-control"], ["id", "accNumber", "formControlName", "customerAccountNumber", "type", "number", "placeholder", "Account Number", "value", "", 1, "form-control"], ["id", "cName", "formControlName", "branchCode", "type", "text", "placeholder", "Branch Code", "value", "", 1, "form-control"], ["id", "nationalID", "maxlength", "10", "formControlName", "customerMobileNumber", "type", "number", "placeholder", "Mobile Number", "value", "", 1, "form-control"], ["class", "invalid-feedback", 4, "ngIf"], ["id", "accNumber", "formControlName", "emailid", "type", "text", "placeholder", "Email Id", "value", "", 1, "form-control"], [1, "pageContentMain", "mt-4", "mb-4"], ["action", "", 1, "formStyle"], ["id", "fname", "formControlName", "nameOfCustomer", "type", "text", "placeholder", "Customer Name", "value", "", 1, "form-control"], ["id", "cNumber", "formControlName", "mobileNumber", "maxlength", "10", "type", "number", "placeholder", "Mobile Number", "value", "", 1, "form-control"], ["id", "MobNumber", "formControlName", "nameOfOperator", "type", "text", "placeholder", "Name of the Operator", "value", "", 1, "form-control"], ["rows", "8", "id", "cName", "formControlName", "dueDeligenceInfo", "type", "text", "placeholder", "Due Diligence", "value", "", 1, "form-control", "rounded-0"], ["rows", "8", "id", "nationalID", "formControlName", "reasonForBlocking", "type", "text", "placeholder", "Reason", "value", "", 1, "form-control", "rounded-0"], ["rows", "8", "formControlName", "commentsByOperator", "id", "MobNumber", "type", "text", "placeholder", "Comments", "value", "", 1, "form-control", "rounded-0"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink", "click"], [1, "invalid-feedback"]], template: function AccountBlockingComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2);
@@ -595,6 +600,7 @@ AccountBlockingComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](64, "div", 23);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](65, "a", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function AccountBlockingComponent_Template_a_click_65_listener() { return ctx.exit(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](66, "Exit");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -1116,8 +1122,113 @@ class CustomerSearchComponent {
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
             retrieve: true
         };
+        this.api.getAccountBlocking().subscribe(resp => {
+            if (resp.exit === 'clickedOnExitFromAccountBlocking') {
+                this.api.getCustomerSearchValues().subscribe(resp => {
+                    console.log(resp);
+                    this.buildForm(resp);
+                });
+                this.result = [
+                    {
+                        accountNumber: "5678910",
+                        id: "4556675",
+                        branchCode: "360000",
+                        dateOfBirth: "123456789",
+                        mobileNumber: "9656849771",
+                        emailAddress: "preethi2220@gmail.com",
+                        customerAddress: "kerala wayanad",
+                        accountCurrency: "AES",
+                        blockStatus: "blocked",
+                    },
+                    {
+                        accountNumber: "5689104",
+                        id: "9956675",
+                        branchCode: "3876860000",
+                        dateOfBirth: "123456789",
+                        mobileNumber: "9656849771",
+                        emailAddress: "p2220@gmail.com",
+                        customerAddress: "banglore Karnataka",
+                        accountCurrency: "AES",
+                        blockStatus: "blocked",
+                    },
+                ];
+                this.custMoreDetailsdata = [
+                    {
+                        pnationalid: "5678910",
+                        barnchcode: "4556675",
+                        custacno: "360000",
+                        ccy: "dollar",
+                        custno: "9656849",
+                        firstname: "preethi",
+                        lastname: "PM",
+                        dateofbirth: "25-04-1995",
+                        email: "preethi2220@gmail.com",
+                        mobileNo: '9656849771',
+                        addr1: "kerala wayanad",
+                        frozen: "Yes",
+                        noCredit: "220",
+                        noDebit: "110",
+                        dormant: "201",
+                    },
+                    {
+                        pnationalid: "0098910",
+                        barnchcode: "6666675",
+                        custacno: "36650890",
+                        ccy: "rupees",
+                        custno: "5684954",
+                        firstname: "venki",
+                        lastname: "PM",
+                        dateofbirth: "22-07-1995",
+                        email: "abc2220@gmail.com",
+                        mobileNo: '9606849771',
+                        addr1: "kranataka wayanad",
+                        frozen: "No",
+                        noCredit: "1220",
+                        noDebit: "4110",
+                        dormant: "620",
+                    },
+                ];
+                this.trndata = [
+                    {
+                        refNo: "5678910",
+                        accBranch: "Edavannapara",
+                        accNo: "360000",
+                        drBrIndicator: "y",
+                        fCurrAmt: "9656849",
+                        ICurrAmt: "8999",
+                        transDate: "7437777",
+                    },
+                    {
+                        refNo: "998910",
+                        accBranch: "Vazhakkad",
+                        accNo: "3656470",
+                        drBrIndicator: "n",
+                        fCurrAmt: "67567",
+                        ICurrAmt: "899966",
+                        transDate: "544546",
+                    },
+                ];
+                this.showtable = true;
+                this.showtable1 = true;
+                this.showtable2 = true;
+            }
+            setTimeout(() => {
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+        });
     }
     onFetch() {
+        this.api.setCustomerSearchValues({
+            firstName: this.accountForm.value.firstName,
+            customerNumber: this.accountForm.value.customerNumber,
+            accountNumber: this.accountForm.value.accountNumber,
+            mobileNo: this.accountForm.value.mobileNo,
+            lastName: this.accountForm.value.lastName,
+            customerName: this.accountForm.value.customerName,
+            branchCode: this.accountForm.value.branchCode,
+            nationalId: this.accountForm.value.nationalId,
+            email: this.accountForm.value.email
+        });
         this.dataSource = null;
         this.dataSource1 = null;
         this.dataSource2 = null;
@@ -1269,6 +1380,18 @@ class CustomerSearchComponent {
             branchCode: data.barnchcode,
             nationalId: data.pnationalid,
             email: data.email
+        });
+    }
+    buildForm(data) {
+        this.accountForm = this.formBuilder.group({
+            firstName: [data ? data.firstName : ""],
+            customerNumber: [data ? data.customerNumber : ""],
+            accountNumber: [data ? data.accountNumber : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.maxLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$")]],
+            mobileNo: [data ? data.mobileNo : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.min(1000000000), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.max(9999999999)]],
+            lastName: [data ? data.lastName : ""],
+            customerName: [data ? data.customerName : ""],
+            branchCode: [data ? data.branchCode : ""],
+            nationalId: [data ? data.nationalId : ""],
         });
     }
 }

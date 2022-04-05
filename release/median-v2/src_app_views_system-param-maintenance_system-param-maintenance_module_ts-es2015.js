@@ -2339,7 +2339,7 @@ class TransactionCodeEditComponent {
         this.gettingSummaryData();
     }
     newRolePermissions() {
-        this.roleService.fetchScreenPermissions('Transaction Code Maint');
+        this.roleService.fetchScreenPermissions('Transaction Code Maintenance');
     }
     createtransactionCodeGroup() {
         return new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroup({
@@ -2589,28 +2589,42 @@ class TransactionCodeEditComponent {
     }
     OndeleteofUser(UserId) {
         console.log("USer", UserId);
-        this.apiService.deleteUserData(UserId).subscribe(resp => {
-            if (resp == true) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record Is Deleted',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Delete the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.apiService.deleteUserData(UserId).subscribe(resp => {
+                    if (resp == true) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record Is Deleted',
+                            icon: 'success'
+                        });
+                        this.router.navigateByUrl('/system-param-maintenance/transaction-code-summary');
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Delete User Data!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
-                this.router.navigateByUrl('/system-param-maintenance/transaction-code-summary');
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Delete User Data!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     onSubmitofForm(formData, auditData) {
         console.log(this.transactionData, formData);
@@ -3347,7 +3361,7 @@ TransactionCodeNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTE
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](25, "div", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](26, "button", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TransactionCodeNewComponent_Template_button_click_26_listener() { return ctx.onSubmit(ctx.transactionCodeForm.value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](27, "Submit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](27, "Save");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](28, "div", 14);
