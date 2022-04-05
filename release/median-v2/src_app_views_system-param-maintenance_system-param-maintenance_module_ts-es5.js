@@ -4439,7 +4439,7 @@
         }, {
           key: "newRolePermissions",
           value: function newRolePermissions() {
-            this.roleService.fetchScreenPermissions('Transaction Code Maint');
+            this.roleService.fetchScreenPermissions('Transaction Code Maintenance');
           }
         }, {
           key: "createtransactionCodeGroup",
@@ -4759,25 +4759,41 @@
             var _this23 = this;
 
             console.log("USer", UserId);
-            this.apiService.deleteUserData(UserId).subscribe(function (resp) {
-              if (resp == true) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Record Is Deleted',
-                  icon: 'success'
-                });
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Delete the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
 
-                _this23.router.navigateByUrl('/system-param-maintenance/transaction-code-summary');
-              } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: 'Failed to Delete User Data!',
-                  icon: 'error'
-                });
-              }
-            }, function (error) {
-              if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: 'Server Error!',
-                  icon: 'error'
+              if (result.isConfirmed === true) {
+                _this23.apiService.deleteUserData(UserId).subscribe(function (resp) {
+                  if (resp == true) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record Is Deleted',
+                      icon: 'success'
+                    });
+
+                    _this23.router.navigateByUrl('/system-param-maintenance/transaction-code-summary');
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Delete User Data!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
                 });
               }
             });
@@ -6196,7 +6212,7 @@
               return ctx.onSubmit(ctx.transactionCodeForm.value);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](27, "Submit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](27, "Save");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 

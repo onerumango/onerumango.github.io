@@ -4640,6 +4640,19 @@
             branchCode: '',
             nationalId: '',
             email: ''
+          });
+          this.AccountBlocking = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            exit: ''
+          });
+          this.CustomerSearchFormValues = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            firstName: '',
+            customerNumber: '',
+            accountNumber: '',
+            mobileNo: '',
+            lastName: '',
+            customerName: '',
+            branchCode: '',
+            nationalId: ''
           }); // Excel Mapping
 
           this.excelSummaryObject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
@@ -5258,6 +5271,26 @@
           key: "getCustomerSearch",
           value: function getCustomerSearch() {
             return this.customerSearch.asObservable();
+          }
+        }, {
+          key: "setAccountBlocking",
+          value: function setAccountBlocking(data) {
+            this.AccountBlocking.next(data);
+          }
+        }, {
+          key: "getAccountBlocking",
+          value: function getAccountBlocking() {
+            return this.AccountBlocking.asObservable();
+          }
+        }, {
+          key: "setCustomerSearchValues",
+          value: function setCustomerSearchValues(data) {
+            this.CustomerSearchFormValues.next(data);
+          }
+        }, {
+          key: "getCustomerSearchValues",
+          value: function getCustomerSearchValues() {
+            return this.CustomerSearchFormValues.asObservable();
           }
         }]);
 
@@ -6017,7 +6050,7 @@
         //  MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
         // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
         MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-        ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
+        ACC_CLOSER_URL: 'http://192.168.0.14:8082/medianAccountClosure'
       };
       /***/
     },

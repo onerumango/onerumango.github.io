@@ -20511,91 +20511,147 @@ class ProcessCodeMappingEditComponent {
             });
         }
         else {
-            this.extName = this.processCodeSummary.extSysName;
-            this.apiService.authProcessCodeRecord(this.extName, this.currentUser).subscribe(authResp => {
-                this.processCodeSummary = authResp;
-                console.log("Auth", this.processCodeSummary);
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: ' Record is Authorized',
-                    icon: 'success'
-                });
-                this.auditLog();
-            });
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+                text: 'You are trying to Authorize the record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES', 'icon': 'info'
+            }).then((result => {
+                console.log("this is reopen ", result);
+                if (result.isConfirmed === true) {
+                    this.extName = this.processCodeSummary.extSysName;
+                    this.apiService.authProcessCodeRecord(this.extName, this.currentUser).subscribe(authResp => {
+                        this.processCodeSummary = authResp;
+                        console.log("Auth", this.processCodeSummary);
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: ' Record is Authorized',
+                            icon: 'success'
+                        });
+                        this.auditLog();
+                    });
+                }
+            }));
         }
     }
     onClickOfClose() {
-        this.processCodeSummary.modifiedBy = this.currentUser;
-        this.extName = this.processCodeSummary.extSysName;
-        this.apiService.closingProcessCodeRecord(this.extName, this.currentUser).subscribe(closeResp => {
-            console.log(closeResp);
-            this.processCodeSummary = closeResp;
-            if (this.processCodeSummary) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Closed',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.processCodeSummary.modifiedBy = this.currentUser;
+                this.extName = this.processCodeSummary.extSysName;
+                this.apiService.closingProcessCodeRecord(this.extName, this.currentUser).subscribe(closeResp => {
+                    console.log(closeResp);
+                    this.processCodeSummary = closeResp;
+                    if (this.processCodeSummary) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Closed',
+                            icon: 'success'
+                        });
+                        this.auditLog();
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Close the Recored!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
-                this.auditLog();
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Close the Recored!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     onClickOfReopen() {
-        this.extName = this.processCodeSummary.extSysName;
-        this.apiService.reopeningProcessCodeRecord(this.extName, this.currentUser).subscribe(openResp => {
-            console.log(openResp);
-            this.processCodeSummary = openResp;
-            if (this.processCodeSummary) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Reopened',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Reopen the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.extName = this.processCodeSummary.extSysName;
+                this.apiService.reopeningProcessCodeRecord(this.extName, this.currentUser).subscribe(openResp => {
+                    console.log(openResp);
+                    this.processCodeSummary = openResp;
+                    if (this.processCodeSummary) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Reopened',
+                            icon: 'success'
+                        });
+                        this.auditLog();
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Failed to Reoped the Recored!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Server Error!',
+                            icon: 'error'
+                        });
+                    }
                 });
-                this.auditLog();
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Failed to Reoped the Recored!',
-                    icon: 'error'
-                });
-            }
-        }, error => {
-            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Server Error!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
     OndeleteofUser() {
-        this.extName = this.processCodeSummary.extSysName;
-        this.apiService.deleteProcessRecord(this.extName, this.currentUser).subscribe(resp => {
-            console.log(resp);
-            if (resp === true) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Record is Deleted',
-                    icon: 'success'
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Delete the record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.extName = this.processCodeSummary.extSysName;
+                this.apiService.deleteProcessRecord(this.extName, this.currentUser).subscribe(resp => {
+                    console.log(resp);
+                    if (resp === true) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            title: 'Record is Deleted',
+                            icon: 'success'
+                        });
+                        this.router.navigateByUrl('/external-system/processCodeMapping');
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Failed to Delete User Data!',
+                            icon: 'error'
+                        });
+                    }
                 });
-                this.router.navigateByUrl('/external-system/processCodeMapping');
             }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: 'Failed to Delete User Data!',
-                    icon: 'error'
-                });
-            }
-        });
+        }));
     }
 }
 ProcessCodeMappingEditComponent.ɵfac = function ProcessCodeMappingEditComponent_Factory(t) { return new (t || ProcessCodeMappingEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__.ToastService)); };

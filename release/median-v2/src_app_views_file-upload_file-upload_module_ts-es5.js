@@ -4173,6 +4173,9 @@
                             _this18.excelFileFlag = true;
                             _this18.flag = false;
                             _this18.isShow = true;
+                            setTimeout(function () {
+                              window.scrollTo(0, document.body.scrollHeight);
+                            });
                           }
                         });
                       } else if (result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().DismissReason.cancel) {

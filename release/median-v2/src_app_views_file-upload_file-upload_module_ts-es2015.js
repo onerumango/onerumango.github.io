@@ -2278,6 +2278,9 @@ class FileUploadComponent {
                                         this.excelFileFlag = true;
                                         this.flag = false;
                                         this.isShow = true;
+                                        setTimeout(() => {
+                                            window.scrollTo(0, document.body.scrollHeight);
+                                        });
                                     }
                                 });
                             }
