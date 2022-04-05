@@ -2,6 +2,7 @@
 	&:after {
 		content:"";
 		display:table;
+		background-color: black;
 		clear:both;
 	}
 	label.menu-toggle {
@@ -140,7 +141,7 @@
 		}
 
 		.toggle:hover {
-			// background-color: #eeeeee;
+			 background-color: #eeeeee;
 		}
 		ul {
 			overflow: hidden;

@@ -97,8 +97,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     }
     .default-background{
- background: #a3a3a3 0% 0% no-repeat padding-box;
-        
+        background: #a3a3a3 0% 0% no-repeat padding-box;
     }
 
     .sub-text {
@@ -119,7 +118,6 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     .dark-chip {
         background: transparent linear-gradient(201deg, #183D3F 0%, #1E1F27 100%) 0% 0% no-repeat padding-box;
-        ;
         border-radius: 14px;
         color: #ffffff !important;
         opacity: 1;
@@ -135,6 +133,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     .mat-drawer-side {
         border-right: none !important;
+//   color: #0C0B0F;
     }
 
     .mat-drawer-container {
@@ -146,7 +145,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
 
     .highcharts-title {
-        fill: #ffffff;
+        fill: black;
     }
 
     .mat-card-title {
@@ -312,6 +311,10 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .mat-color-default {
         color: #ffffff;
     }
+    .mat-indigo {
+        background-color: black !important;
+        color: #fff !important;
+    }
 
     .fill-color-accent {
         color: map-get($mat-accent, 500);
@@ -327,4 +330,48 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
             color: #ffffff;
         }
     }
+    .mat-input-element {
+        color: black;
+    }
+    // .dashbaord-card {
+    //     background-color: #0C0B0F;
+    // }
+    .btn{
+        color:#0C0B0F;
+    }
+    .card-cash-in-cash{
+        background-color: #0C0B0F;
+    }
+    .change-currency {
+        background-color: #0C0B0F;
+    }
+    .example-container {
+        background:#0C0B0F;
+    }
+    .mat-drawer {
+        background:#0C0B0F;
+    }
+    .navdash {
+        color: black;
+      }
+      .inputCard{
+        background:#0C0B0F;
+      }
+      .header-topnav{
+        background:#0C0B0F;
+      }
+      .customerOperations {
+        background-color: #0C0B0F;
+      }
+      .tokenCard {
+        background-color: #0C0B0F;
+        color: white;
+    }
+    .cash-in-card {
+        background-color: #0C0B0F;
+        color: white;
+    }
+
+    
+    
 }
