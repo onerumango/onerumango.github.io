@@ -196,6 +196,7 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
 .egret-navy {
   @include angular-material-theme($default-theme);
   @include egret-theme($default-theme);
+  background-color: #456EFE;
 }
 
 // DARK THEME INIT
@@ -205,4 +206,7 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
 }
 
 
-
+.egret-navy .mat-toolbar {
+  background:blue;
+  color: white;
+}
