@@ -21,8 +21,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color:whitesmoke;
+ // background-color: black;
+  //color:whitesmoke;
   font-weight: $font-weight-base;
   font-size: $font-size-base;
   line-height: 1.5;
@@ -60,7 +60,9 @@ bdo[dir='ltr'] {
 
 .mat-card {
   font-size: 0.875rem;
-  background-color: gray;
+ background-color: gray;
+//  background-image: linear-gradient(rgba(255, 255, 255, 0.5),
+//  rgba(248, 250, 254, 0.5));
 }
 img:not(.mat-card-image) {
   max-width: 100%;
