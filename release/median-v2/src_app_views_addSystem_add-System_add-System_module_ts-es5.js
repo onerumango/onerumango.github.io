@@ -5006,6 +5006,10 @@
         }, {
           key: "auditLog",
           value: function auditLog() {
+            if (this.respData.approverId === 'null') {
+              this.respData.approverId = ' ';
+            }
+
             if (this.respData.approvedStatus === 'N') {
               this.respData.approvedStatus = 'UNAUTHORIZED';
             }

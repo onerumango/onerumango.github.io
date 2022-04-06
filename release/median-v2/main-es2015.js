@@ -2998,6 +2998,7 @@ class RoleService {
         return this.http.get(`${this._fmosbaseURL}` + '/fetchTabLabelAndScreen');
     }
     createnewrole(roledata) {
+        console.log(roledata);
         return this.http.post(`${this._fmosbaseURL}` + '/saveRoleDetails', roledata);
     }
     fetchfmosroles() {

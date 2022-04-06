@@ -5832,6 +5832,7 @@
         }, {
           key: "createnewrole",
           value: function createnewrole(roledata) {
+            console.log(roledata);
             return this.http.post("".concat(this._fmosbaseURL) + '/saveRoleDetails', roledata);
           }
         }, {

@@ -4159,9 +4159,6 @@
                           // this.valueDate = this.responseforfileupload.valueDate == "Today" ?  this.date : "not Today";
 
                           _this18.responsebutton = true;
-                          setTimeout(function () {
-                            window.scrollTo(0, document.body.scrollHeight);
-                          });
                           _this18.responseDto = _this18.responseforfileupload;
 
                           if (_this18.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
@@ -4173,9 +4170,6 @@
                             _this18.excelFileFlag = true;
                             _this18.flag = false;
                             _this18.isShow = true;
-                            setTimeout(function () {
-                              window.scrollTo(0, document.body.scrollHeight);
-                            });
                           }
                         });
                       } else if (result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().DismissReason.cancel) {
@@ -4192,7 +4186,9 @@
                   _this18.disbaleBtn = true;
                 }
 
+                debugger;
                 _this18.date = new Date().toLocaleDateString();
+                _this18.date = _this18.pipe.transform(_this18.date, "MMM dd, yyyy");
                 _this18.valueDate = _this18.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
                 _this18.responsebutton = true;
                 _this18.responseDto = _this18.responseforfileupload;
