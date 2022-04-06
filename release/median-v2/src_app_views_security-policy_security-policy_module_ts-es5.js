@@ -598,7 +598,13 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/router */
+      71258);
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
       54364);
 
@@ -978,7 +984,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.securityData.authStatus);
         }
-      } // import { ToastService } from "src/app/shared/services/toastService.service";
+      }
+
+      var _c0 = function _c0() {
+        return ["/dashboard"];
+      }; // import { ToastService } from "src/app/shared/services/toastService.service";
 
 
       var _SecurityPolicyComponent = /*#__PURE__*/function () {
@@ -1167,8 +1177,8 @@
         type: _SecurityPolicyComponent,
         selectors: [["npr-security-policy"]],
         decls: 59,
-        vars: 3,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "securityLogins", 1, "formLbl"], ["id", "securityLogins", "type", "text", "formControlName", "maxInvLogins", "placeholder", "Maximum Invalid Logins", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "maxPassword", 1, "formLbl"], ["id", "maxPassword", "type", "number", "formControlName", "maxPswdLength", "placeholder", "Maximum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "minPassword", 1, "formLbl"], ["id", "minPassword", "type", "number", "formControlName", "minPswdLength", "placeholder", "Minimum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "passExpiry", 1, "formLbl"], ["id", "passExpiry", "type", "number", "formControlName", "pswdExpiry", "placeholder", "Password Expiry (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "expiryReminder", 1, "formLbl"], ["id", "expiryReminder", "type", "number", "formControlName", "notifyPasswordExpiryInDays", "placeholder", "Password Expiry Reminder (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "reuseLimit", 1, "formLbl"], ["id", "reuseLimit", "type", "number", "formControlName", "pswdReuseAft", "placeholder", "Password Reuse Limit", "value", "", 1, "form-control", 3, "ngModelChange"], [1, "col-12"], ["for", "", 1, "formLbl"], [1, "checkListCol"], [1, "checkStyle"], ["type", "checkbox", "formControlName", "pswdComplexUcase", "id", "uppercaseCheck", 3, "ngModelChange"], ["for", "uppercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexLcase", "id", "lowercaseCheck", 3, "ngModelChange"], ["for", "lowercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexNum", "id", "numberCheck", 3, "ngModelChange"], ["for", "numberCheck"], ["type", "checkbox", "formControlName", "pswdComplexSplc", "id", "charactersCheck", 3, "ngModelChange"], ["for", "charactersCheck"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"], ["class", "dbCardStyle", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
+        vars: 5,
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "securityLogins", 1, "formLbl"], ["id", "securityLogins", "type", "text", "formControlName", "maxInvLogins", "placeholder", "Maximum Invalid Logins", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "maxPassword", 1, "formLbl"], ["id", "maxPassword", "type", "number", "formControlName", "maxPswdLength", "placeholder", "Maximum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "minPassword", 1, "formLbl"], ["id", "minPassword", "type", "number", "formControlName", "minPswdLength", "placeholder", "Minimum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "passExpiry", 1, "formLbl"], ["id", "passExpiry", "type", "number", "formControlName", "pswdExpiry", "placeholder", "Password Expiry (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "expiryReminder", 1, "formLbl"], ["id", "expiryReminder", "type", "number", "formControlName", "notifyPasswordExpiryInDays", "placeholder", "Password Expiry Reminder (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "reuseLimit", 1, "formLbl"], ["id", "reuseLimit", "type", "number", "formControlName", "pswdReuseAft", "placeholder", "Password Reuse Limit", "value", "", 1, "form-control", 3, "ngModelChange"], [1, "col-12"], ["for", "", 1, "formLbl"], [1, "checkListCol"], [1, "checkStyle"], ["type", "checkbox", "formControlName", "pswdComplexUcase", "id", "uppercaseCheck", 3, "ngModelChange"], ["for", "uppercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexLcase", "id", "lowercaseCheck", 3, "ngModelChange"], ["for", "lowercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexNum", "id", "numberCheck", 3, "ngModelChange"], ["for", "numberCheck"], ["type", "checkbox", "formControlName", "pswdComplexSplc", "id", "charactersCheck", 3, "ngModelChange"], ["for", "charactersCheck"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
         template: function SecurityPolicyComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -1395,7 +1405,7 @@
               return ctx.submit();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](54, "Submit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](54, "Save");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -1403,13 +1413,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](55, "div", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](56, "a", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](56, "button", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function SecurityPolicyComponent_Template_a_click_56_listener() {
-              return ctx.reset();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](57, "Reset");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](57, "Exit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -1435,13 +1441,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx.enablesubmit || !ctx.securityForm.valid || !ctx.submitSecurity);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](4, _c0));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.securityData);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.CheckboxControlValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.CheckboxControlValueAccessor, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLink, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzZWN1cml0eS1wb2xpY3kuY29tcG9uZW50LnNjc3MifQ== */"]
       });
       /***/

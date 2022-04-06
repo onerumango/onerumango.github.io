@@ -1807,7 +1807,7 @@
 
               if (ruleTranslationResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: "Record is Created",
+                  text: 'Record is Updated',
                   icon: 'success'
                 });
                 _this4.submit = false;

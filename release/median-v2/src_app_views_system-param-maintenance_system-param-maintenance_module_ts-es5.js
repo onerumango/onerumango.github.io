@@ -1505,7 +1505,7 @@
         }, {
           key: "newRolePermissions",
           value: function newRolePermissions() {
-            this.roleService.fetchScreenPermissions('Dept Id Maint');
+            this.roleService.fetchScreenPermissions('Department ID Maintenance');
           }
         }]);
 
@@ -7916,35 +7916,50 @@
 
             console.log("userGLFormValue", userGLFormValue);
             var userGlData = userGLFormValue.userGLData;
-            var userID = userGLFormValue.userId;
-            var permission = userGLFormValue.permission;
-            this.apiService.saveuserGlCode(userGlData, userID, permission).subscribe(function (savetrnres) {
-              _this37.userGLResp = savetrnres;
+            console.log(userGlData);
 
-              if (_this37.userGLResp == true) {
-                _this37.submitBtn = true;
-                _this37.editFlag = true;
-                _this37.submit1 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
+            for (var i = 0; i < userGlData.length; i++) {
+              for (var k = i + 1; k < userGlData.length; k++) {
+                if (userGlData[i].trnCode != userGlData[k].trnCode || userGlData[i].trnDesc != userGlData[k].trnDesc) {
+                  console.log("not equal"); //do stuff
 
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Record is Created',
-                  icon: 'success'
-                }); // this.userGLForm.reset();
-              } else {
-                // this.toastService.errorMessage('Failed to Save Data!', '');
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Failed to Save Data.',
-                  icon: 'error'
-                });
+                  var userID = userGLFormValue.userId;
+                  var permission = userGLFormValue.permission;
+                  this.apiService.saveuserGlCode(userGlData, userID, permission).subscribe(function (savetrnres) {
+                    _this37.userGLResp = savetrnres;
+
+                    if (_this37.userGLResp == true) {
+                      _this37.submitBtn = true;
+                      _this37.editFlag = true;
+                      _this37.submit1 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
+
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        title: 'Record is Created',
+                        icon: 'success'
+                      }); // this.userGLForm.reset();
+                    } else {
+                      // this.toastService.errorMessage('Failed to Save Data!', '');
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        title: 'Failed to Save Data.',
+                        icon: 'error'
+                      });
+                    }
+                  }, function (error) {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        text: 'Server Error!',
+                        icon: 'error'
+                      });
+                    }
+                  });
+                } else {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                    text: 'GL code and GL code description should not be equal',
+                    icon: 'error'
+                  });
+                }
               }
-            }, function (error) {
-              if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error!',
-                  icon: 'error'
-                });
-              }
-            });
+            }
           }
         }, {
           key: "onSubmitAccountClassForm",
@@ -7953,35 +7968,48 @@
 
             console.log("accountClassForm", accountClassForm);
             var accountData = accountClassForm.accountMaintenanceData;
-            var userID = accountClassForm.userId;
-            var permission = accountClassForm.permission;
-            this.apiService.saveAccountClassCode(accountData, userID, permission).subscribe(function (saveaccresp) {
-              _this38.accountClassResp = saveaccresp;
 
-              if (_this38.accountClassResp == true) {
-                _this38.submitAccBtn = true;
-                _this38.editAccFlag = true;
-                _this38.submit2 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
+            for (var i = 0; i < accountData.length; i++) {
+              for (var k = i + 1; k < accountData.length; k++) {
+                if (accountData[i].trnCode != accountData[k].trnCode || accountData[i].trnDesc != accountData[k].trnDesc) {
+                  console.log("not equal");
+                  var userID = accountClassForm.userId;
+                  var permission = accountClassForm.permission;
+                  this.apiService.saveAccountClassCode(accountData, userID, permission).subscribe(function (saveaccresp) {
+                    _this38.accountClassResp = saveaccresp;
 
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Record is Created',
-                  icon: 'success'
-                }); // this.accountClassForm.reset();
-              } else {
-                // this.toastService.errorMessage('Failed to Save Data!', '');
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Failed to Save Data.',
-                  icon: 'error'
-                });
+                    if (_this38.accountClassResp == true) {
+                      _this38.submitAccBtn = true;
+                      _this38.editAccFlag = true;
+                      _this38.submit2 = false; // this.toastService.successMessage('Data Saved Successfully!.', '');
+
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        title: 'Record is Created',
+                        icon: 'success'
+                      }); // this.accountClassForm.reset();
+                    } else {
+                      // this.toastService.errorMessage('Failed to Save Data!', '');
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        title: 'Failed to Save Data.',
+                        icon: 'error'
+                      });
+                    }
+                  }, function (error) {
+                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        text: 'Server Error!',
+                        icon: 'error'
+                      });
+                    }
+                  });
+                } else {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                    text: 'Account class and Account class description should not be equal',
+                    icon: 'error'
+                  });
+                }
               }
-            }, function (error) {
-              if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  text: 'Server Error!',
-                  icon: 'error'
-                });
-              }
-            });
+            }
           }
         }]);
 

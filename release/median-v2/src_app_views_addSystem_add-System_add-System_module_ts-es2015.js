@@ -2429,6 +2429,9 @@ class AddSystemComponent {
         this.tab22 = false;
     }
     auditLog() {
+        if (this.respData.approverId === 'null') {
+            this.respData.approverId = ' ';
+        }
         if (this.respData.approvedStatus === 'N') {
             this.respData.approvedStatus = 'UNAUTHORIZED';
         }

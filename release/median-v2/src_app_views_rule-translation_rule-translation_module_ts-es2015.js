@@ -901,7 +901,7 @@ class RuleTranslationDetailsComponent {
         this.rules.editruleTranslation("update", this.currentUser, updatedFormData).subscribe(ruleTranslationResp => {
             console.log(ruleTranslationResp);
             if (ruleTranslationResp) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: "Record is Created",
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: 'Record is Updated',
                     icon: 'success' });
                 this.submit = false;
                 this.showAuditLog = true;

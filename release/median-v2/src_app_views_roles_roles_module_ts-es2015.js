@@ -374,9 +374,9 @@ function RoleDetailsComponent_div_14_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.myform.controls["roleName"].errors.required);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.myform.get("roleName").errors.required);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.myform.controls["roleName"].errors.cannotContainSpace);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.myform.get("roleName").errors.cannotContainSpace);
 } }
 function RoleDetailsComponent_div_21_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div");
@@ -390,7 +390,7 @@ function RoleDetailsComponent_div_21_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r2.myform.controls["roleDesc"].errors.required);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r2.myform.get("roleDesc").errors.required);
 } }
 function RoleDetailsComponent_div_24_Template(rf, ctx) { if (rf & 1) {
     const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
@@ -808,7 +808,9 @@ function RoleDetailsComponent_div_60_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](96, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](97, "Modification Number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](98, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](98, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](99);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -821,23 +823,26 @@ function RoleDetailsComponent_div_60_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.modifyRoleObject.maker);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](26, 7, ctx_r7.modifyRoleObject.makerDtStamp, "MM/dd/yyyy, h:mm a"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](26, 8, ctx_r7.modifyRoleObject.makerDtStamp, "MM/dd/yyyy, h:mm a"));
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.modifyRoleObject.recordStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.modifyRoleObject.checkerId);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](63, 10, ctx_r7.modifyRoleObject.checkerDtStamp, "MM/dd/yyyy, h:mm a"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](63, 11, ctx_r7.modifyRoleObject.checkerDtStamp, "MM/dd/yyyy, h:mm a"));
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.modifyRoleObject.firstTimeAuth);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.modifyRoleObject.authStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.modifyRoleObject.version);
 } }
 class RoleDetailsComponent {
-    constructor(roleService, api, route, router, cdr, iziToast) {
+    constructor(roleService, api, route, formBuilder, router, cdr, iziToast) {
         this.roleService = roleService;
         this.api = api;
         this.route = route;
+        this.formBuilder = formBuilder;
         this.router = router;
         this.cdr = cdr;
         this.iziToast = iziToast;
@@ -855,13 +860,6 @@ class RoleDetailsComponent {
         this.authBtn = false;
         this.openHide = true;
         this.closeHide = true;
-        // num=0;
-        this.myform = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroup({
-            roleName: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, UsernameValidator.cannotContainSpace]),
-            roleDesc: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required,
-            ]),
-        });
     }
     ngOnInit() {
         this.username = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
@@ -880,6 +878,8 @@ class RoleDetailsComponent {
         this.modifyRoleObject.checkerId = this.editRoleScreen.queryParams.checkerId;
         this.modifyRoleObject.checkerDtStamp = this.editRoleScreen.queryParams.checkerDtStamp;
         this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
+        this.modifyRoleObject.version = this.editRoleScreen.queryParams.version;
+        this.buildRoleForm(this.modifyRoleObject);
         if (this.modifyRoleObject.recordStatus == 'O') {
             this.modifyRoleObject.recordStatus = "OPEN";
         }
@@ -910,7 +910,7 @@ class RoleDetailsComponent {
             this.modifyRoleObject.firstTimeAuth = this.editRoleScreen.queryParams.firstTimeAuth;
         }
         // console.log(' data for update role recived');
-        console.log(this.modifyRoleObject);
+        console.log(this.modifyRoleObject.roleName);
         if (this.modifyRoleObject.roleName) {
             console.log("Query params");
             this.modifyScreen = true;
@@ -918,6 +918,14 @@ class RoleDetailsComponent {
         }
         this.fetchdynamicroles();
         this.roleService.fetchScreenPermissions('Roles');
+    }
+    buildRoleForm(data) {
+        console.log(data);
+        this.myform = this.formBuilder.group({
+            roleName: [data.roleName ? data.roleName : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, UsernameValidator.cannotContainSpace]],
+            roleDesc: [data.roleDesc ? data.roleDesc : '', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
+        });
+        console.log(this.myform);
     }
     preparingPermissiondto(screenlist, permissionlength) {
         let permissionlist = [];
@@ -1454,55 +1462,70 @@ class RoleDetailsComponent {
                 //if (screenoccurence[ind].permission.toString() != screenoccurence[ind].newpermission.toString()) {
                 // let gettabindex = this.fmosRolesData.permissionDto.findIndex(function (item) { return item.permissionId.screenId == screenoccurence[ind].screenid });
                 let gettabindex = this.newRolesData.permissionDto.findIndex(function (item) { return item.permissionId.screenId == screenoccurence[ind].screenid; });
-                // console.log(gettabindex);
+                console.log(gettabindex);
                 if (gettabindex >= 0) {
                     // this.fmosRolesData.permissionDto[gettabindex].permissionId.roleName =  this.modifyRoleObject.roleName;
                     // let obj = { 'permissionId': this.fmosRolesData.permissionDto[gettabindex].permissionId };
-                    this.newRolesData.permissionDto[gettabindex].permissionId.roleName = this.modifyRoleObject.roleName;
+                    console.log(this.modifyRoleObject);
+                    console.log(this.myform.get('roleName').value);
+                    this.newRolesData.permissionDto[gettabindex].permissionId.roleName = this.myform.get('roleName').value;
+                    ;
                     let obj = { 'permissionId': this.newRolesData.permissionDto[gettabindex].permissionId };
                     obj["permissions"] = screenoccurence[ind].newpermission;
                     permissionslist.push(obj);
-                    // console.log(permissionslist);
+                    console.log(permissionslist);
                 }
                 // } //if
             } //for loop endng
         } //for loop endng
+        console.log(this.modifyRoleObject);
+        this.modifyRoleObject.roleName = this.myform.get('roleName').value;
+        this.modifyRoleObject.roleDesc = this.myform.get('roleDesc').value;
+        console.log(this.modifyRoleObject);
         let newRole = { roleDto: this.modifyRoleObject };
         newRole.permissionDto = permissionslist;
         console.log(newRole);
         this.roleService.createnewrole(newRole)
             .subscribe(role => {
             console.log(role);
-            if (role) {
-                this.modifyRoleObject = role.roleDto;
-                if (this.modifyRoleObject.recordStatus == 'O') {
-                    this.modifyRoleObject.recordStatus = "OPEN";
-                }
-                else if (this.modifyRoleObject.recordStatus == 'C') {
-                    this.modifyRoleObject.recordStatus = "CLOSE";
-                }
-                else {
-                    this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
-                }
-                this.modifyRoleObject.authStatus = this.editRoleScreen.queryParams.authStatus;
-                if (this.modifyRoleObject.authStatus == 'A') {
-                    this.modifyRoleObject.authStatus = "AUTHORIZED";
-                }
-                else {
+            if (role != false) {
+                if (role.roleDto) {
+                    this.modifyRoleObject = role.roleDto;
+                    if (this.modifyRoleObject.recordStatus == 'O') {
+                        this.modifyRoleObject.recordStatus = "OPEN";
+                    }
+                    else if (this.modifyRoleObject.recordStatus == 'C') {
+                        this.modifyRoleObject.recordStatus = "CLOSE";
+                    }
+                    else {
+                        this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
+                    }
                     this.modifyRoleObject.authStatus = this.editRoleScreen.queryParams.authStatus;
-                }
-                this.modifyRoleObject.authStatus = "UNAUTHORIZED";
-                this.modifyRoleObject.firstTimeAuth = this.editRoleScreen.queryParams.firstTimeAuth;
-                if (this.modifyRoleObject.firstTimeAuth == 'Y') {
-                    this.modifyRoleObject.firstTimeAuth = "YES";
-                }
-                else if (this.modifyRoleObject.firstTimeAuth == 'N') {
+                    if (this.modifyRoleObject.authStatus == 'A') {
+                        this.modifyRoleObject.authStatus = "AUTHORIZED";
+                    }
+                    else {
+                        this.modifyRoleObject.authStatus = this.editRoleScreen.queryParams.authStatus;
+                    }
+                    this.modifyRoleObject.authStatus = "UNAUTHORIZED";
+                    this.modifyRoleObject.firstTimeAuth = this.editRoleScreen.queryParams.firstTimeAuth;
+                    if (this.modifyRoleObject.firstTimeAuth == 'Y') {
+                        this.modifyRoleObject.firstTimeAuth = "YES";
+                    }
+                    else if (this.modifyRoleObject.firstTimeAuth == 'N') {
+                        this.modifyRoleObject.firstTimeAuth = "NO";
+                    }
                     this.modifyRoleObject.firstTimeAuth = "NO";
                 }
-                this.modifyRoleObject.firstTimeAuth = "NO";
                 this.editFlag = true;
                 this.submitBtn = true;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is Created");
+            }
+            else if (role == false) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                    icon: 'error',
+                    text: `Role Name already exists.`
+                });
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
@@ -1519,22 +1542,22 @@ class RoleDetailsComponent {
         // this.role = new Roles();
     }
     isEnabled() {
-        console.log(this.roleScreenList, "Before");
+        // console.log(this.roleScreenList,"Before");
         for (let g = 0; g < this.roleScreenList.length; g++) {
             if (this.roleScreenList[g].NEW == '0' && this.roleScreenList[g].EDIT == '0' && this.roleScreenList[g].DELETE == '0' &&
                 this.roleScreenList[g].CLOSE == '0' && this.roleScreenList[g].REOPEN == '0' && this.roleScreenList[g].AUTH == '0' &&
                 this.roleScreenList[g].UNLOCK == '0' && this.roleScreenList[g].PRINT == '0' && this.roleScreenList[g].VIEW == '0') {
-                console.log("Iffffffffffffff");
+                // console.log("Iffffffffffffff");
                 return false;
             }
             if (this.roleScreenList[g].NEW == '1' && this.roleScreenList[g].EDIT == '1' && this.roleScreenList[g].DELETE == '1' &&
                 this.roleScreenList[g].CLOSE == '1' && this.roleScreenList[g].REOPEN == '1' && this.roleScreenList[g].AUTH == '1' &&
                 this.roleScreenList[g].UNLOCK == '1' && this.roleScreenList[g].PRINT == '1' && this.roleScreenList[g].VIEW == '1') {
-                console.log("Elsssssssssssssssss");
+                // console.log("Elsssssssssssssssss");
                 return true;
             }
         }
-        console.log(this.roleScreenList, "After");
+        // console.log(this.roleScreenList,"After");
     }
     clickAllAction(action, event) {
         // console.log(this.checkAll);
@@ -1708,8 +1731,8 @@ class RoleDetailsComponent {
         }
     }
 }
-RoleDetailsComponent.ɵfac = function RoleDetailsComponent_Factory(t) { return new (t || RoleDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService)); };
-RoleDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: RoleDetailsComponent, selectors: [["npr-role-details"]], inputs: { modifyRoleObject: "modifyRoleObject" }, decls: 61, vars: 13, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], ["roleForm", "ngForm"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["id", "roleName", "type", "text", "formControlName", "roleName", "name", "roleName", "placeholder", "Role Name", "value", "", 1, "form-control", 3, "ngModel", "readonly", "ngModelChange"], ["class", "errorColor", 4, "ngIf"], ["for", "roleDescription", 1, "formLbl"], ["id", "roleDescription", "type", "text", "formControlName", "roleDesc", "required", "", "name", "roleDesc", "placeholder", "Tupe your Text", "value", "", 1, "form-control", 3, "ngModel", "readonly", "ngModelChange"], [1, "col-lg-12"], [1, "row", "g-2", "justify-content-center"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "form-check"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "click"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle"], [4, "ngFor", "ngForOf"], ["class", "row g-3 pb-3 justify-content-end pt-3", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "errorColor"], [4, "ngIf"], [1, "col-auto"], [1, "btn", "btnOutlinePrimary", 3, "ngClass", "disabled", "click"], [1, "link-color"], ["type", "checkbox", 1, "form-check-input", 3, "disabled", "click"], ["type", "checkbox", 1, "form-check-input", 3, "disabled", "checked", "click"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "col-auto", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "hidden", "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "hidden", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function RoleDetailsComponent_Template(rf, ctx) { if (rf & 1) {
+RoleDetailsComponent.ɵfac = function RoleDetailsComponent_Factory(t) { return new (t || RoleDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService)); };
+RoleDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: RoleDetailsComponent, selectors: [["npr-role-details"]], inputs: { modifyRoleObject: "modifyRoleObject" }, decls: 61, vars: 11, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], ["roleForm", "ngForm"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["id", "roleName", "type", "text", "formControlName", "roleName", "name", "roleName", "placeholder", "Role Name", "value", "", 1, "form-control", 3, "readonly"], ["class", "errorColor", 4, "ngIf"], ["for", "roleDescription", 1, "formLbl"], ["id", "roleDescription", "type", "text", "formControlName", "roleDesc", "required", "", "name", "roleDesc", "placeholder", "Tupe your Text", "value", "", 1, "form-control", 3, "readonly"], [1, "col-lg-12"], [1, "row", "g-2", "justify-content-center"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "form-check"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "click"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle"], [4, "ngFor", "ngForOf"], ["class", "row g-3 pb-3 justify-content-end pt-3", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "errorColor"], [4, "ngIf"], [1, "col-auto"], [1, "btn", "btnOutlinePrimary", 3, "ngClass", "disabled", "click"], [1, "link-color"], ["type", "checkbox", 1, "form-check-input", 3, "disabled", "click"], ["type", "checkbox", 1, "form-check-input", 3, "disabled", "checked", "click"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "col-auto", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "hidden", "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "hidden", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function RoleDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);
@@ -1726,9 +1749,7 @@ RoleDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](12, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "input", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function RoleDetailsComponent_Template_input_ngModelChange_13_listener($event) { return ctx.modifyRoleObject.roleName = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](13, "input", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](14, RoleDetailsComponent_div_14_Template, 3, 2, "div", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "div", 7);
@@ -1738,9 +1759,7 @@ RoleDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](19, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "input", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function RoleDetailsComponent_Template_input_ngModelChange_20_listener($event) { return ctx.modifyRoleObject.roleDesc = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](20, "input", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](21, RoleDetailsComponent_div_21_Template, 2, 1, "div", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](22, "div", 14);
@@ -1808,18 +1827,18 @@ RoleDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](60, RoleDetailsComponent_div_60_Template, 99, 13, "div", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](60, RoleDetailsComponent_div_60_Template, 100, 14, "div", 24);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx.myform);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx.modifyRoleObject.roleName)("readonly", ctx.editFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.myform.controls["roleName"].invalid && (ctx.myform.controls["roleName"].dirty || ctx.myform.controls["roleName"].touched));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.myform.get("roleName").invalid && (ctx.myform.get("roleName").dirty || ctx.myform.get("roleName").touched));
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx.modifyRoleObject.roleDesc)("readonly", ctx.editFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx.editFlag);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.myform.controls["roleDesc"].invalid && (ctx.myform.controls["roleDesc"].dirty || ctx.myform.controls["roleDesc"].touched));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.myform.get("roleDesc").invalid && (ctx.myform.get("roleDesc").dirty || ctx.myform.get("roleDesc").touched));
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.screenName);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
@@ -1981,7 +2000,8 @@ class RoleListComponent {
                 'checkerDtStamp': this.modifyRoleObject.checkerDtStamp,
                 'recordStatus': this.modifyRoleObject.recordStatus,
                 'authStatus': this.modifyRoleObject.authStatus,
-                'firstTimeAuth': this.modifyRoleObject.firstTimeAuth
+                'firstTimeAuth': this.modifyRoleObject.firstTimeAuth,
+                'version': this.modifyRoleObject.version
             }
         };
         this.roleService.sendNavParam(navigationExtras);

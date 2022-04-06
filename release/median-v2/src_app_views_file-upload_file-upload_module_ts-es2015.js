@@ -2266,9 +2266,6 @@ class FileUploadComponent {
                                     // this.date=new Date().toLocaleDateString();
                                     // this.valueDate = this.responseforfileupload.valueDate == "Today" ?  this.date : "not Today";
                                     this.responsebutton = true;
-                                    setTimeout(() => {
-                                        window.scrollTo(0, document.body.scrollHeight);
-                                    });
                                     this.responseDto = this.responseforfileupload;
                                     if (this.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
                                         sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error:' + this.responseforfileupload.errorMessage, 'error');
@@ -2278,9 +2275,6 @@ class FileUploadComponent {
                                         this.excelFileFlag = true;
                                         this.flag = false;
                                         this.isShow = true;
-                                        setTimeout(() => {
-                                            window.scrollTo(0, document.body.scrollHeight);
-                                        });
                                     }
                                 });
                             }
@@ -2294,7 +2288,9 @@ class FileUploadComponent {
                     this.flag = true;
                     this.disbaleBtn = true;
                 }
+                debugger;
                 this.date = new Date().toLocaleDateString();
+                this.date = this.pipe.transform(this.date, "MMM dd, yyyy");
                 this.valueDate = this.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
                 this.responsebutton = true;
                 this.responseDto = this.responseforfileupload;
