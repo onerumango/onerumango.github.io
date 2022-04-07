@@ -205,8 +205,14 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   @include egret-theme($altTheme);
 }
 
-
 .egret-navy .mat-toolbar {
-  background:blue;
+  background:#456EFE;
   color: white;
+}
+.mat-drawer-container{
+  background:black;
+  color:#fafafa;
+}
+.Chart{
+  background-color: gray;
 }
