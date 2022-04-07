@@ -2288,7 +2288,6 @@ class FileUploadComponent {
                     this.flag = true;
                     this.disbaleBtn = true;
                 }
-                debugger;
                 this.date = new Date().toLocaleDateString();
                 this.date = this.pipe.transform(this.date, "MMM dd, yyyy");
                 this.valueDate = this.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
@@ -2298,10 +2297,11 @@ class FileUploadComponent {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                         title: "Data uploaded successfully ",
                         text: "For the Batch " + this.responseDto.batchNo
-                    });
-                    setTimeout(() => {
-                        window.scrollTo(0, document.body.scrollHeight);
-                    });
+                    }).then((result => {
+                        setTimeout(() => {
+                            window.scrollTo(0, document.body.scrollHeight);
+                        });
+                    }));
                     this.excelFileFlag = true;
                     this.flag = false;
                     this.isShow = true;

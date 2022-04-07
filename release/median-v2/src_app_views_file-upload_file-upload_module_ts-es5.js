@@ -4186,7 +4186,6 @@
                   _this18.disbaleBtn = true;
                 }
 
-                debugger;
                 _this18.date = new Date().toLocaleDateString();
                 _this18.date = _this18.pipe.transform(_this18.date, "MMM dd, yyyy");
                 _this18.valueDate = _this18.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
@@ -4197,9 +4196,10 @@
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                     title: "Data uploaded successfully ",
                     text: "For the Batch " + _this18.responseDto.batchNo
-                  });
-                  setTimeout(function () {
-                    window.scrollTo(0, document.body.scrollHeight);
+                  }).then(function (result) {
+                    setTimeout(function () {
+                      window.scrollTo(0, document.body.scrollHeight);
+                    });
                   });
                   _this18.excelFileFlag = true;
                   _this18.flag = false;
