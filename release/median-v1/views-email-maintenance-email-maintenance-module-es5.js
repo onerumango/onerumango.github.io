@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -91,9 +91,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var EamilAuditLog = function EamilAuditLog() {
+    var EamilAuditLog = /*#__PURE__*/_createClass(function EamilAuditLog() {
       _classCallCheck(this, EamilAuditLog);
-    };
+    });
     /***/
 
   },
@@ -124,9 +124,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var EmailDetails = function EmailDetails() {
+    var EmailDetails = /*#__PURE__*/_createClass(function EmailDetails() {
       _classCallCheck(this, EmailDetails);
-    };
+    });
     /***/
 
   },
@@ -655,9 +655,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./src/app/views/email-maintenance/email-new/email-new.component.ts"); //import { FlexLayoutModule } from '@angular/flex-layout';
 
 
-    var EmailMaintenanceModule = function EmailMaintenanceModule() {
+    var EmailMaintenanceModule = /*#__PURE__*/_createClass(function EmailMaintenanceModule() {
       _classCallCheck(this, EmailMaintenanceModule);
-    };
+    });
 
     EmailMaintenanceModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_email_maintenance_component__WEBPACK_IMPORTED_MODULE_5__["EmailMaintenanceComponent"], _email_summary_email_summary_component__WEBPACK_IMPORTED_MODULE_9__["EmailSummaryComponent"], _email_new_email_new_component__WEBPACK_IMPORTED_MODULE_10__["EmailNewComponent"]],

@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -111,11 +111,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ExcelDataProcessingReqDTO = function ExcelDataProcessingReqDTO() {
+    var ExcelDataProcessingReqDTO = /*#__PURE__*/_createClass(function ExcelDataProcessingReqDTO() {
       _classCallCheck(this, ExcelDataProcessingReqDTO);
 
       this.proceedDuplicates = false;
-    };
+    });
     /***/
 
   },
@@ -146,9 +146,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ExcelDataProcessingRespDTO = function ExcelDataProcessingRespDTO() {
+    var ExcelDataProcessingRespDTO = /*#__PURE__*/_createClass(function ExcelDataProcessingRespDTO() {
       _classCallCheck(this, ExcelDataProcessingRespDTO);
-    };
+    });
     /***/
 
   },
@@ -179,9 +179,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ExcelDataProcessingAuditRespDTO = function ExcelDataProcessingAuditRespDTO() {
+    var ExcelDataProcessingAuditRespDTO = /*#__PURE__*/_createClass(function ExcelDataProcessingAuditRespDTO() {
       _classCallCheck(this, ExcelDataProcessingAuditRespDTO);
-    };
+    });
     /***/
 
   },
@@ -403,7 +403,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_10__["DatePipe"]('en-US');
         this.now = Date.now();
         this.myFormattedDate = this.pipe.transform(this.now, 'dd-MMM-yy');
-        this.roleCodes = new _roles1_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_14__["permissionsLabels"](); //  this.selectorDateData = this.datePipe.transform(this.selectorDateData, 'yyyy-MM-dd');
+        this.roleCodes = new _roles1_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_14__["permissionsLabels"]();
+        this.dataForProcessScreen1 = []; //  this.selectorDateData = this.datePipe.transform(this.selectorDateData, 'yyyy-MM-dd');
       }
 
       _createClass(ExcelDataProcessingComponent, [{
@@ -515,16 +516,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.excelDataProcessingReqDTO.trnCode = this.trncode;
             console.log("calling api", this.excelDataProcessingReqDTO.fileName); // frist call
-            // performance test patch
 
             this.api.showDetailServiceInExcelDataProcessing(this.excelDataProcessingReqDTO, this.user_id).subscribe(function (responseforfileupload) {
               //   for audit log in excel UploadProcessAuthorizationScreenPermission.
               //  this.getAuditLogData(this.excelDataProcessingReqDTO);
               _this4.responseforfileupload = responseforfileupload;
-              _this4.responseDto = responseforfileupload;
               console.log("response from bc", _this4.responseforfileupload);
-              console.log(_this4.responseforfileupload.batchNo);
-              console.log(_this4.responseforfileupload);
+              console.log(_this4.responseforfileupload.respDto.batchNo);
+              console.log(_this4.responseforfileupload.respDto);
               _this4.spinner = false;
               _this4.disbaleBtn = false;
               _this4.disablebtn2 = false;
@@ -537,16 +536,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               _this4.spinner = false;
 
-              if (_this4.responseforfileupload.errorMessage) {
+              if (_this4.responseforfileupload.respDto.errorMessage) {
                 console.log("here is error of duplicate record");
                 _this4.disablebtn2 = true;
-                sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + _this4.responseforfileupload.errorMessage);
+                sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + _this4.responseforfileupload.respDto.errorMessage);
 
-                if (_this4.responseforfileupload.errorMessage === "possible duplicate data") {
+                if (_this4.responseforfileupload.respDto.errorMessage === "possible duplicate data") {
                   _this4.excelDataProcessingReqDTO.proceedDuplicates = true;
                   console.log("here duplicate");
                   sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
-                    //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+                    //text: 'Unable to process' + 'Error ' + this.responseforfileupload.respDto.errorMessage + 'Do you want to Proceed??',
                     text: 'You are trying to upload duplicate data. ' + ' Do you want to proceed?',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -557,15 +556,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }).then(function (result) {
                     if (result.value) {
                       _this4.api.showDetailServiceInExcelDataProcessing(_this4.excelDataProcessingReqDTO, _this4.user_id).subscribe(function (dupliacteResp) {
-                        console.log("dupliacteResp", dupliacteResp); // Swal.fire('Unable to process', 'Error ' + this.responseforfileupload.errorMessage);
+                        console.log("dupliacteResp", dupliacteResp); // Swal.fire('Unable to process', 'Error ' + this.responseforfileupload.respDto.errorMessage);
 
-                        _this4.responseforfileupload = dupliacteResp; // added by vidya M B for the issue 0001047
+                        _this4.responseforfileupload = dupliacteResp;
+                        _this4.responseDto = _this4.responseforfileupload.respDto; // added by vidya M B for the issue 0001047
 
-                        if (_this4.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
-                          sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + _this4.responseforfileupload.errorMessage);
+                        if (_this4.responseforfileupload.respDto.errorMessage === "Amount and LCY amount mismatch") {
+                          sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + _this4.responseforfileupload.respDto.errorMessage);
                         }
 
                         if (_this4.responseDto.totalNoOfRecords !== 0) {
+                          // Swal.fire('Data processed successfully for the Batch  ',this.responseforfileupload.respDto.batchNo);
                           sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
                             title: "Data uploaded successfully ",
                             text: "For the Batch " + _this4.responseDto.batchNo
@@ -575,6 +576,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           _this4.flag = false;
                           _this4.isShow = true;
                         }
+
+                        console.log("________", _this4.responseforfileupload.respDto.errorMessage);
                       });
                     }
                   });
@@ -584,22 +587,65 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 _this4.disbaleBtn = true;
               }
 
-              _this4.valueDate = _this4.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
-              _this4.spinner = false;
-              _this4.responsebutton = true;
-              _this4.spinner = false;
-              _this4.responseDto = _this4.responseforfileupload;
+              if (_this4.responseforfileupload.excelData) {
+                console.log('value date', _this4.pipe.transform(_this4.responseforfileupload.excelData[0].valueDate, 'dd-MMM-yy'));
 
-              if (_this4.responseDto.totalNoOfRecords !== 0) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
-                  title: "Data uploaded successfully ",
-                  text: "For the Batch " + _this4.responseDto.batchNo
-                });
-                _this4.excelFileFlag = true;
-                _this4.flag = false;
-                _this4.isShow = true;
+                d: new Date();
+
+                console.log(_this4.pipe.transform(new Date(), 'dd-MMM-yy'));
+                _this4.a = _this4.pipe.transform(_this4.responseforfileupload.excelData[0].valueDate, 'dd-MMM-yy');
+                _this4.b = _this4.pipe.transform(new Date(), 'dd-MMM-yy');
+                console.log("inside second if of value date");
+                console.log('value date', _this4.responseforfileupload.excelData[0].valueDate);
+                console.log('a', _this4.a);
+                console.log('b', _this4.b);
+
+                if (_this4.a == _this4.b) {
+                  _this4.valueDate = "Today";
+                } else {
+                  _this4.valueDate = "not Today";
+                }
+
+                console.log(_this4.valueDate);
+                _this4.spinner = false;
+                _this4.responsebutton = true;
+                _this4.spinner = false;
+                _this4.responseDto = _this4.responseforfileupload.respDto;
+
+                if (_this4.responseDto.totalNoOfRecords !== 0) {
+                  // Swal.fire('Data processed successfully for the Batch  ',this.responseforfileupload.respDto.batchNo);
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
+                    title: "Data uploaded successfully ",
+                    text: "For the Batch " + _this4.responseDto.batchNo
+                  });
+                  _this4.excelFileFlag = true;
+                  console.log("excelFileFlag value ", _this4.excelFileFlag);
+                  _this4.flag = false;
+                  _this4.isShow = true;
+                }
+
+                console.log("________", _this4.responseforfileupload.respDto.errorMessage);
               }
-            }, function (err) {
+            }, // this.excelDataProcessingRespDTO = this.data;
+            // //// console.log('this.excelDataProcessingRespDTO' + this.excelDataProcessingRespDTO);
+            // this.getAuditLogData(this.excelDataProcessingRespDTO);
+            // if (!this.excelDataProcessingRespDTO) {
+            //   this.spinner = false;
+            //   Swal.fire(
+            //     'Unable to upload data.',
+            //   );
+            // } else {
+            //   this.spinner = false;
+            //   this.totalrecord = this.data.totalNoOfRecords;
+            //   if (this.totalrecord !== 0) {
+            //     Swal.fire('Processing is Successful ', 'Total processed Record ' + this.totalrecord);
+            //   }
+            //   if (this.data.errorMessage) {
+            //     Swal.fire('Unable to process', 'Error' + this.data.errorMessage);
+            //   }
+            // }
+            // },
+            function (err) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('server error.');
             }); // first api call
           }
@@ -630,6 +676,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.excelDataProcessingReqDTO.fileName = '';
           this.disbaleBtn = false;
           this.excelDataProcessingReqDTO.proceedDuplicates = false; // this.excelDataProcessingAuditlog = new ExcelDataProcessingAuditRespDTO();
+        }
+      }, {
+        key: "delay",
+        value: function delay(ms) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return new Promise(function (resolve) {
+                      return setTimeout(function () {
+                        return resolve();
+                      }, ms);
+                    }).then(function () {
+                      return console.log('fired');
+                    });
+
+                  case 2:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         key: "valuechange",
@@ -823,18 +894,134 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "testAlert",
+        value: function testAlert() {
+          var _this11 = this;
+
+          // this.responseDto.valueDate = 'Today';
+          // Swal.fire({
+          //   text: 'Value Date',
+          //   showCancelButton: true,
+          //   confirmButtonColor: '#3085d6',
+          //   cancelButtonColor: '#d33',
+          //   confirmButtonText: 'PROCEED.'
+          // }).then((result) => {
+          //   console.log(result.value);
+          //   if (result.value) {
+          //     console.log('user choose to proceed.');
+          //   } else {
+          //     return;
+          //   }
+          // })
+          this.api.test(this.user_id).subscribe(function (resp) {
+            _this11.test = _this11.test;
+            console.log(_this11.test);
+          });
+        }
+      }, {
         key: "downloadData",
         value: function downloadData() {
-          console.log("this.responseforfileupload.fileDownloadUrl", this.responseforfileupload.fileDownloadUrl);
-          var link = document.createElement('a');
-          link.setAttribute('target', '_blank');
-          link.setAttribute('href', "".concat(this.responseforfileupload.fileDownloadUrl));
-          var url = "".concat(this.responseforfileupload.fileDownloadUrl);
-          var filename = url.substring(url.lastIndexOf('/') + 1);
-          link.setAttribute('download', "".concat(filename));
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
+          var _this12 = this;
+
+          console.log('response', this.responseforfileupload.excelData);
+          this.responseforfileupload.excelData.forEach(function (element) {//   if(element.uploadDate!==null ){
+            //   element.uploadDate
+            //   =this.pipe.transform(element.uploadDate, 'dd-MMM-yy').toString();
+            //   }
+            //   if( element.valueDate !==null){
+            //     element.valueDate
+            //     =this.pipe.transform(element.valueDate
+            //       , 'dd-MMM-yy').toString();
+            //   }
+            //  if(element.inputTime !==null){
+            //   element.inputTime
+            //   =this.pipe.transform(element.inputTime
+            //     , 'dd-MMM-yy').toString();
+            //  }
+            // this.dataForProcessScreen1.push({
+            //   'Source_Code':element.id.sourceCode,
+            //   'Process_Code': element.processCode,
+            //   'Branch_Code': element.id.branchCode,
+            //   'Batch_No': element.id.batchNo,
+            //   'Value_Date': this.pipe.transform(element.valueDate, 'dd-MMM-yy'),
+            //   Account: element.account,
+            //   Account_Branch: element.accountBranch,
+            //   Currency: element.ccyCd,
+            //   Amount: element.amount,
+            //   DrCr: element.drCr,
+            //   LcyEquivalent: element.lcyEquivalent,
+            //   Exch_Rate: element.id.exchRate,
+            //   Curr_No: element.id.currNo,
+            //   Addl_Text: element.addlText,
+            //   Trn_Code: element.txnCode,
+            //   Period_Code: element.periodCode,
+            //   Financial_Cycle: element.finCycle,
+            //   Initiation_Date: this.pipe.transform(element.initiationDate, 'dd-MMM-yy'),
+            //   Upload_Date: this.pipe.transform(element.uploadDate, 'dd-MMM-yy'),
+            //   Input_By: element.inputBy,
+            //   Input_Time: this.pipe.transform(element.inputTime, 'dd-MMM-yy'),
+            //   UDF_Detail: element.udfDetails,
+            //   Error_Desc:element.errorDesc,
+            //   Validation_Error: element.validationError,
+            //   Related_Customer: element.relCust,
+            //   Related_Account: element.relatedAccount,
+            //   Related_Reference: element.relatedRef
+            // });
+          });
+          console.log('data for down', this.responseforfileupload.excelData);
+          this.responseforfileupload.excelData.forEach(function (element) {
+            console.log(element.id.sourceCode);
+            console.log(element);
+
+            if (element.drCr == 'C') {
+              _this12.credit = element.lcyEquivalent;
+              _this12.debit = 0;
+            } else {
+              _this12.debit = element.lcyEquivalent;
+              _this12.credit = 0;
+            }
+
+            _this12.dataForProcessScreen1.push({
+              // 'Source_Code': element.id.sourceCode,
+              // 'Process_Code': element.processCode,
+              // 'Branch_Code': element.id.branchCode,
+              'Batch_No': element.id.batchNo,
+              //Refrence No : element.id.refNo, // 2 skiiping this Field, user can see this in FlexCube
+              Account_Branch: element.accountBranch,
+              Account: element.account,
+              Account_name: element.accDesc,
+              DrCr: element.drCr,
+              Trn_Code: element.txnCode,
+              Transaction_Desc: element.trnDesc,
+              FcyAmount: element.amount,
+              Exch_Rate: element.exchRate,
+              DrLcyAmt: _this12.debit,
+              CrLcyAmt: _this12.credit,
+              Instr_code: element.instrumentNo,
+              'Value_Date': _this12.pipe.transform(element.valueDate, 'dd-MMM-yy'),
+              User_Id: element.inputBy,
+              Authorizer_ID: element.firstTimeAuthorizer,
+              //below fields we are showing only when upload excel failes to upload file else it show below fields in report 
+              Validation_Error: element.validationError,
+              Error_Desc: element.errorDesc
+            });
+
+            console.log(_this12.dataForProcessScreen1, 'screen', _this12.excelFileFlag);
+
+            if (_this12.excelFileFlag) {
+              for (var i = 0; i < _this12.dataForProcessScreen1.length; i++) {
+                delete _this12.dataForProcessScreen1[i].Validation_Error;
+                delete _this12.dataForProcessScreen1[i].Error_Desc;
+              } //for loop endning
+
+            } else {//Validation_Error: element.validationError,
+              //Error_Desc: element.errorDesc,
+            }
+          });
+          console.log('final data', this.dataForProcessScreen1); //this.excelService.exportAsExcelFile(this.dataForProcessScreen1, 'Upload_Error');
+
+          this.excelService.exportAsExcelFile(this.dataForProcessScreen1, this.excelDataProcessingReqDTO.fileName);
+          this.dataForProcessScreen1 = [];
         }
       }, {
         key: "exit",
@@ -857,7 +1044,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getFiledata",
         value: function getFiledata(event, extSysNameData, processNameData, filename) {
-          var _this11 = this;
+          var _this13 = this;
 
           console.log(event.target.value);
 
@@ -874,7 +1061,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log('getFiledatafilename', filename);
           this.selectedFiles = event.target.files;
           this.api.showDetailServiceInExcelDataWithFile(this.selectedFiles.item(0), extSysNameData, processNameData, filename).subscribe(function (responseforfileupload) {
-            _this11.responseforfileupload = responseforfileupload; // console.log(this.responseforfileupload);
+            _this13.responseforfileupload = responseforfileupload; // console.log(this.responseforfileupload);
 
             if (event) {
               if (event.status == 200) {
@@ -938,9 +1125,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/views/excel-data-processing/excel-data-processing.component.scss"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"], _transaction_group_maintenance_transaction_group_maintenance_service_service__WEBPACK_IMPORTED_MODULE_16__["TransactionGroupMaintenanceServiceService"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"], _users_users_service__WEBPACK_IMPORTED_MODULE_9__["UsersService"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"], src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_11__["ExcelService"], _roles1_roles_service__WEBPACK_IMPORTED_MODULE_13__["RoleService"]])], ExcelDataProcessingComponent);
 
-    var ResponseData = function ResponseData() {
+    var ResponseData = /*#__PURE__*/_createClass(function ResponseData() {
       _classCallCheck(this, ResponseData);
-    };
+    });
     /***/
 
   },
@@ -1031,9 +1218,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./value-date-error/value-date-error.component */
     "./src/app/views/excel-data-processing/value-date-error/value-date-error.component.ts");
 
-    var ExcelDataProcessingModule = function ExcelDataProcessingModule() {
+    var ExcelDataProcessingModule = /*#__PURE__*/_createClass(function ExcelDataProcessingModule() {
       _classCallCheck(this, ExcelDataProcessingModule);
-    };
+    });
 
     ExcelDataProcessingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_excel_data_processing_component__WEBPACK_IMPORTED_MODULE_3__["ExcelDataProcessingComponent"], _modals_modal_dialog_modal_dialog_component__WEBPACK_IMPORTED_MODULE_4__["ModalDialogComponent"], _excel_upload_dialog_excel_upload_dialog_component__WEBPACK_IMPORTED_MODULE_9__["ExcelUploadDialogComponent"], _value_date_error_value_date_error_component__WEBPACK_IMPORTED_MODULE_10__["ValueDateErrorComponent"]],
@@ -1275,9 +1462,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ModalDelDataReqDTO = function ModalDelDataReqDTO() {
+    var ModalDelDataReqDTO = /*#__PURE__*/_createClass(function ModalDelDataReqDTO() {
       _classCallCheck(this, ModalDelDataReqDTO);
-    };
+    });
     /***/
 
   },
@@ -1382,7 +1569,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteDataService",
         value: function deleteDataService() {
-          var _this12 = this;
+          var _this14 = this;
 
           this.modalDeleteDataReqDTO = new _modal_delete_data_req_dto__WEBPACK_IMPORTED_MODULE_5__["ModalDelDataReqDTO"]();
           this.modalDeleteDataReqDTO.totalCreditAmount = this.responseDto.totalCreditAmount;
@@ -1397,14 +1584,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.api.deleteDataService(this.modalDeleteDataReqDTO, localStorage.getItem("currentUser"), this.remarks).subscribe(function (resp) {
             //console.log(resp);
-            _this12.processDataStatus = resp;
+            _this14.processDataStatus = resp;
 
-            if (_this12.processDataStatus === true) {
-              _this12.openSnackBar("Data Assigned For Deletion.   STATUS :", "Success  ");
+            if (_this14.processDataStatus === true) {
+              _this14.openSnackBar("Data Assigned For Deletion.   STATUS :", "Success  ");
             }
 
-            if (_this12.processDataStatus === false) {
-              _this12.openSnackBar("Data Assigned For Deletion.   STATUS :", "Failed  ");
+            if (_this14.processDataStatus === false) {
+              _this14.openSnackBar("Data Assigned For Deletion.   STATUS :", "Failed  ");
             }
           });
         }
@@ -1502,9 +1689,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ModalProcessDataReqDTO = function ModalProcessDataReqDTO() {
+    var ModalProcessDataReqDTO = /*#__PURE__*/_createClass(function ModalProcessDataReqDTO() {
       _classCallCheck(this, ModalProcessDataReqDTO);
-    };
+    });
     /***/
 
   }

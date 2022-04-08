@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -51,9 +51,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ProcessAccountClosureRespDTO = function ProcessAccountClosureRespDTO() {
+    var ProcessAccountClosureRespDTO = /*#__PURE__*/_createClass(function ProcessAccountClosureRespDTO() {
       _classCallCheck(this, ProcessAccountClosureRespDTO);
-    }; // export class MedianDeUploadDetails {
+    }); // export class MedianDeUploadDetails {
     //   id: MedDeUploadDetailPKEntity;
     //   account: string;
     //   ccyCd: string;
@@ -881,9 +881,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       component: _authorize_account_closure_authorize_account_closure_component__WEBPACK_IMPORTED_MODULE_1__["AuthorizeAccountClosureComponent"]
     }];
 
-    var ProcessAccountClosureRoutingModule = function ProcessAccountClosureRoutingModule() {
+    var ProcessAccountClosureRoutingModule = /*#__PURE__*/_createClass(function ProcessAccountClosureRoutingModule() {
       _classCallCheck(this, ProcessAccountClosureRoutingModule);
-    };
+    });
     /***/
 
   },
@@ -950,9 +950,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! src/app/shared/angular-material/angular-material.module */
     "./src/app/shared/angular-material/angular-material.module.ts");
 
-    var ProcessAccountClosureModule = function ProcessAccountClosureModule() {
+    var ProcessAccountClosureModule = /*#__PURE__*/_createClass(function ProcessAccountClosureModule() {
       _classCallCheck(this, ProcessAccountClosureModule);
-    };
+    });
 
     ProcessAccountClosureModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_authorize_account_closure_authorize_account_closure_component__WEBPACK_IMPORTED_MODULE_4__["AuthorizeAccountClosureComponent"]],

@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-account-closure-account-closure-module"], {
   /***/
@@ -40061,9 +40061,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! ./account-closure-edit/account-closure-edit.component */
     "./src/app/views/account-closure/account-closure-edit/account-closure-edit.component.ts");
 
-    var AccountClosureModule = function AccountClosureModule() {
+    var AccountClosureModule = /*#__PURE__*/_createClass(function AccountClosureModule() {
       _classCallCheck(this, AccountClosureModule);
-    };
+    });
 
     AccountClosureModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_account_closure_component__WEBPACK_IMPORTED_MODULE_5__["AccountClosureComponent"], _view_report_of_acc_closure_view_report_of_acc_closure_component__WEBPACK_IMPORTED_MODULE_8__["ViewReportOfAccClosureComponent"], _account_closure_summary_account_closure_summary_component__WEBPACK_IMPORTED_MODULE_9__["AccountClosureSummaryComponent"], _account_closure_edit_account_closure_edit_component__WEBPACK_IMPORTED_MODULE_10__["AccountClosureEditComponent"]],

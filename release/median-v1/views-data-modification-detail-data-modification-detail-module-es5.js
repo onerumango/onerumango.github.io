@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-data-modification-detail-data-modification-detail-module"], {
   /***/
@@ -544,9 +544,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./src/app/views/modals/modal-transactions-detail-editable/modal-transactions-detail-editable.component.ts"); // tslint:disable-next-line: max-line-length
 
 
-    var DataModificationDetailModule = function DataModificationDetailModule() {
+    var DataModificationDetailModule = /*#__PURE__*/_createClass(function DataModificationDetailModule() {
       _classCallCheck(this, DataModificationDetailModule);
-    };
+    });
 
     DataModificationDetailModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_data_modification_detail_component__WEBPACK_IMPORTED_MODULE_7__["DataModificationDetailComponent"], _modals_modal_transactions_detail_editable_modal_transactions_detail_editable_component__WEBPACK_IMPORTED_MODULE_8__["ModalTransactionsDetailEditableComponent"]],
@@ -582,9 +582,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var DataModificationDetailsAuditRespDTO = function DataModificationDetailsAuditRespDTO() {
+    var DataModificationDetailsAuditRespDTO = /*#__PURE__*/_createClass(function DataModificationDetailsAuditRespDTO() {
       _classCallCheck(this, DataModificationDetailsAuditRespDTO);
-    };
+    });
     /***/
 
   },

@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-audit-logs-audit-logs-module"], {
   /***/
@@ -997,9 +997,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! ./excel.service */
     "./src/app/views/audit-logs/excel.service.ts");
 
-    var AuditLogsModule = function AuditLogsModule() {
+    var AuditLogsModule = /*#__PURE__*/_createClass(function AuditLogsModule() {
       _classCallCheck(this, AuditLogsModule);
-    };
+    });
 
     AuditLogsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_audit_logs_component__WEBPACK_IMPORTED_MODULE_5__["AuditLogsComponent"]],

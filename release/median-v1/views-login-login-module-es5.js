@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-login-login-module"], {
   /***/
@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar style=\"background-color:#e71a3d;border-bottom-color: 5px solid yellow;\"><img src=\"assets/images/dtb1.png\" alt=\"image\"></mat-toolbar>\r\n\r\n<body class=\"loginContainer\">\r\n  <br> \r\n\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"login-main\">\r\n    <mat-card style=\"border-radius: 25px;height: auto;\">\r\n     \r\n      <mat-card-header>\r\n        &nbsp;<div class=\"logoHolder\" style=\"margin-left: 13%;\">\r\n          <img src=\"assets/images/dtb.jpg\" alt=\"image\">\r\n          <!-- <img src=\"assets/images/med_logo_2.png\" alt=\"image\"> -->\r\n          <br>\r\n          <!-- <a style=\"font-size:12px\">MEDIAN &copy;-Connecting Systems</a> -->\r\n        </div>\r\n      </mat-card-header>\r\n    \r\n   \r\n      <form #loginForm=\"ngForm\" class=\"login-main\">\r\n        <div *ngIf=\"!verifyOTP\">\r\n          <div style=\"text-align: center\">\r\n          <mat-card-content fxLayout=\"column\" >\r\n            <form [formGroup]=\"signin\">\r\n              <br>\r\n              <div>\r\n                   <mat-form-field appearance=\"outline\" >\r\n                      <mat-label>User ID</mat-label>\r\n                      <input matInput type=\"text\" placeholder=\"User Id\" appUppercase  formControlName=\"username\"  required/>\r\n                      <mat-icon matSuffix>username</mat-icon>\r\n                    </mat-form-field>\r\n              </div>\r\n                <div style=\"margin-left: 3px\">\r\n                    <mat-form-field appearance=\"outline\">\r\n                      <mat-label>Password</mat-label>\r\n                        <input matInput placeholder=\"Password\" [type]=\"hide ? 'password' : 'text'\" formControlName=\"password\" required/>\r\n                        <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                        <!-- <mat-hint *ngIf=\"!passwordInput.value\">Enter your password</mat-hint> -->\r\n                    </mat-form-field>\r\n                </div>\r\n             \r\n             </form>\r\n           \r\n            <mat-progress-bar mode=\"indeterminate\" *ngIf=\"loginProcessing\"></mat-progress-bar>\r\n            <br>\r\n            <div>\r\n              <!-- <button mat-raised-button routerLink=\"/dashboard\">Skip Login</button> -->\r\n              <button color=\"primary\" mat-raised-button (click)=\"getOtp(signin.value)\"\r\n              >\r\n                Get OTP\r\n              </button>&nbsp;\r\n              <button color=\"warn\" mat-raised-button (click)=\"forgetPwd()\">\r\n                Forgot Password\r\n                </button>\r\n            </div>\r\n            <!-- <span style=\"color:red;\"> Note that you will be locked after 3 failed attempts using wrong credentials. </span> -->\r\n            <br>\r\n            <!-- <div>\r\n              <button mat-raised-button class=\"font-weight-bold \" (click)=\"forgotPassword(loginForm.value)\">Forgot /\r\n                Reset Password</button>\r\n            </div> -->\r\n            <div class=\"content has-text-centered\">\r\n              \r\n                <a href=\"http://rumango.com/\">Developed by\r\n                  <img src=\"assets/images/rmg.png\" alt=\"RUMANGO\">\r\n\r\n                </a>\r\n              \r\n            </div>\r\n            <br>\r\n            <a style=\"font-size:12px\">MEDIAN &copy; 2020-Connecting Systems</a>\r\n           \r\n          </mat-card-content>\r\n        </div>\r\n        </div>\r\n        <div *ngIf=\"verifyOTP\" style=\"text-align: center\">\r\n          <div>\r\n            <p style=\"text-align: center;\">Enter the OTP sent to your Email</p>\r\n          </div>\r\n          <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n            <mat-label>OTP</mat-label>\r\n            <input id=\"otp\" matInput autocomplete=\"off\" placeholder=\"OTP\" maxlength=\"6\" minlength=\"6\"\r\n              pattern=\"([0-9])\\d{6}\" name=\"otp\" ngModel required #otp=\"ngModel\" required>\r\n          </mat-form-field>\r\n          <br>\r\n          <mat-progress-bar mode=\"indeterminate\" *ngIf=\"loginProcessing\"></mat-progress-bar>\r\n          <br />\r\n          <div>\r\n            <button color=\"primary\" mat-raised-button (click)=\"test(loginForm.value,signin.value)\" [disabled]=\"!check\">\r\n              Verify\r\n            </button>&nbsp;\r\n\r\n            <button color=\"primary\" mat-raised-button (click)=\"getOtp(signin.value); loginForm.reset()\" [disabled]=\"check\">\r\n              Resend OTP\r\n            </button>&nbsp;\r\n\r\n            <button color=\"warn\" mat-raised-button (click)=\"backToLoginScreen()\">\r\n              Exit\r\n            </button>\r\n          </div>\r\n          <br>\r\n          <div class=\"content has-text-centered\">\r\n            \r\n              <a href=\"http://rumango.com/\">Developed by\r\n                <img src=\"assets/images/rmg.png\" alt=\"RUMANGO\">\r\n              </a>\r\n           \r\n          </div>\r\n        </div>\r\n      </form>\r\n    </mat-card>\r\n  </div>\r\n  <br><br>\r\n  \r\n  <br>\r\n</body>";
+    __webpack_exports__["default"] = "<mat-toolbar style=\"background-color:#e71a3d;border-bottom-color: 5px solid yellow;\"><img src=\"assets/images/dtb1.png\" alt=\"image\"></mat-toolbar>\r\n\r\n<body class=\"loginContainer\">\r\n  <br> \r\n\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"login-main\">\r\n    <mat-card style=\"border-radius: 25px;height: auto;\">\r\n     \r\n      <mat-card-header>\r\n        &nbsp;<div class=\"logoHolder\" style=\"margin-left: 13%;\">\r\n          <img src=\"assets/images/dtb.jpg\" alt=\"image\">\r\n          <!-- <img src=\"assets/images/med_logo_2.png\" alt=\"image\"> -->\r\n          <br>\r\n          <!-- <a style=\"font-size:12px\">MEDIAN &copy;-Connecting Systems</a> -->\r\n        </div>\r\n      </mat-card-header>\r\n    \r\n   \r\n      <form #loginForm=\"ngForm\" class=\"login-main\">\r\n        <div *ngIf=\"!verifyOTP\">\r\n          <div style=\"text-align: center\">\r\n          <mat-card-content fxLayout=\"column\" >\r\n            <form [formGroup]=\"signin\">\r\n              <br>\r\n              <div>\r\n                   <mat-form-field appearance=\"outline\" >\r\n                      <mat-label>User ID</mat-label>\r\n                      <input matInput type=\"text\" placeholder=\"User Id\" appUppercase  formControlName=\"username\"  required/>\r\n                      <mat-icon matSuffix>username</mat-icon>\r\n                    </mat-form-field>\r\n              </div>\r\n                <div style=\"margin-left: 3px\">\r\n                    <mat-form-field appearance=\"outline\">\r\n                      <mat-label>Password</mat-label>\r\n                        <input matInput placeholder=\"Password\" [type]=\"hide ? 'password' : 'text'\" formControlName=\"password\" required/>\r\n                        <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                        <!-- <mat-hint *ngIf=\"!passwordInput.value\">Enter your password</mat-hint> -->\r\n                    </mat-form-field>\r\n                </div>\r\n             \r\n             </form>\r\n           \r\n            <mat-progress-bar mode=\"indeterminate\" *ngIf=\"loginProcessing\"></mat-progress-bar>\r\n            <br>\r\n            <div>\r\n              <button mat-raised-button routerLink=\"/dashboard\">Skip Login</button>\r\n              <button color=\"primary\" mat-raised-button (click)=\"getOtp(signin.value)\"\r\n              >\r\n                Get OTP\r\n              </button>&nbsp;\r\n              <button color=\"warn\" mat-raised-button (click)=\"forgetPwd()\">\r\n                Forgot Password\r\n                </button>\r\n            </div>\r\n            <!-- <span style=\"color:red;\"> Note that you will be locked after 3 failed attempts using wrong credentials. </span> -->\r\n            <br>\r\n            <!-- <div>\r\n              <button mat-raised-button class=\"font-weight-bold \" (click)=\"forgotPassword(loginForm.value)\">Forgot /\r\n                Reset Password</button>\r\n            </div> -->\r\n            <div class=\"content has-text-centered\">\r\n              \r\n                <a href=\"http://rumango.com/\">Developed by\r\n                  <img src=\"assets/images/rmg.png\" alt=\"RUMANGO\">\r\n\r\n                </a>\r\n              \r\n            </div>\r\n            <br>\r\n            <a style=\"font-size:12px\">MEDIAN &copy; 2020-Connecting Systems</a>\r\n           \r\n          </mat-card-content>\r\n        </div>\r\n        </div>\r\n        <div *ngIf=\"verifyOTP\" style=\"text-align: center\">\r\n          <div>\r\n            <p style=\"text-align: center;\">Enter the OTP sent to your Email</p>\r\n          </div>\r\n          <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n            <mat-label>OTP</mat-label>\r\n            <input id=\"otp\" matInput autocomplete=\"off\" placeholder=\"OTP\" maxlength=\"6\" minlength=\"6\"\r\n              pattern=\"([0-9])\\d{6}\" name=\"otp\" ngModel required #otp=\"ngModel\" required>\r\n          </mat-form-field>\r\n          <br>\r\n          <mat-progress-bar mode=\"indeterminate\" *ngIf=\"loginProcessing\"></mat-progress-bar>\r\n          <br />\r\n          <div>\r\n            <button color=\"primary\" mat-raised-button (click)=\"test(loginForm.value,signin.value)\" [disabled]=\"!check\">\r\n              Verify\r\n            </button>&nbsp;\r\n\r\n            <button color=\"primary\" mat-raised-button (click)=\"getOtp(signin.value); loginForm.reset()\" [disabled]=\"check\">\r\n              Resend OTP\r\n            </button>&nbsp;\r\n\r\n            <button color=\"warn\" mat-raised-button (click)=\"backToLoginScreen()\">\r\n              Exit\r\n            </button>\r\n          </div>\r\n          <br>\r\n          <div class=\"content has-text-centered\">\r\n            \r\n              <a href=\"http://rumango.com/\">Developed by\r\n                <img src=\"assets/images/rmg.png\" alt=\"RUMANGO\">\r\n              </a>\r\n           \r\n          </div>\r\n        </div>\r\n      </form>\r\n    </mat-card>\r\n  </div>\r\n  <br><br>\r\n  \r\n  <br>\r\n</body>";
     /***/
   },
 
@@ -227,6 +227,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(DropdownLinkDirective, [{
+        key: "open",
+        get: function get() {
+          return this._open;
+        },
+        set: function set(value) {
+          this._open = value;
+
+          if (value) {
+            this.nav.closeOtherLinks(this);
+          }
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {
           this.nav.addLink(this);
@@ -240,18 +252,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "toggle",
         value: function toggle() {
           this.open = !this.open;
-        }
-      }, {
-        key: "open",
-        get: function get() {
-          return this._open;
-        },
-        set: function set(value) {
-          this._open = value;
-
-          if (value) {
-            this.nav.closeOtherLinks(this);
-          }
         }
       }]);
 
@@ -677,9 +677,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var directives = [_font_size_directive__WEBPACK_IMPORTED_MODULE_3__["FontSizeDirective"], _scroll_to_directive__WEBPACK_IMPORTED_MODULE_4__["ScrollToDirective"], _dropdown_directive__WEBPACK_IMPORTED_MODULE_5__["AppDropdownDirective"], _dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_6__["DropdownAnchorDirective"], _dropdown_link_directive__WEBPACK_IMPORTED_MODULE_7__["DropdownLinkDirective"], _uppercase_directive__WEBPACK_IMPORTED_MODULE_8__["UppercaseDirective"], _app_password_directive__WEBPACK_IMPORTED_MODULE_9__["AppPasswordDirective"]];
 
-    var SharedDirectivesModule = function SharedDirectivesModule() {
+    var SharedDirectivesModule = /*#__PURE__*/_createClass(function SharedDirectivesModule() {
       _classCallCheck(this, SharedDirectivesModule);
-    };
+    });
 
     SharedDirectivesModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
@@ -1012,6 +1012,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(LoginComponent, [{
+        key: "emailInput",
+        get: function get() {
+          return this.signin.get('email');
+        }
+      }, {
+        key: "passwordInput",
+        get: function get() {
+          return this.signin.get('password');
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {
           this.progress = false;
@@ -1522,16 +1532,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "resend",
         value: function resend() {}
-      }, {
-        key: "emailInput",
-        get: function get() {
-          return this.signin.get('email');
-        }
-      }, {
-        key: "passwordInput",
-        get: function get() {
-          return this.signin.get('password');
-        }
       }]);
 
       return LoginComponent;
@@ -1658,9 +1658,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./src/app/shared/angular-material/angular-material.module.ts"); //import { SharedComponentsModule } from 'app/shared/components/shared-components.module';
 
 
-    var LoginModule = function LoginModule() {
+    var LoginModule = /*#__PURE__*/_createClass(function LoginModule() {
       _classCallCheck(this, LoginModule);
-    };
+    });
 
     LoginModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"]],

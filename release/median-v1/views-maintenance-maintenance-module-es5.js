@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-maintenance-maintenance-module"], {
   /***/
@@ -1206,9 +1206,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var deaprtmentDto = function deaprtmentDto() {
+    var deaprtmentDto = /*#__PURE__*/_createClass(function deaprtmentDto() {
       _classCallCheck(this, deaprtmentDto);
-    };
+    });
     /***/
 
   },
@@ -1476,9 +1476,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! ./subAgentCode/sub-agent-code-edit/sub-agent-code-edit.component */
     "./src/app/views/maintenance/subAgentCode/sub-agent-code-edit/sub-agent-code-edit.component.ts");
 
-    var MaintenanceModule = function MaintenanceModule() {
+    var MaintenanceModule = /*#__PURE__*/_createClass(function MaintenanceModule() {
       _classCallCheck(this, MaintenanceModule);
-    };
+    });
 
     MaintenanceModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_department_department_new_department_new_component__WEBPACK_IMPORTED_MODULE_4__["DepartmentNewComponent"], _department_department_edit_department_edit_component__WEBPACK_IMPORTED_MODULE_5__["DepartmentEditComponent"], _department_department_summary_department_summary_component__WEBPACK_IMPORTED_MODULE_3__["DepartmentSummaryComponent"], _sftp_sftp_edit_sftp_edit_component__WEBPACK_IMPORTED_MODULE_8__["SftpEditComponent"], _sftp_sftp_new_sftp_new_component__WEBPACK_IMPORTED_MODULE_7__["SftpNewComponent"], _sftp_sftp_summary_sftp_summary_component__WEBPACK_IMPORTED_MODULE_6__["SftpSummaryComponent"], _cash_payments_new_cash_payments_new_component__WEBPACK_IMPORTED_MODULE_14__["CashPaymentsNewComponent"], _cash_payment_authorization_cash_payment_authorization_component__WEBPACK_IMPORTED_MODULE_15__["CashPaymentAuthorizationComponent"], _subAgentCode_sub_agent_code_sub_agent_code_component__WEBPACK_IMPORTED_MODULE_16__["SubAgentCodeComponent"], _subAgentCode_sub_agent_code_new_sub_agent_code_new_component__WEBPACK_IMPORTED_MODULE_17__["SubAgentCodeNewComponent"], _subAgentCode_sub_agent_code_edit_sub_agent_code_edit_component__WEBPACK_IMPORTED_MODULE_18__["SubAgentCodeEditComponent"]],
@@ -2742,9 +2742,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var SubAgentDto = function SubAgentDto() {
+    var SubAgentDto = /*#__PURE__*/_createClass(function SubAgentDto() {
       _classCallCheck(this, SubAgentDto);
-    };
+    });
     /***/
 
   }

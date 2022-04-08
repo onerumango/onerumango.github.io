@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-fcy-deal-number-fcy-deal-number-module"], {
   /***/
@@ -385,9 +385,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       component: _batch_deletion_batch_deletion_component__WEBPACK_IMPORTED_MODULE_1__["BatchDeletionComponent"]
     }];
 
-    var FcyDealNumberRoutingModule = function FcyDealNumberRoutingModule() {
+    var FcyDealNumberRoutingModule = /*#__PURE__*/_createClass(function FcyDealNumberRoutingModule() {
       _classCallCheck(this, FcyDealNumberRoutingModule);
-    };
+    });
     /***/
 
   },
@@ -699,9 +699,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! ./batch-deletion/batch-deletion.component */
     "./src/app/views/fcy-deal-number/batch-deletion/batch-deletion.component.ts");
 
-    var FcyDealNumberModule = function FcyDealNumberModule() {
+    var FcyDealNumberModule = /*#__PURE__*/_createClass(function FcyDealNumberModule() {
       _classCallCheck(this, FcyDealNumberModule);
-    };
+    });
 
     FcyDealNumberModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_fcy_deal_number_component__WEBPACK_IMPORTED_MODULE_5__["FcyDealNumberComponent"], _batch_deletion_batch_deletion_component__WEBPACK_IMPORTED_MODULE_8__["BatchDeletionComponent"]],

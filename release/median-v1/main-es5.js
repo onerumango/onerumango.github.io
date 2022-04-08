@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -106,6 +106,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./bm": "./node_modules/moment/locale/bm.js",
       "./bm.js": "./node_modules/moment/locale/bm.js",
       "./bn": "./node_modules/moment/locale/bn.js",
+      "./bn-bd": "./node_modules/moment/locale/bn-bd.js",
+      "./bn-bd.js": "./node_modules/moment/locale/bn-bd.js",
       "./bn.js": "./node_modules/moment/locale/bn.js",
       "./bo": "./node_modules/moment/locale/bo.js",
       "./bo.js": "./node_modules/moment/locale/bo.js",
@@ -154,6 +156,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./es": "./node_modules/moment/locale/es.js",
       "./es-do": "./node_modules/moment/locale/es-do.js",
       "./es-do.js": "./node_modules/moment/locale/es-do.js",
+      "./es-mx": "./node_modules/moment/locale/es-mx.js",
+      "./es-mx.js": "./node_modules/moment/locale/es-mx.js",
       "./es-us": "./node_modules/moment/locale/es-us.js",
       "./es-us.js": "./node_modules/moment/locale/es-us.js",
       "./es.js": "./node_modules/moment/locale/es.js",
@@ -1273,12 +1277,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _shared_components_layout_admin_admin_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./shared/components/layout/admin/admin.component */
     "./src/app/shared/components/layout/admin/admin.component.ts");
-    /* harmony import */
-
-
-    var _shared_services_auth_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ./shared/services/auth.guard */
-    "./src/app/shared/services/auth.guard.ts");
 
     var rootRoutesConfig = [{
       path: '',
@@ -1304,7 +1302,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: '',
       component: _shared_components_layout_admin_admin_component__WEBPACK_IMPORTED_MODULE_4__["AdminComponent"],
-      canActivate: [_shared_services_auth_guard__WEBPACK_IMPORTED_MODULE_5__["AuthGuard"]],
       children: [{
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule',
@@ -1470,9 +1467,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       redirectTo: ''
     }];
 
-    var AppRoutingModule = function AppRoutingModule() {
+    var AppRoutingModule = /*#__PURE__*/_createClass(function AppRoutingModule() {
       _classCallCheck(this, AppRoutingModule);
-    };
+    });
 
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(rootRoutesConfig)],
@@ -1806,9 +1803,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./shared/services/app-confirm/app-confirm.component */
     "./src/app/shared/services/app-confirm/app-confirm.component.ts");
 
-    var AppModule = function AppModule() {
+    var AppModule = /*#__PURE__*/_createClass(function AppModule() {
       _classCallCheck(this, AppModule);
-    };
+    });
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _views_modals_modal_excel_auth_first_modal_excel_auth_first_component__WEBPACK_IMPORTED_MODULE_11__["ModalExcelAuthFirstComponent"], _views_new_role_list_new_role_list_component__WEBPACK_IMPORTED_MODULE_12__["NewRoleListComponent"], _views_modals_modal_role_view_modal_role_view_component__WEBPACK_IMPORTED_MODULE_13__["ModalRoleViewComponent"], _views_modals_modal_audit_transaction_details_modal_audit_transaction_details_component__WEBPACK_IMPORTED_MODULE_18__["ModalAuditTransactionDetailsComponent"], _shared_services_app_confirm_app_confirm_component__WEBPACK_IMPORTED_MODULE_25__["AppComfirmComponent"]],
@@ -1891,9 +1888,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! mat-progress-buttons */
     "./node_modules/mat-progress-buttons/esm2015/mat-progress-buttons.js");
 
-    var AngularMaterialModule = function AngularMaterialModule() {
+    var AngularMaterialModule = /*#__PURE__*/_createClass(function AngularMaterialModule() {
       _classCallCheck(this, AngularMaterialModule);
-    };
+    });
 
     AngularMaterialModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatButtonToggleModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDatepickerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatChipsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatRadioModule"]],
@@ -1996,9 +1993,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var declaration = [_header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__["FooterComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_5__["SidebarComponent"], _layout_admin_admin_component__WEBPACK_IMPORTED_MODULE_6__["AdminComponent"], _layout_auth_auth_component__WEBPACK_IMPORTED_MODULE_7__["AuthComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_9__["NavigationComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_5__["SidebarComponent"], _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_11__["SpinnerComponent"]];
 
-    var ComponentsModule = function ComponentsModule() {
+    var ComponentsModule = /*#__PURE__*/_createClass(function ComponentsModule() {
       _classCallCheck(this, ComponentsModule);
-    };
+    });
 
     ComponentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: declaration,
@@ -3036,11 +3033,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(AppConstants, null, [{
         key: "baseURL",
-
+        get:
         /*
         *Base URL is not used anywhere so dont change it and dont delete it
         */
-        get: function get() {
+        function get() {
           return src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_1__["environment"].MEDIAN_URL;
         }
       }, {
@@ -3168,9 +3165,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var AllScreenPermission = function AllScreenPermission() {
+    var AllScreenPermission = /*#__PURE__*/_createClass(function AllScreenPermission() {
       _classCallCheck(this, AllScreenPermission);
-    };
+    });
     /***/
 
   },
@@ -3201,9 +3198,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var AuditLogScreenPermission = function AuditLogScreenPermission() {
+    var AuditLogScreenPermission = /*#__PURE__*/_createClass(function AuditLogScreenPermission() {
       _classCallCheck(this, AuditLogScreenPermission);
-    };
+    });
     /***/
 
   },
@@ -3234,9 +3231,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ButtonPermission = function ButtonPermission() {
+    var ButtonPermission = /*#__PURE__*/_createClass(function ButtonPermission() {
       _classCallCheck(this, ButtonPermission);
-    };
+    });
     /***/
 
   },
@@ -3321,46 +3318,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ExcelDataModificationScreenPermission = function ExcelDataModificationScreenPermission() {
+    var ExcelDataModificationScreenPermission = /*#__PURE__*/_createClass(function ExcelDataModificationScreenPermission() {
       _classCallCheck(this, ExcelDataModificationScreenPermission);
-    };
+    });
 
-    var ExcelProcessingSummaryScreenPermission = function ExcelProcessingSummaryScreenPermission() {
+    var ExcelProcessingSummaryScreenPermission = /*#__PURE__*/_createClass(function ExcelProcessingSummaryScreenPermission() {
       _classCallCheck(this, ExcelProcessingSummaryScreenPermission);
-    };
+    });
 
-    var UploadProcessAuthorizationScreenPermission = function UploadProcessAuthorizationScreenPermission() {
+    var UploadProcessAuthorizationScreenPermission = /*#__PURE__*/_createClass(function UploadProcessAuthorizationScreenPermission() {
       _classCallCheck(this, UploadProcessAuthorizationScreenPermission);
-    };
+    });
 
-    var DataModificationDetailsScreenPermission = function DataModificationDetailsScreenPermission() {
+    var DataModificationDetailsScreenPermission = /*#__PURE__*/_createClass(function DataModificationDetailsScreenPermission() {
       _classCallCheck(this, DataModificationDetailsScreenPermission);
-    };
+    });
 
-    var DataAmendAuthorizationScreenPermission = function DataAmendAuthorizationScreenPermission() {
+    var DataAmendAuthorizationScreenPermission = /*#__PURE__*/_createClass(function DataAmendAuthorizationScreenPermission() {
       _classCallCheck(this, DataAmendAuthorizationScreenPermission);
-    }; //////////////////////////////////////////////////////////
+    }); //////////////////////////////////////////////////////////
 
 
-    var CustomerSearchScreenPermission = function CustomerSearchScreenPermission() {
+    var CustomerSearchScreenPermission = /*#__PURE__*/_createClass(function CustomerSearchScreenPermission() {
       _classCallCheck(this, CustomerSearchScreenPermission);
-    };
+    });
 
-    var ExternalSystemsScreenPermission = function ExternalSystemsScreenPermission() {
+    var ExternalSystemsScreenPermission = /*#__PURE__*/_createClass(function ExternalSystemsScreenPermission() {
       _classCallCheck(this, ExternalSystemsScreenPermission);
-    };
+    });
 
-    var ProcessCodeMappingScreenPermission = function ProcessCodeMappingScreenPermission() {
+    var ProcessCodeMappingScreenPermission = /*#__PURE__*/_createClass(function ProcessCodeMappingScreenPermission() {
       _classCallCheck(this, ProcessCodeMappingScreenPermission);
-    };
+    });
 
-    var ExcelMappingScreenPermission = function ExcelMappingScreenPermission() {
+    var ExcelMappingScreenPermission = /*#__PURE__*/_createClass(function ExcelMappingScreenPermission() {
       _classCallCheck(this, ExcelMappingScreenPermission);
-    };
+    });
 
-    var EmailManagementScreenPermission = function EmailManagementScreenPermission() {
+    var EmailManagementScreenPermission = /*#__PURE__*/_createClass(function EmailManagementScreenPermission() {
       _classCallCheck(this, EmailManagementScreenPermission);
-    };
+    });
     /***/
 
   },
@@ -3391,9 +3388,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var RoleScreenPermission = function RoleScreenPermission() {
+    var RoleScreenPermission = /*#__PURE__*/_createClass(function RoleScreenPermission() {
       _classCallCheck(this, RoleScreenPermission);
-    };
+    });
     /***/
 
   },
@@ -3424,9 +3421,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var UserScreenPermission = function UserScreenPermission() {
+    var UserScreenPermission = /*#__PURE__*/_createClass(function UserScreenPermission() {
       _classCallCheck(this, UserScreenPermission);
-    };
+    });
     /***/
 
   },
@@ -3475,21 +3472,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var PendingForAuthDetailsDTO = function PendingForAuthDetailsDTO() {
+    var PendingForAuthDetailsDTO = /*#__PURE__*/_createClass(function PendingForAuthDetailsDTO() {
       _classCallCheck(this, PendingForAuthDetailsDTO);
-    };
+    });
 
-    var MedDeUploadDetailPKEntity = function MedDeUploadDetailPKEntity() {
+    var MedDeUploadDetailPKEntity = /*#__PURE__*/_createClass(function MedDeUploadDetailPKEntity() {
       _classCallCheck(this, MedDeUploadDetailPKEntity);
-    };
+    });
 
-    var MedDeUploadDetailHistPKEntity = function MedDeUploadDetailHistPKEntity() {
+    var MedDeUploadDetailHistPKEntity = /*#__PURE__*/_createClass(function MedDeUploadDetailHistPKEntity() {
       _classCallCheck(this, MedDeUploadDetailHistPKEntity);
-    };
+    });
 
-    var PendingForAuthDetailsHistEntity = function PendingForAuthDetailsHistEntity() {
+    var PendingForAuthDetailsHistEntity = /*#__PURE__*/_createClass(function PendingForAuthDetailsHistEntity() {
       _classCallCheck(this, PendingForAuthDetailsHistEntity);
-    };
+    });
     /***/
 
   },
@@ -3679,11 +3676,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "showDetailServiceInExcelDataProcessing",
         value: function showDetailServiceInExcelDataProcessing(excelDataProcessingReqDTO, user_id) {
-          // return this.http.post(
-          //   `${API_URL}/excelDataProcessing/showDetails/${user_id}`,
-          //   excelDataProcessingReqDTO
-          // );
-          return this.http.post("".concat(API_URL, "/excelDataProcessing/uploadExcelFile/").concat(user_id), excelDataProcessingReqDTO);
+          return this.http.post("".concat(API_URL, "/excelDataProcessing/showDetails/").concat(user_id), excelDataProcessingReqDTO);
         }
       }, {
         key: "showDetailServiceInExcelDataWithFile",
@@ -3701,11 +3694,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processDataService",
         value: function processDataService(modalProcessDataReqDTO, userName, remarks) {
-          // return this.http.post<boolean>(
-          //   `${API_URL}/excelDataForProcessScreeen/processData/${userName}/${remarks}`,
-          //   modalProcessDataReqDTO
-          // );
-          return this.http.post("".concat(API_URL, "/excelDataForProcessScreeen/processExcelData/").concat(userName, "/").concat(remarks), modalProcessDataReqDTO);
+          return this.http.post("".concat(API_URL, "/excelDataForProcessScreeen/processData/").concat(userName, "/").concat(remarks), modalProcessDataReqDTO);
         }
       }, {
         key: "deleteDataService",
@@ -3888,12 +3877,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
-    var AppComfirmComponent = function AppComfirmComponent(dialogRef, data) {
+    var AppComfirmComponent = /*#__PURE__*/_createClass(function AppComfirmComponent(dialogRef, data) {
       _classCallCheck(this, AppComfirmComponent);
 
       this.dialogRef = dialogRef;
       this.data = data;
-    };
+    });
 
     AppComfirmComponent.ctorParameters = function () {
       return [{
@@ -3999,87 +3988,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     AppConfirmService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])], AppConfirmService);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/services/auth.guard.ts":
-  /*!***********************************************!*\
-    !*** ./src/app/shared/services/auth.guard.ts ***!
-    \***********************************************/
-
-  /*! exports provided: AuthGuard */
-
-  /***/
-  function srcAppSharedServicesAuthGuardTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "AuthGuard", function () {
-      return AuthGuard;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./auth.service */
-    "./src/app/shared/services/auth.service.ts");
-
-    var AuthGuard = /*#__PURE__*/function () {
-      function AuthGuard(auth, myRoute) {
-        _classCallCheck(this, AuthGuard);
-
-        this.auth = auth;
-        this.myRoute = myRoute;
-      }
-
-      _createClass(AuthGuard, [{
-        key: "canActivate",
-        value: function canActivate(next, state) {
-          if (this.auth.isLoggednIn()) {
-            return true;
-          } else {
-            this.myRoute.navigate(["login"]);
-            return false;
-          }
-        }
-      }]);
-
-      return AuthGuard;
-    }();
-
-    AuthGuard.ctorParameters = function () {
-      return [{
-        type: _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
-      }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
-      }];
-    };
-
-    AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-      providedIn: 'root'
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])], AuthGuard);
     /***/
   },
 
@@ -4330,8 +4238,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_5__["AES"].encrypt('sr', '@');
           var data = encryptedAES.toString(); // const data = '12345';
 
-          var modifiedReq = req.clone({
-            headers: req.headers.set('Auth', data)
+          var modifiedReq = req.clone({// headers: req.headers.set('Auth', data),
           }); // console.log(modifiedReq, data);
 
           return next.handle(modifiedReq);
@@ -4413,9 +4320,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
-    var ServiceService = function ServiceService() {
+    var ServiceService = /*#__PURE__*/_createClass(function ServiceService() {
       _classCallCheck(this, ServiceService);
-    };
+    });
 
     ServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
@@ -4491,9 +4398,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ngx-quicklink */
     "./node_modules/ngx-quicklink/fesm2015/ngx-quicklink.js");
 
-    var SharedModule = function SharedModule() {
+    var SharedModule = /*#__PURE__*/_createClass(function SharedModule() {
       _classCallCheck(this, SharedModule);
-    };
+    });
 
     SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [],
@@ -5490,19 +5397,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var fmosscreenlabels = function fmosscreenlabels() {
+    var fmosscreenlabels = /*#__PURE__*/_createClass(function fmosscreenlabels() {
       _classCallCheck(this, fmosscreenlabels);
 
       this.exist = true;
-    };
+    });
 
-    var RolePermissions = function RolePermissions() {
+    var RolePermissions = /*#__PURE__*/_createClass(function RolePermissions() {
       _classCallCheck(this, RolePermissions);
-    };
+    });
 
-    var permissionsLabels = function permissionsLabels() {
+    var permissionsLabels = /*#__PURE__*/_createClass(function permissionsLabels() {
       _classCallCheck(this, permissionsLabels);
-    };
+    });
     /***/
 
   },
@@ -5880,10 +5787,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
       // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
       // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-      //MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
+      // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
       //ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
       MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-      ACC_CLOSER_URL: 'http://localhost:9192'
+      ACC_CLOSER_URL: 'http://192.168.0.14:8082/medianAccountClosure'
     };
     /***/
   },

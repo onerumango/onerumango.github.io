@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -105,21 +105,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var PendingForAuthDTO = function PendingForAuthDTO() {
+    var PendingForAuthDTO = /*#__PURE__*/_createClass(function PendingForAuthDTO() {
       _classCallCheck(this, PendingForAuthDTO);
-    };
+    });
 
-    var GetDetailsQueryToggleReqDTO = function GetDetailsQueryToggleReqDTO() {
+    var GetDetailsQueryToggleReqDTO = /*#__PURE__*/_createClass(function GetDetailsQueryToggleReqDTO() {
       _classCallCheck(this, GetDetailsQueryToggleReqDTO);
-    };
+    });
 
-    var DeUploadReqDTO = function DeUploadReqDTO() {
+    var DeUploadReqDTO = /*#__PURE__*/_createClass(function DeUploadReqDTO() {
       _classCallCheck(this, DeUploadReqDTO);
-    };
+    });
 
-    var DeUploadRespStatusEntity = function DeUploadRespStatusEntity() {
+    var DeUploadRespStatusEntity = /*#__PURE__*/_createClass(function DeUploadRespStatusEntity() {
       _classCallCheck(this, DeUploadRespStatusEntity);
-    };
+    });
     /***/
 
   },
@@ -150,9 +150,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var User = function User() {
+    var User = /*#__PURE__*/_createClass(function User() {
       _classCallCheck(this, User);
-    };
+    });
     /***/
 
   },
@@ -450,13 +450,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var FirstAndSecondAuthAuditLogRespDTO = function FirstAndSecondAuthAuditLogRespDTO() {
+    var FirstAndSecondAuthAuditLogRespDTO = /*#__PURE__*/_createClass(function FirstAndSecondAuthAuditLogRespDTO() {
       _classCallCheck(this, FirstAndSecondAuthAuditLogRespDTO);
-    };
+    });
 
-    var DataForProcessScreen = function DataForProcessScreen() {
+    var DataForProcessScreen = /*#__PURE__*/_createClass(function DataForProcessScreen() {
       _classCallCheck(this, DataForProcessScreen);
-    };
+    });
     /***/
 
   },

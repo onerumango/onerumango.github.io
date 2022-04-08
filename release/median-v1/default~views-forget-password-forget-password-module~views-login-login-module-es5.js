@@ -1,3 +1,7 @@
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~views-forget-password-forget-password-module~views-login-login-module"], {
@@ -1235,9 +1239,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.r(__webpack_exports__);
     /*!
-     * perfect-scrollbar v1.4.0
-     * (c) 2018 Hyunje Jun
-     * @license MIT
+     * perfect-scrollbar v1.5.3
+     * Copyright 2021 Hyunje Jun, MDBootstrap and Contributors
+     * Licensed under MIT
      */
 
 
@@ -1293,6 +1297,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var cls = {
       main: 'ps',
+      rtl: 'ps__rtl',
       element: {
         thumb: function thumb(x) {
           return "ps__thumb-" + x;
@@ -1377,10 +1382,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     EventElement.prototype.unbindAll = function unbindAll() {
-      var this$1 = this;
-
-      for (var name in this$1.handlers) {
-        this$1.unbind(name);
+      for (var name in this.handlers) {
+        this.unbind(name);
       }
     };
 
@@ -1452,7 +1455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    var processScrollDiff = function processScrollDiff(i, axis, diff, useScrollingClass, forceFireReachEvent) {
+    function processScrollDiff(i, axis, diff, useScrollingClass, forceFireReachEvent) {
       if (useScrollingClass === void 0) useScrollingClass = true;
       if (forceFireReachEvent === void 0) forceFireReachEvent = false;
       var fields;
@@ -1466,7 +1469,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       processScrollDiff$1(i, diff, fields, useScrollingClass, forceFireReachEvent);
-    };
+    }
 
     function processScrollDiff$1(i, diff, ref, useScrollingClass, forceFireReachEvent) {
       var contentHeight = ref[0];
@@ -1524,16 +1527,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var env = {
       isWebKit: typeof document !== 'undefined' && 'WebkitAppearance' in document.documentElement.style,
-      supportsTouch: typeof window !== 'undefined' && ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch),
+      supportsTouch: typeof window !== 'undefined' && ('ontouchstart' in window || 'maxTouchPoints' in window.navigator && window.navigator.maxTouchPoints > 0 || window.DocumentTouch && document instanceof window.DocumentTouch),
       supportsIePointer: typeof navigator !== 'undefined' && navigator.msMaxTouchPoints,
       isChrome: typeof navigator !== 'undefined' && /Chrome/i.test(navigator && navigator.userAgent)
     };
 
-    var updateGeometry = function updateGeometry(i) {
+    function updateGeometry(i) {
       var element = i.element;
       var roundedScrollTop = Math.floor(element.scrollTop);
-      i.containerWidth = element.clientWidth;
-      i.containerHeight = element.clientHeight;
+      var rect = element.getBoundingClientRect();
+      i.containerWidth = Math.round(rect.width);
+      i.containerHeight = Math.round(rect.height);
       i.contentWidth = element.scrollWidth;
       i.contentHeight = element.scrollHeight;
 
@@ -1589,7 +1593,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         element.classList.remove(cls.state.active('x'));
         i.scrollbarXWidth = 0;
         i.scrollbarXLeft = 0;
-        element.scrollLeft = 0;
+        element.scrollLeft = i.isRtl === true ? i.contentWidth : 0;
       }
 
       if (i.scrollbarYActive) {
@@ -1600,7 +1604,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         i.scrollbarYTop = 0;
         element.scrollTop = 0;
       }
-    };
+    }
 
     function getThumbSize(i, thumbSize) {
       if (i.settings.minScrollbarLength) {
@@ -1640,7 +1644,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       if (i.isScrollbarYUsingRight) {
         if (i.isRtl) {
-          yRailOffset.right = i.contentWidth - (i.negativeScrollAdjustment + element.scrollLeft) - i.scrollbarYRight - i.scrollbarYOuterWidth;
+          yRailOffset.right = i.contentWidth - (i.negativeScrollAdjustment + element.scrollLeft) - i.scrollbarYRight - i.scrollbarYOuterWidth - 9;
         } else {
           yRailOffset.right = i.scrollbarYRight - element.scrollLeft;
         }
@@ -1663,7 +1667,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       });
     }
 
-    var clickRail = function clickRail(i) {
+    function clickRail(i) {
+      var element = i.element;
       i.event.bind(i.scrollbarY, 'mousedown', function (e) {
         return e.stopPropagation();
       });
@@ -1684,12 +1689,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         updateGeometry(i);
         e.stopPropagation();
       });
-    };
+    }
 
-    var dragThumb = function dragThumb(i) {
+    function dragThumb(i) {
       bindMouseScrollHandler(i, ['containerWidth', 'contentWidth', 'pageX', 'railXWidth', 'scrollbarX', 'scrollbarXWidth', 'scrollLeft', 'x', 'scrollbarXRail']);
       bindMouseScrollHandler(i, ['containerHeight', 'contentHeight', 'pageY', 'railYHeight', 'scrollbarY', 'scrollbarYHeight', 'scrollTop', 'y', 'scrollbarYRail']);
-    };
+    }
 
     function bindMouseScrollHandler(i, ref) {
       var containerHeight = ref[0];
@@ -1707,11 +1712,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var scrollBy = null;
 
       function mouseMoveHandler(e) {
+        if (e.touches && e.touches[0]) {
+          e[pageY] = e.touches[0].pageY;
+        }
+
         element[scrollTop] = startingScrollTop + scrollBy * (e[pageY] - startingMousePageY);
         addScrollingClass(i, y);
         updateGeometry(i);
         e.stopPropagation();
-        e.preventDefault();
+
+        if (e.type.startsWith('touch') && e.changedTouches.length > 1) {
+          e.preventDefault();
+        }
       }
 
       function mouseUpHandler() {
@@ -1720,19 +1732,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
       }
 
-      i.event.bind(i[scrollbarY], 'mousedown', function (e) {
+      function bindMoves(e, touchMode) {
         startingScrollTop = element[scrollTop];
+
+        if (touchMode && e.touches) {
+          e[pageY] = e.touches[0].pageY;
+        }
+
         startingMousePageY = e[pageY];
         scrollBy = (i[contentHeight] - i[containerHeight]) / (i[railYHeight] - i[scrollbarYHeight]);
-        i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
-        i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+
+        if (!touchMode) {
+          i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+          i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+          e.preventDefault();
+        } else {
+          i.event.bind(i.ownerDocument, 'touchmove', mouseMoveHandler);
+        }
+
         i[scrollbarYRail].classList.add(cls.state.clicking);
         e.stopPropagation();
-        e.preventDefault();
+      }
+
+      i.event.bind(i[scrollbarY], 'mousedown', function (e) {
+        bindMoves(e);
+      });
+      i.event.bind(i[scrollbarY], 'touchstart', function (e) {
+        bindMoves(e, true);
       });
     }
 
-    var keyboard = function keyboard(i) {
+    function keyboard(i) {
       var element = i.element;
 
       var elementHovered = function elementHovered() {
@@ -1899,9 +1929,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           e.preventDefault();
         }
       });
-    };
+    }
 
-    var wheel = function wheel(i) {
+    function wheel(i) {
       var element = i.element;
 
       function shouldPreventDefault(deltaX, deltaY) {
@@ -1940,10 +1970,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (deltaX !== deltaX && deltaY !== deltaY
         /* NaN checks */
         ) {
-            // IE in some mouse drivers
-            deltaX = 0;
-            deltaY = e.wheelDelta;
-          }
+          // IE in some mouse drivers
+          deltaX = 0;
+          deltaY = e.wheelDelta;
+        }
 
         if (e.shiftKey) {
           // reverse axis with shift key
@@ -1970,22 +2000,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return true;
           }
 
-          var style = get(cursor);
-          var overflow = [style.overflow, style.overflowX, style.overflowY].join(''); // if scrollable
+          var style = get(cursor); // if deltaY && vertical scrollable
 
-          if (overflow.match(/(scroll|auto)/)) {
+          if (deltaY && style.overflowY.match(/(scroll|auto)/)) {
             var maxScrollTop = cursor.scrollHeight - cursor.clientHeight;
 
             if (maxScrollTop > 0) {
-              if (!(cursor.scrollTop === 0 && deltaY > 0) && !(cursor.scrollTop === maxScrollTop && deltaY < 0)) {
+              if (cursor.scrollTop > 0 && deltaY < 0 || cursor.scrollTop < maxScrollTop && deltaY > 0) {
                 return true;
               }
             }
+          } // if deltaX && horizontal scrollable
 
+
+          if (deltaX && style.overflowX.match(/(scroll|auto)/)) {
             var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
 
             if (maxScrollLeft > 0) {
-              if (!(cursor.scrollLeft === 0 && deltaX < 0) && !(cursor.scrollLeft === maxScrollLeft && deltaX > 0)) {
+              if (cursor.scrollLeft > 0 && deltaX < 0 || cursor.scrollLeft < maxScrollLeft && deltaX > 0) {
                 return true;
               }
             }
@@ -2049,9 +2081,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       } else if (typeof window.onmousewheel !== 'undefined') {
         i.event.bind(element, 'mousewheel', mousewheelHandler);
       }
-    };
+    }
 
-    var touch = function touch(i) {
+    function touch(i) {
       if (!env.supportsTouch && !env.supportsIePointer) {
         return;
       }
@@ -2143,22 +2175,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return true;
           }
 
-          var style = get(cursor);
-          var overflow = [style.overflow, style.overflowX, style.overflowY].join(''); // if scrollable
+          var style = get(cursor); // if deltaY && vertical scrollable
 
-          if (overflow.match(/(scroll|auto)/)) {
+          if (deltaY && style.overflowY.match(/(scroll|auto)/)) {
             var maxScrollTop = cursor.scrollHeight - cursor.clientHeight;
 
             if (maxScrollTop > 0) {
-              if (!(cursor.scrollTop === 0 && deltaY > 0) && !(cursor.scrollTop === maxScrollTop && deltaY < 0)) {
+              if (cursor.scrollTop > 0 && deltaY < 0 || cursor.scrollTop < maxScrollTop && deltaY > 0) {
                 return true;
               }
             }
+          } // if deltaX && horizontal scrollable
 
-            var maxScrollLeft = cursor.scrollLeft - cursor.clientWidth;
+
+          if (deltaX && style.overflowX.match(/(scroll|auto)/)) {
+            var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
 
             if (maxScrollLeft > 0) {
-              if (!(cursor.scrollLeft === 0 && deltaX < 0) && !(cursor.scrollLeft === maxScrollLeft && deltaX > 0)) {
+              if (cursor.scrollLeft > 0 && deltaX < 0 || cursor.scrollLeft < maxScrollLeft && deltaX > 0) {
                 return true;
               }
             }
@@ -2220,6 +2254,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return;
             }
 
+            if (!i.element) {
+              clearInterval(easingLoop);
+              return;
+            }
+
             applyTouchMove(speed.x * 30, speed.y * 30);
             speed.x *= 0.8;
             speed.y *= 0.8;
@@ -2242,7 +2281,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           i.event.bind(element, 'MSPointerUp', touchEnd);
         }
       }
-    };
+    }
 
     var defaultSettings = function defaultSettings() {
       return {
@@ -2286,7 +2325,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.settings = defaultSettings();
 
       for (var key in userSettings) {
-        this$1.settings[key] = userSettings[key];
+        this.settings[key] = userSettings[key];
       }
 
       this.containerWidth = null;
@@ -2303,6 +2342,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
 
       this.isRtl = get(element).direction === 'rtl';
+
+      if (this.isRtl === true) {
+        element.classList.add(cls.rtl);
+      }
 
       this.isNegativeScroll = function () {
         var originalScrollLeft = element.scrollLeft;
@@ -2470,7 +2513,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = PerfectScrollbar;
+    __webpack_exports__["default"] = PerfectScrollbar; //# sourceMappingURL=perfect-scrollbar.esm.js.map
+
     /***/
   },
 
@@ -3632,9 +3676,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var Login = function Login() {
+    var Login = /*#__PURE__*/_createClass(function Login() {
       _classCallCheck(this, Login);
-    };
+    });
     /***/
 
   }

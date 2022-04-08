@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -203,17 +203,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var Node = function Node() {
+    var Node = /*#__PURE__*/_createClass(function Node() {
       _classCallCheck(this, Node);
-    };
+    });
 
-    var TagAttributes = function TagAttributes() {
+    var TagAttributes = /*#__PURE__*/_createClass(function TagAttributes() {
       _classCallCheck(this, TagAttributes);
-    };
+    });
 
-    var AttributeData = function AttributeData() {
+    var AttributeData = /*#__PURE__*/_createClass(function AttributeData() {
       _classCallCheck(this, AttributeData);
-    };
+    });
     /***/
 
   },
@@ -1247,9 +1247,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/views/tags/tagmapping/tagmapping.component.css"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])], TagmappingComponent);
 
-    var Country = function Country() {
+    var Country = /*#__PURE__*/_createClass(function Country() {
       _classCallCheck(this, Country);
-    };
+    });
 
     var ELEMENT_DATA = [{
       position: 1,
@@ -1500,9 +1500,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./selectsourcetarget/selectsourcetarget.component */
     "./src/app/views/tags/selectsourcetarget/selectsourcetarget.component.ts");
 
-    var TagsModule = function TagsModule() {
+    var TagsModule = /*#__PURE__*/_createClass(function TagsModule() {
       _classCallCheck(this, TagsModule);
-    };
+    });
 
     TagsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_taglist_taglist_component__WEBPACK_IMPORTED_MODULE_8__["TaglistComponent"], _newtag_newtag_component__WEBPACK_IMPORTED_MODULE_10__["NewtagComponent"], _tagmapping_tagmapping_component__WEBPACK_IMPORTED_MODULE_11__["TagmappingComponent"], _tagmapping_addrule_addrule_component__WEBPACK_IMPORTED_MODULE_12__["AddruleComponent"], _tagmaplist_tagmaplist_component__WEBPACK_IMPORTED_MODULE_13__["TagmaplistComponent"], _tagmaplist_tagmapview_tagmapview_component__WEBPACK_IMPORTED_MODULE_14__["TagmapviewComponent"], _tagmaplist_tagmapview_tagmappingview_tagmappingview_component__WEBPACK_IMPORTED_MODULE_15__["TagmappingviewComponent"], _selectsourcetarget_selectsourcetarget_component__WEBPACK_IMPORTED_MODULE_17__["SelectsourcetargetComponent"]],
@@ -1650,9 +1650,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var Tags = function Tags() {
+    var Tags = /*#__PURE__*/_createClass(function Tags() {
       _classCallCheck(this, Tags);
-    };
+    });
     /***/
 
   }

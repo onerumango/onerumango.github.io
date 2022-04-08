@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -97,9 +97,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       component: _global_gl_ac_code_maint_summary_component__WEBPACK_IMPORTED_MODULE_1__["GlobalGlAcCodeMaintSummaryComponent"]
     }];
 
-    var TransactionGroupMaintenanceRoutingModule = function TransactionGroupMaintenanceRoutingModule() {
+    var TransactionGroupMaintenanceRoutingModule = /*#__PURE__*/_createClass(function TransactionGroupMaintenanceRoutingModule() {
       _classCallCheck(this, TransactionGroupMaintenanceRoutingModule);
-    };
+    });
     /***/
 
   },
@@ -184,9 +184,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./global-gl-ac-code-maint-summary.component */
     "./src/app/views/transaction-group-maintenance/global-gl-ac-code-maint-summary/global-gl-ac-code-maint-summary.component.ts");
 
-    var GlMaintenanceModule = function GlMaintenanceModule() {
+    var GlMaintenanceModule = /*#__PURE__*/_createClass(function GlMaintenanceModule() {
       _classCallCheck(this, GlMaintenanceModule);
-    };
+    });
 
     GlMaintenanceModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_global_gl_ac_code_maint_global_gl_ac_code_maint_component__WEBPACK_IMPORTED_MODULE_8__["GlobalGlAcCodeMaintComponent"], _global_gl_ac_code_maint_summary_component__WEBPACK_IMPORTED_MODULE_9__["GlobalGlAcCodeMaintSummaryComponent"]],
@@ -793,13 +793,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/views/transaction-group-maintenance/global-gl-ac-code-maint/global-gl-ac-code-maint.component.css"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_transaction_group_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__["TransactionGroupMaintenanceServiceService"], _transaction_group_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__["TransactionGroupMaintenanceServiceService"]])], GlobalGlAcCodeMaintComponent);
 
-    var GlData = function GlData() {
+    var GlData = /*#__PURE__*/_createClass(function GlData() {
       _classCallCheck(this, GlData);
-    };
+    });
 
-    var AccClassData = function AccClassData() {
+    var AccClassData = /*#__PURE__*/_createClass(function AccClassData() {
       _classCallCheck(this, AccClassData);
-    };
+    });
     /***/
 
   }
