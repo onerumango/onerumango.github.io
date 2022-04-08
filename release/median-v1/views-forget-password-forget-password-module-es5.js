@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-forget-password-forget-password-module"], {
   /***/
@@ -557,9 +557,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! src/app/shared/angular-material/angular-material.module */
     "./src/app/shared/angular-material/angular-material.module.ts");
 
-    var ForgetPasswordModule = function ForgetPasswordModule() {
+    var ForgetPasswordModule = /*#__PURE__*/_createClass(function ForgetPasswordModule() {
       _classCallCheck(this, ForgetPasswordModule);
-    };
+    });
 
     ForgetPasswordModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_forget_password_component__WEBPACK_IMPORTED_MODULE_8__["ForgetPasswordComponent"]],

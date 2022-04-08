@@ -139,9 +139,9 @@ __webpack_require__(/*! ./lib/component/visualMapContinuous */ "./node_modules/e
 
 __webpack_require__(/*! ./lib/component/visualMapPiecewise */ "./node_modules/echarts/lib/component/visualMapPiecewise.js");
 
-__webpack_require__(/*! zrender/lib/vml/vml */ "./node_modules/echarts/node_modules/zrender/lib/vml/vml.js");
+__webpack_require__(/*! zrender/lib/vml/vml */ "./node_modules/zrender/lib/vml/vml.js");
 
-__webpack_require__(/*! zrender/lib/svg/svg */ "./node_modules/echarts/node_modules/zrender/lib/svg/svg.js");
+__webpack_require__(/*! zrender/lib/svg/svg */ "./node_modules/zrender/lib/svg/svg.js");
 
 /***/ }),
 
@@ -172,7 +172,7 @@ __webpack_require__(/*! zrender/lib/svg/svg */ "./node_modules/echarts/node_modu
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -258,7 +258,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -320,7 +320,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -409,7 +409,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _roamHelper = __webpack_require__(/*! ./roamHelper */ "./node_modules/echarts/lib/action/roamHelper.js");
 
@@ -600,7 +600,7 @@ exports.updateCenterAndZoom = updateCenterAndZoom;
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _barGrid = __webpack_require__(/*! ../layout/barGrid */ "./node_modules/echarts/lib/layout/barGrid.js");
 
@@ -782,7 +782,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -794,9 +794,9 @@ var Model = __webpack_require__(/*! ../../model/Model */ "./node_modules/echarts
 
 var barItemStyle = __webpack_require__(/*! ./barItemStyle */ "./node_modules/echarts/lib/chart/bar/barItemStyle.js");
 
-var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
 var _throttle = __webpack_require__(/*! ../../util/throttle */ "./node_modules/echarts/lib/util/throttle.js");
 
@@ -914,20 +914,26 @@ var _default = echarts.extendChartView({
     var barBorderRadius = backgroundModel.get('barBorderRadius') || 0;
     var bgEls = [];
     var oldBgEls = this._backgroundEls || [];
+
+    var createBackground = function (dataIndex) {
+      var bgLayout = getLayout[coord.type](data, dataIndex);
+      var bgEl = createBackgroundEl(coord, isHorizontalOrRadial, bgLayout);
+      bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
+
+      if (coord.type === 'cartesian2d') {
+        bgEl.setShape('r', barBorderRadius);
+      }
+
+      bgEls[dataIndex] = bgEl;
+      return bgEl;
+    };
+
     data.diff(oldData).add(function (dataIndex) {
       var itemModel = data.getItemModel(dataIndex);
       var layout = getLayout[coord.type](data, dataIndex, itemModel);
 
       if (drawBackground) {
-        var bgLayout = getLayout[coord.type](data, dataIndex);
-        var bgEl = createBackgroundEl(coord, isHorizontalOrRadial, bgLayout);
-        bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
-
-        if (coord.type === 'cartesian2d') {
-          bgEl.setShape('r', barBorderRadius);
-        }
-
-        bgEls[dataIndex] = bgEl;
+        createBackground(dataIndex);
       } // If dataZoom in filteMode: 'empty', the baseValue can be set as NaN in "axisProxy".
 
 
@@ -955,14 +961,21 @@ var _default = echarts.extendChartView({
       var layout = getLayout[coord.type](data, newIndex, itemModel);
 
       if (drawBackground) {
-        var bgEl = oldBgEls[oldIndex];
-        bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
+        var bgEl;
 
-        if (coord.type === 'cartesian2d') {
-          bgEl.setShape('r', barBorderRadius);
+        if (oldBgEls.length === 0) {
+          bgEl = createBackground(oldIndex);
+        } else {
+          bgEl = oldBgEls[oldIndex];
+          bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
+
+          if (coord.type === 'cartesian2d') {
+            bgEl.setShape('r', barBorderRadius);
+          }
+
+          bgEls[newIndex] = bgEl;
         }
 
-        bgEls[newIndex] = bgEl;
         var bgLayout = getLayout[coord.type](data, newIndex);
         var shape = createBackgroundShape(isHorizontalOrRadial, bgLayout, coord);
         graphic.updateProps(bgEl, {
@@ -1106,8 +1119,28 @@ var clip = {
 
     return clipped;
   },
-  polar: function (coordSysClipArea) {
-    return false;
+  polar: function (coordSysClipArea, layout) {
+    var signR = layout.r0 <= layout.r ? 1 : -1; // Make sure r is larger than r0
+
+    if (signR < 0) {
+      var r = layout.r;
+      layout.r = layout.r0;
+      layout.r0 = r;
+    }
+
+    var r = mathMin(layout.r, coordSysClipArea.r);
+    var r0 = mathMax(layout.r0, coordSysClipArea.r0);
+    layout.r = r;
+    layout.r0 = r0;
+    var clipped = r - r0 < 0; // Reverse back
+
+    if (signR < 0) {
+      var r = layout.r;
+      layout.r = layout.r0;
+      layout.r0 = r;
+    }
+
+    return clipped;
   }
 };
 var elementCreator = {
@@ -1598,7 +1631,7 @@ var PictorialBarSeries = BaseBarSeries.extend({
     symbolOffset: null,
     symbolMargin: null,
     // start margin and end margin. Can be a number or a percent string.
-    // Auto margin by defualt.
+    // Auto margin by default.
     symbolRepeat: false,
     // false/null/undefined, means no repeat.
     // Can be true, means auto calculate repeat times and cut by data.
@@ -1659,7 +1692,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -2544,7 +2577,7 @@ echarts.registerLayout(boxplotLayout);
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var SeriesModel = __webpack_require__(/*! ../../model/Series */ "./node_modules/echarts/lib/model/Series.js");
 
@@ -2672,13 +2705,13 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ChartView = __webpack_require__(/*! ../../view/Chart */ "./node_modules/echarts/lib/view/Chart.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -2850,7 +2883,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -3201,7 +3234,7 @@ echarts.registerLayout(candlestickLayout);
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var SeriesModel = __webpack_require__(/*! ../../model/Series */ "./node_modules/echarts/lib/model/Series.js");
 
@@ -3342,13 +3375,13 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ChartView = __webpack_require__(/*! ../../view/Chart */ "./node_modules/echarts/lib/view/Chart.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 var _createClipPathFromCoordSys = __webpack_require__(/*! ../helper/createClipPathFromCoordSys */ "./node_modules/echarts/lib/chart/helper/createClipPathFromCoordSys.js");
 
@@ -3679,7 +3712,7 @@ var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echar
 
 var parsePercent = _number.parsePercent;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var retrieve2 = _util.retrieve2;
 
@@ -3993,7 +4026,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -4061,7 +4094,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphicUtil = __webpack_require__(/*! ../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -4935,7 +4968,7 @@ var SymbolDraw = __webpack_require__(/*! ../helper/SymbolDraw */ "./node_modules
 
 var EffectSymbol = __webpack_require__(/*! ../helper/EffectSymbol */ "./node_modules/echarts/lib/chart/helper/EffectSymbol.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 var pointsLayout = __webpack_require__(/*! ../../layout/points */ "./node_modules/echarts/lib/layout/points.js");
 
@@ -5092,7 +5125,7 @@ echarts.registerProcessor(dataFilter('funnel'));
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createListSimply = __webpack_require__(/*! ../helper/createListSimply */ "./node_modules/echarts/lib/chart/helper/createListSimply.js");
 
@@ -5179,6 +5212,7 @@ var FunnelSeries = echarts.extendSeriesModel({
     maxSize: '100%',
     sort: 'descending',
     // 'ascending', 'descending'
+    orient: 'vertical',
     gap: 0,
     funnelAlign: 'center',
     label: {
@@ -5241,7 +5275,7 @@ module.exports = _default;
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ChartView = __webpack_require__(/*! ../../view/Chart */ "./node_modules/echarts/lib/view/Chart.js");
 
@@ -5452,6 +5486,10 @@ module.exports = _default;
 * under the License.
 */
 
+var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/lib/config.js");
+
+var __DEV__ = _config.__DEV__;
+
 var layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echarts/lib/util/layout.js");
 
 var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
@@ -5513,6 +5551,7 @@ function labelLayout(data) {
     var itemModel = data.getItemModel(idx);
     var labelModel = itemModel.getModel('label');
     var labelPosition = labelModel.get('position');
+    var orient = itemModel.get('orient');
     var labelLineModel = itemModel.getModel('labelLine');
     var layout = data.getItemLayout(idx);
     var points = layout.points;
@@ -5542,6 +5581,7 @@ function labelLayout(data) {
       var x1;
       var y1;
       var x2;
+      var y2;
       var labelLineLen = labelLineModel.get('length');
 
       if (labelPosition === 'left') {
@@ -5558,46 +5598,101 @@ function labelLayout(data) {
         x2 = x1 + labelLineLen;
         textX = x2 + 5;
         textAlign = 'left';
+      } else if (labelPosition === 'top') {
+        // Top side
+        x1 = (points[3][0] + points[0][0]) / 2;
+        y1 = (points[3][1] + points[0][1]) / 2;
+        y2 = y1 - labelLineLen;
+        textY = y2 - 5;
+        textAlign = 'center';
+      } else if (labelPosition === 'bottom') {
+        // Bottom side
+        x1 = (points[1][0] + points[2][0]) / 2;
+        y1 = (points[1][1] + points[2][1]) / 2;
+        y2 = y1 + labelLineLen;
+        textY = y2 + 5;
+        textAlign = 'center';
       } else if (labelPosition === 'rightTop') {
         // RightTop side
-        x1 = points[1][0];
-        y1 = points[1][1];
-        x2 = x1 + labelLineLen;
-        textX = x2 + 5;
-        textAlign = 'top';
+        x1 = orient === 'horizontal' ? points[3][0] : points[1][0];
+        y1 = orient === 'horizontal' ? points[3][1] : points[1][1];
+
+        if (orient === 'horizontal') {
+          y2 = y1 - labelLineLen;
+          textY = y2 - 5;
+          textAlign = 'center';
+        } else {
+          x2 = x1 + labelLineLen;
+          textX = x2 + 5;
+          textAlign = 'top';
+        }
       } else if (labelPosition === 'rightBottom') {
         // RightBottom side
         x1 = points[2][0];
         y1 = points[2][1];
-        x2 = x1 + labelLineLen;
-        textX = x2 + 5;
-        textAlign = 'bottom';
+
+        if (orient === 'horizontal') {
+          y2 = y1 + labelLineLen;
+          textY = y2 + 5;
+          textAlign = 'center';
+        } else {
+          x2 = x1 + labelLineLen;
+          textX = x2 + 5;
+          textAlign = 'bottom';
+        }
       } else if (labelPosition === 'leftTop') {
         // LeftTop side
         x1 = points[0][0];
-        y1 = points[1][1];
-        x2 = x1 - labelLineLen;
-        textX = x2 - 5;
-        textAlign = 'right';
+        y1 = orient === 'horizontal' ? points[0][1] : points[1][1];
+
+        if (orient === 'horizontal') {
+          y2 = y1 - labelLineLen;
+          textY = y2 - 5;
+          textAlign = 'center';
+        } else {
+          x2 = x1 - labelLineLen;
+          textX = x2 - 5;
+          textAlign = 'right';
+        }
       } else if (labelPosition === 'leftBottom') {
         // LeftBottom side
-        x1 = points[3][0];
-        y1 = points[2][1];
-        x2 = x1 - labelLineLen;
-        textX = x2 - 5;
-        textAlign = 'right';
+        x1 = orient === 'horizontal' ? points[1][0] : points[3][0];
+        y1 = orient === 'horizontal' ? points[1][1] : points[2][1];
+
+        if (orient === 'horizontal') {
+          y2 = y1 + labelLineLen;
+          textY = y2 + 5;
+          textAlign = 'center';
+        } else {
+          x2 = x1 - labelLineLen;
+          textX = x2 - 5;
+          textAlign = 'right';
+        }
       } else {
-        // Right side
+        // Right side or Bottom side
         x1 = (points[1][0] + points[2][0]) / 2;
         y1 = (points[1][1] + points[2][1]) / 2;
-        x2 = x1 + labelLineLen;
-        textX = x2 + 5;
-        textAlign = 'left';
+
+        if (orient === 'horizontal') {
+          y2 = y1 + labelLineLen;
+          textY = y2 + 5;
+          textAlign = 'center';
+        } else {
+          x2 = x1 + labelLineLen;
+          textX = x2 + 5;
+          textAlign = 'left';
+        }
       }
 
-      var y2 = y1;
+      if (orient === 'horizontal') {
+        x2 = x1;
+        textX = x2;
+      } else {
+        y2 = y1;
+        textY = y2;
+      }
+
       linePoints = [[x1, y1], [x2, y2]];
-      textY = y2;
     }
 
     layout.label = {
@@ -5618,7 +5713,12 @@ function _default(ecModel, api, payload) {
     var sort = seriesModel.get('sort');
     var viewRect = getViewRect(seriesModel, api);
     var indices = getSortedIndices(data, sort);
-    var sizeExtent = [parsePercent(seriesModel.get('minSize'), viewRect.width), parsePercent(seriesModel.get('maxSize'), viewRect.width)];
+    var orient = seriesModel.get('orient');
+    var viewWidth = viewRect.width;
+    var viewHeight = viewRect.height;
+    var x = viewRect.x;
+    var y = viewRect.y;
+    var sizeExtent = orient === 'horizontal' ? [parsePercent(seriesModel.get('minSize'), viewHeight), parsePercent(seriesModel.get('maxSize'), viewHeight)] : [parsePercent(seriesModel.get('minSize'), viewWidth), parsePercent(seriesModel.get('maxSize'), viewWidth)];
     var dataExtent = data.getDataExtent(valueDim);
     var min = seriesModel.get('min');
     var max = seriesModel.get('max');
@@ -5633,37 +5733,65 @@ function _default(ecModel, api, payload) {
 
     var funnelAlign = seriesModel.get('funnelAlign');
     var gap = seriesModel.get('gap');
-    var itemHeight = (viewRect.height - gap * (data.count() - 1)) / data.count();
-    var y = viewRect.y;
+    var viewSize = orient === 'horizontal' ? viewWidth : viewHeight;
+    var itemSize = (viewSize - gap * (data.count() - 1)) / data.count();
 
-    var getLinePoints = function (idx, offY) {
+    var getLinePoints = function (idx, offset) {
       // End point index is data.count() and we assign it 0
+      if (orient === 'horizontal') {
+        var val = data.get(valueDim, idx) || 0;
+        var itemHeight = linearMap(val, [min, max], sizeExtent, true);
+        var y0;
+
+        switch (funnelAlign) {
+          case 'top':
+            y0 = y;
+            break;
+
+          case 'center':
+            y0 = y + (viewHeight - itemHeight) / 2;
+            break;
+
+          case 'bottom':
+            y0 = y + (viewHeight - itemHeight);
+            break;
+        }
+
+        return [[offset, y0], [offset, y0 + itemHeight]];
+      }
+
       var val = data.get(valueDim, idx) || 0;
       var itemWidth = linearMap(val, [min, max], sizeExtent, true);
       var x0;
 
       switch (funnelAlign) {
         case 'left':
-          x0 = viewRect.x;
+          x0 = x;
           break;
 
         case 'center':
-          x0 = viewRect.x + (viewRect.width - itemWidth) / 2;
+          x0 = x + (viewWidth - itemWidth) / 2;
           break;
 
         case 'right':
-          x0 = viewRect.x + viewRect.width - itemWidth;
+          x0 = x + viewWidth - itemWidth;
           break;
       }
 
-      return [[x0, offY], [x0 + itemWidth, offY]];
+      return [[x0, offset], [x0 + itemWidth, offset]];
     };
 
     if (sort === 'ascending') {
       // From bottom to top
-      itemHeight = -itemHeight;
+      itemSize = -itemSize;
       gap = -gap;
-      y += viewRect.height;
+
+      if (orient === 'horizontal') {
+        x += viewWidth;
+      } else {
+        y += viewHeight;
+      }
+
       indices = indices.reverse();
     }
 
@@ -5671,24 +5799,46 @@ function _default(ecModel, api, payload) {
       var idx = indices[i];
       var nextIdx = indices[i + 1];
       var itemModel = data.getItemModel(idx);
-      var height = itemModel.get('itemStyle.height');
 
-      if (height == null) {
-        height = itemHeight;
-      } else {
-        height = parsePercent(height, viewRect.height);
+      if (orient === 'horizontal') {
+        var width = itemModel.get('itemStyle.width');
 
-        if (sort === 'ascending') {
-          height = -height;
+        if (width == null) {
+          width = itemSize;
+        } else {
+          width = parsePercent(width, viewWidth);
+
+          if (sort === 'ascending') {
+            width = -width;
+          }
         }
-      }
 
-      var start = getLinePoints(idx, y);
-      var end = getLinePoints(nextIdx, y + height);
-      y += height + gap;
-      data.setItemLayout(idx, {
-        points: start.concat(end.slice().reverse())
-      });
+        var start = getLinePoints(idx, x);
+        var end = getLinePoints(nextIdx, x + width);
+        x += width + gap;
+        data.setItemLayout(idx, {
+          points: start.concat(end.slice().reverse())
+        });
+      } else {
+        var height = itemModel.get('itemStyle.height');
+
+        if (height == null) {
+          height = itemSize;
+        } else {
+          height = parsePercent(height, viewHeight);
+
+          if (sort === 'ascending') {
+            height = -height;
+          }
+        }
+
+        var start = orient === 'horizontal' ? getLinePoints(idx, x) : getLinePoints(idx, y);
+        var end = orient === 'horizontal' ? getLinePoints(nextIdx, x + width) : getLinePoints(nextIdx, y + height);
+        y += height + gap;
+        data.setItemLayout(idx, {
+          points: start.concat(end.slice().reverse())
+        });
+      }
     }
 
     labelLayout(data);
@@ -6299,7 +6449,7 @@ module.exports = _default;
 * under the License.
 */
 
-var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -6464,7 +6614,7 @@ var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/l
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -6479,6 +6629,11 @@ var encodeHTML = _format.encodeHTML;
 var createGraphFromNodeEdge = __webpack_require__(/*! ../helper/createGraphFromNodeEdge */ "./node_modules/echarts/lib/chart/helper/createGraphFromNodeEdge.js");
 
 var LegendVisualProvider = __webpack_require__(/*! ../../visual/LegendVisualProvider */ "./node_modules/echarts/lib/visual/LegendVisualProvider.js");
+
+var _multipleGraphEdgeHelper = __webpack_require__(/*! ../helper/multipleGraphEdgeHelper */ "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+var initCurvenessList = _multipleGraphEdgeHelper.initCurvenessList;
+var createEdgeMapForCurveness = _multipleGraphEdgeHelper.createEdgeMapForCurveness;
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -6530,7 +6685,13 @@ var GraphSeries = echarts.extendSeriesModel({
     var self = this;
 
     if (nodes && edges) {
-      return createGraphFromNodeEdge(nodes, edges, this, true, beforeLink).data;
+      // auto curveness
+      initCurvenessList(this);
+      var graph = createGraphFromNodeEdge(nodes, edges, this, true, beforeLink);
+      zrUtil.each(graph.edges, function (edge) {
+        createEdgeMapForCurveness(edge.node1, edge.node2, this, edge.dataIndex);
+      }, this);
+      return graph.data;
     }
 
     function beforeLink(nodeData, edgeData) {
@@ -6707,7 +6868,6 @@ var GraphSeries = echarts.extendSeriesModel({
     lineStyle: {
       color: '#aaa',
       width: 1,
-      curveness: 0,
       opacity: 0.5
     },
     emphasis: {
@@ -6751,7 +6911,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var SymbolDraw = __webpack_require__(/*! ../helper/SymbolDraw */ "./node_modules/echarts/lib/chart/helper/SymbolDraw.js");
 
@@ -7169,9 +7329,9 @@ module.exports = _default;
 * under the License.
 */
 
-var curveTool = __webpack_require__(/*! zrender/lib/core/curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var curveTool = __webpack_require__(/*! zrender/lib/core/curve */ "./node_modules/zrender/lib/core/curve.js");
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var _graphHelper = __webpack_require__(/*! ./graphHelper */ "./node_modules/echarts/lib/chart/graph/graphHelper.js");
 
@@ -7613,12 +7773,18 @@ module.exports = _default;
 * under the License.
 */
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var _graphHelper = __webpack_require__(/*! ./graphHelper */ "./node_modules/echarts/lib/chart/graph/graphHelper.js");
 
 var getSymbolSize = _graphHelper.getSymbolSize;
 var getNodeGlobalScale = _graphHelper.getNodeGlobalScale;
+
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
+
+var _multipleGraphEdgeHelper = __webpack_require__(/*! ../helper/multipleGraphEdgeHelper */ "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+var getCurvenessForEdge = _multipleGraphEdgeHelper.getCurvenessForEdge;
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -7688,8 +7854,8 @@ function circularLayout(seriesModel, basedOn) {
 
   _layoutNodesBasedOn[basedOn](seriesModel, coordSys, graph, nodeData, r, cx, cy, count);
 
-  graph.eachEdge(function (edge) {
-    var curveness = edge.getModel().get('lineStyle.curveness') || 0;
+  graph.eachEdge(function (edge, index) {
+    var curveness = zrUtil.retrieve3(edge.getModel().get('lineStyle.curveness'), getCurvenessForEdge(edge, seriesModel, index), 0);
     var p1 = vec2.clone(edge.node1.getLayout());
     var p2 = vec2.clone(edge.node2.getLayout());
     var cp1;
@@ -7782,7 +7948,7 @@ var _layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echar
 
 var getLayoutRect = _layout.getLayoutRect;
 
-var bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+var bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/zrender/lib/core/bbox.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -7994,7 +8160,7 @@ module.exports = _default;
 * under the License.
 */
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -8204,9 +8370,13 @@ var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echar
 
 var linearMap = _number.linearMap;
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
+
+var _multipleGraphEdgeHelper = __webpack_require__(/*! ../helper/multipleGraphEdgeHelper */ "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+var getCurvenessForEdge = _multipleGraphEdgeHelper.getCurvenessForEdge;
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -8293,11 +8463,12 @@ function _default(ecModel) {
         }
 
         var edgeModel = edge.getModel();
+        var curveness = zrUtil.retrieve3(edgeModel.get('lineStyle.curveness'), -getCurvenessForEdge(edge, graphSeries, idx, true), 0);
         return {
           n1: nodes[edge.node1.dataIndex],
           n2: nodes[edge.node2.dataIndex],
           d: d,
-          curveness: edgeModel.get('lineStyle.curveness') || 0,
+          curveness: curveness,
           ignoreForceLayout: edgeModel.get('ignoreForceLayout')
         };
       });
@@ -8551,7 +8722,7 @@ exports.getSymbolSize = getSymbolSize;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 
@@ -8612,7 +8783,7 @@ function _default(ecModel, api) {
         }
       }
 
-      simpleLayoutEdge(data.graph);
+      simpleLayoutEdge(data.graph, seriesModel);
     } else if (!layout || layout === 'none') {
       simpleLayout(seriesModel);
     }
@@ -8650,7 +8821,13 @@ module.exports = _default;
 * under the License.
 */
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
+
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
+
+var _multipleGraphEdgeHelper = __webpack_require__(/*! ../helper/multipleGraphEdgeHelper */ "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+var getCurvenessForEdge = _multipleGraphEdgeHelper.getCurvenessForEdge;
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -8682,12 +8859,12 @@ function simpleLayout(seriesModel) {
     var model = node.getModel();
     node.setLayout([+model.get('x'), +model.get('y')]);
   });
-  simpleLayoutEdge(graph);
+  simpleLayoutEdge(graph, seriesModel);
 }
 
-function simpleLayoutEdge(graph) {
-  graph.eachEdge(function (edge) {
-    var curveness = edge.getModel().get('lineStyle.curveness') || 0;
+function simpleLayoutEdge(graph, seriesModel) {
+  graph.eachEdge(function (edge, index) {
+    var curveness = zrUtil.retrieve3(edge.getModel().get('lineStyle.curveness'), -getCurvenessForEdge(edge, seriesModel, index, true), 0);
     var p1 = vec2.clone(edge.node1.getLayout());
     var p2 = vec2.clone(edge.node2.getLayout());
     var points = [p1, p2];
@@ -8765,7 +8942,7 @@ __webpack_require__(/*! ./heatmap/HeatmapView */ "./node_modules/echarts/lib/cha
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -9052,7 +9229,7 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var HeatmapLayer = __webpack_require__(/*! ./HeatmapLayer */ "./node_modules/echarts/lib/chart/heatmap/HeatmapLayer.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -9337,15 +9514,15 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var Line = __webpack_require__(/*! ./Line */ "./node_modules/echarts/lib/chart/helper/Line.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _symbol = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echarts/lib/util/symbol.js");
 
 var createSymbol = _symbol.createSymbol;
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var curveUtil = __webpack_require__(/*! zrender/lib/core/curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var curveUtil = __webpack_require__(/*! zrender/lib/core/curve */ "./node_modules/zrender/lib/core/curve.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -9581,11 +9758,11 @@ module.exports = _default;
 
 var Polyline = __webpack_require__(/*! ./Polyline */ "./node_modules/echarts/lib/chart/helper/Polyline.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var EffectLine = __webpack_require__(/*! ./EffectLine */ "./node_modules/echarts/lib/chart/helper/EffectLine.js");
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -9738,7 +9915,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _symbol = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echarts/lib/util/symbol.js");
 
@@ -10013,11 +10190,11 @@ module.exports = _default;
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var IncrementalDisplayable = __webpack_require__(/*! zrender/lib/graphic/IncrementalDisplayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
+var IncrementalDisplayable = __webpack_require__(/*! zrender/lib/graphic/IncrementalDisplayable */ "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
 
-var lineContain = __webpack_require__(/*! zrender/lib/contain/line */ "./node_modules/echarts/node_modules/zrender/lib/contain/line.js");
+var lineContain = __webpack_require__(/*! zrender/lib/contain/line */ "./node_modules/zrender/lib/contain/line.js");
 
-var quadraticContain = __webpack_require__(/*! zrender/lib/contain/quadratic */ "./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js");
+var quadraticContain = __webpack_require__(/*! zrender/lib/contain/quadratic */ "./node_modules/zrender/lib/contain/quadratic.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -10300,7 +10477,7 @@ var _symbol = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echar
 
 var createSymbol = _symbol.createSymbol;
 
-var IncrementalDisplayable = __webpack_require__(/*! zrender/lib/graphic/IncrementalDisplayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
+var IncrementalDisplayable = __webpack_require__(/*! zrender/lib/graphic/IncrementalDisplayable */ "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -10606,9 +10783,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var symbolUtil = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echarts/lib/util/symbol.js");
 
@@ -10653,19 +10830,23 @@ function makeSymbolTypeKey(symbolCategory) {
 
 
 function createSymbol(name, lineData, idx) {
-  var color = lineData.getItemVisual(idx, 'color');
   var symbolType = lineData.getItemVisual(idx, name);
-  var symbolSize = lineData.getItemVisual(idx, name + 'Size');
 
   if (!symbolType || symbolType === 'none') {
     return;
   }
 
+  var color = lineData.getItemVisual(idx, 'color');
+  var symbolSize = lineData.getItemVisual(idx, name + 'Size');
+  var symbolRotate = lineData.getItemVisual(idx, name + 'Rotate');
+
   if (!zrUtil.isArray(symbolSize)) {
     symbolSize = [symbolSize, symbolSize];
   }
 
-  var symbolPath = symbolUtil.createSymbol(symbolType, -symbolSize[0] / 2, -symbolSize[1] / 2, symbolSize[0], symbolSize[1], color);
+  var symbolPath = symbolUtil.createSymbol(symbolType, -symbolSize[0] / 2, -symbolSize[1] / 2, symbolSize[0], symbolSize[1], color); // rotate by default if symbolRotate is not specified or NaN
+
+  symbolPath.__specifiedRotation = symbolRotate == null || isNaN(symbolRotate) ? void 0 : +symbolRotate * Math.PI / 180 || 0;
   symbolPath.name = name;
   return symbolPath;
 }
@@ -10731,16 +10912,38 @@ function updateSymbolAndLabelBeforeLineUpdate() {
   vector.normalize(d, d);
 
   if (symbolFrom) {
-    symbolFrom.attr('position', fromPos);
-    var tangent = line.tangentAt(0);
-    symbolFrom.attr('rotation', Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+    symbolFrom.attr('position', fromPos); // Fix #12388
+    // when symbol is set to be 'arrow' in markLine,
+    // symbolRotate value will be ignored, and compulsively use tangent angle.
+    // rotate by default if symbol rotation is not specified
+
+    var specifiedRotation = symbolFrom.__specifiedRotation;
+
+    if (specifiedRotation == null) {
+      var tangent = line.tangentAt(0);
+      symbolFrom.attr('rotation', Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+    } else {
+      symbolFrom.attr('rotation', specifiedRotation);
+    }
+
     symbolFrom.attr('scale', [invScale * percent, invScale * percent]);
   }
 
   if (symbolTo) {
-    symbolTo.attr('position', toPos);
-    var tangent = line.tangentAt(1);
-    symbolTo.attr('rotation', -Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+    symbolTo.attr('position', toPos); // Fix #12388
+    // when symbol is set to be 'arrow' in markLine,
+    // symbolRotate value will be ignored, and compulsively use tangent angle.
+    // rotate by default if symbol rotation is not specified
+
+    var specifiedRotation = symbolTo.__specifiedRotation;
+
+    if (specifiedRotation == null) {
+      var tangent = line.tangentAt(1);
+      symbolTo.attr('rotation', -Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+    } else {
+      symbolTo.attr('rotation', specifiedRotation);
+    }
+
     symbolTo.attr('scale', [invScale * percent, invScale * percent]);
   }
 
@@ -11277,7 +11480,7 @@ module.exports = _default;
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -11374,7 +11577,7 @@ module.exports = _default;
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -11497,7 +11700,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _symbol = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echarts/lib/util/symbol.js");
 
@@ -11736,7 +11939,7 @@ symbolProto._updateCommon = function (data, idx, symbolSize, seriesScope) {
     });
   } else {
     symbolPath.setStyle({
-      opacity: null,
+      opacity: 1,
       shadowBlur: null,
       shadowOffsetX: null,
       shadowOffsetY: null,
@@ -11899,7 +12102,7 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var SymbolClz = __webpack_require__(/*! ./Symbol */ "./node_modules/echarts/lib/chart/helper/Symbol.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isObject = _util.isObject;
 
@@ -12263,7 +12466,7 @@ exports.createClipPath = createClipPath;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
@@ -12395,7 +12598,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
@@ -12581,7 +12784,7 @@ var createDimensions = __webpack_require__(/*! ../../data/helper/createDimension
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var extend = _util.extend;
 var isArray = _util.isArray;
@@ -12861,6 +13064,274 @@ exports.getDefaultLabel = getDefaultLabel;
 
 /***/ }),
 
+/***/ "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/*
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements.  See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership.  The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License.  You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied.  See the License for the
+* specific language governing permissions and limitations
+* under the License.
+*/
+
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
+
+/*
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements.  See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership.  The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License.  You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied.  See the License for the
+* specific language governing permissions and limitations
+* under the License.
+*/
+var KEY_DELIMITER = '-->';
+/**
+ * params handler
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ * @returns {*}
+ */
+
+var getAutoCurvenessParams = function (seriesModel) {
+  return seriesModel.get('autoCurveness') || null;
+};
+/**
+ * Generate a list of edge curvatures, 20 is the default
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ * @param {number} appendLength
+ * @return  20 => [0, -0.2, 0.2, -0.4, 0.4, -0.6, 0.6, -0.8, 0.8, -1, 1, -1.2, 1.2, -1.4, 1.4, -1.6, 1.6, -1.8, 1.8, -2]
+ */
+
+
+var createCurveness = function (seriesModel, appendLength) {
+  var autoCurvenessParmas = getAutoCurvenessParams(seriesModel);
+  var length = 20;
+  var curvenessList = []; // handler the function set
+
+  if (typeof autoCurvenessParmas === 'number') {
+    length = autoCurvenessParmas;
+  } else if (zrUtil.isArray(autoCurvenessParmas)) {
+    seriesModel.__curvenessList = autoCurvenessParmas;
+    return;
+  } // append length
+
+
+  if (appendLength > length) {
+    length = appendLength;
+  } // make sure the length is even
+
+
+  var len = length % 2 ? length + 2 : length + 3;
+  curvenessList = [];
+
+  for (var i = 0; i < len; i++) {
+    curvenessList.push((i % 2 ? i + 1 : i) / 10 * (i % 2 ? -1 : 1));
+  }
+
+  seriesModel.__curvenessList = curvenessList;
+};
+/**
+ * Create different cache key data in the positive and negative directions, in order to set the curvature later
+ * @param {number|string|module:echarts/data/Graph.Node} n1
+ * @param {number|string|module:echarts/data/Graph.Node} n2
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ * @returns {string} key
+ */
+
+
+var getKeyOfEdges = function (n1, n2, seriesModel) {
+  var source = [n1.id, n1.dataIndex].join('.');
+  var target = [n2.id, n2.dataIndex].join('.');
+  return [seriesModel.uid, source, target].join(KEY_DELIMITER);
+};
+/**
+ * get opposite key
+ * @param {string} key
+ * @returns {string}
+ */
+
+
+var getOppositeKey = function (key) {
+  var keys = key.split(KEY_DELIMITER);
+  return [keys[0], keys[2], keys[1]].join(KEY_DELIMITER);
+};
+/**
+ * get edgeMap with key
+ * @param edge
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ */
+
+
+var getEdgeFromMap = function (edge, seriesModel) {
+  var key = getKeyOfEdges(edge.node1, edge.node2, seriesModel);
+  return seriesModel.__edgeMap[key];
+};
+/**
+ * calculate all cases total length
+ * @param edge
+ * @param seriesModel
+ * @returns {number}
+ */
+
+
+var getTotalLengthBetweenNodes = function (edge, seriesModel) {
+  var len = getEdgeMapLengthWithKey(getKeyOfEdges(edge.node1, edge.node2, seriesModel), seriesModel);
+  var lenV = getEdgeMapLengthWithKey(getKeyOfEdges(edge.node2, edge.node1, seriesModel), seriesModel);
+  return len + lenV;
+};
+/**
+ *
+ * @param key
+ */
+
+
+var getEdgeMapLengthWithKey = function (key, seriesModel) {
+  var edgeMap = seriesModel.__edgeMap;
+  return edgeMap[key] ? edgeMap[key].length : 0;
+};
+/**
+ * Count the number of edges between the same two points, used to obtain the curvature table and the parity of the edge
+ * @see /graph/GraphSeries.js@getInitialData
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ */
+
+
+function initCurvenessList(seriesModel) {
+  if (!getAutoCurvenessParams(seriesModel)) {
+    return;
+  }
+
+  seriesModel.__curvenessList = [];
+  seriesModel.__edgeMap = {}; // calc the array of curveness List
+
+  createCurveness(seriesModel);
+}
+/**
+ * set edgeMap with key
+ * @param {number|string|module:echarts/data/Graph.Node} n1
+ * @param {number|string|module:echarts/data/Graph.Node} n2
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ * @param {number} index
+ */
+
+
+function createEdgeMapForCurveness(n1, n2, seriesModel, index) {
+  if (!getAutoCurvenessParams(seriesModel)) {
+    return;
+  }
+
+  var key = getKeyOfEdges(n1, n2, seriesModel);
+  var edgeMap = seriesModel.__edgeMap;
+  var oppositeEdges = edgeMap[getOppositeKey(key)]; // set direction
+
+  if (edgeMap[key] && !oppositeEdges) {
+    edgeMap[key].isForward = true;
+  } else if (oppositeEdges && edgeMap[key]) {
+    oppositeEdges.isForward = true;
+    edgeMap[key].isForward = false;
+  }
+
+  edgeMap[key] = edgeMap[key] || [];
+  edgeMap[key].push(index);
+}
+/**
+ * get curvature for edge
+ * @param edge
+ * @param {module:echarts/model/SeriesModel} seriesModel
+ * @param index
+ */
+
+
+function getCurvenessForEdge(edge, seriesModel, index, needReverse) {
+  var autoCurvenessParams = getAutoCurvenessParams(seriesModel);
+  var isArrayParam = zrUtil.isArray(autoCurvenessParams);
+
+  if (!autoCurvenessParams) {
+    return null;
+  }
+
+  var edgeArray = getEdgeFromMap(edge, seriesModel);
+
+  if (!edgeArray) {
+    return null;
+  }
+
+  var edgeIndex = -1;
+
+  for (var i = 0; i < edgeArray.length; i++) {
+    if (edgeArray[i] === index) {
+      edgeIndex = i;
+      break;
+    }
+  } // if totalLen is Longer createCurveness
+
+
+  var totalLen = getTotalLengthBetweenNodes(edge, seriesModel);
+  createCurveness(seriesModel, totalLen);
+  edge.lineStyle = edge.lineStyle || {}; // if is opposite edge, must set curvenss to opposite number
+
+  var curKey = getKeyOfEdges(edge.node1, edge.node2, seriesModel);
+  var curvenessList = seriesModel.__curvenessList; // if pass array no need parity
+
+  var parityCorrection = isArrayParam ? 0 : totalLen % 2 ? 0 : 1;
+
+  if (!edgeArray.isForward) {
+    // the opposite edge show outside
+    var oppositeKey = getOppositeKey(curKey);
+    var len = getEdgeMapLengthWithKey(oppositeKey, seriesModel);
+    var resValue = curvenessList[edgeIndex + len + parityCorrection]; // isNeedReverse, simple, force type need reverse the curveness in the junction of the forword and the opposite
+
+    if (needReverse) {
+      // set as array may make the parity handle with the len of opposite
+      if (isArrayParam) {
+        if (autoCurvenessParams && autoCurvenessParams[0] === 0) {
+          return (len + parityCorrection) % 2 ? resValue : -resValue;
+        } else {
+          return ((len % 2 ? 0 : 1) + parityCorrection) % 2 ? resValue : -resValue;
+        }
+      } else {
+        return (len + parityCorrection) % 2 ? resValue : -resValue;
+      }
+    } else {
+      return curvenessList[edgeIndex + len + parityCorrection];
+    }
+  } else {
+    return curvenessList[parityCorrection + edgeIndex];
+  }
+}
+
+exports.initCurvenessList = initCurvenessList;
+exports.createEdgeMapForCurveness = createEdgeMapForCurveness;
+exports.getCurvenessForEdge = getCurvenessForEdge;
+
+/***/ }),
+
 /***/ "./node_modules/echarts/lib/chart/helper/treeHelper.js":
 /*!*************************************************************!*\
   !*** ./node_modules/echarts/lib/chart/helper/treeHelper.js ***!
@@ -12888,7 +13359,7 @@ exports.getDefaultLabel = getDefaultLabel;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -13004,7 +13475,7 @@ exports.wrapTreePathInfo = wrapTreePathInfo;
 
 var createListSimply = __webpack_require__(/*! ../helper/createListSimply */ "./node_modules/echarts/lib/chart/helper/createListSimply.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _dimensionHelper = __webpack_require__(/*! ../../data/helper/dimensionHelper */ "./node_modules/echarts/lib/data/helper/dimensionHelper.js");
 
@@ -13348,9 +13819,9 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var _bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+var _bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/zrender/lib/core/bbox.js");
 
 var fromPoints = _bbox.fromPoints;
 
@@ -14097,7 +14568,7 @@ var _dataStackHelper = __webpack_require__(/*! ../../data/helper/dataStackHelper
 
 var isDimensionStacked = _dataStackHelper.isDimensionStacked;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var map = _util.map;
 
@@ -14441,11 +14912,11 @@ module.exports = _default;
 * under the License.
 */
 
-var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var fixClipWithShadow = __webpack_require__(/*! zrender/lib/graphic/helper/fixClipWithShadow */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
+var fixClipWithShadow = __webpack_require__(/*! zrender/lib/graphic/helper/fixClipWithShadow */ "./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -14900,7 +15371,7 @@ var SeriesModel = __webpack_require__(/*! ../../model/Series */ "./node_modules/
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var concatArray = _util.concatArray;
 var mergeAll = _util.mergeAll;
@@ -14980,8 +15451,6 @@ var LinesSeries = SeriesModel.extend({
     LinesSeries.superApply(this, 'init', arguments);
   },
   mergeOption: function (option) {
-    // The input data may be null/undefined.
-    option.data = option.data || [];
     compatEc2(option);
 
     if (option.data) {
@@ -15744,7 +16213,7 @@ createDataSelectAction('map', [{
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createListSimply = __webpack_require__(/*! ../helper/createListSimply */ "./node_modules/echarts/lib/chart/helper/createListSimply.js");
 
@@ -15879,7 +16348,7 @@ var MapSeries = SeriesModel.extend({
    *
    * @param {number} dataIndex
    */
-  formatTooltip: function (dataIndex) {
+  formatTooltip: function (dataIndex, multipleSeries, dataType, renderMode) {
     // FIXME orignalData and data is a bit confusing
     var data = this.getData();
     var formattedValue = addCommas(this.getRawValue(dataIndex));
@@ -15896,7 +16365,8 @@ var MapSeries = SeriesModel.extend({
       }
     }
 
-    return seriesNames.join(', ') + '<br />' + encodeHTML(name + ' : ' + formattedValue);
+    var newLine = renderMode === 'html' ? '<br/>' : '\n';
+    return seriesNames.join(', ') + newLine + encodeHTML(name + ' : ' + formattedValue);
   },
 
   /**
@@ -16021,7 +16491,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -16256,7 +16726,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -16320,7 +16790,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -16446,7 +16916,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -16665,7 +17135,7 @@ echarts.registerVisual(parallelVisual);
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var createHashMap = _util.createHashMap;
@@ -17178,7 +17648,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 __webpack_require__(/*! ../coord/cartesian/Grid */ "./node_modules/echarts/lib/coord/cartesian/Grid.js");
 
@@ -17247,7 +17717,7 @@ echarts.registerVisual(visualSymbol('pictorialBar', 'roundRect'));
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 __webpack_require__(/*! ./pie/PieSeries */ "./node_modules/echarts/lib/chart/pie/PieSeries.js");
 
@@ -17329,7 +17799,7 @@ var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/l
 
 var createListSimply = __webpack_require__(/*! ../helper/createListSimply */ "./node_modules/echarts/lib/chart/helper/createListSimply.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -17539,7 +18009,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -17939,7 +18409,7 @@ module.exports = _default;
 * under the License.
 */
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -18313,7 +18783,7 @@ var layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echart
 
 var labelLayout = __webpack_require__(/*! ./labelLayout */ "./node_modules/echarts/lib/chart/pie/labelLayout.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -18573,7 +19043,7 @@ var SeriesModel = __webpack_require__(/*! ../../model/Series */ "./node_modules/
 
 var createListSimply = __webpack_require__(/*! ../helper/createListSimply */ "./node_modules/echarts/lib/chart/helper/createListSimply.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _format = __webpack_require__(/*! ../../util/format */ "./node_modules/echarts/lib/util/format.js");
 
@@ -18615,15 +19085,16 @@ var RadarSeries = SeriesModel.extend({
       generateCoordCount: Infinity
     });
   },
-  formatTooltip: function (dataIndex) {
+  formatTooltip: function (dataIndex, multipleSeries, dataType, renderMode) {
     var data = this.getData();
     var coordSys = this.coordinateSystem;
     var indicatorAxes = coordSys.getIndicatorAxes();
     var name = this.getData().getName(dataIndex);
-    return encodeHTML(name === '' ? this.name : name) + '<br/>' + zrUtil.map(indicatorAxes, function (axis, idx) {
+    var newLine = renderMode === 'html' ? '<br/>' : '\n';
+    return encodeHTML(name === '' ? this.name : name) + newLine + zrUtil.map(indicatorAxes, function (axis, idx) {
       var val = data.get(data.mapDimension(axis.dim), dataIndex);
       return encodeHTML(axis.name + ' : ' + val);
-    }).join('<br />');
+    }).join(newLine);
   },
 
   /**
@@ -18702,7 +19173,7 @@ var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/l
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var symbolUtil = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echarts/lib/util/symbol.js");
 
@@ -18750,12 +19221,14 @@ var _default = echarts.extendChartView({
 
       var symbolSize = normalizeSymbolSize(data.getItemVisual(idx, 'symbolSize'));
       var symbolPath = symbolUtil.createSymbol(symbolType, -1, -1, 2, 2, color);
+      var symbolRotate = data.getItemVisual(idx, 'symbolRotate') || 0;
       symbolPath.attr({
         style: {
           strokeNoScale: true
         },
         z2: 100,
-        scale: [symbolSize[0] / 2, symbolSize[1] / 2]
+        scale: [symbolSize[0] / 2, symbolSize[1] / 2],
+        rotation: symbolRotate * Math.PI / 180 || 0
       });
       return symbolPath;
     }
@@ -18925,7 +19398,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -19013,7 +19486,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -19411,7 +19884,7 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -19938,7 +20411,7 @@ echarts.registerAction({
 
 var layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echarts/lib/util/layout.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -20538,7 +21011,7 @@ module.exports = _default;
 
 var VisualMapping = __webpack_require__(/*! ../../visual/VisualMapping */ "./node_modules/echarts/lib/visual/VisualMapping.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -20964,7 +21437,7 @@ echarts.extendChartView({
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 __webpack_require__(/*! ./sunburst/SunburstSeries */ "./node_modules/echarts/lib/chart/sunburst/SunburstSeries.js");
 
@@ -21029,7 +21502,7 @@ echarts.registerProcessor(zrUtil.curry(dataFilter, 'sunburst'));
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -21199,7 +21672,10 @@ SunburstPieceProto._updateLabel = function (seriesModel, visualColor, state) {
   var normalModel = itemModel.getModel('label');
   var labelModel = state === 'normal' || state === 'emphasis' ? normalModel : itemModel.getModel(state + '.label');
   var labelHoverModel = itemModel.getModel('emphasis.label');
-  var text = zrUtil.retrieve(seriesModel.getFormattedLabel(this.node.dataIndex, state, null, null, 'label'), this.node.name);
+  var labelFormatter = labelModel.get('formatter'); // Use normal formatter if no state formatter is defined
+
+  var labelState = labelFormatter ? state : 'normal';
+  var text = zrUtil.retrieve(seriesModel.getFormattedLabel(this.node.dataIndex, labelState, null, null, 'label'), this.node.name);
 
   if (getLabelAttr('show') === false) {
     text = '';
@@ -21431,11 +21907,13 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var SeriesModel = __webpack_require__(/*! ../../model/Series */ "./node_modules/echarts/lib/model/Series.js");
 
 var Tree = __webpack_require__(/*! ../../data/Tree */ "./node_modules/echarts/lib/data/Tree.js");
+
+var Model = __webpack_require__(/*! ../../model/Model */ "./node_modules/echarts/lib/model/Model.js");
 
 var _treeHelper = __webpack_require__(/*! ../helper/treeHelper */ "./node_modules/echarts/lib/chart/helper/treeHelper.js");
 
@@ -21473,14 +21951,24 @@ var _default = SeriesModel.extend({
       children: option.data
     };
     completeTreeValue(root);
-    var levels = option.levels || []; // levels = option.levels = setDefault(levels, ecModel);
-
-    var treeOption = {};
-    treeOption.levels = levels; // Make sure always a new tree is created when setOption,
+    var levelModels = zrUtil.map(option.levels || [], function (levelDefine) {
+      return new Model(levelDefine, this, ecModel);
+    }, this); // Make sure always a new tree is created when setOption,
     // in TreemapView, we check whether oldTree === newTree
     // to choose mappings approach among old shapes and new shapes.
 
-    return Tree.createTree(root, this, treeOption).data;
+    var tree = Tree.createTree(root, this, beforeLink);
+
+    function beforeLink(nodeData) {
+      nodeData.wrapMethod('getItemModel', function (model, idx) {
+        var node = tree.getNodeByDataIndex(idx);
+        var levelModel = levelModels[node.depth];
+        levelModel && (model.parentModel = levelModel);
+        return model;
+      });
+    }
+
+    return tree.data;
   },
   optionUpdated: function () {
     this.resetViewRoot();
@@ -21653,7 +22141,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ChartView = __webpack_require__(/*! ../../view/Chart */ "./node_modules/echarts/lib/view/Chart.js");
 
@@ -22029,7 +22517,7 @@ var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echar
 
 var parsePercent = _number.parsePercent;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -22326,7 +22814,7 @@ var getDimensionTypeByAxis = _dimensionHelper.getDimensionTypeByAxis;
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -22386,9 +22874,22 @@ var ThemeRiverSeries = SeriesModel.extend({
    * @return {Array}
    */
   fixData: function (data) {
-    var rawDataLength = data.length; // grouped data by name
+    var rawDataLength = data.length;
+    /**
+     * Make sure every layer data get the same keys.
+     * The value index tells which layer has visited.
+     * {
+     *  2014/01/01: -1
+     * }
+     */
+
+    var timeValueKeys = {}; // grouped data by name
 
     var groupResult = groupData(data, function (item) {
+      if (!timeValueKeys.hasOwnProperty(item[0])) {
+        timeValueKeys[item[0]] = -1;
+      }
+
       return item[2];
     });
     var layData = [];
@@ -22399,40 +22900,18 @@ var ThemeRiverSeries = SeriesModel.extend({
       });
     });
     var layerNum = layData.length;
-    var largestLayer = -1;
-    var index = -1;
-
-    for (var i = 0; i < layerNum; ++i) {
-      var len = layData[i].dataList.length;
-
-      if (len > largestLayer) {
-        largestLayer = len;
-        index = i;
-      }
-    }
 
     for (var k = 0; k < layerNum; ++k) {
-      if (k === index) {
-        continue;
-      }
-
       var name = layData[k].name;
 
-      for (var j = 0; j < largestLayer; ++j) {
-        var timeValue = layData[index].dataList[j][0];
-        var length = layData[k].dataList.length;
-        var keyIndex = -1;
+      for (var j = 0; j < layData[k].dataList.length; ++j) {
+        var timeValue = layData[k].dataList[j][0];
+        timeValueKeys[timeValue] = k;
+      }
 
-        for (var l = 0; l < length; ++l) {
-          var value = layData[k].dataList[l][0];
-
-          if (value === timeValue) {
-            keyIndex = l;
-            break;
-          }
-        }
-
-        if (keyIndex === -1) {
+      for (var timeValue in timeValueKeys) {
+        if (timeValueKeys.hasOwnProperty(timeValue) && timeValueKeys[timeValue] !== k) {
+          timeValueKeys[timeValue] = k;
           data[rawDataLength] = [];
           data[rawDataLength][0] = timeValue;
           data[rawDataLength][1] = 0;
@@ -22655,7 +23134,7 @@ var Polygon = _poly.Polygon;
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var bind = _util.bind;
 var extend = _util.extend;
@@ -22844,7 +23323,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var numberUtil = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -23028,7 +23507,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 
@@ -23213,7 +23692,7 @@ var _default = SeriesModel.extend({
     };
     var leaves = option.leaves || {};
     var leavesModel = new Model(leaves, this, this.ecModel);
-    var tree = Tree.createTree(root, this, {}, beforeLink);
+    var tree = Tree.createTree(root, this, beforeLink);
 
     function beforeLink(nodeData) {
       nodeData.wrapMethod('getItemModel', function (model, idx) {
@@ -23367,7 +23846,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -23379,7 +23858,7 @@ var radialCoordinate = _layoutHelper.radialCoordinate;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+var bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/zrender/lib/core/bbox.js");
 
 var View = __webpack_require__(/*! ../../coord/View */ "./node_modules/echarts/lib/coord/View.js");
 
@@ -23816,9 +24295,9 @@ function drawEdge(seriesModel, node, virtualRoot, symbolEl, sourceOldLayout, sou
 
       graphic.updateProps(edge, {
         shape: getEdgeShape(seriesScope, sourceLayout, targetLayout),
-        style: {
+        style: zrUtil.defaults({
           opacity: 1
-        }
+        }, seriesScope.lineStyle)
       }, seriesModel);
     }
   } else if (edgeShape === 'polyline') {
@@ -23852,9 +24331,9 @@ function drawEdge(seriesModel, node, virtualRoot, symbolEl, sourceOldLayout, sou
             parentPoint: [targetLayout.x, targetLayout.y],
             childPoints: childPoints
           },
-          style: {
+          style: zrUtil.defaults({
             opacity: 1
-          }
+          }, seriesScope.lineStyle)
         }, seriesModel);
       }
     } else {}
@@ -24822,7 +25301,7 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echarts/lib/util/layout.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _treeHelper = __webpack_require__(/*! ../helper/treeHelper */ "./node_modules/echarts/lib/chart/helper/treeHelper.js");
 
@@ -25023,7 +25502,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var SeriesModel = __webpack_require__(/*! ../../model/Series */ "./node_modules/echarts/lib/model/Series.js");
 
@@ -25231,21 +25710,30 @@ var _default = SeriesModel.extend({
       children: option.data
     };
     completeTreeValue(root);
-    var levels = option.levels || [];
+    var levels = option.levels || []; // Used in "visual priority" in `treemapVisual.js`.
+    // This way is a little tricky, must satisfy the precondition:
+    //   1. There is no `treeNode.getModel('itemStyle.xxx')` used.
+    //   2. The `Model.prototype.getModel()` will not use any clone-like way.
+
+    var designatedVisualItemStyle = this.designatedVisualItemStyle = {};
+    var designatedVisualModel = new Model({
+      itemStyle: designatedVisualItemStyle
+    }, this, ecModel);
     levels = option.levels = setDefault(levels, ecModel);
     var levelModels = zrUtil.map(levels || [], function (levelDefine) {
-      return new Model(levelDefine, this, ecModel);
+      return new Model(levelDefine, designatedVisualModel, ecModel);
     }, this); // Make sure always a new tree is created when setOption,
     // in TreemapView, we check whether oldTree === newTree
     // to choose mappings approach among old shapes and new shapes.
 
-    var tree = Tree.createTree(root, this, null, beforeLink);
+    var tree = Tree.createTree(root, this, beforeLink);
 
     function beforeLink(nodeData) {
       nodeData.wrapMethod('getItemModel', function (model, idx) {
         var node = tree.getNodeByDataIndex(idx);
-        var levelModel = levelModels[node.depth];
-        levelModel && (model.parentModel = levelModel);
+        var levelModel = levelModels[node.depth]; // If no levelModel, we also need `designatedVisualModel`.
+
+        model.parentModel = levelModel || designatedVisualModel;
         return model;
       });
     }
@@ -25451,7 +25939,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -25463,9 +25951,9 @@ var Breadcrumb = __webpack_require__(/*! ./Breadcrumb */ "./node_modules/echarts
 
 var RoamController = __webpack_require__(/*! ../../component/helper/RoamController */ "./node_modules/echarts/lib/component/helper/RoamController.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 var animationUtil = __webpack_require__(/*! ../../util/animation */ "./node_modules/echarts/lib/util/animation.js");
 
@@ -26492,9 +26980,9 @@ echarts.registerAction({
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var _number = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -26919,7 +27407,7 @@ function position(row, rowFixedLength, rect, halfGapWidth, flush) {
 
   rect[xy[idx1WhenH]] += rowOtherLength;
   rect[wh[idx1WhenH]] -= rowOtherLength;
-} // Return [containerWidth, containerHeight] as defualt.
+} // Return [containerWidth, containerHeight] as default.
 
 
 function estimateRootSize(seriesModel, targetInfo, viewRoot, containerWidth, containerHeight) {
@@ -27074,9 +27562,9 @@ module.exports = _default;
 
 var VisualMapping = __webpack_require__(/*! ../../visual/VisualMapping */ "./node_modules/echarts/lib/visual/VisualMapping.js");
 
-var zrColor = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var zrColor = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -27103,21 +27591,17 @@ var _default = {
   reset: function (seriesModel, ecModel, api, payload) {
     var tree = seriesModel.getData().tree;
     var root = tree.root;
-    var seriesItemStyleModel = seriesModel.getModel(ITEM_STYLE_NORMAL);
 
     if (root.isRemoved()) {
       return;
     }
 
-    var levelItemStyles = zrUtil.map(tree.levelModels, function (levelModel) {
-      return levelModel ? levelModel.get(ITEM_STYLE_NORMAL) : null;
-    });
     travelTree(root, // Visual should calculate from tree root but not view root.
-    {}, levelItemStyles, seriesItemStyleModel, seriesModel.getViewRoot().getAncestors(), seriesModel);
+    {}, seriesModel.getViewRoot().getAncestors(), seriesModel);
   }
 };
 
-function travelTree(node, designatedVisual, levelItemStyles, seriesItemStyleModel, viewRootAncestors, seriesModel) {
+function travelTree(node, designatedVisual, viewRootAncestors, seriesModel) {
   var nodeModel = node.getModel();
   var nodeLayout = node.getLayout(); // Optimize
 
@@ -27126,8 +27610,7 @@ function travelTree(node, designatedVisual, levelItemStyles, seriesItemStyleMode
   }
 
   var nodeItemStyleModel = node.getModel(ITEM_STYLE_NORMAL);
-  var levelItemStyle = levelItemStyles[node.depth];
-  var visuals = buildVisuals(nodeItemStyleModel, designatedVisual, levelItemStyle, seriesItemStyleModel); // calculate border color
+  var visuals = buildVisuals(nodeItemStyleModel, designatedVisual, seriesModel); // calculate border color
 
   var borderColor = nodeItemStyleModel.get('borderColor');
   var borderColorSaturation = nodeItemStyleModel.get('borderColorSaturation');
@@ -27153,21 +27636,20 @@ function travelTree(node, designatedVisual, levelItemStyles, seriesItemStyleMode
       // If higher than viewRoot, only ancestors of viewRoot is needed to visit.
       if (child.depth >= viewRootAncestors.length || child === viewRootAncestors[child.depth]) {
         var childVisual = mapVisual(nodeModel, visuals, child, index, mapping, seriesModel);
-        travelTree(child, childVisual, levelItemStyles, seriesItemStyleModel, viewRootAncestors, seriesModel);
+        travelTree(child, childVisual, viewRootAncestors, seriesModel);
       }
     });
   }
 }
 
-function buildVisuals(nodeItemStyleModel, designatedVisual, levelItemStyle, seriesItemStyleModel) {
+function buildVisuals(nodeItemStyleModel, designatedVisual, seriesModel) {
   var visuals = zrUtil.extend({}, designatedVisual);
+  var designatedVisualItemStyle = seriesModel.designatedVisualItemStyle;
   zrUtil.each(['color', 'colorAlpha', 'colorSaturation'], function (visualName) {
     // Priority: thisNode > thisLevel > parentNodeDesignated > seriesModel
-    var val = nodeItemStyleModel.get(visualName, true); // Ignore parent
-
-    val == null && levelItemStyle && (val = levelItemStyle[visualName]);
-    val == null && (val = designatedVisual[visualName]);
-    val == null && (val = seriesItemStyleModel.get(visualName));
+    designatedVisualItemStyle[visualName] = designatedVisual[visualName];
+    var val = nodeItemStyleModel.get(visualName);
+    designatedVisualItemStyle[visualName] = null;
     val != null && (visuals[visualName] = val);
   });
   return visuals;
@@ -27366,7 +27848,7 @@ __webpack_require__(/*! ./axis/CartesianAxisView */ "./node_modules/echarts/lib/
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -27724,7 +28206,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var retrieve = _util.retrieve;
 var defaults = _util.defaults;
@@ -27746,9 +28228,9 @@ var _symbol = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echar
 
 var createSymbol = _symbol.createSymbol;
 
-var matrixUtil = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrixUtil = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
-var _vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var _vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var v2ApplyTransform = _vector.applyTransform;
 
@@ -28564,7 +29046,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -28796,7 +29278,7 @@ CartesianAxisView.extend({
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var AxisBuilder = __webpack_require__(/*! ./AxisBuilder */ "./node_modules/echarts/lib/component/axis/AxisBuilder.js");
 
@@ -28999,7 +29481,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -29218,7 +29700,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var AxisBuilder = __webpack_require__(/*! ./AxisBuilder */ "./node_modules/echarts/lib/component/axis/AxisBuilder.js");
 
@@ -29378,7 +29860,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -29603,7 +30085,7 @@ echarts.registerAction('parallelAxisExpand', function (payload, ecModel) {
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var axisPointerModelHelper = __webpack_require__(/*! ./axisPointer/modelHelper */ "./node_modules/echarts/lib/component/axisPointer/modelHelper.js");
 
@@ -29921,7 +30403,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var clazzUtil = __webpack_require__(/*! ../../util/clazz */ "./node_modules/echarts/lib/util/clazz.js");
 
@@ -29929,7 +30411,7 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var axisPointerModelHelper = __webpack_require__(/*! ./modelHelper */ "./node_modules/echarts/lib/component/axisPointer/modelHelper.js");
 
-var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var throttleUtil = __webpack_require__(/*! ../../util/throttle */ "./node_modules/echarts/lib/util/throttle.js");
 
@@ -30622,7 +31104,7 @@ var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echa
 
 var viewHelper = __webpack_require__(/*! ./viewHelper */ "./node_modules/echarts/lib/component/axisPointer/viewHelper.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 var AxisBuilder = __webpack_require__(/*! ../axis/AxisBuilder */ "./node_modules/echarts/lib/component/axis/AxisBuilder.js");
 
@@ -30927,7 +31409,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -31088,7 +31570,7 @@ function processOnAxis(axisInfo, newValue, updaters, dontSnap, outputFinder) {
   var payloadInfo = buildPayloadsBySeries(newValue, axisInfo);
   var payloadBatch = payloadInfo.payloadBatch;
   var snapToValue = payloadInfo.snapToValue; // Fill content of event obj for echarts.connect.
-  // By defualt use the first involved series data as a sample to connect.
+  // By default use the first involved series data as a sample to connect.
 
   if (payloadBatch[0] && outputFinder.seriesIndex == null) {
     zrUtil.extend(outputFinder, payloadBatch[0]);
@@ -31368,7 +31850,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -31469,9 +31951,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -31641,7 +32123,7 @@ exports.unregister = unregister;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Model = __webpack_require__(/*! ../../model/Model */ "./node_modules/echarts/lib/model/Model.js");
 
@@ -31980,15 +32462,15 @@ exports.makeKey = makeKey;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var formatUtil = __webpack_require__(/*! ../../util/format */ "./node_modules/echarts/lib/util/format.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 var axisHelper = __webpack_require__(/*! ../../coord/axisHelper */ "./node_modules/echarts/lib/coord/axisHelper.js");
 
@@ -32326,7 +32808,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var visualSolution = __webpack_require__(/*! ../../visual/visualSolution */ "./node_modules/echarts/lib/visual/visualSolution.js");
 
@@ -32512,7 +32994,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var BrushController = __webpack_require__(/*! ../helper/BrushController */ "./node_modules/echarts/lib/component/helper/BrushController.js");
 
@@ -32770,7 +33252,7 @@ echarts.registerAction({
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -32877,9 +33359,9 @@ module.exports = _default;
 * under the License.
 */
 
-var polygonContain = __webpack_require__(/*! zrender/lib/contain/polygon */ "./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js");
+var polygonContain = __webpack_require__(/*! zrender/lib/contain/polygon */ "./node_modules/zrender/lib/contain/polygon.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var _graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -33007,9 +33489,9 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var visualSolution = __webpack_require__(/*! ../../visual/visualSolution */ "./node_modules/echarts/lib/visual/visualSolution.js");
 
@@ -33380,7 +33862,7 @@ __webpack_require__(/*! ./calendar/CalendarView */ "./node_modules/echarts/lib/c
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -33872,7 +34354,7 @@ __webpack_require__(/*! ./dataZoomInside */ "./node_modules/echarts/lib/componen
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var numberUtil = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -34406,9 +34888,9 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -35229,7 +35711,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var DataZoomView = __webpack_require__(/*! ./DataZoomView */ "./node_modules/echarts/lib/component/dataZoom/DataZoomView.js");
 
@@ -35718,9 +36200,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -36480,7 +36962,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var helper = __webpack_require__(/*! ./helper */ "./node_modules/echarts/lib/component/dataZoom/helper.js");
 
@@ -36554,7 +37036,7 @@ echarts.registerAction('dataZoom', function (payload, ecModel) {
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -36668,7 +37150,7 @@ echarts.registerProcessor({
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var formatUtil = __webpack_require__(/*! ../../util/format */ "./node_modules/echarts/lib/util/format.js");
 
@@ -36851,7 +37333,7 @@ exports.createLinkedNodesFinder = createLinkedNodesFinder;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -37006,7 +37488,7 @@ exports.count = count;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var RoamController = __webpack_require__(/*! ../../component/helper/RoamController */ "./node_modules/echarts/lib/component/helper/RoamController.js");
 
@@ -37525,7 +38007,7 @@ ComponentView.extend({
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 __webpack_require__(/*! ../coord/geo/GeoModel */ "./node_modules/echarts/lib/coord/geo/GeoModel.js");
 
@@ -37703,7 +38185,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -38284,7 +38766,7 @@ __webpack_require__(/*! ./axisPointer */ "./node_modules/echarts/lib/component/a
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -38368,9 +38850,9 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Eventful = __webpack_require__(/*! zrender/lib/mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! zrender/lib/mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -39301,7 +39783,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -39725,7 +40207,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var RoamController = __webpack_require__(/*! ./RoamController */ "./node_modules/echarts/lib/component/helper/RoamController.js");
 
@@ -39743,7 +40225,7 @@ var _component = __webpack_require__(/*! ../../util/component */ "./node_modules
 
 var getUID = _component.getUID;
 
-var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/zrender/lib/mixin/Transformable.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -40202,11 +40684,11 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Eventful = __webpack_require__(/*! zrender/lib/mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! zrender/lib/mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
-var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var interactionMutex = __webpack_require__(/*! ./interactionMutex */ "./node_modules/echarts/lib/component/helper/interactionMutex.js");
 
@@ -40497,7 +40979,7 @@ module.exports = _default;
 * under the License.
 */
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var _cursorHelper = __webpack_require__(/*! ./cursorHelper */ "./node_modules/echarts/lib/component/helper/cursorHelper.js");
 
@@ -40942,7 +41424,7 @@ exports.updateViewOnZoom = updateViewOnZoom;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -41275,7 +41757,7 @@ Component.registerSubTypeDefaulter('legend', function () {
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Model = __webpack_require__(/*! ../../model/Model */ "./node_modules/echarts/lib/model/Model.js");
 
@@ -41640,7 +42122,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _symbol = __webpack_require__(/*! ../../util/symbol */ "./node_modules/echarts/lib/util/symbol.js");
 
@@ -42244,7 +42726,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -42654,7 +43136,7 @@ var ScrollableLegendView = LegendView.extend({
     contentGroup.eachChild(function (child, idx) {
       var legendDataIdx = child.__legendDataIndex; // FIXME
       // If the given targetDataIndex (from model) is illegal,
-      // we use defualtIndex. But the index on the legend model and
+      // we use defaultIndex. But the index on the legend model and
       // action payload is still illegal. That case will not be
       // changed until some scenario requires.
 
@@ -42703,7 +43185,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -43255,9 +43737,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var colorUtil = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var colorUtil = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
@@ -43449,32 +43931,70 @@ MarkerView.extend({
 
     areaData.each(function (idx) {
       // Layout
-      areaData.setItemLayout(idx, zrUtil.map(dimPermutations, function (dim) {
+      var points = zrUtil.map(dimPermutations, function (dim) {
         return getSingleMarkerEndPoint(areaData, idx, dim, seriesModel, api);
-      })); // Visual
+      }); // If none of the area is inside coordSys, allClipped is set to be true
+      // in layout so that label will not be displayed. See #12591
+
+      var allClipped = true;
+      zrUtil.each(dimPermutations, function (dim) {
+        if (!allClipped) {
+          return;
+        }
+
+        var xValue = areaData.get(dim[0], idx);
+        var yValue = areaData.get(dim[1], idx); // If is infinity, the axis should be considered not clipped
+
+        if ((isInifinity(xValue) || coordSys.getAxis('x').containData(xValue)) && (isInifinity(yValue) || coordSys.getAxis('y').containData(yValue))) {
+          allClipped = false;
+        }
+      });
+      areaData.setItemLayout(idx, {
+        points: points,
+        allClipped: allClipped
+      }); // Visual
 
       areaData.setItemVisual(idx, {
         color: seriesData.getVisual('color')
       });
     });
     areaData.diff(polygonGroup.__data).add(function (idx) {
-      var polygon = new graphic.Polygon({
-        shape: {
-          points: areaData.getItemLayout(idx)
-        }
-      });
-      areaData.setItemGraphicEl(idx, polygon);
-      polygonGroup.group.add(polygon);
+      var layout = areaData.getItemLayout(idx);
+
+      if (!layout.allClipped) {
+        var polygon = new graphic.Polygon({
+          shape: {
+            points: layout.points
+          }
+        });
+        areaData.setItemGraphicEl(idx, polygon);
+        polygonGroup.group.add(polygon);
+      }
     }).update(function (newIdx, oldIdx) {
       var polygon = polygonGroup.__data.getItemGraphicEl(oldIdx);
 
-      graphic.updateProps(polygon, {
-        shape: {
-          points: areaData.getItemLayout(newIdx)
+      var layout = areaData.getItemLayout(newIdx);
+
+      if (!layout.allClipped) {
+        if (polygon) {
+          graphic.updateProps(polygon, {
+            shape: {
+              points: layout.points
+            }
+          }, maModel, newIdx);
+        } else {
+          polygon = new graphic.Polygon({
+            shape: {
+              points: layout.points
+            }
+          });
         }
-      }, maModel, newIdx);
-      polygonGroup.group.add(polygon);
-      areaData.setItemGraphicEl(newIdx, polygon);
+
+        areaData.setItemGraphicEl(newIdx, polygon);
+        polygonGroup.group.add(polygon);
+      } else if (polygon) {
+        polygonGroup.group.remove(polygon);
+      }
     }).remove(function (idx) {
       var polygon = polygonGroup.__data.getItemGraphicEl(idx);
 
@@ -43667,7 +44187,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var List = __webpack_require__(/*! ../../data/List */ "./node_modules/echarts/lib/data/List.js");
 
@@ -43927,8 +44447,10 @@ var _default = MarkerView.extend({
       });
       lineData.setItemLayout(idx, [fromData.getItemLayout(idx), toData.getItemLayout(idx)]);
       lineData.setItemVisual(idx, {
+        'fromSymbolRotate': fromData.getItemVisual(idx, 'symbolRotate'),
         'fromSymbolSize': fromData.getItemVisual(idx, 'symbolSize'),
         'fromSymbol': fromData.getItemVisual(idx, 'symbol'),
+        'toSymbolRotate': toData.getItemVisual(idx, 'symbolRotate'),
         'toSymbolSize': toData.getItemVisual(idx, 'symbolSize'),
         'toSymbol': toData.getItemVisual(idx, 'symbol')
       });
@@ -43946,6 +44468,7 @@ var _default = MarkerView.extend({
       var itemModel = data.getItemModel(idx);
       updateSingleMarkerEndLayout(data, idx, isFrom, seriesModel, api);
       data.setItemVisual(idx, {
+        symbolRotate: itemModel.get('symbolRotate'),
         symbolSize: itemModel.get('symbolSize') || symbolSize[isFrom ? 0 : 1],
         symbol: itemModel.get('symbol', true) || symbolType[isFrom ? 0 : 1],
         color: itemModel.get('itemStyle.color') || seriesData.getVisual('color')
@@ -44121,7 +44644,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var SymbolDraw = __webpack_require__(/*! ../../chart/helper/SymbolDraw */ "./node_modules/echarts/lib/chart/helper/SymbolDraw.js");
 
@@ -44219,10 +44742,12 @@ var _default = MarkerView.extend({
       var itemModel = mpData.getItemModel(idx);
       var symbol = itemModel.getShallow('symbol');
       var symbolSize = itemModel.getShallow('symbolSize');
+      var symbolRotate = itemModel.getShallow('symbolRotate');
       var isFnSymbol = zrUtil.isFunction(symbol);
       var isFnSymbolSize = zrUtil.isFunction(symbolSize);
+      var isFnSymbolRotate = zrUtil.isFunction(symbolRotate);
 
-      if (isFnSymbol || isFnSymbolSize) {
+      if (isFnSymbol || isFnSymbolSize || isFnSymbolRotate) {
         var rawIdx = mpModel.getRawValue(idx);
         var dataParams = mpModel.getDataParams(idx);
 
@@ -44234,11 +44759,16 @@ var _default = MarkerView.extend({
           // FIXME 这里不兼容 ECharts 2.x，2.x 貌似参数是整个数据？
           symbolSize = symbolSize(rawIdx, dataParams);
         }
+
+        if (isFnSymbolRotate) {
+          symbolRotate = symbolRotate(rawIdx, dataParams);
+        }
       }
 
       mpData.setItemVisual(idx, {
         symbol: symbol,
         symbolSize: symbolSize,
+        symbolRotate: symbolRotate,
         color: itemModel.get('itemStyle.color') || seriesData.getVisual('color')
       });
     }); // TODO Text are wrong
@@ -44332,9 +44862,9 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -44444,15 +44974,16 @@ var MarkerModel = echarts.extendComponentModel({
       }, this);
     }
   },
-  formatTooltip: function (dataIndex) {
+  formatTooltip: function (dataIndex, multipleSeries, dataType, renderMode) {
     var data = this.getData();
     var value = this.getRawValue(dataIndex);
     var formattedValue = zrUtil.isArray(value) ? zrUtil.map(value, addCommas).join(', ') : addCommas(value);
     var name = data.getName(dataIndex);
     var html = encodeHTML(this.name);
+    var newLine = renderMode === 'html' ? '<br/>' : '\n';
 
     if (value != null || name) {
-      html += '<br />';
+      html += newLine;
     }
 
     if (name) {
@@ -44511,7 +45042,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -44589,7 +45120,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var numberUtil = __webpack_require__(/*! ../../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -44855,7 +45386,7 @@ exports.numCalculate = numCalculate;
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var throttleUtil = __webpack_require__(/*! ../util/throttle */ "./node_modules/echarts/lib/util/throttle.js");
 
@@ -45041,7 +45572,7 @@ __webpack_require__(/*! ./axis/ParallelAxisView */ "./node_modules/echarts/lib/c
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var barPolar = __webpack_require__(/*! ../layout/barPolar */ "./node_modules/echarts/lib/layout/barPolar.js");
 
@@ -45150,7 +45681,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var AxisBuilder = __webpack_require__(/*! ../axis/AxisBuilder */ "./node_modules/echarts/lib/component/axis/AxisBuilder.js");
 
@@ -45523,7 +46054,7 @@ echarts.registerPreprocessor(preprocessor);
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var TimelineModel = __webpack_require__(/*! ./TimelineModel */ "./node_modules/echarts/lib/component/timeline/TimelineModel.js");
 
@@ -45675,11 +46206,11 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -46228,7 +46759,13 @@ function getViewRect(model, api) {
 }
 
 function makeIcon(timelineModel, objPath, rect, opts) {
-  var icon = graphic.makePath(timelineModel.get(objPath).replace(/^path:\/\//, ''), zrUtil.clone(opts || {}), new BoundingRect(rect[0], rect[1], rect[2], rect[3]), 'center');
+  var style = opts.style;
+  var icon = graphic.createIcon(timelineModel.get(objPath), opts || {}, new BoundingRect(rect[0], rect[1], rect[2], rect[3])); // TODO createIcon won't use style in opt.
+
+  if (style) {
+    icon.setStyle(style);
+  }
+
   return icon;
 }
 /**
@@ -46338,7 +46875,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Axis = __webpack_require__(/*! ../../coord/Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -46441,7 +46978,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ComponentModel = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -46727,7 +47264,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -46863,7 +47400,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -46999,7 +47536,7 @@ Component.registerSubTypeDefaulter('timeline', function () {
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var echarts = __webpack_require__(/*! ../echarts */ "./node_modules/echarts/lib/echarts.js");
 
@@ -47141,7 +47678,7 @@ echarts.extendComponentView({
 
     if (sublink) {
       subTextEl.on('click', function () {
-        windowOpen(link, '_' + titleModel.get('subtarget'));
+        windowOpen(sublink, '_' + titleModel.get('subtarget'));
       });
     }
 
@@ -47296,7 +47833,7 @@ __webpack_require__(/*! ./toolbox/feature/Restore */ "./node_modules/echarts/lib
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var featureManager = __webpack_require__(/*! ./featureManager */ "./node_modules/echarts/lib/component/toolbox/featureManager.js");
 
@@ -47398,9 +47935,9 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var featureManager = __webpack_require__(/*! ./featureManager */ "./node_modules/echarts/lib/component/toolbox/featureManager.js");
 
@@ -47699,7 +48236,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var featureManager = __webpack_require__(/*! ../featureManager */ "./node_modules/echarts/lib/component/toolbox/featureManager.js");
 
@@ -47865,9 +48402,9 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var lang = __webpack_require__(/*! ../../../lang */ "./node_modules/echarts/lib/lang.js");
 
@@ -47961,7 +48498,8 @@ function assembleSeriesWithCategoryAxis(series) {
     }));
     var columns = [categoryAxis.model.getCategories()];
     zrUtil.each(group.series, function (series) {
-      columns.push(series.getRawData().mapArray(valueAxisDim, function (val) {
+      var rawData = series.getRawData();
+      columns.push(series.getRawData().mapArray(rawData.mapDimension(valueAxisDim), function (val) {
         return val;
       }));
     }); // Assemble table content
@@ -48087,7 +48625,15 @@ function parseListContents(str) {
   var data = [];
 
   for (var i = 0; i < lines.length; i++) {
-    var items = trim(lines[i]).split(itemSplitRegex);
+    // if line is empty, ignore it.
+    // there is a case that a user forgot to delete `\n`.
+    var line = trim(lines[i]);
+
+    if (!line) {
+      continue;
+    }
+
+    var items = line.split(itemSplitRegex);
     var name = '';
     var value;
     var hasName = false;
@@ -48294,14 +48840,20 @@ function tryMergeDataOption(newData, originalData) {
     var original = originalData && originalData[idx];
 
     if (zrUtil.isObject(original) && !zrUtil.isArray(original)) {
-      if (zrUtil.isObject(newVal) && !zrUtil.isArray(newVal)) {
-        newVal = newVal.value;
-      } // Original data has option
+      var newValIsObject = zrUtil.isObject(newVal) && !zrUtil.isArray(newVal);
+
+      if (!newValIsObject) {
+        newVal = {
+          value: newVal
+        };
+      } // original data has name but new data has no name
 
 
-      return zrUtil.defaults({
-        value: newVal
-      }, original);
+      var shouldDeleteName = original.name != null && newVal.name == null; // Original data has option
+
+      newVal = zrUtil.defaults(newVal, original);
+      shouldDeleteName && delete newVal.name;
+      return newVal;
     } else {
       return newVal;
     }
@@ -48371,7 +48923,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var BrushController = __webpack_require__(/*! ../../helper/BrushController */ "./node_modules/echarts/lib/component/helper/BrushController.js");
 
@@ -48434,7 +48986,11 @@ DataZoom.defaultOption = {
     back: 'M22,1.4L9.9,13.5l12.3,12.3 M10.3,13.5H54.9v44.6 H10.3v-26'
   },
   // `zoom`, `back`
-  title: zrUtil.clone(dataZoomLang.title)
+  title: zrUtil.clone(dataZoomLang.title),
+  brushStyle: {
+    borderWidth: 0,
+    color: 'rgba(0,0,0,0.2)'
+  }
 };
 var proto = DataZoom.prototype;
 
@@ -48594,11 +49150,7 @@ function updateZoomBtnStatus(featureModel, ecModel, view, payload, api) {
     return targetInfo.xAxisDeclared && !targetInfo.yAxisDeclared ? 'lineX' : !targetInfo.xAxisDeclared && targetInfo.yAxisDeclared ? 'lineY' : 'rect';
   })).enableBrush(zoomActive ? {
     brushType: 'auto',
-    brushStyle: {
-      // FIXME user customized?
-      lineWidth: 0,
-      fill: 'rgba(0,0,0,0.2)'
-    }
+    brushStyle: featureModel.getModel('brushStyle').getItemStyle()
   } : false);
 }
 
@@ -48710,7 +49262,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var lang = __webpack_require__(/*! ../../../lang */ "./node_modules/echarts/lib/lang.js");
 
@@ -49026,7 +49578,7 @@ module.exports = _default;
 * under the License.
 */
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var lang = __webpack_require__(/*! ../../../lang */ "./node_modules/echarts/lib/lang.js");
 
@@ -49093,7 +49645,8 @@ proto.onclick = function (ecModel, api) {
     $a.target = '_blank';
     $a.href = url;
     var evt = new MouseEvent('click', {
-      view: window,
+      // some micro front-end framework， window maybe is a Proxy
+      view: document.defaultView,
       bubbles: true,
       cancelable: false
     });
@@ -49291,15 +49844,15 @@ function () {});
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var zrColor = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var zrColor = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
-var eventUtil = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventUtil = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/zrender/lib/core/event.js");
 
-var domUtil = __webpack_require__(/*! zrender/lib/core/dom */ "./node_modules/echarts/node_modules/zrender/lib/core/dom.js");
+var domUtil = __webpack_require__(/*! zrender/lib/core/dom */ "./node_modules/zrender/lib/core/dom.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var formatUtil = __webpack_require__(/*! ../../util/format */ "./node_modules/echarts/lib/util/format.js");
 
@@ -49351,7 +49904,18 @@ function assembleFont(textStyleModel) {
   var color = textStyleModel.getTextColor();
   color && cssText.push('color:' + color);
   cssText.push('font:' + textStyleModel.getFont());
-  fontSize && cssText.push('line-height:' + Math.round(fontSize * 3 / 2) + 'px');
+  var lineHeight = textStyleModel.get('lineHeight');
+
+  if (lineHeight == null) {
+    lineHeight = Math.round(fontSize * 3 / 2);
+  }
+
+  fontSize && cssText.push('line-height:' + lineHeight + 'px');
+  var shadowColor = textStyleModel.get('textShadowColor');
+  var shadowBlur = textStyleModel.get('textShadowBlur') || 0;
+  var shadowOffsetX = textStyleModel.get('textShadowOffsetX') || 0;
+  var shadowOffsetY = textStyleModel.get('textShadowOffsetY') || 0;
+  shadowBlur && cssText.push('text-shadow:' + shadowOffsetX + 'px ' + shadowOffsetY + 'px ' + shadowBlur + 'px ' + shadowColor);
   each(['decoration', 'align'], function (name) {
     var val = textStyleModel.get(name);
     val && cssText.push('text-' + name + ':' + val);
@@ -49425,6 +49989,10 @@ function makeStyleCoord(out, zr, appendToBody, zrX, zrY) {
       out[1] += viewportRootOffset.offsetTop;
     }
   }
+
+  out[2] = out[0] / zr.getWidth(); // The ratio of left to width
+
+  out[3] = out[1] / zr.getHeight(); // The ratio of top to height
 }
 /**
  * @alias module:echarts/component/tooltip/TooltipContent
@@ -49449,7 +50017,8 @@ function TooltipContent(container, api, opt) {
   this.el = el;
   var zr = this._zr = api.getZr();
   var appendToBody = this._appendToBody = opt && opt.appendToBody;
-  this._styleCoord = [0, 0];
+  this._styleCoord = [0, 0, 0, 0]; // [left, top, left/width, top/height]
+
   makeStyleCoord(this._styleCoord, zr, appendToBody, api.getWidth() / 2, api.getHeight() / 2);
 
   if (appendToBody) {
@@ -49520,7 +50089,7 @@ TooltipContent.prototype = {
   /**
    * Update when tooltip is rendered
    */
-  update: function () {
+  update: function (tooltipModel) {
     // FIXME
     // Move this logic to ec main?
     var container = this._container;
@@ -49529,10 +50098,28 @@ TooltipContent.prototype = {
 
     if (domStyle.position !== 'absolute' && stl.position !== 'absolute') {
       domStyle.position = 'relative';
-    } // Hide the tooltip
+    }
+
+    var alwaysShowContent = tooltipModel.get('alwaysShowContent');
+    alwaysShowContent && this._moveTooltipIfResized(); // Hide the tooltip
     // PENDING
     // this.hide();
+  },
 
+  /**
+   * when `alwaysShowContent` is true,
+   * we should move the tooltip after chart resized
+   */
+  _moveTooltipIfResized: function () {
+    var ratioX = this._styleCoord[2]; // The ratio of left to width
+
+    var ratioY = this._styleCoord[3]; // The ratio of top to height
+
+    var realX = ratioX * this._zr.getWidth();
+
+    var realY = ratioY * this._zr.getHeight();
+
+    this.moveTo(realX, realY);
   },
   show: function (tooltipModel) {
     clearTimeout(this._hideTimeout);
@@ -49542,10 +50129,10 @@ TooltipContent.prototype = {
     // http://stackoverflow.com/questions/21125587/css3-transition-not-working-in-chrome-anymore
     // we should set initial value to `left` and `top`.
     + ';left:' + styleCoord[0] + 'px;top:' + styleCoord[1] + 'px;' + (tooltipModel.get('extraCssText') || '');
-    el.style.display = el.innerHTML ? 'block' : 'none'; // If mouse occsionally move over the tooltip, a mouseout event will be
-    // triggered by canvas, and cuase some unexpectable result like dragging
+    el.style.display = el.innerHTML ? 'block' : 'none'; // If mouse occasionally move over the tooltip, a mouseout event will be
+    // triggered by canvas, and cause some unexpectable result like dragging
     // stop, "unfocusAdjacency". Here `pointer-events: none` is used to solve
-    // it. Although it is not suppored by IE8~IE10, fortunately it is a rare
+    // it. Although it is not supported by IE8~IE10, fortunately it is a rare
     // scenario.
 
     el.style.pointerEvents = this._enterable ? 'auto' : 'none';
@@ -49575,7 +50162,7 @@ TooltipContent.prototype = {
   hideLater: function (time) {
     if (this._show && !(this._inContent && this._enterable)) {
       if (time) {
-        this._hideDelay = time; // Set show false to avoid invoke hideLater mutiple times
+        this._hideDelay = time; // Set show false to avoid invoke hideLater multiple times
 
         this._show = false;
         this._hideTimeout = setTimeout(zrUtil.bind(this.hide, this), time);
@@ -49773,9 +50360,11 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Text = __webpack_require__(/*! zrender/lib/graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var Text = __webpack_require__(/*! zrender/lib/graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
+
+var graphicUtil = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -49796,13 +50385,24 @@ var Text = __webpack_require__(/*! zrender/lib/graphic/Text */ "./node_modules/e
 * under the License.
 */
 // import Group from 'zrender/src/container/Group';
+function makeStyleCoord(out, zr, zrX, zrY) {
+  out[0] = zrX;
+  out[1] = zrY;
+  out[2] = out[0] / zr.getWidth(); // The ratio of left to width
 
+  out[3] = out[1] / zr.getHeight(); // The ratio of top to height
+}
 /**
  * @alias module:echarts/component/tooltip/TooltipRichContent
  * @constructor
  */
+
+
 function TooltipRichContent(api) {
-  this._zr = api.getZr();
+  var zr = this._zr = api.getZr();
+  this._styleCoord = [0, 0, 0, 0]; // [left, top, left/width, top/height]
+
+  makeStyleCoord(this._styleCoord, zr, api.getWidth() / 2, api.getHeight() / 2);
   this._show = false;
   /**
    * @private
@@ -49823,7 +50423,25 @@ TooltipRichContent.prototype = {
   /**
    * Update when tooltip is rendered
    */
-  update: function () {// noop
+  update: function (tooltipModel) {
+    var alwaysShowContent = tooltipModel.get('alwaysShowContent');
+    alwaysShowContent && this._moveTooltipIfResized();
+  },
+
+  /**
+   * when `alwaysShowContent` is true,
+   * we should move the tooltip after chart resized
+   */
+  _moveTooltipIfResized: function () {
+    var ratioX = this._styleCoord[2]; // The ratio of left to width
+
+    var ratioY = this._styleCoord[3]; // The ratio of top to height
+
+    var realX = ratioX * this._zr.getWidth();
+
+    var realY = ratioY * this._zr.getHeight();
+
+    this.moveTo(realX, realY);
   },
   show: function (tooltipModel) {
     if (this._hideTimeout) {
@@ -49878,16 +50496,24 @@ TooltipRichContent.prototype = {
       startId = text.indexOf('{marker');
     }
 
+    var textStyleModel = tooltipModel.getModel('textStyle');
+    var fontSize = textStyleModel.get('fontSize');
+    var lineHeight = tooltipModel.get('textLineHeight');
+
+    if (lineHeight == null) {
+      lineHeight = Math.round(fontSize * 3 / 2);
+    }
+
     this.el = new Text({
-      style: {
+      style: graphicUtil.setTextStyle({}, textStyleModel, {
         rich: markers,
         text: content,
-        textLineHeight: 20,
         textBackgroundColor: tooltipModel.get('backgroundColor'),
         textBorderRadius: tooltipModel.get('borderRadius'),
         textFill: tooltipModel.get('textStyle.color'),
-        textPadding: tooltipModel.get('padding')
-      },
+        textPadding: tooltipModel.get('padding'),
+        textLineHeight: lineHeight
+      }),
       z: tooltipModel.get('z')
     });
 
@@ -49922,7 +50548,9 @@ TooltipRichContent.prototype = {
   },
   moveTo: function (x, y) {
     if (this.el) {
-      this.el.attr('position', [x, y]);
+      var styleCoord = this._styleCoord;
+      makeStyleCoord(styleCoord, this._zr, x, y);
+      this.el.attr('position', [styleCoord[0], styleCoord[1]]);
     }
   },
   hide: function () {
@@ -49935,7 +50563,7 @@ TooltipRichContent.prototype = {
   hideLater: function (time) {
     if (this._show && !(this._inContent && this._enterable)) {
       if (time) {
-        this._hideDelay = time; // Set show false to avoid invoke hideLater mutiple times
+        this._hideDelay = time; // Set show false to avoid invoke hideLater multiple times
 
         this._show = false;
         this._hideTimeout = setTimeout(zrUtil.bind(this.hide, this), time);
@@ -49946,6 +50574,13 @@ TooltipRichContent.prototype = {
   },
   isShow: function () {
     return this._show;
+  },
+  dispose: function () {
+    clearTimeout(this._hideTimeout);
+
+    if (this.el) {
+      this._zr.remove(this.el);
+    }
   },
   getOuterSize: function () {
     var size = this.getSize();
@@ -49989,9 +50624,9 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var TooltipContent = __webpack_require__(/*! ./TooltipContent */ "./node_modules/echarts/lib/component/tooltip/TooltipContent.js");
 
@@ -50112,7 +50747,7 @@ var _default = echarts.extendComponentView({
 
     this._alwaysShowContent = tooltipModel.get('alwaysShowContent');
     var tooltipContent = this._tooltipContent;
-    tooltipContent.update();
+    tooltipContent.update(tooltipModel);
     tooltipContent.setEnterable(tooltipModel.get('enterable'));
 
     this._initGlobalListener();
@@ -50316,7 +50951,7 @@ var _default = echarts.extendComponentView({
   _showOrMove: function (tooltipModel, cb) {
     // showDelay is used in this case: tooltip.enterable is set
     // as true. User intent to move mouse into tooltip and click
-    // something. `showDelay` makes it easyer to enter the content
+    // something. `showDelay` makes it easier to enter the content
     // but tooltip do not move immediately.
     var delay = tooltipModel.get('showDelay');
     cb = zrUtil.bind(cb, this);
@@ -50382,7 +51017,7 @@ var _default = echarts.extendComponentView({
           }
         }); // Default tooltip content
         // FIXME
-        // (1) shold be the first data which has name?
+        // (1) should be the first data which has name?
         // (2) themeRiver, firstDataIndex is array, and first line is unnecessary.
 
         var firstLine = valueLabel;
@@ -50472,7 +51107,7 @@ var _default = echarts.extendComponentView({
     var subTooltipModel = new Model(tooltipOpt, this._tooltipModel, this._ecModel);
     var defaultHtml = subTooltipModel.get('content');
     var asyncTicket = Math.random(); // Do not check whether `trigger` is 'none' here, because `trigger`
-    // only works on cooridinate system. In fact, we have not found case
+    // only works on coordinate system. In fact, we have not found case
     // that requires setting `trigger` nothing on component yet.
 
     this._showOrMove(subTooltipModel, function () {
@@ -50811,7 +51446,7 @@ __webpack_require__(/*! ./visualMapPiecewise */ "./node_modules/echarts/lib/comp
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var VisualMapModel = __webpack_require__(/*! ./VisualMapModel */ "./node_modules/echarts/lib/component/visualMap/VisualMapModel.js");
 
@@ -51095,11 +51730,11 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var LinearGradient = __webpack_require__(/*! zrender/lib/graphic/LinearGradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js");
+var LinearGradient = __webpack_require__(/*! zrender/lib/graphic/LinearGradient */ "./node_modules/zrender/lib/graphic/LinearGradient.js");
 
-var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventTool = __webpack_require__(/*! zrender/lib/core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var VisualMapView = __webpack_require__(/*! ./VisualMapView */ "./node_modules/echarts/lib/component/visualMap/VisualMapView.js");
 
@@ -51905,7 +52540,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var VisualMapModel = __webpack_require__(/*! ./VisualMapModel */ "./node_modules/echarts/lib/component/visualMap/VisualMapModel.js");
 
@@ -52451,7 +53086,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var VisualMapView = __webpack_require__(/*! ./VisualMapView */ "./node_modules/echarts/lib/component/visualMap/VisualMapView.js");
 
@@ -52702,9 +53337,9 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var visualDefault = __webpack_require__(/*! ../../visual/visualDefault */ "./node_modules/echarts/lib/visual/visualDefault.js");
 
@@ -53080,7 +53715,7 @@ var VisualMapModel = echarts.extendComponentModel({
       // Originally we use visualMap.color as the default color, but setOption at
       // the second time the default color will be erased. So we change to use
       // constant DEFAULT_COLOR.
-      // If user do not want the defualt color, set inRange: {color: null}.
+      // If user do not want the default color, set inRange: {color: null}.
 
 
       base.inRange = base.inRange || {
@@ -53255,7 +53890,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -53454,7 +54089,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echarts/lib/util/layout.js");
 
@@ -53563,7 +54198,7 @@ exports.makeHighDownBatch = makeHighDownBatch;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -53712,7 +54347,7 @@ Component.registerSubTypeDefaulter('visualMap', function (option) {
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var visualSolution = __webpack_require__(/*! ../../visual/visualSolution */ "./node_modules/echarts/lib/visual/visualSolution.js");
 
@@ -54102,7 +54737,7 @@ exports.__DEV__ = __DEV__;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var map = _util.map;
@@ -54507,15 +55142,15 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/zrender/lib/mixin/Transformable.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -54840,7 +55475,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -54870,7 +55505,7 @@ var defaultOption = {
   name: '',
   // 'start' | 'middle' | 'end'
   nameLocation: 'end',
-  // By degree. By defualt auto rotate by nameLocation.
+  // By degree. By default auto rotate by nameLocation.
   nameRotate: null,
   nameTruncate: {
     maxWidth: null,
@@ -55064,7 +55699,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var OrdinalScale = __webpack_require__(/*! ../scale/Ordinal */ "./node_modules/echarts/lib/scale/Ordinal.js");
 
@@ -55080,7 +55715,7 @@ var prepareLayoutBarSeries = _barGrid.prepareLayoutBarSeries;
 var makeColumnLayout = _barGrid.makeColumnLayout;
 var retrieveColumnLayout = _barGrid.retrieveColumnLayout;
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 __webpack_require__(/*! ../scale/Time */ "./node_modules/echarts/lib/scale/Time.js");
 
@@ -55439,8 +56074,8 @@ function rotateTextRect(textRect, rotate) {
   var boundingBox = textRect.plain();
   var beforeWidth = boundingBox.width;
   var beforeHeight = boundingBox.height;
-  var afterWidth = beforeWidth * Math.cos(rotateRadians) + beforeHeight * Math.sin(rotateRadians);
-  var afterHeight = beforeWidth * Math.sin(rotateRadians) + beforeHeight * Math.cos(rotateRadians);
+  var afterWidth = beforeWidth * Math.abs(Math.cos(rotateRadians)) + Math.abs(beforeHeight * Math.sin(rotateRadians));
+  var afterHeight = beforeWidth * Math.abs(Math.sin(rotateRadians)) + Math.abs(beforeHeight * Math.cos(rotateRadians));
   var rotatedRect = new BoundingRect(boundingBox.x, boundingBox.y, afterWidth, afterHeight);
   return rotatedRect;
 }
@@ -55505,7 +56140,7 @@ exports.shouldShowAllLabels = shouldShowAllLabels;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -55619,7 +56254,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var axisDefault = __webpack_require__(/*! ./axisDefault */ "./node_modules/echarts/lib/coord/axisDefault.js");
 
@@ -55747,9 +56382,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var _model = __webpack_require__(/*! ../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -56129,7 +56764,7 @@ exports.calculateCategoryInterval = calculateCategoryInterval;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echarts/lib/util/layout.js");
 
@@ -56571,7 +57206,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ComponentModel = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -56820,7 +57455,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Axis = __webpack_require__(/*! ../Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -56977,7 +57612,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ComponentModel = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -57094,7 +57729,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -57243,9 +57878,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var Cartesian = __webpack_require__(/*! ./Cartesian */ "./node_modules/echarts/lib/coord/cartesian/Cartesian.js");
 
@@ -57417,7 +58052,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isObject = _util.isObject;
 var each = _util.each;
@@ -58115,7 +58750,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -58233,7 +58868,7 @@ exports.layout = layout;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -58316,9 +58951,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var View = __webpack_require__(/*! ../View */ "./node_modules/echarts/lib/coord/View.js");
 
@@ -58544,7 +59179,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -58669,8 +59304,9 @@ var GeoModel = ComponentModel.extend({
    * @return {string}
    */
   getFormattedLabel: function (name, status) {
+    status = status || 'normal';
     var regionModel = this.getRegionModel(name);
-    var formatter = regionModel.get('label' + (status === 'normal' ? '.' : status + '.') + 'formatter');
+    var formatter = regionModel.get((status === 'normal' ? '' : status + '.') + 'label.formatter');
     var params = {
       name: name
     };
@@ -58722,13 +59358,13 @@ module.exports = _default;
 * under the License.
 */
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+var bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/zrender/lib/core/bbox.js");
 
-var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var polygonContain = __webpack_require__(/*! zrender/lib/contain/polygon */ "./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js");
+var polygonContain = __webpack_require__(/*! zrender/lib/contain/polygon */ "./node_modules/zrender/lib/contain/polygon.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -59073,7 +59709,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Region = __webpack_require__(/*! ../Region */ "./node_modules/echarts/lib/coord/geo/Region.js");
 
@@ -59227,7 +59863,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Geo = __webpack_require__(/*! ./Geo */ "./node_modules/echarts/lib/coord/geo/Geo.js");
 
@@ -59464,7 +60100,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 
@@ -59590,21 +60226,21 @@ module.exports = _default;
 * under the License.
 */
 
-var _parseSVG = __webpack_require__(/*! zrender/lib/tool/parseSVG */ "./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js");
+var _parseSVG = __webpack_require__(/*! zrender/lib/tool/parseSVG */ "./node_modules/zrender/lib/tool/parseSVG.js");
 
 var parseSVG = _parseSVG.parseSVG;
 var makeViewBoxTransform = _parseSVG.makeViewBoxTransform;
 
-var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
-var Rect = __webpack_require__(/*! zrender/lib/graphic/shape/Rect */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js");
+var Rect = __webpack_require__(/*! zrender/lib/graphic/shape/Rect */ "./node_modules/zrender/lib/graphic/shape/Rect.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var assert = _util.assert;
 var createHashMap = _util.createHashMap;
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -59772,7 +60408,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var createHashMap = _util.createHashMap;
@@ -59783,7 +60419,7 @@ var geoJSONLoader = __webpack_require__(/*! ./geoJSONLoader */ "./node_modules/e
 
 var geoSVGLoader = __webpack_require__(/*! ./geoSVGLoader */ "./node_modules/echarts/lib/coord/geo/geoSVGLoader.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -59916,7 +60552,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var isString = _util.isString;
@@ -59924,7 +60560,7 @@ var isArray = _util.isArray;
 var each = _util.each;
 var assert = _util.assert;
 
-var _parseSVG = __webpack_require__(/*! zrender/lib/tool/parseSVG */ "./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js");
+var _parseSVG = __webpack_require__(/*! zrender/lib/tool/parseSVG */ "./node_modules/zrender/lib/tool/parseSVG.js");
 
 var parseXML = _parseSVG.parseXML;
 
@@ -60035,7 +60671,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Region = __webpack_require__(/*! ./Region */ "./node_modules/echarts/lib/coord/geo/Region.js");
 
@@ -60200,7 +60836,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -60288,7 +60924,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ComponentModel = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -60455,9 +61091,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 var layoutUtil = __webpack_require__(/*! ../../util/layout */ "./node_modules/echarts/lib/util/layout.js");
 
@@ -60980,7 +61616,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Axis = __webpack_require__(/*! ../Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -61080,7 +61716,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Component = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -61322,7 +61958,7 @@ CoordinateSystem.register('parallel', {
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -61423,9 +62059,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var Axis = __webpack_require__(/*! ../Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -61565,7 +62201,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ComponentModel = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -62052,7 +62688,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Axis = __webpack_require__(/*! ../Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -62137,7 +62773,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Polar = __webpack_require__(/*! ./Polar */ "./node_modules/echarts/lib/coord/polar/Polar.js");
 
@@ -62325,7 +62961,7 @@ CoordinateSystem.register('polar', polarCreator);
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -62419,7 +63055,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Axis = __webpack_require__(/*! ../Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -62500,7 +63136,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var IndicatorAxis = __webpack_require__(/*! ./IndicatorAxis */ "./node_modules/echarts/lib/coord/radar/IndicatorAxis.js");
 
@@ -62798,7 +63434,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(/*! ../../echarts */ "./node_modules/echarts/lib/echarts.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var axisDefault = __webpack_require__(/*! ../axisDefault */ "./node_modules/echarts/lib/coord/axisDefault.js");
 
@@ -62966,7 +63602,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var ComponentModel = __webpack_require__(/*! ../../model/Component */ "./node_modules/echarts/lib/model/Component.js");
 
@@ -63100,7 +63736,7 @@ var _layout = __webpack_require__(/*! ../../util/layout */ "./node_modules/echar
 
 var getLayoutRect = _layout.getLayoutRect;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 
@@ -63390,7 +64026,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Axis = __webpack_require__(/*! ../Axis */ "./node_modules/echarts/lib/coord/Axis.js");
 
@@ -63527,7 +64163,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -63606,7 +64242,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -63974,7 +64610,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -64145,7 +64781,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _clazz = __webpack_require__(/*! ../util/clazz */ "./node_modules/echarts/lib/util/clazz.js");
 
@@ -64314,12 +64950,7 @@ graphProto.addEdge = function (n1, n2, dataIndex) {
     return;
   }
 
-  var key = n1.id + '-' + n2.id; // PENDING
-
-  if (edgesMap[key]) {
-    return;
-  }
-
+  var key = n1.id + '-' + n2.id;
   var edge = new Edge(n1, n2, dataIndex);
   edge.hostGraph = this;
 
@@ -64726,7 +65357,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Model = __webpack_require__(/*! ../model/Model */ "./node_modules/echarts/lib/model/Model.js");
 
@@ -65123,7 +65754,7 @@ listProto.mapDimension = function (coordDim, idx) {
  * Initialize from data
  * @param {Array.<Object|number|Array>} data source or data or data provider.
  * @param {Array.<string>} [nameLIst] The name of a datum is used on data diff and
- *        defualt label/tooltip.
+ *        default label/tooltip.
  *        A name can be specified in encode.itemName,
  *        or dataItem.name (only for series option data),
  *        or provided in nameList from outside.
@@ -66817,7 +67448,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var isObject = _util.isObject;
@@ -66994,7 +67625,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var isTypedArray = _util.isTypedArray;
@@ -67176,9 +67807,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
-
-var Model = __webpack_require__(/*! ../model/Model */ "./node_modules/echarts/lib/model/Model.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var linkList = __webpack_require__(/*! ./helper/linkList */ "./node_modules/echarts/lib/data/helper/linkList.js");
 
@@ -67439,20 +68068,7 @@ TreeNode.prototype = {
 
     var hostTree = this.hostTree;
     var itemModel = hostTree.data.getItemModel(this.dataIndex);
-    var levelModel = this.getLevelModel(); // FIXME: refactor levelModel to "beforeLink", and remove levelModel here.
-
-    if (levelModel) {
-      return itemModel.getModel(path, levelModel.getModel(path));
-    } else {
-      return itemModel.getModel(path);
-    }
-  },
-
-  /**
-   * @return {module:echarts/model/Model}
-   */
-  getLevelModel: function () {
-    return (this.hostTree.levelModels || [])[this.depth];
+    return itemModel.getModel(path);
   },
 
   /**
@@ -67525,10 +68141,9 @@ TreeNode.prototype = {
  * @constructor
  * @alias module:echarts/data/Tree
  * @param {module:echarts/model/Model} hostModel
- * @param {Array.<Object>} levelOptions
  */
 
-function Tree(hostModel, levelOptions) {
+function Tree(hostModel) {
   /**
    * @type {module:echarts/data/Tree~TreeNode}
    * @readOnly
@@ -67554,15 +68169,6 @@ function Tree(hostModel, levelOptions) {
    */
 
   this.hostModel = hostModel;
-  /**
-   * @private
-   * @readOnly
-   * @type {Array.<module:echarts/model/Model}
-   */
-
-  this.levelModels = zrUtil.map(levelOptions || [], function (levelDefine) {
-    return new Model(levelDefine, hostModel, hostModel.ecModel);
-  });
 }
 
 Tree.prototype = {
@@ -67649,13 +68255,11 @@ Tree.prototype = {
  * @static
  * @param {Object} dataRoot Root node.
  * @param {module:echarts/model/Model} hostModel
- * @param {Object} treeOptions
- * @param {Array.<Object>} treeOptions.levels
  * @return module:echarts/data/Tree
  */
 
-Tree.createTree = function (dataRoot, hostModel, treeOptions, beforeLink) {
-  var tree = new Tree(hostModel, treeOptions && treeOptions.levels);
+Tree.createTree = function (dataRoot, hostModel, beforeLink) {
+  var tree = new Tree(hostModel);
   var listData = [];
   var dimMax = 1;
   buildHierarchy(dataRoot);
@@ -67745,7 +68349,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -68164,7 +68768,7 @@ var _config = __webpack_require__(/*! ../../config */ "./node_modules/echarts/li
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isTypedArray = _util.isTypedArray;
 var extend = _util.extend;
@@ -68548,7 +69152,7 @@ exports.retrieveRawAttr = retrieveRawAttr;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var isString = _util.isString;
@@ -68740,7 +69344,7 @@ exports.getStackedDimension = getStackedDimension;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var createHashMap = _util.createHashMap;
@@ -68915,7 +69519,7 @@ exports.getDimensionTypeByAxis = getDimensionTypeByAxis;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -69101,7 +69705,7 @@ var _model = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts
 var makeInner = _model.makeInner;
 var getDataItemValue = _model.getDataItemValue;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -69862,17 +70466,17 @@ var _config = __webpack_require__(/*! ./config */ "./node_modules/echarts/lib/co
 
 var __DEV__ = _config.__DEV__;
 
-var zrender = __webpack_require__(/*! zrender/lib/zrender */ "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+var zrender = __webpack_require__(/*! zrender/lib/zrender */ "./node_modules/zrender/lib/zrender.js");
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var colorTool = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var colorTool = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
-var timsort = __webpack_require__(/*! zrender/lib/core/timsort */ "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js");
+var timsort = __webpack_require__(/*! zrender/lib/core/timsort */ "./node_modules/zrender/lib/core/timsort.js");
 
-var Eventful = __webpack_require__(/*! zrender/lib/mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! zrender/lib/mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
 var GlobalModel = __webpack_require__(/*! ./model/Global */ "./node_modules/echarts/lib/model/Global.js");
 
@@ -69941,9 +70545,9 @@ var each = zrUtil.each;
 var isFunction = zrUtil.isFunction;
 var isObject = zrUtil.isObject;
 var parseClassType = ComponentModel.parseClassType;
-var version = '4.8.0';
+var version = '4.9.0';
 var dependencies = {
-  zrender: '4.3.1'
+  zrender: '4.3.2'
 };
 var TEST_FRAME_REMAIN_TIME = 1;
 var PRIORITY_PROCESSOR_FILTER = 1000;
@@ -72214,21 +72818,21 @@ var ___ec_export = __webpack_require__(/*! ./export */ "./node_modules/echarts/l
 * under the License.
 */
 
-var zrender = __webpack_require__(/*! zrender/lib/zrender */ "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+var zrender = __webpack_require__(/*! zrender/lib/zrender */ "./node_modules/zrender/lib/zrender.js");
 
 exports.zrender = zrender;
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 exports.matrix = matrix;
 
-var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 exports.vector = vector;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var colorTool = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var colorTool = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
 exports.color = colorTool;
 
@@ -72267,7 +72871,7 @@ var _Axis = __webpack_require__(/*! ./coord/Axis */ "./node_modules/echarts/lib/
 
 exports.Axis = _Axis;
 
-var _env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var _env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 exports.env = _env;
 
@@ -72335,7 +72939,7 @@ exports.graphic = graphic;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createListFromArray = __webpack_require__(/*! ./chart/helper/createListFromArray */ "./node_modules/echarts/lib/chart/helper/createListFromArray.js");
 
@@ -72643,7 +73247,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _number = __webpack_require__(/*! ../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -73234,7 +73838,7 @@ exports.largeLayout = largeLayout;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _number = __webpack_require__(/*! ../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -73307,7 +73911,7 @@ function barLayoutPolar(seriesType, ecModel, api) {
     /*, baseDim*/
     );
     var clampLayout = baseAxis.dim !== 'radius' || !seriesModel.get('roundCap', true);
-    var valueAxisStart = valueAxis.getExtent()[0];
+    var valueAxisStart = valueAxis.dim === 'radius' ? valueAxis.dataToRadius(0) : valueAxis.dataToAngle(0);
 
     for (var idx = 0, len = data.count(); idx < len; idx++) {
       var value = data.get(valueDim, idx);
@@ -73527,7 +74131,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var map = _util.map;
 
@@ -73655,11 +74259,11 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -73812,7 +74416,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Model = __webpack_require__(/*! ./Model */ "./node_modules/echarts/lib/model/Model.js");
 
@@ -74070,7 +74674,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var filter = _util.filter;
@@ -74801,9 +75405,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var _model = __webpack_require__(/*! ../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -75049,7 +75653,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -75516,9 +76120,9 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var _format = __webpack_require__(/*! ../util/format */ "./node_modules/echarts/lib/util/format.js");
 
@@ -76778,7 +77382,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -76860,7 +77464,7 @@ module.exports = _default;
 * under the License.
 */
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var graphicUtil = __webpack_require__(/*! ../../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
@@ -76945,7 +77549,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var retrieve = _util.retrieve;
@@ -77141,7 +77745,7 @@ exports.getCoordSysInfoBySeries = getCoordSysInfoBySeries;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var isArray = _util.isArray;
@@ -77295,7 +77899,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var modelUtil = __webpack_require__(/*! ../../util/model */ "./node_modules/echarts/lib/util/model.js");
 
@@ -77789,7 +78393,7 @@ function _default(seriesType) {
         var valueAxis = coordSys.getOtherAxis(baseAxis);
         var extent = baseAxis.getExtent(); // Coordinste system has been resized
 
-        var size = extent[1] - extent[0];
+        var size = Math.abs(extent[1] - extent[0]);
         var rate = Math.round(data.count() / size);
 
         if (rate > 1) {
@@ -77842,7 +78446,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -78308,7 +78912,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Scale = __webpack_require__(/*! ./Scale */ "./node_modules/echarts/lib/scale/Scale.js");
 
@@ -78530,7 +79134,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var Scale = __webpack_require__(/*! ./Scale */ "./node_modules/echarts/lib/scale/Scale.js");
 
@@ -78894,7 +79498,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var numberUtil = __webpack_require__(/*! ../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -79261,7 +79865,7 @@ exports.fixExtent = fixExtent;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 var map = _util.map;
@@ -79344,7 +79948,7 @@ var proto = Scheduler.prototype;
  */
 
 proto.restoreData = function (ecModel, payload) {
-  // TODO: Only restroe needed series and components, but not all components.
+  // TODO: Only restore needed series and components, but not all components.
   // Currently `restoreData` of all of the series and component will be called.
   // But some independent components like `title`, `legend`, `graphic`, `toolbox`,
   // `tooltip`, `axisPointer`, etc, do not need series refresh when `setOption`,
@@ -79847,7 +80451,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var assert = _util.assert;
 var isArray = _util.isArray;
@@ -80438,7 +81042,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -80590,7 +81194,7 @@ var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/lib/c
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -80877,7 +81481,7 @@ exports.setReadOnly = setReadOnly;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var _clazz = __webpack_require__(/*! ./clazz */ "./node_modules/echarts/lib/util/clazz.js");
 
@@ -81106,9 +81710,9 @@ exports.enableTopologicalTravel = enableTopologicalTravel;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var numberUtil = __webpack_require__(/*! ./number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -81409,89 +82013,89 @@ exports.windowOpen = windowOpen;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var pathTool = __webpack_require__(/*! zrender/lib/tool/path */ "./node_modules/echarts/node_modules/zrender/lib/tool/path.js");
+var pathTool = __webpack_require__(/*! zrender/lib/tool/path */ "./node_modules/zrender/lib/tool/path.js");
 
-var colorTool = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var colorTool = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
-var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
-var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vector = __webpack_require__(/*! zrender/lib/core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! zrender/lib/graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/zrender/lib/mixin/Transformable.js");
 
-var ZImage = __webpack_require__(/*! zrender/lib/graphic/Image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+var ZImage = __webpack_require__(/*! zrender/lib/graphic/Image */ "./node_modules/zrender/lib/graphic/Image.js");
 
 exports.Image = ZImage;
 
-var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
 exports.Group = Group;
 
-var Text = __webpack_require__(/*! zrender/lib/graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var Text = __webpack_require__(/*! zrender/lib/graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
 
 exports.Text = Text;
 
-var Circle = __webpack_require__(/*! zrender/lib/graphic/shape/Circle */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js");
+var Circle = __webpack_require__(/*! zrender/lib/graphic/shape/Circle */ "./node_modules/zrender/lib/graphic/shape/Circle.js");
 
 exports.Circle = Circle;
 
-var Sector = __webpack_require__(/*! zrender/lib/graphic/shape/Sector */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Sector.js");
+var Sector = __webpack_require__(/*! zrender/lib/graphic/shape/Sector */ "./node_modules/zrender/lib/graphic/shape/Sector.js");
 
 exports.Sector = Sector;
 
-var Ring = __webpack_require__(/*! zrender/lib/graphic/shape/Ring */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ring.js");
+var Ring = __webpack_require__(/*! zrender/lib/graphic/shape/Ring */ "./node_modules/zrender/lib/graphic/shape/Ring.js");
 
 exports.Ring = Ring;
 
-var Polygon = __webpack_require__(/*! zrender/lib/graphic/shape/Polygon */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js");
+var Polygon = __webpack_require__(/*! zrender/lib/graphic/shape/Polygon */ "./node_modules/zrender/lib/graphic/shape/Polygon.js");
 
 exports.Polygon = Polygon;
 
-var Polyline = __webpack_require__(/*! zrender/lib/graphic/shape/Polyline */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js");
+var Polyline = __webpack_require__(/*! zrender/lib/graphic/shape/Polyline */ "./node_modules/zrender/lib/graphic/shape/Polyline.js");
 
 exports.Polyline = Polyline;
 
-var Rect = __webpack_require__(/*! zrender/lib/graphic/shape/Rect */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js");
+var Rect = __webpack_require__(/*! zrender/lib/graphic/shape/Rect */ "./node_modules/zrender/lib/graphic/shape/Rect.js");
 
 exports.Rect = Rect;
 
-var Line = __webpack_require__(/*! zrender/lib/graphic/shape/Line */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js");
+var Line = __webpack_require__(/*! zrender/lib/graphic/shape/Line */ "./node_modules/zrender/lib/graphic/shape/Line.js");
 
 exports.Line = Line;
 
-var BezierCurve = __webpack_require__(/*! zrender/lib/graphic/shape/BezierCurve */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/BezierCurve.js");
+var BezierCurve = __webpack_require__(/*! zrender/lib/graphic/shape/BezierCurve */ "./node_modules/zrender/lib/graphic/shape/BezierCurve.js");
 
 exports.BezierCurve = BezierCurve;
 
-var Arc = __webpack_require__(/*! zrender/lib/graphic/shape/Arc */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Arc.js");
+var Arc = __webpack_require__(/*! zrender/lib/graphic/shape/Arc */ "./node_modules/zrender/lib/graphic/shape/Arc.js");
 
 exports.Arc = Arc;
 
-var CompoundPath = __webpack_require__(/*! zrender/lib/graphic/CompoundPath */ "./node_modules/echarts/node_modules/zrender/lib/graphic/CompoundPath.js");
+var CompoundPath = __webpack_require__(/*! zrender/lib/graphic/CompoundPath */ "./node_modules/zrender/lib/graphic/CompoundPath.js");
 
 exports.CompoundPath = CompoundPath;
 
-var LinearGradient = __webpack_require__(/*! zrender/lib/graphic/LinearGradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js");
+var LinearGradient = __webpack_require__(/*! zrender/lib/graphic/LinearGradient */ "./node_modules/zrender/lib/graphic/LinearGradient.js");
 
 exports.LinearGradient = LinearGradient;
 
-var RadialGradient = __webpack_require__(/*! zrender/lib/graphic/RadialGradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/RadialGradient.js");
+var RadialGradient = __webpack_require__(/*! zrender/lib/graphic/RadialGradient */ "./node_modules/zrender/lib/graphic/RadialGradient.js");
 
 exports.RadialGradient = RadialGradient;
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 exports.BoundingRect = BoundingRect;
 
-var IncrementalDisplayable = __webpack_require__(/*! zrender/lib/graphic/IncrementalDisplayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
+var IncrementalDisplayable = __webpack_require__(/*! zrender/lib/graphic/IncrementalDisplayable */ "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
 
 exports.IncrementalDisplayable = IncrementalDisplayable;
 
-var subPixelOptimizeUtil = __webpack_require__(/*! zrender/lib/graphic/helper/subPixelOptimize */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
+var subPixelOptimizeUtil = __webpack_require__(/*! zrender/lib/graphic/helper/subPixelOptimize */ "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -82946,9 +83550,9 @@ exports.lineLineIntersect = lineLineIntersect;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 var _number = __webpack_require__(/*! ./number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -83479,9 +84083,9 @@ exports.copyLayoutParams = copyLayoutParams;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! zrender/lib/core/env */ "./node_modules/zrender/lib/core/env.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -84036,7 +84640,7 @@ exports.groupData = groupData;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -84735,13 +85339,13 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var graphic = __webpack_require__(/*! ./graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! zrender/lib/core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var _text = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var _text = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
 var calculateTextPosition = _text.calculateTextPosition;
 
@@ -85292,11 +85896,11 @@ exports.clear = clear;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 
-var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
 var componentUtil = __webpack_require__(/*! ../util/component */ "./node_modules/echarts/lib/util/component.js");
 
@@ -85588,7 +86192,7 @@ module.exports = _default;
 * under the License.
 */
 
-var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! zrender/lib/container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
 var componentUtil = __webpack_require__(/*! ../util/component */ "./node_modules/echarts/lib/util/component.js");
 
@@ -85769,9 +86373,9 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var zrColor = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var zrColor = __webpack_require__(/*! zrender/lib/tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
 var _number = __webpack_require__(/*! ../util/number */ "./node_modules/echarts/lib/util/number.js");
 
@@ -85821,7 +86425,7 @@ var CATEGORY_DEFAULT_VISUAL_INDEX = -1;
  *                                            visual data can be array or object
  *                                            (like: {cate1: '#222', none: '#fff'})
  *                                            or primary types (which represents
- *                                            defualt category visual), otherwise visual
+ *                                            default category visual), otherwise visual
  *                                            can be array or primary (which will be
  *                                            normalized to array).
  *
@@ -86391,7 +86995,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var lang = __webpack_require__(/*! ../lang */ "./node_modules/echarts/lib/lang.js");
 
@@ -86574,7 +87178,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var createHashMap = _util.createHashMap;
 
@@ -86682,9 +87286,9 @@ module.exports = _default;
 * under the License.
 */
 
-var Gradient = __webpack_require__(/*! zrender/lib/graphic/Gradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+var Gradient = __webpack_require__(/*! zrender/lib/graphic/Gradient */ "./node_modules/zrender/lib/graphic/Gradient.js");
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isFunction = _util.isFunction;
 
@@ -86785,7 +87389,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isFunction = _util.isFunction;
 
@@ -86915,7 +87519,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -87014,7 +87618,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var VisualMapping = __webpack_require__(/*! ./VisualMapping */ "./node_modules/echarts/lib/visual/VisualMapping.js");
 
@@ -87234,22 +87838,499 @@ exports.incrementalApplyVisual = incrementalApplyVisual;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/Element.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/Element.js ***!
-  \******************************************************************/
+/***/ "./node_modules/ngx-echarts/fesm2015/ngx-echarts.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/ngx-echarts/fesm2015/ngx-echarts.js ***!
+  \**********************************************************/
+/*! exports provided: NgxEchartsModule, ɵa */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgxEchartsModule", function() { return NgxEchartsModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return NgxEchartsDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! echarts */ "./node_modules/echarts/index.js");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class ChangeFilter {
+    /**
+     * @param {?} _changes
+     */
+    constructor(_changes) {
+        this._changes = _changes;
+    }
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    static of(changes) {
+        return new ChangeFilter(changes);
+    }
+    /**
+     * @template T
+     * @param {?} key
+     * @return {?}
+     */
+    notEmpty(key) {
+        if (this._changes[key]) {
+            /** @type {?} */
+            const value = this._changes[key].currentValue;
+            if (value !== undefined && value !== null) {
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+            }
+        }
+        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+    }
+    /**
+     * @template T
+     * @param {?} key
+     * @return {?}
+     */
+    has(key) {
+        if (this._changes[key]) {
+            /** @type {?} */
+            const value = this._changes[key].currentValue;
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+        }
+        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+    }
+    /**
+     * @template T
+     * @param {?} key
+     * @return {?}
+     */
+    notFirst(key) {
+        if (this._changes[key] && !this._changes[key].isFirstChange()) {
+            /** @type {?} */
+            const value = this._changes[key].currentValue;
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+        }
+        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+    }
+    /**
+     * @template T
+     * @param {?} key
+     * @return {?}
+     */
+    notFirstAndEmpty(key) {
+        if (this._changes[key] && !this._changes[key].isFirstChange()) {
+            /** @type {?} */
+            const value = this._changes[key].currentValue;
+            if (value !== undefined && value !== null) {
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+            }
+        }
+        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+    }
+}
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class NgxEchartsDirective {
+    /**
+     * @param {?} el
+     * @param {?} ngZone
+     */
+    constructor(el, ngZone) {
+        this.el = el;
+        this.ngZone = ngZone;
+        this.autoResize = true;
+        this.loadingType = 'default';
+        this.detectEventChanges = true; // deprecated, left for compatibility reasons to avoid triggering major version
+        // deprecated, left for compatibility reasons to avoid triggering major version
+        // ngx-echarts events
+        this.chartInit = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        // echarts mouse events
+        this.chartClick = this.createLazyEvent('click');
+        this.chartDblClick = this.createLazyEvent('dblclick');
+        this.chartMouseDown = this.createLazyEvent('mousedown');
+        this.chartMouseMove = this.createLazyEvent('mousemove');
+        this.chartMouseUp = this.createLazyEvent('mouseup');
+        this.chartMouseOver = this.createLazyEvent('mouseover');
+        this.chartMouseOut = this.createLazyEvent('mouseout');
+        this.chartGlobalOut = this.createLazyEvent('globalout');
+        this.chartContextMenu = this.createLazyEvent('contextmenu');
+        // echarts mouse events
+        this.chartLegendSelectChanged = this.createLazyEvent('legendselectchanged');
+        this.chartLegendSelected = this.createLazyEvent('legendselected');
+        this.chartLegendUnselected = this.createLazyEvent('legendunselected');
+        this.chartLegendScroll = this.createLazyEvent('legendscroll');
+        this.chartDataZoom = this.createLazyEvent('datazoom');
+        this.chartDataRangeSelected = this.createLazyEvent('datarangeselected');
+        this.chartTimelineChanged = this.createLazyEvent('timelinechanged');
+        this.chartTimelinePlayChanged = this.createLazyEvent('timelineplaychanged');
+        this.chartRestore = this.createLazyEvent('restore');
+        this.chartDataViewChanged = this.createLazyEvent('dataviewchanged');
+        this.chartMagicTypeChanged = this.createLazyEvent('magictypechanged');
+        this.chartPieSelectChanged = this.createLazyEvent('pieselectchanged');
+        this.chartPieSelected = this.createLazyEvent('pieselected');
+        this.chartPieUnselected = this.createLazyEvent('pieunselected');
+        this.chartMapSelectChanged = this.createLazyEvent('mapselectchanged');
+        this.chartMapSelected = this.createLazyEvent('mapselected');
+        this.chartMapUnselected = this.createLazyEvent('mapunselected');
+        this.chartAxisAreaSelected = this.createLazyEvent('axisareaselected');
+        this.chartFocusNodeAdjacency = this.createLazyEvent('focusnodeadjacency');
+        this.chartUnfocusNodeAdjacency = this.createLazyEvent('unfocusnodeadjacency');
+        this.chartBrush = this.createLazyEvent('brush');
+        this.chartBrushSelected = this.createLazyEvent('brushselected');
+        this.chartRendered = this.createLazyEvent('rendered');
+        this.chartFinished = this.createLazyEvent('finished');
+        this.currentOffsetWidth = 0;
+        this.currentOffsetHeight = 0;
+    }
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    ngOnChanges(changes) {
+        /** @type {?} */
+        const filter = ChangeFilter.of(changes);
+        filter.notFirstAndEmpty('options').subscribe((/**
+         * @param {?} opt
+         * @return {?}
+         */
+        opt => this.onOptionsChange(opt)));
+        filter.notFirstAndEmpty('merge').subscribe((/**
+         * @param {?} opt
+         * @return {?}
+         */
+        opt => this.setOption(opt)));
+        filter.has('loading').subscribe((/**
+         * @param {?} v
+         * @return {?}
+         */
+        v => this.toggleLoading(!!v)));
+        filter.notFirst('theme').subscribe((/**
+         * @return {?}
+         */
+        () => this.refreshChart()));
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this.resizeSub = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(window, 'resize').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(50)).subscribe((/**
+         * @return {?}
+         */
+        () => {
+            if (this.autoResize && window.innerWidth !== this.currentWindowWidth) {
+                this.currentWindowWidth = window.innerWidth;
+                this.currentOffsetWidth = this.el.nativeElement.offsetWidth;
+                this.currentOffsetHeight = this.el.nativeElement.offsetHeight;
+                this.resize();
+            }
+        }));
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        if (this.resizeSub) {
+            this.resizeSub.unsubscribe();
+        }
+        this.dispose();
+    }
+    /**
+     * @return {?}
+     */
+    ngDoCheck() {
+        // No heavy work in DoCheck!
+        if (this.chart && this.autoResize) {
+            /** @type {?} */
+            const offsetWidth = this.el.nativeElement.offsetWidth;
+            /** @type {?} */
+            const offsetHeight = this.el.nativeElement.offsetHeight;
+            if (this.currentOffsetWidth !== offsetWidth || this.currentOffsetHeight !== offsetHeight) {
+                this.currentOffsetWidth = offsetWidth;
+                this.currentOffsetHeight = offsetHeight;
+                this.resize();
+            }
+        }
+    }
+    /**
+     * @return {?}
+     */
+    ngAfterViewInit() {
+        setTimeout((/**
+         * @return {?}
+         */
+        () => this.initChart()));
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    dispose() {
+        if (this.chart) {
+            this.chart.dispose();
+            this.chart = null;
+        }
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    resize() {
+        if (this.chart) {
+            this.chart.resize();
+        }
+    }
+    /**
+     * @private
+     * @param {?} loading
+     * @return {?}
+     */
+    toggleLoading(loading) {
+        if (this.chart) {
+            loading ? this.chart.showLoading(this.loadingType, this.loadingOpts) : this.chart.hideLoading();
+        }
+    }
+    /**
+     * @private
+     * @param {?} option
+     * @param {?=} opts
+     * @return {?}
+     */
+    setOption(option, opts) {
+        if (this.chart) {
+            this.chart.setOption(option, opts);
+        }
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    refreshChart() {
+        this.dispose();
+        this.initChart();
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    createChart() {
+        this.currentWindowWidth = window.innerWidth;
+        this.currentOffsetWidth = this.el.nativeElement.offsetWidth;
+        this.currentOffsetHeight = this.el.nativeElement.offsetHeight;
+        /** @type {?} */
+        const dom = this.el.nativeElement;
+        if (window && window.getComputedStyle) {
+            /** @type {?} */
+            const prop = window.getComputedStyle(dom, null).getPropertyValue('height');
+            if ((!prop || prop === '0px') &&
+                (!dom.style.height || dom.style.height === '0px')) {
+                dom.style.height = '400px';
+            }
+        }
+        return this.ngZone.runOutsideAngular((/**
+         * @return {?}
+         */
+        () => Object(echarts__WEBPACK_IMPORTED_MODULE_1__["init"])(dom, this.theme, this.initOpts)));
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    initChart() {
+        this.onOptionsChange(this.options);
+        if (this.merge && this.chart) {
+            this.setOption(this.merge);
+        }
+    }
+    /**
+     * @private
+     * @param {?} opt
+     * @return {?}
+     */
+    onOptionsChange(opt) {
+        if (opt) {
+            if (!this.chart) {
+                this.chart = this.createChart();
+                this.chartInit.emit(this.chart);
+            }
+            this.chart.setOption(this.options, true);
+        }
+    }
+    // allows to lazily bind to only those events that are requested through the `@Output` by parent components
+    // see https://stackoverflow.com/questions/51787972/optimal-reentering-the-ngzone-from-eventemitter-event for more info
+    /**
+     * @private
+     * @template T
+     * @param {?} eventName
+     * @return {?}
+     */
+    createLazyEvent(eventName) {
+        return (/** @type {?} */ (this.chartInit.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])((/**
+         * @param {?} chart
+         * @return {?}
+         */
+        (chart) => new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"]((/**
+         * @param {?} observer
+         * @return {?}
+         */
+        observer => {
+            chart.on(eventName, (/**
+             * @param {?} data
+             * @return {?}
+             */
+            (data) => this.ngZone.run((/**
+             * @return {?}
+             */
+            () => observer.next(data)))));
+            return (/**
+             * @return {?}
+             */
+            () => chart.off(eventName));
+        })))))));
+    }
+}
+NgxEchartsDirective.decorators = [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
+                selector: 'echarts, [echarts]',
+            },] }
+];
+/** @nocollapse */
+NgxEchartsDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"] }
+];
+NgxEchartsDirective.propDecorators = {
+    options: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    theme: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    loading: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    initOpts: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    merge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    autoResize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    loadingType: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    loadingOpts: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    detectEventChanges: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    chartInit: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartDblClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMouseDown: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMouseMove: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMouseUp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMouseOver: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMouseOut: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartGlobalOut: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartContextMenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartLegendSelectChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartLegendSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartLegendUnselected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartLegendScroll: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartDataZoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartDataRangeSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartTimelineChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartTimelinePlayChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartRestore: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartDataViewChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMagicTypeChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartPieSelectChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartPieSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartPieUnselected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMapSelectChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMapSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartMapUnselected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartAxisAreaSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartFocusNodeAdjacency: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartUnfocusNodeAdjacency: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartBrush: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartBrushSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartRendered: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    chartFinished: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
+};
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class NgxEchartsModule {
+}
+NgxEchartsModule.decorators = [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                imports: [],
+                declarations: [
+                    NgxEchartsDirective
+                ],
+                exports: [
+                    NgxEchartsDirective
+                ]
+            },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+
+//# sourceMappingURL=ngx-echarts.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color=\"primary\" style=\"height:30px; font-size: small;\">\r\n    <span>Password Management</span>\r\n</mat-toolbar>\r\n<br><br>\r\n<!-- 500 issue id added b vidya -->\r\n<div fxLayout=\"row\">\r\n    <span fxFlex></span>\r\n    <div fxFlex=\"40%\">\r\n        <mat-card>\r\n            <mat-card-title>\r\n            </mat-card-title>\r\n            <mat-card-content>\r\n                <!-- <form #fn=\"ngForm\" novalidate> -->\r\n                    <form [formGroup]=\"userForm\"  class=\"form\" >\r\n                    <div fxLayout=\"row\">\r\n\r\n                        <div fxFlex=\"100\" class=\"pr-1\">\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Old Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"oldPassword\" [type]=\"hide1 ? 'password' : 'text'\"\r\n                                        >\r\n                                        <mat-icon matSuffix (click)=\"hide1 = !hide1\">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>New Password</mat-label>\r\n                                    <!-- <input matInput type=\"password\" required formControlName=\"newPassword\"\r\n                                         > -->\r\n                                         <input matInput type=\"password\" placeholder=\"New Password\" #newPassword name=\"newPassword\"\r\n                                         formControlName=\"newPassword\"  [type]=\"hide ? 'password' : 'text'\" pattern=\"{{passwordRegex}}\">\r\n                                         <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                                <mat-error *ngIf=\"userForm.controls.newPassword.errors && (userForm.controls.newPassword.touched || userForm.controls.newPassword.dirty)\">\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('required','newPassword')\">\r\n                                     Please enter your new password\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('pattern','newPassword')\">\r\n                                       {{errorMsg}}\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('minlength','newPassword')\">\r\n                                      Password must contain Minimum {{minPass}} characters.\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('maxlength','newPassword')\">\r\n                                      Password must contain Maximum {{maxPass}} characters.\r\n                                    </small>\r\n                                </mat-error>\r\n                                        </div>\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Confirm Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"confirmPassword\"\r\n                                    [type]=\"hide2 ? 'password' : 'text'\" >\r\n                                       <mat-icon matSuffix (click)=\"hide2 = !hide2\">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"pb-1\" *ngIf=\"otpEnableFlag\">\r\n                                <a>Please enter OTP sent to your email </a>\r\n                                    <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                        <mat-label>OTP</mat-label>\r\n                                        <input matInput type=\"password\" required formControlName=\"otp\"\r\n                                            >\r\n                                    </mat-form-field>\r\n                                </div>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <!-- <a *ngIf=\"enableLoader\">Verifying Data</a>\r\n                    <mat-progress-bar mode=\"indeterminate\" *ngIf=\"enableLoader\"></mat-progress-bar> -->\r\n                    <!-- <br> -->\r\n                    <div fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"10px\">\r\n                        <button type=\"submit\" #saveBtn mat-raised-button color=\"primary\"\r\n                            (click)=\"onSubmit()\">Submit</button>\r\n                        <!-- [disabled]=\"!fn.form.valid\" -->\r\n                        <button mat-raised-button color=\"warn\" [routerLink]=\"'/dashboard'\">Exit</button>\r\n                       \r\n                    </div>\r\n                </form>\r\n\r\n            </mat-card-content>\r\n        </mat-card>\r\n    </div>\r\n    <span fxFlex></span>\r\n</div>\r\n\r\n<br>\r\n<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(255, 155, 6) , rgb(201, 156, 8));color: white \">\r\n  \r\n  <mat-card-title fxLayoutAlign=\"start center\">\r\n  <small class=\"text-muted\">User Maintenance</small>\r\n\r\n  \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.user}}</h3>\r\n  <small class=\"text-muted\">Availiable Users</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, green , rgb(52, 160, 52));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\"> Audit Logs</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.auditlog}}</h3>\r\n  <small class=\"text-muted\">Total Modification in Application</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(129, 29, 243) , rgb(147, 192, 235));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">User Role</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n \r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.role}}</h3>\r\n  <small class=\"text-muted\">Total Roles For User</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  \r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(228, 10, 10) , rgb(230, 97, 97));color: white;\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">External System</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\">{{this.data.extsys}}</h3>\r\n  <small class=\"text-muted\">Availiable External System</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  \r\n  <mat-tab-group>\r\n  \r\n  \r\n  <mat-tab label=\"Application\">\r\n  <mat-card>\r\n  <div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"50\">\r\n  <div style=\"display: block\" *ngIf=\"chartpie\">\r\n  <mat-card >\r\n  <mat-card-header >User Details</mat-card-header>\r\n  <!-- <canvas baseChart [data]=\"pieChartData\" [labels]=\"pieChartLabels\" [chartType]=\"pieChartType\"></canvas> -->\r\n  </mat-card>\r\n  </div>\r\n  </div>&nbsp;\r\n  <div fxLayout=\"row wrap\" >\r\n <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(241, 76, 11) , rgb(229, 233, 15));color: white;border:solid 1px\">\r\n  \r\n  Batches uploaded by you today: {{uploadedBatches}}\r\n\r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(10, 122, 25) , rgb(49, 228, 117));color: white;border:solid 1px\">\r\n  Pending unauthorized batches for you today: {{pendingUnauthBatch}}\r\n  \r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(164, 15, 233) , rgb(72, 132, 223));color:white;border: solid 1px\">\r\n  Batches authorized by you today:{{authBatches}}\r\n  \r\n  \r\n  </mat-card>\r\n  </div> \r\n  </div>\r\n  \r\n  \r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Services\">\r\n  <mat-card>\r\n  <div style=\"display: block\">\r\n  <!-- <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\"\r\n  [legend]=\"barChartLegend\" [chartType]=\"barChartType\">\r\n  </canvas> -->\r\n  </div>\r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Other\"> Other</mat-tab>\r\n  </mat-tab-group>\r\n  <!-- added by gayathri issueid=0000650 on 20-08-2020 -->\r\n  \r\n  ");
+
+/***/ }),
+
+/***/ "./node_modules/zrender/lib/Element.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/Element.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var guid = __webpack_require__(/*! ./core/guid */ "./node_modules/echarts/node_modules/zrender/lib/core/guid.js");
+var guid = __webpack_require__(/*! ./core/guid */ "./node_modules/zrender/lib/core/guid.js");
 
-var Eventful = __webpack_require__(/*! ./mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! ./mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
-var Transformable = __webpack_require__(/*! ./mixin/Transformable */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+var Transformable = __webpack_require__(/*! ./mixin/Transformable */ "./node_modules/zrender/lib/mixin/Transformable.js");
 
-var Animatable = __webpack_require__(/*! ./mixin/Animatable */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Animatable.js");
+var Animatable = __webpack_require__(/*! ./mixin/Animatable */ "./node_modules/zrender/lib/mixin/Animatable.js");
 
-var zrUtil = __webpack_require__(/*! ./core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ./core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /**
  * @alias module:zrender/Element
@@ -87513,24 +88594,24 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/Handler.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/Handler.js ***!
-  \******************************************************************/
+/***/ "./node_modules/zrender/lib/Handler.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/Handler.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(/*! ./core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var util = __webpack_require__(/*! ./core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var vec2 = __webpack_require__(/*! ./core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! ./core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var Draggable = __webpack_require__(/*! ./mixin/Draggable */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Draggable.js");
+var Draggable = __webpack_require__(/*! ./mixin/Draggable */ "./node_modules/zrender/lib/mixin/Draggable.js");
 
-var Eventful = __webpack_require__(/*! ./mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! ./mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
-var eventTool = __webpack_require__(/*! ./core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventTool = __webpack_require__(/*! ./core/event */ "./node_modules/zrender/lib/core/event.js");
 
-var GestureMgr = __webpack_require__(/*! ./core/GestureMgr */ "./node_modules/echarts/node_modules/zrender/lib/core/GestureMgr.js");
+var GestureMgr = __webpack_require__(/*! ./core/GestureMgr */ "./node_modules/zrender/lib/core/GestureMgr.js");
 
 /**
  * [The interface between `Handler` and `HandlerProxy`]:
@@ -87958,22 +89039,22 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/Layer.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/Layer.js ***!
-  \****************************************************************/
+/***/ "./node_modules/zrender/lib/Layer.js":
+/*!*******************************************!*\
+  !*** ./node_modules/zrender/lib/Layer.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(/*! ./core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var util = __webpack_require__(/*! ./core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var _config = __webpack_require__(/*! ./config */ "./node_modules/echarts/node_modules/zrender/lib/config.js");
+var _config = __webpack_require__(/*! ./config */ "./node_modules/zrender/lib/config.js");
 
 var devicePixelRatio = _config.devicePixelRatio;
 
-var Style = __webpack_require__(/*! ./graphic/Style */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js");
+var Style = __webpack_require__(/*! ./graphic/Style */ "./node_modules/zrender/lib/graphic/Style.js");
 
-var Pattern = __webpack_require__(/*! ./graphic/Pattern */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js");
+var Pattern = __webpack_require__(/*! ./graphic/Pattern */ "./node_modules/zrender/lib/graphic/Pattern.js");
 
 /**
  * @module zrender/Layer
@@ -88203,32 +89284,32 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/Painter.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/Painter.js ***!
-  \******************************************************************/
+/***/ "./node_modules/zrender/lib/Painter.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/Painter.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _config = __webpack_require__(/*! ./config */ "./node_modules/echarts/node_modules/zrender/lib/config.js");
+var _config = __webpack_require__(/*! ./config */ "./node_modules/zrender/lib/config.js");
 
 var devicePixelRatio = _config.devicePixelRatio;
 
-var util = __webpack_require__(/*! ./core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var util = __webpack_require__(/*! ./core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var logError = __webpack_require__(/*! ./core/log */ "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+var logError = __webpack_require__(/*! ./core/log */ "./node_modules/zrender/lib/core/log.js");
 
-var BoundingRect = __webpack_require__(/*! ./core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ./core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var timsort = __webpack_require__(/*! ./core/timsort */ "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js");
+var timsort = __webpack_require__(/*! ./core/timsort */ "./node_modules/zrender/lib/core/timsort.js");
 
-var Layer = __webpack_require__(/*! ./Layer */ "./node_modules/echarts/node_modules/zrender/lib/Layer.js");
+var Layer = __webpack_require__(/*! ./Layer */ "./node_modules/zrender/lib/Layer.js");
 
-var requestAnimationFrame = __webpack_require__(/*! ./animation/requestAnimationFrame */ "./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js");
+var requestAnimationFrame = __webpack_require__(/*! ./animation/requestAnimationFrame */ "./node_modules/zrender/lib/animation/requestAnimationFrame.js");
 
-var Image = __webpack_require__(/*! ./graphic/Image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+var Image = __webpack_require__(/*! ./graphic/Image */ "./node_modules/zrender/lib/graphic/Image.js");
 
-var env = __webpack_require__(/*! ./core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ./core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var HOVER_LAYER_ZLEVEL = 1e5;
 var CANVAS_ZLEVEL = 314159;
@@ -89248,20 +90329,20 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/Storage.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/Storage.js ***!
-  \******************************************************************/
+/***/ "./node_modules/zrender/lib/Storage.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/Storage.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(/*! ./core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var util = __webpack_require__(/*! ./core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var env = __webpack_require__(/*! ./core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ./core/env */ "./node_modules/zrender/lib/core/env.js");
 
-var Group = __webpack_require__(/*! ./container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! ./container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
-var timsort = __webpack_require__(/*! ./core/timsort */ "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js");
+var timsort = __webpack_require__(/*! ./core/timsort */ "./node_modules/zrender/lib/core/timsort.js");
 
 // Use timsort because in most case elements are partially sorted
 // https://jsfiddle.net/pissang/jr4x7mdm/8/
@@ -89490,22 +90571,22 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/animation/Animation.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/animation/Animation.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/zrender/lib/animation/Animation.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/zrender/lib/animation/Animation.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var _event = __webpack_require__(/*! ../core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var _event = __webpack_require__(/*! ../core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var Dispatcher = _event.Dispatcher;
 
-var requestAnimationFrame = __webpack_require__(/*! ./requestAnimationFrame */ "./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js");
+var requestAnimationFrame = __webpack_require__(/*! ./requestAnimationFrame */ "./node_modules/zrender/lib/animation/requestAnimationFrame.js");
 
-var Animator = __webpack_require__(/*! ./Animator */ "./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js");
+var Animator = __webpack_require__(/*! ./Animator */ "./node_modules/zrender/lib/animation/Animator.js");
 
 /**
  * Animation main class, dispatch and manage all animation controllers
@@ -89747,18 +90828,18 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/zrender/lib/animation/Animator.js":
+/*!********************************************************!*\
+  !*** ./node_modules/zrender/lib/animation/Animator.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Clip = __webpack_require__(/*! ./Clip */ "./node_modules/echarts/node_modules/zrender/lib/animation/Clip.js");
+var Clip = __webpack_require__(/*! ./Clip */ "./node_modules/zrender/lib/animation/Clip.js");
 
-var color = __webpack_require__(/*! ../tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var color = __webpack_require__(/*! ../tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
-var _util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isArrayLike = _util.isArrayLike;
 
@@ -90401,14 +91482,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/animation/Clip.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/animation/Clip.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/zrender/lib/animation/Clip.js":
+/*!****************************************************!*\
+  !*** ./node_modules/zrender/lib/animation/Clip.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var easingFuncs = __webpack_require__(/*! ./easing */ "./node_modules/echarts/node_modules/zrender/lib/animation/easing.js");
+var easingFuncs = __webpack_require__(/*! ./easing */ "./node_modules/zrender/lib/animation/easing.js");
 
 /**
  * 动画主控制器
@@ -90512,10 +91593,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/animation/easing.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/animation/easing.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/zrender/lib/animation/easing.js":
+/*!******************************************************!*\
+  !*** ./node_modules/zrender/lib/animation/easing.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -90900,10 +91981,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js ***!
-  \******************************************************************************************/
+/***/ "./node_modules/zrender/lib/animation/requestAnimationFrame.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/zrender/lib/animation/requestAnimationFrame.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -90916,10 +91997,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/config.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/config.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/zrender/lib/config.js":
+/*!********************************************!*\
+  !*** ./node_modules/zrender/lib/config.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -90949,14 +92030,14 @@ exports.devicePixelRatio = devicePixelRatio;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/arc.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/arc.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/contain/arc.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/arc.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(/*! ./util */ "./node_modules/echarts/node_modules/zrender/lib/contain/util.js");
+var _util = __webpack_require__(/*! ./util */ "./node_modules/zrender/lib/contain/util.js");
 
 var normalizeRadian = _util.normalizeRadian;
 var PI2 = Math.PI * 2;
@@ -91019,14 +92100,14 @@ exports.containStroke = containStroke;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/cubic.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/cubic.js ***!
-  \************************************************************************/
+/***/ "./node_modules/zrender/lib/contain/cubic.js":
+/*!***************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/cubic.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var curve = __webpack_require__(/*! ../core/curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var curve = __webpack_require__(/*! ../core/curve */ "./node_modules/zrender/lib/core/curve.js");
 
 /**
  * 三次贝塞尔曲线描边包含判断
@@ -91062,10 +92143,10 @@ exports.containStroke = containStroke;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/line.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/line.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/contain/line.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/line.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -91111,30 +92192,30 @@ exports.containStroke = containStroke;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/path.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/path.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/contain/path.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/path.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/zrender/lib/core/PathProxy.js");
 
-var line = __webpack_require__(/*! ./line */ "./node_modules/echarts/node_modules/zrender/lib/contain/line.js");
+var line = __webpack_require__(/*! ./line */ "./node_modules/zrender/lib/contain/line.js");
 
-var cubic = __webpack_require__(/*! ./cubic */ "./node_modules/echarts/node_modules/zrender/lib/contain/cubic.js");
+var cubic = __webpack_require__(/*! ./cubic */ "./node_modules/zrender/lib/contain/cubic.js");
 
-var quadratic = __webpack_require__(/*! ./quadratic */ "./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js");
+var quadratic = __webpack_require__(/*! ./quadratic */ "./node_modules/zrender/lib/contain/quadratic.js");
 
-var arc = __webpack_require__(/*! ./arc */ "./node_modules/echarts/node_modules/zrender/lib/contain/arc.js");
+var arc = __webpack_require__(/*! ./arc */ "./node_modules/zrender/lib/contain/arc.js");
 
-var _util = __webpack_require__(/*! ./util */ "./node_modules/echarts/node_modules/zrender/lib/contain/util.js");
+var _util = __webpack_require__(/*! ./util */ "./node_modules/zrender/lib/contain/util.js");
 
 var normalizeRadian = _util.normalizeRadian;
 
-var curve = __webpack_require__(/*! ../core/curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var curve = __webpack_require__(/*! ../core/curve */ "./node_modules/zrender/lib/core/curve.js");
 
-var windingLine = __webpack_require__(/*! ./windingLine */ "./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js");
+var windingLine = __webpack_require__(/*! ./windingLine */ "./node_modules/zrender/lib/contain/windingLine.js");
 
 var CMD = PathProxy.CMD;
 var PI2 = Math.PI * 2;
@@ -91517,14 +92598,14 @@ exports.containStroke = containStroke;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/zrender/lib/contain/polygon.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/polygon.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var windingLine = __webpack_require__(/*! ./windingLine */ "./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js");
+var windingLine = __webpack_require__(/*! ./windingLine */ "./node_modules/zrender/lib/contain/windingLine.js");
 
 var EPSILON = 1e-8;
 
@@ -91560,14 +92641,14 @@ exports.contain = contain;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js ***!
-  \****************************************************************************/
+/***/ "./node_modules/zrender/lib/contain/quadratic.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/quadratic.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curve = __webpack_require__(/*! ../core/curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var _curve = __webpack_require__(/*! ../core/curve */ "./node_modules/zrender/lib/core/curve.js");
 
 var quadraticProjectPoint = _curve.quadraticProjectPoint;
 
@@ -91603,18 +92684,18 @@ exports.containStroke = containStroke;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/text.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/contain/text.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/text.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var imageHelper = __webpack_require__(/*! ../graphic/helper/image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js");
+var imageHelper = __webpack_require__(/*! ../graphic/helper/image */ "./node_modules/zrender/lib/graphic/helper/image.js");
 
-var _util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var getContext = _util.getContext;
 var extend = _util.extend;
@@ -92332,10 +93413,10 @@ exports.makeFont = makeFont;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/util.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/util.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/contain/util.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/util.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -92355,10 +93436,10 @@ exports.normalizeRadian = normalizeRadian;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/zrender/lib/contain/windingLine.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/zrender/lib/contain/windingLine.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -92388,18 +93469,18 @@ module.exports = windingLine;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/container/Group.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/zrender/lib/container/Group.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/zrender/lib/container/Group.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Element = __webpack_require__(/*! ../Element */ "./node_modules/echarts/node_modules/zrender/lib/Element.js");
+var Element = __webpack_require__(/*! ../Element */ "./node_modules/zrender/lib/Element.js");
 
-var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 /**
  * Group是一个容器，可以插入子节点，Group的变换也会被应用到子节点上
@@ -92710,16 +93791,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js ***!
-  \****************************************************************************/
+/***/ "./node_modules/zrender/lib/core/BoundingRect.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/zrender/lib/core/BoundingRect.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var vec2 = __webpack_require__(/*! ./vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! ./vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var matrix = __webpack_require__(/*! ./matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! ./matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 /**
  * @module echarts/core/BoundingRect
@@ -92903,14 +93984,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/GestureMgr.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/GestureMgr.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/zrender/lib/core/GestureMgr.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/zrender/lib/core/GestureMgr.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var eventUtil = __webpack_require__(/*! ./event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var eventUtil = __webpack_require__(/*! ./event */ "./node_modules/zrender/lib/core/event.js");
 
 /**
  * Only implements needed gestures for mobile.
@@ -93012,10 +94093,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/LRU.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/LRU.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/zrender/lib/core/LRU.js":
+/*!**********************************************!*\
+  !*** ./node_modules/zrender/lib/core/LRU.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -93224,22 +94305,22 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/zrender/lib/core/PathProxy.js":
+/*!****************************************************!*\
+  !*** ./node_modules/zrender/lib/core/PathProxy.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var curve = __webpack_require__(/*! ./curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var curve = __webpack_require__(/*! ./curve */ "./node_modules/zrender/lib/core/curve.js");
 
-var vec2 = __webpack_require__(/*! ./vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! ./vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var bbox = __webpack_require__(/*! ./bbox */ "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+var bbox = __webpack_require__(/*! ./bbox */ "./node_modules/zrender/lib/core/bbox.js");
 
-var BoundingRect = __webpack_require__(/*! ./BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ./BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/node_modules/zrender/lib/config.js");
+var _config = __webpack_require__(/*! ../config */ "./node_modules/zrender/lib/config.js");
 
 var dpr = _config.devicePixelRatio;
 
@@ -94004,10 +95085,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/arrayDiff2.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/arrayDiff2.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/zrender/lib/core/arrayDiff2.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/zrender/lib/core/arrayDiff2.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -94212,16 +95293,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/bbox.js ***!
-  \********************************************************************/
+/***/ "./node_modules/zrender/lib/core/bbox.js":
+/*!***********************************************!*\
+  !*** ./node_modules/zrender/lib/core/bbox.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var vec2 = __webpack_require__(/*! ./vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! ./vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var curve = __webpack_require__(/*! ./curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var curve = __webpack_require__(/*! ./curve */ "./node_modules/zrender/lib/core/curve.js");
 
 /**
  * @author Yi Shen(https://github.com/pissang)
@@ -94443,14 +95524,14 @@ exports.fromArc = fromArc;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/curve.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/zrender/lib/core/curve.js":
+/*!************************************************!*\
+  !*** ./node_modules/zrender/lib/core/curve.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _vector = __webpack_require__(/*! ./vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var _vector = __webpack_require__(/*! ./vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var v2Create = _vector.create;
 var v2DistSquare = _vector.distSquare;
@@ -94985,16 +96066,16 @@ exports.quadraticProjectPoint = quadraticProjectPoint;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/dom.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/dom.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/zrender/lib/core/dom.js":
+/*!**********************************************!*\
+  !*** ./node_modules/zrender/lib/core/dom.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var env = __webpack_require__(/*! ./env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ./env */ "./node_modules/zrender/lib/core/env.js");
 
-var _fourPointsTransform = __webpack_require__(/*! ./fourPointsTransform */ "./node_modules/echarts/node_modules/zrender/lib/core/fourPointsTransform.js");
+var _fourPointsTransform = __webpack_require__(/*! ./fourPointsTransform */ "./node_modules/zrender/lib/core/fourPointsTransform.js");
 
 var buildTransformer = _fourPointsTransform.buildTransformer;
 var EVENT_SAVED_PROP = '___zrEVENTSAVED';
@@ -95133,10 +96214,10 @@ exports.isCanvasEl = isCanvasEl;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/env.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/env.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/zrender/lib/core/env.js":
+/*!**********************************************!*\
+  !*** ./node_modules/zrender/lib/core/env.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -95313,20 +96394,20 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/event.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/event.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/zrender/lib/core/event.js":
+/*!************************************************!*\
+  !*** ./node_modules/zrender/lib/core/event.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Eventful = __webpack_require__(/*! ../mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! ../mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
 exports.Dispatcher = Eventful;
 
-var env = __webpack_require__(/*! ./env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ./env */ "./node_modules/zrender/lib/core/env.js");
 
-var _dom = __webpack_require__(/*! ./dom */ "./node_modules/echarts/node_modules/zrender/lib/core/dom.js");
+var _dom = __webpack_require__(/*! ./dom */ "./node_modules/zrender/lib/core/dom.js");
 
 var isCanvasEl = _dom.isCanvasEl;
 var transformCoordWithViewport = _dom.transformCoordWithViewport;
@@ -95593,10 +96674,10 @@ exports.notLeftMouse = notLeftMouse;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/fourPointsTransform.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/fourPointsTransform.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/zrender/lib/core/fourPointsTransform.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/zrender/lib/core/fourPointsTransform.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -95697,10 +96778,10 @@ exports.buildTransformer = buildTransformer;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/guid.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/guid.js ***!
-  \********************************************************************/
+/***/ "./node_modules/zrender/lib/core/guid.js":
+/*!***********************************************!*\
+  !*** ./node_modules/zrender/lib/core/guid.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -95719,14 +96800,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/log.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/log.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/zrender/lib/core/log.js":
+/*!**********************************************!*\
+  !*** ./node_modules/zrender/lib/core/log.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _config = __webpack_require__(/*! ../config */ "./node_modules/echarts/node_modules/zrender/lib/config.js");
+var _config = __webpack_require__(/*! ../config */ "./node_modules/zrender/lib/config.js");
 
 var debugMode = _config.debugMode;
 
@@ -95741,10 +96822,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/matrix.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/core/matrix.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/core/matrix.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -95936,10 +97017,10 @@ exports.clone = clone;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/timsort.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/core/timsort.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/core/timsort.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -96612,10 +97693,10 @@ module.exports = sort;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/util.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/util.js ***!
-  \********************************************************************/
+/***/ "./node_modules/zrender/lib/core/util.js":
+/*!***********************************************!*\
+  !*** ./node_modules/zrender/lib/core/util.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -97362,10 +98443,10 @@ exports.noop = noop;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/core/vector.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/core/vector.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/core/vector.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -97686,25 +98767,25 @@ exports.max = max;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/dom/HandlerProxy.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/dom/HandlerProxy.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/zrender/lib/dom/HandlerProxy.js":
+/*!******************************************************!*\
+  !*** ./node_modules/zrender/lib/dom/HandlerProxy.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _event = __webpack_require__(/*! ../core/event */ "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+var _event = __webpack_require__(/*! ../core/event */ "./node_modules/zrender/lib/core/event.js");
 
 var addEventListener = _event.addEventListener;
 var removeEventListener = _event.removeEventListener;
 var normalizeEvent = _event.normalizeEvent;
 var getNativeEvent = _event.getNativeEvent;
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Eventful = __webpack_require__(/*! ../mixin/Eventful */ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+var Eventful = __webpack_require__(/*! ../mixin/Eventful */ "./node_modules/zrender/lib/mixin/Eventful.js");
 
-var env = __webpack_require__(/*! ../core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ../core/env */ "./node_modules/zrender/lib/core/env.js");
 
 /* global document */
 var TOUCH_CLICK_DELAY = 300;
@@ -98201,14 +99282,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/CompoundPath.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/CompoundPath.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/CompoundPath.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/CompoundPath.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ./Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ./Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 // CompoundPath to improve performance
 var _default = Path.extend({
@@ -98267,20 +99348,20 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Displayable.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Displayable.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Style = __webpack_require__(/*! ./Style */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js");
+var Style = __webpack_require__(/*! ./Style */ "./node_modules/zrender/lib/graphic/Style.js");
 
-var Element = __webpack_require__(/*! ../Element */ "./node_modules/echarts/node_modules/zrender/lib/Element.js");
+var Element = __webpack_require__(/*! ../Element */ "./node_modules/zrender/lib/Element.js");
 
-var RectText = __webpack_require__(/*! ./mixin/RectText */ "./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js");
+var RectText = __webpack_require__(/*! ./mixin/RectText */ "./node_modules/zrender/lib/graphic/mixin/RectText.js");
 
 /**
  * Base class of all displayable graphic objects
@@ -98554,10 +99635,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Gradient.js":
+/*!******************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Gradient.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -98582,20 +99663,20 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js ***!
-  \************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Image.js":
+/*!***************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Image.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(/*! ./Displayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+var Displayable = __webpack_require__(/*! ./Displayable */ "./node_modules/zrender/lib/graphic/Displayable.js");
 
-var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var imageHelper = __webpack_require__(/*! ./helper/image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js");
+var imageHelper = __webpack_require__(/*! ./helper/image */ "./node_modules/zrender/lib/graphic/helper/image.js");
 
 /**
  * @alias zrender/graphic/Image
@@ -98684,20 +99765,20 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js ***!
-  \*****************************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/IncrementalDisplayable.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var inherits = _util.inherits;
 
-var Displayble = __webpack_require__(/*! ./Displayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+var Displayble = __webpack_require__(/*! ./Displayable */ "./node_modules/zrender/lib/graphic/Displayable.js");
 
-var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
 /**
  * Displayable for incremental rendering. It will be rendered in a separate layer
@@ -98841,16 +99922,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/LinearGradient.js":
+/*!************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/LinearGradient.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Gradient = __webpack_require__(/*! ./Gradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+var Gradient = __webpack_require__(/*! ./Gradient */ "./node_modules/zrender/lib/graphic/Gradient.js");
 
 /**
  * x, y, x2, y2 are all percent from 0 to 1
@@ -98885,22 +99966,22 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Path.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Path.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(/*! ./Displayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+var Displayable = __webpack_require__(/*! ./Displayable */ "./node_modules/zrender/lib/graphic/Displayable.js");
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/zrender/lib/core/PathProxy.js");
 
-var pathContain = __webpack_require__(/*! ../contain/path */ "./node_modules/echarts/node_modules/zrender/lib/contain/path.js");
+var pathContain = __webpack_require__(/*! ../contain/path */ "./node_modules/zrender/lib/contain/path.js");
 
-var Pattern = __webpack_require__(/*! ./Pattern */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js");
+var Pattern = __webpack_require__(/*! ./Pattern */ "./node_modules/zrender/lib/graphic/Pattern.js");
 
 var getCanvasPattern = Pattern.prototype.getCanvasPattern;
 var abs = Math.abs;
@@ -99273,10 +100354,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Pattern.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Pattern.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -99298,16 +100379,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/RadialGradient.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/RadialGradient.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/RadialGradient.js":
+/*!************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/RadialGradient.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Gradient = __webpack_require__(/*! ./Gradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+var Gradient = __webpack_require__(/*! ./Gradient */ "./node_modules/zrender/lib/graphic/Gradient.js");
 
 /**
  * x, y, r are all percent from 0 to 1
@@ -99340,16 +100421,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js ***!
-  \************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Style.js":
+/*!***************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Style.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fixShadow = __webpack_require__(/*! ./helper/fixShadow */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js");
+var fixShadow = __webpack_require__(/*! ./helper/fixShadow */ "./node_modules/zrender/lib/graphic/helper/fixShadow.js");
 
-var _constant = __webpack_require__(/*! ./constant */ "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+var _constant = __webpack_require__(/*! ./constant */ "./node_modules/zrender/lib/graphic/constant.js");
 
 var ContextCachedBy = _constant.ContextCachedBy;
 var STYLE_COMMON_PROPS = [['shadowBlur', 0], ['shadowOffsetX', 0], ['shadowOffsetY', 0], ['shadowColor', '#000'], ['lineCap', 'butt'], ['lineJoin', 'miter'], ['miterLimit', 10]]; // var SHADOW_PROPS = STYLE_COMMON_PROPS.slice(0, 4);
@@ -99827,22 +100908,22 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/Text.js":
+/*!**************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/Text.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(/*! ./Displayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+var Displayable = __webpack_require__(/*! ./Displayable */ "./node_modules/zrender/lib/graphic/Displayable.js");
 
-var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var textContain = __webpack_require__(/*! ../contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! ../contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
-var textHelper = __webpack_require__(/*! ./helper/text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+var textHelper = __webpack_require__(/*! ./helper/text */ "./node_modules/zrender/lib/graphic/helper/text.js");
 
-var _constant = __webpack_require__(/*! ./constant */ "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+var _constant = __webpack_require__(/*! ./constant */ "./node_modules/zrender/lib/graphic/constant.js");
 
 var ContextCachedBy = _constant.ContextCachedBy;
 
@@ -99916,10 +100997,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/constant.js":
+/*!******************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/constant.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -99935,14 +101016,14 @@ exports.WILL_BE_RESTORED = WILL_BE_RESTORED;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var env = __webpack_require__(/*! ../../core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ../../core/env */ "./node_modules/zrender/lib/core/env.js");
 
 // Fix weird bug in some version of IE11 (like 11.0.9600.178**),
 // where exception "unexpected call to method or property access"
@@ -100001,10 +101082,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/fixShadow.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/fixShadow.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -100032,14 +101113,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/image.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/image.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LRU = __webpack_require__(/*! ../../core/LRU */ "./node_modules/echarts/node_modules/zrender/lib/core/LRU.js");
+var LRU = __webpack_require__(/*! ../../core/LRU */ "./node_modules/zrender/lib/core/LRU.js");
 
 var globalImageCache = new LRU(50);
 /**
@@ -100130,16 +101211,16 @@ exports.isImageReady = isImageReady;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/poly.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/poly.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var smoothSpline = __webpack_require__(/*! ./smoothSpline */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothSpline.js");
+var smoothSpline = __webpack_require__(/*! ./smoothSpline */ "./node_modules/zrender/lib/graphic/helper/smoothSpline.js");
 
-var smoothBezier = __webpack_require__(/*! ./smoothBezier */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothBezier.js");
+var smoothBezier = __webpack_require__(/*! ./smoothBezier */ "./node_modules/zrender/lib/graphic/helper/smoothBezier.js");
 
 function buildPath(ctx, shape, closePath) {
   var points = shape.points;
@@ -100177,10 +101258,10 @@ exports.buildPath = buildPath;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/roundRect.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/roundRect.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -100277,14 +101358,14 @@ exports.buildPath = buildPath;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothBezier.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothBezier.js ***!
-  \**************************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/smoothBezier.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/smoothBezier.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _vector = __webpack_require__(/*! ../../core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var _vector = __webpack_require__(/*! ../../core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var v2Min = _vector.min;
 var v2Max = _vector.max;
@@ -100392,14 +101473,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothSpline.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothSpline.js ***!
-  \**************************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/smoothSpline.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/smoothSpline.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _vector = __webpack_require__(/*! ../../core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var _vector = __webpack_require__(/*! ../../core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var v2Distance = _vector.distance;
 
@@ -100470,10 +101551,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js ***!
-  \******************************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -100593,14 +101674,14 @@ exports.subPixelOptimize = subPixelOptimize;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/helper/text.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/helper/text.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(/*! ../../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var retrieve2 = _util.retrieve2;
 var retrieve3 = _util.retrieve3;
@@ -100609,15 +101690,15 @@ var normalizeCssArray = _util.normalizeCssArray;
 var isString = _util.isString;
 var isObject = _util.isObject;
 
-var textContain = __webpack_require__(/*! ../../contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! ../../contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
-var roundRectHelper = __webpack_require__(/*! ./roundRect */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js");
+var roundRectHelper = __webpack_require__(/*! ./roundRect */ "./node_modules/zrender/lib/graphic/helper/roundRect.js");
 
-var imageHelper = __webpack_require__(/*! ./image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js");
+var imageHelper = __webpack_require__(/*! ./image */ "./node_modules/zrender/lib/graphic/helper/image.js");
 
-var fixShadow = __webpack_require__(/*! ./fixShadow */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js");
+var fixShadow = __webpack_require__(/*! ./fixShadow */ "./node_modules/zrender/lib/graphic/helper/fixShadow.js");
 
-var _constant = __webpack_require__(/*! ../constant */ "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+var _constant = __webpack_require__(/*! ../constant */ "./node_modules/zrender/lib/graphic/constant.js");
 
 var ContextCachedBy = _constant.ContextCachedBy;
 var WILL_BE_RESTORED = _constant.WILL_BE_RESTORED;
@@ -101150,18 +102231,18 @@ exports.needDrawText = needDrawText;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/mixin/RectText.js":
+/*!************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/mixin/RectText.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var textHelper = __webpack_require__(/*! ../helper/text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+var textHelper = __webpack_require__(/*! ../helper/text */ "./node_modules/zrender/lib/graphic/helper/text.js");
 
-var BoundingRect = __webpack_require__(/*! ../../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var _constant = __webpack_require__(/*! ../constant */ "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+var _constant = __webpack_require__(/*! ../constant */ "./node_modules/zrender/lib/graphic/constant.js");
 
 var WILL_BE_RESTORED = _constant.WILL_BE_RESTORED;
 
@@ -101222,14 +102303,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Arc.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Arc.js ***!
-  \****************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Arc.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Arc.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 /**
  * 圆弧
@@ -101267,18 +102348,18 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/BezierCurve.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/BezierCurve.js ***!
-  \************************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/BezierCurve.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/BezierCurve.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var vec2 = __webpack_require__(/*! ../../core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vec2 = __webpack_require__(/*! ../../core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
-var _curve = __webpack_require__(/*! ../../core/curve */ "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+var _curve = __webpack_require__(/*! ../../core/curve */ "./node_modules/zrender/lib/core/curve.js");
 
 var quadraticSubdivide = _curve.quadraticSubdivide;
 var cubicSubdivide = _curve.cubicSubdivide;
@@ -101390,14 +102471,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Circle.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Circle.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 /**
  * 圆形
@@ -101432,14 +102513,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ellipse.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ellipse.js ***!
-  \********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Ellipse.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Ellipse.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 /**
  * 椭圆形状
@@ -101477,16 +102558,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Line.js":
+/*!********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Line.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var _subPixelOptimize = __webpack_require__(/*! ../helper/subPixelOptimize */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
+var _subPixelOptimize = __webpack_require__(/*! ../helper/subPixelOptimize */ "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
 
 var subPixelOptimizeLine = _subPixelOptimize.subPixelOptimizeLine;
 
@@ -101562,16 +102643,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js ***!
-  \********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Polygon.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Polygon.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var polyHelper = __webpack_require__(/*! ../helper/poly */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js");
+var polyHelper = __webpack_require__(/*! ../helper/poly */ "./node_modules/zrender/lib/graphic/helper/poly.js");
 
 /**
  * 多边形
@@ -101593,16 +102674,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Polyline.js":
+/*!************************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Polyline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var polyHelper = __webpack_require__(/*! ../helper/poly */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js");
+var polyHelper = __webpack_require__(/*! ../helper/poly */ "./node_modules/zrender/lib/graphic/helper/poly.js");
 
 /**
  * @module zrender/graphic/shape/Polyline
@@ -101627,18 +102708,18 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Rect.js":
+/*!********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Rect.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var roundRectHelper = __webpack_require__(/*! ../helper/roundRect */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js");
+var roundRectHelper = __webpack_require__(/*! ../helper/roundRect */ "./node_modules/zrender/lib/graphic/helper/roundRect.js");
 
-var _subPixelOptimize = __webpack_require__(/*! ../helper/subPixelOptimize */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
+var _subPixelOptimize = __webpack_require__(/*! ../helper/subPixelOptimize */ "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
 
 var subPixelOptimizeRect = _subPixelOptimize.subPixelOptimizeRect;
 
@@ -101699,14 +102780,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ring.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ring.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Ring.js":
+/*!********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Ring.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
 /**
  * 圆环
@@ -101735,16 +102816,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Sector.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Sector.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/zrender/lib/graphic/shape/Sector.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/zrender/lib/graphic/shape/Sector.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var fixClipWithShadow = __webpack_require__(/*! ../helper/fixClipWithShadow */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
+var fixClipWithShadow = __webpack_require__(/*! ../helper/fixClipWithShadow */ "./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
 
 /**
  * 扇形
@@ -101789,18 +102870,18 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/mixin/Animatable.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Animatable.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/zrender/lib/mixin/Animatable.js":
+/*!******************************************************!*\
+  !*** ./node_modules/zrender/lib/mixin/Animatable.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Animator = __webpack_require__(/*! ../animation/Animator */ "./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js");
+var Animator = __webpack_require__(/*! ../animation/Animator */ "./node_modules/zrender/lib/animation/Animator.js");
 
-var logError = __webpack_require__(/*! ../core/log */ "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+var logError = __webpack_require__(/*! ../core/log */ "./node_modules/zrender/lib/core/log.js");
 
-var _util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isString = _util.isString;
 var isFunction = _util.isFunction;
@@ -102074,10 +103155,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/mixin/Draggable.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Draggable.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/zrender/lib/mixin/Draggable.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/zrender/lib/mixin/Draggable.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -102170,10 +103251,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/zrender/lib/mixin/Eventful.js":
+/*!****************************************************!*\
+  !*** ./node_modules/zrender/lib/mixin/Eventful.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -102551,16 +103632,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/zrender/lib/mixin/Transformable.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/zrender/lib/mixin/Transformable.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var matrix = __webpack_require__(/*! ../core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! ../core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
-var vector = __webpack_require__(/*! ../core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var vector = __webpack_require__(/*! ../core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 /**
  * 提供变换扩展
@@ -102885,36 +103966,36 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/Painter.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/Painter.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/svg/Painter.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/svg/Painter.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _core = __webpack_require__(/*! ./core */ "./node_modules/echarts/node_modules/zrender/lib/svg/core.js");
+var _core = __webpack_require__(/*! ./core */ "./node_modules/zrender/lib/svg/core.js");
 
 var createElement = _core.createElement;
 
-var util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var logError = __webpack_require__(/*! ../core/log */ "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+var logError = __webpack_require__(/*! ../core/log */ "./node_modules/zrender/lib/core/log.js");
 
-var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var ZImage = __webpack_require__(/*! ../graphic/Image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+var ZImage = __webpack_require__(/*! ../graphic/Image */ "./node_modules/zrender/lib/graphic/Image.js");
 
-var ZText = __webpack_require__(/*! ../graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var ZText = __webpack_require__(/*! ../graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
 
-var arrayDiff = __webpack_require__(/*! ../core/arrayDiff2 */ "./node_modules/echarts/node_modules/zrender/lib/core/arrayDiff2.js");
+var arrayDiff = __webpack_require__(/*! ../core/arrayDiff2 */ "./node_modules/zrender/lib/core/arrayDiff2.js");
 
-var GradientManager = __webpack_require__(/*! ./helper/GradientManager */ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/GradientManager.js");
+var GradientManager = __webpack_require__(/*! ./helper/GradientManager */ "./node_modules/zrender/lib/svg/helper/GradientManager.js");
 
-var ClippathManager = __webpack_require__(/*! ./helper/ClippathManager */ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ClippathManager.js");
+var ClippathManager = __webpack_require__(/*! ./helper/ClippathManager */ "./node_modules/zrender/lib/svg/helper/ClippathManager.js");
 
-var ShadowManager = __webpack_require__(/*! ./helper/ShadowManager */ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ShadowManager.js");
+var ShadowManager = __webpack_require__(/*! ./helper/ShadowManager */ "./node_modules/zrender/lib/svg/helper/ShadowManager.js");
 
-var _graphic = __webpack_require__(/*! ./graphic */ "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js");
+var _graphic = __webpack_require__(/*! ./graphic */ "./node_modules/zrender/lib/svg/graphic.js");
 
 var svgPath = _graphic.path;
 var svgImage = _graphic.image;
@@ -103297,10 +104378,10 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/core.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/core.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/zrender/lib/svg/core.js":
+/*!**********************************************!*\
+  !*** ./node_modules/zrender/lib/svg/core.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -103314,28 +104395,28 @@ exports.createElement = createElement;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/svg/graphic.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/svg/graphic.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _core = __webpack_require__(/*! ./core */ "./node_modules/echarts/node_modules/zrender/lib/svg/core.js");
+var _core = __webpack_require__(/*! ./core */ "./node_modules/zrender/lib/svg/core.js");
 
 var createElement = _core.createElement;
 
-var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/zrender/lib/core/PathProxy.js");
 
-var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var matrix = __webpack_require__(/*! ../core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! ../core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
-var textContain = __webpack_require__(/*! ../contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! ../contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
-var textHelper = __webpack_require__(/*! ../graphic/helper/text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+var textHelper = __webpack_require__(/*! ../graphic/helper/text */ "./node_modules/zrender/lib/graphic/helper/text.js");
 
-var Text = __webpack_require__(/*! ../graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var Text = __webpack_require__(/*! ../graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
 
 // TODO
 // 1. shadow
@@ -103847,18 +104928,18 @@ exports.text = svgText;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ClippathManager.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/ClippathManager.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/zrender/lib/svg/helper/ClippathManager.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/zrender/lib/svg/helper/ClippathManager.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Definable = __webpack_require__(/*! ./Definable */ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js");
+var Definable = __webpack_require__(/*! ./Definable */ "./node_modules/zrender/lib/svg/helper/Definable.js");
 
-var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var matrix = __webpack_require__(/*! ../../core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! ../../core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
 /**
  * @file Manages SVG clipPath elements.
@@ -104013,26 +105094,26 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/zrender/lib/svg/helper/Definable.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/zrender/lib/svg/helper/Definable.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _core = __webpack_require__(/*! ../core */ "./node_modules/echarts/node_modules/zrender/lib/svg/core.js");
+var _core = __webpack_require__(/*! ../core */ "./node_modules/zrender/lib/svg/core.js");
 
 var createElement = _core.createElement;
 
-var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Path = __webpack_require__(/*! ../../graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../../graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var ZImage = __webpack_require__(/*! ../../graphic/Image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+var ZImage = __webpack_require__(/*! ../../graphic/Image */ "./node_modules/zrender/lib/graphic/Image.js");
 
-var ZText = __webpack_require__(/*! ../../graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var ZText = __webpack_require__(/*! ../../graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
 
-var _graphic = __webpack_require__(/*! ../graphic */ "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js");
+var _graphic = __webpack_require__(/*! ../graphic */ "./node_modules/zrender/lib/svg/graphic.js");
 
 var svgPath = _graphic.path;
 var svgImage = _graphic.image;
@@ -104289,20 +105370,20 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/GradientManager.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/GradientManager.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/zrender/lib/svg/helper/GradientManager.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/zrender/lib/svg/helper/GradientManager.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Definable = __webpack_require__(/*! ./Definable */ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js");
+var Definable = __webpack_require__(/*! ./Definable */ "./node_modules/zrender/lib/svg/helper/Definable.js");
 
-var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var logError = __webpack_require__(/*! ../../core/log */ "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+var logError = __webpack_require__(/*! ../../core/log */ "./node_modules/zrender/lib/core/log.js");
 
-var colorTool = __webpack_require__(/*! ../../tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var colorTool = __webpack_require__(/*! ../../tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
 /**
  * @file Manages SVG gradient elements.
@@ -104457,7 +105538,7 @@ GradientManager.prototype.updateDom = function (gradient, dom) {
     stop.setAttribute('offset', colors[i].offset * 100 + '%');
     var color = colors[i].color;
 
-    if (color.indexOf('rgba' > -1)) {
+    if (color.indexOf('rgba') > -1) {
       // Fix Safari bug that stop-color not recognizing alpha #9014
       var opacity = colorTool.parse(color)[3];
       var hex = colorTool.toHex(color); // stop-color cannot be color, since:
@@ -104507,16 +105588,16 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ShadowManager.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/ShadowManager.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/zrender/lib/svg/helper/ShadowManager.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/zrender/lib/svg/helper/ShadowManager.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Definable = __webpack_require__(/*! ./Definable */ "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js");
+var Definable = __webpack_require__(/*! ./Definable */ "./node_modules/zrender/lib/svg/helper/Definable.js");
 
-var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ../../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 /**
  * @file Manages SVG shadow elements.
@@ -104704,33 +105785,33 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/svg/svg.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/svg/svg.js ***!
-  \******************************************************************/
+/***/ "./node_modules/zrender/lib/svg/svg.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/svg/svg.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./graphic */ "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js");
+__webpack_require__(/*! ./graphic */ "./node_modules/zrender/lib/svg/graphic.js");
 
-var _zrender = __webpack_require__(/*! ../zrender */ "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+var _zrender = __webpack_require__(/*! ../zrender */ "./node_modules/zrender/lib/zrender.js");
 
 var registerPainter = _zrender.registerPainter;
 
-var Painter = __webpack_require__(/*! ./Painter */ "./node_modules/echarts/node_modules/zrender/lib/svg/Painter.js");
+var Painter = __webpack_require__(/*! ./Painter */ "./node_modules/zrender/lib/svg/Painter.js");
 
 registerPainter('svg', Painter);
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/tool/color.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/zrender/lib/tool/color.js":
+/*!************************************************!*\
+  !*** ./node_modules/zrender/lib/tool/color.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LRU = __webpack_require__(/*! ../core/LRU */ "./node_modules/echarts/node_modules/zrender/lib/core/LRU.js");
+var LRU = __webpack_require__(/*! ../core/LRU */ "./node_modules/zrender/lib/core/LRU.js");
 
 var kCSSColorTable = {
   'transparent': [0, 0, 0, 0],
@@ -105360,44 +106441,44 @@ exports.stringify = stringify;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js ***!
-  \************************************************************************/
+/***/ "./node_modules/zrender/lib/tool/parseSVG.js":
+/*!***************************************************!*\
+  !*** ./node_modules/zrender/lib/tool/parseSVG.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Group = __webpack_require__(/*! ../container/Group */ "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+var Group = __webpack_require__(/*! ../container/Group */ "./node_modules/zrender/lib/container/Group.js");
 
-var ZImage = __webpack_require__(/*! ../graphic/Image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+var ZImage = __webpack_require__(/*! ../graphic/Image */ "./node_modules/zrender/lib/graphic/Image.js");
 
-var Text = __webpack_require__(/*! ../graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var Text = __webpack_require__(/*! ../graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
 
-var Circle = __webpack_require__(/*! ../graphic/shape/Circle */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js");
+var Circle = __webpack_require__(/*! ../graphic/shape/Circle */ "./node_modules/zrender/lib/graphic/shape/Circle.js");
 
-var Rect = __webpack_require__(/*! ../graphic/shape/Rect */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js");
+var Rect = __webpack_require__(/*! ../graphic/shape/Rect */ "./node_modules/zrender/lib/graphic/shape/Rect.js");
 
-var Ellipse = __webpack_require__(/*! ../graphic/shape/Ellipse */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ellipse.js");
+var Ellipse = __webpack_require__(/*! ../graphic/shape/Ellipse */ "./node_modules/zrender/lib/graphic/shape/Ellipse.js");
 
-var Line = __webpack_require__(/*! ../graphic/shape/Line */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js");
+var Line = __webpack_require__(/*! ../graphic/shape/Line */ "./node_modules/zrender/lib/graphic/shape/Line.js");
 
-var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var Polygon = __webpack_require__(/*! ../graphic/shape/Polygon */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js");
+var Polygon = __webpack_require__(/*! ../graphic/shape/Polygon */ "./node_modules/zrender/lib/graphic/shape/Polygon.js");
 
-var Polyline = __webpack_require__(/*! ../graphic/shape/Polyline */ "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js");
+var Polyline = __webpack_require__(/*! ../graphic/shape/Polyline */ "./node_modules/zrender/lib/graphic/shape/Polyline.js");
 
-var LinearGradient = __webpack_require__(/*! ../graphic/LinearGradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js");
+var LinearGradient = __webpack_require__(/*! ../graphic/LinearGradient */ "./node_modules/zrender/lib/graphic/LinearGradient.js");
 
-var Style = __webpack_require__(/*! ../graphic/Style */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js");
+var Style = __webpack_require__(/*! ../graphic/Style */ "./node_modules/zrender/lib/graphic/Style.js");
 
-var matrix = __webpack_require__(/*! ../core/matrix */ "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+var matrix = __webpack_require__(/*! ../core/matrix */ "./node_modules/zrender/lib/core/matrix.js");
 
-var _path = __webpack_require__(/*! ./path */ "./node_modules/echarts/node_modules/zrender/lib/tool/path.js");
+var _path = __webpack_require__(/*! ./path */ "./node_modules/zrender/lib/tool/path.js");
 
 var createFromString = _path.createFromString;
 
-var _util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var isString = _util.isString;
 var extend = _util.extend;
@@ -106062,18 +107143,18 @@ exports.parseSVG = parseSVG;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/tool/path.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/tool/path.js ***!
-  \********************************************************************/
+/***/ "./node_modules/zrender/lib/tool/path.js":
+/*!***********************************************!*\
+  !*** ./node_modules/zrender/lib/tool/path.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/zrender/lib/core/PathProxy.js");
 
-var transformPath = __webpack_require__(/*! ./transformPath */ "./node_modules/echarts/node_modules/zrender/lib/tool/transformPath.js");
+var transformPath = __webpack_require__(/*! ./transformPath */ "./node_modules/zrender/lib/tool/transformPath.js");
 
 // command chars
 // var cc = [
@@ -106512,16 +107593,16 @@ exports.mergePath = mergePath;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/tool/transformPath.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/tool/transformPath.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/zrender/lib/tool/transformPath.js":
+/*!********************************************************!*\
+  !*** ./node_modules/zrender/lib/tool/transformPath.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/zrender/lib/core/PathProxy.js");
 
-var _vector = __webpack_require__(/*! ../core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var _vector = __webpack_require__(/*! ../core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var v2ApplyTransform = _vector.applyTransform;
 var CMD = PathProxy.CMD;
@@ -106622,18 +107703,18 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/vml/Painter.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/vml/Painter.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/vml/Painter.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/vml/Painter.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var logError = __webpack_require__(/*! ../core/log */ "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+var logError = __webpack_require__(/*! ../core/log */ "./node_modules/zrender/lib/core/log.js");
 
-var vmlCore = __webpack_require__(/*! ./core */ "./node_modules/echarts/node_modules/zrender/lib/vml/core.js");
+var vmlCore = __webpack_require__(/*! ./core */ "./node_modules/zrender/lib/vml/core.js");
 
-var _util = __webpack_require__(/*! ../core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var _util = __webpack_require__(/*! ../core/util */ "./node_modules/zrender/lib/core/util.js");
 
 var each = _util.each;
 
@@ -106807,14 +107888,14 @@ module.exports = _default;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/vml/core.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/vml/core.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/zrender/lib/vml/core.js":
+/*!**********************************************!*\
+  !*** ./node_modules/zrender/lib/vml/core.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var env = __webpack_require__(/*! ../core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ../core/env */ "./node_modules/zrender/lib/core/env.js");
 
 var urn = 'urn:schemas-microsoft-com:vml';
 var win = typeof window === 'undefined' ? null : window;
@@ -106865,42 +107946,42 @@ exports.initVML = initVML;
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/vml/graphic.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/vml/graphic.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/zrender/lib/vml/graphic.js":
+/*!*************************************************!*\
+  !*** ./node_modules/zrender/lib/vml/graphic.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var env = __webpack_require__(/*! ../core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ../core/env */ "./node_modules/zrender/lib/core/env.js");
 
-var _vector = __webpack_require__(/*! ../core/vector */ "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+var _vector = __webpack_require__(/*! ../core/vector */ "./node_modules/zrender/lib/core/vector.js");
 
 var applyTransform = _vector.applyTransform;
 
-var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+var BoundingRect = __webpack_require__(/*! ../core/BoundingRect */ "./node_modules/zrender/lib/core/BoundingRect.js");
 
-var colorTool = __webpack_require__(/*! ../tool/color */ "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+var colorTool = __webpack_require__(/*! ../tool/color */ "./node_modules/zrender/lib/tool/color.js");
 
-var textContain = __webpack_require__(/*! ../contain/text */ "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+var textContain = __webpack_require__(/*! ../contain/text */ "./node_modules/zrender/lib/contain/text.js");
 
-var textHelper = __webpack_require__(/*! ../graphic/helper/text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+var textHelper = __webpack_require__(/*! ../graphic/helper/text */ "./node_modules/zrender/lib/graphic/helper/text.js");
 
-var RectText = __webpack_require__(/*! ../graphic/mixin/RectText */ "./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js");
+var RectText = __webpack_require__(/*! ../graphic/mixin/RectText */ "./node_modules/zrender/lib/graphic/mixin/RectText.js");
 
-var Displayable = __webpack_require__(/*! ../graphic/Displayable */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+var Displayable = __webpack_require__(/*! ../graphic/Displayable */ "./node_modules/zrender/lib/graphic/Displayable.js");
 
-var ZImage = __webpack_require__(/*! ../graphic/Image */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+var ZImage = __webpack_require__(/*! ../graphic/Image */ "./node_modules/zrender/lib/graphic/Image.js");
 
-var Text = __webpack_require__(/*! ../graphic/Text */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+var Text = __webpack_require__(/*! ../graphic/Text */ "./node_modules/zrender/lib/graphic/Text.js");
 
-var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+var Path = __webpack_require__(/*! ../graphic/Path */ "./node_modules/zrender/lib/graphic/Path.js");
 
-var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+var PathProxy = __webpack_require__(/*! ../core/PathProxy */ "./node_modules/zrender/lib/core/PathProxy.js");
 
-var Gradient = __webpack_require__(/*! ../graphic/Gradient */ "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+var Gradient = __webpack_require__(/*! ../graphic/Gradient */ "./node_modules/zrender/lib/graphic/Gradient.js");
 
-var vmlCore = __webpack_require__(/*! ./core */ "./node_modules/echarts/node_modules/zrender/lib/vml/core.js");
+var vmlCore = __webpack_require__(/*! ./core */ "./node_modules/zrender/lib/vml/core.js");
 
 // http://www.w3.org/TR/NOTE-VML
 // TODO Use proxy like svg instead of overwrite brush methods
@@ -107878,47 +108959,47 @@ if (!env.canvasSupported) {
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/vml/vml.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/vml/vml.js ***!
-  \******************************************************************/
+/***/ "./node_modules/zrender/lib/vml/vml.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/vml/vml.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./graphic */ "./node_modules/echarts/node_modules/zrender/lib/vml/graphic.js");
+__webpack_require__(/*! ./graphic */ "./node_modules/zrender/lib/vml/graphic.js");
 
-var _zrender = __webpack_require__(/*! ../zrender */ "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+var _zrender = __webpack_require__(/*! ../zrender */ "./node_modules/zrender/lib/zrender.js");
 
 var registerPainter = _zrender.registerPainter;
 
-var Painter = __webpack_require__(/*! ./Painter */ "./node_modules/echarts/node_modules/zrender/lib/vml/Painter.js");
+var Painter = __webpack_require__(/*! ./Painter */ "./node_modules/zrender/lib/vml/Painter.js");
 
 registerPainter('vml', Painter);
 
 /***/ }),
 
-/***/ "./node_modules/echarts/node_modules/zrender/lib/zrender.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/echarts/node_modules/zrender/lib/zrender.js ***!
-  \******************************************************************/
+/***/ "./node_modules/zrender/lib/zrender.js":
+/*!*********************************************!*\
+  !*** ./node_modules/zrender/lib/zrender.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var guid = __webpack_require__(/*! ./core/guid */ "./node_modules/echarts/node_modules/zrender/lib/core/guid.js");
+var guid = __webpack_require__(/*! ./core/guid */ "./node_modules/zrender/lib/core/guid.js");
 
-var env = __webpack_require__(/*! ./core/env */ "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+var env = __webpack_require__(/*! ./core/env */ "./node_modules/zrender/lib/core/env.js");
 
-var zrUtil = __webpack_require__(/*! ./core/util */ "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+var zrUtil = __webpack_require__(/*! ./core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var Handler = __webpack_require__(/*! ./Handler */ "./node_modules/echarts/node_modules/zrender/lib/Handler.js");
+var Handler = __webpack_require__(/*! ./Handler */ "./node_modules/zrender/lib/Handler.js");
 
-var Storage = __webpack_require__(/*! ./Storage */ "./node_modules/echarts/node_modules/zrender/lib/Storage.js");
+var Storage = __webpack_require__(/*! ./Storage */ "./node_modules/zrender/lib/Storage.js");
 
-var Painter = __webpack_require__(/*! ./Painter */ "./node_modules/echarts/node_modules/zrender/lib/Painter.js");
+var Painter = __webpack_require__(/*! ./Painter */ "./node_modules/zrender/lib/Painter.js");
 
-var Animation = __webpack_require__(/*! ./animation/Animation */ "./node_modules/echarts/node_modules/zrender/lib/animation/Animation.js");
+var Animation = __webpack_require__(/*! ./animation/Animation */ "./node_modules/zrender/lib/animation/Animation.js");
 
-var HandlerProxy = __webpack_require__(/*! ./dom/HandlerProxy */ "./node_modules/echarts/node_modules/zrender/lib/dom/HandlerProxy.js");
+var HandlerProxy = __webpack_require__(/*! ./dom/HandlerProxy */ "./node_modules/zrender/lib/dom/HandlerProxy.js");
 
 /*!
 * ZRender, a high performance 2d drawing library.
@@ -107939,7 +109020,7 @@ var instances = {}; // ZRender实例map索引
  * @type {string}
  */
 
-var version = '4.3.1';
+var version = '4.3.2';
 /**
  * Initializing a zrender instance
  * @param {HTMLElement} dom
@@ -108356,483 +109437,6 @@ exports.init = init;
 exports.dispose = dispose;
 exports.getInstance = getInstance;
 exports.registerPainter = registerPainter;
-
-/***/ }),
-
-/***/ "./node_modules/ngx-echarts/fesm2015/ngx-echarts.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/ngx-echarts/fesm2015/ngx-echarts.js ***!
-  \**********************************************************/
-/*! exports provided: NgxEchartsModule, ɵa */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgxEchartsModule", function() { return NgxEchartsModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return NgxEchartsDirective; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! echarts */ "./node_modules/echarts/index.js");
-/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-
-
-
-
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ChangeFilter {
-    /**
-     * @param {?} _changes
-     */
-    constructor(_changes) {
-        this._changes = _changes;
-    }
-    /**
-     * @param {?} changes
-     * @return {?}
-     */
-    static of(changes) {
-        return new ChangeFilter(changes);
-    }
-    /**
-     * @template T
-     * @param {?} key
-     * @return {?}
-     */
-    notEmpty(key) {
-        if (this._changes[key]) {
-            /** @type {?} */
-            const value = this._changes[key].currentValue;
-            if (value !== undefined && value !== null) {
-                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-            }
-        }
-        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-    }
-    /**
-     * @template T
-     * @param {?} key
-     * @return {?}
-     */
-    has(key) {
-        if (this._changes[key]) {
-            /** @type {?} */
-            const value = this._changes[key].currentValue;
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-        }
-        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-    }
-    /**
-     * @template T
-     * @param {?} key
-     * @return {?}
-     */
-    notFirst(key) {
-        if (this._changes[key] && !this._changes[key].isFirstChange()) {
-            /** @type {?} */
-            const value = this._changes[key].currentValue;
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-        }
-        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-    }
-    /**
-     * @template T
-     * @param {?} key
-     * @return {?}
-     */
-    notFirstAndEmpty(key) {
-        if (this._changes[key] && !this._changes[key].isFirstChange()) {
-            /** @type {?} */
-            const value = this._changes[key].currentValue;
-            if (value !== undefined && value !== null) {
-                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-            }
-        }
-        return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-    }
-}
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class NgxEchartsDirective {
-    /**
-     * @param {?} el
-     * @param {?} ngZone
-     */
-    constructor(el, ngZone) {
-        this.el = el;
-        this.ngZone = ngZone;
-        this.autoResize = true;
-        this.loadingType = 'default';
-        this.detectEventChanges = true; // deprecated, left for compatibility reasons to avoid triggering major version
-        // deprecated, left for compatibility reasons to avoid triggering major version
-        // ngx-echarts events
-        this.chartInit = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        // echarts mouse events
-        this.chartClick = this.createLazyEvent('click');
-        this.chartDblClick = this.createLazyEvent('dblclick');
-        this.chartMouseDown = this.createLazyEvent('mousedown');
-        this.chartMouseMove = this.createLazyEvent('mousemove');
-        this.chartMouseUp = this.createLazyEvent('mouseup');
-        this.chartMouseOver = this.createLazyEvent('mouseover');
-        this.chartMouseOut = this.createLazyEvent('mouseout');
-        this.chartGlobalOut = this.createLazyEvent('globalout');
-        this.chartContextMenu = this.createLazyEvent('contextmenu');
-        // echarts mouse events
-        this.chartLegendSelectChanged = this.createLazyEvent('legendselectchanged');
-        this.chartLegendSelected = this.createLazyEvent('legendselected');
-        this.chartLegendUnselected = this.createLazyEvent('legendunselected');
-        this.chartLegendScroll = this.createLazyEvent('legendscroll');
-        this.chartDataZoom = this.createLazyEvent('datazoom');
-        this.chartDataRangeSelected = this.createLazyEvent('datarangeselected');
-        this.chartTimelineChanged = this.createLazyEvent('timelinechanged');
-        this.chartTimelinePlayChanged = this.createLazyEvent('timelineplaychanged');
-        this.chartRestore = this.createLazyEvent('restore');
-        this.chartDataViewChanged = this.createLazyEvent('dataviewchanged');
-        this.chartMagicTypeChanged = this.createLazyEvent('magictypechanged');
-        this.chartPieSelectChanged = this.createLazyEvent('pieselectchanged');
-        this.chartPieSelected = this.createLazyEvent('pieselected');
-        this.chartPieUnselected = this.createLazyEvent('pieunselected');
-        this.chartMapSelectChanged = this.createLazyEvent('mapselectchanged');
-        this.chartMapSelected = this.createLazyEvent('mapselected');
-        this.chartMapUnselected = this.createLazyEvent('mapunselected');
-        this.chartAxisAreaSelected = this.createLazyEvent('axisareaselected');
-        this.chartFocusNodeAdjacency = this.createLazyEvent('focusnodeadjacency');
-        this.chartUnfocusNodeAdjacency = this.createLazyEvent('unfocusnodeadjacency');
-        this.chartBrush = this.createLazyEvent('brush');
-        this.chartBrushSelected = this.createLazyEvent('brushselected');
-        this.chartRendered = this.createLazyEvent('rendered');
-        this.chartFinished = this.createLazyEvent('finished');
-        this.currentOffsetWidth = 0;
-        this.currentOffsetHeight = 0;
-    }
-    /**
-     * @param {?} changes
-     * @return {?}
-     */
-    ngOnChanges(changes) {
-        /** @type {?} */
-        const filter = ChangeFilter.of(changes);
-        filter.notFirstAndEmpty('options').subscribe((/**
-         * @param {?} opt
-         * @return {?}
-         */
-        opt => this.onOptionsChange(opt)));
-        filter.notFirstAndEmpty('merge').subscribe((/**
-         * @param {?} opt
-         * @return {?}
-         */
-        opt => this.setOption(opt)));
-        filter.has('loading').subscribe((/**
-         * @param {?} v
-         * @return {?}
-         */
-        v => this.toggleLoading(!!v)));
-        filter.notFirst('theme').subscribe((/**
-         * @return {?}
-         */
-        () => this.refreshChart()));
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this.resizeSub = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(window, 'resize').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(50)).subscribe((/**
-         * @return {?}
-         */
-        () => {
-            if (this.autoResize && window.innerWidth !== this.currentWindowWidth) {
-                this.currentWindowWidth = window.innerWidth;
-                this.currentOffsetWidth = this.el.nativeElement.offsetWidth;
-                this.currentOffsetHeight = this.el.nativeElement.offsetHeight;
-                this.resize();
-            }
-        }));
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        if (this.resizeSub) {
-            this.resizeSub.unsubscribe();
-        }
-        this.dispose();
-    }
-    /**
-     * @return {?}
-     */
-    ngDoCheck() {
-        // No heavy work in DoCheck!
-        if (this.chart && this.autoResize) {
-            /** @type {?} */
-            const offsetWidth = this.el.nativeElement.offsetWidth;
-            /** @type {?} */
-            const offsetHeight = this.el.nativeElement.offsetHeight;
-            if (this.currentOffsetWidth !== offsetWidth || this.currentOffsetHeight !== offsetHeight) {
-                this.currentOffsetWidth = offsetWidth;
-                this.currentOffsetHeight = offsetHeight;
-                this.resize();
-            }
-        }
-    }
-    /**
-     * @return {?}
-     */
-    ngAfterViewInit() {
-        setTimeout((/**
-         * @return {?}
-         */
-        () => this.initChart()));
-    }
-    /**
-     * @private
-     * @return {?}
-     */
-    dispose() {
-        if (this.chart) {
-            this.chart.dispose();
-            this.chart = null;
-        }
-    }
-    /**
-     * @private
-     * @return {?}
-     */
-    resize() {
-        if (this.chart) {
-            this.chart.resize();
-        }
-    }
-    /**
-     * @private
-     * @param {?} loading
-     * @return {?}
-     */
-    toggleLoading(loading) {
-        if (this.chart) {
-            loading ? this.chart.showLoading(this.loadingType, this.loadingOpts) : this.chart.hideLoading();
-        }
-    }
-    /**
-     * @private
-     * @param {?} option
-     * @param {?=} opts
-     * @return {?}
-     */
-    setOption(option, opts) {
-        if (this.chart) {
-            this.chart.setOption(option, opts);
-        }
-    }
-    /**
-     * @private
-     * @return {?}
-     */
-    refreshChart() {
-        this.dispose();
-        this.initChart();
-    }
-    /**
-     * @private
-     * @return {?}
-     */
-    createChart() {
-        this.currentWindowWidth = window.innerWidth;
-        this.currentOffsetWidth = this.el.nativeElement.offsetWidth;
-        this.currentOffsetHeight = this.el.nativeElement.offsetHeight;
-        /** @type {?} */
-        const dom = this.el.nativeElement;
-        if (window && window.getComputedStyle) {
-            /** @type {?} */
-            const prop = window.getComputedStyle(dom, null).getPropertyValue('height');
-            if ((!prop || prop === '0px') &&
-                (!dom.style.height || dom.style.height === '0px')) {
-                dom.style.height = '400px';
-            }
-        }
-        return this.ngZone.runOutsideAngular((/**
-         * @return {?}
-         */
-        () => Object(echarts__WEBPACK_IMPORTED_MODULE_1__["init"])(dom, this.theme, this.initOpts)));
-    }
-    /**
-     * @private
-     * @return {?}
-     */
-    initChart() {
-        this.onOptionsChange(this.options);
-        if (this.merge && this.chart) {
-            this.setOption(this.merge);
-        }
-    }
-    /**
-     * @private
-     * @param {?} opt
-     * @return {?}
-     */
-    onOptionsChange(opt) {
-        if (opt) {
-            if (!this.chart) {
-                this.chart = this.createChart();
-                this.chartInit.emit(this.chart);
-            }
-            this.chart.setOption(this.options, true);
-        }
-    }
-    // allows to lazily bind to only those events that are requested through the `@Output` by parent components
-    // see https://stackoverflow.com/questions/51787972/optimal-reentering-the-ngzone-from-eventemitter-event for more info
-    /**
-     * @private
-     * @template T
-     * @param {?} eventName
-     * @return {?}
-     */
-    createLazyEvent(eventName) {
-        return (/** @type {?} */ (this.chartInit.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])((/**
-         * @param {?} chart
-         * @return {?}
-         */
-        (chart) => new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"]((/**
-         * @param {?} observer
-         * @return {?}
-         */
-        observer => {
-            chart.on(eventName, (/**
-             * @param {?} data
-             * @return {?}
-             */
-            (data) => this.ngZone.run((/**
-             * @return {?}
-             */
-            () => observer.next(data)))));
-            return (/**
-             * @return {?}
-             */
-            () => chart.off(eventName));
-        })))))));
-    }
-}
-NgxEchartsDirective.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                selector: 'echarts, [echarts]',
-            },] }
-];
-/** @nocollapse */
-NgxEchartsDirective.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"] }
-];
-NgxEchartsDirective.propDecorators = {
-    options: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    theme: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    loading: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    initOpts: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    merge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    autoResize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    loadingType: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    loadingOpts: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    detectEventChanges: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    chartInit: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartDblClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMouseDown: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMouseMove: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMouseUp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMouseOver: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMouseOut: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartGlobalOut: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartContextMenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartLegendSelectChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartLegendSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartLegendUnselected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartLegendScroll: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartDataZoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartDataRangeSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartTimelineChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartTimelinePlayChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartRestore: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartDataViewChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMagicTypeChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartPieSelectChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartPieSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartPieUnselected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMapSelectChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMapSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartMapUnselected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartAxisAreaSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartFocusNodeAdjacency: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartUnfocusNodeAdjacency: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartBrush: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartBrushSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartRendered: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    chartFinished: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class NgxEchartsModule {
-}
-NgxEchartsModule.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
-                imports: [],
-                declarations: [
-                    NgxEchartsDirective
-                ],
-                exports: [
-                    NgxEchartsDirective
-                ]
-            },] }
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-
-//# sourceMappingURL=ngx-echarts.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html":
-/*!**********************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html ***!
-  \**********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color=\"primary\" style=\"height:30px; font-size: small;\">\r\n    <span>Password Management</span>\r\n</mat-toolbar>\r\n<br><br>\r\n<!-- 500 issue id added b vidya -->\r\n<div fxLayout=\"row\">\r\n    <span fxFlex></span>\r\n    <div fxFlex=\"40%\">\r\n        <mat-card>\r\n            <mat-card-title>\r\n            </mat-card-title>\r\n            <mat-card-content>\r\n                <!-- <form #fn=\"ngForm\" novalidate> -->\r\n                    <form [formGroup]=\"userForm\"  class=\"form\" >\r\n                    <div fxLayout=\"row\">\r\n\r\n                        <div fxFlex=\"100\" class=\"pr-1\">\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Old Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"oldPassword\" [type]=\"hide1 ? 'password' : 'text'\"\r\n                                        >\r\n                                        <mat-icon matSuffix (click)=\"hide1 = !hide1\">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>New Password</mat-label>\r\n                                    <!-- <input matInput type=\"password\" required formControlName=\"newPassword\"\r\n                                         > -->\r\n                                         <input matInput type=\"password\" placeholder=\"New Password\" #newPassword name=\"newPassword\"\r\n                                         formControlName=\"newPassword\"  [type]=\"hide ? 'password' : 'text'\" pattern=\"{{passwordRegex}}\">\r\n                                         <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                                <mat-error *ngIf=\"userForm.controls.newPassword.errors && (userForm.controls.newPassword.touched || userForm.controls.newPassword.dirty)\">\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('required','newPassword')\">\r\n                                     Please enter your new password\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('pattern','newPassword')\">\r\n                                       {{errorMsg}}\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('minlength','newPassword')\">\r\n                                      Password must contain Minimum {{minPass}} characters.\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('maxlength','newPassword')\">\r\n                                      Password must contain Maximum {{maxPass}} characters.\r\n                                    </small>\r\n                                </mat-error>\r\n                                        </div>\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Confirm Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"confirmPassword\"\r\n                                    [type]=\"hide2 ? 'password' : 'text'\" >\r\n                                       <mat-icon matSuffix (click)=\"hide2 = !hide2\">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"pb-1\" *ngIf=\"otpEnableFlag\">\r\n                                <a>Please enter OTP sent to your email </a>\r\n                                    <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                        <mat-label>OTP</mat-label>\r\n                                        <input matInput type=\"password\" required formControlName=\"otp\"\r\n                                            >\r\n                                    </mat-form-field>\r\n                                </div>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <!-- <a *ngIf=\"enableLoader\">Verifying Data</a>\r\n                    <mat-progress-bar mode=\"indeterminate\" *ngIf=\"enableLoader\"></mat-progress-bar> -->\r\n                    <!-- <br> -->\r\n                    <div fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"10px\">\r\n                        <button type=\"submit\" #saveBtn mat-raised-button color=\"primary\"\r\n                            (click)=\"onSubmit()\">Submit</button>\r\n                        <!-- [disabled]=\"!fn.form.valid\" -->\r\n                        <button mat-raised-button color=\"warn\" [routerLink]=\"'/dashboard'\">Exit</button>\r\n                       \r\n                    </div>\r\n                </form>\r\n\r\n            </mat-card-content>\r\n        </mat-card>\r\n    </div>\r\n    <span fxFlex></span>\r\n</div>\r\n\r\n<br>\r\n<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html":
-/*!************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html ***!
-  \************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(255, 155, 6) , rgb(201, 156, 8));color: white \">\r\n  \r\n  <mat-card-title fxLayoutAlign=\"start center\">\r\n  <small class=\"text-muted\">User Maintenance</small>\r\n\r\n  \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.user}}</h3>\r\n  <small class=\"text-muted\">Availiable Users</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, green , rgb(52, 160, 52));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\"> Audit Logs</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.auditlog}}</h3>\r\n  <small class=\"text-muted\">Total Modification in Application</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(129, 29, 243) , rgb(147, 192, 235));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">User Role</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n \r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.role}}</h3>\r\n  <small class=\"text-muted\">Total Roles For User</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  \r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(228, 10, 10) , rgb(230, 97, 97));color: white;\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">External System</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\">{{this.data.extsys}}</h3>\r\n  <small class=\"text-muted\">Availiable External System</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  \r\n  <mat-tab-group>\r\n  \r\n  \r\n  <mat-tab label=\"Application\">\r\n  <mat-card>\r\n  <div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"50\">\r\n  <div style=\"display: block\" *ngIf=\"chartpie\">\r\n  <mat-card >\r\n  <mat-card-header >User Details</mat-card-header>\r\n  <!-- <canvas baseChart [data]=\"pieChartData\" [labels]=\"pieChartLabels\" [chartType]=\"pieChartType\"></canvas> -->\r\n  </mat-card>\r\n  </div>\r\n  </div>&nbsp;\r\n  <div fxLayout=\"row wrap\" >\r\n <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(241, 76, 11) , rgb(229, 233, 15));color: white;border:solid 1px\">\r\n  \r\n  Batches uploaded by you today: {{uploadedBatches}}\r\n\r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(10, 122, 25) , rgb(49, 228, 117));color: white;border:solid 1px\">\r\n  Pending unauthorized batches for you today: {{pendingUnauthBatch}}\r\n  \r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(164, 15, 233) , rgb(72, 132, 223));color:white;border: solid 1px\">\r\n  Batches authorized by you today:{{authBatches}}\r\n  \r\n  \r\n  </mat-card>\r\n  </div> \r\n  </div>\r\n  \r\n  \r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Services\">\r\n  <mat-card>\r\n  <div style=\"display: block\">\r\n  <!-- <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\"\r\n  [legend]=\"barChartLegend\" [chartType]=\"barChartType\">\r\n  </canvas> -->\r\n  </div>\r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Other\"> Other</mat-tab>\r\n  </mat-tab-group>\r\n  <!-- added by gayathri issueid=0000650 on 20-08-2020 -->\r\n  \r\n  ");
 
 /***/ }),
 

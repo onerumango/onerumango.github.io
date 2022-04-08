@@ -217,6 +217,7 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
         this.now = Date.now();
         this.myFormattedDate = this.pipe.transform(this.now, 'dd-MMM-yy');
         this.roleCodes = new _roles1_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_14__["permissionsLabels"]();
+        this.dataForProcessScreen1 = [];
         //  this.selectorDateData = this.datePipe.transform(this.selectorDateData, 'yyyy-MM-dd');
     }
     ngOnInit() {
@@ -305,17 +306,15 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
             this.excelDataProcessingReqDTO.trnCode = this.trncode;
             console.log("calling api", this.excelDataProcessingReqDTO.fileName);
             // frist call
-            // performance test patch
             this.api
                 .showDetailServiceInExcelDataProcessing(this.excelDataProcessingReqDTO, this.user_id)
-                .subscribe((responseforfileupload) => {
+                .subscribe(responseforfileupload => {
                 //   for audit log in excel UploadProcessAuthorizationScreenPermission.
                 //  this.getAuditLogData(this.excelDataProcessingReqDTO);
                 this.responseforfileupload = responseforfileupload;
-                this.responseDto = responseforfileupload;
                 console.log("response from bc", this.responseforfileupload);
-                console.log(this.responseforfileupload.batchNo);
-                console.log(this.responseforfileupload);
+                console.log(this.responseforfileupload.respDto.batchNo);
+                console.log(this.responseforfileupload.respDto);
                 this.spinner = false;
                 this.disbaleBtn = false;
                 this.disablebtn2 = false;
@@ -325,15 +324,15 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
                 }
                 // need to modify based on the list of object.list1=download data 2-response.
                 this.spinner = false;
-                if (this.responseforfileupload.errorMessage) {
+                if (this.responseforfileupload.respDto.errorMessage) {
                     console.log("here is error of duplicate record");
                     this.disablebtn2 = true;
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + this.responseforfileupload.errorMessage);
-                    if (this.responseforfileupload.errorMessage === "possible duplicate data") {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + this.responseforfileupload.respDto.errorMessage);
+                    if (this.responseforfileupload.respDto.errorMessage === "possible duplicate data") {
                         this.excelDataProcessingReqDTO.proceedDuplicates = true;
                         console.log("here duplicate");
                         sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
-                            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+                            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.respDto.errorMessage + 'Do you want to Proceed??',
                             text: 'You are trying to upload duplicate data. ' + ' Do you want to proceed?',
                             showCancelButton: true,
                             confirmButtonColor: '#3085d6',
@@ -343,16 +342,17 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
                             confirmButtonText: 'YES.'
                         }).then((result => {
                             if (result.value) {
-                                this.api.showDetailServiceInExcelDataProcessing(this.excelDataProcessingReqDTO, this.user_id)
-                                    .subscribe((dupliacteResp) => {
+                                this.api.showDetailServiceInExcelDataProcessing(this.excelDataProcessingReqDTO, this.user_id).subscribe(dupliacteResp => {
                                     console.log("dupliacteResp", dupliacteResp);
-                                    // Swal.fire('Unable to process', 'Error ' + this.responseforfileupload.errorMessage);
+                                    // Swal.fire('Unable to process', 'Error ' + this.responseforfileupload.respDto.errorMessage);
                                     this.responseforfileupload = dupliacteResp;
+                                    this.responseDto = this.responseforfileupload.respDto;
                                     // added by vidya M B for the issue 0001047
-                                    if (this.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
-                                        sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + this.responseforfileupload.errorMessage);
+                                    if (this.responseforfileupload.respDto.errorMessage === "Amount and LCY amount mismatch") {
+                                        sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('Unable to upload', 'Error:' + this.responseforfileupload.respDto.errorMessage);
                                     }
                                     if (this.responseDto.totalNoOfRecords !== 0) {
+                                        // Swal.fire('Data processed successfully for the Batch  ',this.responseforfileupload.respDto.batchNo);
                                         sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
                                             title: "Data uploaded successfully ",
                                             text: "For the Batch " + this.responseDto.batchNo
@@ -362,6 +362,7 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
                                         this.flag = false;
                                         this.isShow = true;
                                     }
+                                    console.log("________", this.responseforfileupload.respDto.errorMessage);
                                 });
                             }
                         }));
@@ -369,21 +370,61 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
                     this.flag = true;
                     this.disbaleBtn = true;
                 }
-                this.valueDate = this.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
-                this.spinner = false;
-                this.responsebutton = true;
-                this.spinner = false;
-                this.responseDto = this.responseforfileupload;
-                if (this.responseDto.totalNoOfRecords !== 0) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
-                        title: "Data uploaded successfully ",
-                        text: "For the Batch " + this.responseDto.batchNo
-                    });
-                    this.excelFileFlag = true;
-                    this.flag = false;
-                    this.isShow = true;
+                if (this.responseforfileupload.excelData) {
+                    console.log('value date', this.pipe.transform(this.responseforfileupload.excelData[0].valueDate, 'dd-MMM-yy'));
+                    d: new Date();
+                    console.log(this.pipe.transform(new Date(), 'dd-MMM-yy'));
+                    this.a = this.pipe.transform(this.responseforfileupload.excelData[0].valueDate, 'dd-MMM-yy');
+                    this.b = this.pipe.transform(new Date(), 'dd-MMM-yy');
+                    console.log("inside second if of value date");
+                    console.log('value date', this.responseforfileupload.excelData[0].valueDate);
+                    console.log('a', this.a);
+                    console.log('b', this.b);
+                    if (this.a == this.b) {
+                        this.valueDate = "Today";
+                    }
+                    else {
+                        this.valueDate = "not Today";
+                    }
+                    console.log(this.valueDate);
+                    this.spinner = false;
+                    this.responsebutton = true;
+                    this.spinner = false;
+                    this.responseDto = this.responseforfileupload.respDto;
+                    if (this.responseDto.totalNoOfRecords !== 0) {
+                        // Swal.fire('Data processed successfully for the Batch  ',this.responseforfileupload.respDto.batchNo);
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire({
+                            title: "Data uploaded successfully ",
+                            text: "For the Batch " + this.responseDto.batchNo
+                        });
+                        this.excelFileFlag = true;
+                        console.log("excelFileFlag value ", this.excelFileFlag);
+                        this.flag = false;
+                        this.isShow = true;
+                    }
+                    console.log("________", this.responseforfileupload.respDto.errorMessage);
                 }
-            }, (err) => {
+            }, 
+            // this.excelDataProcessingRespDTO = this.data;
+            // //// console.log('this.excelDataProcessingRespDTO' + this.excelDataProcessingRespDTO);
+            // this.getAuditLogData(this.excelDataProcessingRespDTO);
+            // if (!this.excelDataProcessingRespDTO) {
+            //   this.spinner = false;
+            //   Swal.fire(
+            //     'Unable to upload data.',
+            //   );
+            // } else {
+            //   this.spinner = false;
+            //   this.totalrecord = this.data.totalNoOfRecords;
+            //   if (this.totalrecord !== 0) {
+            //     Swal.fire('Processing is Successful ', 'Total processed Record ' + this.totalrecord);
+            //   }
+            //   if (this.data.errorMessage) {
+            //     Swal.fire('Unable to process', 'Error' + this.data.errorMessage);
+            //   }
+            // }
+            // },
+            (err) => {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.fire('server error.');
             }); // first api call
         }
@@ -409,6 +450,11 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
         this.disbaleBtn = false;
         this.excelDataProcessingReqDTO.proceedDuplicates = false;
         // this.excelDataProcessingAuditlog = new ExcelDataProcessingAuditRespDTO();
+    }
+    delay(ms) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => console.log('fired'));
+        });
     }
     valuechange($event) {
         if (this.disablebtn2) {
@@ -575,17 +621,126 @@ let ExcelDataProcessingComponent = class ExcelDataProcessingComponent {
             }
         });
     }
+    testAlert() {
+        // this.responseDto.valueDate = 'Today';
+        // Swal.fire({
+        //   text: 'Value Date',
+        //   showCancelButton: true,
+        //   confirmButtonColor: '#3085d6',
+        //   cancelButtonColor: '#d33',
+        //   confirmButtonText: 'PROCEED.'
+        // }).then((result) => {
+        //   console.log(result.value);
+        //   if (result.value) {
+        //     console.log('user choose to proceed.');
+        //   } else {
+        //     return;
+        //   }
+        // })
+        this.api.test(this.user_id).subscribe(resp => {
+            this.test = this.test;
+            console.log(this.test);
+        });
+    }
     downloadData() {
-        console.log("this.responseforfileupload.fileDownloadUrl", this.responseforfileupload.fileDownloadUrl);
-        const link = document.createElement('a');
-        link.setAttribute('target', '_blank');
-        link.setAttribute('href', `${this.responseforfileupload.fileDownloadUrl}`);
-        let url = `${this.responseforfileupload.fileDownloadUrl}`;
-        let filename = url.substring(url.lastIndexOf('/') + 1);
-        link.setAttribute('download', `${filename}`);
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
+        console.log('response', this.responseforfileupload.excelData);
+        this.responseforfileupload.excelData.forEach(element => {
+            //   if(element.uploadDate!==null ){
+            //   element.uploadDate
+            //   =this.pipe.transform(element.uploadDate, 'dd-MMM-yy').toString();
+            //   }
+            //   if( element.valueDate !==null){
+            //     element.valueDate
+            //     =this.pipe.transform(element.valueDate
+            //       , 'dd-MMM-yy').toString();
+            //   }
+            //  if(element.inputTime !==null){
+            //   element.inputTime
+            //   =this.pipe.transform(element.inputTime
+            //     , 'dd-MMM-yy').toString();
+            //  }
+            // this.dataForProcessScreen1.push({
+            //   'Source_Code':element.id.sourceCode,
+            //   'Process_Code': element.processCode,
+            //   'Branch_Code': element.id.branchCode,
+            //   'Batch_No': element.id.batchNo,
+            //   'Value_Date': this.pipe.transform(element.valueDate, 'dd-MMM-yy'),
+            //   Account: element.account,
+            //   Account_Branch: element.accountBranch,
+            //   Currency: element.ccyCd,
+            //   Amount: element.amount,
+            //   DrCr: element.drCr,
+            //   LcyEquivalent: element.lcyEquivalent,
+            //   Exch_Rate: element.id.exchRate,
+            //   Curr_No: element.id.currNo,
+            //   Addl_Text: element.addlText,
+            //   Trn_Code: element.txnCode,
+            //   Period_Code: element.periodCode,
+            //   Financial_Cycle: element.finCycle,
+            //   Initiation_Date: this.pipe.transform(element.initiationDate, 'dd-MMM-yy'),
+            //   Upload_Date: this.pipe.transform(element.uploadDate, 'dd-MMM-yy'),
+            //   Input_By: element.inputBy,
+            //   Input_Time: this.pipe.transform(element.inputTime, 'dd-MMM-yy'),
+            //   UDF_Detail: element.udfDetails,
+            //   Error_Desc:element.errorDesc,
+            //   Validation_Error: element.validationError,
+            //   Related_Customer: element.relCust,
+            //   Related_Account: element.relatedAccount,
+            //   Related_Reference: element.relatedRef
+            // });
+        });
+        console.log('data for down', this.responseforfileupload.excelData);
+        this.responseforfileupload.excelData.forEach(element => {
+            console.log(element.id.sourceCode);
+            console.log(element);
+            if (element.drCr == 'C') {
+                this.credit = element.lcyEquivalent;
+                this.debit = 0;
+            }
+            else {
+                this.debit = element.lcyEquivalent;
+                this.credit = 0;
+            }
+            this.dataForProcessScreen1.push({
+                // 'Source_Code': element.id.sourceCode,
+                // 'Process_Code': element.processCode,
+                // 'Branch_Code': element.id.branchCode,
+                'Batch_No': element.id.batchNo,
+                //Refrence No : element.id.refNo, // 2 skiiping this Field, user can see this in FlexCube
+                Account_Branch: element.accountBranch,
+                Account: element.account,
+                Account_name: element.accDesc,
+                DrCr: element.drCr,
+                Trn_Code: element.txnCode,
+                Transaction_Desc: element.trnDesc,
+                FcyAmount: element.amount,
+                Exch_Rate: element.exchRate,
+                DrLcyAmt: this.debit,
+                CrLcyAmt: this.credit,
+                Instr_code: element.instrumentNo,
+                'Value_Date': this.pipe.transform(element.valueDate, 'dd-MMM-yy'),
+                User_Id: element.inputBy,
+                Authorizer_ID: element.firstTimeAuthorizer,
+                //below fields we are showing only when upload excel failes to upload file else it show below fields in report 
+                Validation_Error: element.validationError,
+                Error_Desc: element.errorDesc,
+            });
+            console.log(this.dataForProcessScreen1, 'screen', this.excelFileFlag);
+            if (this.excelFileFlag) {
+                for (let i = 0; i < this.dataForProcessScreen1.length; i++) {
+                    delete this.dataForProcessScreen1[i].Validation_Error;
+                    delete this.dataForProcessScreen1[i].Error_Desc;
+                } //for loop endning
+            }
+            else {
+                //Validation_Error: element.validationError,
+                //Error_Desc: element.errorDesc,
+            }
+        });
+        console.log('final data', this.dataForProcessScreen1);
+        //this.excelService.exportAsExcelFile(this.dataForProcessScreen1, 'Upload_Error');
+        this.excelService.exportAsExcelFile(this.dataForProcessScreen1, this.excelDataProcessingReqDTO.fileName);
+        this.dataForProcessScreen1 = [];
     }
     exit() {
         this.responsebutton = false;

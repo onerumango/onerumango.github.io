@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-dashboard-dashboard-module"], {
   /***/
@@ -245,11 +245,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     __webpack_require__(
     /*! zrender/lib/vml/vml */
-    "./node_modules/echarts/node_modules/zrender/lib/vml/vml.js");
+    "./node_modules/zrender/lib/vml/vml.js");
 
     __webpack_require__(
     /*! zrender/lib/svg/svg */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/svg.js");
+    "./node_modules/zrender/lib/svg/svg.js");
     /***/
 
   },
@@ -284,7 +284,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -374,7 +374,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -442,7 +442,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -537,7 +537,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _roamHelper = __webpack_require__(
     /*! ./roamHelper */
@@ -737,7 +737,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _barGrid = __webpack_require__(
     /*! ../layout/barGrid */
@@ -941,7 +941,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -963,11 +963,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var Path = __webpack_require__(
     /*! zrender/lib/graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var Group = __webpack_require__(
     /*! zrender/lib/container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     var _throttle = __webpack_require__(
     /*! ../../util/throttle */
@@ -1092,20 +1092,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var barBorderRadius = backgroundModel.get('barBorderRadius') || 0;
         var bgEls = [];
         var oldBgEls = this._backgroundEls || [];
+
+        var createBackground = function createBackground(dataIndex) {
+          var bgLayout = getLayout[coord.type](data, dataIndex);
+          var bgEl = createBackgroundEl(coord, isHorizontalOrRadial, bgLayout);
+          bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
+
+          if (coord.type === 'cartesian2d') {
+            bgEl.setShape('r', barBorderRadius);
+          }
+
+          bgEls[dataIndex] = bgEl;
+          return bgEl;
+        };
+
         data.diff(oldData).add(function (dataIndex) {
           var itemModel = data.getItemModel(dataIndex);
           var layout = getLayout[coord.type](data, dataIndex, itemModel);
 
           if (drawBackground) {
-            var bgLayout = getLayout[coord.type](data, dataIndex);
-            var bgEl = createBackgroundEl(coord, isHorizontalOrRadial, bgLayout);
-            bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
-
-            if (coord.type === 'cartesian2d') {
-              bgEl.setShape('r', barBorderRadius);
-            }
-
-            bgEls[dataIndex] = bgEl;
+            createBackground(dataIndex);
           } // If dataZoom in filteMode: 'empty', the baseValue can be set as NaN in "axisProxy".
 
 
@@ -1133,14 +1139,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var layout = getLayout[coord.type](data, newIndex, itemModel);
 
           if (drawBackground) {
-            var bgEl = oldBgEls[oldIndex];
-            bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
+            var bgEl;
 
-            if (coord.type === 'cartesian2d') {
-              bgEl.setShape('r', barBorderRadius);
+            if (oldBgEls.length === 0) {
+              bgEl = createBackground(oldIndex);
+            } else {
+              bgEl = oldBgEls[oldIndex];
+              bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
+
+              if (coord.type === 'cartesian2d') {
+                bgEl.setShape('r', barBorderRadius);
+              }
+
+              bgEls[newIndex] = bgEl;
             }
 
-            bgEls[newIndex] = bgEl;
             var bgLayout = getLayout[coord.type](data, newIndex);
             var shape = createBackgroundShape(isHorizontalOrRadial, bgLayout, coord);
             graphic.updateProps(bgEl, {
@@ -1284,8 +1297,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         return clipped;
       },
-      polar: function polar(coordSysClipArea) {
-        return false;
+      polar: function polar(coordSysClipArea, layout) {
+        var signR = layout.r0 <= layout.r ? 1 : -1; // Make sure r is larger than r0
+
+        if (signR < 0) {
+          var r = layout.r;
+          layout.r = layout.r0;
+          layout.r0 = r;
+        }
+
+        var r = mathMin(layout.r, coordSysClipArea.r);
+        var r0 = mathMax(layout.r0, coordSysClipArea.r0);
+        layout.r = r;
+        layout.r0 = r0;
+        var clipped = r - r0 < 0; // Reverse back
+
+        if (signR < 0) {
+          var r = layout.r;
+          layout.r = layout.r0;
+          layout.r0 = r;
+        }
+
+        return clipped;
       }
     };
     var elementCreator = {
@@ -1786,7 +1819,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         symbolOffset: null,
         symbolMargin: null,
         // start margin and end margin. Can be a number or a percent string.
-        // Auto margin by defualt.
+        // Auto margin by default.
         symbolRepeat: false,
         // false/null/undefined, means no repeat.
         // Can be true, means auto calculate repeat times and cut by data.
@@ -1852,7 +1885,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -2770,7 +2803,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var SeriesModel = __webpack_require__(
     /*! ../../model/Series */
@@ -2905,7 +2938,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ChartView = __webpack_require__(
     /*! ../../view/Chart */
@@ -2917,7 +2950,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var Path = __webpack_require__(
     /*! zrender/lib/graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -3093,7 +3126,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _number = __webpack_require__(
     /*! ../../util/number */
@@ -3465,7 +3498,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var SeriesModel = __webpack_require__(
     /*! ../../model/Series */
@@ -3613,7 +3646,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ChartView = __webpack_require__(
     /*! ../../view/Chart */
@@ -3625,7 +3658,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var Path = __webpack_require__(
     /*! zrender/lib/graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var _createClipPathFromCoordSys = __webpack_require__(
     /*! ../helper/createClipPathFromCoordSys */
@@ -3967,7 +4000,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var retrieve2 = _util.retrieve2;
     /*
@@ -4288,7 +4321,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -4362,7 +4395,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphicUtil = __webpack_require__(
     /*! ../util/graphic */
@@ -5293,7 +5326,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var pointsLayout = __webpack_require__(
     /*! ../../layout/points */
@@ -5472,7 +5505,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createListSimply = __webpack_require__(
     /*! ../helper/createListSimply */
@@ -5568,6 +5601,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         maxSize: '100%',
         sort: 'descending',
         // 'ascending', 'descending'
+        orient: 'vertical',
         gap: 0,
         funnelAlign: 'center',
         label: {
@@ -5635,7 +5669,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ChartView = __webpack_require__(
     /*! ../../view/Chart */
@@ -5850,6 +5884,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     * specific language governing permissions and limitations
     * under the License.
     */
+    var _config = __webpack_require__(
+    /*! ../../config */
+    "./node_modules/echarts/lib/config.js");
+
+    var __DEV__ = _config.__DEV__;
+
     var layout = __webpack_require__(
     /*! ../../util/layout */
     "./node_modules/echarts/lib/util/layout.js");
@@ -5915,6 +5955,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var itemModel = data.getItemModel(idx);
         var labelModel = itemModel.getModel('label');
         var labelPosition = labelModel.get('position');
+        var orient = itemModel.get('orient');
         var labelLineModel = itemModel.getModel('labelLine');
         var layout = data.getItemLayout(idx);
         var points = layout.points;
@@ -5944,6 +5985,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var x1;
           var y1;
           var x2;
+          var y2;
           var labelLineLen = labelLineModel.get('length');
 
           if (labelPosition === 'left') {
@@ -5960,46 +6002,101 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             x2 = x1 + labelLineLen;
             textX = x2 + 5;
             textAlign = 'left';
+          } else if (labelPosition === 'top') {
+            // Top side
+            x1 = (points[3][0] + points[0][0]) / 2;
+            y1 = (points[3][1] + points[0][1]) / 2;
+            y2 = y1 - labelLineLen;
+            textY = y2 - 5;
+            textAlign = 'center';
+          } else if (labelPosition === 'bottom') {
+            // Bottom side
+            x1 = (points[1][0] + points[2][0]) / 2;
+            y1 = (points[1][1] + points[2][1]) / 2;
+            y2 = y1 + labelLineLen;
+            textY = y2 + 5;
+            textAlign = 'center';
           } else if (labelPosition === 'rightTop') {
             // RightTop side
-            x1 = points[1][0];
-            y1 = points[1][1];
-            x2 = x1 + labelLineLen;
-            textX = x2 + 5;
-            textAlign = 'top';
+            x1 = orient === 'horizontal' ? points[3][0] : points[1][0];
+            y1 = orient === 'horizontal' ? points[3][1] : points[1][1];
+
+            if (orient === 'horizontal') {
+              y2 = y1 - labelLineLen;
+              textY = y2 - 5;
+              textAlign = 'center';
+            } else {
+              x2 = x1 + labelLineLen;
+              textX = x2 + 5;
+              textAlign = 'top';
+            }
           } else if (labelPosition === 'rightBottom') {
             // RightBottom side
             x1 = points[2][0];
             y1 = points[2][1];
-            x2 = x1 + labelLineLen;
-            textX = x2 + 5;
-            textAlign = 'bottom';
+
+            if (orient === 'horizontal') {
+              y2 = y1 + labelLineLen;
+              textY = y2 + 5;
+              textAlign = 'center';
+            } else {
+              x2 = x1 + labelLineLen;
+              textX = x2 + 5;
+              textAlign = 'bottom';
+            }
           } else if (labelPosition === 'leftTop') {
             // LeftTop side
             x1 = points[0][0];
-            y1 = points[1][1];
-            x2 = x1 - labelLineLen;
-            textX = x2 - 5;
-            textAlign = 'right';
+            y1 = orient === 'horizontal' ? points[0][1] : points[1][1];
+
+            if (orient === 'horizontal') {
+              y2 = y1 - labelLineLen;
+              textY = y2 - 5;
+              textAlign = 'center';
+            } else {
+              x2 = x1 - labelLineLen;
+              textX = x2 - 5;
+              textAlign = 'right';
+            }
           } else if (labelPosition === 'leftBottom') {
             // LeftBottom side
-            x1 = points[3][0];
-            y1 = points[2][1];
-            x2 = x1 - labelLineLen;
-            textX = x2 - 5;
-            textAlign = 'right';
+            x1 = orient === 'horizontal' ? points[1][0] : points[3][0];
+            y1 = orient === 'horizontal' ? points[1][1] : points[2][1];
+
+            if (orient === 'horizontal') {
+              y2 = y1 + labelLineLen;
+              textY = y2 + 5;
+              textAlign = 'center';
+            } else {
+              x2 = x1 - labelLineLen;
+              textX = x2 - 5;
+              textAlign = 'right';
+            }
           } else {
-            // Right side
+            // Right side or Bottom side
             x1 = (points[1][0] + points[2][0]) / 2;
             y1 = (points[1][1] + points[2][1]) / 2;
-            x2 = x1 + labelLineLen;
-            textX = x2 + 5;
-            textAlign = 'left';
+
+            if (orient === 'horizontal') {
+              y2 = y1 + labelLineLen;
+              textY = y2 + 5;
+              textAlign = 'center';
+            } else {
+              x2 = x1 + labelLineLen;
+              textX = x2 + 5;
+              textAlign = 'left';
+            }
           }
 
-          var y2 = y1;
+          if (orient === 'horizontal') {
+            x2 = x1;
+            textX = x2;
+          } else {
+            y2 = y1;
+            textY = y2;
+          }
+
           linePoints = [[x1, y1], [x2, y2]];
-          textY = y2;
         }
 
         layout.label = {
@@ -6020,7 +6117,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var sort = seriesModel.get('sort');
         var viewRect = getViewRect(seriesModel, api);
         var indices = getSortedIndices(data, sort);
-        var sizeExtent = [parsePercent(seriesModel.get('minSize'), viewRect.width), parsePercent(seriesModel.get('maxSize'), viewRect.width)];
+        var orient = seriesModel.get('orient');
+        var viewWidth = viewRect.width;
+        var viewHeight = viewRect.height;
+        var x = viewRect.x;
+        var y = viewRect.y;
+        var sizeExtent = orient === 'horizontal' ? [parsePercent(seriesModel.get('minSize'), viewHeight), parsePercent(seriesModel.get('maxSize'), viewHeight)] : [parsePercent(seriesModel.get('minSize'), viewWidth), parsePercent(seriesModel.get('maxSize'), viewWidth)];
         var dataExtent = data.getDataExtent(valueDim);
         var min = seriesModel.get('min');
         var max = seriesModel.get('max');
@@ -6035,37 +6137,65 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         var funnelAlign = seriesModel.get('funnelAlign');
         var gap = seriesModel.get('gap');
-        var itemHeight = (viewRect.height - gap * (data.count() - 1)) / data.count();
-        var y = viewRect.y;
+        var viewSize = orient === 'horizontal' ? viewWidth : viewHeight;
+        var itemSize = (viewSize - gap * (data.count() - 1)) / data.count();
 
-        var getLinePoints = function getLinePoints(idx, offY) {
+        var getLinePoints = function getLinePoints(idx, offset) {
           // End point index is data.count() and we assign it 0
+          if (orient === 'horizontal') {
+            var val = data.get(valueDim, idx) || 0;
+            var itemHeight = linearMap(val, [min, max], sizeExtent, true);
+            var y0;
+
+            switch (funnelAlign) {
+              case 'top':
+                y0 = y;
+                break;
+
+              case 'center':
+                y0 = y + (viewHeight - itemHeight) / 2;
+                break;
+
+              case 'bottom':
+                y0 = y + (viewHeight - itemHeight);
+                break;
+            }
+
+            return [[offset, y0], [offset, y0 + itemHeight]];
+          }
+
           var val = data.get(valueDim, idx) || 0;
           var itemWidth = linearMap(val, [min, max], sizeExtent, true);
           var x0;
 
           switch (funnelAlign) {
             case 'left':
-              x0 = viewRect.x;
+              x0 = x;
               break;
 
             case 'center':
-              x0 = viewRect.x + (viewRect.width - itemWidth) / 2;
+              x0 = x + (viewWidth - itemWidth) / 2;
               break;
 
             case 'right':
-              x0 = viewRect.x + viewRect.width - itemWidth;
+              x0 = x + viewWidth - itemWidth;
               break;
           }
 
-          return [[x0, offY], [x0 + itemWidth, offY]];
+          return [[x0, offset], [x0 + itemWidth, offset]];
         };
 
         if (sort === 'ascending') {
           // From bottom to top
-          itemHeight = -itemHeight;
+          itemSize = -itemSize;
           gap = -gap;
-          y += viewRect.height;
+
+          if (orient === 'horizontal') {
+            x += viewWidth;
+          } else {
+            y += viewHeight;
+          }
+
           indices = indices.reverse();
         }
 
@@ -6073,24 +6203,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var idx = indices[i];
           var nextIdx = indices[i + 1];
           var itemModel = data.getItemModel(idx);
-          var height = itemModel.get('itemStyle.height');
 
-          if (height == null) {
-            height = itemHeight;
-          } else {
-            height = parsePercent(height, viewRect.height);
+          if (orient === 'horizontal') {
+            var width = itemModel.get('itemStyle.width');
 
-            if (sort === 'ascending') {
-              height = -height;
+            if (width == null) {
+              width = itemSize;
+            } else {
+              width = parsePercent(width, viewWidth);
+
+              if (sort === 'ascending') {
+                width = -width;
+              }
             }
-          }
 
-          var start = getLinePoints(idx, y);
-          var end = getLinePoints(nextIdx, y + height);
-          y += height + gap;
-          data.setItemLayout(idx, {
-            points: start.concat(end.slice().reverse())
-          });
+            var start = getLinePoints(idx, x);
+            var end = getLinePoints(nextIdx, x + width);
+            x += width + gap;
+            data.setItemLayout(idx, {
+              points: start.concat(end.slice().reverse())
+            });
+          } else {
+            var height = itemModel.get('itemStyle.height');
+
+            if (height == null) {
+              height = itemSize;
+            } else {
+              height = parsePercent(height, viewHeight);
+
+              if (sort === 'ascending') {
+                height = -height;
+              }
+            }
+
+            var start = orient === 'horizontal' ? getLinePoints(idx, x) : getLinePoints(idx, y);
+            var end = orient === 'horizontal' ? getLinePoints(nextIdx, x + width) : getLinePoints(nextIdx, y + height);
+            y += height + gap;
+            data.setItemLayout(idx, {
+              points: start.concat(end.slice().reverse())
+            });
+          }
         }
 
         labelLayout(data);
@@ -6725,7 +6877,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var Path = __webpack_require__(
     /*! zrender/lib/graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -6924,7 +7076,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _model = __webpack_require__(
     /*! ../../util/model */
@@ -6949,6 +7101,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var LegendVisualProvider = __webpack_require__(
     /*! ../../visual/LegendVisualProvider */
     "./node_modules/echarts/lib/visual/LegendVisualProvider.js");
+
+    var _multipleGraphEdgeHelper = __webpack_require__(
+    /*! ../helper/multipleGraphEdgeHelper */
+    "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+    var initCurvenessList = _multipleGraphEdgeHelper.initCurvenessList;
+    var createEdgeMapForCurveness = _multipleGraphEdgeHelper.createEdgeMapForCurveness;
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -6967,7 +7126,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     * specific language governing permissions and limitations
     * under the License.
     */
-
 
     var GraphSeries = echarts.extendSeriesModel({
       type: 'series.graph',
@@ -7001,7 +7159,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var self = this;
 
         if (nodes && edges) {
-          return createGraphFromNodeEdge(nodes, edges, this, true, beforeLink).data;
+          // auto curveness
+          initCurvenessList(this);
+          var graph = createGraphFromNodeEdge(nodes, edges, this, true, beforeLink);
+          zrUtil.each(graph.edges, function (edge) {
+            createEdgeMapForCurveness(edge.node1, edge.node2, this, edge.dataIndex);
+          }, this);
+          return graph.data;
         }
 
         function beforeLink(nodeData, edgeData) {
@@ -7178,7 +7342,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         lineStyle: {
           color: '#aaa',
           width: 1,
-          curveness: 0,
           opacity: 0.5
         },
         emphasis: {
@@ -7227,7 +7390,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var SymbolDraw = __webpack_require__(
     /*! ../helper/SymbolDraw */
@@ -7664,11 +7827,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var curveTool = __webpack_require__(
     /*! zrender/lib/core/curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var _graphHelper = __webpack_require__(
     /*! ./graphHelper */
@@ -7818,24 +7981,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           vec2.copy(linePoints[2], pts[1]);
         } // Line
         else {
-            vec2.copy(pts2[0], originalPoints[0]);
-            vec2.copy(pts2[1], originalPoints[1]);
-            vec2.sub(v, pts2[1], pts2[0]);
-            vec2.normalize(v, v);
+          vec2.copy(pts2[0], originalPoints[0]);
+          vec2.copy(pts2[1], originalPoints[1]);
+          vec2.sub(v, pts2[1], pts2[0]);
+          vec2.normalize(v, v);
 
-            if (fromSymbol && fromSymbol !== 'none') {
-              var symbolSize = getSymbolSize(edge.node1);
-              vec2.scaleAndAdd(pts2[0], pts2[0], v, symbolSize * scale);
-            }
-
-            if (toSymbol && toSymbol !== 'none') {
-              var symbolSize = getSymbolSize(edge.node2);
-              vec2.scaleAndAdd(pts2[1], pts2[1], v, -symbolSize * scale);
-            }
-
-            vec2.copy(linePoints[0], pts2[0]);
-            vec2.copy(linePoints[1], pts2[1]);
+          if (fromSymbol && fromSymbol !== 'none') {
+            var symbolSize = getSymbolSize(edge.node1);
+            vec2.scaleAndAdd(pts2[0], pts2[0], v, symbolSize * scale);
           }
+
+          if (toSymbol && toSymbol !== 'none') {
+            var symbolSize = getSymbolSize(edge.node2);
+            vec2.scaleAndAdd(pts2[1], pts2[1], v, -symbolSize * scale);
+          }
+
+          vec2.copy(linePoints[0], pts2[0]);
+          vec2.copy(linePoints[1], pts2[1]);
+        }
       });
     }
 
@@ -8122,7 +8285,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var _graphHelper = __webpack_require__(
     /*! ./graphHelper */
@@ -8130,6 +8293,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var getSymbolSize = _graphHelper.getSymbolSize;
     var getNodeGlobalScale = _graphHelper.getNodeGlobalScale;
+
+    var zrUtil = __webpack_require__(
+    /*! zrender/lib/core/util */
+    "./node_modules/zrender/lib/core/util.js");
+
+    var _multipleGraphEdgeHelper = __webpack_require__(
+    /*! ../helper/multipleGraphEdgeHelper */
+    "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+    var getCurvenessForEdge = _multipleGraphEdgeHelper.getCurvenessForEdge;
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -8199,8 +8372,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
       _layoutNodesBasedOn[basedOn](seriesModel, coordSys, graph, nodeData, r, cx, cy, count);
 
-      graph.eachEdge(function (edge) {
-        var curveness = edge.getModel().get('lineStyle.curveness') || 0;
+      graph.eachEdge(function (edge, index) {
+        var curveness = zrUtil.retrieve3(edge.getModel().get('lineStyle.curveness'), getCurvenessForEdge(edge, seriesModel, index), 0);
         var p1 = vec2.clone(edge.node1.getLayout());
         var p2 = vec2.clone(edge.node2.getLayout());
         var cp1;
@@ -8300,7 +8473,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var bbox = __webpack_require__(
     /*! zrender/lib/core/bbox */
-    "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+    "./node_modules/zrender/lib/core/bbox.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -8518,7 +8691,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -8740,11 +8913,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
+
+    var _multipleGraphEdgeHelper = __webpack_require__(
+    /*! ../helper/multipleGraphEdgeHelper */
+    "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+    var getCurvenessForEdge = _multipleGraphEdgeHelper.getCurvenessForEdge;
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -8763,7 +8942,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     * specific language governing permissions and limitations
     * under the License.
     */
-
 
     function _default(ecModel) {
       ecModel.eachSeriesByType('graph', function (graphSeries) {
@@ -8832,11 +9010,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             var edgeModel = edge.getModel();
+            var curveness = zrUtil.retrieve3(edgeModel.get('lineStyle.curveness'), -getCurvenessForEdge(edge, graphSeries, idx, true), 0);
             return {
               n1: nodes[edge.node1.dataIndex],
               n2: nodes[edge.node2.dataIndex],
               d: d,
-              curveness: edgeModel.get('lineStyle.curveness') || 0,
+              curveness: curveness,
               ignoreForceLayout: edgeModel.get('ignoreForceLayout')
             };
           });
@@ -9103,7 +9282,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
 
@@ -9166,7 +9345,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
           }
 
-          simpleLayoutEdge(data.graph);
+          simpleLayoutEdge(data.graph, seriesModel);
         } else if (!layout || layout === 'none') {
           simpleLayout(seriesModel);
         }
@@ -9207,7 +9386,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
+
+    var zrUtil = __webpack_require__(
+    /*! zrender/lib/core/util */
+    "./node_modules/zrender/lib/core/util.js");
+
+    var _multipleGraphEdgeHelper = __webpack_require__(
+    /*! ../helper/multipleGraphEdgeHelper */
+    "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js");
+
+    var getCurvenessForEdge = _multipleGraphEdgeHelper.getCurvenessForEdge;
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -9227,7 +9416,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     * under the License.
     */
 
-
     function simpleLayout(seriesModel) {
       var coordSys = seriesModel.coordinateSystem;
 
@@ -9240,12 +9428,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var model = node.getModel();
         node.setLayout([+model.get('x'), +model.get('y')]);
       });
-      simpleLayoutEdge(graph);
+      simpleLayoutEdge(graph, seriesModel);
     }
 
-    function simpleLayoutEdge(graph) {
-      graph.eachEdge(function (edge) {
-        var curveness = edge.getModel().get('lineStyle.curveness') || 0;
+    function simpleLayoutEdge(graph, seriesModel) {
+      graph.eachEdge(function (edge, index) {
+        var curveness = zrUtil.retrieve3(edge.getModel().get('lineStyle.curveness'), -getCurvenessForEdge(edge, seriesModel, index, true), 0);
         var p1 = vec2.clone(edge.node1.getLayout());
         var p2 = vec2.clone(edge.node2.getLayout());
         var points = [p1, p2];
@@ -9332,7 +9520,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -9639,7 +9827,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -9932,7 +10120,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _symbol = __webpack_require__(
     /*! ../../util/symbol */
@@ -9942,11 +10130,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var curveUtil = __webpack_require__(
     /*! zrender/lib/core/curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -10188,7 +10376,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var EffectLine = __webpack_require__(
     /*! ./EffectLine */
@@ -10196,7 +10384,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -10353,7 +10541,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _symbol = __webpack_require__(
     /*! ../../util/symbol */
@@ -10642,15 +10830,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var IncrementalDisplayable = __webpack_require__(
     /*! zrender/lib/graphic/IncrementalDisplayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
+    "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
 
     var lineContain = __webpack_require__(
     /*! zrender/lib/contain/line */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/line.js");
+    "./node_modules/zrender/lib/contain/line.js");
 
     var quadraticContain = __webpack_require__(
     /*! zrender/lib/contain/quadratic */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js");
+    "./node_modules/zrender/lib/contain/quadratic.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -10941,7 +11129,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var IncrementalDisplayable = __webpack_require__(
     /*! zrender/lib/graphic/IncrementalDisplayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
+    "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -11251,11 +11439,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var vector = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var symbolUtil = __webpack_require__(
     /*! ../../util/symbol */
@@ -11308,19 +11496,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     function createSymbol(name, lineData, idx) {
-      var color = lineData.getItemVisual(idx, 'color');
       var symbolType = lineData.getItemVisual(idx, name);
-      var symbolSize = lineData.getItemVisual(idx, name + 'Size');
 
       if (!symbolType || symbolType === 'none') {
         return;
       }
 
+      var color = lineData.getItemVisual(idx, 'color');
+      var symbolSize = lineData.getItemVisual(idx, name + 'Size');
+      var symbolRotate = lineData.getItemVisual(idx, name + 'Rotate');
+
       if (!zrUtil.isArray(symbolSize)) {
         symbolSize = [symbolSize, symbolSize];
       }
 
-      var symbolPath = symbolUtil.createSymbol(symbolType, -symbolSize[0] / 2, -symbolSize[1] / 2, symbolSize[0], symbolSize[1], color);
+      var symbolPath = symbolUtil.createSymbol(symbolType, -symbolSize[0] / 2, -symbolSize[1] / 2, symbolSize[0], symbolSize[1], color); // rotate by default if symbolRotate is not specified or NaN
+
+      symbolPath.__specifiedRotation = symbolRotate == null || isNaN(symbolRotate) ? void 0 : +symbolRotate * Math.PI / 180 || 0;
       symbolPath.name = name;
       return symbolPath;
     }
@@ -11386,16 +11578,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       vector.normalize(d, d);
 
       if (symbolFrom) {
-        symbolFrom.attr('position', fromPos);
-        var tangent = line.tangentAt(0);
-        symbolFrom.attr('rotation', Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+        symbolFrom.attr('position', fromPos); // Fix #12388
+        // when symbol is set to be 'arrow' in markLine,
+        // symbolRotate value will be ignored, and compulsively use tangent angle.
+        // rotate by default if symbol rotation is not specified
+
+        var specifiedRotation = symbolFrom.__specifiedRotation;
+
+        if (specifiedRotation == null) {
+          var tangent = line.tangentAt(0);
+          symbolFrom.attr('rotation', Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+        } else {
+          symbolFrom.attr('rotation', specifiedRotation);
+        }
+
         symbolFrom.attr('scale', [invScale * percent, invScale * percent]);
       }
 
       if (symbolTo) {
-        symbolTo.attr('position', toPos);
-        var tangent = line.tangentAt(1);
-        symbolTo.attr('rotation', -Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+        symbolTo.attr('position', toPos); // Fix #12388
+        // when symbol is set to be 'arrow' in markLine,
+        // symbolRotate value will be ignored, and compulsively use tangent angle.
+        // rotate by default if symbol rotation is not specified
+
+        var specifiedRotation = symbolTo.__specifiedRotation;
+
+        if (specifiedRotation == null) {
+          var tangent = line.tangentAt(1);
+          symbolTo.attr('rotation', -Math.PI / 2 - Math.atan2(tangent[1], tangent[0]));
+        } else {
+          symbolTo.attr('rotation', specifiedRotation);
+        }
+
         symbolTo.attr('scale', [invScale * percent, invScale * percent]);
       }
 
@@ -11943,7 +12157,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -12046,7 +12260,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -12173,7 +12387,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _symbol = __webpack_require__(
     /*! ../../util/symbol */
@@ -12420,7 +12634,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       } else {
         symbolPath.setStyle({
-          opacity: null,
+          opacity: 1,
           shadowBlur: null,
           shadowOffsetX: null,
           shadowOffsetY: null,
@@ -12590,7 +12804,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isObject = _util.isObject;
     /*
@@ -12962,7 +13176,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var List = __webpack_require__(
     /*! ../../data/List */
@@ -13110,7 +13324,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var List = __webpack_require__(
     /*! ../../data/List */
@@ -13323,7 +13537,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var extend = _util.extend;
     var isArray = _util.isArray;
@@ -13614,6 +13828,278 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js":
+  /*!**************************************************************************!*\
+    !*** ./node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js ***!
+    \**************************************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesEchartsLibChartHelperMultipleGraphEdgeHelperJs(module, exports, __webpack_require__) {
+    /*
+    * Licensed to the Apache Software Foundation (ASF) under one
+    * or more contributor license agreements.  See the NOTICE file
+    * distributed with this work for additional information
+    * regarding copyright ownership.  The ASF licenses this file
+    * to you under the Apache License, Version 2.0 (the
+    * "License"); you may not use this file except in compliance
+    * with the License.  You may obtain a copy of the License at
+    *
+    *   http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing,
+    * software distributed under the License is distributed on an
+    * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    * KIND, either express or implied.  See the License for the
+    * specific language governing permissions and limitations
+    * under the License.
+    */
+    var zrUtil = __webpack_require__(
+    /*! zrender/lib/core/util */
+    "./node_modules/zrender/lib/core/util.js");
+    /*
+    * Licensed to the Apache Software Foundation (ASF) under one
+    * or more contributor license agreements.  See the NOTICE file
+    * distributed with this work for additional information
+    * regarding copyright ownership.  The ASF licenses this file
+    * to you under the Apache License, Version 2.0 (the
+    * "License"); you may not use this file except in compliance
+    * with the License.  You may obtain a copy of the License at
+    *
+    *   http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing,
+    * software distributed under the License is distributed on an
+    * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    * KIND, either express or implied.  See the License for the
+    * specific language governing permissions and limitations
+    * under the License.
+    */
+
+
+    var KEY_DELIMITER = '-->';
+    /**
+     * params handler
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     * @returns {*}
+     */
+
+    var getAutoCurvenessParams = function getAutoCurvenessParams(seriesModel) {
+      return seriesModel.get('autoCurveness') || null;
+    };
+    /**
+     * Generate a list of edge curvatures, 20 is the default
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     * @param {number} appendLength
+     * @return  20 => [0, -0.2, 0.2, -0.4, 0.4, -0.6, 0.6, -0.8, 0.8, -1, 1, -1.2, 1.2, -1.4, 1.4, -1.6, 1.6, -1.8, 1.8, -2]
+     */
+
+
+    var createCurveness = function createCurveness(seriesModel, appendLength) {
+      var autoCurvenessParmas = getAutoCurvenessParams(seriesModel);
+      var length = 20;
+      var curvenessList = []; // handler the function set
+
+      if (typeof autoCurvenessParmas === 'number') {
+        length = autoCurvenessParmas;
+      } else if (zrUtil.isArray(autoCurvenessParmas)) {
+        seriesModel.__curvenessList = autoCurvenessParmas;
+        return;
+      } // append length
+
+
+      if (appendLength > length) {
+        length = appendLength;
+      } // make sure the length is even
+
+
+      var len = length % 2 ? length + 2 : length + 3;
+      curvenessList = [];
+
+      for (var i = 0; i < len; i++) {
+        curvenessList.push((i % 2 ? i + 1 : i) / 10 * (i % 2 ? -1 : 1));
+      }
+
+      seriesModel.__curvenessList = curvenessList;
+    };
+    /**
+     * Create different cache key data in the positive and negative directions, in order to set the curvature later
+     * @param {number|string|module:echarts/data/Graph.Node} n1
+     * @param {number|string|module:echarts/data/Graph.Node} n2
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     * @returns {string} key
+     */
+
+
+    var getKeyOfEdges = function getKeyOfEdges(n1, n2, seriesModel) {
+      var source = [n1.id, n1.dataIndex].join('.');
+      var target = [n2.id, n2.dataIndex].join('.');
+      return [seriesModel.uid, source, target].join(KEY_DELIMITER);
+    };
+    /**
+     * get opposite key
+     * @param {string} key
+     * @returns {string}
+     */
+
+
+    var getOppositeKey = function getOppositeKey(key) {
+      var keys = key.split(KEY_DELIMITER);
+      return [keys[0], keys[2], keys[1]].join(KEY_DELIMITER);
+    };
+    /**
+     * get edgeMap with key
+     * @param edge
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     */
+
+
+    var getEdgeFromMap = function getEdgeFromMap(edge, seriesModel) {
+      var key = getKeyOfEdges(edge.node1, edge.node2, seriesModel);
+      return seriesModel.__edgeMap[key];
+    };
+    /**
+     * calculate all cases total length
+     * @param edge
+     * @param seriesModel
+     * @returns {number}
+     */
+
+
+    var getTotalLengthBetweenNodes = function getTotalLengthBetweenNodes(edge, seriesModel) {
+      var len = getEdgeMapLengthWithKey(getKeyOfEdges(edge.node1, edge.node2, seriesModel), seriesModel);
+      var lenV = getEdgeMapLengthWithKey(getKeyOfEdges(edge.node2, edge.node1, seriesModel), seriesModel);
+      return len + lenV;
+    };
+    /**
+     *
+     * @param key
+     */
+
+
+    var getEdgeMapLengthWithKey = function getEdgeMapLengthWithKey(key, seriesModel) {
+      var edgeMap = seriesModel.__edgeMap;
+      return edgeMap[key] ? edgeMap[key].length : 0;
+    };
+    /**
+     * Count the number of edges between the same two points, used to obtain the curvature table and the parity of the edge
+     * @see /graph/GraphSeries.js@getInitialData
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     */
+
+
+    function initCurvenessList(seriesModel) {
+      if (!getAutoCurvenessParams(seriesModel)) {
+        return;
+      }
+
+      seriesModel.__curvenessList = [];
+      seriesModel.__edgeMap = {}; // calc the array of curveness List
+
+      createCurveness(seriesModel);
+    }
+    /**
+     * set edgeMap with key
+     * @param {number|string|module:echarts/data/Graph.Node} n1
+     * @param {number|string|module:echarts/data/Graph.Node} n2
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     * @param {number} index
+     */
+
+
+    function createEdgeMapForCurveness(n1, n2, seriesModel, index) {
+      if (!getAutoCurvenessParams(seriesModel)) {
+        return;
+      }
+
+      var key = getKeyOfEdges(n1, n2, seriesModel);
+      var edgeMap = seriesModel.__edgeMap;
+      var oppositeEdges = edgeMap[getOppositeKey(key)]; // set direction
+
+      if (edgeMap[key] && !oppositeEdges) {
+        edgeMap[key].isForward = true;
+      } else if (oppositeEdges && edgeMap[key]) {
+        oppositeEdges.isForward = true;
+        edgeMap[key].isForward = false;
+      }
+
+      edgeMap[key] = edgeMap[key] || [];
+      edgeMap[key].push(index);
+    }
+    /**
+     * get curvature for edge
+     * @param edge
+     * @param {module:echarts/model/SeriesModel} seriesModel
+     * @param index
+     */
+
+
+    function getCurvenessForEdge(edge, seriesModel, index, needReverse) {
+      var autoCurvenessParams = getAutoCurvenessParams(seriesModel);
+      var isArrayParam = zrUtil.isArray(autoCurvenessParams);
+
+      if (!autoCurvenessParams) {
+        return null;
+      }
+
+      var edgeArray = getEdgeFromMap(edge, seriesModel);
+
+      if (!edgeArray) {
+        return null;
+      }
+
+      var edgeIndex = -1;
+
+      for (var i = 0; i < edgeArray.length; i++) {
+        if (edgeArray[i] === index) {
+          edgeIndex = i;
+          break;
+        }
+      } // if totalLen is Longer createCurveness
+
+
+      var totalLen = getTotalLengthBetweenNodes(edge, seriesModel);
+      createCurveness(seriesModel, totalLen);
+      edge.lineStyle = edge.lineStyle || {}; // if is opposite edge, must set curvenss to opposite number
+
+      var curKey = getKeyOfEdges(edge.node1, edge.node2, seriesModel);
+      var curvenessList = seriesModel.__curvenessList; // if pass array no need parity
+
+      var parityCorrection = isArrayParam ? 0 : totalLen % 2 ? 0 : 1;
+
+      if (!edgeArray.isForward) {
+        // the opposite edge show outside
+        var oppositeKey = getOppositeKey(curKey);
+        var len = getEdgeMapLengthWithKey(oppositeKey, seriesModel);
+        var resValue = curvenessList[edgeIndex + len + parityCorrection]; // isNeedReverse, simple, force type need reverse the curveness in the junction of the forword and the opposite
+
+        if (needReverse) {
+          // set as array may make the parity handle with the len of opposite
+          if (isArrayParam) {
+            if (autoCurvenessParams && autoCurvenessParams[0] === 0) {
+              return (len + parityCorrection) % 2 ? resValue : -resValue;
+            } else {
+              return ((len % 2 ? 0 : 1) + parityCorrection) % 2 ? resValue : -resValue;
+            }
+          } else {
+            return (len + parityCorrection) % 2 ? resValue : -resValue;
+          }
+        } else {
+          return curvenessList[edgeIndex + len + parityCorrection];
+        }
+      } else {
+        return curvenessList[parityCorrection + edgeIndex];
+      }
+    }
+
+    exports.initCurvenessList = initCurvenessList;
+    exports.createEdgeMapForCurveness = createEdgeMapForCurveness;
+    exports.getCurvenessForEdge = getCurvenessForEdge;
+    /***/
+  },
+
+  /***/
   "./node_modules/echarts/lib/chart/helper/treeHelper.js":
   /*!*************************************************************!*\
     !*** ./node_modules/echarts/lib/chart/helper/treeHelper.js ***!
@@ -13643,7 +14129,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -13765,7 +14251,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _dimensionHelper = __webpack_require__(
     /*! ../../data/helper/dimensionHelper */
@@ -14142,11 +14628,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _bbox = __webpack_require__(
     /*! zrender/lib/core/bbox */
-    "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+    "./node_modules/zrender/lib/core/bbox.js");
 
     var fromPoints = _bbox.fromPoints;
 
@@ -14916,7 +15402,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var map = _util.map;
     /*
@@ -14996,15 +15482,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         valueStart = extent[1];
       } // auto
       else {
-          // Both positive
-          if (extent[0] > 0) {
-            valueStart = extent[0];
-          } // Both negative
-          else if (extent[1] < 0) {
-              valueStart = extent[1];
-            } // If is one positive, and one negative, onZero shall be true
+        // Both positive
+        if (extent[0] > 0) {
+          valueStart = extent[0];
+        } // Both negative
+        else if (extent[1] < 0) {
+          valueStart = extent[1];
+        } // If is one positive, and one negative, onZero shall be true
 
-        }
+      }
 
       return valueStart;
     }
@@ -15266,15 +15752,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var Path = __webpack_require__(
     /*! zrender/lib/graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var fixClipWithShadow = __webpack_require__(
     /*! zrender/lib/graphic/helper/fixClipWithShadow */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
+    "./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -15751,7 +16237,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var concatArray = _util.concatArray;
     var mergeAll = _util.mergeAll;
@@ -15836,8 +16322,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         LinesSeries.superApply(this, 'init', arguments);
       },
       mergeOption: function mergeOption(option) {
-        // The input data may be null/undefined.
-        option.data = option.data || [];
         compatEc2(option);
 
         if (option.data) {
@@ -16652,7 +17136,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createListSimply = __webpack_require__(
     /*! ../helper/createListSimply */
@@ -16801,7 +17285,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
        *
        * @param {number} dataIndex
        */
-      formatTooltip: function formatTooltip(dataIndex) {
+      formatTooltip: function formatTooltip(dataIndex, multipleSeries, dataType, renderMode) {
         // FIXME orignalData and data is a bit confusing
         var data = this.getData();
         var formattedValue = addCommas(this.getRawValue(dataIndex));
@@ -16818,7 +17302,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         }
 
-        return seriesNames.join(', ') + '<br />' + encodeHTML(name + ' : ' + formattedValue);
+        var newLine = renderMode === 'html' ? '<br/>' : '\n';
+        return seriesNames.join(', ') + newLine + encodeHTML(name + ' : ' + formattedValue);
       },
 
       /**
@@ -16948,7 +17433,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -17191,7 +17676,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -17259,7 +17744,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -17389,7 +17874,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -17626,7 +18111,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var createHashMap = _util.createHashMap;
@@ -18157,7 +18642,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     __webpack_require__(
     /*! ../coord/cartesian/Grid */
@@ -18244,7 +18729,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     __webpack_require__(
     /*! ./pie/PieSeries */
@@ -18346,7 +18831,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -18572,7 +19057,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -18689,13 +19174,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }, seriesModel, idx);
         } // Expansion
         else {
-            sector.shape.endAngle = layout.startAngle;
-            graphic.updateProps(sector, {
-              shape: {
-                endAngle: layout.endAngle
-              }
-            }, seriesModel, idx);
-          }
+          sector.shape.endAngle = layout.startAngle;
+          graphic.updateProps(sector, {
+            shape: {
+              endAngle: layout.endAngle
+            }
+          }, seriesModel, idx);
+        }
       } else {
         if (animationTypeUpdate === 'expansion') {
           // Sectors are set to be target shape and an overlaying clipPath is used for animation
@@ -18980,7 +19465,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var _number = __webpack_require__(
     /*! ../../util/number */
@@ -19365,7 +19850,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -19653,7 +20138,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _format = __webpack_require__(
     /*! ../../util/format */
@@ -19700,15 +20185,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           generateCoordCount: Infinity
         });
       },
-      formatTooltip: function formatTooltip(dataIndex) {
+      formatTooltip: function formatTooltip(dataIndex, multipleSeries, dataType, renderMode) {
         var data = this.getData();
         var coordSys = this.coordinateSystem;
         var indicatorAxes = coordSys.getIndicatorAxes();
         var name = this.getData().getName(dataIndex);
-        return encodeHTML(name === '' ? this.name : name) + '<br/>' + zrUtil.map(indicatorAxes, function (axis, idx) {
+        var newLine = renderMode === 'html' ? '<br/>' : '\n';
+        return encodeHTML(name === '' ? this.name : name) + newLine + zrUtil.map(indicatorAxes, function (axis, idx) {
           var val = data.get(data.mapDimension(axis.dim), dataIndex);
           return encodeHTML(axis.name + ' : ' + val);
-        }).join('<br />');
+        }).join(newLine);
       },
 
       /**
@@ -19794,7 +20280,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var symbolUtil = __webpack_require__(
     /*! ../../util/symbol */
@@ -19845,12 +20331,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var symbolSize = normalizeSymbolSize(data.getItemVisual(idx, 'symbolSize'));
           var symbolPath = symbolUtil.createSymbol(symbolType, -1, -1, 2, 2, color);
+          var symbolRotate = data.getItemVisual(idx, 'symbolRotate') || 0;
           symbolPath.attr({
             style: {
               strokeNoScale: true
             },
             z2: 100,
-            scale: [symbolSize[0] / 2, symbolSize[1] / 2]
+            scale: [symbolSize[0] / 2, symbolSize[1] / 2],
+            rotation: symbolRotate * Math.PI / 180 || 0
           });
           return symbolPath;
         }
@@ -20023,7 +20511,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -20115,7 +20603,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -20546,7 +21034,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -21085,7 +21573,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _model = __webpack_require__(
     /*! ../../util/model */
@@ -21692,7 +22180,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -22155,7 +22643,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     __webpack_require__(
     /*! ./sunburst/SunburstSeries */
@@ -22236,7 +22724,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -22409,7 +22897,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var normalModel = itemModel.getModel('label');
       var labelModel = state === 'normal' || state === 'emphasis' ? normalModel : itemModel.getModel(state + '.label');
       var labelHoverModel = itemModel.getModel('emphasis.label');
-      var text = zrUtil.retrieve(seriesModel.getFormattedLabel(this.node.dataIndex, state, null, null, 'label'), this.node.name);
+      var labelFormatter = labelModel.get('formatter'); // Use normal formatter if no state formatter is defined
+
+      var labelState = labelFormatter ? state : 'normal';
+      var text = zrUtil.retrieve(seriesModel.getFormattedLabel(this.node.dataIndex, labelState, null, null, 'label'), this.node.name);
 
       if (getLabelAttr('show') === false) {
         text = '';
@@ -22644,7 +23135,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var SeriesModel = __webpack_require__(
     /*! ../../model/Series */
@@ -22653,6 +23144,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var Tree = __webpack_require__(
     /*! ../../data/Tree */
     "./node_modules/echarts/lib/data/Tree.js");
+
+    var Model = __webpack_require__(
+    /*! ../../model/Model */
+    "./node_modules/echarts/lib/model/Model.js");
 
     var _treeHelper = __webpack_require__(
     /*! ../helper/treeHelper */
@@ -22692,14 +23187,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           children: option.data
         };
         completeTreeValue(root);
-        var levels = option.levels || []; // levels = option.levels = setDefault(levels, ecModel);
-
-        var treeOption = {};
-        treeOption.levels = levels; // Make sure always a new tree is created when setOption,
+        var levelModels = zrUtil.map(option.levels || [], function (levelDefine) {
+          return new Model(levelDefine, this, ecModel);
+        }, this); // Make sure always a new tree is created when setOption,
         // in TreemapView, we check whether oldTree === newTree
         // to choose mappings approach among old shapes and new shapes.
 
-        return Tree.createTree(root, this, treeOption).data;
+        var tree = Tree.createTree(root, this, beforeLink);
+
+        function beforeLink(nodeData) {
+          nodeData.wrapMethod('getItemModel', function (model, idx) {
+            var node = tree.getNodeByDataIndex(idx);
+            var levelModel = levelModels[node.depth];
+            levelModel && (model.parentModel = levelModel);
+            return model;
+          });
+        }
+
+        return tree.data;
       },
       optionUpdated: function optionUpdated() {
         this.resetViewRoot();
@@ -22875,7 +23380,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ChartView = __webpack_require__(
     /*! ../../view/Chart */
@@ -23270,7 +23775,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -23595,7 +24100,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _model = __webpack_require__(
     /*! ../../util/model */
@@ -23662,9 +24167,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
        * @return {Array}
        */
       fixData: function fixData(data) {
-        var rawDataLength = data.length; // grouped data by name
+        var rawDataLength = data.length;
+        /**
+         * Make sure every layer data get the same keys.
+         * The value index tells which layer has visited.
+         * {
+         *  2014/01/01: -1
+         * }
+         */
+
+        var timeValueKeys = {}; // grouped data by name
 
         var groupResult = groupData(data, function (item) {
+          if (!timeValueKeys.hasOwnProperty(item[0])) {
+            timeValueKeys[item[0]] = -1;
+          }
+
           return item[2];
         });
         var layData = [];
@@ -23675,40 +24193,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
         });
         var layerNum = layData.length;
-        var largestLayer = -1;
-        var index = -1;
-
-        for (var i = 0; i < layerNum; ++i) {
-          var len = layData[i].dataList.length;
-
-          if (len > largestLayer) {
-            largestLayer = len;
-            index = i;
-          }
-        }
 
         for (var k = 0; k < layerNum; ++k) {
-          if (k === index) {
-            continue;
-          }
-
           var name = layData[k].name;
 
-          for (var j = 0; j < largestLayer; ++j) {
-            var timeValue = layData[index].dataList[j][0];
-            var length = layData[k].dataList.length;
-            var keyIndex = -1;
+          for (var j = 0; j < layData[k].dataList.length; ++j) {
+            var timeValue = layData[k].dataList[j][0];
+            timeValueKeys[timeValue] = k;
+          }
 
-            for (var l = 0; l < length; ++l) {
-              var value = layData[k].dataList[l][0];
-
-              if (value === timeValue) {
-                keyIndex = l;
-                break;
-              }
-            }
-
-            if (keyIndex === -1) {
+          for (var timeValue in timeValueKeys) {
+            if (timeValueKeys.hasOwnProperty(timeValue) && timeValueKeys[timeValue] !== k) {
+              timeValueKeys[timeValue] = k;
               data[rawDataLength] = [];
               data[rawDataLength][0] = timeValue;
               data[rawDataLength][1] = 0;
@@ -23940,7 +24436,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var bind = _util.bind;
     var extend = _util.extend;
@@ -24135,7 +24631,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var numberUtil = __webpack_require__(
     /*! ../../util/number */
@@ -24325,7 +24821,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     /*
@@ -24534,7 +25030,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
         var leaves = option.leaves || {};
         var leavesModel = new Model(leaves, this, this.ecModel);
-        var tree = Tree.createTree(root, this, {}, beforeLink);
+        var tree = Tree.createTree(root, this, beforeLink);
 
         function beforeLink(nodeData) {
           nodeData.wrapMethod('getItemModel', function (model, idx) {
@@ -24691,7 +25187,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -24713,7 +25209,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var bbox = __webpack_require__(
     /*! zrender/lib/core/bbox */
-    "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+    "./node_modules/zrender/lib/core/bbox.js");
 
     var View = __webpack_require__(
     /*! ../../coord/View */
@@ -25162,9 +25658,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           graphic.updateProps(edge, {
             shape: getEdgeShape(seriesScope, sourceLayout, targetLayout),
-            style: {
+            style: zrUtil.defaults({
               opacity: 1
-            }
+            }, seriesScope.lineStyle)
           }, seriesModel);
         }
       } else if (edgeShape === 'polyline') {
@@ -25198,9 +25694,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 parentPoint: [targetLayout.x, targetLayout.y],
                 childPoints: childPoints
               },
-              style: {
+              style: zrUtil.defaults({
                 opacity: 1
-              }
+              }, seriesScope.lineStyle)
             }, seriesModel);
           }
         } else {}
@@ -26205,7 +26701,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _treeHelper = __webpack_require__(
     /*! ../helper/treeHelper */
@@ -26411,7 +26907,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var SeriesModel = __webpack_require__(
     /*! ../../model/Series */
@@ -26629,21 +27125,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           children: option.data
         };
         completeTreeValue(root);
-        var levels = option.levels || [];
+        var levels = option.levels || []; // Used in "visual priority" in `treemapVisual.js`.
+        // This way is a little tricky, must satisfy the precondition:
+        //   1. There is no `treeNode.getModel('itemStyle.xxx')` used.
+        //   2. The `Model.prototype.getModel()` will not use any clone-like way.
+
+        var designatedVisualItemStyle = this.designatedVisualItemStyle = {};
+        var designatedVisualModel = new Model({
+          itemStyle: designatedVisualItemStyle
+        }, this, ecModel);
         levels = option.levels = setDefault(levels, ecModel);
         var levelModels = zrUtil.map(levels || [], function (levelDefine) {
-          return new Model(levelDefine, this, ecModel);
+          return new Model(levelDefine, designatedVisualModel, ecModel);
         }, this); // Make sure always a new tree is created when setOption,
         // in TreemapView, we check whether oldTree === newTree
         // to choose mappings approach among old shapes and new shapes.
 
-        var tree = Tree.createTree(root, this, null, beforeLink);
+        var tree = Tree.createTree(root, this, beforeLink);
 
         function beforeLink(nodeData) {
           nodeData.wrapMethod('getItemModel', function (model, idx) {
             var node = tree.getNodeByDataIndex(idx);
-            var levelModel = levelModels[node.depth];
-            levelModel && (model.parentModel = levelModel);
+            var levelModel = levelModels[node.depth]; // If no levelModel, we also need `designatedVisualModel`.
+
+            model.parentModel = levelModel || designatedVisualModel;
             return model;
           });
         }
@@ -26854,7 +27359,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -26878,11 +27383,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var animationUtil = __webpack_require__(
     /*! ../../util/animation */
@@ -27084,8 +27589,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           } // Diff hierarchically (diff only in each subtree, but not whole).
           // because, consistency of view is important.
           else {
-              new DataDiffer(oldViewChildren, thisViewChildren, getKey, getKey).add(processNode).update(processNode).remove(zrUtil.curry(processNode, null)).execute();
-            }
+            new DataDiffer(oldViewChildren, thisViewChildren, getKey, getKey).add(processNode).update(processNode).remove(zrUtil.curry(processNode, null)).execute();
+          }
 
           function getKey(node) {
             // Identify by name or raw index.
@@ -27230,10 +27735,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               } // When animation is stopped for succedent animation starting,
               // el.style.opacity might not be 1
               else if (el.style.opacity !== 1) {
-                  target.style = {
-                    opacity: 1
-                  };
-                }
+                target.style = {
+                  opacity: 1
+                };
+              }
             }
 
             animationWrap.add(el, target, duration, easing);
@@ -27640,8 +28145,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           } // For old bg.
           else {
-              normalStyle.text = emphasisStyle.text = null;
-            }
+            normalStyle.text = emphasisStyle.text = null;
+          }
 
           bg.setStyle(normalStyle);
           graphic.setElementHoverStyle(bg, emphasisStyle);
@@ -27731,13 +28236,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           prepareAnimationWhenHasOld(lasts, element, storageName);
         } // If invisible and no old element, do not create new element (for optimizing).
         else if (!thisInvisible) {
-            element = new Ctor({
-              z: calculateZ(depth, z)
-            });
-            element.__tmDepth = depth;
-            element.__tmStorageName = storageName;
-            prepareAnimationWhenNoOld(lasts, element, storageName);
-          } // Set to thisStorage
+          element = new Ctor({
+            z: calculateZ(depth, z)
+          });
+          element.__tmDepth = depth;
+          element.__tmStorageName = storageName;
+          prepareAnimationWhenNoOld(lasts, element, storageName);
+        } // Set to thisStorage
 
 
         return thisStorage[storageName][thisRawIndex] = element;
@@ -27924,11 +28429,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _number = __webpack_require__(
     /*! ../../util/number */
@@ -28135,12 +28640,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           best = score;
         } // abort, and try a different orientation
         else {
-            row.area -= row.pop().getLayout().area;
-            position(row, rowFixedLength, rect, halfGapWidth, false);
-            rowFixedLength = mathMin(rect.width, rect.height);
-            row.length = row.area = 0;
-            best = Infinity;
-          }
+          row.area -= row.pop().getLayout().area;
+          position(row, rowFixedLength, rect, halfGapWidth, false);
+          rowFixedLength = mathMin(rect.width, rect.height);
+          row.length = row.area = 0;
+          best = Infinity;
+        }
       }
 
       if (row.length) {
@@ -28282,13 +28787,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         orderBy === 'asc' && dataExtent.reverse();
       } // Other dimension.
       else {
-          var dataExtent = [Infinity, -Infinity];
-          each(children, function (child) {
-            var value = child.getValue(dimension);
-            value < dataExtent[0] && (dataExtent[0] = value);
-            value > dataExtent[1] && (dataExtent[1] = value);
-          });
-        }
+        var dataExtent = [Infinity, -Infinity];
+        each(children, function (child) {
+          var value = child.getValue(dimension);
+          value < dataExtent[0] && (dataExtent[0] = value);
+          value > dataExtent[1] && (dataExtent[1] = value);
+        });
+      }
 
       return {
         sum: sum,
@@ -28360,7 +28865,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
       rect[xy[idx1WhenH]] += rowOtherLength;
       rect[wh[idx1WhenH]] -= rowOtherLength;
-    } // Return [containerWidth, containerHeight] as defualt.
+    } // Return [containerWidth, containerHeight] as default.
 
 
     function estimateRootSize(seriesModel, targetInfo, viewRoot, containerWidth, containerHeight) {
@@ -28520,11 +29025,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrColor = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -28552,21 +29057,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       reset: function reset(seriesModel, ecModel, api, payload) {
         var tree = seriesModel.getData().tree;
         var root = tree.root;
-        var seriesItemStyleModel = seriesModel.getModel(ITEM_STYLE_NORMAL);
 
         if (root.isRemoved()) {
           return;
         }
 
-        var levelItemStyles = zrUtil.map(tree.levelModels, function (levelModel) {
-          return levelModel ? levelModel.get(ITEM_STYLE_NORMAL) : null;
-        });
         travelTree(root, // Visual should calculate from tree root but not view root.
-        {}, levelItemStyles, seriesItemStyleModel, seriesModel.getViewRoot().getAncestors(), seriesModel);
+        {}, seriesModel.getViewRoot().getAncestors(), seriesModel);
       }
     };
 
-    function travelTree(node, designatedVisual, levelItemStyles, seriesItemStyleModel, viewRootAncestors, seriesModel) {
+    function travelTree(node, designatedVisual, viewRootAncestors, seriesModel) {
       var nodeModel = node.getModel();
       var nodeLayout = node.getLayout(); // Optimize
 
@@ -28575,8 +29076,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       var nodeItemStyleModel = node.getModel(ITEM_STYLE_NORMAL);
-      var levelItemStyle = levelItemStyles[node.depth];
-      var visuals = buildVisuals(nodeItemStyleModel, designatedVisual, levelItemStyle, seriesItemStyleModel); // calculate border color
+      var visuals = buildVisuals(nodeItemStyleModel, designatedVisual, seriesModel); // calculate border color
 
       var borderColor = nodeItemStyleModel.get('borderColor');
       var borderColorSaturation = nodeItemStyleModel.get('borderColorSaturation');
@@ -28602,21 +29102,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           // If higher than viewRoot, only ancestors of viewRoot is needed to visit.
           if (child.depth >= viewRootAncestors.length || child === viewRootAncestors[child.depth]) {
             var childVisual = mapVisual(nodeModel, visuals, child, index, mapping, seriesModel);
-            travelTree(child, childVisual, levelItemStyles, seriesItemStyleModel, viewRootAncestors, seriesModel);
+            travelTree(child, childVisual, viewRootAncestors, seriesModel);
           }
         });
       }
     }
 
-    function buildVisuals(nodeItemStyleModel, designatedVisual, levelItemStyle, seriesItemStyleModel) {
+    function buildVisuals(nodeItemStyleModel, designatedVisual, seriesModel) {
       var visuals = zrUtil.extend({}, designatedVisual);
+      var designatedVisualItemStyle = seriesModel.designatedVisualItemStyle;
       zrUtil.each(['color', 'colorAlpha', 'colorSaturation'], function (visualName) {
         // Priority: thisNode > thisLevel > parentNodeDesignated > seriesModel
-        var val = nodeItemStyleModel.get(visualName, true); // Ignore parent
-
-        val == null && levelItemStyle && (val = levelItemStyle[visualName]);
-        val == null && (val = designatedVisual[visualName]);
-        val == null && (val = seriesItemStyleModel.get(visualName));
+        designatedVisualItemStyle[visualName] = designatedVisual[visualName];
+        var val = nodeItemStyleModel.get(visualName);
+        designatedVisualItemStyle[visualName] = null;
         val != null && (visuals[visualName] = val);
       });
       return visuals;
@@ -28830,7 +29329,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -29200,7 +29699,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var retrieve = _util.retrieve;
     var defaults = _util.defaults;
@@ -29234,11 +29733,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var matrixUtil = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var _vector = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var v2ApplyTransform = _vector.applyTransform;
 
@@ -30068,7 +30567,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -30315,7 +30814,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var AxisBuilder = __webpack_require__(
     /*! ./AxisBuilder */
@@ -30530,7 +31029,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -30759,7 +31258,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var AxisBuilder = __webpack_require__(
     /*! ./AxisBuilder */
@@ -30932,7 +31431,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -31169,7 +31668,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var axisPointerModelHelper = __webpack_require__(
     /*! ./axisPointer/modelHelper */
@@ -31511,7 +32010,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var clazzUtil = __webpack_require__(
     /*! ../../util/clazz */
@@ -31527,7 +32026,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var eventTool = __webpack_require__(
     /*! zrender/lib/core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var throttleUtil = __webpack_require__(
     /*! ../../util/throttle */
@@ -32245,7 +32744,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var AxisBuilder = __webpack_require__(
     /*! ../axis/AxisBuilder */
@@ -32568,7 +33067,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _model = __webpack_require__(
     /*! ../../util/model */
@@ -32736,7 +33235,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var payloadInfo = buildPayloadsBySeries(newValue, axisInfo);
       var payloadBatch = payloadInfo.payloadBatch;
       var snapToValue = payloadInfo.snapToValue; // Fill content of event obj for echarts.connect.
-      // By defualt use the first involved series data as a sample to connect.
+      // By default use the first involved series data as a sample to connect.
 
       if (payloadBatch[0] && outputFinder.seriesIndex == null) {
         zrUtil.extend(outputFinder, payloadBatch[0]);
@@ -32881,10 +33380,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         } // When always show (e.g., handle used), remain
         // original value and status.
         else {
-            // If hide, value still need to be set, consider
-            // click legend to toggle axis blank.
-            !axisInfo.useHandle && (option.status = 'hide');
-          } // If status is 'hide', should be no info in payload.
+          // If hide, value still need to be set, consider
+          // click legend to toggle axis blank.
+          !axisInfo.useHandle && (option.status = 'hide');
+        } // If status is 'hide', should be no info in payload.
 
 
         option.status === 'show' && outputAxesInfo.push({
@@ -33019,7 +33518,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -33126,11 +33625,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var _model = __webpack_require__(
     /*! ../../util/model */
@@ -33305,7 +33804,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Model = __webpack_require__(
     /*! ../../model/Model */
@@ -33650,7 +34149,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -33658,7 +34157,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var formatUtil = __webpack_require__(
     /*! ../../util/format */
@@ -33666,7 +34165,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var axisHelper = __webpack_require__(
     /*! ../../coord/axisHelper */
@@ -34032,7 +34531,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var visualSolution = __webpack_require__(
     /*! ../../visual/visualSolution */
@@ -34228,7 +34727,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BrushController = __webpack_require__(
     /*! ../helper/BrushController */
@@ -34497,7 +34996,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -34608,11 +35107,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var polygonContain = __webpack_require__(
     /*! zrender/lib/contain/polygon */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js");
+    "./node_modules/zrender/lib/contain/polygon.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -34747,11 +35246,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var visualSolution = __webpack_require__(
     /*! ../../visual/visualSolution */
@@ -35144,7 +35643,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -35652,7 +36151,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var numberUtil = __webpack_require__(
     /*! ../../util/number */
@@ -36200,11 +36699,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -37043,7 +37542,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var DataZoomView = __webpack_require__(
     /*! ./DataZoomView */
@@ -37554,11 +38053,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var eventTool = __webpack_require__(
     /*! zrender/lib/core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -38336,7 +38835,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var helper = __webpack_require__(
     /*! ./helper */
@@ -38418,7 +38917,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var each = _util.each;
@@ -38535,7 +39034,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var formatUtil = __webpack_require__(
     /*! ../../util/format */
@@ -38724,7 +39223,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -38883,7 +39382,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var RoamController = __webpack_require__(
     /*! ../../component/helper/RoamController */
@@ -39473,7 +39972,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     __webpack_require__(
     /*! ../coord/geo/GeoModel */
@@ -39673,7 +40172,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../util/model */
@@ -40276,7 +40775,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../util/graphic */
@@ -40372,11 +40871,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Eventful = __webpack_require__(
     /*! zrender/lib/mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -41320,7 +41819,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -41754,7 +42253,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var RoamController = __webpack_require__(
     /*! ./RoamController */
@@ -41786,7 +42285,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var Transformable = __webpack_require__(
     /*! zrender/lib/mixin/Transformable */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+    "./node_modules/zrender/lib/mixin/Transformable.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -42249,15 +42748,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Eventful = __webpack_require__(
     /*! zrender/lib/mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     var eventTool = __webpack_require__(
     /*! zrender/lib/core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var interactionMutex = __webpack_require__(
     /*! ./interactionMutex */
@@ -42554,7 +43053,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _cursorHelper = __webpack_require__(
     /*! ./cursorHelper */
@@ -43023,7 +43522,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -43378,7 +43877,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Model = __webpack_require__(
     /*! ../../model/Model */
@@ -43757,7 +44256,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _symbol = __webpack_require__(
     /*! ../../util/symbol */
@@ -44378,7 +44877,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -44581,8 +45080,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             controllerPos[orientIdx] += maxSize[wh] - controllerRect[wh];
           } // controller is on the left / top.
           else {
-              containerPos[orientIdx] += controllerRect[wh] + pageButtonGap;
-            }
+            containerPos[orientIdx] += controllerRect[wh] + pageButtonGap;
+          }
         } // Always align controller to content as 'middle'.
 
 
@@ -44795,7 +45294,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         contentGroup.eachChild(function (child, idx) {
           var legendDataIdx = child.__legendDataIndex; // FIXME
           // If the given targetDataIndex (from model) is illegal,
-          // we use defualtIndex. But the index on the legend model and
+          // we use defaultIndex. But the index on the legend model and
           // action payload is still illegal. That case will not be
           // changed until some scenario requires.
 
@@ -44849,7 +45348,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -45449,11 +45948,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var colorUtil = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var List = __webpack_require__(
     /*! ../../data/List */
@@ -45656,32 +46155,70 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         areaData.each(function (idx) {
           // Layout
-          areaData.setItemLayout(idx, zrUtil.map(dimPermutations, function (dim) {
+          var points = zrUtil.map(dimPermutations, function (dim) {
             return getSingleMarkerEndPoint(areaData, idx, dim, seriesModel, api);
-          })); // Visual
+          }); // If none of the area is inside coordSys, allClipped is set to be true
+          // in layout so that label will not be displayed. See #12591
+
+          var allClipped = true;
+          zrUtil.each(dimPermutations, function (dim) {
+            if (!allClipped) {
+              return;
+            }
+
+            var xValue = areaData.get(dim[0], idx);
+            var yValue = areaData.get(dim[1], idx); // If is infinity, the axis should be considered not clipped
+
+            if ((isInifinity(xValue) || coordSys.getAxis('x').containData(xValue)) && (isInifinity(yValue) || coordSys.getAxis('y').containData(yValue))) {
+              allClipped = false;
+            }
+          });
+          areaData.setItemLayout(idx, {
+            points: points,
+            allClipped: allClipped
+          }); // Visual
 
           areaData.setItemVisual(idx, {
             color: seriesData.getVisual('color')
           });
         });
         areaData.diff(polygonGroup.__data).add(function (idx) {
-          var polygon = new graphic.Polygon({
-            shape: {
-              points: areaData.getItemLayout(idx)
-            }
-          });
-          areaData.setItemGraphicEl(idx, polygon);
-          polygonGroup.group.add(polygon);
+          var layout = areaData.getItemLayout(idx);
+
+          if (!layout.allClipped) {
+            var polygon = new graphic.Polygon({
+              shape: {
+                points: layout.points
+              }
+            });
+            areaData.setItemGraphicEl(idx, polygon);
+            polygonGroup.group.add(polygon);
+          }
         }).update(function (newIdx, oldIdx) {
           var polygon = polygonGroup.__data.getItemGraphicEl(oldIdx);
 
-          graphic.updateProps(polygon, {
-            shape: {
-              points: areaData.getItemLayout(newIdx)
+          var layout = areaData.getItemLayout(newIdx);
+
+          if (!layout.allClipped) {
+            if (polygon) {
+              graphic.updateProps(polygon, {
+                shape: {
+                  points: layout.points
+                }
+              }, maModel, newIdx);
+            } else {
+              polygon = new graphic.Polygon({
+                shape: {
+                  points: layout.points
+                }
+              });
             }
-          }, maModel, newIdx);
-          polygonGroup.group.add(polygon);
-          areaData.setItemGraphicEl(newIdx, polygon);
+
+            areaData.setItemGraphicEl(newIdx, polygon);
+            polygonGroup.group.add(polygon);
+          } else if (polygon) {
+            polygonGroup.group.remove(polygon);
+          }
         }).remove(function (idx) {
           var polygon = polygonGroup.__data.getItemGraphicEl(idx);
 
@@ -45882,7 +46419,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var List = __webpack_require__(
     /*! ../../data/List */
@@ -46154,8 +46691,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           lineData.setItemLayout(idx, [fromData.getItemLayout(idx), toData.getItemLayout(idx)]);
           lineData.setItemVisual(idx, {
+            'fromSymbolRotate': fromData.getItemVisual(idx, 'symbolRotate'),
             'fromSymbolSize': fromData.getItemVisual(idx, 'symbolSize'),
             'fromSymbol': fromData.getItemVisual(idx, 'symbol'),
+            'toSymbolRotate': toData.getItemVisual(idx, 'symbolRotate'),
             'toSymbolSize': toData.getItemVisual(idx, 'symbolSize'),
             'toSymbol': toData.getItemVisual(idx, 'symbol')
           });
@@ -46173,6 +46712,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var itemModel = data.getItemModel(idx);
           updateSingleMarkerEndLayout(data, idx, isFrom, seriesModel, api);
           data.setItemVisual(idx, {
+            symbolRotate: itemModel.get('symbolRotate'),
             symbolSize: itemModel.get('symbolSize') || symbolSize[isFrom ? 0 : 1],
             symbol: itemModel.get('symbol', true) || symbolType[isFrom ? 0 : 1],
             color: itemModel.get('itemStyle.color') || seriesData.getVisual('color')
@@ -46355,7 +46895,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var SymbolDraw = __webpack_require__(
     /*! ../../chart/helper/SymbolDraw */
@@ -46408,13 +46948,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           point = [xPx, yPx];
         } // Chart like bar may have there own marker positioning logic
         else if (seriesModel.getMarkerPosition) {
-            // Use the getMarkerPoisition
-            point = seriesModel.getMarkerPosition(mpData.getValues(mpData.dimensions, idx));
-          } else if (coordSys) {
-            var x = mpData.get(coordSys.dimensions[0], idx);
-            var y = mpData.get(coordSys.dimensions[1], idx);
-            point = coordSys.dataToPoint([x, y]);
-          } // Use x, y if has any
+          // Use the getMarkerPoisition
+          point = seriesModel.getMarkerPosition(mpData.getValues(mpData.dimensions, idx));
+        } else if (coordSys) {
+          var x = mpData.get(coordSys.dimensions[0], idx);
+          var y = mpData.get(coordSys.dimensions[1], idx);
+          point = coordSys.dataToPoint([x, y]);
+        } // Use x, y if has any
 
 
         if (!isNaN(xPx)) {
@@ -46464,10 +47004,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var itemModel = mpData.getItemModel(idx);
           var symbol = itemModel.getShallow('symbol');
           var symbolSize = itemModel.getShallow('symbolSize');
+          var symbolRotate = itemModel.getShallow('symbolRotate');
           var isFnSymbol = zrUtil.isFunction(symbol);
           var isFnSymbolSize = zrUtil.isFunction(symbolSize);
+          var isFnSymbolRotate = zrUtil.isFunction(symbolRotate);
 
-          if (isFnSymbol || isFnSymbolSize) {
+          if (isFnSymbol || isFnSymbolSize || isFnSymbolRotate) {
             var rawIdx = mpModel.getRawValue(idx);
             var dataParams = mpModel.getDataParams(idx);
 
@@ -46479,11 +47021,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               // FIXME 这里不兼容 ECharts 2.x，2.x 貌似参数是整个数据？
               symbolSize = symbolSize(rawIdx, dataParams);
             }
+
+            if (isFnSymbolRotate) {
+              symbolRotate = symbolRotate(rawIdx, dataParams);
+            }
           }
 
           mpData.setItemVisual(idx, {
             symbol: symbol,
             symbolSize: symbolSize,
+            symbolRotate: symbolRotate,
             color: itemModel.get('itemStyle.color') || seriesData.getVisual('color')
           });
         }); // TODO Text are wrong
@@ -46584,11 +47131,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -46705,15 +47252,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }, this);
         }
       },
-      formatTooltip: function formatTooltip(dataIndex) {
+      formatTooltip: function formatTooltip(dataIndex, multipleSeries, dataType, renderMode) {
         var data = this.getData();
         var value = this.getRawValue(dataIndex);
         var formattedValue = zrUtil.isArray(value) ? zrUtil.map(value, addCommas).join(', ') : addCommas(value);
         var name = data.getName(dataIndex);
         var html = encodeHTML(this.name);
+        var newLine = renderMode === 'html' ? '<br/>' : '\n';
 
         if (value != null || name) {
-          html += '<br />';
+          html += newLine;
         }
 
         if (name) {
@@ -46777,7 +47325,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -46859,7 +47407,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var numberUtil = __webpack_require__(
     /*! ../../util/number */
@@ -47134,7 +47682,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var throttleUtil = __webpack_require__(
     /*! ../util/throttle */
@@ -47344,7 +47892,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var barPolar = __webpack_require__(
     /*! ../layout/barPolar */
@@ -47481,7 +48029,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var AxisBuilder = __webpack_require__(
     /*! ../axis/AxisBuilder */
@@ -47599,49 +48147,49 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         } // Polyyon
         else {
-            var realSplitNumber;
-            var axesTicksPoints = zrUtil.map(indicatorAxes, function (indicatorAxis, idx) {
-              var ticksCoords = indicatorAxis.getTicksCoords();
-              realSplitNumber = realSplitNumber == null ? ticksCoords.length - 1 : Math.min(ticksCoords.length - 1, realSplitNumber);
-              return zrUtil.map(ticksCoords, function (tickCoord) {
-                return radar.coordToPoint(tickCoord.coord, idx);
-              });
+          var realSplitNumber;
+          var axesTicksPoints = zrUtil.map(indicatorAxes, function (indicatorAxis, idx) {
+            var ticksCoords = indicatorAxis.getTicksCoords();
+            realSplitNumber = realSplitNumber == null ? ticksCoords.length - 1 : Math.min(ticksCoords.length - 1, realSplitNumber);
+            return zrUtil.map(ticksCoords, function (tickCoord) {
+              return radar.coordToPoint(tickCoord.coord, idx);
             });
-            var prevPoints = [];
+          });
+          var prevPoints = [];
 
-            for (var i = 0; i <= realSplitNumber; i++) {
-              var points = [];
+          for (var i = 0; i <= realSplitNumber; i++) {
+            var points = [];
 
-              for (var j = 0; j < indicatorAxes.length; j++) {
-                points.push(axesTicksPoints[j][i]);
-              } // Close
+            for (var j = 0; j < indicatorAxes.length; j++) {
+              points.push(axesTicksPoints[j][i]);
+            } // Close
 
 
-              if (points[0]) {
-                points.push(points[0].slice());
-              } else {}
+            if (points[0]) {
+              points.push(points[0].slice());
+            } else {}
 
-              if (showSplitLine) {
-                var colorIndex = getColorIndex(splitLines, splitLineColors, i);
-                splitLines[colorIndex].push(new graphic.Polyline({
-                  shape: {
-                    points: points
-                  }
-                }));
-              }
-
-              if (showSplitArea && prevPoints) {
-                var colorIndex = getColorIndex(splitAreas, splitAreaColors, i - 1);
-                splitAreas[colorIndex].push(new graphic.Polygon({
-                  shape: {
-                    points: points.concat(prevPoints)
-                  }
-                }));
-              }
-
-              prevPoints = points.slice().reverse();
+            if (showSplitLine) {
+              var colorIndex = getColorIndex(splitLines, splitLineColors, i);
+              splitLines[colorIndex].push(new graphic.Polyline({
+                shape: {
+                  points: points
+                }
+              }));
             }
+
+            if (showSplitArea && prevPoints) {
+              var colorIndex = getColorIndex(splitAreas, splitAreaColors, i - 1);
+              splitAreas[colorIndex].push(new graphic.Polygon({
+                shape: {
+                  points: points.concat(prevPoints)
+                }
+              }));
+            }
+
+            prevPoints = points.slice().reverse();
           }
+        }
 
         var lineStyle = lineStyleModel.getLineStyle();
         var areaStyle = areaStyleModel.getAreaStyle(); // Add splitArea before splitLine
@@ -47896,7 +48444,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var TimelineModel = __webpack_require__(
     /*! ./TimelineModel */
@@ -48056,15 +48604,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -48629,7 +49177,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }
 
     function makeIcon(timelineModel, objPath, rect, opts) {
-      var icon = graphic.makePath(timelineModel.get(objPath).replace(/^path:\/\//, ''), zrUtil.clone(opts || {}), new BoundingRect(rect[0], rect[1], rect[2], rect[3]), 'center');
+      var style = opts.style;
+      var icon = graphic.createIcon(timelineModel.get(objPath), opts || {}, new BoundingRect(rect[0], rect[1], rect[2], rect[3])); // TODO createIcon won't use style in opt.
+
+      if (style) {
+        icon.setStyle(style);
+      }
+
       return icon;
     }
     /**
@@ -48742,7 +49296,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Axis = __webpack_require__(
     /*! ../../coord/Axis */
@@ -48851,7 +49405,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ComponentModel = __webpack_require__(
     /*! ../../model/Component */
@@ -49151,7 +49705,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -49293,7 +49847,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -49437,7 +49991,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var echarts = __webpack_require__(
     /*! ../echarts */
@@ -49587,7 +50141,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         if (sublink) {
           subTextEl.on('click', function () {
-            windowOpen(link, '_' + titleModel.get('subtarget'));
+            windowOpen(sublink, '_' + titleModel.get('subtarget'));
           });
         }
 
@@ -49763,7 +50317,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var featureManager = __webpack_require__(
     /*! ./featureManager */
@@ -49873,11 +50427,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var featureManager = __webpack_require__(
     /*! ./featureManager */
@@ -50190,7 +50744,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var featureManager = __webpack_require__(
     /*! ../featureManager */
@@ -50366,11 +50920,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var eventTool = __webpack_require__(
     /*! zrender/lib/core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var lang = __webpack_require__(
     /*! ../../../lang */
@@ -50469,7 +51023,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }));
         var columns = [categoryAxis.model.getCategories()];
         zrUtil.each(group.series, function (series) {
-          columns.push(series.getRawData().mapArray(valueAxisDim, function (val) {
+          var rawData = series.getRawData();
+          columns.push(series.getRawData().mapArray(rawData.mapDimension(valueAxisDim), function (val) {
             return val;
           }));
         }); // Assemble table content
@@ -50595,7 +51150,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var data = [];
 
       for (var i = 0; i < lines.length; i++) {
-        var items = trim(lines[i]).split(itemSplitRegex);
+        // if line is empty, ignore it.
+        // there is a case that a user forgot to delete `\n`.
+        var line = trim(lines[i]);
+
+        if (!line) {
+          continue;
+        }
+
+        var items = line.split(itemSplitRegex);
         var name = '';
         var value;
         var hasName = false;
@@ -50802,14 +51365,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var original = originalData && originalData[idx];
 
         if (zrUtil.isObject(original) && !zrUtil.isArray(original)) {
-          if (zrUtil.isObject(newVal) && !zrUtil.isArray(newVal)) {
-            newVal = newVal.value;
-          } // Original data has option
+          var newValIsObject = zrUtil.isObject(newVal) && !zrUtil.isArray(newVal);
+
+          if (!newValIsObject) {
+            newVal = {
+              value: newVal
+            };
+          } // original data has name but new data has no name
 
 
-          return zrUtil.defaults({
-            value: newVal
-          }, original);
+          var shouldDeleteName = original.name != null && newVal.name == null; // Original data has option
+
+          newVal = zrUtil.defaults(newVal, original);
+          shouldDeleteName && delete newVal.name;
+          return newVal;
         } else {
           return newVal;
         }
@@ -50884,7 +51453,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BrushController = __webpack_require__(
     /*! ../../helper/BrushController */
@@ -50962,7 +51531,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         back: 'M22,1.4L9.9,13.5l12.3,12.3 M10.3,13.5H54.9v44.6 H10.3v-26'
       },
       // `zoom`, `back`
-      title: zrUtil.clone(dataZoomLang.title)
+      title: zrUtil.clone(dataZoomLang.title),
+      brushStyle: {
+        borderWidth: 0,
+        color: 'rgba(0,0,0,0.2)'
+      }
     };
     var proto = DataZoom.prototype;
 
@@ -51122,11 +51695,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return targetInfo.xAxisDeclared && !targetInfo.yAxisDeclared ? 'lineX' : !targetInfo.xAxisDeclared && targetInfo.yAxisDeclared ? 'lineY' : 'rect';
       })).enableBrush(zoomActive ? {
         brushType: 'auto',
-        brushStyle: {
-          // FIXME user customized?
-          lineWidth: 0,
-          fill: 'rgba(0,0,0,0.2)'
-        }
+        brushStyle: featureModel.getModel('brushStyle').getItemStyle()
       } : false);
     }
 
@@ -51243,7 +51812,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var lang = __webpack_require__(
     /*! ../../../lang */
@@ -51577,7 +52146,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var lang = __webpack_require__(
     /*! ../../../lang */
@@ -51649,31 +52218,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         $a.target = '_blank';
         $a.href = url;
         var evt = new MouseEvent('click', {
-          view: window,
+          // some micro front-end framework， window maybe is a Proxy
+          view: document.defaultView,
           bubbles: true,
           cancelable: false
         });
         $a.dispatchEvent(evt);
       } // IE
       else {
-          if (window.navigator.msSaveOrOpenBlob) {
-            var bstr = atob(url.split(',')[1]);
-            var n = bstr.length;
-            var u8arr = new Uint8Array(n);
+        if (window.navigator.msSaveOrOpenBlob) {
+          var bstr = atob(url.split(',')[1]);
+          var n = bstr.length;
+          var u8arr = new Uint8Array(n);
 
-            while (n--) {
-              u8arr[n] = bstr.charCodeAt(n);
-            }
-
-            var blob = new Blob([u8arr]);
-            window.navigator.msSaveOrOpenBlob(blob, title + '.' + type);
-          } else {
-            var lang = model.get('lang');
-            var html = '' + '<body style="margin:0;">' + '<img src="' + url + '" style="max-width:100%;" title="' + (lang && lang[0] || '') + '" />' + '</body>';
-            var tab = window.open();
-            tab.document.write(html);
+          while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
           }
+
+          var blob = new Blob([u8arr]);
+          window.navigator.msSaveOrOpenBlob(blob, title + '.' + type);
+        } else {
+          var lang = model.get('lang');
+          var html = '' + '<body style="margin:0;">' + '<img src="' + url + '" style="max-width:100%;" title="' + (lang && lang[0] || '') + '" />' + '</body>';
+          var tab = window.open();
+          tab.document.write(html);
         }
+      }
     };
 
     featureManager.register('saveAsImage', SaveAsImage);
@@ -51862,23 +52432,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var zrColor = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var eventUtil = __webpack_require__(
     /*! zrender/lib/core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var domUtil = __webpack_require__(
     /*! zrender/lib/core/dom */
-    "./node_modules/echarts/node_modules/zrender/lib/core/dom.js");
+    "./node_modules/zrender/lib/core/dom.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var formatUtil = __webpack_require__(
     /*! ../../util/format */
@@ -51933,7 +52503,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var color = textStyleModel.getTextColor();
       color && cssText.push('color:' + color);
       cssText.push('font:' + textStyleModel.getFont());
-      fontSize && cssText.push('line-height:' + Math.round(fontSize * 3 / 2) + 'px');
+      var lineHeight = textStyleModel.get('lineHeight');
+
+      if (lineHeight == null) {
+        lineHeight = Math.round(fontSize * 3 / 2);
+      }
+
+      fontSize && cssText.push('line-height:' + lineHeight + 'px');
+      var shadowColor = textStyleModel.get('textShadowColor');
+      var shadowBlur = textStyleModel.get('textShadowBlur') || 0;
+      var shadowOffsetX = textStyleModel.get('textShadowOffsetX') || 0;
+      var shadowOffsetY = textStyleModel.get('textShadowOffsetY') || 0;
+      shadowBlur && cssText.push('text-shadow:' + shadowOffsetX + 'px ' + shadowOffsetY + 'px ' + shadowBlur + 'px ' + shadowColor);
       each(['decoration', 'align'], function (name) {
         var val = textStyleModel.get(name);
         val && cssText.push('text-' + name + ':' + val);
@@ -52007,6 +52588,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           out[1] += viewportRootOffset.offsetTop;
         }
       }
+
+      out[2] = out[0] / zr.getWidth(); // The ratio of left to width
+
+      out[3] = out[1] / zr.getHeight(); // The ratio of top to height
     }
     /**
      * @alias module:echarts/component/tooltip/TooltipContent
@@ -52031,7 +52616,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.el = el;
       var zr = this._zr = api.getZr();
       var appendToBody = this._appendToBody = opt && opt.appendToBody;
-      this._styleCoord = [0, 0];
+      this._styleCoord = [0, 0, 0, 0]; // [left, top, left/width, top/height]
+
       makeStyleCoord(this._styleCoord, zr, appendToBody, api.getWidth() / 2, api.getHeight() / 2);
 
       if (appendToBody) {
@@ -52102,7 +52688,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /**
        * Update when tooltip is rendered
        */
-      update: function update() {
+      update: function update(tooltipModel) {
         // FIXME
         // Move this logic to ec main?
         var container = this._container;
@@ -52111,10 +52697,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         if (domStyle.position !== 'absolute' && stl.position !== 'absolute') {
           domStyle.position = 'relative';
-        } // Hide the tooltip
+        }
+
+        var alwaysShowContent = tooltipModel.get('alwaysShowContent');
+        alwaysShowContent && this._moveTooltipIfResized(); // Hide the tooltip
         // PENDING
         // this.hide();
+      },
 
+      /**
+       * when `alwaysShowContent` is true,
+       * we should move the tooltip after chart resized
+       */
+      _moveTooltipIfResized: function _moveTooltipIfResized() {
+        var ratioX = this._styleCoord[2]; // The ratio of left to width
+
+        var ratioY = this._styleCoord[3]; // The ratio of top to height
+
+        var realX = ratioX * this._zr.getWidth();
+
+        var realY = ratioY * this._zr.getHeight();
+
+        this.moveTo(realX, realY);
       },
       show: function show(tooltipModel) {
         clearTimeout(this._hideTimeout);
@@ -52124,10 +52728,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         // http://stackoverflow.com/questions/21125587/css3-transition-not-working-in-chrome-anymore
         // we should set initial value to `left` and `top`.
         + ';left:' + styleCoord[0] + 'px;top:' + styleCoord[1] + 'px;' + (tooltipModel.get('extraCssText') || '');
-        el.style.display = el.innerHTML ? 'block' : 'none'; // If mouse occsionally move over the tooltip, a mouseout event will be
-        // triggered by canvas, and cuase some unexpectable result like dragging
+        el.style.display = el.innerHTML ? 'block' : 'none'; // If mouse occasionally move over the tooltip, a mouseout event will be
+        // triggered by canvas, and cause some unexpectable result like dragging
         // stop, "unfocusAdjacency". Here `pointer-events: none` is used to solve
-        // it. Although it is not suppored by IE8~IE10, fortunately it is a rare
+        // it. Although it is not supported by IE8~IE10, fortunately it is a rare
         // scenario.
 
         el.style.pointerEvents = this._enterable ? 'auto' : 'none';
@@ -52157,7 +52761,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       hideLater: function hideLater(time) {
         if (this._show && !(this._inContent && this._enterable)) {
           if (time) {
-            this._hideDelay = time; // Set show false to avoid invoke hideLater mutiple times
+            this._hideDelay = time; // Set show false to avoid invoke hideLater multiple times
 
             this._show = false;
             this._hideTimeout = setTimeout(zrUtil.bind(this.hide, this), time);
@@ -52362,11 +52966,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Text = __webpack_require__(
     /*! zrender/lib/graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+    "./node_modules/zrender/lib/graphic/Text.js");
+
+    var graphicUtil = __webpack_require__(
+    /*! ../../util/graphic */
+    "./node_modules/echarts/lib/util/graphic.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -52387,6 +52995,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     // import Group from 'zrender/src/container/Group';
 
+
+    function makeStyleCoord(out, zr, zrX, zrY) {
+      out[0] = zrX;
+      out[1] = zrY;
+      out[2] = out[0] / zr.getWidth(); // The ratio of left to width
+
+      out[3] = out[1] / zr.getHeight(); // The ratio of top to height
+    }
     /**
      * @alias module:echarts/component/tooltip/TooltipRichContent
      * @constructor
@@ -52394,7 +53010,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     function TooltipRichContent(api) {
-      this._zr = api.getZr();
+      var zr = this._zr = api.getZr();
+      this._styleCoord = [0, 0, 0, 0]; // [left, top, left/width, top/height]
+
+      makeStyleCoord(this._styleCoord, zr, api.getWidth() / 2, api.getHeight() / 2);
       this._show = false;
       /**
        * @private
@@ -52415,7 +53034,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /**
        * Update when tooltip is rendered
        */
-      update: function update() {// noop
+      update: function update(tooltipModel) {
+        var alwaysShowContent = tooltipModel.get('alwaysShowContent');
+        alwaysShowContent && this._moveTooltipIfResized();
+      },
+
+      /**
+       * when `alwaysShowContent` is true,
+       * we should move the tooltip after chart resized
+       */
+      _moveTooltipIfResized: function _moveTooltipIfResized() {
+        var ratioX = this._styleCoord[2]; // The ratio of left to width
+
+        var ratioY = this._styleCoord[3]; // The ratio of top to height
+
+        var realX = ratioX * this._zr.getWidth();
+
+        var realY = ratioY * this._zr.getHeight();
+
+        this.moveTo(realX, realY);
       },
       show: function show(tooltipModel) {
         if (this._hideTimeout) {
@@ -52470,16 +53107,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           startId = text.indexOf('{marker');
         }
 
+        var textStyleModel = tooltipModel.getModel('textStyle');
+        var fontSize = textStyleModel.get('fontSize');
+        var lineHeight = tooltipModel.get('textLineHeight');
+
+        if (lineHeight == null) {
+          lineHeight = Math.round(fontSize * 3 / 2);
+        }
+
         this.el = new Text({
-          style: {
+          style: graphicUtil.setTextStyle({}, textStyleModel, {
             rich: markers,
             text: content,
-            textLineHeight: 20,
             textBackgroundColor: tooltipModel.get('backgroundColor'),
             textBorderRadius: tooltipModel.get('borderRadius'),
             textFill: tooltipModel.get('textStyle.color'),
-            textPadding: tooltipModel.get('padding')
-          },
+            textPadding: tooltipModel.get('padding'),
+            textLineHeight: lineHeight
+          }),
           z: tooltipModel.get('z')
         });
 
@@ -52514,7 +53159,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       moveTo: function moveTo(x, y) {
         if (this.el) {
-          this.el.attr('position', [x, y]);
+          var styleCoord = this._styleCoord;
+          makeStyleCoord(styleCoord, this._zr, x, y);
+          this.el.attr('position', [styleCoord[0], styleCoord[1]]);
         }
       },
       hide: function hide() {
@@ -52527,7 +53174,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       hideLater: function hideLater(time) {
         if (this._show && !(this._inContent && this._enterable)) {
           if (time) {
-            this._hideDelay = time; // Set show false to avoid invoke hideLater mutiple times
+            this._hideDelay = time; // Set show false to avoid invoke hideLater multiple times
 
             this._show = false;
             this._hideTimeout = setTimeout(zrUtil.bind(this.hide, this), time);
@@ -52538,6 +53185,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       isShow: function isShow() {
         return this._show;
+      },
+      dispose: function dispose() {
+        clearTimeout(this._hideTimeout);
+
+        if (this.el) {
+          this._zr.remove(this.el);
+        }
       },
       getOuterSize: function getOuterSize() {
         var size = this.getSize();
@@ -52586,11 +53240,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var TooltipContent = __webpack_require__(
     /*! ./TooltipContent */
@@ -52735,7 +53389,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this._alwaysShowContent = tooltipModel.get('alwaysShowContent');
         var tooltipContent = this._tooltipContent;
-        tooltipContent.update();
+        tooltipContent.update(tooltipModel);
         tooltipContent.setEnterable(tooltipModel.get('enterable'));
 
         this._initGlobalListener();
@@ -52922,24 +53576,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this._showAxisTooltip(dataByCoordSys, e);
         } // Always show item tooltip if mouse is on the element with dataIndex
         else if (el && el.dataIndex != null) {
-            this._lastDataByCoordSys = null;
+          this._lastDataByCoordSys = null;
 
-            this._showSeriesItemTooltip(e, el, dispatchAction);
-          } // Tooltip provided directly. Like legend.
-          else if (el && el.tooltip) {
-              this._lastDataByCoordSys = null;
+          this._showSeriesItemTooltip(e, el, dispatchAction);
+        } // Tooltip provided directly. Like legend.
+        else if (el && el.tooltip) {
+          this._lastDataByCoordSys = null;
 
-              this._showComponentItemTooltip(e, el, dispatchAction);
-            } else {
-              this._lastDataByCoordSys = null;
+          this._showComponentItemTooltip(e, el, dispatchAction);
+        } else {
+          this._lastDataByCoordSys = null;
 
-              this._hide(dispatchAction);
-            }
+          this._hide(dispatchAction);
+        }
       },
       _showOrMove: function _showOrMove(tooltipModel, cb) {
         // showDelay is used in this case: tooltip.enterable is set
         // as true. User intent to move mouse into tooltip and click
-        // something. `showDelay` makes it easyer to enter the content
+        // something. `showDelay` makes it easier to enter the content
         // but tooltip do not move immediately.
         var delay = tooltipModel.get('showDelay');
         cb = zrUtil.bind(cb, this);
@@ -53005,7 +53659,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }
             }); // Default tooltip content
             // FIXME
-            // (1) shold be the first data which has name?
+            // (1) should be the first data which has name?
             // (2) themeRiver, firstDataIndex is array, and first line is unnecessary.
 
             var firstLine = valueLabel;
@@ -53095,7 +53749,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var subTooltipModel = new Model(tooltipOpt, this._tooltipModel, this._ecModel);
         var defaultHtml = subTooltipModel.get('content');
         var asyncTicket = Math.random(); // Do not check whether `trigger` is 'none' here, because `trigger`
-        // only works on cooridinate system. In fact, we have not found case
+        // only works on coordinate system. In fact, we have not found case
         // that requires setting `trigger` nothing on component yet.
 
         this._showOrMove(subTooltipModel, function () {
@@ -53189,14 +53843,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           vAlign = null;
         } // Specify tooltip position by string 'top' 'bottom' 'left' 'right' around graphic element
         else if (typeof positionExpr === 'string' && el) {
-            var pos = calcTooltipPosition(positionExpr, rect, contentSize);
-            x = pos[0];
-            y = pos[1];
-          } else {
-            var pos = refixTooltipPosition(x, y, content, viewWidth, viewHeight, align ? null : 20, vAlign ? null : 20);
-            x = pos[0];
-            y = pos[1];
-          }
+          var pos = calcTooltipPosition(positionExpr, rect, contentSize);
+          x = pos[0];
+          y = pos[1];
+        } else {
+          var pos = refixTooltipPosition(x, y, content, viewWidth, viewHeight, align ? null : 20, vAlign ? null : 20);
+          x = pos[0];
+          y = pos[1];
+        }
 
         align && (x -= isCenterAlign(align) ? contentSize[0] / 2 : align === 'right' ? contentSize[0] : 0);
         vAlign && (y -= isCenterAlign(vAlign) ? contentSize[1] / 2 : vAlign === 'bottom' ? contentSize[1] : 0);
@@ -53443,7 +54097,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var VisualMapModel = __webpack_require__(
     /*! ./VisualMapModel */
@@ -53735,15 +54389,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var LinearGradient = __webpack_require__(
     /*! zrender/lib/graphic/LinearGradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js");
+    "./node_modules/zrender/lib/graphic/LinearGradient.js");
 
     var eventTool = __webpack_require__(
     /*! zrender/lib/core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var VisualMapView = __webpack_require__(
     /*! ./VisualMapView */
@@ -54567,7 +55221,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var VisualMapModel = __webpack_require__(
     /*! ./VisualMapModel */
@@ -55124,7 +55778,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var VisualMapView = __webpack_require__(
     /*! ./VisualMapView */
@@ -55310,8 +55964,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           viewPieceList.reverse();
         } // Origin order of endsText is [high, low]
         else if (endsText) {
-            endsText = endsText.slice().reverse();
-          }
+          endsText = endsText.slice().reverse();
+        }
 
         return {
           viewPieceList: viewPieceList,
@@ -55391,11 +56045,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var visualDefault = __webpack_require__(
     /*! ../../visual/visualDefault */
@@ -55782,7 +56436,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           // Originally we use visualMap.color as the default color, but setOption at
           // the second time the default color will be erased. So we change to use
           // constant DEFAULT_COLOR.
-          // If user do not want the defualt color, set inRange: {color: null}.
+          // If user do not want the default color, set inRange: {color: null}.
 
 
           base.inRange = base.inRange || {
@@ -55962,7 +56616,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../../util/graphic */
@@ -56173,7 +56827,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _layout = __webpack_require__(
     /*! ../../util/layout */
@@ -56287,7 +56941,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -56446,7 +57100,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var visualSolution = __webpack_require__(
     /*! ../../visual/visualSolution */
@@ -56841,8 +57495,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       dev = window.__DEV__;
     } // In node
     else if (typeof global !== 'undefined') {
-        dev = global.__DEV__;
-      }
+      dev = global.__DEV__;
+    }
 
     if (typeof dev === 'undefined') {
       dev = true;
@@ -56883,7 +57537,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var map = _util.map;
@@ -57295,23 +57949,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var vector = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var Transformable = __webpack_require__(
     /*! zrender/lib/mixin/Transformable */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+    "./node_modules/zrender/lib/mixin/Transformable.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -57640,7 +58294,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -57671,7 +58325,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       name: '',
       // 'start' | 'middle' | 'end'
       nameLocation: 'end',
-      // By degree. By defualt auto rotate by nameLocation.
+      // By degree. By default auto rotate by nameLocation.
       nameRotate: null,
       nameTruncate: {
         maxWidth: null,
@@ -57870,7 +58524,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var OrdinalScale = __webpack_require__(
     /*! ../scale/Ordinal */
@@ -57898,7 +58552,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     __webpack_require__(
     /*! ../scale/Time */
@@ -58031,21 +58685,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (ecModel && scaleType === 'time'
       /*|| scaleType === 'interval' */
       ) {
-          var barSeriesModels = prepareLayoutBarSeries('bar', ecModel);
-          var isBaseAxisAndHasBarSeries;
-          zrUtil.each(barSeriesModels, function (seriesModel) {
-            isBaseAxisAndHasBarSeries |= seriesModel.getBaseAxis() === model.axis;
-          });
+        var barSeriesModels = prepareLayoutBarSeries('bar', ecModel);
+        var isBaseAxisAndHasBarSeries;
+        zrUtil.each(barSeriesModels, function (seriesModel) {
+          isBaseAxisAndHasBarSeries |= seriesModel.getBaseAxis() === model.axis;
+        });
 
-          if (isBaseAxisAndHasBarSeries) {
-            // Calculate placement of bars on axis
-            var barWidthAndOffset = makeColumnLayout(barSeriesModels); // Adjust axis min and max to account for overflow
+        if (isBaseAxisAndHasBarSeries) {
+          // Calculate placement of bars on axis
+          var barWidthAndOffset = makeColumnLayout(barSeriesModels); // Adjust axis min and max to account for overflow
 
-            var adjustedScale = adjustScaleForOverflow(min, max, model, barWidthAndOffset);
-            min = adjustedScale.min;
-            max = adjustedScale.max;
-          }
+          var adjustedScale = adjustScaleForOverflow(min, max, model, barWidthAndOffset);
+          min = adjustedScale.min;
+          max = adjustedScale.max;
         }
+      }
 
       return {
         extent: [min, max],
@@ -58262,8 +58916,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var boundingBox = textRect.plain();
       var beforeWidth = boundingBox.width;
       var beforeHeight = boundingBox.height;
-      var afterWidth = beforeWidth * Math.cos(rotateRadians) + beforeHeight * Math.sin(rotateRadians);
-      var afterHeight = beforeWidth * Math.sin(rotateRadians) + beforeHeight * Math.cos(rotateRadians);
+      var afterWidth = beforeWidth * Math.abs(Math.cos(rotateRadians)) + Math.abs(beforeHeight * Math.sin(rotateRadians));
+      var afterHeight = beforeWidth * Math.abs(Math.sin(rotateRadians)) + Math.abs(beforeHeight * Math.cos(rotateRadians));
       var rotatedRect = new BoundingRect(boundingBox.x, boundingBox.y, afterWidth, afterHeight);
       return rotatedRect;
     }
@@ -58331,7 +58985,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -58449,7 +59103,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var axisDefault = __webpack_require__(
     /*! ./axisDefault */
@@ -58589,11 +59243,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var _model = __webpack_require__(
     /*! ../util/model */
@@ -58719,15 +59373,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       // scenario, Use multiple grid with the xAxis sync, and only one xAxis shows
       // labels. `splitLine` and `axisTick` should be consistent in this case.
       else if (optionTickInterval === 'auto') {
-          var labelsResult = makeCategoryLabelsActually(axis, axis.getLabelModel());
-          tickCategoryInterval = labelsResult.labelCategoryInterval;
-          ticks = zrUtil.map(labelsResult.labels, function (labelItem) {
-            return labelItem.tickValue;
-          });
-        } else {
-          tickCategoryInterval = optionTickInterval;
-          ticks = makeLabelsByNumericCategoryInterval(axis, tickCategoryInterval, true);
-        } // Cache to avoid calling interval function repeatly.
+        var labelsResult = makeCategoryLabelsActually(axis, axis.getLabelModel());
+        tickCategoryInterval = labelsResult.labelCategoryInterval;
+        ticks = zrUtil.map(labelsResult.labels, function (labelItem) {
+          return labelItem.tickValue;
+        });
+      } else {
+        tickCategoryInterval = optionTickInterval;
+        ticks = makeLabelsByNumericCategoryInterval(axis, tickCategoryInterval, true);
+      } // Cache to avoid calling interval function repeatly.
 
 
       return listCacheSet(ticksCache, optionTickInterval, {
@@ -58853,11 +59507,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       } // Only update cache if cache not used, otherwise the
       // changing of interval is too insensitive.
       else {
-          cache.lastTickCount = tickCount;
-          cache.lastAutoInterval = interval;
-          cache.axisExtend0 = axisExtent[0];
-          cache.axisExtend1 = axisExtent[1];
-        }
+        cache.lastTickCount = tickCount;
+        cache.lastAutoInterval = interval;
+        cache.axisExtend0 = axisExtent[0];
+        cache.axisExtend1 = axisExtent[1];
+      }
 
       return interval;
     }
@@ -58980,7 +59634,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var layout = __webpack_require__(
     /*! ../../util/layout */
@@ -59432,7 +60086,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ComponentModel = __webpack_require__(
     /*! ../../model/Component */
@@ -59690,7 +60344,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Axis = __webpack_require__(
     /*! ../Axis */
@@ -59853,7 +60507,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ComponentModel = __webpack_require__(
     /*! ../../model/Component */
@@ -59980,7 +60634,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -60133,11 +60787,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var Cartesian = __webpack_require__(
     /*! ./Cartesian */
@@ -60317,7 +60971,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isObject = _util.isObject;
     var each = _util.each;
@@ -60665,12 +61319,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         axis = this.getAxis('y', yAxisModel.componentIndex);
       } // Lowest priority.
       else if (gridModel) {
-          var grid = gridModel.coordinateSystem;
+        var grid = gridModel.coordinateSystem;
 
-          if (grid === this) {
-            cartesian = this._coordsList[0];
-          }
+        if (grid === this) {
+          cartesian = this._coordsList[0];
         }
+      }
 
       return {
         cartesian: cartesian,
@@ -61039,7 +61693,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -61161,7 +61815,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -61248,11 +61902,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var View = __webpack_require__(
     /*! ../View */
@@ -61486,7 +62140,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -61622,8 +62276,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
        * @return {string}
        */
       getFormattedLabel: function getFormattedLabel(name, status) {
+        status = status || 'normal';
         var regionModel = this.getRegionModel(name);
-        var formatter = regionModel.get('label' + (status === 'normal' ? '.' : status + '.') + 'formatter');
+        var formatter = regionModel.get((status === 'normal' ? '' : status + '.') + 'label.formatter');
         var params = {
           name: name
         };
@@ -61678,19 +62333,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var bbox = __webpack_require__(
     /*! zrender/lib/core/bbox */
-    "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+    "./node_modules/zrender/lib/core/bbox.js");
 
     var vec2 = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var polygonContain = __webpack_require__(
     /*! zrender/lib/contain/polygon */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js");
+    "./node_modules/zrender/lib/contain/polygon.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -62043,7 +62698,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Region = __webpack_require__(
     /*! ../Region */
@@ -62209,7 +62864,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Geo = __webpack_require__(
     /*! ./Geo */
@@ -62460,7 +63115,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
 
@@ -62602,29 +63257,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _parseSVG = __webpack_require__(
     /*! zrender/lib/tool/parseSVG */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js");
+    "./node_modules/zrender/lib/tool/parseSVG.js");
 
     var parseSVG = _parseSVG.parseSVG;
     var makeViewBoxTransform = _parseSVG.makeViewBoxTransform;
 
     var Group = __webpack_require__(
     /*! zrender/lib/container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     var Rect = __webpack_require__(
     /*! zrender/lib/graphic/shape/Rect */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js");
+    "./node_modules/zrender/lib/graphic/shape/Rect.js");
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var assert = _util.assert;
     var createHashMap = _util.createHashMap;
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _model = __webpack_require__(
     /*! ../../util/model */
@@ -62799,7 +63454,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var createHashMap = _util.createHashMap;
@@ -62818,7 +63473,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -62957,7 +63612,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var isString = _util.isString;
@@ -62967,7 +63622,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _parseSVG = __webpack_require__(
     /*! zrender/lib/tool/parseSVG */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js");
+    "./node_modules/zrender/lib/tool/parseSVG.js");
 
     var parseXML = _parseSVG.parseXML;
     /*
@@ -63081,7 +63736,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Region = __webpack_require__(
     /*! ./Region */
@@ -63252,7 +63907,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -63344,7 +63999,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ComponentModel = __webpack_require__(
     /*! ../../model/Component */
@@ -63525,11 +64180,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var layoutUtil = __webpack_require__(
     /*! ../../util/layout */
@@ -63975,12 +64630,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           : behavior = 'none';
         } // When screen is too narrow, make it visible and slidable, although it is hard to interact.
         else {
-            var winSize = axisExpandWindow[1] - axisExpandWindow[0];
-            var pos = extent[1] * pointCoord / winSize;
-            axisExpandWindow = [mathMax(0, pos - winSize / 2)];
-            axisExpandWindow[1] = mathMin(extent[1], axisExpandWindow[0] + winSize);
-            axisExpandWindow[0] = axisExpandWindow[1] - winSize;
-          }
+          var winSize = axisExpandWindow[1] - axisExpandWindow[0];
+          var pos = extent[1] * pointCoord / winSize;
+          axisExpandWindow = [mathMax(0, pos - winSize / 2)];
+          axisExpandWindow[1] = mathMin(extent[1], axisExpandWindow[0] + winSize);
+          axisExpandWindow[0] = axisExpandWindow[1] - winSize;
+        }
 
         return {
           axisExpandWindow: axisExpandWindow,
@@ -64068,7 +64723,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Axis = __webpack_require__(
     /*! ../Axis */
@@ -64174,7 +64829,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Component = __webpack_require__(
     /*! ../../model/Component */
@@ -64430,7 +65085,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -64537,11 +65192,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var Axis = __webpack_require__(
     /*! ../Axis */
@@ -64645,9 +65300,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         } // Only update cache if cache not used, otherwise the
         // changing of interval is too insensitive.
         else {
-            cache.lastTickCount = tickCount;
-            cache.lastAutoInterval = interval;
-          }
+          cache.lastTickCount = tickCount;
+          cache.lastAutoInterval = interval;
+        }
 
         return interval;
       }
@@ -64688,7 +65343,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ComponentModel = __webpack_require__(
     /*! ../../model/Component */
@@ -65197,7 +65852,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Axis = __webpack_require__(
     /*! ../Axis */
@@ -65290,7 +65945,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Polar = __webpack_require__(
     /*! ./Polar */
@@ -65494,7 +66149,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -65592,7 +66247,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Axis = __webpack_require__(
     /*! ../Axis */
@@ -65679,7 +66334,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var IndicatorAxis = __webpack_require__(
     /*! ./IndicatorAxis */
@@ -65995,7 +66650,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var axisDefault = __webpack_require__(
     /*! ../axisDefault */
@@ -66173,7 +66828,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var ComponentModel = __webpack_require__(
     /*! ../../model/Component */
@@ -66323,7 +66978,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     /*
@@ -66616,7 +67271,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Axis = __webpack_require__(
     /*! ../Axis */
@@ -66759,7 +67414,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -66842,7 +67497,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -67222,7 +67877,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -67399,7 +68054,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _clazz = __webpack_require__(
     /*! ../util/clazz */
@@ -67570,12 +68225,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return;
       }
 
-      var key = n1.id + '-' + n2.id; // PENDING
-
-      if (edgesMap[key]) {
-        return;
-      }
-
+      var key = n1.id + '-' + n2.id;
       var edge = new Edge(n1, n2, dataIndex);
       edge.hostGraph = this;
 
@@ -67987,7 +68637,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Model = __webpack_require__(
     /*! ../model/Model */
@@ -68397,7 +69047,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
      * Initialize from data
      * @param {Array.<Object|number|Array>} data source or data or data provider.
      * @param {Array.<string>} [nameLIst] The name of a datum is used on data diff and
-     *        defualt label/tooltip.
+     *        default label/tooltip.
      *        A name can be specified in encode.itemName,
      *        or dataItem.name (only for series option data),
      *        or provided in nameList from outside.
@@ -70094,7 +70744,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var isObject = _util.isObject;
@@ -70274,7 +70924,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var isTypedArray = _util.isTypedArray;
@@ -70463,11 +71113,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
-
-    var Model = __webpack_require__(
-    /*! ../model/Model */
-    "./node_modules/echarts/lib/model/Model.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var linkList = __webpack_require__(
     /*! ./helper/linkList */
@@ -70735,20 +71381,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         var hostTree = this.hostTree;
         var itemModel = hostTree.data.getItemModel(this.dataIndex);
-        var levelModel = this.getLevelModel(); // FIXME: refactor levelModel to "beforeLink", and remove levelModel here.
-
-        if (levelModel) {
-          return itemModel.getModel(path, levelModel.getModel(path));
-        } else {
-          return itemModel.getModel(path);
-        }
-      },
-
-      /**
-       * @return {module:echarts/model/Model}
-       */
-      getLevelModel: function getLevelModel() {
-        return (this.hostTree.levelModels || [])[this.depth];
+        return itemModel.getModel(path);
       },
 
       /**
@@ -70821,10 +71454,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
      * @constructor
      * @alias module:echarts/data/Tree
      * @param {module:echarts/model/Model} hostModel
-     * @param {Array.<Object>} levelOptions
      */
 
-    function Tree(hostModel, levelOptions) {
+    function Tree(hostModel) {
       /**
        * @type {module:echarts/data/Tree~TreeNode}
        * @readOnly
@@ -70850,15 +71482,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
        */
 
       this.hostModel = hostModel;
-      /**
-       * @private
-       * @readOnly
-       * @type {Array.<module:echarts/model/Model}
-       */
-
-      this.levelModels = zrUtil.map(levelOptions || [], function (levelDefine) {
-        return new Model(levelDefine, hostModel, hostModel.ecModel);
-      });
     }
 
     Tree.prototype = {
@@ -70945,13 +71568,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
      * @static
      * @param {Object} dataRoot Root node.
      * @param {module:echarts/model/Model} hostModel
-     * @param {Object} treeOptions
-     * @param {Array.<Object>} treeOptions.levels
      * @return module:echarts/data/Tree
      */
 
-    Tree.createTree = function (dataRoot, hostModel, treeOptions, beforeLink) {
-      var tree = new Tree(hostModel, treeOptions && treeOptions.levels);
+    Tree.createTree = function (dataRoot, hostModel, beforeLink) {
+      var tree = new Tree(hostModel);
       var listData = [];
       var dimMax = 1;
       buildHierarchy(dataRoot);
@@ -71044,7 +71665,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var each = _util.each;
@@ -71483,7 +72104,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isTypedArray = _util.isTypedArray;
     var extend = _util.extend;
@@ -71878,7 +72499,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var isString = _util.isString;
@@ -72073,7 +72694,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var createHashMap = _util.createHashMap;
@@ -72253,7 +72874,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -72447,7 +73068,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var each = _util.each;
@@ -72849,15 +73470,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           // both dimensions name.
         } // In category way, the first category axis.
         else if (baseCategoryDimIndex === coordDimIdx) {
-            pushDim(encode[coordDimName], 0, count);
-            pushDim(encodeItemName, 0, count);
-          } // In category way, the other axis.
-          else {
-              var start = datasetRecord.categoryWayDim;
-              pushDim(encode[coordDimName], start, count);
-              pushDim(encodeSeriesName, start, count);
-              datasetRecord.categoryWayDim += count;
-            }
+          pushDim(encode[coordDimName], 0, count);
+          pushDim(encodeItemName, 0, count);
+        } // In category way, the other axis.
+        else {
+          var start = datasetRecord.categoryWayDim;
+          pushDim(encode[coordDimName], start, count);
+          pushDim(encodeSeriesName, start, count);
+          datasetRecord.categoryWayDim += count;
+        }
       });
 
       function pushDim(dimIdxArr, idxFrom, idxCount) {
@@ -73219,27 +73840,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrender = __webpack_require__(
     /*! zrender/lib/zrender */
-    "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+    "./node_modules/zrender/lib/zrender.js");
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var colorTool = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var timsort = __webpack_require__(
     /*! zrender/lib/core/timsort */
-    "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js");
+    "./node_modules/zrender/lib/core/timsort.js");
 
     var Eventful = __webpack_require__(
     /*! zrender/lib/mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     var GlobalModel = __webpack_require__(
     /*! ./model/Global */
@@ -73351,9 +73972,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var isFunction = zrUtil.isFunction;
     var isObject = zrUtil.isObject;
     var parseClassType = ComponentModel.parseClassType;
-    var version = '4.8.0';
+    var version = '4.9.0';
     var dependencies = {
-      zrender: '4.3.1'
+      zrender: '4.3.2'
     };
     var TEST_FRAME_REMAIN_TIME = 1;
     var PRIORITY_PROCESSOR_FILTER = 1000;
@@ -73562,36 +74183,36 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         triggerUpdatedEvent.call(this, silent);
       } // Avoid do both lazy update and progress in one frame.
       else if (scheduler.unfinished) {
-          // Stream progress.
-          var remainTime = TEST_FRAME_REMAIN_TIME;
-          var ecModel = this._model;
-          var api = this._api;
-          scheduler.unfinished = false;
+        // Stream progress.
+        var remainTime = TEST_FRAME_REMAIN_TIME;
+        var ecModel = this._model;
+        var api = this._api;
+        scheduler.unfinished = false;
 
-          do {
-            var startTime = +new Date();
-            scheduler.performSeriesTasks(ecModel); // Currently dataProcessorFuncs do not check threshold.
+        do {
+          var startTime = +new Date();
+          scheduler.performSeriesTasks(ecModel); // Currently dataProcessorFuncs do not check threshold.
 
-            scheduler.performDataProcessorTasks(ecModel);
-            updateStreamModes(this, ecModel); // Do not update coordinate system here. Because that coord system update in
-            // each frame is not a good user experience. So we follow the rule that
-            // the extent of the coordinate system is determin in the first frame (the
-            // frame is executed immedietely after task reset.
-            // this._coordSysMgr.update(ecModel, api);
-            // console.log('--- ec frame visual ---', remainTime);
+          scheduler.performDataProcessorTasks(ecModel);
+          updateStreamModes(this, ecModel); // Do not update coordinate system here. Because that coord system update in
+          // each frame is not a good user experience. So we follow the rule that
+          // the extent of the coordinate system is determin in the first frame (the
+          // frame is executed immedietely after task reset.
+          // this._coordSysMgr.update(ecModel, api);
+          // console.log('--- ec frame visual ---', remainTime);
 
-            scheduler.performVisualTasks(ecModel);
-            renderSeries(this, this._model, api, 'remain');
-            remainTime -= +new Date() - startTime;
-          } while (remainTime > 0 && scheduler.unfinished); // Call flush explicitly for trigger finished event.
+          scheduler.performVisualTasks(ecModel);
+          renderSeries(this, this._model, api, 'remain');
+          remainTime -= +new Date() - startTime;
+        } while (remainTime > 0 && scheduler.unfinished); // Call flush explicitly for trigger finished event.
 
 
-          if (!scheduler.unfinished) {
-            this._zr.flush();
-          } // Else, zr flushing be ensue within the same frame,
-          // because zr flushing is after onframe event.
+        if (!scheduler.unfinished) {
+          this._zr.flush();
+        } // Else, zr flushing be ensue within the same frame,
+        // because zr flushing is after onframe event.
 
-        }
+      }
     };
     /**
      * @return {HTMLElement}
@@ -74759,8 +75380,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             params = dataModel && dataModel.getDataParams(el.dataIndex, el.dataType, el) || {};
           } // If element has custom eventData of components
           else if (el && el.eventData) {
-              params = zrUtil.extend({}, el.eventData);
-            } // Contract: if params prepared in mouse event,
+            params = zrUtil.extend({}, el.eventData);
+          } // Contract: if params prepared in mouse event,
           // these properties must be specified:
           // {
           //    componentType: string (component main type)
@@ -74990,42 +75611,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           cptQuery.subType = condCptType.sub || null;
         } // `query` is an object, convert to {mainType, index, name, id}.
         else {
-            // `xxxIndex`, `xxxName`, `xxxId`, `name`, `dataIndex`, `dataType` is reserved,
-            // can not be used in `compomentModel.filterForExposedEvent`.
-            var suffixes = ['Index', 'Name', 'Id'];
-            var dataKeys = {
-              name: 1,
-              dataIndex: 1,
-              dataType: 1
-            };
-            zrUtil.each(query, function (val, key) {
-              var reserved = false;
+          // `xxxIndex`, `xxxName`, `xxxId`, `name`, `dataIndex`, `dataType` is reserved,
+          // can not be used in `compomentModel.filterForExposedEvent`.
+          var suffixes = ['Index', 'Name', 'Id'];
+          var dataKeys = {
+            name: 1,
+            dataIndex: 1,
+            dataType: 1
+          };
+          zrUtil.each(query, function (val, key) {
+            var reserved = false;
 
-              for (var i = 0; i < suffixes.length; i++) {
-                var propSuffix = suffixes[i];
-                var suffixPos = key.lastIndexOf(propSuffix);
+            for (var i = 0; i < suffixes.length; i++) {
+              var propSuffix = suffixes[i];
+              var suffixPos = key.lastIndexOf(propSuffix);
 
-                if (suffixPos > 0 && suffixPos === key.length - propSuffix.length) {
-                  var mainType = key.slice(0, suffixPos); // Consider `dataIndex`.
+              if (suffixPos > 0 && suffixPos === key.length - propSuffix.length) {
+                var mainType = key.slice(0, suffixPos); // Consider `dataIndex`.
 
-                  if (mainType !== 'data') {
-                    cptQuery.mainType = mainType;
-                    cptQuery[propSuffix.toLowerCase()] = val;
-                    reserved = true;
-                  }
+                if (mainType !== 'data') {
+                  cptQuery.mainType = mainType;
+                  cptQuery[propSuffix.toLowerCase()] = val;
+                  reserved = true;
                 }
               }
+            }
 
-              if (dataKeys.hasOwnProperty(key)) {
-                dataQuery[key] = val;
-                reserved = true;
-              }
+            if (dataKeys.hasOwnProperty(key)) {
+              dataQuery[key] = val;
+              reserved = true;
+            }
 
-              if (!reserved) {
-                otherQuery[key] = val;
-              }
-            });
-          }
+            if (!reserved) {
+              otherQuery[key] = val;
+            }
+          });
+        }
 
         return {
           cptQuery: cptQuery,
@@ -75632,29 +76253,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrender = __webpack_require__(
     /*! zrender/lib/zrender */
-    "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+    "./node_modules/zrender/lib/zrender.js");
 
     exports.zrender = zrender;
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     exports.matrix = matrix;
 
     var vector = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     exports.vector = vector;
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var colorTool = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     exports.color = colorTool;
 
@@ -75713,7 +76334,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     exports.env = _env;
     /*
@@ -75784,7 +76405,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createListFromArray = __webpack_require__(
     /*! ./chart/helper/createListFromArray */
@@ -76116,7 +76737,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _number = __webpack_require__(
     /*! ../util/number */
@@ -76717,7 +77338,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _number = __webpack_require__(
     /*! ../util/number */
@@ -76794,7 +77415,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         /*, baseDim*/
         );
         var clampLayout = baseAxis.dim !== 'radius' || !seriesModel.get('roundCap', true);
-        var valueAxisStart = valueAxis.getExtent()[0];
+        var valueAxisStart = valueAxis.dim === 'radius' ? valueAxis.dataToRadius(0) : valueAxis.dataToAngle(0);
 
         for (var idx = 0, len = data.count(); idx < len; idx++) {
           var value = data.get(valueDim, idx);
@@ -76838,29 +77459,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             stacked && (lastStackCoords[stackId][baseValue][sign] = r);
           } // tangential sector
           else {
-              var angleSpan = valueAxis.dataToAngle(value, clampLayout) - valueAxisStart;
-              var radius = baseAxis.dataToRadius(baseValue);
+            var angleSpan = valueAxis.dataToAngle(value, clampLayout) - valueAxisStart;
+            var radius = baseAxis.dataToRadius(baseValue);
 
-              if (Math.abs(angleSpan) < barMinAngle) {
-                angleSpan = (angleSpan < 0 ? -1 : 1) * barMinAngle;
-              }
-
-              r0 = radius + columnOffset;
-              r = r0 + columnWidth;
-              startAngle = baseCoord;
-              endAngle = baseCoord + angleSpan; // if the previous stack is at the end of the ring,
-              // add a round to differentiate it from origin
-              // var extent = angleAxis.getExtent();
-              // var stackCoord = angle;
-              // if (stackCoord === extent[0] && value > 0) {
-              //     stackCoord = extent[1];
-              // }
-              // else if (stackCoord === extent[1] && value < 0) {
-              //     stackCoord = extent[0];
-              // }
-
-              stacked && (lastStackCoords[stackId][baseValue][sign] = endAngle);
+            if (Math.abs(angleSpan) < barMinAngle) {
+              angleSpan = (angleSpan < 0 ? -1 : 1) * barMinAngle;
             }
+
+            r0 = radius + columnOffset;
+            r = r0 + columnWidth;
+            startAngle = baseCoord;
+            endAngle = baseCoord + angleSpan; // if the previous stack is at the end of the ring,
+            // add a round to differentiate it from origin
+            // var extent = angleAxis.getExtent();
+            // var stackCoord = angle;
+            // if (stackCoord === extent[0] && value > 0) {
+            //     stackCoord = extent[1];
+            // }
+            // else if (stackCoord === extent[1] && value < 0) {
+            //     stackCoord = extent[0];
+            // }
+
+            stacked && (lastStackCoords[stackId][baseValue][sign] = endAngle);
+          }
 
           data.setItemLayout(idx, {
             cx: cx,
@@ -77017,7 +77638,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var map = _util.map;
 
@@ -77152,7 +77773,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ../util/graphic */
@@ -77160,7 +77781,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -77317,7 +77938,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Model = __webpack_require__(
     /*! ./Model */
@@ -77593,7 +78214,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var filter = _util.filter;
@@ -78339,11 +78960,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var _model = __webpack_require__(
     /*! ../util/model */
@@ -78605,7 +79226,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../util/model */
@@ -79082,11 +79703,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var _format = __webpack_require__(
     /*! ../util/format */
@@ -80398,7 +81019,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -80484,7 +81105,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var graphicUtil = __webpack_require__(
     /*! ../../util/graphic */
@@ -80577,7 +81198,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var retrieve = _util.retrieve;
@@ -80776,7 +81397,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var isArray = _util.isArray;
@@ -80937,7 +81558,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var modelUtil = __webpack_require__(
     /*! ../../util/model */
@@ -81438,7 +82059,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             var valueAxis = coordSys.getOtherAxis(baseAxis);
             var extent = baseAxis.getExtent(); // Coordinste system has been resized
 
-            var size = extent[1] - extent[0];
+            var size = Math.abs(extent[1] - extent[0]);
             var rate = Math.round(data.count() / size);
 
             if (rate > 1) {
@@ -81494,7 +82115,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     var each = _util.each;
@@ -81594,10 +82215,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               if (sum >= 0 && val > 0 || // Positive stack
               sum <= 0 && val < 0 // Negative stack
               ) {
-                  sum += val;
-                  stackedOver = val;
-                  break;
-                }
+                sum += val;
+                stackedOver = val;
+                break;
+              }
             }
           }
 
@@ -81973,7 +82594,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Scale = __webpack_require__(
     /*! ./Scale */
@@ -82205,7 +82826,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Scale = __webpack_require__(
     /*! ./Scale */
@@ -82581,7 +83202,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var numberUtil = __webpack_require__(
     /*! ../util/number */
@@ -82964,7 +83585,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     var map = _util.map;
@@ -83057,7 +83678,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
      */
 
     proto.restoreData = function (ecModel, payload) {
-      // TODO: Only restroe needed series and components, but not all components.
+      // TODO: Only restore needed series and components, but not all components.
       // Currently `restoreData` of all of the series and component will be called.
       // But some independent components like `title`, `legend`, `graphic`, `toolbox`,
       // `tooltip`, `axisPointer`, etc, do not need series refresh when `setOption`,
@@ -83364,9 +83985,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       // pipelines will be disabled unexpectedly. But it still needs stubs to receive
       // dirty info from upsteam.
       else {
-          overallProgress = false;
-          each(ecModel.getSeries(), createStub);
-        }
+        overallProgress = false;
+        each(ecModel.getSeries(), createStub);
+      }
 
       function createStub(seriesModel) {
         var pipelineId = seriesModel.uid;
@@ -83563,7 +84184,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var assert = _util.assert;
     var isArray = _util.isArray;
@@ -83684,8 +84305,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this._dueEnd = upTask._outputDueEnd;
       } // DataTask or overallTask
       else {
-          this._dueEnd = this._count ? this._count(this.context) : Infinity;
-        } // Note: Stubs, that its host overall task let it has progress, has progress.
+        this._dueEnd = this._count ? this._count(this.context) : Infinity;
+      } // Note: Stubs, that its host overall task let it has progress, has progress.
       // If no progress, pass index from upstream to downstream each time plan called.
 
 
@@ -84163,7 +84784,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -84321,7 +84942,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -84612,7 +85233,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _clazz = __webpack_require__(
     /*! ./clazz */
@@ -84846,11 +85467,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var textContain = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var numberUtil = __webpack_require__(
     /*! ./number */
@@ -85157,137 +85778,137 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var pathTool = __webpack_require__(
     /*! zrender/lib/tool/path */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/path.js");
+    "./node_modules/zrender/lib/tool/path.js");
 
     var colorTool = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var matrix = __webpack_require__(
     /*! zrender/lib/core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var vector = __webpack_require__(
     /*! zrender/lib/core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var Path = __webpack_require__(
     /*! zrender/lib/graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var Transformable = __webpack_require__(
     /*! zrender/lib/mixin/Transformable */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+    "./node_modules/zrender/lib/mixin/Transformable.js");
 
     var ZImage = __webpack_require__(
     /*! zrender/lib/graphic/Image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+    "./node_modules/zrender/lib/graphic/Image.js");
 
     exports.Image = ZImage;
 
     var Group = __webpack_require__(
     /*! zrender/lib/container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     exports.Group = Group;
 
     var Text = __webpack_require__(
     /*! zrender/lib/graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+    "./node_modules/zrender/lib/graphic/Text.js");
 
     exports.Text = Text;
 
     var Circle = __webpack_require__(
     /*! zrender/lib/graphic/shape/Circle */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js");
+    "./node_modules/zrender/lib/graphic/shape/Circle.js");
 
     exports.Circle = Circle;
 
     var Sector = __webpack_require__(
     /*! zrender/lib/graphic/shape/Sector */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Sector.js");
+    "./node_modules/zrender/lib/graphic/shape/Sector.js");
 
     exports.Sector = Sector;
 
     var Ring = __webpack_require__(
     /*! zrender/lib/graphic/shape/Ring */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ring.js");
+    "./node_modules/zrender/lib/graphic/shape/Ring.js");
 
     exports.Ring = Ring;
 
     var Polygon = __webpack_require__(
     /*! zrender/lib/graphic/shape/Polygon */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js");
+    "./node_modules/zrender/lib/graphic/shape/Polygon.js");
 
     exports.Polygon = Polygon;
 
     var Polyline = __webpack_require__(
     /*! zrender/lib/graphic/shape/Polyline */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js");
+    "./node_modules/zrender/lib/graphic/shape/Polyline.js");
 
     exports.Polyline = Polyline;
 
     var Rect = __webpack_require__(
     /*! zrender/lib/graphic/shape/Rect */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js");
+    "./node_modules/zrender/lib/graphic/shape/Rect.js");
 
     exports.Rect = Rect;
 
     var Line = __webpack_require__(
     /*! zrender/lib/graphic/shape/Line */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js");
+    "./node_modules/zrender/lib/graphic/shape/Line.js");
 
     exports.Line = Line;
 
     var BezierCurve = __webpack_require__(
     /*! zrender/lib/graphic/shape/BezierCurve */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/BezierCurve.js");
+    "./node_modules/zrender/lib/graphic/shape/BezierCurve.js");
 
     exports.BezierCurve = BezierCurve;
 
     var Arc = __webpack_require__(
     /*! zrender/lib/graphic/shape/Arc */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Arc.js");
+    "./node_modules/zrender/lib/graphic/shape/Arc.js");
 
     exports.Arc = Arc;
 
     var CompoundPath = __webpack_require__(
     /*! zrender/lib/graphic/CompoundPath */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/CompoundPath.js");
+    "./node_modules/zrender/lib/graphic/CompoundPath.js");
 
     exports.CompoundPath = CompoundPath;
 
     var LinearGradient = __webpack_require__(
     /*! zrender/lib/graphic/LinearGradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js");
+    "./node_modules/zrender/lib/graphic/LinearGradient.js");
 
     exports.LinearGradient = LinearGradient;
 
     var RadialGradient = __webpack_require__(
     /*! zrender/lib/graphic/RadialGradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/RadialGradient.js");
+    "./node_modules/zrender/lib/graphic/RadialGradient.js");
 
     exports.RadialGradient = RadialGradient;
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     exports.BoundingRect = BoundingRect;
 
     var IncrementalDisplayable = __webpack_require__(
     /*! zrender/lib/graphic/IncrementalDisplayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
+    "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js");
 
     exports.IncrementalDisplayable = IncrementalDisplayable;
 
     var subPixelOptimizeUtil = __webpack_require__(
     /*! zrender/lib/graphic/helper/subPixelOptimize */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
+    "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -86746,11 +87367,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _number = __webpack_require__(
     /*! ./number */
@@ -87190,20 +87811,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         // Than we can make sure user only want those two, and ignore
         // all origin params in targetOption.
         else if (newValueCount >= enoughParamNumber) {
-            return newParams;
-          } else {
-            // Chose another param from targetOption by priority.
-            for (var i = 0; i < names.length; i++) {
-              var name = names[i];
+          return newParams;
+        } else {
+          // Chose another param from targetOption by priority.
+          for (var i = 0; i < names.length; i++) {
+            var name = names[i];
 
-              if (!hasProp(newParams, name) && hasProp(targetOption, name)) {
-                newParams[name] = targetOption[name];
-                break;
-              }
+            if (!hasProp(newParams, name) && hasProp(targetOption, name)) {
+              newParams[name] = targetOption[name];
+              break;
             }
-
-            return newParams;
           }
+
+          return newParams;
+        }
       }
 
       function hasProp(obj, name) {
@@ -87289,11 +87910,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! zrender/lib/core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -87852,7 +88473,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -88211,14 +88832,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         // `new Date(1478412000000).getTimezoneOffset();  // get 300`
         // So we should not use `new Date`, but use `Date.UTC`.
         else {
-            var hour = +match[4] || 0;
+          var hour = +match[4] || 0;
 
-            if (match[8].toUpperCase() !== 'Z') {
-              hour -= match[8].slice(0, 3);
-            }
-
-            return new Date(Date.UTC(+match[1], +(match[2] || 1) - 1, +match[3] || 1, hour, +(match[5] || 0), +match[6] || 0, +match[7] || 0));
+          if (match[8].toUpperCase() !== 'Z') {
+            hour -= match[8].slice(0, 3);
           }
+
+          return new Date(Date.UTC(+match[1], +(match[2] || 1) - 1, +match[3] || 1, hour, +(match[5] || 0), +match[6] || 0, +match[7] || 0));
+        }
       } else if (value == null) {
         return new Date(NaN);
       }
@@ -88558,7 +89179,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var graphic = __webpack_require__(
     /*! ./graphic */
@@ -88566,11 +89187,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var BoundingRect = __webpack_require__(
     /*! zrender/lib/core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _text = __webpack_require__(
     /*! zrender/lib/contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var _calculateTextPosition = _text.calculateTextPosition;
     /*
@@ -89127,13 +89748,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
 
     var Group = __webpack_require__(
     /*! zrender/lib/container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     var componentUtil = __webpack_require__(
     /*! ../util/component */
@@ -89441,7 +90062,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var Group = __webpack_require__(
     /*! zrender/lib/container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     var componentUtil = __webpack_require__(
     /*! ../util/component */
@@ -89632,11 +90253,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var zrColor = __webpack_require__(
     /*! zrender/lib/tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var _number = __webpack_require__(
     /*! ../util/number */
@@ -89688,7 +90309,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
      *                                            visual data can be array or object
      *                                            (like: {cate1: '#222', none: '#fff'})
      *                                            or primary types (which represents
-     *                                            defualt category visual), otherwise visual
+     *                                            default category visual), otherwise visual
      *                                            can be array or primary (which will be
      *                                            normalized to array).
      *
@@ -90261,7 +90882,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var lang = __webpack_require__(
     /*! ../lang */
@@ -90451,7 +91072,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var createHashMap = _util.createHashMap;
     /*
@@ -90562,11 +91183,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var Gradient = __webpack_require__(
     /*! zrender/lib/graphic/Gradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+    "./node_modules/zrender/lib/graphic/Gradient.js");
 
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isFunction = _util.isFunction;
     /*
@@ -90670,7 +91291,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var _util = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isFunction = _util.isFunction;
     /*
@@ -90803,7 +91424,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /*
     * Licensed to the Apache Software Foundation (ASF) under one
     * or more contributor license agreements.  See the NOTICE file
@@ -90906,7 +91527,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
     var zrUtil = __webpack_require__(
     /*! zrender/lib/core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var VisualMapping = __webpack_require__(
     /*! ./VisualMapping */
@@ -91130,34 +91751,783 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/Element.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/Element.js ***!
-    \******************************************************************/
+  "./node_modules/ngx-echarts/fesm2015/ngx-echarts.js":
+  /*!**********************************************************!*\
+    !*** ./node_modules/ngx-echarts/fesm2015/ngx-echarts.js ***!
+    \**********************************************************/
+
+  /*! exports provided: NgxEchartsModule, ɵa */
+
+  /***/
+  function node_modulesNgxEchartsFesm2015NgxEchartsJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgxEchartsModule", function () {
+      return NgxEchartsModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵa", function () {
+      return NgxEchartsDirective;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var echarts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! echarts */
+    "./node_modules/echarts/index.js");
+    /* harmony import */
+
+
+    var echarts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_1__);
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+
+    var ChangeFilter = /*#__PURE__*/function () {
+      /**
+       * @param {?} _changes
+       */
+      function ChangeFilter(_changes) {
+        _classCallCheck(this, ChangeFilter);
+
+        this._changes = _changes;
+      }
+      /**
+       * @param {?} changes
+       * @return {?}
+       */
+
+
+      _createClass(ChangeFilter, [{
+        key: "notEmpty",
+        value:
+        /**
+         * @template T
+         * @param {?} key
+         * @return {?}
+         */
+        function notEmpty(key) {
+          if (this._changes[key]) {
+            /** @type {?} */
+            var value = this._changes[key].currentValue;
+
+            if (value !== undefined && value !== null) {
+              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+            }
+          }
+
+          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+        }
+        /**
+         * @template T
+         * @param {?} key
+         * @return {?}
+         */
+
+      }, {
+        key: "has",
+        value: function has(key) {
+          if (this._changes[key]) {
+            /** @type {?} */
+            var value = this._changes[key].currentValue;
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+          }
+
+          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+        }
+        /**
+         * @template T
+         * @param {?} key
+         * @return {?}
+         */
+
+      }, {
+        key: "notFirst",
+        value: function notFirst(key) {
+          if (this._changes[key] && !this._changes[key].isFirstChange()) {
+            /** @type {?} */
+            var value = this._changes[key].currentValue;
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+          }
+
+          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+        }
+        /**
+         * @template T
+         * @param {?} key
+         * @return {?}
+         */
+
+      }, {
+        key: "notFirstAndEmpty",
+        value: function notFirstAndEmpty(key) {
+          if (this._changes[key] && !this._changes[key].isFirstChange()) {
+            /** @type {?} */
+            var value = this._changes[key].currentValue;
+
+            if (value !== undefined && value !== null) {
+              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
+            }
+          }
+
+          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+        }
+      }], [{
+        key: "of",
+        value: function of(changes) {
+          return new ChangeFilter(changes);
+        }
+      }]);
+
+      return ChangeFilter;
+    }();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+
+    var NgxEchartsDirective = /*#__PURE__*/function () {
+      /**
+       * @param {?} el
+       * @param {?} ngZone
+       */
+      function NgxEchartsDirective(el, ngZone) {
+        _classCallCheck(this, NgxEchartsDirective);
+
+        this.el = el;
+        this.ngZone = ngZone;
+        this.autoResize = true;
+        this.loadingType = 'default';
+        this.detectEventChanges = true; // deprecated, left for compatibility reasons to avoid triggering major version
+        // deprecated, left for compatibility reasons to avoid triggering major version
+        // ngx-echarts events
+
+        this.chartInit = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"](); // echarts mouse events
+
+        this.chartClick = this.createLazyEvent('click');
+        this.chartDblClick = this.createLazyEvent('dblclick');
+        this.chartMouseDown = this.createLazyEvent('mousedown');
+        this.chartMouseMove = this.createLazyEvent('mousemove');
+        this.chartMouseUp = this.createLazyEvent('mouseup');
+        this.chartMouseOver = this.createLazyEvent('mouseover');
+        this.chartMouseOut = this.createLazyEvent('mouseout');
+        this.chartGlobalOut = this.createLazyEvent('globalout');
+        this.chartContextMenu = this.createLazyEvent('contextmenu'); // echarts mouse events
+
+        this.chartLegendSelectChanged = this.createLazyEvent('legendselectchanged');
+        this.chartLegendSelected = this.createLazyEvent('legendselected');
+        this.chartLegendUnselected = this.createLazyEvent('legendunselected');
+        this.chartLegendScroll = this.createLazyEvent('legendscroll');
+        this.chartDataZoom = this.createLazyEvent('datazoom');
+        this.chartDataRangeSelected = this.createLazyEvent('datarangeselected');
+        this.chartTimelineChanged = this.createLazyEvent('timelinechanged');
+        this.chartTimelinePlayChanged = this.createLazyEvent('timelineplaychanged');
+        this.chartRestore = this.createLazyEvent('restore');
+        this.chartDataViewChanged = this.createLazyEvent('dataviewchanged');
+        this.chartMagicTypeChanged = this.createLazyEvent('magictypechanged');
+        this.chartPieSelectChanged = this.createLazyEvent('pieselectchanged');
+        this.chartPieSelected = this.createLazyEvent('pieselected');
+        this.chartPieUnselected = this.createLazyEvent('pieunselected');
+        this.chartMapSelectChanged = this.createLazyEvent('mapselectchanged');
+        this.chartMapSelected = this.createLazyEvent('mapselected');
+        this.chartMapUnselected = this.createLazyEvent('mapunselected');
+        this.chartAxisAreaSelected = this.createLazyEvent('axisareaselected');
+        this.chartFocusNodeAdjacency = this.createLazyEvent('focusnodeadjacency');
+        this.chartUnfocusNodeAdjacency = this.createLazyEvent('unfocusnodeadjacency');
+        this.chartBrush = this.createLazyEvent('brush');
+        this.chartBrushSelected = this.createLazyEvent('brushselected');
+        this.chartRendered = this.createLazyEvent('rendered');
+        this.chartFinished = this.createLazyEvent('finished');
+        this.currentOffsetWidth = 0;
+        this.currentOffsetHeight = 0;
+      }
+      /**
+       * @param {?} changes
+       * @return {?}
+       */
+
+
+      _createClass(NgxEchartsDirective, [{
+        key: "ngOnChanges",
+        value: function ngOnChanges(changes) {
+          var _this = this;
+
+          /** @type {?} */
+          var filter = ChangeFilter.of(changes);
+          filter.notFirstAndEmpty('options').subscribe(
+          /**
+          * @param {?} opt
+          * @return {?}
+          */
+          function (opt) {
+            return _this.onOptionsChange(opt);
+          });
+          filter.notFirstAndEmpty('merge').subscribe(
+          /**
+          * @param {?} opt
+          * @return {?}
+          */
+          function (opt) {
+            return _this.setOption(opt);
+          });
+          filter.has('loading').subscribe(
+          /**
+          * @param {?} v
+          * @return {?}
+          */
+          function (v) {
+            return _this.toggleLoading(!!v);
+          });
+          filter.notFirst('theme').subscribe(
+          /**
+          * @return {?}
+          */
+          function () {
+            return _this.refreshChart();
+          });
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this2 = this;
+
+          this.resizeSub = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(window, 'resize').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(50)).subscribe(
+          /**
+          * @return {?}
+          */
+          function () {
+            if (_this2.autoResize && window.innerWidth !== _this2.currentWindowWidth) {
+              _this2.currentWindowWidth = window.innerWidth;
+              _this2.currentOffsetWidth = _this2.el.nativeElement.offsetWidth;
+              _this2.currentOffsetHeight = _this2.el.nativeElement.offsetHeight;
+
+              _this2.resize();
+            }
+          });
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this.resizeSub) {
+            this.resizeSub.unsubscribe();
+          }
+
+          this.dispose();
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngDoCheck",
+        value: function ngDoCheck() {
+          // No heavy work in DoCheck!
+          if (this.chart && this.autoResize) {
+            /** @type {?} */
+            var offsetWidth = this.el.nativeElement.offsetWidth;
+            /** @type {?} */
+
+            var offsetHeight = this.el.nativeElement.offsetHeight;
+
+            if (this.currentOffsetWidth !== offsetWidth || this.currentOffsetHeight !== offsetHeight) {
+              this.currentOffsetWidth = offsetWidth;
+              this.currentOffsetHeight = offsetHeight;
+              this.resize();
+            }
+          }
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          var _this3 = this;
+
+          setTimeout(
+          /**
+          * @return {?}
+          */
+          function () {
+            return _this3.initChart();
+          });
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "dispose",
+        value: function dispose() {
+          if (this.chart) {
+            this.chart.dispose();
+            this.chart = null;
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "resize",
+        value: function resize() {
+          if (this.chart) {
+            this.chart.resize();
+          }
+        }
+        /**
+         * @private
+         * @param {?} loading
+         * @return {?}
+         */
+
+      }, {
+        key: "toggleLoading",
+        value: function toggleLoading(loading) {
+          if (this.chart) {
+            loading ? this.chart.showLoading(this.loadingType, this.loadingOpts) : this.chart.hideLoading();
+          }
+        }
+        /**
+         * @private
+         * @param {?} option
+         * @param {?=} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "setOption",
+        value: function setOption(option, opts) {
+          if (this.chart) {
+            this.chart.setOption(option, opts);
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "refreshChart",
+        value: function refreshChart() {
+          this.dispose();
+          this.initChart();
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "createChart",
+        value: function createChart() {
+          var _this4 = this;
+
+          this.currentWindowWidth = window.innerWidth;
+          this.currentOffsetWidth = this.el.nativeElement.offsetWidth;
+          this.currentOffsetHeight = this.el.nativeElement.offsetHeight;
+          /** @type {?} */
+
+          var dom = this.el.nativeElement;
+
+          if (window && window.getComputedStyle) {
+            /** @type {?} */
+            var prop = window.getComputedStyle(dom, null).getPropertyValue('height');
+
+            if ((!prop || prop === '0px') && (!dom.style.height || dom.style.height === '0px')) {
+              dom.style.height = '400px';
+            }
+          }
+
+          return this.ngZone.runOutsideAngular(
+          /**
+          * @return {?}
+          */
+          function () {
+            return Object(echarts__WEBPACK_IMPORTED_MODULE_1__["init"])(dom, _this4.theme, _this4.initOpts);
+          });
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "initChart",
+        value: function initChart() {
+          this.onOptionsChange(this.options);
+
+          if (this.merge && this.chart) {
+            this.setOption(this.merge);
+          }
+        }
+        /**
+         * @private
+         * @param {?} opt
+         * @return {?}
+         */
+
+      }, {
+        key: "onOptionsChange",
+        value: function onOptionsChange(opt) {
+          if (opt) {
+            if (!this.chart) {
+              this.chart = this.createChart();
+              this.chartInit.emit(this.chart);
+            }
+
+            this.chart.setOption(this.options, true);
+          }
+        } // allows to lazily bind to only those events that are requested through the `@Output` by parent components
+        // see https://stackoverflow.com/questions/51787972/optimal-reentering-the-ngzone-from-eventemitter-event for more info
+
+        /**
+         * @private
+         * @template T
+         * @param {?} eventName
+         * @return {?}
+         */
+
+      }, {
+        key: "createLazyEvent",
+        value: function createLazyEvent(eventName) {
+          var _this5 = this;
+
+          return (
+            /** @type {?} */
+            this.chartInit.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(
+            /**
+            * @param {?} chart
+            * @return {?}
+            */
+            function (chart) {
+              return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](
+              /**
+              * @param {?} observer
+              * @return {?}
+              */
+              function (observer) {
+                chart.on(eventName,
+                /**
+                * @param {?} data
+                * @return {?}
+                */
+                function (data) {
+                  return _this5.ngZone.run(
+                  /**
+                  * @return {?}
+                  */
+                  function () {
+                    return observer.next(data);
+                  });
+                });
+                return (
+                  /**
+                  * @return {?}
+                  */
+                  function () {
+                    return chart.off(eventName);
+                  }
+                );
+              });
+            }))
+          );
+        }
+      }]);
+
+      return NgxEchartsDirective;
+    }();
+
+    NgxEchartsDirective.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'echarts, [echarts]'
+      }]
+    }];
+    /** @nocollapse */
+
+    NgxEchartsDirective.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]
+      }];
+    };
+
+    NgxEchartsDirective.propDecorators = {
+      options: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      theme: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      loading: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      initOpts: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      merge: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      autoResize: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      loadingType: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      loadingOpts: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      detectEventChanges: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      chartInit: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartClick: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartDblClick: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMouseDown: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMouseMove: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMouseUp: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMouseOver: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMouseOut: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartGlobalOut: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartContextMenu: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartLegendSelectChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartLegendSelected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartLegendUnselected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartLegendScroll: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartDataZoom: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartDataRangeSelected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartTimelineChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartTimelinePlayChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartRestore: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartDataViewChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMagicTypeChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartPieSelectChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartPieSelected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartPieUnselected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMapSelectChanged: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMapSelected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartMapUnselected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartAxisAreaSelected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartFocusNodeAdjacency: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartUnfocusNodeAdjacency: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartBrush: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartBrushSelected: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartRendered: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      chartFinished: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+
+    var NgxEchartsModule = /*#__PURE__*/_createClass(function NgxEchartsModule() {
+      _classCallCheck(this, NgxEchartsModule);
+    });
+
+    NgxEchartsModule.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+      args: [{
+        imports: [],
+        declarations: [NgxEchartsDirective],
+        exports: [NgxEchartsDirective]
+      }]
+    }];
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    //# sourceMappingURL=ngx-echarts.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html":
+  /*!**********************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html ***!
+    \**********************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppViewsDashboardChangePasswordChangePasswordComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<mat-toolbar color=\"primary\" style=\"height:30px; font-size: small;\">\r\n    <span>Password Management</span>\r\n</mat-toolbar>\r\n<br><br>\r\n<!-- 500 issue id added b vidya -->\r\n<div fxLayout=\"row\">\r\n    <span fxFlex></span>\r\n    <div fxFlex=\"40%\">\r\n        <mat-card>\r\n            <mat-card-title>\r\n            </mat-card-title>\r\n            <mat-card-content>\r\n                <!-- <form #fn=\"ngForm\" novalidate> -->\r\n                    <form [formGroup]=\"userForm\"  class=\"form\" >\r\n                    <div fxLayout=\"row\">\r\n\r\n                        <div fxFlex=\"100\" class=\"pr-1\">\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Old Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"oldPassword\" [type]=\"hide1 ? 'password' : 'text'\"\r\n                                        >\r\n                                        <mat-icon matSuffix (click)=\"hide1 = !hide1\">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>New Password</mat-label>\r\n                                    <!-- <input matInput type=\"password\" required formControlName=\"newPassword\"\r\n                                         > -->\r\n                                         <input matInput type=\"password\" placeholder=\"New Password\" #newPassword name=\"newPassword\"\r\n                                         formControlName=\"newPassword\"  [type]=\"hide ? 'password' : 'text'\" pattern=\"{{passwordRegex}}\">\r\n                                         <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                                <mat-error *ngIf=\"userForm.controls.newPassword.errors && (userForm.controls.newPassword.touched || userForm.controls.newPassword.dirty)\">\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('required','newPassword')\">\r\n                                     Please enter your new password\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('pattern','newPassword')\">\r\n                                       {{errorMsg}}\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('minlength','newPassword')\">\r\n                                      Password must contain Minimum {{minPass}} characters.\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('maxlength','newPassword')\">\r\n                                      Password must contain Maximum {{maxPass}} characters.\r\n                                    </small>\r\n                                </mat-error>\r\n                                        </div>\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Confirm Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"confirmPassword\"\r\n                                    [type]=\"hide2 ? 'password' : 'text'\" >\r\n                                       <mat-icon matSuffix (click)=\"hide2 = !hide2\">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"pb-1\" *ngIf=\"otpEnableFlag\">\r\n                                <a>Please enter OTP sent to your email </a>\r\n                                    <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                        <mat-label>OTP</mat-label>\r\n                                        <input matInput type=\"password\" required formControlName=\"otp\"\r\n                                            >\r\n                                    </mat-form-field>\r\n                                </div>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <!-- <a *ngIf=\"enableLoader\">Verifying Data</a>\r\n                    <mat-progress-bar mode=\"indeterminate\" *ngIf=\"enableLoader\"></mat-progress-bar> -->\r\n                    <!-- <br> -->\r\n                    <div fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"10px\">\r\n                        <button type=\"submit\" #saveBtn mat-raised-button color=\"primary\"\r\n                            (click)=\"onSubmit()\">Submit</button>\r\n                        <!-- [disabled]=\"!fn.form.valid\" -->\r\n                        <button mat-raised-button color=\"warn\" [routerLink]=\"'/dashboard'\">Exit</button>\r\n                       \r\n                    </div>\r\n                </form>\r\n\r\n            </mat-card-content>\r\n        </mat-card>\r\n    </div>\r\n    <span fxFlex></span>\r\n</div>\r\n\r\n<br>\r\n<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html":
+  /*!************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html ***!
+    \************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppViewsDashboardDashboardComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(255, 155, 6) , rgb(201, 156, 8));color: white \">\r\n  \r\n  <mat-card-title fxLayoutAlign=\"start center\">\r\n  <small class=\"text-muted\">User Maintenance</small>\r\n\r\n  \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.user}}</h3>\r\n  <small class=\"text-muted\">Availiable Users</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, green , rgb(52, 160, 52));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\"> Audit Logs</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.auditlog}}</h3>\r\n  <small class=\"text-muted\">Total Modification in Application</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(129, 29, 243) , rgb(147, 192, 235));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">User Role</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n \r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.role}}</h3>\r\n  <small class=\"text-muted\">Total Roles For User</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  \r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(228, 10, 10) , rgb(230, 97, 97));color: white;\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">External System</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\">{{this.data.extsys}}</h3>\r\n  <small class=\"text-muted\">Availiable External System</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  \r\n  <mat-tab-group>\r\n  \r\n  \r\n  <mat-tab label=\"Application\">\r\n  <mat-card>\r\n  <div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"50\">\r\n  <div style=\"display: block\" *ngIf=\"chartpie\">\r\n  <mat-card >\r\n  <mat-card-header >User Details</mat-card-header>\r\n  <!-- <canvas baseChart [data]=\"pieChartData\" [labels]=\"pieChartLabels\" [chartType]=\"pieChartType\"></canvas> -->\r\n  </mat-card>\r\n  </div>\r\n  </div>&nbsp;\r\n  <div fxLayout=\"row wrap\" >\r\n <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(241, 76, 11) , rgb(229, 233, 15));color: white;border:solid 1px\">\r\n  \r\n  Batches uploaded by you today: {{uploadedBatches}}\r\n\r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(10, 122, 25) , rgb(49, 228, 117));color: white;border:solid 1px\">\r\n  Pending unauthorized batches for you today: {{pendingUnauthBatch}}\r\n  \r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(164, 15, 233) , rgb(72, 132, 223));color:white;border: solid 1px\">\r\n  Batches authorized by you today:{{authBatches}}\r\n  \r\n  \r\n  </mat-card>\r\n  </div> \r\n  </div>\r\n  \r\n  \r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Services\">\r\n  <mat-card>\r\n  <div style=\"display: block\">\r\n  <!-- <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\"\r\n  [legend]=\"barChartLegend\" [chartType]=\"barChartType\">\r\n  </canvas> -->\r\n  </div>\r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Other\"> Other</mat-tab>\r\n  </mat-tab-group>\r\n  <!-- added by gayathri issueid=0000650 on 20-08-2020 -->\r\n  \r\n  ";
+    /***/
+  },
+
+  /***/
+  "./node_modules/zrender/lib/Element.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/Element.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibElementJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibElementJs(module, exports, __webpack_require__) {
     var guid = __webpack_require__(
     /*! ./core/guid */
-    "./node_modules/echarts/node_modules/zrender/lib/core/guid.js");
+    "./node_modules/zrender/lib/core/guid.js");
 
     var Eventful = __webpack_require__(
     /*! ./mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     var Transformable = __webpack_require__(
     /*! ./mixin/Transformable */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js");
+    "./node_modules/zrender/lib/mixin/Transformable.js");
 
     var Animatable = __webpack_require__(
     /*! ./mixin/Animatable */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Animatable.js");
+    "./node_modules/zrender/lib/mixin/Animatable.js");
 
     var zrUtil = __webpack_require__(
     /*! ./core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /**
      * @alias module:zrender/Element
      * @constructor
@@ -91423,38 +92793,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/Handler.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/Handler.js ***!
-    \******************************************************************/
+  "./node_modules/zrender/lib/Handler.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/Handler.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibHandlerJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibHandlerJs(module, exports, __webpack_require__) {
     var util = __webpack_require__(
     /*! ./core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var vec2 = __webpack_require__(
     /*! ./core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var Draggable = __webpack_require__(
     /*! ./mixin/Draggable */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Draggable.js");
+    "./node_modules/zrender/lib/mixin/Draggable.js");
 
     var Eventful = __webpack_require__(
     /*! ./mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     var eventTool = __webpack_require__(
     /*! ./core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var GestureMgr = __webpack_require__(
     /*! ./core/GestureMgr */
-    "./node_modules/echarts/node_modules/zrender/lib/core/GestureMgr.js");
+    "./node_modules/zrender/lib/core/GestureMgr.js");
     /**
      * [The interface between `Handler` and `HandlerProxy`]:
      *
@@ -91884,32 +93254,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/Layer.js":
-  /*!****************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/Layer.js ***!
-    \****************************************************************/
+  "./node_modules/zrender/lib/Layer.js":
+  /*!*******************************************!*\
+    !*** ./node_modules/zrender/lib/Layer.js ***!
+    \*******************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibLayerJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibLayerJs(module, exports, __webpack_require__) {
     var util = __webpack_require__(
     /*! ./core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _config = __webpack_require__(
     /*! ./config */
-    "./node_modules/echarts/node_modules/zrender/lib/config.js");
+    "./node_modules/zrender/lib/config.js");
 
     var devicePixelRatio = _config.devicePixelRatio;
 
     var Style = __webpack_require__(
     /*! ./graphic/Style */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js");
+    "./node_modules/zrender/lib/graphic/Style.js");
 
     var Pattern = __webpack_require__(
     /*! ./graphic/Pattern */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js");
+    "./node_modules/zrender/lib/graphic/Pattern.js");
     /**
      * @module zrender/Layer
      * @author pissang(https://www.github.com/pissang)
@@ -91967,9 +93337,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         dom = createDom(id, painter, dpr);
       } // Not using isDom because in node it will return false
       else if (util.isObject(id)) {
-          dom = id;
-          id = dom.id;
-        }
+        dom = id;
+        id = dom.id;
+      }
 
       this.id = id;
       this.dom = dom;
@@ -92117,8 +93487,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             clearColor.__canvasGradient = clearColorGradientOrPattern;
           } // Pattern
           else if (clearColor.image) {
-              clearColorGradientOrPattern = Pattern.prototype.getCanvasPattern.call(clearColor, ctx);
-            }
+            clearColorGradientOrPattern = Pattern.prototype.getCanvasPattern.call(clearColor, ctx);
+          }
 
           ctx.save();
           ctx.fillStyle = clearColorGradientOrPattern || clearColor;
@@ -92141,52 +93511,52 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/Painter.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/Painter.js ***!
-    \******************************************************************/
+  "./node_modules/zrender/lib/Painter.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/Painter.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibPainterJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibPainterJs(module, exports, __webpack_require__) {
     var _config = __webpack_require__(
     /*! ./config */
-    "./node_modules/echarts/node_modules/zrender/lib/config.js");
+    "./node_modules/zrender/lib/config.js");
 
     var devicePixelRatio = _config.devicePixelRatio;
 
     var util = __webpack_require__(
     /*! ./core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var logError = __webpack_require__(
     /*! ./core/log */
-    "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+    "./node_modules/zrender/lib/core/log.js");
 
     var BoundingRect = __webpack_require__(
     /*! ./core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var timsort = __webpack_require__(
     /*! ./core/timsort */
-    "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js");
+    "./node_modules/zrender/lib/core/timsort.js");
 
     var Layer = __webpack_require__(
     /*! ./Layer */
-    "./node_modules/echarts/node_modules/zrender/lib/Layer.js");
+    "./node_modules/zrender/lib/Layer.js");
 
     var requestAnimationFrame = __webpack_require__(
     /*! ./animation/requestAnimationFrame */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js");
+    "./node_modules/zrender/lib/animation/requestAnimationFrame.js");
 
     var Image = __webpack_require__(
     /*! ./graphic/Image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+    "./node_modules/zrender/lib/graphic/Image.js");
 
     var env = __webpack_require__(
     /*! ./core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var HOVER_LAYER_ZLEVEL = 1e5;
     var CANVAS_ZLEVEL = 314159;
@@ -92713,8 +94083,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             util.merge(layer, this._layerConfig[zlevel], true);
           } // TODO Remove EL_AFTER_INCREMENTAL_INC magic number
           else if (this._layerConfig[zlevel - EL_AFTER_INCREMENTAL_INC]) {
-              util.merge(layer, this._layerConfig[zlevel - EL_AFTER_INCREMENTAL_INC], true);
-            }
+            util.merge(layer, this._layerConfig[zlevel - EL_AFTER_INCREMENTAL_INC], true);
+          }
 
           if (virtual) {
             layer.virtual = virtual;
@@ -93207,30 +94577,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/Storage.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/Storage.js ***!
-    \******************************************************************/
+  "./node_modules/zrender/lib/Storage.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/Storage.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibStorageJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibStorageJs(module, exports, __webpack_require__) {
     var util = __webpack_require__(
     /*! ./core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var env = __webpack_require__(
     /*! ./core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var Group = __webpack_require__(
     /*! ./container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     var timsort = __webpack_require__(
     /*! ./core/timsort */
-    "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js"); // Use timsort because in most case elements are partially sorted
+    "./node_modules/zrender/lib/core/timsort.js"); // Use timsort because in most case elements are partially sorted
     // https://jsfiddle.net/pissang/jr4x7mdm/8/
 
 
@@ -93460,32 +94830,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/animation/Animation.js":
-  /*!******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/animation/Animation.js ***!
-    \******************************************************************************/
+  "./node_modules/zrender/lib/animation/Animation.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/zrender/lib/animation/Animation.js ***!
+    \*********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibAnimationAnimationJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibAnimationAnimationJs(module, exports, __webpack_require__) {
     var util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var _event = __webpack_require__(
     /*! ../core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var Dispatcher = _event.Dispatcher;
 
     var requestAnimationFrame = __webpack_require__(
     /*! ./requestAnimationFrame */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js");
+    "./node_modules/zrender/lib/animation/requestAnimationFrame.js");
 
     var Animator = __webpack_require__(
     /*! ./Animator */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js");
+    "./node_modules/zrender/lib/animation/Animator.js");
     /**
      * Animation main class, dispatch and manage all animation controllers
      *
@@ -93729,26 +95099,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js":
-  /*!*****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js ***!
-    \*****************************************************************************/
+  "./node_modules/zrender/lib/animation/Animator.js":
+  /*!********************************************************!*\
+    !*** ./node_modules/zrender/lib/animation/Animator.js ***!
+    \********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibAnimationAnimatorJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibAnimationAnimatorJs(module, exports, __webpack_require__) {
     var Clip = __webpack_require__(
     /*! ./Clip */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/Clip.js");
+    "./node_modules/zrender/lib/animation/Clip.js");
 
     var color = __webpack_require__(
     /*! ../tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var _util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isArrayLike = _util.isArrayLike;
     /**
@@ -94392,18 +95762,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/animation/Clip.js":
-  /*!*************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/animation/Clip.js ***!
-    \*************************************************************************/
+  "./node_modules/zrender/lib/animation/Clip.js":
+  /*!****************************************************!*\
+    !*** ./node_modules/zrender/lib/animation/Clip.js ***!
+    \****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibAnimationClipJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibAnimationClipJs(module, exports, __webpack_require__) {
     var easingFuncs = __webpack_require__(
     /*! ./easing */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/easing.js");
+    "./node_modules/zrender/lib/animation/easing.js");
     /**
      * 动画主控制器
      * @config target 动画对象，可以是数组，如果是数组的话会批量分发onframe等事件
@@ -94509,15 +95879,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/animation/easing.js":
-  /*!***************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/animation/easing.js ***!
-    \***************************************************************************/
+  "./node_modules/zrender/lib/animation/easing.js":
+  /*!******************************************************!*\
+    !*** ./node_modules/zrender/lib/animation/easing.js ***!
+    \******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibAnimationEasingJs(module, exports) {
+  function node_modulesZrenderLibAnimationEasingJs(module, exports) {
     /**
      * 缓动代码来自 https://github.com/sole/tween.js/blob/master/src/Tween.js
      * @see http://sole.github.io/tween.js/examples/03_graphs.html
@@ -94900,15 +96270,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js":
-  /*!******************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/animation/requestAnimationFrame.js ***!
-    \******************************************************************************************/
+  "./node_modules/zrender/lib/animation/requestAnimationFrame.js":
+  /*!*********************************************************************!*\
+    !*** ./node_modules/zrender/lib/animation/requestAnimationFrame.js ***!
+    \*********************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibAnimationRequestAnimationFrameJs(module, exports) {
+  function node_modulesZrenderLibAnimationRequestAnimationFrameJs(module, exports) {
     var _default = typeof window !== 'undefined' && (window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || // https://github.com/ecomfe/zrender/issues/189#issuecomment-224919809
     window.msRequestAnimationFrame && window.msRequestAnimationFrame.bind(window) || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame) || function (func) {
       setTimeout(func, 16);
@@ -94919,15 +96289,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/config.js":
-  /*!*****************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/config.js ***!
-    \*****************************************************************/
+  "./node_modules/zrender/lib/config.js":
+  /*!********************************************!*\
+    !*** ./node_modules/zrender/lib/config.js ***!
+    \********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibConfigJs(module, exports) {
+  function node_modulesZrenderLibConfigJs(module, exports) {
     var dpr = 1; // If in browser environment
 
     if (typeof window !== 'undefined') {
@@ -94955,18 +96325,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/arc.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/arc.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/contain/arc.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/arc.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainArcJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainArcJs(module, exports, __webpack_require__) {
     var _util = __webpack_require__(
     /*! ./util */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/util.js");
+    "./node_modules/zrender/lib/contain/util.js");
 
     var normalizeRadian = _util.normalizeRadian;
     var PI2 = Math.PI * 2;
@@ -95030,18 +96400,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/cubic.js":
-  /*!************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/cubic.js ***!
-    \************************************************************************/
+  "./node_modules/zrender/lib/contain/cubic.js":
+  /*!***************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/cubic.js ***!
+    \***************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainCubicJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainCubicJs(module, exports, __webpack_require__) {
     var curve = __webpack_require__(
     /*! ../core/curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
     /**
      * 三次贝塞尔曲线描边包含判断
      * @param  {number}  x0
@@ -95079,15 +96449,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/line.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/line.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/contain/line.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/line.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainLineJs(module, exports) {
+  function node_modulesZrenderLibContainLineJs(module, exports) {
     /**
      * 线段包含判断
      * @param  {number}  x0
@@ -95131,48 +96501,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/path.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/path.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/contain/path.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/path.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainPathJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainPathJs(module, exports, __webpack_require__) {
     var PathProxy = __webpack_require__(
     /*! ../core/PathProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+    "./node_modules/zrender/lib/core/PathProxy.js");
 
     var line = __webpack_require__(
     /*! ./line */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/line.js");
+    "./node_modules/zrender/lib/contain/line.js");
 
     var cubic = __webpack_require__(
     /*! ./cubic */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/cubic.js");
+    "./node_modules/zrender/lib/contain/cubic.js");
 
     var quadratic = __webpack_require__(
     /*! ./quadratic */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js");
+    "./node_modules/zrender/lib/contain/quadratic.js");
 
     var arc = __webpack_require__(
     /*! ./arc */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/arc.js");
+    "./node_modules/zrender/lib/contain/arc.js");
 
     var _util = __webpack_require__(
     /*! ./util */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/util.js");
+    "./node_modules/zrender/lib/contain/util.js");
 
     var normalizeRadian = _util.normalizeRadian;
 
     var curve = __webpack_require__(
     /*! ../core/curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
 
     var windingLine = __webpack_require__(
     /*! ./windingLine */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js");
+    "./node_modules/zrender/lib/contain/windingLine.js");
 
     var CMD = PathProxy.CMD;
     var PI2 = Math.PI * 2;
@@ -95556,18 +96926,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js":
-  /*!**************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/polygon.js ***!
-    \**************************************************************************/
+  "./node_modules/zrender/lib/contain/polygon.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/polygon.js ***!
+    \*****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainPolygonJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainPolygonJs(module, exports, __webpack_require__) {
     var windingLine = __webpack_require__(
     /*! ./windingLine */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js");
+    "./node_modules/zrender/lib/contain/windingLine.js");
 
     var EPSILON = 1e-8;
 
@@ -95604,18 +96974,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js":
-  /*!****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/quadratic.js ***!
-    \****************************************************************************/
+  "./node_modules/zrender/lib/contain/quadratic.js":
+  /*!*******************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/quadratic.js ***!
+    \*******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainQuadraticJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainQuadraticJs(module, exports, __webpack_require__) {
     var _curve = __webpack_require__(
     /*! ../core/curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
 
     var quadraticProjectPoint = _curve.quadraticProjectPoint;
     /**
@@ -95652,26 +97022,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/text.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/text.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/contain/text.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/text.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainTextJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainTextJs(module, exports, __webpack_require__) {
     var BoundingRect = __webpack_require__(
     /*! ../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var imageHelper = __webpack_require__(
     /*! ../graphic/helper/image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js");
+    "./node_modules/zrender/lib/graphic/helper/image.js");
 
     var _util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var getContext = _util.getContext;
     var extend = _util.extend;
@@ -96356,11 +97726,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           (text || !tokensLen || isEmptyStr) && tokens.push(token);
         } // Other tokens always start a new line.
         else {
-            // If there is '', insert it as a placeholder.
-            lines.push({
-              tokens: [token]
-            });
-          }
+          // If there is '', insert it as a placeholder.
+          lines.push({
+            tokens: [token]
+          });
+        }
       }
     }
 
@@ -96390,15 +97760,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/util.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/util.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/contain/util.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/util.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainUtilJs(module, exports) {
+  function node_modulesZrenderLibContainUtilJs(module, exports) {
     var PI2 = Math.PI * 2;
 
     function normalizeRadian(angle) {
@@ -96416,15 +97786,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js":
-  /*!******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/contain/windingLine.js ***!
-    \******************************************************************************/
+  "./node_modules/zrender/lib/contain/windingLine.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/zrender/lib/contain/windingLine.js ***!
+    \*********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainWindingLineJs(module, exports) {
+  function node_modulesZrenderLibContainWindingLineJs(module, exports) {
     function windingLine(x0, y0, x1, y1, x, y) {
       if (y > y0 && y > y1 || y < y0 && y < y1) {
         return 0;
@@ -96452,26 +97822,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/container/Group.js":
-  /*!**************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/container/Group.js ***!
-    \**************************************************************************/
+  "./node_modules/zrender/lib/container/Group.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/zrender/lib/container/Group.js ***!
+    \*****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibContainerGroupJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibContainerGroupJs(module, exports, __webpack_require__) {
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Element = __webpack_require__(
     /*! ../Element */
-    "./node_modules/echarts/node_modules/zrender/lib/Element.js");
+    "./node_modules/zrender/lib/Element.js");
 
     var BoundingRect = __webpack_require__(
     /*! ../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
     /**
      * Group是一个容器，可以插入子节点，Group的变换也会被应用到子节点上
      * @module zrender/graphic/Group
@@ -96784,22 +98154,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js":
-  /*!****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js ***!
-    \****************************************************************************/
+  "./node_modules/zrender/lib/core/BoundingRect.js":
+  /*!*******************************************************!*\
+    !*** ./node_modules/zrender/lib/core/BoundingRect.js ***!
+    \*******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreBoundingRectJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreBoundingRectJs(module, exports, __webpack_require__) {
     var vec2 = __webpack_require__(
     /*! ./vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var matrix = __webpack_require__(
     /*! ./matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
     /**
      * @module echarts/core/BoundingRect
      */
@@ -96985,18 +98355,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/GestureMgr.js":
-  /*!**************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/GestureMgr.js ***!
-    \**************************************************************************/
+  "./node_modules/zrender/lib/core/GestureMgr.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/zrender/lib/core/GestureMgr.js ***!
+    \*****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreGestureMgrJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreGestureMgrJs(module, exports, __webpack_require__) {
     var eventUtil = __webpack_require__(
     /*! ./event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
     /**
      * Only implements needed gestures for mobile.
      */
@@ -97100,15 +98470,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/LRU.js":
-  /*!*******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/LRU.js ***!
-    \*******************************************************************/
+  "./node_modules/zrender/lib/core/LRU.js":
+  /*!**********************************************!*\
+    !*** ./node_modules/zrender/lib/core/LRU.js ***!
+    \**********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreLRUJs(module, exports) {
+  function node_modulesZrenderLibCoreLRUJs(module, exports) {
     // Simple LRU cache use doubly linked list
     // @module zrender/core/LRU
 
@@ -97315,34 +98685,34 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js":
-  /*!*************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js ***!
-    \*************************************************************************/
+  "./node_modules/zrender/lib/core/PathProxy.js":
+  /*!****************************************************!*\
+    !*** ./node_modules/zrender/lib/core/PathProxy.js ***!
+    \****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCorePathProxyJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCorePathProxyJs(module, exports, __webpack_require__) {
     var curve = __webpack_require__(
     /*! ./curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
 
     var vec2 = __webpack_require__(
     /*! ./vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var bbox = __webpack_require__(
     /*! ./bbox */
-    "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js");
+    "./node_modules/zrender/lib/core/bbox.js");
 
     var BoundingRect = __webpack_require__(
     /*! ./BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _config = __webpack_require__(
     /*! ../config */
-    "./node_modules/echarts/node_modules/zrender/lib/config.js");
+    "./node_modules/zrender/lib/config.js");
 
     var dpr = _config.devicePixelRatio;
     /**
@@ -98108,15 +99478,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/arrayDiff2.js":
-  /*!**************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/arrayDiff2.js ***!
-    \**************************************************************************/
+  "./node_modules/zrender/lib/core/arrayDiff2.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/zrender/lib/core/arrayDiff2.js ***!
+    \*****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreArrayDiff2Js(module, exports) {
+  function node_modulesZrenderLibCoreArrayDiff2Js(module, exports) {
     // Myers' Diff Algorithm
     // Modified from https://github.com/kpdecker/jsdiff/blob/master/src/diff/base.js
     function Diff() {}
@@ -98319,22 +99689,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/bbox.js":
-  /*!********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/bbox.js ***!
-    \********************************************************************/
+  "./node_modules/zrender/lib/core/bbox.js":
+  /*!***********************************************!*\
+    !*** ./node_modules/zrender/lib/core/bbox.js ***!
+    \***********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreBboxJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreBboxJs(module, exports, __webpack_require__) {
     var vec2 = __webpack_require__(
     /*! ./vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var curve = __webpack_require__(
     /*! ./curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
     /**
      * @author Yi Shen(https://github.com/pissang)
      */
@@ -98558,18 +99928,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/curve.js":
-  /*!*********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/curve.js ***!
-    \*********************************************************************/
+  "./node_modules/zrender/lib/core/curve.js":
+  /*!************************************************!*\
+    !*** ./node_modules/zrender/lib/core/curve.js ***!
+    \************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreCurveJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreCurveJs(module, exports, __webpack_require__) {
     var _vector = __webpack_require__(
     /*! ./vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var v2Create = _vector.create;
     var v2DistSquare = _vector.distSquare;
@@ -99105,22 +100475,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/dom.js":
-  /*!*******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/dom.js ***!
-    \*******************************************************************/
+  "./node_modules/zrender/lib/core/dom.js":
+  /*!**********************************************!*\
+    !*** ./node_modules/zrender/lib/core/dom.js ***!
+    \**********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreDomJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreDomJs(module, exports, __webpack_require__) {
     var env = __webpack_require__(
     /*! ./env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var _fourPointsTransform = __webpack_require__(
     /*! ./fourPointsTransform */
-    "./node_modules/echarts/node_modules/zrender/lib/core/fourPointsTransform.js");
+    "./node_modules/zrender/lib/core/fourPointsTransform.js");
 
     var buildTransformer = _fourPointsTransform.buildTransformer;
     var EVENT_SAVED_PROP = '___zrEVENTSAVED';
@@ -99260,15 +100630,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/env.js":
-  /*!*******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/env.js ***!
-    \*******************************************************************/
+  "./node_modules/zrender/lib/core/env.js":
+  /*!**********************************************!*\
+    !*** ./node_modules/zrender/lib/core/env.js ***!
+    \**********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreEnvJs(module, exports) {
+  function node_modulesZrenderLibCoreEnvJs(module, exports) {
     /**
      * echarts设备环境识别
      *
@@ -99443,28 +100813,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/event.js":
-  /*!*********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/event.js ***!
-    \*********************************************************************/
+  "./node_modules/zrender/lib/core/event.js":
+  /*!************************************************!*\
+    !*** ./node_modules/zrender/lib/core/event.js ***!
+    \************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreEventJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreEventJs(module, exports, __webpack_require__) {
     var Eventful = __webpack_require__(
     /*! ../mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     exports.Dispatcher = Eventful;
 
     var env = __webpack_require__(
     /*! ./env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var _dom = __webpack_require__(
     /*! ./dom */
-    "./node_modules/echarts/node_modules/zrender/lib/core/dom.js");
+    "./node_modules/zrender/lib/core/dom.js");
 
     var isCanvasEl = _dom.isCanvasEl;
     var transformCoordWithViewport = _dom.transformCoordWithViewport;
@@ -99517,16 +100887,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       // <https://bugs.jquery.com/ticket/8523#comment:14>
       // BTW3, In ff, offsetX/offsetY is always 0.
       else if (env.browser.firefox && e.layerX != null && e.layerX !== e.offsetX) {
-          out.zrX = e.layerX;
-          out.zrY = e.layerY;
-        } // For IE6+, chrome, safari, opera. (When will ff support offsetX?)
-        else if (e.offsetX != null) {
-            out.zrX = e.offsetX;
-            out.zrY = e.offsetY;
-          } // For some other device, e.g., IOS safari.
-          else {
-              calculateZrXY(el, e, out);
-            }
+        out.zrX = e.layerX;
+        out.zrY = e.layerY;
+      } // For IE6+, chrome, safari, opera. (When will ff support offsetX?)
+      else if (e.offsetX != null) {
+        out.zrX = e.offsetX;
+        out.zrY = e.offsetY;
+      } // For some other device, e.g., IOS safari.
+      else {
+        calculateZrXY(el, e, out);
+      }
 
       return out;
     }
@@ -99732,15 +101102,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/fourPointsTransform.js":
-  /*!***********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/fourPointsTransform.js ***!
-    \***********************************************************************************/
+  "./node_modules/zrender/lib/core/fourPointsTransform.js":
+  /*!**************************************************************!*\
+    !*** ./node_modules/zrender/lib/core/fourPointsTransform.js ***!
+    \**************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreFourPointsTransformJs(module, exports) {
+  function node_modulesZrenderLibCoreFourPointsTransformJs(module, exports) {
     /**
      * The algoritm is learnt from
      * https://franklinta.com/2014/09/08/computing-css-matrix3d-transforms/
@@ -99839,15 +101209,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/guid.js":
-  /*!********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/guid.js ***!
-    \********************************************************************/
+  "./node_modules/zrender/lib/core/guid.js":
+  /*!***********************************************!*\
+    !*** ./node_modules/zrender/lib/core/guid.js ***!
+    \***********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreGuidJs(module, exports) {
+  function node_modulesZrenderLibCoreGuidJs(module, exports) {
     /**
      * zrender: 生成唯一id
      *
@@ -99864,18 +101234,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/log.js":
-  /*!*******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/log.js ***!
-    \*******************************************************************/
+  "./node_modules/zrender/lib/core/log.js":
+  /*!**********************************************!*\
+    !*** ./node_modules/zrender/lib/core/log.js ***!
+    \**********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreLogJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibCoreLogJs(module, exports, __webpack_require__) {
     var _config = __webpack_require__(
     /*! ../config */
-    "./node_modules/echarts/node_modules/zrender/lib/config.js");
+    "./node_modules/zrender/lib/config.js");
 
     var debugMode = _config.debugMode;
 
@@ -99891,15 +101261,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/matrix.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/core/matrix.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/core/matrix.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreMatrixJs(module, exports) {
+  function node_modulesZrenderLibCoreMatrixJs(module, exports) {
     /**
      * 3x2矩阵操作类
      * @exports zrender/tool/matrix
@@ -100089,15 +101459,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/timsort.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/timsort.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/core/timsort.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/core/timsort.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreTimsortJs(module, exports) {
+  function node_modulesZrenderLibCoreTimsortJs(module, exports) {
     // https://github.com/mziccard/node-timsort
     var DEFAULT_MIN_MERGE = 32;
     var DEFAULT_MIN_GALLOPING = 7;
@@ -100768,15 +102138,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/util.js":
-  /*!********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/util.js ***!
-    \********************************************************************/
+  "./node_modules/zrender/lib/core/util.js":
+  /*!***********************************************!*\
+    !*** ./node_modules/zrender/lib/core/util.js ***!
+    \***********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreUtilJs(module, exports) {
+  function node_modulesZrenderLibCoreUtilJs(module, exports) {
     /**
      * @module zrender/core/util
      */
@@ -101521,15 +102891,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/core/vector.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/core/vector.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/core/vector.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/core/vector.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibCoreVectorJs(module, exports) {
+  function node_modulesZrenderLibCoreVectorJs(module, exports) {
     /* global Float32Array */
     var ArrayCtor = typeof Float32Array === 'undefined' ? Array : Float32Array;
     /**
@@ -101848,18 +103218,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/dom/HandlerProxy.js":
-  /*!***************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/dom/HandlerProxy.js ***!
-    \***************************************************************************/
+  "./node_modules/zrender/lib/dom/HandlerProxy.js":
+  /*!******************************************************!*\
+    !*** ./node_modules/zrender/lib/dom/HandlerProxy.js ***!
+    \******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibDomHandlerProxyJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibDomHandlerProxyJs(module, exports, __webpack_require__) {
     var _event = __webpack_require__(
     /*! ../core/event */
-    "./node_modules/echarts/node_modules/zrender/lib/core/event.js");
+    "./node_modules/zrender/lib/core/event.js");
 
     var addEventListener = _event.addEventListener;
     var removeEventListener = _event.removeEventListener;
@@ -101868,15 +103238,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Eventful = __webpack_require__(
     /*! ../mixin/Eventful */
-    "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js");
+    "./node_modules/zrender/lib/mixin/Eventful.js");
 
     var env = __webpack_require__(
     /*! ../core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
     /* global document */
 
 
@@ -102250,8 +103620,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       // We do not consider "both-support-touch-and-mouse device" for this feature (see the comment of
       // `mountLocalDOMEventListeners`) to avoid bugs util some requirements come.
       else if (!env.touchEventsSupported) {
-          zrUtil.each(globalNativeListenerNames.mouse, mount);
-        }
+        zrUtil.each(globalNativeListenerNames.mouse, mount);
+      }
 
       function mount(nativeEventName) {
         function nativeEventListener(event) {
@@ -102375,18 +103745,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/CompoundPath.js":
-  /*!*******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/CompoundPath.js ***!
-    \*******************************************************************************/
+  "./node_modules/zrender/lib/graphic/CompoundPath.js":
+  /*!**********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/CompoundPath.js ***!
+    \**********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicCompoundPathJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicCompoundPathJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ./Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js"); // CompoundPath to improve performance
+    "./node_modules/zrender/lib/graphic/Path.js"); // CompoundPath to improve performance
 
 
     var _default = Path.extend({
@@ -102446,30 +103816,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js":
-  /*!******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js ***!
-    \******************************************************************************/
+  "./node_modules/zrender/lib/graphic/Displayable.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Displayable.js ***!
+    \*********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicDisplayableJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicDisplayableJs(module, exports, __webpack_require__) {
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Style = __webpack_require__(
     /*! ./Style */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js");
+    "./node_modules/zrender/lib/graphic/Style.js");
 
     var Element = __webpack_require__(
     /*! ../Element */
-    "./node_modules/echarts/node_modules/zrender/lib/Element.js");
+    "./node_modules/zrender/lib/Element.js");
 
     var RectText = __webpack_require__(
     /*! ./mixin/RectText */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js");
+    "./node_modules/zrender/lib/graphic/mixin/RectText.js");
     /**
      * Base class of all displayable graphic objects
      * @module zrender/graphic/Displayable
@@ -102745,15 +104115,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js":
-  /*!***************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js ***!
-    \***************************************************************************/
+  "./node_modules/zrender/lib/graphic/Gradient.js":
+  /*!******************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Gradient.js ***!
+    \******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicGradientJs(module, exports) {
+  function node_modulesZrenderLibGraphicGradientJs(module, exports) {
     /**
      * @param {Array.<Object>} colorStops
      */
@@ -102776,30 +104146,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js":
-  /*!************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js ***!
-    \************************************************************************/
+  "./node_modules/zrender/lib/graphic/Image.js":
+  /*!***************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Image.js ***!
+    \***************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicImageJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicImageJs(module, exports, __webpack_require__) {
     var Displayable = __webpack_require__(
     /*! ./Displayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+    "./node_modules/zrender/lib/graphic/Displayable.js");
 
     var BoundingRect = __webpack_require__(
     /*! ../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var imageHelper = __webpack_require__(
     /*! ./helper/image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js");
+    "./node_modules/zrender/lib/graphic/helper/image.js");
     /**
      * @alias zrender/graphic/Image
      * @extends module:zrender/graphic/Displayable
@@ -102890,28 +104260,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js":
-  /*!*****************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/IncrementalDisplayable.js ***!
-    \*****************************************************************************************/
+  "./node_modules/zrender/lib/graphic/IncrementalDisplayable.js":
+  /*!********************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/IncrementalDisplayable.js ***!
+    \********************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicIncrementalDisplayableJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicIncrementalDisplayableJs(module, exports, __webpack_require__) {
     var _util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var inherits = _util.inherits;
 
     var Displayble = __webpack_require__(
     /*! ./Displayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+    "./node_modules/zrender/lib/graphic/Displayable.js");
 
     var BoundingRect = __webpack_require__(
     /*! ../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
     /**
      * Displayable for incremental rendering. It will be rendered in a separate layer
      * IncrementalDisplay have two main methods. `clearDisplayables` and `addDisplayables`
@@ -103057,22 +104427,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js":
-  /*!*********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js ***!
-    \*********************************************************************************/
+  "./node_modules/zrender/lib/graphic/LinearGradient.js":
+  /*!************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/LinearGradient.js ***!
+    \************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicLinearGradientJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicLinearGradientJs(module, exports, __webpack_require__) {
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Gradient = __webpack_require__(
     /*! ./Gradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+    "./node_modules/zrender/lib/graphic/Gradient.js");
     /**
      * x, y, x2, y2 are all percent from 0 to 1
      * @param {number} [x=0]
@@ -103109,34 +104479,34 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/graphic/Path.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Path.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicPathJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicPathJs(module, exports, __webpack_require__) {
     var Displayable = __webpack_require__(
     /*! ./Displayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+    "./node_modules/zrender/lib/graphic/Displayable.js");
 
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var PathProxy = __webpack_require__(
     /*! ../core/PathProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+    "./node_modules/zrender/lib/core/PathProxy.js");
 
     var pathContain = __webpack_require__(
     /*! ../contain/path */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/path.js");
+    "./node_modules/zrender/lib/contain/path.js");
 
     var Pattern = __webpack_require__(
     /*! ./Pattern */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js");
+    "./node_modules/zrender/lib/graphic/Pattern.js");
 
     var getCanvasPattern = Pattern.prototype.getCanvasPattern;
     var abs = Math.abs;
@@ -103510,15 +104880,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js":
-  /*!**************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Pattern.js ***!
-    \**************************************************************************/
+  "./node_modules/zrender/lib/graphic/Pattern.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Pattern.js ***!
+    \*****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicPatternJs(module, exports) {
+  function node_modulesZrenderLibGraphicPatternJs(module, exports) {
     var Pattern = function Pattern(image, repeat) {
       // Should do nothing more in this constructor. Because gradient can be
       // declard by `color: {image: ...}`, where this constructor will not be called.
@@ -103538,22 +104908,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/RadialGradient.js":
-  /*!*********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/RadialGradient.js ***!
-    \*********************************************************************************/
+  "./node_modules/zrender/lib/graphic/RadialGradient.js":
+  /*!************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/RadialGradient.js ***!
+    \************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicRadialGradientJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicRadialGradientJs(module, exports, __webpack_require__) {
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Gradient = __webpack_require__(
     /*! ./Gradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+    "./node_modules/zrender/lib/graphic/Gradient.js");
     /**
      * x, y, r are all percent from 0 to 1
      * @param {number} [x=0.5]
@@ -103588,22 +104958,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js":
-  /*!************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js ***!
-    \************************************************************************/
+  "./node_modules/zrender/lib/graphic/Style.js":
+  /*!***************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Style.js ***!
+    \***************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicStyleJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicStyleJs(module, exports, __webpack_require__) {
     var fixShadow = __webpack_require__(
     /*! ./helper/fixShadow */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js");
+    "./node_modules/zrender/lib/graphic/helper/fixShadow.js");
 
     var _constant = __webpack_require__(
     /*! ./constant */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+    "./node_modules/zrender/lib/graphic/constant.js");
 
     var ContextCachedBy = _constant.ContextCachedBy;
     var STYLE_COMMON_PROPS = [['shadowBlur', 0], ['shadowOffsetX', 0], ['shadowOffsetY', 0], ['shadowColor', '#000'], ['lineCap', 'butt'], ['lineJoin', 'miter'], ['miterLimit', 10]]; // var SHADOW_PROPS = STYLE_COMMON_PROPS.slice(0, 4);
@@ -104082,34 +105452,34 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js":
-  /*!***********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js ***!
-    \***********************************************************************/
+  "./node_modules/zrender/lib/graphic/Text.js":
+  /*!**************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/Text.js ***!
+    \**************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicTextJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicTextJs(module, exports, __webpack_require__) {
     var Displayable = __webpack_require__(
     /*! ./Displayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+    "./node_modules/zrender/lib/graphic/Displayable.js");
 
     var zrUtil = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var textContain = __webpack_require__(
     /*! ../contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var textHelper = __webpack_require__(
     /*! ./helper/text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+    "./node_modules/zrender/lib/graphic/helper/text.js");
 
     var _constant = __webpack_require__(
     /*! ./constant */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+    "./node_modules/zrender/lib/graphic/constant.js");
 
     var ContextCachedBy = _constant.ContextCachedBy;
     /**
@@ -104184,15 +105554,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js":
-  /*!***************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js ***!
-    \***************************************************************************/
+  "./node_modules/zrender/lib/graphic/constant.js":
+  /*!******************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/constant.js ***!
+    \******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicConstantJs(module, exports) {
+  function node_modulesZrenderLibGraphicConstantJs(module, exports) {
     var ContextCachedBy = {
       NONE: 0,
       STYLE_BIND: 1,
@@ -104206,18 +105576,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js":
-  /*!*******************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js ***!
-    \*******************************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js":
+  /*!**********************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js ***!
+    \**********************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperFixClipWithShadowJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicHelperFixClipWithShadowJs(module, exports, __webpack_require__) {
     var env = __webpack_require__(
     /*! ../../core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js"); // Fix weird bug in some version of IE11 (like 11.0.9600.178**),
+    "./node_modules/zrender/lib/core/env.js"); // Fix weird bug in some version of IE11 (like 11.0.9600.178**),
     // where exception "unexpected call to method or property access"
     // might be thrown when calling ctx.fill or ctx.stroke after a path
     // whose area size is zero is drawn and ctx.clip() is called and
@@ -104277,15 +105647,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js":
-  /*!***********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js ***!
-    \***********************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/fixShadow.js":
+  /*!**************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/fixShadow.js ***!
+    \**************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperFixShadowJs(module, exports) {
+  function node_modulesZrenderLibGraphicHelperFixShadowJs(module, exports) {
     var SHADOW_PROPS = {
       'shadowBlur': 1,
       'shadowOffsetX': 1,
@@ -104311,18 +105681,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js":
-  /*!*******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js ***!
-    \*******************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/image.js":
+  /*!**********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/image.js ***!
+    \**********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperImageJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicHelperImageJs(module, exports, __webpack_require__) {
     var LRU = __webpack_require__(
     /*! ../../core/LRU */
-    "./node_modules/echarts/node_modules/zrender/lib/core/LRU.js");
+    "./node_modules/zrender/lib/core/LRU.js");
 
     var globalImageCache = new LRU(50);
     /**
@@ -104385,8 +105755,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return image;
       } // newImageOrSrc is an HTMLImageElement or HTMLCanvasElement or Canvas
       else {
-          return newImageOrSrc;
-        }
+        return newImageOrSrc;
+      }
     }
 
     function imageOnLoad() {
@@ -104414,22 +105784,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js":
-  /*!******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js ***!
-    \******************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/poly.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/poly.js ***!
+    \*********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperPolyJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicHelperPolyJs(module, exports, __webpack_require__) {
     var smoothSpline = __webpack_require__(
     /*! ./smoothSpline */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothSpline.js");
+    "./node_modules/zrender/lib/graphic/helper/smoothSpline.js");
 
     var smoothBezier = __webpack_require__(
     /*! ./smoothBezier */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothBezier.js");
+    "./node_modules/zrender/lib/graphic/helper/smoothBezier.js");
 
     function buildPath(ctx, shape, closePath) {
       var points = shape.points;
@@ -104468,15 +105838,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js":
-  /*!***********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js ***!
-    \***********************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/roundRect.js":
+  /*!**************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/roundRect.js ***!
+    \**************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperRoundRectJs(module, exports) {
+  function node_modulesZrenderLibGraphicHelperRoundRectJs(module, exports) {
     /**
      * @param {Object} ctx
      * @param {Object} shape
@@ -104571,18 +105941,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothBezier.js":
-  /*!**************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothBezier.js ***!
-    \**************************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/smoothBezier.js":
+  /*!*****************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/smoothBezier.js ***!
+    \*****************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperSmoothBezierJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicHelperSmoothBezierJs(module, exports, __webpack_require__) {
     var _vector = __webpack_require__(
     /*! ../../core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var v2Min = _vector.min;
     var v2Max = _vector.max;
@@ -104691,18 +106061,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothSpline.js":
-  /*!**************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/smoothSpline.js ***!
-    \**************************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/smoothSpline.js":
+  /*!*****************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/smoothSpline.js ***!
+    \*****************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperSmoothSplineJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicHelperSmoothSplineJs(module, exports, __webpack_require__) {
     var _vector = __webpack_require__(
     /*! ../../core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var v2Distance = _vector.distance;
     /**
@@ -104774,15 +106144,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js":
-  /*!******************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js ***!
-    \******************************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js":
+  /*!*********************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js ***!
+    \*********************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperSubPixelOptimizeJs(module, exports) {
+  function node_modulesZrenderLibGraphicHelperSubPixelOptimizeJs(module, exports) {
     /**
      * Sub-pixel optimize for canvas rendering, prevent from blur
      * when rendering a thin vertical/horizontal line.
@@ -104900,18 +106270,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js":
-  /*!******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js ***!
-    \******************************************************************************/
+  "./node_modules/zrender/lib/graphic/helper/text.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/helper/text.js ***!
+    \*********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicHelperTextJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicHelperTextJs(module, exports, __webpack_require__) {
     var _util = __webpack_require__(
     /*! ../../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var retrieve2 = _util.retrieve2;
     var retrieve3 = _util.retrieve3;
@@ -104922,23 +106292,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var textContain = __webpack_require__(
     /*! ../../contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var roundRectHelper = __webpack_require__(
     /*! ./roundRect */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js");
+    "./node_modules/zrender/lib/graphic/helper/roundRect.js");
 
     var imageHelper = __webpack_require__(
     /*! ./image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/image.js");
+    "./node_modules/zrender/lib/graphic/helper/image.js");
 
     var fixShadow = __webpack_require__(
     /*! ./fixShadow */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixShadow.js");
+    "./node_modules/zrender/lib/graphic/helper/fixShadow.js");
 
     var _constant = __webpack_require__(
     /*! ../constant */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+    "./node_modules/zrender/lib/graphic/constant.js");
 
     var ContextCachedBy = _constant.ContextCachedBy;
     var WILL_BE_RESTORED = _constant.WILL_BE_RESTORED;
@@ -105024,8 +106394,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       } // Since this will be restored, prevent from using these props to check cache in the next
       // entering of this method. But do not need to clear other cache like `Style::bind`.
       else if (cachedByMe) {
-          ctx.__attrCachedBy = ContextCachedBy.NONE;
-        }
+        ctx.__attrCachedBy = ContextCachedBy.NONE;
+      }
 
       var styleFont = style.font || DEFAULT_FONT; // PENDING
       // Only `Text` el set `font` and keep it (`RectText` will restore). So theoretically
@@ -105472,26 +106842,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js":
-  /*!*********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js ***!
-    \*********************************************************************************/
+  "./node_modules/zrender/lib/graphic/mixin/RectText.js":
+  /*!************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/mixin/RectText.js ***!
+    \************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicMixinRectTextJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicMixinRectTextJs(module, exports, __webpack_require__) {
     var textHelper = __webpack_require__(
     /*! ../helper/text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+    "./node_modules/zrender/lib/graphic/helper/text.js");
 
     var BoundingRect = __webpack_require__(
     /*! ../../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var _constant = __webpack_require__(
     /*! ../constant */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/constant.js");
+    "./node_modules/zrender/lib/graphic/constant.js");
 
     var WILL_BE_RESTORED = _constant.WILL_BE_RESTORED;
     /**
@@ -105553,18 +106923,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Arc.js":
-  /*!****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Arc.js ***!
-    \****************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Arc.js":
+  /*!*******************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Arc.js ***!
+    \*******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeArcJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeArcJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
     /**
      * 圆弧
      * @module zrender/graphic/shape/Arc
@@ -105604,26 +106974,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/BezierCurve.js":
-  /*!************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/BezierCurve.js ***!
-    \************************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/BezierCurve.js":
+  /*!***************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/BezierCurve.js ***!
+    \***************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeBezierCurveJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeBezierCurveJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var vec2 = __webpack_require__(
     /*! ../../core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var _curve = __webpack_require__(
     /*! ../../core/curve */
-    "./node_modules/echarts/node_modules/zrender/lib/core/curve.js");
+    "./node_modules/zrender/lib/core/curve.js");
 
     var quadraticSubdivide = _curve.quadraticSubdivide;
     var cubicSubdivide = _curve.cubicSubdivide;
@@ -105736,18 +107106,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js":
-  /*!*******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js ***!
-    \*******************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Circle.js":
+  /*!**********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Circle.js ***!
+    \**********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeCircleJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeCircleJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
     /**
      * 圆形
      * @module zrender/shape/Circle
@@ -105784,18 +107154,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ellipse.js":
-  /*!********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ellipse.js ***!
-    \********************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Ellipse.js":
+  /*!***********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Ellipse.js ***!
+    \***********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeEllipseJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeEllipseJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
     /**
      * 椭圆形状
      * @module zrender/graphic/shape/Ellipse
@@ -105835,22 +107205,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js":
-  /*!*****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js ***!
-    \*****************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Line.js":
+  /*!********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Line.js ***!
+    \********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeLineJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeLineJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var _subPixelOptimize = __webpack_require__(
     /*! ../helper/subPixelOptimize */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
+    "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
 
     var subPixelOptimizeLine = _subPixelOptimize.subPixelOptimizeLine;
     /**
@@ -105927,22 +107297,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js":
-  /*!********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js ***!
-    \********************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Polygon.js":
+  /*!***********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Polygon.js ***!
+    \***********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapePolygonJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapePolygonJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var polyHelper = __webpack_require__(
     /*! ../helper/poly */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js");
+    "./node_modules/zrender/lib/graphic/helper/poly.js");
     /**
      * 多边形
      * @module zrender/shape/Polygon
@@ -105966,22 +107336,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js":
-  /*!*********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js ***!
-    \*********************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Polyline.js":
+  /*!************************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Polyline.js ***!
+    \************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapePolylineJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapePolylineJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var polyHelper = __webpack_require__(
     /*! ../helper/poly */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/poly.js");
+    "./node_modules/zrender/lib/graphic/helper/poly.js");
     /**
      * @module zrender/graphic/shape/Polyline
      */
@@ -106008,26 +107378,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js":
-  /*!*****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js ***!
-    \*****************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Rect.js":
+  /*!********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Rect.js ***!
+    \********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeRectJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeRectJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var roundRectHelper = __webpack_require__(
     /*! ../helper/roundRect */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/roundRect.js");
+    "./node_modules/zrender/lib/graphic/helper/roundRect.js");
 
     var _subPixelOptimize = __webpack_require__(
     /*! ../helper/subPixelOptimize */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
+    "./node_modules/zrender/lib/graphic/helper/subPixelOptimize.js");
 
     var subPixelOptimizeRect = _subPixelOptimize.subPixelOptimizeRect;
     /**
@@ -106089,18 +107459,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ring.js":
-  /*!*****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ring.js ***!
-    \*****************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Ring.js":
+  /*!********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Ring.js ***!
+    \********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeRingJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeRingJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
     /**
      * 圆环
      * @module zrender/graphic/shape/Ring
@@ -106131,22 +107501,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Sector.js":
-  /*!*******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Sector.js ***!
-    \*******************************************************************************/
+  "./node_modules/zrender/lib/graphic/shape/Sector.js":
+  /*!**********************************************************!*\
+    !*** ./node_modules/zrender/lib/graphic/shape/Sector.js ***!
+    \**********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibGraphicShapeSectorJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibGraphicShapeSectorJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var fixClipWithShadow = __webpack_require__(
     /*! ../helper/fixClipWithShadow */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
+    "./node_modules/zrender/lib/graphic/helper/fixClipWithShadow.js");
     /**
      * 扇形
      * @module zrender/graphic/shape/Sector
@@ -106193,26 +107563,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/mixin/Animatable.js":
-  /*!***************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Animatable.js ***!
-    \***************************************************************************/
+  "./node_modules/zrender/lib/mixin/Animatable.js":
+  /*!******************************************************!*\
+    !*** ./node_modules/zrender/lib/mixin/Animatable.js ***!
+    \******************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibMixinAnimatableJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibMixinAnimatableJs(module, exports, __webpack_require__) {
     var Animator = __webpack_require__(
     /*! ../animation/Animator */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/Animator.js");
+    "./node_modules/zrender/lib/animation/Animator.js");
 
     var logError = __webpack_require__(
     /*! ../core/log */
-    "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+    "./node_modules/zrender/lib/core/log.js");
 
     var _util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isString = _util.isString;
     var isFunction = _util.isFunction;
@@ -106363,21 +107733,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         delay = 0;
       } // animateTo(target, time, delay, callback);
       else if (isFunction(easing)) {
-          callback = easing;
-          easing = 'linear';
-          delay = 0;
-        } // animateTo(target, time, callback);
-        else if (isFunction(delay)) {
-            callback = delay;
-            delay = 0;
-          } // animateTo(target, callback)
-          else if (isFunction(time)) {
-              callback = time;
-              time = 500;
-            } // animateTo(target)
-            else if (!time) {
-                time = 500;
-              } // Stop all previous animations
+        callback = easing;
+        easing = 'linear';
+        delay = 0;
+      } // animateTo(target, time, callback);
+      else if (isFunction(delay)) {
+        callback = delay;
+        delay = 0;
+      } // animateTo(target, callback)
+      else if (isFunction(time)) {
+        callback = time;
+        time = 500;
+      } // animateTo(target)
+      else if (!time) {
+        time = 500;
+      } // Stop all previous animations
 
 
       animatable.stopAnimation();
@@ -106487,15 +107857,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/mixin/Draggable.js":
-  /*!**************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Draggable.js ***!
-    \**************************************************************************/
+  "./node_modules/zrender/lib/mixin/Draggable.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/zrender/lib/mixin/Draggable.js ***!
+    \*****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibMixinDraggableJs(module, exports) {
+  function node_modulesZrenderLibMixinDraggableJs(module, exports) {
     // TODO Draggable for group
     // FIXME Draggable on element which has parent rotation or scale
     function Draggable() {
@@ -106586,15 +107956,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js":
-  /*!*************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Eventful.js ***!
-    \*************************************************************************/
+  "./node_modules/zrender/lib/mixin/Eventful.js":
+  /*!****************************************************!*\
+    !*** ./node_modules/zrender/lib/mixin/Eventful.js ***!
+    \****************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibMixinEventfulJs(module, exports) {
+  function node_modulesZrenderLibMixinEventfulJs(module, exports) {
     /**
      * Event Mixin
      * @module zrender/mixin/Eventful
@@ -106970,22 +108340,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js":
-  /*!******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/mixin/Transformable.js ***!
-    \******************************************************************************/
+  "./node_modules/zrender/lib/mixin/Transformable.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/zrender/lib/mixin/Transformable.js ***!
+    \*********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibMixinTransformableJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibMixinTransformableJs(module, exports, __webpack_require__) {
     var matrix = __webpack_require__(
     /*! ../core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var vector = __webpack_require__(
     /*! ../core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
     /**
      * 提供变换扩展
      * @module zrender/mixin/Transformable
@@ -107312,60 +108682,60 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/Painter.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/Painter.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/svg/Painter.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/svg/Painter.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgPainterJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgPainterJs(module, exports, __webpack_require__) {
     var _core = __webpack_require__(
     /*! ./core */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/core.js");
+    "./node_modules/zrender/lib/svg/core.js");
 
     var createElement = _core.createElement;
 
     var util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var logError = __webpack_require__(
     /*! ../core/log */
-    "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+    "./node_modules/zrender/lib/core/log.js");
 
     var Path = __webpack_require__(
     /*! ../graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var ZImage = __webpack_require__(
     /*! ../graphic/Image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+    "./node_modules/zrender/lib/graphic/Image.js");
 
     var ZText = __webpack_require__(
     /*! ../graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+    "./node_modules/zrender/lib/graphic/Text.js");
 
     var arrayDiff = __webpack_require__(
     /*! ../core/arrayDiff2 */
-    "./node_modules/echarts/node_modules/zrender/lib/core/arrayDiff2.js");
+    "./node_modules/zrender/lib/core/arrayDiff2.js");
 
     var GradientManager = __webpack_require__(
     /*! ./helper/GradientManager */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/helper/GradientManager.js");
+    "./node_modules/zrender/lib/svg/helper/GradientManager.js");
 
     var ClippathManager = __webpack_require__(
     /*! ./helper/ClippathManager */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ClippathManager.js");
+    "./node_modules/zrender/lib/svg/helper/ClippathManager.js");
 
     var ShadowManager = __webpack_require__(
     /*! ./helper/ShadowManager */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ShadowManager.js");
+    "./node_modules/zrender/lib/svg/helper/ShadowManager.js");
 
     var _graphic = __webpack_require__(
     /*! ./graphic */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js");
+    "./node_modules/zrender/lib/svg/graphic.js");
 
     var svgPath = _graphic.path;
     var svgImage = _graphic.image;
@@ -107749,15 +109119,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/core.js":
-  /*!*******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/core.js ***!
-    \*******************************************************************/
+  "./node_modules/zrender/lib/svg/core.js":
+  /*!**********************************************!*\
+    !*** ./node_modules/zrender/lib/svg/core.js ***!
+    \**********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgCoreJs(module, exports) {
+  function node_modulesZrenderLibSvgCoreJs(module, exports) {
     var svgURI = 'http://www.w3.org/2000/svg';
 
     function createElement(name) {
@@ -107769,44 +109139,44 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/svg/graphic.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/svg/graphic.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgGraphicJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgGraphicJs(module, exports, __webpack_require__) {
     var _core = __webpack_require__(
     /*! ./core */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/core.js");
+    "./node_modules/zrender/lib/svg/core.js");
 
     var createElement = _core.createElement;
 
     var PathProxy = __webpack_require__(
     /*! ../core/PathProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+    "./node_modules/zrender/lib/core/PathProxy.js");
 
     var BoundingRect = __webpack_require__(
     /*! ../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var matrix = __webpack_require__(
     /*! ../core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var textContain = __webpack_require__(
     /*! ../contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var textHelper = __webpack_require__(
     /*! ../graphic/helper/text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+    "./node_modules/zrender/lib/graphic/helper/text.js");
 
     var Text = __webpack_require__(
     /*! ../graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js"); // TODO
+    "./node_modules/zrender/lib/graphic/Text.js"); // TODO
     // 1. shadow
     // 2. Image: sx, sy, sw, sh
 
@@ -108319,26 +109689,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ClippathManager.js":
-  /*!*************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/ClippathManager.js ***!
-    \*************************************************************************************/
+  "./node_modules/zrender/lib/svg/helper/ClippathManager.js":
+  /*!****************************************************************!*\
+    !*** ./node_modules/zrender/lib/svg/helper/ClippathManager.js ***!
+    \****************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgHelperClippathManagerJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgHelperClippathManagerJs(module, exports, __webpack_require__) {
     var Definable = __webpack_require__(
     /*! ./Definable */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js");
+    "./node_modules/zrender/lib/svg/helper/Definable.js");
 
     var zrUtil = __webpack_require__(
     /*! ../../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var matrix = __webpack_require__(
     /*! ../../core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
     /**
      * @file Manages SVG clipPath elements.
      * @author Zhang Wenli
@@ -108495,40 +109865,40 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js":
-  /*!*******************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js ***!
-    \*******************************************************************************/
+  "./node_modules/zrender/lib/svg/helper/Definable.js":
+  /*!**********************************************************!*\
+    !*** ./node_modules/zrender/lib/svg/helper/Definable.js ***!
+    \**********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgHelperDefinableJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgHelperDefinableJs(module, exports, __webpack_require__) {
     var _core = __webpack_require__(
     /*! ../core */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/core.js");
+    "./node_modules/zrender/lib/svg/core.js");
 
     var createElement = _core.createElement;
 
     var zrUtil = __webpack_require__(
     /*! ../../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Path = __webpack_require__(
     /*! ../../graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var ZImage = __webpack_require__(
     /*! ../../graphic/Image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+    "./node_modules/zrender/lib/graphic/Image.js");
 
     var ZText = __webpack_require__(
     /*! ../../graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+    "./node_modules/zrender/lib/graphic/Text.js");
 
     var _graphic = __webpack_require__(
     /*! ../graphic */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js");
+    "./node_modules/zrender/lib/svg/graphic.js");
 
     var svgPath = _graphic.path;
     var svgImage = _graphic.image;
@@ -108786,30 +110156,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/helper/GradientManager.js":
-  /*!*************************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/GradientManager.js ***!
-    \*************************************************************************************/
+  "./node_modules/zrender/lib/svg/helper/GradientManager.js":
+  /*!****************************************************************!*\
+    !*** ./node_modules/zrender/lib/svg/helper/GradientManager.js ***!
+    \****************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgHelperGradientManagerJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgHelperGradientManagerJs(module, exports, __webpack_require__) {
     var Definable = __webpack_require__(
     /*! ./Definable */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js");
+    "./node_modules/zrender/lib/svg/helper/Definable.js");
 
     var zrUtil = __webpack_require__(
     /*! ../../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var logError = __webpack_require__(
     /*! ../../core/log */
-    "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+    "./node_modules/zrender/lib/core/log.js");
 
     var colorTool = __webpack_require__(
     /*! ../../tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
     /**
      * @file Manages SVG gradient elements.
      * @author Zhang Wenli
@@ -108965,7 +110335,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         stop.setAttribute('offset', colors[i].offset * 100 + '%');
         var color = colors[i].color;
 
-        if (color.indexOf('rgba' > -1)) {
+        if (color.indexOf('rgba') > -1) {
           // Fix Safari bug that stop-color not recognizing alpha #9014
           var opacity = colorTool.parse(color)[3];
           var hex = colorTool.toHex(color); // stop-color cannot be color, since:
@@ -109016,22 +110386,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/helper/ShadowManager.js":
-  /*!***********************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/helper/ShadowManager.js ***!
-    \***********************************************************************************/
+  "./node_modules/zrender/lib/svg/helper/ShadowManager.js":
+  /*!**************************************************************!*\
+    !*** ./node_modules/zrender/lib/svg/helper/ShadowManager.js ***!
+    \**************************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgHelperShadowManagerJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgHelperShadowManagerJs(module, exports, __webpack_require__) {
     var Definable = __webpack_require__(
     /*! ./Definable */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/helper/Definable.js");
+    "./node_modules/zrender/lib/svg/helper/Definable.js");
 
     var zrUtil = __webpack_require__(
     /*! ../../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
     /**
      * @file Manages SVG shadow elements.
      * @author Zhang Wenli
@@ -109221,46 +110591,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/svg/svg.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/svg/svg.js ***!
-    \******************************************************************/
+  "./node_modules/zrender/lib/svg/svg.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/svg/svg.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibSvgSvgJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibSvgSvgJs(module, exports, __webpack_require__) {
     __webpack_require__(
     /*! ./graphic */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/graphic.js");
+    "./node_modules/zrender/lib/svg/graphic.js");
 
     var _zrender = __webpack_require__(
     /*! ../zrender */
-    "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+    "./node_modules/zrender/lib/zrender.js");
 
     var registerPainter = _zrender.registerPainter;
 
     var Painter = __webpack_require__(
     /*! ./Painter */
-    "./node_modules/echarts/node_modules/zrender/lib/svg/Painter.js");
+    "./node_modules/zrender/lib/svg/Painter.js");
 
     registerPainter('svg', Painter);
     /***/
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/tool/color.js":
-  /*!*********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/tool/color.js ***!
-    \*********************************************************************/
+  "./node_modules/zrender/lib/tool/color.js":
+  /*!************************************************!*\
+    !*** ./node_modules/zrender/lib/tool/color.js ***!
+    \************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibToolColorJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibToolColorJs(module, exports, __webpack_require__) {
     var LRU = __webpack_require__(
     /*! ../core/LRU */
-    "./node_modules/echarts/node_modules/zrender/lib/core/LRU.js");
+    "./node_modules/zrender/lib/core/LRU.js");
 
     var kCSSColorTable = {
       'transparent': [0, 0, 0, 0],
@@ -109891,76 +111261,76 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js":
-  /*!************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/tool/parseSVG.js ***!
-    \************************************************************************/
+  "./node_modules/zrender/lib/tool/parseSVG.js":
+  /*!***************************************************!*\
+    !*** ./node_modules/zrender/lib/tool/parseSVG.js ***!
+    \***************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibToolParseSVGJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibToolParseSVGJs(module, exports, __webpack_require__) {
     var Group = __webpack_require__(
     /*! ../container/Group */
-    "./node_modules/echarts/node_modules/zrender/lib/container/Group.js");
+    "./node_modules/zrender/lib/container/Group.js");
 
     var ZImage = __webpack_require__(
     /*! ../graphic/Image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+    "./node_modules/zrender/lib/graphic/Image.js");
 
     var Text = __webpack_require__(
     /*! ../graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+    "./node_modules/zrender/lib/graphic/Text.js");
 
     var Circle = __webpack_require__(
     /*! ../graphic/shape/Circle */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Circle.js");
+    "./node_modules/zrender/lib/graphic/shape/Circle.js");
 
     var Rect = __webpack_require__(
     /*! ../graphic/shape/Rect */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Rect.js");
+    "./node_modules/zrender/lib/graphic/shape/Rect.js");
 
     var Ellipse = __webpack_require__(
     /*! ../graphic/shape/Ellipse */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Ellipse.js");
+    "./node_modules/zrender/lib/graphic/shape/Ellipse.js");
 
     var Line = __webpack_require__(
     /*! ../graphic/shape/Line */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Line.js");
+    "./node_modules/zrender/lib/graphic/shape/Line.js");
 
     var Path = __webpack_require__(
     /*! ../graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var Polygon = __webpack_require__(
     /*! ../graphic/shape/Polygon */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polygon.js");
+    "./node_modules/zrender/lib/graphic/shape/Polygon.js");
 
     var Polyline = __webpack_require__(
     /*! ../graphic/shape/Polyline */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/shape/Polyline.js");
+    "./node_modules/zrender/lib/graphic/shape/Polyline.js");
 
     var LinearGradient = __webpack_require__(
     /*! ../graphic/LinearGradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/LinearGradient.js");
+    "./node_modules/zrender/lib/graphic/LinearGradient.js");
 
     var Style = __webpack_require__(
     /*! ../graphic/Style */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Style.js");
+    "./node_modules/zrender/lib/graphic/Style.js");
 
     var matrix = __webpack_require__(
     /*! ../core/matrix */
-    "./node_modules/echarts/node_modules/zrender/lib/core/matrix.js");
+    "./node_modules/zrender/lib/core/matrix.js");
 
     var _path = __webpack_require__(
     /*! ./path */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/path.js");
+    "./node_modules/zrender/lib/tool/path.js");
 
     var createFromString = _path.createFromString;
 
     var _util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var isString = _util.isString;
     var extend = _util.extend;
@@ -110626,26 +111996,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/tool/path.js":
-  /*!********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/tool/path.js ***!
-    \********************************************************************/
+  "./node_modules/zrender/lib/tool/path.js":
+  /*!***********************************************!*\
+    !*** ./node_modules/zrender/lib/tool/path.js ***!
+    \***********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibToolPathJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibToolPathJs(module, exports, __webpack_require__) {
     var Path = __webpack_require__(
     /*! ../graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var PathProxy = __webpack_require__(
     /*! ../core/PathProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+    "./node_modules/zrender/lib/core/PathProxy.js");
 
     var transformPath = __webpack_require__(
     /*! ./transformPath */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/transformPath.js"); // command chars
+    "./node_modules/zrender/lib/tool/transformPath.js"); // command chars
     // var cc = [
     //     'm', 'M', 'l', 'L', 'v', 'V', 'h', 'H', 'z', 'Z',
     //     'c', 'C', 'q', 'Q', 't', 'T', 's', 'S', 'a', 'A'
@@ -111085,22 +112455,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/tool/transformPath.js":
-  /*!*****************************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/tool/transformPath.js ***!
-    \*****************************************************************************/
+  "./node_modules/zrender/lib/tool/transformPath.js":
+  /*!********************************************************!*\
+    !*** ./node_modules/zrender/lib/tool/transformPath.js ***!
+    \********************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibToolTransformPathJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibToolTransformPathJs(module, exports, __webpack_require__) {
     var PathProxy = __webpack_require__(
     /*! ../core/PathProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+    "./node_modules/zrender/lib/core/PathProxy.js");
 
     var _vector = __webpack_require__(
     /*! ../core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var v2ApplyTransform = _vector.applyTransform;
     var CMD = PathProxy.CMD;
@@ -111202,26 +112572,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/vml/Painter.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/vml/Painter.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/vml/Painter.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/vml/Painter.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibVmlPainterJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibVmlPainterJs(module, exports, __webpack_require__) {
     var logError = __webpack_require__(
     /*! ../core/log */
-    "./node_modules/echarts/node_modules/zrender/lib/core/log.js");
+    "./node_modules/zrender/lib/core/log.js");
 
     var vmlCore = __webpack_require__(
     /*! ./core */
-    "./node_modules/echarts/node_modules/zrender/lib/vml/core.js");
+    "./node_modules/zrender/lib/vml/core.js");
 
     var _util = __webpack_require__(
     /*! ../core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var each = _util.each;
     /**
@@ -111396,18 +112766,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/vml/core.js":
-  /*!*******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/vml/core.js ***!
-    \*******************************************************************/
+  "./node_modules/zrender/lib/vml/core.js":
+  /*!**********************************************!*\
+    !*** ./node_modules/zrender/lib/vml/core.js ***!
+    \**********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibVmlCoreJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibVmlCoreJs(module, exports, __webpack_require__) {
     var env = __webpack_require__(
     /*! ../core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var urn = 'urn:schemas-microsoft-com:vml';
     var win = typeof window === 'undefined' ? null : window;
@@ -111459,72 +112829,72 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/vml/graphic.js":
-  /*!**********************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/vml/graphic.js ***!
-    \**********************************************************************/
+  "./node_modules/zrender/lib/vml/graphic.js":
+  /*!*************************************************!*\
+    !*** ./node_modules/zrender/lib/vml/graphic.js ***!
+    \*************************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibVmlGraphicJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibVmlGraphicJs(module, exports, __webpack_require__) {
     var env = __webpack_require__(
     /*! ../core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var _vector = __webpack_require__(
     /*! ../core/vector */
-    "./node_modules/echarts/node_modules/zrender/lib/core/vector.js");
+    "./node_modules/zrender/lib/core/vector.js");
 
     var applyTransform = _vector.applyTransform;
 
     var BoundingRect = __webpack_require__(
     /*! ../core/BoundingRect */
-    "./node_modules/echarts/node_modules/zrender/lib/core/BoundingRect.js");
+    "./node_modules/zrender/lib/core/BoundingRect.js");
 
     var colorTool = __webpack_require__(
     /*! ../tool/color */
-    "./node_modules/echarts/node_modules/zrender/lib/tool/color.js");
+    "./node_modules/zrender/lib/tool/color.js");
 
     var textContain = __webpack_require__(
     /*! ../contain/text */
-    "./node_modules/echarts/node_modules/zrender/lib/contain/text.js");
+    "./node_modules/zrender/lib/contain/text.js");
 
     var textHelper = __webpack_require__(
     /*! ../graphic/helper/text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/helper/text.js");
+    "./node_modules/zrender/lib/graphic/helper/text.js");
 
     var RectText = __webpack_require__(
     /*! ../graphic/mixin/RectText */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/mixin/RectText.js");
+    "./node_modules/zrender/lib/graphic/mixin/RectText.js");
 
     var Displayable = __webpack_require__(
     /*! ../graphic/Displayable */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Displayable.js");
+    "./node_modules/zrender/lib/graphic/Displayable.js");
 
     var ZImage = __webpack_require__(
     /*! ../graphic/Image */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Image.js");
+    "./node_modules/zrender/lib/graphic/Image.js");
 
     var Text = __webpack_require__(
     /*! ../graphic/Text */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Text.js");
+    "./node_modules/zrender/lib/graphic/Text.js");
 
     var Path = __webpack_require__(
     /*! ../graphic/Path */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Path.js");
+    "./node_modules/zrender/lib/graphic/Path.js");
 
     var PathProxy = __webpack_require__(
     /*! ../core/PathProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/core/PathProxy.js");
+    "./node_modules/zrender/lib/core/PathProxy.js");
 
     var Gradient = __webpack_require__(
     /*! ../graphic/Gradient */
-    "./node_modules/echarts/node_modules/zrender/lib/graphic/Gradient.js");
+    "./node_modules/zrender/lib/graphic/Gradient.js");
 
     var vmlCore = __webpack_require__(
     /*! ./core */
-    "./node_modules/echarts/node_modules/zrender/lib/vml/core.js"); // http://www.w3.org/TR/NOTE-VML
+    "./node_modules/zrender/lib/vml/core.js"); // http://www.w3.org/TR/NOTE-VML
     // TODO Use proxy like svg instead of overwrite brush methods
 
 
@@ -112504,74 +113874,74 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/vml/vml.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/vml/vml.js ***!
-    \******************************************************************/
+  "./node_modules/zrender/lib/vml/vml.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/vml/vml.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibVmlVmlJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibVmlVmlJs(module, exports, __webpack_require__) {
     __webpack_require__(
     /*! ./graphic */
-    "./node_modules/echarts/node_modules/zrender/lib/vml/graphic.js");
+    "./node_modules/zrender/lib/vml/graphic.js");
 
     var _zrender = __webpack_require__(
     /*! ../zrender */
-    "./node_modules/echarts/node_modules/zrender/lib/zrender.js");
+    "./node_modules/zrender/lib/zrender.js");
 
     var registerPainter = _zrender.registerPainter;
 
     var Painter = __webpack_require__(
     /*! ./Painter */
-    "./node_modules/echarts/node_modules/zrender/lib/vml/Painter.js");
+    "./node_modules/zrender/lib/vml/Painter.js");
 
     registerPainter('vml', Painter);
     /***/
   },
 
   /***/
-  "./node_modules/echarts/node_modules/zrender/lib/zrender.js":
-  /*!******************************************************************!*\
-    !*** ./node_modules/echarts/node_modules/zrender/lib/zrender.js ***!
-    \******************************************************************/
+  "./node_modules/zrender/lib/zrender.js":
+  /*!*********************************************!*\
+    !*** ./node_modules/zrender/lib/zrender.js ***!
+    \*********************************************/
 
   /*! no static exports found */
 
   /***/
-  function node_modulesEchartsNode_modulesZrenderLibZrenderJs(module, exports, __webpack_require__) {
+  function node_modulesZrenderLibZrenderJs(module, exports, __webpack_require__) {
     var guid = __webpack_require__(
     /*! ./core/guid */
-    "./node_modules/echarts/node_modules/zrender/lib/core/guid.js");
+    "./node_modules/zrender/lib/core/guid.js");
 
     var env = __webpack_require__(
     /*! ./core/env */
-    "./node_modules/echarts/node_modules/zrender/lib/core/env.js");
+    "./node_modules/zrender/lib/core/env.js");
 
     var zrUtil = __webpack_require__(
     /*! ./core/util */
-    "./node_modules/echarts/node_modules/zrender/lib/core/util.js");
+    "./node_modules/zrender/lib/core/util.js");
 
     var Handler = __webpack_require__(
     /*! ./Handler */
-    "./node_modules/echarts/node_modules/zrender/lib/Handler.js");
+    "./node_modules/zrender/lib/Handler.js");
 
     var Storage = __webpack_require__(
     /*! ./Storage */
-    "./node_modules/echarts/node_modules/zrender/lib/Storage.js");
+    "./node_modules/zrender/lib/Storage.js");
 
     var Painter = __webpack_require__(
     /*! ./Painter */
-    "./node_modules/echarts/node_modules/zrender/lib/Painter.js");
+    "./node_modules/zrender/lib/Painter.js");
 
     var Animation = __webpack_require__(
     /*! ./animation/Animation */
-    "./node_modules/echarts/node_modules/zrender/lib/animation/Animation.js");
+    "./node_modules/zrender/lib/animation/Animation.js");
 
     var HandlerProxy = __webpack_require__(
     /*! ./dom/HandlerProxy */
-    "./node_modules/echarts/node_modules/zrender/lib/dom/HandlerProxy.js");
+    "./node_modules/zrender/lib/dom/HandlerProxy.js");
     /*!
     * ZRender, a high performance 2d drawing library.
     *
@@ -112593,7 +113963,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
      * @type {string}
      */
 
-    var version = '4.3.1';
+    var version = '4.3.2';
     /**
      * Initializing a zrender instance
      * @param {HTMLElement} dom
@@ -113014,755 +114384,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/ngx-echarts/fesm2015/ngx-echarts.js":
-  /*!**********************************************************!*\
-    !*** ./node_modules/ngx-echarts/fesm2015/ngx-echarts.js ***!
-    \**********************************************************/
-
-  /*! exports provided: NgxEchartsModule, ɵa */
-
-  /***/
-  function node_modulesNgxEchartsFesm2015NgxEchartsJs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "NgxEchartsModule", function () {
-      return NgxEchartsModule;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ɵa", function () {
-      return NgxEchartsDirective;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var echarts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! echarts */
-    "./node_modules/echarts/index.js");
-    /* harmony import */
-
-
-    var echarts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_1__);
-    /* harmony import */
-
-
-    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! rxjs */
-    "./node_modules/rxjs/_esm2015/index.js");
-    /* harmony import */
-
-
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
-
-
-    var ChangeFilter = /*#__PURE__*/function () {
-      /**
-       * @param {?} _changes
-       */
-      function ChangeFilter(_changes) {
-        _classCallCheck(this, ChangeFilter);
-
-        this._changes = _changes;
-      }
-      /**
-       * @param {?} changes
-       * @return {?}
-       */
-
-
-      _createClass(ChangeFilter, [{
-        key: "notEmpty",
-
-        /**
-         * @template T
-         * @param {?} key
-         * @return {?}
-         */
-        value: function notEmpty(key) {
-          if (this._changes[key]) {
-            /** @type {?} */
-            var value = this._changes[key].currentValue;
-
-            if (value !== undefined && value !== null) {
-              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-            }
-          }
-
-          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-        }
-        /**
-         * @template T
-         * @param {?} key
-         * @return {?}
-         */
-
-      }, {
-        key: "has",
-        value: function has(key) {
-          if (this._changes[key]) {
-            /** @type {?} */
-            var value = this._changes[key].currentValue;
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-          }
-
-          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-        }
-        /**
-         * @template T
-         * @param {?} key
-         * @return {?}
-         */
-
-      }, {
-        key: "notFirst",
-        value: function notFirst(key) {
-          if (this._changes[key] && !this._changes[key].isFirstChange()) {
-            /** @type {?} */
-            var value = this._changes[key].currentValue;
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-          }
-
-          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-        }
-        /**
-         * @template T
-         * @param {?} key
-         * @return {?}
-         */
-
-      }, {
-        key: "notFirstAndEmpty",
-        value: function notFirstAndEmpty(key) {
-          if (this._changes[key] && !this._changes[key].isFirstChange()) {
-            /** @type {?} */
-            var value = this._changes[key].currentValue;
-
-            if (value !== undefined && value !== null) {
-              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(value);
-            }
-          }
-
-          return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
-        }
-      }], [{
-        key: "of",
-        value: function of(changes) {
-          return new ChangeFilter(changes);
-        }
-      }]);
-
-      return ChangeFilter;
-    }();
-
-    if (false) {}
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
-
-
-    var NgxEchartsDirective = /*#__PURE__*/function () {
-      /**
-       * @param {?} el
-       * @param {?} ngZone
-       */
-      function NgxEchartsDirective(el, ngZone) {
-        _classCallCheck(this, NgxEchartsDirective);
-
-        this.el = el;
-        this.ngZone = ngZone;
-        this.autoResize = true;
-        this.loadingType = 'default';
-        this.detectEventChanges = true; // deprecated, left for compatibility reasons to avoid triggering major version
-        // deprecated, left for compatibility reasons to avoid triggering major version
-        // ngx-echarts events
-
-        this.chartInit = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"](); // echarts mouse events
-
-        this.chartClick = this.createLazyEvent('click');
-        this.chartDblClick = this.createLazyEvent('dblclick');
-        this.chartMouseDown = this.createLazyEvent('mousedown');
-        this.chartMouseMove = this.createLazyEvent('mousemove');
-        this.chartMouseUp = this.createLazyEvent('mouseup');
-        this.chartMouseOver = this.createLazyEvent('mouseover');
-        this.chartMouseOut = this.createLazyEvent('mouseout');
-        this.chartGlobalOut = this.createLazyEvent('globalout');
-        this.chartContextMenu = this.createLazyEvent('contextmenu'); // echarts mouse events
-
-        this.chartLegendSelectChanged = this.createLazyEvent('legendselectchanged');
-        this.chartLegendSelected = this.createLazyEvent('legendselected');
-        this.chartLegendUnselected = this.createLazyEvent('legendunselected');
-        this.chartLegendScroll = this.createLazyEvent('legendscroll');
-        this.chartDataZoom = this.createLazyEvent('datazoom');
-        this.chartDataRangeSelected = this.createLazyEvent('datarangeselected');
-        this.chartTimelineChanged = this.createLazyEvent('timelinechanged');
-        this.chartTimelinePlayChanged = this.createLazyEvent('timelineplaychanged');
-        this.chartRestore = this.createLazyEvent('restore');
-        this.chartDataViewChanged = this.createLazyEvent('dataviewchanged');
-        this.chartMagicTypeChanged = this.createLazyEvent('magictypechanged');
-        this.chartPieSelectChanged = this.createLazyEvent('pieselectchanged');
-        this.chartPieSelected = this.createLazyEvent('pieselected');
-        this.chartPieUnselected = this.createLazyEvent('pieunselected');
-        this.chartMapSelectChanged = this.createLazyEvent('mapselectchanged');
-        this.chartMapSelected = this.createLazyEvent('mapselected');
-        this.chartMapUnselected = this.createLazyEvent('mapunselected');
-        this.chartAxisAreaSelected = this.createLazyEvent('axisareaselected');
-        this.chartFocusNodeAdjacency = this.createLazyEvent('focusnodeadjacency');
-        this.chartUnfocusNodeAdjacency = this.createLazyEvent('unfocusnodeadjacency');
-        this.chartBrush = this.createLazyEvent('brush');
-        this.chartBrushSelected = this.createLazyEvent('brushselected');
-        this.chartRendered = this.createLazyEvent('rendered');
-        this.chartFinished = this.createLazyEvent('finished');
-        this.currentOffsetWidth = 0;
-        this.currentOffsetHeight = 0;
-      }
-      /**
-       * @param {?} changes
-       * @return {?}
-       */
-
-
-      _createClass(NgxEchartsDirective, [{
-        key: "ngOnChanges",
-        value: function ngOnChanges(changes) {
-          var _this = this;
-
-          /** @type {?} */
-          var filter = ChangeFilter.of(changes);
-          filter.notFirstAndEmpty('options').subscribe(
-          /**
-          * @param {?} opt
-          * @return {?}
-          */
-          function (opt) {
-            return _this.onOptionsChange(opt);
-          });
-          filter.notFirstAndEmpty('merge').subscribe(
-          /**
-          * @param {?} opt
-          * @return {?}
-          */
-          function (opt) {
-            return _this.setOption(opt);
-          });
-          filter.has('loading').subscribe(
-          /**
-          * @param {?} v
-          * @return {?}
-          */
-          function (v) {
-            return _this.toggleLoading(!!v);
-          });
-          filter.notFirst('theme').subscribe(
-          /**
-          * @return {?}
-          */
-          function () {
-            return _this.refreshChart();
-          });
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          var _this2 = this;
-
-          this.resizeSub = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(window, 'resize').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(50)).subscribe(
-          /**
-          * @return {?}
-          */
-          function () {
-            if (_this2.autoResize && window.innerWidth !== _this2.currentWindowWidth) {
-              _this2.currentWindowWidth = window.innerWidth;
-              _this2.currentOffsetWidth = _this2.el.nativeElement.offsetWidth;
-              _this2.currentOffsetHeight = _this2.el.nativeElement.offsetHeight;
-
-              _this2.resize();
-            }
-          });
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "ngOnDestroy",
-        value: function ngOnDestroy() {
-          if (this.resizeSub) {
-            this.resizeSub.unsubscribe();
-          }
-
-          this.dispose();
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "ngDoCheck",
-        value: function ngDoCheck() {
-          // No heavy work in DoCheck!
-          if (this.chart && this.autoResize) {
-            /** @type {?} */
-            var offsetWidth = this.el.nativeElement.offsetWidth;
-            /** @type {?} */
-
-            var offsetHeight = this.el.nativeElement.offsetHeight;
-
-            if (this.currentOffsetWidth !== offsetWidth || this.currentOffsetHeight !== offsetHeight) {
-              this.currentOffsetWidth = offsetWidth;
-              this.currentOffsetHeight = offsetHeight;
-              this.resize();
-            }
-          }
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "ngAfterViewInit",
-        value: function ngAfterViewInit() {
-          var _this3 = this;
-
-          setTimeout(
-          /**
-          * @return {?}
-          */
-          function () {
-            return _this3.initChart();
-          });
-        }
-        /**
-         * @private
-         * @return {?}
-         */
-
-      }, {
-        key: "dispose",
-        value: function dispose() {
-          if (this.chart) {
-            this.chart.dispose();
-            this.chart = null;
-          }
-        }
-        /**
-         * @private
-         * @return {?}
-         */
-
-      }, {
-        key: "resize",
-        value: function resize() {
-          if (this.chart) {
-            this.chart.resize();
-          }
-        }
-        /**
-         * @private
-         * @param {?} loading
-         * @return {?}
-         */
-
-      }, {
-        key: "toggleLoading",
-        value: function toggleLoading(loading) {
-          if (this.chart) {
-            loading ? this.chart.showLoading(this.loadingType, this.loadingOpts) : this.chart.hideLoading();
-          }
-        }
-        /**
-         * @private
-         * @param {?} option
-         * @param {?=} opts
-         * @return {?}
-         */
-
-      }, {
-        key: "setOption",
-        value: function setOption(option, opts) {
-          if (this.chart) {
-            this.chart.setOption(option, opts);
-          }
-        }
-        /**
-         * @private
-         * @return {?}
-         */
-
-      }, {
-        key: "refreshChart",
-        value: function refreshChart() {
-          this.dispose();
-          this.initChart();
-        }
-        /**
-         * @private
-         * @return {?}
-         */
-
-      }, {
-        key: "createChart",
-        value: function createChart() {
-          var _this4 = this;
-
-          this.currentWindowWidth = window.innerWidth;
-          this.currentOffsetWidth = this.el.nativeElement.offsetWidth;
-          this.currentOffsetHeight = this.el.nativeElement.offsetHeight;
-          /** @type {?} */
-
-          var dom = this.el.nativeElement;
-
-          if (window && window.getComputedStyle) {
-            /** @type {?} */
-            var prop = window.getComputedStyle(dom, null).getPropertyValue('height');
-
-            if ((!prop || prop === '0px') && (!dom.style.height || dom.style.height === '0px')) {
-              dom.style.height = '400px';
-            }
-          }
-
-          return this.ngZone.runOutsideAngular(
-          /**
-          * @return {?}
-          */
-          function () {
-            return Object(echarts__WEBPACK_IMPORTED_MODULE_1__["init"])(dom, _this4.theme, _this4.initOpts);
-          });
-        }
-        /**
-         * @private
-         * @return {?}
-         */
-
-      }, {
-        key: "initChart",
-        value: function initChart() {
-          this.onOptionsChange(this.options);
-
-          if (this.merge && this.chart) {
-            this.setOption(this.merge);
-          }
-        }
-        /**
-         * @private
-         * @param {?} opt
-         * @return {?}
-         */
-
-      }, {
-        key: "onOptionsChange",
-        value: function onOptionsChange(opt) {
-          if (opt) {
-            if (!this.chart) {
-              this.chart = this.createChart();
-              this.chartInit.emit(this.chart);
-            }
-
-            this.chart.setOption(this.options, true);
-          }
-        } // allows to lazily bind to only those events that are requested through the `@Output` by parent components
-        // see https://stackoverflow.com/questions/51787972/optimal-reentering-the-ngzone-from-eventemitter-event for more info
-
-        /**
-         * @private
-         * @template T
-         * @param {?} eventName
-         * @return {?}
-         */
-
-      }, {
-        key: "createLazyEvent",
-        value: function createLazyEvent(eventName) {
-          var _this5 = this;
-
-          return (
-            /** @type {?} */
-            this.chartInit.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(
-            /**
-            * @param {?} chart
-            * @return {?}
-            */
-            function (chart) {
-              return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](
-              /**
-              * @param {?} observer
-              * @return {?}
-              */
-              function (observer) {
-                chart.on(eventName,
-                /**
-                * @param {?} data
-                * @return {?}
-                */
-                function (data) {
-                  return _this5.ngZone.run(
-                  /**
-                  * @return {?}
-                  */
-                  function () {
-                    return observer.next(data);
-                  });
-                });
-                return (
-                  /**
-                  * @return {?}
-                  */
-                  function () {
-                    return chart.off(eventName);
-                  }
-                );
-              });
-            }))
-          );
-        }
-      }]);
-
-      return NgxEchartsDirective;
-    }();
-
-    NgxEchartsDirective.decorators = [{
-      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
-      args: [{
-        selector: 'echarts, [echarts]'
-      }]
-    }];
-    /** @nocollapse */
-
-    NgxEchartsDirective.ctorParameters = function () {
-      return [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-      }, {
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]
-      }];
-    };
-
-    NgxEchartsDirective.propDecorators = {
-      options: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      theme: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      loading: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      initOpts: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      merge: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      autoResize: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      loadingType: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      loadingOpts: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      detectEventChanges: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-      }],
-      chartInit: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartClick: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartDblClick: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMouseDown: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMouseMove: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMouseUp: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMouseOver: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMouseOut: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartGlobalOut: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartContextMenu: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartLegendSelectChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartLegendSelected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartLegendUnselected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartLegendScroll: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartDataZoom: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartDataRangeSelected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartTimelineChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartTimelinePlayChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartRestore: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartDataViewChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMagicTypeChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartPieSelectChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartPieSelected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartPieUnselected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMapSelectChanged: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMapSelected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartMapUnselected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartAxisAreaSelected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartFocusNodeAdjacency: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartUnfocusNodeAdjacency: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartBrush: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartBrushSelected: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartRendered: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }],
-      chartFinished: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
-      }]
-    };
-
-    if (false) {}
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
-
-
-    var NgxEchartsModule = function NgxEchartsModule() {
-      _classCallCheck(this, NgxEchartsModule);
-    };
-
-    NgxEchartsModule.decorators = [{
-      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
-      args: [{
-        imports: [],
-        declarations: [NgxEchartsDirective],
-        exports: [NgxEchartsDirective]
-      }]
-    }];
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
-    //# sourceMappingURL=ngx-echarts.js.map
-
-    /***/
-  },
-
-  /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html":
-  /*!**********************************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/change-password/change-password.component.html ***!
-    \**********************************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppViewsDashboardChangePasswordChangePasswordComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<mat-toolbar color=\"primary\" style=\"height:30px; font-size: small;\">\r\n    <span>Password Management</span>\r\n</mat-toolbar>\r\n<br><br>\r\n<!-- 500 issue id added b vidya -->\r\n<div fxLayout=\"row\">\r\n    <span fxFlex></span>\r\n    <div fxFlex=\"40%\">\r\n        <mat-card>\r\n            <mat-card-title>\r\n            </mat-card-title>\r\n            <mat-card-content>\r\n                <!-- <form #fn=\"ngForm\" novalidate> -->\r\n                    <form [formGroup]=\"userForm\"  class=\"form\" >\r\n                    <div fxLayout=\"row\">\r\n\r\n                        <div fxFlex=\"100\" class=\"pr-1\">\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Old Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"oldPassword\" [type]=\"hide1 ? 'password' : 'text'\"\r\n                                        >\r\n                                        <mat-icon matSuffix (click)=\"hide1 = !hide1\">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>New Password</mat-label>\r\n                                    <!-- <input matInput type=\"password\" required formControlName=\"newPassword\"\r\n                                         > -->\r\n                                         <input matInput type=\"password\" placeholder=\"New Password\" #newPassword name=\"newPassword\"\r\n                                         formControlName=\"newPassword\"  [type]=\"hide ? 'password' : 'text'\" pattern=\"{{passwordRegex}}\">\r\n                                         <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                                <mat-error *ngIf=\"userForm.controls.newPassword.errors && (userForm.controls.newPassword.touched || userForm.controls.newPassword.dirty)\">\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('required','newPassword')\">\r\n                                     Please enter your new password\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('pattern','newPassword')\">\r\n                                       {{errorMsg}}\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('minlength','newPassword')\">\r\n                                      Password must contain Minimum {{minPass}} characters.\r\n                                    </small><br>\r\n                                    <small class=\"form-error-msg\" *ngIf=\"userForm.hasError('maxlength','newPassword')\">\r\n                                      Password must contain Maximum {{maxPass}} characters.\r\n                                    </small>\r\n                                </mat-error>\r\n                                        </div>\r\n                            <div class=\"pb-1\" *ngIf=\"!otpEnableFlag\">\r\n                                <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                    <mat-label>Confirm Password</mat-label>\r\n                                    <input matInput type=\"password\" formControlName=\"confirmPassword\"\r\n                                    [type]=\"hide2 ? 'password' : 'text'\" >\r\n                                       <mat-icon matSuffix (click)=\"hide2 = !hide2\">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"pb-1\" *ngIf=\"otpEnableFlag\">\r\n                                <a>Please enter OTP sent to your email </a>\r\n                                    <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n                                        <mat-label>OTP</mat-label>\r\n                                        <input matInput type=\"password\" required formControlName=\"otp\"\r\n                                            >\r\n                                    </mat-form-field>\r\n                                </div>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <!-- <a *ngIf=\"enableLoader\">Verifying Data</a>\r\n                    <mat-progress-bar mode=\"indeterminate\" *ngIf=\"enableLoader\"></mat-progress-bar> -->\r\n                    <!-- <br> -->\r\n                    <div fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"10px\">\r\n                        <button type=\"submit\" #saveBtn mat-raised-button color=\"primary\"\r\n                            (click)=\"onSubmit()\">Submit</button>\r\n                        <!-- [disabled]=\"!fn.form.valid\" -->\r\n                        <button mat-raised-button color=\"warn\" [routerLink]=\"'/dashboard'\">Exit</button>\r\n                       \r\n                    </div>\r\n                </form>\r\n\r\n            </mat-card-content>\r\n        </mat-card>\r\n    </div>\r\n    <span fxFlex></span>\r\n</div>\r\n\r\n<br>\r\n<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
-    /***/
-  },
-
-  /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html":
-  /*!************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/dashboard/dashboard.component.html ***!
-    \************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppViewsDashboardDashboardComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(255, 155, 6) , rgb(201, 156, 8));color: white \">\r\n  \r\n  <mat-card-title fxLayoutAlign=\"start center\">\r\n  <small class=\"text-muted\">User Maintenance</small>\r\n\r\n  \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.user}}</h3>\r\n  <small class=\"text-muted\">Availiable Users</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, green , rgb(52, 160, 52));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\"> Audit Logs</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.auditlog}}</h3>\r\n  <small class=\"text-muted\">Total Modification in Application</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  \r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(129, 29, 243) , rgb(147, 192, 235));color:white\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">User Role</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n \r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\" *ngIf=\"data\">{{this.data.role}}</h3>\r\n  <small class=\"text-muted\">Total Roles For User</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  \r\n  </div>&nbsp;\r\n  <div fxFlex=\"25\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(228, 10, 10) , rgb(230, 97, 97));color: white;\">\r\n  <mat-card-title>\r\n  <small class=\"text-muted\">External System</small>\r\n \r\n  <span fxFlex></span>\r\n  \r\n  </mat-card-title>\r\n\r\n  <mat-card-content>\r\n  <h3 class=\"m-0 font-normal\">{{this.data.extsys}}</h3>\r\n  <small class=\"text-muted\">Availiable External System</small>\r\n  </mat-card-content>\r\n  </mat-card>\r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  \r\n  <mat-tab-group>\r\n  \r\n  \r\n  <mat-tab label=\"Application\">\r\n  <mat-card>\r\n  <div fxLayout=\"row wrap\">\r\n  <div fxFlex=\"100\">\r\n  <div fxFlex=\"50\">\r\n  <div style=\"display: block\" *ngIf=\"chartpie\">\r\n  <mat-card >\r\n  <mat-card-header >User Details</mat-card-header>\r\n  <!-- <canvas baseChart [data]=\"pieChartData\" [labels]=\"pieChartLabels\" [chartType]=\"pieChartType\"></canvas> -->\r\n  </mat-card>\r\n  </div>\r\n  </div>&nbsp;\r\n  <div fxLayout=\"row wrap\" >\r\n <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(241, 76, 11) , rgb(229, 233, 15));color: white;border:solid 1px\">\r\n  \r\n  Batches uploaded by you today: {{uploadedBatches}}\r\n\r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(10, 122, 25) , rgb(49, 228, 117));color: white;border:solid 1px\">\r\n  Pending unauthorized batches for you today: {{pendingUnauthBatch}}\r\n  \r\n  </mat-card>\r\n  </div>\r\n  <div fxFlex=\"100\">\r\n  <mat-card style=\"background-image: linear-gradient(to right, rgb(164, 15, 233) , rgb(72, 132, 223));color:white;border: solid 1px\">\r\n  Batches authorized by you today:{{authBatches}}\r\n  \r\n  \r\n  </mat-card>\r\n  </div> \r\n  </div>\r\n  \r\n  \r\n  \r\n  </div>\r\n  \r\n  </div>\r\n  \r\n  \r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Services\">\r\n  <mat-card>\r\n  <div style=\"display: block\">\r\n  <!-- <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\"\r\n  [legend]=\"barChartLegend\" [chartType]=\"barChartType\">\r\n  </canvas> -->\r\n  </div>\r\n  </mat-card>\r\n  </mat-tab>\r\n  <mat-tab label=\"Other\"> Other</mat-tab>\r\n  </mat-tab-group>\r\n  <!-- added by gayathri issueid=0000650 on 20-08-2020 -->\r\n  \r\n  ";
-    /***/
-  },
-
-  /***/
   "./src/app/shared/pipes/excerpt.pipe.ts":
   /*!**********************************************!*\
     !*** ./src/app/shared/pipes/excerpt.pipe.ts ***!
@@ -114024,9 +114645,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var pipes = [_relative_time_pipe__WEBPACK_IMPORTED_MODULE_3__["RelativeTimePipe"], _excerpt_pipe__WEBPACK_IMPORTED_MODULE_4__["ExcerptPipe"], _get_value_by_key_pipe__WEBPACK_IMPORTED_MODULE_5__["GetValueByKeyPipe"]];
 
-    var SharedPipesModule = function SharedPipesModule() {
+    var SharedPipesModule = /*#__PURE__*/_createClass(function SharedPipesModule() {
       _classCallCheck(this, SharedPipesModule);
-    };
+    });
 
     SharedPipesModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
@@ -114163,13 +114784,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var ChangePasswordDTO = function ChangePasswordDTO() {
+    var ChangePasswordDTO = /*#__PURE__*/_createClass(function ChangePasswordDTO() {
       _classCallCheck(this, ChangePasswordDTO);
-    };
+    });
 
-    var ChangePasswordRespDTO = function ChangePasswordRespDTO() {
+    var ChangePasswordRespDTO = /*#__PURE__*/_createClass(function ChangePasswordRespDTO() {
       _classCallCheck(this, ChangePasswordRespDTO);
-    };
+    });
     /***/
 
   },
@@ -114913,9 +115534,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       "./src/app/views/dashboard/dashboard.component.scss"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"], src_app_shared_services_dashboard_service__WEBPACK_IMPORTED_MODULE_4__["DashboardService"], src_app_shared_services_date_service__WEBPACK_IMPORTED_MODULE_7__["DateService"], _login_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])], DashboardComponent);
 
-    var DashboardData = function DashboardData() {
+    var DashboardData = /*#__PURE__*/_createClass(function DashboardData() {
       _classCallCheck(this, DashboardData);
-    };
+    });
     /***/
 
   },
@@ -115018,9 +115639,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
 
-    var DashboardModule = function DashboardModule() {
+    var DashboardModule = /*#__PURE__*/_createClass(function DashboardModule() {
       _classCallCheck(this, DashboardModule);
-    };
+    });
 
     DashboardModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_dashboard_component__WEBPACK_IMPORTED_MODULE_6__["DashboardComponent"], _change_password_change_password_component__WEBPACK_IMPORTED_MODULE_11__["ChangePasswordComponent"]],

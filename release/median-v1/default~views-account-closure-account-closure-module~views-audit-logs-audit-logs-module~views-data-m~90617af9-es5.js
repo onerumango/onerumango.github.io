@@ -26,13 +26,13 @@
         }) : a;
       }
 
-      function c(b, c, d) {
-        var e = new XMLHttpRequest();
-        e.open("GET", b), e.responseType = "blob", e.onload = function () {
-          a(e.response, c, d);
-        }, e.onerror = function () {
+      function c(a, b, c) {
+        var d = new XMLHttpRequest();
+        d.open("GET", a), d.responseType = "blob", d.onload = function () {
+          g(d.response, b, c);
+        }, d.onerror = function () {
           console.error("could not download file");
-        }, e.send();
+        }, d.send();
       }
 
       function d(a) {
@@ -56,7 +56,8 @@
       }
 
       var f = "object" == typeof window && window.window === window ? window : "object" == typeof self && self.self === self ? self : "object" == typeof global && global.global === global ? global : void 0,
-          a = f.saveAs || ("object" != typeof window || window !== f ? function () {} : "download" in HTMLAnchorElement.prototype ? function (b, g, h) {
+          a = f.navigator && /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent),
+          g = f.saveAs || ("object" != typeof window || window !== f ? function () {} : "download" in HTMLAnchorElement.prototype && !a ? function (b, g, h) {
         var i = f.URL || f.webkitURL,
             j = document.createElement("a");
         g = g || b.name || "download", j.download = g, j.rel = "noopener", "string" == typeof b ? (j.href = b, j.origin === location.origin ? e(j) : d(j.href) ? c(b, g, h) : e(j, j.target = "_blank")) : (j.href = i.createObjectURL(b), setTimeout(function () {
@@ -71,27 +72,27 @@
             e(i);
           });
         }
-      } : function (a, b, d, e) {
-        if (e = e || open("", "_blank"), e && (e.document.title = e.document.body.innerText = "downloading..."), "string" == typeof a) return c(a, b, d);
-        var g = "application/octet-stream" === a.type,
-            h = /constructor/i.test(f.HTMLElement) || f.safari,
-            i = /CriOS\/[\d]+/.test(navigator.userAgent);
+      } : function (b, d, e, g) {
+        if (g = g || open("", "_blank"), g && (g.document.title = g.document.body.innerText = "downloading..."), "string" == typeof b) return c(b, d, e);
+        var h = "application/octet-stream" === b.type,
+            i = /constructor/i.test(f.HTMLElement) || f.safari,
+            j = /CriOS\/[\d]+/.test(navigator.userAgent);
 
-        if ((i || g && h) && "object" == typeof FileReader) {
-          var j = new FileReader();
-          j.onloadend = function () {
-            var a = j.result;
-            a = i ? a : a.replace(/^data:[^;]*;/, "data:attachment/file;"), e ? e.location.href = a : location = a, e = null;
-          }, j.readAsDataURL(a);
+        if ((j || h && i || a) && "undefined" != typeof FileReader) {
+          var k = new FileReader();
+          k.onloadend = function () {
+            var a = k.result;
+            a = j ? a : a.replace(/^data:[^;]*;/, "data:attachment/file;"), g ? g.location.href = a : location = a, g = null;
+          }, k.readAsDataURL(b);
         } else {
-          var k = f.URL || f.webkitURL,
-              l = k.createObjectURL(a);
-          e ? e.location = l : location.href = l, e = null, setTimeout(function () {
-            k.revokeObjectURL(l);
+          var l = f.URL || f.webkitURL,
+              m = l.createObjectURL(b);
+          g ? g.location = m : location.href = m, g = null, setTimeout(function () {
+            l.revokeObjectURL(m);
           }, 4E4);
         }
       });
-      f.saveAs = a.saveAs = a, true && (module.exports = a);
+      f.saveAs = g.saveAs = g, true && (module.exports = g);
     }); //# sourceMappingURL=FileSaver.min.js.map
 
     /***/
@@ -10571,22 +10572,22 @@
               && s.prev_length < s.max_lazy_match && s.strstart - hash_head <= s.w_size - MIN_LOOKAHEAD
               /*MAX_DIST(s)*/
               ) {
-                  /* To simplify the code, we prevent matches with the string
-                   * of window index 0 (in particular we have to avoid a match
-                   * of the string with itself at the start of the input file).
-                   */
-                  s.match_length = longest_match(s, hash_head);
-                  /* longest_match() sets match_start */
+                /* To simplify the code, we prevent matches with the string
+                 * of window index 0 (in particular we have to avoid a match
+                 * of the string with itself at the start of the input file).
+                 */
+                s.match_length = longest_match(s, hash_head);
+                /* longest_match() sets match_start */
 
-                  if (s.match_length <= 5 && (s.strategy === Z_FILTERED || s.match_length === MIN_MATCH && s.strstart - s.match_start > 4096
-                  /*TOO_FAR*/
-                  )) {
-                    /* If prev_match is also MIN_MATCH, match_start is garbage
-                     * but we will ignore the current match anyway.
-                     */
-                    s.match_length = MIN_MATCH - 1;
-                  }
+                if (s.match_length <= 5 && (s.strategy === Z_FILTERED || s.match_length === MIN_MATCH && s.strstart - s.match_start > 4096
+                /*TOO_FAR*/
+                )) {
+                  /* If prev_match is also MIN_MATCH, match_start is garbage
+                   * but we will ignore the current match anyway.
+                   */
+                  s.match_length = MIN_MATCH - 1;
                 }
+              }
               /* If there was a match at the previous step and the current
                * match is not better, output the previous match:
                */
@@ -11441,36 +11442,36 @@
               if (s.gzhead.extra
               /* != Z_NULL*/
               ) {
-                  beg = s.pending;
-                  /* start of bytes to update crc */
+                beg = s.pending;
+                /* start of bytes to update crc */
 
-                  while (s.gzindex < (s.gzhead.extra.length & 0xffff)) {
-                    if (s.pending === s.pending_buf_size) {
-                      if (s.gzhead.hcrc && s.pending > beg) {
-                        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-                      }
-
-                      flush_pending(strm);
-                      beg = s.pending;
-
-                      if (s.pending === s.pending_buf_size) {
-                        break;
-                      }
+                while (s.gzindex < (s.gzhead.extra.length & 0xffff)) {
+                  if (s.pending === s.pending_buf_size) {
+                    if (s.gzhead.hcrc && s.pending > beg) {
+                      strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
                     }
 
-                    put_byte(s, s.gzhead.extra[s.gzindex] & 0xff);
-                    s.gzindex++;
+                    flush_pending(strm);
+                    beg = s.pending;
+
+                    if (s.pending === s.pending_buf_size) {
+                      break;
+                    }
                   }
 
-                  if (s.gzhead.hcrc && s.pending > beg) {
-                    strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-                  }
+                  put_byte(s, s.gzhead.extra[s.gzindex] & 0xff);
+                  s.gzindex++;
+                }
 
-                  if (s.gzindex === s.gzhead.extra.length) {
-                    s.gzindex = 0;
-                    s.status = NAME_STATE;
-                  }
-                } else {
+                if (s.gzhead.hcrc && s.pending > beg) {
+                  strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+                }
+
+                if (s.gzindex === s.gzhead.extra.length) {
+                  s.gzindex = 0;
+                  s.status = NAME_STATE;
+                }
+              } else {
                 s.status = NAME_STATE;
               }
             }
@@ -11479,44 +11480,44 @@
               if (s.gzhead.name
               /* != Z_NULL*/
               ) {
-                  beg = s.pending;
-                  /* start of bytes to update crc */
-                  //int val;
+                beg = s.pending;
+                /* start of bytes to update crc */
+                //int val;
 
-                  do {
-                    if (s.pending === s.pending_buf_size) {
-                      if (s.gzhead.hcrc && s.pending > beg) {
-                        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-                      }
-
-                      flush_pending(strm);
-                      beg = s.pending;
-
-                      if (s.pending === s.pending_buf_size) {
-                        val = 1;
-                        break;
-                      }
-                    } // JS specific: little magic to add zero terminator to end of string
-
-
-                    if (s.gzindex < s.gzhead.name.length) {
-                      val = s.gzhead.name.charCodeAt(s.gzindex++) & 0xff;
-                    } else {
-                      val = 0;
+                do {
+                  if (s.pending === s.pending_buf_size) {
+                    if (s.gzhead.hcrc && s.pending > beg) {
+                      strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
                     }
 
-                    put_byte(s, val);
-                  } while (val !== 0);
+                    flush_pending(strm);
+                    beg = s.pending;
 
-                  if (s.gzhead.hcrc && s.pending > beg) {
-                    strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+                    if (s.pending === s.pending_buf_size) {
+                      val = 1;
+                      break;
+                    }
+                  } // JS specific: little magic to add zero terminator to end of string
+
+
+                  if (s.gzindex < s.gzhead.name.length) {
+                    val = s.gzhead.name.charCodeAt(s.gzindex++) & 0xff;
+                  } else {
+                    val = 0;
                   }
 
-                  if (val === 0) {
-                    s.gzindex = 0;
-                    s.status = COMMENT_STATE;
-                  }
-                } else {
+                  put_byte(s, val);
+                } while (val !== 0);
+
+                if (s.gzhead.hcrc && s.pending > beg) {
+                  strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+                }
+
+                if (val === 0) {
+                  s.gzindex = 0;
+                  s.status = COMMENT_STATE;
+                }
+              } else {
                 s.status = COMMENT_STATE;
               }
             }
@@ -11525,43 +11526,43 @@
               if (s.gzhead.comment
               /* != Z_NULL*/
               ) {
-                  beg = s.pending;
-                  /* start of bytes to update crc */
-                  //int val;
+                beg = s.pending;
+                /* start of bytes to update crc */
+                //int val;
 
-                  do {
-                    if (s.pending === s.pending_buf_size) {
-                      if (s.gzhead.hcrc && s.pending > beg) {
-                        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-                      }
-
-                      flush_pending(strm);
-                      beg = s.pending;
-
-                      if (s.pending === s.pending_buf_size) {
-                        val = 1;
-                        break;
-                      }
-                    } // JS specific: little magic to add zero terminator to end of string
-
-
-                    if (s.gzindex < s.gzhead.comment.length) {
-                      val = s.gzhead.comment.charCodeAt(s.gzindex++) & 0xff;
-                    } else {
-                      val = 0;
+                do {
+                  if (s.pending === s.pending_buf_size) {
+                    if (s.gzhead.hcrc && s.pending > beg) {
+                      strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
                     }
 
-                    put_byte(s, val);
-                  } while (val !== 0);
+                    flush_pending(strm);
+                    beg = s.pending;
 
-                  if (s.gzhead.hcrc && s.pending > beg) {
-                    strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+                    if (s.pending === s.pending_buf_size) {
+                      val = 1;
+                      break;
+                    }
+                  } // JS specific: little magic to add zero terminator to end of string
+
+
+                  if (s.gzindex < s.gzhead.comment.length) {
+                    val = s.gzhead.comment.charCodeAt(s.gzindex++) & 0xff;
+                  } else {
+                    val = 0;
                   }
 
-                  if (val === 0) {
-                    s.status = HCRC_STATE;
-                  }
-                } else {
+                  put_byte(s, val);
+                } while (val !== 0);
+
+                if (s.gzhead.hcrc && s.pending > beg) {
+                  strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+                }
+
+                if (val === 0) {
+                  s.status = HCRC_STATE;
+                }
+              } else {
                 s.status = HCRC_STATE;
               }
             }
@@ -11725,8 +11726,8 @@
             || !strm.state
             /*== Z_NULL*/
             ) {
-                return Z_STREAM_ERROR;
-              }
+              return Z_STREAM_ERROR;
+            }
 
             status = strm.state.status;
 
@@ -12210,9 +12211,9 @@
                       }
                     } else if ((op & 64) === 0) {
                       /* 2nd level distance code */
-                      here = dcode[(here & 0xffff) + (
+                      here = dcode[(here & 0xffff
                       /*here.val*/
-                      hold & (1 << op) - 1)];
+                      ) + (hold & (1 << op) - 1)];
                       continue dodist;
                     } else {
                       strm.msg = 'invalid distance code';
@@ -12224,9 +12225,9 @@
                   }
                 } else if ((op & 64) === 0) {
                   /* 2nd level length code */
-                  here = lcode[(here & 0xffff) + (
+                  here = lcode[(here & 0xffff
                   /*here.val*/
-                  hold & (1 << op) - 1)];
+                  ) + (hold & (1 << op) - 1)];
                   continue dolen;
                 } else if (op & 32) {
                   /* end-of-block */
@@ -12923,17 +12924,17 @@
 
                   if (!(state.wrap & 1) ||
                   /* check if zlib header allowed */
-                  (((hold & 0xff) <<
+                  (((hold & 0xff
                   /*BITS(8)*/
-                  8) + (hold >> 8)) % 31) {
+                  ) << 8) + (hold >> 8)) % 31) {
                     strm.msg = 'incorrect header check';
                     state.mode = BAD;
                     break;
                   }
 
-                  if ((hold & 0x0f) !==
+                  if ((hold & 0x0f
                   /*BITS(4)*/
-                  Z_DEFLATED) {
+                  ) !== Z_DEFLATED) {
                     strm.msg = 'unknown compression method';
                     state.mode = BAD;
                     break;
@@ -12943,9 +12944,9 @@
                   hold >>>= 4;
                   bits -= 4; //---//
 
-                  len = (hold & 0x0f) +
+                  len = (hold & 0x0f
                   /*BITS(4)*/
-                  8;
+                  ) + 8;
 
                   if (state.wbits === 0) {
                     state.wbits = len;
@@ -13355,8 +13356,9 @@
                   hold >>>= 1;
                   bits -= 1; //---//
 
-                  switch (hold & 0x03) {
-                    /*BITS(2)*/
+                  switch (hold & 0x03
+                  /*BITS(2)*/
+                  ) {
                     case 0:
                       /* stored block */
                       //Tracev((stderr, "inflate:     stored block%s\n",
@@ -13487,23 +13489,23 @@
                   } //===//
 
 
-                  state.nlen = (hold & 0x1f) +
+                  state.nlen = (hold & 0x1f
                   /*BITS(5)*/
-                  257; //--- DROPBITS(5) ---//
+                  ) + 257; //--- DROPBITS(5) ---//
 
                   hold >>>= 5;
                   bits -= 5; //---//
 
-                  state.ndist = (hold & 0x1f) +
+                  state.ndist = (hold & 0x1f
                   /*BITS(5)*/
-                  1; //--- DROPBITS(5) ---//
+                  ) + 1; //--- DROPBITS(5) ---//
 
                   hold >>>= 5;
                   bits -= 5; //---//
 
-                  state.ncode = (hold & 0x0f) +
+                  state.ncode = (hold & 0x0f
                   /*BITS(4)*/
-                  4; //--- DROPBITS(4) ---//
+                  ) + 4; //--- DROPBITS(4) ---//
 
                   hold >>>= 4;
                   bits -= 4; //---//
@@ -13820,9 +13822,9 @@
                     last_val = here_val;
 
                     for (;;) {
-                      here = state.lencode[last_val + ((hold & (1 << last_bits + last_op) - 1) >>
+                      here = state.lencode[last_val + ((hold & (1 << last_bits + last_op) - 1
                       /*BITS(last.bits + last.op)*/
-                      last_bits)];
+                      ) >> last_bits)];
                       here_bits = here >>> 24;
                       here_op = here >>> 16 & 0xff;
                       here_val = here & 0xffff;
@@ -13942,9 +13944,9 @@
                     last_val = here_val;
 
                     for (;;) {
-                      here = state.distcode[last_val + ((hold & (1 << last_bits + last_op) - 1) >>
+                      here = state.distcode[last_val + ((hold & (1 << last_bits + last_op) - 1
                       /*BITS(last.bits + last.op)*/
-                      last_bits)];
+                      ) >> last_bits)];
                       here_bits = here >>> 24;
                       here_op = here >>> 16 & 0xff;
                       here_val = here & 0xffff;
@@ -14247,8 +14249,8 @@
             if (!strm || !strm.state
             /*|| strm->zfree == (free_func)0*/
             ) {
-                return Z_STREAM_ERROR;
-              }
+              return Z_STREAM_ERROR;
+            }
 
             var state = strm.state;
 
@@ -19051,17 +19053,17 @@
           } else if (idx !== -1
           /*FREESECT*/
           ) {
-              var sector = sectors[idx],
-                  m = (ssz >>> 2) - 1;
-              if (!sector) return;
+            var sector = sectors[idx],
+                m = (ssz >>> 2) - 1;
+            if (!sector) return;
 
-              for (var i = 0; i < m; ++i) {
-                if ((q = __readInt32LE(sector, i * 4)) === ENDOFCHAIN) break;
-                fat_addrs.push(q);
-              }
-
-              sleuth_fat(__readInt32LE(sector, ssz - 4), cnt - 1, sectors, ssz, fat_addrs);
+            for (var i = 0; i < m; ++i) {
+              if ((q = __readInt32LE(sector, i * 4)) === ENDOFCHAIN) break;
+              fat_addrs.push(q);
             }
+
+            sleuth_fat(__readInt32LE(sector, ssz - 4), cnt - 1, sectors, ssz, fat_addrs);
+          }
         }
         /** Follow the linked list of sectors for a given starting point */
 
@@ -19184,11 +19186,11 @@
             } else if (o.size >= 4096
             /* MSCSZ */
             ) {
-                o.storage = 'fat';
-                if (sector_list[o.start] === undefined) sector_list[o.start] = get_sector_list(sectors, o.start, sector_list.fat_addrs, sector_list.ssz);
-                sector_list[o.start].name = o.name;
-                o.content = sector_list[o.start].data.slice(0, o.size);
-              } else {
+              o.storage = 'fat';
+              if (sector_list[o.start] === undefined) sector_list[o.start] = get_sector_list(sectors, o.start, sector_list.fat_addrs, sector_list.ssz);
+              sector_list[o.start].name = o.name;
+              o.content = sector_list[o.start].data.slice(0, o.size);
+            } else {
               o.storage = 'minifat';
               if (o.size < 0) o.size = 0;else if (minifat_store !== ENDOFCHAIN && o.start !== ENDOFCHAIN && sector_list[minifat_store]) {
                 o.content = get_mfat_entry(o, sector_list[minifat_store].data, (sector_list[mini] || {}).data);
@@ -19604,9 +19606,9 @@
           if (path.charCodeAt(0) === 47
           /* "/" */
           ) {
-              k = true;
-              path = UCFullPaths[0].slice(0, -1) + path;
-            } else k = path.indexOf("/") !== -1;
+            k = true;
+            path = UCFullPaths[0].slice(0, -1) + path;
+          } else k = path.indexOf("/") !== -1;
 
           var UCPath = path.toUpperCase();
           var w = k === true ? UCFullPaths.indexOf(UCPath) : UCPaths.indexOf(UCPath);
@@ -26114,9 +26116,9 @@
       /* [MS-XLS] 2.4.189 TODO */
 
 
-      function parse_Pane()
-      /*blob, length, opts*/
-      {}
+      function
+        /*blob, length, opts*/
+      parse_Pane() {}
       /* [MS-XLS] 2.4.122 TODO */
 
 
@@ -29668,12 +29670,12 @@
         }
         /* 18.4.4 r CT_RElt (Rich Text Run) */
         else if (
-          /*y = */
-          x.match(sirregex)) {
-            z.r = utf8read(x);
-            z.t = unescapexml(utf8read((x.replace(sirphregex, '').match(sitregex) || []).join("").replace(tagregex, "")));
-            if (html) z.h = rs_to_html(parse_rs(z.r));
-          }
+        /*y = */
+        x.match(sirregex)) {
+          z.r = utf8read(x);
+          z.t = unescapexml(utf8read((x.replace(sirphregex, '').match(sitregex) || []).join("").replace(tagregex, "")));
+          if (html) z.h = rs_to_html(parse_rs(z.r));
+        }
         /* 18.4.3 phoneticPr CT_PhoneticPr (TODO: needed for Asian support) */
 
         /* 18.4.6 rPh CT_PhoneticRun (TODO: needed for Asian support) */
@@ -38303,9 +38305,9 @@
       /* [MS-XLSB] 2.4.692 BrtPane */
 
 
-      function parse_BrtPane()
-      /*data, length, opts*/
-      {}
+      function
+        /*data, length, opts*/
+      parse_BrtPane() {}
       /* [MS-XLSB] 2.4.6 BrtArrFmla */
 
 
@@ -38457,13 +38459,13 @@
         return o;
       }
 
-      function parse_BrtDVal()
-      /*data, length, opts*/
-      {}
+      function
+        /*data, length, opts*/
+      parse_BrtDVal() {}
 
-      function parse_BrtDVal14()
-      /*data, length, opts*/
-      {}
+      function
+        /*data, length, opts*/
+      parse_BrtDVal14() {}
       /* [MS-XLSB] 2.1.7.61 Worksheet */
 
 
@@ -44720,8 +44722,8 @@
           if (WB && WB.content) WorkbookP = parse_workbook(WB.content, options);
           /* Quattro Pro 7-8 */
           else if ((_data = CFB.find(cfb, 'PerfectOffice_MAIN')) && _data.content) WorkbookP = WK_.to_workbook(_data.content, (options.type = T, options));
-            /* Quattro Pro 9 */
-            else if ((_data = CFB.find(cfb, 'NativeContent_MAIN')) && _data.content) WorkbookP = WK_.to_workbook(_data.content, (options.type = T, options));else throw new Error("Cannot find Workbook stream");
+          /* Quattro Pro 9 */
+          else if ((_data = CFB.find(cfb, 'NativeContent_MAIN')) && _data.content) WorkbookP = WK_.to_workbook(_data.content, (options.type = T, options));else throw new Error("Cannot find Workbook stream");
           if (options.bookVBA && cfb.FullPaths && CFB.find(cfb, '/_VBA_PROJECT_CUR/VBA/dir')) WorkbookP.vbaraw = make_vba_xls(cfb);
         }
         var props = {};

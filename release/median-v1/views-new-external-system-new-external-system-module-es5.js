@@ -2,7 +2,7 @@ function _classCallCheck2(instance, Constructor) { if (!(instance instanceof Con
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-new-external-system-new-external-system-module"], {
   /***/
@@ -32,13 +32,13 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         }) : a;
       }
 
-      function c(b, c, d) {
-        var e = new XMLHttpRequest();
-        e.open("GET", b), e.responseType = "blob", e.onload = function () {
-          a(e.response, c, d);
-        }, e.onerror = function () {
+      function c(a, b, c) {
+        var d = new XMLHttpRequest();
+        d.open("GET", a), d.responseType = "blob", d.onload = function () {
+          g(d.response, b, c);
+        }, d.onerror = function () {
           console.error("could not download file");
-        }, e.send();
+        }, d.send();
       }
 
       function d(a) {
@@ -62,7 +62,8 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       var f = "object" == typeof window && window.window === window ? window : "object" == typeof self && self.self === self ? self : "object" == typeof global && global.global === global ? global : void 0,
-          a = f.saveAs || ("object" != typeof window || window !== f ? function () {} : "download" in HTMLAnchorElement.prototype ? function (b, g, h) {
+          a = f.navigator && /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent),
+          g = f.saveAs || ("object" != typeof window || window !== f ? function () {} : "download" in HTMLAnchorElement.prototype && !a ? function (b, g, h) {
         var i = f.URL || f.webkitURL,
             j = document.createElement("a");
         g = g || b.name || "download", j.download = g, j.rel = "noopener", "string" == typeof b ? (j.href = b, j.origin === location.origin ? e(j) : d(j.href) ? c(b, g, h) : e(j, j.target = "_blank")) : (j.href = i.createObjectURL(b), setTimeout(function () {
@@ -77,27 +78,27 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
             e(i);
           });
         }
-      } : function (a, b, d, e) {
-        if (e = e || open("", "_blank"), e && (e.document.title = e.document.body.innerText = "downloading..."), "string" == typeof a) return c(a, b, d);
-        var g = "application/octet-stream" === a.type,
-            h = /constructor/i.test(f.HTMLElement) || f.safari,
-            i = /CriOS\/[\d]+/.test(navigator.userAgent);
+      } : function (b, d, e, g) {
+        if (g = g || open("", "_blank"), g && (g.document.title = g.document.body.innerText = "downloading..."), "string" == typeof b) return c(b, d, e);
+        var h = "application/octet-stream" === b.type,
+            i = /constructor/i.test(f.HTMLElement) || f.safari,
+            j = /CriOS\/[\d]+/.test(navigator.userAgent);
 
-        if ((i || g && h) && "object" == typeof FileReader) {
-          var j = new FileReader();
-          j.onloadend = function () {
-            var a = j.result;
-            a = i ? a : a.replace(/^data:[^;]*;/, "data:attachment/file;"), e ? e.location.href = a : location = a, e = null;
-          }, j.readAsDataURL(a);
+        if ((j || h && i || a) && "undefined" != typeof FileReader) {
+          var k = new FileReader();
+          k.onloadend = function () {
+            var a = k.result;
+            a = j ? a : a.replace(/^data:[^;]*;/, "data:attachment/file;"), g ? g.location.href = a : location = a, g = null;
+          }, k.readAsDataURL(b);
         } else {
-          var k = f.URL || f.webkitURL,
-              l = k.createObjectURL(a);
-          e ? e.location = l : location.href = l, e = null, setTimeout(function () {
-            k.revokeObjectURL(l);
+          var l = f.URL || f.webkitURL,
+              m = l.createObjectURL(b);
+          g ? g.location = m : location.href = m, g = null, setTimeout(function () {
+            l.revokeObjectURL(m);
           }, 4E4);
         }
       });
-      f.saveAs = a.saveAs = a, true && (module.exports = a);
+      f.saveAs = g.saveAs = g, true && (module.exports = g);
     }); //# sourceMappingURL=FileSaver.min.js.map
 
     /***/
@@ -3719,9 +3720,9 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_2__["ExternalSystemNewComponent"]
     }];
 
-    var ExternalSystemRoutingModule1 = function ExternalSystemRoutingModule1() {
+    var ExternalSystemRoutingModule1 = /*#__PURE__*/_createClass2(function ExternalSystemRoutingModule1() {
       _classCallCheck2(this, ExternalSystemRoutingModule1);
-    };
+    });
     /***/
 
   },
@@ -4188,9 +4189,9 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var NewExternalSystems = function NewExternalSystems() {
+    var NewExternalSystems = /*#__PURE__*/_createClass2(function NewExternalSystems() {
       _classCallCheck2(this, NewExternalSystems);
-    };
+    });
     /***/
 
   },
@@ -4311,9 +4312,9 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
 
-    var NewExternalSystemModule = function NewExternalSystemModule() {
+    var NewExternalSystemModule = /*#__PURE__*/_createClass2(function NewExternalSystemModule() {
       _classCallCheck2(this, NewExternalSystemModule);
-    };
+    });
 
     NewExternalSystemModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_external_system_summary_external_system_summary_component__WEBPACK_IMPORTED_MODULE_5__["ExternalSystemSummaryComponent"], _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_9__["ExternalSystemNewComponent"]],

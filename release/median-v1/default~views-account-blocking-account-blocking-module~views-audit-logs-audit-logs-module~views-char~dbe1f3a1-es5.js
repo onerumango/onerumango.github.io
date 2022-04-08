@@ -1,24 +1,24 @@
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+function _get() { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(arguments.length < 3 ? target : receiver); } return desc.value; }; } return _get.apply(this, arguments); }
 
 function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
 function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest(); }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -26,7 +26,7 @@ function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableTo
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -38,13 +38,13 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -351,9 +351,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * *****************************************************************
      */
 
-    var CoreModule = function CoreModule() {
+    var CoreModule = /*#__PURE__*/_createClass(function CoreModule() {
       _classCallCheck(this, CoreModule);
-    };
+    });
 
     CoreModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -788,13 +788,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(BaseDirective2, [{
-        key: "ngOnChanges",
+        key: "parentElement",
+        get: function get() {
+          return this.elementRef.nativeElement.parentElement;
+        }
+        /**
+         * Access to the HTMLElement for the directive
+         * @protected
+         * @return {?}
+         */
 
+      }, {
+        key: "nativeElement",
+        get: function get() {
+          return this.elementRef.nativeElement;
+        }
+        /**
+         * Access to the activated value for the directive
+         * @return {?}
+         */
+
+      }, {
+        key: "activatedValue",
+        get: function get() {
+          return this.marshal.getValue(this.nativeElement, this.DIRECTIVE_KEY);
+        }
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this.marshal.setValue(this.nativeElement, this.DIRECTIVE_KEY, value, this.marshal.activatedAlias);
+        }
         /**
          * For \@Input changes
          * @param {?} changes
          * @return {?}
          */
+
+      }, {
+        key: "ngOnChanges",
         value: function ngOnChanges(changes) {
           var _this = this;
 
@@ -977,40 +1011,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "updateWithValue",
         value: function updateWithValue(input) {
           this.addStyles(input);
-        }
-      }, {
-        key: "parentElement",
-        get: function get() {
-          return this.elementRef.nativeElement.parentElement;
-        }
-        /**
-         * Access to the HTMLElement for the directive
-         * @protected
-         * @return {?}
-         */
-
-      }, {
-        key: "nativeElement",
-        get: function get() {
-          return this.elementRef.nativeElement;
-        }
-        /**
-         * Access to the activated value for the directive
-         * @return {?}
-         */
-
-      }, {
-        key: "activatedValue",
-        get: function get() {
-          return this.marshal.getValue(this.nativeElement, this.DIRECTIVE_KEY);
-        }
-        /**
-         * @param {?} value
-         * @return {?}
-         */
-        ,
-        set: function set(value) {
-          this.marshal.setValue(this.nativeElement, this.DIRECTIVE_KEY, value, this.marshal.activatedAlias);
         }
       }]);
 
@@ -1464,27 +1464,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          */
 
       }, {
-        key: "findWithPredicate",
-
-        /**
-         * Memoized lookup using custom predicate function
-         * @private
-         * @param {?} key
-         * @param {?} searchFn
-         * @return {?}
-         */
-        value: function findWithPredicate(key, searchFn) {
-          /** @type {?} */
-          var response = this.findByMap.get(key);
-
-          if (!response) {
-            response = this.items.find(searchFn) || null;
-            this.findByMap.set(key, response);
-          }
-
-          return response || null;
-        }
-      }, {
         key: "overlappings",
         get: function get() {
           return this.items.filter(
@@ -1531,6 +1510,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (it) {
             return !!it.suffix ? it.suffix : '';
           });
+        }
+        /**
+         * Memoized lookup using custom predicate function
+         * @private
+         * @param {?} key
+         * @param {?} searchFn
+         * @return {?}
+         */
+
+      }, {
+        key: "findWithPredicate",
+        value: function findWithPredicate(key, searchFn) {
+          /** @type {?} */
+          var response = this.findByMap.get(key);
+
+          if (!response) {
+            response = this.items.find(searchFn) || null;
+            this.findByMap.set(key, response);
+          }
+
+          return response || null;
         }
       }]);
 
@@ -1609,13 +1609,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(MatchMedia, [{
-        key: "isActive",
-
+        key: "activations",
+        get: function get() {
+          /** @type {?} */
+          var results = [];
+          this.registry.forEach(
+          /**
+          * @param {?} mql
+          * @param {?} key
+          * @return {?}
+          */
+          function (mql, key) {
+            if (mql.matches) {
+              results.push(key);
+            }
+          });
+          return results;
+        }
         /**
          * For the specified mediaQuery?
          * @param {?} mediaQuery
          * @return {?}
          */
+
+      }, {
+        key: "isActive",
         value: function isActive(mediaQuery) {
           /** @type {?} */
           var mql = this.registry.get(mediaQuery);
@@ -1759,24 +1777,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "buildMQL",
         value: function buildMQL(query) {
           return constructMql(query, Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformBrowser"])(this._platformId));
-        }
-      }, {
-        key: "activations",
-        get: function get() {
-          /** @type {?} */
-          var results = [];
-          this.registry.forEach(
-          /**
-          * @param {?} mql
-          * @param {?} key
-          * @return {?}
-          */
-          function (mql, key) {
-            if (mql.matches) {
-              results.push(key);
-            }
-          });
-          return results;
         }
       }]);
 
@@ -2252,13 +2252,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(MockMediaQueryList, [{
-        key: "destroy",
+        key: "matches",
+        get: function get() {
+          return this._isActive;
+        }
+        /**
+         * @return {?}
+         */
 
+      }, {
+        key: "media",
+        get: function get() {
+          return this._mediaQuery;
+        }
         /**
          * Destroy the current list by deactivating the
          * listeners and clearing the internal list
          * @return {?}
          */
+
+      }, {
+        key: "destroy",
         value: function destroy() {
           this.deactivate();
           this._listeners = [];
@@ -2381,20 +2395,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function dispatchEvent(_) {
           return false;
         }
-      }, {
-        key: "matches",
-        get: function get() {
-          return this._isActive;
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "media",
-        get: function get() {
-          return this._mediaQuery;
-        }
       }]);
 
       return MockMediaQueryList;
@@ -2484,13 +2484,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          */
 
       }, {
-        key: "getEventBreakpoints",
+        key: "printAlias",
+        get: function get() {
+          return this.layoutConfig.printWithBreakpoints || [];
+        }
+        /**
+         * Lookup breakpoints associated with print aliases.
+         * @return {?}
+         */
 
+      }, {
+        key: "printBreakPoints",
+        get: function get() {
+          var _this9 = this;
+
+          return (
+            /** @type {?} */
+            this.printAlias.map(
+            /**
+            * @param {?} alias
+            * @return {?}
+            */
+            function (alias) {
+              return _this9.breakpoints.findByAlias(alias);
+            }).filter(
+            /**
+            * @param {?} bp
+            * @return {?}
+            */
+            function (bp) {
+              return bp !== null;
+            })
+          );
+        }
         /**
          * Lookup breakpoint associated with mediaQuery
          * @param {?} __0
          * @return {?}
          */
+
+      }, {
+        key: "getEventBreakpoints",
         value: function getEventBreakpoints(_ref) {
           var mediaQuery = _ref.mediaQuery;
 
@@ -2530,7 +2564,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "interceptEvents",
         value: function interceptEvents(target) {
-          var _this9 = this;
+          var _this10 = this;
 
           return (
             /**
@@ -2538,18 +2572,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (event) {
-              if (_this9.isPrintEvent(event)) {
-                if (event.matches && !_this9.isPrinting) {
-                  _this9.startPrinting(target, _this9.getEventBreakpoints(event));
+              if (_this10.isPrintEvent(event)) {
+                if (event.matches && !_this10.isPrinting) {
+                  _this10.startPrinting(target, _this10.getEventBreakpoints(event));
 
                   target.updateStyles();
-                } else if (!event.matches && _this9.isPrinting) {
-                  _this9.stopPrinting(target);
+                } else if (!event.matches && _this10.isPrinting) {
+                  _this10.stopPrinting(target);
 
                   target.updateStyles();
                 }
               } else {
-                _this9.collectActivations(event);
+                _this10.collectActivations(event);
               }
             }
           );
@@ -2562,7 +2596,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "blockPropagation",
         value: function blockPropagation() {
-          var _this10 = this;
+          var _this11 = this;
 
           return (
             /**
@@ -2570,7 +2604,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (event) {
-              return !(_this10.isPrinting || _this10.isPrintEvent(event));
+              return !(_this11.isPrinting || _this11.isPrintEvent(event));
             }
           );
         }
@@ -2641,40 +2675,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.deactivations = [];
             }
           }
-        }
-      }, {
-        key: "printAlias",
-        get: function get() {
-          return this.layoutConfig.printWithBreakpoints || [];
-        }
-        /**
-         * Lookup breakpoints associated with print aliases.
-         * @return {?}
-         */
-
-      }, {
-        key: "printBreakPoints",
-        get: function get() {
-          var _this11 = this;
-
-          return (
-            /** @type {?} */
-            this.printAlias.map(
-            /**
-            * @param {?} alias
-            * @return {?}
-            */
-            function (alias) {
-              return _this11.breakpoints.findByAlias(alias);
-            }).filter(
-            /**
-            * @param {?} bp
-            * @return {?}
-            */
-            function (bp) {
-              return bp !== null;
-            })
-          );
         }
       }]);
 
@@ -4142,13 +4142,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(MediaMarshaller, [{
-        key: "onMediaChange",
-
+        key: "activatedAlias",
+        get: function get() {
+          return this.activatedBreakpoints[0] ? this.activatedBreakpoints[0].alias : '';
+        }
         /**
          * Update styles on breakpoint activates or deactivates
          * @param {?} mc
          * @return {?}
          */
+
+      }, {
+        key: "onMediaChange",
         value: function onMediaChange(mc) {
           /** @type {?} */
           var bp = this.findByQuery(mc.mediaQuery);
@@ -4618,11 +4623,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.matchMedia.observe(this.hook.withPrintQuery(queries)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(this.hook.interceptEvents(target)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(this.hook.blockPropagation())).subscribe(this.onMediaChange.bind(this));
         }
-      }, {
-        key: "activatedAlias",
-        get: function get() {
-          return this.activatedBreakpoints[0] ? this.activatedBreakpoints[0].alias : '';
-        }
       }]);
 
       return MediaMarshaller;
@@ -4845,12 +4845,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(ImgSrcStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} url
          * @return {?}
          */
-        value: function buildStyles(url) {
+        function buildStyles(url) {
           return {
             'content': url ? "url(".concat(url, ")") : ''
           };
@@ -4922,8 +4922,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(ImgSrcDirective, [{
-        key: "updateWithValue",
-
+        key: "src",
+        set: function set(val) {
+          this.defaultSrc = val;
+          this.setValue(this.defaultSrc, '');
+        }
         /**
          * Use the [responsively] activated input value to update
          * the host img src attribute or assign a default `img.src=''`
@@ -4935,6 +4938,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?=} value
          * @return {?}
          */
+
+      }, {
+        key: "updateWithValue",
         value: function updateWithValue(value) {
           /** @type {?} */
           var url = value || this.defaultSrc;
@@ -4944,12 +4950,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             this.nativeElement.setAttribute('src', url);
           }
-        }
-      }, {
-        key: "src",
-        set: function set(val) {
-          this.defaultSrc = val;
-          this.setValue(this.defaultSrc, '');
         }
       }]);
 
@@ -5028,7 +5028,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this24;
       }
 
-      return DefaultImgSrcDirective;
+      return _createClass(DefaultImgSrcDirective);
     }(ImgSrcDirective);
 
     DefaultImgSrcDirective.decorators = [{
@@ -5091,13 +5091,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(ClassDirective, [{
-        key: "updateWithValue",
-
+        key: "klass",
+        set: function set(val) {
+          this.ngClassInstance.klass = val;
+          this.setValue(val, '');
+        }
         /**
          * @protected
          * @param {?} value
          * @return {?}
          */
+
+      }, {
+        key: "updateWithValue",
         value: function updateWithValue(value) {
           this.ngClassInstance.ngClass = value;
           this.ngClassInstance.ngDoCheck();
@@ -5114,12 +5120,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngDoCheck",
         value: function ngDoCheck() {
           this.ngClassInstance.ngDoCheck();
-        }
-      }, {
-        key: "klass",
-        set: function set(val) {
-          this.ngClassInstance.klass = val;
-          this.setValue(val, '');
         }
       }]);
 
@@ -5193,7 +5193,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this26;
       }
 
-      return DefaultClassDirective;
+      return _createClass(DefaultClassDirective);
     }(ClassDirective);
 
     DefaultClassDirective.decorators = [{
@@ -5222,13 +5222,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(ShowHideStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} show
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(show, parent) {
+        function buildStyles(show, parent) {
           /** @type {?} */
           var shouldShow = show === 'true';
           return {
@@ -5517,7 +5517,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this30;
       }
 
-      return DefaultShowHideDirective;
+      return _createClass(DefaultShowHideDirective);
     }(ShowHideDirective);
 
     DefaultShowHideDirective.decorators = [{
@@ -5536,7 +5536,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * NgStyle allowed inputs
      */
 
-    var NgStyleKeyValue =
+    var NgStyleKeyValue = /*#__PURE__*/_createClass(
     /**
      * @param {?} key
      * @param {?} value
@@ -5552,7 +5552,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.key = noQuotes ? key.replace(/['"]/g, '').trim() : key.trim();
       this.value = noQuotes ? value.replace(/['"]/g, '').trim() : value.trim();
       this.value = this.value.replace(/;/, '');
-    };
+    });
     /**
      * @param {?} target
      * @return {?}
@@ -5923,7 +5923,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this33;
       }
 
-      return DefaultStyleDirective;
+      return _createClass(DefaultStyleDirective);
     }(StyleDirective);
 
     DefaultStyleDirective.decorators = [{
@@ -5982,9 +5982,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * *****************************************************************
      */
 
-    var ExtendedModule = function ExtendedModule() {
+    var ExtendedModule = /*#__PURE__*/_createClass(function ExtendedModule() {
       _classCallCheck(this, ExtendedModule);
-    };
+    });
 
     ExtendedModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -7161,12 +7161,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(LayoutStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @return {?}
          */
-        value: function buildStyles(input) {
+        function buildStyles(input) {
           return buildLayoutCSS(input);
         }
       }]);
@@ -7232,7 +7232,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this34;
       }
 
-      return LayoutDirective;
+      return _createClass(LayoutDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     LayoutDirective.decorators = [{
@@ -7273,7 +7273,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this35;
       }
 
-      return DefaultLayoutDirective;
+      return _createClass(DefaultLayoutDirective);
     }(LayoutDirective);
 
     DefaultLayoutDirective.decorators = [{
@@ -7460,14 +7460,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(LayoutGapDirective, [{
-        key: "ngAfterContentInit",
-        // *********************************************
+        key: "childrenNodes",
+        get: function get() {
+          /** @type {?} */
+          var obj = this.nativeElement.children;
+          /** @type {?} */
+
+          var buffer = []; // iterate backwards ensuring that length is an UInt32
+
+          for (var i = obj.length; i--;) {
+            buffer[i] = obj[i];
+          }
+
+          return buffer;
+        } // *********************************************
         // Lifecycle Methods
         // *********************************************
 
         /**
          * @return {?}
          */
+
+      }, {
+        key: "ngAfterContentInit",
         value: function ngAfterContentInit() {
           this.buildChildObservable();
           this.triggerUpdate();
@@ -7667,21 +7682,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           });
         }
-      }, {
-        key: "childrenNodes",
-        get: function get() {
-          /** @type {?} */
-          var obj = this.nativeElement.children;
-          /** @type {?} */
-
-          var buffer = []; // iterate backwards ensuring that length is an UInt32
-
-          for (var i = obj.length; i--;) {
-            buffer[i] = obj[i];
-          }
-
-          return buffer;
-        }
       }]);
 
       return LayoutGapDirective;
@@ -7729,7 +7729,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this41;
       }
 
-      return DefaultLayoutGapDirective;
+      return _createClass(DefaultLayoutGapDirective);
     }(LayoutGapDirective);
 
     DefaultLayoutGapDirective.decorators = [{
@@ -8192,8 +8192,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(FlexDirective, [{
-        key: "onLayoutChange",
+        key: "shrink",
+        get: function get() {
+          return this.flexShrink;
+        }
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this.flexShrink = value || '1';
+          this.triggerReflow();
+        }
+        /**
+         * @return {?}
+         */
 
+      }, {
+        key: "grow",
+        get: function get() {
+          return this.flexGrow;
+        }
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this.flexGrow = value || '1';
+          this.triggerReflow();
+        }
         /**
          * Caches the parent container's 'flex-direction' and updates the element's style.
          * Used as a handler for layout change events from the parent flex container.
@@ -8201,6 +8230,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?} matcher
          * @return {?}
          */
+
+      }, {
+        key: "onLayoutChange",
         value: function onLayoutChange(matcher) {
           /** @type {?} */
           var layout = matcher.value;
@@ -8279,38 +8311,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.marshal.updateElement(this.nativeElement, this.DIRECTIVE_KEY, parts.join(' '));
           }
         }
-      }, {
-        key: "shrink",
-        get: function get() {
-          return this.flexShrink;
-        }
-        /**
-         * @param {?} value
-         * @return {?}
-         */
-        ,
-        set: function set(value) {
-          this.flexShrink = value || '1';
-          this.triggerReflow();
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "grow",
-        get: function get() {
-          return this.flexGrow;
-        }
-        /**
-         * @param {?} value
-         * @return {?}
-         */
-        ,
-        set: function set(value) {
-          this.flexGrow = value || '1';
-          this.triggerReflow();
-        }
       }]);
 
       return FlexDirective;
@@ -8368,7 +8368,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this44;
       }
 
-      return DefaultFlexDirective;
+      return _createClass(DefaultFlexDirective);
     }(FlexDirective);
 
     DefaultFlexDirective.decorators = [{
@@ -8408,12 +8408,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(FlexOrderStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} value
          * @return {?}
          */
-        value: function buildStyles(value) {
+        function buildStyles(value) {
           return {
             order: value && parseInt(value, 10) || ''
           };
@@ -8479,7 +8479,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this45;
       }
 
-      return FlexOrderDirective;
+      return _createClass(FlexOrderDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     FlexOrderDirective.decorators = [{
@@ -8524,7 +8524,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this46;
       }
 
-      return DefaultFlexOrderDirective;
+      return _createClass(DefaultFlexOrderDirective);
     }(FlexOrderDirective);
 
     DefaultFlexOrderDirective.decorators = [{
@@ -8552,13 +8552,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(FlexOffsetStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} offset
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(offset, parent) {
+        function buildStyles(offset, parent) {
           if (offset === '') {
             offset = '0';
           }
@@ -8736,7 +8736,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this48;
       }
 
-      return DefaultFlexOffsetDirective;
+      return _createClass(DefaultFlexOffsetDirective);
     }(FlexOffsetDirective);
 
     DefaultFlexOffsetDirective.decorators = [{
@@ -8776,12 +8776,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(FlexAlignStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @return {?}
          */
-        value: function buildStyles(input) {
+        function buildStyles(input) {
           input = input || 'stretch';
           /** @type {?} */
 
@@ -8864,7 +8864,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this49;
       }
 
-      return FlexAlignDirective;
+      return _createClass(FlexAlignDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     FlexAlignDirective.decorators = [{
@@ -8909,7 +8909,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this50;
       }
 
-      return DefaultFlexAlignDirective;
+      return _createClass(DefaultFlexAlignDirective);
     }(FlexAlignDirective);
 
     DefaultFlexAlignDirective.decorators = [{
@@ -8947,12 +8947,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(FlexFillStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} _input
          * @return {?}
          */
-        value: function buildStyles(_input) {
+        function buildStyles(_input) {
           return FLEX_FILL_CSS;
         }
       }]);
@@ -9010,7 +9010,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this51;
       }
 
-      return FlexFillDirective;
+      return _createClass(FlexFillDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     FlexFillDirective.decorators = [{
@@ -9054,13 +9054,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(LayoutAlignStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} align
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(align, parent) {
+        function buildStyles(align, parent) {
           /** @type {?} */
           var css = {};
 
@@ -9337,7 +9337,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this54;
       }
 
-      return DefaultLayoutAlignDirective;
+      return _createClass(DefaultLayoutAlignDirective);
     }(LayoutAlignDirective);
 
     DefaultLayoutAlignDirective.decorators = [{
@@ -9385,9 +9385,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * *****************************************************************
      */
 
-    var FlexModule = function FlexModule() {
+    var FlexModule = /*#__PURE__*/_createClass(function FlexModule() {
       _classCallCheck(this, FlexModule);
-    };
+    });
 
     FlexModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -9680,12 +9680,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridAlignStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @return {?}
          */
-        value: function buildStyles(input) {
+        function buildStyles(input) {
           return buildCss(input || ROW_DEFAULT);
         }
       }]);
@@ -9738,7 +9738,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this55;
       }
 
-      return GridAlignDirective;
+      return _createClass(GridAlignDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     GridAlignDirective.decorators = [{
@@ -9797,7 +9797,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this56;
       }
 
-      return DefaultGridAlignDirective;
+      return _createClass(DefaultGridAlignDirective);
     }(GridAlignDirective);
 
     DefaultGridAlignDirective.decorators = [{
@@ -9899,13 +9899,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridAlignColumnsStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           return buildCss$1(input || "".concat(DEFAULT_MAIN, " ").concat(DEFAULT_CROSS), parent.inline);
         }
       }]);
@@ -9963,23 +9963,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridAlignColumnsDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? alignColumnsInlineCache : alignColumnsCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -9991,6 +9974,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? alignColumnsInlineCache : alignColumnsCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -10060,7 +10060,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this58;
       }
 
-      return DefaultGridAlignColumnsDirective;
+      return _createClass(DefaultGridAlignColumnsDirective);
     }(GridAlignColumnsDirective);
 
     DefaultGridAlignColumnsDirective.decorators = [{
@@ -10175,13 +10175,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridAlignRowsStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           return buildCss$2(input || "".concat(DEFAULT_MAIN$1, " ").concat(DEFAULT_CROSS$1), parent.inline);
         }
       }]);
@@ -10239,23 +10239,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridAlignRowsDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? alignRowsInlineCache : alignRowsCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -10267,6 +10250,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? alignRowsInlineCache : alignRowsCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -10336,7 +10336,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this60;
       }
 
-      return DefaultGridAlignRowsDirective;
+      return _createClass(DefaultGridAlignRowsDirective);
     }(GridAlignRowsDirective);
 
     DefaultGridAlignRowsDirective.decorators = [{
@@ -10421,12 +10421,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridAreaStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @return {?}
          */
-        value: function buildStyles(input) {
+        function buildStyles(input) {
           return {
             'grid-area': input || DEFAULT_VALUE
           };
@@ -10481,7 +10481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this61;
       }
 
-      return GridAreaDirective;
+      return _createClass(GridAreaDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     GridAreaDirective.decorators = [{
@@ -10537,7 +10537,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this62;
       }
 
-      return DefaultGridAreaDirective;
+      return _createClass(DefaultGridAreaDirective);
     }(GridAreaDirective);
 
     DefaultGridAreaDirective.decorators = [{
@@ -10572,13 +10572,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridAreasStyleBuiler, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           /** @type {?} */
           var areas = (input || DEFAULT_VALUE$1).split(DELIMETER).map(
           /**
@@ -10648,23 +10648,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridAreasDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? areasInlineCache : areasCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -10676,6 +10659,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? areasInlineCache : areasCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -10744,7 +10744,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this64;
       }
 
-      return DefaultGridAreasDirective;
+      return _createClass(DefaultGridAreasDirective);
     }(GridAreasDirective);
 
     DefaultGridAreasDirective.decorators = [{
@@ -10776,13 +10776,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridAutoStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           var _split = (input || DEFAULT_VALUE$2).split(' '),
               _split2 = _slicedToArray(_split, 2),
               direction = _split2[0],
@@ -10853,23 +10853,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridAutoDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? autoInlineCache : autoCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -10881,6 +10864,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? autoInlineCache : autoCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -10949,7 +10949,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this66;
       }
 
-      return DefaultGridAutoDirective;
+      return _createClass(DefaultGridAutoDirective);
     }(GridAutoDirective);
 
     DefaultGridAutoDirective.decorators = [{
@@ -10981,12 +10981,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridColumnStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @return {?}
          */
-        value: function buildStyles(input) {
+        function buildStyles(input) {
           return {
             'grid-column': input || DEFAULT_VALUE$3
           };
@@ -11041,7 +11041,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this67;
       }
 
-      return GridColumnDirective;
+      return _createClass(GridColumnDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     GridColumnDirective.decorators = [{
@@ -11097,7 +11097,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this68;
       }
 
-      return DefaultGridColumnDirective;
+      return _createClass(DefaultGridColumnDirective);
     }(GridColumnDirective);
 
     DefaultGridColumnDirective.decorators = [{
@@ -11132,13 +11132,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridColumnsStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           input = input || DEFAULT_VALUE$4;
           /** @type {?} */
 
@@ -11217,23 +11217,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridColumnsDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? columnsInlineCache : columnsCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -11245,6 +11228,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? columnsInlineCache : columnsCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -11314,7 +11314,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this70;
       }
 
-      return DefaultGridColumnsDirective;
+      return _createClass(DefaultGridColumnsDirective);
     }(GridColumnsDirective);
 
     DefaultGridColumnsDirective.decorators = [{
@@ -11346,13 +11346,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridGapStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           return {
             'display': parent.inline ? 'inline-grid' : 'grid',
             'grid-gap': input || DEFAULT_VALUE$5
@@ -11413,23 +11413,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridGapDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? gapInlineCache : gapCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -11441,6 +11424,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? gapInlineCache : gapCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -11510,7 +11510,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this72;
       }
 
-      return DefaultGridGapDirective;
+      return _createClass(DefaultGridGapDirective);
     }(GridGapDirective);
 
     DefaultGridGapDirective.decorators = [{
@@ -11542,12 +11542,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridRowStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @return {?}
          */
-        value: function buildStyles(input) {
+        function buildStyles(input) {
           return {
             'grid-row': input || DEFAULT_VALUE$6
           };
@@ -11602,7 +11602,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this73;
       }
 
-      return GridRowDirective;
+      return _createClass(GridRowDirective);
     }(_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["BaseDirective2"]);
 
     GridRowDirective.decorators = [{
@@ -11658,7 +11658,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this74;
       }
 
-      return DefaultGridRowDirective;
+      return _createClass(DefaultGridRowDirective);
     }(GridRowDirective);
 
     DefaultGridRowDirective.decorators = [{
@@ -11693,13 +11693,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(GridRowsStyleBuilder, [{
         key: "buildStyles",
-
+        value:
         /**
          * @param {?} input
          * @param {?} parent
          * @return {?}
          */
-        value: function buildStyles(input, parent) {
+        function buildStyles(input, parent) {
           input = input || DEFAULT_VALUE$7;
           /** @type {?} */
 
@@ -11778,23 +11778,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(GridRowsDirective, [{
-        key: "updateWithValue",
-        // *********************************************
-        // Protected methods
-        // *********************************************
-
-        /**
-         * @protected
-         * @param {?} value
-         * @return {?}
-         */
-        value: function updateWithValue(value) {
-          this.styleCache = this.inline ? rowsInlineCache : rowsCache;
-          this.addStyles(value, {
-            inline: this.inline
-          });
-        }
-      }, {
         key: "inline",
         get: function get() {
           return this._inline;
@@ -11806,6 +11789,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ,
         set: function set(val) {
           this._inline = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(val);
+        } // *********************************************
+        // Protected methods
+        // *********************************************
+
+        /**
+         * @protected
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "updateWithValue",
+        value: function updateWithValue(value) {
+          this.styleCache = this.inline ? rowsInlineCache : rowsCache;
+          this.addStyles(value, {
+            inline: this.inline
+          });
         }
       }]);
 
@@ -11875,7 +11875,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this76;
       }
 
-      return DefaultGridRowsDirective;
+      return _createClass(DefaultGridRowsDirective);
     }(GridRowsDirective);
 
     DefaultGridRowsDirective.decorators = [{
@@ -11899,9 +11899,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * *****************************************************************
      */
 
-    var GridModule = function GridModule() {
+    var GridModule = /*#__PURE__*/_createClass(function GridModule() {
       _classCallCheck(this, GridModule);
-    };
+    });
 
     GridModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],

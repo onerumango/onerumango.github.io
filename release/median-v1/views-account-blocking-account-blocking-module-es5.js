@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1715,9 +1715,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var sendMailToOperationTeam = function sendMailToOperationTeam() {
+    var sendMailToOperationTeam = /*#__PURE__*/_createClass(function sendMailToOperationTeam() {
       _classCallCheck(this, sendMailToOperationTeam);
-    };
+    });
     /***/
 
   },
@@ -2129,9 +2129,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./account-customer-search/dataservice */
     "./src/app/views/account-blocking/account-customer-search/dataservice.ts");
 
-    var AccountBlockingModule = function AccountBlockingModule() {
+    var AccountBlockingModule = /*#__PURE__*/_createClass(function AccountBlockingModule() {
       _classCallCheck(this, AccountBlockingModule);
-    };
+    });
 
     AccountBlockingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_account_blocking_component__WEBPACK_IMPORTED_MODULE_7__["AccountBlockingComponent"], _account_customer_search_account_customer_search_component__WEBPACK_IMPORTED_MODULE_10__["AccountCustomerSearchComponent"], _view_on_account_blocking_view_on_account_blocking_component__WEBPACK_IMPORTED_MODULE_11__["ViewOnAccountBlockingComponent"]],
@@ -2168,9 +2168,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var FCUBSAccsCustomerQueryResDTO = function FCUBSAccsCustomerQueryResDTO() {
+    var FCUBSAccsCustomerQueryResDTO = /*#__PURE__*/_createClass(function FCUBSAccsCustomerQueryResDTO() {
       _classCallCheck(this, FCUBSAccsCustomerQueryResDTO);
-    };
+    });
     /***/
 
   },

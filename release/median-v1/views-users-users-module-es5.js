@@ -1,20 +1,20 @@
-function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+function _get() { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(arguments.length < 3 ? target : receiver); } return desc.value; }; } return _get.apply(this, arguments); }
 
 function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -26,13 +26,13 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1060,11 +1060,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbAccordionConfig = function NgbAccordionConfig() {
+    var NgbAccordionConfig = /*#__PURE__*/_createClass(function NgbAccordionConfig() {
       _classCallCheck(this, NgbAccordionConfig);
 
       this.closeOthers = false;
-    };
+    });
 
     NgbAccordionConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -1099,7 +1099,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 4.1.0
      */
 
-    var NgbPanelHeader =
+    var NgbPanelHeader = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -1107,7 +1107,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPanelHeader);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPanelHeader.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -1129,7 +1129,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPanelTitle =
+    var NgbPanelTitle = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -1137,7 +1137,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPanelTitle);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPanelTitle.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -1157,7 +1157,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPanelContent =
+    var NgbPanelContent = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -1165,7 +1165,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPanelContent);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPanelContent.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -1659,9 +1659,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NGB_ACCORDION_DIRECTIVES = [NgbAccordion, NgbPanel, NgbPanelTitle, NgbPanelContent, NgbPanelHeader, NgbPanelToggle];
 
-    var NgbAccordionModule = function NgbAccordionModule() {
+    var NgbAccordionModule = /*#__PURE__*/_createClass(function NgbAccordionModule() {
       _classCallCheck(this, NgbAccordionModule);
-    };
+    });
 
     NgbAccordionModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -1683,12 +1683,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * to provide default values for all alerts used in the application.
      */
 
-    var NgbAlertConfig = function NgbAlertConfig() {
+    var NgbAlertConfig = /*#__PURE__*/_createClass(function NgbAlertConfig() {
       _classCallCheck(this, NgbAlertConfig);
 
       this.dismissible = true;
       this.type = 'warning';
-    };
+    });
 
     NgbAlertConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -1819,9 +1819,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbAlertModule = function NgbAlertModule() {
+    var NgbAlertModule = /*#__PURE__*/_createClass(function NgbAlertModule() {
       _classCallCheck(this, NgbAlertModule);
-    };
+    });
 
     NgbAlertModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -1837,9 +1837,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbButtonLabel = function NgbButtonLabel() {
+    var NgbButtonLabel = /*#__PURE__*/_createClass(function NgbButtonLabel() {
       _classCallCheck(this, NgbButtonLabel);
-    };
+    });
 
     NgbButtonLabel.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -1924,12 +1924,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbCheckBox, [{
-        key: "onInputChange",
+        key: "focused",
+        set: function set(isFocused) {
+          this._label.focused = isFocused;
 
+          if (!isFocused) {
+            this.onTouched();
+          }
+        }
         /**
          * @param {?} $event
          * @return {?}
          */
+
+      }, {
+        key: "onInputChange",
         value: function onInputChange($event) {
           /** @type {?} */
           var modelToPropagate = $event.target.checked ? this.valueChecked : this.valueUnChecked;
@@ -1980,15 +1989,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this._label.active = this.checked; // label won't be updated, if it is inside the OnPush component when [ngModel] changes
 
           this._cd.markForCheck();
-        }
-      }, {
-        key: "focused",
-        set: function set(isFocused) {
-          this._label.focused = isFocused;
-
-          if (!isFocused) {
-            this.onTouched();
-          }
         }
       }]);
 
@@ -2094,12 +2094,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbRadioGroup, [{
-        key: "onRadioChange",
-
+        key: "disabled",
+        get: function get() {
+          return this._disabled;
+        }
+        /**
+         * @param {?} isDisabled
+         * @return {?}
+         */
+        ,
+        set: function set(isDisabled) {
+          this.setDisabledState(isDisabled);
+        }
         /**
          * @param {?} radio
          * @return {?}
          */
+
+      }, {
+        key: "onRadioChange",
         value: function onRadioChange(radio) {
           this.writeValue(radio.value);
           this.onChange(radio.value);
@@ -2213,19 +2226,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return radio.updateDisabled();
           });
         }
-      }, {
-        key: "disabled",
-        get: function get() {
-          return this._disabled;
-        }
-        /**
-         * @param {?} isDisabled
-         * @return {?}
-         */
-        ,
-        set: function set(isDisabled) {
-          this.setDisabledState(isDisabled);
-        }
       }]);
 
       return NgbRadioGroup;
@@ -2281,11 +2281,83 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbRadio, [{
-        key: "ngOnDestroy",
-
+        key: "value",
+        get:
         /**
          * @return {?}
          */
+        function get() {
+          return this._value;
+        }
+        /**
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this._value = value;
+          /** @type {?} */
+
+          var stringValue = value ? value.toString() : '';
+
+          this._renderer.setProperty(this._element.nativeElement, 'value', stringValue);
+
+          this._group.onRadioValueUpdate();
+        }
+        /**
+         * If `true`, current radio button will be disabled.
+         * @param {?} isDisabled
+         * @return {?}
+         */
+
+      }, {
+        key: "disabled",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._group.disabled || this._disabled;
+        },
+        set: function set(isDisabled) {
+          this._disabled = isDisabled !== false;
+          this.updateDisabled();
+        }
+        /**
+         * @param {?} isFocused
+         * @return {?}
+         */
+
+      }, {
+        key: "focused",
+        set: function set(isFocused) {
+          if (this._label) {
+            this._label.focused = isFocused;
+          }
+
+          if (!isFocused) {
+            this._group.onTouched();
+          }
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "checked",
+        get: function get() {
+          return this._checked;
+        }
+      }, {
+        key: "nameAttr",
+        get: function get() {
+          return this.name || this._group.name;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
         value: function ngOnDestroy() {
           this._group.unregister(this);
         }
@@ -2322,78 +2394,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "updateDisabled",
         value: function updateDisabled() {
           this._label.disabled = this.disabled;
-        }
-      }, {
-        key: "value",
-        set: function set(value) {
-          this._value = value;
-          /** @type {?} */
-
-          var stringValue = value ? value.toString() : '';
-
-          this._renderer.setProperty(this._element.nativeElement, 'value', stringValue);
-
-          this._group.onRadioValueUpdate();
-        }
-        /**
-         * If `true`, current radio button will be disabled.
-         * @param {?} isDisabled
-         * @return {?}
-         */
-        ,
-
-        /**
-         * @return {?}
-         */
-        get: function get() {
-          return this._value;
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "disabled",
-        set: function set(isDisabled) {
-          this._disabled = isDisabled !== false;
-          this.updateDisabled();
-        }
-        /**
-         * @param {?} isFocused
-         * @return {?}
-         */
-        ,
-
-        /**
-         * @return {?}
-         */
-        get: function get() {
-          return this._group.disabled || this._disabled;
-        }
-      }, {
-        key: "focused",
-        set: function set(isFocused) {
-          if (this._label) {
-            this._label.focused = isFocused;
-          }
-
-          if (!isFocused) {
-            this._group.onTouched();
-          }
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "checked",
-        get: function get() {
-          return this._checked;
-        }
-      }, {
-        key: "nameAttr",
-        get: function get() {
-          return this.name || this._group.name;
         }
       }]);
 
@@ -2452,9 +2452,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NGB_BUTTON_DIRECTIVES = [NgbButtonLabel, NgbCheckBox, NgbRadioGroup, NgbRadio];
 
-    var NgbButtonsModule = function NgbButtonsModule() {
+    var NgbButtonsModule = /*#__PURE__*/_createClass(function NgbButtonsModule() {
       _classCallCheck(this, NgbButtonsModule);
-    };
+    });
 
     NgbButtonsModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -2475,7 +2475,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * to provide default values for all carousels used in the application.
      */
 
-    var NgbCarouselConfig = function NgbCarouselConfig() {
+    var NgbCarouselConfig = /*#__PURE__*/_createClass(function NgbCarouselConfig() {
       _classCallCheck(this, NgbCarouselConfig);
 
       this.interval = 5000;
@@ -2484,7 +2484,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.pauseOnHover = true;
       this.showNavigationArrows = true;
       this.showNavigationIndicators = true;
-    };
+    });
 
     NgbCarouselConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -2513,7 +2513,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * A directive that wraps the individual carousel slide.
      */
 
-    var NgbSlide =
+    var NgbSlide = /*#__PURE__*/_createClass(
     /**
      * @param {?} tplRef
      */
@@ -2528,7 +2528,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        */
 
       this.id = "ngb-slide-".concat(nextId$2++);
-    };
+    });
 
     NgbSlide.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -2597,11 +2597,61 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbCarousel, [{
-        key: "mouseEnter",
-
+        key: "interval",
+        get:
         /**
          * @return {?}
          */
+        function get() {
+          return this._interval$.value;
+        }
+        /**
+         * If `true`, will 'wrap' the carousel by switching from the last slide back to the first.
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this._interval$.next(value);
+        }
+      }, {
+        key: "wrap",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._wrap$.value;
+        }
+        /**
+         * If `true`, will pause slide switching when mouse cursor hovers the slide.
+         *
+         * \@since 2.2.0
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this._wrap$.next(value);
+        }
+      }, {
+        key: "pauseOnHover",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._pauseOnHover$.value;
+        }
+        /**
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this._pauseOnHover$.next(value);
+        }
+      }, {
+        key: "mouseEnter",
         value: function mouseEnter() {
           this._mouseHover$.next(true);
         }
@@ -2894,56 +2944,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var isFirstSlide = currentSlideIdx === 0;
           return isFirstSlide ? this.wrap ? slideArr[slideArr.length - 1].id : slideArr[0].id : slideArr[currentSlideIdx - 1].id;
         }
-      }, {
-        key: "interval",
-        set: function set(value) {
-          this._interval$.next(value);
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._interval$.value;
-        }
-        /**
-         * If `true`, will 'wrap' the carousel by switching from the last slide back to the first.
-         * @param {?} value
-         * @return {?}
-         */
-
-      }, {
-        key: "wrap",
-        set: function set(value) {
-          this._wrap$.next(value);
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._wrap$.value;
-        }
-        /**
-         * If `true`, will pause slide switching when mouse cursor hovers the slide.
-         *
-         * \@since 2.2.0
-         * @param {?} value
-         * @return {?}
-         */
-
-      }, {
-        key: "pauseOnHover",
-        set: function set(value) {
-          this._pauseOnHover$.next(value);
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._pauseOnHover$.value;
-        }
       }]);
 
       return NgbCarousel;
@@ -3048,9 +3048,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbCarouselModule = function NgbCarouselModule() {
+    var NgbCarouselModule = /*#__PURE__*/_createClass(function NgbCarouselModule() {
       _classCallCheck(this, NgbCarouselModule);
-    };
+    });
 
     NgbCarouselModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -3069,14 +3069,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * A directive to provide a simple way of hiding and showing elements on the page.
      */
 
-    var NgbCollapse = function NgbCollapse() {
+    var NgbCollapse = /*#__PURE__*/_createClass(function NgbCollapse() {
       _classCallCheck(this, NgbCollapse);
 
       /**
        * If `true`, will collapse the element or show it otherwise.
        */
       this.collapsed = false;
-    };
+    });
 
     NgbCollapse.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -3100,9 +3100,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbCollapseModule = function NgbCollapseModule() {
+    var NgbCollapseModule = /*#__PURE__*/_createClass(function NgbCollapseModule() {
       _classCallCheck(this, NgbCollapseModule);
-    };
+    });
 
     NgbCollapseModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -3133,33 +3133,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
     var NgbDate = /*#__PURE__*/function () {
-      _createClass(NgbDate, null, [{
-        key: "from",
-
-        /**
-         * A **static method** that creates a new date object from the `NgbDateStruct`,
-         *
-         * ex. `NgbDate.from({year: 2000, month: 5, day: 1})`.
-         *
-         * If the `date` is already of `NgbDate` type, the method will return the same object.
-         * @param {?} date
-         * @return {?}
-         */
-        value: function from(date) {
-          if (date instanceof NgbDate) {
-            return date;
-          }
-
-          return date ? new NgbDate(date.year, date.month, date.day) : null;
-        }
-        /**
-         * @param {?} year
-         * @param {?} month
-         * @param {?} day
-         */
-
-      }]);
-
+      /**
+       * @param {?} year
+       * @param {?} month
+       * @param {?} day
+       */
       function NgbDate(year, month, day) {
         _classCallCheck(this, NgbDate);
 
@@ -3225,6 +3203,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return this.year > other.year;
           }
         }
+      }], [{
+        key: "from",
+        value:
+        /**
+         * A **static method** that creates a new date object from the `NgbDateStruct`,
+         *
+         * ex. `NgbDate.from({year: 2000, month: 5, day: 1})`.
+         *
+         * If the `date` is already of `NgbDate` type, the method will return the same object.
+         * @param {?} date
+         * @return {?}
+         */
+        function from(date) {
+          if (date instanceof NgbDate) {
+            return date;
+          }
+
+          return date ? new NgbDate(date.year, date.month, date.day) : null;
+        }
       }]);
 
       return NgbDate;
@@ -3276,9 +3273,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbCalendar = function NgbCalendar() {
+    var NgbCalendar = /*#__PURE__*/_createClass(function NgbCalendar() {
       _classCallCheck(this, NgbCalendar);
-    };
+    });
 
     NgbCalendar.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -3308,11 +3305,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbCalendarGregorian, [{
         key: "getDaysPerWeek",
-
+        value:
         /**
          * @return {?}
          */
-        value: function getDaysPerWeek() {
+        function getDaysPerWeek() {
           return 7;
         }
         /**
@@ -3944,7 +3941,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDatepickerI18n, [{
         key: "getDayNumerals",
-
+        value:
         /**
          * Returns the textual representation of a day that is rendered in a day cell.
          *
@@ -3952,7 +3949,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?} date
          * @return {?}
          */
-        value: function getDayNumerals(date) {
+        function getDayNumerals(date) {
           return "".concat(date.day);
         }
         /**
@@ -4272,12 +4269,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbDatepickerService, [{
-        key: "set",
+        key: "model$",
+        get: function get() {
+          return this._model$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(
+          /**
+          * @param {?} model
+          * @return {?}
+          */
+          function (model) {
+            return model.months.length > 0;
+          }));
+        }
+        /**
+         * @return {?}
+         */
 
+      }, {
+        key: "dateSelect$",
+        get: function get() {
+          return this._dateSelect$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(
+          /**
+          * @param {?} date
+          * @return {?}
+          */
+          function (date) {
+            return date !== null;
+          }));
+        }
         /**
          * @param {?} options
          * @return {?}
          */
+
+      }, {
+        key: "set",
         value: function set(options) {
           var _this8 = this;
 
@@ -4607,34 +4632,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           return state;
         }
-      }, {
-        key: "model$",
-        get: function get() {
-          return this._model$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(
-          /**
-          * @param {?} model
-          * @return {?}
-          */
-          function (model) {
-            return model.months.length > 0;
-          }));
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "dateSelect$",
-        get: function get() {
-          return this._dateSelect$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(
-          /**
-          * @param {?} date
-          * @return {?}
-          */
-          function (date) {
-            return date !== null;
-          }));
-        }
       }]);
 
       return NgbDatepickerService;
@@ -4678,7 +4675,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the datepickers used in the application.
      */
 
-    var NgbDatepickerConfig = function NgbDatepickerConfig() {
+    var NgbDatepickerConfig = /*#__PURE__*/_createClass(function NgbDatepickerConfig() {
       _classCallCheck(this, NgbDatepickerConfig);
 
       this.displayMonths = 1;
@@ -4687,7 +4684,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.outsideDays = 'visible';
       this.showWeekdays = true;
       this.showWeekNumbers = false;
-    };
+    });
 
     NgbDatepickerConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -4732,9 +4729,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbDateAdapter = function NgbDateAdapter() {
+    var NgbDateAdapter = /*#__PURE__*/_createClass(function NgbDateAdapter() {
       _classCallCheck(this, NgbDateAdapter);
-    };
+    });
 
     NgbDateAdapter.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -4764,13 +4761,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDateStructAdapter, [{
         key: "fromModel",
-
+        value:
         /**
          * Converts a NgbDateStruct value into NgbDateStruct value
          * @param {?} date
          * @return {?}
          */
-        value: function fromModel(date) {
+        function fromModel(date) {
           return date && isInteger(date.year) && isInteger(date.month) && isInteger(date.day) ? {
             year: date.year,
             month: date.month,
@@ -4824,7 +4821,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 5.3.0
      */
 
-    var NgbDatepickerContent =
+    var NgbDatepickerContent = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -4832,7 +4829,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbDatepickerContent);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbDatepickerContent.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -5032,13 +5029,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbDatepicker, [{
-        key: "focusDate",
+        key: "state",
+        get: function get() {
+          return this._publicState;
+        }
+        /**
+         *  Returns the calendar service used in the specific datepicker instance.
+         *
+         * \@since 5.3.0
+         * @return {?}
+         */
 
+      }, {
+        key: "calendar",
+        get: function get() {
+          return this._calendar;
+        }
         /**
          *  Focuses on given date.
          * @param {?} date
          * @return {?}
          */
+
+      }, {
+        key: "focusDate",
         value: function focusDate(date) {
           this._service.focus(NgbDate.from(date));
         }
@@ -5315,23 +5329,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this._service.select(this._controlValue);
         }
-      }, {
-        key: "state",
-        get: function get() {
-          return this._publicState;
-        }
-        /**
-         *  Returns the calendar service used in the specific datepicker instance.
-         *
-         * \@since 5.3.0
-         * @return {?}
-         */
-
-      }, {
-        key: "calendar",
-        get: function get() {
-          return this._calendar;
-        }
       }]);
 
       return NgbDatepicker;
@@ -5492,14 +5489,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDatepickerKeyboardService, [{
         key: "processKey",
-
+        value:
         /**
          * Processes a keyboard event.
          * @param {?} event
          * @param {?} datepicker
          * @return {?}
          */
-        value: function processKey(event, datepicker) {
+        function processKey(event, datepicker) {
           var state = datepicker.state,
               calendar = datepicker.calendar; // tslint:disable-next-line:deprecation
 
@@ -5608,12 +5605,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbDatepickerMonth, [{
-        key: "onKeyDown",
-
+        key: "month",
+        set: function set(month) {
+          this.viewModel = this._service.getMonth(month);
+        }
         /**
          * @param {?} event
          * @return {?}
          */
+
+      }, {
+        key: "onKeyDown",
         value: function onKeyDown(event) {
           this._keyboardService.processKey(event, this.datepicker);
         }
@@ -5628,11 +5630,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (!day.context.disabled && !day.hidden) {
             this.datepicker.onDateSelect(day.date);
           }
-        }
-      }, {
-        key: "month",
-        set: function set(month) {
-          this.viewModel = this._service.getMonth(month);
         }
       }]);
 
@@ -6098,13 +6095,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(Positioning, [{
         key: "getAllStyles",
-
+        value:
         /**
          * @private
          * @param {?} element
          * @return {?}
          */
-        value: function getAllStyles(element) {
+        function getAllStyles(element) {
           return window.getComputedStyle(element);
         }
         /**
@@ -6578,9 +6575,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbDateParserFormatter = function NgbDateParserFormatter() {
+    var NgbDateParserFormatter = /*#__PURE__*/_createClass(function NgbDateParserFormatter() {
       _classCallCheck(this, NgbDateParserFormatter);
-    };
+    });
 
     NgbDateParserFormatter.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -6610,12 +6607,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDateISOParserFormatter, [{
         key: "parse",
-
+        value:
         /**
          * @param {?} value
          * @return {?}
          */
-        value: function parse(value) {
+        function parse(value) {
           if (value) {
             /** @type {?} */
             var dateParts = value.trim().split('-');
@@ -6692,7 +6689,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _this14;
       }
 
-      return NgbInputDatepickerConfig;
+      return _createClass(NgbInputDatepickerConfig);
     }(NgbDatepickerConfig);
 
     NgbInputDatepickerConfig.decorators = [{
@@ -6844,12 +6841,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbInputDatepicker, [{
-        key: "registerOnChange",
+        key: "disabled",
+        get: function get() {
+          return this._disabled;
+        }
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this._disabled = value === '' || value && value !== 'false';
 
+          if (this.isOpen()) {
+            this._cRef.instance.setDisabledState(this._disabled);
+          }
+        }
         /**
          * @param {?} fn
          * @return {?}
          */
+
+      }, {
+        key: "registerOnChange",
         value: function registerOnChange(fn) {
           this._onChange = fn;
         }
@@ -7296,23 +7310,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           positionElements(hostElement, this._cRef.location.nativeElement, this.placement, this.container === 'body');
         }
-      }, {
-        key: "disabled",
-        get: function get() {
-          return this._disabled;
-        }
-        /**
-         * @param {?} value
-         * @return {?}
-         */
-        ,
-        set: function set(value) {
-          this._disabled = value === '' || value && value !== 'false';
-
-          if (this.isOpen()) {
-            this._cRef.instance.setDisabledState(this._disabled);
-          }
-        }
       }]);
 
       return NgbInputDatepicker;
@@ -7647,11 +7644,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbCalendarHijri, [{
         key: "getDaysPerWeek",
-
+        value:
         /**
          * @return {?}
          */
-        value: function getDaysPerWeek() {
+        function getDaysPerWeek() {
           return 7;
         }
         /**
@@ -7942,14 +7939,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbCalendarIslamicCivil, [{
         key: "fromGregorian",
-
+        value:
         /**
          * Returns the equivalent islamic(civil) date value for a give input Gregorian date.
          * `gDate` is a JS Date to be converted to Hijri.
          * @param {?} gDate
          * @return {?}
          */
-        value: function fromGregorian(gDate) {
+        function fromGregorian(gDate) {
           /** @type {?} */
           var gYear = gDate.getFullYear();
           /** @type {?} */
@@ -8211,14 +8208,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbCalendarIslamicUmalqura, [{
         key: "fromGregorian",
-
+        value:
         /**
          * Returns the equivalent islamic(Umalqura) date value for a give input Gregorian date.
          * `gdate` is s JS Date to be converted to Hijri.
          * @param {?} gDate
          * @return {?}
          */
-        value: function fromGregorian(gDate) {
+        function fromGregorian(gDate) {
           /** @type {?} */
           var hDay = 1;
           /** @type {?} */
@@ -8724,11 +8721,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbCalendarPersian, [{
         key: "getDaysPerWeek",
-
+        value:
         /**
          * @return {?}
          */
-        value: function getDaysPerWeek() {
+        function getDaysPerWeek() {
           return 7;
         }
         /**
@@ -9374,11 +9371,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbCalendarHebrew, [{
         key: "getDaysPerWeek",
-
+        value:
         /**
          * @return {?}
          */
-        value: function getDaysPerWeek() {
+        function getDaysPerWeek() {
           return 7;
         }
         /**
@@ -9561,13 +9558,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDatepickerI18nHebrew, [{
         key: "getMonthShortName",
-
+        value:
         /**
          * @param {?} month
          * @param {?=} year
          * @return {?}
          */
-        value: function getMonthShortName(month, year) {
+        function getMonthShortName(month, year) {
           return this.getMonthFullName(month, year);
         }
         /**
@@ -9662,13 +9659,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDateNativeAdapter, [{
         key: "fromModel",
-
+        value:
         /**
          * Converts a native `Date` to a `NgbDateStruct`.
          * @param {?} date
          * @return {?}
          */
-        value: function fromModel(date) {
+        function fromModel(date) {
           return date instanceof Date && !isNaN(date.getTime()) ? this._fromNativeDate(date) : null;
         }
         /**
@@ -9744,13 +9741,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDateNativeUTCAdapter, [{
         key: "_fromNativeDate",
-
+        value:
         /**
          * @protected
          * @param {?} date
          * @return {?}
          */
-        value: function _fromNativeDate(date) {
+        function _fromNativeDate(date) {
           return {
             year: date.getUTCFullYear(),
             month: date.getUTCMonth() + 1,
@@ -9785,9 +9782,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbDatepickerModule = function NgbDatepickerModule() {
+    var NgbDatepickerModule = /*#__PURE__*/_createClass(function NgbDatepickerModule() {
       _classCallCheck(this, NgbDatepickerModule);
-    };
+    });
 
     NgbDatepickerModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -9810,12 +9807,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the dropdowns used in the application.
      */
 
-    var NgbDropdownConfig = function NgbDropdownConfig() {
+    var NgbDropdownConfig = /*#__PURE__*/_createClass(function NgbDropdownConfig() {
       _classCallCheck(this, NgbDropdownConfig);
 
       this.autoClose = true;
       this.placement = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
-    };
+    });
 
     NgbDropdownConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -9837,9 +9834,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbNavbar = function NgbNavbar() {
+    var NgbNavbar = /*#__PURE__*/_createClass(function NgbNavbar() {
       _classCallCheck(this, NgbNavbar);
-    };
+    });
 
     NgbNavbar.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -9872,17 +9869,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbDropdownItem, [{
         key: "disabled",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._disabled;
+        },
         set: function set(value) {
           this._disabled =
           /** @type {?} */
           value === '' || value === true; // accept an empty attribute as true
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._disabled;
         }
       }]);
 
@@ -9916,7 +9913,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * A directive that wraps dropdown menu content and dropdown items.
      */
 
-    var NgbDropdownMenu =
+    var NgbDropdownMenu = /*#__PURE__*/_createClass(
     /**
      * @param {?} dropdown
      */
@@ -9926,7 +9923,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.dropdown = dropdown;
       this.placement = 'bottom';
       this.isOpen = false;
-    };
+    });
 
     NgbDropdownMenu.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -10058,7 +10055,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return _super14.call(this, dropdown, elementRef);
       }
 
-      return NgbDropdownToggle;
+      return _createClass(NgbDropdownToggle);
     }(NgbDropdownAnchor);
 
     NgbDropdownToggle.decorators = [{
@@ -10675,9 +10672,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NGB_DROPDOWN_DIRECTIVES = [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbNavbar];
 
-    var NgbDropdownModule = function NgbDropdownModule() {
+    var NgbDropdownModule = /*#__PURE__*/_createClass(function NgbDropdownModule() {
       _classCallCheck(this, NgbDropdownModule);
-    };
+    });
 
     NgbDropdownModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -10700,12 +10697,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 3.1.0
      */
 
-    var NgbModalConfig = function NgbModalConfig() {
+    var NgbModalConfig = /*#__PURE__*/_createClass(function NgbModalConfig() {
       _classCallCheck(this, NgbModalConfig);
 
       this.backdrop = true;
       this.keyboard = true;
-    };
+    });
 
     NgbModalConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -10727,7 +10724,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var ContentRef =
+    var ContentRef = /*#__PURE__*/_createClass(
     /**
      * @param {?} nodes
      * @param {?=} viewRef
@@ -10739,7 +10736,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.nodes = nodes;
       this.viewRef = viewRef;
       this.componentRef = componentRef;
-    };
+    });
     /**
      * @template T
      */
@@ -10991,9 +10988,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbModalBackdrop = function NgbModalBackdrop() {
+    var NgbModalBackdrop = /*#__PURE__*/_createClass(function NgbModalBackdrop() {
       _classCallCheck(this, NgbModalBackdrop);
-    };
+    });
 
     NgbModalBackdrop.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -11031,7 +11028,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbActiveModal, [{
         key: "close",
-
+        value:
         /**
          * Closes the modal with an optional `result` value.
          *
@@ -11039,7 +11036,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?=} result
          * @return {?}
          */
-        value: function close(result) {}
+        function close(result) {}
         /**
          * Dismisses the modal with an optional `reason` value.
          *
@@ -11111,8 +11108,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbModalRef, [{
-        key: "close",
-
+        key: "componentInstance",
+        get: function get() {
+          if (this._contentRef && this._contentRef.componentRef) {
+            return this._contentRef.componentRef.instance;
+          }
+        }
         /**
          * Closes the modal with an optional `result` value.
          *
@@ -11120,6 +11121,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?=} result
          * @return {?}
          */
+
+      }, {
+        key: "close",
         value: function close(result) {
           if (this._windowCmptRef) {
             this._resolve(result);
@@ -11210,13 +11214,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this._windowCmptRef = null;
           this._backdropCmptRef = null;
           this._contentRef = null;
-        }
-      }, {
-        key: "componentInstance",
-        get: function get() {
-          if (this._contentRef && this._contentRef.componentRef) {
-            return this._contentRef.componentRef.instance;
-          }
         }
       }]);
 
@@ -12151,9 +12148,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbModalModule = function NgbModalModule() {
+    var NgbModalModule = /*#__PURE__*/_createClass(function NgbModalModule() {
       _classCallCheck(this, NgbModalModule);
-    };
+    });
 
     NgbModalModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -12177,13 +12174,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 5.2.0
      */
 
-    var NgbNavConfig = function NgbNavConfig() {
+    var NgbNavConfig = /*#__PURE__*/_createClass(function NgbNavConfig() {
       _classCallCheck(this, NgbNavConfig);
 
       this.destroyOnHide = true;
       this.orientation = 'horizontal';
       this.roles = 'tablist';
-    };
+    });
 
     NgbNavConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -12225,7 +12222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 5.2.0
      */
 
-    var NgbNavContent =
+    var NgbNavContent = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12233,7 +12230,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbNavContent);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbNavContent.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -12304,15 +12301,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          */
 
       }, {
-        key: "isPanelInDom",
-
-        /**
-         * @return {?}
-         */
-        value: function isPanelInDom() {
-          return (isDefined(this.destroyOnHide) ? !this.destroyOnHide : !this._nav.destroyOnHide) || this.active;
-        }
-      }, {
         key: "active",
         get: function get() {
           return this._nav.activeId === this.id;
@@ -12334,6 +12322,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "panelDomId",
         get: function get() {
           return "".concat(this.domId, "-panel");
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "isPanelInDom",
+        value: function isPanelInDom() {
+          return (isDefined(this.destroyOnHide) ? !this.destroyOnHide : !this._nav.destroyOnHide) || this.active;
         }
       }]);
 
@@ -12648,9 +12645,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbNavOutlet = function NgbNavOutlet() {
+    var NgbNavOutlet = /*#__PURE__*/_createClass(function NgbNavOutlet() {
       _classCallCheck(this, NgbNavOutlet);
-    };
+    });
 
     NgbNavOutlet.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -12681,9 +12678,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NGB_NAV_DIRECTIVES = [NgbNavContent, NgbNav, NgbNavItem, NgbNavLink, NgbNavOutlet];
 
-    var NgbNavModule = function NgbNavModule() {
+    var NgbNavModule = /*#__PURE__*/_createClass(function NgbNavModule() {
       _classCallCheck(this, NgbNavModule);
-    };
+    });
 
     NgbNavModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -12705,7 +12702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the paginations used in the application.
      */
 
-    var NgbPaginationConfig = function NgbPaginationConfig() {
+    var NgbPaginationConfig = /*#__PURE__*/_createClass(function NgbPaginationConfig() {
       _classCallCheck(this, NgbPaginationConfig);
 
       this.disabled = false;
@@ -12715,7 +12712,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.maxSize = 0;
       this.pageSize = 10;
       this.rotate = false;
-    };
+    });
 
     NgbPaginationConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -12743,7 +12740,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 4.1.0
      */
 
-    var NgbPaginationEllipsis =
+    var NgbPaginationEllipsis = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12751,7 +12748,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPaginationEllipsis);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPaginationEllipsis.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -12773,7 +12770,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPaginationFirst =
+    var NgbPaginationFirst = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12781,7 +12778,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPaginationFirst);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPaginationFirst.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -12803,7 +12800,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPaginationLast =
+    var NgbPaginationLast = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12811,7 +12808,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPaginationLast);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPaginationLast.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -12833,7 +12830,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPaginationNext =
+    var NgbPaginationNext = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12841,7 +12838,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPaginationNext);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPaginationNext.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -12863,7 +12860,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPaginationNumber =
+    var NgbPaginationNumber = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12871,7 +12868,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPaginationNumber);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPaginationNumber.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -12893,7 +12890,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPaginationPrevious =
+    var NgbPaginationPrevious = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -12901,7 +12898,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbPaginationPrevious);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbPaginationPrevious.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -13297,9 +13294,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DIRECTIVES = [NgbPagination, NgbPaginationEllipsis, NgbPaginationFirst, NgbPaginationLast, NgbPaginationNext, NgbPaginationNumber, NgbPaginationPrevious];
 
-    var NgbPaginationModule = function NgbPaginationModule() {
+    var NgbPaginationModule = /*#__PURE__*/_createClass(function NgbPaginationModule() {
       _classCallCheck(this, NgbPaginationModule);
-    };
+    });
 
     NgbPaginationModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -13654,7 +13651,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbPopoverConfig = function NgbPopoverConfig() {
+    var NgbPopoverConfig = /*#__PURE__*/_createClass(function NgbPopoverConfig() {
       _classCallCheck(this, NgbPopoverConfig);
 
       this.autoClose = true;
@@ -13663,7 +13660,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.disablePopover = false;
       this.openDelay = 0;
       this.closeDelay = 0;
-    };
+    });
 
     NgbPopoverConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -13696,11 +13693,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbPopoverWindow, [{
         key: "isTitleTemplate",
-
+        value:
         /**
          * @return {?}
          */
-        value: function isTitleTemplate() {
+        function isTitleTemplate() {
           return this.title instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"];
         }
       }]);
@@ -14041,9 +14038,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbPopoverModule = function NgbPopoverModule() {
+    var NgbPopoverModule = /*#__PURE__*/_createClass(function NgbPopoverModule() {
       _classCallCheck(this, NgbPopoverModule);
-    };
+    });
 
     NgbPopoverModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -14066,14 +14063,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the progress bars used in the application.
      */
 
-    var NgbProgressbarConfig = function NgbProgressbarConfig() {
+    var NgbProgressbarConfig = /*#__PURE__*/_createClass(function NgbProgressbarConfig() {
       _classCallCheck(this, NgbProgressbarConfig);
 
       this.max = 100;
       this.animated = false;
       this.striped = false;
       this.showValue = false;
-    };
+    });
 
     NgbProgressbarConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -14130,11 +14127,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbProgressbar, [{
-        key: "getValue",
-
+        key: "max",
+        get:
         /**
          * @return {?}
          */
+        function get() {
+          return this._max;
+        }
+        /**
+         * @return {?}
+         */
+        ,
+        set: function set(max) {
+          this._max = !isNumber(max) || max <= 0 ? 100 : max;
+        }
+      }, {
+        key: "getValue",
         value: function getValue() {
           return getValueInRange(this.value, this.max);
         }
@@ -14146,18 +14155,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getPercentValue",
         value: function getPercentValue() {
           return 100 * this.getValue() / this.max;
-        }
-      }, {
-        key: "max",
-        set: function set(max) {
-          this._max = !isNumber(max) || max <= 0 ? 100 : max;
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._max;
         }
       }]);
 
@@ -14212,9 +14209,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbProgressbarModule = function NgbProgressbarModule() {
+    var NgbProgressbarModule = /*#__PURE__*/_createClass(function NgbProgressbarModule() {
       _classCallCheck(this, NgbProgressbarModule);
-    };
+    });
 
     NgbProgressbarModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -14236,13 +14233,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the ratings used in the application.
      */
 
-    var NgbRatingConfig = function NgbRatingConfig() {
+    var NgbRatingConfig = /*#__PURE__*/_createClass(function NgbRatingConfig() {
       _classCallCheck(this, NgbRatingConfig);
 
       this.max = 10;
       this.readonly = false;
       this.resettable = false;
-    };
+    });
 
     NgbRatingConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -14644,9 +14641,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbRatingModule = function NgbRatingModule() {
+    var NgbRatingModule = /*#__PURE__*/_createClass(function NgbRatingModule() {
       _classCallCheck(this, NgbRatingModule);
-    };
+    });
 
     NgbRatingModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -14668,13 +14665,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the tabsets used in the application.
      */
 
-    var NgbTabsetConfig = function NgbTabsetConfig() {
+    var NgbTabsetConfig = /*#__PURE__*/_createClass(function NgbTabsetConfig() {
       _classCallCheck(this, NgbTabsetConfig);
 
       this.justify = 'start';
       this.orientation = 'horizontal';
       this.type = 'tabs';
-    };
+    });
 
     NgbTabsetConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -14705,7 +14702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * Alternatively you could use the `NgbTab.title` input for string titles.
      */
 
-    var NgbTabTitle =
+    var NgbTabTitle = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -14713,7 +14710,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbTabTitle);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbTabTitle.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -14733,7 +14730,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbTabContent =
+    var NgbTabContent = /*#__PURE__*/_createClass(
     /**
      * @param {?} templateRef
      */
@@ -14741,7 +14738,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgbTabContent);
 
       this.templateRef = templateRef;
-    };
+    });
 
     NgbTabContent.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -14860,8 +14857,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbTabset, [{
-        key: "select",
-
+        key: "justify",
+        set: function set(className) {
+          if (className === 'fill' || className === 'justified') {
+            this.justifyClass = "nav-".concat(className);
+          } else {
+            this.justifyClass = "justify-content-".concat(className);
+          }
+        }
         /**
          * Selects the tab with the given id and shows its associated content panel.
          *
@@ -14870,6 +14873,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?} tabId
          * @return {?}
          */
+
+      }, {
+        key: "select",
         value: function select(tabId) {
           /** @type {?} */
           var selectedTab = this._getTabById(tabId);
@@ -14928,15 +14934,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           return tabsWithId.length ? tabsWithId[0] : null;
         }
-      }, {
-        key: "justify",
-        set: function set(className) {
-          if (className === 'fill' || className === 'justified') {
-            this.justifyClass = "nav-".concat(className);
-          } else {
-            this.justifyClass = "justify-content-".concat(className);
-          }
-        }
       }]);
 
       return NgbTabset;
@@ -14992,9 +14989,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NGB_TABSET_DIRECTIVES = [NgbTabset, NgbTab, NgbTabContent, NgbTabTitle];
 
-    var NgbTabsetModule = function NgbTabsetModule() {
+    var NgbTabsetModule = /*#__PURE__*/_createClass(function NgbTabsetModule() {
       _classCallCheck(this, NgbTabsetModule);
-    };
+    });
 
     NgbTabsetModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -15137,7 +15134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbTimepickerConfig = function NgbTimepickerConfig() {
+    var NgbTimepickerConfig = /*#__PURE__*/_createClass(function NgbTimepickerConfig() {
       _classCallCheck(this, NgbTimepickerConfig);
 
       this.meridian = false;
@@ -15149,7 +15146,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.disabled = false;
       this.readonlyInputs = false;
       this.size = 'medium';
-    };
+    });
 
     NgbTimepickerConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -15195,9 +15192,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbTimeAdapter = function NgbTimeAdapter() {
+    var NgbTimeAdapter = /*#__PURE__*/_createClass(function NgbTimeAdapter() {
       _classCallCheck(this, NgbTimeAdapter);
-    };
+    });
 
     NgbTimeAdapter.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -15227,13 +15224,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(NgbTimeStructAdapter, [{
         key: "fromModel",
-
+        value:
         /**
          * Converts a NgbTimeStruct value into NgbTimeStruct value
          * @param {?} time
          * @return {?}
          */
-        value: function fromModel(time) {
+        function fromModel(time) {
           return time && isInteger(time.hour) && isInteger(time.minute) ? {
             hour: time.hour,
             minute: time.minute,
@@ -15284,9 +15281,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgbTimepickerI18n = function NgbTimepickerI18n() {
+    var NgbTimepickerI18n = /*#__PURE__*/_createClass(function NgbTimepickerI18n() {
       _classCallCheck(this, NgbTimepickerI18n);
-    };
+    });
 
     NgbTimepickerI18n.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -15433,12 +15430,60 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbTimepicker, [{
-        key: "writeValue",
-
+        key: "hourStep",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._hourStep;
+        }
+        /**
+         * The number of minutes to add/subtract when clicking minute spinners.
+         * @param {?} step
+         * @return {?}
+         */
+        ,
+        set: function set(step) {
+          this._hourStep = isInteger(step) ? step : this._config.hourStep;
+        }
+      }, {
+        key: "minuteStep",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._minuteStep;
+        }
+        /**
+         * The number of seconds to add/subtract when clicking second spinners.
+         * @param {?} step
+         * @return {?}
+         */
+        ,
+        set: function set(step) {
+          this._minuteStep = isInteger(step) ? step : this._config.minuteStep;
+        }
+      }, {
+        key: "secondStep",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._secondStep;
+        }
         /**
          * @param {?} value
          * @return {?}
          */
+        ,
+        set: function set(step) {
+          this._secondStep = isInteger(step) ? step : this._config.secondStep;
+        }
+      }, {
+        key: "writeValue",
         value: function writeValue(value) {
           /** @type {?} */
           var structValue = this._ngbTimeAdapter.fromModel(value);
@@ -15612,12 +15657,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          */
 
       }, {
-        key: "ngOnChanges",
+        key: "isSmallSize",
+        get: function get() {
+          return this.size === 'small';
+        }
+        /**
+         * @return {?}
+         */
 
+      }, {
+        key: "isLargeSize",
+        get: function get() {
+          return this.size === 'large';
+        }
         /**
          * @param {?} changes
          * @return {?}
          */
+
+      }, {
+        key: "ngOnChanges",
         value: function ngOnChanges(changes) {
           if (changes['seconds'] && !this.seconds && this.model && !isNumber(this.model.second)) {
             this.model.second = 0;
@@ -15648,68 +15707,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             this.onChange(this._ngbTimeAdapter.toModel(null));
           }
-        }
-      }, {
-        key: "hourStep",
-        set: function set(step) {
-          this._hourStep = isInteger(step) ? step : this._config.hourStep;
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._hourStep;
-        }
-        /**
-         * The number of minutes to add/subtract when clicking minute spinners.
-         * @param {?} step
-         * @return {?}
-         */
-
-      }, {
-        key: "minuteStep",
-        set: function set(step) {
-          this._minuteStep = isInteger(step) ? step : this._config.minuteStep;
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._minuteStep;
-        }
-        /**
-         * The number of seconds to add/subtract when clicking second spinners.
-         * @param {?} step
-         * @return {?}
-         */
-
-      }, {
-        key: "secondStep",
-        set: function set(step) {
-          this._secondStep = isInteger(step) ? step : this._config.secondStep;
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._secondStep;
-        }
-      }, {
-        key: "isSmallSize",
-        get: function get() {
-          return this.size === 'small';
-        }
-        /**
-         * @return {?}
-         */
-
-      }, {
-        key: "isLargeSize",
-        get: function get() {
-          return this.size === 'large';
         }
       }]);
 
@@ -15771,9 +15768,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbTimepickerModule = function NgbTimepickerModule() {
+    var NgbTimepickerModule = /*#__PURE__*/_createClass(function NgbTimepickerModule() {
       _classCallCheck(this, NgbTimepickerModule);
-    };
+    });
 
     NgbTimepickerModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -15796,13 +15793,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 5.0.0
      */
 
-    var NgbToastConfig = function NgbToastConfig() {
+    var NgbToastConfig = /*#__PURE__*/_createClass(function NgbToastConfig() {
       _classCallCheck(this, NgbToastConfig);
 
       this.autohide = true;
       this.delay = 500;
       this.ariaLive = 'polite';
-    };
+    });
 
     NgbToastConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -15831,9 +15828,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * \@since 5.0.0
      */
 
-    var NgbToastHeader = function NgbToastHeader() {
+    var NgbToastHeader = /*#__PURE__*/_createClass(function NgbToastHeader() {
       _classCallCheck(this, NgbToastHeader);
-    };
+    });
 
     NgbToastHeader.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
@@ -16013,9 +16010,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbToastModule = function NgbToastModule() {
+    var NgbToastModule = /*#__PURE__*/_createClass(function NgbToastModule() {
       _classCallCheck(this, NgbToastModule);
-    };
+    });
 
     NgbToastModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -16037,7 +16034,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the tooltips used in the application.
      */
 
-    var NgbTooltipConfig = function NgbTooltipConfig() {
+    var NgbTooltipConfig = /*#__PURE__*/_createClass(function NgbTooltipConfig() {
       _classCallCheck(this, NgbTooltipConfig);
 
       this.autoClose = true;
@@ -16046,7 +16043,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.disableTooltip = false;
       this.openDelay = 0;
       this.closeDelay = 0;
-    };
+    });
 
     NgbTooltipConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -16072,9 +16069,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var nextId$5 = 0;
 
-    var NgbTooltipWindow = function NgbTooltipWindow() {
+    var NgbTooltipWindow = /*#__PURE__*/_createClass(function NgbTooltipWindow() {
       _classCallCheck(this, NgbTooltipWindow);
-    };
+    });
 
     NgbTooltipWindow.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -16166,8 +16163,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(NgbTooltip, [{
-        key: "open",
-
+        key: "ngbTooltip",
+        get:
+        /**
+         * @return {?}
+         */
+        function get() {
+          return this._ngbTooltip;
+        }
         /**
          * Opens the tooltip.
          *
@@ -16176,6 +16179,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @param {?=} context
          * @return {?}
          */
+        ,
+        set: function set(value) {
+          this._ngbTooltip = value;
+
+          if (!value && this._windowRef) {
+            this.close();
+          }
+        }
+      }, {
+        key: "open",
         value: function open(context) {
           var _this38 = this;
 
@@ -16298,22 +16311,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this._zoneSubscription.unsubscribe();
         }
-      }, {
-        key: "ngbTooltip",
-        set: function set(value) {
-          this._ngbTooltip = value;
-
-          if (!value && this._windowRef) {
-            this.close();
-          }
-        }
-        /**
-         * @return {?}
-         */
-        ,
-        get: function get() {
-          return this._ngbTooltip;
-        }
       }]);
 
       return NgbTooltip;
@@ -16396,9 +16393,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbTooltipModule = function NgbTooltipModule() {
+    var NgbTooltipModule = /*#__PURE__*/_createClass(function NgbTooltipModule() {
       _classCallCheck(this, NgbTooltipModule);
-    };
+    });
 
     NgbTooltipModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -16820,14 +16817,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * order to provide default values for all the typeaheads used in the application.
      */
 
-    var NgbTypeaheadConfig = function NgbTypeaheadConfig() {
+    var NgbTypeaheadConfig = /*#__PURE__*/_createClass(function NgbTypeaheadConfig() {
       _classCallCheck(this, NgbTypeaheadConfig);
 
       this.editable = true;
       this.focusFirst = true;
       this.showHint = false;
       this.placement = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
-    };
+    });
 
     NgbTypeaheadConfig.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
@@ -17474,9 +17471,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
-    var NgbTypeaheadModule = function NgbTypeaheadModule() {
+    var NgbTypeaheadModule = /*#__PURE__*/_createClass(function NgbTypeaheadModule() {
       _classCallCheck(this, NgbTypeaheadModule);
-    };
+    });
 
     NgbTypeaheadModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -17496,9 +17493,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NGB_MODULES = [NgbAccordionModule, NgbAlertModule, NgbButtonsModule, NgbCarouselModule, NgbCollapseModule, NgbDatepickerModule, NgbDropdownModule, NgbModalModule, NgbNavModule, NgbPaginationModule, NgbPopoverModule, NgbProgressbarModule, NgbRatingModule, NgbTabsetModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule];
 
-    var NgbModule = function NgbModule() {
+    var NgbModule = /*#__PURE__*/_createClass(function NgbModule() {
       _classCallCheck(this, NgbModule);
-    };
+    });
 
     NgbModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
@@ -17830,6 +17827,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log('form', this.userForm);
         }
       }, {
+        key: "email",
+        get: function get() {
+          return this.userForm.get('email');
+        } // get userId() {
+        //   return this.userForm.get('userId');
+        // }
+
+      }, {
+        key: "mobile",
+        get: function get() {
+          return this.userForm.get('mobile');
+        }
+      }, {
+        key: "password",
+        get: function get() {
+          return this.userForm.get('password');
+        }
+      }, {
         key: "onFormSubmit",
         value: function onFormSubmit(event) {
           var _this45 = this;
@@ -18029,24 +18044,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             this.outTime = true;
           }
-        }
-      }, {
-        key: "email",
-        get: function get() {
-          return this.userForm.get('email');
-        } // get userId() {
-        //   return this.userForm.get('userId');
-        // }
-
-      }, {
-        key: "mobile",
-        get: function get() {
-          return this.userForm.get('mobile');
-        }
-      }, {
-        key: "password",
-        get: function get() {
-          return this.userForm.get('password');
         }
       }]);
 
@@ -19126,9 +19123,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var User = function User() {
+    var User = /*#__PURE__*/_createClass(function User() {
       _classCallCheck(this, User);
-    };
+    });
     /***/
 
   },
@@ -19231,9 +19228,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
 
-    var UsersModule = function UsersModule() {
+    var UsersModule = /*#__PURE__*/_createClass(function UsersModule() {
       _classCallCheck(this, UsersModule);
-    };
+    });
 
     UsersModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_users_component__WEBPACK_IMPORTED_MODULE_3__["UsersComponent"], _create_user_create_user_component__WEBPACK_IMPORTED_MODULE_8__["CreateUserComponent"], _modify_user_modify_user_component__WEBPACK_IMPORTED_MODULE_9__["ModifyUserComponent"]],

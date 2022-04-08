@@ -1,6 +1,6 @@
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -149,7 +149,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     if (false) {}
 
-    var NgxSpinner =
+    var NgxSpinner = /*#__PURE__*/_createClass(
     /**
      * @param {?=} init
      */
@@ -157,7 +157,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgxSpinner);
 
       Object.assign(this, init);
-    };
+    });
 
     if (false) {}
     /**
@@ -578,9 +578,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var NgxSpinnerModule = function NgxSpinnerModule() {
+    var NgxSpinnerModule = /*#__PURE__*/_createClass(function NgxSpinnerModule() {
       _classCallCheck(this, NgxSpinnerModule);
-    };
+    });
 
     NgxSpinnerModule.decorators = [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],

@@ -2,7 +2,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-charge-maintenance-charge-maintenance-module"], {
   /***/
@@ -376,9 +376,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       component: _charge_maintenance_component__WEBPACK_IMPORTED_MODULE_1__["ChargeMaintenanceComponent"]
     }];
 
-    var ChargeMaintenanceRoutingModule = function ChargeMaintenanceRoutingModule() {
+    var ChargeMaintenanceRoutingModule = /*#__PURE__*/_createClass(function ChargeMaintenanceRoutingModule() {
       _classCallCheck(this, ChargeMaintenanceRoutingModule);
-    };
+    });
     /***/
 
   },
@@ -1229,9 +1229,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! ./charge-maintenance-summary/charge-maintenance-summary.component */
     "./src/app/views/charge-maintenance/charge-maintenance-summary/charge-maintenance-summary.component.ts");
 
-    var ChargeMaintenanceModule = function ChargeMaintenanceModule() {
+    var ChargeMaintenanceModule = /*#__PURE__*/_createClass(function ChargeMaintenanceModule() {
       _classCallCheck(this, ChargeMaintenanceModule);
-    };
+    });
 
     ChargeMaintenanceModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_charge_maintenance_component__WEBPACK_IMPORTED_MODULE_4__["ChargeMaintenanceComponent"], _charge_maintenance_new_charge_maintenance_new_component__WEBPACK_IMPORTED_MODULE_10__["ChargeMaintenanceNewComponent"], _charge_maintenance_summary_charge_maintenance_summary_component__WEBPACK_IMPORTED_MODULE_11__["ChargeMaintenanceSummaryComponent"]],
@@ -1266,9 +1266,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var chargeMaintenanceDTO = function chargeMaintenanceDTO() {
+    var chargeMaintenanceDTO = /*#__PURE__*/_createClass(function chargeMaintenanceDTO() {
       _classCallCheck(this, chargeMaintenanceDTO);
-    };
+    });
     /***/
 
   }
