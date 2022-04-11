@@ -649,9 +649,15 @@ img {
 	opacity: 0.8;
 	position: relative;
 }
-.subMenuLink.active {
-  color: #e78e07;
+
+.theme1 .subMenuLink.active {
+  color: var(--bs-red) !important;
 }
+
+.theme2 .subMenuLink.active {
+  color: #6d6d80 !important;
+}
+
 .subMenuLink::before {
   content: "";
   position: absolute;
