@@ -13,650 +13,13 @@
 
   function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_auth_login_login_module_ts"], {
-    /***/
-    49624:
-    /*!*************************************************************************!*\
-      !*** ./node_modules/ng-otp-input/__ivy_ngcc__/fesm2015/ng-otp-input.js ***!
-      \*************************************************************************/
-
-    /***/
-    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export */
-
-
-      __webpack_require__.d(__webpack_exports__, {
-        /* harmony export */
-        "NgOtpInputComponent": function NgOtpInputComponent() {
-          return (
-            /* binding */
-            _NgOtpInputComponent
-          );
-        },
-
-        /* harmony export */
-        "NgOtpInputModule": function NgOtpInputModule() {
-          return (
-            /* binding */
-            _NgOtpInputModule
-          );
-        },
-
-        /* harmony export */
-        "ɵa": function ɵa() {
-          return (
-            /* binding */
-            KeysPipe
-          );
-        },
-
-        /* harmony export */
-        "ɵb": function ɵb() {
-          return (
-            /* binding */
-            NumberOnlyDirective
-          );
-        }
-        /* harmony export */
-
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      2316);
-      /* harmony import */
-
-
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/forms */
-      1707);
-      /* harmony import */
-
-
-      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/common */
-      54364);
-
-      function NgOtpInputComponent_div_0_input_1_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function NgOtpInputComponent_div_0_input_1_Template_input_keydown_0_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
-
-            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-            return ctx_r4.onKeyDown($event);
-          })("keyup", function NgOtpInputComponent_div_0_input_1_Template_input_keyup_0_listener($event) {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
-
-            var i_r3 = restoredCtx.index;
-
-            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-            return ctx_r6.onKeyUp($event, i_r3);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var item_r2 = ctx.$implicit;
-          var i_r3 = ctx.index;
-
-          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("otp-input ", ctx_r1.config.inputClass, "");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate2"]("id", "otp_", i_r3, "_", ctx_r1.componentKey, "");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("pattern", ctx_r1.config.allowNumbersOnly ? "\\d*" : "")("type", ctx_r1.inputType)("placeholder", (ctx_r1.config == null ? null : ctx_r1.config.placeholder) || "")("disabledNumberOnly", !ctx_r1.config.allowNumbersOnly)("ngStyle", ctx_r1.config.inputStyles)("formControl", ctx_r1.otpForm.controls[item_r2]);
-        }
-      }
-
-      function NgOtpInputComponent_div_0_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, NgOtpInputComponent_div_0_input_1_Template, 1, 11, "input", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "keys");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("wrapper ", ctx_r0.config.containerClass, "");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "c_", ctx_r0.componentKey, "");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", ctx_r0.config.containerStyles);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](2, 6, ctx_r0.otpForm == null ? null : ctx_r0.otpForm.controls));
-        }
-      }
-
-      var KeysPipe = /*#__PURE__*/function () {
-        function KeysPipe() {
-          _classCallCheck(this, KeysPipe);
-        }
-
-        _createClass(KeysPipe, [{
-          key: "transform",
-          value: function transform(value) {
-            return Object.keys(value);
-          }
-        }]);
-
-        return KeysPipe;
-      }();
-
-      KeysPipe.ɵfac = function KeysPipe_Factory(t) {
-        return new (t || KeysPipe)();
-      };
-
-      KeysPipe.ɵpipe = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
-        name: "keys",
-        type: KeysPipe,
-        pure: true
-      });
-
-      (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](KeysPipe, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Pipe,
-          args: [{
-            name: 'keys'
-          }]
-        }], null, null);
-      })();
-
-      var Config = /*#__PURE__*/_createClass(function Config() {
-        _classCallCheck(this, Config);
-      });
-
-      var _NgOtpInputComponent = /*#__PURE__*/function () {
-        function _NgOtpInputComponent(keysPipe) {
-          _classCallCheck(this, _NgOtpInputComponent);
-
-          this.keysPipe = keysPipe;
-          this.config = {
-            length: 4
-          }; // tslint:disable-next-line: no-output-on-prefix
-
-          this.onInputChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
-          this.inputControls = new Array(this.config.length);
-          this.componentKey = Math.random().toString(36).substring(2) + new Date().getTime().toString(36);
-        }
-
-        _createClass(_NgOtpInputComponent, [{
-          key: "ngOnInit",
-          value: function ngOnInit() {
-            var _this = this;
-
-            this.otpForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroup({});
-
-            for (var index = 0; index < this.config.length; index++) {
-              this.otpForm.addControl(this.getControlName(index), new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControl());
-            }
-
-            this.otpForm.valueChanges.subscribe(function (v) {
-              _this.keysPipe.transform(_this.otpForm.controls).forEach(function (k) {
-                var val = _this.otpForm.controls[k].value;
-
-                if (val && val.length > 1) {
-                  if (val.length >= _this.config.length) {
-                    _this.setValue(val);
-                  } else {
-                    _this.rebuildValue();
-                  }
-                }
-              });
-            });
-            this.inputType = this.getInputType();
-          }
-        }, {
-          key: "ngAfterViewInit",
-          value: function ngAfterViewInit() {
-            var _this2 = this;
-
-            if (!this.config.disableAutoFocus) {
-              var containerItem = document.getElementById("c_".concat(this.componentKey));
-
-              if (containerItem) {
-                containerItem.addEventListener('paste', function (evt) {
-                  return _this2.handlePaste(evt);
-                });
-                var ele = containerItem.getElementsByClassName('otp-input')[0];
-
-                if (ele && ele.focus) {
-                  ele.focus();
-                }
-              }
-            }
-          }
-        }, {
-          key: "getControlName",
-          value: function getControlName(idx) {
-            return "ctrl_".concat(idx);
-          }
-        }, {
-          key: "ifLeftArrow",
-          value: function ifLeftArrow(event) {
-            return this.ifKeyCode(event, 37);
-          }
-        }, {
-          key: "ifRightArrow",
-          value: function ifRightArrow(event) {
-            return this.ifKeyCode(event, 39);
-          }
-        }, {
-          key: "ifBackspaceOrDelete",
-          value: function ifBackspaceOrDelete(event) {
-            return event.key === 'Backspace' || event.key === 'Delete' || this.ifKeyCode(event, 8) || this.ifKeyCode(event, 46);
-          }
-        }, {
-          key: "ifKeyCode",
-          value: function ifKeyCode(event, targetCode) {
-            var key = event.keyCode || event.charCode; // tslint:disable-next-line: triple-equals
-
-            return key == targetCode ? true : false;
-          }
-        }, {
-          key: "onKeyDown",
-          value: function onKeyDown($event) {
-            var isSpace = this.ifKeyCode($event, 32);
-
-            if (isSpace) {
-              // prevent space
-              return false;
-            }
-          }
-        }, {
-          key: "onKeyUp",
-          value: function onKeyUp($event, inputIdx) {
-            var nextInputId = this.appendKey("otp_".concat(inputIdx + 1));
-            var prevInputId = this.appendKey("otp_".concat(inputIdx - 1));
-
-            if (this.ifRightArrow($event)) {
-              this.setSelected(nextInputId);
-              return;
-            }
-
-            if (this.ifLeftArrow($event)) {
-              this.setSelected(prevInputId);
-              return;
-            }
-
-            var isBackspace = this.ifBackspaceOrDelete($event);
-
-            if (isBackspace && !$event.target.value) {
-              this.setSelected(prevInputId);
-              this.rebuildValue();
-              return;
-            }
-
-            if (!$event.target.value) {
-              return;
-            }
-
-            if (this.ifValidEntry($event)) {
-              this.setSelected(nextInputId);
-            }
-
-            this.rebuildValue();
-          }
-        }, {
-          key: "appendKey",
-          value: function appendKey(id) {
-            return "".concat(id, "_").concat(this.componentKey);
-          }
-        }, {
-          key: "setSelected",
-          value: function setSelected(eleId) {
-            this.focusTo(eleId);
-            var ele = document.getElementById(eleId);
-
-            if (ele && ele.setSelectionRange) {
-              setTimeout(function () {
-                ele.setSelectionRange(0, 1);
-              }, 0);
-            }
-          }
-        }, {
-          key: "ifValidEntry",
-          value: function ifValidEntry(event) {
-            var inp = String.fromCharCode(event.keyCode);
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            return isMobile || /[a-zA-Z0-9-_]/.test(inp) || this.config.allowKeyCodes && this.config.allowKeyCodes.includes(event.keyCode) || event.keyCode >= 96 && event.keyCode <= 105;
-          }
-        }, {
-          key: "focusTo",
-          value: function focusTo(eleId) {
-            var ele = document.getElementById(eleId);
-
-            if (ele) {
-              ele.focus();
-            }
-          } // method to set component value
-
-        }, {
-          key: "setValue",
-          value: function setValue(value) {
-            var _this3 = this;
-
-            if (this.config.allowNumbersOnly && isNaN(value)) {
-              return;
-            }
-
-            this.otpForm.reset();
-
-            if (!value) {
-              this.rebuildValue();
-              return;
-            }
-
-            value = value.toString().replace(/\s/g, ''); // remove whitespace
-
-            Array.from(value).forEach(function (c, idx) {
-              if (_this3.otpForm.get(_this3.getControlName(idx))) {
-                _this3.otpForm.get(_this3.getControlName(idx)).setValue(c);
-              }
-            });
-
-            if (!this.config.disableAutoFocus) {
-              var containerItem = document.getElementById("c_".concat(this.componentKey));
-              var indexOfElementToFocus = value.length < this.config.length ? value.length : this.config.length - 1;
-              var ele = containerItem.getElementsByClassName('otp-input')[indexOfElementToFocus];
-
-              if (ele && ele.focus) {
-                ele.focus();
-              }
-            }
-
-            this.rebuildValue();
-          }
-        }, {
-          key: "rebuildValue",
-          value: function rebuildValue() {
-            var _this4 = this;
-
-            var val = '';
-            this.keysPipe.transform(this.otpForm.controls).forEach(function (k) {
-              if (_this4.otpForm.controls[k].value) {
-                var ctrlVal = _this4.otpForm.controls[k].value;
-                var isLengthExceed = ctrlVal.length > 1;
-                var isCaseTransformEnabled = !_this4.config.allowNumbersOnly && _this4.config.letterCase && (_this4.config.letterCase.toLocaleLowerCase() == 'upper' || _this4.config.letterCase.toLocaleLowerCase() == 'lower');
-                ctrlVal = ctrlVal[0];
-                var transformedVal = isCaseTransformEnabled ? _this4.config.letterCase.toLocaleLowerCase() == 'upper' ? ctrlVal.toUpperCase() : ctrlVal.toLowerCase() : ctrlVal;
-
-                if (isCaseTransformEnabled && transformedVal == ctrlVal) {
-                  isCaseTransformEnabled = false;
-                } else {
-                  ctrlVal = transformedVal;
-                }
-
-                val += ctrlVal;
-
-                if (isLengthExceed || isCaseTransformEnabled) {
-                  _this4.otpForm.controls[k].setValue(ctrlVal);
-                }
-              }
-            });
-            this.onInputChange.emit(val);
-          }
-        }, {
-          key: "getInputType",
-          value: function getInputType() {
-            return this.config.isPasswordInput ? 'password' : this.config.allowNumbersOnly ? 'tel' : 'text';
-          }
-        }, {
-          key: "handlePaste",
-          value: function handlePaste(e) {
-            // Get pasted data via clipboard API
-            var clipboardData = e.clipboardData || window['clipboardData'];
-
-            if (clipboardData) {
-              var pastedData = clipboardData.getData('Text');
-            } // Stop data actually being pasted into div
-
-
-            e.stopPropagation();
-            e.preventDefault();
-
-            if (!pastedData) {
-              return;
-            }
-
-            this.setValue(pastedData);
-          }
-        }]);
-
-        return _NgOtpInputComponent;
-      }();
-
-      _NgOtpInputComponent.ɵfac = function NgOtpInputComponent_Factory(t) {
-        return new (t || _NgOtpInputComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](KeysPipe));
-      };
-
-      _NgOtpInputComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-        type: _NgOtpInputComponent,
-        selectors: [["ng-otp-input"]],
-        inputs: {
-          config: "config"
-        },
-        outputs: {
-          onInputChange: "onInputChange"
-        },
-        decls: 1,
-        vars: 1,
-        consts: [[3, "class", "id", "ngStyle", 4, "ngIf"], [3, "id", "ngStyle"], ["numberOnly", "", "autocomplete", "one-time-code", 3, "pattern", "type", "placeholder", "disabledNumberOnly", "ngStyle", "class", "formControl", "id", "keydown", "keyup", 4, "ngFor", "ngForOf"], ["numberOnly", "", "autocomplete", "one-time-code", 3, "pattern", "type", "placeholder", "disabledNumberOnly", "ngStyle", "formControl", "id", "keydown", "keyup"]],
-        template: function NgOtpInputComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, NgOtpInputComponent_div_0_Template, 3, 8, "div", 0);
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.otpForm == null ? null : ctx.otpForm.controls);
-          }
-        },
-        directives: function directives() {
-          return [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgStyle, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, NumberOnlyDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlDirective];
-        },
-        pipes: function pipes() {
-          return [KeysPipe];
-        },
-        styles: [".otp-input[_ngcontent-%COMP%]{width:50px;height:50px;border-radius:4px;border:solid 1px #c5c5c5;text-align:center;font-size:32px}.wrapper[_ngcontent-%COMP%]   .otp-input[_ngcontent-%COMP%]:not(:last-child){margin-right:8px}@media screen and (max-width: 767px){.otp-input[_ngcontent-%COMP%]{width:40px;font-size:24px;height:40px}}@media screen and (max-width: 420px){.otp-input[_ngcontent-%COMP%]{width:30px;font-size:18px;height:30px}}"]
-      });
-      /**
-       * @type {function(): !Array<(null|{
-       *   type: ?,
-       *   decorators: (undefined|!Array<{type: !Function, args: (undefined|!Array<?>)}>),
-       * })>}
-       * @nocollapse
-       */
-
-      _NgOtpInputComponent.ctorParameters = function () {
-        return [{
-          type: KeysPipe
-        }];
-      };
-      /** @type {!Object<string, !Array<{type: !Function, args: (undefined|!Array<?>)}>>} */
-
-
-      _NgOtpInputComponent.propDecorators = {
-        config: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
-        }],
-        onInputChange: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output
-        }]
-      };
-
-      (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_NgOtpInputComponent, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
-          args: [{
-            // tslint:disable-next-line: component-selector
-            selector: 'ng-otp-input',
-            template: "<div class=\"wrapper {{config.containerClass}}\" id=\"c_{{componentKey}}\" *ngIf=\"otpForm?.controls\"\r\n  [ngStyle]=\"config.containerStyles\">\r\n  <input [pattern]=\"config.allowNumbersOnly ? '\\\\d*' : ''\" [type]=\"inputType\" numberOnly [placeholder]=\"config?.placeholder || ''\"\r\n    [disabledNumberOnly]=\"!config.allowNumbersOnly\" [ngStyle]=\"config.inputStyles\" \r\n    class=\"otp-input {{config.inputClass}}\" autocomplete=\"one-time-code\" *ngFor=\"let item of otpForm?.controls | keys;let i=index\"\r\n    [formControl]=\"otpForm.controls[item]\" id=\"otp_{{i}}_{{componentKey}}\" (keydown)=\"onKeyDown($event)\"\r\n    (keyup)=\"onKeyUp($event,i)\">\r\n</div>",
-            styles: [".otp-input{width:50px;height:50px;border-radius:4px;border:solid 1px #c5c5c5;text-align:center;font-size:32px}.wrapper .otp-input:not(:last-child){margin-right:8px}@media screen and (max-width: 767px){.otp-input{width:40px;font-size:24px;height:40px}}@media screen and (max-width: 420px){.otp-input{width:30px;font-size:18px;height:30px}}\n"]
-          }]
-        }], function () {
-          return [{
-            type: KeysPipe
-          }];
-        }, {
-          config: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
-          }],
-          onInputChange: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output
-          }]
-        });
-      })();
-
-      var NumberOnlyDirective = /*#__PURE__*/function () {
-        function NumberOnlyDirective(_elRef, _renderer) {
-          _classCallCheck(this, NumberOnlyDirective);
-
-          this._elRef = _elRef;
-          this._renderer = _renderer;
-        }
-
-        _createClass(NumberOnlyDirective, [{
-          key: "ngOnInit",
-          value: function ngOnInit() {
-            if (!this.disabledNumberOnly) {
-              this._renderer.setAttribute(this._elRef.nativeElement, 'onkeypress', 'return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 0');
-            }
-          }
-        }]);
-
-        return NumberOnlyDirective;
-      }();
-
-      NumberOnlyDirective.ɵfac = function NumberOnlyDirective_Factory(t) {
-        return new (t || NumberOnlyDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2));
-      };
-
-      NumberOnlyDirective.ɵdir = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-        type: NumberOnlyDirective,
-        selectors: [["", "numberOnly", ""]],
-        inputs: {
-          disabledNumberOnly: "disabledNumberOnly"
-        }
-      });
-      /**
-       * @type {function(): !Array<(null|{
-       *   type: ?,
-       *   decorators: (undefined|!Array<{type: !Function, args: (undefined|!Array<?>)}>),
-       * })>}
-       * @nocollapse
-       */
-
-      NumberOnlyDirective.ctorParameters = function () {
-        return [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
-        }, {
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2
-        }];
-      };
-      /** @type {!Object<string, !Array<{type: !Function, args: (undefined|!Array<?>)}>>} */
-
-
-      NumberOnlyDirective.propDecorators = {
-        disabledNumberOnly: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
-        }]
-      };
-
-      (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NumberOnlyDirective, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-          args: [{
-            selector: '[numberOnly]'
-          }]
-        }], function () {
-          return [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2
-          }];
-        }, {
-          disabledNumberOnly: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
-          }]
-        });
-      })();
-
-      var _NgOtpInputModule = /*#__PURE__*/_createClass(function _NgOtpInputModule() {
-        _classCallCheck(this, _NgOtpInputModule);
-      });
-
-      _NgOtpInputModule.ɵfac = function NgOtpInputModule_Factory(t) {
-        return new (t || _NgOtpInputModule)();
-      };
-
-      _NgOtpInputModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-        type: _NgOtpInputModule
-      });
-      _NgOtpInputModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-        providers: [KeysPipe],
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule]]
-      });
-
-      (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_NgOtpInputModule, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
-          args: [{
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule],
-            declarations: [_NgOtpInputComponent, KeysPipe, NumberOnlyDirective],
-            exports: [_NgOtpInputComponent],
-            providers: [KeysPipe]
-          }]
-        }], null, null);
-      })();
-
-      (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](_NgOtpInputModule, {
-          declarations: function declarations() {
-            return [_NgOtpInputComponent, KeysPipe, NumberOnlyDirective];
-          },
-          imports: function imports() {
-            return [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule];
-          },
-          exports: function exports() {
-            return [_NgOtpInputComponent];
-          }
-        });
-      })();
-      /*
-       * Public API Surface of ng-otp-input
-       */
-
-      /**
-       * Generated bundle index. Do not edit.
-       */
-
-      /***/
-
-    },
-
     /***/
     65336:
     /*!*****************************************************!*\
@@ -1352,19 +715,19 @@
         }, {
           key: "toggle",
           value: function toggle() {
-            var _this5 = this;
+            var _this = this;
 
             setTimeout(function () {
               //  this.spinner.hide();
-              _this5.showOtpComponent = !_this5.showOtpComponent;
+              _this.showOtpComponent = !_this.showOtpComponent;
 
-              _this5.showTimer(60);
+              _this.showTimer(60);
             }, 2500);
           }
         }, {
           key: "getOtp",
           value: function getOtp() {
-            var _this6 = this;
+            var _this2 = this;
 
             //  this.spinner.show();
             localStorage.setItem("getOtpClicked", "true");
@@ -1379,41 +742,41 @@
             console.log("jygjh");
             this.apiService.fetchMedUser(this.signinForm.value.username).subscribe(function (response) {
               console.log(response);
-              _this6.user = response;
+              _this2.user = response;
 
-              _this6.ls.setItem("departmentHeader", _this6.user.department);
+              _this2.ls.setItem("departmentHeader", _this2.user.department);
 
-              _this6.ls.setItem("LoggedInUserHeader", _this6.user.logoutTime);
+              _this2.ls.setItem("LoggedInUserHeader", _this2.user.logoutTime);
 
-              _this6.email = _this6.user.email;
-              localStorage.setItem("userFromLogin", _this6.user.userId);
-              sessionStorage.setItem("user_id", _this6.user.userId);
+              _this2.email = _this2.user.email;
+              localStorage.setItem("userFromLogin", _this2.user.userId);
+              sessionStorage.setItem("user_id", _this2.user.userId);
 
-              if (_this6.user.statusForUser === "Enable" && _this6.user.verifiedStatus === "A") {
+              if (_this2.user.statusForUser === "Enable" && _this2.user.verifiedStatus === "A") {
                 //---------- Password Policy Implementation (BEGIN) ----------
-                _this6.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                  _this6.security = resp;
-                  _this6.notifyPswdExpry = _this6.security.notifyPasswordExpiryInDays;
-                  _this6.pswdExpiry = _this6.security.pswdExpiry;
+                _this2.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                  _this2.security = resp;
+                  _this2.notifyPswdExpry = _this2.security.notifyPasswordExpiryInDays;
+                  _this2.pswdExpiry = _this2.security.pswdExpiry;
 
-                  if (_this6.pswdExpiry === 0 && _this6.notifyPswdExpry === 0) {
+                  if (_this2.pswdExpiry === 0 && _this2.notifyPswdExpry === 0) {
                     console.log("Hitting dashboard"); // this.router
                     //   .navigate(["/dashboard"])
                     //   .then((data) => console.log("dashboard hit", data));
                   } else {
-                    _this6.currentDate = new Date();
-                    _this6.changePwdDate = new Date(_this6.user.pwdChangeDate);
-                    _this6.differnceInTime = _this6.currentDate - _this6.changePwdDate;
-                    _this6.differnceInDays = Math.floor(_this6.differnceInTime / (1000 * 3600 * 24));
-                    _this6.finalDiff = _this6.pswdExpiry - _this6.differnceInDays;
+                    _this2.currentDate = new Date();
+                    _this2.changePwdDate = new Date(_this2.user.pwdChangeDate);
+                    _this2.differnceInTime = _this2.currentDate - _this2.changePwdDate;
+                    _this2.differnceInDays = Math.floor(_this2.differnceInTime / (1000 * 3600 * 24));
+                    _this2.finalDiff = _this2.pswdExpiry - _this2.differnceInDays;
 
-                    if (_this6.finalDiff === 0 || _this6.finalDiff <= 0) {
-                      _this6.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
+                    if (_this2.finalDiff === 0 || _this2.finalDiff <= 0) {
+                      _this2.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
                     } else {
-                      _this6.check = true;
+                      _this2.check = true;
 
-                      if (_this6.signinForm.value.password === "" || _this6.signinForm.value.username === "") {
-                        _this6.toastService.errorMessage("Please enter login credentials.", "");
+                      if (_this2.signinForm.value.password === "" || _this2.signinForm.value.username === "") {
+                        _this2.toastService.errorMessage("Please enter login credentials.", "");
                       } else {
                         var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.password, "@12#90!^*NPR*g&*()$34#$");
                         var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.username, "@12#90!^*NPR*g&*()$34#$");
@@ -1421,49 +784,49 @@
                         var uname = USERNAME.toString();
                         login.password = data;
                         login.username = uname;
-                        _this6.apiService.getOtp(login).subscribe(function (res) {
-                          _this6.variable = res;
-                          _this6.otpreceivedtime = new Date();
+                        _this2.apiService.getOtp(login).subscribe(function (res) {
+                          _this2.variable = res;
+                          _this2.otpreceivedtime = new Date();
 
-                          if (_this6.variable) {
-                            if (_this6.variable[0] === "Username or password wrong") {
-                              _this6.toastService.errorMessage("Invalid UserId or Password !!!", "");
+                          if (_this2.variable) {
+                            if (_this2.variable[0] === "Username or password wrong") {
+                              _this2.toastService.errorMessage("Invalid UserId or Password !!!", "");
                             }
 
                             if (res.failLgnCounter != 0) {
-                              _this6.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
-                                _this6.security = sp;
-                                _this6.invLogins = _this6.security.maxInvLogins;
+                              _this2.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
+                                _this2.security = sp;
+                                _this2.invLogins = _this2.security.maxInvLogins;
 
-                                if (_this6.invLogins !== 0) {
-                                  _this6.invLogins = _this6.invLogins - 1;
+                                if (_this2.invLogins !== 0) {
+                                  _this2.invLogins = _this2.invLogins - 1;
 
-                                  if (_this6.invLogins === res.failLgnCounter) {
-                                    _this6.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
+                                  if (_this2.invLogins === res.failLgnCounter) {
+                                    _this2.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
                                   }
                                 }
                               });
                             } // ---------- Password Policy Implementation (END) ----------
 
 
-                            if (_this6.variable[0] === "true") {
-                              _this6.progress = true;
+                            if (_this2.variable[0] === "true") {
+                              _this2.progress = true;
 
-                              _this6.toggle();
+                              _this2.toggle();
 
-                              _this6.toastService.successMessage("OTP sent successfully to " + _this6.email, "");
+                              _this2.toastService.successMessage("OTP sent successfully to " + _this2.email, "");
 
-                              _this6.loginProcessing = false;
-                              _this6.verifyOTP = true;
+                              _this2.loginProcessing = false;
+                              _this2.verifyOTP = true;
                             } else {
-                              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(_this6.variable[0]);
-                              _this6.loginProcessing = false;
+                              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(_this2.variable[0]);
+                              _this2.loginProcessing = false;
                             }
                           }
                         }, function (err) {
-                          _this6.toastService.errorMessage("Server Error", "");
+                          _this2.toastService.errorMessage("Server Error", "");
 
-                          _this6.loginProcessing = false;
+                          _this2.loginProcessing = false;
                         }), function (error) {};
                       }
                     }
@@ -1492,7 +855,7 @@
         }, {
           key: "resendOtpMethod",
           value: function resendOtpMethod() {
-            var _this7 = this;
+            var _this3 = this;
 
             var login = {};
             login.username = this.signinForm.value.username;
@@ -1513,36 +876,36 @@
             // Skip login Section end
 
             this.apiService.fetchMedUser(this.signinForm.value.username).subscribe(function (response) {
-              _this7.user = response;
-              _this7.email = _this7.user.email;
-              localStorage.setItem("userFromLogin", _this7.user.userId);
-              sessionStorage.setItem("user_id", _this7.user.userId);
+              _this3.user = response;
+              _this3.email = _this3.user.email;
+              localStorage.setItem("userFromLogin", _this3.user.userId);
+              sessionStorage.setItem("user_id", _this3.user.userId);
 
-              if (_this7.user.statusForUser === "Enable" && _this7.user.verifiedStatus === "A") {
+              if (_this3.user.statusForUser === "Enable" && _this3.user.verifiedStatus === "A") {
                 //---------- Password Policy Implementation (BEGIN) ----------
-                _this7.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                  _this7.security = resp;
-                  _this7.notifyPswdExpry = _this7.security.notifyPasswordExpiryInDays;
-                  _this7.pswdExpiry = _this7.security.pswdExpiry;
+                _this3.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                  _this3.security = resp;
+                  _this3.notifyPswdExpry = _this3.security.notifyPasswordExpiryInDays;
+                  _this3.pswdExpiry = _this3.security.pswdExpiry;
 
-                  if (_this7.pswdExpiry === 0 && _this7.notifyPswdExpry === 0) {// console.log("Hitting dashboard");
+                  if (_this3.pswdExpiry === 0 && _this3.notifyPswdExpry === 0) {// console.log("Hitting dashboard");
                     // this.router
                     //   .navigate(["/dashboard"])
                     //   .then((data) => console.log("dashboard hit", data));
                   } else {
-                    _this7.currentDate = new Date();
-                    _this7.changePwdDate = new Date(_this7.user.pwdChangeDate);
-                    _this7.differnceInTime = _this7.currentDate - _this7.changePwdDate;
-                    _this7.differnceInDays = Math.floor(_this7.differnceInTime / (1000 * 3600 * 24));
-                    _this7.finalDiff = _this7.pswdExpiry - _this7.differnceInDays;
+                    _this3.currentDate = new Date();
+                    _this3.changePwdDate = new Date(_this3.user.pwdChangeDate);
+                    _this3.differnceInTime = _this3.currentDate - _this3.changePwdDate;
+                    _this3.differnceInDays = Math.floor(_this3.differnceInTime / (1000 * 3600 * 24));
+                    _this3.finalDiff = _this3.pswdExpiry - _this3.differnceInDays;
 
-                    if (_this7.finalDiff === 0 || _this7.finalDiff <= 0) {
-                      _this7.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
+                    if (_this3.finalDiff === 0 || _this3.finalDiff <= 0) {
+                      _this3.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
                     } else {
-                      _this7.check = true;
+                      _this3.check = true;
 
-                      if (_this7.signinForm.value.password === "" || _this7.signinForm.value.username === "") {
-                        _this7.toastService.errorMessage("Please enter login credentials.", "");
+                      if (_this3.signinForm.value.password === "" || _this3.signinForm.value.username === "") {
+                        _this3.toastService.errorMessage("Please enter login credentials.", "");
                       } else {
                         var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.password, "@12#90!^*NPR*g&*()$34#$");
                         var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.username, "@12#90!^*NPR*g&*()$34#$");
@@ -1551,44 +914,44 @@
                         login.password = data;
                         login.username = uname;
 
-                        _this7.apiService.getOtp(login).subscribe(function (res) {
-                          _this7.variable = res;
-                          _this7.otpreceivedtime = new Date();
+                        _this3.apiService.getOtp(login).subscribe(function (res) {
+                          _this3.variable = res;
+                          _this3.otpreceivedtime = new Date();
 
-                          if (_this7.variable) {
-                            if (_this7.variable[0] === "Username or password wrong") {
-                              _this7.toastService.errorMessage("Invalid UserId or Password !!!", "");
+                          if (_this3.variable) {
+                            if (_this3.variable[0] === "Username or password wrong") {
+                              _this3.toastService.errorMessage("Invalid UserId or Password !!!", "");
                             }
 
                             if (res.failLgnCounter != 0) {
-                              _this7.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
-                                _this7.security = sp;
-                                _this7.invLogins = _this7.security.maxInvLogins;
+                              _this3.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
+                                _this3.security = sp;
+                                _this3.invLogins = _this3.security.maxInvLogins;
 
-                                if (_this7.invLogins !== 0) {
-                                  _this7.invLogins = _this7.invLogins - 1;
+                                if (_this3.invLogins !== 0) {
+                                  _this3.invLogins = _this3.invLogins - 1;
 
-                                  if (_this7.invLogins === res.failLgnCounter) {
-                                    _this7.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
+                                  if (_this3.invLogins === res.failLgnCounter) {
+                                    _this3.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
                                   }
                                 }
                               });
                             } // ---------- Password Policy Implementation (END) ----------
 
 
-                            if (_this7.variable[0] === "true") {
-                              _this7.progress = true;
+                            if (_this3.variable[0] === "true") {
+                              _this3.progress = true;
 
-                              _this7.toastService.successMessage("OTP sent successfully to " + _this7.email, "");
+                              _this3.toastService.successMessage("OTP sent successfully to " + _this3.email, "");
 
-                              _this7.loginProcessing = false;
-                              _this7.verifyOTP = true;
+                              _this3.loginProcessing = false;
+                              _this3.verifyOTP = true;
                             } else {}
                           }
                         }, function (err) {
-                          _this7.toastService.errorMessage("Server Error", "");
+                          _this3.toastService.errorMessage("Server Error", "");
 
-                          _this7.loginProcessing = false;
+                          _this3.loginProcessing = false;
                         });
                       }
                     }
@@ -1600,90 +963,90 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this8 = this;
+            var _this4 = this;
 
             var otp = {};
             otp.username = this.signinForm.value.username;
             otp.otp = this.otp;
             this.apiService.loginService(otp).subscribe(function (res) {
-              _this8.responseforotp = res;
+              _this4.responseforotp = res;
 
-              if (_this8.responseforotp[0] == "OTP is invalid") {
-                _this8.toastService.errorMessage("Enter the Valid OTP.", "");
+              if (_this4.responseforotp[0] == "OTP is invalid") {
+                _this4.toastService.errorMessage("Enter the Valid OTP.", "");
               }
 
-              _this8.apiService.fetchMedUser(otp.username).subscribe(function (response) {
-                _this8.user = response; // if (this.responseforotp) {
+              _this4.apiService.fetchMedUser(otp.username).subscribe(function (response) {
+                _this4.user = response; // if (this.responseforotp) {
 
-                if (_this8.user != null) {
-                  if (_this8.responseforotp[0] == "Time Expired") {
-                    _this8.toastService.errorMessage("This OTP is expired. Please click on Resend OTP to get a new OTP.", "");
+                if (_this4.user != null) {
+                  if (_this4.responseforotp[0] == "Time Expired") {
+                    _this4.toastService.errorMessage("This OTP is expired. Please click on Resend OTP to get a new OTP.", "");
 
-                    _this8.check = false;
+                    _this4.check = false;
                   }
 
-                  _this8.loginProcessing = false;
-                  _this8.user = _this8.responseforotp[1];
-                  _this8.loginProcessing = false;
-                  localStorage.setItem("userFromLogin", _this8.user.userId);
-                  sessionStorage.setItem("user_id", _this8.user.userId);
+                  _this4.loginProcessing = false;
+                  _this4.user = _this4.responseforotp[1];
+                  _this4.loginProcessing = false;
+                  localStorage.setItem("userFromLogin", _this4.user.userId);
+                  sessionStorage.setItem("user_id", _this4.user.userId);
 
-                  if (_this8.user.statusForUser === "Enable" && _this8.user.verifiedStatus === "A") {
+                  if (_this4.user.statusForUser === "Enable" && _this4.user.verifiedStatus === "A") {
                     //---------- Password Policy Implementation (BEGIN) ----------
-                    _this8.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                      _this8.security = resp;
-                      _this8.notifyPswdExpry = _this8.security.notifyPasswordExpiryInDays;
-                      _this8.pswdExpiry = _this8.security.pswdExpiry;
+                    _this4.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                      _this4.security = resp;
+                      _this4.notifyPswdExpry = _this4.security.notifyPasswordExpiryInDays;
+                      _this4.pswdExpiry = _this4.security.pswdExpiry;
 
-                      if (_this8.pswdExpiry === 0 && _this8.notifyPswdExpry === 0) {// this.router
+                      if (_this4.pswdExpiry === 0 && _this4.notifyPswdExpry === 0) {// this.router
                         //   .navigate(["/dashboard"])
                         //   .then((data) => console.log("dashboard hit", data));
                       } else {
-                        _this8.currentDate = new Date();
-                        _this8.changePwdDate = new Date(_this8.user.pwdChangeDate);
-                        _this8.differnceInTime = _this8.currentDate - _this8.changePwdDate;
-                        _this8.differnceInDays = Math.floor(_this8.differnceInTime / (1000 * 3600 * 24));
-                        _this8.finalDiff = _this8.pswdExpiry - _this8.differnceInDays;
+                        _this4.currentDate = new Date();
+                        _this4.changePwdDate = new Date(_this4.user.pwdChangeDate);
+                        _this4.differnceInTime = _this4.currentDate - _this4.changePwdDate;
+                        _this4.differnceInDays = Math.floor(_this4.differnceInTime / (1000 * 3600 * 24));
+                        _this4.finalDiff = _this4.pswdExpiry - _this4.differnceInDays;
 
-                        if (_this8.finalDiff === 0 || _this8.finalDiff <= 0) {
-                          _this8.toastService.errorMessage("Your password expired, Please change your password", "");
+                        if (_this4.finalDiff === 0 || _this4.finalDiff <= 0) {
+                          _this4.toastService.errorMessage("Your password expired, Please change your password", "");
 
-                          _this8.router.navigate(["/forget-password"]).then(function (data) {
+                          _this4.router.navigate(["/forget-password"]).then(function (data) {
                             return console.log("Forget password hit", data);
                           });
                         } else {
                           //---------- Password Policy Implementation (END) ----------
                           // this.router.navigate(["/dashboard"])
                           //---------- Password Policy Implementation (BEGIN) ----------
-                          _this8.currentUser = localStorage.getItem("currentUser");
+                          _this4.currentUser = localStorage.getItem("currentUser");
 
-                          _this8.apiService.fetchMedUser(otp.username).subscribe(function (response) {
-                            _this8.userEntity = response;
-                            console.log("userEntity ", _this8.userEntity);
+                          _this4.apiService.fetchMedUser(otp.username).subscribe(function (response) {
+                            _this4.userEntity = response;
+                            console.log("userEntity ", _this4.userEntity);
 
-                            _this8.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                              _this8.security = resp;
-                              _this8.notifyPswdExpry = _this8.security.notifyPasswordExpiryInDays;
-                              _this8.pswdExpiry = _this8.security.pswdExpiry;
+                            _this4.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                              _this4.security = resp;
+                              _this4.notifyPswdExpry = _this4.security.notifyPasswordExpiryInDays;
+                              _this4.pswdExpiry = _this4.security.pswdExpiry;
 
-                              if (_this8.pswdExpiry !== 0 && _this8.notifyPswdExpry !== 0) {
-                                _this8.currentDate = new Date();
-                                _this8.changePwdDate = new Date(_this8.userEntity.pwdChangeDate);
-                                _this8.differnceInTime = _this8.currentDate - _this8.changePwdDate;
-                                _this8.differnceInDays = Math.floor(_this8.differnceInTime / (1000 * 3600 * 24));
-                                console.log("today's date ", _this8.currentDate);
-                                console.log("pswd created date ", _this8.changePwdDate);
-                                console.log("no of days diff ", _this8.differnceInDays);
-                                _this8.finalDiff = _this8.pswdExpiry - _this8.differnceInDays;
-                                console.log("notify user on password expiry", _this8.notifyPswdExpry);
-                                console.log("pwd expiry ", _this8.security.pswdExpiry);
-                                console.log("final diff", _this8.finalDiff);
+                              if (_this4.pswdExpiry !== 0 && _this4.notifyPswdExpry !== 0) {
+                                _this4.currentDate = new Date();
+                                _this4.changePwdDate = new Date(_this4.userEntity.pwdChangeDate);
+                                _this4.differnceInTime = _this4.currentDate - _this4.changePwdDate;
+                                _this4.differnceInDays = Math.floor(_this4.differnceInTime / (1000 * 3600 * 24));
+                                console.log("today's date ", _this4.currentDate);
+                                console.log("pswd created date ", _this4.changePwdDate);
+                                console.log("no of days diff ", _this4.differnceInDays);
+                                _this4.finalDiff = _this4.pswdExpiry - _this4.differnceInDays;
+                                console.log("notify user on password expiry", _this4.notifyPswdExpry);
+                                console.log("pwd expiry ", _this4.security.pswdExpiry);
+                                console.log("final diff", _this4.finalDiff);
 
-                                if (_this8.finalDiff > 0 && _this8.finalDiff <= _this8.notifyPswdExpry) {
-                                  _this8.toastService.errorMessage("Your password will expire in " + "".concat(_this8.finalDiff) + " day(s)", "");
+                                if (_this4.finalDiff > 0 && _this4.finalDiff <= _this4.notifyPswdExpry) {
+                                  _this4.toastService.errorMessage("Your password will expire in " + "".concat(_this4.finalDiff) + " day(s)", "");
                                 }
 
-                                _this8.showToast();
+                                _this4.showToast();
                               }
                             });
                           }); //  ---------- Password Policy Implementation (END) ----------
@@ -1693,34 +1056,34 @@
                     });
                   }
 
-                  _this8.roleService.fetchNewRolePermissions(_this8.user.userId);
+                  _this4.roleService.fetchNewRolePermissions(_this4.user.userId);
                 }
               });
             }, function (err) {
-              _this8.loginProcessing = false;
+              _this4.loginProcessing = false;
 
-              _this8.toastService.errorMessage("Server Error ", "");
+              _this4.toastService.errorMessage("Server Error ", "");
             });
           }
         }, {
           key: "routing",
           value: function routing() {
-            var _this9 = this;
+            var _this5 = this;
 
             console.log(this.userEntity);
             this.jwtAuth.signin().subscribe(function (response) {
               setTimeout(function () {
-                _this9.ls.setItem("currentUser", _this9.userEntity.userId);
+                _this5.ls.setItem("currentUser", _this5.userEntity.userId);
 
-                _this9.ls.setItem("userobj", _this9.userEntity);
+                _this5.ls.setItem("userobj", _this5.userEntity);
 
-                _this9.ls.setItem("usercompleteobj", _this9.userEntity);
+                _this5.ls.setItem("usercompleteobj", _this5.userEntity);
 
-                _this9.router.navigate(["/dashboard"]);
+                _this5.router.navigate(["/dashboard"]);
 
-                _this9.iziToast.show({
+                _this5.iziToast.show({
                   title: "DTB Bank - Median!",
-                  message: "Welcome, ".concat(_this9.userEntity.userId, "!"),
+                  message: "Welcome, ".concat(_this5.userEntity.userId, "!"),
                   image: "assets/images/user.png",
                   icon: "ico ico-success",
                   // theme:"dark",
@@ -1811,7 +1174,7 @@
         }, {
           key: "showTimer",
           value: function showTimer(remaining) {
-            var _this10 = this;
+            var _this6 = this;
 
             var timerOn = true;
             this.m = Math.floor(remaining / 60);
@@ -1823,7 +1186,7 @@
 
             if (remaining >= 0 && timerOn) {
               setTimeout(function () {
-                _this10.showTimer(remaining);
+                _this6.showTimer(remaining);
               }, 1000);
               return;
             }
