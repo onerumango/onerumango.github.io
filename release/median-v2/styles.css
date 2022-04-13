@@ -16320,6 +16320,10 @@ ul.nav.nav-tabs li+li {
   background: var(--lightColor);
 }
 
+.justify{
+  justify-content: center;
+}
+
 .deleteIcon {
   background: #747274;
   background: var(--darkgrey);
