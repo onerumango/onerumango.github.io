@@ -1611,7 +1611,7 @@ class UserNewComponent {
             // rolesForUser: new FormControl(''),
             newRoleForUser: [data.newRoleForUser ? data.newRoleForUser : '', (_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required)],
             statusForUser: [data.statusForUser ? data.statusForUser : 'Enable'],
-            intime: [data.intime ? data.intime : '04:13'],
+            intime: [data.intime ? data.intime : '09:00'],
             outtime: [data.outtime ? data.outtime : '18:00'],
         });
         console.log(this.userForm);
