@@ -7338,7 +7338,7 @@
             return ctx_r11.onSubmitGlForm(ctx_r11.userGLForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](52, "Submit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](52, "Save");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -7616,7 +7616,7 @@
             return ctx_r19.onSubmitAccountClassForm(ctx_r19.accountClassForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](48, "Submit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](48, "Save");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
