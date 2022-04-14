@@ -2101,8 +2101,6 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppComponent {
     constructor(renderer, platform, document, route, router) {
-        // this.setTimeout();
-        // this.userInactive.subscribe(() => this.logout());}
         this.renderer = renderer;
         this.platform = platform;
         this.document = document;
@@ -2110,11 +2108,11 @@ class AppComponent {
         this.router = router;
         this.title = "Median";
         this.userInactive = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-        // setTimeout() {
-        //   this.userActivity = setTimeout(
-        //     () => this.userInactive.next(undefined),
-        //     600 * 1000
-        //   );
+        this.setTimeout();
+        this.userInactive.subscribe(() => this.logout());
+    }
+    setTimeout() {
+        this.userActivity = setTimeout(() => this.userInactive.next(undefined), 600 * 1000);
     }
     logout() {
         if (localStorage.getItem("userFromLogin")) {
@@ -2124,9 +2122,23 @@ class AppComponent {
         sessionStorage.clear();
         this.router.navigate(['/session/login']);
     }
+    refreshUserState() {
+        clearTimeout(this.userActivity);
+        this.setTimeout();
+    }
+    onUpdateStorage() {
+        const getOtpClicked = localStorage.getItem("getOtpClicked");
+        if (getOtpClicked === 'true') {
+            localStorage.clear();
+            sessionStorage.clear();
+            this.router.navigate(['/session/login']);
+        }
+    }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.Renderer2), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_3__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_4__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router)); };
-AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 1, vars: 0, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], hostBindings: function AppComponent_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("mousemove", function AppComponent_mousemove_HostBindingHandler() { return ctx.refreshUserState(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"])("storage", function AppComponent_storage_HostBindingHandler() { return ctx.onUpdateStorage(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"]);
+    } }, decls: 1, vars: 0, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "router-outlet");
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterOutlet], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MifQ== */"] });
 
@@ -2528,9 +2540,9 @@ class ApiService {
     gettingTransactionCodeSummary() {
         return this.http.get(`${median}/config/getSummaryForTransactionCodeMapping`);
     }
-    saveTrnCodeMaster(master) {
-        return this.http.post(`${median}/config/saveTrnMaster`, master);
-    }
+    // saveTrnCodeMaster(master): Observable<any> {
+    //   return this.http.post<boolean>(`${median}/config/saveTrnMaster`, master);
+    // }
     saveTrnCode(trnData, userId, loggedInuser) {
         return this.http.post(`${median}/config/saveTrn/${userId}/${loggedInuser}`, trnData);
     }
@@ -2552,14 +2564,14 @@ class ApiService {
     deleteUserData(UserId) {
         return this.http.delete(`${API_URL}/config/deleteWholeRecord/${UserId}`);
     }
-    onClckOfAuthTransactionCode(userId, userIdLoggedIn) {
-        return this.http.get(`${API_URL}/config/verify/${userId}/${userIdLoggedIn}`);
+    onClckOfAuthTransactionCode(operation, MedTransOperationData) {
+        return this.http.put(`${API_URL}/config/${operation}`, MedTransOperationData);
     }
-    onclickOfCloseTransactionCode(userId, userIdLoggedIn) {
-        return this.http.get(`${API_URL}/config/close/${userId}/${userIdLoggedIn}`);
+    onclickOfCloseTransactionCode(operation, MedTransOperationData) {
+        return this.http.put(`${API_URL}/config/${operation}`, MedTransOperationData);
     }
-    onclickOfReopenTransactionCode(userId, userIdLoggedIn) {
-        return this.http.get(`${API_URL}/config/reOpen/${userId}/${userIdLoggedIn}`);
+    onclickOfReopenTransactionCode(operation, MedTransOperationData) {
+        return this.http.put(`${API_URL}/config/${operation}`, MedTransOperationData);
     }
     updateAuditData(master) {
         return this.http.put(`${API_URL}/config/modifyMaster`, master);

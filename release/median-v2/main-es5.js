@@ -4340,24 +4340,43 @@
 
       var _AppComponent = /*#__PURE__*/function () {
         function _AppComponent(renderer, platform, document, route, router) {
+          var _this7 = this;
+
           _classCallCheck(this, _AppComponent);
 
-          // this.setTimeout();
-          // this.userInactive.subscribe(() => this.logout());}
           this.renderer = renderer;
           this.platform = platform;
           this.document = document;
           this.route = route;
           this.router = router;
           this.title = "Median";
-          this.userInactive = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject(); // setTimeout() {
-          //   this.userActivity = setTimeout(
-          //     () => this.userInactive.next(undefined),
-          //     600 * 1000
-          //   );
+          this.userInactive = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+          this.setTimeout();
+          this.userInactive.subscribe(function () {
+            return _this7.logout();
+          });
         }
 
         _createClass(_AppComponent, [{
+          key: "setTimeout",
+          value: function (_setTimeout) {
+            function setTimeout() {
+              return _setTimeout.apply(this, arguments);
+            }
+
+            setTimeout.toString = function () {
+              return _setTimeout.toString();
+            };
+
+            return setTimeout;
+          }(function () {
+            var _this8 = this;
+
+            this.userActivity = setTimeout(function () {
+              return _this8.userInactive.next(undefined);
+            }, 600 * 1000);
+          })
+        }, {
           key: "logout",
           value: function logout() {
             if (localStorage.getItem("userFromLogin")) {
@@ -4367,6 +4386,23 @@
             localStorage.clear();
             sessionStorage.clear();
             this.router.navigate(['/session/login']);
+          }
+        }, {
+          key: "refreshUserState",
+          value: function refreshUserState() {
+            clearTimeout(this.userActivity);
+            this.setTimeout();
+          }
+        }, {
+          key: "onUpdateStorage",
+          value: function onUpdateStorage() {
+            var getOtpClicked = localStorage.getItem("getOtpClicked");
+
+            if (getOtpClicked === 'true') {
+              localStorage.clear();
+              sessionStorage.clear();
+              this.router.navigate(['/session/login']);
+            }
           }
         }]);
 
@@ -4380,6 +4416,15 @@
       _AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: _AppComponent,
         selectors: [["app-root"]],
+        hostBindings: function AppComponent_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("mousemove", function AppComponent_mousemove_HostBindingHandler() {
+              return ctx.refreshUserState();
+            }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"])("storage", function AppComponent_storage_HostBindingHandler() {
+              return ctx.onUpdateStorage();
+            }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"]);
+          }
+        },
         decls: 1,
         vars: 0,
         template: function AppComponent_Template(rf, ctx) {
@@ -4639,7 +4684,7 @@
         }, {
           key: "_check",
           value: function _check() {
-            var _this7 = this;
+            var _this9 = this;
 
             // Check the authentication status
             return this.jwtAuth.check().pipe((0, rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.switchMap)(function (authenticated) {
@@ -4650,7 +4695,7 @@
                 localStorage.clear();
                 sessionStorage.clear();
 
-                _this7.router.navigate(["session/login"]); // Prevent the access
+                _this9.router.navigate(["session/login"]); // Prevent the access
 
 
                 return (0, rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(false);
@@ -5044,12 +5089,10 @@
           key: "gettingTransactionCodeSummary",
           value: function gettingTransactionCodeSummary() {
             return this.http.get("".concat(_median, "/config/getSummaryForTransactionCodeMapping"));
-          }
-        }, {
-          key: "saveTrnCodeMaster",
-          value: function saveTrnCodeMaster(master) {
-            return this.http.post("".concat(_median, "/config/saveTrnMaster"), master);
-          }
+          } // saveTrnCodeMaster(master): Observable<any> {
+          //   return this.http.post<boolean>(`${median}/config/saveTrnMaster`, master);
+          // }
+
         }, {
           key: "saveTrnCode",
           value: function saveTrnCode(trnData, userId, loggedInuser) {
@@ -5087,18 +5130,18 @@
           }
         }, {
           key: "onClckOfAuthTransactionCode",
-          value: function onClckOfAuthTransactionCode(userId, userIdLoggedIn) {
-            return this.http.get("".concat(_API_URL, "/config/verify/").concat(userId, "/").concat(userIdLoggedIn));
+          value: function onClckOfAuthTransactionCode(operation, MedTransOperationData) {
+            return this.http.put("".concat(_API_URL, "/config/").concat(operation), MedTransOperationData);
           }
         }, {
           key: "onclickOfCloseTransactionCode",
-          value: function onclickOfCloseTransactionCode(userId, userIdLoggedIn) {
-            return this.http.get("".concat(_API_URL, "/config/close/").concat(userId, "/").concat(userIdLoggedIn));
+          value: function onclickOfCloseTransactionCode(operation, MedTransOperationData) {
+            return this.http.put("".concat(_API_URL, "/config/").concat(operation), MedTransOperationData);
           }
         }, {
           key: "onclickOfReopenTransactionCode",
-          value: function onclickOfReopenTransactionCode(userId, userIdLoggedIn) {
-            return this.http.get("".concat(_API_URL, "/config/reOpen/").concat(userId, "/").concat(userIdLoggedIn));
+          value: function onclickOfReopenTransactionCode(operation, MedTransOperationData) {
+            return this.http.put("".concat(_API_URL, "/config/").concat(operation), MedTransOperationData);
           }
         }, {
           key: "updateAuditData",
@@ -5742,15 +5785,15 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this8 = this;
+            var _this10 = this;
 
             return (0, rxjs__WEBPACK_IMPORTED_MODULE_2__.of)({
               token: _DEMO_TOKEN,
               user: _DEMO_USER
             }).pipe((0, rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.delay)(1000), (0, rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(function (res) {
-              _this8.setUserAndToken(res.token, res.user, !!res);
+              _this10.setUserAndToken(res.token, res.user, !!res);
 
-              _this8.signingIn = true;
+              _this10.signingIn = true;
               return res;
             }), (0, rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(function (error) {
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_6__.throwError)(error);
@@ -5764,12 +5807,12 @@
         }, {
           key: "checkTokenIsValid",
           value: function checkTokenIsValid() {
-            var _this9 = this;
+            var _this11 = this;
 
             return (0, rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(_DEMO_USER).pipe((0, rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(function (profile) {
-              _this9.setUserAndToken(_this9.getJwtToken(), profile, true);
+              _this11.setUserAndToken(_this11.getJwtToken(), profile, true);
 
-              _this9.signingIn = false;
+              _this11.signingIn = false;
               return profile;
             }), (0, rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(function (error) {
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(error);
@@ -6185,11 +6228,11 @@
         }, {
           key: "fetchNewRolePermissions",
           value: function fetchNewRolePermissions(userIdLoggedIn) {
-            var _this10 = this;
+            var _this12 = this;
 
             this.http.get("".concat(this._fmosbaseURL, "/allRolePermissionForUser/").concat(userIdLoggedIn)).subscribe(function (data) {
-              _this10.storeuserpermissions = data;
-              localStorage.setItem('userPermissions', JSON.stringify(_this10.storeuserpermissions));
+              _this12.storeuserpermissions = data;
+              localStorage.setItem('userPermissions', JSON.stringify(_this12.storeuserpermissions));
             });
           } //dynamic roles
 
@@ -6251,7 +6294,7 @@
         }, {
           key: "EnablescreenPermissions",
           value: function EnablescreenPermissions() {
-            var _this11 = this;
+            var _this13 = this;
 
             console.log(localStorage.getItem('userPermissions'));
             var userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
@@ -6283,7 +6326,7 @@
 
             this.screenwisePermissions.next(permissionlist);
             this.screenwisePermissions.subscribe(function (message) {
-              return _this11.screenpermissions = message;
+              return _this13.screenpermissions = message;
             }); // console.log("screen permissions final", this.screenpermissions);
           }
         }]);

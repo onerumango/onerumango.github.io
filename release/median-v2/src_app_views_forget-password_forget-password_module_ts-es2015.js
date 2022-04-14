@@ -443,29 +443,36 @@ class ForgetPasswordComponent {
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Enter User Id." });
             return;
         }
-        var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_0__.AES.encrypt(username, "@12#90!^*NPR*g&*()$34#$");
-        var uname = USERNAME.toString();
-        console.log(uname);
-        this.spinnerbutton = true;
-        this.passwordReset1 = uname;
-        console.log("uname", uname);
-        this.apiService.getOtpForReset(this.passwordReset1).subscribe((res) => {
-            this.loginProcessing = false;
-            this.var = res;
-            if (this.var) {
-                this.button1 = true;
-                this.button2 = false;
-                this.isReadOnly = true;
-                this.spinnerbutton = false;
-                this.toastService.successMessage("OTP sent successfully", "");
-            }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Unable to find User details.Verify your userid." });
-                this.button1 = false;
-                this.button2 = true;
-                this.isReadOnly = true;
-                this.spinnerbutton = false;
-            }
+        this.apiService.fetchMedUser(username).subscribe((response) => {
+            console.log(response);
+            this.user = response;
+            this.email = this.user.email;
+            localStorage.setItem("userFromLogin", this.user.userId);
+            sessionStorage.setItem("user_id", this.user.userId);
+            var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_0__.AES.encrypt(username, "@12#90!^*NPR*g&*()$34#$");
+            var uname = USERNAME.toString();
+            console.log(uname);
+            this.spinnerbutton = true;
+            this.passwordReset1 = uname;
+            console.log("uname", uname);
+            this.apiService.getOtpForReset(this.passwordReset1).subscribe((res) => {
+                this.loginProcessing = false;
+                this.var = res;
+                if (this.var) {
+                    this.button1 = true;
+                    this.button2 = false;
+                    this.isReadOnly = true;
+                    this.spinnerbutton = false;
+                    this.toastService.successMessage("OTP sent successfully to " + this.email, "");
+                }
+                else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Unable to find User details.Verify your userid." });
+                    this.button1 = false;
+                    this.button2 = true;
+                    this.isReadOnly = true;
+                    this.spinnerbutton = false;
+                }
+            });
         }, (error) => {
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Server Error,Unable to connect server." });
         });
@@ -582,7 +589,7 @@ ForgetPasswordComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "label", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "Confirm password");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "Confirm Password");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "span", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](35, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();

@@ -785,7 +785,7 @@ class DepartmenrtIdNewComponent {
     }
 }
 DepartmenrtIdNewComponent.ɵfac = function DepartmenrtIdNewComponent_Factory(t) { return new (t || DepartmenrtIdNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_maintenance_service__WEBPACK_IMPORTED_MODULE_3__.MaintenanceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService)); };
-DepartmenrtIdNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: DepartmenrtIdNewComponent, selectors: [["npr-departmenrt-id-new"]], decls: 45, vars: 16, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "", 1, "formLbl"], [1, "colorRed"], ["id", "fname", "formControlName", "departId", "type", "text", "placeholder", "Department ID", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "lname", "type", "text", "formControlName", "departName", "placeholder", "Department Name", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "accNumber", "pattern", "[0-9]*", "maxlength", "3", "formControlName", "fromSeries", "placeholder", "Batch No From", "value", "", "required", "", 1, "form-control", 3, "readonly", "keypress"], ["id", "cName", "pattern", "[0-9]*", "maxlength", "3", "type", "text", "formControlName", "toSeries", "placeholder", "Batch No To", "value", "", "required", "", 1, "form-control", 3, "readonly", "keypress"], ["class", "invalid-feedback", 4, "ngIf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [1, "invalid-feedback"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function DepartmenrtIdNewComponent_Template(rf, ctx) { if (rf & 1) {
+DepartmenrtIdNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: DepartmenrtIdNewComponent, selectors: [["npr-departmenrt-id-new"]], decls: 45, vars: 16, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "", 1, "formLbl"], [1, "colorRed"], ["id", "fname", "formControlName", "departId", "type", "text", "placeholder", "Department ID", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "lname", "type", "text", "formControlName", "departName", "placeholder", "Department Name", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "accNumber", "pattern", "[0-9]*", "maxlength", "3", "formControlName", "fromSeries", "placeholder", "Batch No From", "value", "", "required", "", 1, "form-control", 3, "readonly", "keypress"], ["id", "cName", "pattern", "[0-9]*", "maxlength", "3", "type", "text", "formControlName", "toSeries", "placeholder", "Batch No To", "value", "", "required", "", 1, "form-control", 3, "readonly", "keypress"], ["class", "invalid-feedback", 4, "ngIf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [1, "invalid-feedback"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function DepartmenrtIdNewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
@@ -1854,7 +1854,7 @@ GlobalGccAcNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](102, "div", 30);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](103, "button", 35);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function GlobalGccAcNewComponent_Template_button_click_103_listener() { return ctx.onSubmitAccountForm(ctx.accountMaintenanceForm.value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](104, "Submit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](104, "Save");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](105, "div", 30);
@@ -2244,6 +2244,10 @@ class TransactionCodeEditComponent {
             trnDesc: '',
             trnCode: ''
         };
+        this.MedTransOperationDto = {
+            userId: '',
+            userIdLoggedIn: ''
+        };
         this.clicked = false;
         this.submitFlag = false;
     }
@@ -2258,7 +2262,15 @@ class TransactionCodeEditComponent {
         this.currentUser = localStorage.getItem("userFromLogin");
         this.transactionCodeEditForm = this.formBuilder.group({
             userId: [""],
-            transactionData: this.formBuilder.array([this.createtransactionCodeGroup()])
+            creatorId: [""],
+            transactionData: this.formBuilder.array([this.createtransactionCodeGroup()]),
+            verifiedBy: [""],
+            verifiedTime: [""],
+            recordStatus: [""],
+            verifiedOnce: [""],
+            modNo: [""],
+            verifiedStatus: [""],
+            creatorDtStamp: [""],
         });
         this.getUserName();
         this.gettingSummaryData();
@@ -2268,6 +2280,7 @@ class TransactionCodeEditComponent {
     }
     createtransactionCodeGroup() {
         return new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroup({
+            'id': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl(''),
             'trnDesc': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl(''),
             'trnCode': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('')
         });
@@ -2290,7 +2303,7 @@ class TransactionCodeEditComponent {
     deleteRowData(data, i) {
         const transactionData = this.transactionCodeEditForm.get('transactionData');
         if (transactionData.at(i).get('trnCode').value && transactionData.at(i).get('trnDesc').value) {
-            transactionData.removeAt(i);
+            // transactionData.removeAt(i);
             console.log("this.transactionCodeSummryData.formValues", data.id);
             this.apiService.deleteRow(data.id).subscribe(resp => {
                 this.deleteRowResp = resp;
@@ -2320,7 +2333,7 @@ class TransactionCodeEditComponent {
             });
         }
         else {
-            transactionData.removeAt(i);
+            // transactionData.removeAt(i);
         }
     }
     addFormGroup() {
@@ -2353,10 +2366,11 @@ class TransactionCodeEditComponent {
     gettingSummaryData() {
         this.apiService.getSummaryDataTransactionCode().subscribe((summaryData) => {
             this.transactionCodeSummryData = summaryData;
-            console.log("this.transactionCodeSummryData", this.transactionCodeSummryData.formValues);
+            console.log("formValues", this.transactionCodeSummryData.formValues);
+            console.log("this.transactionCodeSummryData", this.transactionCodeSummryData);
             this.auditLog();
-            const userID = this.transactionCodeSummryData.userID;
-            this.transactionCodeEditForm.controls.userId.setValue(userID);
+            this.userID = this.transactionCodeSummryData.userID;
+            this.transactionCodeEditForm.controls.userId.setValue(this.userID);
             this.addtrnDec.removeAt(0);
             this.transactionCodeSummryData.formValues.forEach(element => {
                 const row = this.formBuilder.group({
@@ -2423,7 +2437,11 @@ class TransactionCodeEditComponent {
             }).then((result => {
                 console.log("this is reopen ", result);
                 if (result.isConfirmed === true) {
-                    this.apiService.onClckOfAuthTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(authResp => {
+                    this.operation = 'verify';
+                    this.MedTransOperationDto.userId = this.userID;
+                    this.MedTransOperationDto.userIdLoggedIn = this.currentUser;
+                    console.log("this.MedTransOperationDto", this.MedTransOperationDto);
+                    this.apiService.onClckOfAuthTransactionCode(this.operation, this.MedTransOperationDto).subscribe(authResp => {
                         console.log(authResp);
                         this.transactionCodeSummryData = authResp;
                         this.auditLog();
@@ -2449,7 +2467,11 @@ class TransactionCodeEditComponent {
         }).then((result => {
             console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
-                this.apiService.onclickOfCloseTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(closeResp => {
+                this.operation = 'close';
+                this.MedTransOperationDto.userId = this.userID;
+                this.MedTransOperationDto.userIdLoggedIn = this.currentUser;
+                console.log("this.MedTransOperationDto", this.MedTransOperationDto);
+                this.apiService.onclickOfCloseTransactionCode(this.operation, this.MedTransOperationDto).subscribe(closeResp => {
                     console.log(closeResp);
                     this.transactionCodeSummryData = closeResp;
                     this.auditLog();
@@ -2490,7 +2512,10 @@ class TransactionCodeEditComponent {
         }).then((result => {
             console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
-                this.apiService.onclickOfReopenTransactionCode(this.transactionCodeSummryData.userID, this.currentUser).subscribe(openResp => {
+                this.operation = 'reOpen';
+                this.MedTransOperationDto.userId = this.userID;
+                this.MedTransOperationDto.userIdLoggedIn = this.currentUser;
+                this.apiService.onclickOfReopenTransactionCode(this.operation, this.MedTransOperationDto).subscribe(openResp => {
                     console.log(openResp);
                     this.transactionCodeSummryData = openResp;
                     this.auditLog();
@@ -2530,7 +2555,6 @@ class TransactionCodeEditComponent {
             cancelButtonText: 'NO',
             confirmButtonText: 'YES', 'icon': 'info'
         }).then((result => {
-            console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
                 this.apiService.deleteUserData(UserId).subscribe(resp => {
                     if (resp == true) {
@@ -2558,46 +2582,34 @@ class TransactionCodeEditComponent {
         }));
     }
     onSubmitofForm(formData, auditData) {
-        console.log(this.transactionData, formData);
-        this.masterClass.creatorDtStamp = auditData.creatorDtStamp;
-        this.masterClass.creatorId = this.currentUser;
-        this.masterClass.creatorDtStamp = auditData.creatorDtStamp;
-        this.masterClass.creatorId = this.currentUser;
-        this.masterClass.modNo = auditData.modNo;
-        this.masterClass.recordStatus = auditData.recordStatus;
-        this.masterClass.verifiedBy = auditData.verifiedBy;
-        this.masterClass.verifiedOnce = auditData.verifiedOnce;
-        this.masterClass.verifiedStatus = auditData.verifiedStatus;
-        this.masterClass.verifiedTime = auditData.verifiedTime;
-        this.masterClass.userId = auditData.userID;
-        console.log("this.masterClass", this.masterClass);
-        this.apiService.updateAuditData(this.masterClass).subscribe(savetrnres => {
-            this.savetrnResponse = savetrnres;
-            if (this.savetrnResponse) {
-                this.modifyMAster(formData);
-                this.disablesubmit = true;
-            }
-            else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: 'Unable to Save Data!',
-                    icon: 'warning'
-                });
-            }
+        this.disablesubmit = true;
+        formData.creatorDtStamp = auditData.creatorDtStamp;
+        formData.creatorId = this.currentUser;
+        formData.creatorDtStamp = auditData.creatorDtStamp;
+        formData.modNo = auditData.modNo;
+        formData.recordStatus = auditData.recordStatus;
+        formData.verifiedBy = auditData.verifiedBy;
+        formData.verifiedOnce = auditData.verifiedOnce;
+        formData.verifiedStatus = auditData.verifiedStatus;
+        formData.verifiedTime = auditData.verifiedTime;
+        formData.userId = auditData.userID;
+        formData.transactionData.forEach(element => {
+            formData.id = element.id;
+            formData.userId = element.userId;
+            formData.creatorId = element.creatorId;
         });
-    }
-    modifyMAster(formData) {
         this.transactionData = formData.transactionData;
-        console.log("this.trnData", formData, formData.transactionData);
         for (let i = 0; i < this.transactionData.length; i++) {
-            this.transactionData[i].userId = formData.userId;
+            this.transactionData[i].creatorId = this.currentUser;
             this.transactionData[i].creatorDtStamp = formData.creatorDtStamp;
+            this.transactionData[i].modNo = formData.modNo;
             this.transactionData[i].recordStatus = formData.recordStatus;
             this.transactionData[i].verifiedBy = formData.verifiedBy;
             this.transactionData[i].verifiedOnce = formData.verifiedOnce;
             this.transactionData[i].verifiedStatus = formData.verifiedStatus;
             this.transactionData[i].verifiedTime = formData.verifiedTime;
-            this.transactionData[i].creatorId = formData.creatorId;
         }
+        console.log("Final Data", this.transactionData);
         this.apiService.updateTransactionCode(this.transactionData, this.currentUser).subscribe(savetrnres => {
             this.updatetrnResp = savetrnres;
             if (this.updatetrnResp) {
@@ -2616,7 +2628,7 @@ class TransactionCodeEditComponent {
     }
 }
 TransactionCodeEditComponent.ɵfac = function TransactionCodeEditComponent_Factory(t) { return new (t || TransactionCodeEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_5__.RoleService)); };
-TransactionCodeEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: TransactionCodeEditComponent, selectors: [["npr-transaction-code-edit"]], decls: 134, vars: 22, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-12"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], ["id", "usersId", "type", "text", "oninput", "this.value = this.value.toUpperCase()", "readonly", "", "formControlName", "userId", "placeholder", "User Id", "value", "", 1, "form-control"], ["formArrayName", "transactionData", "fxLayout", "column", "fxLayoutGap", "50px", 1, "row", "gy-4"], ["class", "row", "style", "margin-top: 10px;", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."], [1, "row", 2, "margin-top", "10px", 3, "formGroupName"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], ["id", "transactionCode", "formControlName", "trnCode", "placeholder", "Transaction Code", "required", "", 1, "form-control", 3, "readonly", "ngModelChange"], ["id", "transactionDes", "formControlName", "trnDesc", "type", "text", "placeholder", "Transaction Description", 1, "form-control", 3, "readonly", "ngModelChange"], [3, "ngStyle"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "colorRed"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "disabled", "click"]], template: function TransactionCodeEditComponent_Template(rf, ctx) { if (rf & 1) {
+TransactionCodeEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: TransactionCodeEditComponent, selectors: [["npr-transaction-code-edit"]], decls: 134, vars: 22, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-12"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], ["id", "usersId", "type", "text", "oninput", "this.value = this.value.toUpperCase()", "readonly", "", "formControlName", "userId", "placeholder", "User Id", "value", "", 1, "form-control"], ["formArrayName", "transactionData", "fxLayout", "column", "fxLayoutGap", "50px", 1, "row", "gy-4"], ["class", "row", "style", "margin-top: 10px;", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."], [1, "row", 2, "margin-top", "10px", 3, "formGroupName"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], ["id", "transactionCode", "formControlName", "trnCode", "placeholder", "Transaction Code", "required", "", 1, "form-control", 3, "readonly", "ngModelChange"], ["id", "transactionDes", "formControlName", "trnDesc", "type", "text", "placeholder", "Transaction Description", 1, "form-control", 3, "readonly", "ngModelChange"], [3, "ngStyle"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "colorRed"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"]], template: function TransactionCodeEditComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);
@@ -2984,6 +2996,7 @@ class TransactionCodeMaintenanceComponent {
         const userID = data.userId;
         this.apiService.gettingTransactionDatabyID(data.userId).subscribe(trndataResp => {
             this.transactionDataResp = trndataResp;
+            console.log("this.transactionDataResp", this.transactionDataResp.id, data.id);
             if (this.transactionDataResp) {
                 this.apiService.setSummaryDataTransactionCode({
                     userID: data.userId,
@@ -3166,14 +3179,6 @@ class TransactionCodeNewComponent {
         this.apiService = apiService;
         this.toastService = toastService;
         this.showList = false;
-        this.masterClass = {
-            creatorId: '',
-            userId: ''
-        };
-        this.formValues = {
-            trnDesc: '',
-            trnCode: ''
-        };
         this.editFlag = false;
         this.showDelete = false;
         this.submitAccBtn = false;
@@ -3182,15 +3187,15 @@ class TransactionCodeNewComponent {
         this.currentUser = localStorage.getItem("userFromLogin");
         this.transactionCodeForm = this.formBuilder.group({
             userId: [""],
-            verifiedBy: [""],
-            verifiedTime: [""],
-            recordStatus: [""],
-            verifiedOnce: [""],
-            modNo: [""],
-            verifiedStatus: [""],
-            creatorDtStamp: [""],
             creatorId: [""],
             transactionData: this.formBuilder.array([this.createtransactionCodeGroup()])
+            // verifiedBy: [""],
+            // verifiedTime: [""],
+            // recordStatus: [""],
+            // verifiedOnce: [""],
+            // modNo: [""],
+            // verifiedStatus: [""],
+            // creatorDtStamp: [""],
         });
         this.getUserName();
     }
@@ -3228,38 +3233,37 @@ class TransactionCodeNewComponent {
             }
         });
     }
+    // long id;
+    // String trnCode;
+    // String trnDesc;
+    // String userId;
     onSubmit(transactionCodeForm) {
-        this.masterClass.creatorId = this.currentUser;
-        this.masterClass.userId = transactionCodeForm.userId;
         this.formValues = transactionCodeForm.transactionData;
-        this.apiService.saveTrnCodeMaster(this.masterClass).subscribe(res => {
-            if (res) {
-                this.apiService.saveTrnCode(this.formValues, this.masterClass.userId, this.currentUser).subscribe(res => {
-                    if (res == true) {
-                        this.submitAccBtn = true;
-                        // this.toastService.successMessage('Data Saved Successfully!.', '');
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                            title: 'Record is Created',
-                            icon: 'success'
-                        });
-                        this.editFlag = true;
-                    }
-                    else {
-                        // this.toastService.errorMessage('Failed to Save Data!', '');
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                            title: 'Failed to Save Data.',
-                            icon: 'error'
-                        });
-                    }
-                }, error => {
-                    if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                            text: 'Server Error!',
-                            icon: 'error'
-                        });
-                    }
+        this.createrId = transactionCodeForm.userId;
+        console.log("transactionCodeForm", this.formValues, this.createrId, this.currentUser);
+        this.apiService.saveTrnCode(this.formValues, this.createrId, this.currentUser).subscribe(res => {
+            if (res == true) {
+                this.submitAccBtn = true;
+                // this.toastService.successMessage('Data Saved Successfully!.', '');
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                    title: 'Record is Created',
+                    icon: 'success'
                 });
-                // this.transactionCodeForm.reset();
+                this.editFlag = true;
+            }
+            else {
+                // this.toastService.errorMessage('Failed to Save Data!', '');
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                    title: 'Failed to Save Data.',
+                    icon: 'error'
+                });
+            }
+        }, error => {
+            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpErrorResponse) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                    text: 'Server Error!',
+                    icon: 'error'
+                });
             }
         });
     }
