@@ -741,32 +741,40 @@
               return;
             }
 
-            var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_0__.AES.encrypt(username, "@12#90!^*NPR*g&*()$34#$");
-            var uname = USERNAME.toString();
-            console.log(uname);
-            this.spinnerbutton = true;
-            this.passwordReset1 = uname;
-            console.log("uname", uname);
-            this.apiService.getOtpForReset(this.passwordReset1).subscribe(function (res) {
-              _this5.loginProcessing = false;
-              _this5["var"] = res;
+            this.apiService.fetchMedUser(username).subscribe(function (response) {
+              console.log(response);
+              _this5.user = response;
+              _this5.email = _this5.user.email;
+              localStorage.setItem("userFromLogin", _this5.user.userId);
+              sessionStorage.setItem("user_id", _this5.user.userId);
+              var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_0__.AES.encrypt(username, "@12#90!^*NPR*g&*()$34#$");
+              var uname = USERNAME.toString();
+              console.log(uname);
+              _this5.spinnerbutton = true;
+              _this5.passwordReset1 = uname;
+              console.log("uname", uname);
 
-              if (_this5["var"]) {
-                _this5.button1 = true;
-                _this5.button2 = false;
-                _this5.isReadOnly = true;
-                _this5.spinnerbutton = false;
+              _this5.apiService.getOtpForReset(_this5.passwordReset1).subscribe(function (res) {
+                _this5.loginProcessing = false;
+                _this5["var"] = res;
 
-                _this5.toastService.successMessage("OTP sent successfully", "");
-              } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  text: "Unable to find User details.Verify your userid."
-                });
-                _this5.button1 = false;
-                _this5.button2 = true;
-                _this5.isReadOnly = true;
-                _this5.spinnerbutton = false;
-              }
+                if (_this5["var"]) {
+                  _this5.button1 = true;
+                  _this5.button2 = false;
+                  _this5.isReadOnly = true;
+                  _this5.spinnerbutton = false;
+
+                  _this5.toastService.successMessage("OTP sent successfully to " + _this5.email, "");
+                } else {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: "Unable to find User details.Verify your userid."
+                  });
+                  _this5.button1 = false;
+                  _this5.button2 = true;
+                  _this5.isReadOnly = true;
+                  _this5.spinnerbutton = false;
+                }
+              });
             }, function (error) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                 text: "Server Error,Unable to connect server."
@@ -973,7 +981,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "label", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "Confirm password");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "Confirm Password");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "span", 7);
 
