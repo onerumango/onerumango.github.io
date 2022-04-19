@@ -1193,16 +1193,24 @@ class SidenavComponent {
     EnablescreenPermissions() {
         let userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
         let permissionlist = [];
+        console.log(userPermissions, "UserPermission");
         if (userPermissions) {
             let labelsdata = userPermissions.labels;
             labelsdata.sort((a, b) => a.labelId - b.labelId);
             let screensdata = userPermissions.screenAndPermissionsDTO;
-            let viewindex = labelsdata.findIndex(function (item) { return item.labelName.toLowerCase() == 'view'; });
-            ;
+            // let viewindex = labelsdata.findIndex(function (item) { return item.labelName.toLowerCase() == 'view' });;
+            //  console.log(viewindex,"ViewIndex");
             for (let i = 0; i < screensdata.length; i++) {
                 let data = screensdata[i].permissions.toString();
-                if (data.charAt(viewindex) == 1 || data.charAt(viewindex) == "1") {
-                    permissionlist.push(screensdata[i].screenName);
+                console.log(data, "Data");
+                // console.log(data.charAt(viewindex),"DataIndex");
+                for (let m = 0; m < labelsdata.length; m++) {
+                    console.log(m + " " + labelsdata[m].labelId + " " + labelsdata[m].labelName, "Index");
+                    if (data.charAt(m) == 1 || data.charAt(m) == "1") {
+                        // console.log("If condition");
+                        permissionlist.push(screensdata[i].screenName);
+                        break;
+                    }
                 }
             } //for loop endng
         } //if
@@ -2523,7 +2531,7 @@ class ApiService {
         return this.http.get(`${API_URL}/login/getUserByUserId/${userId}`);
     }
     fetchSecurityPolicyService() {
-        return this.http.get(`${API_URL}/securityPolicy/fetch`);
+        return this.http.get(`${API_URL}/securityPolicy/fetchAuthRecord`);
     }
     accountBlock(data) {
         return this.http.post(`${API_URL}/api/blockCustAcc`, data);
@@ -3207,11 +3215,13 @@ class RoleService {
         } //if permissions exist
         console.log('scr', this.screenData);
         this.screenLabelList.next(this.screenData);
+        console.log('scr', this.screenLabelList);
     }
     fetchNewRolePermissions(userIdLoggedIn) {
         this.http.get(`${this._fmosbaseURL}/allRolePermissionForUser/${userIdLoggedIn}`).subscribe(data => {
             this.storeuserpermissions = data;
             localStorage.setItem('userPermissions', JSON.stringify(this.storeuserpermissions));
+            console.log(this.storeuserpermissions);
         });
     }
     //dynamic roles

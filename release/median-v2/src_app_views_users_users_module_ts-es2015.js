@@ -1220,7 +1220,7 @@ function UserNewComponent_div_80_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r13.submit || ctx_r13.userForm.valid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r13.submit || !ctx_r13.userForm.valid);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](2, _c0));
 } }
@@ -1329,13 +1329,13 @@ function UserNewComponent_div_81_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.roleCodes.auth);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.roleCodes.auth && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "C" && ctx_r14.roleCodes.reopen && ctx_r14.userObjWithAudit.verifiedOnce == "YES");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "C" && ctx_r14.roleCodes.reopen && ctx_r14.userObjWithAudit.verifiedOnce == "YES" && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "O" && ctx_r14.userObjWithAudit.verifiedOnce == "YES");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "O" && ctx_r14.userObjWithAudit.verifiedOnce == "YES" && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.roleCodes.delete && ctx_r14.userObjWithAudit.verifiedOnce == "NO" && ctx_r14.modifyUserObject.verifiedStatus == "U");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.roleCodes.delete && ctx_r14.userObjWithAudit.verifiedOnce == "NO" && ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c0));
 } }
@@ -1534,14 +1534,16 @@ function UserNewComponent_div_82_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r15.userObjWithAudit.modNo);
 } }
 class UserNewComponent {
-    constructor(roleService, userApi, securityApi, _location, formBuilder, iziToast, router) {
+    constructor(roleService, userApi, securityApi, _location, formBuilder, cdr, iziToast, router) {
         this.roleService = roleService;
         this.userApi = userApi;
         this.securityApi = securityApi;
         this._location = _location;
         this.formBuilder = formBuilder;
+        this.cdr = cdr;
         this.iziToast = iziToast;
         this.router = router;
+        this.passwordRegex = '';
         this.hide = true;
         this.editFlag = false;
         this.modifyUserObject = new src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_0__.User();
@@ -1593,7 +1595,6 @@ class UserNewComponent {
         if (this.editUserScreen && Object.keys(this.editUserScreen).length === 0 && Object.getPrototypeOf(this.editUserScreen) === Object.prototype) {
             this._location.back();
         }
-        this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
         this.editFlag = false;
         this.user_id = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
         this.role = sessionStorage.getItem('user_role');
@@ -1646,9 +1647,11 @@ class UserNewComponent {
         this.getAllDeptNames();
         this.getAllRolesNames();
         this.getUserAuditData();
+        this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
+        console.log(this.roleCodes);
+        this.userForm.disable();
     }
     buildUserForm(data, isResponse) {
-        console.log(data);
         this.securityApi.fetchSecurityPolicyService()
             .subscribe(resp => {
             this.security1 = resp;
@@ -1658,46 +1661,58 @@ class UserNewComponent {
             this.splc = this.security1.pswdComplexSplc;
             this.errorMsg = '';
             this.passwordRegex = '';
+            this.minPass = this.security1.minPswdLength;
+            this.maxPass = this.security1.maxPswdLength;
             if (this.security1.pswdComplexUcase == "true") {
-                this.passwordRegex = '(?=[^A-Z]*[A-Z])';
+                // this.passwordRegex = '(?=[^A-Z]*[A-Z])';
+                this.passwordRegex = '(?=.*[A-Z])';
                 this.errorMsg = ' UpperCase';
             }
             if (this.security1.pswdComplexLcase == "true") {
-                this.passwordRegex = this.passwordRegex + '(?=[^a-z]*[a-z])';
+                // this.passwordRegex = this.passwordRegex + '(?=[^a-z]*[a-z])';
+                this.passwordRegex = this.passwordRegex + '(?=.*[a-z])';
                 if (this.errorMsg != '') {
                     this.errorMsg = this.errorMsg + ', LowerCase';
                 }
                 else {
-                    this.errorMsg = this.errorMsg + ' LowerCase';
+                    // this.errorMsg = this.errorMsg + ' LowerCase';
+                    this.errorMsg = ' LowerCase';
                 }
             }
             if (this.security1.pswdComplexNum == "true") {
-                this.passwordRegex = this.passwordRegex + '(?=[^0-9]*[0-9])';
+                // this.passwordRegex = this.passwordRegex + '(?=[^0-9]*[0-9])';
+                this.passwordRegex = this.passwordRegex + '(?=.*?[0-9])';
                 if (this.errorMsg != '') {
                     this.errorMsg = this.errorMsg + ', Number';
                 }
                 else {
-                    this.errorMsg = this.errorMsg + ' Number';
+                    this.errorMsg = ' Number';
                 }
             }
             if (this.security1.pswdComplexSplc == "true") {
-                this.passwordRegex = this.passwordRegex + '(?=[^!-@]*[!-@])';
+                // this.passwordRegex = this.passwordRegex + '(?=[^!-@]*[!-@])';
+                this.passwordRegex = this.passwordRegex + '(?=.*?[!@#\$&*~])';
                 if (this.errorMsg != '') {
                     this.errorMsg = this.errorMsg + ', Special Character';
                 }
                 else {
-                    this.errorMsg = this.errorMsg + ' Special Character';
+                    this.errorMsg = ' Special Character';
                 }
             }
-            this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
+            // this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
+            this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',}';
             // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
             this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
             console.log(this.passwordRegex);
+            this.userForm.get('password').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.pattern(this.passwordRegex),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.maxLength(this.maxPass),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.minLength(this.minPass)])]);
             // ---------- Password Policy Implementation (END) ----------
         });
-        this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
-        // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
-        this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
+        // this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
+        // // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
+        // this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
         console.log(this.passwordRegex);
         this.userForm = this.formBuilder.group({
             userId: [data.userId ? data.userId : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, UsernameValidator.cannotContainSpace]],
@@ -2046,9 +2061,10 @@ class UserNewComponent {
     editValues() {
         this.editFlag = false;
         this.authBtn = false;
+        this.userForm.enable();
     }
 }
-UserNewComponent.ɵfac = function UserNewComponent_Factory(t) { return new (t || UserNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_3__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router)); };
+UserNewComponent.ɵfac = function UserNewComponent_Factory(t) { return new (t || UserNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_3__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router)); };
 UserNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: UserNewComponent, selectors: [["npr-user-new"]], decls: 83, vars: 31, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["id", "usersId", "oninput", "this.value = this.value.toUpperCase()", "placeholder", "User Id", "required", "", "formControlName", "userId", "maxlength", "35", "minlength", "2", "type", "text", 1, "form-control", 3, "readonly"], ["class", "errorColor", 4, "ngIf"], ["id", "usersName", "type", "text", "formControlName", "userName", "placeholder", "User Name", 1, "form-control", 3, "readonly"], [1, "form-control", "d-flex"], ["id", "usersPassword", "type", "password", "formControlName", "password", "placeholder", "Password", 1, "noborder", 2, "width", "100%", 3, "type", "readonly"], ["toggle", "#pwdFld", 1, "visibility", 3, "click"], ["class", "showPwd", "src", "assets/images/show-icon.svg", "alt", "...", 4, "ngIf"], ["class", "hidePwd", "src", "assets/images/hide-icon.svg", "alt", "...", 4, "ngIf"], ["type", "email", "id", "usersPassword", "formControlName", "email", "placeholder", "Email", "value", "", 1, "form-control", 3, "readonly"], ["id", "usersPassword", "pattern", "^\\d{10}$", "name", "mobile", "maxLength", "10", "formControlName", "mobile", "placeholder", "Mobile Number", 1, "form-control", 3, "readonly", "keypress"], ["formControlName", "newRoleForUser", 1, "container", 3, "placeholder", "data", "settings", "disabled", "onFilterChange", "onDropDownClose", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll"], ["multiSelect", ""], ["id", "outlineNgSelect", "formControlName", "department", "aria-label", "Default select example", 1, "form-select", 3, "readonly"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "disabled", "value", 4, "ngFor", "ngForOf"], [1, "col-lg-8"], [1, "col-lg-6"], ["id", "timeStart", "value", "09:00", "type", "time", "formControlName", "intime", 1, "form-control", 3, "readonly"], ["id", "timeEnd", "type", "time", "formControlName", "outtime", "placeholder", "18:00", "value", "", 1, "form-control", 3, "readonly"], [1, "row", "g-2"], [1, "radio", "radioStyle"], ["id", "radio-1", "formControlName", "statusForUser", "value", "Enable", "type", "radio", "checked", "", 3, "disabled"], ["for", "radio-1", 1, "radio-label"], ["id", "radio-2", "formControlName", "statusForUser", "type", "radio", "value", "Disable", 3, "disabled"], ["for", "radio-2", 1, "radio-label"], ["class", "col-lg-12", 4, "ngIf"], ["class", "dbCardStyle mt-20", 4, "ngIf"], [1, "errorColor"], [4, "ngIf"], ["src", "assets/images/show-icon.svg", "alt", "...", 1, "showPwd"], ["src", "assets/images/hide-icon.svg", "alt", "...", 1, "hidePwd"], [3, "disabled", "value"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "col-auto", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "hidden", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "hidden", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "dbCardStyle", "mt-20"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function UserNewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);

@@ -211,10 +211,10 @@ class SecurityPolicyService {
     }
     saveDataSecurity(obj) {
         console.log(obj);
-        return this.httpClient.post(`${this.API_URL}/config/save`, obj);
+        return this.httpClient.post(`${this.API_URL}/securityPolicy/save`, obj);
     }
     fetchSecurityPolicyService() {
-        return this.httpClient.get(`${this.API_URL}/config/fetch`);
+        return this.httpClient.get(`${this.API_URL}/securityPolicy/fetchAuthRecord`);
     }
     getSecurityPolicyForAuth() {
         return this.httpClient.get(`${this.API_URL}/authorization/getSecurityPolicy`);

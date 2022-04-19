@@ -2238,7 +2238,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r13.submit || ctx_r13.userForm.valid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r13.submit || !ctx_r13.userForm.valid);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
@@ -2492,19 +2492,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.roleCodes.auth);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.roleCodes.auth && ctx_r14.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "C" && ctx_r14.roleCodes.reopen && ctx_r14.userObjWithAudit.verifiedOnce == "YES");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "C" && ctx_r14.roleCodes.reopen && ctx_r14.userObjWithAudit.verifiedOnce == "YES" && ctx_r14.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "O" && ctx_r14.userObjWithAudit.verifiedOnce == "YES");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "O" && ctx_r14.userObjWithAudit.verifiedOnce == "YES" && ctx_r14.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.roleCodes["delete"] && ctx_r14.userObjWithAudit.verifiedOnce == "NO" && ctx_r14.modifyUserObject.verifiedStatus == "U");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r14.roleCodes["delete"] && ctx_r14.userObjWithAudit.verifiedOnce == "NO" && ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
@@ -2901,7 +2901,7 @@
       }
 
       var _UserNewComponent = /*#__PURE__*/function () {
-        function _UserNewComponent(roleService, userApi, securityApi, _location, formBuilder, iziToast, router) {
+        function _UserNewComponent(roleService, userApi, securityApi, _location, formBuilder, cdr, iziToast, router) {
           _classCallCheck(this, _UserNewComponent);
 
           this.roleService = roleService;
@@ -2909,8 +2909,10 @@
           this.securityApi = securityApi;
           this._location = _location;
           this.formBuilder = formBuilder;
+          this.cdr = cdr;
           this.iziToast = iziToast;
           this.router = router;
+          this.passwordRegex = '';
           this.hide = true;
           this.editFlag = false;
           this.modifyUserObject = new src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_0__.User();
@@ -2971,9 +2973,6 @@
               this._location.back();
             }
 
-            this.roleService.screenLabelList.subscribe(function (message) {
-              return _this8.roleCodes = message;
-            });
             this.editFlag = false;
             this.user_id = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.role = sessionStorage.getItem('user_role');
@@ -3036,13 +3035,17 @@
             this.getAllDeptNames();
             this.getAllRolesNames();
             this.getUserAuditData();
+            this.roleService.screenLabelList.subscribe(function (message) {
+              return _this8.roleCodes = message;
+            });
+            console.log(this.roleCodes);
+            this.userForm.disable();
           }
         }, {
           key: "buildUserForm",
           value: function buildUserForm(data, isResponse) {
             var _this9 = this;
 
-            console.log(data);
             this.securityApi.fetchSecurityPolicyService().subscribe(function (resp) {
               _this9.security1 = resp;
               _this9.ucase = _this9.security1.pswdComplexUcase;
@@ -3051,50 +3054,61 @@
               _this9.splc = _this9.security1.pswdComplexSplc;
               _this9.errorMsg = '';
               _this9.passwordRegex = '';
+              _this9.minPass = _this9.security1.minPswdLength;
+              _this9.maxPass = _this9.security1.maxPswdLength;
 
               if (_this9.security1.pswdComplexUcase == "true") {
-                _this9.passwordRegex = '(?=[^A-Z]*[A-Z])';
+                // this.passwordRegex = '(?=[^A-Z]*[A-Z])';
+                _this9.passwordRegex = '(?=.*[A-Z])';
                 _this9.errorMsg = ' UpperCase';
               }
 
               if (_this9.security1.pswdComplexLcase == "true") {
-                _this9.passwordRegex = _this9.passwordRegex + '(?=[^a-z]*[a-z])';
+                // this.passwordRegex = this.passwordRegex + '(?=[^a-z]*[a-z])';
+                _this9.passwordRegex = _this9.passwordRegex + '(?=.*[a-z])';
 
                 if (_this9.errorMsg != '') {
                   _this9.errorMsg = _this9.errorMsg + ', LowerCase';
                 } else {
-                  _this9.errorMsg = _this9.errorMsg + ' LowerCase';
+                  // this.errorMsg = this.errorMsg + ' LowerCase';
+                  _this9.errorMsg = ' LowerCase';
                 }
               }
 
               if (_this9.security1.pswdComplexNum == "true") {
-                _this9.passwordRegex = _this9.passwordRegex + '(?=[^0-9]*[0-9])';
+                // this.passwordRegex = this.passwordRegex + '(?=[^0-9]*[0-9])';
+                _this9.passwordRegex = _this9.passwordRegex + '(?=.*?[0-9])';
 
                 if (_this9.errorMsg != '') {
                   _this9.errorMsg = _this9.errorMsg + ', Number';
                 } else {
-                  _this9.errorMsg = _this9.errorMsg + ' Number';
+                  _this9.errorMsg = ' Number';
                 }
               }
 
               if (_this9.security1.pswdComplexSplc == "true") {
-                _this9.passwordRegex = _this9.passwordRegex + '(?=[^!-@]*[!-@])';
+                // this.passwordRegex = this.passwordRegex + '(?=[^!-@]*[!-@])';
+                _this9.passwordRegex = _this9.passwordRegex + '(?=.*?[!@#\$&*~])';
 
                 if (_this9.errorMsg != '') {
                   _this9.errorMsg = _this9.errorMsg + ', Special Character';
                 } else {
-                  _this9.errorMsg = _this9.errorMsg + ' Special Character';
+                  _this9.errorMsg = ' Special Character';
                 }
-              }
+              } // this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
 
-              _this9.passwordRegex = _this9.passwordRegex + '.{' + _this9.minPass + ',' + _this9.maxPass + '}'; // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
+
+              _this9.passwordRegex = _this9.passwordRegex + '.{' + _this9.minPass + ',}'; // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
 
               _this9.errorMsg = 'Password must contain atleast one ' + _this9.errorMsg + '.';
-              console.log(_this9.passwordRegex); // ---------- Password Policy Implementation (END) ----------
-            });
-            this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}'; // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
+              console.log(_this9.passwordRegex);
 
-            this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
+              _this9.userForm.get('password').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.pattern(_this9.passwordRegex), _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.maxLength(_this9.maxPass), _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.minLength(_this9.minPass)])]); // ---------- Password Policy Implementation (END) ----------
+
+            }); // this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
+            // // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
+            // this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
+
             console.log(this.passwordRegex);
             this.userForm = this.formBuilder.group({
               userId: [data.userId ? data.userId : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _UsernameValidator.cannotContainSpace]],
@@ -3525,6 +3539,7 @@
           value: function editValues() {
             this.editFlag = false;
             this.authBtn = false;
+            this.userForm.enable();
           }
         }]);
 
@@ -3532,7 +3547,7 @@
       }();
 
       _UserNewComponent.ɵfac = function UserNewComponent_Factory(t) {
-        return new (t || _UserNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_3__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router));
+        return new (t || _UserNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_3__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router));
       };
 
       _UserNewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
