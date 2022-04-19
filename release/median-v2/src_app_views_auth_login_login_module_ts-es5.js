@@ -756,6 +756,7 @@
                 //---------- Password Policy Implementation (BEGIN) ----------
                 _this2.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
                   _this2.security = resp;
+                  console.log(resp);
                   _this2.notifyPswdExpry = _this2.security.notifyPasswordExpiryInDays;
                   _this2.pswdExpiry = _this2.security.pswdExpiry;
 
@@ -789,8 +790,10 @@
                           _this2.otpreceivedtime = new Date();
 
                           if (_this2.variable) {
-                            if (_this2.variable[0] === "Username or password wrong") {
-                              _this2.toastService.errorMessage("Invalid UserId or Password !!!", "");
+                            if (_this2.variable[0] === "Username or password wrong") {// this.toastService.errorMessage(
+                              //   "Invalid UserId or Password !!!",
+                              //   ""
+                              // );
                             }
 
                             if (res.failLgnCounter != 0) {
@@ -819,8 +822,12 @@
                               _this2.loginProcessing = false;
                               _this2.verifyOTP = true;
                             } else {
-                              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(_this2.variable[0]);
-                              _this2.loginProcessing = false;
+                              if (_this2.variable[0] === "Username or password wrong") {
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Username or Password is wrong");
+                              } else {
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(_this2.variable[0]);
+                                _this2.loginProcessing = false;
+                              }
                             }
                           }
                         }, function (err) {

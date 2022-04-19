@@ -2409,23 +2409,28 @@
 
             var userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
             var permissionlist = [];
+            console.log(userPermissions, "UserPermission");
 
             if (userPermissions) {
               var labelsdata = userPermissions.labels;
               labelsdata.sort(function (a, b) {
                 return a.labelId - b.labelId;
               });
-              var screensdata = userPermissions.screenAndPermissionsDTO;
-              var viewindex = labelsdata.findIndex(function (item) {
-                return item.labelName.toLowerCase() == 'view';
-              });
-              ;
+              var screensdata = userPermissions.screenAndPermissionsDTO; // let viewindex = labelsdata.findIndex(function (item) { return item.labelName.toLowerCase() == 'view' });;
+              //  console.log(viewindex,"ViewIndex");
 
               for (var i = 0; i < screensdata.length; i++) {
                 var data = screensdata[i].permissions.toString();
+                console.log(data, "Data"); // console.log(data.charAt(viewindex),"DataIndex");
 
-                if (data.charAt(viewindex) == 1 || data.charAt(viewindex) == "1") {
-                  permissionlist.push(screensdata[i].screenName);
+                for (var m = 0; m < labelsdata.length; m++) {
+                  console.log(m + " " + labelsdata[m].labelId + " " + labelsdata[m].labelName, "Index");
+
+                  if (data.charAt(m) == 1 || data.charAt(m) == "1") {
+                    // console.log("If condition");
+                    permissionlist.push(screensdata[i].screenName);
+                    break;
+                  }
                 }
               } //for loop endng
 
@@ -5063,7 +5068,7 @@
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService() {
-            return this.http.get("".concat(_API_URL, "/securityPolicy/fetch"));
+            return this.http.get("".concat(_API_URL, "/securityPolicy/fetchAuthRecord"));
           }
         }, {
           key: "accountBlock",
@@ -6224,6 +6229,7 @@
 
             console.log('scr', this.screenData);
             this.screenLabelList.next(this.screenData);
+            console.log('scr', this.screenLabelList);
           }
         }, {
           key: "fetchNewRolePermissions",
@@ -6233,6 +6239,7 @@
             this.http.get("".concat(this._fmosbaseURL, "/allRolePermissionForUser/").concat(userIdLoggedIn)).subscribe(function (data) {
               _this12.storeuserpermissions = data;
               localStorage.setItem('userPermissions', JSON.stringify(_this12.storeuserpermissions));
+              console.log(_this12.storeuserpermissions);
             });
           } //dynamic roles
 

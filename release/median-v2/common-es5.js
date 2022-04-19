@@ -509,12 +509,12 @@
           key: "saveDataSecurity",
           value: function saveDataSecurity(obj) {
             console.log(obj);
-            return this.httpClient.post("".concat(this.API_URL, "/config/save"), obj);
+            return this.httpClient.post("".concat(this.API_URL, "/securityPolicy/save"), obj);
           }
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService() {
-            return this.httpClient.get("".concat(this.API_URL, "/config/fetch"));
+            return this.httpClient.get("".concat(this.API_URL, "/securityPolicy/fetchAuthRecord"));
           }
         }, {
           key: "getSecurityPolicyForAuth",

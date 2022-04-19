@@ -343,6 +343,7 @@ class LoginComponent {
                 //---------- Password Policy Implementation (BEGIN) ----------
                 this.apiService.fetchSecurityPolicyService().subscribe((resp) => {
                     this.security = resp;
+                    console.log(resp);
                     this.notifyPswdExpry = this.security.notifyPasswordExpiryInDays;
                     this.pswdExpiry = this.security.pswdExpiry;
                     if (this.pswdExpiry === 0 && this.notifyPswdExpry === 0) {
@@ -378,7 +379,10 @@ class LoginComponent {
                                     this.otpreceivedtime = new Date();
                                     if (this.variable) {
                                         if (this.variable[0] === "Username or password wrong") {
-                                            this.toastService.errorMessage("Invalid UserId or Password !!!", "");
+                                            // this.toastService.errorMessage(
+                                            //   "Invalid UserId or Password !!!",
+                                            //   ""
+                                            // );
                                         }
                                         if (res.failLgnCounter != 0) {
                                             this.apiService
@@ -405,8 +409,13 @@ class LoginComponent {
                                             this.verifyOTP = true;
                                         }
                                         else {
-                                            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(this.variable[0]);
-                                            this.loginProcessing = false;
+                                            if (this.variable[0] === "Username or password wrong") {
+                                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Username or Password is wrong");
+                                            }
+                                            else {
+                                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(this.variable[0]);
+                                                this.loginProcessing = false;
+                                            }
                                         }
                                     }
                                 }, (err) => {
