@@ -702,6 +702,7 @@
               height: "50px"
             }
           };
+          this.arrayOfAuthStatus = [];
         }
 
         _createClass(_LoginComponent, [{
@@ -846,9 +847,41 @@
             });
           }
         }, {
+          key: "roles",
+          value: function roles(user) {
+            var _this3 = this;
+
+            var remainingRolesToFetch = user.newRoleForUser.length;
+
+            var _loop = function _loop(index) {
+              _this3.roleService.fetchdynamicrolesdata(user.newRoleForUser[index]).subscribe(function (data) {
+                _this3.arrayOfAuthStatus[index] = data.roleDto.authStatus;
+                remainingRolesToFetch--;
+
+                if (remainingRolesToFetch === 0) {
+                  _this3.isUserRoleAuthorized();
+                }
+              }), function (error) {};
+            };
+
+            for (var index = 0; index < user.newRoleForUser.length; index++) {
+              _loop(index);
+            }
+          }
+        }, {
+          key: "isUserRoleAuthorized",
+          value: function isUserRoleAuthorized() {
+            if (this.arrayOfAuthStatus.includes('A') !== true) {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is not Authorized for the user");
+            } else {
+              this.showToast();
+            }
+
+            this.arrayOfAuthStatus = [];
+          }
+        }, {
           key: "skipLoginUser",
           value: function skipLoginUser() {
-            // Skip login Section start
             this.ls.setItem("currentUser", this.demoUser.currentUser);
             this.ls.setItem("userPermissions", this.demoUser.userPermissions);
             this.ls.setItem("department", this.demoUser.department);
@@ -862,7 +895,7 @@
         }, {
           key: "resendOtpMethod",
           value: function resendOtpMethod() {
-            var _this3 = this;
+            var _this4 = this;
 
             var login = {};
             login.username = this.signinForm.value.username;
@@ -870,49 +903,34 @@
             var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.password, "@12#90!^*NPR*g&*()$34#$");
             var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.username, "@12#90!^*NPR*g&*()$34#$");
             var data = encryptedAES.toString();
-            var uname = USERNAME.toString(); // Skip login Section start
-            // this.signinForm.value.password = data;
-            // this.ls.setItem("currentUser", this.demoUser.currentUser);
-            // this.ls.setItem("userPermissions", this.demoUser.userPermissions);
-            // this.ls.setItem("department", this.demoUser.department);
-            // this.ls.setItem("LoggedInUser", this.demoUser.LoggedInUser);
-            // this.ls.setItem("userobj", this.demoUser.userobj);
-            // this.ls.setItem("usercompleteobj", this.demoUser.usercompleteobj);
-            // this.router.navigate(["/dashboard"]);
-            // this.jwtAuth.setUserAndToken("affsff", {}, true);
-            // Skip login Section end
-
+            var uname = USERNAME.toString();
             this.apiService.fetchMedUser(this.signinForm.value.username).subscribe(function (response) {
-              _this3.user = response;
-              _this3.email = _this3.user.email;
-              localStorage.setItem("userFromLogin", _this3.user.userId);
-              sessionStorage.setItem("user_id", _this3.user.userId);
+              _this4.user = response;
+              _this4.email = _this4.user.email;
+              localStorage.setItem("userFromLogin", _this4.user.userId);
+              sessionStorage.setItem("user_id", _this4.user.userId);
 
-              if (_this3.user.statusForUser === "Enable" && _this3.user.verifiedStatus === "A") {
+              if (_this4.user.statusForUser === "Enable" && _this4.user.verifiedStatus === "A") {
                 //---------- Password Policy Implementation (BEGIN) ----------
-                _this3.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                  _this3.security = resp;
-                  _this3.notifyPswdExpry = _this3.security.notifyPasswordExpiryInDays;
-                  _this3.pswdExpiry = _this3.security.pswdExpiry;
+                _this4.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                  _this4.security = resp;
+                  _this4.notifyPswdExpry = _this4.security.notifyPasswordExpiryInDays;
+                  _this4.pswdExpiry = _this4.security.pswdExpiry;
 
-                  if (_this3.pswdExpiry === 0 && _this3.notifyPswdExpry === 0) {// console.log("Hitting dashboard");
-                    // this.router
-                    //   .navigate(["/dashboard"])
-                    //   .then((data) => console.log("dashboard hit", data));
-                  } else {
-                    _this3.currentDate = new Date();
-                    _this3.changePwdDate = new Date(_this3.user.pwdChangeDate);
-                    _this3.differnceInTime = _this3.currentDate - _this3.changePwdDate;
-                    _this3.differnceInDays = Math.floor(_this3.differnceInTime / (1000 * 3600 * 24));
-                    _this3.finalDiff = _this3.pswdExpiry - _this3.differnceInDays;
+                  if (_this4.pswdExpiry === 0 && _this4.notifyPswdExpry === 0) {} else {
+                    _this4.currentDate = new Date();
+                    _this4.changePwdDate = new Date(_this4.user.pwdChangeDate);
+                    _this4.differnceInTime = _this4.currentDate - _this4.changePwdDate;
+                    _this4.differnceInDays = Math.floor(_this4.differnceInTime / (1000 * 3600 * 24));
+                    _this4.finalDiff = _this4.pswdExpiry - _this4.differnceInDays;
 
-                    if (_this3.finalDiff === 0 || _this3.finalDiff <= 0) {
-                      _this3.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
+                    if (_this4.finalDiff === 0 || _this4.finalDiff <= 0) {
+                      _this4.toastService.errorMessage("Your Password is expired. Please reset your password.", "");
                     } else {
-                      _this3.check = true;
+                      _this4.check = true;
 
-                      if (_this3.signinForm.value.password === "" || _this3.signinForm.value.username === "") {
-                        _this3.toastService.errorMessage("Please enter login credentials.", "");
+                      if (_this4.signinForm.value.password === "" || _this4.signinForm.value.username === "") {
+                        _this4.toastService.errorMessage("Please enter login credentials.", "");
                       } else {
                         var encryptedAES = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.password, "@12#90!^*NPR*g&*()$34#$");
                         var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(login.username, "@12#90!^*NPR*g&*()$34#$");
@@ -921,44 +939,44 @@
                         login.password = data;
                         login.username = uname;
 
-                        _this3.apiService.getOtp(login).subscribe(function (res) {
-                          _this3.variable = res;
-                          _this3.otpreceivedtime = new Date();
+                        _this4.apiService.getOtp(login).subscribe(function (res) {
+                          _this4.variable = res;
+                          _this4.otpreceivedtime = new Date();
 
-                          if (_this3.variable) {
-                            if (_this3.variable[0] === "Username or password wrong") {
-                              _this3.toastService.errorMessage("Invalid UserId or Password !!!", "");
+                          if (_this4.variable) {
+                            if (_this4.variable[0] === "Username or password wrong") {
+                              _this4.toastService.errorMessage("Invalid UserId or Password !!!", "");
                             }
 
                             if (res.failLgnCounter != 0) {
-                              _this3.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
-                                _this3.security = sp;
-                                _this3.invLogins = _this3.security.maxInvLogins;
+                              _this4.apiService.fetchSecurityPolicyService().subscribe(function (sp) {
+                                _this4.security = sp;
+                                _this4.invLogins = _this4.security.maxInvLogins;
 
-                                if (_this3.invLogins !== 0) {
-                                  _this3.invLogins = _this3.invLogins - 1;
+                                if (_this4.invLogins !== 0) {
+                                  _this4.invLogins = _this4.invLogins - 1;
 
-                                  if (_this3.invLogins === res.failLgnCounter) {
-                                    _this3.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
+                                  if (_this4.invLogins === res.failLgnCounter) {
+                                    _this4.toastService.errorMessage("Contact Admin, User Account locked after " + "".concat(res.failLgnCounter + 1) + " wrong attempts.", "");
                                   }
                                 }
                               });
                             } // ---------- Password Policy Implementation (END) ----------
 
 
-                            if (_this3.variable[0] === "true") {
-                              _this3.progress = true;
+                            if (_this4.variable[0] === "true") {
+                              _this4.progress = true;
 
-                              _this3.toastService.successMessage("OTP sent successfully to " + _this3.email, "");
+                              _this4.toastService.successMessage("OTP sent successfully to " + _this4.email, "");
 
-                              _this3.loginProcessing = false;
-                              _this3.verifyOTP = true;
+                              _this4.loginProcessing = false;
+                              _this4.verifyOTP = true;
                             } else {}
                           }
                         }, function (err) {
-                          _this3.toastService.errorMessage("Server Error", "");
+                          _this4.toastService.errorMessage("Server Error", "");
 
-                          _this3.loginProcessing = false;
+                          _this4.loginProcessing = false;
                         });
                       }
                     }
@@ -970,90 +988,90 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this4 = this;
+            var _this5 = this;
 
             var otp = {};
             otp.username = this.signinForm.value.username;
             otp.otp = this.otp;
             this.apiService.loginService(otp).subscribe(function (res) {
-              _this4.responseforotp = res;
+              _this5.responseforotp = res;
 
-              if (_this4.responseforotp[0] == "OTP is invalid") {
-                _this4.toastService.errorMessage("Enter the Valid OTP.", "");
+              if (_this5.responseforotp[0] == "OTP is invalid") {
+                _this5.toastService.errorMessage("Enter the Valid OTP.", "");
               }
 
-              _this4.apiService.fetchMedUser(otp.username).subscribe(function (response) {
-                _this4.user = response; // if (this.responseforotp) {
+              _this5.apiService.fetchMedUser(otp.username).subscribe(function (response) {
+                _this5.user = response; // if (this.responseforotp) {
 
-                if (_this4.user != null) {
-                  if (_this4.responseforotp[0] == "Time Expired") {
-                    _this4.toastService.errorMessage("This OTP is expired. Please click on Resend OTP to get a new OTP.", "");
+                if (_this5.user != null) {
+                  if (_this5.responseforotp[0] == "Time Expired") {
+                    _this5.toastService.errorMessage("This OTP is expired. Please click on Resend OTP to get a new OTP.", "");
 
-                    _this4.check = false;
+                    _this5.check = false;
                   }
 
-                  _this4.loginProcessing = false;
-                  _this4.user = _this4.responseforotp[1];
-                  _this4.loginProcessing = false;
-                  localStorage.setItem("userFromLogin", _this4.user.userId);
-                  sessionStorage.setItem("user_id", _this4.user.userId);
+                  _this5.loginProcessing = false;
+                  _this5.user = _this5.responseforotp[1];
+                  _this5.loginProcessing = false;
+                  localStorage.setItem("userFromLogin", _this5.user.userId);
+                  sessionStorage.setItem("user_id", _this5.user.userId);
 
-                  if (_this4.user.statusForUser === "Enable" && _this4.user.verifiedStatus === "A") {
+                  if (_this5.user.statusForUser === "Enable" && _this5.user.verifiedStatus === "A") {
                     //---------- Password Policy Implementation (BEGIN) ----------
-                    _this4.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                      _this4.security = resp;
-                      _this4.notifyPswdExpry = _this4.security.notifyPasswordExpiryInDays;
-                      _this4.pswdExpiry = _this4.security.pswdExpiry;
+                    _this5.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                      _this5.security = resp;
+                      _this5.notifyPswdExpry = _this5.security.notifyPasswordExpiryInDays;
+                      _this5.pswdExpiry = _this5.security.pswdExpiry;
 
-                      if (_this4.pswdExpiry === 0 && _this4.notifyPswdExpry === 0) {// this.router
+                      if (_this5.pswdExpiry === 0 && _this5.notifyPswdExpry === 0) {// this.router
                         //   .navigate(["/dashboard"])
                         //   .then((data) => console.log("dashboard hit", data));
                       } else {
-                        _this4.currentDate = new Date();
-                        _this4.changePwdDate = new Date(_this4.user.pwdChangeDate);
-                        _this4.differnceInTime = _this4.currentDate - _this4.changePwdDate;
-                        _this4.differnceInDays = Math.floor(_this4.differnceInTime / (1000 * 3600 * 24));
-                        _this4.finalDiff = _this4.pswdExpiry - _this4.differnceInDays;
+                        _this5.currentDate = new Date();
+                        _this5.changePwdDate = new Date(_this5.user.pwdChangeDate);
+                        _this5.differnceInTime = _this5.currentDate - _this5.changePwdDate;
+                        _this5.differnceInDays = Math.floor(_this5.differnceInTime / (1000 * 3600 * 24));
+                        _this5.finalDiff = _this5.pswdExpiry - _this5.differnceInDays;
 
-                        if (_this4.finalDiff === 0 || _this4.finalDiff <= 0) {
-                          _this4.toastService.errorMessage("Your password expired, Please change your password", "");
+                        if (_this5.finalDiff === 0 || _this5.finalDiff <= 0) {
+                          _this5.toastService.errorMessage("Your password expired, Please change your password", "");
 
-                          _this4.router.navigate(["/forget-password"]).then(function (data) {
+                          _this5.router.navigate(["/forget-password"]).then(function (data) {
                             return console.log("Forget password hit", data);
                           });
                         } else {
                           //---------- Password Policy Implementation (END) ----------
                           // this.router.navigate(["/dashboard"])
                           //---------- Password Policy Implementation (BEGIN) ----------
-                          _this4.currentUser = localStorage.getItem("currentUser");
+                          _this5.currentUser = localStorage.getItem("currentUser");
 
-                          _this4.apiService.fetchMedUser(otp.username).subscribe(function (response) {
-                            _this4.userEntity = response;
-                            console.log("userEntity ", _this4.userEntity);
+                          _this5.apiService.fetchMedUser(otp.username).subscribe(function (response) {
+                            _this5.userEntity = response;
+                            console.log("userEntity ", _this5.userEntity);
 
-                            _this4.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
-                              _this4.security = resp;
-                              _this4.notifyPswdExpry = _this4.security.notifyPasswordExpiryInDays;
-                              _this4.pswdExpiry = _this4.security.pswdExpiry;
+                            _this5.apiService.fetchSecurityPolicyService().subscribe(function (resp) {
+                              _this5.security = resp;
+                              _this5.notifyPswdExpry = _this5.security.notifyPasswordExpiryInDays;
+                              _this5.pswdExpiry = _this5.security.pswdExpiry;
 
-                              if (_this4.pswdExpiry !== 0 && _this4.notifyPswdExpry !== 0) {
-                                _this4.currentDate = new Date();
-                                _this4.changePwdDate = new Date(_this4.userEntity.pwdChangeDate);
-                                _this4.differnceInTime = _this4.currentDate - _this4.changePwdDate;
-                                _this4.differnceInDays = Math.floor(_this4.differnceInTime / (1000 * 3600 * 24));
-                                console.log("today's date ", _this4.currentDate);
-                                console.log("pswd created date ", _this4.changePwdDate);
-                                console.log("no of days diff ", _this4.differnceInDays);
-                                _this4.finalDiff = _this4.pswdExpiry - _this4.differnceInDays;
-                                console.log("notify user on password expiry", _this4.notifyPswdExpry);
-                                console.log("pwd expiry ", _this4.security.pswdExpiry);
-                                console.log("final diff", _this4.finalDiff);
+                              if (_this5.pswdExpiry !== 0 && _this5.notifyPswdExpry !== 0) {
+                                _this5.currentDate = new Date();
+                                _this5.changePwdDate = new Date(_this5.userEntity.pwdChangeDate);
+                                _this5.differnceInTime = _this5.currentDate - _this5.changePwdDate;
+                                _this5.differnceInDays = Math.floor(_this5.differnceInTime / (1000 * 3600 * 24));
+                                console.log("today's date ", _this5.currentDate);
+                                console.log("pswd created date ", _this5.changePwdDate);
+                                console.log("no of days diff ", _this5.differnceInDays);
+                                _this5.finalDiff = _this5.pswdExpiry - _this5.differnceInDays;
+                                console.log("notify user on password expiry", _this5.notifyPswdExpry);
+                                console.log("pwd expiry ", _this5.security.pswdExpiry);
+                                console.log("final diff", _this5.finalDiff);
 
-                                if (_this4.finalDiff > 0 && _this4.finalDiff <= _this4.notifyPswdExpry) {
-                                  _this4.toastService.errorMessage("Your password will expire in " + "".concat(_this4.finalDiff) + " day(s)", "");
+                                if (_this5.finalDiff > 0 && _this5.finalDiff <= _this5.notifyPswdExpry) {
+                                  _this5.toastService.errorMessage("Your password will expire in " + "".concat(_this5.finalDiff) + " day(s)", "");
                                 }
 
-                                _this4.showToast();
+                                _this5.roles(_this5.user);
                               }
                             });
                           }); //  ---------- Password Policy Implementation (END) ----------
@@ -1063,34 +1081,34 @@
                     });
                   }
 
-                  _this4.roleService.fetchNewRolePermissions(_this4.user.userId);
+                  _this5.roleService.fetchNewRolePermissions(_this5.user.userId);
                 }
               });
             }, function (err) {
-              _this4.loginProcessing = false;
+              _this5.loginProcessing = false;
 
-              _this4.toastService.errorMessage("Server Error ", "");
+              _this5.toastService.errorMessage("Server Error ", "");
             });
           }
         }, {
           key: "routing",
           value: function routing() {
-            var _this5 = this;
+            var _this6 = this;
 
             console.log(this.userEntity);
             this.jwtAuth.signin().subscribe(function (response) {
               setTimeout(function () {
-                _this5.ls.setItem("currentUser", _this5.userEntity.userId);
+                _this6.ls.setItem("currentUser", _this6.userEntity.userId);
 
-                _this5.ls.setItem("userobj", _this5.userEntity);
+                _this6.ls.setItem("userobj", _this6.userEntity);
 
-                _this5.ls.setItem("usercompleteobj", _this5.userEntity);
+                _this6.ls.setItem("usercompleteobj", _this6.userEntity);
 
-                _this5.router.navigate(["/dashboard"]);
+                _this6.router.navigate(["/dashboard"]);
 
-                _this5.iziToast.show({
+                _this6.iziToast.show({
                   title: "DTB Bank - Median!",
-                  message: "Welcome, ".concat(_this5.userEntity.userId, "!"),
+                  message: "Welcome, ".concat(_this6.userEntity.userId, "!"),
                   image: "assets/images/user.png",
                   icon: "ico ico-success",
                   // theme:"dark",
@@ -1139,49 +1157,12 @@
             if (this.otp.length === 6) {
               this.isValid = true;
               var signinData = this.signinForm.value;
-            } // if (this.otp.length === 6) {
-            //   this.isValid = true;
-            //   const signinData = this.signinForm.value;
-            //   if (!this.signinForm.invalid) {
-            //     this.jwtAuth.signin().subscribe(
-            //       (response) => {
-            //         setTimeout(() => {
-            //           this.ls.setItem("currentUser", this.demoUser.currentUser);
-            //           this.ls.setItem("userPermissions", this.demoUser.userPermissions);
-            //           this.ls.setItem("department", this.demoUser.department);
-            //           this.ls.setItem("LoggedInUser", this.demoUser.LoggedInUser);
-            //           this.ls.setItem("userobj", this.demoUser.userobj);
-            //           this.ls.setItem("usercompleteobj", this.demoUser.usercompleteobj);
-            //           this.router.navigate(["/dashboard"]);
-            //           this.iziToast.show({
-            //             title: `DTB Bank - Median!`,
-            //             message: `Welcome, ${this.demoUser.currentUser}!`,
-            //             image: "assets/images/user.png",
-            //             icon: "ico ico-success",
-            //             // theme:"dark",
-            //             layout: 2,
-            //             // imageWidth:50,
-            //             balloon: false,
-            //             position: "topRight",
-            //             progressBarColor: "red",
-            //             pauseOnHover: true,
-            //           });
-            //         }, 2500);
-            //       },
-            //       (err) => {
-            //         // console.log(err);
-            //       }
-            //     );
-            //   }
-            // } else {
-            //   this.isValid = false;
-            // }
-
+            }
           }
         }, {
           key: "showTimer",
           value: function showTimer(remaining) {
-            var _this6 = this;
+            var _this7 = this;
 
             var timerOn = true;
             this.m = Math.floor(remaining / 60);
@@ -1193,7 +1174,7 @@
 
             if (remaining >= 0 && timerOn) {
               setTimeout(function () {
-                _this6.showTimer(remaining);
+                _this7.showTimer(remaining);
               }, 1000);
               return;
             }
