@@ -712,7 +712,7 @@
         }, {
           key: "onClickOfDeleteOfModifyUser",
           value: function onClickOfDeleteOfModifyUser(userobjForDelete) {
-            return this.http.get("".concat(_API_URL, "/users/deleteUser/").concat(userobjForDelete));
+            return this.http["delete"]("".concat(_API_URL, "/users/deleteUser/").concat(userobjForDelete));
           }
         }, {
           key: "statusChangeUser",
