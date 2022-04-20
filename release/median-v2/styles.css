@@ -21620,9 +21620,9 @@ ul.nav.nav-tabs li+li {
 .fileUpload .file-upload-wrapper:before {
   position: absolute;
   content: '';
-  background-image: url('/assets/images/upload.png');
+   background-image: url('/assets/images/upload-cloud.svg');
   height: 25px;
-  width: 25px;
+  width: 25px; 
   background-repeat: no-repeat;
   background-size: contain;
   left: 40%;

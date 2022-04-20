@@ -316,7 +316,7 @@ class UsersService {
         return this.http.get(`${API_URL}/users/reopenUser/${userId}/${makerId}`);
     }
     onClickOfDeleteOfModifyUser(userobjForDelete) {
-        return this.http.get(`${API_URL}/users/deleteUser/${userobjForDelete}`);
+        return this.http.delete(`${API_URL}/users/deleteUser/${userobjForDelete}`);
     }
     statusChangeUser(user_id) {
         return this.http.get(`${API_URL}/users/statusUser/${user_id}`);
