@@ -304,6 +304,7 @@ class LoginComponent {
             placeholder: "*",
             inputStyles: { width: "50px", height: "50px" },
         };
+        this.arrayOfAuthStatus = [];
     }
     ngOnInit() {
         this.signinForm = this.fb.group({
@@ -434,8 +435,29 @@ class LoginComponent {
             // this.toastService.errorMessage('Unable to update the record, server error!', '');
         });
     }
+    roles(user) {
+        let remainingRolesToFetch = user.newRoleForUser.length;
+        for (let index = 0; index < (user.newRoleForUser).length; index++) {
+            this.roleService.fetchdynamicrolesdata(user.newRoleForUser[index]).subscribe(data => {
+                this.arrayOfAuthStatus[index] = data.roleDto.authStatus;
+                remainingRolesToFetch--;
+                if (remainingRolesToFetch === 0) {
+                    this.isUserRoleAuthorized();
+                }
+            }), error => {
+            };
+        }
+    }
+    isUserRoleAuthorized() {
+        if (this.arrayOfAuthStatus.includes('A') !== true) {
+            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is not Authorized for the user");
+        }
+        else {
+            this.showToast();
+        }
+        this.arrayOfAuthStatus = [];
+    }
     skipLoginUser() {
-        // Skip login Section start
         this.ls.setItem("currentUser", this.demoUser.currentUser);
         this.ls.setItem("userPermissions", this.demoUser.userPermissions);
         this.ls.setItem("department", this.demoUser.department);
@@ -455,17 +477,6 @@ class LoginComponent {
         var USERNAME = crypto_js__WEBPACK_IMPORTED_MODULE_1__.AES.encrypt(this.signinForm.value.username, "@12#90!^*NPR*g&*()$34#$");
         var data = encryptedAES.toString();
         var uname = USERNAME.toString();
-        // Skip login Section start
-        // this.signinForm.value.password = data;
-        // this.ls.setItem("currentUser", this.demoUser.currentUser);
-        // this.ls.setItem("userPermissions", this.demoUser.userPermissions);
-        // this.ls.setItem("department", this.demoUser.department);
-        // this.ls.setItem("LoggedInUser", this.demoUser.LoggedInUser);
-        // this.ls.setItem("userobj", this.demoUser.userobj);
-        // this.ls.setItem("usercompleteobj", this.demoUser.usercompleteobj);
-        // this.router.navigate(["/dashboard"]);
-        // this.jwtAuth.setUserAndToken("affsff", {}, true);
-        // Skip login Section end
         this.apiService
             .fetchMedUser(this.signinForm.value.username)
             .subscribe((response) => {
@@ -481,10 +492,6 @@ class LoginComponent {
                     this.notifyPswdExpry = this.security.notifyPasswordExpiryInDays;
                     this.pswdExpiry = this.security.pswdExpiry;
                     if (this.pswdExpiry === 0 && this.notifyPswdExpry === 0) {
-                        // console.log("Hitting dashboard");
-                        // this.router
-                        //   .navigate(["/dashboard"])
-                        //   .then((data) => console.log("dashboard hit", data));
                     }
                     else {
                         this.currentDate = new Date();
@@ -629,7 +636,7 @@ class LoginComponent {
                                                         `${this.finalDiff}` +
                                                         " day(s)", "");
                                                 }
-                                                this.showToast();
+                                                this.roles(this.user);
                                             }
                                         });
                                     });
@@ -700,43 +707,6 @@ class LoginComponent {
             this.isValid = true;
             const signinData = this.signinForm.value;
         }
-        // if (this.otp.length === 6) {
-        //   this.isValid = true;
-        //   const signinData = this.signinForm.value;
-        //   if (!this.signinForm.invalid) {
-        //     this.jwtAuth.signin().subscribe(
-        //       (response) => {
-        //         setTimeout(() => {
-        //           this.ls.setItem("currentUser", this.demoUser.currentUser);
-        //           this.ls.setItem("userPermissions", this.demoUser.userPermissions);
-        //           this.ls.setItem("department", this.demoUser.department);
-        //           this.ls.setItem("LoggedInUser", this.demoUser.LoggedInUser);
-        //           this.ls.setItem("userobj", this.demoUser.userobj);
-        //           this.ls.setItem("usercompleteobj", this.demoUser.usercompleteobj);
-        //           this.router.navigate(["/dashboard"]);
-        //           this.iziToast.show({
-        //             title: `DTB Bank - Median!`,
-        //             message: `Welcome, ${this.demoUser.currentUser}!`,
-        //             image: "assets/images/user.png",
-        //             icon: "ico ico-success",
-        //             // theme:"dark",
-        //             layout: 2,
-        //             // imageWidth:50,
-        //             balloon: false,
-        //             position: "topRight",
-        //             progressBarColor: "red",
-        //             pauseOnHover: true,
-        //           });
-        //         }, 2500);
-        //       },
-        //       (err) => {
-        //         // console.log(err);
-        //       }
-        //     );
-        //   }
-        // } else {
-        //   this.isValid = false;
-        // }
     }
     showTimer(remaining) {
         let timerOn = true;
