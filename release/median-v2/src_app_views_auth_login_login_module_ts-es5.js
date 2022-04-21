@@ -872,7 +872,11 @@
           key: "isUserRoleAuthorized",
           value: function isUserRoleAuthorized() {
             if (this.arrayOfAuthStatus.includes('A') !== true) {
-              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is not Authorized for the user");
+              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Role is not authorized for the user");
+              localStorage.clear();
+              sessionStorage.clear();
+              this.signinForm.reset();
+              this.backToLogin();
             } else {
               this.showToast();
             }

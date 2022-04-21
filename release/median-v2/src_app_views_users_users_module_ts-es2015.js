@@ -1346,17 +1346,17 @@ function UserNewComponent_div_81_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.editFlag && ctx_r14.roleCodes.edit && ctx_r14.modifyUserObject.recordStatus == "O");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.editFlag && ctx_r14.roleCodes.edit && (ctx_r14.userObjWithAudit.recordStatus == "O" || ctx_r14.userObjWithAudit.recordStatus == "OPEN"));
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.roleCodes.auth && ctx_r14.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r14.userObjWithAudit.verifiedStatus == "U" || ctx_r14.userObjWithAudit.verifiedStatus == "UNAUTHORIZED") && ctx_r14.roleCodes.auth);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "C" && ctx_r14.roleCodes.reopen && ctx_r14.userObjWithAudit.verifiedOnce == "YES" && ctx_r14.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r14.userObjWithAudit.recordStatus == "C" || ctx_r14.userObjWithAudit.recordStatus == "CLOSE") && ctx_r14.roleCodes.reopen && (ctx_r14.userObjWithAudit.verifiedOnce == "YES" || ctx_r14.userObjWithAudit.verifiedOnce == "Y") && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.modifyUserObject.recordStatus == "O" && ctx_r14.userObjWithAudit.verifiedOnce == "YES" && ctx_r14.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r14.userObjWithAudit.recordStatus == "O" || ctx_r14.userObjWithAudit.recordStatus == "OPEN") && (ctx_r14.userObjWithAudit.verifiedOnce == "YES" || ctx_r14.userObjWithAudit.verifiedOnce == "Y") && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.roleCodes.delete && ctx_r14.userObjWithAudit.verifiedOnce == "NO" && ctx_r14.modifyUserObject.verifiedStatus == "U" && ctx_r14.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r14.roleCodes.delete && (ctx_r14.userObjWithAudit.verifiedOnce == "NO" || ctx_r14.userObjWithAudit.verifiedOnce == "N") && (ctx_r14.userObjWithAudit.verifiedStatus == "U" || ctx_r14.userObjWithAudit.verifiedStatus == "UNAUTHORIZED") && ctx_r14.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](7, _c0));
 } }
@@ -1979,7 +1979,8 @@ class UserNewComponent {
         console.log("form value", this.modifyUserObject);
         this.userApi.modifyUserService(this.modifyUserObject).subscribe(data => {
             this.statusFlag = data;
-            if (this.statusFlag === true) {
+            this.userObjWithAudit = this.statusFlag;
+            if (this.statusFlag) {
                 this.submit = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'User is Updated',
@@ -1988,17 +1989,18 @@ class UserNewComponent {
                 this.getUserAuditData();
                 this.editFlag = false;
             }
-            if (this.statusFlag === false) {
+            if (!this.statusFlag) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     icon: 'error',
                     text: 'Failed to modify user '
                 });
             }
-            this.router.navigate(['/users']);
+            // this.router.navigate(['/users']);
         });
     }
     getUserAuditData() {
-        this.userApi.getUserAuditService(this.modifyUserObject.userId).subscribe(data => {
+        console.log(this.userObjWithAudit);
+        this.userApi.getUserAuditService(this.userObjWithAudit.userId).subscribe(data => {
             this.userObjWithAudit = data;
             console.log('dev code user audit: ', this.userObjWithAudit);
             console.log(this.userObjWithAudit);
@@ -2054,9 +2056,12 @@ class UserNewComponent {
         this.userApi.createUserService(this.userObj).subscribe(data => {
             console.log(this.userObj);
             this.statusFlag = data;
-            if (this.statusFlag === true) {
+            this.userObjWithAudit = this.statusFlag;
+            console.log(this.userObjWithAudit);
+            if (this.statusFlag) {
                 this.editFlag = false;
                 this.submit = false;
+                this.modifyScreen = true;
                 this.getUserAuditData();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'User is Created ',
@@ -2065,7 +2070,7 @@ class UserNewComponent {
                 this.getUserAuditData();
                 this.editFlag = true;
             }
-            if (this.statusFlag === false) {
+            if (!this.statusFlag) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     icon: 'error',
                     text: 'Failed to create user ',

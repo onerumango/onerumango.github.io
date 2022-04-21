@@ -1189,7 +1189,9 @@ class RoleDetailsComponent {
                 // this.responseError = 'success';
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Updated ");
                 this.submitBtn = true;
+                this.editFlag = true;
                 console.log("IF IF IF IF IF");
+                this.auditLog();
             }
             else {
                 // this.responseError = 'Server Error';
@@ -1508,7 +1510,8 @@ class RoleDetailsComponent {
         this.roleService.createnewrole(newRole)
             .subscribe(role => {
             console.log(role);
-            if (role != false) {
+            this.modifyRoleObject = role;
+            if (role) {
                 if (role.roleDto) {
                     this.modifyRoleObject = role.roleDto;
                     if (this.modifyRoleObject.recordStatus == 'O') {
@@ -1539,9 +1542,11 @@ class RoleDetailsComponent {
                 }
                 this.editFlag = true;
                 this.submitBtn = true;
+                this.modifyScreen = true;
+                this.auditLog();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Created");
             }
-            else if (role == false) {
+            else if (!role) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                     icon: 'error',
                     text: `Role Name already exists.`
