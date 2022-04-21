@@ -2083,7 +2083,10 @@
                 // this.responseError = 'success';
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Updated ");
                 _this7.submitBtn = true;
+                _this7.editFlag = true;
                 console.log("IF IF IF IF IF");
+
+                _this7.auditLog();
               } else {
                 // this.responseError = 'Server Error';
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
@@ -2525,8 +2528,9 @@
             console.log(newRole);
             this.roleService.createnewrole(newRole).subscribe(function (role) {
               console.log(role);
+              _this9.modifyRoleObject = role;
 
-              if (role != false) {
+              if (role) {
                 if (role.roleDto) {
                   _this9.modifyRoleObject = role.roleDto;
 
@@ -2560,8 +2564,12 @@
 
                 _this9.editFlag = true;
                 _this9.submitBtn = true;
+                _this9.modifyScreen = true;
+
+                _this9.auditLog();
+
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Created");
-              } else if (role == false) {
+              } else if (!role) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   icon: 'error',
                   text: "Role Name already exists."

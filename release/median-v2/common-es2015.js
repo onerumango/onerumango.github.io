@@ -214,7 +214,7 @@ class SecurityPolicyService {
         return this.httpClient.post(`${this.API_URL}/securityPolicy/save`, obj);
     }
     fetchSecurityPolicyService() {
-        return this.httpClient.get(`${this.API_URL}/securityPolicy/fetchAuthRecord`);
+        return this.httpClient.get(`${this.API_URL}/securityPolicy/fetch`);
     }
     getSecurityPolicyForAuth() {
         return this.httpClient.get(`${this.API_URL}/authorization/getSecurityPolicy`);
@@ -227,6 +227,9 @@ class SecurityPolicyService {
     // }
     changePassword(passwordDTO) {
         return this.httpClient.post(`${this.API_URL}/user/changePassword`, passwordDTO);
+    }
+    authSecurity(operation) {
+        return this.httpClient.put(`${this.API_URL}/securityPolicy/${operation}`, operation);
     }
 }
 SecurityPolicyService.ɵfac = function SecurityPolicyService_Factory(t) { return new (t || SecurityPolicyService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
@@ -295,7 +298,7 @@ class UsersService {
         return this.http.get(`${API_URL}/users/getAllRoleNamesU`);
     }
     getAllAuthRole() {
-        return this.http.get(`${API_URL}/fmsRoles/fetchAllRolesSummary`);
+        return this.http.get(`${API_URL}/medRoles/fetchAllRolesSummary`);
     }
     // audit log starts
     onClickOfAuthOfUsers(authUser) {
@@ -380,7 +383,7 @@ class UsersService {
         return this.http.get(`${API_URL}/users/getAllRoleNamesU`);
     }
     getAllAuthRole() {
-        return this.http.get(`${API_URL}/fmsRoles/fetchAllRolesSummary`);
+        return this.http.get(`${API_URL}/medRoles/fetchAllRolesSummary`);
     }
     onClickOfAuthOfUsers(authUser) {
         return this.http.get(`${API_URL}/users/getAllRoleNames`);

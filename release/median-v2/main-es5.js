@@ -5005,8 +5005,8 @@
             authStatus: ''
           }); // this._baseURL = AppConstants.baseURL + '/role';
 
-          this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles' + '/fetchAllRolesSummary';
-          this._fmosbaseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles';
+          this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles' + '/fetchAllRolesSummary';
+          this._fmosbaseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles';
         }
 
         _createClass(_ApiService, [{
@@ -5068,7 +5068,7 @@
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService() {
-            return this.http.get("".concat(_API_URL, "/securityPolicy/fetchAuthRecord"));
+            return this.http.get("".concat(_API_URL, "/securityPolicy/fetch"));
           }
         }, {
           key: "accountBlock",
@@ -6077,7 +6077,7 @@
           this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({});
           this.getNavParam = this.paramSource.asObservable();
           this._baseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/role';
-          this._fmosbaseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles';
+          this._fmosbaseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles';
           this.baseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
         }
 

@@ -2493,8 +2493,8 @@ class ApiService {
             authStatus: '',
         });
         // this._baseURL = AppConstants.baseURL + '/role';
-        this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles' + '/fetchAllRolesSummary';
-        this._fmosbaseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles';
+        this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles' + '/fetchAllRolesSummary';
+        this._fmosbaseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles';
     }
     getAllExtSys() {
         return this.http.get(`${this.uriForExt}` + '/extsysdata');
@@ -2531,7 +2531,7 @@ class ApiService {
         return this.http.get(`${API_URL}/login/getUserByUserId/${userId}`);
     }
     fetchSecurityPolicyService() {
-        return this.http.get(`${API_URL}/securityPolicy/fetchAuthRecord`);
+        return this.http.get(`${API_URL}/securityPolicy/fetch`);
     }
     accountBlock(data) {
         return this.http.post(`${API_URL}/api/blockCustAcc`, data);
@@ -3119,7 +3119,7 @@ class RoleService {
         this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({});
         this.getNavParam = this.paramSource.asObservable();
         this._baseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/role';
-        this._fmosbaseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/fmsRoles';
+        this._fmosbaseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles';
         this.baseURL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
     }
     sendNavParam(params) {

@@ -514,7 +514,7 @@
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService() {
-            return this.httpClient.get("".concat(this.API_URL, "/securityPolicy/fetchAuthRecord"));
+            return this.httpClient.get("".concat(this.API_URL, "/securityPolicy/fetch"));
           }
         }, {
           key: "getSecurityPolicyForAuth",
@@ -533,6 +533,11 @@
           key: "changePassword",
           value: function changePassword(passwordDTO) {
             return this.httpClient.post("".concat(this.API_URL, "/user/changePassword"), passwordDTO);
+          }
+        }, {
+          key: "authSecurity",
+          value: function authSecurity(operation) {
+            return this.httpClient.put("".concat(this.API_URL, "/securityPolicy/").concat(operation), operation);
           }
         }]);
 
@@ -680,7 +685,7 @@
         }, {
           key: "getAllAuthRole",
           value: function getAllAuthRole() {
-            return this.http.get("".concat(_API_URL, "/fmsRoles/fetchAllRolesSummary"));
+            return this.http.get("".concat(_API_URL, "/medRoles/fetchAllRolesSummary"));
           } // audit log starts
 
         }, {
@@ -853,7 +858,7 @@
         }, {
           key: "getAllAuthRole",
           value: function getAllAuthRole() {
-            return this.http.get("".concat(_API_URL2, "/fmsRoles/fetchAllRolesSummary"));
+            return this.http.get("".concat(_API_URL2, "/medRoles/fetchAllRolesSummary"));
           }
         }, {
           key: "onClickOfAuthOfUsers",

@@ -1078,6 +1078,7 @@
               pswdReuseAft: [item ? item.pswdReuseAft : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
               version: [item ? item.version : ""]
             });
+            console.log(this.securityForm.value);
           }
         }, {
           key: "assignCheckValue",
@@ -1150,7 +1151,39 @@
                 }
               });
             }
-          }
+          } // verifyRole() {
+          //       Swal.fire(
+          //         {
+          //           text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+          //           showCancelButton: true,
+          //           confirmButtonColor: '#E6224A',
+          //           cancelButtonColor: '#011945',
+          //           // confirmButtonText: 'PROCEED.'
+          //           cancelButtonText: 'NO',
+          //           confirmButtonText: 'YES',
+          //           icon:'info'
+          //         }
+          //       ).then((result => {
+          //         if(result.isConfirmed=== true){
+          //           this.secuityService.authSecurity('authorize').subscribe(data => {
+          //             this.updatedSecObject = data;
+          //             console.log(this.updatedSecObject);
+          //           if (this.updatedSecObject) {
+          //             // this.auditLog();
+          //       Swal.fire(
+          //              { 
+          //             text:"Security Policy is Authorized",
+          //             icon:'success'
+          //           }
+          //             );
+          //           }
+          //         });
+          //        }}))
+          //       // Swal.fire("Role is Authorized ");
+          //     // });
+          //   // }
+          // }
+
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService() {
