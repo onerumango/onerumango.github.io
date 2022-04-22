@@ -97,7 +97,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     }
     .default-background{
-        background: #a3a3a3 0% 0% no-repeat padding-box;
+        background: #0C0B0F 0% 0% no-repeat padding-box;
     }
 
     .sub-text {
@@ -133,7 +133,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     .mat-drawer-side {
         border-right: none !important;
-//   color: #0C0B0F;
+        color: #0C0B0F;
     }
 
     .mat-drawer-container {
@@ -149,7 +149,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
 
     .mat-card-title {
-        color: #ffffff !important;
+        color: #240303 !important;
     }
 
     .card-chip {
@@ -339,39 +339,42 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .btn{
         color:#0C0B0F;
     }
-    .card-cash-in-cash{
-        background-color: #0C0B0F;
+    // .card-cash-in-cash{
+    //     background-color: #0C0B0F;
+    // }
+    // .change-currency {
+    //     background-color: #0C0B0F;
+    // }
+    // .example-container {
+    //     background:#0C0B0F;
+    // }
+    // .container{
+    //     background:#0C0B0F;
+    // }
+    // .mat-drawer {
+    //     background:#0C0B0F;
+    // }
+    // .navdash {
+    //     color: black;
+    //   }
+    //   .inputCard{
+    //     background:#0C0B0F;
+    //   }
+    //   .header-topnav{
+    //     background:#0C0B0F;
+    //   }
+    //   .customerOperations {
+    //     background-color: #0C0B0F;
+    //   }
+    //   .tokenCard {
+    //     background-color: #0C0B0F;
+    //     color: white;
+    // }
+    // .cash-in-card {
+    //     background-color: #0C0B0F;
+    //     color: white;
+    // }
+    .mat-card {
+       background-color: gray;
     }
-    .change-currency {
-        background-color: #0C0B0F;
-    }
-    .example-container {
-        background:#0C0B0F;
-    }
-    .mat-drawer {
-        background:#0C0B0F;
-    }
-    .navdash {
-        color: black;
-      }
-      .inputCard{
-        background:#0C0B0F;
-      }
-      .header-topnav{
-        background:#0C0B0F;
-      }
-      .customerOperations {
-        background-color: #0C0B0F;
-      }
-      .tokenCard {
-        background-color: #0C0B0F;
-        color: white;
-    }
-    .cash-in-card {
-        background-color: #0C0B0F;
-        color: white;
-    }
-
-    
-    
 }

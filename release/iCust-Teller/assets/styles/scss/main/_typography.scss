@@ -14,7 +14,8 @@ h6,
   margin-top: 0;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
-  color: $headings-color;
+ // color: $headings-color;
+  color:inherit;
 }
 
 h1,
@@ -40,6 +41,7 @@ h5,
 h6,
 .h6 {
   font-size: $font-size-h6;
+  color:black;
 }
 
 a,
@@ -68,6 +70,7 @@ b {
   font: {
     size: 18px;
     weight: 500;
+    color: black;
   }
 }
 

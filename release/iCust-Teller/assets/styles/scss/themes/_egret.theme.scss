@@ -46,9 +46,9 @@
     background-color: $unselected-chip;
   }
 
-  .mat-bg-card {
-    background-color: map-get($background, card);
-  }
+  // .mat-bg-card {
+  //   background-color: map-get($background, card);
+  // }
 
   .mat-bg-default {
     background-color: map-get($background, background);
