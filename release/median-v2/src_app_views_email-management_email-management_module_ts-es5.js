@@ -1036,15 +1036,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.eamilAuditLog.verifiedStatus == "U" && ctx_r3.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.verifiedStatus == "U" || ctx_r3.eamilAuditLog.verifiedStatus == "UNAUTHORIZED") && ctx_r3.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.eamilAuditLog.recordStatus == "C" && ctx_r3.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSE") && ctx_r3.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.eamilAuditLog.recordStatus == "O" && ctx_r3.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "O" || ctx_r3.eamilAuditLog.recordStatus == "OPEN") && ctx_r3.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -1434,7 +1434,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r4.eamilAuditLog.modNO);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r4.eamilAuditLog.modNo);
         }
       }
 
@@ -1485,7 +1485,7 @@
             this.user_id = sessionStorage.getItem('user_id');
             this.role = sessionStorage.getItem('user_role'); // this.screenpermission();
 
-            this.eamilAuditLog.modNO = this.editAddSysResp.queryParams.modifyNo;
+            this.eamilAuditLog.modNo = this.editAddSysResp.queryParams.modNo;
             this.eamilAuditLog.inputBy = this.editAddSysResp.queryParams.creator;
             this.eamilAuditLog.recordStatus = this.editAddSysResp.queryParams.rstatus;
             this.eamilAuditLog.verifiedOnce = this.editAddSysResp.queryParams.vStatus;
@@ -1551,10 +1551,11 @@
           key: "getEmailItem",
           value: function getEmailItem() {
             return this.formBuilder.group({
-              emailId: [''],
               emailType: ['Account_Block'],
+              emailId: [''],
               emailRequired: ['Y'],
-              id: ['']
+              // id:[''],
+              modNo: ['']
             });
           }
         }, {
@@ -1844,7 +1845,8 @@
             } else {
               console.log("else");
               this.accountBlockingService.emailMaintenance(this.selected, this.loggedInUser, this.emails.value).subscribe(function (resp) {
-                _this6.masterresponse = resp; //console.log(resp);
+                _this6.masterresponse = resp;
+                _this6.eamilAuditLog = _this6.masterresponse;
 
                 if (resp) {
                   _this6.masterDatapermission = true;
@@ -1852,6 +1854,8 @@
                     text: 'Record is Created',
                     icon: 'success'
                   });
+
+                  _this6.auditLog();
                 } else if (resp == null) {
                   // this.masterDatapermission=false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire('Email Id Already Exit ');

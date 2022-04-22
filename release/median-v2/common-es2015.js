@@ -199,8 +199,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SecurityPolicyService": function() { return /* binding */ SecurityPolicyService; }
 /* harmony export */ });
 /* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 53882);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 76491);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 53882);
+
 
 
 
@@ -208,10 +210,38 @@ class SecurityPolicyService {
     constructor(httpClient) {
         this.httpClient = httpClient;
         this.API_URL = src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.MEDIAN_URL;
+        this.securityDetailsEdit = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({
+            authStatus: '',
+            authorizedBy: '',
+            authorizedTime: '',
+            createdBy: '',
+            createdDate: '',
+            isActive: '',
+            maxInvLogins: '',
+            maxPswdLength: '',
+            minPswdLength: '',
+            modifiedBy: '',
+            modifiedTime: '',
+            notifyPasswordExpiryInDays: '',
+            pswdComplexLcase: '',
+            pswdComplexNum: '',
+            pswdComplexSplc: '',
+            pswdComplexUcase: '',
+            pswdExpiry: '',
+            pswdReuseAft: '',
+            recordStatus: '',
+            version: ''
+        });
     }
     saveDataSecurity(obj) {
         console.log(obj);
         return this.httpClient.post(`${this.API_URL}/securityPolicy/save`, obj);
+    }
+    setSecurityPolicy(data) {
+        this.securityDetailsEdit.next(data);
+    }
+    getsecurityDetailsEdit() {
+        return this.securityDetailsEdit.asObservable();
     }
     fetchSecurityPolicyService() {
         return this.httpClient.get(`${this.API_URL}/securityPolicy/fetch`);
@@ -228,12 +258,15 @@ class SecurityPolicyService {
     changePassword(passwordDTO) {
         return this.httpClient.post(`${this.API_URL}/user/changePassword`, passwordDTO);
     }
-    authSecurity(operation) {
-        return this.httpClient.put(`${this.API_URL}/securityPolicy/${operation}`, operation);
+    authSecurity(operation, obj) {
+        return this.httpClient.put(`${this.API_URL}/securityPolicy/${operation}`, obj);
+    }
+    getAllSecurityPolicy(pageNo, pageSize, sortBy) {
+        return this.httpClient.get(`${this.API_URL}/securityPolicy/getSecurityPolicies?pageNo=${0}&pageSize=${1000}&sortBy=${sortBy}`);
     }
 }
-SecurityPolicyService.ɵfac = function SecurityPolicyService_Factory(t) { return new (t || SecurityPolicyService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
-SecurityPolicyService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: SecurityPolicyService, factory: SecurityPolicyService.ɵfac, providedIn: 'root' });
+SecurityPolicyService.ɵfac = function SecurityPolicyService_Factory(t) { return new (t || SecurityPolicyService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient)); };
+SecurityPolicyService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: SecurityPolicyService, factory: SecurityPolicyService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

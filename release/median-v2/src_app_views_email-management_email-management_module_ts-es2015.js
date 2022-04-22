@@ -585,11 +585,11 @@ function EmailManagementCreateComponent_div_31_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r3.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.eamilAuditLog.verifiedStatus == "U" && ctx_r3.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.verifiedStatus == "U" || ctx_r3.eamilAuditLog.verifiedStatus == "UNAUTHORIZED") && ctx_r3.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.eamilAuditLog.recordStatus == "C" && ctx_r3.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSE") && ctx_r3.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.eamilAuditLog.recordStatus == "O" && ctx_r3.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "O" || ctx_r3.eamilAuditLog.recordStatus == "OPEN") && ctx_r3.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag);
 } }
@@ -784,7 +784,7 @@ function EmailManagementCreateComponent_div_32_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r4.eamilAuditLog.verifiedStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r4.eamilAuditLog.modNO);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r4.eamilAuditLog.modNo);
 } }
 class EmailManagementCreateComponent {
     // allDetails: import("d:/GITHUB REPOSITORY_UI/median_v2/src/app/shared/models/EmailDetails").EmailDetails;
@@ -824,7 +824,7 @@ class EmailManagementCreateComponent {
         this.user_id = sessionStorage.getItem('user_id');
         this.role = sessionStorage.getItem('user_role');
         // this.screenpermission();
-        this.eamilAuditLog.modNO = this.editAddSysResp.queryParams.modifyNo;
+        this.eamilAuditLog.modNo = this.editAddSysResp.queryParams.modNo;
         this.eamilAuditLog.inputBy = this.editAddSysResp.queryParams.creator;
         this.eamilAuditLog.recordStatus = this.editAddSysResp.queryParams.rstatus;
         this.eamilAuditLog.verifiedOnce = this.editAddSysResp.queryParams.vStatus;
@@ -873,10 +873,11 @@ class EmailManagementCreateComponent {
     }
     getEmailItem() {
         return this.formBuilder.group({
-            emailId: [''],
             emailType: ['Account_Block'],
+            emailId: [''],
             emailRequired: ['Y'],
-            id: ['']
+            // id:[''],
+            modNo: ['']
         });
     }
     get emails() {
@@ -1135,13 +1136,14 @@ class EmailManagementCreateComponent {
             console.log("else");
             this.accountBlockingService.emailMaintenance(this.selected, this.loggedInUser, this.emails.value).subscribe(resp => {
                 this.masterresponse = resp;
-                //console.log(resp);
+                this.eamilAuditLog = this.masterresponse;
                 if (resp) {
                     this.masterDatapermission = true;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                         text: 'Record is Created',
                         icon: 'success'
                     });
+                    this.auditLog();
                 }
                 else if (resp == null) {
                     // this.masterDatapermission=false;

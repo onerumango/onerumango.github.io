@@ -1529,7 +1529,7 @@
       }
 
       var _c4 = function _c4() {
-        return ["/security-policy"];
+        return ["/security-policy/summary"];
       };
 
       function SidenavComponent_li_27_Template(rf, ctx) {
@@ -4009,7 +4009,11 @@
               return m.SecurityPolicyModule;
             });
           }
-        }, {
+        }, // {
+        //   path: 'summary',
+        //   loadChildren: () => import('./views/security-policy/security-policy.module').then(m => m.SecurityPolicyModule),
+        // },
+        {
           path: 'createrule',
           loadChildren: function loadChildren() {
             return Promise.all(
@@ -4973,6 +4977,28 @@
             verifiedOnce: '',
             version: ''
           });
+          this.securityDetailsEdit = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            authStatus: '',
+            authorizedBy: '',
+            authorizedTime: '',
+            createdBy: '',
+            createdDate: '',
+            isActive: '',
+            maxInvLogins: '',
+            maxPswdLength: '',
+            minPswdLength: '',
+            modifiedBy: '',
+            modifiedTime: '',
+            notifyPasswordExpiryInDays: '',
+            pswdComplexLcase: '',
+            pswdComplexNum: '',
+            pswdComplexSplc: '',
+            pswdComplexUcase: '',
+            pswdExpiry: '',
+            pswdReuseAft: '',
+            recordStatus: '',
+            version: ''
+          });
           this.customerSearch = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
             firstName: '',
             customerNumber: '',
@@ -5612,6 +5638,16 @@
           key: "getCustomerSearch",
           value: function getCustomerSearch() {
             return this.customerSearch.asObservable();
+          }
+        }, {
+          key: "setSecurityPolicy",
+          value: function setSecurityPolicy(data) {
+            this.securityDetailsEdit.next(data);
+          }
+        }, {
+          key: "getsecurityDetailsEdit",
+          value: function getsecurityDetailsEdit() {
+            return this.securityDetailsEdit.asObservable();
           }
         }, {
           key: "setAccountBlocking",

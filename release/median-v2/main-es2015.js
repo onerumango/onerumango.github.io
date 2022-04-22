@@ -735,7 +735,7 @@ function SidenavComponent_li_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](2, _c3))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction1"](3, _c1, ctx_r3.handleActiveClass("audit-logs")));
 } }
-const _c4 = function () { return ["/security-policy"]; };
+const _c4 = function () { return ["/security-policy/summary"]; };
 function SidenavComponent_li_27_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "li", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "a", 27);
@@ -1989,7 +1989,12 @@ const routes = [
             }, {
                 path: 'security-policy',
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_security-policy_security-policy_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/security-policy/security-policy.module */ 88185)).then(m => m.SecurityPolicyModule),
-            }, {
+            },
+            // {
+            //   path: 'summary',
+            //   loadChildren: () => import('./views/security-policy/security-policy.module').then(m => m.SecurityPolicyModule),
+            // },
+            {
                 path: 'createrule',
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_rxjs__esm2015_internal_observab-7042fc"), __webpack_require__.e("default-node_modules_ng-select_ng-select_fesm2015_ng-select-ng-select_mjs"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule_rule_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule/rule.module */ 11784)).then(m => m.RuleModule),
             }, {
@@ -2461,6 +2466,28 @@ class ApiService {
             verifiedOnce: '',
             version: '',
         });
+        this.securityDetailsEdit = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            authStatus: '',
+            authorizedBy: '',
+            authorizedTime: '',
+            createdBy: '',
+            createdDate: '',
+            isActive: '',
+            maxInvLogins: '',
+            maxPswdLength: '',
+            minPswdLength: '',
+            modifiedBy: '',
+            modifiedTime: '',
+            notifyPasswordExpiryInDays: '',
+            pswdComplexLcase: '',
+            pswdComplexNum: '',
+            pswdComplexSplc: '',
+            pswdComplexUcase: '',
+            pswdExpiry: '',
+            pswdReuseAft: '',
+            recordStatus: '',
+            version: ''
+        });
         this.customerSearch = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
             firstName: '',
             customerNumber: '',
@@ -2873,6 +2900,12 @@ class ApiService {
     }
     getCustomerSearch() {
         return this.customerSearch.asObservable();
+    }
+    setSecurityPolicy(data) {
+        this.securityDetailsEdit.next(data);
+    }
+    getsecurityDetailsEdit() {
+        return this.securityDetailsEdit.asObservable();
     }
     setAccountBlocking(data) {
         this.AccountBlocking.next(data);
