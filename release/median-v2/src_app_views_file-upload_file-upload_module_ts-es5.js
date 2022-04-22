@@ -4177,15 +4177,25 @@
                             sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error:' + _this18.responseforfileupload.errorMessage, 'error');
                           }
 
+                          if (_this18.responseforfileupload.errorMessage === "Error while reading file") {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + _this18.responseforfileupload.errorMessage);
+                          }
+
                           if (_this18.responseDto.totalNoOfRecords !== 0) {
                             sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                               title: "Data uploaded successfully ",
                               text: "For the Batch " + _this18.responseDto.batchNo
+                            }).then(function (result) {
+                              setTimeout(function () {
+                                window.scrollTo(0, document.body.scrollHeight);
+                              });
                             });
                             _this18.excelFileFlag = true;
                             _this18.flag = false;
                             _this18.isShow = true;
                           }
+                        }, function (error) {
+                          console.log(error);
                         });
                       } else if (result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().DismissReason.cancel) {
                         swalWithBootstrapButtons.fire('Cancelled', 'Duplicate data uploading cancelled, successfully :)', 'error');

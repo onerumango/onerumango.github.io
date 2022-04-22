@@ -2277,15 +2277,24 @@ class FileUploadComponent {
                                     if (this.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
                                         sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error:' + this.responseforfileupload.errorMessage, 'error');
                                     }
+                                    if (this.responseforfileupload.errorMessage === "Error while reading file") {
+                                        sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + this.responseforfileupload.errorMessage);
+                                    }
                                     if (this.responseDto.totalNoOfRecords !== 0) {
                                         sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                                             title: "Data uploaded successfully ",
                                             text: "For the Batch " + this.responseDto.batchNo
-                                        });
+                                        }).then((result => {
+                                            setTimeout(() => {
+                                                window.scrollTo(0, document.body.scrollHeight);
+                                            });
+                                        }));
                                         this.excelFileFlag = true;
                                         this.flag = false;
                                         this.isShow = true;
                                     }
+                                }, error => {
+                                    console.log(error);
                                 });
                             }
                             else if (result.dismiss === (sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().DismissReason.cancel)) {
