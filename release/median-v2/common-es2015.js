@@ -230,7 +230,8 @@ class SecurityPolicyService {
             pswdExpiry: '',
             pswdReuseAft: '',
             recordStatus: '',
-            version: ''
+            version: '',
+            firstTimeAuth: ''
         });
     }
     saveDataSecurity(obj) {

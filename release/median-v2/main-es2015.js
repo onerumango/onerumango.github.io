@@ -1934,10 +1934,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": function() { return /* binding */ AppRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 71258);
 /* harmony import */ var src_npr_components_layout_layout_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/@npr/components/layout/layout.component */ 15070);
 /* harmony import */ var _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/guards/auth.guard */ 87618);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/guards/can-deactivate.guard */ 50215);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+
 
 
 
@@ -2075,15 +2077,15 @@ const routes = [
 class AppRoutingModule {
 }
 AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
-AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forRoot(routes, {
+AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
+AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_2__.CanDeactivateGuard], imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes, {
                 // preloadingStrategy: PreloadAllModules,
                 useHash: true,
                 scrollPositionRestoration: 'enabled',
                 relativeLinkResolution: 'corrected',
                 anchorScrolling: 'enabled'
-            })], _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule] }); })();
+            })], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] }); })();
 
 
 /***/ }),
@@ -2301,6 +2303,43 @@ AuthGuard.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵ�
 
 /***/ }),
 
+/***/ 50215:
+/*!*******************************************************!*\
+  !*** ./src/app/shared/guards/can-deactivate.guard.ts ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CanDeactivateGuard": function() { return /* binding */ CanDeactivateGuard; }
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
+
+class CanDeactivateGuard {
+    constructor() { }
+    canDeactivate(component, currentRoute, currentState, nextState) {
+        // Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+        // return true;
+        console.log("canDeactivate was called", component);
+        if (component === null || component === void 0 ? void 0 : component.pageDeactivation) {
+            // return component.pageDeactivation().pipe(first());
+            // console.log("canDeactivate ", component.pageDeactivation());
+            // return component.pageDeactivation();
+            const canDeact = component.pageDeactivation();
+            console.log("CanDeact: ", canDeact);
+            return canDeact;
+        }
+        console.log("in canDeactivate bef true..");
+        // return of(true);
+    }
+}
+CanDeactivateGuard.ɵfac = function CanDeactivateGuard_Factory(t) { return new (t || CanDeactivateGuard)(); };
+CanDeactivateGuard.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: CanDeactivateGuard, factory: CanDeactivateGuard.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ 35383:
 /*!*********************************************************!*\
   !*** ./src/app/shared/models/fmosNewRolePermissions.ts ***!
@@ -2451,6 +2490,36 @@ class ApiService {
             verifiedTime: '',
             formValues: []
         });
+        this.globalGccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            inputBy: '',
+            creatorDtStamp: '',
+            creatorId: '',
+            modNo: '',
+            recordStatus: '',
+            verifiedStatus: '',
+            verifiedBy: '',
+            verifiedOnce: '',
+            verifiedTime: '',
+            permission: '',
+            trnCode: '',
+            trnDesc: '',
+            activeTab: ''
+        });
+        this.globalAccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            inputBy: '',
+            creatorDtStamp: '',
+            creatorId: '',
+            modNo: '',
+            recordStatus: '',
+            verifiedStatus: '',
+            verifiedBy: '',
+            verifiedOnce: '',
+            verifiedTime: '',
+            permission: '',
+            trnCode: '',
+            trnDesc: '',
+            activeTab: ''
+        });
         //File upload end
         // External System
         this.externalSystemData = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
@@ -2592,6 +2661,18 @@ class ApiService {
     }
     getSummaryDataTransactionCode() {
         return this.transactionCodeSummryData.asObservable();
+    }
+    setGlobalGccSummary(summaryData) {
+        this.globalGccSummary.next(summaryData);
+    }
+    getGlobalGccSummary() {
+        return this.globalGccSummary.asObservable();
+    }
+    setGlobalAccSummary(summaryData) {
+        this.globalAccSummary.next(summaryData);
+    }
+    getGlobalAccSummary() {
+        return this.globalAccSummary.asObservable();
     }
     deleteRow(id) {
         return this.http.delete(`${API_URL}/config/deleteRow/${id}`);

@@ -529,7 +529,8 @@
             pswdExpiry: '',
             pswdReuseAft: '',
             recordStatus: '',
-            version: ''
+            version: '',
+            firstTimeAuth: ''
           });
         }
 
