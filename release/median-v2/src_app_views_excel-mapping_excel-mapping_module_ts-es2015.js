@@ -2078,7 +2078,7 @@ class ExcelMappingComponent {
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
         };
         this.getexcelMappingSummary();
-        this.roleService.fetchScreenPermissions('Template Mapping"');
+        this.roleService.fetchScreenPermissions('Template Mapping');
         this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
         console.log(this.roleCodes);
     }
