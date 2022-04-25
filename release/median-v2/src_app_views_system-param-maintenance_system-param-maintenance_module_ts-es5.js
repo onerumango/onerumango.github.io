@@ -112,7 +112,7 @@
         }, {
           key: "onAuthDepartment",
           value: function onAuthDepartment(obj) {
-            return this.http.put("".concat(this.API_URL, "/departBatchMaint/authorize"), obj);
+            return this.http.put("".concat(this.API_URL, "/departBatchMaint/verify"), obj);
           } //department --->close
 
         }, {
@@ -1241,7 +1241,7 @@
                       );
                     } else {
                       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                        text: "Maker cannot authorize the record",
+                        text: "Authorization failed for the record",
                         'icon': 'error'
                       });
                     }
