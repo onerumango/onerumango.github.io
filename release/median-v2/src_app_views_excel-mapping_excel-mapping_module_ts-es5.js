@@ -3830,7 +3830,7 @@
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
             this.getexcelMappingSummary();
-            this.roleService.fetchScreenPermissions('Template Mapping"');
+            this.roleService.fetchScreenPermissions('Template Mapping');
             this.roleService.screenLabelList.subscribe(function (message) {
               return _this19.roleCodes = message;
             });
