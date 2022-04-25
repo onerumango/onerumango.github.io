@@ -373,6 +373,12 @@
       /* harmony import */
 
 
+      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! rxjs */
+      81134);
+      /* harmony import */
+
+
       var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! sweetalert2 */
       18190);
@@ -407,19 +413,19 @@
       /* harmony import */
 
 
-      var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ng-select/ng-select */
       88660);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
       71258);
 
@@ -1154,6 +1160,20 @@
             this.fetchingIso();
           }
         }, {
+          key: "pageDeactivation",
+          value: function pageDeactivation() {
+            console.log("pageDeactivation in user was called"); // return of (true);
+
+            if (this.ruleMappingForm.touched) {
+              var swalMsg = '';
+              var result = confirm('There are unsaved changes! Are you sure?');
+              console.log("result: ", result);
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(result);
+            } else {
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(true);
+            }
+          }
+        }, {
           key: "getDestinationItem",
           value: function getDestinationItem() {
             return this.formBuilder.group({
@@ -1835,7 +1855,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.showSource || ctx.showDestination);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_6__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_6__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupName, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArrayName, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLink, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgStyle],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupName, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArrayName, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLink, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgStyle],
         styles: [".m-10[_ngcontent-%COMP%] {\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtbWFwcGluZy1jcmVhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtBQUNKIiwiZmlsZSI6InJ1bGUtbWFwcGluZy1jcmVhdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubS0xMHtcclxuICAgIG1hcmdpbi10b3A6IDEwcHhcclxufSJdfQ== */"]
       });
 
@@ -1926,6 +1946,12 @@
       /* harmony import */
 
 
+      var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! rxjs */
+      81134);
+      /* harmony import */
+
+
       var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/core */
       2316);
@@ -1944,13 +1970,13 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
@@ -2851,6 +2877,20 @@
             });
           }
         }, {
+          key: "pageDeactivation",
+          value: function pageDeactivation() {
+            console.log("pageDeactivation in user was called"); // return of (true);
+
+            if (this.ruleMappingForm.touched) {
+              var swalMsg = '';
+              var result = confirm('There are unsaved changes! Are you sure?');
+              console.log("result: ", result);
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
+            } else {
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(true);
+            }
+          }
+        }, {
           key: "getRuleMappingDetails",
           value: function getRuleMappingDetails() {
             return this.formBuilder.group({
@@ -3305,7 +3345,7 @@
       }();
 
       _RuleMappingDetailsComponent.ɵfac = function RuleMappingDetailsComponent_Factory(t) {
-        return new (t || _RuleMappingDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_2__.RuleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_4__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_5__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder));
+        return new (t || _RuleMappingDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_2__.RuleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_10__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_4__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_5__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder));
       };
 
       _RuleMappingDetailsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
@@ -4005,8 +4045,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx.addSysRespData.versionNo);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupName, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgStyle],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupName, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkWithHref, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgStyle],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
         styles: [".m-10[_ngcontent-%COMP%] {\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtbWFwcGluZy1kZXRhaWxzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7QUFDSiIsImZpbGUiOiJydWxlLW1hcHBpbmctZGV0YWlscy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tLTEwe1xyXG4gICAgbWFyZ2luLXRvcDogMTBweFxyXG59Il19 */"]
       });
 
@@ -4051,52 +4091,60 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! src/app/shared/guards/can-deactivate.guard */
+      50215);
+      /* harmony import */
+
+
+      var _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./conversion/conversion.component */
       74982);
       /* harmony import */
 
 
-      var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./rule-mapping-create/rule-mapping-create.component */
       7622);
       /* harmony import */
 
 
-      var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./rule-mapping-details/rule-mapping-details.component */
       50531);
       /* harmony import */
 
 
-      var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./rule-mapping/rule-mapping.component */
       10245);
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
       2316);
 
       var routes = [{
         path: 'create',
-        component: _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_1__.RuleMappingCreateComponent
+        component: _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_2__.RuleMappingCreateComponent,
+        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
       }, {
         path: 'edit/:mapId',
-        component: _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__.RuleMappingDetailsComponent
+        component: _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_3__.RuleMappingDetailsComponent,
+        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
       }, {
         path: 'summary',
-        component: _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_3__.RuleMappingComponent
+        component: _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__.RuleMappingComponent
       }, {
         path: 'conversion',
-        component: _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_0__.ConversionComponent
+        component: _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_1__.ConversionComponent
       }];
 
       var _RuleMappingRoutingModule = /*#__PURE__*/_createClass(function _RuleMappingRoutingModule() {
@@ -4107,17 +4155,17 @@
         return new (t || _RuleMappingRoutingModule)();
       };
 
-      _RuleMappingRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
+      _RuleMappingRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: _RuleMappingRoutingModule
       });
-      _RuleMappingRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
-        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
+      _RuleMappingRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
+        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](_RuleMappingRoutingModule, {
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule],
-          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsetNgModuleScope"](_RuleMappingRoutingModule, {
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule],
+          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule]
         });
       })();
       /***/

@@ -98,13 +98,19 @@
       /* harmony import */
 
 
+      var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! rxjs */
+      81134);
+      /* harmony import */
+
+
       var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/core */
       2316);
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
@@ -134,13 +140,13 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
 
 
-      var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @ng-select/ng-select */
       88660);
 
@@ -1887,6 +1893,20 @@
             this.ruleForm.enable();
           }
         }, {
+          key: "pageDeactivation",
+          value: function pageDeactivation() {
+            console.log("pageDeactivation in user was called"); // return of (true);
+
+            if (this.ruleForm.touched) {
+              var swalMsg = '';
+              var result = confirm('There are unsaved changes! Are you sure?');
+              console.log("result: ", result);
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_9__.of)(result);
+            } else {
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_9__.of)(true);
+            }
+          }
+        }, {
           key: "getRuleData",
           value: function getRuleData(ruleId) {
             var _this2 = this;
@@ -2676,7 +2696,7 @@
       }();
 
       _RuleDetails2Component.ɵfac = function RuleDetails2Component_Factory(t) {
-        return new (t || _RuleDetails2Component)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_4__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_5__.RuleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_6__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder));
+        return new (t || _RuleDetails2Component)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_4__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_5__.RuleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_6__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder));
       };
 
       _RuleDetails2Component.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({
@@ -3098,8 +3118,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx.ruleConfig.versionNo);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgSelectComponent, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgStyle, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLink],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_12__.NgSelectComponent, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_12__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgStyle, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouterLink],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.DatePipe],
         styles: [".td-highlight[_ngcontent-%COMP%] {\n  color: #E6224A !important;\n  font-size: 12px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  padding: 15px 3px 0px 12px;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px !important;\n  white-space: nowrap;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding-left: 2px !important;\n}\n\n.readonlyTrue[_ngcontent-%COMP%] {\n  pointer-events: none !important;\n}\n\n.readonlyFalse[_ngcontent-%COMP%] {\n  pointer-events: visible !important;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtZGV0YWlsczIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFHSSx5QkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsMEJBQUE7QUFESjs7QUFLQTtFQUNJLHdCQUFBO0VBQ0EsbUJBQUE7QUFGSjs7QUFJRTtFQUNFLDRCQUFBO0FBREo7O0FBSUE7RUFDRSwrQkFBQTtBQURGOztBQUlBO0VBQ0Usa0NBQUE7RUFDQSxlQUFBO0FBREYiLCJmaWxlIjoicnVsZS1kZXRhaWxzMi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZC1oaWdobGlnaHR7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDogNnB4ICFpbXBvcnRhbnQ7XHJcbiAgICAvLyBtYXJnaW4tYm90dG9tOiAwLjFyZW0gIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjRTYyMjRBICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDFweDtcclxuICAgIHBhZGRpbmc6IDE1cHggM3B4IDBweCAxMnB4O1xyXG4gICAgLy8gYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNGNUY1RjU7XHJcbn1cclxuXHJcbnRhYmxlLnRhYmxlU3R5bGUgdGhlYWQgdHIgdGgge1xyXG4gICAgcGFkZGluZzogMTJweCAhaW1wb3J0YW50O1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICB9XHJcbiAgdGFibGUudGFibGVTdHlsZSB0Ym9keSB0ZCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDJweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ucmVhZG9ubHlUcnVle1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5yZWFkb25seUZhbHNle1xyXG4gIHBvaW50ZXItZXZlbnRzOiB2aXNpYmxlICFpbXBvcnRhbnQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59Il19 */"]
       });
 
@@ -3206,6 +3226,12 @@
       /* harmony import */
 
 
+      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! rxjs */
+      81134);
+      /* harmony import */
+
+
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
       2316);
@@ -3224,19 +3250,19 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
 
 
-      var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ng-select/ng-select */
       88660);
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
       71258);
 
@@ -5032,6 +5058,20 @@
             });
           }
         }, {
+          key: "pageDeactivation",
+          value: function pageDeactivation() {
+            console.log("pageDeactivation in user was called"); // return of (true);
+
+            if (this.ruleForm.touched) {
+              var swalMsg = '';
+              var result = confirm('There are unsaved changes! Are you sure?');
+              console.log("result: ", result);
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(result);
+            } else {
+              return (0, rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(true);
+            }
+          }
+        }, {
           key: "getDestinationItem",
           value: function getDestinationItem() {
             return this.formBuilder.group({
@@ -5500,8 +5540,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.auditShowStatus);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__.NgSelectComponent, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArrayName, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLink, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgModel],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DatePipe],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__.NgSelectComponent, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArrayName, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLink, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgModel],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
         styles: [".danger[_ngcontent-%COMP%] {\n  color: #E6224A;\n}\n\n.td-highlight[_ngcontent-%COMP%] {\n  color: #E6224A !important;\n  font-size: 12px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  padding: 15px 3px 0px 12px;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px !important;\n  white-space: nowrap;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding-left: 2px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtZGV0YWlscy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7QUFDRjs7QUFDQTtFQUdFLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtBQUFGOztBQUlBO0VBQ0Usd0JBQUE7RUFDQSxtQkFBQTtBQURGOztBQUdBO0VBQ0UsNEJBQUE7QUFBRiIsImZpbGUiOiJydWxlLWRldGFpbHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGFuZ2VyIHtcclxuICBjb2xvcjogI0U2MjI0QTtcclxufVxyXG4udGQtaGlnaGxpZ2h0e1xyXG4gIC8vIG1hcmdpbi1sZWZ0OiA2cHggIWltcG9ydGFudDtcclxuICAvLyBtYXJnaW4tYm90dG9tOiAwLjFyZW0gIWltcG9ydGFudDtcclxuICBjb2xvcjogI0U2MjI0QSAhaW1wb3J0YW50O1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XHJcbiAgcGFkZGluZzogMTVweCAzcHggMHB4IDEycHg7XHJcbiAgLy8gYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNGNUY1RjU7XHJcbn1cclxuXHJcbnRhYmxlLnRhYmxlU3R5bGUgdGhlYWQgdHIgdGgge1xyXG4gIHBhZGRpbmc6IDEycHggIWltcG9ydGFudDtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG59XHJcbnRhYmxlLnRhYmxlU3R5bGUgdGJvZHkgdGQge1xyXG4gIHBhZGRpbmctbGVmdDogMnB4ICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"]
       });
 
@@ -5992,43 +6032,51 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var _rule_details_rule_details_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! src/app/shared/guards/can-deactivate.guard */
+      50215);
+      /* harmony import */
+
+
+      var _rule_details_rule_details_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./rule-details/rule-details.component */
       43492);
       /* harmony import */
 
 
-      var _rule_details2_rule_details2_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _rule_details2_rule_details2_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./rule-details2/rule-details2.component */
       36591);
       /* harmony import */
 
 
-      var _rule_list_rule_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _rule_list_rule_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./rule-list/rule-list.component */
       60084);
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
       2316);
 
       var routes = [{
         path: 'list',
-        component: _rule_list_rule_list_component__WEBPACK_IMPORTED_MODULE_2__.RuleListComponent
+        component: _rule_list_rule_list_component__WEBPACK_IMPORTED_MODULE_3__.RuleListComponent
       }, {
         path: 'create',
-        component: _rule_details_rule_details_component__WEBPACK_IMPORTED_MODULE_0__.RuleDetailsComponent
+        component: _rule_details_rule_details_component__WEBPACK_IMPORTED_MODULE_1__.RuleDetailsComponent,
+        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
       }, {
         path: 'edit/:id',
-        component: _rule_details2_rule_details2_component__WEBPACK_IMPORTED_MODULE_1__.RuleDetails2Component
+        component: _rule_details2_rule_details2_component__WEBPACK_IMPORTED_MODULE_2__.RuleDetails2Component,
+        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
       }];
 
       var _RuleRoutingModule = /*#__PURE__*/_createClass(function _RuleRoutingModule() {
@@ -6039,17 +6087,17 @@
         return new (t || _RuleRoutingModule)();
       };
 
-      _RuleRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+      _RuleRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
         type: _RuleRoutingModule
       });
-      _RuleRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
+      _RuleRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](_RuleRoutingModule, {
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule],
-          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](_RuleRoutingModule, {
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule],
+          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
         });
       })();
       /***/

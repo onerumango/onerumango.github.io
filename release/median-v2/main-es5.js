@@ -3869,7 +3869,7 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
@@ -3887,7 +3887,13 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./shared/guards/can-deactivate.guard */
+      50215);
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
       2316);
 
@@ -4258,23 +4264,24 @@
         return new (t || _AppRoutingModule)();
       };
 
-      _AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      _AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: _AppRoutingModule
       });
-      _AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forRoot(routes, {
+      _AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        providers: [_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_2__.CanDeactivateGuard],
+        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes, {
           // preloadingStrategy: PreloadAllModules,
           useHash: true,
           scrollPositionRestoration: 'enabled',
           relativeLinkResolution: 'corrected',
           anchorScrolling: 'enabled'
-        })], _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule]
+        })], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](_AppRoutingModule, {
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule],
-          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](_AppRoutingModule, {
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule],
+          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
         });
       })();
       /***/
@@ -4732,6 +4739,78 @@
     },
 
     /***/
+    50215:
+    /*!*******************************************************!*\
+      !*** ./src/app/shared/guards/can-deactivate.guard.ts ***!
+      \*******************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+
+
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */
+        "CanDeactivateGuard": function CanDeactivateGuard() {
+          return (
+            /* binding */
+            _CanDeactivateGuard
+          );
+        }
+        /* harmony export */
+
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      2316);
+
+      var _CanDeactivateGuard = /*#__PURE__*/function () {
+        function _CanDeactivateGuard() {
+          _classCallCheck(this, _CanDeactivateGuard);
+        }
+
+        _createClass(_CanDeactivateGuard, [{
+          key: "canDeactivate",
+          value: function canDeactivate(component, currentRoute, currentState, nextState) {
+            // Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+            // return true;
+            console.log("canDeactivate was called", component);
+
+            if (component === null || component === void 0 ? void 0 : component.pageDeactivation) {
+              // return component.pageDeactivation().pipe(first());
+              // console.log("canDeactivate ", component.pageDeactivation());
+              // return component.pageDeactivation();
+              var canDeact = component.pageDeactivation();
+              console.log("CanDeact: ", canDeact);
+              return canDeact;
+            }
+
+            console.log("in canDeactivate bef true.."); // return of(true);
+          }
+        }]);
+
+        return _CanDeactivateGuard;
+      }();
+
+      _CanDeactivateGuard.ɵfac = function CanDeactivateGuard_Factory(t) {
+        return new (t || _CanDeactivateGuard)();
+      };
+
+      _CanDeactivateGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: _CanDeactivateGuard,
+        factory: _CanDeactivateGuard.ɵfac,
+        providedIn: 'root'
+      });
+      /***/
+    },
+
+    /***/
     35383:
     /*!*********************************************************!*\
       !*** ./src/app/shared/models/fmosNewRolePermissions.ts ***!
@@ -4961,6 +5040,36 @@
             verifiedOnce: '',
             verifiedTime: '',
             formValues: []
+          });
+          this.globalGccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            inputBy: '',
+            creatorDtStamp: '',
+            creatorId: '',
+            modNo: '',
+            recordStatus: '',
+            verifiedStatus: '',
+            verifiedBy: '',
+            verifiedOnce: '',
+            verifiedTime: '',
+            permission: '',
+            trnCode: '',
+            trnDesc: '',
+            activeTab: ''
+          });
+          this.globalAccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            inputBy: '',
+            creatorDtStamp: '',
+            creatorId: '',
+            modNo: '',
+            recordStatus: '',
+            verifiedStatus: '',
+            verifiedBy: '',
+            verifiedOnce: '',
+            verifiedTime: '',
+            permission: '',
+            trnCode: '',
+            trnDesc: '',
+            activeTab: ''
           }); //File upload end
           // External System
 
@@ -5148,6 +5257,26 @@
           key: "getSummaryDataTransactionCode",
           value: function getSummaryDataTransactionCode() {
             return this.transactionCodeSummryData.asObservable();
+          }
+        }, {
+          key: "setGlobalGccSummary",
+          value: function setGlobalGccSummary(summaryData) {
+            this.globalGccSummary.next(summaryData);
+          }
+        }, {
+          key: "getGlobalGccSummary",
+          value: function getGlobalGccSummary() {
+            return this.globalGccSummary.asObservable();
+          }
+        }, {
+          key: "setGlobalAccSummary",
+          value: function setGlobalAccSummary(summaryData) {
+            this.globalAccSummary.next(summaryData);
+          }
+        }, {
+          key: "getGlobalAccSummary",
+          value: function getGlobalAccSummary() {
+            return this.globalAccSummary.asObservable();
           }
         }, {
           key: "deleteRow",
