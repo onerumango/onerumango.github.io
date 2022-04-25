@@ -48,7 +48,7 @@ class MaintenanceService {
     }
     //department --->auth
     onAuthDepartment(obj) {
-        return this.http.put(`${this.API_URL}/departBatchMaint/authorize`, obj);
+        return this.http.put(`${this.API_URL}/departBatchMaint/verify`, obj);
     } //department --->close
     onCloseOfDepartment(obj) {
         return this.http.put(`${this.API_URL}/departBatchMaint/close`, obj);
@@ -666,7 +666,7 @@ class DepartmenrtIdNewComponent {
                         }
                         else {
                             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                                text: "Maker cannot authorize the record",
+                                text: "Authorization failed for the record",
                                 'icon': 'error'
                             });
                         }
