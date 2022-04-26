@@ -1052,6 +1052,7 @@ class SecurityPolicyComponent {
             this.secuityService
                 .saveDataSecurity(this.securityForm.value)
                 .subscribe((response) => {
+                this.securityData = response;
                 if (response) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Record is Created` });
                     // this.enablesubmit = false;

@@ -487,13 +487,16 @@
           value: function sendAccType(emailType) {
             return this.http.get("".concat(_API_URL, "/emailMaintenence/getDetailsData/").concat(emailType));
           } //audit log --methods
+          // onClickOfAuthOfEmailManagement(emailType: string, loginUSer: string) {
+          //   //console.log("type:",emailType)
+          //   //console.log("loginUSer",loginUSer)
+          //   return this.http.get(`${API_URL}/emailMaintenence/verify/${emailType}/${loginUSer}`)
+          // }
 
         }, {
           key: "onClickOfAuthOfEmailManagement",
-          value: function onClickOfAuthOfEmailManagement(emailType, loginUSer) {
-            //console.log("type:",emailType)
-            //console.log("loginUSer",loginUSer)
-            return this.http.get("".concat(_API_URL, "/emailMaintenence/verify/").concat(emailType, "/").concat(loginUSer));
+          value: function onClickOfAuthOfEmailManagement(operation, emailType, makerId) {
+            return this.http.put("".concat(_API_URL, "/emailMaintenence/").concat(operation, "/").concat(emailType, "/").concat(makerId), operation);
           }
         }, {
           key: "onclickOfReopenOfEamilManagement",
@@ -1046,7 +1049,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSE") && ctx_r3.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSED") && ctx_r3.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -1054,7 +1057,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag && ctx_r3.roleCodes["delete"] && (ctx_r3.eamilAuditLog.verifiedOnce == "NO" || ctx_r3.eamilAuditLog.verifiedOnce == "N") && (ctx_r3.eamilAuditLog.verifiedStatus == "U" || ctx_r3.eamilAuditLog.verifiedStatus == "UNAUTHORIZED"));
         }
       }
 
@@ -1483,6 +1486,8 @@
             });
             console.log(this.editAddSysResp);
             this.loggedInUser = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
+            this.emailTypes = localStorage.getItem('EmailType');
+            console.log(this.emailTypes);
             this.emailForm = this.formBuilder.group({
               accountType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
               emails: this.formBuilder.array([])
@@ -1500,7 +1505,7 @@
             this.eamilAuditLog.verifiedTime = this.editAddSysResp.queryParams.authtym;
             this.eamilAuditLog.verifiedBy = this.editAddSysResp.queryParams.authBy;
             this.eamilAuditLog.emailType = this.editAddSysResp.queryParams.emailType;
-            console.log(this.eamilAuditLog);
+            console.log(this.eamilAuditLog.emailType);
 
             if (this.eamilAuditLog.emailType) {
               console.log("Query params");
@@ -1710,23 +1715,15 @@
         }, {
           key: "onClickOfAuthOfEmailManagement",
           value: function onClickOfAuthOfEmailManagement() {
-            console.log('this is auth');
-            this.accountBlockingService.onClickOfAuthOfEmailManagement(this.selected, this.loggedInUser).subscribe(function (authresp) {
+            console.log('this is auth'); // let object = {
+            //   emailType : 'Account_Block', 
+            //   makerId: this.loggedInUser,
+            // }
+
+            this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(function (authresp) {
               console.log(authresp);
 
-              if (authresp == false) {
-                // this.iziToast.show({
-                //   message: `Maker Cannot Authorize The Record`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme: "dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+              if (authresp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: 'Maker Cannot Authorize The Record',
                   icon: 'warning'
@@ -1756,7 +1753,7 @@
           key: "onclickOfReopenOfEamilManagement",
           value: function onclickOfReopenOfEamilManagement() {
             //console.log('this is Reopen');
-            this.accountBlockingService.onclickOfReopenOfEamilManagement(this.selected, this.loggedInUser).subscribe(function (reopenResp) {
+            this.accountBlockingService.onClickOfAuthOfEmailManagement('reopen', 'Account_Block', this.loggedInUser).subscribe(function (reopenResp) {
               console.log(reopenResp);
 
               if (reopenResp == false) {
@@ -1799,7 +1796,7 @@
           key: "onclickOfCloseOfEmailManagement",
           value: function onclickOfCloseOfEmailManagement() {
             console.log('this is close', this.selected, this.loggedInUser);
-            this.accountBlockingService.onclickOfCloseOfEmailManagement(this.selected, this.loggedInUser).subscribe(function (closeResp) {
+            this.accountBlockingService.onClickOfAuthOfEmailManagement('close', 'Account_Block', this.loggedInUser).subscribe(function (closeResp) {
               console.log(closeResp);
 
               if (closeResp == false) {
@@ -1843,12 +1840,12 @@
             var _this6 = this;
 
             // if (this.eamilAuditLog.emailType != null || this.eamilAuditLog.emailType != undefined) {
-            console.log(this.editAddSysResp);
+            console.log(this.eamilAuditLog.inputBy);
+            console.log(this.emailTypes);
 
-            if (this.eamilAuditLog.inputBy != null) {
-              console.log("If");
+            if (this.eamilAuditLog.inputBy != null || this.emailTypes == 'Account_Block') {
               this.accountBlockingService.onclickOfEditOfEmailManagement(this.selected, this.loggedInUser, this.emails.value).subscribe(function (editResp) {
-                console.log(editResp);
+                console.log(editResp, "If");
 
                 if (editResp == false) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
@@ -1862,7 +1859,9 @@
                   });
                 }
               });
-            } else {
+            }
+
+            if (this.emailTypes != 'Account_Block') {
               console.log("else");
               this.accountBlockingService.emailMaintenance(this.selected, this.loggedInUser, this.emails.value).subscribe(function (resp) {
                 _this6.masterresponse = resp;
@@ -2517,6 +2516,8 @@
 
             this.accountBlockingService.getAllEmail().subscribe(function (emaildata) {
               _this8.emaildata = emaildata;
+              console.log(_this8.emaildata[0].emailType);
+              localStorage.setItem("EmailType", _this8.emaildata[0].emailType);
 
               _this8.dtTrigger.next();
 

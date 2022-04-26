@@ -294,6 +294,11 @@
             // <source_ip>123.32.23.34</source_ip>`
             return this.http.post("".concat(_API_URL, "/message/readMessage"), data);
           }
+        }, {
+          key: "fetchTableName",
+          value: function fetchTableName(addSystem) {
+            return this.http.post("".concat(_API_URL, "/newExtApi/validate/addSystem"), addSystem);
+          }
         }]);
 
         return _AddSystemService;
