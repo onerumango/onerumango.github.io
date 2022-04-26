@@ -1811,6 +1811,8 @@
               });
             } else {
               this.secuityService.saveDataSecurity(this.securityForm.value).subscribe(function (response) {
+                _this6.securityData = response;
+
                 if (response) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Created"

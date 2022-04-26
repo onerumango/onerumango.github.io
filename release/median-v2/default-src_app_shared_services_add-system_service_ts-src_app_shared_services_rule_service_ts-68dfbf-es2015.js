@@ -184,6 +184,9 @@ class AddSystemService {
         // <source_ip>123.32.23.34</source_ip>`
         return this.http.post(`${API_URL}/message/readMessage`, data);
     }
+    fetchTableName(addSystem) {
+        return this.http.post(`${API_URL}/newExtApi/validate/addSystem`, addSystem);
+    }
 }
 AddSystemService.ɵfac = function AddSystemService_Factory(t) { return new (t || AddSystemService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient)); };
 AddSystemService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: AddSystemService, factory: AddSystemService.ɵfac, providedIn: 'root' });
