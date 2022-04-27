@@ -3400,7 +3400,11 @@
                 icon: 'info'
               }).then(function (result) {
                 if (result.isConfirmed === true) {
-                  _this16.userApi.onClickOfAuthOfModifyUsers(_this16.modifyUserObject.userId, _this16.currentUser).subscribe(function (authResp) {
+                  var UpdateUserAuthDto = {};
+                  UpdateUserAuthDto.userId = _this16.modifyUserObject.userId;
+                  UpdateUserAuthDto.makerId = _this16.currentUser;
+
+                  _this16.userApi.onClickOfAuthOfModifyUsers(UpdateUserAuthDto).subscribe(function (authResp) {
                     console.log(authResp);
                     _this16.authStatusFlag = authResp;
 

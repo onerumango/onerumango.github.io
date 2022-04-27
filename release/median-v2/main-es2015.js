@@ -3417,12 +3417,12 @@ const environment = {
     //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
     //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
     //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-    // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
+    MEDIAN_URL: 'http://localhost:9191',
+    ACC_CLOSER_URL: 'http://localhost:9192' //account closer for local testing
     //  MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
     // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
+    //  MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
+    // ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
 };
 
 
