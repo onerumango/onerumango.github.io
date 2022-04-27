@@ -775,10 +775,10 @@
                   _this5.spinnerbutton = false;
                 }
               });
-            }, function (error) {
-              sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                text: "Server Error,Unable to connect server."
-              });
+            }, function (err) {
+              // Swal.fire(
+              // {text:  "Server Error,Unable to connect server."}
+              sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire(err.error.message);
             });
           }
         }, {

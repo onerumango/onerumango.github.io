@@ -473,8 +473,10 @@ class ForgetPasswordComponent {
                     this.spinnerbutton = false;
                 }
             });
-        }, (error) => {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Server Error,Unable to connect server." });
+        }, (err) => {
+            // Swal.fire(
+            // {text:  "Server Error,Unable to connect server."}
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire(err.error.message);
         });
     }
     goHome() {
