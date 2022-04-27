@@ -343,8 +343,8 @@ class UsersService {
     // Audit log  ends for User creatrion
     // -------------------User Modification-------------
     // audit log for User Modification Starts
-    onClickOfAuthOfModifyUsers(userId, makerId) {
-        return this.http.get(`${API_URL}/users/authorizeUser/${userId}/${makerId}`);
+    onClickOfAuthOfModifyUsers(obj) {
+        return this.http.put(`${API_URL}/users/authorizeUser`, obj);
     }
     onClickOfCloseOfModifyUsers(userId, makerId) {
         return this.http.get(`${API_URL}/users/closeUser/${userId}/${makerId}`);

@@ -745,8 +745,8 @@
 
         }, {
           key: "onClickOfAuthOfModifyUsers",
-          value: function onClickOfAuthOfModifyUsers(userId, makerId) {
-            return this.http.get("".concat(_API_URL, "/users/authorizeUser/").concat(userId, "/").concat(makerId));
+          value: function onClickOfAuthOfModifyUsers(obj) {
+            return this.http.put("".concat(_API_URL, "/users/authorizeUser"), obj);
           }
         }, {
           key: "onClickOfCloseOfModifyUsers",

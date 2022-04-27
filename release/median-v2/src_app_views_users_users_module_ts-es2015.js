@@ -1935,7 +1935,10 @@ class UserNewComponent {
                 icon: 'info'
             }).then((result => {
                 if (result.isConfirmed === true) {
-                    this.userApi.onClickOfAuthOfModifyUsers(this.modifyUserObject.userId, this.currentUser).subscribe(authResp => {
+                    let UpdateUserAuthDto = {};
+                    UpdateUserAuthDto.userId = this.modifyUserObject.userId;
+                    UpdateUserAuthDto.makerId = this.currentUser;
+                    this.userApi.onClickOfAuthOfModifyUsers(UpdateUserAuthDto).subscribe(authResp => {
                         console.log(authResp);
                         this.authStatusFlag = authResp;
                         this.getUserAuditData();
