@@ -1881,7 +1881,16 @@ class GlobalGccAcNewComponent {
         // this.loginUser = "JILU";
         this.globalGccForm = this.formBuilder.group({
             permission: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
-            globalGccData: this.formBuilder.array([this.createglobalGCCGroup()])
+            approvedEver: ["",],
+            approvedStatus: ["",],
+            approvedTime: ["",],
+            approverId: ["",],
+            createdTime: ["",],
+            creatorId: ["",],
+            globalGlCodeId: ["",],
+            medGlobalGlCodeDetails: this.formBuilder.array([this.createglobalGCCGroup()]),
+            recordStatus: ["",],
+            versionNo: [],
         });
         this.accountMaintenanceForm = this.formBuilder.group({
             permission: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
@@ -1894,8 +1903,8 @@ class GlobalGccAcNewComponent {
     }
     createglobalGCCGroup() {
         return new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroup({
-            'trnCode': new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl(''),
-            'trnDesc': new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl('')
+            'glCode': new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl(''),
+            'glDesc': new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl('')
         });
     }
     createglobalAccountGroup() {
@@ -1956,12 +1965,12 @@ class GlobalGccAcNewComponent {
         this.accountMaintenanceForm.controls.permission.setValue(this.permission);
     }
     removeGCCData(i) {
-        const globalGccData = this.globalGccForm.get('globalGccData');
-        if (globalGccData.length > 1) {
-            globalGccData.removeAt(i);
+        const medGlobalGlCodeDetails = this.globalGccForm.get('medGlobalGlCodeDetails');
+        if (medGlobalGlCodeDetails.length > 1) {
+            medGlobalGlCodeDetails.removeAt(i);
         }
         else {
-            globalGccData.reset();
+            medGlobalGlCodeDetails.reset();
         }
     }
     removeAccountData(i) {
@@ -1975,23 +1984,23 @@ class GlobalGccAcNewComponent {
     }
     addGCCFormGroup() {
         console.log("Hr;ppp");
-        const globalGccData = this.globalGccForm.get('globalGccData');
-        globalGccData.push(this.createglobalGCCGroup());
+        const medGlobalGlCodeDetails = this.globalGccForm.get('medGlobalGlCodeDetails');
+        medGlobalGlCodeDetails.push(this.createglobalGCCGroup());
     }
     addAccountFormGroup() {
         const accountMaintenanceData = this.accountMaintenanceForm.get('accountMaintenanceData');
         accountMaintenanceData.push(this.createglobalAccountGroup());
     }
     onSubmitGCCForm(globalGccForm) {
-        this.gccformValues = globalGccForm.globalGccData;
-        console.log(this.gccformValues);
-        globalGccForm.globalGccData.forEach((element, index) => {
-            this.trnCod = globalGccForm.globalGccData[index].trnCode;
-            this.trnDescp = globalGccForm.globalGccData[index].trnDesc;
-            this.gccformValues[index].permission = globalGccForm.permission;
+        globalGccForm.creatorId = this.currentUser;
+        console.log("GCC Form Submit", globalGccForm);
+        this.gccformValues = globalGccForm.medGlobalGlCodeDetails;
+        globalGccForm.medGlobalGlCodeDetails.forEach((element, index) => {
+            this.trnCod = globalGccForm.medGlobalGlCodeDetails[index].trnCode;
+            this.trnDescp = globalGccForm.medGlobalGlCodeDetails[index].trnDesc;
+            // this.gccformValues[index].permission = globalGccForm.permission;
         });
-        console.log(this.gccformValues);
-        this.apiService.saveGlCodeData(this.gccformValues, this.currentUser).subscribe(response => {
+        this.apiService.saveGlCodeData(globalGccForm, this.currentUser).subscribe(response => {
             this.savegccResp = response;
             console.log("this.savegccResp", this.savegccResp);
             if (this.savegccResp == true) {
@@ -2061,7 +2070,7 @@ class GlobalGccAcNewComponent {
     }
 }
 GlobalGccAcNewComponent.ɵfac = function GlobalGccAcNewComponent_Factory(t) { return new (t || GlobalGccAcNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService)); };
-GlobalGccAcNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: GlobalGccAcNewComponent, selectors: [["npr-global-gcc-ac-new"]], decls: 108, vars: 10, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], [1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-1", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-1", 1, "radio-label"], ["id", "radio-2", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-2", 1, "radio-label"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "globalGccData"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-4", 1, "radio-label"], ["formArrayName", "accountMaintenanceData"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "trnCode", "type", "text", "placeholder", "GL Code", "value", "", 1, "form-control"], ["id", "transactionCode", "formControlName", "trnDesc", "placeholder", "GL Code Description", "value", "", "required", "", 1, "form-control"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["id", "transactionDes", "required", "", "formControlName", "trnCode", "type", "text", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "trnDesc", "placeholder", "Account Class Description", "value", "", "required", "", 1, "form-control", 3, "readonly"]], template: function GlobalGccAcNewComponent_Template(rf, ctx) { if (rf & 1) {
+GlobalGccAcNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: GlobalGccAcNewComponent, selectors: [["npr-global-gcc-ac-new"]], decls: 108, vars: 10, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], [1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-1", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-1", 1, "radio-label"], ["id", "radio-2", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-2", 1, "radio-label"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-4", 1, "radio-label"], ["formArrayName", "accountMaintenanceData"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "value", "", 1, "form-control"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "GL Code Description", "value", "", "required", "", 1, "form-control"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["id", "transactionDes", "required", "", "formControlName", "trnCode", "type", "text", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "trnDesc", "placeholder", "Account Class Description", "value", "", "required", "", 1, "form-control", 3, "readonly"]], template: function GlobalGccAcNewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h2", 2);
@@ -2253,9 +2262,9 @@ GlobalGccAcNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formGroup", ctx.globalGccForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.globalGccForm.get("globalGccData")["controls"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.globalGccForm.get("medGlobalGlCodeDetails")["controls"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.globalGccForm.controls.globalGccData.invalid || !ctx.submit1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.globalGccForm.controls.medGlobalGlCodeDetails.invalid || !ctx.submit1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](8, _c1));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
@@ -3044,7 +3053,7 @@ class TransactionCodeEditComponent {
             this.transactionData[i].verifiedTime = formData.verifiedTime;
         }
         console.log("Final Data", this.transactionData);
-        this.apiService.updateTransactionCode(this.transactionData, this.currentUser).subscribe(savetrnres => {
+        this.apiService.updateTransactionCode(this.transactionData, formData.userId, this.currentUser).subscribe(savetrnres => {
             this.updatetrnResp = savetrnres;
             if (this.updatetrnResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({

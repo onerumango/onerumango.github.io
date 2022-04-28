@@ -5274,8 +5274,8 @@
           }
         }, {
           key: "updateTransactionCode",
-          value: function updateTransactionCode(trnData, loggedInuser) {
-            return this.http.put("".concat(_API_URL, "/config/modify/").concat(loggedInuser), trnData);
+          value: function updateTransactionCode(trnData, userId, loggedInuser) {
+            return this.http.put("".concat(_API_URL, "/config/modify/").concat(userId, "/").concat(loggedInuser), trnData);
           }
         }, {
           key: "todayUploadedBatches",
@@ -6510,21 +6510,19 @@
 
       var _environment = {
         production: true,
-        //MEDIAN_URL: 'http://10.127.43.228:8080/median',
-        //ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
+        // MEDIAN_URL: 'http://10.127.43.228:8080/median',
+        // ACC_CLOSER_URL: 'http://10.127.43.228:8080/medianAccountClosure'//account closer new
         //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2.2',
         //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianAccountClosure'//account closer new
         // MEDIAN_URL: 'https://10.137.145.90:8443/medianv2.2',
         //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
-        //MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
-        //ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-        MEDIAN_URL: 'http://localhost:9191',
-        ACC_CLOSER_URL: 'http://localhost:9192' //account closer for local testing
-        //  MEDIAN_URL: 'http://localhost:9192', // phase2 for local testing
-        // ACC_CLOSER_URL: 'http://localhost:9191'//account closer for local testing
-        //  MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-        // ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
-
+        // MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
+        // ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
+        //Currently Using Ports 
+        // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
+        // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
+        MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
+        ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
       };
       /***/
     },
