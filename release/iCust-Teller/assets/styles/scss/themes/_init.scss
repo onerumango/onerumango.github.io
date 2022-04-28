@@ -212,6 +212,10 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   background:#456EFE;
   color: white;
 }
+.egret-dark-purple .mat-toolbar {
+  background:#0C0B0F;
+  color: white;
+}
 .egret-dark-purple .highcharts-background{
   background-color: gray;
 }
@@ -343,7 +347,8 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   color:#000000;
 }
 .egret-dark-purple .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: rgb(31 18 18 / 30%);
+ // color: rgb(31 18 18 / 30%);
+  color:#d3d3d3;
 }
 .egret-dark-purple .mat-form-field-label {
   color: lightblue;
