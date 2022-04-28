@@ -2954,17 +2954,17 @@ class ApiService {
         console.log(batchNo);
         return this.http.get(`${API_URL}/medUpload/get/${batchNo}`);
     }
-    closingProcessCodeRecord(extSysName, userIdLoggedIn) {
-        return this.http.get(`${this.uriForExt}/close/${extSysName}/${userIdLoggedIn}`);
+    closingProcessCodeRecord(obj) {
+        return this.http.put(`${this.uriForExt}/close`, obj);
     }
-    reopeningProcessCodeRecord(extSysName, userIdLoggedIn) {
-        return this.http.get(`${this.uriForExt}/reOpen/${extSysName}/${userIdLoggedIn}`);
+    reopeningProcessCodeRecord(obj) {
+        return this.http.put(`${this.uriForExt}/reOpen`, obj);
     }
-    authProcessCodeRecord(extSysName, userIdLoggedIn) {
-        return this.http.get(`${this.uriForExt}/verify/${extSysName}/${userIdLoggedIn}`);
+    authProcessCodeRecord(obj) {
+        return this.http.put(`${this.uriForExt}/authorize`, obj);
     }
-    deleteProcessRecord(extSysName, userIdLoggedIn) {
-        return this.http.delete(`${this.uriForExt}/${extSysName}/${userIdLoggedIn}`, { responseType: 'text' });
+    deleteProcessRecord(extSysName, processCode, userIdLoggedIn) {
+        return this.http.delete(`${this.uriForExt}/${extSysName}/${processCode}/${userIdLoggedIn}`, { responseType: 'text' });
     }
     setCustomerSearch(data) {
         this.customerSearch.next(data);

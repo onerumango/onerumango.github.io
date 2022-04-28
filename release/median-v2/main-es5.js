@@ -5702,23 +5702,23 @@
           }
         }, {
           key: "closingProcessCodeRecord",
-          value: function closingProcessCodeRecord(extSysName, userIdLoggedIn) {
-            return this.http.get("".concat(this.uriForExt, "/close/").concat(extSysName, "/").concat(userIdLoggedIn));
+          value: function closingProcessCodeRecord(obj) {
+            return this.http.put("".concat(this.uriForExt, "/close"), obj);
           }
         }, {
           key: "reopeningProcessCodeRecord",
-          value: function reopeningProcessCodeRecord(extSysName, userIdLoggedIn) {
-            return this.http.get("".concat(this.uriForExt, "/reOpen/").concat(extSysName, "/").concat(userIdLoggedIn));
+          value: function reopeningProcessCodeRecord(obj) {
+            return this.http.put("".concat(this.uriForExt, "/reOpen"), obj);
           }
         }, {
           key: "authProcessCodeRecord",
-          value: function authProcessCodeRecord(extSysName, userIdLoggedIn) {
-            return this.http.get("".concat(this.uriForExt, "/verify/").concat(extSysName, "/").concat(userIdLoggedIn));
+          value: function authProcessCodeRecord(obj) {
+            return this.http.put("".concat(this.uriForExt, "/authorize"), obj);
           }
         }, {
           key: "deleteProcessRecord",
-          value: function deleteProcessRecord(extSysName, userIdLoggedIn) {
-            return this.http["delete"]("".concat(this.uriForExt, "/").concat(extSysName, "/").concat(userIdLoggedIn), {
+          value: function deleteProcessRecord(extSysName, processCode, userIdLoggedIn) {
+            return this.http["delete"]("".concat(this.uriForExt, "/").concat(extSysName, "/").concat(processCode, "/").concat(userIdLoggedIn), {
               responseType: 'text'
             });
           }

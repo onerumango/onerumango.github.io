@@ -22157,6 +22157,7 @@
             var _this17 = this;
 
             if (this.processCodeSummary.creatorId == this.currentUser) {
+              console.log(this.processCodeSummary);
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                 title: 'Maker Cannot Authorized the Record!',
                 icon: 'error'
@@ -22176,9 +22177,12 @@
                 console.log("this is reopen ", result);
 
                 if (result.isConfirmed === true) {
+                  var payload = {};
+                  payload.externalSystemName = _this17.processCodeSummary.extSysName;
+                  payload.loggedInUser = _this17.currentUser, payload.processCode = _this17.processCodeSummary.processCode;
                   _this17.extName = _this17.processCodeSummary.extSysName;
 
-                  _this17.apiService.authProcessCodeRecord(_this17.extName, _this17.currentUser).subscribe(function (authResp) {
+                  _this17.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
                     _this17.processCodeSummary = authResp;
                     console.log("Auth", _this17.processCodeSummary);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -22213,8 +22217,11 @@
               if (result.isConfirmed === true) {
                 _this18.processCodeSummary.modifiedBy = _this18.currentUser;
                 _this18.extName = _this18.processCodeSummary.extSysName;
+                var payload = {};
+                payload.externalSystemName = _this18.processCodeSummary.extSysName;
+                payload.loggedInUser = _this18.currentUser, payload.processCode = _this18.processCodeSummary.processCode;
 
-                _this18.apiService.closingProcessCodeRecord(_this18.extName, _this18.currentUser).subscribe(function (closeResp) {
+                _this18.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
                   console.log(closeResp);
                   _this18.processCodeSummary = closeResp;
 
@@ -22262,8 +22269,11 @@
 
               if (result.isConfirmed === true) {
                 _this19.extName = _this19.processCodeSummary.extSysName;
+                var payload = {};
+                payload.externalSystemName = _this19.processCodeSummary.extSysName;
+                payload.loggedInUser = _this19.currentUser, payload.processCode = _this19.processCodeSummary.processCode;
 
-                _this19.apiService.reopeningProcessCodeRecord(_this19.extName, _this19.currentUser).subscribe(function (openResp) {
+                _this19.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
                   console.log(openResp);
                   _this19.processCodeSummary = openResp;
 
@@ -22312,10 +22322,10 @@
               if (result.isConfirmed === true) {
                 _this20.extName = _this20.processCodeSummary.extSysName;
 
-                _this20.apiService.deleteProcessRecord(_this20.extName, _this20.currentUser).subscribe(function (resp) {
+                _this20.apiService.deleteProcessRecord(_this20.extName, _this20.processCodeSummary.processCode, _this20.currentUser).subscribe(function (resp) {
                   console.log(resp);
 
-                  if (resp === true) {
+                  if (resp === "extSys has been deleted!") {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Record is Deleted',
                       icon: 'success'
@@ -22328,6 +22338,8 @@
                       icon: 'error'
                     });
                   }
+                }, function (error) {
+                  console.log(error.error.message);
                 });
               }
             });
@@ -24581,9 +24593,12 @@
                 console.log("this is reopen ", result);
 
                 if (result.isConfirmed === true) {
+                  var payload = {};
+                  payload.externalSystemName = _this24.auditlogData.extSysName;
+                  payload.loggedInUser = _this24.currentUser, payload.processCode = _this24.auditlogData.processCode;
                   _this24.extName = _this24.auditlogData.extSysName;
 
-                  _this24.apiService.authProcessCodeRecord(_this24.extName, _this24.currentUser).subscribe(function (authResp) {
+                  _this24.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
                     _this24.auditlogData = authResp;
                     console.log("Auth", _this24.auditlogData);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -24618,8 +24633,11 @@
               if (result.isConfirmed === true) {
                 _this25.auditlogData.modifiedBy = _this25.currentUser;
                 _this25.extName = _this25.auditlogData.extSysName;
+                var payload = {};
+                payload.externalSystemName = _this25.auditlogData.extSysName;
+                payload.loggedInUser = _this25.currentUser, payload.processCode = _this25.auditlogData.processCode;
 
-                _this25.apiService.closingProcessCodeRecord(_this25.extName, _this25.currentUser).subscribe(function (closeResp) {
+                _this25.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
                   console.log(closeResp);
                   _this25.auditlogData = closeResp;
 
@@ -24666,9 +24684,12 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
+                var payload = {};
+                payload.externalSystemName = _this26.auditlogData.extSysName;
+                payload.loggedInUser = _this26.currentUser, payload.processCode = _this26.auditlogData.processCode;
                 _this26.extName = _this26.auditlogData.extSysName;
 
-                _this26.apiService.reopeningProcessCodeRecord(_this26.extName, _this26.currentUser).subscribe(function (openResp) {
+                _this26.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
                   console.log(openResp);
                   _this26.auditlogData = openResp;
 
@@ -24715,10 +24736,26 @@
               if (result.isConfirmed === true) {
                 _this27.extName = _this27.auditlogData.extSysName;
 
-                _this27.apiService.deleteProcessRecord(_this27.extName, _this27.currentUser).subscribe(function (resp) {
+                _this27.apiService.deleteProcessRecord(_this27.extName, _this27.auditlogData.processCode, _this27.currentUser).subscribe(function (resp) {
                   console.log(resp);
 
-                  if (resp === true) {
+                  if (resp === "extSys has been deleted!") {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                      title: 'Record is Deleted',
+                      icon: 'success'
+                    });
+
+                    _this27.router.navigateByUrl('/external-system/processCodeMapping');
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                      text: 'Failed to Delete User Data!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  console.log(error.error.message);
+
+                  if (error.error.message === "extSys has been deleted!") {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record is Deleted',
                       icon: 'success'

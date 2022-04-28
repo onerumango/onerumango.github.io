@@ -7021,18 +7021,20 @@
           }
         }, {
           key: "onSelectingMessageBasis",
-          value: function onSelectingMessageBasis(event, i) {
+          value: function onSelectingMessageBasis(value, i) {
             if (this.tempArrayList[i]) {
-              this.tempArrayList[i] = event.target.value;
+              this.tempArrayList[i] = value;
             } else {
-              this.tempArrayList.push(event.target.value);
+              this.tempArrayList.push(value);
             }
 
             var x = this.isoRespData.find(function (item) {
-              return item.fieldNo == event.target.value;
+              return item.fieldNo == value;
             });
+            console.log(x);
             this.tcpForm.get('sysService')['controls'][i].get('messageBasis').setValue(x.fieldName);
             this.tcpForm.get('sysService')['controls'][i].get('dataType').setValue(x.dataType);
+            console.log(this.tcpForm.get('sysService'));
           }
         }, {
           key: "onSelectingMessageBasis1",
