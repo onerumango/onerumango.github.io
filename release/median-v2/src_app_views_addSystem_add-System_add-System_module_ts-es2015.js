@@ -3712,16 +3712,18 @@ class AddSystemComponent {
             }
         });
     }
-    onSelectingMessageBasis(event, i) {
+    onSelectingMessageBasis(value, i) {
         if (this.tempArrayList[i]) {
-            this.tempArrayList[i] = event.target.value;
+            this.tempArrayList[i] = value;
         }
         else {
-            this.tempArrayList.push(event.target.value);
+            this.tempArrayList.push(value);
         }
-        var x = this.isoRespData.find(item => item.fieldNo == event.target.value);
+        var x = this.isoRespData.find(item => item.fieldNo == value);
+        console.log(x);
         this.tcpForm.get('sysService')['controls'][i].get('messageBasis').setValue(x.fieldName);
         this.tcpForm.get('sysService')['controls'][i].get('dataType').setValue(x.dataType);
+        console.log(this.tcpForm.get('sysService'));
     }
     onSelectingMessageBasis1(event, i) {
         if (this.tempArrayList[i]) {

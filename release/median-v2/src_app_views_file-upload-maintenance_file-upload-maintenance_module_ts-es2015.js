@@ -20260,6 +20260,7 @@ class ProcessCodeMappingEditComponent {
     }
     onClickOfAuth() {
         if (this.processCodeSummary.creatorId == this.currentUser) {
+            console.log(this.processCodeSummary);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                 title: 'Maker Cannot Authorized the Record!',
                 icon: 'error'
@@ -20278,8 +20279,12 @@ class ProcessCodeMappingEditComponent {
             }).then((result => {
                 console.log("this is reopen ", result);
                 if (result.isConfirmed === true) {
+                    let payload = {};
+                    payload.externalSystemName = this.processCodeSummary.extSysName;
+                    payload.loggedInUser = this.currentUser,
+                        payload.processCode = this.processCodeSummary.processCode;
                     this.extName = this.processCodeSummary.extSysName;
-                    this.apiService.authProcessCodeRecord(this.extName, this.currentUser).subscribe(authResp => {
+                    this.apiService.authProcessCodeRecord(payload).subscribe(authResp => {
                         this.processCodeSummary = authResp;
                         console.log("Auth", this.processCodeSummary);
                         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -20307,7 +20312,11 @@ class ProcessCodeMappingEditComponent {
             if (result.isConfirmed === true) {
                 this.processCodeSummary.modifiedBy = this.currentUser;
                 this.extName = this.processCodeSummary.extSysName;
-                this.apiService.closingProcessCodeRecord(this.extName, this.currentUser).subscribe(closeResp => {
+                let payload = {};
+                payload.externalSystemName = this.processCodeSummary.extSysName;
+                payload.loggedInUser = this.currentUser,
+                    payload.processCode = this.processCodeSummary.processCode;
+                this.apiService.closingProcessCodeRecord(payload).subscribe(closeResp => {
                     console.log(closeResp);
                     this.processCodeSummary = closeResp;
                     if (this.processCodeSummary) {
@@ -20348,7 +20357,11 @@ class ProcessCodeMappingEditComponent {
             console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
                 this.extName = this.processCodeSummary.extSysName;
-                this.apiService.reopeningProcessCodeRecord(this.extName, this.currentUser).subscribe(openResp => {
+                let payload = {};
+                payload.externalSystemName = this.processCodeSummary.extSysName;
+                payload.loggedInUser = this.currentUser,
+                    payload.processCode = this.processCodeSummary.processCode;
+                this.apiService.reopeningProcessCodeRecord(payload).subscribe(openResp => {
                     console.log(openResp);
                     this.processCodeSummary = openResp;
                     if (this.processCodeSummary) {
@@ -20389,9 +20402,9 @@ class ProcessCodeMappingEditComponent {
             console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
                 this.extName = this.processCodeSummary.extSysName;
-                this.apiService.deleteProcessRecord(this.extName, this.currentUser).subscribe(resp => {
+                this.apiService.deleteProcessRecord(this.extName, this.processCodeSummary.processCode, this.currentUser).subscribe(resp => {
                     console.log(resp);
-                    if (resp === true) {
+                    if (resp === "extSys has been deleted!") {
                         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                             title: 'Record is Deleted',
                             icon: 'success'
@@ -20404,6 +20417,8 @@ class ProcessCodeMappingEditComponent {
                             icon: 'error'
                         });
                     }
+                }, error => {
+                    console.log(error.error.message);
                 });
             }
         }));
@@ -21595,8 +21610,12 @@ class ProcessCodeMappingNewComponent {
             }).then((result => {
                 console.log("this is reopen ", result);
                 if (result.isConfirmed === true) {
+                    let payload = {};
+                    payload.externalSystemName = this.auditlogData.extSysName;
+                    payload.loggedInUser = this.currentUser,
+                        payload.processCode = this.auditlogData.processCode;
                     this.extName = this.auditlogData.extSysName;
-                    this.apiService.authProcessCodeRecord(this.extName, this.currentUser).subscribe(authResp => {
+                    this.apiService.authProcessCodeRecord(payload).subscribe(authResp => {
                         this.auditlogData = authResp;
                         console.log("Auth", this.auditlogData);
                         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -21624,7 +21643,11 @@ class ProcessCodeMappingNewComponent {
             if (result.isConfirmed === true) {
                 this.auditlogData.modifiedBy = this.currentUser;
                 this.extName = this.auditlogData.extSysName;
-                this.apiService.closingProcessCodeRecord(this.extName, this.currentUser).subscribe(closeResp => {
+                let payload = {};
+                payload.externalSystemName = this.auditlogData.extSysName;
+                payload.loggedInUser = this.currentUser,
+                    payload.processCode = this.auditlogData.processCode;
+                this.apiService.closingProcessCodeRecord(payload).subscribe(closeResp => {
                     console.log(closeResp);
                     this.auditlogData = closeResp;
                     if (this.auditlogData) {
@@ -21664,8 +21687,12 @@ class ProcessCodeMappingNewComponent {
         }).then((result => {
             console.log("this is reopen ", result);
             if (result.isConfirmed === true) {
+                let payload = {};
+                payload.externalSystemName = this.auditlogData.extSysName;
+                payload.loggedInUser = this.currentUser,
+                    payload.processCode = this.auditlogData.processCode;
                 this.extName = this.auditlogData.extSysName;
-                this.apiService.reopeningProcessCodeRecord(this.extName, this.currentUser).subscribe(openResp => {
+                this.apiService.reopeningProcessCodeRecord(payload).subscribe(openResp => {
                     console.log(openResp);
                     this.auditlogData = openResp;
                     if (this.auditlogData) {
@@ -21705,9 +21732,24 @@ class ProcessCodeMappingNewComponent {
         }).then((result => {
             if (result.isConfirmed === true) {
                 this.extName = this.auditlogData.extSysName;
-                this.apiService.deleteProcessRecord(this.extName, this.currentUser).subscribe(resp => {
+                this.apiService.deleteProcessRecord(this.extName, this.auditlogData.processCode, this.currentUser).subscribe(resp => {
                     console.log(resp);
-                    if (resp === true) {
+                    if (resp === "extSys has been deleted!") {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                            title: 'Record is Deleted',
+                            icon: 'success'
+                        });
+                        this.router.navigateByUrl('/external-system/processCodeMapping');
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                            text: 'Failed to Delete User Data!',
+                            icon: 'error'
+                        });
+                    }
+                }, error => {
+                    console.log(error.error.message);
+                    if (error.error.message === "extSys has been deleted!") {
                         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                             title: 'Record is Deleted',
                             icon: 'success'
