@@ -1903,6 +1903,7 @@
             }).then(function (result) {
               if (result.isConfirmed === true) {
                 _this5.roleService.reopenRecord(userId, _this5.username).subscribe(function (data) {
+                  debugger;
                   _this5.updatedRoleObject = data;
 
                   _this5.cdr.markForCheck();
@@ -1912,7 +1913,7 @@
                   _this5.openBtn = false;
                   _this5.closeBtn = false;
 
-                  if (_this5.modifyRoleObject) {
+                  if (_this5.updatedRoleObject) {
                     _this5.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
@@ -3354,7 +3355,7 @@
 
             this.isLoading = true;
             this.api.getAllRoles().subscribe(function (data) {
-              _this11.allRoles = data;
+              _this11.allRoles = data.result;
               _this11.isLoading = false;
 
               _this11.cdr.markForCheck();

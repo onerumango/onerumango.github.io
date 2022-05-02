@@ -2583,7 +2583,7 @@ class ApiService {
         this._fmosbaseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles';
     }
     getAllExtSys() {
-        return this.http.get(`${this.uriForExt}` + '/extsysdata');
+        return this.http.get(`${this.uriForExt}` + `/extsysdata?pageNo=${0}&pageSize=${1000}`);
     }
     fetchnewscreenlabels() {
         return this.http.get(`${this._fmosbaseURL}` + '/fetchTabLabelAndScreen');
@@ -2598,7 +2598,7 @@ class ApiService {
         this.processCodeMappingObject.next(processCode);
     }
     getAllExt() {
-        return this.http.get(`${this.ext}` + '/getExt');
+        return this.http.get(`${this.ext}` + `/getExt?pageNo=${0}&pageSize=${1000}`);
     }
     modifyExtSysService(modifyextSys) {
         return this.http.put(`${this.uriForExt}` + `/modifyextSys`, modifyextSys);
@@ -2632,7 +2632,7 @@ class ApiService {
         return this.http.post(`${API_URL}/login/credentials`, login);
     }
     gettingTransactionCodeSummary() {
-        return this.http.get(`${median}/config/getSummaryForTransactionCodeMapping`);
+        return this.http.get(`${median}/config/getSummaryForTransactionCodeMapping?pageNo=${0}&pageSize=${5000}`);
     }
     // saveTrnCodeMaster(master): Observable<any> {
     //   return this.http.post<boolean>(`${median}/config/saveTrnMaster`, master);
@@ -2699,14 +2699,14 @@ class ApiService {
     }
     getAllRoles() {
         // return this.http.get(`${this._baseURL}` + '/roles');
-        return this.http.get(`${this._baseURL}`);
+        return this.http.get(`${this._baseURL}?pageNo=${0}&pageSize=${1000}`);
     }
     getAllUsersListService() {
-        return this.http.get(`${this.API_URL}/users/getAllUsers`);
+        return this.http.get(`${this.API_URL}/users/getAllUsers?pageNo=${0}&pageSize=${1000}`);
     }
     // audit Logs
     getAllAuditData() {
-        return this.http.get(`${this.API_URL}` + '/auditLogs/getAllAuditLogs');
+        return this.http.get(`${this.API_URL}` + `/auditLogs/getAllAuditLogs?pageNo=${0}&pageSize=${5000}&sortBy=${'creatorDtStamp'}`);
     }
     getAllAuditDataByDate(from, to) {
         return this.http.get(`${this.API_URL}/dataauditsList/${from}/${to}`);
@@ -2900,7 +2900,7 @@ class ApiService {
         return this.http.get(`${API_URL}/medUpload/getModule`);
     }
     getMappingSummary() {
-        return this.http.get(`${this.excelmap}/fetchAllMappingData/`);
+        return this.http.get(`${this.excelmap}/fetchAllMappingData?pageNo=${0}&pageSize=${1000}`);
     }
     getExcelMappingDataforEdit(extSysCode, processName, extSys) {
         return this.http.get(`${this.excelmap}/getExcelMappingInfo?extSysCode=${extSysCode}&processName=${processName}&extSys=${extSys}`);

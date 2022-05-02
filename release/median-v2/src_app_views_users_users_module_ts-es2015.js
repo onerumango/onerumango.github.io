@@ -833,7 +833,7 @@ class UserListComponent {
     getAllUsers() {
         this.isLoading = true;
         this.api.getAllUsersListService().subscribe((resp) => {
-            this.allUsersList = resp;
+            this.allUsersList = resp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

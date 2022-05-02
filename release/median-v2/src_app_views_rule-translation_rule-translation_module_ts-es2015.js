@@ -1410,7 +1410,7 @@ class RuleTranslationSummaryComponent {
         this.ruleService.fetchingruleTranslation()
             .subscribe(resp => {
             console.log(resp);
-            this.translationList = resp;
+            this.translationList = resp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

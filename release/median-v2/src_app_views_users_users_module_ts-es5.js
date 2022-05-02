@@ -1483,7 +1483,7 @@
 
             this.isLoading = true;
             this.api.getAllUsersListService().subscribe(function (resp) {
-              _this7.allUsersList = resp;
+              _this7.allUsersList = resp.result;
               _this7.isLoading = false;
 
               _this7.cdr.markForCheck();

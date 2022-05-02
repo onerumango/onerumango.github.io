@@ -45,7 +45,7 @@ class AddSystemService {
     }
     //geting external System
     fecthingAddSystem() {
-        return this.http.get(`${API_URL}/newExtApi/getAllExternalSys`);
+        return this.http.get(`${API_URL}/newExtApi/getAllExternalSys/?pageNo=${0}&pageSize=${1000}`);
     }
     //update
     editaddsystem(operation, currentUser, addSsytem) {
@@ -223,7 +223,7 @@ class RuleService {
     }
     //get method
     fetchingRules() {
-        return this.http.get(`${_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL}/ruleConfig/getRuleConfigSummary`);
+        return this.http.get(`${_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL}/ruleConfig/getRuleConfigSummary?pageNo=${0}&pageSize=${1000}`);
     }
     //put method
     updateingRules(updatingruleData) {
@@ -242,7 +242,7 @@ class RuleService {
     }
     //get method
     fetchingruleTranslation() {
-        return this.http.get(`${_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL}/msgApi/getTranslation`);
+        return this.http.get(`${_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL}/msgApi/getTranslation?pageNo=${0}&pageSize=${1000}`);
     }
     //getting rule transtion based on id
     ruleTranslationBasedonId(id) {
@@ -298,7 +298,7 @@ class RuleService {
     }
     //get method
     fetchingruleMapping() {
-        return this.http.get(`${_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL}/msgApi/getAllMapping`);
+        return this.http.get(`${_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL}/msgApi/getAllMapping?pageNo=${0}&pageSize=${1000}`);
     }
     //put method
     updatingruleMapping(updaterulemappingData) {

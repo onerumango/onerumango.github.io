@@ -2658,7 +2658,7 @@
             this.isLoading = true;
             this.ruleService.fetchingruleTranslation().subscribe(function (resp) {
               console.log(resp);
-              _this16.translationList = resp;
+              _this16.translationList = resp.result;
               _this16.isLoading = false;
 
               _this16.cdr.markForCheck();

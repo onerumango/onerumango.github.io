@@ -19337,7 +19337,7 @@ class ExternalSystemComponent {
     gettingExternalSummry() {
         this.isLoading = true;
         this.apiService.getAllExt().subscribe(summryResp => {
-            this.externalSummaryData = summryResp;
+            this.externalSummaryData = summryResp.result;
             console.log(this.externalSummaryData);
             this.isLoading = false;
             this.dtTrigger.next();
@@ -22227,7 +22227,7 @@ class ProcessCodeMappingComponent {
     getprocessCodeMappingSummry() {
         this.isLoading = true;
         this.apiService.getAllExtSys().subscribe(data => {
-            this.processCodeMappingSummry = data;
+            this.processCodeMappingSummry = data.result;
             this.isLoading = false;
             this.dtTrigger.next();
         });

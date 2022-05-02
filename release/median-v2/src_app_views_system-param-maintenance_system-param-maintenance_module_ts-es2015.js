@@ -40,7 +40,7 @@ class MaintenanceService {
     }
     //getting data in summary
     gettingDepartmentDataInSummary() {
-        return this.http.get(`${this.API_URL}/departBatchMaint/getAllDeparts`);
+        return this.http.get(`${this.API_URL}/departBatchMaint/getAllDeparts?pageNo=${0}&pageSize=${5000}`);
     }
     //save in edit Department
     onsaveTheEditOfDepartment(obj) {
@@ -1035,7 +1035,7 @@ class DepartmentIdMaintenanceComponent {
     getChargeMaintainenceSummary() {
         this.isLoading = true;
         this.apiService.gettingDepartmentDataInSummary().subscribe((dataresp) => {
-            this.respArray = dataresp;
+            this.respArray = dataresp.result;
             this.isLoading = false;
             this.dtTrigger.next();
         });
@@ -3446,7 +3446,7 @@ class TransactionCodeMaintenanceComponent {
     getTransactionCodeSummary() {
         this.isLoading = true;
         this.apiService.gettingTransactionCodeSummary().subscribe(resp => {
-            this.transactionCodeData = resp;
+            this.transactionCodeData = resp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();
@@ -4806,99 +4806,168 @@ class UserGccAcNewComponent {
         this.accountClassForm.controls.permission.setValue(this.permission);
     }
     onSubmitGlForm(userGLFormValue) {
+        debugger;
         console.log("userGLFormValue", userGLFormValue);
         let userGlData = userGLFormValue.userGLData;
         console.log(userGlData);
-        for (let i = 0; i < userGlData.length; i++) {
-            for (let k = i + 1; k < userGlData.length; k++) {
-                if (userGlData[i].trnCode != userGlData[k].trnCode) {
-                    console.log("not equal");
-                    //do stuff
-                    const userID = userGLFormValue.userId;
-                    const permission = userGLFormValue.permission;
-                    this.apiService.saveuserGlCode(userGlData, userID, permission).subscribe(savetrnres => {
-                        this.userGLResp = savetrnres;
-                        if (this.userGLResp == true) {
-                            this.submitBtn = true;
-                            this.editFlag = true;
-                            this.submit1 = false;
-                            // this.toastService.successMessage('Data Saved Successfully!.', '');
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                                title: 'Record is Created',
-                                icon: 'success'
-                            });
-                            // this.userGLForm.reset();
-                        }
-                        else {
-                            // this.toastService.errorMessage('Failed to Save Data!', '');
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                                title: 'Failed to Save Data.',
-                                icon: 'error'
-                            });
-                        }
-                    }, error => {
-                        if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                                text: 'Server Error!',
-                                icon: 'error'
-                            });
-                        }
+        if (userGlData.length > 1) {
+            for (let i = 0; i < userGlData.length; i++) {
+                for (let k = i + 1; k < userGlData.length; k++) {
+                    if (userGlData[i].trnCode != userGlData[k].trnCode) {
+                        console.log("not equal");
+                        //do stuff
+                        const userID = userGLFormValue.userId;
+                        const permission = userGLFormValue.permission;
+                        this.apiService.saveuserGlCode(userGlData, userID, permission).subscribe(savetrnres => {
+                            this.userGLResp = savetrnres;
+                            if (this.userGLResp == true) {
+                                this.submitBtn = true;
+                                this.editFlag = true;
+                                this.submit1 = false;
+                                // this.toastService.successMessage('Data Saved Successfully!.', '');
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                                    title: 'Record is Created',
+                                    icon: 'success'
+                                });
+                                // this.userGLForm.reset();
+                            }
+                            else {
+                                // this.toastService.errorMessage('Failed to Save Data!', '');
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                                    title: 'Failed to Save Data.',
+                                    icon: 'error'
+                                });
+                            }
+                        }, error => {
+                            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                                    text: 'Server Error!',
+                                    icon: 'error'
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                            text: 'GL code and GL code description should not be equal',
+                            icon: 'error'
+                        });
+                    }
+                }
+            }
+        }
+        else {
+            const userID = userGLFormValue.userId;
+            const permission = userGLFormValue.permission;
+            this.apiService.saveuserGlCode(userGlData, userID, permission).subscribe(savetrnres => {
+                this.userGLResp = savetrnres;
+                if (this.userGLResp == true) {
+                    this.submitBtn = true;
+                    this.editFlag = true;
+                    this.submit1 = false;
+                    // this.toastService.successMessage('Data Saved Successfully!.', '');
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        title: 'Record is Created',
+                        icon: 'success'
                     });
+                    // this.userGLForm.reset();
                 }
                 else {
+                    // this.toastService.errorMessage('Failed to Save Data!', '');
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                        text: 'GL code and GL code description should not be equal',
+                        title: 'Failed to Save Data.',
                         icon: 'error'
                     });
                 }
-            }
+            }, error => {
+                if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        text: 'Server Error!',
+                        icon: 'error'
+                    });
+                }
+            });
         }
     }
     onSubmitAccountClassForm(accountClassForm) {
         console.log("accountClassForm", accountClassForm);
         let accountData = accountClassForm.accountMaintenanceData;
-        for (let i = 0; i < accountData.length; i++) {
-            for (let k = i + 1; k < accountData.length; k++) {
-                if (accountData[i].trnCode != accountData[k].trnCode || accountData[i].trnDesc != accountData[k].trnDesc) {
-                    console.log("not equal");
-                    const userID = accountClassForm.userId;
-                    const permission = accountClassForm.permission;
-                    this.apiService.saveAccountClassCode(accountData, userID, permission).subscribe(saveaccresp => {
-                        this.accountClassResp = saveaccresp;
-                        if (this.accountClassResp == true) {
-                            this.submitAccBtn = true;
-                            this.editAccFlag = true;
-                            this.submit2 = false;
-                            // this.toastService.successMessage('Data Saved Successfully!.', '');
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                                title: 'Record is Created',
-                                icon: 'success'
-                            });
-                            // this.accountClassForm.reset();
-                        }
-                        else {
-                            // this.toastService.errorMessage('Failed to Save Data!', '');
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                                title: 'Failed to Save Data.',
-                                icon: 'error'
-                            });
-                        }
-                    }, error => {
-                        if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                                text: 'Server Error!',
-                                icon: 'error'
-                            });
-                        }
+        if (accountData.length > 1) {
+            for (let i = 0; i < accountData.length; i++) {
+                for (let k = i + 1; k < accountData.length; k++) {
+                    if (accountData[i].trnCode != accountData[k].trnCode || accountData[i].trnDesc != accountData[k].trnDesc) {
+                        console.log("not equal");
+                        const userID = accountClassForm.userId;
+                        const permission = accountClassForm.permission;
+                        this.apiService.saveAccountClassCode(accountData, userID, permission).subscribe(saveaccresp => {
+                            this.accountClassResp = saveaccresp;
+                            if (this.accountClassResp == true) {
+                                this.submitAccBtn = true;
+                                this.editAccFlag = true;
+                                this.submit2 = false;
+                                // this.toastService.successMessage('Data Saved Successfully!.', '');
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                                    title: 'Record is Created',
+                                    icon: 'success'
+                                });
+                                // this.accountClassForm.reset();
+                            }
+                            else {
+                                // this.toastService.errorMessage('Failed to Save Data!', '');
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                                    title: 'Failed to Save Data.',
+                                    icon: 'error'
+                                });
+                            }
+                        }, error => {
+                            if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                                    text: 'Server Error!',
+                                    icon: 'error'
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                            text: 'Account class and Account class description should not be equal',
+                            icon: 'error'
+                        });
+                    }
+                }
+            }
+        }
+        else {
+            const userID = accountClassForm.userId;
+            const permission = accountClassForm.permission;
+            this.apiService.saveAccountClassCode(accountData, userID, permission).subscribe(saveaccresp => {
+                this.accountClassResp = saveaccresp;
+                if (this.accountClassResp == true) {
+                    this.submitAccBtn = true;
+                    this.editAccFlag = true;
+                    this.submit2 = false;
+                    // this.toastService.successMessage('Data Saved Successfully!.', '');
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        title: 'Record is Created',
+                        icon: 'success'
                     });
+                    // this.accountClassForm.reset();
                 }
                 else {
+                    // this.toastService.errorMessage('Failed to Save Data!', '');
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                        text: 'Account class and Account class description should not be equal',
+                        title: 'Failed to Save Data.',
                         icon: 'error'
                     });
                 }
-            }
+            }, error => {
+                if (_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                        text: 'Server Error!',
+                        icon: 'error'
+                    });
+                }
+            });
         }
     }
 }

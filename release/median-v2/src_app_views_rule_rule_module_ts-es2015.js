@@ -3287,7 +3287,7 @@ class RuleListComponent {
             .subscribe((resp) => {
             console.log(resp);
             // this.toastService.successMessage('Data Fetched Successfully!.', '');
-            this.rulesData = resp;
+            this.rulesData = resp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

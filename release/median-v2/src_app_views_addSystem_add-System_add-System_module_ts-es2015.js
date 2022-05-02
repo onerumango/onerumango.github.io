@@ -45,7 +45,7 @@ class AddSystemService {
     }
     //geting external System
     fecthingAddSystem() {
-        return this.http.get(`${API_URL}/newExtApi/getAllExternalSys`);
+        return this.http.get(`${API_URL}/newExtApi/getAllExternalSys/?pageNo=${0}&pageSize=${1000}`);
     }
     //update
     editaddsystem(operation, currentUser, addSsytem) {
@@ -2859,8 +2859,9 @@ class AddSystemComponent {
             if (resp.index) {
                 this.index = resp.index;
                 this.addSystem.fecthingAddSystem().subscribe((dataresp) => {
-                    if (dataresp) {
-                        this.getRespBasedOnId(dataresp, resp.index);
+                    debugger;
+                    if (dataresp.result) {
+                        this.getRespBasedOnId(dataresp.result, resp.index);
                     }
                 });
             }
@@ -3589,7 +3590,7 @@ class AddSystemComponent {
                         this.index = addSysResp.systemId;
                         this.respData = addSysResp;
                         // this.respData.approvedEver = 'N'
-                        this.respData.createdTime = new Date();
+                        // this.respData.createdTime=new Date();
                         this.auditLog();
                         this.previous('messageConfiguration');
                         this.editFlag = false;
@@ -3609,8 +3610,8 @@ class AddSystemComponent {
                         // this.submitFlag=false;
                         this.index = addSysResp.systemId;
                         this.respData = addSysResp;
-                        this.respData.approvedEver = 'N';
-                        this.respData.createdTime = new Date();
+                        //  this.respData.approvedEver = 'N'
+                        // this.respData.createdTime=new Date();
                         this.auditLog();
                         this.previous('messageConfiguration');
                         this.editFlag = false;
@@ -4021,7 +4022,7 @@ class AddSystemSummaryComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [6] }],
+            columnDefs: [{ type: 'date', 'targets': ['createdTime'] }],
             order: [[6, 'desc']],
             processing: true,
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
@@ -4036,7 +4037,7 @@ class AddSystemSummaryComponent {
     getDataForMonitor() {
         this.isLoading = true;
         this.apiService.fecthingAddSystem().subscribe(dataresp => {
-            this.respArray = dataresp;
+            this.respArray = dataresp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

@@ -161,7 +161,7 @@ class AuditLogsComponent {
     getAuditLogList() {
         this.isLoading = true;
         this.api.getAllAuditData().subscribe((data) => {
-            this.auditlogdata = data.sort().reverse();
+            this.auditlogdata = data.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

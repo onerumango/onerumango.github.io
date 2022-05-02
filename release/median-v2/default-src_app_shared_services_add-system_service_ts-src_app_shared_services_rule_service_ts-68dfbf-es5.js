@@ -105,7 +105,7 @@
         }, {
           key: "fecthingAddSystem",
           value: function fecthingAddSystem() {
-            return this.http.get("".concat(_API_URL, "/newExtApi/getAllExternalSys"));
+            return this.http.get("".concat(_API_URL, "/newExtApi/getAllExternalSys/?pageNo=", 0, "&pageSize=", 1000));
           } //update
 
         }, {
@@ -380,7 +380,7 @@
         }, {
           key: "fetchingRules",
           value: function fetchingRules() {
-            return this.http.get("".concat(_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL, "/ruleConfig/getRuleConfigSummary"));
+            return this.http.get("".concat(_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL, "/ruleConfig/getRuleConfigSummary?pageNo=", 0, "&pageSize=", 1000));
           } //put method
 
         }, {
@@ -409,7 +409,7 @@
         }, {
           key: "fetchingruleTranslation",
           value: function fetchingruleTranslation() {
-            return this.http.get("".concat(_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL, "/msgApi/getTranslation"));
+            return this.http.get("".concat(_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL, "/msgApi/getTranslation?pageNo=", 0, "&pageSize=", 1000));
           } //getting rule transtion based on id
 
         }, {
@@ -493,7 +493,7 @@
         }, {
           key: "fetchingruleMapping",
           value: function fetchingruleMapping() {
-            return this.http.get("".concat(_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL, "/msgApi/getAllMapping"));
+            return this.http.get("".concat(_api_service__WEBPACK_IMPORTED_MODULE_0__.API_URL, "/msgApi/getAllMapping?pageNo=", 0, "&pageSize=", 1000));
           } //put method
 
         }, {

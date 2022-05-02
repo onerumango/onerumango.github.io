@@ -349,7 +349,7 @@
 
             this.isLoading = true;
             this.api.getAllAuditData().subscribe(function (data) {
-              _this2.auditlogdata = data.sort().reverse();
+              _this2.auditlogdata = data.result;
               _this2.isLoading = false;
 
               _this2.cdr.markForCheck();
