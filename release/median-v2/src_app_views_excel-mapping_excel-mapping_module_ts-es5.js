@@ -4114,7 +4114,7 @@
 
             this.isLoading = true;
             this.apiService.getMappingSummary().subscribe(function (data) {
-              _this21.excelData = data;
+              _this21.excelData = data.result;
               _this21.isLoading = false;
 
               _this21.dtTrigger.next();

@@ -105,7 +105,7 @@
         }, {
           key: "fecthingAddSystem",
           value: function fecthingAddSystem() {
-            return this.http.get("".concat(_API_URL, "/newExtApi/getAllExternalSys"));
+            return this.http.get("".concat(_API_URL, "/newExtApi/getAllExternalSys/?pageNo=", 0, "&pageSize=", 1000));
           } //update
 
         }, {
@@ -5950,8 +5950,10 @@
                 _this.index = resp.index;
 
                 _this.addSystem.fecthingAddSystem().subscribe(function (dataresp) {
-                  if (dataresp) {
-                    _this.getRespBasedOnId(dataresp, resp.index);
+                  debugger;
+
+                  if (dataresp.result) {
+                    _this.getRespBasedOnId(dataresp.result, resp.index);
                   }
                 });
               } else {
@@ -6859,8 +6861,7 @@
                   if (addSysResp) {
                     _this13.index = addSysResp.systemId;
                     _this13.respData = addSysResp; // this.respData.approvedEver = 'N'
-
-                    _this13.respData.createdTime = new Date();
+                    // this.respData.createdTime=new Date();
 
                     _this13.auditLog();
 
@@ -6885,9 +6886,8 @@
                   if (addSysResp) {
                     // this.submitFlag=false;
                     _this13.index = addSysResp.systemId;
-                    _this13.respData = addSysResp;
-                    _this13.respData.approvedEver = 'N';
-                    _this13.respData.createdTime = new Date();
+                    _this13.respData = addSysResp; //  this.respData.approvedEver = 'N'
+                    // this.respData.createdTime=new Date();
 
                     _this13.auditLog();
 
@@ -7573,7 +7573,7 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [6]
+                'targets': ['createdTime']
               }],
               order: [[6, 'desc']],
               processing: true,
@@ -7595,7 +7595,7 @@
 
             this.isLoading = true;
             this.apiService.fecthingAddSystem().subscribe(function (dataresp) {
-              _this26.respArray = dataresp;
+              _this26.respArray = dataresp.result;
               _this26.isLoading = false;
 
               _this26.cdr.markForCheck();

@@ -1081,13 +1081,14 @@ class RoleDetailsComponent {
         }).then((result => {
             if (result.isConfirmed === true) {
                 this.roleService.reopenRecord(userId, this.username).subscribe(data => {
+                    debugger;
                     this.updatedRoleObject = data;
                     this.cdr.markForCheck();
                     this.modifyRoleObject = this.updatedRoleObject;
                     console.log('user is reopened');
                     this.openBtn = false;
                     this.closeBtn = false;
-                    if (this.modifyRoleObject) {
+                    if (this.updatedRoleObject) {
                         this.auditLog();
                         sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                             text: "Role is Reopened",
@@ -2021,7 +2022,7 @@ class RoleListComponent {
     getRoles() {
         this.isLoading = true;
         this.api.getAllRoles().subscribe(data => {
-            this.allRoles = data;
+            this.allRoles = data.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             console.log(this.allRoles);

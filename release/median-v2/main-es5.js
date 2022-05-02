@@ -5111,7 +5111,7 @@
         _createClass(_ApiService, [{
           key: "getAllExtSys",
           value: function getAllExtSys() {
-            return this.http.get("".concat(this.uriForExt) + '/extsysdata');
+            return this.http.get("".concat(this.uriForExt) + "/extsysdata?pageNo=".concat(0, "&pageSize=", 1000));
           }
         }, {
           key: "fetchnewscreenlabels",
@@ -5136,7 +5136,7 @@
         }, {
           key: "getAllExt",
           value: function getAllExt() {
-            return this.http.get("".concat(this.ext) + '/getExt');
+            return this.http.get("".concat(this.ext) + "/getExt?pageNo=".concat(0, "&pageSize=", 1000));
           }
         }, {
           key: "modifyExtSysService",
@@ -5192,7 +5192,7 @@
         }, {
           key: "gettingTransactionCodeSummary",
           value: function gettingTransactionCodeSummary() {
-            return this.http.get("".concat(_median, "/config/getSummaryForTransactionCodeMapping"));
+            return this.http.get("".concat(_median, "/config/getSummaryForTransactionCodeMapping?pageNo=", 0, "&pageSize=", 5000));
           } // saveTrnCodeMaster(master): Observable<any> {
           //   return this.http.post<boolean>(`${median}/config/saveTrnMaster`, master);
           // }
@@ -5301,18 +5301,18 @@
           key: "getAllRoles",
           value: function getAllRoles() {
             // return this.http.get(`${this._baseURL}` + '/roles');
-            return this.http.get("".concat(this._baseURL));
+            return this.http.get("".concat(this._baseURL, "?pageNo=", 0, "&pageSize=", 1000));
           }
         }, {
           key: "getAllUsersListService",
           value: function getAllUsersListService() {
-            return this.http.get("".concat(this.API_URL, "/users/getAllUsers"));
+            return this.http.get("".concat(this.API_URL, "/users/getAllUsers?pageNo=", 0, "&pageSize=", 1000));
           } // audit Logs
 
         }, {
           key: "getAllAuditData",
           value: function getAllAuditData() {
-            return this.http.get("".concat(this.API_URL) + '/auditLogs/getAllAuditLogs');
+            return this.http.get("".concat(this.API_URL) + "/auditLogs/getAllAuditLogs?pageNo=".concat(0, "&pageSize=", 5000, "&sortBy=", 'creatorDtStamp'));
           }
         }, {
           key: "getAllAuditDataByDate",
@@ -5610,7 +5610,7 @@
         }, {
           key: "getMappingSummary",
           value: function getMappingSummary() {
-            return this.http.get("".concat(this.excelmap, "/fetchAllMappingData/"));
+            return this.http.get("".concat(this.excelmap, "/fetchAllMappingData?pageNo=", 0, "&pageSize=", 1000));
           }
         }, {
           key: "getExcelMappingDataforEdit",
