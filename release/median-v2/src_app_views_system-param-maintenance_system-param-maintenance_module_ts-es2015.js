@@ -489,7 +489,7 @@ class DepartmenrtIdNewComponent {
                     .subscribe((dataresp) => {
                     console.log(dataresp);
                     if (dataresp) {
-                        this.getRespBasedOnId(dataresp, index.index);
+                        this.getRespBasedOnId(dataresp.result, index.index);
                     }
                 });
             }

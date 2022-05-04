@@ -17046,6 +17046,13 @@ table.tableStyle thead tr th.tblehead {
 .swal2-icon.swal2-success .swal2-success-ring {
   border: 0.25em solid #f27474 !important;
 }
+
+.ng-select.ng-select-opened.ng-select-top>.ng-select-container {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background-color: green;
+}
+
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[2]!./node_modules/font-awesome/css/font-awesome.css ***!
   \****************************************************************************************************************************************************************************************************************************************/
@@ -21072,13 +21079,13 @@ a:hover {
 }
 
 .theme2 .form-select {
-  background-color: #1b1b29 !important;
+  background-color: none !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }
 
 .theme2 input {
-  background-color: #1b1b29 !important;
+  background-color:none !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }

@@ -24356,7 +24356,7 @@
             var _this21 = this;
 
             this.apiService.getAllExt().subscribe(function (data) {
-              _this21.extSysCodeData = data;
+              _this21.extSysCodeData = data.result;
             });
           }
         }, {

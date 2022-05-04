@@ -703,7 +703,7 @@ class AccountClosureDetailsComponent {
         setTimeout(() => {
             console.log(this.roleCodes);
         }, 100);
-        this.accountClosureForm.disable();
+        // this.accountClosureForm.disable();
     }
     onClickOfBulk() {
         console.log("this is bulk call");

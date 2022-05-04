@@ -2658,7 +2658,7 @@
             this.isLoading = true;
             this.ruleService.fetchingruleTranslation().subscribe(function (resp) {
               console.log(resp);
-              _this16.translationList = resp;
+              _this16.translationList = resp.result;
               _this16.isLoading = false;
 
               _this16.cdr.markForCheck();
@@ -4145,7 +4145,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r0.showFetch == "TCP/IP");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r0.showFetch === "TCP/IP");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 

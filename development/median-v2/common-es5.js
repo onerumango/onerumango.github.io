@@ -519,6 +519,7 @@
             maxInvLogins: '',
             maxPswdLength: '',
             minPswdLength: '',
+            passwordGenerationType: '',
             modifiedBy: '',
             modifiedTime: '',
             notifyPasswordExpiryInDays: '',

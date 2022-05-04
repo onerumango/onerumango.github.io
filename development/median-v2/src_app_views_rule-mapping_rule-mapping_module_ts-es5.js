@@ -5282,7 +5282,7 @@
             this.isLoading = true;
             this.rulelist.fetchingruleMapping().subscribe(function (resp) {
               console.log(resp);
-              _this25.ruleMappingListResp = resp;
+              _this25.ruleMappingListResp = resp.result;
               _this25.isLoading = false;
 
               _this25.cdr.markForCheck();

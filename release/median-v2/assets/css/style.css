@@ -1748,13 +1748,13 @@ a:hover {
 }
 
 .theme2 .form-select {
-  background-color: #1b1b29 !important;
+  background-color: none !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }
 
 .theme2 input {
-  background-color: #1b1b29 !important;
+  background-color:none !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }

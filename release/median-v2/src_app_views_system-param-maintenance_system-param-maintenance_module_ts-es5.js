@@ -1022,7 +1022,7 @@
                   console.log(dataresp);
 
                   if (dataresp) {
-                    _this.getRespBasedOnId(dataresp, index.index);
+                    _this.getRespBasedOnId(dataresp.result, index.index);
                   }
                 });
               }

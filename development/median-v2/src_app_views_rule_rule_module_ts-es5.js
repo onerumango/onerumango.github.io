@@ -6244,7 +6244,7 @@
             this.ruleService.fetchingRules().subscribe(function (resp) {
               console.log(resp); // this.toastService.successMessage('Data Fetched Successfully!.', '');
 
-              _this28.rulesData = resp;
+              _this28.rulesData = resp.result;
               _this28.isLoading = false;
 
               _this28.cdr.markForCheck();

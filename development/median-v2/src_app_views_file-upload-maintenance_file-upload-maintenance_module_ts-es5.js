@@ -20457,7 +20457,7 @@
 
             this.isLoading = true;
             this.apiService.getAllExt().subscribe(function (summryResp) {
-              _this12.externalSummaryData = summryResp;
+              _this12.externalSummaryData = summryResp.result;
               console.log(_this12.externalSummaryData);
               _this12.isLoading = false;
 
@@ -24356,7 +24356,7 @@
             var _this21 = this;
 
             this.apiService.getAllExt().subscribe(function (data) {
-              _this21.extSysCodeData = data;
+              _this21.extSysCodeData = data.result;
             });
           }
         }, {
@@ -25741,7 +25741,7 @@
 
             this.isLoading = true;
             this.apiService.getAllExtSys().subscribe(function (data) {
-              _this29.processCodeMappingSummry = data;
+              _this29.processCodeMappingSummry = data.result;
               _this29.isLoading = false;
 
               _this29.dtTrigger.next();

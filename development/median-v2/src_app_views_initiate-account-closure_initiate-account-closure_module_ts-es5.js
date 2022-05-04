@@ -1409,8 +1409,7 @@
             });
             setTimeout(function () {
               console.log(_this.roleCodes);
-            }, 100);
-            this.accountClosureForm.disable();
+            }, 100); // this.accountClosureForm.disable();
           }
         }, {
           key: "onClickOfBulk",

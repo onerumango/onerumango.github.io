@@ -220,6 +220,7 @@ class SecurityPolicyService {
             maxInvLogins: '',
             maxPswdLength: '',
             minPswdLength: '',
+            passwordGenerationType: '',
             modifiedBy: '',
             modifiedTime: '',
             notifyPasswordExpiryInDays: '',

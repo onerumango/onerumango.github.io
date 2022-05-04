@@ -2268,7 +2268,7 @@ class ExcelMappingComponent {
     getexcelMappingSummary() {
         this.isLoading = true;
         this.apiService.getMappingSummary().subscribe(data => {
-            this.excelData = data;
+            this.excelData = data.result;
             this.isLoading = false;
             this.dtTrigger.next();
         });

@@ -2810,7 +2810,7 @@ class RuleMappingComponent {
         this.isLoading = true;
         this.rulelist.fetchingruleMapping().subscribe((resp) => {
             console.log(resp);
-            this.ruleMappingListResp = resp;
+            this.ruleMappingListResp = resp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

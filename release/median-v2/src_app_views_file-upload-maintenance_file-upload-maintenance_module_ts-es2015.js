@@ -21408,7 +21408,7 @@ class ProcessCodeMappingNewComponent {
     }
     getextSysCodeData() {
         this.apiService.getAllExt().subscribe(data => {
-            this.extSysCodeData = data;
+            this.extSysCodeData = data.result;
         });
     }
     onOptionsChange(event) {

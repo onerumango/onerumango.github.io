@@ -2182,6 +2182,8 @@ class FileUploadComponent {
     }
     ngOnInit() {
         this.user_id = localStorage.getItem('userFromLogin');
+        this.department = localStorage.getItem('departmentHeader');
+        this.departmentString = this.department.replace(/["]+/g, '');
         this.uploadExcelForm = this.fb.group({
             extSysNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
             processNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
@@ -2366,7 +2368,9 @@ class FileUploadComponent {
     }
     getAllExternalSystemNames() {
         this.api.getAllExtSysNamesService(this.user_id).subscribe(resp => {
-            this.allExternalSystemNames = resp.sort();
+            resp.filter(resp => resp.department == this.departmentString);
+            debugger;
+            this.allExternalSystemNames = (resp.filter(resp => resp.department == this.department)).sort();
         });
     }
     resetEntries() {

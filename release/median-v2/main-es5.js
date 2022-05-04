@@ -5165,6 +5165,11 @@
             return this.http.get("".concat(_API_URL, "/login/getUserByUserId/").concat(userId));
           }
         }, {
+          key: "fetchAutoPassword",
+          value: function fetchAutoPassword(userId) {
+            return this.http.post("".concat(_API_URL, "/login/autoGeneratePassword?userId=").concat(userId), userId);
+          }
+        }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService() {
             return this.http.get("".concat(_API_URL, "/securityPolicy/fetch"));
@@ -6521,8 +6526,6 @@
         //Currently Using Ports 
         // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
         // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
-        //  MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-        // ACC_CLOSER_URL: 'http://192.168.0.14:8089/medianAccountClosure'
         MEDIAN_URL: 'http://192.168.0.14:9003/medianv2',
         ACC_CLOSER_URL: 'http://192.168.0.14:9003/medianAccountClosure'
       };
