@@ -1651,32 +1651,40 @@ class RoleDetailsComponent {
         // console.log(this.checkAll);
     }
     clickRoleAction(roles, action, event) {
-        // console.log(roles,"Roles");
-        // console.log(action,"action");
-        // console.log(event,"event");
+        console.log(roles, "Roles");
+        console.log(action, "action");
+        console.log(event, "event");
         if (action == "NEW" || action == "SELECTALL") {
             roles.NEW = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "EDIT" || action == "SELECTALL") {
             roles.EDIT = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "DELETE" || action == "SELECTALL") {
             roles.DELETE = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "CLOSE" || action == "SELECTALL") {
             roles.CLOSE = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "REOPEN" || action == "SELECTALL") {
             roles.REOPEN = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "UNLOCK" || action == "SELECTALL") {
             roles.UNLOCK = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "PRINT" || action == "SELECTALL") {
             roles.PRINT = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "AUTH" || action == "SELECTALL") {
             roles.AUTH = (event) ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "VIEW" || action == "SELECTALL") {
             roles.VIEW = (event) ? "1" : "0";

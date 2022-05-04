@@ -1824,6 +1824,8 @@
                     text: "Record is Created"
                   }); // this.enablesubmit = false;
 
+                  _this6.auditlog();
+
                   _this6.edit = false;
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({

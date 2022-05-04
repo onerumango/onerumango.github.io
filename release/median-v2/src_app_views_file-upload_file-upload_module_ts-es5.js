@@ -4078,8 +4078,6 @@
             var _this15 = this;
 
             this.user_id = localStorage.getItem('userFromLogin');
-            this.department = localStorage.getItem('departmentHeader');
-            this.departmentString = this.department.replace(/["]+/g, '');
             this.uploadExcelForm = this.fb.group({
               extSysNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
               processNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
@@ -4298,13 +4296,7 @@
             var _this19 = this;
 
             this.api.getAllExtSysNamesService(this.user_id).subscribe(function (resp) {
-              resp.filter(function (resp) {
-                return resp.department == _this19.departmentString;
-              });
-              debugger;
-              _this19.allExternalSystemNames = resp.filter(function (resp) {
-                return resp.department == _this19.department;
-              }).sort();
+              _this19.allExternalSystemNames = resp.sort();
             });
           }
         }, {
