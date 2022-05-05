@@ -1903,7 +1903,6 @@
             }).then(function (result) {
               if (result.isConfirmed === true) {
                 _this5.roleService.reopenRecord(userId, _this5.username).subscribe(function (data) {
-                  debugger;
                   _this5.updatedRoleObject = data;
 
                   _this5.cdr.markForCheck();

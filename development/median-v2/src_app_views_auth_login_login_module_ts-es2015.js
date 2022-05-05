@@ -225,7 +225,7 @@ function LoginComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("formGroup", ctx_r0.signinForm);
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r0.passwordGenerationType === "Manual" || ctx_r0.auto);
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r0.passwordGenerationType === "MANUAL" || ctx_r0.passwordGenerationType === "Manual" || ctx_r0.auto);
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("disabled", !ctx_r0.signinForm.valid);
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](3);
@@ -703,8 +703,8 @@ class LoginComponent {
             this.user = response;
             if (response) {
                 // this.passwordGenerationType=response.passwordGenerationType
-                this.passwordGenerationType = 'Manual';
-                if (this.passwordGenerationType == 'Auto') {
+                this.passwordGenerationType = response.passwordGenerationType;
+                if (this.passwordGenerationType == 'Auto' || this.passwordGenerationType == 'AUTO') {
                     this.fetchAutoPassword(this.signinForm.value.username);
                 }
             }

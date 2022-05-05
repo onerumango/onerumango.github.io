@@ -3640,6 +3640,7 @@ class TransactionCodeNewComponent {
         this.editFlag = false;
         this.showDelete = false;
         this.submitAccBtn = false;
+        this.formTouched = true;
     }
     ngOnInit() {
         this.currentUser = localStorage.getItem("userFromLogin");
@@ -3692,9 +3693,9 @@ class TransactionCodeNewComponent {
         });
     }
     pageDeactivation() {
-        console.log("pageDeactivation in user was called");
+        console.log("pageDeactivation in user was called", this.transactionCodeForm.touched);
         // return of (true);
-        if (this.transactionCodeForm.touched) {
+        if (this.transactionCodeForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -3724,6 +3725,7 @@ class TransactionCodeNewComponent {
                     icon: 'success'
                 });
                 this.editFlag = true;
+                this.formTouched = !this.transactionCodeForm.touched;
             }
             else {
                 // this.toastService.errorMessage('Failed to Save Data!', '');
@@ -4806,7 +4808,6 @@ class UserGccAcNewComponent {
         this.accountClassForm.controls.permission.setValue(this.permission);
     }
     onSubmitGlForm(userGLFormValue) {
-        debugger;
         console.log("userGLFormValue", userGLFormValue);
         let userGlData = userGLFormValue.userGLData;
         console.log(userGlData);

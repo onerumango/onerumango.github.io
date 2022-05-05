@@ -1081,7 +1081,6 @@ class RoleDetailsComponent {
         }).then((result => {
             if (result.isConfirmed === true) {
                 this.roleService.reopenRecord(userId, this.username).subscribe(data => {
-                    debugger;
                     this.updatedRoleObject = data;
                     this.cdr.markForCheck();
                     this.modifyRoleObject = this.updatedRoleObject;

@@ -5950,8 +5950,6 @@
                 _this.index = resp.index;
 
                 _this.addSystem.fecthingAddSystem().subscribe(function (dataresp) {
-                  debugger;
-
                   if (dataresp.result) {
                     _this.getRespBasedOnId(dataresp.result, resp.index);
                   }

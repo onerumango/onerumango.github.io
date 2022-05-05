@@ -561,11 +561,15 @@ function EmailManagementCreateComponent_div_31_div_6_Template(rf, ctx) { if (rf 
 function EmailManagementCreateComponent_div_31_div_7_Template(rf, ctx) { if (rf & 1) {
     const _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "button", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "button", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function EmailManagementCreateComponent_div_31_div_7_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r33); const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2); return ctx_r32.onClickOfDeleteOfEmailManagement(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2, "Delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r21.emails.value.length != 0);
 } }
 function EmailManagementCreateComponent_div_31_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 37);
@@ -575,7 +579,7 @@ function EmailManagementCreateComponent_div_31_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](4, EmailManagementCreateComponent_div_31_div_4_Template, 3, 0, "div", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](5, EmailManagementCreateComponent_div_31_div_5_Template, 3, 0, "div", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](6, EmailManagementCreateComponent_div_31_div_6_Template, 3, 0, "div", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, EmailManagementCreateComponent_div_31_div_7_Template, 3, 0, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, EmailManagementCreateComponent_div_31_div_7_Template, 3, 1, "div", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "div", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "button", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10, "Exit");
@@ -928,6 +932,7 @@ class EmailManagementCreateComponent {
                 console.log(email, "Emails");
             }
             console.log(this.emails);
+            console.log(this.emails.value.length);
         });
     }
     screenpermission() {

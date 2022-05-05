@@ -2859,7 +2859,6 @@ class AddSystemComponent {
             if (resp.index) {
                 this.index = resp.index;
                 this.addSystem.fecthingAddSystem().subscribe((dataresp) => {
-                    debugger;
                     if (dataresp.result) {
                         this.getRespBasedOnId(dataresp.result, resp.index);
                     }

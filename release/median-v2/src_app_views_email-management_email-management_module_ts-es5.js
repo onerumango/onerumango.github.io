@@ -981,7 +981,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 40);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "button", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "button", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function EmailManagementCreateComponent_div_31_div_7_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r33);
@@ -996,6 +996,14 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r21.emails.value.length != 0);
         }
       }
 
@@ -1015,7 +1023,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](6, EmailManagementCreateComponent_div_31_div_6_Template, 3, 0, "div", 39);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, EmailManagementCreateComponent_div_31_div_7_Template, 3, 0, "div", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, EmailManagementCreateComponent_div_31_div_7_Template, 3, 1, "div", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "div", 40);
 
@@ -1620,6 +1628,7 @@
               }
 
               console.log(_this3.emails);
+              console.log(_this3.emails.value.length);
             });
           }
         }, {

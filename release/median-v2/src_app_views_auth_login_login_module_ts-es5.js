@@ -549,7 +549,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r0.passwordGenerationType === "Manual" || ctx_r0.auto);
+          _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx_r0.passwordGenerationType === "MANUAL" || ctx_r0.passwordGenerationType === "Manual" || ctx_r0.auto);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](2);
 
@@ -1175,9 +1175,9 @@
 
               if (response) {
                 // this.passwordGenerationType=response.passwordGenerationType
-                _this8.passwordGenerationType = 'Manual';
+                _this8.passwordGenerationType = response.passwordGenerationType;
 
-                if (_this8.passwordGenerationType == 'Auto') {
+                if (_this8.passwordGenerationType == 'Auto' || _this8.passwordGenerationType == 'AUTO') {
                   _this8.fetchAutoPassword(_this8.signinForm.value.username);
                 }
               }

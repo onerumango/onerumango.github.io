@@ -6771,6 +6771,7 @@
           this.editFlag = false;
           this.showDelete = false;
           this.submitAccBtn = false;
+          this.formTouched = true;
         }
 
         _createClass(_TransactionCodeNewComponent, [{
@@ -6840,9 +6841,9 @@
         }, {
           key: "pageDeactivation",
           value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+            console.log("pageDeactivation in user was called", this.transactionCodeForm.touched); // return of (true);
 
-            if (this.transactionCodeForm.touched) {
+            if (this.transactionCodeForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -6875,6 +6876,7 @@
                   icon: 'success'
                 });
                 _this33.editFlag = true;
+                _this33.formTouched = !_this33.transactionCodeForm.touched;
               } else {
                 // this.toastService.errorMessage('Failed to Save Data!', '');
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -8917,7 +8919,6 @@
           value: function onSubmitGlForm(userGLFormValue) {
             var _this42 = this;
 
-            debugger;
             console.log("userGLFormValue", userGLFormValue);
             var userGlData = userGLFormValue.userGLData;
             console.log(userGlData);
