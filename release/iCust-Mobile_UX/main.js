@@ -1431,8 +1431,37 @@ let ApiService = class ApiService {
     getDashboardDataNew(customerId) {
         return this.http.get(`${API_URL}/teller-service/api/mobile/${customerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
     }
-    getTransactionByAccountId(accountId) {
-        return this.http.get(`${API_URL}/cash-deposit/api/fetchTransaction?accountNumber=${accountId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
+    getTransactionByAccountId(accountId, page, formattedFromDate, formattedToDate) {
+        var params;
+        if ((accountId != null || accountId != '' || accountId.length != 0) && page == 0) {
+            console.log('only accountId');
+            if (formattedFromDate != null && formattedToDate != null) {
+                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                    .append('accountNumber', accountId)
+                    .append('fromDate', formattedFromDate)
+                    .append('toDate', formattedToDate);
+            }
+            else {
+                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                    .append('accountNumber', accountId);
+            }
+        }
+        else {
+            console.log('accountId and page');
+            if (formattedFromDate != null && formattedToDate != null) {
+                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                    .append('accountNumber', accountId)
+                    .append('page', page)
+                    .append('fromDate', formattedFromDate)
+                    .append('toDate', formattedToDate);
+            }
+            else {
+                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                    .append('accountNumber', accountId)
+                    .append('page', page);
+            }
+        }
+        return this.http.get(`${API_URL}/cash-deposit/api/fetchTransaction?${params}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
     }
     getByTransactionId(transId) {
         return this.http.get(`${API_URL}/cash-deposit/api/fetchByTransId/${transId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
@@ -2216,8 +2245,8 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: true,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
-    //ICUST_URL:'http://192.168.0.14:8081/Icust-Digital-Banking'
-    ICUST_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
+    ICUST_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking'
+    //  ICUST_URL:'http://192.168.0.14:9001/Icust-Digital-Banking',
 };
 
 
