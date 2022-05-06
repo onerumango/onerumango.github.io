@@ -2876,6 +2876,8 @@ class AddSystemComponent {
     }
     buildForm(item) {
         this.basicInfoForm = this.fb.group({
+            createdTime: [item ? item.createdTime : ""],
+            creatorId: [item ? item.creatorId : ""],
             systemId: [item ? item.systemId : ""],
             systemCode: [item ? item.systemCode : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
             systemName: [item ? item.systemName : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
