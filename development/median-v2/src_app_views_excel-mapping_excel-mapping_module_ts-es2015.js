@@ -1652,6 +1652,9 @@ class ExcelMappingNewComponent {
         this.apiService.getProcessNameByExtSysCode(extSysCode).subscribe(response => {
             this.processResp = response;
             this.processName = this.processResp;
+            if (this.processName.length === 1 && this.processName != undefined) {
+                this.excelMappingForm.get('proCode').setValue(this.processName[0]);
+            }
             this.getExtSysNameByExtSysCode(extSysCode);
         });
     }
@@ -2007,7 +2010,7 @@ ExcelMappingNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](95, ExcelMappingNewComponent_div_95_Template, 3, 2, "div", 37);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](96, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](97, "a", 38);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](98, "Cancel");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](98, "Exit");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();

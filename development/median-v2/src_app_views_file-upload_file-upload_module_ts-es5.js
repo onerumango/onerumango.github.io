@@ -4428,12 +4428,18 @@
           value: function getProcessNamesBasedOnExtSysNameForUpload(extSysName) {
             var _this22 = this;
 
+            this.processNames = [];
+
             if (this.disablebtn2) {
               this.disbaleBtn = false;
             }
 
             this.api.getProcessNamesBasedOnExtSysNameService(extSysName).subscribe(function (resp) {
               _this22.processNames = resp;
+
+              if (_this22.processNames.length === 1 && _this22.processNames != undefined) {
+                _this22.uploadExcelForm.get('processNameData').setValue(_this22.processNames[0]);
+              }
             });
           }
         }, {

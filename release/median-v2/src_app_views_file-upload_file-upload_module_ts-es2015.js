@@ -2455,6 +2455,7 @@ class FileUploadComponent {
         });
     }
     getProcessNamesBasedOnExtSysNameForUpload(extSysName) {
+        this.processNames = [];
         if (this.disablebtn2) {
             this.disbaleBtn = false;
         }
@@ -2462,6 +2463,9 @@ class FileUploadComponent {
             .getProcessNamesBasedOnExtSysNameService(extSysName)
             .subscribe(resp => {
             this.processNames = resp;
+            if (this.processNames.length === 1 && this.processNames != undefined) {
+                this.uploadExcelForm.get('processNameData').setValue(this.processNames[0]);
+            }
         });
     }
     getTrnCode(trncode) {
