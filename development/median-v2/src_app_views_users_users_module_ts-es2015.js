@@ -1793,10 +1793,11 @@ class UserNewComponent {
             this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
             // this.errorMsg1='User Id must contain atleast one ' + this.errorMsg1 + '.';
             console.log(this.passwordRegex);
-            this.userForm.get('password').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required,
+            this.userForm.get('password').setValidators([
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern(this.passwordRegex),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.maxLength(this.maxPass),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.minLength(this.minPass)])]);
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.minLength(this.minPass)])
+            ]);
             // (this.userForm.get('userId') as FormControl).setValidators([Validators.required,
             //   Validators.compose([Validators.pattern('^[a-zA-Z0-9]$"'),
             //   Validators.maxLength(this.usersmax),
@@ -1813,14 +1814,15 @@ class UserNewComponent {
             //   Validators.compose([Validators.pattern('^[a-zA-Z0-9]$"'),
             //   Validators.maxLength(this.usersmax),
             //   Validators.minLength(this.usersmin)])]],
-            userId: [data.userId ? data.userId : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required, , UsernameValidator.cannotContainSpace
-                ]],
-            // userId: [data.userId? data.userId:'',[Validators.required,UsernameValidator.cannotContainSpace]],
+            // userId: [data.userId ? data.userId:'', [Validators.required,,UsernameValidator.cannotContainSpace
+            //  ]],
+            userId: [data.userId ? data.userId : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required, UsernameValidator.cannotContainSpace]],
             userName: [data.userName ? data.userName : '', (_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required)],
-            password: [data.encryptedPassword ? data.encryptedPassword : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required,
+            password: [data.encryptedPassword ? data.encryptedPassword : '', [
                     _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern(this.passwordRegex),
                         _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.maxLength(this.maxPass),
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.minLength(this.minPass)])]],
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.minLength(this.minPass)])
+                ]],
             email: [data.email ? data.email : '', (_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"))],
             department: [data.department ? data.department : ''],
             mobile: [data.mobile ? data.mobile : ''],

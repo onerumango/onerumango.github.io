@@ -3000,6 +3000,10 @@
               _this17.processResp = response;
               _this17.processName = _this17.processResp;
 
+              if (_this17.processName.length === 1 && _this17.processName != undefined) {
+                _this17.excelMappingForm.get('proCode').setValue(_this17.processName[0]);
+              }
+
               _this17.getExtSysNameByExtSysCode(extSysCode);
             });
           }
@@ -3574,7 +3578,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](97, "a", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](98, "Cancel");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](98, "Exit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
