@@ -90,7 +90,7 @@ class HeaderComponent {
         this.currentUserString = this.currentUser.replace(/["]+/g, '');
         this.getPendingForAuthData();
         this.getAllUsers();
-        this.initTheme(localStorage.getItem('SELECTED_THEME') || 'theme2');
+        this.initTheme(localStorage.getItem('SELECTED_THEME') || 'theme1');
     }
     openPopUp() {
         jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.ddTrigger', function (e) {
@@ -114,7 +114,7 @@ class HeaderComponent {
         });
     }
     initTheme(bgClass) {
-        var lastBg = bgClass === "theme1" ? "theme1" : "theme2";
+        var lastBg = bgClass === "theme2" ? "theme2" : "theme1";
         jquery__WEBPACK_IMPORTED_MODULE_0__('body').removeClass(lastBg).addClass(bgClass);
         this.lastBg = bgClass;
         jquery__WEBPACK_IMPORTED_MODULE_0__('.ddParent').removeClass('actDD');
@@ -2132,6 +2132,7 @@ class AppComponent {
         this.router = router;
         this.title = "Median";
         this.userInactive = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+        this.changeTheme();
         this.setTimeout();
         this.userInactive.subscribe(() => this.logout());
     }
@@ -2157,6 +2158,17 @@ class AppComponent {
             sessionStorage.clear();
             this.router.navigate(['/session/login']);
         }
+    }
+    changeTheme() {
+        var lastBg = "";
+        $(document).on('click', '.tColor', function (e) {
+            e.preventDefault();
+            var bgClass = $(this).data("id");
+            $(this).addClass('active').parent().siblings().find('.tColor').removeClass('active');
+            $('body').removeClass(lastBg).addClass(bgClass);
+            lastBg = bgClass;
+            $('.ddParent').removeClass('actDD');
+        });
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.Renderer2), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_3__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_4__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router)); };

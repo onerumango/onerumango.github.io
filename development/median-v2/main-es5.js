@@ -190,7 +190,7 @@
             this.currentUserString = this.currentUser.replace(/["]+/g, '');
             this.getPendingForAuthData();
             this.getAllUsers();
-            this.initTheme(localStorage.getItem('SELECTED_THEME') || 'theme2');
+            this.initTheme(localStorage.getItem('SELECTED_THEME') || 'theme1');
           }
         }, {
           key: "openPopUp",
@@ -223,7 +223,7 @@
         }, {
           key: "initTheme",
           value: function initTheme(bgClass) {
-            var lastBg = bgClass === "theme1" ? "theme1" : "theme2";
+            var lastBg = bgClass === "theme2" ? "theme2" : "theme1";
             jquery__WEBPACK_IMPORTED_MODULE_0__('body').removeClass(lastBg).addClass(bgClass);
             this.lastBg = bgClass;
             jquery__WEBPACK_IMPORTED_MODULE_0__('.ddParent').removeClass('actDD');
@@ -4352,6 +4352,7 @@
           this.router = router;
           this.title = "Median";
           this.userInactive = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+          this.changeTheme();
           this.setTimeout();
           this.userInactive.subscribe(function () {
             return _this8.logout();
@@ -4404,6 +4405,19 @@
               sessionStorage.clear();
               this.router.navigate(['/session/login']);
             }
+          }
+        }, {
+          key: "changeTheme",
+          value: function changeTheme() {
+            var lastBg = "";
+            $(document).on('click', '.tColor', function (e) {
+              e.preventDefault();
+              var bgClass = $(this).data("id");
+              $(this).addClass('active').parent().siblings().find('.tColor').removeClass('active');
+              $('body').removeClass(lastBg).addClass(bgClass);
+              lastBg = bgClass;
+              $('.ddParent').removeClass('actDD');
+            });
           }
         }]);
 
