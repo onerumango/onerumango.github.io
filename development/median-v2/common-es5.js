@@ -751,13 +751,13 @@
           }
         }, {
           key: "onClickOfCloseOfModifyUsers",
-          value: function onClickOfCloseOfModifyUsers(userId, makerId) {
-            return this.http.get("".concat(_API_URL, "/users/closeUser/").concat(userId, "/").concat(makerId));
+          value: function onClickOfCloseOfModifyUsers(authDto) {
+            return this.http.put("".concat(_API_URL, "/users/closeUser"), authDto);
           }
         }, {
           key: "onClickOfReopenOfModifyUser",
-          value: function onClickOfReopenOfModifyUser(userId, makerId) {
-            return this.http.get("".concat(_API_URL, "/users/reopenUser/").concat(userId, "/").concat(makerId));
+          value: function onClickOfReopenOfModifyUser(authDto) {
+            return this.http.put("".concat(_API_URL, "/users/reopenUser"), authDto);
           }
         }, {
           key: "onClickOfDeleteOfModifyUser",

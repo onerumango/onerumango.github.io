@@ -1878,7 +1878,10 @@ class UserNewComponent {
             icon: 'info'
         }).then((result => {
             if (result.isConfirmed === true) {
-                this.userApi.onClickOfCloseOfModifyUsers(this.modifyUserObject.userId, this.modifyUserObject.creatorId).subscribe(dataofCloseFromBackend => {
+                let UpdateUserAuthDto = {};
+                UpdateUserAuthDto.userId = this.modifyUserObject.userId;
+                UpdateUserAuthDto.makerId = this.currentUser;
+                this.userApi.onClickOfCloseOfModifyUsers(UpdateUserAuthDto).subscribe(dataofCloseFromBackend => {
                     this.statusFlag = dataofCloseFromBackend;
                     this.openBtn = false;
                     this.closeBtn = false;
@@ -1921,7 +1924,10 @@ class UserNewComponent {
             icon: 'info'
         }).then((result => {
             if (result.isConfirmed === true) {
-                this.userApi.onClickOfReopenOfModifyUser(this.modifyUserObject.userId, this.modifyUserObject.creatorId)
+                let UpdateUserAuthDto = {};
+                UpdateUserAuthDto.userId = this.modifyUserObject.userId;
+                UpdateUserAuthDto.makerId = this.currentUser;
+                this.userApi.onClickOfReopenOfModifyUser(UpdateUserAuthDto)
                     .subscribe((dataOfReopen) => {
                     // console.log(dataOfReopen);
                     this.statusFlag = dataOfReopen;
@@ -2135,6 +2141,7 @@ class UserNewComponent {
         this.userObj.department = this.userForm.get('department').value;
         this.userObj.intime = this.userForm.get('intime').value;
         this.userObj.outtime = this.userForm.get('outtime').value;
+        this.userObj.passwordGenerationType = this.userForm.get('passwordGenerationType').value;
         console.log("Formsubmit", this.userObj);
         this.userApi.createUserService(this.userObj).subscribe(data => {
             console.log(this.userObj);

@@ -3376,7 +3376,11 @@
               icon: 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this13.userApi.onClickOfCloseOfModifyUsers(_this13.modifyUserObject.userId, _this13.modifyUserObject.creatorId).subscribe(function (dataofCloseFromBackend) {
+                var UpdateUserAuthDto = {};
+                UpdateUserAuthDto.userId = _this13.modifyUserObject.userId;
+                UpdateUserAuthDto.makerId = _this13.currentUser;
+
+                _this13.userApi.onClickOfCloseOfModifyUsers(UpdateUserAuthDto).subscribe(function (dataofCloseFromBackend) {
                   _this13.statusFlag = dataofCloseFromBackend;
                   _this13.openBtn = false;
                   _this13.closeBtn = false;
@@ -3425,7 +3429,11 @@
               icon: 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this14.userApi.onClickOfReopenOfModifyUser(_this14.modifyUserObject.userId, _this14.modifyUserObject.creatorId).subscribe(function (dataOfReopen) {
+                var UpdateUserAuthDto = {};
+                UpdateUserAuthDto.userId = _this14.modifyUserObject.userId;
+                UpdateUserAuthDto.makerId = _this14.currentUser;
+
+                _this14.userApi.onClickOfReopenOfModifyUser(UpdateUserAuthDto).subscribe(function (dataOfReopen) {
                   // console.log(dataOfReopen);
                   _this14.statusFlag = dataOfReopen;
 
@@ -3686,6 +3694,7 @@
             this.userObj.department = this.userForm.get('department').value;
             this.userObj.intime = this.userForm.get('intime').value;
             this.userObj.outtime = this.userForm.get('outtime').value;
+            this.userObj.passwordGenerationType = this.userForm.get('passwordGenerationType').value;
             console.log("Formsubmit", this.userObj);
             this.userApi.createUserService(this.userObj).subscribe(function (data) {
               console.log(_this20.userObj);

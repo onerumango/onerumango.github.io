@@ -5187,7 +5187,7 @@
             if (transactionData.at(i).get('trnCode').value && transactionData.at(i).get('trnDesc').value) {
               // transactionData.removeAt(i);
               console.log("this.transactionCodeSummryData.formValues", data.id);
-              this.apiService.deleteRow(data.id).subscribe(function (resp) {
+              this.apiService.deleteRow(data.id, this.currentUser).subscribe(function (resp) {
                 _this21.deleteRowResp = resp;
 
                 if (_this21.deleteRowResp == true) {
@@ -5537,10 +5537,12 @@
             formData.verifiedOnce = auditData.verifiedOnce;
             formData.verifiedStatus = auditData.verifiedStatus;
             formData.verifiedTime = auditData.verifiedTime;
-            formData.userId = auditData.userID;
+            var userId = auditData.userID;
+            console.log("userId ", userId);
             formData.transactionData.forEach(function (element) {
               formData.id = element.id;
               formData.userId = element.userId;
+              console.log("formData.userId ", formData.userId);
               formData.creatorId = element.creatorId;
             });
             this.transactionData = formData.transactionData;
@@ -5556,11 +5558,11 @@
               this.transactionData[i].verifiedTime = formData.verifiedTime;
             }
 
-            console.log("Final Data", this.transactionData);
-            this.apiService.updateTransactionCode(this.transactionData, formData.userId, this.currentUser).subscribe(function (savetrnres) {
-              _this28.updatetrnResp = savetrnres;
+            console.log("Final Data ", userId);
+            this.apiService.updateTransactionCode(this.transactionData, userId, this.currentUser).subscribe(function (savetrnres) {
+              _this28.transactionCodeSummryData = savetrnres;
 
-              if (_this28.updatetrnResp) {
+              if (_this28.transactionCodeSummryData != null) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   title: 'Record is Updated',
                   icon: 'success'

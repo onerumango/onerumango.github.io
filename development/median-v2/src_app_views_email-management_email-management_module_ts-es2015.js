@@ -1148,13 +1148,14 @@ class EmailManagementCreateComponent {
         if (this.eamilAuditLog.inputBy != null || this.emailTypes == 'Account_Block') {
             this.accountBlockingService.onclickOfEditOfEmailManagement(this.selected, this.loggedInUser, this.emails.value).subscribe(editResp => {
                 console.log(editResp, "If");
-                if (editResp == false) {
+                if (editResp == null) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                         text: 'Failed To Uppdate The Record',
                         icon: 'warning',
                     });
                 }
                 else {
+                    this.eamilAuditLog = editResp;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                         text: 'Record is Updated',
                         icon: 'success'

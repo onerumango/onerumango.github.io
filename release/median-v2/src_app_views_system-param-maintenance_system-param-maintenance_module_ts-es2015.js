@@ -2748,7 +2748,7 @@ class TransactionCodeEditComponent {
         if (transactionData.at(i).get('trnCode').value && transactionData.at(i).get('trnDesc').value) {
             // transactionData.removeAt(i);
             console.log("this.transactionCodeSummryData.formValues", data.id);
-            this.apiService.deleteRow(data.id).subscribe(resp => {
+            this.apiService.deleteRow(data.id, this.currentUser).subscribe(resp => {
                 this.deleteRowResp = resp;
                 if (this.deleteRowResp == true) {
                     {
@@ -3035,10 +3035,12 @@ class TransactionCodeEditComponent {
         formData.verifiedOnce = auditData.verifiedOnce;
         formData.verifiedStatus = auditData.verifiedStatus;
         formData.verifiedTime = auditData.verifiedTime;
-        formData.userId = auditData.userID;
+        let userId = auditData.userID;
+        console.log("userId ", userId);
         formData.transactionData.forEach(element => {
             formData.id = element.id;
             formData.userId = element.userId;
+            console.log("formData.userId ", formData.userId);
             formData.creatorId = element.creatorId;
         });
         this.transactionData = formData.transactionData;
@@ -3052,10 +3054,10 @@ class TransactionCodeEditComponent {
             this.transactionData[i].verifiedStatus = formData.verifiedStatus;
             this.transactionData[i].verifiedTime = formData.verifiedTime;
         }
-        console.log("Final Data", this.transactionData);
-        this.apiService.updateTransactionCode(this.transactionData, formData.userId, this.currentUser).subscribe(savetrnres => {
-            this.updatetrnResp = savetrnres;
-            if (this.updatetrnResp) {
+        console.log("Final Data ", userId);
+        this.apiService.updateTransactionCode(this.transactionData, userId, this.currentUser).subscribe(savetrnres => {
+            this.transactionCodeSummryData = savetrnres;
+            if (this.transactionCodeSummryData != null) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     title: 'Record is Updated',
                     icon: 'success'

@@ -1881,12 +1881,13 @@
               this.accountBlockingService.onclickOfEditOfEmailManagement(this.selected, this.loggedInUser, this.emails.value).subscribe(function (editResp) {
                 console.log(editResp, "If");
 
-                if (editResp == false) {
+                if (editResp == null) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Failed To Uppdate The Record',
                     icon: 'warning'
                   });
                 } else {
+                  _this9.eamilAuditLog = editResp;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Record is Updated',
                     icon: 'success'

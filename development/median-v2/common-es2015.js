@@ -347,11 +347,11 @@ class UsersService {
     onClickOfAuthOfModifyUsers(obj) {
         return this.http.put(`${API_URL}/users/authorizeUser`, obj);
     }
-    onClickOfCloseOfModifyUsers(userId, makerId) {
-        return this.http.get(`${API_URL}/users/closeUser/${userId}/${makerId}`);
+    onClickOfCloseOfModifyUsers(authDto) {
+        return this.http.put(`${API_URL}/users/closeUser`, authDto);
     }
-    onClickOfReopenOfModifyUser(userId, makerId) {
-        return this.http.get(`${API_URL}/users/reopenUser/${userId}/${makerId}`);
+    onClickOfReopenOfModifyUser(authDto) {
+        return this.http.put(`${API_URL}/users/reopenUser`, authDto);
     }
     onClickOfDeleteOfModifyUser(userobjForDelete) {
         return this.http.delete(`${API_URL}/users/deleteUser/${userobjForDelete}`);
