@@ -1684,6 +1684,7 @@
           this.enablesubmit = true;
           this.submitSecurity = false;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_SecurityPolicyComponent, [{
@@ -1827,6 +1828,7 @@
                   _this6.auditlog();
 
                   _this6.edit = false;
+                  _this6.formTouched = !_this6.securityForm.touched;
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Saving Failed"
@@ -1905,7 +1907,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.securityForm.touched) {
+            if (this.securityForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);

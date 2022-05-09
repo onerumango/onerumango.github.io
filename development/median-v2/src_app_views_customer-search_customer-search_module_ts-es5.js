@@ -1571,6 +1571,7 @@
           this.dtOptions1 = {};
           this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
           this.dtTrigger1 = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
+          this.formTouched = true;
         }
 
         _createClass(_CustomerSearchComponent, [{
@@ -1879,7 +1880,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.accountForm.touched) {
+            if (this.accountForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);

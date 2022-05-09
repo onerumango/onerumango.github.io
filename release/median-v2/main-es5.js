@@ -233,7 +233,7 @@
             this.getPendingForAuthData(); //  this.getAllUsers();
 
             this.getTransactionCodeSummary();
-            this.initTheme(localStorage.getItem('SELECTED_THEME') || 'theme2');
+            this.initTheme(localStorage.getItem('SELECTED_THEME') || 'theme1');
           }
         }, {
           key: "openPopUp",
@@ -6644,8 +6644,6 @@
         // MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
         // ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
         //Currently Using Ports 
-        // MEDIAN_URL: 'http://localhost:9191', // phase2 for local testing
-        // ACC_CLOSER_URL: 'http://localhost:9192'//account closer for local testing
         MEDIAN_URL: 'http://192.168.0.14:9003/medianv2',
         ACC_CLOSER_URL: 'http://192.168.0.14:9003/medianAccountClosure'
       };

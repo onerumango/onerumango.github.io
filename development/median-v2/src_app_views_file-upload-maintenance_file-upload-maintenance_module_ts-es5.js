@@ -18856,6 +18856,7 @@
           this.formBuilder = formBuilder;
           this.toastService = toastService;
           this.editFlag = false;
+          this.formTouched = true;
           this.externalSystemUpdate = {
             extSysCode: '',
             extSysName: '',
@@ -18951,7 +18952,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.externalSystemEditForm.touched) {
+            if (this.externalSystemEditForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -19021,6 +19022,7 @@
                   icon: 'success'
                 });
                 _this4.submitDisable = true;
+                _this4.formTouched = !_this4.externalSystemEditForm.touched;
 
                 _this4.auditLog();
               } else {
@@ -19864,6 +19866,7 @@
           this.submitBtn = true;
           this.space = false;
           this.spaceForExtName = false;
+          this.formTouched = true;
         }
 
         _createClass(_ExternalSystemNewComponent, [{
@@ -19908,7 +19911,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.externalSystemForm.touched) {
+            if (this.externalSystemForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -19964,8 +19967,9 @@
                   icon: 'success'
                 });
 
-                _this10.auditLog(); // this.externalSystemForm.reset();
+                _this10.auditLog();
 
+                _this10.formTouched = !_this10.externalSystemForm.touched; // this.externalSystemForm.reset();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: 'Given External System Code/External System Already Present!',
@@ -21817,6 +21821,7 @@
           this.showbackDateValue = false;
           this.showsftpValues = false;
           this.editFlag = false;
+          this.formTouched = true;
         }
 
         _createClass(_ProcessCodeMappingEditComponent, [{
@@ -22068,7 +22073,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.processCodeEditForm.touched) {
+            if (this.processCodeEditForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -22134,6 +22139,8 @@
                 _this16.submitEdit = true;
 
                 _this16.processCodeEditForm.reset();
+
+                _this16.formTouched = !_this16.processCodeEditForm.touched;
 
                 _this16.auditLog();
               } else {
@@ -24289,6 +24296,7 @@
           this.showfCYExchangeValue = false;
           this.showbackDateValue = false;
           this.showsftpValues = false;
+          this.formTouched = true;
         }
 
         _createClass(_ProcessCodeMappingNewComponent, [{
@@ -24384,7 +24392,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.processCodeForm.touched) {
+            if (this.processCodeForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -24514,7 +24522,8 @@
                   title: 'Record is Created!',
                   icon: 'success'
                 });
-                _this22.submit = true; // this.processCodeForm.reset();
+                _this22.submit = true;
+                _this22.formTouched = !_this22.processCodeForm.touched; // this.processCodeForm.reset();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Failed to Save Data!',
@@ -24550,7 +24559,8 @@
                   title: 'Record is Updated',
                   icon: 'success'
                 });
-                _this23.showSubmit = false; // this.processCodeForm.reset();
+                _this23.showSubmit = false;
+                _this23.formTouched = !_this23.processCodeForm.touched; // this.processCodeForm.reset();
 
                 _this23.auditLog();
               } else {

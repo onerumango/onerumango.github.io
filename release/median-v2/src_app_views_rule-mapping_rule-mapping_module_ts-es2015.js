@@ -769,6 +769,7 @@ class RuleMappingCreateComponent {
         this.afterSubmit = false;
         this.submit = true;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+        this.formTouched = true;
     }
     ngOnInit() {
         this.currentUser = localStorage.getItem('userFromLogin');
@@ -792,7 +793,7 @@ class RuleMappingCreateComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);	
-        if (this.ruleMappingForm.touched) {
+        if (this.ruleMappingForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -1157,6 +1158,7 @@ class RuleMappingCreateComponent {
                     this.disableSubmitBtn = true;
                     this.disableResetBtn = true;
                     this.submit = false;
+                    this.formTouched = !this.ruleMappingForm.touched;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Updated",
                         icon: 'success' });
                 }
@@ -1179,6 +1181,7 @@ class RuleMappingCreateComponent {
                     this.disableSubmitBtn = true;
                     this.disableResetBtn = true;
                     this.submit = false;
+                    this.formTouched = !this.ruleMappingForm.touched;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Created",
                         icon: 'success' });
                 }
@@ -1812,6 +1815,7 @@ class RuleMappingDetailsComponent {
         this.hideFetch = false;
         this.hideSubmit = false;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+        this.formTouched = true;
     }
     ngOnInit() {
         this.currentUser = localStorage.getItem('userFromLogin');
@@ -1872,7 +1876,7 @@ class RuleMappingDetailsComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.ruleMappingForm.touched) {
+        if (this.ruleMappingForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -2209,6 +2213,7 @@ class RuleMappingDetailsComponent {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: 'Record is Updated',
                     icon: 'success' });
                 this.submit = false;
+                this.formTouched = !this.ruleMappingForm.touched;
             }
         }, (err) => {
             console.log(err.error.text);

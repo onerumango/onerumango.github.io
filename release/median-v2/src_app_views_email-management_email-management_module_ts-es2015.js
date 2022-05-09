@@ -820,6 +820,7 @@ class EmailManagementCreateComponent {
         this.modifyScreen = false;
         this.submitBtn = true;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+        this.formTouched = true;
     }
     ngOnInit() {
         this.navSubscription = this.accountBlockingService.getNavParam.subscribe(data => this.editAddSysResp = data);
@@ -907,7 +908,7 @@ class EmailManagementCreateComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.emailForm.touched) {
+        if (this.emailForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -1160,6 +1161,7 @@ class EmailManagementCreateComponent {
                         text: 'Record is Updated',
                         icon: 'success'
                     });
+                    this.formTouched = !this.emailForm.touched;
                 }
             });
         }
@@ -1175,6 +1177,7 @@ class EmailManagementCreateComponent {
                         icon: 'success'
                     });
                     this.auditLog();
+                    this.formTouched = !this.emailForm.touched;
                 }
                 else if (resp == null) {
                     // this.masterDatapermission=false;

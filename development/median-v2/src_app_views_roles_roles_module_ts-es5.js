@@ -1630,6 +1630,7 @@
           this.authBtn = false;
           this.openHide = true;
           this.closeHide = true;
+          this.formTouched = true;
           this.selectAllChecked = false;
         }
 
@@ -2037,6 +2038,7 @@
               if (_this7.validationResponse) {
                 // this.responseError = 'success';
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Updated ");
+                _this7.formTouched = !_this7.myform.touched;
                 _this7.submitBtn = true;
                 _this7.editFlag = true;
                 console.log("IF IF IF IF IF");
@@ -2524,6 +2526,7 @@
                 _this9.auditLog();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Created");
+                _this9.formTouched = !_this9.myform.touched;
               } else if (!role) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   icon: 'error',
@@ -2809,7 +2812,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.myform.touched) {
+            if (this.myform.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);

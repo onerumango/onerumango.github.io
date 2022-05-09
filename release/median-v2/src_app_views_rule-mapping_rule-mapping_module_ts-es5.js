@@ -1636,6 +1636,7 @@
           this.afterSubmit = false;
           this.submit = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_RuleMappingCreateComponent, [{
@@ -1668,7 +1669,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);	
 
-            if (this.ruleMappingForm.touched) {
+            if (this.ruleMappingForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -2134,6 +2135,7 @@
                   _this10.disableSubmitBtn = true;
                   _this10.disableResetBtn = true;
                   _this10.submit = false;
+                  _this10.formTouched = !_this10.ruleMappingForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Updated",
                     icon: 'success'
@@ -2164,6 +2166,7 @@
                   _this10.disableSubmitBtn = true;
                   _this10.disableResetBtn = true;
                   _this10.submit = false;
+                  _this10.formTouched = !_this10.ruleMappingForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Created",
                     icon: 'success'
@@ -3518,6 +3521,7 @@
           this.hideFetch = false;
           this.hideSubmit = false;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_RuleMappingDetailsComponent, [{
@@ -3599,7 +3603,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.ruleMappingForm.touched) {
+            if (this.ruleMappingForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -4048,6 +4052,7 @@
                   icon: 'success'
                 });
                 _this23.submit = false;
+                _this23.formTouched = !_this23.ruleMappingForm.touched;
               }
             }, function (err) {
               console.log(err.error.text);

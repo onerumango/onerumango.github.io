@@ -4138,6 +4138,7 @@
           this.now = Date.now();
           this.myFormattedDate = this.pipe.transform(this.now, 'dd-MMM-yy');
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_3__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_FileUploadComponent, [{
@@ -4213,7 +4214,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.uploadExcelForm.touched) {
+            if (this.uploadExcelForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -4317,6 +4318,7 @@
                             _this19.excelFileFlag = true;
                             _this19.flag = false;
                             _this19.isShow = true;
+                            _this19.formTouched = !_this19.uploadExcelForm.touched;
                           }
                         }, function (error) {
                           console.log(error);
@@ -4350,6 +4352,7 @@
                       window.scrollTo(0, document.body.scrollHeight);
                     });
                   });
+                  _this19.formTouched = !_this19.uploadExcelForm.touched;
                   _this19.excelFileFlag = true;
                   _this19.flag = false;
                   _this19.isShow = true;

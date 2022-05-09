@@ -1279,6 +1279,7 @@
           this.submitFile = true;
           this.bulk = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+          this.formTouched = true;
           this.modifyScreen = false;
         }
 
@@ -1516,6 +1517,7 @@
                   text: "Record Successfully Uploaded" // type: "success"
 
                 });
+                _this2.formTouched = !_this2.accountClosureForm.touched;
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: responseMsg,
@@ -1726,6 +1728,7 @@
                     text: "File uploaded sucessfully",
                     icon: 'success'
                   });
+                  _this4.formTouched = !_this4.accountClosureForm.touched;
                   _this4.showSubmitProgressBar = false;
                   _this4.showAuditlog = true;
                 } else {
@@ -1757,7 +1760,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.accountClosureForm.touched) {
+            if (this.accountClosureForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);

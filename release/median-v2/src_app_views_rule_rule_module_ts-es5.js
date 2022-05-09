@@ -1840,6 +1840,7 @@
           this.isSelected = true;
           this.externalsystem = [];
           this.showRuleValidation = false;
+          this.formTouched = true;
           this.showpBar = false;
           this.isEdit = false;
           this.ruleConfig = new _RuleConfig();
@@ -1897,7 +1898,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.ruleForm.touched) {
+            if (this.ruleForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -2328,7 +2329,8 @@
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: 'Record is Updated',
                   icon: 'success'
-                }); // this.toastService.successMessage('Record Saved Successfully!.', '');
+                });
+                _this9.formTouched = !_this9.ruleForm.touched; // this.toastService.successMessage('Record Saved Successfully!.', '');
 
                 _this9.ModifyCreateRule = true;
                 _this9.submit = false;
@@ -5243,6 +5245,7 @@
           this.xmlRespData = [];
           this.editFlag = true;
           this.ruleIdInvalid = false;
+          this.formTouched = true;
 
           this.issourceSysDisabled = function (value) {
             return _this17.headerTagData1.includes(value);
@@ -5284,7 +5287,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.ruleForm.touched) {
+            if (this.ruleForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -5717,6 +5720,7 @@
                     icon: 'success'
                   });
                   _this26.submit = false;
+                  _this26.formTouched = !_this26.ruleForm.touched;
 
                   _this26.ruleForm.disable();
 
@@ -5745,6 +5749,7 @@
                     text: 'Record is Created.',
                     icon: 'success'
                   });
+                  _this26.formTouched = !_this26.ruleForm.touched;
                   _this26.submit = false;
 
                   _this26.ruleForm.disable();

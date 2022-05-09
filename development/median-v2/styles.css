@@ -16199,8 +16199,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control::before {
 .radioStyle input[type=radio]:disabled+.radio-label:before {
   border-color: #E6224A;
   border-color: var(--primaryColor);
-  background: #E6224A;
-  background: var(--primaryColor);
+  /* background: none !important; */
 }
 
 .radioStyle input[type=radio]+.radio-label:empty:before {

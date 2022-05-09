@@ -932,6 +932,7 @@ class SecurityPolicyComponent {
         this.enablesubmit = true;
         this.submitSecurity = false;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+        this.formTouched = true;
     }
     ngOnInit() {
         this.buildForm("");
@@ -1063,6 +1064,7 @@ class SecurityPolicyComponent {
                     // this.enablesubmit = false;
                     this.auditlog();
                     this.edit = false;
+                    this.formTouched = !this.securityForm.touched;
                 }
                 else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Saving Failed` });
@@ -1133,7 +1135,7 @@ class SecurityPolicyComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.securityForm.touched) {
+        if (this.securityForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);

@@ -1482,6 +1482,7 @@
           this.modifyScreen = false;
           this.submitBtn = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_EmailManagementCreateComponent, [{
@@ -1596,7 +1597,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.emailForm.touched) {
+            if (this.emailForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -1892,6 +1893,7 @@
                     text: 'Record is Updated',
                     icon: 'success'
                   });
+                  _this9.formTouched = !_this9.emailForm.touched;
                 }
               });
             }
@@ -1910,6 +1912,8 @@
                   });
 
                   _this9.auditLog();
+
+                  _this9.formTouched = !_this9.emailForm.touched;
                 } else if (resp == null) {
                   // this.masterDatapermission=false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire('Email Id Already Exit ');

@@ -988,6 +988,7 @@
           this.submitDisab = false;
           this.editFlag = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_DepartmenrtIdNewComponent, [{
@@ -1044,7 +1045,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.departmentForm.touched) {
+            if (this.departmentForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -1106,6 +1107,7 @@
                     text: "Record is Created",
                     'icon': 'success'
                   });
+                  _this2.formTouched = !_this2.departmentForm.touched;
                 } else {
                   _this2.submitDisab = true;
                   _this2.editFlag = false;
@@ -3555,6 +3557,7 @@
           this.toastService = toastService;
           this.permissionvalue = ['Allow', 'Disallow'];
           this.permissionvalue1 = ['Allow', 'Disallow'];
+          this.formTouched = true;
           this.gccformValues = [{
             trnCode: '',
             trnDesc: '',
@@ -3650,7 +3653,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.globalGccForm.touched) {
+            if (this.globalGccForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -3742,7 +3745,8 @@
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Record is Created',
                   icon: 'success'
-                }); // this.globalGccForm.reset();
+                });
+                _this18.formTouched = !_this18.globalGccForm.touched; // this.globalGccForm.reset();
               } else {
                 // this.toastService.errorMessage('Failed to Save Data!', '');
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -5081,6 +5085,7 @@
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.showList = false;
           this.editFlag = false;
+          this.formTouched = true;
           this.masterClass = new _transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_2__.TrnDataMaster();
           this.formValues = {
             trnDesc: '',
@@ -5165,7 +5170,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.transactionCodeEditForm.touched) {
+            if (this.transactionCodeEditForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -5567,6 +5572,7 @@
                   title: 'Record is Updated',
                   icon: 'success'
                 });
+                _this28.formTouched = !_this28.transactionCodeEditForm.touched;
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   title: 'Failed to Update the Record!',
@@ -8704,6 +8710,7 @@
           this.editFlag = false;
           this.editAccFlag = false;
           this.submitAccBtn = false;
+          this.formTouched = true;
         }
 
         _createClass(_UserGccAcNewComponent, [{
@@ -8769,7 +8776,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.userGLForm.touched) {
+            if (this.userGLForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -8944,7 +8951,8 @@
                         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                           title: 'Record is Created',
                           icon: 'success'
-                        }); // this.userGLForm.reset();
+                        });
+                        _this42.formTouched = !_this42.userGLForm.touched; // this.userGLForm.reset();
                       } else {
                         // this.toastService.errorMessage('Failed to Save Data!', '');
                         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({

@@ -593,6 +593,7 @@ class AccountClosureDetailsComponent {
         this.submitFile = true;
         this.bulk = true;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
+        this.formTouched = true;
         this.modifyScreen = false;
     }
     ngOnInit() {
@@ -795,6 +796,7 @@ class AccountClosureDetailsComponent {
                     text: "Record Successfully Uploaded",
                     // type: "success"
                 });
+                this.formTouched = !this.accountClosureForm.touched;
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
@@ -994,6 +996,7 @@ class AccountClosureDetailsComponent {
                         text: "File uploaded sucessfully",
                         icon: 'success'
                     });
+                    this.formTouched = !this.accountClosureForm.touched;
                     this.showSubmitProgressBar = false;
                     this.showAuditlog = true;
                 }
@@ -1023,7 +1026,7 @@ class AccountClosureDetailsComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.accountClosureForm.touched) {
+        if (this.accountClosureForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);

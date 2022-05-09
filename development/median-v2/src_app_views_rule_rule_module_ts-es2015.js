@@ -839,6 +839,7 @@ class RuleDetails2Component {
         this.isSelected = true;
         this.externalsystem = [];
         this.showRuleValidation = false;
+        this.formTouched = true;
         this.showpBar = false;
         this.isEdit = false;
         this.ruleConfig = new RuleConfig();
@@ -885,7 +886,7 @@ class RuleDetails2Component {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.ruleForm.touched) {
+        if (this.ruleForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -1204,6 +1205,7 @@ class RuleDetails2Component {
             if (data) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Record is Updated',
                     icon: 'success' });
+                this.formTouched = !this.ruleForm.touched;
                 // this.toastService.successMessage('Record Saved Successfully!.', '');
                 this.ModifyCreateRule = true;
                 this.submit = false;
@@ -2656,6 +2658,7 @@ class RuleDetailsComponent {
         this.xmlRespData = [];
         this.editFlag = true;
         this.ruleIdInvalid = false;
+        this.formTouched = true;
         this.issourceSysDisabled = (value) => {
             return this.headerTagData1.includes(value);
         };
@@ -2688,7 +2691,7 @@ class RuleDetailsComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.ruleForm.touched) {
+        if (this.ruleForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -3004,6 +3007,7 @@ class RuleDetailsComponent {
                     this.ruleForm.get('validationSystems').setValue(data === null || data === void 0 ? void 0 : data.mdmtValidationSystemData);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Record is Updated.', icon: 'success' });
                     this.submit = false;
+                    this.formTouched = !this.ruleForm.touched;
                     this.ruleForm.disable();
                     this.auditShowStatus = true;
                     this.editFlag = false;
@@ -3021,6 +3025,7 @@ class RuleDetailsComponent {
                     this.ruleForm.get('sysRuleDetails').setValue(data.sysRuleDetails);
                     this.ruleForm.get('validationSystems').setValue(data.mdmtValidationSystemData);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Record is Created.', icon: 'success' });
+                    this.formTouched = !this.ruleForm.touched;
                     this.submit = false;
                     this.ruleForm.disable();
                     this.auditShowStatus = true;

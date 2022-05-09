@@ -860,6 +860,7 @@ class RoleDetailsComponent {
         this.authBtn = false;
         this.openHide = true;
         this.closeHide = true;
+        this.formTouched = true;
         this.selectAllChecked = false;
     }
     ngOnInit() {
@@ -1173,6 +1174,7 @@ class RoleDetailsComponent {
             if (this.validationResponse) {
                 // this.responseError = 'success';
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Updated ");
+                this.formTouched = !this.myform.touched;
                 this.submitBtn = true;
                 this.editFlag = true;
                 console.log("IF IF IF IF IF");
@@ -1530,6 +1532,7 @@ class RoleDetailsComponent {
                 this.modifyScreen = true;
                 this.auditLog();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire("Role is Created");
+                this.formTouched = !this.myform.touched;
             }
             else if (!role) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
@@ -1767,7 +1770,7 @@ class RoleDetailsComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.myform.touched) {
+        if (this.myform.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);

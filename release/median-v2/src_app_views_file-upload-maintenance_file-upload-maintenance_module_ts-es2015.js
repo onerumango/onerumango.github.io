@@ -18418,6 +18418,7 @@ class ExternalSystemEditComponent {
         this.formBuilder = formBuilder;
         this.toastService = toastService;
         this.editFlag = false;
+        this.formTouched = true;
         this.externalSystemUpdate = {
             extSysCode: '',
             extSysName: '',
@@ -18491,7 +18492,7 @@ class ExternalSystemEditComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.externalSystemEditForm.touched) {
+        if (this.externalSystemEditForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -18544,6 +18545,7 @@ class ExternalSystemEditComponent {
                     icon: 'success'
                 });
                 this.submitDisable = true;
+                this.formTouched = !this.externalSystemEditForm.touched;
                 this.auditLog();
             }
             else {
@@ -19019,6 +19021,7 @@ class ExternalSystemNewComponent {
         this.submitBtn = true;
         this.space = false;
         this.spaceForExtName = false;
+        this.formTouched = true;
     }
     ngOnInit() {
         this.currentUser = localStorage.getItem("userFromLogin");
@@ -19051,7 +19054,7 @@ class ExternalSystemNewComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.externalSystemForm.touched) {
+        if (this.externalSystemForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -19096,6 +19099,7 @@ class ExternalSystemNewComponent {
                     icon: 'success'
                 });
                 this.auditLog();
+                this.formTouched = !this.externalSystemForm.touched;
                 // this.externalSystemForm.reset();
             }
             else {
@@ -20004,6 +20008,7 @@ class ProcessCodeMappingEditComponent {
         this.showbackDateValue = false;
         this.showsftpValues = false;
         this.editFlag = false;
+        this.formTouched = true;
     }
     ngOnInit() {
         setTimeout(() => {
@@ -20184,7 +20189,7 @@ class ProcessCodeMappingEditComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.processCodeEditForm.touched) {
+        if (this.processCodeEditForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -20241,6 +20246,7 @@ class ProcessCodeMappingEditComponent {
                 });
                 this.submitEdit = true;
                 this.processCodeEditForm.reset();
+                this.formTouched = !this.processCodeEditForm.touched;
                 this.auditLog();
             }
             else {
@@ -21355,6 +21361,7 @@ class ProcessCodeMappingNewComponent {
         this.showfCYExchangeValue = false;
         this.showbackDateValue = false;
         this.showsftpValues = false;
+        this.formTouched = true;
     }
     ngOnInit() {
         this.currentUser = localStorage.getItem("userFromLogin");
@@ -21427,7 +21434,7 @@ class ProcessCodeMappingNewComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.processCodeForm.touched) {
+        if (this.processCodeForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -21539,6 +21546,7 @@ class ProcessCodeMappingNewComponent {
                     icon: 'success'
                 });
                 this.submit = true;
+                this.formTouched = !this.processCodeForm.touched;
                 // this.processCodeForm.reset();
             }
             else {
@@ -21572,6 +21580,7 @@ class ProcessCodeMappingNewComponent {
                     icon: 'success'
                 });
                 this.showSubmit = false;
+                this.formTouched = !this.processCodeForm.touched;
                 // this.processCodeForm.reset();
                 this.auditLog();
             }

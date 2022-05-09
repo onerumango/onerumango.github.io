@@ -1634,6 +1634,7 @@
           this.displaySubmit = false;
           this.authorizeDone = false;
           this.hideSubmit = false;
+          this.formTouched = true;
           this.isSelected = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.disableFields = false;
@@ -1742,7 +1743,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.ruleTransForm.touched) {
+            if (this.ruleTransForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -1893,6 +1894,7 @@
                 _this5.submit = false;
                 _this5.showAuditLog = true;
                 _this5.editValue = false;
+                _this5.formTouched = !_this5.ruleTransForm.touched;
               }
             }, function (err) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -4555,6 +4557,7 @@
           this.isSelected = true;
           this.hideSubmit = false;
           this.hideEdit = true;
+          this.formTouched = true;
           this.msgTranslation = new _msgTranslation2();
           this.recordSaved = false;
           this.disableSubmit = false;
@@ -4645,7 +4648,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.ruleTransForm.touched) {
+            if (this.ruleTransForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -4856,6 +4859,7 @@
 
                   _this22.msgTransDetails.disable();
 
+                  _this22.formTouched = !_this22.ruleTransForm.touched;
                   _this22.hideSubmit = true;
                   _this22.hideEdit = false;
                   _this22.showAuditLog = true;
@@ -4884,6 +4888,7 @@
 
                   _this22.msgTransDetails.disable();
 
+                  _this22.formTouched = !_this22.ruleTransForm.touched;
                   _this22.hideSubmit = true;
                   _this22.hideEdit = false;
                   _this22.showAuditLog = true;

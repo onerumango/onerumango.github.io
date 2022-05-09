@@ -942,6 +942,7 @@ class ChargeMaintaineneceComponent {
         this.router = router;
         this.editFlag = true;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+        this.formTouched = true;
     }
     ngOnInit() {
         setTimeout(() => {
@@ -986,7 +987,7 @@ class ChargeMaintaineneceComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.chargeForm.touched) {
+        if (this.chargeForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -1018,6 +1019,7 @@ class ChargeMaintaineneceComponent {
                     // this.submitDisab = true;
                     this.editFlag = false;
                     this.index = this.respData.id;
+                    this.formTouched = !this.chargeForm.touched;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Created ",
                         icon: 'success' });
                 }
@@ -1038,6 +1040,7 @@ class ChargeMaintaineneceComponent {
                     this.editFlag = false;
                     this.index = this.respData.id;
                     this.auditLog();
+                    this.formTouched = !this.chargeForm.touched;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Updated " });
                 }
             });

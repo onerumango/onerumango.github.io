@@ -468,6 +468,7 @@ class DepartmenrtIdNewComponent {
         this.submitDisab = false;
         this.editFlag = true;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+        this.formTouched = true;
     }
     ngOnInit() {
         _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormConfig.set({ "validationMessage": { "greaterThan": "Batch No To should not be less than Batch No From." } });
@@ -505,7 +506,7 @@ class DepartmenrtIdNewComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.departmentForm.touched) {
+        if (this.departmentForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -559,6 +560,7 @@ class DepartmenrtIdNewComponent {
                         text: "Record is Created",
                         'icon': 'success'
                     });
+                    this.formTouched = !this.departmentForm.touched;
                 }
                 else {
                     this.submitDisab = true;
@@ -1859,6 +1861,7 @@ class GlobalGccAcNewComponent {
         this.toastService = toastService;
         this.permissionvalue = ['Allow', 'Disallow'];
         this.permissionvalue1 = ['Allow', 'Disallow'];
+        this.formTouched = true;
         this.gccformValues = [{
                 trnCode: '',
                 trnDesc: '',
@@ -1937,7 +1940,7 @@ class GlobalGccAcNewComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.globalGccForm.touched) {
+        if (this.globalGccForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -2012,6 +2015,7 @@ class GlobalGccAcNewComponent {
                     title: 'Record is Created',
                     icon: 'success'
                 });
+                this.formTouched = !this.globalGccForm.touched;
                 // this.globalGccForm.reset();
             }
             else {
@@ -2666,6 +2670,7 @@ class TransactionCodeEditComponent {
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
         this.showList = false;
         this.editFlag = false;
+        this.formTouched = true;
         this.masterClass = new _transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_2__.TrnDataMaster;
         this.formValues = {
             trnDesc: '',
@@ -2730,7 +2735,7 @@ class TransactionCodeEditComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.transactionCodeEditForm.touched) {
+        if (this.transactionCodeEditForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -3062,6 +3067,7 @@ class TransactionCodeEditComponent {
                     title: 'Record is Updated',
                     icon: 'success'
                 });
+                this.formTouched = !this.transactionCodeEditForm.touched;
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -4646,6 +4652,7 @@ class UserGccAcNewComponent {
         this.editFlag = false;
         this.editAccFlag = false;
         this.submitAccBtn = false;
+        this.formTouched = true;
     }
     ngOnInit() {
         this.loginUser = localStorage.getItem('userFromLogin');
@@ -4694,7 +4701,7 @@ class UserGccAcNewComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.userGLForm.touched) {
+        if (this.userGLForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -4832,6 +4839,7 @@ class UserGccAcNewComponent {
                                     title: 'Record is Created',
                                     icon: 'success'
                                 });
+                                this.formTouched = !this.userGLForm.touched;
                                 // this.userGLForm.reset();
                             }
                             else {

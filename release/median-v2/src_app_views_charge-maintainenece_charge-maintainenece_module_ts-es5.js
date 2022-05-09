@@ -1755,6 +1755,7 @@
           this.router = router;
           this.editFlag = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+          this.formTouched = true;
         }
 
         _createClass(_ChargeMaintaineneceComponent, [{
@@ -1815,7 +1816,7 @@
           value: function pageDeactivation() {
             console.log("pageDeactivation in user was called"); // return of (true);
 
-            if (this.chargeForm.touched) {
+            if (this.chargeForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes! Are you sure?');
               console.log("result: ", result);
@@ -1855,6 +1856,7 @@
 
                   _this5.editFlag = false;
                   _this5.index = _this5.respData.id;
+                  _this5.formTouched = !_this5.chargeForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Created ",
                     icon: 'success'
@@ -1879,6 +1881,7 @@
 
                   _this5.auditLog();
 
+                  _this5.formTouched = !_this5.chargeForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Updated "
                   });

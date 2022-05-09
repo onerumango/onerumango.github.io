@@ -758,6 +758,7 @@ class RuleTranslationDetailsComponent {
         this.displaySubmit = false;
         this.authorizeDone = false;
         this.hideSubmit = false;
+        this.formTouched = true;
         this.isSelected = true;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
         this.disableFields = false;
@@ -836,7 +837,7 @@ class RuleTranslationDetailsComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.ruleTransForm.touched) {
+        if (this.ruleTransForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -951,6 +952,7 @@ class RuleTranslationDetailsComponent {
                 this.submit = false;
                 this.showAuditLog = true;
                 this.editValue = false;
+                this.formTouched = !this.ruleTransForm.touched;
             }
         }, (err) => {
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Server Error.",
@@ -2296,6 +2298,7 @@ class RuleTranslationComponent {
         this.isSelected = true;
         this.hideSubmit = false;
         this.hideEdit = true;
+        this.formTouched = true;
         this.msgTranslation = new msgTranslation();
         this.recordSaved = false;
         this.disableSubmit = false;
@@ -2366,7 +2369,7 @@ class RuleTranslationComponent {
     pageDeactivation() {
         console.log("pageDeactivation in user was called");
         // return of (true);
-        if (this.ruleTransForm.touched) {
+        if (this.ruleTransForm.touched && this.formTouched == true) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes! Are you sure?');
             console.log("result: ", result);
@@ -2527,6 +2530,7 @@ class RuleTranslationComponent {
                     });
                     this.ruleTransForm.disable();
                     this.msgTransDetails.disable();
+                    this.formTouched = !this.ruleTransForm.touched;
                     this.hideSubmit = true;
                     this.hideEdit = false;
                     this.showAuditLog = true;
@@ -2550,6 +2554,7 @@ class RuleTranslationComponent {
                     });
                     this.ruleTransForm.disable();
                     this.msgTransDetails.disable();
+                    this.formTouched = !this.ruleTransForm.touched;
                     this.hideSubmit = true;
                     this.hideEdit = false;
                     this.showAuditLog = true;
