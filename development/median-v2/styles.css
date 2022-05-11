@@ -19620,7 +19620,7 @@ button:focus,
 .tColor::before {
   content: "";
   position: absolute;
-  background-image: url('/assets/images/check.png');
+  background-image: url('/assets/images/checkMedian.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 12px;

@@ -21863,7 +21863,8 @@
               sftpRequired: [""],
               sftpUsername: [""],
               treasuryrefRequired: [""],
-              wuFile: [""]
+              wuFile: [""],
+              id: [""]
             });
             this.gettingProcessCode(); // this.auditLog();
           }
@@ -21949,6 +21950,8 @@
               _this14.processCodeEditForm.controls.sftpRequired.setValue(sftpRequired);
 
               _this14.processCodeEditForm.controls.futureDateAllow.setValue(futureDateAllow);
+
+              _this14.processCodeEditForm.controls.id.setValue(_this14.processCodeSummary.id);
 
               if (autoUpload == true) {
                 _this14.showFilefield = true;

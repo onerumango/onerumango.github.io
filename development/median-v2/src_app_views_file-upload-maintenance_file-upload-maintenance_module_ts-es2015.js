@@ -20044,6 +20044,7 @@ class ProcessCodeMappingEditComponent {
             sftpUsername: [""],
             treasuryrefRequired: [""],
             wuFile: [""],
+            id: [""]
         });
         this.gettingProcessCode();
         // this.auditLog();
@@ -20102,6 +20103,7 @@ class ProcessCodeMappingEditComponent {
             this.processCodeEditForm.controls.fCYRateVariance.setValue(fCYRateVariance);
             this.processCodeEditForm.controls.sftpRequired.setValue(sftpRequired);
             this.processCodeEditForm.controls.futureDateAllow.setValue(futureDateAllow);
+            this.processCodeEditForm.controls.id.setValue(this.processCodeSummary.id);
             if (autoUpload == true) {
                 this.showFilefield = true;
                 const fileName = this.processCodeSummary.fileName;

@@ -3512,8 +3512,8 @@ const environment = {
     // MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
     // ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
     //Currently Using Ports 
-    MEDIAN_URL: 'http://192.168.0.14:9003/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:9003/medianAccountClosure'
+    MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
+    ACC_CLOSER_URL: 'http://192.168.0.14:8082/medianAccountClosure'
 };
 
 

@@ -232,7 +232,7 @@ button:focus,
 .tColor::before {
   content: "";
   position: absolute;
-  background-image: url('/assets/images/check.png');
+  background-image: url('/assets/images/checkMedian.png');
   -webkit-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
