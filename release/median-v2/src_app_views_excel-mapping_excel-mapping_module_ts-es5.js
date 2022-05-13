@@ -1996,19 +1996,19 @@
               }).then(function (result) {
                 if (result.isConfirmed === true) {
                   _this9.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, _this9.extNameValue, _this9.proCodeValue, _this9.extCodeValue, _this9.currentUser, _this9.currencyValue).subscribe(function (authResp) {
-                    var _a, _b, _c, _d, _e, _f, _g, _h;
+                    var _a, _b, _c, _d, _e, _f, _g;
 
                     _this9.mappingResponse = authResp;
 
                     if (_this9.mappingResponse) {
                       _this9.authStatus = (_a = _this9.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                      _this9.recordStatus = (_b = _this9.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                      _this9.modifiedBy = (_c = _this9.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                      _this9.modifiedTime = (_d = _this9.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                      _this9.authorizedBy = (_e = _this9.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                      _this9.authorizedTime = (_f = _this9.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                      _this9.version = (_g = _this9.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
-                      _this9.modifiedBy = (_h = _this9.mappingResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
+                      _this9.recordStatus = (_b = _this9.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus; // this.modifiedBy = this.mappingResponse?.modifiedBy;
+
+                      _this9.modifiedTime = (_c = _this9.mappingResponse) === null || _c === void 0 ? void 0 : _c.inputDtStamp;
+                      _this9.authorizedBy = (_d = _this9.mappingResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
+                      _this9.authorizedTime = (_e = _this9.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
+                      _this9.version = (_f = _this9.mappingResponse) === null || _f === void 0 ? void 0 : _f.version;
+                      _this9.modifiedBy = (_g = _this9.mappingResponse) === null || _g === void 0 ? void 0 : _g.inputBy;
 
                       if (_this9.authStatus === 'U') {
                         _this9.authStatus = 'UNAUTHORIZED';

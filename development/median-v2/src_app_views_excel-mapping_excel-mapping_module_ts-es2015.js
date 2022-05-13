@@ -1073,17 +1073,17 @@ class ExcelMappingEditComponent {
                 if (result.isConfirmed === true) {
                     this.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, this.extNameValue, this.proCodeValue, this.extCodeValue, this.currentUser, this.currencyValue)
                         .subscribe(authResp => {
-                        var _a, _b, _c, _d, _e, _f, _g, _h;
+                        var _a, _b, _c, _d, _e, _f, _g;
                         this.mappingResponse = authResp;
                         if (this.mappingResponse) {
                             this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
                             this.recordStatus = (_b = this.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                            this.modifiedBy = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                            this.modifiedTime = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                            this.authorizedBy = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                            this.authorizedTime = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                            this.version = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
-                            this.modifiedBy = (_h = this.mappingResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
+                            // this.modifiedBy = this.mappingResponse?.modifiedBy;
+                            this.modifiedTime = (_c = this.mappingResponse) === null || _c === void 0 ? void 0 : _c.inputDtStamp;
+                            this.authorizedBy = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
+                            this.authorizedTime = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
+                            this.version = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.version;
+                            this.modifiedBy = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.inputBy;
                             if (this.authStatus === 'U') {
                                 this.authStatus = 'UNAUTHORIZED';
                             }
