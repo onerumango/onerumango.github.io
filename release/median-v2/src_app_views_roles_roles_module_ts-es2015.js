@@ -1443,6 +1443,24 @@ class RoleDetailsComponent {
         // console.log(screenslist);
         this.roleScreenList = screenslist;
         console.log(this.roleScreenList);
+        for (let s = 0; s < this.roleScreenList.length; s++) {
+            console.log(this.roleScreenList[s], "AUTH INside for");
+            if (this.roleScreenList[s].NEW == "0" ||
+                this.roleScreenList[s].EDIT == "0" ||
+                this.roleScreenList[s].DELETE == "0" ||
+                this.roleScreenList[s].CLOSE == "0" ||
+                this.roleScreenList[s].REOPEN == "0" ||
+                this.roleScreenList[s].AUTH == "0" ||
+                this.roleScreenList[s].UNLOCK == "0" ||
+                this.roleScreenList[s].PRINT == "0" ||
+                this.roleScreenList[s].VIEW == "0") {
+                console.log("Tabs are Selected");
+                this.selectAllChecked = false;
+            }
+            else {
+                this.selectAllChecked = true;
+            }
+        }
         // console.log(checklist);
         // console.log(strchklist);
         // this.datasource.list = new MatTableDataSource(screenslist);
@@ -1596,6 +1614,7 @@ class RoleDetailsComponent {
             this.roleScreenList[s].UNLOCK = (event) ? "1" : "0";
             this.roleScreenList[s].PRINT = (event) ? "1" : "0";
             this.roleScreenList[s].VIEW = (event) ? "1" : "0";
+            console.log(action, event);
             if (event == true) {
                 this.selectAllChecked = true;
             }
@@ -1643,8 +1662,8 @@ class RoleDetailsComponent {
                             this.rolessorteddata[m].screenlist[n].newpermission = newperm1;
                         }
                     }
-                    console.log(action, "action");
-                    console.log(event, "event");
+                    //  console.log(action,"action");
+                    //  console.log(event,"event");
                     console.log(this.rolessorteddata);
                 }
             }
@@ -1653,40 +1672,50 @@ class RoleDetailsComponent {
         // console.log(this.checkAll);
     }
     clickRoleAction(roles, action, event) {
+        console.log(this.roleScreenList);
         console.log(roles, "Roles");
         console.log(action, "action");
         console.log(event, "event");
+        // if(roles.AUTH)
+        console.log(roles.Screens);
+        console.log(roles.NEW);
+        // if(roles.AUTH == "0" || roles.NEW == "0" || roles.DELETE == "0" || roles.VIEW == "0" || roles.CLOSE == "0" || roles.REOPEN == "0"){
+        if (roles.AUTH) {
+            console.log(this.selectAllChecked);
+            // this.selectAllChecked=false;
+        }
         if (action == "NEW" || action == "SELECTALL") {
             roles.NEW = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
+            console.log(roles.NEW, "Inside New If");
         }
         if (action == "EDIT" || action == "SELECTALL") {
             roles.EDIT = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "DELETE" || action == "SELECTALL") {
             roles.DELETE = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "CLOSE" || action == "SELECTALL") {
             roles.CLOSE = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "REOPEN" || action == "SELECTALL") {
             roles.REOPEN = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "UNLOCK" || action == "SELECTALL") {
             roles.UNLOCK = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "PRINT" || action == "SELECTALL") {
             roles.PRINT = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "AUTH" || action == "SELECTALL") {
             roles.AUTH = (event) ? "1" : "0";
-            roles.VIEW = (event) ? "1" : "0";
+            // roles.VIEW = (event)  ? "1" : "0";
         }
         if (action == "VIEW" || action == "SELECTALL") {
             roles.VIEW = (event) ? "1" : "0";

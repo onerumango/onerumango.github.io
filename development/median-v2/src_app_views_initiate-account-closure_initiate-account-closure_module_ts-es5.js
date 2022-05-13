@@ -1480,60 +1480,65 @@
             this.fetchUserSingle.inputBy = this.currentUser; // this.showProgressBarSingle=true;
 
             this.accClosure.onSingleClosure(this.accountClosureForm.value, this.fetchUserSingle.inputBy).subscribe(function (singleClosureData) {
-              console.log(singleClosureData);
-              console.log(singleClosureData.errorDesc);
-              var responseMsg = singleClosureData.errorDesc;
+              if (singleClosureData) {
+                var responseMsg = singleClosureData.errorDesc;
 
-              if (responseMsg == 'S' || responseMsg === "S") {
-                _this2.fetchUserSingle = singleClosureData;
-                console.log(_this2.fetchUserSingle);
-                console.log(_this2.fetchUserSingle);
+                if (responseMsg == 'S' || responseMsg === "S") {
+                  _this2.fetchUserSingle = singleClosureData;
+                  console.log(_this2.fetchUserSingle);
+                  console.log(_this2.fetchUserSingle);
 
-                if (_this2.fetchUserSingle.recordStatus == 'O') {
-                  _this2.fetchUserSingle.recordStatus = 'OPEN';
+                  if (_this2.fetchUserSingle.recordStatus == 'O') {
+                    _this2.fetchUserSingle.recordStatus = 'OPEN';
+                  }
+
+                  if (_this2.fetchUserSingle.verifiedStatus == 'U') {
+                    _this2.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
+                  }
+
+                  if (_this2.fetchUserSingle.verifiedOnce == 'N') {
+                    _this2.fetchUserSingle.verifiedOnce = 'NO';
+                  } // this.iziToast.show({
+                  //   message: `Record Successfully Uploaded`,
+                  //   image: "assets/images/user.png",
+                  //   icon: 'ico ico-success',
+                  //   theme:"dark",
+                  //   layout: 2,
+                  //   // imageWidth:50,
+                  //   balloon: false,
+                  //   position: "topRight",
+                  //   progressBarColor: "green",
+                  //   pauseOnHover: true,
+                  // });
+
+
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                    text: "Record Successfully Uploaded" // type: "success"
+
+                  });
+                  _this2.formTouched = !_this2.accountClosureForm.touched;
+                } else {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                    text: responseMsg,
+                    icon: "warning"
+                  }); // this.iziToast.show({
+                  //   message: responseMsg,
+                  //   image: "assets/images/user.png",
+                  //   icon: 'ico ico-error',
+                  //   theme:"dark",
+                  //   layout: 2,
+                  //   // imageWidth:50,
+                  //   balloon: false,
+                  //   position: "topRight",
+                  //   progressBarColor: "green",
+                  //   pauseOnHover: true,
+                  // });
                 }
-
-                if (_this2.fetchUserSingle.verifiedStatus == 'U') {
-                  _this2.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
-                }
-
-                if (_this2.fetchUserSingle.verifiedOnce == 'N') {
-                  _this2.fetchUserSingle.verifiedOnce = 'NO';
-                } // this.iziToast.show({
-                //   message: `Record Successfully Uploaded`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
-
-
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  text: "Record Successfully Uploaded" // type: "success"
-
-                });
-                _this2.formTouched = !_this2.accountClosureForm.touched;
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  text: responseMsg,
-                  icon: "warning"
-                }); // this.iziToast.show({
-                //   message: responseMsg,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-error',
-                //   theme:"dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
+                  text: "Server Error",
+                  icon: "error"
+                });
               } // this.showProgressBarSingle=false; 
 
             }); // this.accountClosureForm.reset();
@@ -1706,51 +1711,58 @@
                 // } else if (event instanceof HttpResponse) {
                 //   this.uploadSuccess = true;
                 // }
-                console.log(fileResp);
-                _this4.fetchUserSingle = fileResp;
+                if (fileResp) {
+                  console.log(fileResp);
+                  _this4.fetchUserSingle = fileResp;
 
-                if (_this4.fetchUserSingle.errorDesc == 'S') {
-                  _this4.enableView = true;
-                  _this4.submitFile = true; // this.iziToast.show({
-                  //   message: `File uploaded sucessfully`,
-                  //   image: "assets/images/user.png",
-                  //   icon: 'ico ico-success',
-                  //   theme:"dark",
-                  //   layout: 2,
-                  //   // imageWidth:50,
-                  //   balloon: false,
-                  //   position: "topRight",
-                  //   progressBarColor: "green",
-                  //   pauseOnHover: true,
-                  // });
+                  if (_this4.fetchUserSingle.errorDesc == 'S') {
+                    _this4.enableView = true;
+                    _this4.submitFile = true; // this.iziToast.show({
+                    //   message: `File uploaded sucessfully`,
+                    //   image: "assets/images/user.png",
+                    //   icon: 'ico ico-success',
+                    //   theme:"dark",
+                    //   layout: 2,
+                    //   // imageWidth:50,
+                    //   balloon: false,
+                    //   position: "topRight",
+                    //   progressBarColor: "green",
+                    //   pauseOnHover: true,
+                    // });
 
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                    text: "File uploaded sucessfully",
-                    icon: 'success'
-                  });
-                  _this4.formTouched = !_this4.accountClosureForm.touched;
-                  _this4.showSubmitProgressBar = false;
-                  _this4.showAuditlog = true;
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: "File uploaded sucessfully",
+                      icon: 'success'
+                    });
+                    _this4.formTouched = !_this4.accountClosureForm.touched;
+                    _this4.showSubmitProgressBar = false;
+                    _this4.showAuditlog = true;
+                  } else {
+                    _this4.accountClosureForm.get('accountType').setValue(_this4.sendAccountType);
+
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: _this4.fetchUserSingle.errorDesc,
+                      icon: 'error'
+                    }); // this.iziToast.show({
+                    //   message: this.fetchUserSingle.errorDesc,
+                    //   image: "assets/images/user.png",
+                    //   icon: 'ico ico-error',
+                    //   theme:"dark",
+                    //   layout: 2,
+                    //   // imageWidth:50,
+                    //   balloon: false,
+                    //   position: "topRight",
+                    //   progressBarColor: "red",
+                    //   pauseOnHover: true,
+                    // });
+
+                    _this4.showSubmitProgressBar = false;
+                  }
                 } else {
-                  _this4.accountClosureForm.get('accountType').setValue(_this4.sendAccountType);
-
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                    text: _this4.fetchUserSingle.errorDesc,
-                    icon: 'error'
-                  }); // this.iziToast.show({
-                  //   message: this.fetchUserSingle.errorDesc,
-                  //   image: "assets/images/user.png",
-                  //   icon: 'ico ico-error',
-                  //   theme:"dark",
-                  //   layout: 2,
-                  //   // imageWidth:50,
-                  //   balloon: false,
-                  //   position: "topRight",
-                  //   progressBarColor: "red",
-                  //   pauseOnHover: true,
-                  // });
-
-                  _this4.showSubmitProgressBar = false;
+                    text: "Server Error",
+                    icon: "error"
+                  });
                 }
               });
             }
