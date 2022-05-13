@@ -9439,6 +9439,8 @@ let TransactionPage = class TransactionPage {
         this.trxnArrayList = [];
     }
     ngOnInit() {
+        this.loginRespAccountId = localStorage.getItem('loginRespAccountId');
+        console.log("loginRespAccountId", this.loginRespAccountId);
         this.phoneNumber = localStorage.getItem('PhoneNumLogin');
         console.log("phoneNumber", this.phoneNumber);
         this.shareDataService.getAccountInfo.subscribe(data => {
@@ -9456,7 +9458,7 @@ let TransactionPage = class TransactionPage {
         this.loggedInCust = sessionStorage.getItem('customer_id');
         this.page = page;
         // console.log("Logged In Customer -- ", this.loggedInCust);
-        this.apiService.getTransactionByAccountId(this.accountNumber, this.page, formattedFromDate, formattedToDate)
+        this.apiService.getTransactionByAccountId(this.loginRespAccountId, this.page, formattedFromDate, formattedToDate)
             .subscribe(data => {
             this.loadingService.dismiss();
             if (data != null || data != undefined) {
