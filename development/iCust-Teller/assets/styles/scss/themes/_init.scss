@@ -190,6 +190,7 @@ $default-theme-warn: mat-palette($default-warn-palette, main, lighter, darker);
 
 $default-theme: mat-light-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
 $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
+//$altTheme: mat-light-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
 // @debug $theme;
 
 // MAIN THEME INIT
@@ -355,4 +356,231 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
 }
 .egret-dark-purple .ngx-datatable.material .datatable-header .datatable-header-cell {
   background-color: gray !important;
+}
+// .yellow .app-admin-container .rightside-content-hold {
+//   background: yellow;
+// }
+.blue .app-admin-container .rightside-content-hold {
+  background: blue;
+}
+.red .app-admin-container .rightside-content-hold {
+  background: red;
+}
+.yellow .topbar.mat-toolbar {
+  background: yellowgreen;
+}
+
+// blue color theme 
+// .blue {
+//   @include angular-material-theme($altTheme);
+//   @include egret-theme($altTheme);
+//  // color: #000000;
+// //  background-color: #ffffff;
+// }
+
+.blue .topbar.mat-toolbar {
+  background: blueviolet;
+}
+.blue .mat-card {
+  color: #ffffff;
+  background: blueviolet;
+}
+.blue .text-large {
+  color: white;
+}
+.blue .small-head{
+  color: white;
+}
+.blue .search-box input{
+  background: blue;
+}
+.blue .mat-dialog-container {
+  background: blue;
+  color: white;
+}
+.blue .mat-drawer-inner-container {
+  color: white;
+  background: royalblue;
+}
+.blue .notification-list .notific-item .message {
+  color: white;
+}
+.blue .mat-menu-content{
+  background: royalblue;
+}
+.blue .mat-icon {
+  color: white;
+}
+.blue .mat-icon-button {
+  background: royalblue;
+}
+.blue .text-blue {
+  color: white;
+}
+.blue .mat-form-field-label-wrapper {
+  color: black;
+}
+   .blue h3, .h3 {
+  color: white;
+}
+.blue h4, .h4 {
+  color: white;
+}
+.blue  .justify-content-center {
+  color: white; 
+}
+.blue .mat-menu-item {
+  background: royalblue;
+  color: white;
+}
+.blue .mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+  background: royalblue;
+}
+.blue .sidebar-panel {
+  background: royalblue;
+}
+.blue .sidebar-panel .navigation-hold {
+  color: white;
+  background: royalblue;
+}
+.blue .mat-expansion-panel-body {
+  background: royalblue;
+}
+.blue .mat-form-field{
+  color: white;
+}
+
+        // red color theme
+
+.red .mat-card {
+  color: #ffffff;
+  background: red;
+}
+.red .topbar.mat-toolbar {
+  background: red;
+}
+.red .text-large {
+  color: white;
+}
+.red .small-head{
+  color: white;
+}
+.red .mat-dialog-container {
+  background: red;
+  color: white;
+}
+.red .mat-drawer-inner-container {
+  color: white;
+  background: red;
+}
+.red .notification-list .notific-item .message {
+  color: white;
+}
+.red .mat-menu-content{
+  background: darkred;
+}
+.red .mat-icon {
+  color: white;
+}
+.red  .justify-content-center {
+  color: white; 
+}
+.red .mat-menu-item {
+  background: darkred;
+  color: white;
+}
+.red .mat-form-field-label-wrapper {
+  color: black;
+}
+.red h3, .h3 {
+  color: white;
+}
+.red h4, .h4 {
+  color: white;
+}
+.red .search-box input{
+  background: red;
+}
+.red .mat-icon-button {
+  background: coral;
+}
+.red .mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+  background: whitesmoke;
+}
+.red .sidebar-panel {
+  background: red;
+}
+.red .sidebar-panel .navigation-hold {
+  color: white;
+  background: red;
+}
+.red .mat-expansion-panel-body {
+  background: darkred;
+}
+.red .mat-form-field{
+  color: white;
+}
+
+// yellow theme
+
+.yellow .mat-dialog-container {
+  background: yellow;
+  //color: white;
+}
+.yellow .mat-drawer-inner-container {
+ // color: white;
+  background: yellow;
+}
+// .yellow .notification-list .notific-item .message {
+//   color: white;
+// }
+.yellow .mat-menu-content{
+  background: yellowgreen;
+}
+.yellow .mat-menu-item {
+  background: yellowgreen;
+}
+.yellow .text-white {
+  color: black;
+}
+.yellow .search-box input{
+  background: yellow;
+}
+.yellow .sidebar-panel {
+  background: yellow;
+}
+.yellow .mat-card {
+  background: yellow;
+}
+.yellow .sidebar-panel .navigation-hold {
+  color: black;
+  background: yellow;
+}
+// .yellow .mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+//   background: black;
+// }
+.yellow .mat-expansion-panel-body {
+  background: yellowgreen;
+}
+.yellow .mat-expansion-panel-header {
+  background:yellowgreen;
+}
+.yellow .mat-raised-button {
+  background:yellowgreen;
+}
+
+.blue .input.mat-input-element {
+  color: black;
+}
+.red .input.mat-input-element {
+  color: black;
+}
+.yellow .input.mat-input-element {
+  color: black;
+}
+.red .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  color: black;
+}
+.blue .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  color: black;
 }
