@@ -304,9 +304,18 @@ class UsersService {
         this.http = http;
         this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({});
         this.getNavParam = this.paramSource.asObservable();
+        this.Index = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({
+            index: '',
+        });
     }
     sendNavParam(params) {
         this.paramSource.next(params);
+    }
+    setIndexValue(index) {
+        this.Index.next(index);
+    }
+    getIndexValue() {
+        return this.Index.asObservable();
     }
     getRoleScreenPermission(userId, screenName, roleName) {
         return this.http.get(`${rolepermission}/getRolePermission/${userId}/${screenName}/${roleName}`);

@@ -1288,6 +1288,11 @@
           value: function ngOnInit() {
             var _this = this;
 
+            this.accClosure.getIndexValue().subscribe(function (resp) {
+              if (resp.index === '') {
+                _this.createAccClosure();
+              }
+            });
             this.currentUser = localStorage.getItem('currentUser').replace(/['"]+/g, '');
             this.navSubscription = this.roleService.getNavParam.subscribe(function (data) {
               return _this.initiateAccClosure = data;
@@ -1914,6 +1919,14 @@
                 _this7.fetchUserSingle.recordStatus = 'OPEN';
               }
             });
+          }
+        }, {
+          key: "createAccClosure",
+          value: function createAccClosure() {
+            var navigationExtras = {
+              queryParams: {}
+            };
+            this.roleService.sendNavParam(navigationExtras);
           }
         }]);
 
@@ -2568,6 +2581,9 @@
               queryParams: {}
             };
             this.roleService.sendNavParam(navigationExtras);
+            this.accClosureServiceSum.setIndexValue({
+              index: "new"
+            });
           }
         }, {
           key: "getDataFromSummary",
@@ -2626,6 +2642,9 @@
 
             this.roleService.sendNavParam(navigationExtras);
             this.router.navigate(['/initiate-account-closure/create']);
+            this.accClosureServiceSum.setIndexValue({
+              index: "edit"
+            });
           }
         }, {
           key: "newRolePermissions",

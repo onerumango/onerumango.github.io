@@ -22149,6 +22149,7 @@
             this.processCodeEditForm.controls.recordStatus.setValue('O');
             this.processCodeEditForm.controls.creatorId.setValue(this.currentUser);
             this.apiService.updateExtSys(this.processCodeEditForm.value).subscribe(function (resp) {
+              debugger;
               _this16.processCodeSummary = resp;
 
               if (_this16.processCodeSummary) {
@@ -22156,11 +22157,7 @@
                   title: 'Record is Updated',
                   icon: 'success'
                 });
-                _this16.submitEdit = true;
-
-                _this16.processCodeEditForm.reset();
-
-                _this16.formTouched = !_this16.processCodeEditForm.touched;
+                _this16.submitEdit = true; // this.formTouched=!this.processCodeEditForm.touched;
 
                 _this16.auditLog();
               } else {

@@ -15219,6 +15219,7 @@ span.medainStyle {
 
 .subMenuLink::before {
   content: "";
+  display: none;
   position: absolute;
   left: 0;
   top: 11px;
@@ -17062,6 +17063,170 @@ table.tableStyle thead tr th.tblehead {
   background-color: green;
 }
 
+.roleIcon {
+  -webkit-mask: url('role.svg') no-repeat center;
+  mask: url('role.svg') no-repeat center;
+}
+
+.userIcon {
+  -webkit-mask: url('user.svg') no-repeat center;
+  mask: url('user.svg') no-repeat center;
+}
+
+.auditIcon {
+  -webkit-mask: url('aduit.svg') no-repeat center;
+  mask: url('aduit.svg') no-repeat center;
+}
+
+.securityIcon {
+  -webkit-mask: url('security.svg') no-repeat center;
+  mask: url('security.svg') no-repeat center;
+}
+
+.authorizeIcon {
+  -webkit-mask: url('transaction.svg') no-repeat center;
+  mask: url('transaction.svg') no-repeat center;
+}
+
+.transactionIcon {
+  -webkit-mask: url('transaction.svg') no-repeat center;
+  mask: url('transaction.svg') no-repeat center;
+}
+
+.globalIcon {
+  -webkit-mask: url('globe.svg.svg') no-repeat center;
+  mask: url('globe.svg.svg') no-repeat center;
+}
+
+.userGlIcon {
+  -webkit-mask: url('user-icon-1.svg') no-repeat center;
+  mask: url('user-icon-1.svg') no-repeat center;
+}
+
+.departmentIcon {
+  -webkit-mask: url('gear-icon.svg') no-repeat center;
+  mask: url('gear-icon.svg') no-repeat center;
+}
+
+.emailIcon {
+  -webkit-mask: url('email-managment.svg') no-repeat center;
+  mask: url('email-managment.svg') no-repeat center;
+}
+
+.addSysIcon {
+  -webkit-mask: url('add-system.svg') no-repeat center;
+  mask: url('add-system.svg') no-repeat center;
+}
+
+.translationIcon {
+  -webkit-mask: url('rule-translate.svg') no-repeat center;
+  mask: url('rule-translate.svg') no-repeat center;
+}
+
+.ruleIcon {
+  -webkit-mask: url('create-rule.svg') no-repeat center;
+  mask: url('create-rule.svg') no-repeat center;
+}
+
+.mappingIcon {
+  -webkit-mask: url('rule-mapping.svg') no-repeat center;
+  mask: url('rule-mapping.svg') no-repeat center;
+}
+
+.externalSystemIcon{
+  -webkit-mask: url('external-system.svg') no-repeat center;
+  mask: url('external-system.svg') no-repeat center;
+}
+
+.processCodeMappingIcon{
+  -webkit-mask: url('process-code.svg') no-repeat center;
+  mask: url('process-code.svg') no-repeat center;
+}
+
+.templateMappingIcon{
+  -webkit-mask: url('excel-mapping.svg') no-repeat center;
+  mask: url('excel-mapping.svg') no-repeat center;
+}
+
+.uploadIcon{
+  -webkit-mask: url('upload-excel.svg') no-repeat center;
+  mask: url('upload-excel.svg') no-repeat center;
+}
+
+.authorizeIcon{
+  -webkit-mask: url('authorize.svg') no-repeat center;
+  mask: url('authorize.svg') no-repeat center;
+}
+
+.rejectionIcon{
+  -webkit-mask: url('file-x.svg') no-repeat center;
+  mask: url('file-x.svg') no-repeat center;
+}
+
+.authorizeModificationIcon{
+  -webkit-mask: url('pencil-square.svg') no-repeat center;
+  mask: url('pencil-square.svg') no-repeat center;
+}
+
+.tresuryIcon{
+  -webkit-mask: url('treasury-reference.svg') no-repeat center;
+  mask: url('treasury-reference.svg') no-repeat center;
+}
+
+.processMonitoringIcon{
+  -webkit-mask: url('process.svg') no-repeat center;
+  mask: url('process.svg') no-repeat center;
+}
+
+.customerSearchIcon{
+  -webkit-mask: url('customer-search.svg') no-repeat center;
+  mask: url('customer-search.svg') no-repeat center;
+}
+
+.initiateIcon{
+  -webkit-mask: url('inititate-account.svg') no-repeat center;
+  mask: url('inititate-account.svg') no-repeat center;
+}
+
+.processAccountClosureIcon{
+  -webkit-mask: url('account-closer.svg') no-repeat center;
+  mask: url('account-closer.svg') no-repeat center;
+}
+
+.accountClosureIcon{
+  -webkit-mask: url('grommet-maintenance.svg') no-repeat center;
+  mask: url('grommet-maintenance.svg') no-repeat center;
+}
+
+.chargeIcon{
+  -webkit-mask: url('charge-maintenance.svg') no-repeat center;
+  mask: url('charge-maintenance.svg') no-repeat center;
+}
+
+.customListIcon {
+  position: absolute;
+  left: -16px;
+  top: 3px;
+  background-color: #747274;
+  background-color: var(--navColor);
+  width: 20px;
+  height: 20px;
+}
+
+.customListIcon:hover {
+  background-color: #E6224A;
+  background-color: var(--primaryColor);
+}
+
+.iconActive {
+  background-color: #E6224A;
+  background-color: var(--primaryColor);
+}
+
+.subMenuLink:hover~.customListIcon {
+  background-color: #E6224A;
+  background-color: var(--primaryColor);
+}
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[2]!./node_modules/font-awesome/css/font-awesome.css ***!
   \****************************************************************************************************************************************************************************************************************************************/

@@ -1639,6 +1639,11 @@
           value: function ngOnInit() {
             var _this2 = this;
 
+            this.roleService.getIndexValue().subscribe(function (resp) {
+              if (resp.index === '') {
+                _this2.createRole();
+              }
+            });
             this.username = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.navSubscription = this.roleService.getNavParam.subscribe(function (data) {
               return _this2.editRoleScreen = data;
@@ -2690,37 +2695,44 @@
             }
 
             if (action == "NEW" || action == "SELECTALL") {
-              roles.NEW = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
-
+              roles.NEW = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
               console.log(roles.NEW, "Inside New If");
             }
 
             if (action == "EDIT" || action == "SELECTALL") {
-              roles.EDIT = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.EDIT = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "DELETE" || action == "SELECTALL") {
-              roles.DELETE = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.DELETE = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "CLOSE" || action == "SELECTALL") {
-              roles.CLOSE = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.CLOSE = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "REOPEN" || action == "SELECTALL") {
-              roles.REOPEN = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.REOPEN = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "UNLOCK" || action == "SELECTALL") {
-              roles.UNLOCK = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.UNLOCK = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "PRINT" || action == "SELECTALL") {
-              roles.PRINT = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.PRINT = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "AUTH" || action == "SELECTALL") {
-              roles.AUTH = event ? "1" : "0"; // roles.VIEW = (event)  ? "1" : "0";
+              roles.AUTH = event ? "1" : "0";
+              roles.VIEW = event ? "1" : "0";
             }
 
             if (action == "VIEW" || action == "SELECTALL") {
@@ -2838,6 +2850,14 @@
             // console.log("The End")
             // return;
 
+          }
+        }, {
+          key: "createRole",
+          value: function createRole() {
+            var navigationExtras = {
+              queryParams: {}
+            };
+            this.roleService.sendNavParam(navigationExtras);
           }
         }]);
 
@@ -3399,6 +3419,9 @@
             this.modifyRoleObject = userObject;
             console.log('inside modify');
             console.log(this.modifyRoleObject);
+            this.roleService.setIndexValue({
+              index: "edit"
+            });
             var navigationExtras = {
               queryParams: {
                 'id': this.modifyRoleObject.id,
@@ -3434,6 +3457,9 @@
               queryParams: {}
             };
             this.roleService.sendNavParam(navigationExtras);
+            this.roleService.setIndexValue({
+              index: "new"
+            });
           }
         }]);
 

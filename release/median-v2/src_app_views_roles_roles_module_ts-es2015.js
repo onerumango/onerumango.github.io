@@ -864,6 +864,11 @@ class RoleDetailsComponent {
         this.selectAllChecked = false;
     }
     ngOnInit() {
+        this.roleService.getIndexValue().subscribe(resp => {
+            if (resp.index === '') {
+                this.createRole();
+            }
+        });
         this.username = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
         this.navSubscription = this.roleService.getNavParam.subscribe(data => this.editRoleScreen = data);
         console.log(this.username);
@@ -1686,36 +1691,36 @@ class RoleDetailsComponent {
         }
         if (action == "NEW" || action == "SELECTALL") {
             roles.NEW = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
             console.log(roles.NEW, "Inside New If");
         }
         if (action == "EDIT" || action == "SELECTALL") {
             roles.EDIT = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "DELETE" || action == "SELECTALL") {
             roles.DELETE = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "CLOSE" || action == "SELECTALL") {
             roles.CLOSE = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "REOPEN" || action == "SELECTALL") {
             roles.REOPEN = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "UNLOCK" || action == "SELECTALL") {
             roles.UNLOCK = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "PRINT" || action == "SELECTALL") {
             roles.PRINT = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "AUTH" || action == "SELECTALL") {
             roles.AUTH = (event) ? "1" : "0";
-            // roles.VIEW = (event)  ? "1" : "0";
+            roles.VIEW = (event) ? "1" : "0";
         }
         if (action == "VIEW" || action == "SELECTALL") {
             roles.VIEW = (event) ? "1" : "0";
@@ -1811,6 +1816,12 @@ class RoleDetailsComponent {
         // return this.pageDeactivation();
         // console.log("The End")
         // return;
+    }
+    createRole() {
+        const navigationExtras = {
+            queryParams: {}
+        };
+        this.roleService.sendNavParam(navigationExtras);
     }
 }
 RoleDetailsComponent.ɵfac = function RoleDetailsComponent_Factory(t) { return new (t || RoleDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_6__.Ng2IzitoastService)); };
@@ -2074,6 +2085,9 @@ class RoleListComponent {
         this.modifyRoleObject = userObject;
         console.log('inside modify');
         console.log(this.modifyRoleObject);
+        this.roleService.setIndexValue({
+            index: "edit",
+        });
         const navigationExtras = {
             queryParams: {
                 'id': this.modifyRoleObject.id,
@@ -2108,6 +2122,9 @@ class RoleListComponent {
             queryParams: {}
         };
         this.roleService.sendNavParam(navigationExtras);
+        this.roleService.setIndexValue({
+            index: "new",
+        });
     }
 }
 RoleListComponent.ɵfac = function RoleListComponent_Factory(t) { return new (t || RoleListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService)); };
