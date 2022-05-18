@@ -843,7 +843,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r2.emailForm.controls.emails.invalid || !ctx_r2.emailForm.value.accountType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r2.emailForm.controls.emails.invalid || !ctx_r2.emailForm.value.accountType || !ctx_r2.submitBtn);
         }
       }
 
@@ -899,7 +899,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r17.emailForm.controls.emails.invalid || !ctx_r17.emailForm.value.accountType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r17.emailForm.controls.emails.invalid || !ctx_r17.emailForm.value.accountType || !ctx_r17.submitBtn);
         }
       }
 
@@ -1894,6 +1894,8 @@
                     icon: 'success'
                   });
                   _this9.formTouched = !_this9.emailForm.touched;
+                  _this9.modifyScreen = true;
+                  _this9.submitBtn = false;
                 }
               });
             }
@@ -1914,6 +1916,8 @@
                   _this9.auditLog();
 
                   _this9.formTouched = !_this9.emailForm.touched;
+                  _this9.modifyScreen = true;
+                  _this9.submitBtn = false;
                 } else if (resp == null) {
                   // this.masterDatapermission=false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire('Email Id Already Exit ');

@@ -293,6 +293,7 @@ class ForgetPasswordComponent {
         this.login1 = new Login();
         this.otpBtn = false;
         this.submitBtn = false;
+        this.getOtpButtonEnable = true;
         this.route.queryParams.subscribe((params) => {
             this.modifyUserObject.username = params.userId;
         });
@@ -464,6 +465,7 @@ class ForgetPasswordComponent {
                     this.isReadOnly = true;
                     this.spinnerbutton = false;
                     this.toastService.successMessage("OTP sent successfully to " + this.email, "");
+                    this.getOtpButtonEnable = false;
                 }
                 else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Unable to find User details.Verify your userid." });
@@ -645,7 +647,7 @@ ForgetPasswordComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.reactiveForm.get("confirmPassword").hasError("maxlength"));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx.otpBtn);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx.otpBtn || !ctx.getOtpButtonEnable);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx.reactiveForm.valid || ctx.submitBtn);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, ng_otp_input__WEBPACK_IMPORTED_MODULE_8__.NgOtpInputComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmb3JnZXQtcGFzc3dvcmQuY29tcG9uZW50LnNjc3MifQ== */"] });

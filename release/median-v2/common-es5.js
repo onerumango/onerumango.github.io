@@ -680,12 +680,25 @@
           this.http = http;
           this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({});
           this.getNavParam = this.paramSource.asObservable();
+          this.Index = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({
+            index: ''
+          });
         }
 
         _createClass(_UsersService, [{
           key: "sendNavParam",
           value: function sendNavParam(params) {
             this.paramSource.next(params);
+          }
+        }, {
+          key: "setIndexValue",
+          value: function setIndexValue(index) {
+            this.Index.next(index);
+          }
+        }, {
+          key: "getIndexValue",
+          value: function getIndexValue() {
+            return this.Index.asObservable();
           }
         }, {
           key: "getRoleScreenPermission",

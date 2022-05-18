@@ -1497,6 +1497,9 @@
             console.log(user);
             this.currentUser = user; // this.route.navigate(["users/modify"]);
 
+            this.userApi.setIndexValue({
+              index: "edit"
+            });
             var navigationExtras = {
               queryParams: {
                 // 'id': this.modifyUserObject.id,
@@ -1543,6 +1546,9 @@
               queryParams: {}
             };
             this.userApi.sendNavParam(navigationExtras);
+            this.userApi.setIndexValue({
+              index: "new"
+            });
           }
         }, {
           key: "exportAsXLSX",
@@ -2811,7 +2817,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r12.userObjWithAudit.recordStatus == "O" || ctx_r12.userObjWithAudit.recordStatus == "OPEN") && (ctx_r12.userObjWithAudit.verifiedOnce == "YES" || ctx_r12.userObjWithAudit.verifiedOnce == "Y") && ctx_r12.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r12.userObjWithAudit.recordStatus == "O" || ctx_r12.userObjWithAudit.recordStatus == "OPEN") && ctx_r12.roleCodes.close && (ctx_r12.userObjWithAudit.verifiedOnce == "YES" || ctx_r12.userObjWithAudit.verifiedOnce == "Y") && ctx_r12.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -3257,6 +3263,13 @@
           value: function ngOnInit() {
             var _this9 = this;
 
+            this.userApi.getIndexValue().subscribe(function (resp) {
+              console.log("index value ", resp);
+
+              if (resp.index === '') {
+                _this9.createUser();
+              }
+            });
             this.currentUser = localStorage.getItem("userFromLogin");
             this.settings = {
               singleSelection: false,
@@ -4049,6 +4062,15 @@
             // console.log("The End")
             // return;
 
+          }
+        }, {
+          key: "createUser",
+          value: function createUser() {
+            this.router.navigate(['users/new']);
+            var navigationExtras = {
+              queryParams: {}
+            };
+            this.userApi.sendNavParam(navigationExtras);
           }
         }]);
 
