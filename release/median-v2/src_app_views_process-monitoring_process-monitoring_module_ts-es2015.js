@@ -426,7 +426,7 @@ class ProcessMonitoringComponent {
         this.isLoading = true;
         this.apiService.getMonitorData().subscribe((dataresp) => {
             console.log(dataresp);
-            this.respArray = dataresp;
+            this.respArray = dataresp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();

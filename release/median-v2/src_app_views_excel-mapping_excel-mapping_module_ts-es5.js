@@ -2922,7 +2922,7 @@
               startingRow: [""],
               currency: [""],
               sheetNumber: [""],
-              headerRepeated: [""]
+              headerRepeated: [false]
             });
             this.addForm = this.fb.group({
               subArray: this.fb.array([this.getSubArray()])
@@ -2971,7 +2971,7 @@
               mappingColumn: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.maxLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern('^[a-zA-Z \-#,@,%\']+')]],
               mandatory: [false],
               // mandatory: [""],
-              headerName: [''],
+              headerName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
               dateFormat: [{
                 value: '',
                 disabled: true

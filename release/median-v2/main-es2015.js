@@ -2731,7 +2731,7 @@ class ApiService {
             permission: '',
             recordStatus: '',
             versionNo: '',
-            activeTab: ''
+            activeTab: '',
         });
         this.globalAccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
             approvedEver: '',

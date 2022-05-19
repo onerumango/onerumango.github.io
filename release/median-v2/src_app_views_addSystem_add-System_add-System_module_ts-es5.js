@@ -984,7 +984,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](80, "label", 39);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](81, "Source URI");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](81, "External URI");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](82, "span", 20);
 
@@ -7194,16 +7194,16 @@
             var _this21 = this;
 
             if (this.tempArrayList[i]) {
-              this.tempArrayList[i] = event.target.value;
+              this.tempArrayList[i] = event;
             } else {
-              this.tempArrayList.push(event.target.value);
+              this.tempArrayList.push(event);
             }
 
             var result = Object.keys(this.uploadXmlResp.nodeValueMap).map(function (key) {
               return [key, _this21.uploadXmlResp.nodeValueMap[key]];
             });
             var x = result.find(function (item) {
-              return item[0] == event.target.value;
+              return item[0] == event;
             });
             this.tcpForm.get('sysService')['controls'][i].get('headerValue').setValue(x[1]);
           }
@@ -7213,16 +7213,16 @@
             var _this22 = this;
 
             if (this.tempArrayList[i]) {
-              this.tempArrayList[i] = event.target.value;
+              this.tempArrayList[i] = event;
             } else {
-              this.tempArrayList.push(event.target.value);
+              this.tempArrayList.push(event);
             }
 
             var result = Object.keys(this.uploadXmlResp1.nodeValueMap).map(function (key) {
               return [key, _this22.uploadXmlResp1.nodeValueMap[key]];
             });
             var x = result.find(function (item) {
-              return item[0] == event.target.value;
+              return item[0] == event;
             });
             this.tcpForm1.get('sysService')['controls'][i].get('headerValue').setValue(x[1]);
           }

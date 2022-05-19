@@ -514,7 +514,7 @@ function AddSystemComponent_div_1_form_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "div", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](80, "label", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](81, "Source URI");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](81, "External URI");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](82, "span", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](83, "*");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -3832,24 +3832,24 @@ class AddSystemComponent {
     }
     onselectingTag(event, i) {
         if (this.tempArrayList[i]) {
-            this.tempArrayList[i] = event.target.value;
+            this.tempArrayList[i] = event;
         }
         else {
-            this.tempArrayList.push(event.target.value);
+            this.tempArrayList.push(event);
         }
         var result = Object.keys(this.uploadXmlResp.nodeValueMap).map((key) => [(key), this.uploadXmlResp.nodeValueMap[key]]);
-        var x = result.find(item => item[0] == event.target.value);
+        var x = result.find(item => item[0] == event);
         this.tcpForm.get('sysService')['controls'][i].get('headerValue').setValue(x[1]);
     }
     onselectingTag1(event, i) {
         if (this.tempArrayList[i]) {
-            this.tempArrayList[i] = event.target.value;
+            this.tempArrayList[i] = event;
         }
         else {
-            this.tempArrayList.push(event.target.value);
+            this.tempArrayList.push(event);
         }
         var result = Object.keys(this.uploadXmlResp1.nodeValueMap).map((key) => [(key), this.uploadXmlResp1.nodeValueMap[key]]);
-        var x = result.find(item => item[0] == event.target.value);
+        var x = result.find(item => item[0] == event);
         this.tcpForm1.get('sysService')['controls'][i].get('headerValue').setValue(x[1]);
     }
     uploadFileXmlOut(event) {

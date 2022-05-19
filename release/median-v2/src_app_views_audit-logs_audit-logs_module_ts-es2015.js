@@ -149,8 +149,8 @@ class AuditLogsComponent {
             pagingType: 'full_numbers',
             pageLength: 5,
             processing: true,
-            // columnDefs: [ { type: 'date', 'targets': [4] } ],
-            // order: [[4, 'desc']],
+            columnDefs: [{ type: 'date', 'targets': [5] }],
+            order: [[5, 'desc']],
             lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
         };
         this.getAuditLogList();
