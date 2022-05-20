@@ -2591,7 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./conversion/conversion.component */ 74982);
 /* harmony import */ var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rule-mapping-create/rule-mapping-create.component */ 7622);
 /* harmony import */ var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rule-mapping-details/rule-mapping-details.component */ 50531);
-/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 10245);
+/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 49);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -2641,7 +2641,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 54364);
 /* harmony import */ var _rule_mapping_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rule-mapping-routing.module */ 9216);
-/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 10245);
+/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 49);
 /* harmony import */ var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rule-mapping-details/rule-mapping-details.component */ 50531);
 /* harmony import */ var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rule-mapping-create/rule-mapping-create.component */ 7622);
 /* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-datatables */ 50481);
@@ -2684,7 +2684,7 @@ RuleMappingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6
 
 /***/ }),
 
-/***/ 10245:
+/***/ 49:
 /*!***************************************************************************!*\
   !*** ./src/app/views/rule-mapping/rule-mapping/rule-mapping.component.ts ***!
   \***************************************************************************/

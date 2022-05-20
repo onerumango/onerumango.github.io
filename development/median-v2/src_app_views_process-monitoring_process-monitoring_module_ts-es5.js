@@ -643,7 +643,7 @@
             this.isLoading = true;
             this.apiService.getMonitorData().subscribe(function (dataresp) {
               console.log(dataresp);
-              _this2.respArray = dataresp;
+              _this2.respArray = dataresp.result;
               _this2.isLoading = false;
 
               _this2.cdr.markForCheck();

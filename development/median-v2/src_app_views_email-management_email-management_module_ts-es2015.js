@@ -507,7 +507,7 @@ function EmailManagementCreateComponent_div_30_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r2.emailForm.controls.emails.invalid || !ctx_r2.emailForm.value.accountType);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r2.emailForm.controls.emails.invalid || !ctx_r2.emailForm.value.accountType || !ctx_r2.submitBtn);
 } }
 function EmailManagementCreateComponent_div_31_div_2_Template(rf, ctx) { if (rf & 1) {
     const _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
@@ -529,7 +529,7 @@ function EmailManagementCreateComponent_div_31_div_3_Template(rf, ctx) { if (rf 
 } if (rf & 2) {
     const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r17.emailForm.controls.emails.invalid || !ctx_r17.emailForm.value.accountType);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx_r17.emailForm.controls.emails.invalid || !ctx_r17.emailForm.value.accountType || !ctx_r17.submitBtn);
 } }
 function EmailManagementCreateComponent_div_31_div_4_Template(rf, ctx) { if (rf & 1) {
     const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
@@ -1162,6 +1162,8 @@ class EmailManagementCreateComponent {
                         icon: 'success'
                     });
                     this.formTouched = !this.emailForm.touched;
+                    this.modifyScreen = true;
+                    this.submitBtn = false;
                 }
             });
         }
@@ -1178,6 +1180,8 @@ class EmailManagementCreateComponent {
                     });
                     this.auditLog();
                     this.formTouched = !this.emailForm.touched;
+                    this.modifyScreen = true;
+                    this.submitBtn = false;
                 }
                 else if (resp == null) {
                     // this.masterDatapermission=false;

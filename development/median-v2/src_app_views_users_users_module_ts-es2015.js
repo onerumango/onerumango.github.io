@@ -843,6 +843,9 @@ class UserListComponent {
         console.log(user);
         this.currentUser = user;
         // this.route.navigate(["users/modify"]);
+        this.userApi.setIndexValue({
+            index: "edit",
+        });
         const navigationExtras = {
             queryParams: {
                 // 'id': this.modifyUserObject.id,
@@ -887,6 +890,9 @@ class UserListComponent {
             queryParams: {}
         };
         this.userApi.sendNavParam(navigationExtras);
+        this.userApi.setIndexValue({
+            index: "new",
+        });
     }
     exportAsXLSX() {
         this.allUsersList.forEach(element => {
@@ -1443,7 +1449,7 @@ function UserNewComponent_div_72_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r12.userObjWithAudit.recordStatus == "C" || ctx_r12.userObjWithAudit.recordStatus == "CLOSE") && ctx_r12.roleCodes.reopen && (ctx_r12.userObjWithAudit.verifiedOnce == "YES" || ctx_r12.userObjWithAudit.verifiedOnce == "Y") && ctx_r12.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r12.userObjWithAudit.recordStatus == "O" || ctx_r12.userObjWithAudit.recordStatus == "OPEN") && (ctx_r12.userObjWithAudit.verifiedOnce == "YES" || ctx_r12.userObjWithAudit.verifiedOnce == "Y") && ctx_r12.editFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r12.userObjWithAudit.recordStatus == "O" || ctx_r12.userObjWithAudit.recordStatus == "OPEN") && ctx_r12.roleCodes.close && (ctx_r12.userObjWithAudit.verifiedOnce == "YES" || ctx_r12.userObjWithAudit.verifiedOnce == "Y") && ctx_r12.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r12.roleCodes.delete && (ctx_r12.userObjWithAudit.verifiedOnce == "NO" || ctx_r12.userObjWithAudit.verifiedOnce == "N") && (ctx_r12.userObjWithAudit.verifiedStatus == "U" || ctx_r12.userObjWithAudit.verifiedStatus == "UNAUTHORIZED") && ctx_r12.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
@@ -1682,6 +1688,12 @@ class UserNewComponent {
         this.formTouched = true;
     }
     ngOnInit() {
+        this.userApi.getIndexValue().subscribe(resp => {
+            console.log("index value ", resp);
+            if (resp.index === '') {
+                this.createUser();
+            }
+        });
         this.currentUser = localStorage.getItem("userFromLogin");
         this.settings = {
             singleSelection: false,
@@ -2356,6 +2368,13 @@ class UserNewComponent {
         // return this.pageDeactivation();
         // console.log("The End")
         // return;
+    }
+    createUser() {
+        this.router.navigate(['users/new']);
+        const navigationExtras = {
+            queryParams: {}
+        };
+        this.userApi.sendNavParam(navigationExtras);
     }
 }
 UserNewComponent.ɵfac = function UserNewComponent_Factory(t) { return new (t || UserNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_4__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_5__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_11__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_6__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_12__.Router)); };

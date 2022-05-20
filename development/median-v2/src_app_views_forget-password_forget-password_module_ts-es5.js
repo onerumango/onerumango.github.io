@@ -402,7 +402,7 @@
 
       var ng_otp_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ng-otp-input */
-      49624);
+      50287);
       /* harmony import */
 
 
@@ -589,6 +589,7 @@
           this.login1 = new _Login();
           this.otpBtn = false;
           this.submitBtn = false;
+          this.getOtpButtonEnable = true;
           this.route.queryParams.subscribe(function (params) {
             _this.modifyUserObject.username = params.userId;
           });
@@ -765,6 +766,8 @@
                   _this5.spinnerbutton = false;
 
                   _this5.toastService.successMessage("OTP sent successfully to " + _this5.email, "");
+
+                  _this5.getOtpButtonEnable = false;
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Unable to find User details.Verify your userid."
@@ -1107,7 +1110,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx.otpBtn);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx.otpBtn || !ctx.getOtpButtonEnable);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
@@ -1177,7 +1180,7 @@
 
       var ng_otp_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ng-otp-input */
-      49624);
+      50287);
       /* harmony import */
 
 

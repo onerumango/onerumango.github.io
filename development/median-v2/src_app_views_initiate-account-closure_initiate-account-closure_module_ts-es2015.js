@@ -1,6 +1,296 @@
 "use strict";
 (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_initiate-account-closure_initiate-account-closure_module_ts"],{
 
+/***/ 50481:
+/*!**************************************************!*\
+  !*** ./node_modules/angular-datatables/index.js ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DataTableDirective": function() { return /* reexport safe */ _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective; },
+/* harmony export */   "DataTablesModule": function() { return /* reexport safe */ _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__.DataTablesModule; }
+/* harmony export */ });
+/* harmony import */ var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/angular-datatables.directive */ 9301);
+/* harmony import */ var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/angular-datatables.module */ 9368);
+/**
+ * @license
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+ */
+/**
+ * @module
+ * @description
+ * Entry point from which you should import all public library APIs.
+ */
+
+
+
+
+/***/ }),
+
+/***/ 9301:
+/*!*****************************************************************************!*\
+  !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
+  \*****************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DataTableDirective": function() { return /* binding */ DataTableDirective; }
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
+/**
+ * @license
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+ */
+
+
+
+
+var DataTableDirective =
+/** @class */
+function () {
+  function DataTableDirective(el, vcr, renderer) {
+    this.el = el;
+    this.vcr = vcr;
+    this.renderer = renderer;
+    /**
+     * The DataTable option you pass to configure your table.
+     */
+
+    this.dtOptions = {};
+  }
+
+  DataTableDirective.prototype.ngOnInit = function () {
+    var _this = this;
+
+    if (this.dtTrigger) {
+      this.dtTrigger.subscribe(function (options) {
+        _this.displayTable(options);
+      });
+    } else {
+      this.displayTable(null);
+    }
+  };
+
+  DataTableDirective.prototype.ngOnDestroy = function () {
+    if (this.dtTrigger) {
+      this.dtTrigger.unsubscribe();
+    }
+
+    if (this.dt) {
+      this.dt.destroy(true);
+    }
+  };
+
+  DataTableDirective.prototype.displayTable = function (dtOptions) {
+    var _this = this; // assign new options if provided
+
+
+    if (dtOptions) {
+      this.dtOptions = dtOptions;
+    }
+
+    this.dtInstance = new Promise(function (resolve, reject) {
+      Promise.resolve(_this.dtOptions).then(function (resolvedDTOptions) {
+        // validate object
+        var isTableEmpty = Object.keys(resolvedDTOptions).length === 0 && $('tbody tr', _this.el.nativeElement).length === 0;
+
+        if (isTableEmpty) {
+          reject('Both the table and dtOptions cannot be empty');
+          return;
+        } // Using setTimeout as a "hack" to be "part" of NgZone
+
+
+        setTimeout(function () {
+          // Assign DT properties here
+          var options = {
+            rowCallback: function (row, data, index) {
+              if (resolvedDTOptions.columns) {
+                var columns = resolvedDTOptions.columns;
+
+                _this.applyNgPipeTransform(row, columns);
+
+                _this.applyNgRefTemplate(row, columns, data);
+              } // run user specified row callback if provided.
+
+
+              if (resolvedDTOptions.rowCallback) {
+                resolvedDTOptions.rowCallback(row, data, index);
+              }
+            }
+          }; // merge user's config with ours
+
+          options = Object.assign({}, resolvedDTOptions, options);
+          _this.dt = $(_this.el.nativeElement).DataTable(options);
+          resolve(_this.dt);
+        });
+      });
+    });
+  };
+
+  DataTableDirective.prototype.applyNgPipeTransform = function (row, columns) {
+    // Filter columns with pipe declared
+    var colsWithPipe = columns.filter(function (x) {
+      return x.ngPipeInstance && !x.ngTemplateRef;
+    });
+    colsWithPipe.forEach(function (el) {
+      var pipe = el.ngPipeInstance; // find index of column using `data` attr
+
+      var i = columns.findIndex(function (e) {
+        return e.data === el.data;
+      }); // get <td> element which holds data using index
+
+      var rowFromCol = row.childNodes.item(i); // Transform data with Pipe
+
+      var rowVal = $(rowFromCol).text();
+      var rowValAfter = pipe.transform(rowVal); // Apply transformed string to <td>
+
+      $(rowFromCol).text(rowValAfter);
+    });
+  };
+
+  DataTableDirective.prototype.applyNgRefTemplate = function (row, columns, data) {
+    var _this = this; // Filter columns using `ngTemplateRef`
+
+
+    var colsWithTemplate = columns.filter(function (x) {
+      return x.ngTemplateRef && !x.ngPipeInstance;
+    });
+    colsWithTemplate.forEach(function (el) {
+      var _a = el.ngTemplateRef,
+          ref = _a.ref,
+          context = _a.context; // get <td> element which holds data using index
+
+      var i = columns.findIndex(function (e) {
+        return e.data === el.data;
+      });
+      var cellFromIndex = row.childNodes.item(i); // reset cell before applying transform
+
+      $(cellFromIndex).html(''); // render onto DOM
+      // finalize context to be sent to user
+
+      var _context = Object.assign({}, context, context === null || context === void 0 ? void 0 : context.userData, {
+        adtData: data
+      });
+
+      var instance = _this.vcr.createEmbeddedView(ref, _context);
+
+      _this.renderer.appendChild(cellFromIndex, instance.rootNodes[0]);
+    });
+  };
+
+  DataTableDirective.ɵfac = function DataTableDirective_Factory(t) {
+    return new (t || DataTableDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2));
+  };
+
+  DataTableDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: DataTableDirective,
+    selectors: [["", "datatable", ""]],
+    inputs: {
+      dtOptions: "dtOptions",
+      dtTrigger: "dtTrigger"
+    }
+  });
+  return DataTableDirective;
+}();
+
+
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataTableDirective, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[datatable]'
+    }]
+  }], function () {
+    return [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
+    }, {
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef
+    }, {
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2
+    }];
+  }, {
+    dtOptions: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    dtTrigger: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }]
+  });
+})();
+
+/***/ }),
+
+/***/ 9368:
+/*!**************************************************************************!*\
+  !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
+  \**************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DataTablesModule": function() { return /* binding */ DataTablesModule; }
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./angular-datatables.directive */ 9301);
+/**
+ * @license
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+ */
+
+
+
+
+
+var DataTablesModule =
+/** @class */
+function () {
+  function DataTablesModule() {}
+
+  DataTablesModule.forRoot = function () {
+    return {
+      ngModule: DataTablesModule
+    };
+  };
+
+  DataTablesModule.ɵfac = function DataTablesModule_Factory(t) {
+    return new (t || DataTablesModule)();
+  };
+
+  DataTablesModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+    type: DataTablesModule
+  });
+  DataTablesModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+    imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]]
+  });
+  return DataTablesModule;
+}();
+
+
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](DataTablesModule, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.NgModule,
+    args: [{
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule],
+      declarations: [_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective],
+      exports: [_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective]
+    }]
+  }], null, null);
+})();
+
+/***/ }),
+
 /***/ 58179:
 /*!*********************************************************************!*\
   !*** ./src/app/shared/models/FetchUserForSingleAccClosureReqDTO.ts ***!
@@ -597,6 +887,11 @@ class AccountClosureDetailsComponent {
         this.modifyScreen = false;
     }
     ngOnInit() {
+        this.accClosure.getIndexValue().subscribe(resp => {
+            if (resp.index === '') {
+                this.createAccClosure();
+            }
+        });
         this.currentUser = localStorage.getItem('currentUser').replace(/['"]+/g, '');
         this.navSubscription = this.roleService.getNavParam.subscribe(data => this.initiateAccClosure = data);
         // this.accountClosureForm = this.formBuilder.group({
@@ -1159,13 +1454,19 @@ class AccountClosureDetailsComponent {
             }
         });
     }
+    createAccClosure() {
+        const navigationExtras = {
+            queryParams: {}
+        };
+        this.roleService.sendNavParam(navigationExtras);
+    }
 }
 AccountClosureDetailsComponent.ɵfac = function AccountClosureDetailsComponent_Factory(t) { return new (t || AccountClosureDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_account_closure_service_service__WEBPACK_IMPORTED_MODULE_3__.AccountClosureServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_4__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_5__.RoleService)); };
 AccountClosureDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: AccountClosureDetailsComponent, selectors: [["npr-account-closure-details"]], decls: 42, vars: 13, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle", "cardWidth"], [1, "row", "gy-4", "justify-content-center"], [1, "col-12"], [1, "row", "g-2", "justify-content-center"], [1, "col-sm-4", "col-5"], [1, "radio", "radioStyle"], ["id", "radio-1", "name", "radio", "type", "radio", 3, "readonly", "checked", "click"], ["for", "radio-1", 1, "radio-label"], ["id", "radio-2", "name", "radio", "type", "radio", 3, "readonly", "checked", "click"], ["for", "radio-2", 1, "radio-label"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["formControlName", "accountType", "aria-label", "Default select example", 1, "form-select"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["value", "dormant"], ["value", "overDrawn"], ["value", "unclaimed"], ["class", "errorColor", 4, "ngIf"], ["class", "col-12", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], [1, "errorColor"], [4, "ngIf"], ["id", "accountNumber", "placeholder", "Account Number", "required", "", "formControlName", "accountNumber", "value", "", 1, "form-control", 3, "readonly"], ["id", "branchCode", "placeholder", "Branch Code", "required", "", "formControlName", "branchCode", "value", "", 1, "form-control", 3, "readonly"], ["id", "", "placeholder", "Reason For Closure", "required", "", "formControlName", "reasonForClosure", "value", "", 1, "form-control", 3, "readonly"], [1, "fileUpload"], [1, "formS"], ["data-text", "File Upload", 1, "file-upload-wrapper"], ["name", "file-upload-field", "type", "file", "value", "", 1, "file-upload-field", 3, "readonly", "disabled", "change"], ["style", "font-size: 11px;color:#a30202", 4, "ngIf"], [2, "font-size", "11px", "color", "#a30202"], [1, "row", "g-3", "pb-3", "justify-content-center", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["routerLink", "/initiate-account-closure", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "dbCardStyle"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]], template: function AccountClosureDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Account Closure");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Initiate Account Closure");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "form", 3);
@@ -1468,6 +1769,9 @@ class InitiateAccountClosureComponent {
             queryParams: {}
         };
         this.roleService.sendNavParam(navigationExtras);
+        this.accClosureServiceSum.setIndexValue({
+            index: "new",
+        });
     }
     getDataFromSummary(row) {
         console.log("this is row", row);
@@ -1523,6 +1827,9 @@ class InitiateAccountClosureComponent {
         // this.router.navigate(['initiate-account-closure/create'], navigationExtras);
         this.roleService.sendNavParam(navigationExtras);
         this.router.navigate(['/initiate-account-closure/create']);
+        this.accClosureServiceSum.setIndexValue({
+            index: "edit",
+        });
     }
     newRolePermissions() {
         this.roleService.fetchScreenPermissions('Initiate Account Closure');
@@ -1544,7 +1851,7 @@ InitiateAccountClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMP
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Account Closure Summary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Initiate Account Closure ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 3);

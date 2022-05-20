@@ -20252,6 +20252,7 @@ class ProcessCodeMappingEditComponent {
         this.apiService
             .updateExtSys(this.processCodeEditForm.value)
             .subscribe((resp) => {
+            debugger;
             this.processCodeSummary = resp;
             if (this.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -20259,8 +20260,7 @@ class ProcessCodeMappingEditComponent {
                     icon: 'success'
                 });
                 this.submitEdit = true;
-                this.processCodeEditForm.reset();
-                this.formTouched = !this.processCodeEditForm.touched;
+                // this.formTouched=!this.processCodeEditForm.touched;
                 this.auditLog();
             }
             else {

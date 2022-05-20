@@ -4431,6 +4431,7 @@
           value: function getProcessNamesBasedOnExtSysNameForUpload(extSysName) {
             var _this22 = this;
 
+            console.log(extSysName);
             this.processNames = [];
 
             if (this.disablebtn2) {
@@ -4442,6 +4443,8 @@
 
               if (_this22.processNames.length === 1 && _this22.processNames != undefined) {
                 _this22.uploadExcelForm.get('processNameData').setValue(_this22.processNames[0]);
+
+                _this22.enablefilebrowser = true;
               }
             });
           }
