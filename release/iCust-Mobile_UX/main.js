@@ -1431,7 +1431,7 @@ let ApiService = class ApiService {
     getDashboardDataNew(customerId) {
         return this.http.get(`${API_URL}/teller-service/api/mobile/${customerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
     }
-    getTransactionByAccountId(accountId, page, formattedFromDate, formattedToDate) {
+    getTransactionByAccountId(accountId, page, formattedFromDate, formattedToDate, size) {
         var params;
         if ((accountId != null || accountId != '' || accountId.length != 0) && page == 0) {
             console.log('only accountId');
@@ -1442,8 +1442,15 @@ let ApiService = class ApiService {
                     .append('toDate', formattedToDate);
             }
             else {
-                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                    .append('accountNumber', accountId);
+                if (size > 20) {
+                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                        .append('accountNumber', accountId)
+                        .append('size', size);
+                }
+                else {
+                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                        .append('accountNumber', accountId);
+                }
             }
         }
         else {
@@ -1456,9 +1463,17 @@ let ApiService = class ApiService {
                     .append('toDate', formattedToDate);
             }
             else {
-                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                    .append('accountNumber', accountId)
-                    .append('page', page);
+                if (size > 20) {
+                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                        .append('accountNumber', accountId)
+                        .append('page', page)
+                        .append('size', size);
+                }
+                else {
+                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+                        .append('accountNumber', accountId)
+                        .append('page', page);
+                }
             }
         }
         return this.http.get(`${API_URL}/cash-deposit/api/fetchTransaction?${params}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
