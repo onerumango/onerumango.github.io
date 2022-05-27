@@ -20707,7 +20707,7 @@
             var _this6 = this;
 
             this.api.getAllUsersListService().subscribe(function (resp) {
-              _this6.allUsersList = resp; // this.allUsersList = (resp as any).resp;
+              _this6.allUsersList = resp.result; // this.allUsersList = (resp as any).resp;
               // this.dataSource = new MatTableDataSource<User>(this.allUsersList);
               // this.dataSource.sort = this.sort;
               // this.dataSource.paginator = this.paginator;

@@ -1525,7 +1525,7 @@ class DashboardAnalyticsComponent {
     }
     getAllUsers() {
         this.api.getAllUsersListService().subscribe(resp => {
-            this.allUsersList = resp;
+            this.allUsersList = resp.result;
             // this.allUsersList = (resp as any).resp;
             // this.dataSource = new MatTableDataSource<User>(this.allUsersList);
             // this.dataSource.sort = this.sort;

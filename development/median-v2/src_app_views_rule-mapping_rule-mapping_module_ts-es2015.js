@@ -233,7 +233,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_9_option_
 } if (rf & 2) {
     const tag_r26 = ctx.$implicit;
     const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r25.try(tag_r26.messageBasis))("value", tag_r26.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r25.try(tag_r26.messageKey))("value", tag_r26.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("", tag_r26.messageKey, " ", tag_r26.messageBasis, "");
 } }
@@ -266,7 +266,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_10_option
 } if (rf & 2) {
     const tag_r33 = ctx.$implicit;
     const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r32.try(tag_r33.messageKey))("value", tag_r33.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r32.try(tag_r33.messageKey))("value", tag_r33.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](tag_r33.messageKey);
 } }
@@ -304,7 +304,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_15_option
 } if (rf & 2) {
     const fname_r40 = ctx.$implicit;
     const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r39.try2(fname_r40.messageBasis))("value", fname_r40.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r39.try2(fname_r40.messageKey))("value", fname_r40.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", fname_r40.messageKey, " ", fname_r40.messageBasis, "");
 } }
@@ -337,7 +337,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_16_option
 } if (rf & 2) {
     const fname_r48 = ctx.$implicit;
     const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r47.try2(fname_r48.messageBasis))("value", fname_r48.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r47.try2(fname_r48.messageKey))("value", fname_r48.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", fname_r48.messageKey, "");
 } }
@@ -795,7 +795,7 @@ class RuleMappingCreateComponent {
         // return of (true);	
         if (this.ruleMappingForm.touched && this.formTouched == true) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
         }
@@ -1773,7 +1773,7 @@ function RuleMappingDetailsComponent_div_80_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r0.submit);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !(ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.approvedStatus == "U" || ctx_r0.addSysRespData.approvedStatus == "UNAUTHORIZED") && ctx_r0.roleCodes.auth);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
@@ -1878,7 +1878,7 @@ class RuleMappingDetailsComponent {
         // return of (true);
         if (this.ruleMappingForm.touched && this.formTouched == true) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
         }

@@ -1237,7 +1237,7 @@ function AccountClosureMaintenanceComponent_div_58_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r11.accAuditDetails.inputBy);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](26, 8, ctx_r11.accAuditDetails.inputTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](26, 8, ctx_r11.accAuditDetails.inputTime, "MM/dd/yyyy, h:mm a"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r11.accAuditDetails.recordStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
@@ -1245,7 +1245,7 @@ function AccountClosureMaintenanceComponent_div_58_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r11.accAuditDetails.modNo);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](75, 10, ctx_r11.accAuditDetails.verifiedTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](75, 11, ctx_r11.accAuditDetails.verifiedTime, "MM/dd/yyyy, h:mm a"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r11.accAuditDetails.verifiedOnce);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
@@ -1370,7 +1370,7 @@ class AccountClosureMaintenanceComponent {
         // return of (true);
         if (this.accountTypeForm.touched && (this.formTouched1 == true || this.formTouched2 == true)) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(result);
         }
@@ -1755,7 +1755,7 @@ AccountClosureMaintenanceComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](58, AccountClosureMaintenanceComponent_div_58_Template, 100, 12, "div", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](58, AccountClosureMaintenanceComponent_div_58_Template, 100, 14, "div", 33);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx.accountTypeForm);

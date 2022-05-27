@@ -208,11 +208,12 @@ class HeaderComponent {
     }
     getTransactionCodeSummary() {
         this.api.gettingTransactionCodeSummary().subscribe(resp => {
+            var _a;
             this.transactionCodeData = resp.result;
             console.log(this.transactionCodeData, "Transaction Code Data");
             for (let i = 0; i <= this.transactionCodeData.length; i++) {
                 // console.log("Looooppppp")
-                if (this.transactionCodeData[i].verifiedStatus == 'U') {
+                if (((_a = this.transactionCodeData[i]) === null || _a === void 0 ? void 0 : _a.verifiedStatus) == 'U') {
                     // console.log("UnAUthorized");
                     this.unAUthorizedUsers.push(this.transactionCodeData[i]);
                 }
@@ -2948,6 +2949,7 @@ class ApiService {
         return this.globalGccSummary.asObservable();
     }
     setGlobalAccSummary(summaryData) {
+        console.log(summaryData);
         this.globalAccSummary.next(summaryData);
     }
     getGlobalAccSummary() {

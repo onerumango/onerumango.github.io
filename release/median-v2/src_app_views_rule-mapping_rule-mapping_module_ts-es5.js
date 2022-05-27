@@ -513,7 +513,7 @@
 
           var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r25["try"](tag_r26.messageBasis))("value", tag_r26.messageBasis);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r25["try"](tag_r26.messageKey))("value", tag_r26.messageKey);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -587,7 +587,7 @@
 
           var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r32["try"](tag_r33.messageKey))("value", tag_r33.messageBasis);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r32["try"](tag_r33.messageKey))("value", tag_r33.messageKey);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -671,7 +671,7 @@
 
           var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r39.try2(fname_r40.messageBasis))("value", fname_r40.messageBasis);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r39.try2(fname_r40.messageKey))("value", fname_r40.messageKey);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -745,7 +745,7 @@
 
           var ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r47.try2(fname_r48.messageBasis))("value", fname_r48.messageBasis);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r47.try2(fname_r48.messageKey))("value", fname_r48.messageKey);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -1671,7 +1671,7 @@
 
             if (this.ruleMappingForm.touched && this.formTouched == true) {
               var swalMsg = '';
-              var result = confirm('There are unsaved changes! Are you sure?');
+              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
               console.log("result: ", result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
             } else {
@@ -3465,7 +3465,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !(ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -3605,7 +3605,7 @@
 
             if (this.ruleMappingForm.touched && this.formTouched == true) {
               var swalMsg = '';
-              var result = confirm('There are unsaved changes! Are you sure?');
+              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
               console.log("result: ", result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
             } else {
@@ -4846,7 +4846,7 @@
 
       var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./rule-mapping/rule-mapping.component */
-      10245);
+      49);
       /* harmony import */
 
 
@@ -4935,7 +4935,7 @@
 
       var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./rule-mapping/rule-mapping.component */
-      10245);
+      49);
       /* harmony import */
 
 
@@ -5005,7 +5005,7 @@
     },
 
     /***/
-    10245:
+    49:
     /*!***************************************************************************!*\
       !*** ./src/app/views/rule-mapping/rule-mapping/rule-mapping.component.ts ***!
       \***************************************************************************/

@@ -1806,7 +1806,7 @@ class RoleDetailsComponent {
         // return of (true);
         if (this.myform.touched && this.formTouched == true) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.of)(result);
         }

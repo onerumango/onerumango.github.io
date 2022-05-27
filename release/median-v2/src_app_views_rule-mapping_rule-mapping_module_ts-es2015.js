@@ -233,7 +233,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_9_option_
 } if (rf & 2) {
     const tag_r26 = ctx.$implicit;
     const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r25.try(tag_r26.messageBasis))("value", tag_r26.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r25.try(tag_r26.messageKey))("value", tag_r26.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("", tag_r26.messageKey, " ", tag_r26.messageBasis, "");
 } }
@@ -266,7 +266,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_10_option
 } if (rf & 2) {
     const tag_r33 = ctx.$implicit;
     const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r32.try(tag_r33.messageKey))("value", tag_r33.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r32.try(tag_r33.messageKey))("value", tag_r33.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](tag_r33.messageKey);
 } }
@@ -304,7 +304,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_15_option
 } if (rf & 2) {
     const fname_r40 = ctx.$implicit;
     const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r39.try2(fname_r40.messageBasis))("value", fname_r40.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r39.try2(fname_r40.messageKey))("value", fname_r40.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", fname_r40.messageKey, " ", fname_r40.messageBasis, "");
 } }
@@ -337,7 +337,7 @@ function RuleMappingCreateComponent_div_81_ng_container_2_ng_container_16_option
 } if (rf & 2) {
     const fname_r48 = ctx.$implicit;
     const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r47.try2(fname_r48.messageBasis))("value", fname_r48.messageBasis);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx_r47.try2(fname_r48.messageKey))("value", fname_r48.messageKey);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", fname_r48.messageKey, "");
 } }
@@ -795,7 +795,7 @@ class RuleMappingCreateComponent {
         // return of (true);	
         if (this.ruleMappingForm.touched && this.formTouched == true) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
         }
@@ -1773,7 +1773,7 @@ function RuleMappingDetailsComponent_div_80_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r0.submit);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !(ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.approvedStatus == "U" || ctx_r0.addSysRespData.approvedStatus == "UNAUTHORIZED") && ctx_r0.roleCodes.auth);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
@@ -1878,7 +1878,7 @@ class RuleMappingDetailsComponent {
         // return of (true);
         if (this.ruleMappingForm.touched && this.formTouched == true) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
         }
@@ -2591,7 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./conversion/conversion.component */ 74982);
 /* harmony import */ var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rule-mapping-create/rule-mapping-create.component */ 7622);
 /* harmony import */ var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rule-mapping-details/rule-mapping-details.component */ 50531);
-/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 10245);
+/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 49);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -2641,7 +2641,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 54364);
 /* harmony import */ var _rule_mapping_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rule-mapping-routing.module */ 9216);
-/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 10245);
+/* harmony import */ var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rule-mapping/rule-mapping.component */ 49);
 /* harmony import */ var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rule-mapping-details/rule-mapping-details.component */ 50531);
 /* harmony import */ var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rule-mapping-create/rule-mapping-create.component */ 7622);
 /* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-datatables */ 50481);
@@ -2684,7 +2684,7 @@ RuleMappingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6
 
 /***/ }),
 
-/***/ 10245:
+/***/ 49:
 /*!***************************************************************************!*\
   !*** ./src/app/views/rule-mapping/rule-mapping/rule-mapping.component.ts ***!
   \***************************************************************************/

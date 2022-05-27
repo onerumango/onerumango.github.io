@@ -353,6 +353,281 @@
     },
 
     /***/
+    60965:
+    /*!********************************************************************!*\
+      !*** ./src/app/shared/services/account-closure-service.service.ts ***!
+      \********************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+
+
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */
+        "API_URL": function API_URL() {
+          return (
+            /* binding */
+            _API_URL
+          );
+        },
+
+        /* harmony export */
+        "AccountClosureServiceService": function AccountClosureServiceService() {
+          return (
+            /* binding */
+            _AccountClosureServiceService
+          );
+        }
+        /* harmony export */
+
+      });
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! rxjs */
+      76491);
+      /* harmony import */
+
+
+      var file_saver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! file-saver */
+      97797);
+      /* harmony import */
+
+
+      var file_saver__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_0__);
+      /* harmony import */
+
+
+      var xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! xlsx */
+      88031);
+      /* harmony import */
+
+
+      var xlsx__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! src/app/shared/config/app.constant */
+      3118);
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/core */
+      2316);
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/common/http */
+      53882);
+
+      var _API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__.AppConstants.acctCloserUrl;
+      var EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+      var EXCEL_EXTENSION = '.xlsx';
+
+      var _AccountClosureServiceService = /*#__PURE__*/function () {
+        function _AccountClosureServiceService(http) {
+          _classCallCheck(this, _AccountClosureServiceService);
+
+          this.http = http;
+          this.datafinal = [];
+          this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({});
+          this.getNavParam = this.paramSource.asObservable();
+          this.Index = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({
+            index: ''
+          });
+          this.excel = [];
+        }
+
+        _createClass(_AccountClosureServiceService, [{
+          key: "setIndexValue",
+          value: function setIndexValue(index) {
+            this.Index.next(index);
+          }
+        }, {
+          key: "getIndexValue",
+          value: function getIndexValue() {
+            return this.Index.asObservable();
+          }
+        }, {
+          key: "sendNavParam",
+          value: function sendNavParam(params) {
+            this.paramSource.next(params);
+          }
+        }, {
+          key: "onSingleClosure",
+          value: function onSingleClosure(data, inputby) {
+            console.log(data);
+            return this.http.post("".concat(_API_URL, "/api2/createAccountClosure/").concat(inputby), data);
+          }
+        }, {
+          key: "onViewOfSingleClsureType",
+          value: function onViewOfSingleClsureType(accType, closureType, accountNumber) {
+            console.log("this is in service of ");
+            return this.http.get("".concat(_API_URL, "/api2/getDetailsSingleReport/").concat(accType, "/").concat(closureType, "/").concat(accountNumber));
+          }
+        }, {
+          key: "gettingAccountClosureSummary",
+          value: function gettingAccountClosureSummary(currentUser) {
+            return this.http.get("".concat(_API_URL, "/api2/getSummary/").concat(currentUser));
+          } // -------------After Edit of Bulk Closure----------
+
+        }, {
+          key: "gettingEditData",
+          value: function gettingEditData(inputBy) {
+            return this.http.get("".concat(_API_URL, "/api2/modify/").concat(inputBy));
+          }
+        }, {
+          key: "submiitingSingleClosureRecordAfterEdit",
+          value: function submiitingSingleClosureRecordAfterEdit(data, inputBy, id) {
+            console.log("single edit ", id);
+            return this.http.post("".concat(_API_URL, "/api2/modify/").concat(inputBy, "/").concat(id), data);
+          } //--------------file upload-------------
+
+        }, {
+          key: "onFileUpload",
+          value: function onFileUpload(file, accountType, closure, inputBy) {
+            console.log("this is in service", file);
+            console.log("checing null or not", accountType);
+            console.log(closure);
+            var formData = new FormData();
+            formData.append('file', file);
+            return this.http.post("".concat(_API_URL, "/file/saveFileDataToDB/").concat(accountType, "/").concat(closure, "/").concat(inputBy), formData); // ------------For upload Percentage------
+            // return this.http.post(`${API_URL}/api2/fileUpload`, formData,{reportProgress: true, observe: 'events'})
+          } // ------------- Excel Download without header color------------
+
+        }, {
+          key: "exportAsExcelFile",
+          value: function exportAsExcelFile(json, excelFileName) {
+            console.log(excelFileName);
+            console.log(json);
+            var worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
+            var workbook = {
+              Sheets: {
+                'data': worksheet
+              },
+              SheetNames: ['data']
+            };
+            var excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, {
+              bookType: 'xlsx',
+              type: 'array'
+            });
+            this.saveAsExcelFile(excelBuffer, excelFileName);
+          }
+        }, {
+          key: "saveAsExcelFile",
+          value: function saveAsExcelFile(buffer, fileName) {
+            var data = new Blob([buffer], {
+              type: EXCEL_TYPE
+            });
+            file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+          } // --------------Excel Download for Single---------------
+
+        }, {
+          key: "exportAsExcelForSingleAccount",
+          value: function exportAsExcelForSingleAccount(json, excelFileName) {
+            console.log(excelFileName);
+            console.log(json);
+            var worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
+            worksheet.blankRows = false;
+            var workbook = {
+              Sheets: {
+                'data': worksheet
+              },
+              SheetNames: ['data']
+            };
+            var excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, {
+              bookType: 'xlsx',
+              type: 'array'
+            });
+            this.saveAsExcelSingle(excelBuffer, excelFileName);
+          }
+        }, {
+          key: "saveAsExcelSingle",
+          value: function saveAsExcelSingle(buffer, fileName) {
+            var data = new Blob([buffer], {
+              type: EXCEL_TYPE
+            });
+            file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+          } // -------------------Excel Download color---------------------------
+          //getting excel for bulk
+
+        }, {
+          key: "getExcel",
+          value: function getExcel(filename, accountType) {
+            console.log("this is send fileName and getFile", accountType);
+            console.log(filename);
+            return this.http.get("".concat(_API_URL, "/file/download/").concat(filename, "/").concat(accountType));
+          }
+        }, {
+          key: "onDeletingTheReocrd",
+          value: function onDeletingTheReocrd(fileName, accountType, inputBy) {
+            console.log("file", fileName, "accType", accountType, "maker", inputBy);
+            return this.http.get("".concat(_API_URL, "/file/cancelProcess/").concat(accountType, "/").concat(fileName, "/").concat(inputBy));
+          }
+        }, {
+          key: "onDeletingSingle",
+          value: function onDeletingSingle(accountNumber, accntType, closure, maker) {
+            console.log("in service", accountNumber, accntType, closure, maker);
+            return this.http.get("".concat(_API_URL, "/api2/cancelProcess/").concat(accountNumber, "/").concat(accntType, "/").concat(closure, "/").concat(maker));
+          } // -----------Process the Bulk record---------
+
+        }, {
+          key: "processTheBulkRecord",
+          value: function processTheBulkRecord(fileName, accountType, inputBy) {
+            console.log("file", fileName, "accType", accountType, "maker", inputBy);
+            return this.http.get("".concat(_API_URL, "/api2/process/").concat(fileName, "/").concat(accountType, "/").concat(inputBy));
+          } // -----------Process the Single record---------
+
+        }, {
+          key: "processTheSingleRecord",
+          value: function processTheSingleRecord(accountNumber, inputBy) {
+            console.log(accountNumber, "maker", inputBy);
+            return this.http.get("".concat(_API_URL, "/api2/processStatus/").concat(accountNumber, "/").concat(inputBy));
+          } // ----------------Adit Log Method-----------------
+
+        }, {
+          key: "onAuthorizingTheRecord",
+          value: function onAuthorizingTheRecord(accountNumber, authorizer) {
+            console.log("this is authorization");
+            return this.http.get("".concat(_API_URL, "/api2/verify/").concat(accountNumber, "/").concat(authorizer));
+          }
+        }, {
+          key: "onClosingTheRecord",
+          value: function onClosingTheRecord(accountNumber, inputBy) {
+            console.log("this is Closing Action");
+            return this.http.get("".concat(_API_URL, "/api2/close/").concat(accountNumber, "/").concat(inputBy));
+          }
+        }, {
+          key: "onReopningTheRecord",
+          value: function onReopningTheRecord(accountNumber, inputBy) {
+            return this.http.get("".concat(_API_URL, "/api2//").concat(accountNumber, "/").concat(inputBy));
+          }
+        }]);
+
+        return _AccountClosureServiceService;
+      }();
+
+      _AccountClosureServiceService.ɵfac = function AccountClosureServiceService_Factory(t) {
+        return new (t || _AccountClosureServiceService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient));
+      };
+
+      _AccountClosureServiceService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
+        token: _AccountClosureServiceService,
+        factory: _AccountClosureServiceService.ɵfac,
+        providedIn: 'root'
+      });
+      /***/
+    },
+
+    /***/
     58219:
     /*!**************************************************!*\
       !*** ./src/app/shared/services/excel.service.ts ***!
@@ -618,7 +893,7 @@
         "API_URL": function API_URL() {
           return (
             /* binding */
-            _API_URL
+            _API_URL2
           );
         },
 
@@ -665,7 +940,7 @@
       /*! @angular/common/http */
       53882);
 
-      var _API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
+      var _API_URL2 = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
 
       var _rolepermission = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/rolePermission'; //export const rolepermission1 = AppConstants.baseURL + '/fmsRoles';
       //export const API_URL = 'http://192.168.0.142:8010';
@@ -708,48 +983,48 @@
         }, {
           key: "getUserAuditService",
           value: function getUserAuditService(userId) {
-            return this.http.get("".concat(_API_URL, "/users/getModifiedUser/").concat(userId));
+            return this.http.get("".concat(_API_URL2, "/users/getModifiedUser/").concat(userId));
           }
         }, {
           key: "getUserObjModified",
           value: function getUserObjModified(userId) {
-            return this.http.get("".concat(_API_URL, "/users/getModifiedUser/").concat(userId));
+            return this.http.get("".concat(_API_URL2, "/users/getModifiedUser/").concat(userId));
           }
         }, {
           key: "createUserService",
           value: function createUserService(user) {
-            return this.http.post("".concat(_API_URL, "/users/createUser"), user);
+            return this.http.post("".concat(_API_URL2, "/users/createUser"), user);
           }
         }, {
           key: "modifyUserService",
           value: function modifyUserService(user) {
-            return this.http.post("".concat(_API_URL, "/users/modifyUser"), user);
+            return this.http.post("".concat(_API_URL2, "/users/modifyUser"), user);
           }
         }, {
           key: "getAllUsersListService",
           value: function getAllUsersListService() {
-            return this.http.get("".concat(_API_URL, "/users/getAllUsers"));
+            return this.http.get("".concat(_API_URL2, "/users/getAllUsers"));
           }
         }, {
           key: "getAllRoleNameService",
           value: function getAllRoleNameService() {
-            return this.http.get("".concat(_API_URL, "/users/getAllRoleNames"));
+            return this.http.get("".concat(_API_URL2, "/users/getAllRoleNames"));
           }
         }, {
           key: "getAllRoleNameServiceU",
           value: function getAllRoleNameServiceU() {
-            return this.http.get("".concat(_API_URL, "/users/getAllRoleNamesU"));
+            return this.http.get("".concat(_API_URL2, "/users/getAllRoleNamesU"));
           }
         }, {
           key: "getAllAuthRole",
           value: function getAllAuthRole() {
-            return this.http.get("".concat(_API_URL, "/medRoles/fetchAllRolesSummary"));
+            return this.http.get("".concat(_API_URL2, "/medRoles/fetchAllRolesSummary"));
           } // audit log starts
 
         }, {
           key: "onClickOfAuthOfUsers",
           value: function onClickOfAuthOfUsers(authUser) {
-            return this.http.get("".concat(_API_URL, "/users/getAllRoleNames"));
+            return this.http.get("".concat(_API_URL2, "/users/getAllRoleNames"));
           }
         }, {
           key: "onClickOfOpenOfUsers",
@@ -760,32 +1035,32 @@
         }, {
           key: "onClickOfAuthOfModifyUsers",
           value: function onClickOfAuthOfModifyUsers(obj) {
-            return this.http.put("".concat(_API_URL, "/users/authorizeUser"), obj);
+            return this.http.put("".concat(_API_URL2, "/users/authorizeUser"), obj);
           }
         }, {
           key: "onClickOfCloseOfModifyUsers",
           value: function onClickOfCloseOfModifyUsers(authDto) {
-            return this.http.put("".concat(_API_URL, "/users/closeUser"), authDto);
+            return this.http.put("".concat(_API_URL2, "/users/closeUser"), authDto);
           }
         }, {
           key: "onClickOfReopenOfModifyUser",
           value: function onClickOfReopenOfModifyUser(authDto) {
-            return this.http.put("".concat(_API_URL, "/users/reopenUser"), authDto);
+            return this.http.put("".concat(_API_URL2, "/users/reopenUser"), authDto);
           }
         }, {
           key: "onClickOfDeleteOfModifyUser",
           value: function onClickOfDeleteOfModifyUser(userobjForDelete) {
-            return this.http["delete"]("".concat(_API_URL, "/users/deleteUser/").concat(userobjForDelete));
+            return this.http["delete"]("".concat(_API_URL2, "/users/deleteUser/").concat(userobjForDelete));
           }
         }, {
           key: "statusChangeUser",
           value: function statusChangeUser(user_id) {
-            return this.http.get("".concat(_API_URL, "/users/statusUser/").concat(user_id));
+            return this.http.get("".concat(_API_URL2, "/users/statusUser/").concat(user_id));
           }
         }, {
           key: "refreshGl",
           value: function refreshGl() {
-            return this.http.get("".concat(_API_URL, "/refxch"));
+            return this.http.get("".concat(_API_URL2, "/refxch"));
           }
         }]);
 
@@ -821,7 +1096,7 @@
         "API_URL": function API_URL() {
           return (
             /* binding */
-            _API_URL2
+            _API_URL3
           );
         },
 
@@ -862,7 +1137,7 @@
       /*! @angular/common/http */
       53882);
 
-      var _API_URL2 = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
+      var _API_URL3 = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL;
 
       var _rolepermission2 = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/rolePermission';
 
@@ -881,47 +1156,47 @@
         }, {
           key: "getUserAuditService",
           value: function getUserAuditService(userId) {
-            return this.http.get("".concat(_API_URL2, "/users/getModifiedUser/").concat(userId));
+            return this.http.get("".concat(_API_URL3, "/users/getModifiedUser/").concat(userId));
           }
         }, {
           key: "getUserObjModified",
           value: function getUserObjModified(userId) {
-            return this.http.get("".concat(_API_URL2, "/users/getModifiedUser/").concat(userId));
+            return this.http.get("".concat(_API_URL3, "/users/getModifiedUser/").concat(userId));
           }
         }, {
           key: "createUserService",
           value: function createUserService(user) {
-            return this.http.post("".concat(_API_URL2, "/users/createUser"), user);
+            return this.http.post("".concat(_API_URL3, "/users/createUser"), user);
           }
         }, {
           key: "modifyUserService",
           value: function modifyUserService(user) {
-            return this.http.post("".concat(_API_URL2, "/users/modifyUser"), user);
+            return this.http.post("".concat(_API_URL3, "/users/modifyUser"), user);
           }
         }, {
           key: "getAllUsersListService",
           value: function getAllUsersListService() {
-            return this.http.get("".concat(_API_URL2, "/users/getAllUsers"));
+            return this.http.get("".concat(_API_URL3, "/users/getAllUsers"));
           }
         }, {
           key: "getAllRoleNameService",
           value: function getAllRoleNameService() {
-            return this.http.get("".concat(_API_URL2, "/users/getAllRoleNames"));
+            return this.http.get("".concat(_API_URL3, "/users/getAllRoleNames"));
           }
         }, {
           key: "getAllRoleNameServiceU",
           value: function getAllRoleNameServiceU() {
-            return this.http.get("".concat(_API_URL2, "/users/getAllRoleNamesU"));
+            return this.http.get("".concat(_API_URL3, "/users/getAllRoleNamesU"));
           }
         }, {
           key: "getAllAuthRole",
           value: function getAllAuthRole() {
-            return this.http.get("".concat(_API_URL2, "/medRoles/fetchAllRolesSummary"));
+            return this.http.get("".concat(_API_URL3, "/medRoles/fetchAllRolesSummary"));
           }
         }, {
           key: "onClickOfAuthOfUsers",
           value: function onClickOfAuthOfUsers(authUser) {
-            return this.http.get("".concat(_API_URL2, "/users/getAllRoleNames"));
+            return this.http.get("".concat(_API_URL3, "/users/getAllRoleNames"));
           }
         }, {
           key: "onClickOfOpenOfUsers",
@@ -929,32 +1204,32 @@
         }, {
           key: "onClickOfAuthOfModifyUsers",
           value: function onClickOfAuthOfModifyUsers(userId, makerId) {
-            return this.http.get("".concat(_API_URL2, "/users/authorizeUser/").concat(userId, "/").concat(makerId));
+            return this.http.get("".concat(_API_URL3, "/users/authorizeUser/").concat(userId, "/").concat(makerId));
           }
         }, {
           key: "onClickOfCloseOfModifyUsers",
           value: function onClickOfCloseOfModifyUsers(userId, makerId) {
-            return this.http.get("".concat(_API_URL2, "/users/closeUser/").concat(userId, "/").concat(makerId));
+            return this.http.get("".concat(_API_URL3, "/users/closeUser/").concat(userId, "/").concat(makerId));
           }
         }, {
           key: "onClickOfReopenOfModifyUser",
           value: function onClickOfReopenOfModifyUser(userId, makerId) {
-            return this.http.get("".concat(_API_URL2, "/users/reopenUser/").concat(userId, "/").concat(makerId));
+            return this.http.get("".concat(_API_URL3, "/users/reopenUser/").concat(userId, "/").concat(makerId));
           }
         }, {
           key: "onClickOfDeleteOfModifyUser",
           value: function onClickOfDeleteOfModifyUser(userobjForDelete) {
-            return this.http.get("".concat(_API_URL2, "/users/deleteUser/").concat(userobjForDelete));
+            return this.http.get("".concat(_API_URL3, "/users/deleteUser/").concat(userobjForDelete));
           }
         }, {
           key: "statusChangeUser",
           value: function statusChangeUser(user_id) {
-            return this.http.get("".concat(_API_URL2, "/users/statusUser/").concat(user_id));
+            return this.http.get("".concat(_API_URL3, "/users/statusUser/").concat(user_id));
           }
         }, {
           key: "refreshGl",
           value: function refreshGl() {
-            return this.http.get("".concat(_API_URL2, "/refxch"));
+            return this.http.get("".concat(_API_URL3, "/refxch"));
           }
         }]);
 
