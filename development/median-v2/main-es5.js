@@ -367,12 +367,14 @@
             var _this2 = this;
 
             this.api.gettingTransactionCodeSummary().subscribe(function (resp) {
+              var _a;
+
               _this2.transactionCodeData = resp.result;
               console.log(_this2.transactionCodeData, "Transaction Code Data");
 
               for (var i = 0; i <= _this2.transactionCodeData.length; i++) {
                 // console.log("Looooppppp")
-                if (_this2.transactionCodeData[i].verifiedStatus == 'U') {
+                if (((_a = _this2.transactionCodeData[i]) === null || _a === void 0 ? void 0 : _a.verifiedStatus) == 'U') {
                   // console.log("UnAUthorized");
                   _this2.unAUthorizedUsers.push(_this2.transactionCodeData[i]);
                 }
@@ -5684,6 +5686,7 @@
         }, {
           key: "setGlobalAccSummary",
           value: function setGlobalAccSummary(summaryData) {
+            console.log(summaryData);
             this.globalAccSummary.next(summaryData);
           }
         }, {

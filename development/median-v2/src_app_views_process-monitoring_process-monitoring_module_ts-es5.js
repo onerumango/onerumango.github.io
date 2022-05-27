@@ -543,6 +543,8 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](17, "date");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -581,7 +583,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](data_r2.createdDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](17, 8, data_r2.createdDate, "medium"));
         }
       }
 
@@ -747,7 +749,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](24, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](25, ProcessMonitoringComponent_tr_25_Template, 17, 8, "tr", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](25, ProcessMonitoringComponent_tr_25_Template, 18, 11, "tr", 5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
@@ -775,6 +777,7 @@
           }
         },
         directives: [angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9jZXNzLW1vbml0b3JpbmcuY29tcG9uZW50LnNjc3MifQ== */"]
       });
       /***/

@@ -1362,7 +1362,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](26, 8, ctx_r21.modifiedTime));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](26, 8, ctx_r21.modifiedTime, "MM/dd/yyyy, h:mm a"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
 
@@ -1374,7 +1374,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](63, 10, ctx_r21.authorizedTime));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](63, 11, ctx_r21.authorizedTime, "MM/dd/yyyy, h:mm a"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
 
@@ -1494,7 +1494,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](32, ExcelMappingEditComponent_div_26_div_32_Template, 12, 8, "div", 40);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](33, ExcelMappingEditComponent_div_26_div_33_Template, 100, 12, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](33, ExcelMappingEditComponent_div_26_div_33_Template, 100, 14, "div", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -1615,7 +1615,7 @@
 
             if (this.updateMappingForm.touched && this.formTouched == true) {
               var swalMsg = '';
-              var result = confirm('There are unsaved changes! Are you sure?');
+              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
               console.log("result: ", result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(result);
             } else {
@@ -2192,10 +2192,11 @@
         }, {
           key: "removeSubArray",
           value: function removeSubArray(i, data) {
-            // this.confirmService
+            console.log(i, "Deleted"); // this.confirmService
             //   .confirm({ title: 'Confirm', message: 'Are you sure to delete?', ok: 'Yes', cancel: 'No' })
             //   .subscribe(res => {
             //     if (res) {
+
             this.getRowIdx(i); //   } else { return; }
             // });
           }
@@ -2220,10 +2221,9 @@
                 });
               }
 
-              control.removeAt(i);
-
               _this12.cdr.markForCheck();
             });
+            control.removeAt(i);
           }
         }, {
           key: "finalSubmit",
@@ -3172,7 +3172,7 @@
 
             if (this.excelMappingForm.touched && this.formTouched == true) {
               var swalMsg = '';
-              var result = confirm('There are unsaved changes! Are you sure?');
+              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
               console.log("result: ", result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_5__.of)(result);
             } else {

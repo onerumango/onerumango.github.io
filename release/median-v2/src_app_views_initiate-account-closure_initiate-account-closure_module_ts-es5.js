@@ -9,6 +9,365 @@
 
   (self["webpackChunkmedian"] = self["webpackChunkmedian"] || []).push([["src_app_views_initiate-account-closure_initiate-account-closure_module_ts"], {
     /***/
+    50481:
+    /*!**************************************************!*\
+      !*** ./node_modules/angular-datatables/index.js ***!
+      \**************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+
+
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */
+        "DataTableDirective": function DataTableDirective() {
+          return (
+            /* reexport safe */
+            _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective
+          );
+        },
+
+        /* harmony export */
+        "DataTablesModule": function DataTablesModule() {
+          return (
+            /* reexport safe */
+            _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__.DataTablesModule
+          );
+        }
+        /* harmony export */
+
+      });
+      /* harmony import */
+
+
+      var _src_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./src/angular-datatables.directive */
+      9301);
+      /* harmony import */
+
+
+      var _src_angular_datatables_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./src/angular-datatables.module */
+      9368);
+      /**
+       * @license
+       *
+       * Use of this source code is governed by an MIT-style license that can be
+       * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+       */
+
+      /**
+       * @module
+       * @description
+       * Entry point from which you should import all public library APIs.
+       */
+
+      /***/
+
+    },
+
+    /***/
+    9301:
+    /*!*****************************************************************************!*\
+      !*** ./node_modules/angular-datatables/src/angular-datatables.directive.js ***!
+      \*****************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+
+
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */
+        "DataTableDirective": function DataTableDirective() {
+          return (
+            /* binding */
+            _DataTableDirective
+          );
+        }
+        /* harmony export */
+
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      2316);
+      /**
+       * @license
+       *
+       * Use of this source code is governed by an MIT-style license that can be
+       * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+       */
+
+
+      var _DataTableDirective =
+      /** @class */
+      function () {
+        function DataTableDirective(el, vcr, renderer) {
+          this.el = el;
+          this.vcr = vcr;
+          this.renderer = renderer;
+          /**
+           * The DataTable option you pass to configure your table.
+           */
+
+          this.dtOptions = {};
+        }
+
+        DataTableDirective.prototype.ngOnInit = function () {
+          var _this = this;
+
+          if (this.dtTrigger) {
+            this.dtTrigger.subscribe(function (options) {
+              _this.displayTable(options);
+            });
+          } else {
+            this.displayTable(null);
+          }
+        };
+
+        DataTableDirective.prototype.ngOnDestroy = function () {
+          if (this.dtTrigger) {
+            this.dtTrigger.unsubscribe();
+          }
+
+          if (this.dt) {
+            this.dt.destroy(true);
+          }
+        };
+
+        DataTableDirective.prototype.displayTable = function (dtOptions) {
+          var _this = this; // assign new options if provided
+
+
+          if (dtOptions) {
+            this.dtOptions = dtOptions;
+          }
+
+          this.dtInstance = new Promise(function (resolve, reject) {
+            Promise.resolve(_this.dtOptions).then(function (resolvedDTOptions) {
+              // validate object
+              var isTableEmpty = Object.keys(resolvedDTOptions).length === 0 && $('tbody tr', _this.el.nativeElement).length === 0;
+
+              if (isTableEmpty) {
+                reject('Both the table and dtOptions cannot be empty');
+                return;
+              } // Using setTimeout as a "hack" to be "part" of NgZone
+
+
+              setTimeout(function () {
+                // Assign DT properties here
+                var options = {
+                  rowCallback: function rowCallback(row, data, index) {
+                    if (resolvedDTOptions.columns) {
+                      var columns = resolvedDTOptions.columns;
+
+                      _this.applyNgPipeTransform(row, columns);
+
+                      _this.applyNgRefTemplate(row, columns, data);
+                    } // run user specified row callback if provided.
+
+
+                    if (resolvedDTOptions.rowCallback) {
+                      resolvedDTOptions.rowCallback(row, data, index);
+                    }
+                  }
+                }; // merge user's config with ours
+
+                options = Object.assign({}, resolvedDTOptions, options);
+                _this.dt = $(_this.el.nativeElement).DataTable(options);
+                resolve(_this.dt);
+              });
+            });
+          });
+        };
+
+        DataTableDirective.prototype.applyNgPipeTransform = function (row, columns) {
+          // Filter columns with pipe declared
+          var colsWithPipe = columns.filter(function (x) {
+            return x.ngPipeInstance && !x.ngTemplateRef;
+          });
+          colsWithPipe.forEach(function (el) {
+            var pipe = el.ngPipeInstance; // find index of column using `data` attr
+
+            var i = columns.findIndex(function (e) {
+              return e.data === el.data;
+            }); // get <td> element which holds data using index
+
+            var rowFromCol = row.childNodes.item(i); // Transform data with Pipe
+
+            var rowVal = $(rowFromCol).text();
+            var rowValAfter = pipe.transform(rowVal); // Apply transformed string to <td>
+
+            $(rowFromCol).text(rowValAfter);
+          });
+        };
+
+        DataTableDirective.prototype.applyNgRefTemplate = function (row, columns, data) {
+          var _this = this; // Filter columns using `ngTemplateRef`
+
+
+          var colsWithTemplate = columns.filter(function (x) {
+            return x.ngTemplateRef && !x.ngPipeInstance;
+          });
+          colsWithTemplate.forEach(function (el) {
+            var _a = el.ngTemplateRef,
+                ref = _a.ref,
+                context = _a.context; // get <td> element which holds data using index
+
+            var i = columns.findIndex(function (e) {
+              return e.data === el.data;
+            });
+            var cellFromIndex = row.childNodes.item(i); // reset cell before applying transform
+
+            $(cellFromIndex).html(''); // render onto DOM
+            // finalize context to be sent to user
+
+            var _context = Object.assign({}, context, context === null || context === void 0 ? void 0 : context.userData, {
+              adtData: data
+            });
+
+            var instance = _this.vcr.createEmbeddedView(ref, _context);
+
+            _this.renderer.appendChild(cellFromIndex, instance.rootNodes[0]);
+          });
+        };
+
+        DataTableDirective.ɵfac = function DataTableDirective_Factory(t) {
+          return new (t || DataTableDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2));
+        };
+
+        DataTableDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+          type: DataTableDirective,
+          selectors: [["", "datatable", ""]],
+          inputs: {
+            dtOptions: "dtOptions",
+            dtTrigger: "dtTrigger"
+          }
+        });
+        return DataTableDirective;
+      }();
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_DataTableDirective, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+          args: [{
+            selector: '[datatable]'
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2
+          }];
+        }, {
+          dtOptions: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+          }],
+          dtTrigger: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+          }]
+        });
+      })();
+      /***/
+
+    },
+
+    /***/
+    9368:
+    /*!**************************************************************************!*\
+      !*** ./node_modules/angular-datatables/src/angular-datatables.module.js ***!
+      \**************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+
+
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */
+        "DataTablesModule": function DataTablesModule() {
+          return (
+            /* binding */
+            _DataTablesModule
+          );
+        }
+        /* harmony export */
+
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      2316);
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      54364);
+      /* harmony import */
+
+
+      var _angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./angular-datatables.directive */
+      9301);
+      /**
+       * @license
+       *
+       * Use of this source code is governed by an MIT-style license that can be
+       * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+       */
+
+
+      var _DataTablesModule =
+      /** @class */
+      function () {
+        function DataTablesModule() {}
+
+        DataTablesModule.forRoot = function () {
+          return {
+            ngModule: DataTablesModule
+          };
+        };
+
+        DataTablesModule.ɵfac = function DataTablesModule_Factory(t) {
+          return new (t || DataTablesModule)();
+        };
+
+        DataTablesModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+          type: DataTablesModule
+        });
+        DataTablesModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+          imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]]
+        });
+        return DataTablesModule;
+      }();
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](_DataTablesModule, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.NgModule,
+          args: [{
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule],
+            declarations: [_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective],
+            exports: [_angular_datatables_directive__WEBPACK_IMPORTED_MODULE_0__.DataTableDirective]
+          }]
+        }], null, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     58179:
     /*!*********************************************************************!*\
       !*** ./src/app/shared/models/FetchUserForSingleAccClosureReqDTO.ts ***!
@@ -1092,47 +1451,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](61, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](61, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](62);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](62, "div", 46);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](63, "div", 47);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](64, "div", 48);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](65, "div", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "div", 61);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](67, "img", 62);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "div", 51);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](69, "div", 52);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](70, "h2");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](71, "First Time Auth");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](72, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](73);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](63, "date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1146,41 +1469,35 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](74, "div", 46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](64, "div", 46);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](75, "div", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](65, "div", 47);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](76, "div", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "div", 48);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](77, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](67, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "div", 63);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "div", 61);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](79, "img", 64);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](80, "div", 51);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](81, "div", 52);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](82, "h2");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](83, "Auth Status");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](84, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](69, "img", 62);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](70, "div", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](71, "div", 52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](72, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](73, "First Time Auth");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](74, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](75);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1188,33 +1505,81 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](86, "div", 46);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](87, "div", 47);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](88, "div", 48);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](89, "div", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](90, "div", 63);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](91, "img", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](92, "div", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](76, "div", 46);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](93, "div", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](77, "div", 47);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](94, "h2");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "div", 48);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](95, "Modification Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](79, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](80, "div", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](81, "img", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](96, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](82, "div", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](83, "div", 52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](84, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](85, "Auth Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](86, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](87);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](88, "div", 46);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](89, "div", 47);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](90, "div", 48);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](91, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](92, "div", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](93, "img", 62);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](94, "div", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](95, "div", 52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](96, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](97, "Modification Number");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](98, "p");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1240,7 +1605,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](26, 6, ctx_r7.fetchUserSingle.makerInputTime, "MM/dd/yyyy, h:mm a"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](26, 7, ctx_r7.fetchUserSingle.makerInputTime, "MM/dd/yyyy, h:mm a"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
 
@@ -1250,7 +1615,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.verifiedBy);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](63, 10, ctx_r7.fetchUserSingle.makerInputTime, "MM/dd/yyyy, h:mm a"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r7.fetchUserSingle.verifiedOnce);
 
@@ -1286,16 +1655,16 @@
         _createClass(_AccountClosureDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this = this;
+            var _this2 = this;
 
             this.accClosure.getIndexValue().subscribe(function (resp) {
               if (resp.index === '') {
-                _this.createAccClosure();
+                _this2.createAccClosure();
               }
             });
             this.currentUser = localStorage.getItem('currentUser').replace(/['"]+/g, '');
             this.navSubscription = this.roleService.getNavParam.subscribe(function (data) {
-              return _this.initiateAccClosure = data;
+              return _this2.initiateAccClosure = data;
             }); // this.accountClosureForm = this.formBuilder.group({
             //   closureType: ['', Validators.required],
             //   accountType: ['', Validators.required],
@@ -1411,10 +1780,10 @@
             this.accountClosureForm.get('closureType').setValue('BULK');
             localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType);
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this.roleCodes = message;
+              return _this2.roleCodes = message;
             });
             setTimeout(function () {
-              console.log(_this.roleCodes);
+              console.log(_this2.roleCodes);
             }, 100); // this.accountClosureForm.disable();
           }
         }, {
@@ -1472,7 +1841,7 @@
         }, {
           key: "onSubmitSingle",
           value: function onSubmitSingle(data) {
-            var _this2 = this;
+            var _this3 = this;
 
             console.log("on submit Single", data);
             console.log(this.accountClosureForm.value); // this.accountClosure.accountNumber = this.accountClosureForm.get('accountNumber').value;
@@ -1489,20 +1858,20 @@
                 var responseMsg = singleClosureData.errorDesc;
 
                 if (responseMsg == 'S' || responseMsg === "S") {
-                  _this2.fetchUserSingle = singleClosureData;
-                  console.log(_this2.fetchUserSingle);
-                  console.log(_this2.fetchUserSingle);
+                  _this3.fetchUserSingle = singleClosureData;
+                  console.log(_this3.fetchUserSingle);
+                  console.log(_this3.fetchUserSingle);
 
-                  if (_this2.fetchUserSingle.recordStatus == 'O') {
-                    _this2.fetchUserSingle.recordStatus = 'OPEN';
+                  if (_this3.fetchUserSingle.recordStatus == 'O') {
+                    _this3.fetchUserSingle.recordStatus = 'OPEN';
                   }
 
-                  if (_this2.fetchUserSingle.verifiedStatus == 'U') {
-                    _this2.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
+                  if (_this3.fetchUserSingle.verifiedStatus == 'U') {
+                    _this3.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
                   }
 
-                  if (_this2.fetchUserSingle.verifiedOnce == 'N') {
-                    _this2.fetchUserSingle.verifiedOnce = 'NO';
+                  if (_this3.fetchUserSingle.verifiedOnce == 'N') {
+                    _this3.fetchUserSingle.verifiedOnce = 'NO';
                   } // this.iziToast.show({
                   //   message: `Record Successfully Uploaded`,
                   //   image: "assets/images/user.png",
@@ -1521,7 +1890,7 @@
                     text: "Record Successfully Uploaded" // type: "success"
 
                   });
-                  _this2.formTouched = !_this2.accountClosureForm.touched;
+                  _this3.formTouched = !_this3.accountClosureForm.touched;
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: responseMsg,
@@ -1608,7 +1977,7 @@
         }, {
           key: "onClickOfViewToData",
           value: function onClickOfViewToData() {
-            var _this3 = this;
+            var _this4 = this;
 
             console.log("this is view", this.fetchUserSingle.closureType);
             localStorage.setItem("accountTypeForProcess", this.fetchUserSingle.accountType);
@@ -1618,58 +1987,58 @@
             if (this.fetchUserSingle.closureType == "SINGLE") {
               console.log("inisde if of single edit screnn");
               this.accClosure.onViewOfSingleClsureType(this.fetchUserSingle.accountType, this.fetchUserSingle.closureType, this.fetchUserSingle.accountNumber).subscribe(function (viewReportOfSingleResp) {
-                _this3.fetch = viewReportOfSingleResp;
+                _this4.fetch = viewReportOfSingleResp;
                 var navigationExtras = {
                   queryParams: {
-                    'closureTypeView': _this3.fetch.closureType,
-                    'accountNumberView': _this3.fetch.accountNumber,
-                    'accountTypeview': _this3.fetch.accountType,
-                    'creator': _this3.fetch.inputBy,
-                    'record': _this3.fetch.recordStatus,
-                    'authStatus': _this3.fetch.verifiedStatus,
-                    'modficationNo': _this3.fetch.modNo,
-                    'creatorDate': _this3.fetch.inputTime,
-                    'authDate': _this3.fetch.verifiedTime,
-                    'authFirsTime': _this3.fetch.verifiedOnce,
-                    'authorizer': _this3.fetch.verifiedBy,
-                    'acyCurrBalance': _this3.fetch.acyCurrBalance,
-                    'frozenView': _this3.fetch.frozen,
-                    'branchCode': _this3.fetch.branchCode,
-                    'dorm': _this3.fetch.dorm,
-                    'lcyCurrBalance': _this3.fetch.lcyCurrBalance,
-                    'acSatNoCr': _this3.fetch.acSatNoCr,
-                    'acyAvlBal': _this3.fetch.acyAvlBal,
-                    'fileName': _this3.fetch.fileName,
-                    'accStatus': _this3.fetch.accountStatus,
-                    'flexRecord': _this3.fetch.recordStatusFromFlexCube,
-                    'custId': _this3.fetch.customerId,
-                    'valueDate': _this3.fetch.valueDate,
-                    'debit': _this3.fetch.acStatNoDr,
-                    'file': _this3.fetch.fileName,
-                    'processStatus': _this3.fetch.processStatus,
-                    'Desc': _this3.fetch.accountLinkageDesc,
-                    'closeStatusInputBy': _this3.fetch.closeStatusInputBy,
-                    'closeStatusInputTime': _this3.fetch.closeStatusInputTime,
-                    'closeStatus': _this3.fetch.closeStatus,
-                    'icliqAvlBal': _this3.fetch.icliqAvlBal,
-                    'icliqBalance': _this3.fetch.icliqBalance,
-                    'icliqStatus': _this3.fetch.icliqStatus,
-                    'makerId': _this3.fetch.makerId,
-                    'makerInputTime': _this3.fetch.makerInputTime,
-                    'accls': _this3.fetch.accls,
-                    'lastTransactionDetail': _this3.fetch.lastTransactionDetail,
-                    'blockedAmount': _this3.fetch.blockedAmount,
-                    'deStatus': _this3.fetch.deStatus,
-                    'linkedAccounts': _this3.fetch.linkedAccounts,
-                    'checkerId': _this3.fetch.checkerId,
-                    'checkerInputTime': _this3.fetch.checkerInputTime //------------------------------
+                    'closureTypeView': _this4.fetch.closureType,
+                    'accountNumberView': _this4.fetch.accountNumber,
+                    'accountTypeview': _this4.fetch.accountType,
+                    'creator': _this4.fetch.inputBy,
+                    'record': _this4.fetch.recordStatus,
+                    'authStatus': _this4.fetch.verifiedStatus,
+                    'modficationNo': _this4.fetch.modNo,
+                    'creatorDate': _this4.fetch.inputTime,
+                    'authDate': _this4.fetch.verifiedTime,
+                    'authFirsTime': _this4.fetch.verifiedOnce,
+                    'authorizer': _this4.fetch.verifiedBy,
+                    'acyCurrBalance': _this4.fetch.acyCurrBalance,
+                    'frozenView': _this4.fetch.frozen,
+                    'branchCode': _this4.fetch.branchCode,
+                    'dorm': _this4.fetch.dorm,
+                    'lcyCurrBalance': _this4.fetch.lcyCurrBalance,
+                    'acSatNoCr': _this4.fetch.acSatNoCr,
+                    'acyAvlBal': _this4.fetch.acyAvlBal,
+                    'fileName': _this4.fetch.fileName,
+                    'accStatus': _this4.fetch.accountStatus,
+                    'flexRecord': _this4.fetch.recordStatusFromFlexCube,
+                    'custId': _this4.fetch.customerId,
+                    'valueDate': _this4.fetch.valueDate,
+                    'debit': _this4.fetch.acStatNoDr,
+                    'file': _this4.fetch.fileName,
+                    'processStatus': _this4.fetch.processStatus,
+                    'Desc': _this4.fetch.accountLinkageDesc,
+                    'closeStatusInputBy': _this4.fetch.closeStatusInputBy,
+                    'closeStatusInputTime': _this4.fetch.closeStatusInputTime,
+                    'closeStatus': _this4.fetch.closeStatus,
+                    'icliqAvlBal': _this4.fetch.icliqAvlBal,
+                    'icliqBalance': _this4.fetch.icliqBalance,
+                    'icliqStatus': _this4.fetch.icliqStatus,
+                    'makerId': _this4.fetch.makerId,
+                    'makerInputTime': _this4.fetch.makerInputTime,
+                    'accls': _this4.fetch.accls,
+                    'lastTransactionDetail': _this4.fetch.lastTransactionDetail,
+                    'blockedAmount': _this4.fetch.blockedAmount,
+                    'deStatus': _this4.fetch.deStatus,
+                    'linkedAccounts': _this4.fetch.linkedAccounts,
+                    'checkerId': _this4.fetch.checkerId,
+                    'checkerInputTime': _this4.fetch.checkerInputTime //------------------------------
 
                   }
                 }; // console.log("edit data",this.fetch);
                 // localStorage.setItem('singledta',JSON.stringify(this.fetch));
                 // this.router.navigate(['account-closure/viewReportOfAccountClosure']);
 
-                _this3.router.navigate(['initiate-account-closure/viewReport']);
+                _this4.router.navigate(['initiate-account-closure/viewReport']);
               });
             }
 
@@ -1678,7 +2047,7 @@
         }, {
           key: "onSubmitFile",
           value: function onSubmitFile() {
-            var _this4 = this;
+            var _this5 = this;
 
             console.log("on submit");
             this.accountClosureForm.get('closureType').setValue('BULK');
@@ -1718,11 +2087,11 @@
                 // }
                 if (fileResp) {
                   console.log(fileResp);
-                  _this4.fetchUserSingle = fileResp;
+                  _this5.fetchUserSingle = fileResp;
 
-                  if (_this4.fetchUserSingle.errorDesc == 'S') {
-                    _this4.enableView = true;
-                    _this4.submitFile = true; // this.iziToast.show({
+                  if (_this5.fetchUserSingle.errorDesc == 'S') {
+                    _this5.enableView = true;
+                    _this5.submitFile = true; // this.iziToast.show({
                     //   message: `File uploaded sucessfully`,
                     //   image: "assets/images/user.png",
                     //   icon: 'ico ico-success',
@@ -1739,14 +2108,14 @@
                       text: "File uploaded sucessfully",
                       icon: 'success'
                     });
-                    _this4.formTouched = !_this4.accountClosureForm.touched;
-                    _this4.showSubmitProgressBar = false;
-                    _this4.showAuditlog = true;
+                    _this5.formTouched = !_this5.accountClosureForm.touched;
+                    _this5.showSubmitProgressBar = false;
+                    _this5.showAuditlog = true;
                   } else {
-                    _this4.accountClosureForm.get('accountType').setValue(_this4.sendAccountType);
+                    _this5.accountClosureForm.get('accountType').setValue(_this5.sendAccountType);
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                      text: _this4.fetchUserSingle.errorDesc,
+                      text: _this5.fetchUserSingle.errorDesc,
                       icon: 'error'
                     }); // this.iziToast.show({
                     //   message: this.fetchUserSingle.errorDesc,
@@ -1761,7 +2130,7 @@
                     //   pauseOnHover: true,
                     // });
 
-                    _this4.showSubmitProgressBar = false;
+                    _this5.showSubmitProgressBar = false;
                   }
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
@@ -1779,7 +2148,7 @@
 
             if (this.accountClosureForm.touched && this.formTouched == true) {
               var swalMsg = '';
-              var result = confirm('There are unsaved changes! Are you sure?');
+              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
               console.log("result: ", result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
             } else {
@@ -1819,17 +2188,17 @@
         }, {
           key: "onSubmitOfSingleClosure",
           value: function onSubmitOfSingleClosure() {
-            var _this5 = this;
+            var _this6 = this;
 
             // this.editFalg=false;
             console.log("this is submitting single Record Data");
             console.log(this.fetchUserSingle);
             this.accClosure.submiitingSingleClosureRecordAfterEdit(this.fetchUserSingle, this.currentUser, this.fetchUserSingle.id).subscribe(function (backendResp) {
               console.log(backendResp.errorDesc);
-              _this5.fetchUserSingle = backendResp;
+              _this6.fetchUserSingle = backendResp;
               /****if bckend Resp.closeCustAcErrorDesc == 's' print success else direct print the backend response*/
 
-              if (_this5.fetchUserSingle.errorDesc == 'S') {
+              if (_this6.fetchUserSingle.errorDesc == 'S') {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   title: 'Record successfuly modified and uploaded' // type:'success'
 
@@ -1843,7 +2212,7 @@
                 });
               }
 
-              _this5.cdr.markForCheck();
+              _this6.cdr.markForCheck();
             });
           }
         }, {
@@ -1855,7 +2224,7 @@
 
               if (!authResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  title: 'Maker Cannot Authorize The Record',
+                  title: 'Authorization Failed',
                   icon: 'warning'
                 });
               } else {
@@ -1869,47 +2238,12 @@
         }, {
           key: "onclickOfClose",
           value: function onclickOfClose() {
-            var _this6 = this;
+            var _this7 = this;
 
             console.log("this is close");
             this.accClosure.onClosingTheRecord(this.fetchUserSingle.accountNumber, this.currentUser).subscribe(function (recordStatusResp) {
               console.log(recordStatusResp);
-              _this6.fetchUserSingle = recordStatusResp;
-
-              if (_this6.fetchUserSingle.recordStatus == 'C') {
-                _this6.fetchUserSingle.recordStatus = 'CLOSE';
-              }
-
-              if (_this6.fetchUserSingle.recordStatus == 'O') {
-                _this6.fetchUserSingle.recordStatus = 'OPEN';
-              }
-
-              if (_this6.fetchUserSingle.verifiedStatus == 'A') {
-                _this6.fetchUserSingle.verifiedStatus = 'AUTHORIZED';
-              }
-
-              if (_this6.fetchUserSingle.verifiedStatus == 'U') {
-                _this6.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
-              }
-
-              if (_this6.fetchUserSingle.verifiedOnce == 'Y') {
-                _this6.fetchUserSingle.verifiedOnce = 'YES';
-              }
-
-              if (_this6.fetchUserSingle.verifiedOnce == 'N') {
-                _this6.fetchUserSingle.verifiedOnce = 'NO';
-              }
-            });
-          }
-        }, {
-          key: "onclickOfReopen",
-          value: function onclickOfReopen() {
-            var _this7 = this;
-
-            console.log("this is reopen");
-            this.accClosure.onReopningTheRecord(this.fetchUserSingle.accountNumber, this.currentUser).subscribe(function (openResp) {
-              console.log(openResp);
-              _this7.fetchUserSingle = openResp;
+              _this7.fetchUserSingle = recordStatusResp;
 
               if (_this7.fetchUserSingle.recordStatus == 'C') {
                 _this7.fetchUserSingle.recordStatus = 'CLOSE';
@@ -1917,6 +2251,41 @@
 
               if (_this7.fetchUserSingle.recordStatus == 'O') {
                 _this7.fetchUserSingle.recordStatus = 'OPEN';
+              }
+
+              if (_this7.fetchUserSingle.verifiedStatus == 'A') {
+                _this7.fetchUserSingle.verifiedStatus = 'AUTHORIZED';
+              }
+
+              if (_this7.fetchUserSingle.verifiedStatus == 'U') {
+                _this7.fetchUserSingle.verifiedStatus = 'UNAUTHORIZED';
+              }
+
+              if (_this7.fetchUserSingle.verifiedOnce == 'Y') {
+                _this7.fetchUserSingle.verifiedOnce = 'YES';
+              }
+
+              if (_this7.fetchUserSingle.verifiedOnce == 'N') {
+                _this7.fetchUserSingle.verifiedOnce = 'NO';
+              }
+            });
+          }
+        }, {
+          key: "onclickOfReopen",
+          value: function onclickOfReopen() {
+            var _this8 = this;
+
+            console.log("this is reopen");
+            this.accClosure.onReopningTheRecord(this.fetchUserSingle.accountNumber, this.currentUser).subscribe(function (openResp) {
+              console.log(openResp);
+              _this8.fetchUserSingle = openResp;
+
+              if (_this8.fetchUserSingle.recordStatus == 'C') {
+                _this8.fetchUserSingle.recordStatus = 'CLOSE';
+              }
+
+              if (_this8.fetchUserSingle.recordStatus == 'O') {
+                _this8.fetchUserSingle.recordStatus = 'OPEN';
               }
             });
           }
@@ -2083,7 +2452,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](40, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](41, AccountClosureDetailsComponent_div_41_Template, 97, 9, "div", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](41, AccountClosureDetailsComponent_div_41_Template, 99, 13, "div", 23);
           }
 
           if (rf & 2) {
@@ -2549,10 +2918,10 @@
         _createClass(_InitiateAccountClosureComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this8 = this;
+            var _this9 = this;
 
             setTimeout(function () {
-              _this8.newRolePermissions();
+              _this9.newRolePermissions();
             }, 2000);
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -2569,7 +2938,7 @@
             this.gettingAccClosureSummary(this.currentUser);
             this.roleService.fetchScreenPermissions('Initiate Account Closure');
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this8.roleCodes = message;
+              return _this9.roleCodes = message;
             });
             console.log(this.roleCodes);
           }
@@ -2654,14 +3023,14 @@
         }, {
           key: "gettingAccClosureSummary",
           value: function gettingAccClosureSummary(currentUser) {
-            var _this9 = this;
+            var _this10 = this;
 
             console.log("this account closure Summary");
             this.accClosureServiceSum.gettingAccountClosureSummary(currentUser).subscribe(function (backendResp) {
               console.log(backendResp);
-              _this9.summaryDetails = backendResp;
+              _this10.summaryDetails = backendResp;
 
-              _this9.dtTrigger.next(); // this.dataSource = new MatTableDataSource<FetchUserForSingleAccClosureReqDTO>(this.summaryDetails);
+              _this10.dtTrigger.next(); // this.dataSource = new MatTableDataSource<FetchUserForSingleAccClosureReqDTO>(this.summaryDetails);
               // this.dataSource.paginator = this.paginator.toArray()[0];;
               // console.log(this.summaryDetails);
 
@@ -3484,13 +3853,13 @@
         _createClass(_ViewReportAccClosureComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this10 = this;
+            var _this11 = this;
 
             console.log("Inside View Report");
             this.closureTypes = localStorage.getItem("CLOSURETYPE");
             console.log(this.closureTypes);
             this.navSubscription = this.excelService.getNavParam.subscribe(function (data) {
-              return _this10.ViewAccClosure = data;
+              return _this11.ViewAccClosure = data;
             });
             console.log(this.ViewAccClosure);
             this.fetchUserSingle.accountTypeBulk = this.ViewAccClosure.queryParams.accountTypeBulk;
@@ -3531,7 +3900,7 @@
         }, {
           key: "exportAsXLSX",
           value: function exportAsXLSX() {
-            var _this11 = this;
+            var _this12 = this;
 
             console.log("this is on click of download"); // this.showProgressBar = true;
 
@@ -3545,11 +3914,11 @@
             var fin = this.fetchUserSingle.fileName.split('.').slice(0, -1).join('.');
             this.excelService.getExcel(fin, this.fetchUserSingle.accountType).subscribe(function (data) {
               console.log("this is backend data for excel", data);
-              _this11.excel = data;
+              _this12.excel = data;
               data.forEach(function (element) {//this.excel.push(element);
               }); //console.log("vidya",this.excel);
 
-              _this11.excelService.exportAsExcelFile(_this11.excel, 'BULK_ACCOUNT_CLOSURE');
+              _this12.excelService.exportAsExcelFile(_this12.excel, 'BULK_ACCOUNT_CLOSURE');
             });
             console.log(this.excel); // --passing two arguments --1)is getting data from backend --i.e is excel data
             // 2)what name i should give for file
@@ -3558,7 +3927,7 @@
         }, {
           key: "convert",
           value: function convert() {
-            var _this12 = this;
+            var _this13 = this;
 
             var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_1___default())();
             var col = [["AccountNo", "branchCode", "closureReason", "customerId", "fileName", "frozen"]];
@@ -3570,8 +3939,8 @@
 
             this.excelService.getExcel(fin, this.fetchUserSingle.accountType).subscribe(function (data) {
               console.log("this is backend data for excel");
-              _this12.excel = data;
-              var itemNew = _this12.excel;
+              _this13.excel = data;
+              var itemNew = _this13.excel;
               itemNew.forEach(function (element) {
                 var date = new Date(element.timeForExport).toLocaleDateString("en-us");
                 console.log(date);
@@ -3604,7 +3973,7 @@
         }, {
           key: "onProcessingTheBulkAccount",
           value: function onProcessingTheBulkAccount() {
-            var _this13 = this;
+            var _this14 = this;
 
             console.log("this is bulk process", this.fetchUserSingle.fileName);
             this.excelService.processTheBulkRecord(this.fetchUserSingle.fileName, this.fetchUserSingle.accountType, this.fetchUserSingle.inputBy).subscribe(function (processResp) {
@@ -3612,9 +3981,9 @@
               var msg = processResp.errorDesc;
 
               if (processResp.var1 == true) {
-                _this13.process = true;
+                _this14.process = true;
 
-                _this13.ref.markForCheck();
+                _this14.ref.markForCheck();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Record Processed SuccessFully',
@@ -3631,20 +4000,20 @@
         }, {
           key: "onCancelingTheRecord",
           value: function onCancelingTheRecord() {
-            var _this14 = this;
+            var _this15 = this;
 
             console.log("this is deleteing the record", this.fetchUserSingle.fileName);
             this.excelService.onDeletingTheReocrd(this.fetchUserSingle.fileName, this.fetchUserSingle.accountTypeBulk, this.fetchUserSingle.makerId).subscribe(function (deleteResp) {
               console.log(deleteResp);
 
               if (deleteResp == true) {
-                _this14["delete"] = true;
+                _this15["delete"] = true;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Record is Deleted',
                   icon: "success"
                 });
 
-                _this14.router.navigate(['/initiate-account-closure']);
+                _this15.router.navigate(['/initiate-account-closure']);
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Failed To Delete The Record',
@@ -3656,7 +4025,7 @@
         }, {
           key: "onProcessingTheSingleAccount",
           value: function onProcessingTheSingleAccount() {
-            var _this15 = this;
+            var _this16 = this;
 
             console.log("this is single process", this.fetchUserSingle.accountNumber);
             this.excelService.processTheSingleRecord(this.fetchUserSingle.accountNumber, this.fetchUserSingle.inputBy).subscribe(function (processResp) {
@@ -3664,9 +4033,9 @@
               var msg = processResp.errorDesc;
 
               if (processResp.var1 == true) {
-                _this15.process = true;
+                _this16.process = true;
 
-                _this15.ref.markForCheck();
+                _this16.ref.markForCheck();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                   text: 'Record Processed SuccessFully',
@@ -3683,7 +4052,7 @@
         }, {
           key: "onCancelingTheSingleRecord",
           value: function onCancelingTheSingleRecord() {
-            var _this16 = this;
+            var _this17 = this;
 
             console.log("deleting Single", this.fetchUserSingle.accountNumber);
             console.log("deleting Single", this.fetchUserSingle.accountType);
@@ -3691,7 +4060,7 @@
             console.log("deleting Single", this.fetchUserSingle.inputBy);
             this.excelService.onDeletingSingle(this.fetchUserSingle.accountNumber, this.fetchUserSingle.accountType, this.fetchUserSingle.closureType, this.fetchUserSingle.inputBy).subscribe(function (singledeleteResp) {
               console.log(singledeleteResp);
-              _this16.deleteSingle = true;
+              _this17.deleteSingle = true;
 
               if (singledeleteResp == true) {
                 // this.iziToast.show({
@@ -3711,7 +4080,7 @@
                   icon: "success"
                 });
 
-                _this16.router.navigate(['/initiate-account-closure']);
+                _this17.router.navigate(['/initiate-account-closure']);
               } else {
                 // this.iziToast.show({
                 //   message: `Failed To Delete The Record`,
@@ -3747,7 +4116,7 @@
         }, {
           key: "convertReportForSingle",
           value: function convertReportForSingle() {
-            var _this17 = this;
+            var _this18 = this;
 
             console.log(this.fetchUserSingle);
             var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_1___default())();
@@ -3763,7 +4132,7 @@
             var mapped = Object.keys(this.fetchUserSingle).map(function (key) {
               return {
                 type: key,
-                value: _this17.fetchUserSingle[key]
+                value: _this18.fetchUserSingle[key]
               };
             });
             console.log(mapped);

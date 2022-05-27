@@ -40,6 +40,7 @@
 *,
 ::after,
 ::before {
+    /* width:400px; */
     box-sizing: border-box
 }
 
@@ -11793,6 +11794,15 @@ fieldset:disabled .btn {
     }
 }
 
+.ng-dropdown-panel .scroll-host {
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    width:200px;
+}
+
 /*# sourceMappingURL=bootstrap.min.css.map */
 /*!*********************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[2]!./src/assets/css/mCustomScrollbar.min.css ***!
@@ -17060,7 +17070,6 @@ table.tableStyle thead tr th.tblehead {
 .ng-select.ng-select-opened.ng-select-top>.ng-select-container {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  background-color: green;
 }
 
 .roleIcon {
@@ -17227,6 +17236,11 @@ table.tableStyle thead tr th.tblehead {
   background-color: #E6224A;
   background-color: var(--primaryColor);
 }
+
+#auditLogsTable .dataTables_empty {
+  display: none;
+}
+
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[2]!./node_modules/font-awesome/css/font-awesome.css ***!
   \****************************************************************************************************************************************************************************************************************************************/
@@ -21286,6 +21300,11 @@ a:hover {
 
 .theme2 .multiselect-dropdown .dropdown-btn {
   border: 1px solid #1b1b29 !important;
+}
+
+.theme1 .multiselect-dropdown .dropdown-btn {
+  /* border: 1px solid #1010ac !important; */
+  border: none !important;
 }
 
 .theme2 .multiselect-dropdown .disabled>span {

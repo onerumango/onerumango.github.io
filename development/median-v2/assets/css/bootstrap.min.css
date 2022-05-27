@@ -36,6 +36,7 @@
 *,
 ::after,
 ::before {
+    /* width:400px; */
     box-sizing: border-box
 }
 
@@ -11717,6 +11718,14 @@ fieldset:disabled .btn {
     .d-print-none {
         display: none !important
     }
+}
+.ng-dropdown-panel .scroll-host {
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    width:200px;
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */

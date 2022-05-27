@@ -143,6 +143,155 @@ class User {
 
 /***/ }),
 
+/***/ 60965:
+/*!********************************************************************!*\
+  !*** ./src/app/shared/services/account-closure-service.service.ts ***!
+  \********************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": function() { return /* binding */ API_URL; },
+/* harmony export */   "AccountClosureServiceService": function() { return /* binding */ AccountClosureServiceService; }
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 76491);
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! file-saver */ 97797);
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! xlsx */ 88031);
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/config/app.constant */ 3118);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 53882);
+
+
+
+
+
+
+const API_URL = src_app_shared_config_app_constant__WEBPACK_IMPORTED_MODULE_2__.AppConstants.acctCloserUrl;
+const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+const EXCEL_EXTENSION = '.xlsx';
+class AccountClosureServiceService {
+    constructor(http) {
+        this.http = http;
+        this.datafinal = [];
+        this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({});
+        this.getNavParam = this.paramSource.asObservable();
+        this.Index = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({
+            index: '',
+        });
+        this.excel = [];
+    }
+    setIndexValue(index) {
+        this.Index.next(index);
+    }
+    getIndexValue() {
+        return this.Index.asObservable();
+    }
+    sendNavParam(params) {
+        this.paramSource.next(params);
+    }
+    onSingleClosure(data, inputby) {
+        console.log(data);
+        return this.http.post(`${API_URL}/api2/createAccountClosure/${inputby}`, data);
+    }
+    onViewOfSingleClsureType(accType, closureType, accountNumber) {
+        console.log("this is in service of ");
+        return this.http.get(`${API_URL}/api2/getDetailsSingleReport/${accType}/${closureType}/${accountNumber}`);
+    }
+    gettingAccountClosureSummary(currentUser) {
+        return this.http.get(`${API_URL}/api2/getSummary/${currentUser}`);
+    }
+    // -------------After Edit of Bulk Closure----------
+    gettingEditData(inputBy) {
+        return this.http.get(`${API_URL}/api2/modify/${inputBy}`);
+    }
+    submiitingSingleClosureRecordAfterEdit(data, inputBy, id) {
+        console.log("single edit ", id);
+        return this.http.post(`${API_URL}/api2/modify/${inputBy}/${id}`, data);
+    }
+    //--------------file upload-------------
+    onFileUpload(file, accountType, closure, inputBy) {
+        console.log("this is in service", file);
+        console.log("checing null or not", accountType);
+        console.log(closure);
+        const formData = new FormData();
+        formData.append('file', file);
+        return this.http.post(`${API_URL}/file/saveFileDataToDB/${accountType}/${closure}/${inputBy}`, formData);
+        // ------------For upload Percentage------
+        // return this.http.post(`${API_URL}/api2/fileUpload`, formData,{reportProgress: true, observe: 'events'})
+    }
+    // ------------- Excel Download without header color------------
+    exportAsExcelFile(json, excelFileName) {
+        console.log(excelFileName);
+        console.log(json);
+        const worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, { bookType: 'xlsx', type: 'array', });
+        this.saveAsExcelFile(excelBuffer, excelFileName);
+    }
+    saveAsExcelFile(buffer, fileName) {
+        const data = new Blob([buffer], { type: EXCEL_TYPE });
+        file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+    }
+    // --------------Excel Download for Single---------------
+    exportAsExcelForSingleAccount(json, excelFileName) {
+        console.log(excelFileName);
+        console.log(json);
+        const worksheet = xlsx__WEBPACK_IMPORTED_MODULE_1__.utils.json_to_sheet(json);
+        worksheet.blankRows = false;
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_1__.write(workbook, { bookType: 'xlsx', type: 'array' });
+        this.saveAsExcelSingle(excelBuffer, excelFileName);
+    }
+    saveAsExcelSingle(buffer, fileName) {
+        const data = new Blob([buffer], { type: EXCEL_TYPE });
+        file_saver__WEBPACK_IMPORTED_MODULE_0__.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+    }
+    // -------------------Excel Download color---------------------------
+    //getting excel for bulk
+    getExcel(filename, accountType) {
+        console.log("this is send fileName and getFile", accountType);
+        console.log(filename);
+        return this.http.get(`${API_URL}/file/download/${filename}/${accountType}`);
+    }
+    onDeletingTheReocrd(fileName, accountType, inputBy) {
+        console.log("file", fileName, "accType", accountType, "maker", inputBy);
+        return this.http.get(`${API_URL}/file/cancelProcess/${accountType}/${fileName}/${inputBy}`);
+    }
+    onDeletingSingle(accountNumber, accntType, closure, maker) {
+        console.log("in service", accountNumber, accntType, closure, maker);
+        return this.http.get(`${API_URL}/api2/cancelProcess/${accountNumber}/${accntType}/${closure}/${maker}`);
+    }
+    // -----------Process the Bulk record---------
+    processTheBulkRecord(fileName, accountType, inputBy) {
+        console.log("file", fileName, "accType", accountType, "maker", inputBy);
+        return this.http.get(`${API_URL}/api2/process/${fileName}/${accountType}/${inputBy}`);
+    }
+    // -----------Process the Single record---------
+    processTheSingleRecord(accountNumber, inputBy) {
+        console.log(accountNumber, "maker", inputBy);
+        return this.http.get(`${API_URL}/api2/processStatus/${accountNumber}/${inputBy}`);
+    }
+    // ----------------Adit Log Method-----------------
+    onAuthorizingTheRecord(accountNumber, authorizer) {
+        console.log("this is authorization");
+        return this.http.get(`${API_URL}/api2/verify/${accountNumber}/${authorizer}`);
+    }
+    onClosingTheRecord(accountNumber, inputBy) {
+        console.log("this is Closing Action");
+        return this.http.get(`${API_URL}/api2/close/${accountNumber}/${inputBy}`);
+    }
+    onReopningTheRecord(accountNumber, inputBy) {
+        return this.http.get(`${API_URL}/api2//${accountNumber}/${inputBy}`);
+    }
+}
+AccountClosureServiceService.ɵfac = function AccountClosureServiceService_Factory(t) { return new (t || AccountClosureServiceService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient)); };
+AccountClosureServiceService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: AccountClosureServiceService, factory: AccountClosureServiceService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ 58219:
 /*!**************************************************!*\
   !*** ./src/app/shared/services/excel.service.ts ***!

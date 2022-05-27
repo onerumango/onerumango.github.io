@@ -563,6 +563,7 @@ class SecurityPolicySummaryComponent {
             minPswdLength: data.minPswdLength,
             modifiedBy: data.modifiedBy,
             modifiedTime: data.modifiedTime,
+            firstTimeAuth: data.firstTimeAuth,
             notifyPasswordExpiryInDays: data.notifyPasswordExpiryInDays,
             pswdComplexLcase: data.pswdComplexLcase,
             pswdComplexNum: data.pswdComplexNum,
@@ -913,7 +914,7 @@ function SecurityPolicyComponent_div_86_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r6.securityData.authorizedBy);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](63, 11, ctx_r6.securityData.authorizedTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](63, 11, ctx_r6.securityData.authorizedTime, "MM/dd/yyyy, h:mm a"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r6.securityData.firstTimeAuth);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
@@ -935,6 +936,7 @@ class SecurityPolicyComponent {
         this.formTouched = true;
     }
     ngOnInit() {
+        this.currentUser = localStorage.getItem('userFromLogin');
         this.buildForm("");
         this.fetchSecurityPolicyService();
         this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
@@ -1137,7 +1139,7 @@ class SecurityPolicyComponent {
         // return of (true);
         if (this.securityForm.touched && this.formTouched == true) {
             let swalMsg = '';
-            const result = confirm('There are unsaved changes! Are you sure?');
+            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
             console.log("result: ", result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(result);
         }
@@ -1170,6 +1172,7 @@ class SecurityPolicyComponent {
                     return;
                 }
                 console.log("this is authorzation");
+                this.securityForm.value.authorizedBy = this.currentUser;
                 this.secuityService.authSecurity('authorize', this.securityForm.value).subscribe(resp => {
                     console.log(resp);
                     this.securityData = resp;
@@ -1414,7 +1417,7 @@ SecurityPolicyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](86, SecurityPolicyComponent_div_86_Template, 100, 13, "div", 41);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](86, SecurityPolicyComponent_div_86_Template, 100, 14, "div", 41);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     } if (rf & 2) {

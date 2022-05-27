@@ -1781,6 +1781,10 @@ a:hover {
 .theme2 .multiselect-dropdown .dropdown-btn {
   border: 1px solid #1b1b29 !important;
 }
+.theme1 .multiselect-dropdown .dropdown-btn {
+  /* border: 1px solid #1010ac !important; */
+  border: none !important;
+}
 
 .theme2 .multiselect-dropdown .disabled>span {
   background-color: #1b1b29 !important;
