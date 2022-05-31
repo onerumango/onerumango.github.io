@@ -214,7 +214,7 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   color: white;
 }
 .egret-dark-purple .mat-toolbar {
-  background:#0C0B0F;
+  background:#1e1e2d;
   color: white;
 }
 .egret-dark-purple .highcharts-background{
@@ -224,7 +224,8 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   background: #000000;
 }
 .egret-dark-purple .mat-card{
-  background: gray;
+  background: #1e1e2d;
+  color:#cdcdde ;
 }
 .egret-dark-purple .container{
   background: #000000;
@@ -233,28 +234,29 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   background: #000000;
 }
 .egret-dark-purple .search-box input{
-  background: black;
+  background: #000000;
+  color:#cdcdde;
 }
 .egret-dark-purple .mat-flat-button {
-  background: gray;
-  color:#fafafa;
+  background: #1e1e2d;
+  color:#cdcdde;
 }
 .egret-dark-purple .app-admin-container .rightside-content-hold {
   background: black;
 }
 .egret-dark-purple .mat-menu-item {
-  background: gray;
+  background: #1e1e2d;
   color: white;
 }
 .egret-dark-purple .title{
-  color: white;
+  color: #cdcdde;
 }
 .egret-dark-purple h6,
 .h6{
   color: white;
 }
 .egret-dark-purple .mat-menu-content{
-  background: gray;
+  background: #1e1e2d;
 } 
 .egret-dark-purple .mat-icon.mat-primary {
   color: #fafafa;
@@ -263,46 +265,49 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   background: white;
 }
 .egret-dark-purple .mat-dialog-container {
-  background: gray;
-  color:#fafafa;
+  background: #1e1e2d;
+  color:#A6AAB5;
 }
 .egret-dark-purple .sidebar-panel .navigation-hold {
-  background: gray;
+  background: #1e1e2d;
   color:#fafafa;
 }
 .egret-dark-purple .sidebar-panel {
-  background: gray;
+  background: #1a1a27;
 }
 .egret-dark-purple .card-text-label {
-  color: white;
+  color: #cdcdde;
 }
 .egret-dark-purple .mat-header-cell {
-  color: white;
-  background: gray;
+  color: #565674;
+  background: #1e1e2d;
 }
 .egret-dark-purple .mat-cell, .egret-dark-purple .mat-footer-cell {
   color: white;
-  background: gray;
+  background: #1e1e2d;
 }
  .egret-dark-purple .mat-paginator-container{
-  color: white;
-  background: gray;
+  color:  #A6AAB5;
+  background: #1e1e2d;
 }
 .egret-dark-purple .mat-hint {
-  color: white;
+  color: #A6AAB5;
 }
 .egret-dark-purple .text-muted, .mat-heading-label {
-  color: white;
+  color: #A6AAB5;
 }
 .egret-dark-purple .revertStyle {
-  color: white;
+  color: #cdcdde;
 }
 .egret-dark-purple .revertStyle1 {
-  color: white;
+  color: #cdcdde;
 }
-
+.egret-dark-purple .centeralign{
+  background: #1e1e2d;
+  border: 1px solid darkblue;
+}
 .egret-dark-purple .mat-drawer {
-    background-color: #0C0B0F;
+    background-color: #1e1e2d;
     color: white;
 }
 .egret-dark-purple .mat-error {
@@ -320,6 +325,35 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
 
 .egret-dark-purple .mat-form-field-suffix .mat-icon {
    color: gray;
+}
+.egret-dark-purple .mat-bg-primary {
+  background-color: #1e1e2d;
+}
+.egret-dark-purple .small-head{
+  color: #cdcdde;
+}
+.egret-dark-purple .notification-list .notific-item .message {
+  color: #cdcdde;
+}
+.egret-dark-purple .mat-form-field-appearance-outline .mat-form-field-flex {
+  background: #1b1b29;
+  color: #92929f !important;
+  border-color: #1b1b29 !important;
+}
+.egret-dark-purple .innerLabelSpan{
+  color: #cdcdde;
+}
+.egret-dark-purple  .col2 {
+  color: #cdcdde;;
+}
+.egret-dark-purple  .col4{
+  color: #cdcdde;;
+}
+.egret-dark-purple  .mat-expansion-panel-body {
+  background: #1b1b29;
+}
+.backIcon {
+  color: #92929f;
 }
 // .egret-dark-purple .form-holder {
 //   padding: 16px;
@@ -349,7 +383,7 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
 }
 .egret-dark-purple .mat-form-field-appearance-outline .mat-form-field-outline {
  // color: rgb(31 18 18 / 30%);
-  color:#d3d3d3;
+  color:#3b3b59;
 }
 .egret-dark-purple .mat-form-field-label {
   color: lightblue;
