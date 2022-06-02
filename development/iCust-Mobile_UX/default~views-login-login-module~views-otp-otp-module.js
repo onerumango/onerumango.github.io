@@ -88,7 +88,8 @@ let LoginPage = class LoginPage {
         console.log("model", this.oTpModel);
         if (this.oTpModel.source_value != '') {
             this.api.getOtp(this.oTpModel).subscribe(otpResp => {
-                if (otpResp.icust.custStatus != "APPROVED" || otpResp.icust.custAccount[0].status != "APPROVED") {
+                console.log('custStatus :: ', otpResp.icust.custStatus);
+                if (!otpResp.icust.custStatus.toString().includes('APPROVED')) {
                     this.openToast1();
                 }
                 else {
