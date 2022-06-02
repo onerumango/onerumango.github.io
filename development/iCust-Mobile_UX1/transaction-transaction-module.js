@@ -9570,6 +9570,7 @@ let TransactionPage = class TransactionPage {
             }
         });
         this.loadData();
+        console.log('testing');
         this.getTransactionByAccountId('onload', 0, '', null, null, 20);
         this.priviousDate = this.getYesterdayDate();
         this.priviousDate = this.priviousDate.toISOString();
