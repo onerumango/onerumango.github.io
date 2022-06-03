@@ -3465,7 +3465,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.recordStatus == "C" || ctx_r0.addSysRespData.recordStatus == "CLOSED") && ctx_r0.roleCodes.edit);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (ctx_r0.addSysRespData.recordStatus == "O" || ctx_r0.addSysRespData.recordStatus == "OPEN") && ctx_r0.roleCodes.edit);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 

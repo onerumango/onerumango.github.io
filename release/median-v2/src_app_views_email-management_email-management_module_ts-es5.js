@@ -463,12 +463,25 @@
           this.http = http;
           this.paramSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({});
           this.getNavParam = this.paramSource.asObservable();
+          this.Index = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject({
+            index: ''
+          });
         }
 
         _createClass(_AccountBlockingServiceService, [{
           key: "sendNavParam",
           value: function sendNavParam(params) {
             this.paramSource.next(params);
+          }
+        }, {
+          key: "setIndexValue",
+          value: function setIndexValue(index) {
+            this.Index.next(index);
+          }
+        }, {
+          key: "getIndexValue",
+          value: function getIndexValue() {
+            return this.Index.asObservable();
           } // new module
 
         }, {
@@ -1492,21 +1505,24 @@
           value: function ngOnInit() {
             var _this2 = this;
 
+            this.emailNavObj = localStorage.getItem('emailManagementNavObj');
+            this.emailNavigationObject = JSON.parse(this.emailNavObj);
+            this.accountBlockingService.getIndexValue().subscribe(function (resp) {
+              if (resp.index === '') {
+                _this2.createEmail();
+              }
+            });
+            this.loggedInUser = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.navSubscription = this.accountBlockingService.getNavParam.subscribe(function (data) {
               return _this2.editAddSysResp = data;
             });
-            console.log(this.editAddSysResp);
-            this.loggedInUser = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
             this.emailTypes = localStorage.getItem('EmailType');
-            console.log(this.emailTypes);
             this.emailForm = this.formBuilder.group({
               accountType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
               emails: this.formBuilder.array([])
-            }); // console.log(this.loggedInUser);
-
+            });
             this.user_id = sessionStorage.getItem('user_id');
-            this.role = sessionStorage.getItem('user_role'); // this.screenpermission();
-
+            this.role = sessionStorage.getItem('user_role');
             this.eamilAuditLog.modNo = this.editAddSysResp.queryParams.modNo;
             this.eamilAuditLog.inputBy = this.editAddSysResp.queryParams.creator;
             this.eamilAuditLog.recordStatus = this.editAddSysResp.queryParams.rstatus;
@@ -1516,31 +1532,35 @@
             this.eamilAuditLog.verifiedTime = this.editAddSysResp.queryParams.authtym;
             this.eamilAuditLog.verifiedBy = this.editAddSysResp.queryParams.authBy;
             this.eamilAuditLog.emailType = this.editAddSysResp.queryParams.emailType;
-            console.log(this.eamilAuditLog.emailType);
+
+            if (this.editAddSysResp.queryParams.emailType == 'Account_Block') {
+              this.buildEmailForm(this.eamilAuditLog);
+              this.getScreenDetails();
+            }
+
+            if (this.editAddSysResp.queryParams.emailType != 'Account_Block') {
+              if (JSON.parse(this.emailNavObj) != null) {
+                this.buildEmailForm(this.emailNavigationObject);
+                this.getScreenDetails();
+                this.modifyScreen = true;
+                this.editFlag = true;
+              }
+            }
 
             if (this.eamilAuditLog.emailType) {
-              console.log("Query params");
               this.modifyScreen = true;
               this.editFlag = true;
             }
 
             this.auditLog();
 
-            if (this.eamilAuditLog.emailType) {
-              this.getScreenDetails();
-            }
-
-            this.buildEmailForm(this.eamilAuditLog);
-
             if (this.eamilAuditLog.emailType == null) {
               this.addAddress();
             }
 
-            console.log(this.loggedInUser);
             this.roleService.screenLabelList.subscribe(function (message) {
               return _this2.roleCodes = message;
             });
-            console.log(this.roleCodes);
           }
         }, {
           key: "auditLog",
@@ -1588,7 +1608,6 @@
         }, {
           key: "buildEmailForm",
           value: function buildEmailForm(data, isResponse) {
-            console.log(data);
             this.emailForm = this.formBuilder.group({
               accountType: [data.emailType ? data.emailType : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
               emails: this.formBuilder.array([])
@@ -1597,8 +1616,7 @@
         }, {
           key: "pageDeactivation",
           value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
-
+            // return of (true);
             if (this.emailForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
@@ -1613,25 +1631,22 @@
           value: function getScreenDetails() {
             var _this3 = this;
 
+            // this.eamilAuditLog=this.emailNavigationObject;
+            if (this.eamilAuditLog.emailType == undefined) {
+              this.eamilAuditLog = this.emailNavigationObject;
+            }
+
             this.selected = this.eamilAuditLog.emailType;
-            console.log(this.selected);
             this.accountBlockingService.sendAccType(this.eamilAuditLog.emailType).subscribe(function (resp) {
-              console.log(resp);
               _this3.emailList = resp;
 
               for (var index = 0; index < _this3.emailList.length; index++) {
                 _this3.addAddress();
 
-                var email = _this3.emailList[index];
-                console.log(email); // this.emails.at(index).get('emails').patchValue(email);
+                var email = _this3.emailList[index]; // this.emails.at(index).get('emails').patchValue(email);
 
                 _this3.emails.at(index).patchValue(email);
-
-                console.log(email, "Emails");
               }
-
-              console.log(_this3.emails);
-              console.log(_this3.emails.value.length);
             });
           }
         }, {
@@ -1657,16 +1672,13 @@
         }, {
           key: "selectedChk",
           value: function selectedChk(e) {
-            console.log(e);
             this.selected = e;
           } // TODO
 
         }, {
           key: "addAddress",
           value: function addAddress() {
-            console.log("add");
             this.emails.push(this.getEmailItem());
-            console.log(this.emails);
           }
         }, {
           key: "removeAddress",
@@ -1677,8 +1689,6 @@
             //   this.emailForm.controls.emails.reset()
             // }
             // else{
-            console.log(row);
-
             if (row.value.emailId == "") {
               this.emails.removeAt(i);
             } else {
@@ -1735,16 +1745,13 @@
                 icon: 'error'
               });
               return;
-            }
-
-            console.log('this is auth'); // let object = {
+            } // let object = {
             //   emailType : 'Account_Block', 
             //   makerId: this.loggedInUser,
             // }
 
-            this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(function (authresp) {
-              console.log(authresp);
 
+            this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(function (authresp) {
               if (authresp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: 'Record is Authorized',
@@ -1781,8 +1788,6 @@
 
             //console.log('this is Reopen');
             this.accountBlockingService.onClickOfAuthOfEmailManagement('reopen', 'Account_Block', this.loggedInUser).subscribe(function (reopenResp) {
-              console.log(reopenResp);
-
               if (reopenResp == false) {
                 // this.iziToast.show({
                 //   message: `UnAuthorized Records Cannot Be Reopen`,
@@ -1828,10 +1833,7 @@
           value: function onclickOfCloseOfEmailManagement() {
             var _this8 = this;
 
-            console.log('this is close', this.selected, this.loggedInUser);
             this.accountBlockingService.onClickOfAuthOfEmailManagement('close', 'Account_Block', this.loggedInUser).subscribe(function (closeResp) {
-              console.log(closeResp);
-
               if (closeResp == false) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: 'UnAuthorized Records Cannot Be Closed',
@@ -1952,6 +1954,14 @@
             //   }
             // });
 
+          }
+        }, {
+          key: "createEmail",
+          value: function createEmail() {
+            var navigationExtras = {
+              queryParams: {}
+            };
+            this.accountBlockingService.sendNavParam(navigationExtras);
           }
         }]);
 
@@ -2533,11 +2543,15 @@
         }, {
           key: "getEmail",
           value: function getEmail(email) {
-            console.log("email", email); //console.log(row.modNO);
+            console.log("email", email);
+            this.emaildetails = email; //console.log(row.modNO);
 
+            this.accountBlockingService.setIndexValue({
+              index: 'edit'
+            });
             var navigationExtras = {
               queryParams: {
-                modifyNo: email.modNO,
+                modNo: email.modNO,
                 creator: email.inputBy,
                 rstatus: email.recordStatus,
                 vStatus: email.verifiedOnce,
@@ -2548,7 +2562,7 @@
                 emailType: email.emailType
               }
             };
-            console.log(email.emailType);
+            localStorage.setItem('emailManagementNavObj', JSON.stringify(this.emaildetails));
             this.accountBlockingService.sendNavParam(navigationExtras);
             this.router.navigate(['email-management/create']); // this.router.navigate(['email-management/create'],navigationExtras);
 
@@ -2574,12 +2588,15 @@
         }, {
           key: "createEmail",
           value: function createEmail() {
+            localStorage.removeItem('emailManagementNavObj');
             this.router.navigate(['/email-management/create']);
             var navigationExtras = {
               queryParams: {}
             };
-            console.log(navigationExtras);
             this.accountBlockingService.sendNavParam(navigationExtras);
+            this.accountBlockingService.setIndexValue({
+              index: 'new'
+            });
           }
         }]);
 

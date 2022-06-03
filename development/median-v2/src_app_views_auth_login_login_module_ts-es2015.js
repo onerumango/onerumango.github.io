@@ -414,7 +414,8 @@ class LoginComponent {
                                                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Username or Password is wrong");
                                             }
                                             else {
-                                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(this.variable[0]);
+                                                // Swal.fire(this.variable[0]);
+                                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire('Account blocked, maximum failed attempts reached. To login, please do Forgot Password and then try for login.');
                                                 this.loginProcessing = false;
                                             }
                                         }

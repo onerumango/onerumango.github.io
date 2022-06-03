@@ -944,7 +944,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Cash Payments Authorization");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Authorize Cash Payments");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 

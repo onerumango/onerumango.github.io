@@ -975,7 +975,8 @@
 
       var _AuthorizeModificationComponent = /*#__PURE__*/function () {
         function _AuthorizeModificationComponent(api, // public dialog: MatDialog,
-        userApi, excelService) {
+        userApi, excelService // private toastService : ToastService,
+        ) {
           _classCallCheck(this, _AuthorizeModificationComponent);
 
           this.api = api;
@@ -1017,7 +1018,7 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [4]
+                targets: [4]
               }],
               order: [[4, 'desc']],
               processing: true,
@@ -1056,7 +1057,7 @@
         }, {
           key: "extractFilename",
           value: function extractFilename(path) {
-            var pathArray = path.split("/");
+            var pathArray = path.split('/');
             var lastIndex = pathArray.length - 1;
             return pathArray[lastIndex];
           }
@@ -1129,7 +1130,7 @@
           value: function queryDetailsDataByParam(pendingForAuthDTO, i) {
             var _this6 = this;
 
-            var btn = document.getElementById("btnGetDetails" + i);
+            var btn = document.getElementById('btnGetDetails' + i);
             btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
             this.getDetailsQueryToggleReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_1__.GetDetailsQueryToggleReqDTO(); // this.getDetailsQueryToggleReqDTO.externalSysName =
             //   pendingForAuthDTO.externalSysName;
@@ -1223,7 +1224,7 @@
               // console.log(resp);
               _this9.pendingForAuthData = resp;
 
-              _this9.dtTrigger1.next();
+              _this9.dtTrigger1.next(0);
 
               console.log(_this9.pendingForAuthData);
             });
