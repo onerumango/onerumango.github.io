@@ -2398,6 +2398,7 @@
           value: function onAuthOfRule() {
             var _this13 = this;
 
+            console.log(this.currentUser);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
@@ -2428,11 +2429,36 @@
                     el.ruleId = _this13.ruleConfig.ruleId;
                   });
 
-                  console.log(_this13.arrRuleValidation);
+                  console.log(_this13.ruleConfig);
                   _this13.ruleConfig.sysRuleDetails = _this13.arrRuleValidation;
-                  _this13.ruleConfig.approvedEver == 'NO' ? _this13.ruleConfig.approvedEver = 'N' : _this13.ruleConfig.approvedEver == 'YES' ? _this13.ruleConfig.approvedEver = 'Y' : _this13.ruleConfig.approvedEver;
-                  _this13.ruleConfig.approvedStatus == 'UNAUTHORIZED' ? _this13.ruleConfig.approvedStatus = 'U' : _this13.ruleConfig.approvedStatus == 'AUTHORIZED' ? _this13.ruleConfig.approvedStatus = 'A' : _this13.ruleConfig.approvedStatus;
-                  _this13.ruleConfig.recordStatus == 'OPEN' ? _this13.ruleConfig.recordStatus = 'O' : _this13.ruleConfig.recordStatus == 'CLOSED' ? _this13.ruleConfig.recordStatus = 'C' : _this13.ruleConfig.recordStatus;
+                  _this13.ruleConfig.approverId = _this13.currentUser; // this.ruleConfig.approvedEver == 'NO'? this.ruleConfig.approvedEver = 'N' : (this.ruleConfig.approvedEver == 'YES'? this.ruleConfig.approvedEver = 'Y' : this.ruleConfig.approvedEver);
+                  // this.ruleConfig.approvedStatus == 'UNAUTHORIZED'? this.ruleConfig.approvedStatus = 'U' : (this.ruleConfig.approvedStatus == 'AUTHORIZED'? this.ruleConfig.approvedStatus = 'A' : this.ruleConfig.approvedStatus);
+                  // this.ruleConfig.recordStatus == "OPEN" ? this.ruleConfig.recordStatus = 'O' : (this.ruleConfig.recordStatus == 'CLOSE'? this.ruleConfig.recordStatus = 'C' : this.ruleConfig.recordStatus);
+
+                  if (_this13.ruleConfig.approvedStatus === 'UNAUTHORIZED') {
+                    _this13.ruleConfig.approvedStatus = 'U';
+                  }
+
+                  if (_this13.ruleConfig.approvedStatus === 'AUTHORIZED') {
+                    _this13.ruleConfig.approvedStatus = 'A';
+                  }
+
+                  if (_this13.ruleConfig.recordStatus === 'OPEN') {
+                    _this13.ruleConfig.recordStatus = 'O';
+                  }
+
+                  if (_this13.ruleConfig.recordStatus === 'CLOSE') {
+                    _this13.ruleConfig.recordStatus = 'C';
+                  }
+
+                  if (_this13.ruleConfig.approvedEver === 'NO') {
+                    _this13.ruleConfig.approvedEver = 'N';
+                  }
+
+                  if (_this13.ruleConfig.approvedEver === 'YES') {
+                    _this13.ruleConfig.approvedEver = 'Y';
+                  }
+
                   console.log(_this13.ruleConfig);
 
                   _this13.rules.editRuleConfig("auth", _this13.ruleConfig, _this13.currentUser).subscribe(function (authResp) {
@@ -5874,7 +5900,7 @@
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_9__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLink, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgModel],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe],
-        styles: [".danger[_ngcontent-%COMP%] {\n  color: #E6224A;\n}\n\n.td-highlight[_ngcontent-%COMP%] {\n  color: #E6224A !important;\n  font-size: 12px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  padding: 15px 3px 0px 12px;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px !important;\n  white-space: nowrap;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding-left: 2px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtZGV0YWlscy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7QUFDRjs7QUFDQTtFQUdFLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtBQUFGOztBQUlBO0VBQ0Usd0JBQUE7RUFDQSxtQkFBQTtBQURGOztBQUdBO0VBQ0UsNEJBQUE7QUFBRiIsImZpbGUiOiJydWxlLWRldGFpbHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGFuZ2VyIHtcclxuICBjb2xvcjogI0U2MjI0QTtcclxufVxyXG4udGQtaGlnaGxpZ2h0e1xyXG4gIC8vIG1hcmdpbi1sZWZ0OiA2cHggIWltcG9ydGFudDtcclxuICAvLyBtYXJnaW4tYm90dG9tOiAwLjFyZW0gIWltcG9ydGFudDtcclxuICBjb2xvcjogI0U2MjI0QSAhaW1wb3J0YW50O1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XHJcbiAgcGFkZGluZzogMTVweCAzcHggMHB4IDEycHg7XHJcbiAgLy8gYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNGNUY1RjU7XHJcbn1cclxuXHJcbnRhYmxlLnRhYmxlU3R5bGUgdGhlYWQgdHIgdGgge1xyXG4gIHBhZGRpbmc6IDEycHggIWltcG9ydGFudDtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG59XHJcbnRhYmxlLnRhYmxlU3R5bGUgdGJvZHkgdGQge1xyXG4gIHBhZGRpbmctbGVmdDogMnB4ICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"]
+        styles: [".danger[_ngcontent-%COMP%] {\n  color: #E6224A;\n}\n\n.td-highlight[_ngcontent-%COMP%] {\n  color: #000 !important;\n  font-size: 12px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  padding: 15px 3px 0px 12px;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px !important;\n  white-space: nowrap;\n}\n\ntable.tableStyle[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding-left: 2px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtZGV0YWlscy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7QUFDRjs7QUFDQTtFQUdFLHNCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtBQUFGOztBQUlBO0VBQ0Usd0JBQUE7RUFDQSxtQkFBQTtBQURGOztBQUdBO0VBQ0UsNEJBQUE7QUFBRiIsImZpbGUiOiJydWxlLWRldGFpbHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGFuZ2VyIHtcclxuICBjb2xvcjogI0U2MjI0QTtcclxufVxyXG4udGQtaGlnaGxpZ2h0e1xyXG4gIC8vIG1hcmdpbi1sZWZ0OiA2cHggIWltcG9ydGFudDtcclxuICAvLyBtYXJnaW4tYm90dG9tOiAwLjFyZW0gIWltcG9ydGFudDtcclxuICBjb2xvcjogIzAwMCAhaW1wb3J0YW50O1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XHJcbiAgcGFkZGluZzogMTVweCAzcHggMHB4IDEycHg7XHJcbiAgLy8gYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNGNUY1RjU7XHJcbn1cclxuXHJcbnRhYmxlLnRhYmxlU3R5bGUgdGhlYWQgdHIgdGgge1xyXG4gIHBhZGRpbmc6IDEycHggIWltcG9ydGFudDtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG59XHJcbnRhYmxlLnRhYmxlU3R5bGUgdGJvZHkgdGQge1xyXG4gIHBhZGRpbmctbGVmdDogMnB4ICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"]
       });
 
       var _RuleConfig2 = /*#__PURE__*/_createClass(function _RuleConfig2() {

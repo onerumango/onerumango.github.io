@@ -1378,7 +1378,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.authStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.firstTimeAuth);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
 
@@ -1649,7 +1649,8 @@
               recordStatus: [''],
               delimeter: [''],
               defaultValue: [''],
-              repeatedTillNextValue: ['']
+              repeatedTillNextValue: [''],
+              firstTimeAuth: ['']
             });
           }
         }, {
@@ -1844,8 +1845,9 @@
         }, {
           key: "auditLog",
           value: function auditLog() {
-            var _a, _b, _c, _d, _e, _f, _g;
+            var _a, _b, _c, _d, _e, _f, _g, _h;
 
+            debugger;
             this.authStatus = (_a = this.mappingResponse[0]) === null || _a === void 0 ? void 0 : _a.authStatus;
             this.recordStatus = (_b = this.mappingResponse[0]) === null || _b === void 0 ? void 0 : _b.recordStatus;
             this.modifiedBy = (_c = this.mappingResponse[0]) === null || _c === void 0 ? void 0 : _c.modifiedBy;
@@ -1853,6 +1855,7 @@
             this.authorizedBy = (_e = this.mappingResponse[0]) === null || _e === void 0 ? void 0 : _e.authorizedBy;
             this.authorizedTime = (_f = this.mappingResponse[0]) === null || _f === void 0 ? void 0 : _f.authorizedTime;
             this.version = (_g = this.mappingResponse[0]) === null || _g === void 0 ? void 0 : _g.version;
+            this.firstTimeAuth = (_h = this.mappingResponse[0]) === null || _h === void 0 ? void 0 : _h.firstTimeAuth;
             console.log("AuditLog", this.authStatus, this.recordStatus, this.modifiedBy, this.authorizedBy);
 
             if (this.authStatus === 'U') {
@@ -1869,6 +1872,14 @@
 
             if (this.recordStatus === 'O') {
               this.recordStatus = 'OPEN';
+            }
+
+            if (this.firstTimeAuth === 'Y') {
+              this.firstTimeAuth = 'YES';
+            }
+
+            if (this.firstTimeAuth === 'N') {
+              this.firstTimeAuth = 'NO';
             }
           }
         }, {
@@ -1996,7 +2007,7 @@
               }).then(function (result) {
                 if (result.isConfirmed === true) {
                   _this9.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, _this9.extNameValue, _this9.proCodeValue, _this9.extCodeValue, _this9.currentUser, _this9.currencyValue).subscribe(function (authResp) {
-                    var _a, _b, _c, _d, _e, _f, _g;
+                    var _a, _b, _c, _d, _e, _f, _g, _h;
 
                     _this9.mappingResponse = authResp;
 
@@ -2008,7 +2019,8 @@
                       _this9.authorizedBy = (_d = _this9.mappingResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
                       _this9.authorizedTime = (_e = _this9.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
                       _this9.version = (_f = _this9.mappingResponse) === null || _f === void 0 ? void 0 : _f.version;
-                      _this9.modifiedBy = (_g = _this9.mappingResponse) === null || _g === void 0 ? void 0 : _g.inputBy;
+                      _this9.firstTimeAuth = (_g = _this9.mappingResponse) === null || _g === void 0 ? void 0 : _g.firstTimeAuth;
+                      _this9.modifiedBy = (_h = _this9.mappingResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
 
                       if (_this9.authStatus === 'U') {
                         _this9.authStatus = 'UNAUTHORIZED';
@@ -2024,6 +2036,14 @@
 
                       if (_this9.recordStatus === 'O') {
                         _this9.recordStatus = 'OPEN';
+                      }
+
+                      if (_this9.firstTimeAuth === 'Y') {
+                        _this9.firstTimeAuth = 'YES';
+                      }
+
+                      if (_this9.firstTimeAuth === 'N') {
+                        _this9.firstTimeAuth = 'NO';
                       }
 
                       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({

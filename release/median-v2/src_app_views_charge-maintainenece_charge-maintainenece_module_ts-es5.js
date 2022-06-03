@@ -918,6 +918,7 @@
         }, {
           key: "new",
           value: function _new() {
+            localStorage.removeItem('idValue');
             this.apiService.setIndex({
               index: ""
             });
@@ -929,6 +930,7 @@
             this.apiService.setIndex({
               index: data.id
             });
+            localStorage.setItem('idValue', data.id);
             this.router.navigateByUrl("/charge-maintainence/create");
           }
         }, {
@@ -2106,6 +2108,7 @@
           value: function ngOnInit() {
             var _this8 = this;
 
+            this.idValue = localStorage.getItem('idValue');
             setTimeout(function () {
               _this8.newRolePermissions();
             }, 2000);
@@ -2118,6 +2121,13 @@
             console.log("role codes", this.roleCodes);
             this.currentUser = localStorage.getItem("userFromLogin");
             this.buildForm("");
+
+            if (this.idValue != null) {
+              this.chargeMaintenanceService.setIndex({
+                index: this.idValue
+              });
+            }
+
             this.chargeMaintenanceService.getIndex().subscribe(function (index) {
               if (index.index) {
                 _this8.index = index.index;

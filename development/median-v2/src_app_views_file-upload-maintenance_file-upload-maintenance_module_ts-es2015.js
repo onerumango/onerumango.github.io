@@ -22505,7 +22505,7 @@ function TreasuryReferenceComponent_option_13_Template(rf, ctx) { if (rf & 1) {
     const batch_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", batch_r3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", batch_r3, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", batch_r3, " ");
 } }
 function TreasuryReferenceComponent_div_15_tr_23_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
@@ -22537,6 +22537,7 @@ function TreasuryReferenceComponent_div_15_tr_23_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const data_r6 = ctx.$implicit;
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.id.batchNo);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
@@ -22544,13 +22545,15 @@ function TreasuryReferenceComponent_div_15_tr_23_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.id.currNo);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](9, 7, data_r6.id.initiationDate));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](9, 8, data_r6.id.initiationDate));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.id.sourceCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.account);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.amount);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", ctx_r4.disableSave);
 } }
 function TreasuryReferenceComponent_div_15_ng_container_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
@@ -22597,7 +22600,7 @@ function TreasuryReferenceComponent_div_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "tbody");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](23, TreasuryReferenceComponent_div_15_tr_23_Template, 18, 9, "tr", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](23, TreasuryReferenceComponent_div_15_tr_23_Template, 18, 10, "tr", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](24, TreasuryReferenceComponent_div_15_ng_container_24_Template, 5, 0, "ng-container", 18);
@@ -22617,19 +22620,19 @@ function TreasuryReferenceComponent_div_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "button", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function TreasuryReferenceComponent_div_16_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r7.onSaveOfFcyDealNumber(ctx_r7.treasuryReferenceData); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Save");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, " Save ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "button", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Exit");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, " Exit ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r2.disbaleSave);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r2.disableSave);
 } }
 class TreasuryReferenceComponent {
     constructor(apiService, formBuilder, toastService, fcyService, cdr) {
@@ -22646,53 +22649,56 @@ class TreasuryReferenceComponent {
     }
     ngOnInit() {
         this.treasuryReferenceForm = this.formBuilder.group({
-            batch: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            batch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
         });
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, 30],
+            ],
         };
         this.fetchingBatchNumber();
     }
     onSaveOfFcyDealNumber(data) {
-        console.log("onSaveOfFcyDealNumber", data);
-        this.fcyService.onSaveOfFcyDealNumber(data).subscribe(saveResp => {
+        console.log('onSaveOfFcyDealNumber', data);
+        this.fcyService.onSaveOfFcyDealNumber(data).subscribe((saveResp) => {
             console.log(saveResp);
             if (saveResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: "Record Saved Successfully",
+                    title: "Record saved successfully",
                     icon: "success"
                 });
-                this.disbaleSave = true;
+                this.disableSave = true;
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: "Failed Save the Record"
+                    title: 'Failed Save the Record',
                 });
             }
         });
     }
     fetchingBatchNumber() {
         this.isLoading = true;
-        this.apiService.fetchingBatchNo().subscribe(batchNumberResp => {
+        this.apiService.fetchingBatchNo().subscribe((batchNumberResp) => {
             this.selectedBatchNumber = batchNumberResp;
             this.isLoading = false;
             this.cdr.markForCheck();
             this.dtTrigger.next();
-            console.log("this.selectedBatchNumber", this.selectedBatchNumber);
+            console.log('this.selectedBatchNumber', this.selectedBatchNumber);
         });
     }
     onOptionsChange(event) {
         const value = event.target.value;
         if (value) {
             this.treasuryReferenceForm.controls.batch.setValue(value);
-            this.apiService.sendingBatchNumber(value).subscribe(batchResp => {
+            this.apiService.sendingBatchNumber(value).subscribe((batchResp) => {
                 if (batchResp == '') {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                        title: "No Data for Batch:" + value,
-                        icon: 'warning'
+                        title: 'No Data for Batch:' + value,
+                        icon: 'warning',
                     });
                     this.showTable = false;
                 }
@@ -22704,12 +22710,12 @@ class TreasuryReferenceComponent {
         }
     }
     pageDeactivation() {
-        console.log("pageDeactivation in user was called");
+        console.log('pageDeactivation in user was called');
         // return of (true);
         if (this.treasuryReferenceForm.touched) {
             let swalMsg = '';
             const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-            console.log("result: ", result);
+            console.log('result: ', result);
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
         }
         else {
@@ -22721,7 +22727,7 @@ class TreasuryReferenceComponent {
     }
 }
 TreasuryReferenceComponent.ɵfac = function TreasuryReferenceComponent_Factory(t) { return new (t || TreasuryReferenceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_fcy_deal_number_service__WEBPACK_IMPORTED_MODULE_3__.FcyDealNumberService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef)); };
-TreasuryReferenceComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: TreasuryReferenceComponent, selectors: [["npr-treasury-reference"]], decls: 17, vars: 4, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "selectBatch", 1, "formLbl"], ["formControlName", "batch", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "dbCardStyle dbCardStyle2 p-0", 4, "ngIf"], ["class", "row g-3 pb-3 pt-4 justify-content-end", 4, "ngIf"], [3, "value"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["type", "text", "placeholder", "Treasury Reference", "value", "", 1, "form-control"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], [1, "col-auto"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["type", "button", "routerLink", "/dashboard", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"]], template: function TreasuryReferenceComponent_Template(rf, ctx) { if (rf & 1) {
+TreasuryReferenceComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: TreasuryReferenceComponent, selectors: [["npr-treasury-reference"]], decls: 17, vars: 4, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "selectBatch", 1, "formLbl"], ["formControlName", "batch", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "dbCardStyle dbCardStyle2 p-0", 4, "ngIf"], ["class", "row g-3 pb-3 pt-4 justify-content-end", 4, "ngIf"], [3, "value"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["type", "text", "placeholder", "Treasury Reference", "value", "", 1, "form-control", 3, "readonly"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], [1, "col-auto"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["type", "button", "routerLink", "/dashboard", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"]], template: function TreasuryReferenceComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);

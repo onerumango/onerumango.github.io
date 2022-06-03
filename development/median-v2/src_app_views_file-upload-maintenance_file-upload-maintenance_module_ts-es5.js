@@ -26242,7 +26242,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", batch_r3, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", batch_r3, " ");
         }
       }
 
@@ -26306,6 +26306,8 @@
         if (rf & 2) {
           var data_r6 = ctx.$implicit;
 
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.id.batchNo);
@@ -26320,7 +26322,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](9, 7, data_r6.id.initiationDate));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](9, 8, data_r6.id.initiationDate));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
@@ -26333,6 +26335,10 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r6.amount);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("readonly", ctx_r4.disableSave);
         }
       }
 
@@ -26426,7 +26432,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "tbody");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](23, TreasuryReferenceComponent_div_15_tr_23_Template, 18, 9, "tr", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](23, TreasuryReferenceComponent_div_15_tr_23_Template, 18, 10, "tr", 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -26472,7 +26478,7 @@
             return ctx_r7.onSaveOfFcyDealNumber(ctx_r7.treasuryReferenceData);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Save");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, " Save ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -26482,7 +26488,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "button", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Exit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, " Exit ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -26496,7 +26502,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r2.disbaleSave);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx_r2.disableSave);
         }
       }
 
@@ -26520,7 +26526,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.treasuryReferenceForm = this.formBuilder.group({
-              batch: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]]
+              batch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]]
             });
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -26535,19 +26541,19 @@
           value: function onSaveOfFcyDealNumber(data) {
             var _this30 = this;
 
-            console.log("onSaveOfFcyDealNumber", data);
+            console.log('onSaveOfFcyDealNumber', data);
             this.fcyService.onSaveOfFcyDealNumber(data).subscribe(function (saveResp) {
               console.log(saveResp);
 
               if (saveResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: "Record Saved Successfully",
+                  title: "Record saved successfully",
                   icon: "success"
                 });
-                _this30.disbaleSave = true;
+                _this30.disableSave = true;
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: "Failed Save the Record"
+                  title: 'Failed Save the Record'
                 });
               }
             });
@@ -26566,7 +26572,7 @@
 
               _this31.dtTrigger.next();
 
-              console.log("this.selectedBatchNumber", _this31.selectedBatchNumber);
+              console.log('this.selectedBatchNumber', _this31.selectedBatchNumber);
             });
           }
         }, {
@@ -26581,7 +26587,7 @@
               this.apiService.sendingBatchNumber(value).subscribe(function (batchResp) {
                 if (batchResp == '') {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: "No Data for Batch:" + value,
+                    title: 'No Data for Batch:' + value,
                     icon: 'warning'
                   });
                   _this32.showTable = false;
@@ -26595,12 +26601,12 @@
         }, {
           key: "pageDeactivation",
           value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+            console.log('pageDeactivation in user was called'); // return of (true);
 
             if (this.treasuryReferenceForm.touched) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-              console.log("result: ", result);
+              console.log('result: ', result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
             } else {
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(true);
@@ -26625,7 +26631,7 @@
         selectors: [["npr-treasury-reference"]],
         decls: 17,
         vars: 4,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "selectBatch", 1, "formLbl"], ["formControlName", "batch", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "dbCardStyle dbCardStyle2 p-0", 4, "ngIf"], ["class", "row g-3 pb-3 pt-4 justify-content-end", 4, "ngIf"], [3, "value"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["type", "text", "placeholder", "Treasury Reference", "value", "", 1, "form-control"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], [1, "col-auto"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["type", "button", "routerLink", "/dashboard", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "selectBatch", 1, "formLbl"], ["formControlName", "batch", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "dbCardStyle dbCardStyle2 p-0", 4, "ngIf"], ["class", "row g-3 pb-3 pt-4 justify-content-end", 4, "ngIf"], [3, "value"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["type", "text", "placeholder", "Treasury Reference", "value", "", 1, "form-control", 3, "readonly"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], [1, "col-auto"], ["type", "button", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["type", "button", "routerLink", "/dashboard", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"]],
         template: function TreasuryReferenceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);

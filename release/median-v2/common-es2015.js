@@ -481,6 +481,12 @@ class UsersService {
     modifyUserService(user) {
         return this.http.post(`${API_URL}/users/modifyUser`, user);
     }
+    uploadDocument(uploadData) {
+        return this.http.post(`${API_URL}/users/uploadProfileImage`, uploadData);
+    }
+    getCustomerDocuments(userId) {
+        return this.http.get(`${API_URL}/users/getProfileImage?userId=${userId}`);
+    }
     getAllUsersListService() {
         return this.http.get(`${API_URL}/users/getAllUsers`);
     }

@@ -826,7 +826,8 @@
                               if (_this2.variable[0] === "Username or password wrong") {
                                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Username or Password is wrong");
                               } else {
-                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire(_this2.variable[0]);
+                                // Swal.fire(this.variable[0]);
+                                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire('Account blocked, maximum failed attempts reached. To login, please do Forgot Password and then try for login.');
                                 _this2.loginProcessing = false;
                               }
                             }

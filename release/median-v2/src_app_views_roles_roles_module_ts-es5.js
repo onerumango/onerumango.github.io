@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -1187,7 +1193,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r6.editFlag && ctx_r6.roleCodes.edit && ctx_r6.modifyRoleObject.recordStatus == "OPEN");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r6.editFlag && ctx_r6.roleCodes.edit && (ctx_r6.modifyRoleObject.recordStatus == "Open" || ctx_r6.modifyRoleObject.recordStatus == "OPEN"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -1195,19 +1201,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.authStatus == "UNAUTHORIZED" && ctx_r6.roleCodes.auth);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r6.modifyRoleObject.authStatus == "UNAUTHORIZED" || ctx_r6.modifyRoleObject.authStatus == "Unauthorized") && ctx_r6.roleCodes.auth);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "CLOSED" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES" && ctx_r6.roleCodes.reopen);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r6.modifyRoleObject.recordStatus == "CLOSED" || ctx_r6.modifyRoleObject.recordStatus == "Close") && (ctx_r6.modifyRoleObject.firstTimeAuth == "YES" || ctx_r6.modifyRoleObject.firstTimeAuth == "Y") && ctx_r6.roleCodes.reopen);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.recordStatus == "OPEN" && ctx_r6.modifyRoleObject.firstTimeAuth == "YES" && ctx_r6.roleCodes.close);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r6.modifyRoleObject.recordStatus == "OPEN" || ctx_r6.modifyRoleObject.recordStatus == "Open") && (ctx_r6.modifyRoleObject.firstTimeAuth == "YES" || ctx_r6.modifyRoleObject.firstTimeAuth == "Y") && ctx_r6.roleCodes.close);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r6.modifyRoleObject.firstTimeAuth == "NO" && ctx_r6.roleCodes["delete"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r6.modifyRoleObject.firstTimeAuth == "NO" || ctx_r6.modifyRoleObject.firstTimeAuth == "N") && ctx_r6.roleCodes["delete"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
@@ -1639,7 +1645,11 @@
           value: function ngOnInit() {
             var _this2 = this;
 
+            this.roleNavObj = localStorage.getItem('roleNavObj');
+            this.roleNavigationObject = JSON.parse(this.roleNavObj);
             this.roleService.getIndexValue().subscribe(function (resp) {
+              console.log(resp);
+
               if (resp.index === '') {
                 _this2.createRole();
               }
@@ -1648,11 +1658,9 @@
             this.navSubscription = this.roleService.getNavParam.subscribe(function (data) {
               return _this2.editRoleScreen = data;
             });
-            console.log(this.username); //this.getPermission(1,'System Maintenance');
+            console.log(this.editRoleScreen); //this.getPermission(1,'System Maintenance');
 
             this.editFlag = false;
-            console.log(this.editRoleScreen);
-            console.log(this.route.snapshot.queryParams);
             this.modifyRoleObject.id = this.editRoleScreen.queryParams.id;
             this.modifyRoleObject.roleName = this.editRoleScreen.queryParams.roleName;
             this.modifyRoleObject.roleDesc = this.editRoleScreen.queryParams.roleDesc;
@@ -1662,9 +1670,14 @@
             this.modifyRoleObject.checkerDtStamp = this.editRoleScreen.queryParams.checkerDtStamp;
             this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
             this.modifyRoleObject.version = this.editRoleScreen.queryParams.version;
-            this.buildRoleForm(this.modifyRoleObject);
 
-            if (this.modifyRoleObject.recordStatus == 'O') {
+            if (JSON.parse(this.roleNavObj) != null) {
+              this.buildRoleForm(JSON.parse(this.roleNavObj));
+            } else {
+              this.buildRoleForm(this.modifyRoleObject);
+            }
+
+            if (this.modifyRoleObject.recordStatus == 'Open') {
               this.modifyRoleObject.recordStatus = "OPEN";
             } else if (this.modifyRoleObject.recordStatus == 'C') {
               this.modifyRoleObject.recordStatus = "CLOSED";
@@ -1690,15 +1703,6 @@
               this.modifyRoleObject.firstTimeAuth = "NO";
             } else {
               this.modifyRoleObject.firstTimeAuth = this.editRoleScreen.queryParams.firstTimeAuth;
-            } // console.log(' data for update role recived');
-
-
-            console.log(this.modifyRoleObject.roleName);
-
-            if (this.modifyRoleObject.roleName) {
-              console.log("Query params");
-              this.modifyScreen = true;
-              this.editFlag = true;
             }
 
             this.fetchdynamicroles();
@@ -1706,19 +1710,22 @@
             this.roleService.screenLabelList.subscribe(function (message) {
               return _this2.roleCodes = message;
             });
-            console.log(this.roleCodes);
-            console.log(this.roleCodes.edit);
-            console.log(this.roleCodes.reopen);
+            this.modifyRoleObject = this.roleNavigationObject;
+
+            if (this.modifyRoleObject.roleName || this.roleNavigationObject.roleName) {
+              this.modifyScreen = true;
+              this.editFlag = true;
+            }
+
+            this.auditLog();
           }
         }, {
           key: "buildRoleForm",
           value: function buildRoleForm(data) {
-            console.log(data);
             this.myform = this.formBuilder.group({
               roleName: [data.roleName ? data.roleName : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _UsernameValidator.cannotContainSpace]],
               roleDesc: [data.roleDesc ? data.roleDesc : '', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]
             });
-            console.log(this.myform);
           }
         }, {
           key: "preparingPermissiondto",
@@ -1758,8 +1765,6 @@
         }, {
           key: "getPermission",
           value: function getPermission(num, event) {
-            // console.log(this.checkAll);
-            // console.log(num,event);
             this.btnNameSelected = event; // console.log(num);
 
             if (num != null || num != undefined) {
@@ -2075,6 +2080,8 @@
           key: "fetchdynamicroles",
           value: function fetchdynamicroles() {
             var _this8 = this;
+
+            this.modifyRoleObject.roleName = this.roleNavigationObject.roleName;
 
             if (this.modifyRoleObject.roleName != null) {
               this.roleService.fetchdynamicrolesdata(this.modifyRoleObject.roleName).subscribe(function (data) {
@@ -2508,7 +2515,7 @@
                 if (role.roleDto) {
                   _this9.modifyRoleObject = role.roleDto;
 
-                  if (_this9.modifyRoleObject.recordStatus == 'O') {
+                  if (_this9.modifyRoleObject.recordStatus == 'Open') {
                     _this9.modifyRoleObject.recordStatus = "OPEN";
                   } else if (_this9.modifyRoleObject.recordStatus == 'C') {
                     _this9.modifyRoleObject.recordStatus = "CLOSE";
@@ -2790,8 +2797,7 @@
                   }
                 }
 
-                console.log(roles, "Roles");
-                console.log(action, "action"); // console.log(event,"event");
+                console.log(roles, "Roles"); // console.log(event,"event");
 
                 console.log(this.rolessorteddata); // this.isEnabled();
               }
@@ -2808,19 +2814,19 @@
         }, {
           key: "auditLog",
           value: function auditLog() {
-            if (this.modifyRoleObject.authStatus == 'U') {
+            if (this.modifyRoleObject.authStatus == 'U' || this.modifyRoleObject.authStatus == 'Unauthorized') {
               this.modifyRoleObject.authStatus = 'UNAUTHORIZED';
             }
 
-            if (this.modifyRoleObject.authStatus == 'A') {
+            if (this.modifyRoleObject.authStatus == 'A' || this.modifyRoleObject.authStatus == 'Authorized') {
               this.modifyRoleObject.authStatus = 'AUTHORIZED';
             }
 
-            if (this.modifyRoleObject.recordStatus == 'O') {
+            if (this.modifyRoleObject.recordStatus == 'O' || this.modifyRoleObject.recordStatus == 'Open') {
               this.modifyRoleObject.recordStatus = 'OPEN';
             }
 
-            if (this.modifyRoleObject.recordStatus == 'C') {
+            if (this.modifyRoleObject.recordStatus == 'C' || this.modifyRoleObject.recordStatus == 'Close') {
               this.modifyRoleObject.recordStatus = 'CLOSED';
             }
 
@@ -3243,7 +3249,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx_r0.roleCodes["new"].labelDescription);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", ctx_r0.roleCodes["new"].labelDescription, " ");
         }
       }
 
@@ -3364,6 +3370,7 @@
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.dtOptions = {};
           this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+          this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
         }
 
         _createClass(_RoleListComponent, [{
@@ -3378,7 +3385,7 @@
               processing: true,
               columnDefs: [{
                 type: 'date',
-                'targets': [4]
+                targets: [4]
               }],
               order: [[4, 'desc']],
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
@@ -3401,6 +3408,29 @@
 
             this.isLoading = true;
             this.api.getAllRoles().subscribe(function (data) {
+              var _iterator = _createForOfIteratorHelper(data.result),
+                  _step;
+
+              try {
+                var _loop7 = function _loop7() {
+                  var item = _step.value;
+                  item.authStatus = _this11.statusArr.find(function (i) {
+                    return i.startsWith(item.authStatus);
+                  });
+                  item.recordStatus = _this11.statusArr.find(function (i) {
+                    return i.startsWith(item.recordStatus);
+                  });
+                };
+
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  _loop7();
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
+
               _this11.allRoles = data.result;
               _this11.isLoading = false;
 
@@ -3420,45 +3450,47 @@
             console.log('inside modify');
             console.log(this.modifyRoleObject);
             this.roleService.setIndexValue({
-              index: "edit"
+              index: 'edit'
             });
             var navigationExtras = {
               queryParams: {
-                'id': this.modifyRoleObject.id,
-                'roleName': this.modifyRoleObject.roleName,
-                'roleDesc': this.modifyRoleObject.roleDesc,
-                'new1': this.modifyRoleObject.new1,
-                'copy1': this.modifyRoleObject.copy1,
-                'delete1': this.modifyRoleObject.delete1,
-                'close1': this.modifyRoleObject.close1,
-                'unlock1': this.modifyRoleObject.unlock1,
-                'reopen1': this.modifyRoleObject.reopen1,
-                'print1': this.modifyRoleObject.print1,
-                'auth1': this.modifyRoleObject.auth1,
-                'view1': this.modifyRoleObject.view1,
-                'makerId': this.modifyRoleObject.makerId,
-                'makerDtStamp': this.modifyRoleObject.makerDtStamp,
-                'checkerId': this.modifyRoleObject.checkerId,
-                'checkerDtStamp': this.modifyRoleObject.checkerDtStamp,
-                'recordStatus': this.modifyRoleObject.recordStatus,
-                'authStatus': this.modifyRoleObject.authStatus,
-                'firstTimeAuth': this.modifyRoleObject.firstTimeAuth,
-                'version': this.modifyRoleObject.version
+                id: this.modifyRoleObject.id,
+                roleName: this.modifyRoleObject.roleName,
+                roleDesc: this.modifyRoleObject.roleDesc,
+                new1: this.modifyRoleObject.new1,
+                copy1: this.modifyRoleObject.copy1,
+                delete1: this.modifyRoleObject.delete1,
+                close1: this.modifyRoleObject.close1,
+                unlock1: this.modifyRoleObject.unlock1,
+                reopen1: this.modifyRoleObject.reopen1,
+                print1: this.modifyRoleObject.print1,
+                auth1: this.modifyRoleObject.auth1,
+                view1: this.modifyRoleObject.view1,
+                makerId: this.modifyRoleObject.makerId,
+                makerDtStamp: this.modifyRoleObject.makerDtStamp,
+                checkerId: this.modifyRoleObject.checkerId,
+                checkerDtStamp: this.modifyRoleObject.checkerDtStamp,
+                recordStatus: this.modifyRoleObject.recordStatus,
+                authStatus: this.modifyRoleObject.authStatus,
+                firstTimeAuth: this.modifyRoleObject.firstTimeAuth,
+                version: this.modifyRoleObject.version
               }
             };
+            localStorage.setItem('roleNavObj', JSON.stringify(this.modifyRoleObject));
             this.roleService.sendNavParam(navigationExtras);
             this.router.navigate(['/roles/create']); //this.router.navigate(['/roles/search'], navigationExtras);
           }
         }, {
           key: "createRole",
           value: function createRole() {
+            localStorage.removeItem('roleNavObj');
             this.router.navigate(['/roles/create']);
             var navigationExtras = {
               queryParams: {}
             };
             this.roleService.sendNavParam(navigationExtras);
             this.roleService.setIndexValue({
-              index: "new"
+              index: 'new'
             });
           }
         }]);
@@ -3500,7 +3532,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "button", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Exit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, " Exit ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

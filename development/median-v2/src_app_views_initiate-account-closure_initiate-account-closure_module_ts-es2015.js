@@ -553,13 +553,9 @@ function AccountClosureDetailsComponent_div_39_div_2_Template(rf, ctx) { if (rf 
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AccountClosureDetailsComponent_div_39_div_2_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r36); const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2); return ctx_r35.editValues(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, " Edit");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", ctx_r27.roleCodes.edit.labelDescription, "");
 } }
 function AccountClosureDetailsComponent_div_39_div_3_Template(rf, ctx) { if (rf & 1) {
     const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
@@ -647,7 +643,7 @@ function AccountClosureDetailsComponent_div_39_div_9_Template(rf, ctx) { if (rf 
 function AccountClosureDetailsComponent_div_39_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, AccountClosureDetailsComponent_div_39_div_2_Template, 3, 1, "div", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, AccountClosureDetailsComponent_div_39_div_2_Template, 3, 0, "div", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](3, AccountClosureDetailsComponent_div_39_div_3_Template, 3, 1, "div", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, AccountClosureDetailsComponent_div_39_div_4_Template, 3, 1, "div", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](5, AccountClosureDetailsComponent_div_39_div_5_Template, 3, 1, "div", 36);
@@ -665,7 +661,7 @@ function AccountClosureDetailsComponent_div_39_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r6.editFlag && ctx_r6.roleCodes.edit);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r6.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r6.singleCall && ctx_r6.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
@@ -892,26 +888,18 @@ class AccountClosureDetailsComponent {
         this.modifyScreen = false;
     }
     ngOnInit() {
+        this.accClosureNavObj = localStorage.getItem('AccountClosureNavObj');
+        this.accClosureNavigationObject = JSON.parse(this.accClosureNavObj);
         this.accClosure.getIndexValue().subscribe(resp => {
+            this.paramScreen = resp;
             if (resp.index === '') {
                 this.createAccClosure();
             }
         });
         this.currentUser = localStorage.getItem('currentUser').replace(/['"]+/g, '');
         this.navSubscription = this.roleService.getNavParam.subscribe(data => this.initiateAccClosure = data);
-        // this.accountClosureForm = this.formBuilder.group({
-        //   closureType: ['', Validators.required],
-        //   accountType: ['', Validators.required],
-        //   accountNumber: ['', [Validators.required, Validators.pattern('^[0-9 \-\']+')]],
-        //   branchCode:['',[Validators.required, Validators.pattern('^[0-9 \-\']+')]],
-        //   reasonForClosure:['',Validators.required],
-        // });
-        console.log(this.initiateAccClosure.queryParams);
-        // if(this.route.snapshot.queryParams.closureType){
-        //   console.log("Query params");
-        //   this.modifyScreen=true;
-        //   this.editFlag = true;
-        // }
+        console.log(this.initiateAccClosure, "Initiate Account Closure");
+        console.log(this.accClosureNavigationObject, "accClosureNavigationObject");
         this.fetchUserSingle.id = this.initiateAccClosure.queryParams.id;
         this.fetchUserSingle.modNo = this.initiateAccClosure.queryParams.modNo;
         this.fetchUserSingle.closureType = this.initiateAccClosure.queryParams.closureType;
@@ -946,11 +934,7 @@ class AccountClosureDetailsComponent {
         this.fetchUserSingle.checkerId = this.initiateAccClosure.queryParams.checkerId;
         this.fetchUserSingle.checkerInputTime = this.initiateAccClosure.queryParams.checkerInputTime;
         //--------------------------------------------
-        // this.id=params['id']
-        // console.log("idddd",this.id);
-        // });
-        console.log(this.fetchUserSingle);
-        console.log(this.fetchUserSingle.verifiedStatus);
+        console.log(this.roleCodes);
         if (this.fetchUserSingle.closureType == 'SINGLE') {
             this.data = 'SINGLE';
             console.log('inside bulk', this.fetchUserSingle.closureType);
@@ -960,13 +944,8 @@ class AccountClosureDetailsComponent {
             this.data = this.singleCall;
         }
         this.cdr.markForCheck();
-        console.log(this.fetchUserSingle.accountType);
         this.selected = this.fetchUserSingle.accountType;
-        console.log(this.selected);
         this.radioSelectred = this.fetchUserSingle.closureType;
-        // this.accClosure.gettingEditData(this.currentUser).subscribe(dataOfdit => {
-        //   console.log(dataOfdit);
-        // })
         if (this.fetchUserSingle.recordStatus == 'C') {
             this.fetchUserSingle.recordStatus = 'CLOSE';
         }
@@ -998,27 +977,32 @@ class AccountClosureDetailsComponent {
             }
             this.buildAccClosureForm(this.fetchUserSingle, true);
         }
+        if (this.initiateAccClosure.queryParams.closureType != 'BULK' || this.initiateAccClosure.queryParams.closureType != 'SINGLE') {
+            if (JSON.parse(this.accClosureNavObj) != null && this.paramScreen.index != 'new') {
+                this.fetchUserSingle = this.accClosureNavigationObject;
+                this.buildAccClosureForm(this.accClosureNavigationObject);
+                this.fileName = this.accClosureNavigationObject.fileName;
+                this.accountClosureForm.disable();
+            }
+        }
         this.accountClosureForm.get('closureType').setValue('BULK');
         localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType);
         this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
         setTimeout(() => {
-            console.log(this.roleCodes);
         }, 100);
-        // this.accountClosureForm.disable();
     }
     onClickOfBulk() {
-        console.log("this is bulk call");
         this.singleCall = false;
         this.accountClosureForm.get('closureType').setValue('BULK');
         localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType);
     }
     onclickOfSingle() {
-        console.log("this is single call");
         this.singleCall = true;
         this.accountClosureForm.get('closureType').setValue('SINGLE');
         localStorage.setItem('CLOSURETYPE', this.accountClosureForm.value.closureType);
     }
     buildAccClosureForm(data, isResponse) {
+        console.log(data);
         this.accountClosureForm = this.formBuilder.group({
             closureType: [data.closureType ? data.closureType : '', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
             accountType: [data.accountType ? data.accountType : '', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
@@ -1037,14 +1021,12 @@ class AccountClosureDetailsComponent {
         else {
             this.selectedFiles = event.target.files;
             this.sizeOfFile = this.selectedFiles.item(0).size;
-            console.log(this.sizeOfFile);
-            console.log(this.selectedFiles);
-            console.log(this.selectedFiles[0].name);
             this.fileName = this.selectedFiles[0].name;
-            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                text: "File Uploaded Successfully",
-                icon: 'success'
-            });
+            // Swal.fire(
+            //   {
+            //     text:"File Uploaded Successfully",
+            //     icon:'success'
+            //   });
             // this.showProgressBar=true;
             setTimeout(() => {
                 // this.showProgressBar=false;
@@ -1053,14 +1035,10 @@ class AccountClosureDetailsComponent {
         }
     }
     onSubmitSingle(data) {
-        console.log("on submit Single", data);
-        console.log(this.accountClosureForm.value);
         // this.accountClosure.accountNumber = this.accountClosureForm.get('accountNumber').value;
         // this.accountClosure.accountType = this.accountClosureForm.get('accountType').value;
         // this.accountClosure.branchCode = this.accountClosureForm.get('branchCode').value;
         // this.accountClosure.reasonForClosure = this.accountClosureForm.get('reasonForClosure').value;
-        console.log(this.accountClosureForm);
-        console.log(this.accountClosureForm.value);
         this.fetchUserSingle.inputBy = this.currentUser;
         // this.showProgressBarSingle=true;
         this.accClosure.onSingleClosure(this.accountClosureForm.value, this.fetchUserSingle.inputBy).subscribe(singleClosureData => {
@@ -1068,8 +1046,6 @@ class AccountClosureDetailsComponent {
                 let responseMsg = singleClosureData.errorDesc;
                 if (responseMsg == 'S' || responseMsg === "S") {
                     this.fetchUserSingle = singleClosureData;
-                    console.log(this.fetchUserSingle);
-                    console.log(this.fetchUserSingle);
                     if (this.fetchUserSingle.recordStatus == 'O') {
                         this.fetchUserSingle.recordStatus = 'OPEN';
                     }
@@ -1079,18 +1055,6 @@ class AccountClosureDetailsComponent {
                     if (this.fetchUserSingle.verifiedOnce == 'N') {
                         this.fetchUserSingle.verifiedOnce = 'NO';
                     }
-                    // this.iziToast.show({
-                    //   message: `Record Successfully Uploaded`,
-                    //   image: "assets/images/user.png",
-                    //   icon: 'ico ico-success',
-                    //   theme:"dark",
-                    //   layout: 2,
-                    //   // imageWidth:50,
-                    //   balloon: false,
-                    //   position: "topRight",
-                    //   progressBarColor: "green",
-                    //   pauseOnHover: true,
-                    // });
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                         text: "Record Successfully Uploaded",
                         // type: "success"
@@ -1102,18 +1066,6 @@ class AccountClosureDetailsComponent {
                         text: responseMsg,
                         icon: "warning"
                     });
-                    // this.iziToast.show({
-                    //   message: responseMsg,
-                    //   image: "assets/images/user.png",
-                    //   icon: 'ico ico-error',
-                    //   theme:"dark",
-                    //   layout: 2,
-                    //   // imageWidth:50,
-                    //   balloon: false,
-                    //   position: "topRight",
-                    //   progressBarColor: "green",
-                    //   pauseOnHover: true,
-                    // });
                 }
             }
             else {
@@ -1124,21 +1076,14 @@ class AccountClosureDetailsComponent {
             }
             // this.showProgressBarSingle=false; 
         });
-        // this.accountClosureForm.reset();
-        // this.submitted = true;
     }
     editValues() {
         this.editFlag = true;
         this.accountClosureForm.enable();
     }
     onClickOfViewToDatabulk() {
-        console.log("bulk");
         // else{
         if (this.fetchUserSingle.closureType == 'BULK') {
-            console.log("insdie bulk", this.fetchUserSingle);
-            console.log("accont Type", this.fetchUserSingle.accountType);
-            console.log("closure Tpye", this.fetchUserSingle.closureType);
-            console.log("finle Name", this.fetchUserSingle.fileName);
             const navigationExtras = {
                 queryParams: {
                     'closureTypeViewBulk': this.fetchUserSingle.closureType,
@@ -1172,21 +1117,15 @@ class AccountClosureDetailsComponent {
                     //----------------------------------
                 }
             };
-            console.log(navigationExtras);
             this.accClosure.sendNavParam(navigationExtras);
-            console.log(navigationExtras);
             this.router.navigate(['initiate-account-closure/viewReport']);
-            console.log(navigationExtras);
             // this.router.navigate(['account-closure/viewReportOfAccountClosure'],navigationExtras);
         }
     }
     onClickOfViewToData() {
-        console.log("this is view", this.fetchUserSingle.closureType);
         localStorage.setItem("accountTypeForProcess", this.fetchUserSingle.accountType);
         localStorage.setItem("closureTypeForBulk", this.fetchUserSingle.closureType);
-        console.log("bulk", this.fetchUserSingle.closureType);
         if (this.fetchUserSingle.closureType == "SINGLE") {
-            console.log("inisde if of single edit screnn");
             this.accClosure.onViewOfSingleClsureType(this.fetchUserSingle.accountType, this.fetchUserSingle.closureType, this.fetchUserSingle.accountNumber).subscribe(viewReportOfSingleResp => {
                 this.fetch = viewReportOfSingleResp;
                 const navigationExtras = {
@@ -1245,7 +1184,6 @@ class AccountClosureDetailsComponent {
         ;
     }
     onSubmitFile() {
-        console.log("on submit");
         this.accountClosureForm.get('closureType').setValue('BULK');
         console.log(this.accountClosureForm.value);
         console.log(this.accountClosureForm.controls.accountType.value);
@@ -1282,7 +1220,6 @@ class AccountClosureDetailsComponent {
                 //   this.uploadSuccess = true;
                 // }
                 if (fileResp) {
-                    console.log(fileResp);
                     this.fetchUserSingle = fileResp;
                     if (this.fetchUserSingle.errorDesc == 'S') {
                         this.enableView = true;
@@ -1338,7 +1275,6 @@ class AccountClosureDetailsComponent {
         }
     }
     pageDeactivation() {
-        console.log("pageDeactivation in user was called");
         // return of (true);
         if (this.accountClosureForm.touched && this.formTouched == true) {
             let swalMsg = '';
@@ -1380,8 +1316,6 @@ class AccountClosureDetailsComponent {
     }
     onSubmitOfSingleClosure() {
         // this.editFalg=false;
-        console.log("this is submitting single Record Data");
-        console.log(this.fetchUserSingle);
         this.accClosure.submiitingSingleClosureRecordAfterEdit(this.fetchUserSingle, this.currentUser, this.fetchUserSingle.id).subscribe(backendResp => {
             console.log(backendResp.errorDesc);
             this.fetchUserSingle = backendResp;
@@ -1781,13 +1715,12 @@ class InitiateAccountClosureComponent {
     getDataFromSummary(row) {
         console.log("this is row", row);
         this.fileName = row.fileName;
-        console.log("file", this.fileName);
         localStorage.setItem("fileName", this.fileName);
         this.viewAccountType = row.accountType;
         localStorage.setItem("typeOfAccount", this.viewAccountType);
-        console.log("typeOfAccount", this.viewAccountType);
-        if (row.closureType == "SINGLE") {
-        }
+        //  if(row.closureType=="SINGLE")
+        //  {
+        //  }
         const navigationExtras = {
             queryParams: {
                 modifyNo: row.modNo,
@@ -1827,9 +1760,8 @@ class InitiateAccountClosureComponent {
                 //-------------------------------------
             }
         };
-        console.log('row', row.accountLinkageDesc);
-        console.log('row', navigationExtras);
-        // this.router.navigate(['initiate-account-closure/create'], navigationExtras);
+        console.log('navigationExtras', navigationExtras);
+        localStorage.setItem('AccountClosureNavObj', JSON.stringify(row));
         this.roleService.sendNavParam(navigationExtras);
         this.router.navigate(['/initiate-account-closure/create']);
         this.accClosureServiceSum.setIndexValue({
