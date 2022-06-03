@@ -79,7 +79,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
         color: #24CCA7;
     } 
     .mat-input-element {
-        
+        background: none;
         color: white;
     }
      .button{
@@ -493,6 +493,10 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
     .mat-menu-panel {
         background-color:#1b1b29;
+      }
+    .headingInput{
+        background: #1b1b29;
+        color: #cdcdde; 
       }
 
 
