@@ -80,7 +80,7 @@ let LoginPage = class LoginPage {
         console.log(this.customerPhonenum);
         localStorage.setItem("PhoneNumLogin", this.customerPhonenum);
         if (this.customerPhonenum == '')
-            this.openToast();
+            this.openToast('Please enter the registered Mobile Number');
         // localStorage.setItem("PhoneNumLogin", this.customerPhonenum);
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
@@ -88,24 +88,30 @@ let LoginPage = class LoginPage {
         console.log("model", this.oTpModel);
         if (this.oTpModel.source_value != '') {
             this.api.getOtp(this.oTpModel).subscribe(otpResp => {
-                if (otpResp.icust.custStatus != "APPROVED" || otpResp.icust.custAccount[0].status != "APPROVED") {
-                    this.openToast1();
+                console.log('custStatus :: ', otpResp);
+                if (Object.keys(otpResp).length === 0) {
+                    this.openToast('No data found for Phone No. :' + phone.phoneNo);
                 }
                 else {
-                    console.log("Response Success", otpResp);
-                    this.otpResponse = otpResp;
-                    console.log("Response otpResp['otpVal'].token", otpResp['otpVal'].token);
-                    this.api.sendOtp(this.otpResponse['otpVal'].token);
-                    /* Added validation for un-registered mobile nummber is entered */
-                    if (this.otpResponse.otpVal.userId === "New Customer" || (this.otpResponse.otpVal.userId === '' && this.otpResponse.otpVal.userId === null)) {
-                        this.cdk.detectChanges();
-                        this.userResp = true;
-                        this.openToast();
+                    if (!otpResp.icust.custStatus.toString().includes('APPROVED')) {
+                        this.openToast('Customer Id or Account Status is not approved');
                     }
                     else {
-                        // this.otpResponse.otpVal.userId !='' && this.otpResponse.otpVal.userId!=null && 
-                        console.log('in else');
-                        this.router.navigateByUrl('/otp');
+                        console.log("Response Success", otpResp);
+                        this.otpResponse = otpResp;
+                        console.log("Response otpResp['otpVal'].token", otpResp['otpVal'].token);
+                        this.api.sendOtp(this.otpResponse['otpVal'].token);
+                        /* Added validation for un-registered mobile nummber is entered */
+                        if (this.otpResponse.otpVal.userId === "New Customer" || (this.otpResponse.otpVal.userId === '' && this.otpResponse.otpVal.userId === null)) {
+                            this.cdk.detectChanges();
+                            this.userResp = true;
+                            this.openToast('Please enter the registered Mobile Number');
+                        }
+                        else {
+                            // this.otpResponse.otpVal.userId !='' && this.otpResponse.otpVal.userId!=null && 
+                            console.log('in else');
+                            this.router.navigateByUrl('/otp');
+                        }
                     }
                 }
             });
@@ -132,15 +138,6 @@ let LoginPage = class LoginPage {
             this.router.navigateByUrl('/sessions/login');
         }
     }
-    openToast1() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const toast = yield this.toastCtrl.create({
-                message: 'Customer Id or Account Status is not approved',
-                duration: 2000
-            });
-            toast.present();
-        });
-    }
     goToCashWithdrawal(loginForm) {
         // console.log(loginForm.value.otp);
         console.log(loginForm.phoneNo);
@@ -153,10 +150,10 @@ let LoginPage = class LoginPage {
         });
         // this.router.navigate(['tabs']);
     }
-    openToast() {
+    openToast(message) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
-                message: 'Please enter the registered Mobile Number',
+                message: `${message}`,
                 duration: 5000
             });
             toast.present();
