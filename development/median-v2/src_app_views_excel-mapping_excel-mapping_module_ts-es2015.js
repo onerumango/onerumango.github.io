@@ -641,7 +641,7 @@ function ExcelMappingEditComponent_div_26_div_33_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](63, 11, ctx_r21.authorizedTime, "MM/dd/yyyy, h:mm a"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.authStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.firstTimeAuth);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r21.authStatus);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
@@ -808,7 +808,8 @@ class ExcelMappingEditComponent {
             recordStatus: [''],
             delimeter: [''],
             defaultValue: [''],
-            repeatedTillNextValue: ['']
+            repeatedTillNextValue: [''],
+            firstTimeAuth: ['']
         });
     }
     gettingSummaryData() {
@@ -947,7 +948,8 @@ class ExcelMappingEditComponent {
     get f() { return this.addForm.controls; }
     get t() { return this.f.subArray; }
     auditLog() {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        debugger;
         this.authStatus = (_a = this.mappingResponse[0]) === null || _a === void 0 ? void 0 : _a.authStatus;
         this.recordStatus = (_b = this.mappingResponse[0]) === null || _b === void 0 ? void 0 : _b.recordStatus;
         this.modifiedBy = (_c = this.mappingResponse[0]) === null || _c === void 0 ? void 0 : _c.modifiedBy;
@@ -955,6 +957,7 @@ class ExcelMappingEditComponent {
         this.authorizedBy = (_e = this.mappingResponse[0]) === null || _e === void 0 ? void 0 : _e.authorizedBy;
         this.authorizedTime = (_f = this.mappingResponse[0]) === null || _f === void 0 ? void 0 : _f.authorizedTime;
         this.version = (_g = this.mappingResponse[0]) === null || _g === void 0 ? void 0 : _g.version;
+        this.firstTimeAuth = (_h = this.mappingResponse[0]) === null || _h === void 0 ? void 0 : _h.firstTimeAuth;
         console.log("AuditLog", this.authStatus, this.recordStatus, this.modifiedBy, this.authorizedBy);
         if (this.authStatus === 'U') {
             this.authStatus = 'UNAUTHORIZED';
@@ -967,6 +970,12 @@ class ExcelMappingEditComponent {
         }
         if (this.recordStatus === 'O') {
             this.recordStatus = 'OPEN';
+        }
+        if (this.firstTimeAuth === 'Y') {
+            this.firstTimeAuth = 'YES';
+        }
+        if (this.firstTimeAuth === 'N') {
+            this.firstTimeAuth = 'NO';
         }
     }
     checkTypeStatus(i) {
@@ -1073,7 +1082,7 @@ class ExcelMappingEditComponent {
                 if (result.isConfirmed === true) {
                     this.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, this.extNameValue, this.proCodeValue, this.extCodeValue, this.currentUser, this.currencyValue)
                         .subscribe(authResp => {
-                        var _a, _b, _c, _d, _e, _f, _g;
+                        var _a, _b, _c, _d, _e, _f, _g, _h;
                         this.mappingResponse = authResp;
                         if (this.mappingResponse) {
                             this.authStatus = (_a = this.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
@@ -1083,7 +1092,8 @@ class ExcelMappingEditComponent {
                             this.authorizedBy = (_d = this.mappingResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
                             this.authorizedTime = (_e = this.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
                             this.version = (_f = this.mappingResponse) === null || _f === void 0 ? void 0 : _f.version;
-                            this.modifiedBy = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.inputBy;
+                            this.firstTimeAuth = (_g = this.mappingResponse) === null || _g === void 0 ? void 0 : _g.firstTimeAuth;
+                            this.modifiedBy = (_h = this.mappingResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
                             if (this.authStatus === 'U') {
                                 this.authStatus = 'UNAUTHORIZED';
                             }
@@ -1095,6 +1105,12 @@ class ExcelMappingEditComponent {
                             }
                             if (this.recordStatus === 'O') {
                                 this.recordStatus = 'OPEN';
+                            }
+                            if (this.firstTimeAuth === 'Y') {
+                                this.firstTimeAuth = 'YES';
+                            }
+                            if (this.firstTimeAuth === 'N') {
+                                this.firstTimeAuth = 'NO';
                             }
                             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                                 title: 'Record is Authorized',

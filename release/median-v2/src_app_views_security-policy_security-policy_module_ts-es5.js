@@ -881,6 +881,7 @@
           value: function getResp() {
             var _this4 = this;
 
+            localStorage.removeItem('securityPolicyData');
             this.router.navigateByUrl("/security-policy");
             var data = this.respArray.find(function (item) {
               return item.version == _this4.maxVersion;
@@ -912,6 +913,7 @@
               version: data.version,
               passwordGenerationType: data.passwordGenerationType
             });
+            localStorage.setItem("securityPolicyData", JSON.stringify(data));
           }
         }]);
 
@@ -1695,7 +1697,9 @@
 
             this.currentUser = localStorage.getItem('userFromLogin');
             this.buildForm("");
-            this.fetchSecurityPolicyService();
+            debugger;
+            var newObject = localStorage.getItem("securityPolicyData");
+            this.fetchSecurityPolicyService(JSON.parse(newObject));
             this.roleService.screenLabelList.subscribe(function (message) {
               return _this5.roleCodes = message;
             });
@@ -1873,35 +1877,32 @@
 
         }, {
           key: "fetchSecurityPolicyService",
-          value: function fetchSecurityPolicyService() {
-            var _this7 = this;
+          value: function fetchSecurityPolicyService(resp) {
+            debugger;
 
-            this.secuityService.getsecurityDetailsEdit().subscribe(function (resp) {
-              if (resp) {
-                _this7.securityData = resp;
-                console.log(_this7.securityData);
+            if (resp) {
+              this.securityData = resp;
+              console.log(this.securityData);
+              this.assignCheckValue(this.securityData);
 
-                _this7.assignCheckValue(_this7.securityData);
-
-                if (_this7.securityData.recordStatus == 'O') {
-                  _this7.securityData.recordStatus = "OPEN";
-                } else if (_this7.securityData.recordStatus == 'C') {
-                  _this7.securityData.recordStatus = "CLOSE";
-                }
-
-                if (_this7.securityData.authStatus == 'A') {
-                  _this7.securityData.authStatus = "AUTHORIZED";
-                } else if (_this7.securityData.authStatus == 'U') {
-                  _this7.securityData.authStatus = "UNAUTHORIZED";
-                }
-
-                if (_this7.securityData.firstTimeAuth == 'Y') {
-                  _this7.securityData.firstTimeAuth = "YES";
-                } else if (_this7.securityData.firstTimeAuth == 'N') {
-                  _this7.securityData.firstTimeAuth = "NO";
-                }
+              if (this.securityData.recordStatus == 'O') {
+                this.securityData.recordStatus = "OPEN";
+              } else if (this.securityData.recordStatus == 'C') {
+                this.securityData.recordStatus = "CLOSE";
               }
-            });
+
+              if (this.securityData.authStatus == 'A') {
+                this.securityData.authStatus = "AUTHORIZED";
+              } else if (this.securityData.authStatus == 'U') {
+                this.securityData.authStatus = "UNAUTHORIZED";
+              }
+
+              if (this.securityData.firstTimeAuth == 'Y') {
+                this.securityData.firstTimeAuth = "YES";
+              } else if (this.securityData.firstTimeAuth == 'N') {
+                this.securityData.firstTimeAuth = "NO";
+              }
+            }
           } // async pageDeactivation(): Promise<Observable<boolean>> {
 
         }, {
@@ -1931,7 +1932,7 @@
         }, {
           key: "auth",
           value: function auth() {
-            var _this8 = this;
+            var _this7 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -1948,7 +1949,7 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                if (_this8.securityData.createdBy === localStorage.getItem("userFromLogin")) {
+                if (_this7.securityData.createdBy === localStorage.getItem("userFromLogin")) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: 'Maker Cannot Authorize Record!',
                     icon: 'error'
@@ -1957,13 +1958,20 @@
                 }
 
                 console.log("this is authorzation");
-                _this8.securityForm.value.authorizedBy = _this8.currentUser;
+                _this7.securityForm.value.loggedInUser = _this7.currentUser;
 
-                _this8.secuityService.authSecurity('authorize', _this8.securityForm.value).subscribe(function (resp) {
+                _this7.secuityService.authSecurity('authorize', _this7.securityForm.value).subscribe(function (resp) {
                   console.log(resp);
-                  _this8.securityData = resp;
+                  _this7.securityData = resp;
 
-                  _this8.auditlog();
+                  _this7.auditlog();
+
+                  if (resp) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Record is Authorized",
+                      icon: 'success'
+                    });
+                  }
                 }, function (error) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: error.error.message,
@@ -1976,7 +1984,7 @@
         }, {
           key: "close",
           value: function close() {
-            var _this9 = this;
+            var _this8 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -1995,13 +2003,13 @@
               if (result.isConfirmed === true) {
                 console.log("this is close");
 
-                _this9.secuityService.authSecurity('close', _this9.securityForm.value).subscribe(function (resp) {
+                _this8.secuityService.authSecurity('close', _this8.securityForm.value).subscribe(function (resp) {
                   console.log(resp);
-                  _this9.securityData = resp;
+                  _this8.securityData = resp;
 
-                  _this9.auditlog();
+                  _this8.auditlog();
 
-                  if (_this9.securityData) {
+                  if (_this8.securityData) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Closed"
                     });
@@ -2015,7 +2023,7 @@
         }, {
           key: "reopen",
           value: function reopen() {
-            var _this10 = this;
+            var _this9 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2032,14 +2040,14 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this10.secuityService.authSecurity('reopen', _this10.securityForm.value).subscribe(function (resp) {
+                _this9.secuityService.authSecurity('reopen', _this9.securityForm.value).subscribe(function (resp) {
                   console.log(resp);
-                  _this10.securityData = resp;
+                  _this9.securityData = resp;
 
-                  _this10.auditlog();
+                  _this9.auditlog();
 
-                  if (_this10.securityData.recordStatus == "O") {
-                    _this10.auditlog();
+                  if (_this9.securityData.recordStatus == "O") {
+                    _this9.auditlog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Reopened"
@@ -2076,6 +2084,11 @@
               this.securityData.firstTimeAuth = "NO";
             }
           }
+        }, {
+          key: "exit",
+          value: function exit() {
+            localStorage.removeItem('securityPolicyData');
+          }
         }]);
 
         return _SecurityPolicyComponent;
@@ -2090,7 +2103,7 @@
         selectors: [["npr-security-policy"]],
         decls: 87,
         vars: 11,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [3, "disabled"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "securityLogins", 1, "formLbl"], [1, "colorRed"], ["formControlName", "passwordGenerationType", "aria-label", "Default select example", 1, "form-select", 3, "ngModelChange"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["value", "Manual"], ["value", "Auto"], ["id", "securityLogins", "type", "text", "formControlName", "maxInvLogins", "placeholder", "Maximum Invalid Logins", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "maxPassword", 1, "formLbl"], ["id", "maxPassword", "type", "number", "formControlName", "maxPswdLength", "placeholder", "Maximum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "minPassword", 1, "formLbl"], ["id", "minPassword", "type", "number", "formControlName", "minPswdLength", "placeholder", "Minimum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "passExpiry", 1, "formLbl"], ["id", "passExpiry", "type", "number", "formControlName", "pswdExpiry", "placeholder", "Password Expiry (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "expiryReminder", 1, "formLbl"], ["id", "expiryReminder", "type", "number", "formControlName", "notifyPasswordExpiryInDays", "placeholder", "Password Expiry Reminder (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "reuseLimit", 1, "formLbl"], ["id", "reuseLimit", "type", "number", "formControlName", "pswdReuseAft", "placeholder", "Password Reuse Limit", "value", "", 1, "form-control", 3, "ngModelChange"], [1, "col-12"], ["for", "", 1, "formLbl"], [1, "checkListCol"], [1, "checkStyle"], ["type", "checkbox", "formControlName", "pswdComplexUcase", "id", "uppercaseCheck", 3, "ngModelChange"], ["for", "uppercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexLcase", "id", "lowercaseCheck", 3, "ngModelChange"], ["for", "lowercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexNum", "id", "numberCheck", 3, "ngModelChange"], ["for", "numberCheck"], ["type", "checkbox", "formControlName", "pswdComplexSplc", "id", "charactersCheck", 3, "ngModelChange"], ["for", "charactersCheck"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [3, "disabled"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "securityLogins", 1, "formLbl"], [1, "colorRed"], ["formControlName", "passwordGenerationType", "aria-label", "Default select example", 1, "form-select", 3, "ngModelChange"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["value", "Manual"], ["value", "Auto"], ["id", "securityLogins", "type", "text", "formControlName", "maxInvLogins", "placeholder", "Maximum Invalid Logins", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "maxPassword", 1, "formLbl"], ["id", "maxPassword", "type", "number", "formControlName", "maxPswdLength", "placeholder", "Maximum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "minPassword", 1, "formLbl"], ["id", "minPassword", "type", "number", "formControlName", "minPswdLength", "placeholder", "Minimum Password Length", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "passExpiry", 1, "formLbl"], ["id", "passExpiry", "type", "number", "formControlName", "pswdExpiry", "placeholder", "Password Expiry (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "expiryReminder", 1, "formLbl"], ["id", "expiryReminder", "type", "number", "formControlName", "notifyPasswordExpiryInDays", "placeholder", "Password Expiry Reminder (In days)", "value", "", 1, "form-control", 3, "ngModelChange"], ["for", "reuseLimit", 1, "formLbl"], ["id", "reuseLimit", "type", "number", "formControlName", "pswdReuseAft", "placeholder", "Password Reuse Limit", "value", "", 1, "form-control", 3, "ngModelChange"], [1, "col-12"], ["for", "", 1, "formLbl"], [1, "checkListCol"], [1, "checkStyle"], ["type", "checkbox", "formControlName", "pswdComplexUcase", "id", "uppercaseCheck", 3, "ngModelChange"], ["for", "uppercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexLcase", "id", "lowercaseCheck", 3, "ngModelChange"], ["for", "lowercaseCheck"], ["type", "checkbox", "formControlName", "pswdComplexNum", "id", "numberCheck", 3, "ngModelChange"], ["for", "numberCheck"], ["type", "checkbox", "formControlName", "pswdComplexSplc", "id", "charactersCheck", 3, "ngModelChange"], ["for", "charactersCheck"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink", "click"], ["class", "dbCardStyle", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
         template: function SecurityPolicyComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -2406,6 +2419,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "div", 39);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](84, "button", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function SecurityPolicyComponent_Template_button_click_84_listener() {
+              return ctx.exit();
+            });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](85, "Exit");
 

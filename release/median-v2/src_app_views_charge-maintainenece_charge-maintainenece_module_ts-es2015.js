@@ -540,6 +540,7 @@ class ChargeMaintainenceSummaryComponent {
         });
     }
     new() {
+        localStorage.removeItem('idValue');
         this.apiService.setIndex({
             index: "",
         });
@@ -549,6 +550,7 @@ class ChargeMaintainenceSummaryComponent {
         this.apiService.setIndex({
             index: data.id,
         });
+        localStorage.setItem('idValue', data.id);
         this.router.navigateByUrl("/charge-maintainence/create");
     }
     ngOnDestroy() {
@@ -1148,6 +1150,7 @@ class ChargeMaintaineneceComponent {
         this.formTouched = true;
     }
     ngOnInit() {
+        this.idValue = localStorage.getItem('idValue');
         setTimeout(() => {
             this.newRolePermissions();
         }, 2000);
@@ -1158,6 +1161,11 @@ class ChargeMaintaineneceComponent {
         console.log("role codes", this.roleCodes);
         this.currentUser = localStorage.getItem("userFromLogin");
         this.buildForm("");
+        if (this.idValue != null) {
+            this.chargeMaintenanceService.setIndex({
+                index: this.idValue,
+            });
+        }
         this.chargeMaintenanceService.getIndex().subscribe((index) => {
             if (index.index) {
                 this.index = index.index;

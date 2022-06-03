@@ -1001,6 +1001,16 @@
             return this.http.post("".concat(_API_URL2, "/users/modifyUser"), user);
           }
         }, {
+          key: "uploadDocument",
+          value: function uploadDocument(uploadData) {
+            return this.http.post("".concat(_API_URL2, "/users/uploadProfileImage"), uploadData);
+          }
+        }, {
+          key: "getCustomerDocuments",
+          value: function getCustomerDocuments(userId) {
+            return this.http.get("".concat(_API_URL2, "/users/getProfileImage?userId=").concat(userId));
+          }
+        }, {
           key: "getAllUsersListService",
           value: function getAllUsersListService() {
             return this.http.get("".concat(_API_URL2, "/users/getAllUsers"));

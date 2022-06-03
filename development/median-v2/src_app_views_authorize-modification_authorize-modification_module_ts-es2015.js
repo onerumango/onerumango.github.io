@@ -553,7 +553,8 @@ function AuthorizeModificationComponent_button_57_Template(rf, ctx) { if (rf & 1
 class AuthorizeModificationComponent {
     constructor(api, 
     // public dialog: MatDialog,
-    userApi, excelService) {
+    userApi, excelService // private toastService : ToastService,
+    ) {
         this.api = api;
         this.userApi = userApi;
         this.excelService = excelService;
@@ -588,17 +589,23 @@ class AuthorizeModificationComponent {
         this.dtOptions[0] = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [4] }],
+            columnDefs: [{ type: 'date', targets: [4] }],
             order: [[4, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, 30],
+            ],
         };
         this.dtOptions[1] = {
             pagingType: 'full_numbers',
             pageLength: 5,
             processing: true,
             retrieve: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, 30],
+            ],
         };
     }
     ngOnDestroy() {
@@ -608,7 +615,9 @@ class AuthorizeModificationComponent {
     screenpermission() {
         this.screenName = 'DataAmendAuthorization';
         // this.role='ROLE1';
-        this.userApi.getRoleScreenPermission(this.user_id, this.screenName, this.role).subscribe(res => {
+        this.userApi
+            .getRoleScreenPermission(this.user_id, this.screenName, this.role)
+            .subscribe((res) => {
             this.rolepermission = res;
             console.log(this.rolepermission);
             if (this.rolepermission) {
@@ -618,15 +627,14 @@ class AuthorizeModificationComponent {
         });
     }
     extractFilename(path) {
-        const pathArray = path.split("/");
+        const pathArray = path.split('/');
         const lastIndex = pathArray.length - 1;
         return pathArray[lastIndex];
     }
-    ;
     getAuditLogData(getDetailsQueryToggleReqDTO) {
         this.api
             .getFirstAndSecondAuthAuditService(this.getDetailsQueryToggleReqDTO)
-            .subscribe(resp => {
+            .subscribe((resp) => {
             this.firstAndSecondAuthAuditLogRespDTO = resp;
         });
     }
@@ -650,7 +658,9 @@ class AuthorizeModificationComponent {
         }
         this.flag = false;
         this.progress = true;
-        this.api.authorizeSecondLevel(this.pendingForAuthDetailsListAll, localStorage.getItem('currentUser')).subscribe(resp => {
+        this.api
+            .authorizeSecondLevel(this.pendingForAuthDetailsListAll, localStorage.getItem('currentUser'))
+            .subscribe((resp) => {
             this.firstLevelAuthorizationStatus = resp;
             console.log(this.firstLevelAuthorizationStatus);
             if (this.firstLevelAuthorizationStatus) {
@@ -669,14 +679,15 @@ class AuthorizeModificationComponent {
         // );
     }
     getAllSecondLevelAuthDetailsData() {
-        this.api.getSecondLevelAuthDetailsData().subscribe(resp => {
+        this.api.getSecondLevelAuthDetailsData().subscribe((resp) => {
             this.pendingForAuthDetailsListAll = resp;
             this.dtTrigger2.next();
         });
     }
     queryDetailsDataByParam(pendingForAuthDTO, i) {
-        var btn = document.getElementById("btnGetDetails" + i);
-        btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
+        var btn = document.getElementById('btnGetDetails' + i);
+        btn.innerHTML =
+            '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
         this.getDetailsQueryToggleReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_1__.GetDetailsQueryToggleReqDTO();
         // this.getDetailsQueryToggleReqDTO.externalSysName =
         //   pendingForAuthDTO.externalSysName;
@@ -693,7 +704,7 @@ class AuthorizeModificationComponent {
         //
         this.api
             .queryDetailsDataByParamServiceSecond(pendingForAuthDTO.batchNumber)
-            .subscribe(resp => {
+            .subscribe((resp) => {
             this.pendingForAuthDetailsListAll = resp;
             btn.innerHTML = '<span>Get Details</span>';
             this.dtTrigger2.next();
@@ -715,14 +726,18 @@ class AuthorizeModificationComponent {
     getDataWithOldAndNewValue(pendingForAuthDTO) {
         this.deUploadPendingForAuthDTO = pendingForAuthDTO;
         this.getDetailsQueryToggleReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_1__.GetDetailsQueryToggleReqDTO();
-        this.getDetailsQueryToggleReqDTO.externalSysName = this.deUploadPendingForAuthDTO.externalSysName;
-        this.getDetailsQueryToggleReqDTO.processName = this.deUploadPendingForAuthDTO.processName;
-        this.getDetailsQueryToggleReqDTO.processingDate = this.deUploadPendingForAuthDTO.processingDate;
-        this.getDetailsQueryToggleReqDTO.currency = this.deUploadPendingForAuthDTO.currency;
+        this.getDetailsQueryToggleReqDTO.externalSysName =
+            this.deUploadPendingForAuthDTO.externalSysName;
+        this.getDetailsQueryToggleReqDTO.processName =
+            this.deUploadPendingForAuthDTO.processName;
+        this.getDetailsQueryToggleReqDTO.processingDate =
+            this.deUploadPendingForAuthDTO.processingDate;
+        this.getDetailsQueryToggleReqDTO.currency =
+            this.deUploadPendingForAuthDTO.currency;
         //
         this.api
             .queryDetailsDataByParamService(this.getDetailsQueryToggleReqDTO)
-            .subscribe(resp => {
+            .subscribe((resp) => {
             this.detailsDataForFlex = resp;
             // console.log("hahaha");
             // console.log(this.detailsDataForFlex);
@@ -735,7 +750,7 @@ class AuthorizeModificationComponent {
         this.deUploadReqDTO.pendingForAuthDTO = this.deUploadPendingForAuthDTO;
         this.deUploadReqDTO.pendingForAuthDetailsDTOList = this.detailsDataForFlex;
         // this.flag = false;
-        this.api.processDeUpload(this.deUploadReqDTO, this.user_id).subscribe(resp => {
+        this.api.processDeUpload(this.deUploadReqDTO, this.user_id).subscribe((resp) => {
             this.deUploadStatus = resp;
             // console.log(this.deUploadStatus);
             if (this.deUploadStatus.statusMessage === 'FAILURE') {
@@ -746,7 +761,7 @@ class AuthorizeModificationComponent {
                 this.spinner = false;
                 this.openSnackBar('Data Successfully Uploaded TO DeUpload', '');
             }
-        }, error => {
+        }, (error) => {
             if (_angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpErrorResponse) {
                 this.spinner = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire('Error', 'Failed to connect to flexcube');
@@ -754,10 +769,10 @@ class AuthorizeModificationComponent {
         });
     }
     getPendingForAuthData() {
-        this.api.getPendingForAuthDataFirstError(this.user_id).subscribe(resp => {
+        this.api.getPendingForAuthDataFirstError(this.user_id).subscribe((resp) => {
             // console.log(resp);
             this.pendingForAuthData = resp;
-            this.dtTrigger1.next();
+            this.dtTrigger1.next(0);
             console.log(this.pendingForAuthData);
         });
     }
@@ -775,7 +790,8 @@ class AuthorizeModificationComponent {
         this.getDataWithOldAndNewValue(detailsObj);
         console.log(detailsObj);
         console.log(src_app_shared_models_pending_for_auth_details_dto__WEBPACK_IMPORTED_MODULE_0__.PendingForAuthDetailsDTO);
-        this.dummyPendingForAuthDataDetailsSecond = new Array();
+        this.dummyPendingForAuthDataDetailsSecond =
+            new Array();
         const sourceCode = detailsObj.id.sourceCode;
         const branchCode = detailsObj.id.branchCode;
         const batchNo = detailsObj.id.batchNo;
@@ -832,7 +848,7 @@ class AuthorizeModificationComponent {
                 //   Validation_Error: element.validationError,
                 Related_Customer: element.relCust,
                 Related_Account: element.relatedAccount,
-                Related_Reference: element.relatedRef
+                Related_Reference: element.relatedRef,
             });
             console.log(this.dataForProcessScreen1);
         });
