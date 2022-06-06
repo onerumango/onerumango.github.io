@@ -1845,6 +1845,7 @@ class UserNewComponent {
         console.log(JSON.parse(this.userNavObj));
         if (JSON.parse(this.userNavObj) != null) {
             this.buildUserForm(JSON.parse(this.userNavObj));
+            this.getProfileImage(JSON.parse(this.userNavObj).userId);
         }
     }
     buildUserForm(data, isResponse) {

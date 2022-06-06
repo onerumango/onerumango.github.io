@@ -968,18 +968,22 @@ class AccountClosureDetailsComponent {
         if (this.fetchUserSingle.closureType == undefined) {
             this.buildAccClosureForm(this.fetchUserSingle, false);
         }
-        if (this.fetchUserSingle.closureType == 'BULK' || this.fetchUserSingle.closureType == 'SINGLE') {
+        console.log(this.fetchUserSingle);
+        if (this.fetchUserSingle.closureType == 'BULK' || this.fetchUserSingle.closureType == 'SINGLE' || this.fetchUserSingle.closureType == undefined) {
             if (this.fetchUserSingle.closureType == 'BULK') {
                 this.bulk = true;
             }
             if (this.fetchUserSingle.closureType == 'SINGLE') {
                 this.bulk = false;
             }
+            console.log("YJHGJH");
             this.buildAccClosureForm(this.fetchUserSingle, true);
         }
-        if (this.initiateAccClosure.queryParams.closureType != 'BULK' || this.initiateAccClosure.queryParams.closureType != 'SINGLE') {
-            if (JSON.parse(this.accClosureNavObj) != null && this.paramScreen.index != 'new') {
+        console.log(this.initiateAccClosure);
+        if ((this.initiateAccClosure.queryParams.closureType != 'BULK' || this.initiateAccClosure.queryParams.closureType != 'SINGLE')) {
+            if ((JSON.parse(this.accClosureNavObj) != null && this.paramScreen.index != 'new')) {
                 this.fetchUserSingle = this.accClosureNavigationObject;
+                console.log("YJHGJH");
                 this.buildAccClosureForm(this.accClosureNavigationObject);
                 this.fileName = this.accClosureNavigationObject.fileName;
                 this.accountClosureForm.disable();

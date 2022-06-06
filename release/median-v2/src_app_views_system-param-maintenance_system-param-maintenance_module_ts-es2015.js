@@ -1550,7 +1550,8 @@ class AccountClassEditComponent {
     getGlobalAccSummary() {
         this.apiService.getGlobalAccSummary().subscribe((summaryData) => {
             this.globalaccacsummryData = summaryData;
-            console.log("ACC Data", this.globalaccacsummryData);
+            var retrievedObject = localStorage.getItem('globalaccacsummryData');
+            this.globalaccacsummryData = JSON.parse(retrievedObject);
             this.userID = this.globalaccacsummryData.creatorId;
             this.auditLogforACC();
             const permission = this.globalaccacsummryData.permission;
@@ -2352,6 +2353,8 @@ class GeneralLedgerEditComponent {
     getGlobalGccSummary() {
         this.apiService.getGlobalGccSummary().subscribe((summaryData) => {
             this.globalgccacsummryData = summaryData;
+            var retrievedObject = localStorage.getItem('globalgccacsummryData');
+            this.globalgccacsummryData = JSON.parse(retrievedObject);
             console.log("GCC dta", this.globalgccacsummryData);
             this.auditLogforGCC();
             const permission = this.globalgccacsummryData.permission;
@@ -3091,6 +3094,7 @@ class GlobalGccAcMaintenanceComponent {
     }
     sendingGccDataforEdit(data) {
         console.log(data, "Data");
+        localStorage.setItem('globalgccacsummryData', JSON.stringify(data));
         this.apiService.setGlobalGccSummary({
             approvedEver: data.approvedEver,
             approvedStatus: data.approvedStatus,
@@ -3108,6 +3112,7 @@ class GlobalGccAcMaintenanceComponent {
         this.router.navigate(["/system-param-maintenance/global-gl-edit"]);
     }
     sendingaccDataforEdit(data) {
+        localStorage.setItem('globalaccacsummryData', JSON.stringify(data));
         this.apiService.setGlobalAccSummary({
             approvedEver: data.approvedEver,
             approvedStatus: data.approvedStatus,
@@ -4268,6 +4273,8 @@ class TransactionCodeEditComponent {
         this.submitFlag = false;
     }
     ngOnInit() {
+        console.log("idValue ", localStorage.getItem('idValue'));
+        this.idValue = localStorage.getItem('idValue');
         setTimeout(() => {
             this.newRolePermissions();
         }, 2000);
@@ -4290,6 +4297,10 @@ class TransactionCodeEditComponent {
         });
         this.getUserName();
         this.gettingSummaryData();
+        // var retrievedObject = localStorage.getItem('transactionCodeData');
+        // console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        // this.transactionCodeSummryData = JSON.parse(retrievedObject);
+        // console.log('transactionCodeSummryData: ', JSON.parse(retrievedObject));
     }
     newRolePermissions() {
         this.roleService.fetchScreenPermissions('Transaction Code Maintenance');
@@ -4398,13 +4409,13 @@ class TransactionCodeEditComponent {
     gettingSummaryData() {
         this.apiService.getSummaryDataTransactionCode().subscribe((summaryData) => {
             this.transactionCodeSummryData = summaryData;
-            console.log("formValues", this.transactionCodeSummryData.formValues);
-            console.log("this.transactionCodeSummryData", this.transactionCodeSummryData);
+            var retrievedObject = localStorage.getItem('transactionCodeData');
+            this.transactionCodeSummryData = JSON.parse(retrievedObject);
             this.auditLog();
-            this.userID = this.transactionCodeSummryData.userID;
+            this.userID = this.transactionCodeSummryData.userId;
             this.transactionCodeEditForm.controls.userId.setValue(this.userID);
             this.addtrnDec.removeAt(0);
-            this.transactionCodeSummryData.formValues.forEach(element => {
+            this.transactionCodeSummryData.medTransCode.forEach(element => {
                 const row = this.formBuilder.group({
                     trnDesc: [element.trnDesc, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
                     trnCode: [element.trnCode, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
@@ -5046,12 +5057,13 @@ class TransactionCodeMaintenanceComponent {
     }
     sendingDataforEdit(data) {
         const userID = data.userId;
+        localStorage.setItem('idValue', userID);
         this.apiService.gettingTransactionDatabyID(data.userId).subscribe(trndataResp => {
             this.transactionDataResp = trndataResp;
-            console.log("this.transactionDataResp", this.transactionDataResp.id, data.id);
+            localStorage.setItem('transactionCodeData', JSON.stringify(data));
             if (this.transactionDataResp) {
                 this.apiService.setSummaryDataTransactionCode({
-                    userID: data.userId,
+                    userId: data.userId,
                     creatorDtStamp: data.creatorDtStamp,
                     creatorId: data.creatorId,
                     modNo: data.modNo,
@@ -5060,7 +5072,7 @@ class TransactionCodeMaintenanceComponent {
                     verifiedBy: data.verifiedBy,
                     verifiedOnce: data.verifiedOnce,
                     verifiedTime: data.verifiedTime,
-                    formValues: this.transactionDataResp
+                    medTransCode: this.transactionDataResp
                 });
                 this.router.navigate(["/system-param-maintenance/transaction-code-edit"]);
             }
@@ -6416,6 +6428,8 @@ class UserAccountClassEditComponent {
     getuserACCdata() {
         this.apiService.getuserACCSummary().subscribe((summaryData) => {
             this.getuserACCSummarydata = summaryData;
+            var retrievedObject = localStorage.getItem('getuserACCSummarydata');
+            this.getuserACCSummarydata = JSON.parse(retrievedObject);
             this.userID = this.getuserACCSummarydata.creatorId;
             this.auditLogforACC();
             const permission = this.getuserACCSummarydata.permission;
@@ -8062,6 +8076,7 @@ class UserGccAcMaintenanceComponent {
         });
     }
     sendingUserGCCforEdit(data) {
+        localStorage.setItem('getuserGCCSummarydata', JSON.stringify(data));
         this.apiService.setUserGCCSummary({
             approvedEver: data.approvedEver,
             approvedStatus: data.approvedStatus,
@@ -8079,6 +8094,7 @@ class UserGccAcMaintenanceComponent {
         this.router.navigate(["/system-param-maintenance/user-gl-edit"]);
     }
     sendingUserACCforEdit(data) {
+        localStorage.setItem('getuserACCSummarydata', JSON.stringify(data));
         this.apiService.setUserACCSummary({
             approvedEver: data.approvedEver,
             approvedStatus: data.approvedStatus,
@@ -9452,6 +9468,8 @@ class UserGeneralLedgerEditComponent {
     getuserGCCdata() {
         this.apiService.getuserGCCSummary().subscribe((summaryData) => {
             this.getuserGCCSummarydata = summaryData;
+            var retrievedObject = localStorage.getItem('getuserGCCSummarydata');
+            this.getuserGCCSummarydata = JSON.parse(retrievedObject);
             this.userID = this.getuserGCCSummarydata.creatorId;
             this.auditLogforGCC();
             this.userGLEditForm.controls.userId.setValue(this.getuserGCCSummarydata.creatorId);

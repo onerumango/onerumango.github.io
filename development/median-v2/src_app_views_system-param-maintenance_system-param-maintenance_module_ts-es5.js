@@ -2940,7 +2940,8 @@
 
             this.apiService.getGlobalAccSummary().subscribe(function (summaryData) {
               _this9.globalaccacsummryData = summaryData;
-              console.log("ACC Data", _this9.globalaccacsummryData);
+              var retrievedObject = localStorage.getItem('globalaccacsummryData');
+              _this9.globalaccacsummryData = JSON.parse(retrievedObject);
               _this9.userID = _this9.globalaccacsummryData.creatorId;
 
               _this9.auditLogforACC();
@@ -4357,6 +4358,8 @@
 
             this.apiService.getGlobalGccSummary().subscribe(function (summaryData) {
               _this16.globalgccacsummryData = summaryData;
+              var retrievedObject = localStorage.getItem('globalgccacsummryData');
+              _this16.globalgccacsummryData = JSON.parse(retrievedObject);
               console.log("GCC dta", _this16.globalgccacsummryData);
 
               _this16.auditLogforGCC();
@@ -5521,6 +5524,7 @@
           key: "sendingGccDataforEdit",
           value: function sendingGccDataforEdit(data) {
             console.log(data, "Data");
+            localStorage.setItem('globalgccacsummryData', JSON.stringify(data));
             this.apiService.setGlobalGccSummary({
               approvedEver: data.approvedEver,
               approvedStatus: data.approvedStatus,
@@ -5540,6 +5544,7 @@
         }, {
           key: "sendingaccDataforEdit",
           value: function sendingaccDataforEdit(data) {
+            localStorage.setItem('globalaccacsummryData', JSON.stringify(data));
             this.apiService.setGlobalAccSummary({
               approvedEver: data.approvedEver,
               approvedStatus: data.approvedStatus,
@@ -7726,6 +7731,8 @@
           value: function ngOnInit() {
             var _this32 = this;
 
+            console.log("idValue ", localStorage.getItem('idValue'));
+            this.idValue = localStorage.getItem('idValue');
             setTimeout(function () {
               _this32.newRolePermissions();
             }, 2000);
@@ -7749,7 +7756,10 @@
               creatorDtStamp: [""]
             });
             this.getUserName();
-            this.gettingSummaryData();
+            this.gettingSummaryData(); // var retrievedObject = localStorage.getItem('transactionCodeData');
+            // console.log('retrievedObject: ', JSON.parse(retrievedObject));
+            // this.transactionCodeSummryData = JSON.parse(retrievedObject);
+            // console.log('transactionCodeSummryData: ', JSON.parse(retrievedObject));
           }
         }, {
           key: "newRolePermissions",
@@ -7886,18 +7896,18 @@
 
             this.apiService.getSummaryDataTransactionCode().subscribe(function (summaryData) {
               _this35.transactionCodeSummryData = summaryData;
-              console.log("formValues", _this35.transactionCodeSummryData.formValues);
-              console.log("this.transactionCodeSummryData", _this35.transactionCodeSummryData);
+              var retrievedObject = localStorage.getItem('transactionCodeData');
+              _this35.transactionCodeSummryData = JSON.parse(retrievedObject);
 
               _this35.auditLog();
 
-              _this35.userID = _this35.transactionCodeSummryData.userID;
+              _this35.userID = _this35.transactionCodeSummryData.userId;
 
               _this35.transactionCodeEditForm.controls.userId.setValue(_this35.userID);
 
               _this35.addtrnDec.removeAt(0);
 
-              _this35.transactionCodeSummryData.formValues.forEach(function (element) {
+              _this35.transactionCodeSummryData.medTransCode.forEach(function (element) {
                 var row = _this35.formBuilder.group({
                   trnDesc: [element.trnDesc, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
                   trnCode: [element.trnCode, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
@@ -9002,13 +9012,14 @@
             var _this43 = this;
 
             var userID = data.userId;
+            localStorage.setItem('idValue', userID);
             this.apiService.gettingTransactionDatabyID(data.userId).subscribe(function (trndataResp) {
               _this43.transactionDataResp = trndataResp;
-              console.log("this.transactionDataResp", _this43.transactionDataResp.id, data.id);
+              localStorage.setItem('transactionCodeData', JSON.stringify(data));
 
               if (_this43.transactionDataResp) {
                 _this43.apiService.setSummaryDataTransactionCode({
-                  userID: data.userId,
+                  userId: data.userId,
                   creatorDtStamp: data.creatorDtStamp,
                   creatorId: data.creatorId,
                   modNo: data.modNo,
@@ -9017,7 +9028,7 @@
                   verifiedBy: data.verifiedBy,
                   verifiedOnce: data.verifiedOnce,
                   verifiedTime: data.verifiedTime,
-                  formValues: _this43.transactionDataResp
+                  medTransCode: _this43.transactionDataResp
                 });
 
                 _this43.router.navigate(["/system-param-maintenance/transaction-code-edit"]);
@@ -11583,6 +11594,8 @@
 
             this.apiService.getuserACCSummary().subscribe(function (summaryData) {
               _this51.getuserACCSummarydata = summaryData;
+              var retrievedObject = localStorage.getItem('getuserACCSummarydata');
+              _this51.getuserACCSummarydata = JSON.parse(retrievedObject);
               _this51.userID = _this51.getuserACCSummarydata.creatorId;
 
               _this51.auditLogforACC();
@@ -14248,6 +14261,7 @@
         }, {
           key: "sendingUserGCCforEdit",
           value: function sendingUserGCCforEdit(data) {
+            localStorage.setItem('getuserGCCSummarydata', JSON.stringify(data));
             this.apiService.setUserGCCSummary({
               approvedEver: data.approvedEver,
               approvedStatus: data.approvedStatus,
@@ -14267,6 +14281,7 @@
         }, {
           key: "sendingUserACCforEdit",
           value: function sendingUserACCforEdit(data) {
+            localStorage.setItem('getuserACCSummarydata', JSON.stringify(data));
             this.apiService.setUserACCSummary({
               approvedEver: data.approvedEver,
               approvedStatus: data.approvedStatus,
@@ -16844,6 +16859,8 @@
 
             this.apiService.getuserGCCSummary().subscribe(function (summaryData) {
               _this80.getuserGCCSummarydata = summaryData;
+              var retrievedObject = localStorage.getItem('getuserGCCSummarydata');
+              _this80.getuserGCCSummarydata = JSON.parse(retrievedObject);
               _this80.userID = _this80.getuserGCCSummarydata.creatorId;
 
               _this80.auditLogforGCC();
