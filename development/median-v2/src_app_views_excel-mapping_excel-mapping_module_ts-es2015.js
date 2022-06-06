@@ -815,16 +815,22 @@ class ExcelMappingEditComponent {
     gettingSummaryData() {
         this.apiService.getexcelSummaryData().subscribe((resp) => {
             this.summryResponse = resp;
+            console.log("this.summryResponse", this.summryResponse);
+            var retrievedObject = localStorage.getItem('summryResponse');
+            this.summryResponse = JSON.parse(retrievedObject);
         });
         if (this.summryResponse) {
-            this.extCode = this.summryResponse.extCode;
+            this.extCode = this.summryResponse.extSysCode;
             this.processNAme = this.summryResponse.processName;
-            this.extSys = this.summryResponse.extSysName;
+            this.extSys = this.summryResponse.extSys;
             this.updateMappingForm.controls.extCode.setValue(this.extCode);
             this.updateMappingForm.controls.proCode.setValue(this.processNAme);
             this.apiService.getExcelMappingDataforEdit(this.extCode, this.processNAme, this.extSys).subscribe((editResp) => {
                 console.log("This. is new Resp", editResp);
                 this.newDataResponse = editResp;
+                localStorage.setItem('newDataResponse', JSON.stringify(this.newDataResponse));
+                var retrievedObject = localStorage.getItem('newDataResponse');
+                this.newDataResponse = JSON.parse(retrievedObject);
                 this.ccyData = this.newDataResponse.currency;
                 this.sheetData = this.newDataResponse.sheetNo;
                 if (this.newDataResponse.currency.length === 1) {
@@ -852,6 +858,9 @@ class ExcelMappingEditComponent {
         this.apiService.getAllMappingByExtSysAndProcessCode(extCode, proCode, currenyVal, sheetNumber)
             .subscribe(mappingResponse => {
             this.mappingResponse = mappingResponse;
+            localStorage.setItem('mappingResponse', JSON.stringify(this.mappingResponse));
+            var retrievedObject = localStorage.getItem('mappingResponse');
+            this.mappingResponse = JSON.parse(retrievedObject);
             console.log("this.mappingResponse", this.mappingResponse);
             if (this.mappingResponse == null) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -949,7 +958,6 @@ class ExcelMappingEditComponent {
     get t() { return this.f.subArray; }
     auditLog() {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        debugger;
         this.authStatus = (_a = this.mappingResponse[0]) === null || _a === void 0 ? void 0 : _a.authStatus;
         this.recordStatus = (_b = this.mappingResponse[0]) === null || _b === void 0 ? void 0 : _b.recordStatus;
         this.modifiedBy = (_c = this.mappingResponse[0]) === null || _c === void 0 ? void 0 : _c.modifiedBy;
@@ -2338,10 +2346,11 @@ class ExcelMappingComponent {
         });
     }
     setDataFromSummaryToUpdateExcelMapping(element) {
+        localStorage.setItem('summryResponse', JSON.stringify(element));
         console.log("element.extCode", element.extSysCode);
         this.apiService.setexcelSummaryData({
-            extCode: element.extSysCode,
-            extSysName: element.extSys,
+            extSysCode: element.extSysCode,
+            extSys: element.extSys,
             processName: element.processName,
             authStatus: element.authStatus
         });

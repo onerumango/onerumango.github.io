@@ -18968,7 +18968,9 @@
 
             this.apiService.getExternalSystemSummry().subscribe(function (summaryData) {
               _this3.externalSystemSummry = summaryData;
-              console.log("this.externalSystemSummry", _this3.externalSystemSummry);
+              var retrievedObject = localStorage.getItem('externalSystemSummry');
+              _this3.externalSystemSummry = JSON.parse(retrievedObject); // console.log("this.externalSystemSummry", this.externalSystemSummry);
+
               var extCode = _this3.externalSystemSummry.extSysCode;
               var extName = _this3.externalSystemSummry.extSysName;
               var department = _this3.externalSystemSummry.department;
@@ -20472,6 +20474,7 @@
           key: "sendingDataforEdit",
           value: function sendingDataforEdit(dataForEdit) {
             if (dataForEdit) {
+              localStorage.setItem('externalSystemSummry', JSON.stringify(dataForEdit));
               this.apiService.setExternalSystemSummry({
                 authStatus: dataForEdit.authStatus,
                 authorizedBy: dataForEdit.authorizedBy,
@@ -21904,6 +21907,8 @@
 
             this.apiService.getProcessCode().subscribe(function (summaryData) {
               _this14.processCodeSummary = summaryData;
+              var retrievedObject = localStorage.getItem('processCodeSummary');
+              _this14.processCodeSummary = JSON.parse(retrievedObject);
               console.log("this.processCodeSummary", _this14.processCodeSummary);
               var extCode = _this14.processCodeSummary.extSysCode;
               var extSysName = _this14.processCodeSummary.extSysName;
@@ -21912,7 +21917,7 @@
               var treasuryrefReq = _this14.processCodeSummary.treasuryrefRequired;
               var autoUpload = _this14.processCodeSummary.autoUpload;
               var backDateAllow = _this14.processCodeSummary.backDateAllow;
-              var fCYRateVariance = _this14.processCodeSummary.fcyvariance;
+              var fCYRateVariance = _this14.processCodeSummary.fCYRateVariance;
               var sftpRequired = _this14.processCodeSummary.sftpRequired;
               var futureDateAllow = _this14.processCodeSummary.futureDateAllow;
               var wuFile = _this14.processCodeSummary.wuFile;
@@ -21978,7 +21983,7 @@
 
               if (fCYRateVariance == true) {
                 _this14.showfCYExchangeValue = true;
-                var fCYPercentage = _this14.processCodeSummary.fcypercenatage;
+                var fCYPercentage = _this14.processCodeSummary.fCYPercentage;
 
                 _this14.processCodeEditForm.controls.fCYPercentage.setValue(fCYPercentage);
               }
@@ -21992,23 +21997,23 @@
 
               if (sftpRequired == true) {
                 _this14.showsftpValues = true;
-                var ipAddress = _this14.processCodeSummary.ipAddress;
+                var ipAddress = _this14.processCodeSummary.sftpIpaddress;
 
                 _this14.processCodeEditForm.controls.sftpIpaddress.setValue(ipAddress);
 
-                var userName = _this14.processCodeSummary.userName;
+                var userName = _this14.processCodeSummary.sftpUsername;
 
                 _this14.processCodeEditForm.controls.sftpUsername.setValue(userName);
 
-                var path = _this14.processCodeSummary.path;
+                var path = _this14.processCodeSummary.sftpPath;
 
                 _this14.processCodeEditForm.controls.sftpPath.setValue(path);
 
-                var port = _this14.processCodeSummary.port;
+                var port = _this14.processCodeSummary.sftpPort;
 
                 _this14.processCodeEditForm.controls.sftpPort.setValue(port);
 
-                var password = _this14.processCodeSummary.password;
+                var password = _this14.processCodeSummary.sftpPassword;
 
                 _this14.processCodeEditForm.controls.sftpPassword.setValue(password);
               }
@@ -25801,6 +25806,7 @@
           key: "sendingDataforEdit",
           value: function sendingDataforEdit(element) {
             if (element) {
+              localStorage.setItem('processCodeSummary', JSON.stringify(element));
               this.apiService.setProcessCodeData({
                 id: element.id,
                 extSysCode: element.extSysCode,
@@ -25860,14 +25866,14 @@
                 acft: element.acft,
                 autoUpload: element.autoUpload,
                 filePath: element.filePath,
-                fcyvariance: element.fCYRateVariance,
-                fcypercenatage: element.fCYPercentage,
-                userName: element.sftpUsername,
-                password: element.sftpPassword,
-                port: element.sftpPort,
-                ipAddress: element.sftpIpaddress,
+                fCYRateVariance: element.fCYRateVariance,
+                fCYPercentage: element.fCYPercentage,
+                sftpUsername: element.sftpUsername,
+                sftpPassword: element.sftpPassword,
+                sftpPort: element.sftpPort,
+                sftpIpaddress: element.sftpIpaddress,
                 sftpRequired: element.sftpRequired,
-                path: element.sftpPath,
+                sftpPath: element.sftpPath,
                 mandatoryFieldImposed: element.mandatoryFieldImposed,
                 treasuryrefRequired: element.treasuryrefRequired,
                 wuFile: element.wuFile,

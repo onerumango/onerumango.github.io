@@ -3445,6 +3445,7 @@
 
             if (JSON.parse(this.userNavObj) != null) {
               this.buildUserForm(JSON.parse(this.userNavObj));
+              this.getProfileImage(JSON.parse(this.userNavObj).userId);
             }
           }
         }, {

@@ -18505,7 +18505,9 @@ class ExternalSystemEditComponent {
     getExternalSystemSummry() {
         this.apiService.getExternalSystemSummry().subscribe((summaryData) => {
             this.externalSystemSummry = summaryData;
-            console.log("this.externalSystemSummry", this.externalSystemSummry);
+            var retrievedObject = localStorage.getItem('externalSystemSummry');
+            this.externalSystemSummry = JSON.parse(retrievedObject);
+            // console.log("this.externalSystemSummry", this.externalSystemSummry);
             const extCode = this.externalSystemSummry.extSysCode;
             const extName = this.externalSystemSummry.extSysName;
             const department = this.externalSystemSummry.department;
@@ -19349,6 +19351,7 @@ class ExternalSystemComponent {
     }
     sendingDataforEdit(dataForEdit) {
         if (dataForEdit) {
+            localStorage.setItem('externalSystemSummry', JSON.stringify(dataForEdit));
             this.apiService.setExternalSystemSummry({
                 authStatus: dataForEdit.authStatus,
                 authorizedBy: dataForEdit.authorizedBy,
@@ -20077,6 +20080,8 @@ class ProcessCodeMappingEditComponent {
     gettingProcessCode() {
         this.apiService.getProcessCode().subscribe((summaryData) => {
             this.processCodeSummary = summaryData;
+            var retrievedObject = localStorage.getItem('processCodeSummary');
+            this.processCodeSummary = JSON.parse(retrievedObject);
             console.log("this.processCodeSummary", this.processCodeSummary);
             const extCode = this.processCodeSummary.extSysCode;
             const extSysName = this.processCodeSummary.extSysName;
@@ -20085,7 +20090,7 @@ class ProcessCodeMappingEditComponent {
             const treasuryrefReq = this.processCodeSummary.treasuryrefRequired;
             const autoUpload = this.processCodeSummary.autoUpload;
             const backDateAllow = this.processCodeSummary.backDateAllow;
-            const fCYRateVariance = this.processCodeSummary.fcyvariance;
+            const fCYRateVariance = this.processCodeSummary.fCYRateVariance;
             const sftpRequired = this.processCodeSummary.sftpRequired;
             const futureDateAllow = this.processCodeSummary.futureDateAllow;
             const wuFile = this.processCodeSummary.wuFile;
@@ -20124,7 +20129,7 @@ class ProcessCodeMappingEditComponent {
             }
             if (fCYRateVariance == true) {
                 this.showfCYExchangeValue = true;
-                const fCYPercentage = this.processCodeSummary.fcypercenatage;
+                const fCYPercentage = this.processCodeSummary.fCYPercentage;
                 this.processCodeEditForm.controls.fCYPercentage.setValue(fCYPercentage);
             }
             if (futureDateAllow == true) {
@@ -20134,15 +20139,15 @@ class ProcessCodeMappingEditComponent {
             }
             if (sftpRequired == true) {
                 this.showsftpValues = true;
-                const ipAddress = this.processCodeSummary.ipAddress;
+                const ipAddress = this.processCodeSummary.sftpIpaddress;
                 this.processCodeEditForm.controls.sftpIpaddress.setValue(ipAddress);
-                const userName = this.processCodeSummary.userName;
+                const userName = this.processCodeSummary.sftpUsername;
                 this.processCodeEditForm.controls.sftpUsername.setValue(userName);
-                const path = this.processCodeSummary.path;
+                const path = this.processCodeSummary.sftpPath;
                 this.processCodeEditForm.controls.sftpPath.setValue(path);
-                const port = this.processCodeSummary.port;
+                const port = this.processCodeSummary.sftpPort;
                 this.processCodeEditForm.controls.sftpPort.setValue(port);
-                const password = this.processCodeSummary.password;
+                const password = this.processCodeSummary.sftpPassword;
                 this.processCodeEditForm.controls.sftpPassword.setValue(password);
             }
             this.auditLog();
@@ -22268,6 +22273,7 @@ class ProcessCodeMappingComponent {
     }
     sendingDataforEdit(element) {
         if (element) {
+            localStorage.setItem('processCodeSummary', JSON.stringify(element));
             this.apiService.setProcessCodeData({
                 id: element.id,
                 extSysCode: element.extSysCode,
@@ -22327,14 +22333,14 @@ class ProcessCodeMappingComponent {
                 acft: element.acft,
                 autoUpload: element.autoUpload,
                 filePath: element.filePath,
-                fcyvariance: element.fCYRateVariance,
-                fcypercenatage: element.fCYPercentage,
-                userName: element.sftpUsername,
-                password: element.sftpPassword,
-                port: element.sftpPort,
-                ipAddress: element.sftpIpaddress,
+                fCYRateVariance: element.fCYRateVariance,
+                fCYPercentage: element.fCYPercentage,
+                sftpUsername: element.sftpUsername,
+                sftpPassword: element.sftpPassword,
+                sftpPort: element.sftpPort,
+                sftpIpaddress: element.sftpIpaddress,
                 sftpRequired: element.sftpRequired,
-                path: element.sftpPath,
+                sftpPath: element.sftpPath,
                 mandatoryFieldImposed: element.mandatoryFieldImposed,
                 treasuryrefRequired: element.treasuryrefRequired,
                 wuFile: element.wuFile,

@@ -1649,6 +1649,7 @@
             this.roleNavigationObject = JSON.parse(this.roleNavObj);
             this.roleService.getIndexValue().subscribe(function (resp) {
               console.log(resp);
+              _this2.paramScreen = resp;
 
               if (resp.index === '') {
                 _this2.createRole();
@@ -1670,12 +1671,7 @@
             this.modifyRoleObject.checkerDtStamp = this.editRoleScreen.queryParams.checkerDtStamp;
             this.modifyRoleObject.recordStatus = this.editRoleScreen.queryParams.recordStatus;
             this.modifyRoleObject.version = this.editRoleScreen.queryParams.version;
-
-            if (JSON.parse(this.roleNavObj) != null) {
-              this.buildRoleForm(JSON.parse(this.roleNavObj));
-            } else {
-              this.buildRoleForm(this.modifyRoleObject);
-            }
+            console.log(this.modifyRoleObject);
 
             if (this.modifyRoleObject.recordStatus == 'Open') {
               this.modifyRoleObject.recordStatus = "OPEN";
@@ -1705,12 +1701,24 @@
               this.modifyRoleObject.firstTimeAuth = this.editRoleScreen.queryParams.firstTimeAuth;
             }
 
+            console.log(this.roleNavigationObject);
+
+            if (JSON.parse(this.roleNavObj) != null) {
+              console.log("Inside If");
+              this.buildRoleForm(this.roleNavigationObject);
+              this.modifyRoleObject = this.roleNavigationObject;
+            }
+
+            if (this.modifyRoleObject.roleName == undefined && this.paramScreen.index == 'new' || this.roleNavigationObject == null) {
+              console.log("Undesfined");
+              this.buildRoleForm(this.modifyRoleObject);
+            }
+
             this.fetchdynamicroles();
             this.roleService.fetchScreenPermissions('Roles');
             this.roleService.screenLabelList.subscribe(function (message) {
               return _this2.roleCodes = message;
-            });
-            this.modifyRoleObject = this.roleNavigationObject;
+            }); // this.modifyRoleObject=this.roleNavigationObject;
 
             if (this.modifyRoleObject.roleName || this.roleNavigationObject.roleName) {
               this.modifyScreen = true;
@@ -1722,6 +1730,7 @@
         }, {
           key: "buildRoleForm",
           value: function buildRoleForm(data) {
+            console.log(data);
             this.myform = this.formBuilder.group({
               roleName: [data.roleName ? data.roleName : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _UsernameValidator.cannotContainSpace]],
               roleDesc: [data.roleDesc ? data.roleDesc : '', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]
@@ -2081,7 +2090,11 @@
           value: function fetchdynamicroles() {
             var _this8 = this;
 
-            this.modifyRoleObject.roleName = this.roleNavigationObject.roleName;
+            console.log(this.roleNavigationObject);
+
+            if (this.roleNavigationObject != null) {
+              this.modifyRoleObject.roleName = this.roleNavigationObject.roleName;
+            }
 
             if (this.modifyRoleObject.roleName != null) {
               this.roleService.fetchdynamicrolesdata(this.modifyRoleObject.roleName).subscribe(function (data) {

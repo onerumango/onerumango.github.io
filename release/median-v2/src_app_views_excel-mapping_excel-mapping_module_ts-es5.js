@@ -1660,17 +1660,23 @@
 
             this.apiService.getexcelSummaryData().subscribe(function (resp) {
               _this2.summryResponse = resp;
+              console.log("this.summryResponse", _this2.summryResponse);
+              var retrievedObject = localStorage.getItem('summryResponse');
+              _this2.summryResponse = JSON.parse(retrievedObject);
             });
 
             if (this.summryResponse) {
-              this.extCode = this.summryResponse.extCode;
+              this.extCode = this.summryResponse.extSysCode;
               this.processNAme = this.summryResponse.processName;
-              this.extSys = this.summryResponse.extSysName;
+              this.extSys = this.summryResponse.extSys;
               this.updateMappingForm.controls.extCode.setValue(this.extCode);
               this.updateMappingForm.controls.proCode.setValue(this.processNAme);
               this.apiService.getExcelMappingDataforEdit(this.extCode, this.processNAme, this.extSys).subscribe(function (editResp) {
                 console.log("This. is new Resp", editResp);
                 _this2.newDataResponse = editResp;
+                localStorage.setItem('newDataResponse', JSON.stringify(_this2.newDataResponse));
+                var retrievedObject = localStorage.getItem('newDataResponse');
+                _this2.newDataResponse = JSON.parse(retrievedObject);
                 _this2.ccyData = _this2.newDataResponse.currency;
                 _this2.sheetData = _this2.newDataResponse.sheetNo;
 
@@ -1703,6 +1709,9 @@
             });
             this.apiService.getAllMappingByExtSysAndProcessCode(extCode, proCode, currenyVal, sheetNumber).subscribe(function (mappingResponse) {
               _this3.mappingResponse = mappingResponse;
+              localStorage.setItem('mappingResponse', JSON.stringify(_this3.mappingResponse));
+              var retrievedObject = localStorage.getItem('mappingResponse');
+              _this3.mappingResponse = JSON.parse(retrievedObject);
               console.log("this.mappingResponse", _this3.mappingResponse);
 
               if (_this3.mappingResponse == null) {
@@ -1847,7 +1856,6 @@
           value: function auditLog() {
             var _a, _b, _c, _d, _e, _f, _g, _h;
 
-            debugger;
             this.authStatus = (_a = this.mappingResponse[0]) === null || _a === void 0 ? void 0 : _a.authStatus;
             this.recordStatus = (_b = this.mappingResponse[0]) === null || _b === void 0 ? void 0 : _b.recordStatus;
             this.modifiedBy = (_c = this.mappingResponse[0]) === null || _c === void 0 ? void 0 : _c.modifiedBy;
@@ -4204,10 +4212,11 @@
         }, {
           key: "setDataFromSummaryToUpdateExcelMapping",
           value: function setDataFromSummaryToUpdateExcelMapping(element) {
+            localStorage.setItem('summryResponse', JSON.stringify(element));
             console.log("element.extCode", element.extSysCode);
             this.apiService.setexcelSummaryData({
-              extCode: element.extSysCode,
-              extSysName: element.extSys,
+              extSysCode: element.extSysCode,
+              extSys: element.extSys,
               processName: element.processName,
               authStatus: element.authStatus
             });
