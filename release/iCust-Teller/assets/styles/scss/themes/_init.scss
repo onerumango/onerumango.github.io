@@ -320,9 +320,18 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   color: white;
 }
 .egret-dark-purple .mat-expansion-panel-header {
-  background-color: #0C0B0F;
+  background-color: #1e1e2d;
 }
-
+.egret-dark-purple .tbchargeDetailsTbl{
+  color: #cdcdde;
+}
+.egret-dark-purple .thchargeDetailsTbl{
+  color: #cdcdde;
+}
+.egret-dark-purple .btn {
+  background-color: #1e1e2d;
+  color: #cdcdde;
+}
 .egret-dark-purple .mat-form-field-suffix .mat-icon {
    color: gray;
 }
