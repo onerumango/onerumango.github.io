@@ -736,26 +736,32 @@ function AuthorizeExcelComponent_div_43_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](81, "h2");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](82, "Auth Status");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](83, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](83, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](85, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](84, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](85, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](86, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](87, "div", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](88, "div", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](89, "img", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](86, "div", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](87, "div", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](88, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](89, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](90, "div", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](91, "img", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](90, "div", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](91, "div", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](92, "h2");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](93, "Modification No");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](92, "div", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](93, "div", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](94, "h2");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](95, "Modification No");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](94, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](96, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](98, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
@@ -768,11 +774,15 @@ function AuthorizeExcelComponent_div_43_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r2.pendingForAuthDetailsDTOList[0].inputBy);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](26, 4, ctx_r2.pendingForAuthDetailsDTOList[0].inputTime));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](26, 6, ctx_r2.pendingForAuthDetailsDTOList[0].inputTime));
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r2.firstLevelAuthorizationStatus.authorizer);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](62, 6, ctx_r2.firstLevelAuthorizationStatus.authDate));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](62, 8, ctx_r2.firstLevelAuthorizationStatus.authDate));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r2.pendingForAuthDetailsDTOList[0].firstTimeAuthStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r2.pendingForAuthDetailsDTOList[0].versionNo);
 } }
 function AuthorizeExcelComponent_ng_template_44_Template(rf, ctx) { if (rf & 1) {
     const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
@@ -1233,8 +1243,7 @@ function AuthorizeExcelComponent_ng_template_44_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpropertyInterpolate"]("value", ctx_r4.responseDto.udfDetails);
 } }
 class AuthorizeExcelComponent {
-    constructor(api, roleService, userApi, excelService, modalService
-    // private toastService : ToastService,
+    constructor(api, roleService, userApi, excelService, modalService // private toastService : ToastService,
     ) {
         this.api = api;
         this.roleService = roleService;
@@ -1246,7 +1255,8 @@ class AuthorizeExcelComponent {
         this.dtTrigger1 = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
         this.dtTrigger2 = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
         this.closeResult = '';
-        this.rejectReason = "Testing";
+        this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
+        this.rejectReason = 'Testing';
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_3__.permissionsLabels();
         this.approveButtonStatus = true;
         this.spinner = false;
@@ -1273,8 +1283,11 @@ class AuthorizeExcelComponent {
             processing: true,
             retrieve: true,
             order: [[6, 'desc']],
-            columnDefs: [{ type: 'date', 'targets': [6] }],
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            columnDefs: [{ type: 'date', targets: [6] }],
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, 30],
+            ],
         };
         this.dtOptions[1] = {
             pagingType: 'full_numbers',
@@ -1283,19 +1296,23 @@ class AuthorizeExcelComponent {
             retrieve: true,
             // order: [[6, 'desc']],
             // columnDefs: [ { type: 'date', 'targets': [6] } ],
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, 30],
+            ],
         };
         setTimeout(() => {
             this.newRolePermissions();
         }, 2000);
-        this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
+        this.roleService.screenLabelList.subscribe((message) => (this.roleCodes = message));
         this.flag = false;
         this.firstLevelAuthorizationStatus = {};
         this.approveButtonStatus = false;
         this.user_id = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
         this.role = sessionStorage.getItem('user_role');
         this.getPendingForAuthData();
-        this.dummyQenPMJNuqUwhg5W8UMFs66YBXrBVhhZzMFt = new Array();
+        this.dummyQenPMJNuqUwhg5W8UMFs66YBXrBVhhZzMFt =
+            new Array();
     }
     ngOnDestroy() {
         this.dtTrigger1.unsubscribe();
@@ -1303,7 +1320,9 @@ class AuthorizeExcelComponent {
     }
     screenpermission() {
         this.screenName = 'UploadProcessAuthorization';
-        this.userApi.getRoleScreenPermission(this.user_id, this.screenName, this.role).subscribe(res => {
+        this.userApi
+            .getRoleScreenPermission(this.user_id, this.screenName, this.role)
+            .subscribe((res) => {
             this.rolepermission = res;
             if (this.rolepermission) {
                 this.button_permission = this.rolepermission[0];
@@ -1315,7 +1334,7 @@ class AuthorizeExcelComponent {
         if (!this.rejectReason) {
             sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Enter the reason for Rejection');
         }
-        console.log("rejectreason" + this.rejectReason);
+        console.log('rejectreason' + this.rejectReason);
         if (this.pendingForAuthDetailsDTOList[0].inputBy == this.user_id) {
             sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Maker cannot reject the record.');
             return;
@@ -1324,7 +1343,8 @@ class AuthorizeExcelComponent {
         this.approveButtonStatus = false;
         this.deUploadReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_0__.DeUploadReqDTO();
         this.deUploadReqDTO.pendingForAuthDTO = this.deUploadPendingForAuthDTO;
-        this.deUploadReqDTO.pendingForAuthDetailsDTOList = this.pendingForAuthDetailsDTOList;
+        this.deUploadReqDTO.pendingForAuthDetailsDTOList =
+            this.pendingForAuthDetailsDTOList;
         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
             text: 'You are trying to Reject record. ' + ' Do you want to reject?',
             showCancelButton: true,
@@ -1334,22 +1354,24 @@ class AuthorizeExcelComponent {
             confirmButtonText: 'REJECT',
             icon: 'info',
             input: 'textarea',
-            inputValue: this.remarks
+            inputValue: this.remarks,
             // inputPlaceholder: this.remarks
-        }).then((result => {
+        }).then((result) => {
             if (result.isConfirmed === true) {
-                this.api.rejectCallApi(this.deUploadReqDTO, this.user_id, this.rejectReason).subscribe(resp => {
+                this.api
+                    .rejectCallApi(this.deUploadReqDTO, this.user_id, this.rejectReason)
+                    .subscribe((resp) => {
                     this.statusFlag = resp;
                     if (this.statusFlag) {
                         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                            text: "Rejected Successfully",
-                            icon: 'success'
+                            text: 'Rejected Successfully',
+                            icon: 'success',
                         });
                     }
                     if (this.statusFlag === false) {
                         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
                             icon: 'error',
-                            text: 'Failed to Rejected '
+                            text: 'Failed to Rejected ',
                         });
                     }
                 });
@@ -1358,7 +1380,7 @@ class AuthorizeExcelComponent {
                 this.process = true;
                 this.approveButtonStatus = true;
             }
-        }));
+        });
         // this.api.rejectCallApi(this.deUploadReqDTO, this.user_id, this.rejectReason).subscribe(resp => {
         //   this.datarejection = resp;
         //   console.log(this.datarejection);
@@ -1398,7 +1420,8 @@ class AuthorizeExcelComponent {
         this.approveButtonStatus = false;
         this.deUploadReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_0__.DeUploadReqDTO();
         this.deUploadReqDTO.pendingForAuthDTO = this.deUploadPendingForAuthDTO;
-        this.deUploadReqDTO.pendingForAuthDetailsDTOList = this.pendingForAuthDetailsDTOList;
+        this.deUploadReqDTO.pendingForAuthDetailsDTOList =
+            this.pendingForAuthDetailsDTOList;
         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
             text: 'You are trying to Authorize Record. ' + ' Do you want to proceed?',
             showCancelButton: true,
@@ -1407,39 +1430,41 @@ class AuthorizeExcelComponent {
             // confirmButtonText: 'PROCEED.'
             cancelButtonText: 'NO',
             confirmButtonText: 'YES',
-            icon: 'info'
-        }).then((result => {
+            icon: 'info',
+        }).then((result) => {
             console.log(result);
             if (result.isConfirmed === true) {
-                this.api.approveDetailsData(this.deUploadReqDTO, this.user_id).subscribe(resp => {
+                this.api
+                    .approveDetailsData(this.deUploadReqDTO, this.user_id)
+                    .subscribe((resp) => {
                     this.firstLevelAuthorizationStatus = resp;
                     console.log(this.firstLevelAuthorizationStatus);
                     this.authprocess = false;
                     if (!this.firstLevelAuthorizationStatus) {
                         console.log(this.approveButtonStatus);
                         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                            text: "Data authorization is failed",
-                            icon: 'error'
+                            text: 'Data authorization is failed',
+                            icon: 'error',
                         });
                     }
                     if (this.firstLevelAuthorizationStatus) {
                         sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                            text: "Record is Approved and Processed",
-                            icon: 'success'
+                            text: 'Record is Approved and Processed',
+                            icon: 'success',
                         });
                         this.process = true;
                         this.getPendingForAuthData();
                         this.approval = false;
                         this.Process();
                     }
-                }, error => {
+                }, (error) => {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Data authorization is failed.');
                 });
             }
             if (result.isConfirmed == false) {
                 this.approveButtonStatus = true;
             }
-        }));
+        });
         // console.log('for authorization', this.deUploadReqDTO);
         // this.api.approveDetailsData(this.deUploadReqDTO, this.user_id).subscribe(resp => {
         //   this.firstLevelAuthorizationStatus = resp;
@@ -1467,10 +1492,13 @@ class AuthorizeExcelComponent {
         this.spinner = true;
         this.deUploadReqDTO = new src_app_shared_models_pending_for_auth_dto__WEBPACK_IMPORTED_MODULE_0__.DeUploadReqDTO();
         this.deUploadReqDTO.pendingForAuthDTO = this.deUploadPendingForAuthDTO;
-        this.deUploadReqDTO.pendingForAuthDetailsDTOList = this.pendingForAuthDetailsDTOList;
+        this.deUploadReqDTO.pendingForAuthDetailsDTOList =
+            this.pendingForAuthDetailsDTOList;
         this.flag = false;
         console.log(this.deUploadReqDTO);
-        this.api.processDeUploadt(this.deUploadReqDTO, this.user_id).subscribe(resp => {
+        this.api
+            .processDeUploadt(this.deUploadReqDTO, this.user_id)
+            .subscribe((resp) => {
             this.responseforDE = resp;
             console.log('Response ::' + this.responseforDE);
             if (!this.responseforDE) {
@@ -1485,13 +1513,14 @@ class AuthorizeExcelComponent {
     getAuditLogData(getDetailsQueryToggleReqDTO) {
         this.api
             .getFirstAndSecondAuthAuditService(this.getDetailsQueryToggleReqDTO)
-            .subscribe(resp => {
+            .subscribe((resp) => {
             this.firstAndSecondAuthAuditLogRespDTO = resp;
         });
     }
     queryDetailsDataByParam(pendingForAuthDTO, i) {
-        var btn = document.getElementById("btnGetDetails" + i);
-        btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
+        var btn = document.getElementById('btnGetDetails' + i);
+        btn.innerHTML =
+            '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
         this.isLoading = true;
         this.process = false;
         this.approveButtonStatus = false;
@@ -1507,24 +1536,22 @@ class AuthorizeExcelComponent {
             pendingForAuthDTO.processName;
         this.getDetailsQueryToggleReqDTO.processingDate =
             pendingForAuthDTO.processingDate;
-        this.getDetailsQueryToggleReqDTO.currency =
-            pendingForAuthDTO.currency;
-        this.getDetailsQueryToggleReqDTO.filename =
-            pendingForAuthDTO.fileName;
+        this.getDetailsQueryToggleReqDTO.currency = pendingForAuthDTO.currency;
+        this.getDetailsQueryToggleReqDTO.filename = pendingForAuthDTO.fileName;
         this.getDetailsQueryToggleReqDTO.batchNumber =
             pendingForAuthDTO.batchNumber;
         this.getDetailsQueryToggleReqDTO.overrides = this.overrides;
         console.log(this.getDetailsQueryToggleReqDTO);
         this.api
             .queryDetailsDataByParamService(this.getDetailsQueryToggleReqDTO)
-            .subscribe(resp => {
+            .subscribe((resp) => {
             this.isLoading = false;
-            console.log("backend row data after query", resp);
+            console.log('backend row data after query', resp);
             btn.innerHTML = '<span>Get Details</span>';
             this.pendingForAuthDetailsDTOList = resp;
             if (this.pendingForAuthDetailsDTOList[0].inputBy == this.user_id) {
                 console.log(this.user_id);
-                console.log("true");
+                console.log('true');
                 this.reject1 = true;
             }
             if (this.pendingForAuthDetailsDTOList.length > 0) {
@@ -1534,14 +1561,15 @@ class AuthorizeExcelComponent {
                 this.approval = true;
                 this.flag = true;
                 this.button1 = true;
-                this.dummyPendingForAuthDataDetails = this.pendingForAuthDetailsDTOList;
+                this.dummyPendingForAuthDataDetails =
+                    this.pendingForAuthDetailsDTOList;
                 // this.dtTrigger2.next();
                 this.createSubTable(i + 1);
             }
             else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Data Not Found');
             }
-        }, err => {
+        }, (err) => {
             this.isLoading = false;
         });
         this.spinner1 = false;
@@ -1557,27 +1585,42 @@ class AuthorizeExcelComponent {
             const trow = document.createElement('tr');
             this.previousRow = trow;
             trow.classList.add('trowAuthorization');
-            trow.style.position = "relative";
-            trow.style.height = "408px";
+            trow.style.position = 'relative';
+            trow.style.height = '408px';
             acountDetails.classList.add('accountDetailsDiv');
             trow.appendChild(acountDetails);
             tBody.insertBefore(trow, tBody.children[position]);
         }, 0);
     }
     getAllDetailsData() {
-        this.api.getDetailsListServiceFirst().subscribe(resp => {
-            this.queriedPendingForAuthDetailsDTOList = resp;
-            this.dummyPendingForAuthDataDetails = this.queriedPendingForAuthDetailsDTOList;
+        this.api.getDetailsListServiceFirst().subscribe((resp) => {
+            console.log(resp);
+            // for (let item of this.result) {
+            //   item.authStatus = this..find((i) =>
+            //     i.startsWith(item.authStatus)
+            //   );
+            // }
+            https: this.queriedPendingForAuthDetailsDTOList = resp;
+            this.dummyPendingForAuthDataDetails =
+                this.queriedPendingForAuthDetailsDTOList;
             this.dtTrigger2.next();
         });
     }
     getPendingForAuthData() {
-        this.api.getPendingForAuthDataFirst(this.user_id).subscribe(resp => {
+        this.api.getPendingForAuthDataFirst(this.user_id).subscribe((resp) => {
+            console.log(resp);
             this.pendingForAuthData = resp;
+            for (let item of this.pendingForAuthData) {
+                item.authStatus = this.statusArr.find((i) => i.startsWith(item.authStatus));
+                item.uploadStatus = this.statusArr.find((i) => i.startsWith(item.uploadStatus));
+            }
             this.dtTrigger1.next();
             if (this.pendingForAuthData) {
                 for (let index = 0; index < this.pendingForAuthData.length; index++) {
-                    this.pendingForAuthData[index].fileName = JSON.stringify(this.pendingForAuthData[index].fileName).split('/').pop().split('"')[0];
+                    this.pendingForAuthData[index].fileName = JSON.stringify(this.pendingForAuthData[index].fileName)
+                        .split('/')
+                        .pop()
+                        .split('"')[0];
                 }
                 if (this.pendingForAuthData.authStatus === 'A') {
                     this.getAllDetailsData();
@@ -1624,7 +1667,7 @@ class AuthorizeExcelComponent {
         }
     }
     openAuditDetails(detailsDto) {
-        this.api.getAuditDataOfDetailsRecord(detailsDto).subscribe(resp => {
+        this.api.getAuditDataOfDetailsRecord(detailsDto).subscribe((resp) => {
             this.medDeUploadDetailHistEntityList = resp;
             // //console.log(this.medDeUploadDetailHistEntityList);
             // const dialogRef = this.dialog.open(ModalAuditTransactionDetailsComponent, {
@@ -1673,31 +1716,35 @@ class AuthorizeExcelComponent {
     //pdf download
     convert() {
         var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_5___default())({
-            orientation: "landscape",
+            orientation: 'landscape',
         });
-        doc.setFont("helvetica");
-        doc.setFontSize("bold");
+        doc.setFont('helvetica');
+        doc.setFontSize('bold');
         doc.setFontSize(9);
-        var col = [["BatchNo",
+        var col = [
+            [
+                'BatchNo',
                 //Refrence No : // 2 skiiping this, user can see this in FlexCube
-                "AccBranch",
-                "Acc",
-                "AccDesc",
-                "DrCr",
-                "TrnCode",
-                "TrnDesc",
-                "FcyAmt",
-                "Rate",
-                "DrLcyAmt",
-                "CrLcyAmt",
-                "InstrCode",
-                "ValueDate",
-                "UserId",
-                "AuthId"]]; // 16
+                'AccBranch',
+                'Acc',
+                'AccDesc',
+                'DrCr',
+                'TrnCode',
+                'TrnDesc',
+                'FcyAmt',
+                'Rate',
+                'DrLcyAmt',
+                'CrLcyAmt',
+                'InstrCode',
+                'ValueDate',
+                'UserId',
+                'AuthId',
+            ],
+        ]; // 16
         var rows = [];
         console.log(this.pendingForAuthDetailsDTOList);
         var itemNew = this.pendingForAuthDetailsDTOList;
-        itemNew.forEach(element => {
+        itemNew.forEach((element) => {
             if (element.drCr == 'C') {
                 this.pdfCreditVar = element.lcyEquivalent;
                 this.pdfDebitVar = 0;
@@ -1707,9 +1754,10 @@ class AuthorizeExcelComponent {
                 this.pdfCreditVar = 0;
             }
             this.valueDate = this.pipe.transform(element.valueDate, 'dd-MMM-yy'); //14
-            var date = new Date(element.timeForExport).toLocaleDateString("en-us");
+            var date = new Date(element.timeForExport).toLocaleDateString('en-us');
             console.log(date);
-            var temp = [element.id.batchNo,
+            var temp = [
+                element.id.batchNo,
                 // Refrence No : element.id.refNo, // 2 skiiping this user can see this in FlexCube
                 element.accountBranch,
                 element.account,
@@ -1724,7 +1772,8 @@ class AuthorizeExcelComponent {
                 element.instrumentNo,
                 this.valueDate,
                 element.inputBy,
-                element.firstTimeAuthorizer]; //16
+                element.firstTimeAuthorizer,
+            ]; //16
             rows.push(temp);
         });
         doc.autoTable({
@@ -1732,8 +1781,7 @@ class AuthorizeExcelComponent {
             body: rows,
             theme: 'striped',
             margin: { top: 25, bottom: 15 },
-            styles: { overflow: 'linebreak',
-                fontSize: 8 },
+            styles: { overflow: 'linebreak', fontSize: 8 },
             showHeader: 'everyPage',
         });
         doc.save('ExcelDAtaAuthFirst.pdf');
@@ -1811,7 +1859,7 @@ AuthorizeExcelComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](40, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](41, AuthorizeExcelComponent_div_41_Template, 40, 8, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](42, "div", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, AuthorizeExcelComponent_div_43_Template, 95, 8, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, AuthorizeExcelComponent_div_43_Template, 99, 10, "div", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](44, AuthorizeExcelComponent_ng_template_44_Template, 229, 57, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"]);
@@ -1946,15 +1994,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var src_app_shared_models_excel_data_processing_resp_dto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/excel-data-processing-resp-dto */ 19130);
 /* harmony import */ var src_app_shared_models_excel_data_processing_dto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/excel-data-processing-dto */ 86981);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ 1707);
 /* harmony import */ var src_app_shared_models_excel_data_processing_dto_audit_resp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/models/excel-data-processing-dto-audit-resp */ 31484);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 54364);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ 53882);
 /* harmony import */ var src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/models/fmosNewRolePermissions */ 35383);
 /* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2 */ 18190);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 81134);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 79441);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 2316);
 /* harmony import */ var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/services/api.service */ 94761);
 /* harmony import */ var src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/views/users/users.service */ 59119);
@@ -2224,15 +2272,18 @@ const swalWithBootstrapButtons = sweetalert2__WEBPACK_IMPORTED_MODULE_5___defaul
 class FileUploadComponent {
     constructor(api, userApi, fb, 
     // private toastService : ToastService,
-    excelService, roleService, router) {
+    excelService, roleService, router, cdr) {
         this.api = api;
         this.userApi = userApi;
         this.fb = fb;
         this.excelService = excelService;
         this.roleService = roleService;
         this.router = router;
+        this.cdr = cdr;
         this.isSelected = true;
         this.showSelectedFilename = false;
+        this.showDialog = false;
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_11__.Subject();
         this.allExternalSystemNames = [];
         this.space = false;
         this.excelDataProcessingAuditlog = new src_app_shared_models_excel_data_processing_dto_audit_resp__WEBPACK_IMPORTED_MODULE_2__.ExcelDataProcessingAuditRespDTO();
@@ -2249,7 +2300,7 @@ class FileUploadComponent {
         this.button_permission = {};
         this.button = true;
         this.flag = false;
-        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_11__.DatePipe('en-US');
+        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_12__.DatePipe('en-US');
         this.now = Date.now();
         this.myFormattedDate = this.pipe.transform(this.now, 'dd-MMM-yy');
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_3__.permissionsLabels();
@@ -2260,11 +2311,11 @@ class FileUploadComponent {
         this.department = localStorage.getItem("departmentHeader");
         this.departmentString = this.department.replace(/["]+/g, '');
         this.uploadExcelForm = this.fb.group({
-            extSysNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
-            processNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
+            extSysNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
+            processNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
             selectorDateData: [new Date()],
-            trncode: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
-            fileName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
+            trncode: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
+            fileName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
             remarks: [""]
         });
         setTimeout(() => {
@@ -2305,17 +2356,39 @@ class FileUploadComponent {
             console.log(this.data);
         });
     }
-    pageDeactivation() {
-        console.log("pageDeactivation in user was called");
-        // return of (true);
+    canExit() {
+        let isExit = false;
         if (this.uploadExcelForm.touched && this.formTouched == true) {
-            let swalMsg = '';
-            const result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-            console.log("result: ", result);
-            return (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.of)(result);
+            return sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info',
+            }).then((result) => {
+                if (result.isConfirmed === true) {
+                    isExit = true;
+                    this.cdr.markForCheck();
+                    return isExit;
+                }
+                else {
+                    isExit = false;
+                    this.cdr.markForCheck();
+                    return isExit;
+                }
+            });
         }
         else {
-            return (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.of)(true);
+            isExit = true;
+            return new Promise((resolve, reject) => {
+                if (isExit === true) {
+                    isExit = true;
+                    this.cdr.markForCheck();
+                    resolve(true);
+                }
+            });
         }
     }
     newRolePermissions() {
@@ -2361,7 +2434,7 @@ class FileUploadComponent {
                 if (this.responseforfileupload.errorMessage) {
                     console.log("here is error of duplicate record");
                     this.disablebtn2 = true;
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + this.responseforfileupload.errorMessage);
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + "Template Mapping is Not Authorized");
                     if (this.responseforfileupload.errorMessage === "Ppossible duplicate data") {
                         this.excelDataProcessingReqDTO.proceedDuplicates = true;
                         sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
@@ -2459,7 +2532,7 @@ class FileUploadComponent {
         this.fileNameData = '';
         this.trncode = '';
         this.showSelectedFilename = false;
-        this.enablefilebrowser = false;
+        this.enablefilebrowser = true;
         this.button = true;
         this.disablebtn2 = false;
         this.excelDataProcessingReqDTO.fileName = '';
@@ -2676,7 +2749,7 @@ class FileUploadComponent {
         }
     }
 }
-FileUploadComponent.ɵfac = function FileUploadComponent_Factory(t) { return new (t || FileUploadComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_7__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_8__.ExcelService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_roles_service__WEBPACK_IMPORTED_MODULE_9__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router)); };
+FileUploadComponent.ɵfac = function FileUploadComponent_Factory(t) { return new (t || FileUploadComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_7__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_8__.ExcelService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_roles_service__WEBPACK_IMPORTED_MODULE_9__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_10__.ChangeDetectorRef)); };
 FileUploadComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineComponent"]({ type: FileUploadComponent, selectors: [["npr-file-upload"]], viewQuery: function FileUploadComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵviewQuery"](_c0, 5);
     } if (rf & 2) {
@@ -2770,7 +2843,7 @@ FileUploadComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](54, "div", 26);
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](55, "h2", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](56, "Final excel report can be downloaded from Process Excel Screen.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](56, "Final excel report can be downloaded from Authorize Excel Screen.");
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
@@ -2809,7 +2882,7 @@ FileUploadComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵpureFunction0"](16, _c1));
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx.responsebutton);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControlName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__.DefaultValueAccessor, _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.RequiredValidator], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmaWxlLXVwbG9hZC5jb21wb25lbnQuc2NzcyJ9 */"] });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControlName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__.DefaultValueAccessor, _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.RequiredValidator], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmaWxlLXVwbG9hZC5jb21wb25lbnQuc2NzcyJ9 */"] });
 class ResponseData {
 }
 

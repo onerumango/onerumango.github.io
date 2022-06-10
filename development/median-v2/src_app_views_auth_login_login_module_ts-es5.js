@@ -745,6 +745,22 @@
               console.log(response);
               _this2.user = response;
 
+              if (_this2.user.verifiedStatus == "U") {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                  text: "User Is Unauthorized",
+                  'icon': "error"
+                });
+                return;
+              }
+
+              if (_this2.user.statusForUser == "Disable") {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                  text: "User Is Disabled",
+                  'icon': "error"
+                });
+                return;
+              }
+
               _this2.ls.setItem("departmentHeader", _this2.user.department);
 
               _this2.ls.setItem("LoggedInUserHeader", _this2.user.logoutTime);

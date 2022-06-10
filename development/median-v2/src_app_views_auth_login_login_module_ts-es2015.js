@@ -334,6 +334,14 @@ class LoginComponent {
         this.apiService.fetchMedUser(this.signinForm.value.username).subscribe((response) => {
             console.log(response);
             this.user = response;
+            if (this.user.verifiedStatus == "U") {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({ text: "User Is Unauthorized", 'icon': "error" });
+                return;
+            }
+            if (this.user.statusForUser == "Disable") {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({ text: "User Is Disabled", 'icon': "error" });
+                return;
+            }
             this.ls.setItem("departmentHeader", this.user.department);
             this.ls.setItem("LoggedInUserHeader", this.user.logoutTime);
             this.email = this.user.email;

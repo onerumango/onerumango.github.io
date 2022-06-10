@@ -6406,20 +6406,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const _c0 = ["format"];
 function AuditLogsComponent_div_4_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "label", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](2, "Export As");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](3, "select", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("change", function AuditLogsComponent_div_4_Template_select_change_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r4.modo($event.target.value); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](4, "option", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](5, "Excel");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](3, "select", 9, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](5, "option", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](6, "Excel");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](6, "option", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](7, "PDF");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](7, "option", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](8, "PDF");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](9, "button", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function AuditLogsComponent_div_4_Template_button_click_9_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r6); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](); return ctx_r5.modo($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](10, "Download");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } }
@@ -6446,23 +6450,23 @@ function AuditLogsComponent_tbody_22_tr_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const audits_r7 = ctx.$implicit;
+    const audits_r8 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r7.log);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r8.log);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r7.creatorId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r8.creatorId);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r7.actionPerformBy);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r8.actionPerformBy);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r7.record);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r8.record);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r7.action);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](audits_r8.action);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](13, 6, audits_r7.creatorDtStamp, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](13, 6, audits_r8.creatorDtStamp, "medium"));
 } }
 function AuditLogsComponent_tbody_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tbody");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](1, AuditLogsComponent_tbody_22_tr_1_Template, 14, 9, "tr", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](1, AuditLogsComponent_tbody_22_tr_1_Template, 14, 9, "tr", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
@@ -6472,7 +6476,7 @@ function AuditLogsComponent_tbody_22_Template(rf, ctx) { if (rf & 1) {
 function AuditLogsComponent_tbody_23_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tbody");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "td", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "td", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3, "No data!");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
@@ -6480,10 +6484,10 @@ function AuditLogsComponent_tbody_23_Template(rf, ctx) { if (rf & 1) {
 } }
 function AuditLogsComponent_ng_container_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "span", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "span", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3, "Please wait... ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](4, "span", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](4, "span", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementContainerEnd"]();
@@ -6521,6 +6525,9 @@ class AuditLogsComponent {
                 this.http.get(`${this.API_URL}` + `/auditLogs/getAllAuditLogs?pageNo=${pageNo}&pageSize=${pageSize}`)
                     .subscribe(resp => {
                     ;
+                    console.log(resp);
+                    this.totalPages = resp.totalNoOfPages;
+                    this.totalRecords = resp.totalRecords;
                     this.auditlogdata = resp.result;
                     this.isLoading = false;
                     this.cdr.markForCheck();
@@ -6540,26 +6547,32 @@ class AuditLogsComponent {
     modo(event) {
         console.log(event);
         if (event == 'PDF') {
-            this.convert();
+            this.downloadLog(this.totalRecords, this.totalPages);
         }
-        if (event == 'Excel') {
+        if (this.format.nativeElement.value === 'Excel') {
             this.exportAsXLSX();
         }
     }
     exportAsXLSX() {
+        console.log(this.auditlogdata);
         this.auditlogdata.forEach(element => {
-            element.timeForExport = this.pipe.transform(element.timeForExport, 'dd-MMM-yy').toString();
-            element.updatedAt = this.pipe.transform(element.updatedAt, 'dd-MMM-yy').toString();
-            element.creatorDtStamp = this.pipe.transform(element.creatorDtStamp, 'dd-MMM-yy').toString();
+            element.timeForExport = this.pipe.transform(element.timeForExport, 'dd-MMM-yy');
+            element.updatedAt = this.pipe.transform(element.updatedAt, 'dd-MMM-yy');
+            element.creatorDtStamp = this.pipe.transform(element.creatorDtStamp, 'dd-MMM-yy');
         });
         this.excelService.exportAsExcelFile(this.auditlogdata, 'Audit_Report');
     }
-    convert() {
+    downloadLog(totalRecords, totalNoOfPages) {
+        this.http.get(`${this.API_URL}` + `/auditLogs/getAllAuditLogs?pageSize=${totalNoOfPages}&pageSize=${totalRecords}`)
+            .subscribe(resp => {
+            this.convert(resp.result);
+        });
+    }
+    convert(data) {
         var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_0___default())();
         var col = [["Screen", "creatorId", "ActionPerformBy", "Record", "Action", "Time"]];
         var rows = [];
-        /* The following array of object as response from the API req  */
-        var itemNew = this.auditlogdata;
+        var itemNew = data;
         itemNew.forEach(element => {
             var date = new Date(element.timeForExport).toLocaleDateString("en-us");
             console.log(date);
@@ -6575,14 +6588,19 @@ class AuditLogsComponent {
     }
 }
 AuditLogsComponent.ɵfac = function AuditLogsComponent_Factory(t) { return new (t || AuditLogsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_11__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_account_closure_service_service__WEBPACK_IMPORTED_MODULE_6__.AccountClosureServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_9__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_7__.RoleService)); };
-AuditLogsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({ type: AuditLogsComponent, selectors: [["npr-audit-logs"]], decls: 25, vars: 5, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["class", "col-2", 4, "ngIf"], [1, "dbCardStyle"], ["id", "auditLogsTable", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions"], [4, "ngIf"], [1, "col-2"], ["for", "roleName", 1, "formLbl"], ["aria-label", "Default select example", 1, "form-select", 3, "change"], ["disabled", "", "selected", "", "value", "Excel"], ["value", "PDF"], [4, "ngFor", "ngForOf"], ["colspan", "3", 1, "no-data-available"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function AuditLogsComponent_Template(rf, ctx) { if (rf & 1) {
+AuditLogsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({ type: AuditLogsComponent, selectors: [["npr-audit-logs"]], viewQuery: function AuditLogsComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵviewQuery"](_c0, 5);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵloadQuery"]()) && (ctx.format = _t.first);
+    } }, decls: 25, vars: 5, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["class", "col-2", 4, "ngIf"], [1, "dbCardStyle"], ["id", "auditLogsTable", "datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions"], [4, "ngIf"], [1, "col-2"], ["for", "roleName", 1, "formLbl"], ["aria-label", "Default select example", 1, "form-select"], ["format", ""], ["selected", "", "value", "Excel"], ["value", "PDF"], [1, "downloadForAuditLog", 3, "click"], [4, "ngFor", "ngForOf"], ["colspan", "3", 1, "no-data-available"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function AuditLogsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "h2", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3, "Audit Logs");
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](4, AuditLogsComponent_div_4_Template, 8, 0, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](4, AuditLogsComponent_div_4_Template, 11, 0, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](5, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](6, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](7, "table", 5);
@@ -6625,7 +6643,7 @@ AuditLogsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", (ctx.auditlogdata == null ? null : ctx.auditlogdata.length) == 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx.isLoading);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, angular_datatables__WEBPACK_IMPORTED_MODULE_8__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhdWRpdC1sb2dzLmNvbXBvbmVudC5zY3NzIn0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, angular_datatables__WEBPACK_IMPORTED_MODULE_8__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe], styles: [".downloadForAuditLog[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: relative;\n  left: 250px;\n  bottom: 33px;\n  background-color: #D61C4E;\n  color: aliceblue;\n  font-family: var(--medium);\n  width: 60%;\n  border: 0;\n  border-radius: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF1ZGl0LWxvZ3MuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0EsMEJBQUE7RUFDQSxVQUFBO0VBQ0EsU0FBQTtFQUNBLGtCQUFBO0FBQ0oiLCJmaWxlIjoiYXVkaXQtbG9ncy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kb3dubG9hZEZvckF1ZGl0TG9ne1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgbGVmdDogMjUwcHg7XHJcbiAgICBib3R0b206IDMzcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRDYxQzRFO1xyXG4gICAgY29sb3I6IGFsaWNlYmx1ZTtcclxuICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1tZWRpdW0pO1xyXG4gICAgd2lkdGg6IDYwJTtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuXHJcbn0iXX0= */"] });
 
 
 /***/ }),

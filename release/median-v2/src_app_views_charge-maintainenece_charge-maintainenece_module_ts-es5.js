@@ -613,13 +613,13 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_tr_25_button_13_Template(rf, ctx) {
+      function ChargeMaintainenceSummaryComponent_tr_29_button_17_Template(rf, ctx) {
         if (rf & 1) {
           var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_25_button_13_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_17_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r12);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -641,13 +641,13 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_tr_25_button_14_Template(rf, ctx) {
+      function ChargeMaintainenceSummaryComponent_tr_29_button_18_Template(rf, ctx) {
         if (rf & 1) {
           var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_25_button_14_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_18_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r15);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -669,13 +669,13 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_tr_25_button_15_Template(rf, ctx) {
+      function ChargeMaintainenceSummaryComponent_tr_29_button_19_Template(rf, ctx) {
         if (rf & 1) {
           var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_25_button_15_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_19_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r18);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -697,13 +697,13 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_tr_25_button_16_Template(rf, ctx) {
+      function ChargeMaintainenceSummaryComponent_tr_29_button_20_Template(rf, ctx) {
         if (rf & 1) {
           var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_25_button_16_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_20_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r21);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -725,7 +725,7 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_tr_25_Template(rf, ctx) {
+      function ChargeMaintainenceSummaryComponent_tr_29_Template(rf, ctx) {
         if (rf & 1) {
           var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
@@ -735,7 +735,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_25_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r23);
 
             var data_r5 = restoredCtx.$implicit;
@@ -767,21 +767,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](10, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "span", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](13, ChargeMaintainenceSummaryComponent_tr_25_button_13_Template, 4, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](14, "date");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](14, ChargeMaintainenceSummaryComponent_tr_25_button_14_Template, 4, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](15, ChargeMaintainenceSummaryComponent_tr_25_button_15_Template, 4, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](16, ChargeMaintainenceSummaryComponent_tr_25_button_16_Template, 4, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "span", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](17, ChargeMaintainenceSummaryComponent_tr_29_button_17_Template, 4, 0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, ChargeMaintainenceSummaryComponent_tr_29_button_18_Template, 4, 0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](19, ChargeMaintainenceSummaryComponent_tr_29_button_19_Template, 4, 0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, ChargeMaintainenceSummaryComponent_tr_29_button_20_Template, 4, 0, "button", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -803,11 +815,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r5.chargePercentage);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r5.taxAmount);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](10, 8, data_r5.inputTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r5.approvedStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r5.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](14, 10, data_r5.inputTime, "medium"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
 
@@ -827,7 +847,7 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_ng_container_26_Template(rf, ctx) {
+      function ChargeMaintainenceSummaryComponent_ng_container_30_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
 
@@ -1130,7 +1150,7 @@
       _ChargeMaintainenceSummaryComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _ChargeMaintainenceSummaryComponent,
         selectors: [["npr-charge-maintainence-summary"]],
-        decls: 27,
+        decls: 31,
         vars: 7,
         consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [2, "display", "flex", "gap", "50px"], ["class", "iconBtn", "color", "primary", 3, "click", 4, "ngIf"], ["color", "primary", 1, "iconBtn", 3, "click"], [1, "btnTooltip"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["src", "assets/images/open.svg", "alt", "..."], ["src", "assets/images/delete.svg", "alt", "..."], ["src", "assets/images/authorize.svg", "alt", "Authorize"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function ChargeMaintainenceSummaryComponent_Template(rf, ctx) {
@@ -1189,19 +1209,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](19, "Charge Percentage");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](19, "Tax Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](21, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](21, "Auth Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](23, "Actions");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](23, "Record Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](24, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](25, "Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](26, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](27, "Actions");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -1209,15 +1241,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](24, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](25, ChargeMaintainenceSummaryComponent_tr_25_Template, 17, 11, "tr", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](29, ChargeMaintainenceSummaryComponent_tr_29_Template, 21, 13, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, ChargeMaintainenceSummaryComponent_ng_container_26_Template, 5, 0, "ng-container", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](30, ChargeMaintainenceSummaryComponent_ng_container_30_Template, 5, 0, "ng-container", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -1237,7 +1269,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.respArray);
 
@@ -1367,21 +1399,21 @@
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/forms */
       1707);
       /* harmony import */
 
 
-      var _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @rxweb/reactive-form-validators */
       88111);
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! rxjs */
-      81134);
+      79441);
       /* harmony import */
 
 
@@ -2090,7 +2122,7 @@
       };
 
       var _ChargeMaintaineneceComponent = /*#__PURE__*/function () {
-        function _ChargeMaintaineneceComponent(toastService, formBuilder, chargeMaintenanceService, roleService, router) {
+        function _ChargeMaintaineneceComponent(toastService, formBuilder, chargeMaintenanceService, roleService, router, cdr) {
           _classCallCheck(this, _ChargeMaintaineneceComponent);
 
           this.toastService = toastService;
@@ -2098,9 +2130,12 @@
           this.chargeMaintenanceService = chargeMaintenanceService;
           this.roleService = roleService;
           this.router = router;
+          this.cdr = cdr;
           this.editFlag = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.formTouched = true;
+          this.showDialog = false;
+          this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
         }
 
         _createClass(_ChargeMaintaineneceComponent, [{
@@ -2136,7 +2171,7 @@
               }
             });
 
-            _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormConfig.set({
+            _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_7__.ReactiveFormConfig.set({
               "validationMessage": {
                 "lessThan": "Tax Amount should be less than Charge amount."
               }
@@ -2146,13 +2181,13 @@
           key: "buildForm",
           value: function buildForm(item) {
             this.chargeForm = this.formBuilder.group({
-              currency: [item ? item.currency : "", _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
-              chargeAmount: [item ? item.chargeAmount : "", _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
-              chargePercentage: [item ? item.chargePercentage : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.min(0)]],
-              taxAmount: [item ? item.taxAmount : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_6__.RxwebValidators.lessThan({
+              currency: [item ? item.currency : "", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
+              chargeAmount: [item ? item.chargeAmount : "", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
+              chargePercentage: [item ? item.chargePercentage : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.min(0)]],
+              taxAmount: [item ? item.taxAmount : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _rxweb_reactive_form_validators__WEBPACK_IMPORTED_MODULE_7__.RxwebValidators.lessThan({
                 fieldName: 'chargeAmount'
               })]],
-              taxPercentage: [item ? item.taxPercentage : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.min(0)]],
+              taxPercentage: [item ? item.taxPercentage : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.min(0)]],
               inputBy: [item ? item.inputBy : ""],
               inputTime: [item ? item.inputTime : ""],
               recordStatus: [item ? item.recordStatus : ""],
@@ -2165,23 +2200,53 @@
             });
           }
         }, {
-          key: "pageDeactivation",
-          value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+          key: "canExit",
+          value: function canExit() {
+            var _this9 = this;
+
+            var isExit = false;
 
             if (this.chargeForm.touched && this.formTouched == true) {
-              var swalMsg = '';
-              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-              console.log("result: ", result);
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(result);
+              return sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  isExit = true;
+
+                  _this9.cdr.markForCheck();
+
+                  return isExit;
+                } else {
+                  isExit = false;
+
+                  _this9.cdr.markForCheck();
+
+                  return isExit;
+                }
+              });
             } else {
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_8__.of)(true);
+              isExit = true;
+              return new Promise(function (resolve, reject) {
+                if (isExit === true) {
+                  isExit = true;
+
+                  _this9.cdr.markForCheck();
+
+                  resolve(true);
+                }
+              });
             }
           }
         }, {
           key: "onSubmittingofChargeMaintenance",
           value: function onSubmittingofChargeMaintenance(value) {
-            var _this9 = this;
+            var _this10 = this;
 
             if (this.chargeForm.value.chargeAmount < this.chargeForm.value.taxAmount) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -2200,16 +2265,16 @@
                     text: "Record Already Exist",
                     icon: 'warning'
                   });
-                  _this9.submitDisab = true;
+                  _this10.submitDisab = true;
                 } else {
-                  _this9.respData = chargeMaintenanceResp;
+                  _this10.respData = chargeMaintenanceResp;
 
-                  _this9.auditLog(); // this.submitDisab = true;
+                  _this10.auditLog(); // this.submitDisab = true;
 
 
-                  _this9.editFlag = false;
-                  _this9.index = _this9.respData.id;
-                  _this9.formTouched = !_this9.chargeForm.touched;
+                  _this10.editFlag = false;
+                  _this10.index = _this10.respData.id;
+                  _this10.formTouched = !_this10.chargeForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Created ",
                     icon: 'success'
@@ -2228,13 +2293,13 @@
                   }); // this.submitDisab = true;
                 } else {
                   // this.submitDisab = true;
-                  _this9.respData = chargeMaintenanceResp;
-                  _this9.editFlag = false;
-                  _this9.index = _this9.respData.id;
+                  _this10.respData = chargeMaintenanceResp;
+                  _this10.editFlag = false;
+                  _this10.index = _this10.respData.id;
 
-                  _this9.auditLog();
+                  _this10.auditLog();
 
-                  _this9.formTouched = !_this9.chargeForm.touched;
+                  _this10.formTouched = !_this10.chargeForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Updated "
                   });
@@ -2245,16 +2310,16 @@
         }, {
           key: "onEditCharge",
           value: function onEditCharge(index) {
-            var _this10 = this;
+            var _this11 = this;
 
             this.editFlag = false;
             this.chargeMaintenanceService.sendingIdforchargeMaintenanceEdit(index).subscribe(function (chargeMaintenanceResp) {
               console.log(chargeMaintenanceResp);
-              _this10.respData = chargeMaintenanceResp;
+              _this11.respData = chargeMaintenanceResp;
 
-              _this10.buildForm(chargeMaintenanceResp);
+              _this11.buildForm(chargeMaintenanceResp);
 
-              _this10.auditLog();
+              _this11.auditLog();
             });
           }
         }, {
@@ -2292,7 +2357,7 @@
         }, {
           key: "onAuthorizingTheRecord",
           value: function onAuthorizingTheRecord() {
-            var _this11 = this;
+            var _this12 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2309,7 +2374,7 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                if (_this11.currentUser === _this11.respData.inputBy) {
+                if (_this12.currentUser === _this12.respData.inputBy) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: 'Maker Cannot Authorize Record!',
                     icon: 'error'
@@ -2319,13 +2384,13 @@
 
                 console.log("this is authorzation");
 
-                _this11.chargeMaintenanceService.onAuthofChargeMaintenance(_this11.currentUser, _this11.chargeForm.value.id).subscribe(function (authResp) {
+                _this12.chargeMaintenanceService.onAuthofChargeMaintenance(_this12.currentUser, _this12.chargeForm.value.id).subscribe(function (authResp) {
                   console.log(authResp);
-                  _this11.respData = authResp;
+                  _this12.respData = authResp;
 
-                  _this11.auditLog();
+                  _this12.auditLog();
 
-                  if (_this11.respData.verifiedBy != null) {
+                  if (_this12.respData.verifiedBy != null) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Authorized"
                     } // type: "success"
@@ -2368,7 +2433,7 @@
         }, {
           key: "onClosingTheRecord",
           value: function onClosingTheRecord() {
-            var _this12 = this;
+            var _this13 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2387,13 +2452,13 @@
               if (result.isConfirmed === true) {
                 console.log("this is close");
 
-                _this12.chargeMaintenanceService.onClosingTheRecord(_this12.currentUser, _this12.chargeForm.value.id).subscribe(function (closeResp) {
+                _this13.chargeMaintenanceService.onClosingTheRecord(_this13.currentUser, _this13.chargeForm.value.id).subscribe(function (closeResp) {
                   console.log(closeResp);
-                  _this12.respData = closeResp;
+                  _this13.respData = closeResp;
 
-                  _this12.auditLog();
+                  _this13.auditLog();
 
-                  if (_this12.respData) {
+                  if (_this13.respData) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Closed"
                     });
@@ -2405,7 +2470,7 @@
         }, {
           key: "onReopningTheRecord",
           value: function onReopningTheRecord() {
-            var _this13 = this;
+            var _this14 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2422,13 +2487,13 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this13.chargeMaintenanceService.onReopningTheRecord(_this13.currentUser, _this13.chargeForm.value.id).subscribe(function (reopnResp) {
+                _this14.chargeMaintenanceService.onReopningTheRecord(_this14.currentUser, _this14.chargeForm.value.id).subscribe(function (reopnResp) {
                   console.log(reopnResp);
-                  _this13.respData = reopnResp;
-                  _this13.respData = reopnResp;
+                  _this14.respData = reopnResp;
+                  _this14.respData = reopnResp;
 
-                  if (_this13.respData.recordStatus == "O") {
-                    _this13.auditLog();
+                  if (_this14.respData.recordStatus == "O") {
+                    _this14.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Reopened"
@@ -2446,7 +2511,7 @@
         }, {
           key: "onDeletingTheRecord",
           value: function onDeletingTheRecord() {
-            var _this14 = this;
+            var _this15 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2463,20 +2528,20 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this14.chargeMaintenanceService.onDeletTheRecord(_this14.currentUser, _this14.chargeForm.value.id).subscribe(function (deleteResp) {
+                _this15.chargeMaintenanceService.onDeletTheRecord(_this15.currentUser, _this15.chargeForm.value.id).subscribe(function (deleteResp) {
                   console.log(deleteResp);
-                  _this14.respData = deleteResp;
-                  _this14.respData = deleteResp;
+                  _this15.respData = deleteResp;
+                  _this15.respData = deleteResp;
 
-                  if (_this14.respData.chargeAmount == null) {
-                    _this14.auditLog();
+                  if (_this15.respData.chargeAmount == null) {
+                    _this15.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Deleted"
                     } // type: "success"
                     );
 
-                    _this14.router.navigate(['/charge-maintainence']);
+                    _this15.router.navigate(['/charge-maintainence']);
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record cannot be delete "
@@ -2512,7 +2577,7 @@
       }();
 
       _ChargeMaintaineneceComponent.ɵfac = function ChargeMaintaineneceComponent_Factory(t) {
-        return new (t || _ChargeMaintaineneceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_charge_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__.ChargeMaintenanceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router));
+        return new (t || _ChargeMaintaineneceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_charge_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__.ChargeMaintenanceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef));
       };
 
       _ChargeMaintaineneceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
@@ -2786,7 +2851,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.respData);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NumberValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkWithHref],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NumberValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkWithHref],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjaGFyZ2UtbWFpbnRhaW5lbmVjZS5jb21wb25lbnQuc2NzcyJ9 */"]
       });

@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -20549,6 +20555,7 @@
           this.dtOptions = {}; // this.dtOptions = {};
 
           this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+          this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
         }
 
         _createClass(_DashboardAnalyticsComponent, [{
@@ -20561,7 +20568,7 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [5]
+                targets: [5]
               }],
               order: [[5, 'desc']],
               processing: true,
@@ -20588,34 +20595,34 @@
             var navigationExtras = {
               queryParams: {
                 // 'id': this.modifyUserObject.id,
-                'userId': this.currentUser.userId,
-                'userName': this.currentUser.userName,
-                'email': this.currentUser.email,
-                'ldapUserId': this.currentUser.ldapUserId,
-                'failedAttempts': this.currentUser.failedAttempts,
-                'mobile': this.currentUser.mobile,
-                'authStatus': this.currentUser.verifiedStatus,
-                'recordStatus': this.currentUser.recordStatus,
-                'autoAuth': this.currentUser.autoAuth,
-                'emailNotification': this.currentUser.emailNotification,
-                'maintAllowed': this.currentUser.maintAllowed,
-                'smsNotification': this.currentUser.smsNotification,
-                'userAccessOption': this.currentUser.userAccessOption,
-                'roleForUser': this.currentUser.roleForUser,
-                'creatorId': this.currentUser.creatorId,
-                'creatorDtStamp': this.currentUser.creatorDtStamp,
-                'verifierId': this.currentUser.verifierId,
-                'verifierDtStamp': this.currentUser.verifierDtStamp,
-                'encryptedPassword': this.currentUser.encryptedPassword,
-                'updatedBy': this.currentUser.updatedBy,
-                'fristTimeAuth': this.currentUser.verifiedOnce,
-                'newRoleForUser': this.currentUser.newRoleForUser,
-                'versionNo': this.currentUser.versionNo,
-                'statusForUser': this.currentUser.statusForUser,
-                'department': this.currentUser.department,
-                'intime': this.currentUser.intime,
-                'outtime': this.currentUser.outtime,
-                'pwdChangeDate': this.currentUser.pwdChangeDate
+                userId: this.currentUser.userId,
+                userName: this.currentUser.userName,
+                email: this.currentUser.email,
+                ldapUserId: this.currentUser.ldapUserId,
+                failedAttempts: this.currentUser.failedAttempts,
+                mobile: this.currentUser.mobile,
+                authStatus: this.currentUser.verifiedStatus,
+                recordStatus: this.currentUser.recordStatus,
+                autoAuth: this.currentUser.autoAuth,
+                emailNotification: this.currentUser.emailNotification,
+                maintAllowed: this.currentUser.maintAllowed,
+                smsNotification: this.currentUser.smsNotification,
+                userAccessOption: this.currentUser.userAccessOption,
+                roleForUser: this.currentUser.roleForUser,
+                creatorId: this.currentUser.creatorId,
+                creatorDtStamp: this.currentUser.creatorDtStamp,
+                verifierId: this.currentUser.verifierId,
+                verifierDtStamp: this.currentUser.verifierDtStamp,
+                encryptedPassword: this.currentUser.encryptedPassword,
+                updatedBy: this.currentUser.updatedBy,
+                fristTimeAuth: this.currentUser.verifiedOnce,
+                newRoleForUser: this.currentUser.newRoleForUser,
+                versionNo: this.currentUser.versionNo,
+                statusForUser: this.currentUser.statusForUser,
+                department: this.currentUser.department,
+                intime: this.currentUser.intime,
+                outtime: this.currentUser.outtime,
+                pwdChangeDate: this.currentUser.pwdChangeDate
               }
             }; // console.log(this.currentUser.intime, this.currentUser.outtime);
             //console.log(this.currentUser);department
@@ -20707,6 +20714,26 @@
             var _this6 = this;
 
             this.api.getAllUsersListService().subscribe(function (resp) {
+              var _iterator = _createForOfIteratorHelper(resp.result),
+                  _step;
+
+              try {
+                var _loop = function _loop() {
+                  var item = _step.value;
+                  item.verifiedStatus = _this6.statusArr.find(function (i) {
+                    return i.startsWith(item.verifiedStatus);
+                  });
+                };
+
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  _loop();
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
+
               _this6.allUsersList = resp.result; // this.allUsersList = (resp as any).resp;
               // this.dataSource = new MatTableDataSource<User>(this.allUsersList);
               // this.dataSource.sort = this.sort;
@@ -20716,7 +20743,13 @@
 
               _this6.dtTrigger.next(); // }
 
-            });
+            } // error => {
+            //   Swal.fire({
+            //     type: "error",
+            //     text: "Server error "
+            //   });
+            // }
+            );
           }
         }]);
 

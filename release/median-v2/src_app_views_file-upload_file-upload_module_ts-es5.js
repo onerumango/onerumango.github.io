@@ -1497,7 +1497,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](83, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](83, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](84);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](85, "p");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
@@ -1509,33 +1515,39 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](84, "div", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](86, "div", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](85, "div", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](87, "div", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](86, "div", 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](88, "div", 28);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](87, "div", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](89, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](88, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](90, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](89, "img", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](91, "img", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](90, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](91, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](92, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](92, "h2");
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](93, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](93, "Modification No");
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](94, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](95, "Modification No");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](94, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](96, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](97);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](98, "p");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
@@ -1561,7 +1573,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](26, 4, ctx_r2.pendingForAuthDetailsDTOList[0].inputTime));
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](26, 6, ctx_r2.pendingForAuthDetailsDTOList[0].inputTime));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](24);
 
@@ -1569,7 +1581,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](62, 6, ctx_r2.firstLevelAuthorizationStatus.authDate));
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](62, 8, ctx_r2.firstLevelAuthorizationStatus.authDate));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r2.pendingForAuthDetailsDTOList[0].firstTimeAuthStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r2.pendingForAuthDetailsDTOList[0].versionNo);
         }
       }
 
@@ -2509,7 +2529,8 @@
           this.dtTrigger1 = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
           this.dtTrigger2 = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
           this.closeResult = '';
-          this.rejectReason = "Testing";
+          this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
+          this.rejectReason = 'Testing';
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_3__.permissionsLabels();
           this.approveButtonStatus = true;
           this.spinner = false;
@@ -2543,7 +2564,7 @@
               order: [[6, 'desc']],
               columnDefs: [{
                 type: 'date',
-                'targets': [6]
+                targets: [6]
               }],
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
@@ -2601,7 +2622,7 @@
               sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Enter the reason for Rejection');
             }
 
-            console.log("rejectreason" + this.rejectReason);
+            console.log('rejectreason' + this.rejectReason);
 
             if (this.pendingForAuthDetailsDTOList[0].inputBy == this.user_id) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire('Maker cannot reject the record.');
@@ -2631,7 +2652,7 @@
 
                   if (_this4.statusFlag) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                      text: "Rejected Successfully",
+                      text: 'Rejected Successfully',
                       icon: 'success'
                     });
                   }
@@ -2718,14 +2739,14 @@
                   if (!_this5.firstLevelAuthorizationStatus) {
                     console.log(_this5.approveButtonStatus);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                      text: "Data authorization is failed",
+                      text: 'Data authorization is failed',
                       icon: 'error'
                     });
                   }
 
                   if (_this5.firstLevelAuthorizationStatus) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().fire({
-                      text: "Record is Approved and Processed",
+                      text: 'Record is Approved and Processed',
                       icon: 'success'
                     });
                     _this5.process = true;
@@ -2805,7 +2826,7 @@
           value: function queryDetailsDataByParam(pendingForAuthDTO, i) {
             var _this8 = this;
 
-            var btn = document.getElementById("btnGetDetails" + i);
+            var btn = document.getElementById('btnGetDetails' + i);
             btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
             this.isLoading = true;
             this.process = false;
@@ -2826,13 +2847,13 @@
             console.log(this.getDetailsQueryToggleReqDTO);
             this.api.queryDetailsDataByParamService(this.getDetailsQueryToggleReqDTO).subscribe(function (resp) {
               _this8.isLoading = false;
-              console.log("backend row data after query", resp);
+              console.log('backend row data after query', resp);
               btn.innerHTML = '<span>Get Details</span>';
               _this8.pendingForAuthDetailsDTOList = resp;
 
               if (_this8.pendingForAuthDetailsDTOList[0].inputBy == _this8.user_id) {
                 console.log(_this8.user_id);
-                console.log("true");
+                console.log('true');
                 _this8.reject1 = true;
               }
 
@@ -2871,8 +2892,8 @@
               var trow = document.createElement('tr');
               _this9.previousRow = trow;
               trow.classList.add('trowAuthorization');
-              trow.style.position = "relative";
-              trow.style.height = "408px";
+              trow.style.position = 'relative';
+              trow.style.height = '408px';
               acountDetails.classList.add('accountDetailsDiv');
               trow.appendChild(acountDetails);
               tBody.insertBefore(trow, tBody.children[position]);
@@ -2884,7 +2905,14 @@
             var _this10 = this;
 
             this.api.getDetailsListServiceFirst().subscribe(function (resp) {
-              _this10.queriedPendingForAuthDetailsDTOList = resp;
+              console.log(resp); // for (let item of this.result) {
+              //   item.authStatus = this..find((i) =>
+              //     i.startsWith(item.authStatus)
+              //   );
+              // }
+
+              https: _this10.queriedPendingForAuthDetailsDTOList = resp;
+
               _this10.dummyPendingForAuthDataDetails = _this10.queriedPendingForAuthDetailsDTOList;
 
               _this10.dtTrigger2.next();
@@ -2896,7 +2924,31 @@
             var _this11 = this;
 
             this.api.getPendingForAuthDataFirst(this.user_id).subscribe(function (resp) {
+              console.log(resp);
               _this11.pendingForAuthData = resp;
+
+              var _iterator = _createForOfIteratorHelper(_this11.pendingForAuthData),
+                  _step;
+
+              try {
+                var _loop = function _loop() {
+                  var item = _step.value;
+                  item.authStatus = _this11.statusArr.find(function (i) {
+                    return i.startsWith(item.authStatus);
+                  });
+                  item.uploadStatus = _this11.statusArr.find(function (i) {
+                    return i.startsWith(item.uploadStatus);
+                  });
+                };
+
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  _loop();
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
 
               _this11.dtTrigger1.next();
 
@@ -2928,21 +2980,21 @@
           value: function findRowsPerExtSys(extSysName) {
             this.dummyPendingForAuthDataDetails = new Array();
 
-            var _iterator = _createForOfIteratorHelper(this.pendingForAuthDetailsDTOList),
-                _step;
+            var _iterator2 = _createForOfIteratorHelper(this.pendingForAuthDetailsDTOList),
+                _step2;
 
             try {
-              for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                var entry = _step.value;
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                var entry = _step2.value;
 
                 if (entry.sourceCode === extSysName) {
                   this.dummyPendingForAuthDataDetails.push(entry);
                 }
               }
             } catch (err) {
-              _iterator.e(err);
+              _iterator2.e(err);
             } finally {
-              _iterator.f();
+              _iterator2.f();
             }
 
             this.dtTrigger2.next();
@@ -3036,13 +3088,13 @@
             var _this15 = this;
 
             var doc = new (jspdf__WEBPACK_IMPORTED_MODULE_5___default())({
-              orientation: "landscape"
+              orientation: 'landscape'
             });
-            doc.setFont("helvetica");
-            doc.setFontSize("bold");
+            doc.setFont('helvetica');
+            doc.setFontSize('bold');
             doc.setFontSize(9);
-            var col = [["BatchNo", //Refrence No : // 2 skiiping this, user can see this in FlexCube
-            "AccBranch", "Acc", "AccDesc", "DrCr", "TrnCode", "TrnDesc", "FcyAmt", "Rate", "DrLcyAmt", "CrLcyAmt", "InstrCode", "ValueDate", "UserId", "AuthId"]]; // 16
+            var col = [['BatchNo', //Refrence No : // 2 skiiping this, user can see this in FlexCube
+            'AccBranch', 'Acc', 'AccDesc', 'DrCr', 'TrnCode', 'TrnDesc', 'FcyAmt', 'Rate', 'DrLcyAmt', 'CrLcyAmt', 'InstrCode', 'ValueDate', 'UserId', 'AuthId']]; // 16
 
             var rows = [];
             console.log(this.pendingForAuthDetailsDTOList);
@@ -3058,7 +3110,7 @@
 
               _this15.valueDate = _this15.pipe.transform(element.valueDate, 'dd-MMM-yy'); //14
 
-              var date = new Date(element.timeForExport).toLocaleDateString("en-us");
+              var date = new Date(element.timeForExport).toLocaleDateString('en-us');
               console.log(date);
               var temp = [element.id.batchNo, // Refrence No : element.id.refNo, // 2 skiiping this user can see this in FlexCube
               element.accountBranch, element.account, element.accDesc, element.drCr, element.txnCode, element.trnDesc, element.amount, element.exchRate, _this15.pdfDebitVar, _this15.pdfCreditVar, element.instrumentNo, _this15.valueDate, element.inputBy, element.firstTimeAuthorizer]; //16
@@ -3239,7 +3291,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](42, "div", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, AuthorizeExcelComponent_div_43_Template, 95, 8, "div", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, AuthorizeExcelComponent_div_43_Template, 99, 10, "div", 11);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
 
@@ -3525,7 +3577,7 @@
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/forms */
       1707);
       /* harmony import */
@@ -3537,7 +3589,7 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
@@ -3571,9 +3623,9 @@
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! rxjs */
-      81134);
+      79441);
       /* harmony import */
 
 
@@ -4142,7 +4194,7 @@
 
       var _FileUploadComponent = /*#__PURE__*/function () {
         function _FileUploadComponent(api, userApi, fb, // private toastService : ToastService,
-        excelService, roleService, router) {
+        excelService, roleService, router, cdr) {
           _classCallCheck(this, _FileUploadComponent);
 
           this.api = api;
@@ -4151,8 +4203,11 @@
           this.excelService = excelService;
           this.roleService = roleService;
           this.router = router;
+          this.cdr = cdr;
           this.isSelected = true;
           this.showSelectedFilename = false;
+          this.showDialog = false;
+          this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_11__.Subject();
           this.allExternalSystemNames = [];
           this.space = false;
           this.excelDataProcessingAuditlog = new src_app_shared_models_excel_data_processing_dto_audit_resp__WEBPACK_IMPORTED_MODULE_2__.ExcelDataProcessingAuditRespDTO();
@@ -4169,7 +4224,7 @@
           this.button_permission = {};
           this.button = true;
           this.flag = false;
-          this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_11__.DatePipe('en-US');
+          this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_12__.DatePipe('en-US');
           this.now = Date.now();
           this.myFormattedDate = this.pipe.transform(this.now, 'dd-MMM-yy');
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_3__.permissionsLabels();
@@ -4185,11 +4240,11 @@
             this.department = localStorage.getItem("departmentHeader");
             this.departmentString = this.department.replace(/["]+/g, '');
             this.uploadExcelForm = this.fb.group({
-              extSysNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
-              processNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
+              extSysNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
+              processNameData: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
               selectorDateData: [new Date()],
-              trncode: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
-              fileName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required]],
+              trncode: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
+              fileName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]],
               remarks: [""]
             });
             setTimeout(function () {
@@ -4245,17 +4300,47 @@
             });
           }
         }, {
-          key: "pageDeactivation",
-          value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+          key: "canExit",
+          value: function canExit() {
+            var _this19 = this;
+
+            var isExit = false;
 
             if (this.uploadExcelForm.touched && this.formTouched == true) {
-              var swalMsg = '';
-              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-              console.log("result: ", result);
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_13__.of)(result);
+              return sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  isExit = true;
+
+                  _this19.cdr.markForCheck();
+
+                  return isExit;
+                } else {
+                  isExit = false;
+
+                  _this19.cdr.markForCheck();
+
+                  return isExit;
+                }
+              });
             } else {
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_13__.of)(true);
+              isExit = true;
+              return new Promise(function (resolve, reject) {
+                if (isExit === true) {
+                  isExit = true;
+
+                  _this19.cdr.markForCheck();
+
+                  resolve(true);
+                }
+              });
             }
           }
         }, {
@@ -4266,7 +4351,7 @@
         }, {
           key: "doFirstValidation",
           value: function doFirstValidation() {
-            var _this19 = this;
+            var _this20 = this;
 
             this.button = false;
             this.isUploading = true; // this.uploadExcelForm.get('selectorDateData').setValue(new Date());
@@ -4298,21 +4383,21 @@
               this.excelDataProcessingReqDTO.trnCode = this.uploadExcelForm.get('trncode').value;
               this.excelDataProcessingReqDTO.fileName = this.uploadExcelForm.get('fileName').value;
               this.api.showDetailServiceInExcelDataProcessing(this.excelDataProcessingReqDTO, this.user_id).subscribe(function (responseforfileupload) {
-                _this19.isUploading = false;
-                _this19.responseforfileupload = responseforfileupload;
+                _this20.isUploading = false;
+                _this20.responseforfileupload = responseforfileupload;
 
-                if (_this19.responseforfileupload == null) {
+                if (_this20.responseforfileupload == null) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Server error.');
                   return;
                 }
 
-                if (_this19.responseforfileupload.errorMessage) {
+                if (_this20.responseforfileupload.errorMessage) {
                   console.log("here is error of duplicate record");
-                  _this19.disablebtn2 = true;
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + _this19.responseforfileupload.errorMessage);
+                  _this20.disablebtn2 = true;
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + "Template Mapping is Not Authorized");
 
-                  if (_this19.responseforfileupload.errorMessage === "Ppossible duplicate data") {
-                    _this19.excelDataProcessingReqDTO.proceedDuplicates = true;
+                  if (_this20.responseforfileupload.errorMessage === "Ppossible duplicate data") {
+                    _this20.excelDataProcessingReqDTO.proceedDuplicates = true;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                       title: 'Do you want to proceed?',
                       text: 'You\'re trying to upload duplicate data',
@@ -4323,37 +4408,37 @@
                       confirmButtonText: 'YES'
                     }).then(function (result) {
                       if (result.isConfirmed) {
-                        _this19.api.showDetailServiceInExcelDataProcessing(_this19.excelDataProcessingReqDTO, _this19.user_id).subscribe(function (dupliacteResp) {
-                          _this19.responseforfileupload = dupliacteResp;
-                          _this19.valueDate = _this19.responseforfileupload.valueDate == "Today" ? "Today" : "not Today"; // 
+                        _this20.api.showDetailServiceInExcelDataProcessing(_this20.excelDataProcessingReqDTO, _this20.user_id).subscribe(function (dupliacteResp) {
+                          _this20.responseforfileupload = dupliacteResp;
+                          _this20.valueDate = _this20.responseforfileupload.valueDate == "Today" ? "Today" : "not Today"; // 
                           // this.date=new Date().toLocaleDateString();
                           // this.valueDate = this.responseforfileupload.valueDate == "Today" ?  this.date : "not Today";
 
-                          _this19.responsebutton = true;
-                          _this19.responseDto = _this19.responseforfileupload;
+                          _this20.responsebutton = true;
+                          _this20.responseDto = _this20.responseforfileupload;
 
-                          if (_this19.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error:' + _this19.responseforfileupload.errorMessage, 'error');
+                          if (_this20.responseforfileupload.errorMessage === "Amount and LCY amount mismatch") {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error:' + _this20.responseforfileupload.errorMessage, 'error');
                           }
 
-                          if (_this19.responseforfileupload.errorMessage === "Error while reading file") {
-                            sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + _this19.responseforfileupload.errorMessage);
+                          if (_this20.responseforfileupload.errorMessage === "Error while reading file") {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + _this20.responseforfileupload.errorMessage);
                           }
 
-                          if (_this19.responseDto.totalNoOfRecords !== 0) {
-                            _this19.dataUploaded = true;
+                          if (_this20.responseDto.totalNoOfRecords !== 0) {
+                            _this20.dataUploaded = true;
                             sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                               title: "Data uploaded successfully ",
-                              text: "For the Batch " + _this19.responseDto.batchNo
+                              text: "For the Batch " + _this20.responseDto.batchNo
                             }).then(function (result) {
                               setTimeout(function () {
                                 window.scrollTo(0, document.body.scrollHeight);
                               });
                             });
-                            _this19.excelFileFlag = true;
-                            _this19.flag = false;
-                            _this19.isShow = true;
-                            _this19.formTouched = !_this19.uploadExcelForm.touched;
+                            _this20.excelFileFlag = true;
+                            _this20.flag = false;
+                            _this20.isShow = true;
+                            _this20.formTouched = !_this20.uploadExcelForm.touched;
                           }
                         }, function (error) {
                           console.log(error);
@@ -4364,52 +4449,52 @@
 
                       ;
 
-                      _this19.resetEntries();
+                      _this20.resetEntries();
                     });
                   }
 
-                  _this19.flag = true;
-                  _this19.disbaleBtn = true;
+                  _this20.flag = true;
+                  _this20.disbaleBtn = true;
                 }
 
-                _this19.date = new Date().toLocaleDateString();
-                _this19.date = _this19.pipe.transform(_this19.date, "MMM dd, yyyy");
-                _this19.valueDate = _this19.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
-                _this19.responsebutton = true;
-                _this19.responseDto = _this19.responseforfileupload;
+                _this20.date = new Date().toLocaleDateString();
+                _this20.date = _this20.pipe.transform(_this20.date, "MMM dd, yyyy");
+                _this20.valueDate = _this20.responseforfileupload.valueDate == "Today" ? "Today" : "not Today";
+                _this20.responsebutton = true;
+                _this20.responseDto = _this20.responseforfileupload;
 
-                if (_this19.responseDto.totalNoOfRecords !== 0) {
+                if (_this20.responseDto.totalNoOfRecords !== 0) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                     title: "Data uploaded successfully ",
-                    text: "For the Batch " + _this19.responseDto.batchNo
+                    text: "For the Batch " + _this20.responseDto.batchNo
                   }).then(function (result) {
                     setTimeout(function () {
                       window.scrollTo(0, document.body.scrollHeight);
                     });
                   });
-                  _this19.formTouched = !_this19.uploadExcelForm.touched;
-                  _this19.excelFileFlag = true;
-                  _this19.flag = false;
-                  _this19.isShow = true;
+                  _this20.formTouched = !_this20.uploadExcelForm.touched;
+                  _this20.excelFileFlag = true;
+                  _this20.flag = false;
+                  _this20.isShow = true;
                 }
               }, function (err) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Server error.');
-                _this19.isUploading = false;
+                _this20.isUploading = false;
               });
             }
           }
         }, {
           key: "getAllExternalSystemNames",
           value: function getAllExternalSystemNames() {
-            var _this20 = this;
+            var _this21 = this;
 
             this.api.getAllExtSysNamesService(this.user_id).subscribe(function (resp) {
               var data = resp.find(function (item) {
-                return item.department == _this20.departmentString;
+                return item.department == _this21.departmentString;
               });
               console.log("data before filter ", resp);
               console.log("data after filter ", data);
-              _this20.allExternalSystemNames = resp.sort();
+              _this21.allExternalSystemNames = resp.sort();
             });
           }
         }, {
@@ -4422,7 +4507,7 @@
             this.fileNameData = '';
             this.trncode = '';
             this.showSelectedFilename = false;
-            this.enablefilebrowser = false;
+            this.enablefilebrowser = true;
             this.button = true;
             this.disablebtn2 = false;
             this.excelDataProcessingReqDTO.fileName = '';
@@ -4444,19 +4529,19 @@
         }, {
           key: "getFileNamesBasedOnExtSysNameAndProcessName",
           value: function getFileNamesBasedOnExtSysNameAndProcessName(extSysName, processName) {
-            var _this21 = this;
+            var _this22 = this;
 
             if (this.disablebtn2) {
               this.disbaleBtn = false;
             }
 
             this.api.getUploadPermission(extSysName, processName).subscribe(function (resp) {
-              _this21.permission = resp;
+              _this22.permission = resp;
 
-              if (_this21.permission[0] == 'false') {
-                _this21.enablefilebrowser = true;
+              if (_this22.permission[0] == 'false') {
+                _this22.enablefilebrowser = true;
               } else {
-                _this21.enablefilebrowser = false;
+                _this22.enablefilebrowser = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Permission denied! ', 'Try with some other external system or process name.');
               }
             });
@@ -4464,7 +4549,7 @@
         }, {
           key: "getProcessNamesBasedOnExtSysNameForUpload",
           value: function getProcessNamesBasedOnExtSysNameForUpload(extSysName) {
-            var _this22 = this;
+            var _this23 = this;
 
             console.log(extSysName);
             this.processNames = [];
@@ -4474,12 +4559,12 @@
             }
 
             this.api.getProcessNamesBasedOnExtSysNameService(extSysName).subscribe(function (resp) {
-              _this22.processNames = resp;
+              _this23.processNames = resp;
 
-              if (_this22.processNames.length === 1 && _this22.processNames != undefined) {
-                _this22.uploadExcelForm.get('processNameData').setValue(_this22.processNames[0]);
+              if (_this23.processNames.length === 1 && _this23.processNames != undefined) {
+                _this23.uploadExcelForm.get('processNameData').setValue(_this23.processNames[0]);
 
-                _this22.enablefilebrowser = true;
+                _this23.enablefilebrowser = true;
               }
             });
           }
@@ -4491,11 +4576,11 @@
         }, {
           key: "getTrnCodeArray",
           value: function getTrnCodeArray() {
-            var _this23 = this;
+            var _this24 = this;
 
             this.api.getAllTransactionCode(this.user_id).subscribe(function (res) {
-              _this23.trnCodeArray = res;
-              console.log(_this23.trnCodeArray);
+              _this24.trnCodeArray = res;
+              console.log(_this24.trnCodeArray);
             });
           }
         }, {
@@ -4509,7 +4594,7 @@
         }, {
           key: "Datacheck",
           value: function Datacheck() {
-            var _this24 = this;
+            var _this25 = this;
 
             console.log("valueDate", this.valueDate);
 
@@ -4532,26 +4617,26 @@
 
               this.flag = true;
               this.api.processDataService(this.responseforfileupload, this.user_id, this.uploadExcelForm.get('remarks').value).subscribe(function (resp) {
-                _this24.isProcessing = false;
-                _this24.processDataStatus = resp;
+                _this25.isProcessing = false;
+                _this25.processDataStatus = resp;
                 console.log('this.processDataStatus');
 
-                if (_this24.processDataStatus) {
-                  _this24.dataProcessed = true;
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Data processed successfully', 'For the Batch ' + _this24.responseDto.batchNo);
-                  _this24.isShow = true;
+                if (_this25.processDataStatus) {
+                  _this25.dataProcessed = true;
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Data processed successfully', 'For the Batch ' + _this25.responseDto.batchNo);
+                  _this25.isShow = true;
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to process.');
                 }
               }, function (err) {
-                _this24.isProcessing = false;
+                _this25.isProcessing = false;
               });
             }
           }
         }, {
           key: "processDataService",
           value: function processDataService() {
-            var _this25 = this;
+            var _this26 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
               text: 'Value Date is ' + this.responseDto.valueDate + ' in few or all uploading records. Would you like to proceed?',
@@ -4564,38 +4649,38 @@
 
               if (result.value) {
                 console.log('user choose to proceed.');
-                _this25.isProcessing = true;
+                _this26.isProcessing = true;
 
-                if (_this25.responseDto.totalNoOfRecords == 0) {
-                  _this25.isProcessing = false;
+                if (_this26.responseDto.totalNoOfRecords == 0) {
+                  _this26.isProcessing = false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('total no. of record is 0', 'Unable to process.');
                   return;
                 }
 
-                if (!_this25.remarks) {
-                  _this25.isProcessing = false;
+                if (!_this26.remarks) {
+                  _this26.isProcessing = false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Remark is mandatory for process.');
                   return;
                 }
 
-                _this25.flag = true;
+                _this26.flag = true;
 
-                _this25.api.processDataService(_this25.responseforfileupload, _this25.user_id, _this25.remarks).subscribe(function (resp) {
-                  _this25.isProcessing = false;
-                  _this25.processDataStatus = resp;
+                _this26.api.processDataService(_this26.responseforfileupload, _this26.user_id, _this26.remarks).subscribe(function (resp) {
+                  _this26.isProcessing = false;
+                  _this26.processDataStatus = resp;
                   console.log('this.processDataStatus');
 
-                  if (_this25.processDataStatus) {
+                  if (_this26.processDataStatus) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
                       title: "Data processed successfully",
-                      text: "For the Batch " + _this25.responseDto.batchNo
+                      text: "For the Batch " + _this26.responseDto.batchNo
                     });
-                    _this25.isShow = true;
+                    _this26.isShow = true;
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to process.');
                   }
                 }, function (err) {
-                  _this25.isProcessing = false;
+                  _this26.isProcessing = false;
                 });
               } else {
                 return;
@@ -4635,7 +4720,7 @@
         }, {
           key: "getFiledata",
           value: function getFiledata(event, extSysNameData, processNameData, filename) {
-            var _this26 = this;
+            var _this27 = this;
 
             this.showSelectedFilename = true;
             console.log(event.target.value);
@@ -4657,7 +4742,7 @@
             console.log('getFiledatafilename', filename);
             this.selectedFiles = event.target.files;
             this.api.showDetailServiceInExcelDataWithFile(this.selectedFiles.item(0), extSysNameData, processNameData, filename).subscribe(function (responseforfileupload) {
-              _this26.responseforfileupload = responseforfileupload;
+              _this27.responseforfileupload = responseforfileupload;
 
               if (event) {
                 if (event.status == 200) {
@@ -4692,7 +4777,7 @@
       }();
 
       _FileUploadComponent.ɵfac = function FileUploadComponent_Factory(t) {
-        return new (t || _FileUploadComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_7__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_8__.ExcelService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_roles_service__WEBPACK_IMPORTED_MODULE_9__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router));
+        return new (t || _FileUploadComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_views_users_users_service__WEBPACK_IMPORTED_MODULE_7__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_excel_service__WEBPACK_IMPORTED_MODULE_8__.ExcelService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](src_app_shared_services_roles_service__WEBPACK_IMPORTED_MODULE_9__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_10__.ChangeDetectorRef));
       };
 
       _FileUploadComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineComponent"]({
@@ -4896,7 +4981,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](55, "h2", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](56, "Final excel report can be downloaded from Process Excel Screen.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](56, "Final excel report can be downloaded from Authorize Excel Screen.");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
 
@@ -4975,7 +5060,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("ngIf", ctx.responsebutton);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControlName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__.DefaultValueAccessor, _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.RequiredValidator],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControlName, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_16__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__.DefaultValueAccessor, _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.RequiredValidator],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmaWxlLXVwbG9hZC5jb21wb25lbnQuc2NzcyJ9 */"]
       });
 
@@ -6902,7 +6987,7 @@
         _createClass(_RejectionQueueComponent, [{
           key: "queryDetailsDataByParam",
           value: function queryDetailsDataByParam(pendingForAuthDTO, i) {
-            var _this27 = this;
+            var _this28 = this;
 
             var btn = document.getElementById("btnGetDetails" + i);
             btn.innerHTML = '<span class="indicator-progress" >Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>';
@@ -6915,19 +7000,19 @@
             this.getDetailsQueryToggleReqDTO.filename = pendingForAuthDTO.fileName;
             this.getDetailsQueryToggleReqDTO.batchNumber = pendingForAuthDTO.batchNumber;
             this.api.queryFailedDetailsDataByParamService(this.getDetailsQueryToggleReqDTO).subscribe(function (resp) {
-              _this27.PendingForAuthDetailsDTOList = resp;
+              _this28.PendingForAuthDetailsDTOList = resp;
               btn.innerHTML = '<span>Get Details</span>';
 
-              _this27.dtTrigger2.next();
+              _this28.dtTrigger2.next();
 
-              console.log(_this27.PendingForAuthDetailsDTOList);
+              console.log(_this28.PendingForAuthDetailsDTOList);
 
-              if (_this27.PendingForAuthDetailsDTOList) {
-                console.log(_this27.PendingForAuthDetailsDTOList[0].inputBy);
-                _this27.audit = true;
-                _this27.flag = true;
-                _this27.dataAvail = true;
-                _this27.spinner1 = false;
+              if (_this28.PendingForAuthDetailsDTOList) {
+                console.log(_this28.PendingForAuthDetailsDTOList[0].inputBy);
+                _this28.audit = true;
+                _this28.flag = true;
+                _this28.dataAvail = true;
+                _this28.spinner1 = false;
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire('No Data');
               }
@@ -6975,30 +7060,30 @@
         }, {
           key: "screenpermission",
           value: function screenpermission() {
-            var _this28 = this;
+            var _this29 = this;
 
             this.screenName = 'DataModificationDetails';
             this.userApi.getRoleScreenPermission(this.user_id, this.screenName, this.role).subscribe(function (res) {
-              _this28.rolepermission = res;
-              console.log(_this28.rolepermission);
+              _this29.rolepermission = res;
+              console.log(_this29.rolepermission);
 
-              if (_this28.rolepermission) {
-                _this28.button_permission = _this28.rolepermission[0];
-                console.log(_this28.button_permission);
+              if (_this29.rolepermission) {
+                _this29.button_permission = _this29.rolepermission[0];
+                console.log(_this29.button_permission);
               }
             });
           }
         }, {
           key: "getPendingForAuthData",
           value: function getPendingForAuthData() {
-            var _this29 = this;
+            var _this30 = this;
 
             this.api.getPendingForAuthDataForModification(this.user_id).subscribe(function (resp) {
-              _this29.pendingForAuthData = resp;
+              _this30.pendingForAuthData = resp;
 
-              _this29.dtTrigger1.next();
+              _this30.dtTrigger1.next();
 
-              console.log(_this29.pendingForAuthData);
+              console.log(_this30.pendingForAuthData);
             });
           }
         }, {
@@ -7009,14 +7094,14 @@
         }, {
           key: "approveAndProcess",
           value: function approveAndProcess() {
-            var _this30 = this;
+            var _this31 = this;
 
             this.flag = false;
             this.api.excelModifyAuthorization(this.PendingForAuthDetailsDTOList, this.user_id).subscribe(function (authRes) {
-              _this30.authRes = authRes;
-              console.log(_this30.authRes);
+              _this31.authRes = authRes;
+              console.log(_this31.authRes);
 
-              if (_this30.authRes) {
+              if (_this31.authRes) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire('Data Send for Authorization. After Authorization you can process the data.');
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire('Authorization Failed.');
@@ -7026,18 +7111,18 @@
         }, {
           key: "getAllDetailsData",
           value: function getAllDetailsData() {
-            var _this31 = this;
+            var _this32 = this;
 
             this.api.getFailedDetailsListService().subscribe(function (resp) {
-              _this31.PendingForAuthDetailsDTOList = resp;
+              _this32.PendingForAuthDetailsDTOList = resp;
 
-              _this31.dtTrigger2.next();
+              _this32.dtTrigger2.next();
             });
           }
         }, {
           key: "openDialog",
           value: function openDialog(content, data) {
-            var _this32 = this;
+            var _this33 = this;
 
             console.log(content, "DetailsDTO");
             console.log(data, "data");
@@ -7046,9 +7131,9 @@
               ariaLabelledBy: 'modal-basic-title',
               windowClass: "my-class"
             }).result.then(function (result) {
-              _this32.closeResult = "Closed with: ".concat(result);
+              _this33.closeResult = "Closed with: ".concat(result);
             }, function (reason) {
-              _this32.closeResult = "Dismissed ".concat(_this32.getDismissReason(reason));
+              _this33.closeResult = "Dismissed ".concat(_this33.getDismissReason(reason));
             });
           }
         }, {
@@ -7065,7 +7150,7 @@
         }, {
           key: "insertModifiedDataIntoDetailsData",
           value: function insertModifiedDataIntoDetailsData(reqDTO) {
-            var _this33 = this;
+            var _this34 = this;
 
             if (reqDTO.inputBy !== this.user_id) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire('You Donot have permission for modification.', 'Only maker can modify record.');
@@ -7074,14 +7159,14 @@
 
             this.api.sendUpdatedDataToDetailsData(reqDTO, this.user_id).subscribe(function (resp) {
               // console.log(resp);
-              _this33.status = resp;
-              console.log('insertion status: ' + _this33.status);
+              _this34.status = resp;
+              console.log('insertion status: ' + _this34.status);
 
-              if (_this33.status === true) {
+              if (_this34.status === true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire('data saved successfully.', 'success');
               }
 
-              if (_this33.status === false) {
+              if (_this34.status === false) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
                   icon: 'error',
                   text: 'data save to DB Failed.'

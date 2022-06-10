@@ -805,7 +805,7 @@
         }
       }
 
-      function AccountClosureMaintenanceSummaryComponent_tr_18_Template(rf, ctx) {
+      function AccountClosureMaintenanceSummaryComponent_tr_26_Template(rf, ctx) {
         if (rf & 1) {
           var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
@@ -815,7 +815,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "a", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_18_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6);
 
             var data_r4 = restoredCtx.$implicit;
@@ -837,6 +837,36 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](12, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "button", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Action");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         }
 
@@ -849,7 +879,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.approvedStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.inputBy);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](12, 5, data_r4.inputTime, "medium"));
         }
       }
 
@@ -942,9 +984,9 @@
       _AccountClosureMaintenanceSummaryComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
         type: _AccountClosureMaintenanceSummaryComponent,
         selectors: [["npr-account-closure-maintenance-summary"]],
-        decls: 19,
+        decls: 27,
         vars: 6,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "primaryColor", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "primaryColor", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"]],
         template: function AccountClosureMaintenanceSummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -991,7 +1033,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "Maker Id");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "Auth Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "Record Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "Maker Id");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "Action");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -999,9 +1065,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](18, AccountClosureMaintenanceSummaryComponent_tr_18_Template, 6, 2, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](26, AccountClosureMaintenanceSummaryComponent_tr_26_Template, 16, 8, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -1025,12 +1091,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.respArray);
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_3__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhY2NvdW50LWNsb3N1cmUtbWFpbnRlbmFuY2Utc3VtbWFyeS5jb21wb25lbnQuc2NzcyJ9 */"]
       });
       /***/
@@ -1175,12 +1242,6 @@
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! rxjs */
-      81134);
-      /* harmony import */
-
-
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
       2316);
@@ -1205,13 +1266,13 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
       54364);
 
@@ -2396,7 +2457,7 @@
       };
 
       var _AccountClosureMaintenanceComponent = /*#__PURE__*/function () {
-        function _AccountClosureMaintenanceComponent(fb, roleService, toastService, accClosureService, router, _location) {
+        function _AccountClosureMaintenanceComponent(fb, roleService, toastService, accClosureService, router, _location, cdr) {
           _classCallCheck(this, _AccountClosureMaintenanceComponent);
 
           this.fb = fb;
@@ -2405,6 +2466,7 @@
           this.accClosureService = accClosureService;
           this.router = router;
           this._location = _location;
+          this.cdr = cdr;
           this.payload = {};
           this.array = [];
           this.accAuditDetails = {};
@@ -2543,31 +2605,61 @@
             }
           }
         }, {
-          key: "pageDeactivation",
-          value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+          key: "canExit",
+          value: function canExit() {
+            var _this6 = this;
+
+            var isExit = false;
 
             if (this.accountTypeForm.touched && (this.formTouched1 == true || this.formTouched2 == true)) {
-              var swalMsg = '';
-              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-              console.log("result: ", result);
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(result);
+              return sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  isExit = true;
+
+                  _this6.cdr.markForCheck();
+
+                  return isExit;
+                } else {
+                  isExit = false;
+
+                  _this6.cdr.markForCheck();
+
+                  return isExit;
+                }
+              });
             } else {
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(true);
+              isExit = true;
+              return new Promise(function (resolve, reject) {
+                if (isExit === true) {
+                  isExit = true;
+
+                  _this6.cdr.markForCheck();
+
+                  resolve(true);
+                }
+              });
             }
           }
         }, {
           key: "onDeleteParticularRecord",
           value: function onDeleteParticularRecord(id, screentype) {
-            var _this6 = this;
+            var _this7 = this;
 
             console.log(id, screentype);
             this.accClosureService.deletingParticularRecord(id, screentype, this.accountTypeForm.value.amountAccountType, this.currentUser).subscribe(function (deleteResp) {
               console.log(deleteResp);
-              _this6.accAuditDetails = deleteResp;
+              _this7.accAuditDetails = deleteResp;
 
-              if (_this6.accAuditDetails.verifiedStatus == 'A') {
-                _this6.auditLog();
+              if (_this7.accAuditDetails.verifiedStatus == 'A') {
+                _this7.auditLog();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: 'Authorize Record Cannot be Deleted',
@@ -2580,14 +2672,14 @@
                 } // type: "success"
                 );
 
-                _this6.router.navigate(['/account-closure-maintenance/account-closure-summary']);
+                _this7.router.navigate(['/account-closure-maintenance/account-closure-summary']);
               }
             });
           }
         }, {
           key: "ondelete",
           value: function ondelete() {
-            var _this7 = this;
+            var _this8 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2602,11 +2694,11 @@
               iconColor: "#d33"
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this7.payload.accountingEntries = _this7.AccountEntryForm.value.accountingEntries;
-                _this7.payload.userDefinedFields = _this7.UdfForm.value.userDefinedFields;
-                console.log("payload ", _this7.payload);
+                _this8.payload.accountingEntries = _this8.AccountEntryForm.value.accountingEntries;
+                _this8.payload.userDefinedFields = _this8.UdfForm.value.userDefinedFields;
+                console.log("payload ", _this8.payload);
 
-                _this7.accClosureService.onDelete(_this7.index, _this7.currentUser, _this7.payload).subscribe(function (reopnResp) {
+                _this8.accClosureService.onDelete(_this8.index, _this8.currentUser, _this8.payload).subscribe(function (reopnResp) {
                   if (reopnResp === "Record Deleted Successfully") {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Deleted",
@@ -2614,9 +2706,9 @@
                     } // type: "success"
                     );
 
-                    _this7.router.navigateByUrl('/account-closure-maintenance/account-closure-summary');
+                    _this8.router.navigateByUrl('/account-closure-maintenance/account-closure-summary');
                   } else {
-                    _this7.auditLog();
+                    _this8.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record cannot be Deleted ",
@@ -2633,7 +2725,7 @@
                     } // type: "success"
                     );
 
-                    _this7.router.navigateByUrl('/account-closure-maintenance/account-closure-summary');
+                    _this8.router.navigateByUrl('/account-closure-maintenance/account-closure-summary');
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record cannot be Deleted ",
@@ -2665,29 +2757,29 @@
         }, {
           key: "getRespBasedOnAccountType",
           value: function getRespBasedOnAccountType(index) {
-            var _this8 = this;
+            var _this9 = this;
 
             this.editFlag = false;
             this.buildForm(index);
             this.accClosureService.gettingcompleteData(index).subscribe(function (resp) {
-              _this8.array = resp.userDefinedFields;
+              _this9.array = resp.userDefinedFields;
 
-              while (_this8.formArrUDF.length > 0) {
-                _this8.formArrUDF.removeAt(_this8.formArrUDF.length - 1);
+              while (_this9.formArrUDF.length > 0) {
+                _this9.formArrUDF.removeAt(_this9.formArrUDF.length - 1);
               }
 
-              _this8.array.forEach(function (x) {
-                _this8.formArrUDF.push(_this8.fb.group(x));
+              _this9.array.forEach(function (x) {
+                _this9.formArrUDF.push(_this9.fb.group(x));
               });
 
-              _this8.arrayAccountEntry = resp.accountingEntries;
+              _this9.arrayAccountEntry = resp.accountingEntries;
 
-              while (_this8.formArrAccountEntry.length > 0) {
-                _this8.formArrAccountEntry.removeAt(_this8.formArrAccountEntry.length - 1);
+              while (_this9.formArrAccountEntry.length > 0) {
+                _this9.formArrAccountEntry.removeAt(_this9.formArrAccountEntry.length - 1);
               }
 
-              _this8.arrayAccountEntry.forEach(function (x) {
-                _this8.formArrAccountEntry.push(_this8.fb.group(x));
+              _this9.arrayAccountEntry.forEach(function (x) {
+                _this9.formArrAccountEntry.push(_this9.fb.group(x));
               });
             });
             this.getAuditLog(index);
@@ -2695,12 +2787,12 @@
         }, {
           key: "getAuditLog",
           value: function getAuditLog(index) {
-            var _this9 = this;
+            var _this10 = this;
 
             this.accClosureService.gettingAccountClosureMaintenance().subscribe(function (summaryResp) {
-              _this9.filterAuditLog(summaryResp, index);
+              _this10.filterAuditLog(summaryResp, index);
 
-              _this9.auditLog();
+              _this10.auditLog();
             });
           }
         }, {
@@ -2729,7 +2821,7 @@
         }, {
           key: "onClosingTheRecord",
           value: function onClosingTheRecord() {
-            var _this10 = this;
+            var _this11 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2746,11 +2838,11 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this10.accClosureService.onClosingTheRecord(_this10.index, _this10.currentUser).subscribe(function (closeResp) {
-                  _this10.accAuditDetails = closeResp;
+                _this11.accClosureService.onClosingTheRecord(_this11.index, _this11.currentUser).subscribe(function (closeResp) {
+                  _this11.accAuditDetails = closeResp;
 
-                  if (_this10.accAuditDetails) {
-                    _this10.auditLog();
+                  if (_this11.accAuditDetails) {
+                    _this11.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Closed",
@@ -2764,7 +2856,7 @@
         }, {
           key: "onReopningTheRecord",
           value: function onReopningTheRecord() {
-            var _this11 = this;
+            var _this12 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2781,11 +2873,11 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this11.accClosureService.onReopningTheRecord(_this11.index, _this11.currentUser).subscribe(function (reopnResp) {
-                  _this11.accAuditDetails = reopnResp;
+                _this12.accClosureService.onReopningTheRecord(_this12.index, _this12.currentUser).subscribe(function (reopnResp) {
+                  _this12.accAuditDetails = reopnResp;
 
-                  if (_this11.accAuditDetails.recordStatus === "O") {
-                    _this11.auditLog();
+                  if (_this12.accAuditDetails.recordStatus === "O") {
+                    _this12.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Reopened",
@@ -2793,7 +2885,7 @@
                     } // type: "success"
                     );
                   } else {
-                    _this11.auditLog();
+                    _this12.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record cannot be opened ",
@@ -2834,7 +2926,7 @@
         }, {
           key: "onAuthorizingTheRecord",
           value: function onAuthorizingTheRecord() {
-            var _this12 = this;
+            var _this13 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2851,7 +2943,7 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                if (_this12.currentUser === _this12.accAuditDetails.inputBy) {
+                if (_this13.currentUser === _this13.accAuditDetails.inputBy) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: 'Maker Cannot Authorize Record!',
                     icon: 'error'
@@ -2859,12 +2951,12 @@
                   return;
                 }
 
-                _this12.accClosureService.onAuthofAccMaint(_this12.index, _this12.currentUser).subscribe(function (authResp) {
-                  _this12.accAuditDetails = authResp;
+                _this13.accClosureService.onAuthofAccMaint(_this13.index, _this13.currentUser).subscribe(function (authResp) {
+                  _this13.accAuditDetails = authResp;
 
-                  _this12.auditLog();
+                  _this13.auditLog();
 
-                  if (_this12.accAuditDetails.accountType === "" || _this12.accAuditDetails.accountType == null) {
+                  if (_this13.accAuditDetails.accountType === "" || _this13.accAuditDetails.accountType == null) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Maker cannot authorize the record",
                       icon: 'error'
@@ -2882,7 +2974,7 @@
         }, {
           key: "onSubmittingTheAccMaintenanceClosureData",
           value: function onSubmittingTheAccMaintenanceClosureData() {
-            var _this13 = this;
+            var _this14 = this;
 
             this.payload.accountingEntries = this.AccountEntryForm.value.accountingEntries;
             this.payload.userDefinedFields = this.UdfForm.value.userDefinedFields;
@@ -2890,10 +2982,10 @@
             console.log("this is submit of edit screen", this.payload);
             this.accClosureService.submittingTheEditedRecord(this.payload, this.index, this.currentUser).subscribe(function (editScreenResp) {
               console.log(editScreenResp);
-              _this13.accAuditDetails = editScreenResp;
+              _this14.accAuditDetails = editScreenResp;
 
-              if (!_this13.accAuditDetails) {
-                _this13.auditLog();
+              if (!_this14.accAuditDetails) {
+                _this14.auditLog();
 
                 {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -2903,9 +2995,9 @@
                 }
               } else {
                 {
-                  _this13.index = _this13.accAuditDetails.accountType;
-                  _this13.formTouched1 = !_this13.UdfForm.touched;
-                  _this13.formTouched2 = !_this13.AccountEntryForm.touched;
+                  _this14.index = _this14.accAuditDetails.accountType;
+                  _this14.formTouched1 = !_this14.UdfForm.touched;
+                  _this14.formTouched2 = !_this14.AccountEntryForm.touched;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: 'Record is Updated ',
                     icon: 'success'
@@ -2913,7 +3005,7 @@
                 }
               }
 
-              _this13.getAuditLog(_this13.index);
+              _this14.getAuditLog(_this14.index);
             }, function (error) {
               console.log(error);
             });
@@ -2925,7 +3017,7 @@
       }();
 
       _AccountClosureMaintenanceComponent.ɵfac = function AccountClosureMaintenanceComponent_Factory(t) {
-        return new (t || _AccountClosureMaintenanceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_acc_closure_maintenance_service_service__WEBPACK_IMPORTED_MODULE_4__.AccClosureMaintenanceServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__.Location));
+        return new (t || _AccountClosureMaintenanceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_acc_closure_maintenance_service_service__WEBPACK_IMPORTED_MODULE_4__.AccClosureMaintenanceServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef));
       };
 
       _AccountClosureMaintenanceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
@@ -3203,8 +3295,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.accAuditDetails);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgStyle],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgStyle],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe],
         styles: [".isDisabled[_ngcontent-%COMP%] {\n  color: currentColor;\n  cursor: not-allowed;\n  pointer-events: none;\n  opacity: 0.4;\n  text-decoration: none;\n}\n\n[_ngcontent-%COMP%]::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #F5F5F5;\n}\n\n[_ngcontent-%COMP%]::-webkit-scrollbar {\n  width: 6px;\n  height: 12px;\n  background-color: #F5F5F5;\n}\n\n[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background-color: #000000;\n}\n\n#dbTable1[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  vertical-align: top;\n  min-width: 120px;\n  width: 50px;\n  border-spacing: 1.5;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY291bnQtY2xvc3VyZS1tYWludGVuYW5jZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtBQUNGOztBQUVBO0VBRUMsb0RBQUE7RUFDQSx5QkFBQTtBQUFEOztBQUdBO0VBRUMsVUFBQTtFQUNDLFlBQUE7RUFDRCx5QkFBQTtBQUREOztBQUlBO0VBRUMseUJBQUE7QUFGRDs7QUFLQztFQUVDLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7QUFIRiIsImZpbGUiOiJhY2NvdW50LWNsb3N1cmUtbWFpbnRlbmFuY2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaXNEaXNhYmxlZCB7XHJcbiAgY29sb3I6IGN1cnJlbnRDb2xvcjtcclxuICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gIG9wYWNpdHk6IDAuNDtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbjo6LXdlYmtpdC1zY3JvbGxiYXItdHJhY2tcclxue1xyXG5cdC13ZWJraXQtYm94LXNoYWRvdzogaW5zZXQgMCAwIDZweCByZ2JhKDAsMCwwLDAuMyk7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI0Y1RjVGNTtcclxufVxyXG5cclxuOjotd2Via2l0LXNjcm9sbGJhclxyXG57XHJcblx0d2lkdGg6IDZweDtcclxuICBoZWlnaHQ6IDEycHg7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI0Y1RjVGNTtcclxufVxyXG5cclxuOjotd2Via2l0LXNjcm9sbGJhci10aHVtYlxyXG57XHJcblx0YmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcclxufVxyXG4jZGJUYWJsZTF7XHJcbiB0ZHsgXHJcbiAvLyBkaXNwbGF5OmlubGluZS1ibG9jazsgXHJcbiAgdmVydGljYWwtYWxpZ246dG9wOyBcclxuICBtaW4td2lkdGg6MTIwcHg7IFxyXG4gIHdpZHRoOjUwcHg7XHJcbiAgYm9yZGVyLXNwYWNpbmc6IDEuNTtcclxuIH1cclxufVxyXG4iXX0= */"]
       });
       /***/

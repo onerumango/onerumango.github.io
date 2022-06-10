@@ -551,15 +551,15 @@
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
       1707);
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! rxjs */
-      81134);
+      79441);
       /* harmony import */
 
 
@@ -2410,7 +2410,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r7.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r7.messageConfigurationForm.value.sysChannel[0].messageFormat == "XML");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
@@ -5741,7 +5741,7 @@
       }
 
       var _AddSystemComponent = /*#__PURE__*/function () {
-        function _AddSystemComponent(fb, addSystem, router, roleService, toastService, spinner) {
+        function _AddSystemComponent(fb, addSystem, router, roleService, toastService, spinner, cdr) {
           _classCallCheck(this, _AddSystemComponent);
 
           this.fb = fb;
@@ -5750,6 +5750,7 @@
           this.roleService = roleService;
           this.toastService = toastService;
           this.spinner = spinner;
+          this.cdr = cdr;
           this.basicConfiguration = true;
           this.isoRespData = [];
           this.messageBasisIso = [];
@@ -5781,6 +5782,8 @@
           this.headerArray = [];
           this.selectedMessageKeys = [];
           this.selectedMessageKeys1 = [];
+          this.showDialog = false;
+          this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
         }
 
         _createClass(_AddSystemComponent, [{
@@ -5846,36 +5849,66 @@
               createdTime: [item ? item.createdTime : ""],
               creatorId: [item ? item.creatorId : ""],
               systemId: [item ? item.systemId : ""],
-              systemCode: [item ? item.systemCode : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              systemName: [item ? item.systemName : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              serviceType: [item ? item.serviceType : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              messsageType: [item ? item.messsageType : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              medianIp: [item ? item.medianIp : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              sourceUri: [item ? item.sourceUri : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              medianUri: [item ? item.medianUri : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              medianPort: [item ? item.medianPort : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(2)]],
-              sourceIp: [item ? item.sourceIp : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$")]],
-              sourcePort: [item ? item.sourcePort : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(2)]]
+              systemCode: [item ? item.systemCode : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              systemName: [item ? item.systemName : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              serviceType: [item ? item.serviceType : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              messsageType: [item ? item.messsageType : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              medianIp: [item ? item.medianIp : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              sourceUri: [item ? item.sourceUri : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              medianUri: [item ? item.medianUri : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              medianPort: [item ? item.medianPort : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.minLength(2)]],
+              sourceIp: [item ? item.sourceIp : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.pattern("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$")]],
+              sourcePort: [item ? item.sourcePort : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.minLength(2)]]
             });
           }
         }, {
-          key: "pageDeactivation",
-          value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+          key: "canExit",
+          value: function canExit() {
+            var _this2 = this;
+
+            var isExit = false;
 
             if ((this.basicInfoForm.touched || this.messageConfigurationForm.touched || this.tcpForm.touched || this.messageConfigurationForm1.touched || this.tcpForm1.touched) && (this.formTouched1 == true || this.formTouched2 == true || this.formTouched3 == true || this.formTouched4 == true || this.formTouched5 == true)) {
-              var swalMsg = "";
-              var result = confirm("There are unsaved changes in the screen.Would you like to navigate to other screen?");
-              console.log("result: ", result);
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(result);
+              return sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  isExit = true;
+
+                  _this2.cdr.markForCheck();
+
+                  return isExit;
+                } else {
+                  isExit = false;
+
+                  _this2.cdr.markForCheck();
+
+                  return isExit;
+                }
+              });
             } else {
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(true);
+              isExit = true;
+              return new Promise(function (resolve, reject) {
+                if (isExit === true) {
+                  isExit = true;
+
+                  _this2.cdr.markForCheck();
+
+                  resolve(true);
+                }
+              });
             }
           }
         }, {
           key: "getRespBasedOnId",
           value: function getRespBasedOnId(resp, arg0) {
-            var _this2 = this;
+            var _this3 = this;
 
             var _a, _b, _c, _d;
 
@@ -5924,7 +5957,7 @@
             }
 
             this.arrayMessageConfig.forEach(function (x) {
-              _this2.formArrMessageConfig.push(_this2.fb.group(x));
+              _this3.formArrMessageConfig.push(_this3.fb.group(x));
             }); //tcForm
 
             this.array = this.arrayMessageConfig[0].sysService;
@@ -5936,7 +5969,7 @@
 
             if (((_b = (_a = this.messageConfigurationForm.value) === null || _a === void 0 ? void 0 : _a.sysChannel[0]) === null || _b === void 0 ? void 0 : _b.messageChannel) !== "TCP/IP") {
               this.array.forEach(function (x) {
-                _this2.formArr.push(_this2.fb.group(x));
+                _this3.formArr.push(_this3.fb.group(x));
               });
             }
 
@@ -5952,7 +5985,7 @@
               }
 
               this.arrayMessageConfig1.forEach(function (x) {
-                _this2.formArrMessageConfig1.push(_this2.fb.group(x));
+                _this3.formArrMessageConfig1.push(_this3.fb.group(x));
               }); //tcForm1
 
               this.array1 = this.arrayMessageConfig1[0].sysService;
@@ -5964,7 +5997,7 @@
 
               if (((_d = (_c = this.messageConfigurationForm1.value) === null || _c === void 0 ? void 0 : _c.sysChannel[0]) === null || _d === void 0 ? void 0 : _d.messageChannel) !== "TCP/IP") {
                 this.array1.forEach(function (x) {
-                  _this2.formArr1.push(_this2.fb.group(x));
+                  _this3.formArr1.push(_this3.fb.group(x));
                 });
               }
             }
@@ -6007,8 +6040,8 @@
               queueManager: [""],
               queueName: [""],
               queueType: [""],
-              messageChannel: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              messageFormat: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+              messageChannel: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              messageFormat: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
               messageType: [""]
             });
           }
@@ -6026,8 +6059,8 @@
               queueManager: [""],
               queueName: [""],
               queueType: [""],
-              messageChannel: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              messageFormat: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+              messageChannel: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              messageFormat: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
               messageType: [""]
             });
           }
@@ -6036,12 +6069,12 @@
           value: function createSysService() {
             return this.fb.group({
               channelId: [""],
-              dataType: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              encryption: ["No Encryption", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              headerTag: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              headerValue: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+              dataType: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              encryption: ["No Encryption", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              headerTag: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              headerValue: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
               messageBasis: [""],
-              messageKey: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+              messageKey: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
               serviceId: [""],
               systemChannelId: [""]
             });
@@ -6051,12 +6084,12 @@
           value: function createSysService1() {
             return this.fb.group({
               channelId: [""],
-              dataType: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              encryption: ["No Encryption", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              headerTag: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              headerValue: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+              dataType: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              encryption: ["No Encryption", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              headerTag: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+              headerValue: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
               messageBasis: [""],
-              messageKey: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+              messageKey: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
               serviceId: [""],
               systemChannelId: [""]
             });
@@ -6111,41 +6144,41 @@
         }, {
           key: "next",
           value: function next(value) {
-            var _this3 = this;
+            var _this4 = this;
 
             if (value === "basicConfiguration") {
               console.log(this.index);
               this.addSystem.validateCode(this.basicInfoForm.value.systemCode).subscribe(function (result) {
                 console.log(result);
-                _this3.isSysCodeAlreadyExist = result.exists;
-                _this3.sysCodeError = result.response;
+                _this4.isSysCodeAlreadyExist = result.exists;
+                _this4.sysCodeError = result.response;
 
-                if (_this3.isSysCodeAlreadyExist === true && _this3.index === undefined) {
+                if (_this4.isSysCodeAlreadyExist === true && _this4.index === undefined) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    title: _this3.sysCodeError + " !",
+                    title: _this4.sysCodeError + " !",
                     icon: "error"
                   });
-                  _this3.all = false;
+                  _this4.all = false;
                   return;
                 } else {
-                  if (_this3.index === undefined) {
-                    _this3.ipAddressValidating();
+                  if (_this4.index === undefined) {
+                    _this4.ipAddressValidating();
                   } else {
-                    if (_this3.basicInfoForm.value.messsageType == "I") {
-                      _this3.messageType = "Incoming";
+                    if (_this4.basicInfoForm.value.messsageType == "I") {
+                      _this4.messageType = "Incoming";
                     }
 
-                    if (_this3.basicInfoForm.value.messsageType == "O") {
-                      _this3.messageType = "Outgoing";
+                    if (_this4.basicInfoForm.value.messsageType == "O") {
+                      _this4.messageType = "Outgoing";
                     }
 
-                    _this3.basicConfiguration = false;
-                    _this3.messageConfiguration = true;
-                    _this3.incomingMessageConfiguration = false;
-                    _this3.xml = false;
-                    _this3.mdbXml = false;
-                    _this3.incomingMdbXml = false;
-                    _this3.dbConnection = false;
+                    _this4.basicConfiguration = false;
+                    _this4.messageConfiguration = true;
+                    _this4.incomingMessageConfiguration = false;
+                    _this4.xml = false;
+                    _this4.mdbXml = false;
+                    _this4.incomingMdbXml = false;
+                    _this4.dbConnection = false;
                   }
                 }
               });
@@ -6223,12 +6256,12 @@
         }, {
           key: "fetchDatabaseTable",
           value: function fetchDatabaseTable() {
-            var _this4 = this;
+            var _this5 = this;
 
             console.log(this.messageConfigurationForm.value.sysChannel[0]);
             this.addSystem.pingDataSource(this.messageConfigurationForm.value.sysChannel[0].dbConnectString, this.messageConfigurationForm.value.sysChannel[0].dbServiceName, this.messageConfigurationForm.value.sysChannel[0].dbUsername, this.messageConfigurationForm.value.sysChannel[0].dbPassword).subscribe(function (resp) {
               console.log("resp from backend for fetching database tables ", resp);
-              _this4.table = resp;
+              _this5.table = resp;
             });
 
             if (this.index !== undefined) {
@@ -6243,12 +6276,12 @@
         }, {
           key: "fetchDatabaseTable1",
           value: function fetchDatabaseTable1() {
-            var _this5 = this;
+            var _this6 = this;
 
             console.log(this.messageConfigurationForm.value.sysChannel[0]);
             this.addSystem.pingDataSource(this.messageConfigurationForm1.value.sysChannel[0].dbConnectString, this.messageConfigurationForm1.value.sysChannel[0].dbServiceName, this.messageConfigurationForm1.value.sysChannel[0].dbUsername, this.messageConfigurationForm1.value.sysChannel[0].dbPassword).subscribe(function (resp) {
               console.log("resp from backend for fetching database tables ", resp);
-              _this5.table2 = resp;
+              _this6.table2 = resp;
             });
 
             if (this.index !== undefined) {
@@ -6263,50 +6296,50 @@
         }, {
           key: "onTableSlection",
           value: function onTableSlection(event) {
-            var _this6 = this;
+            var _this7 = this;
 
             this.tableDropDownClick = true;
             this.addSystem.coulmnNameBasedonTableName(this.messageConfigurationForm.value.sysChannel[0].dbConnectString, this.messageConfigurationForm.value.sysChannel[0].dbServiceName, this.messageConfigurationForm.value.sysChannel[0].dbUsername, this.messageConfigurationForm.value.sysChannel[0].dbPassword, event).subscribe(function (resp) {
               console.log("resp from backend for fetching database tables ", resp);
-              _this6.tabelData = resp;
+              _this7.tabelData = resp;
             });
           }
         }, {
           key: "onTableSlection1",
           value: function onTableSlection1(event) {
-            var _this7 = this;
+            var _this8 = this;
 
             this.tableDropDownClick1 = true;
             this.addSystem.coulmnNameBasedonTableName(this.messageConfigurationForm1.value.sysChannel[0].dbConnectString, this.messageConfigurationForm1.value.sysChannel[0].dbServiceName, this.messageConfigurationForm1.value.sysChannel[0].dbUsername, this.messageConfigurationForm1.value.sysChannel[0].dbPassword, event).subscribe(function (resp) {
               console.log("resp from backend for fetching database tables ", resp);
-              _this7.tabelData1 = resp;
+              _this8.tabelData1 = resp;
             });
           }
         }, {
           key: "ipAddressValidating",
           value: function ipAddressValidating() {
-            var _this8 = this;
+            var _this9 = this;
 
             var payload = {};
             payload.sourceIp = this.basicInfoForm.value.sourceIp, payload.sourcePort = this.basicInfoForm.value.sourcePort, payload.medianIp = this.basicInfoForm.value.medianIp, payload.medianPort = this.basicInfoForm.value.medianPort;
             this.addSystem.validatePort(payload).subscribe(function (resp) {
               if (resp == true) {
-                if (_this8.basicInfoForm.value.messsageType == "I") {
-                  _this8.messageType = "Incoming";
+                if (_this9.basicInfoForm.value.messsageType == "I") {
+                  _this9.messageType = "Incoming";
                 }
 
-                if (_this8.basicInfoForm.value.messsageType == "O") {
-                  _this8.messageType = "Outgoing";
+                if (_this9.basicInfoForm.value.messsageType == "O") {
+                  _this9.messageType = "Outgoing";
                 }
 
-                _this8.basicConfiguration = false;
-                _this8.messageConfiguration = true;
-                _this8.incomingMessageConfiguration = false;
-                _this8.xml = false;
-                _this8.mdbXml = false;
-                _this8.incomingMdbXml = false;
-                _this8.dbConnection = false;
-                _this8.tableFlag = false;
+                _this9.basicConfiguration = false;
+                _this9.messageConfiguration = true;
+                _this9.incomingMessageConfiguration = false;
+                _this9.xml = false;
+                _this9.mdbXml = false;
+                _this9.incomingMdbXml = false;
+                _this9.dbConnection = false;
+                _this9.tableFlag = false;
               }
             }, function (error) {
               console.log(error);
@@ -6314,7 +6347,7 @@
                 title: error.error.message + " !",
                 icon: "error"
               });
-              _this8.all = false;
+              _this9.all = false;
               return;
             });
           }
@@ -6370,7 +6403,7 @@
         }, {
           key: "onClickOfAuth",
           value: function onClickOfAuth() {
-            var _this9 = this;
+            var _this10 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -6387,7 +6420,7 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                if (_this9.currentUser === _this9.respData.creatorId) {
+                if (_this10.currentUser === _this10.respData.creatorId) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Maker Cannot Authorize Record!",
                     icon: "error"
@@ -6395,63 +6428,6 @@
                   return;
                 }
 
-                var obj_test = {};
-
-                if (_this9.basicInfoForm.value.messsageType === "I" || _this9.basicInfoForm.value.messsageType === "O") {
-                  obj_test = _this9.basicInfoForm.value;
-                  obj_test.sysChannel = _this9.messageConfigurationForm.value.sysChannel;
-
-                  for (var index = 0; index < obj_test.sysChannel.length; index++) {
-                    obj_test.sysChannel[index].sysService = _this9.tcpForm.value.sysService;
-                  }
-                } //submitAll
-
-
-                if (_this9.basicInfoForm.value.messsageType === "A") {
-                  obj_test = _this9.basicInfoForm.value;
-                  obj_test.sysChannel = _this9.messageConfigurationForm.value.sysChannel;
-                  _this9.messageConfigurationForm.value.sysChannel[0].messageType = "I";
-                  _this9.messageConfigurationForm1.value.sysChannel[0].messageType = "O";
-                  obj_test.sysChannel.push(_this9.messageConfigurationForm1.value.sysChannel[0]);
-                  obj_test.sysChannel[0].sysService = _this9.tcpForm.value.sysService;
-                  obj_test.sysChannel[1].sysService = _this9.tcpForm1.value.sysService;
-                }
-
-                _this9.addSystem.editaddsystem("auth", _this9.currentUser, obj_test).subscribe(function (response) {
-                  if (response) {
-                    _this9.respData = response;
-
-                    _this9.auditLog();
-
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record is Authorized",
-                      icon: "success"
-                    });
-                  }
-                });
-              }
-            });
-          }
-        }, {
-          key: "onClickOfClose",
-          value: function onClickOfClose() {
-            var _this10 = this;
-
-            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
-              text: "You are trying to Close record. " + " Do you want to proceed?",
-              showCancelButton: true,
-              confirmButtonColor: "#3e54b8",
-              cancelButtonColor: "#d33",
-              // confirmButtonText: 'PROCEED.'
-              cancelButtonText: "NO",
-              confirmButtonText: "YES",
-              icon: "info",
-              iconColor: "#d33"
-            }).then(function (result) {
-              console.log("this is reopen ", result);
-
-              if (result.isConfirmed === true) {
                 var obj_test = {};
 
                 if (_this10.basicInfoForm.value.messsageType === "I" || _this10.basicInfoForm.value.messsageType === "O") {
@@ -6474,14 +6450,14 @@
                   obj_test.sysChannel[1].sysService = _this10.tcpForm1.value.sysService;
                 }
 
-                _this10.addSystem.editaddsystem("close", _this10.currentUser, obj_test).subscribe(function (response) {
+                _this10.addSystem.editaddsystem("auth", _this10.currentUser, obj_test).subscribe(function (response) {
                   if (response) {
                     _this10.respData = response;
 
                     _this10.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record is Closed",
+                      text: "Record is Authorized",
                       icon: "success"
                     });
                   }
@@ -6490,13 +6466,13 @@
             });
           }
         }, {
-          key: "onClickOfReopen",
-          value: function onClickOfReopen() {
+          key: "onClickOfClose",
+          value: function onClickOfClose() {
             var _this11 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
-              text: "You are trying to Reopen record. " + " Do you want to proceed?",
+              text: "You are trying to Close record. " + " Do you want to proceed?",
               showCancelButton: true,
               confirmButtonColor: "#3e54b8",
               cancelButtonColor: "#d33",
@@ -6531,11 +6507,68 @@
                   obj_test.sysChannel[1].sysService = _this11.tcpForm1.value.sysService;
                 }
 
-                _this11.addSystem.editaddsystem("open", _this11.currentUser, obj_test).subscribe(function (response) {
+                _this11.addSystem.editaddsystem("close", _this11.currentUser, obj_test).subscribe(function (response) {
                   if (response) {
                     _this11.respData = response;
 
                     _this11.auditLog();
+
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Record is Closed",
+                      icon: "success"
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "onClickOfReopen",
+          value: function onClickOfReopen() {
+            var _this12 = this;
+
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: "You are trying to Reopen record. " + " Do you want to proceed?",
+              showCancelButton: true,
+              confirmButtonColor: "#3e54b8",
+              cancelButtonColor: "#d33",
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: "NO",
+              confirmButtonText: "YES",
+              icon: "info",
+              iconColor: "#d33"
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                var obj_test = {};
+
+                if (_this12.basicInfoForm.value.messsageType === "I" || _this12.basicInfoForm.value.messsageType === "O") {
+                  obj_test = _this12.basicInfoForm.value;
+                  obj_test.sysChannel = _this12.messageConfigurationForm.value.sysChannel;
+
+                  for (var index = 0; index < obj_test.sysChannel.length; index++) {
+                    obj_test.sysChannel[index].sysService = _this12.tcpForm.value.sysService;
+                  }
+                } //submitAll
+
+
+                if (_this12.basicInfoForm.value.messsageType === "A") {
+                  obj_test = _this12.basicInfoForm.value;
+                  obj_test.sysChannel = _this12.messageConfigurationForm.value.sysChannel;
+                  _this12.messageConfigurationForm.value.sysChannel[0].messageType = "I";
+                  _this12.messageConfigurationForm1.value.sysChannel[0].messageType = "O";
+                  obj_test.sysChannel.push(_this12.messageConfigurationForm1.value.sysChannel[0]);
+                  obj_test.sysChannel[0].sysService = _this12.tcpForm.value.sysService;
+                  obj_test.sysChannel[1].sysService = _this12.tcpForm1.value.sysService;
+                }
+
+                _this12.addSystem.editaddsystem("open", _this12.currentUser, obj_test).subscribe(function (response) {
+                  if (response) {
+                    _this12.respData = response;
+
+                    _this12.auditLog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Reopened",
@@ -6549,7 +6582,7 @@
         }, {
           key: "OndeleteofUser",
           value: function OndeleteofUser() {
-            var _this12 = this;
+            var _this13 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -6566,14 +6599,14 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this12.addSystem.deleteAddSystem(_this12.currentUser, _this12.respData.systemId).subscribe(function (response) {
+                _this13.addSystem.deleteAddSystem(_this13.currentUser, _this13.respData.systemId).subscribe(function (response) {
                   if (response) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Deleted",
                       icon: "success"
                     });
 
-                    _this12.router.navigate(["/addSystem/summary"]);
+                    _this13.router.navigate(["/addSystem/summary"]);
                   }
                 });
               }
@@ -6754,7 +6787,7 @@
         }, {
           key: "submit2",
           value: function submit2() {
-            var _this13 = this;
+            var _this14 = this;
 
             if (this.tcpForm.value.sysService.some(function (sysService) {
               return sysService["headerTag"] === "OPERATION";
@@ -6769,7 +6802,7 @@
                 obj_test.sysChannel[index].sysService = this.tcpForm.value.sysService.map(function (val) {
                   var _a, _b;
 
-                  if (((_b = (_a = _this13.messageConfigurationForm.value) === null || _a === void 0 ? void 0 : _a.sysChannel[0]) === null || _b === void 0 ? void 0 : _b.messageChannel) !== "TCP/IP") {
+                  if (((_b = (_a = _this14.messageConfigurationForm.value) === null || _a === void 0 ? void 0 : _a.sysChannel[0]) === null || _b === void 0 ? void 0 : _b.messageChannel) !== "TCP/IP") {
                     return Object.assign({}, val);
                   }
 
@@ -6782,25 +6815,25 @@
               if (this.index) {
                 this.addSystem.editaddsystem("update", this.currentUser, obj_test).subscribe(function (addSysResp) {
                   if (addSysResp) {
-                    _this13.index = addSysResp.systemId;
-                    _this13.respData = addSysResp; // this.respData.approvedEver = 'N'
+                    _this14.index = addSysResp.systemId;
+                    _this14.respData = addSysResp; // this.respData.approvedEver = 'N'
                     // this.respData.createdTime=new Date();
 
-                    _this13.auditLog();
+                    _this14.auditLog();
 
-                    _this13.previous("messageConfiguration");
+                    _this14.previous("messageConfiguration");
 
-                    _this13.editFlag = false; // this.submitFlag=false;
+                    _this14.editFlag = false; // this.submitFlag=false;
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Updated",
                       icon: "success"
                     });
-                    _this13.formTouched1 = !_this13.basicInfoForm.touched;
-                    _this13.formTouched2 = !_this13.messageConfigurationForm.touched;
-                    _this13.formTouched3 = !_this13.tcpForm.touched;
-                    _this13.formTouched4 = !_this13.messageConfigurationForm1.touched;
-                    _this13.formTouched5 = !_this13.tcpForm1.touched;
+                    _this14.formTouched1 = !_this14.basicInfoForm.touched;
+                    _this14.formTouched2 = !_this14.messageConfigurationForm.touched;
+                    _this14.formTouched3 = !_this14.tcpForm.touched;
+                    _this14.formTouched4 = !_this14.messageConfigurationForm1.touched;
+                    _this14.formTouched5 = !_this14.tcpForm1.touched;
                   }
                 }, function (error) {
                   console.log("error resp :: ", error);
@@ -6813,24 +6846,24 @@
                 this.addSystem.submittingAddSystem(obj_test, this.currentUser).subscribe(function (addSysResp) {
                   if (addSysResp) {
                     // this.submitFlag=false;
-                    _this13.index = addSysResp.systemId;
-                    _this13.respData = addSysResp; //  this.respData.approvedEver = 'N'
+                    _this14.index = addSysResp.systemId;
+                    _this14.respData = addSysResp; //  this.respData.approvedEver = 'N'
                     // this.respData.createdTime=new Date();
 
-                    _this13.auditLog();
+                    _this14.auditLog();
 
-                    _this13.previous("messageConfiguration");
+                    _this14.previous("messageConfiguration");
 
-                    _this13.editFlag = false;
+                    _this14.editFlag = false;
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: "Record is Created",
                       icon: "success"
                     });
-                    _this13.formTouched1 = !_this13.basicInfoForm.touched;
-                    _this13.formTouched2 = !_this13.messageConfigurationForm.touched;
-                    _this13.formTouched3 = !_this13.tcpForm.touched;
-                    _this13.formTouched4 = !_this13.messageConfigurationForm1.touched;
-                    _this13.formTouched5 = !_this13.tcpForm1.touched;
+                    _this14.formTouched1 = !_this14.basicInfoForm.touched;
+                    _this14.formTouched2 = !_this14.messageConfigurationForm.touched;
+                    _this14.formTouched3 = !_this14.tcpForm.touched;
+                    _this14.formTouched4 = !_this14.messageConfigurationForm1.touched;
+                    _this14.formTouched5 = !_this14.tcpForm1.touched;
                   }
                 }, function (error) {
                   console.log("error resp :: ", error);
@@ -6850,51 +6883,51 @@
         }, {
           key: "fetchingIso",
           value: function fetchingIso() {
-            var _this14 = this;
+            var _this15 = this;
 
             this.addSystem.fetchingIsoForTcp().subscribe(function (isoResp) {
-              _this14.isoRespData = isoResp;
-              _this14.isoRespDataFiltered = _this14.isoRespData.map(function (mKey) {
+              _this15.isoRespData = isoResp;
+              _this15.isoRespDataFiltered = _this15.isoRespData.map(function (mKey) {
                 return Object.assign(Object.assign({}, mKey), {
                   formattedmKey: "".concat(mKey.fieldNo, " ").concat(mKey.fieldName)
                 });
               });
 
               if (isoResp) {
-                _this14.messageBasisIso = isoResp.map(function (data) {
+                _this15.messageBasisIso = isoResp.map(function (data) {
                   return data.fieldName;
                 }); // for dropdown 1
 
-                _this14.messageKeyIso = isoResp.map(function (data) {
+                _this15.messageKeyIso = isoResp.map(function (data) {
                   return data.fieldNo;
                 });
-                _this14.typeDataIso = isoResp.map(function (data) {
+                _this15.typeDataIso = isoResp.map(function (data) {
                   return data.dataType;
                 });
-                _this14.headerValueIso = isoResp.map(function (data) {
+                _this15.headerValueIso = isoResp.map(function (data) {
                   return data.headerValue;
                 });
 
-                var valFieldMapper = _this14.isoRespData.reduce(function (acc, val) {
+                var valFieldMapper = _this15.isoRespData.reduce(function (acc, val) {
                   acc[val.fieldNo] = val.fieldName;
                   return acc;
                 }, {});
 
-                var selectedMessageKeys = new Set(_this14.array.map(function (x) {
+                var selectedMessageKeys = new Set(_this15.array.map(function (x) {
                   return valFieldMapper[x.messageKey];
                 }));
-                _this14.isoRespDataFiltered = _this14.isoRespDataFiltered.filter(function (val) {
+                _this15.isoRespDataFiltered = _this15.isoRespDataFiltered.filter(function (val) {
                   return !selectedMessageKeys.has(val.fieldName);
                 });
 
-                _this14.array.forEach(function (x) {
-                  var data = _this14.isoRespData.find(function (val) {
+                _this15.array.forEach(function (x) {
+                  var data = _this15.isoRespData.find(function (val) {
                     return val.fieldNo == x.messageKey;
                   });
 
                   x.messageKey = "".concat(x.messageKey || "", " ").concat((data === null || data === void 0 ? void 0 : data.fieldName) || "");
 
-                  _this14.formArr.push(_this14.fb.group(x));
+                  _this15.formArr.push(_this15.fb.group(x));
                 });
               }
             });
@@ -6902,53 +6935,53 @@
         }, {
           key: "fetchingIso1",
           value: function fetchingIso1() {
-            var _this15 = this;
+            var _this16 = this;
 
             this.addSystem.fetchingIsoForTcp().subscribe(function (isoResp) {
               var _a;
 
-              _this15.isoRespData1 = isoResp;
-              _this15.isoRespDataFiltered1 = _this15.isoRespData1.map(function (mKey) {
+              _this16.isoRespData1 = isoResp;
+              _this16.isoRespDataFiltered1 = _this16.isoRespData1.map(function (mKey) {
                 return Object.assign(Object.assign({}, mKey), {
                   formattedmKey: "".concat(mKey.fieldNo, " ").concat(mKey.fieldName)
                 });
               });
 
               if (isoResp) {
-                _this15.messageBasisIso1 = isoResp.map(function (data) {
+                _this16.messageBasisIso1 = isoResp.map(function (data) {
                   return data.fieldName;
                 }); // for dropdown 1
 
-                _this15.messageKeyIso1 = isoResp.map(function (data) {
+                _this16.messageKeyIso1 = isoResp.map(function (data) {
                   return data.fieldNo;
                 });
-                _this15.typeDataIso1 = isoResp.map(function (data) {
+                _this16.typeDataIso1 = isoResp.map(function (data) {
                   return data.dataType;
                 });
-                _this15.headerValueIso1 = isoResp.map(function (data) {
+                _this16.headerValueIso1 = isoResp.map(function (data) {
                   return data.headerValue;
                 });
 
-                var valFieldMapper = _this15.isoRespData1.reduce(function (acc, val) {
+                var valFieldMapper = _this16.isoRespData1.reduce(function (acc, val) {
                   acc[val.fieldNo] = val.fieldName;
                   return acc;
                 }, {});
 
-                var selectedMessageKeys = new Set((_a = _this15.array1) === null || _a === void 0 ? void 0 : _a.map(function (x) {
+                var selectedMessageKeys = new Set((_a = _this16.array1) === null || _a === void 0 ? void 0 : _a.map(function (x) {
                   return valFieldMapper[x.messageKey];
                 }));
-                _this15.isoRespDataFiltered1 = _this15.isoRespDataFiltered1.filter(function (val) {
+                _this16.isoRespDataFiltered1 = _this16.isoRespDataFiltered1.filter(function (val) {
                   return !selectedMessageKeys.has(val.fieldName);
                 });
 
-                _this15.array1.forEach(function (x) {
-                  var data = _this15.isoRespData1.find(function (val) {
+                _this16.array1.forEach(function (x) {
+                  var data = _this16.isoRespData1.find(function (val) {
                     return val.fieldNo == x.messageKey;
                   });
 
                   x.messageKey = "".concat(x.messageKey || "", " ").concat((data === null || data === void 0 ? void 0 : data.fieldName) || "");
 
-                  _this15.formArr1.push(_this15.fb.group(x));
+                  _this16.formArr1.push(_this16.fb.group(x));
                 });
               }
             });
@@ -6956,23 +6989,23 @@
         }, {
           key: "fetchingXMl",
           value: function fetchingXMl() {
-            var _this16 = this;
+            var _this17 = this;
 
             this.addSystem.gettinXMLmsgIncoming().subscribe(function (xmlResp) {
-              _this16.xmlRespData = xmlResp;
-              _this16.xmlRespDataFiltered = _toConsumableArray(_this16.xmlRespData);
+              _this17.xmlRespData = xmlResp;
+              _this17.xmlRespDataFiltered = _toConsumableArray(_this17.xmlRespData);
 
               if (xmlResp) {
-                _this16.messageBasisIso = xmlResp.map(function (data) {
+                _this17.messageBasisIso = xmlResp.map(function (data) {
                   return data.messageBasis;
                 });
-                _this16.messageKeyIso = xmlResp.map(function (data) {
+                _this17.messageKeyIso = xmlResp.map(function (data) {
                   return data.messageKey;
                 });
-                _this16.typeDataIso = xmlResp.map(function (data) {
+                _this17.typeDataIso = xmlResp.map(function (data) {
                   return data.dataType;
                 });
-                _this16.headerValueIso = xmlResp.map(function (data) {
+                _this17.headerValueIso = xmlResp.map(function (data) {
                   return data.headerValue;
                 });
               }
@@ -6988,23 +7021,23 @@
         }, {
           key: "fetchingXMl1",
           value: function fetchingXMl1() {
-            var _this17 = this;
+            var _this18 = this;
 
             this.addSystem.gettinXMLmsgIncoming().subscribe(function (xmlResp) {
-              _this17.xmlRespData1 = xmlResp;
-              _this17.xmlRespDataFiltered1 = _toConsumableArray(_this17.xmlRespData1);
+              _this18.xmlRespData1 = xmlResp;
+              _this18.xmlRespDataFiltered1 = _toConsumableArray(_this18.xmlRespData1);
 
               if (xmlResp) {
-                _this17.messageBasisIso = xmlResp.map(function (data) {
+                _this18.messageBasisIso = xmlResp.map(function (data) {
                   return data.messageBasis;
                 });
-                _this17.messageKeyIso = xmlResp.map(function (data) {
+                _this18.messageKeyIso = xmlResp.map(function (data) {
                   return data.messageKey;
                 });
-                _this17.typeDataIso = xmlResp.map(function (data) {
+                _this18.typeDataIso = xmlResp.map(function (data) {
                   return data.dataType;
                 });
-                _this17.headerValueIso = xmlResp.map(function (data) {
+                _this18.headerValueIso = xmlResp.map(function (data) {
                   return data.headerValue;
                 });
               }
@@ -7058,10 +7091,10 @@
         }, {
           key: "fetchingHeadertag",
           value: function fetchingHeadertag() {
-            var _this18 = this;
+            var _this19 = this;
 
             this.addSystem.fetchingHeaderTag().subscribe(function (resp) {
-              _this18.headerTagData = resp;
+              _this19.headerTagData = resp;
             });
           }
         }, {
@@ -7077,7 +7110,7 @@
         }, {
           key: "uploadFileXml",
           value: function uploadFileXml(event) {
-            var _this19 = this;
+            var _this20 = this;
 
             this.selectedFiles = event.target.files;
             this.sizeOfFile = this.selectedFiles.item(0).size;
@@ -7086,22 +7119,22 @@
             this.fileUploadWrapper.nativeElement.setAttribute("data-text", this.fileName);
             this.addSystem.gettingHederofXMl(this.currentFileUpload).subscribe(function (xmlResp) {
               if (xmlResp) {
-                _this19.uploadXmlResp = xmlResp;
-                _this19.messageBasisIso = xmlResp.nodeTagList;
-                _this19.xmlRespData = xmlResp.nodeTagList;
-                _this19.xmlRespDataFiltered = _this19.xmlRespData;
+                _this20.uploadXmlResp = xmlResp;
+                _this20.messageBasisIso = xmlResp.nodeTagList;
+                _this20.xmlRespData = xmlResp.nodeTagList;
+                _this20.xmlRespDataFiltered = _this20.xmlRespData;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: "File Uploaded Successfully",
                   icon: "success"
                 });
-                _this19.fileUploadClick = false;
+                _this20.fileUploadClick = false;
               }
             });
           }
         }, {
           key: "uploadFileXml1",
           value: function uploadFileXml1(event) {
-            var _this20 = this;
+            var _this21 = this;
 
             this.selectedFiles1 = event.target.files;
             this.sizeOfFile1 = this.selectedFiles1.item(0).size;
@@ -7110,22 +7143,22 @@
             this.fileUploadWrapper1.nativeElement.setAttribute("data-text", this.fileName1);
             this.addSystem.gettingHederofXMl(this.currentFileUpload1).subscribe(function (xmlResp) {
               if (xmlResp) {
-                _this20.uploadXmlResp1 = xmlResp;
-                _this20.messageBasisIso1 = xmlResp.nodeTagList;
-                _this20.xmlRespData1 = xmlResp.nodeTagList;
-                _this20.xmlRespDataFiltered1 = _this20.xmlRespData1;
+                _this21.uploadXmlResp1 = xmlResp;
+                _this21.messageBasisIso1 = xmlResp.nodeTagList;
+                _this21.xmlRespData1 = xmlResp.nodeTagList;
+                _this21.xmlRespDataFiltered1 = _this21.xmlRespData1;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: "File Uploaded Successfully",
                   icon: "success"
                 });
-                _this20.fileUploadClickAll = false;
+                _this21.fileUploadClickAll = false;
               }
             });
           }
         }, {
           key: "onselectingTag",
           value: function onselectingTag(event, i) {
-            var _this21 = this;
+            var _this22 = this;
 
             if (this.tempArrayList[i]) {
               this.tempArrayList[i] = event;
@@ -7134,7 +7167,7 @@
             }
 
             var result = Object.keys(this.uploadXmlResp.nodeValueMap).map(function (key) {
-              return [key, _this21.uploadXmlResp.nodeValueMap[key]];
+              return [key, _this22.uploadXmlResp.nodeValueMap[key]];
             });
             var x = result.find(function (item) {
               return item[0] == event;
@@ -7149,7 +7182,7 @@
         }, {
           key: "onselectingTag1",
           value: function onselectingTag1(event, i) {
-            var _this22 = this;
+            var _this23 = this;
 
             if (this.tempArrayList[i]) {
               this.tempArrayList[i] = event;
@@ -7158,7 +7191,7 @@
             }
 
             var result = Object.keys(this.uploadXmlResp1.nodeValueMap).map(function (key) {
-              return [key, _this22.uploadXmlResp1.nodeValueMap[key]];
+              return [key, _this23.uploadXmlResp1.nodeValueMap[key]];
             });
             var x = result.find(function (item) {
               return item[0] == event;
@@ -7173,7 +7206,7 @@
         }, {
           key: "uploadFileXmlOut",
           value: function uploadFileXmlOut(event) {
-            var _this23 = this;
+            var _this24 = this;
 
             this.selectedFiles = event.target.files;
             this.sizeOfFile = this.selectedFiles.item(0).size;
@@ -7181,15 +7214,15 @@
             this.fileNameOut = this.currentFileUpload.name;
             this.addSystem.gettingHederofXMl(this.currentFileUpload).subscribe(function (xmlResp) {
               if (xmlResp) {
-                _this23.uploadXmlResp = xmlResp;
-                _this23.messageBasisIso = xmlResp.nodeTagList;
+                _this24.uploadXmlResp = xmlResp;
+                _this24.messageBasisIso = xmlResp.nodeTagList;
               }
             }, function (err) {});
           }
         }, {
           key: "submitAll",
           value: function submitAll() {
-            var _this24 = this;
+            var _this25 = this;
 
             var _a, _b, _c, _d;
 
@@ -7232,7 +7265,7 @@
               console.log("obj_test ", obj_test);
               this.addSystem.submittingAddSystem(obj_test, this.currentUser).subscribe(function (addSysResp) {
                 if (addSysResp) {
-                  _this24.submitFlagAll = false;
+                  _this25.submitFlagAll = false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Created",
                     icon: "success"
@@ -7393,7 +7426,7 @@
       }();
 
       _AddSystemComponent.ɵfac = function AddSystemComponent_Factory(t) {
-        return new (t || _AddSystemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_2__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](ngx_spinner__WEBPACK_IMPORTED_MODULE_9__.NgxSpinnerService));
+        return new (t || _AddSystemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_2__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](ngx_spinner__WEBPACK_IMPORTED_MODULE_9__.NgxSpinnerService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef));
       };
 
       _AddSystemComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
@@ -7431,7 +7464,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.loading);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MinLengthValidator, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLink, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgSelectComponent, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgOptionComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgForm],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.MinLengthValidator, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupName, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLink, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgSelectComponent, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgOptionComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgForm],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
         styles: [".fileUpload[_ngcontent-%COMP%] {\n  width: 50%;\n  margin-bottom: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC1zeXN0ZW0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxVQUFBO0VBQ0EsbUJBQUE7QUFDSiIsImZpbGUiOiJhZGQtc3lzdGVtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZpbGVVcGxvYWR7XHJcbiAgICB3aWR0aDo1MCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOjIwcHg7XHJcbn0iXX0= */"]
       });
@@ -7596,13 +7629,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](14, "date");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](16, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "Action");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -7613,10 +7650,6 @@
           var data_r5 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.systemId);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.systemCode);
 
@@ -7630,15 +7663,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.sourceIp);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.approvedStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.sourcePort);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.recordStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](16, 7, data_r5.createdTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](14, 6, data_r5.createdTime, "medium"));
         }
       }
 
@@ -7646,13 +7679,13 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -7684,7 +7717,7 @@
         _createClass(_AddSystemSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this25 = this;
+            var _this26 = this;
 
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -7702,23 +7735,23 @@
             this.getDataForMonitor();
             this.roleService.fetchScreenPermissions('Add System');
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this25.roleCodes = message;
+              return _this26.roleCodes = message;
             });
             console.log(this.roleCodes);
           }
         }, {
           key: "getDataForMonitor",
           value: function getDataForMonitor() {
-            var _this26 = this;
+            var _this27 = this;
 
             this.isLoading = true;
             this.apiService.fecthingAddSystem().subscribe(function (dataresp) {
-              _this26.respArray = dataresp.result;
-              _this26.isLoading = false;
+              _this27.respArray = dataresp.result;
+              _this27.isLoading = false;
 
-              _this26.cdr.markForCheck();
+              _this27.cdr.markForCheck();
 
-              _this26.dtTrigger.next();
+              _this27.dtTrigger.next();
             });
           }
         }, {
@@ -7760,7 +7793,7 @@
         selectors: [["npr-add-system-summary"]],
         decls: 30,
         vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 3, "click"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function AddSystemSummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -7801,43 +7834,43 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "Id");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, " System Code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, " System Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "System Code\tName");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "System Code\tName");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "Type");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "Type");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "Auth Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "External Ip");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Record Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "External Port");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "Action");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -7847,7 +7880,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, AddSystemSummaryComponent_tr_28_Template, 17, 10, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, AddSystemSummaryComponent_tr_28_Template, 18, 9, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

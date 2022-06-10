@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -580,13 +586,13 @@
       /* harmony import */
 
 
-      var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! tslib */
       3786);
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! rxjs */
       79441);
       /* harmony import */
@@ -604,7 +610,7 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
       2316);
       /* harmony import */
@@ -622,167 +628,181 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/services/user.service */
+      98613);
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common */
       54364);
 
       function SecurityPolicySummaryComponent_tbody_24_tr_1_td_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var data_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2).$implicit;
+          var data_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2).$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r2.version, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r2.version, " ");
         }
       }
 
       function SecurityPolicySummaryComponent_tbody_24_tr_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "a", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "a", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SecurityPolicySummaryComponent_tbody_24_tr_1_Template_a_click_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function SecurityPolicySummaryComponent_tbody_24_tr_1_Template_a_click_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7);
 
-            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
 
             return ctx_r6.getResp();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, SecurityPolicySummaryComponent_tbody_24_tr_1_td_4_Template, 2, 1, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, SecurityPolicySummaryComponent_tbody_24_tr_1_td_4_Template, 2, 1, "td", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](13, "date");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](15, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "a", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function SecurityPolicySummaryComponent_tbody_24_tr_1_Template_a_click_15_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+
+            return ctx_r8.gotoSummary();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "i", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var data_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().$implicit;
+          var data_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
 
-          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r2.version);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r2.version);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", data_r2.version != ctx_r3.maxVersion);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r2.version != ctx_r3.maxVersion);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r2.createdBy);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r2.createdBy);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r2.pswdExpiry);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r2.authStatus);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r2.authStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r2.recordStatus);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r2.recordStatus);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](15, 7, data_r2.createdDate, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](13, 6, data_r2.createdDate, "medium"));
         }
       }
 
       function SecurityPolicySummaryComponent_tbody_24_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tbody");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tbody");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, SecurityPolicySummaryComponent_tbody_24_tr_1_Template, 16, 10, "tr", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, SecurityPolicySummaryComponent_tbody_24_tr_1_Template, 17, 9, "tr", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
           var data_r2 = ctx.$implicit;
 
-          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", data_r2.version === ctx_r0.maxVersion);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r2.version === ctx_r0.maxVersion);
         }
       }
 
       function SecurityPolicySummaryComponent_ng_container_25_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
         }
       }
 
@@ -791,23 +811,25 @@
       };
 
       var _SecurityPolicySummaryComponent = /*#__PURE__*/function () {
-        function _SecurityPolicySummaryComponent(apiService, roleService, router, cdr) {
+        function _SecurityPolicySummaryComponent(apiService, roleService, router, cdr, userApi) {
           _classCallCheck(this, _SecurityPolicySummaryComponent);
 
           this.apiService = apiService;
           this.roleService = roleService;
           this.router = router;
           this.cdr = cdr;
+          this.userApi = userApi;
           this.respArray = [];
           this.dtOptions = {};
-          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
           this.isLoading = false;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.dataTableConfig = {
-            sortBy: "version",
+            sortBy: 'version',
             pageNo: 1,
             pageSize: 5
           };
+          this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
         }
 
         _createClass(_SecurityPolicySummaryComponent, [{
@@ -820,7 +842,7 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [5]
+                targets: [5]
               }],
               order: [[0, 'desc']],
               processing: true,
@@ -843,11 +865,37 @@
             this.isLoading = true;
             this.respArray = [];
             this.apiService.getAllSecurityPolicy(this.dataTableConfig.pageNo, this.dataTableConfig.pageSize, this.dataTableConfig.sortBy).subscribe(function (dataresp) {
-              return (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(_this3, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              return (0, tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(_this3, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var _this4 = this;
+
+                var _iterator, _step, _loop;
+
                 return regeneratorRuntime.wrap(function _callee$(_context2) {
                   while (1) {
                     switch (_context2.prev = _context2.next) {
                       case 0:
+                        _iterator = _createForOfIteratorHelper(dataresp.result);
+
+                        try {
+                          _loop = function _loop() {
+                            var item = _step.value;
+                            item.authStatus = _this4.statusArr.find(function (i) {
+                              return i.startsWith(item.authStatus);
+                            });
+                            item.recordStatus = _this4.statusArr.find(function (i) {
+                              return i.startsWith(item.recordStatus);
+                            });
+                          };
+
+                          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                            _loop();
+                          }
+                        } catch (err) {
+                          _iterator.e(err);
+                        } finally {
+                          _iterator.f();
+                        }
+
                         this.maxVersion = Math.max.apply(Math, dataresp.result.map(function (o) {
                           return o.version;
                         }));
@@ -857,7 +905,7 @@
                         this.cdr.markForCheck();
                         this.dtTrigger.next(); // this.initDataTableListeners()
 
-                      case 5:
+                      case 7:
                       case "end":
                         return _context2.stop();
                     }
@@ -874,20 +922,20 @@
         }, {
           key: "new",
           value: function _new() {
-            this.router.navigateByUrl("/security-policy");
+            this.router.navigateByUrl('/security-policy');
           }
         }, {
           key: "getResp",
           value: function getResp() {
-            var _this4 = this;
+            var _this5 = this;
 
             localStorage.removeItem('securityPolicyData');
-            this.router.navigateByUrl("/security-policy");
+            this.router.navigateByUrl('/security-policy');
             var data = this.respArray.find(function (item) {
-              return item.version == _this4.maxVersion;
+              return item.version == _this5.maxVersion;
             });
             console.log(this.respArray.find(function (item) {
-              return item.version == _this4.maxVersion;
+              return item.version == _this5.maxVersion;
             }));
             this.apiService.setSecurityPolicy({
               authStatus: data.authStatus,
@@ -913,7 +961,45 @@
               version: data.version,
               passwordGenerationType: data.passwordGenerationType
             });
-            localStorage.setItem("securityPolicyData", JSON.stringify(data));
+            localStorage.setItem('securityPolicyData', JSON.stringify(data));
+          }
+        }, {
+          key: "gotoSummary",
+          value: function gotoSummary() {
+            var _this6 = this;
+
+            this.router.navigateByUrl('/security-policy');
+            var data = this.respArray.find(function (item) {
+              return item.version == _this6.maxVersion;
+            });
+            console.log(this.respArray.find(function (item) {
+              return item.version == _this6.maxVersion;
+            }));
+            this.apiService.setSecurityPolicy({
+              activeEdit: true,
+              authStatus: data.authStatus,
+              authorizedBy: data.authorizedBy,
+              authorizedTime: data.authorizedTime,
+              createdBy: data.createdBy,
+              createdDate: data.createdDate,
+              isActive: data.isActive,
+              maxInvLogins: data.maxInvLogins,
+              maxPswdLength: data.maxPswdLength,
+              minPswdLength: data.minPswdLength,
+              modifiedBy: data.modifiedBy,
+              modifiedTime: data.modifiedTime,
+              firstTimeAuth: data.firstTimeAuth,
+              notifyPasswordExpiryInDays: data.notifyPasswordExpiryInDays,
+              pswdComplexLcase: data.pswdComplexLcase,
+              pswdComplexNum: data.pswdComplexNum,
+              pswdComplexSplc: data.pswdComplexSplc,
+              pswdComplexUcase: data.pswdComplexUcase,
+              pswdExpiry: data.pswdExpiry,
+              pswdReuseAft: data.pswdReuseAft,
+              recordStatus: data.recordStatus,
+              version: data.version,
+              passwordGenerationType: data.passwordGenerationType
+            });
           }
         }]);
 
@@ -921,133 +1007,133 @@
       }();
 
       _SecurityPolicySummaryComponent.ɵfac = function SecurityPolicySummaryComponent_Factory(t) {
-        return new (t || _SecurityPolicySummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_2__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.ChangeDetectorRef));
+        return new (t || _SecurityPolicySummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_2__.SecurityPolicyService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_4__.UsersService));
       };
 
-      _SecurityPolicySummaryComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+      _SecurityPolicySummaryComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _SecurityPolicySummaryComponent,
         selectors: [["npr-security-policy-summary"]],
         viewQuery: function SecurityPolicySummaryComponent_Query(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵviewQuery"](angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, 5);
           }
 
           if (rf & 2) {
             var _t;
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.dtElement = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵloadQuery"]()) && (ctx.dtElement = _t.first);
           }
         },
         decls: 26,
         vars: 6,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "primaryColor", 3, "click"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "primaryColor", 3, "click"], [1, "btn", 2, "color", "red", 3, "click"], [1, "fa", "fa-edit"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function SecurityPolicySummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Security Policy");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Security Policy");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "a", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "a", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, "Exit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8, "Exit");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "table", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "table", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "thead");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "thead");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13, "Version");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13, "Version");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, " Created By");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](15, "Created By");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, " Password Expiry InDays ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](17, "Auth Status");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "Auth Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](19, "Record Status");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](21, "Record Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](21, "Date");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](23, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](23, "Action");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](24, SecurityPolicySummaryComponent_tbody_24_Template, 2, 1, "tbody", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](24, SecurityPolicySummaryComponent_tbody_24_Template, 2, 1, "tbody", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](25, SecurityPolicySummaryComponent_ng_container_25_Template, 5, 0, "ng-container", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](25, SecurityPolicySummaryComponent_ng_container_25_Template, 5, 0, "ng-container", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](5, _c0));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](5, _c0));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.respArray);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.respArray);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.isLoading);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.isLoading);
           }
         },
-        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe],
+        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzZWN1cml0eS1wb2xpY3ktc3VtbWFyeS5jb21wb25lbnQuc2NzcyJ9 */"]
       });
       /***/
@@ -1677,12 +1763,13 @@
 
 
       var _SecurityPolicyComponent = /*#__PURE__*/function () {
-        function _SecurityPolicyComponent(toastService, formBuilder, roleService, secuityService) {
+        function _SecurityPolicyComponent(toastService, formBuilder, roleService, cdr, secuityService) {
           _classCallCheck(this, _SecurityPolicyComponent);
 
           this.toastService = toastService;
           this.formBuilder = formBuilder;
           this.roleService = roleService;
+          this.cdr = cdr;
           this.secuityService = secuityService;
           this.enablesubmit = true;
           this.submitSecurity = false;
@@ -1693,15 +1780,15 @@
         _createClass(_SecurityPolicyComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this5 = this;
+            var _this7 = this;
 
             this.currentUser = localStorage.getItem('userFromLogin');
-            this.buildForm("");
-            debugger;
-            var newObject = localStorage.getItem("securityPolicyData");
+            this.buildForm('');
+            ;
+            var newObject = localStorage.getItem('securityPolicyData');
             this.fetchSecurityPolicyService(JSON.parse(newObject));
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this5.roleCodes = message;
+              return _this7.roleCodes = message;
             });
             console.log(this.roleCodes);
           }
@@ -1710,29 +1797,29 @@
           value: function invalidLogin(event, type) {
             this.submitSecurity = false;
 
-            if (type == "pgt" && this.securityForm.value.passwordGenerationType != this.securityData.passwordGenerationType) {
+            if (type == 'pgt' && this.securityForm.value.passwordGenerationType != this.securityData.passwordGenerationType) {
               this.submitSecurity = true;
             }
 
-            if (type == "invalid" && this.securityForm.value.maxInvLogins != this.securityData.maxInvLogins) {
+            if (type == 'invalid' && this.securityForm.value.maxInvLogins != this.securityData.maxInvLogins) {
               this.submitSecurity = true;
-            } else if (type == "length" && this.securityForm.value.maxPswdLength != this.securityData.maxPswdLength) {
+            } else if (type == 'length' && this.securityForm.value.maxPswdLength != this.securityData.maxPswdLength) {
               this.submitSecurity = true;
-            } else if (type == "minlength" && this.securityForm.value.minPswdLength != this.securityData.minPswdLength) {
+            } else if (type == 'minlength' && this.securityForm.value.minPswdLength != this.securityData.minPswdLength) {
               this.submitSecurity = true;
-            } else if (type == "expiry" && this.securityForm.value.pswdExpiry != this.securityData.pswdExpiry) {
+            } else if (type == 'expiry' && this.securityForm.value.pswdExpiry != this.securityData.pswdExpiry) {
               this.submitSecurity = true;
-            } else if (type == "notification" && this.securityForm.value.notifyPasswordExpiryInDays != this.securityData.notifyPasswordExpiryInDays) {
+            } else if (type == 'notification' && this.securityForm.value.notifyPasswordExpiryInDays != this.securityData.notifyPasswordExpiryInDays) {
               this.submitSecurity = true;
-            } else if (type == "reuse" && this.securityForm.value.pswdReuseAft != this.securityData.pswdReuseAft) {
+            } else if (type == 'reuse' && this.securityForm.value.pswdReuseAft != this.securityData.pswdReuseAft) {
               this.submitSecurity = true;
-            } else if (type === "uppercaseCheck") {
+            } else if (type === 'uppercaseCheck') {
               this.submitSecurity = true;
-            } else if (type === "lowercaseCheck") {
+            } else if (type === 'lowercaseCheck') {
               this.submitSecurity = true;
-            } else if (type === "numberCheck") {
+            } else if (type === 'numberCheck') {
               this.submitSecurity = true;
-            } else if (type === "charactersCheck") {
+            } else if (type === 'charactersCheck') {
               this.submitSecurity = true;
             }
           }
@@ -1741,61 +1828,63 @@
           value: function buildForm(item) {
             console.log(item);
             this.securityForm = this.formBuilder.group({
-              authStatus: [item ? item.authStatus : ""],
-              authorizedBy: [item ? item.authorizedBy : ""],
-              authorizedTime: [item ? item.authorizedTime : ""],
-              maxInvLogins: [item ? item.maxInvLogins : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              maxPswdLength: [item ? item.maxPswdLength : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              minPswdLength: [item ? item.minPswdLength : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              modifiedBy: [item ? item.modifiedBy : ""],
-              modifiedTime: [item ? item.modifiedTime : ""],
-              loggedInUser: [""],
-              notifyPasswordExpiryInDays: [item ? item.notifyPasswordExpiryInDays : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              firstTimeAuth: [item ? item.firstTimeAuth : ""],
-              pswdComplexLcase: [item ? item.pswdComplexLcase : ""],
-              pswdComplexNum: [item ? item.pswdComplexNum : ""],
-              pswdComplexSplc: [item ? item.pswdComplexSplc : ""],
-              pswdComplexUcase: [item ? item.pswdComplexUcase : ""],
+              activeEdit: [item ? item.activeEdit : ''],
+              authStatus: [item ? item.authStatus : ''],
+              authorizedBy: [item ? item.authorizedBy : ''],
+              authorizedTime: [item ? item.authorizedTime : ''],
+              maxInvLogins: [item ? item.maxInvLogins : '', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              maxPswdLength: [item ? item.maxPswdLength : '', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              minPswdLength: [item ? item.minPswdLength : '', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              modifiedBy: [item ? item.modifiedBy : ''],
+              modifiedTime: [item ? item.modifiedTime : ''],
+              loggedInUser: [''],
+              notifyPasswordExpiryInDays: [item ? item.notifyPasswordExpiryInDays : '', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              firstTimeAuth: [item ? item.firstTimeAuth : ''],
+              pswdComplexLcase: [item ? item.pswdComplexLcase : ''],
+              pswdComplexNum: [item ? item.pswdComplexNum : ''],
+              pswdComplexSplc: [item ? item.pswdComplexSplc : ''],
+              pswdComplexUcase: [item ? item.pswdComplexUcase : ''],
               // pswdComplexity: [item?item.pswdComplexity :false],
-              pswdExpiry: [item ? item.pswdExpiry : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              pswdReuseAft: [item ? item.pswdReuseAft : "", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              version: [item ? item.version : ""],
+              pswdExpiry: [item ? item.pswdExpiry : '', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              pswdReuseAft: [item ? item.pswdReuseAft : '', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              version: [item ? item.version : ''],
               passwordGenerationType: [item ? item.passwordGenerationType : 'Manual']
             });
             console.log(this.securityForm.value);
+            this.activeEditOnInit();
           }
         }, {
           key: "assignCheckValue",
           value: function assignCheckValue(item) {
-            if (item.pswdComplexLcase === "true") {
+            if (item.pswdComplexLcase === 'true') {
               item.pswdComplexLcase = true;
             }
 
-            if (item.pswdComplexLcase === "false") {
+            if (item.pswdComplexLcase === 'false') {
               item.pswdComplexLcase = false;
             }
 
-            if (item.pswdComplexNum === "true") {
+            if (item.pswdComplexNum === 'true') {
               item.pswdComplexNum = true;
             }
 
-            if (item.pswdComplexNum === "false") {
+            if (item.pswdComplexNum === 'false') {
               item.pswdComplexNum = false;
             }
 
-            if (item.pswdComplexSplc === "true") {
+            if (item.pswdComplexSplc === 'true') {
               item.pswdComplexSplc = true;
             }
 
-            if (item.pswdComplexSplc === "false") {
+            if (item.pswdComplexSplc === 'false') {
               item.pswdComplexSplc = false;
             }
 
-            if (item.pswdComplexUcase === "true") {
+            if (item.pswdComplexUcase === 'true') {
               item.pswdComplexUcase = true;
             }
 
-            if (item.pswdComplexUcase === "false") {
+            if (item.pswdComplexUcase === 'false') {
               item.pswdComplexUcase = false;
             }
 
@@ -1804,10 +1893,10 @@
         }, {
           key: "submit",
           value: function submit() {
-            var _this6 = this;
+            var _this8 = this;
 
-            this.securityForm.value.modifiedBy = localStorage.getItem("userFromLogin");
-            this.securityForm.value.loggedInUser = localStorage.getItem("userFromLogin");
+            this.securityForm.value.modifiedBy = localStorage.getItem('userFromLogin');
+            this.securityForm.value.loggedInUser = localStorage.getItem('userFromLogin');
             console.log(this.securityForm.value);
 
             if (this.securityForm.value.minPswdLength > this.securityForm.value.maxPswdLength) {
@@ -1824,17 +1913,17 @@
               });
             } else {
               this.secuityService.saveDataSecurity(this.securityForm.value).subscribe(function (response) {
-                _this6.securityData = response;
+                _this8.securityData = response;
 
                 if (response) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Record is Created"
                   }); // this.enablesubmit = false;
 
-                  _this6.auditlog();
+                  _this8.auditlog();
 
-                  _this6.edit = false;
-                  _this6.formTouched = !_this6.securityForm.touched;
+                  _this8.edit = false;
+                  _this8.formTouched = !_this8.securityForm.touched;
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Saving Failed"
@@ -1862,7 +1951,7 @@
           //           if (this.updatedSecObject) {
           //             // this.auditLog();
           //       Swal.fire(
-          //              { 
+          //              {
           //             text:"Security Policy is Authorized",
           //             icon:'success'
           //           }
@@ -1878,7 +1967,7 @@
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService(resp) {
-            debugger;
+            ;
 
             if (resp) {
               this.securityData = resp;
@@ -1886,21 +1975,21 @@
               this.assignCheckValue(this.securityData);
 
               if (this.securityData.recordStatus == 'O') {
-                this.securityData.recordStatus = "OPEN";
+                this.securityData.recordStatus = 'OPEN';
               } else if (this.securityData.recordStatus == 'C') {
-                this.securityData.recordStatus = "CLOSE";
+                this.securityData.recordStatus = 'CLOSE';
               }
 
               if (this.securityData.authStatus == 'A') {
-                this.securityData.authStatus = "AUTHORIZED";
+                this.securityData.authStatus = 'AUTHORIZED';
               } else if (this.securityData.authStatus == 'U') {
-                this.securityData.authStatus = "UNAUTHORIZED";
+                this.securityData.authStatus = 'UNAUTHORIZED';
               }
 
               if (this.securityData.firstTimeAuth == 'Y') {
-                this.securityData.firstTimeAuth = "YES";
+                this.securityData.firstTimeAuth = 'YES';
               } else if (this.securityData.firstTimeAuth == 'N') {
-                this.securityData.firstTimeAuth = "NO";
+                this.securityData.firstTimeAuth = 'NO';
               }
             }
           } // async pageDeactivation(): Promise<Observable<boolean>> {
@@ -1908,12 +1997,12 @@
         }, {
           key: "pageDeactivation",
           value: function pageDeactivation() {
-            console.log("pageDeactivation in user was called"); // return of (true);
+            console.log('pageDeactivation in user was called'); // return of (true);
 
             if (this.securityForm.touched && this.formTouched == true) {
               var swalMsg = '';
               var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-              console.log("result: ", result);
+              console.log('result: ', result);
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(result);
             } else {
               return (0, rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(true);
@@ -1930,9 +2019,16 @@
             this.edit = true;
           }
         }, {
+          key: "activeEditOnInit",
+          value: function activeEditOnInit() {
+            if (this.securityForm.value.activeEdit) {
+              this.editValues();
+            }
+          }
+        }, {
           key: "auth",
           value: function auth() {
-            var _this7 = this;
+            var _this9 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -1943,13 +2039,13 @@
               // confirmButtonText: 'PROCEED.'
               cancelButtonText: 'NO',
               confirmButtonText: 'YES',
-              'icon': 'info',
-              iconColor: "#d33"
+              icon: 'info',
+              iconColor: '#d33'
             }).then(function (result) {
-              console.log("this is reopen ", result);
+              console.log('this is reopen ', result);
 
               if (result.isConfirmed === true) {
-                if (_this7.securityData.createdBy === localStorage.getItem("userFromLogin")) {
+                if (_this9.securityData.createdBy === localStorage.getItem('userFromLogin')) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: 'Maker Cannot Authorize Record!',
                     icon: 'error'
@@ -1957,25 +2053,25 @@
                   return;
                 }
 
-                console.log("this is authorzation");
-                _this7.securityForm.value.loggedInUser = _this7.currentUser;
+                console.log('this is authorzation');
+                _this9.securityForm.value.loggedInUser = _this9.currentUser;
 
-                _this7.secuityService.authSecurity('authorize', _this7.securityForm.value).subscribe(function (resp) {
+                _this9.secuityService.authSecurity('authorize', _this9.securityForm.value).subscribe(function (resp) {
                   console.log(resp);
-                  _this7.securityData = resp;
+                  _this9.securityData = resp;
 
-                  _this7.auditlog();
+                  _this9.auditlog();
 
                   if (resp) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record is Authorized",
+                      text: 'Record is Authorized',
                       icon: 'success'
                     });
                   }
                 }, function (error) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: error.error.message,
-                    icon: "error"
+                    icon: 'error'
                   });
                 });
               }
@@ -1984,7 +2080,7 @@
         }, {
           key: "close",
           value: function close() {
-            var _this8 = this;
+            var _this10 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -1995,23 +2091,23 @@
               // confirmButtonText: 'PROCEED.'
               cancelButtonText: 'NO',
               confirmButtonText: 'YES',
-              'icon': 'info',
-              iconColor: "#d33"
+              icon: 'info',
+              iconColor: '#d33'
             }).then(function (result) {
-              console.log("this is reopen ", result);
+              console.log('this is reopen ', result);
 
               if (result.isConfirmed === true) {
-                console.log("this is close");
+                console.log('this is close');
 
-                _this8.secuityService.authSecurity('close', _this8.securityForm.value).subscribe(function (resp) {
+                _this10.secuityService.authSecurity('close', _this10.securityForm.value).subscribe(function (resp) {
                   console.log(resp);
-                  _this8.securityData = resp;
+                  _this10.securityData = resp;
 
-                  _this8.auditlog();
+                  _this10.auditlog();
 
-                  if (_this8.securityData) {
+                  if (_this10.securityData) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record is Closed"
+                      text: 'Record is Closed'
                     });
                   }
                 }, function (error) {
@@ -2023,7 +2119,7 @@
         }, {
           key: "reopen",
           value: function reopen() {
-            var _this9 = this;
+            var _this11 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -2034,27 +2130,27 @@
               // confirmButtonText: 'PROCEED.'
               cancelButtonText: 'NO',
               confirmButtonText: 'YES',
-              'icon': 'info',
-              iconColor: "#d33"
+              icon: 'info',
+              iconColor: '#d33'
             }).then(function (result) {
-              console.log("this is reopen ", result);
+              console.log('this is reopen ', result);
 
               if (result.isConfirmed === true) {
-                _this9.secuityService.authSecurity('reopen', _this9.securityForm.value).subscribe(function (resp) {
+                _this11.secuityService.authSecurity('reopen', _this11.securityForm.value).subscribe(function (resp) {
                   console.log(resp);
-                  _this9.securityData = resp;
+                  _this11.securityData = resp;
 
-                  _this9.auditlog();
+                  _this11.auditlog();
 
-                  if (_this9.securityData.recordStatus == "O") {
-                    _this9.auditlog();
+                  if (_this11.securityData.recordStatus == 'O') {
+                    _this11.auditlog();
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record is Reopened"
+                      text: 'Record is Reopened'
                     });
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: "Record cannot be opened "
+                      text: 'Record cannot be opened '
                     });
                   }
                 }, function (error) {
@@ -2067,21 +2163,21 @@
           key: "auditlog",
           value: function auditlog() {
             if (this.securityData.recordStatus == 'O') {
-              this.securityData.recordStatus = "OPEN";
+              this.securityData.recordStatus = 'OPEN';
             } else if (this.securityData.recordStatus == 'C') {
-              this.securityData.recordStatus = "CLOSE";
+              this.securityData.recordStatus = 'CLOSE';
             }
 
             if (this.securityData.authStatus == 'A') {
-              this.securityData.authStatus = "AUTHORIZED";
+              this.securityData.authStatus = 'AUTHORIZED';
             } else if (this.securityData.authStatus == 'U') {
-              this.securityData.authStatus = "UNAUTHORIZED";
+              this.securityData.authStatus = 'UNAUTHORIZED';
             }
 
             if (this.securityData.firstTimeAuth == 'Y') {
-              this.securityData.firstTimeAuth = "YES";
+              this.securityData.firstTimeAuth = 'YES';
             } else if (this.securityData.firstTimeAuth == 'N') {
-              this.securityData.firstTimeAuth = "NO";
+              this.securityData.firstTimeAuth = 'NO';
             }
           }
         }, {
@@ -2089,13 +2185,57 @@
           value: function exit() {
             localStorage.removeItem('securityPolicyData');
           }
+        }, {
+          key: "canExit",
+          value: function canExit() {
+            var _this12 = this;
+
+            var isExit = false;
+
+            if (this.securityForm.touched && this.formTouched == true) {
+              return sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  isExit = true;
+
+                  _this12.cdr.markForCheck();
+
+                  return isExit;
+                } else {
+                  isExit = false;
+
+                  _this12.cdr.markForCheck();
+
+                  return isExit;
+                }
+              });
+            } else {
+              isExit = true;
+              return new Promise(function (resolve, reject) {
+                if (isExit === true) {
+                  isExit = true;
+
+                  _this12.cdr.markForCheck();
+
+                  resolve(true);
+                }
+              });
+            }
+          }
         }]);
 
         return _SecurityPolicyComponent;
       }();
 
       _SecurityPolicyComponent.ɵfac = function SecurityPolicyComponent_Factory(t) {
-        return new (t || _SecurityPolicyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__.SecurityPolicyService));
+        return new (t || _SecurityPolicyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_security_policy_service__WEBPACK_IMPORTED_MODULE_4__.SecurityPolicyService));
       };
 
       _SecurityPolicyComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
