@@ -105,7 +105,7 @@ let TransactionPopupPage = class TransactionPopupPage {
         this.tokenObjects = new TokenObjects();
     }
     ngOnInit() {
-        console.log("Dialog Box opened");
+        console.log("Dialog Box opened:: ", this.tokenObjects);
         console.log(this.value);
         setTimeout(() => {
             this.generateQRCode(this.tokenObjects);
