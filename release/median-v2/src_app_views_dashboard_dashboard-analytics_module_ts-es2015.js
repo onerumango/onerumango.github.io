@@ -1382,26 +1382,47 @@ class DashboardAnalyticsComponent {
             yAxis: {
                 title: false,
                 gridLineWidth: 0,
-                minorGridLineWidth: 0
+                minorGridLineWidth: 0,
             },
             credits: {
                 enabled: false,
             },
             xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
+                categories: [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr',
+                    'May',
+                    'Jun',
+                    'Jul',
+                    'Aug',
+                    'Sep',
+                    'Oct',
+                ],
             },
-            series: [{
+            series: [
+                {
                     type: 'column',
                     colorByPoint: true,
                     data: [120.9, 198, 156.4, 50.0, 125.0, 156.4, 50.0, 120.9, 198, 50.0],
-                    showInLegend: false
-                }],
+                    showInLegend: false,
+                },
+            ],
         };
         this.data = new DashboardData();
-        this.displayedColumns = ['userId', 'name', 'email', 'mobile', 'status', 'date'];
+        this.displayedColumns = [
+            'userId',
+            'name',
+            'email',
+            'mobile',
+            'status',
+            'date',
+        ];
         this.dtOptions = {};
         // this.dtOptions = {};
         this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+        this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
     }
     ngOnInit() {
         this.currentUser = localStorage.getItem('userFromLogin');
@@ -1409,10 +1430,13 @@ class DashboardAnalyticsComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [5] }],
+            columnDefs: [{ type: 'date', targets: [5] }],
             order: [[5, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, 30],
+            ],
         };
         this.getDataForDashboard();
         this.getAllUsers();
@@ -1431,34 +1455,34 @@ class DashboardAnalyticsComponent {
         const navigationExtras = {
             queryParams: {
                 // 'id': this.modifyUserObject.id,
-                'userId': this.currentUser.userId,
-                'userName': this.currentUser.userName,
-                'email': this.currentUser.email,
-                'ldapUserId': this.currentUser.ldapUserId,
-                'failedAttempts': this.currentUser.failedAttempts,
-                'mobile': this.currentUser.mobile,
-                'authStatus': this.currentUser.verifiedStatus,
-                'recordStatus': this.currentUser.recordStatus,
-                'autoAuth': this.currentUser.autoAuth,
-                'emailNotification': this.currentUser.emailNotification,
-                'maintAllowed': this.currentUser.maintAllowed,
-                'smsNotification': this.currentUser.smsNotification,
-                'userAccessOption': this.currentUser.userAccessOption,
-                'roleForUser': this.currentUser.roleForUser,
-                'creatorId': this.currentUser.creatorId,
-                'creatorDtStamp': this.currentUser.creatorDtStamp,
-                'verifierId': this.currentUser.verifierId,
-                'verifierDtStamp': this.currentUser.verifierDtStamp,
-                'encryptedPassword': this.currentUser.encryptedPassword,
-                'updatedBy': this.currentUser.updatedBy,
-                'fristTimeAuth': this.currentUser.verifiedOnce,
-                'newRoleForUser': this.currentUser.newRoleForUser,
-                'versionNo': this.currentUser.versionNo,
-                'statusForUser': this.currentUser.statusForUser,
-                'department': this.currentUser.department,
-                'intime': this.currentUser.intime,
-                'outtime': this.currentUser.outtime,
-                'pwdChangeDate': this.currentUser.pwdChangeDate
+                userId: this.currentUser.userId,
+                userName: this.currentUser.userName,
+                email: this.currentUser.email,
+                ldapUserId: this.currentUser.ldapUserId,
+                failedAttempts: this.currentUser.failedAttempts,
+                mobile: this.currentUser.mobile,
+                authStatus: this.currentUser.verifiedStatus,
+                recordStatus: this.currentUser.recordStatus,
+                autoAuth: this.currentUser.autoAuth,
+                emailNotification: this.currentUser.emailNotification,
+                maintAllowed: this.currentUser.maintAllowed,
+                smsNotification: this.currentUser.smsNotification,
+                userAccessOption: this.currentUser.userAccessOption,
+                roleForUser: this.currentUser.roleForUser,
+                creatorId: this.currentUser.creatorId,
+                creatorDtStamp: this.currentUser.creatorDtStamp,
+                verifierId: this.currentUser.verifierId,
+                verifierDtStamp: this.currentUser.verifierDtStamp,
+                encryptedPassword: this.currentUser.encryptedPassword,
+                updatedBy: this.currentUser.updatedBy,
+                fristTimeAuth: this.currentUser.verifiedOnce,
+                newRoleForUser: this.currentUser.newRoleForUser,
+                versionNo: this.currentUser.versionNo,
+                statusForUser: this.currentUser.statusForUser,
+                department: this.currentUser.department,
+                intime: this.currentUser.intime,
+                outtime: this.currentUser.outtime,
+                pwdChangeDate: this.currentUser.pwdChangeDate,
             },
         };
         // console.log(this.currentUser.intime, this.currentUser.outtime);
@@ -1467,7 +1491,7 @@ class DashboardAnalyticsComponent {
         this.route.navigate(['users/new']);
     }
     getDataForDashboard() {
-        this.api.getData().subscribe(data => {
+        this.api.getData().subscribe((data) => {
             this.datafordashboard = data;
             this.data = this.datafordashboard;
             this.cdr.markForCheck();
@@ -1484,7 +1508,12 @@ class DashboardAnalyticsComponent {
     }
     getpiechart(chartpiedata) {
         // console.log(chartpiedata);
-        this.pieChartLabels = ['User', 'Total Audit Log', 'Role', 'External System'];
+        this.pieChartLabels = [
+            'User',
+            'Total Audit Log',
+            'Role',
+            'External System',
+        ];
         this.pieChartData = chartpiedata;
         this.pieChartType = 'pie';
         // this.api.getChartDetails().subscribe(resp=>{
@@ -1497,7 +1526,9 @@ class DashboardAnalyticsComponent {
     }
     //Today Uploaded Batches by that user
     todayUploadedBatches() {
-        this.api.todayUploadedBatches(this.currentUser).subscribe(todayUploadedBatchesResp => {
+        this.api
+            .todayUploadedBatches(this.currentUser)
+            .subscribe((todayUploadedBatchesResp) => {
             console.log(todayUploadedBatchesResp);
             this.uploadedBatches = todayUploadedBatchesResp;
             this.cdr.markForCheck();
@@ -1507,7 +1538,9 @@ class DashboardAnalyticsComponent {
     }
     // Today's pending unauthorized batches
     pendingUnauthorizeBatches() {
-        this.api.pendingUnauthorizeBatches(this.currentUser).subscribe(pendingUnauthorizeBatchesResp => {
+        this.api
+            .pendingUnauthorizeBatches(this.currentUser)
+            .subscribe((pendingUnauthorizeBatchesResp) => {
             console.log(pendingUnauthorizeBatchesResp);
             this.pendingUnauthBatch = pendingUnauthorizeBatchesResp;
             this.cdr.markForCheck();
@@ -1516,7 +1549,9 @@ class DashboardAnalyticsComponent {
     }
     // Today's Authorized batches by that user
     authorizedBatchesByuser() {
-        this.api.authorizedBatchesByuser(this.currentUser).subscribe(authorizedBatchesByuser => {
+        this.api
+            .authorizedBatchesByuser(this.currentUser)
+            .subscribe((authorizedBatchesByuser) => {
             console.log(authorizedBatchesByuser);
             this.authBatches = authorizedBatchesByuser;
             this.cdr.markForCheck();
@@ -1524,7 +1559,10 @@ class DashboardAnalyticsComponent {
         });
     }
     getAllUsers() {
-        this.api.getAllUsersListService().subscribe(resp => {
+        this.api.getAllUsersListService().subscribe((resp) => {
+            for (let item of resp.result) {
+                item.verifiedStatus = this.statusArr.find((i) => i.startsWith(item.verifiedStatus));
+            }
             this.allUsersList = resp.result;
             // this.allUsersList = (resp as any).resp;
             // this.dataSource = new MatTableDataSource<User>(this.allUsersList);
@@ -1534,7 +1572,14 @@ class DashboardAnalyticsComponent {
             // if(this.allUsersList){
             this.dtTrigger.next();
             // }
-        });
+        }
+        // error => {
+        //   Swal.fire({
+        //     type: "error",
+        //     text: "Server error "
+        //   });
+        // }
+        );
     }
 }
 DashboardAnalyticsComponent.ɵfac = function DashboardAnalyticsComponent_Factory(t) { return new (t || DashboardAnalyticsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_user_service__WEBPACK_IMPORTED_MODULE_1__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService)); };

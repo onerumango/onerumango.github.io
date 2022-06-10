@@ -1224,7 +1224,9 @@
               // console.log(resp);
               _this9.pendingForAuthData = resp;
 
-              _this9.dtTrigger1.next(0);
+              _this9.dtTrigger1.next();
+
+              _this9.dtTrigger1.complete();
 
               console.log(_this9.pendingForAuthData);
             });

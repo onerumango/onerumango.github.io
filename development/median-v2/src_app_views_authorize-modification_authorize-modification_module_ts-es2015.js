@@ -772,7 +772,8 @@ class AuthorizeModificationComponent {
         this.api.getPendingForAuthDataFirstError(this.user_id).subscribe((resp) => {
             // console.log(resp);
             this.pendingForAuthData = resp;
-            this.dtTrigger1.next(0);
+            this.dtTrigger1.next();
+            this.dtTrigger1.complete();
             console.log(this.pendingForAuthData);
         });
     }

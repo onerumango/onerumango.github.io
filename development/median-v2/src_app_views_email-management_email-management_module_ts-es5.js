@@ -580,15 +580,15 @@
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/forms */
       1707);
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! rxjs */
-      81134);
+      79441);
       /* harmony import */
 
 
@@ -1472,7 +1472,7 @@
 
       var _EmailManagementCreateComponent = /*#__PURE__*/function () {
         // allDetails: import("d:/GITHUB REPOSITORY_UI/median_v2/src/app/shared/models/EmailDetails").EmailDetails;
-        function _EmailManagementCreateComponent(accountBlockingService, ref, userApi, route, iziToast, roleService, formBuilder, router) {
+        function _EmailManagementCreateComponent(accountBlockingService, ref, userApi, route, iziToast, roleService, formBuilder, cdr, router) {
           _classCallCheck(this, _EmailManagementCreateComponent);
 
           this.accountBlockingService = accountBlockingService;
@@ -1482,6 +1482,7 @@
           this.iziToast = iziToast;
           this.roleService = roleService;
           this.formBuilder = formBuilder;
+          this.cdr = cdr;
           this.router = router; // interface email
           // {
           //   emailId: '',
@@ -1498,6 +1499,8 @@
           this.submitBtn = true;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_1__.permissionsLabels();
           this.formTouched = true;
+          this.showDialog = false;
+          this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_8__.Subject();
         }
 
         _createClass(_EmailManagementCreateComponent, [{
@@ -1518,7 +1521,7 @@
             });
             this.emailTypes = localStorage.getItem('EmailType');
             this.emailForm = this.formBuilder.group({
-              accountType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
+              accountType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required],
               emails: this.formBuilder.array([])
             });
             this.user_id = sessionStorage.getItem('user_id');
@@ -1609,27 +1612,58 @@
           key: "buildEmailForm",
           value: function buildEmailForm(data, isResponse) {
             this.emailForm = this.formBuilder.group({
-              accountType: [data.emailType ? data.emailType : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+              accountType: [data.emailType ? data.emailType : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
               emails: this.formBuilder.array([])
             });
           }
         }, {
-          key: "pageDeactivation",
-          value: function pageDeactivation() {
-            // return of (true);
+          key: "canExit",
+          value: function canExit() {
+            var _this3 = this;
+
+            var isExit = false;
+
             if (this.emailForm.touched && this.formTouched == true) {
-              var swalMsg = '';
-              var result = confirm('There are unsaved changes in the screen.Would you like to navigate to other screen?');
-              console.log("result: ", result);
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_9__.of)(result);
+              return sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  isExit = true;
+
+                  _this3.cdr.markForCheck();
+
+                  return isExit;
+                } else {
+                  isExit = false;
+
+                  _this3.cdr.markForCheck();
+
+                  return isExit;
+                }
+              });
             } else {
-              return (0, rxjs__WEBPACK_IMPORTED_MODULE_9__.of)(true);
+              isExit = true;
+              return new Promise(function (resolve, reject) {
+                if (isExit === true) {
+                  isExit = true;
+
+                  _this3.cdr.markForCheck();
+
+                  resolve(true);
+                }
+              });
             }
           }
         }, {
           key: "getScreenDetails",
           value: function getScreenDetails() {
-            var _this3 = this;
+            var _this4 = this;
 
             // this.eamilAuditLog=this.emailNavigationObject;
             if (this.eamilAuditLog.emailType == undefined) {
@@ -1638,29 +1672,29 @@
 
             this.selected = this.eamilAuditLog.emailType;
             this.accountBlockingService.sendAccType(this.eamilAuditLog.emailType).subscribe(function (resp) {
-              _this3.emailList = resp;
+              _this4.emailList = resp;
 
-              for (var index = 0; index < _this3.emailList.length; index++) {
-                _this3.addAddress();
+              for (var index = 0; index < _this4.emailList.length; index++) {
+                _this4.addAddress();
 
-                var email = _this3.emailList[index]; // this.emails.at(index).get('emails').patchValue(email);
+                var email = _this4.emailList[index]; // this.emails.at(index).get('emails').patchValue(email);
 
-                _this3.emails.at(index).patchValue(email);
+                _this4.emails.at(index).patchValue(email);
               }
             });
           }
         }, {
           key: "screenpermission",
           value: function screenpermission() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.screenName = 'roles'; // this.role='ROLE1';
 
             this.userApi.getRoleScreenPermission(this.loggedInUser, this.screenName, this.role).subscribe(function (res) {
-              _this4.rolepermission = res; //console.log(this.rolepermission);
+              _this5.rolepermission = res; //console.log(this.rolepermission);
 
-              if (_this4.rolepermission) {
-                _this4.button_permission = _this4.rolepermission[0]; //console.log( this.button_permission);
+              if (_this5.rolepermission) {
+                _this5.button_permission = _this5.rolepermission[0]; //console.log( this.button_permission);
               }
             });
           }
@@ -1683,7 +1717,7 @@
         }, {
           key: "removeAddress",
           value: function removeAddress(i, row) {
-            var _this5 = this;
+            var _this6 = this;
 
             // if(i=== 0){
             //   this.emailForm.controls.emails.reset()
@@ -1694,14 +1728,14 @@
             } else {
               this.accountBlockingService.deleteingParticluarRow(this.eamilAuditLog.emailType, this.loggedInUser, row.value.id).subscribe(function (deleteResp) {
                 if (deleteResp == true) {
-                  _this5.emails.removeAt(i);
+                  _this6.emails.removeAt(i);
 
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Record is Deleted',
                     icon: 'success'
                   });
 
-                  _this5.router.navigate(['/email-management']);
+                  _this6.router.navigate(['/email-management']);
                 } else {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Once Verifed Record Cannot Be Deleted',
@@ -1709,7 +1743,7 @@
                   });
                 }
 
-                _this5.ref.markForCheck();
+                _this6.ref.markForCheck();
               });
             }
           }
@@ -1737,7 +1771,7 @@
         }, {
           key: "onClickOfAuthOfEmailManagement",
           value: function onClickOfAuthOfEmailManagement() {
-            var _this6 = this;
+            var _this7 = this;
 
             if (this.loggedInUser === this.eamilAuditLog.inputBy) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
@@ -1757,9 +1791,9 @@
                   text: 'Record is Authorized',
                   icon: 'success'
                 });
-                _this6.eamilAuditLog = authresp;
+                _this7.eamilAuditLog = authresp;
 
-                _this6.auditLog();
+                _this7.auditLog();
               } else {
                 // this.iziToast.show({
                 //   message: `You Authorized The Record`,
@@ -1784,7 +1818,7 @@
         }, {
           key: "onclickOfReopenOfEamilManagement",
           value: function onclickOfReopenOfEamilManagement() {
-            var _this7 = this;
+            var _this8 = this;
 
             //console.log('this is Reopen');
             this.accountBlockingService.onClickOfAuthOfEmailManagement('reopen', 'Account_Block', this.loggedInUser).subscribe(function (reopenResp) {
@@ -1806,9 +1840,9 @@
                   icon: 'warning'
                 });
               } else {
-                _this7.eamilAuditLog = reopenResp;
+                _this8.eamilAuditLog = reopenResp;
 
-                _this7.auditLog();
+                _this8.auditLog();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: 'Record is Reopened',
@@ -1831,7 +1865,7 @@
         }, {
           key: "onclickOfCloseOfEmailManagement",
           value: function onclickOfCloseOfEmailManagement() {
-            var _this8 = this;
+            var _this9 = this;
 
             this.accountBlockingService.onClickOfAuthOfEmailManagement('close', 'Account_Block', this.loggedInUser).subscribe(function (closeResp) {
               if (closeResp == false) {
@@ -1851,9 +1885,9 @@
                 //   pauseOnHover: true,
                 // });
               } else {
-                _this8.eamilAuditLog = closeResp;
+                _this9.eamilAuditLog = closeResp;
 
-                _this8.auditLog();
+                _this9.auditLog();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: 'Record is Closed',
@@ -1876,7 +1910,7 @@
         }, {
           key: "logValue",
           value: function logValue() {
-            var _this9 = this;
+            var _this10 = this;
 
             // if (this.eamilAuditLog.emailType != null || this.eamilAuditLog.emailType != undefined) {
             console.log(this.eamilAuditLog.inputBy);
@@ -1892,14 +1926,14 @@
                     icon: 'warning'
                   });
                 } else {
-                  _this9.eamilAuditLog = editResp;
+                  _this10.eamilAuditLog = editResp;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Record is Updated',
                     icon: 'success'
                   });
-                  _this9.formTouched = !_this9.emailForm.touched;
-                  _this9.modifyScreen = true;
-                  _this9.submitBtn = false;
+                  _this10.formTouched = !_this10.emailForm.touched;
+                  _this10.modifyScreen = true;
+                  _this10.submitBtn = false;
                 }
               });
             }
@@ -1907,21 +1941,21 @@
             if (this.emailTypes != 'Account_Block') {
               console.log("else");
               this.accountBlockingService.emailMaintenance(this.selected, this.loggedInUser, this.emails.value).subscribe(function (resp) {
-                _this9.masterresponse = resp;
-                _this9.eamilAuditLog = _this9.masterresponse;
+                _this10.masterresponse = resp;
+                _this10.eamilAuditLog = _this10.masterresponse;
 
                 if (resp) {
-                  _this9.masterDatapermission = true;
+                  _this10.masterDatapermission = true;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Record is Created',
                     icon: 'success'
                   });
 
-                  _this9.auditLog();
+                  _this10.auditLog();
 
-                  _this9.formTouched = !_this9.emailForm.touched;
-                  _this9.modifyScreen = true;
-                  _this9.submitBtn = false;
+                  _this10.formTouched = !_this10.emailForm.touched;
+                  _this10.modifyScreen = true;
+                  _this10.submitBtn = false;
                 } else if (resp == null) {
                   // this.masterDatapermission=false;
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire('Email Id Already Exit ');
@@ -1969,7 +2003,7 @@
       }();
 
       _EmailManagementCreateComponent.ɵfac = function EmailManagementCreateComponent_Factory(t) {
-        return new (t || _EmailManagementCreateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_account_blocking_service_service__WEBPACK_IMPORTED_MODULE_3__.AccountBlockingServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_users_users_service__WEBPACK_IMPORTED_MODULE_4__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_6__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.Router));
+        return new (t || _EmailManagementCreateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_account_blocking_service_service__WEBPACK_IMPORTED_MODULE_3__.AccountBlockingServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_users_users_service__WEBPACK_IMPORTED_MODULE_4__.UsersService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](ng2_izitoast__WEBPACK_IMPORTED_MODULE_5__.Ng2IzitoastService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_6__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.Router));
       };
 
       _EmailManagementCreateComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({
@@ -2135,7 +2169,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.eamilAuditLog.emailType != null);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgClass, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.EmailValidator, _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouterLink],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_9__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgClass, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.EmailValidator, _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouterLink],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.DatePipe],
         styles: [".errorColor[_ngcontent-%COMP%] {\n  color: #e6224a;\n}\n\n.isDisabled[_ngcontent-%COMP%] {\n  color: currentColor;\n  cursor: not-allowed;\n  pointer-events: none;\n  opacity: 0.4;\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVtYWlsLW1hbmFnZW1lbnQtY3JlYXRlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtBQUNKOztBQUNBO0VBQ0ksbUJBQUE7RUFDQSxtQkFBQTtFQUNBLG9CQUFBO0VBQ0EsWUFBQTtFQUNBLHFCQUFBO0FBRUoiLCJmaWxlIjoiZW1haWwtbWFuYWdlbWVudC1jcmVhdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXJyb3JDb2xvcntcclxuICAgIGNvbG9yOiAjZTYyMjRhO1xyXG59XHJcbi5pc0Rpc2FibGVkIHtcclxuICAgIGNvbG9yOiBjdXJyZW50Q29sb3I7XHJcbiAgICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICBvcGFjaXR5OiAwLjQ7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcblxyXG4gIH0iXX0= */"]
       });
@@ -2511,7 +2545,7 @@
         _createClass(_EmailManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this10 = this;
+            var _this11 = this;
 
             this.user_id = sessionStorage.getItem('user_id');
             this.role = sessionStorage.getItem('user_role');
@@ -2531,7 +2565,7 @@
             };
             this.roleService.fetchScreenPermissions('Email-Management');
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this10.roleCodes = message;
+              return _this11.roleCodes = message;
             });
           }
         }, {
@@ -2571,16 +2605,16 @@
         }, {
           key: "getAllData",
           value: function getAllData() {
-            var _this11 = this;
+            var _this12 = this;
 
             this.accountBlockingService.getAllEmail().subscribe(function (emaildata) {
-              _this11.emaildata = emaildata.result;
-              console.log(_this11.emaildata[0].emailType);
-              localStorage.setItem("EmailType", _this11.emaildata[0].emailType);
+              _this12.emaildata = emaildata.result;
+              console.log(_this12.emaildata[0].emailType);
+              localStorage.setItem("EmailType", _this12.emaildata[0].emailType);
 
-              _this11.dtTrigger.next();
+              _this12.dtTrigger.next();
 
-              console.log(_this11.emaildata);
+              console.log(_this12.emaildata);
             });
             localStorage.setItem("EmailSwitch", "existing");
             localStorage.setItem("responseFromEmailSummary", this.emaildata);
