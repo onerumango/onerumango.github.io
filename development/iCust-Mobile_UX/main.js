@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\workspace\IcustMobile\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! G:\office_workspace\ICUST\IcustMobile\src\main.ts */"zUnb");
 
 
 /***/ }),
