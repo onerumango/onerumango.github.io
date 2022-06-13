@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\office_workspace\ICUST\IcustMobile\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! E:\workspace\IcustMobile\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -1431,52 +1431,8 @@ let ApiService = class ApiService {
     getDashboardDataNew(customerId) {
         return this.http.get(`${API_URL}/teller-service/api/mobile/${customerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
     }
-    getTransactionByAccountId(accountId, page, formattedFromDate, formattedToDate, size) {
-        var params;
-        if ((accountId != null || accountId != '' || accountId.length != 0) && page == 0) {
-            console.log('only accountId');
-            if (formattedFromDate != null && formattedToDate != null) {
-                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                    .append('accountNumber', accountId)
-                    .append('fromDate', formattedFromDate)
-                    .append('toDate', formattedToDate);
-            }
-            else {
-                if (size > 20) {
-                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                        .append('accountNumber', accountId)
-                        .append('size', size);
-                }
-                else {
-                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                        .append('accountNumber', accountId);
-                }
-            }
-        }
-        else {
-            console.log('accountId and page');
-            if (formattedFromDate != null && formattedToDate != null) {
-                params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                    .append('accountNumber', accountId)
-                    .append('page', page)
-                    .append('fromDate', formattedFromDate)
-                    .append('toDate', formattedToDate);
-            }
-            else {
-                if (size > 20) {
-                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                        .append('accountNumber', accountId)
-                        .append('page', page)
-                        .append('size', size);
-                }
-                else {
-                    params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
-                        .append('accountNumber', accountId)
-                        .append('page', page);
-                }
-            }
-        }
-        return this.http.get(`${API_URL}/cash-deposit/api/fetchTransaction?${params}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
+    getTransactionByAccountId(accountId) {
+        return this.http.get(`${API_URL}/cash-deposit/api/fetchTransaction?accountNumber=${accountId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
     }
     getByTransactionId(transId) {
         return this.http.get(`${API_URL}/cash-deposit/api/fetchByTransId/${transId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
@@ -2230,7 +2186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".bookedSlot {\n  background-color: #d4d4d4 !important;\n  pointer-events: none;\n}\n\n.availableSlot {\n  background-color: #F8F9F9 !important;\n  cursor: pointer;\n  color: black !important;\n  font-weight: 900;\n}\n\n.selectedClass {\n  color: #f7f7f7 !important;\n  background-image: linear-gradient(to right, #FE6700, #FE8430, #FEA96E) !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFx0aW1lLXNsb3RzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUUsb0NBQUE7RUFDQSxvQkFBQTtBQUFGOztBQUlBO0VBQ0Usb0NBQUE7RUFDQSxlQUFBO0VBQ0EsdUJBQUE7RUFDQSxnQkFBQTtBQURGOztBQUlBO0VBQ0UseUJBQUE7RUFDQSxpRkFBQTtBQURGIiwiZmlsZSI6InRpbWUtc2xvdHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYm9va2VkU2xvdCB7XHJcbiAgLy8gYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCAjOWM5YzljICwjYzRjNGM0LCNmNWY1ZjUpIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjEyLCAyMTIsIDIxMikgIWltcG9ydGFudDtcclxuICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICAvLyBvcGFjaXR5OiAuNSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uYXZhaWxhYmxlU2xvdCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI0Y4RjlGOSAhaW1wb3J0YW50O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDtcclxuICBmb250LXdlaWdodDogOTAwO1xyXG59XHJcblxyXG4uc2VsZWN0ZWRDbGFzcyB7XHJcbiAgY29sb3I6ICNmN2Y3ZjcgIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICNGRTY3MDAsICNGRTg0MzAsICNGRUE5NkUpICFpbXBvcnRhbnQ7XHJcbiAgLy8gYmFja2dyb3VuZC1jb2xvcjpsaWdodGJsdWU7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".bookedSlot {\n  background-color: #d4d4d4 !important;\n  pointer-events: none;\n}\n\n.availableSlot {\n  background-color: #ffffff !important;\n  cursor: pointer;\n  color: #7c7c7c !important;\n}\n\n.selectedClass {\n  color: #f7f7f7 !important;\n  background-image: linear-gradient(to right, #FE6700, #FE8430, #FEA96E) !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFx0aW1lLXNsb3RzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUksb0NBQUE7RUFDQSxvQkFBQTtBQUFKOztBQUdJO0VBQ0Usb0NBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7QUFBTjs7QUFFSTtFQUNJLHlCQUFBO0VBQ0EsaUZBQUE7QUFDUiIsImZpbGUiOiJ0aW1lLXNsb3RzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJvb2tlZFNsb3R7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICM5YzljOWMgLCNjNGM0YzQsI2Y1ZjVmNSkhaW1wb3J0YW50O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIxMiwgMjEyLCAyMTIpIWltcG9ydGFudDtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gICAgLy8gb3BhY2l0eTogLjUgIWltcG9ydGFudDtcclxuICAgIH1cclxuICAgIC5hdmFpbGFibGVTbG90e1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmICFpbXBvcnRhbnQ7XHJcbiAgICAgIGN1cnNvcjpwb2ludGVyO1xyXG4gICAgICBjb2xvcjogIzdjN2M3YyAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG4gICAgLnNlbGVjdGVkQ2xhc3N7XHJcbiAgICAgICAgY29sb3I6ICNmN2Y3ZjcgIWltcG9ydGFudDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICNGRTY3MDAgLCNGRTg0MzAsI0ZFQTk2RSkhaW1wb3J0YW50OyBcclxuICAgICAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxuICAgICAgfSJdfQ== */");
 
 /***/ }),
 
@@ -2261,7 +2217,6 @@ const environment = {
     production: true,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
     ICUST_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
-    //  ICUST_URL:'http://192.168.0.14:9001/Icust-Digital-Banking',
 };
 
 
