@@ -1153,6 +1153,34 @@
             });
           }
         }, {
+          key: "getUser",
+          value: function getUser() {
+            var _this8 = this;
+
+            this.user1 = localStorage.getItem("userobj");
+            this.apiService.fetchMedUser(JSON.parse(this.user1).userId).subscribe(function (response) {
+              _this8.initTheme(response.screenThemeSelected);
+            });
+          }
+        }, {
+          key: "initTheme",
+          value: function initTheme(bgClass) {
+            var lastBg = bgClass === "theme2" ? "theme2" : "theme1";
+            $('body').removeClass(lastBg).addClass(bgClass);
+            this.lastBg = bgClass;
+            $('.ddParent').removeClass('actDD');
+            ;
+
+            if (bgClass === "theme1") {
+              console.log($('#themeChangeRadio:nth-child(1)'));
+              $('[data-id="theme1"]').addClass('active');
+              $('[data-id="theme2"]').removeClass('active');
+            } else {
+              $('[data-id="theme1"]').removeClass('active');
+              $('[data-id="theme2"]').addClass('active');
+            }
+          }
+        }, {
           key: "showToast",
           value: function showToast() {
             this.ls.setItem("currentUser", this.userEntity.userId);
@@ -1197,7 +1225,7 @@
         }, {
           key: "showTimer",
           value: function showTimer(remaining) {
-            var _this8 = this;
+            var _this9 = this;
 
             var timerOn = true;
             this.m = Math.floor(remaining / 60);
@@ -1209,7 +1237,7 @@
 
             if (remaining >= 0 && timerOn) {
               setTimeout(function () {
-                _this8.showTimer(remaining);
+                _this9.showTimer(remaining);
               }, 1000);
               return;
             }

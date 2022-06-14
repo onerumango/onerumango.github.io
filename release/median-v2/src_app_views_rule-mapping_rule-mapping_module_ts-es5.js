@@ -1833,6 +1833,33 @@
             this.ruleMappingForm.enable();
           }
         }, {
+          key: "auditLog",
+          value: function auditLog() {
+            if (this.addSysRespData.authStatus == 'U' || this.addSysRespData.authStatus == 'Unauthorized') {
+              this.addSysRespData.authStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.addSysRespData.authStatus == 'A' || this.addSysRespData.authStatus == 'Authorized') {
+              this.addSysRespData.authStatus = 'AUTHORIZED';
+            }
+
+            if (this.addSysRespData.recordStatus == 'O' || this.addSysRespData.recordStatus == 'Open') {
+              this.addSysRespData.recordStatus = 'OPEN';
+            }
+
+            if (this.addSysRespData.recordStatus == 'C' || this.addSysRespData.recordStatus == 'Close') {
+              this.addSysRespData.recordStatus = 'CLOSED';
+            }
+
+            if (this.addSysRespData.approvedEver == 'N' || this.addSysRespData.approvedEver == 'No') {
+              this.addSysRespData.approvedEver = 'NO';
+            }
+
+            if (this.addSysRespData.approvedEver == 'Y') {
+              this.addSysRespData.approvedEver = 'YES';
+            }
+          }
+        }, {
           key: "getRuleMappingDetail",
           value: function getRuleMappingDetail() {
             return this.formBuilder.group({
@@ -2173,6 +2200,9 @@
                   _this11.rulemappingDetail.patchValue(resp.msgMappingDetails);
 
                   _this11.addSysRespData = resp;
+
+                  _this11.auditLog();
+
                   _this11.showAuditLog = true;
                   _this11.afterSubmit = true;
 
@@ -2204,6 +2234,9 @@
                   _this11.rulemappingDetail.patchValue(resp.msgMappingDetails);
 
                   _this11.addSysRespData = resp;
+
+                  _this11.auditLog();
+
                   _this11.showAuditLog = true;
                   _this11.afterSubmit = true;
 
@@ -2590,7 +2623,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !((ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "C" || (ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "CLOSED") && ctx.roleCodes.edit);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !((ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "O" || (ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "OPEN") && ctx.roleCodes.edit);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
@@ -3597,6 +3630,7 @@
               this._location.back();
             } else {
               this.addSysRespData = this.ruleMappingDataForPayload;
+              this.auditLog();
               this.rulemapping.sourceTranslationId = this.editruleMappingResp["sourceTransDetId"];
 
               if (this.rulemapping.sourceTranslationId) {
@@ -3646,6 +3680,33 @@
               serviceName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
               operationName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]
             });
+          }
+        }, {
+          key: "auditLog",
+          value: function auditLog() {
+            if (this.addSysRespData.authStatus == 'U' || this.addSysRespData.authStatus == 'Unauthorized') {
+              this.addSysRespData.authStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.addSysRespData.authStatus == 'A' || this.addSysRespData.authStatus == 'Authorized') {
+              this.addSysRespData.authStatus = 'AUTHORIZED';
+            }
+
+            if (this.addSysRespData.recordStatus == 'O' || this.addSysRespData.recordStatus == 'Open') {
+              this.addSysRespData.recordStatus = 'OPEN';
+            }
+
+            if (this.addSysRespData.recordStatus == 'C' || this.addSysRespData.recordStatus == 'Close') {
+              this.addSysRespData.recordStatus = 'CLOSED';
+            }
+
+            if (this.addSysRespData.approvedEver == 'N' || this.addSysRespData.approvedEver == 'No') {
+              this.addSysRespData.approvedEver = 'NO';
+            }
+
+            if (this.addSysRespData.approvedEver == 'Y') {
+              this.addSysRespData.approvedEver = 'YES';
+            }
           }
         }, {
           key: "canExit",
@@ -3831,6 +3892,9 @@
                   _this17.rulemap.editRuleMapping("auth", _this17.currentUser, payloadObj).subscribe(function (resp) {
                     _this17.authorizeDone = true;
                     _this17.addSysRespData = resp;
+
+                    _this17.auditLog();
+
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       text: 'Record is Authorized'
                     }); // this.toastService.successMessage('Record Authorized!', '');
@@ -3865,6 +3929,9 @@
 
                 _this18.rulemap.editRuleMapping("close", _this18.currentUser, payloadObj).subscribe(function (resp) {
                   _this18.addSysRespData = resp;
+
+                  _this18.auditLog();
+
                   _this18.editBtn = true;
                   _this18.authBtn = true;
                   _this18.deleted = false;
@@ -3903,6 +3970,9 @@
 
                 _this19.rulemap.editRuleMapping("open", _this19.currentUser, payloadObj).subscribe(function (resp) {
                   _this19.addSysRespData = resp;
+
+                  _this19.auditLog();
+
                   _this19.authBtnHide = false;
                   _this19.editBtn = false;
                   _this19.authBtn = false;
@@ -4125,6 +4195,9 @@
 
               if (resp) {
                 _this25.addSysRespData = resp;
+
+                _this25.auditLog();
+
                 _this25.disableSubmitBtn = true;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: 'Record is Updated',
