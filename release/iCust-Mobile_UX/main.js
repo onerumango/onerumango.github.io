@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Icust-Ui\IcustMobile\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! G:\office_workspace\ICUST\IcustMobile\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -915,6 +915,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
+    // ICUST_URL: 'http://localhost:1212',
     ICUST_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking'
 };
 /*
@@ -2261,8 +2262,8 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: true,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
-    ICUST_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking'
-    //  ICUST_URL:'http://192.168.0.14:9001/Icust-Digital-Banking',
+    //  ICUST_URL:'http://192.168.0.14:8081/Icust-Digital-Banking'
+    ICUST_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
 };
 
 
