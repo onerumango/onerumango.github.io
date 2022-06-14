@@ -1967,22 +1967,20 @@
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService(resp) {
-            ;
-
             if (resp) {
               this.securityData = resp;
               console.log(this.securityData);
               this.assignCheckValue(this.securityData);
 
-              if (this.securityData.recordStatus == 'O') {
+              if (this.securityData.recordStatus == 'O' || this.securityData.recordStatus == 'Open') {
                 this.securityData.recordStatus = 'OPEN';
-              } else if (this.securityData.recordStatus == 'C') {
+              } else if (this.securityData.recordStatus == 'C' || this.securityData.recordStatus == 'Close') {
                 this.securityData.recordStatus = 'CLOSE';
               }
 
-              if (this.securityData.authStatus == 'A') {
+              if (this.securityData.authStatus == 'A' || this.securityData.authStatus == 'Authorized') {
                 this.securityData.authStatus = 'AUTHORIZED';
-              } else if (this.securityData.authStatus == 'U') {
+              } else if (this.securityData.authStatus == 'U' || this.securityData.authStatus == 'Unauthorized') {
                 this.securityData.authStatus = 'UNAUTHORIZED';
               }
 
@@ -2168,9 +2166,9 @@
               this.securityData.recordStatus = 'CLOSE';
             }
 
-            if (this.securityData.authStatus == 'A') {
+            if (this.securityData.authStatus == 'A' || this.securityData.authStatus == 'Authorized') {
               this.securityData.authStatus = 'AUTHORIZED';
-            } else if (this.securityData.authStatus == 'U') {
+            } else if (this.securityData.authStatus == 'U' || this.securityData.authStatus == 'Unauthorized') {
               this.securityData.authStatus = 'UNAUTHORIZED';
             }
 

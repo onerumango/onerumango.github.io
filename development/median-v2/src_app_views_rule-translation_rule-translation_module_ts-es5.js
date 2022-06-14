@@ -1163,7 +1163,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r0.showFetch == "Https/Http");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r0.showFetch == "Https/Http" && ctx_r0.showFormat !== "JSON");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
 
@@ -1894,6 +1894,7 @@
               }
 
               _this5.showFetch = translationResp.MdmtSystemChannel[0].messageChannel;
+              _this5.showFormat = translationResp.MdmtSystemChannel[0].messageFormat;
               console.log("showFetch", _this5.showFetch);
 
               if (_this5.showFetch == 'Https/Http') {// this.fetchingXMl();
@@ -4204,11 +4205,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.showFetch == "Https/Http");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.showFetch == "Https/Http" && ctx_r0.showFormat !== "JSON");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.showFetch === "TCP/IP");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.showFetch === "TCP/IP" || ctx_r0.showFormat === "JSON");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -4915,6 +4916,7 @@
               }
 
               _this23.showFetch = translationResp.MdmtSystemChannel[0].messageChannel;
+              _this23.showFormat = translationResp.MdmtSystemChannel[0].messageFormat;
               console.log(_this23.showFetch);
 
               if (_this23.showFetch == 'Https/Http') {// this.fetchingXMl();

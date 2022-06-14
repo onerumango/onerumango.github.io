@@ -917,6 +917,26 @@ class RuleMappingCreateComponent {
         this.submit = true;
         this.ruleMappingForm.enable();
     }
+    auditLog() {
+        if (this.addSysRespData.authStatus == 'U' || this.addSysRespData.authStatus == 'Unauthorized') {
+            this.addSysRespData.authStatus = 'UNAUTHORIZED';
+        }
+        if (this.addSysRespData.authStatus == 'A' || this.addSysRespData.authStatus == 'Authorized') {
+            this.addSysRespData.authStatus = 'AUTHORIZED';
+        }
+        if (this.addSysRespData.recordStatus == 'O' || this.addSysRespData.recordStatus == 'Open') {
+            this.addSysRespData.recordStatus = 'OPEN';
+        }
+        if (this.addSysRespData.recordStatus == 'C' || this.addSysRespData.recordStatus == 'Close') {
+            this.addSysRespData.recordStatus = 'CLOSED';
+        }
+        if (this.addSysRespData.approvedEver == 'N' || this.addSysRespData.approvedEver == 'No') {
+            this.addSysRespData.approvedEver = 'NO';
+        }
+        if (this.addSysRespData.approvedEver == 'Y') {
+            this.addSysRespData.approvedEver = 'YES';
+        }
+    }
     getRuleMappingDetail() {
         return this.formBuilder.group({
             id: [''],
@@ -1180,6 +1200,7 @@ class RuleMappingCreateComponent {
                     this.mappingId = resp.mappingId;
                     this.rulemappingDetail.patchValue(resp.msgMappingDetails);
                     this.addSysRespData = resp;
+                    this.auditLog();
                     this.showAuditLog = true;
                     this.afterSubmit = true;
                     this.ruleMappingForm.disable();
@@ -1203,6 +1224,7 @@ class RuleMappingCreateComponent {
                     this.mappingId = resp.mappingId;
                     this.rulemappingDetail.patchValue(resp.msgMappingDetails);
                     this.addSysRespData = resp;
+                    this.auditLog();
                     this.showAuditLog = true;
                     this.afterSubmit = true;
                     this.ruleMappingForm.disable();
@@ -1389,7 +1411,7 @@ RuleMappingCreateComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](28);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.showSource || ctx.showDestination);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !((ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "C" || (ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "CLOSED") && ctx.roleCodes.edit);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !((ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "O" || (ctx.addSysRespData == null ? null : ctx.addSysRespData.recordStatus) == "OPEN") && ctx.roleCodes.edit);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("hidden", !ctx.submit)("disabled", ctx.ruleMappingForm.invalid);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
@@ -1866,6 +1888,7 @@ class RuleMappingDetailsComponent {
         }
         else {
             this.addSysRespData = this.ruleMappingDataForPayload;
+            this.auditLog();
             this.rulemapping.sourceTranslationId = this.editruleMappingResp["sourceTransDetId"];
             if (this.rulemapping.sourceTranslationId) {
                 this.gettingTranslationData(this.rulemapping.sourceTranslationId);
@@ -1903,6 +1926,26 @@ class RuleMappingDetailsComponent {
             serviceName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
             operationName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
         });
+    }
+    auditLog() {
+        if (this.addSysRespData.authStatus == 'U' || this.addSysRespData.authStatus == 'Unauthorized') {
+            this.addSysRespData.authStatus = 'UNAUTHORIZED';
+        }
+        if (this.addSysRespData.authStatus == 'A' || this.addSysRespData.authStatus == 'Authorized') {
+            this.addSysRespData.authStatus = 'AUTHORIZED';
+        }
+        if (this.addSysRespData.recordStatus == 'O' || this.addSysRespData.recordStatus == 'Open') {
+            this.addSysRespData.recordStatus = 'OPEN';
+        }
+        if (this.addSysRespData.recordStatus == 'C' || this.addSysRespData.recordStatus == 'Close') {
+            this.addSysRespData.recordStatus = 'CLOSED';
+        }
+        if (this.addSysRespData.approvedEver == 'N' || this.addSysRespData.approvedEver == 'No') {
+            this.addSysRespData.approvedEver = 'NO';
+        }
+        if (this.addSysRespData.approvedEver == 'Y') {
+            this.addSysRespData.approvedEver = 'YES';
+        }
     }
     canExit() {
         let isExit = false;
@@ -2038,6 +2081,7 @@ class RuleMappingDetailsComponent {
                     this.rulemap.editRuleMapping("auth", this.currentUser, payloadObj).subscribe((resp) => {
                         this.authorizeDone = true;
                         this.addSysRespData = resp;
+                        this.auditLog();
                         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: 'Record is Authorized' });
                         // this.toastService.successMessage('Record Authorized!', '');
                     });
@@ -2063,6 +2107,7 @@ class RuleMappingDetailsComponent {
                 payloadObj.msgMappingDetails = this.rulemappingDetail;
                 this.rulemap.editRuleMapping("close", this.currentUser, payloadObj).subscribe((resp) => {
                     this.addSysRespData = resp;
+                    this.auditLog();
                     this.editBtn = true;
                     this.authBtn = true;
                     this.deleted = false;
@@ -2091,6 +2136,7 @@ class RuleMappingDetailsComponent {
                 payloadObj.msgMappingDetails = this.rulemappingDetail;
                 this.rulemap.editRuleMapping("open", this.currentUser, payloadObj).subscribe((resp) => {
                     this.addSysRespData = resp;
+                    this.auditLog();
                     this.authBtnHide = false;
                     this.editBtn = false;
                     this.authBtn = false;
@@ -2262,6 +2308,7 @@ class RuleMappingDetailsComponent {
             console.log(resp);
             if (resp) {
                 this.addSysRespData = resp;
+                this.auditLog();
                 this.disableSubmitBtn = true;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: 'Record is Updated',
                     icon: 'success' });

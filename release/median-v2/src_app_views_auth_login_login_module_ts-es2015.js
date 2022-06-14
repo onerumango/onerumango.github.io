@@ -693,6 +693,28 @@ class LoginComponent {
             // console.log(err);
         });
     }
+    getUser() {
+        this.user1 = localStorage.getItem("userobj");
+        this.apiService.fetchMedUser(JSON.parse(this.user1).userId).subscribe((response) => {
+            this.initTheme(response.screenThemeSelected);
+        });
+    }
+    initTheme(bgClass) {
+        var lastBg = bgClass === "theme2" ? "theme2" : "theme1";
+        $('body').removeClass(lastBg).addClass(bgClass);
+        this.lastBg = bgClass;
+        $('.ddParent').removeClass('actDD');
+        ;
+        if (bgClass === "theme1") {
+            console.log($('#themeChangeRadio:nth-child(1)'));
+            $('[data-id="theme1"]').addClass('active');
+            $('[data-id="theme2"]').removeClass('active');
+        }
+        else {
+            $('[data-id="theme1"]').removeClass('active');
+            $('[data-id="theme2"]').addClass('active');
+        }
+    }
     showToast() {
         this.ls.setItem("currentUser", this.userEntity.userId);
         this.ls.setItem("userobj", this.userEntity);

@@ -13593,7 +13593,7 @@
           value: function modo(event) {
             console.log(event);
 
-            if (event == 'PDF') {
+            if (this.format.nativeElement.value == 'PDF') {
               this.downloadLog(this.totalRecords, this.totalPages);
             }
 

@@ -3683,7 +3683,7 @@
             // console.log(this.passwordRegex);
 
             this.userForm = this.formBuilder.group({
-              userId: [data.userId ? data.userId : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.minLength(this.usersmin), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.maxLength(this.usersmax), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern(/^[A-Z0-9@._]{0,35}$/), _UsernameValidator.cannotContainSpace]],
+              userId: [data.userId ? data.userId : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.minLength(this.usersmin), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.maxLength(this.usersmax), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^(?=.*[A-Z])[A-Z0-9@._]*'), _UsernameValidator.cannotContainSpace]],
               userName: [data.userName ? data.userName : '', _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required],
               password: [data.encryptedPassword ? data.encryptedPassword : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern(this.passwordRegex), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.maxLength(this.maxPass), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.minLength(this.minPass)])]],
               email: [data.email ? data.email : '', _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
