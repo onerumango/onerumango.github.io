@@ -914,7 +914,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    ICUST_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking'
 };
 /*
  * For easier debugging in development mode, you can import the following file
