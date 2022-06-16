@@ -3071,8 +3071,8 @@
                 Instr_code: element.instrumentNo,
                 Value_Date: _this14.pipe.transform(element.valueDate, 'dd-MMM-yy'),
                 User_Id: element.inputBy,
-                Authorizer_ID: element.firstTimeAuthorizer //16
-
+                Authorizer_ID: element.firstTimeAuthorizer,
+                Treasury_Reference: element.acumenJournal
               });
 
               console.log(_this14.dataForProcessScreen1);
@@ -3094,7 +3094,7 @@
             doc.setFontSize('bold');
             doc.setFontSize(9);
             var col = [['BatchNo', //Refrence No : // 2 skiiping this, user can see this in FlexCube
-            'AccBranch', 'Acc', 'AccDesc', 'DrCr', 'TrnCode', 'TrnDesc', 'FcyAmt', 'Rate', 'DrLcyAmt', 'CrLcyAmt', 'InstrCode', 'ValueDate', 'UserId', 'AuthId']]; // 16
+            'AccBranch', 'Acc', 'AccDesc', 'DrCr', 'TrnCode', 'TrnDesc', 'FcyAmt', 'Rate', 'DrLcyAmt', 'CrLcyAmt', 'InstrCode', 'ValueDate', 'UserId', 'AuthId', 'TreasuryReference']]; // 16
 
             var rows = [];
             console.log(this.pendingForAuthDetailsDTOList);
@@ -3113,7 +3113,7 @@
               var date = new Date(element.timeForExport).toLocaleDateString('en-us');
               console.log(date);
               var temp = [element.id.batchNo, // Refrence No : element.id.refNo, // 2 skiiping this user can see this in FlexCube
-              element.accountBranch, element.account, element.accDesc, element.drCr, element.txnCode, element.trnDesc, element.amount, element.exchRate, _this15.pdfDebitVar, _this15.pdfCreditVar, element.instrumentNo, _this15.valueDate, element.inputBy, element.firstTimeAuthorizer]; //16
+              element.accountBranch, element.account, element.accDesc, element.drCr, element.txnCode, element.trnDesc, element.amount, element.exchRate, _this15.pdfDebitVar, _this15.pdfCreditVar, element.instrumentNo, _this15.valueDate, element.inputBy, element.firstTimeAuthorizer, element.acumenJournal]; //16
 
               rows.push(temp);
             });

@@ -227,6 +227,7 @@ class HeaderComponent {
                 this.localStoreService.clear();
                 sessionStorage.clear();
                 localStorage.clear();
+                window.location.reload();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Logout Successfully",
                     icon: 'success'
