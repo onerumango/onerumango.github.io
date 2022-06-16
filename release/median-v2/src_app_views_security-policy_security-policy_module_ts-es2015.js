@@ -1124,15 +1124,29 @@ class SecurityPolicyComponent {
                 .saveDataSecurity(this.securityForm.value)
                 .subscribe((response) => {
                 this.securityData = response;
-                if (response) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Record is Created` });
-                    // this.enablesubmit = false;
-                    this.auditlog();
-                    this.edit = false;
-                    this.formTouched = !this.securityForm.touched;
+                if (this.edit = false) {
+                    if (response) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Record is Created` });
+                        // this.enablesubmit = false;
+                        this.auditlog();
+                        // this.edit = false;
+                        this.formTouched = !this.securityForm.touched;
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Saving Failed` });
+                    }
                 }
                 else {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Saving Failed` });
+                    if (response) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Record is Updated` });
+                        // this.enablesubmit = false;
+                        this.auditlog();
+                        // this.edit = false;
+                        this.formTouched = !this.securityForm.touched;
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: `Update Failed` });
+                    }
                 }
             });
         }

@@ -1915,19 +1915,36 @@
               this.secuityService.saveDataSecurity(this.securityForm.value).subscribe(function (response) {
                 _this8.securityData = response;
 
-                if (response) {
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Record is Created"
-                  }); // this.enablesubmit = false;
+                if (_this8.edit = false) {
+                  if (response) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Record is Created"
+                    }); // this.enablesubmit = false;
 
-                  _this8.auditlog();
+                    _this8.auditlog(); // this.edit = false;
 
-                  _this8.edit = false;
-                  _this8.formTouched = !_this8.securityForm.touched;
+
+                    _this8.formTouched = !_this8.securityForm.touched;
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Saving Failed"
+                    });
+                  }
                 } else {
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Saving Failed"
-                  });
+                  if (response) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Record is Updated"
+                    }); // this.enablesubmit = false;
+
+                    _this8.auditlog(); // this.edit = false;
+
+
+                    _this8.formTouched = !_this8.securityForm.touched;
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Update Failed"
+                    });
+                  }
                 }
               });
             }

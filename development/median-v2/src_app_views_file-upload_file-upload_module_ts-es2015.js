@@ -1705,7 +1705,8 @@ class AuthorizeExcelComponent {
                 Instr_code: element.instrumentNo,
                 Value_Date: this.pipe.transform(element.valueDate, 'dd-MMM-yy'),
                 User_Id: element.inputBy,
-                Authorizer_ID: element.firstTimeAuthorizer, //16
+                Authorizer_ID: element.firstTimeAuthorizer,
+                Treasury_Reference: element.acumenJournal
             });
             console.log(this.dataForProcessScreen1);
         });
@@ -1739,6 +1740,7 @@ class AuthorizeExcelComponent {
                 'ValueDate',
                 'UserId',
                 'AuthId',
+                'TreasuryReference'
             ],
         ]; // 16
         var rows = [];
@@ -1773,6 +1775,7 @@ class AuthorizeExcelComponent {
                 this.valueDate,
                 element.inputBy,
                 element.firstTimeAuthorizer,
+                element.acumenJournal
             ]; //16
             rows.push(temp);
         });
