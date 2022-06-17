@@ -3115,10 +3115,7 @@ class ApiService {
         return this.http.delete(`${API_URL}/userAccGL/deleteAccountDetailById/${id}`);
     }
     deleteglobalGCRow(id) {
-        return this.http.delete(`${API_URL}/globalAccGL/deletegGlDetailById/${id}`);
-    }
-    deleteglobalGLRow(id) {
-        return this.http.delete(`${API_URL}/globalAccGL/deleteAcDetailById/${id}`);
+        return this.http.delete(`${API_URL}/deletegGlDetailByIdRow/${id}`);
     }
     deleteUserData(UserId) {
         return this.http.delete(`${API_URL}/config/deleteWholeRecord/${UserId}`);
@@ -3201,11 +3198,11 @@ class ApiService {
     deleteUserACC(userAccClassId, userId) {
         return this.http.delete(`${API_URL}/userAccGL/deleteAccountData/${userAccClassId}/${userId}`);
     }
-    deleteGCCuserdata(globalGlCodeId, userId) {
-        return this.http.delete(`${API_URL}/globalAccGL/deletegGlData/${globalGlCodeId}/${userId}`);
+    deleteGCCuserdata(id) {
+        return this.http.delete(`${API_URL}/deletegGlDetailById/${id}`);
     }
-    deleteACCuserdata(globalAccClassId, userId) {
-        return this.http.delete(`${API_URL}/globalAccGL/deleteAcData/${globalAccClassId}/${userId}`);
+    deleteACCuserdata(id) {
+        return this.http.delete(`${API_URL}/deletegGlDetailById/${id}`);
     }
     updateGlCodeData(updatData, operation, userIdLoggedIn) {
         return this.http.put(`${median}/globalAccGL/globalgl/${operation}/${userIdLoggedIn} `, updatData);

@@ -1805,7 +1805,7 @@
         }
       }
 
-      function DepartmentIdMaintenanceComponent_tr_24_Template(rf, ctx) {
+      function DepartmentIdMaintenanceComponent_tr_28_Template(rf, ctx) {
         if (rf & 1) {
           var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
@@ -1815,7 +1815,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function DepartmentIdMaintenanceComponent_tr_24_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function DepartmentIdMaintenanceComponent_tr_28_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7);
 
             var data_r5 = restoredCtx.$implicit;
@@ -1853,7 +1853,39 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](12, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](14, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "a", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function DepartmentIdMaintenanceComponent_tr_28_Template_a_click_16_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7);
+
+            var data_r5 = restoredCtx.$implicit;
+
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r8.edit(data_r5);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](17, "i", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](19, "i", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -1881,21 +1913,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](12, 5, data_r5.inputTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](14, 6, data_r5.inputTime, "medium"));
         }
       }
 
-      function DepartmentIdMaintenanceComponent_ng_container_25_Template(rf, ctx) {
+      function DepartmentIdMaintenanceComponent_ng_container_29_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "span", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2017,9 +2053,9 @@
       _DepartmentIdMaintenanceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
         type: _DepartmentIdMaintenanceComponent,
         selectors: [["npr-department-id-maintenance"]],
-        decls: 26,
+        decls: 30,
         vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "click"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "click"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", 2, "color", "red", 3, "click"], [1, "fa", "fa-edit"], [1, "btn", 2, "color", "red"], [1, "fa", "fa-trash"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function DepartmentIdMaintenanceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -2084,7 +2120,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Record Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "Action");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2092,15 +2140,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](24, DepartmentIdMaintenanceComponent_tr_24_Template, 13, 8, "tr", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, DepartmentIdMaintenanceComponent_tr_28_Template, 20, 9, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](25, DepartmentIdMaintenanceComponent_ng_container_25_Template, 5, 0, "ng-container", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](29, DepartmentIdMaintenanceComponent_ng_container_29_Template, 5, 0, "ng-container", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -2120,7 +2168,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.respArray);
 
@@ -2327,17 +2375,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroupName", i_r12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("readonly", !ctx_r2.editFlag);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("readonly", !ctx_r2.editFlag);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c0, !ctx_r2.editFlag));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](2, _c0, !ctx_r2.editFlag));
         }
       }
 
@@ -2906,7 +2946,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r10.globalaccacsummryData.modNo);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r10.globalaccacsummryData.versionNo);
         }
       }
 
@@ -3092,8 +3132,7 @@
                   _this11.operation = 'auth';
                   accFormValues.creatorId = _this11.globalaccacsummryData.creatorId;
                   accFormValues.createdTime = _this11.globalaccacsummryData.createdTime;
-                  accFormValues.approvedEver = _this11.globalaccacsummryData.approvedEver; // accFormValues.approvedId = this.globalaccacsummryData.approvedId;
-
+                  accFormValues.approvedEver = _this11.globalaccacsummryData.approvedEver;
                   accFormValues.modNo = _this11.globalaccacsummryData.modNo;
                   accFormValues.approvedStatus = _this11.globalaccacsummryData.approvedStatus;
                   accFormValues.recordStatus = _this11.globalaccacsummryData.recordStatus;
@@ -3144,6 +3183,7 @@
           value: function onClickOfCloseACC(accFormValues) {
             var _this12 = this;
 
+            console.log(accFormValues);
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
@@ -3159,8 +3199,8 @@
                 _this12.operation = 'close';
                 accFormValues.creatorId = _this12.currentUser;
                 accFormValues.createdTime = _this12.globalaccacsummryData.createdTime;
-                accFormValues.approvedEver = _this12.globalaccacsummryData.approvedEver; // accFormValues.approvedId = this.globalaccacsummryData.approvedId;
-
+                accFormValues.approvedEver = _this12.globalaccacsummryData.approvedEver;
+                accFormValues.approvedId = '';
                 accFormValues.modNo = _this12.globalaccacsummryData.modNo;
                 accFormValues.approvedStatus = _this12.globalaccacsummryData.approvedStatus;
                 accFormValues.recordStatus = _this12.globalaccacsummryData.recordStatus;
@@ -3222,6 +3262,7 @@
           value: function onClickOfReopenACC(accFormValues) {
             var _this13 = this;
 
+            console.log(accFormValues);
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to Reopen the record. ' + ' Do you want to proceed?',
@@ -3237,8 +3278,8 @@
                 _this13.operation = 'open';
                 accFormValues.creatorId = _this13.currentUser;
                 accFormValues.createdTime = _this13.globalaccacsummryData.createdTime;
-                accFormValues.approvedEver = _this13.globalaccacsummryData.approvedEver; // accFormValues.approvedId = this.globalaccacsummryData.approvedId;
-
+                accFormValues.approvedEver = _this13.globalaccacsummryData.approvedEver;
+                accFormValues.approvedId = '';
                 accFormValues.modNo = _this13.globalaccacsummryData.modNo;
                 accFormValues.approvedStatus = _this13.globalaccacsummryData.approvedStatus;
                 accFormValues.recordStatus = _this13.globalaccacsummryData.recordStatus;
@@ -3314,7 +3355,7 @@
               if (result.isConfirmed === true) {
                 var globalGlCodeId = _this14.globalaccacsummryData.globalGlCodeId;
 
-                _this14.apiService.deleteGCCuserdata(globalGlCodeId, UserId).subscribe(function (resp) {
+                _this14.apiService.deleteGCCuserdata(globalGlCodeId).subscribe(function (resp) {
                   if (resp == true) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record Is Deleted',
@@ -3349,7 +3390,7 @@
             if (medGlobalGlCodeDetails.at(i).get('glCode').value && medGlobalGlCodeDetails.at(i).get('glDesc').value) {
               // transactionData.removeAt(i);
               console.log("this.medGlobalGlCodeDetails.formValues", data, data.id);
-              this.apiService.deleteglobalGLRow(data.id).subscribe(function (resp) {
+              this.apiService.deleteglobalGCRow(data.id).subscribe(function (resp) {
                 _this15.deleteRowResp = resp;
 
                 if (_this15.deleteRowResp == true) {
@@ -3459,7 +3500,7 @@
         selectors: [["npr-account-class-edit"]],
         decls: 55,
         vars: 14,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["role", "presentation", 1, "nav-item"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", "disable"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], [1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], ["class", "col-lg-6", 4, "ngIf"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "type", "radio", 3, "readonly"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "value", "Disallow", 3, "readonly"], ["for", "radio-4", 1, "radio-label"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "Account Class Description", "value", "", "required", "", 1, "form-control", 3, "readonly"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["role", "presentation", 1, "nav-item"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", "disable"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], [1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], ["class", "col-lg-6", 4, "ngIf"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "type", "radio", 3, "readonly"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "value", "Disallow", 3, "readonly"], ["for", "radio-4", 1, "radio-label"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "readonly]", "!editFlag", "placeholder", "Account Class", "value", "", 1, "form-control"], ["id", "transactionCode", "formControlName", "glDesc", "readonly]", "!editFlag", "placeholder", "Account Class Description", "value", "", "required", "", 1, "form-control"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
         template: function AccountClassEditComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
@@ -3578,7 +3619,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](37, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](38, AccountClassEditComponent_div_38_Template, 12, 6, "div", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](38, AccountClassEditComponent_div_38_Template, 12, 4, "div", 22);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
@@ -4684,6 +4725,7 @@
           value: function onClickOfCloseGCC(gccFormValues) {
             var _this19 = this;
 
+            console.log("accFormValues", gccFormValues);
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
@@ -4699,8 +4741,7 @@
                 _this19.operation = 'close';
                 gccFormValues.creatorId = _this19.currentUser;
                 gccFormValues.createdTime = _this19.globalgccacsummryData.createdTime;
-                gccFormValues.approvedEver = _this19.globalgccacsummryData.approvedEver; // gccFormValues.approvedId = this.globalgccacsummryData.approvedId;
-
+                gccFormValues.approvedEver = _this19.globalgccacsummryData.approvedEver;
                 gccFormValues.modNo = _this19.globalgccacsummryData.modNo;
                 gccFormValues.approvedStatus = _this19.globalgccacsummryData.approvedStatus;
                 gccFormValues.recordStatus = _this19.globalgccacsummryData.recordStatus;
@@ -4728,8 +4769,6 @@
                 if (gccFormValues.approvedEver === 'YES') {
                   gccFormValues.approvedEver = 'Y';
                 }
-
-                console.log("accFormValues", gccFormValues);
 
                 _this19.apiService.onClckOfOperationGlobal(_this19.operation, _this19.currentUser, gccFormValues).subscribe(function (closeResp) {
                   _this19.globalgccacsummryData = closeResp;
@@ -4763,6 +4802,7 @@
           value: function onClickOfReopenGCC(gccFormValues) {
             var _this20 = this;
 
+            console.log("accFormValues", gccFormValues);
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to Reopen the record. ' + ' Do you want to proceed?',
@@ -4778,11 +4818,10 @@
                 _this20.operation = 'open';
                 gccFormValues.creatorId = _this20.currentUser;
                 gccFormValues.createdTime = _this20.globalgccacsummryData.createdTime;
-                gccFormValues.approvedEver = _this20.globalgccacsummryData.approvedEver; // gccFormValues.approvedId = this.globalgccacsummryData.approvedId;
-
+                gccFormValues.approvedEver = _this20.globalgccacsummryData.approvedEver;
                 gccFormValues.modNo = _this20.globalgccacsummryData.modNo;
                 gccFormValues.approvedStatus = _this20.globalgccacsummryData.approvedStatus;
-                gccFormValues.recordStatus = _this20.globalgccacsummryData.recordStatus; // gccFormValues.approverId = this.globalgccacsummryData.approverId ;
+                gccFormValues.recordStatus = _this20.globalgccacsummryData.recordStatus;
 
                 if (gccFormValues.approvedStatus === 'UNAUTHORIZED') {
                   gccFormValues.approvedStatus = 'U';
@@ -4854,7 +4893,7 @@
               if (result.isConfirmed === true) {
                 var globalGlCodeId = _this21.globalgccacsummryData.globalGlCodeId;
 
-                _this21.apiService.deleteGCCuserdata(globalGlCodeId, UserId).subscribe(function (resp) {
+                _this21.apiService.deleteGCCuserdata(globalGlCodeId).subscribe(function (resp) {
                   if (resp == true) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record Is Deleted',
@@ -5366,7 +5405,7 @@
         }
       }
 
-      function GlobalGccAcMaintenanceComponent_tr_25_Template(rf, ctx) {
+      function GlobalGccAcMaintenanceComponent_tr_29_Template(rf, ctx) {
         if (rf & 1) {
           var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
@@ -5376,7 +5415,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "a", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_25_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_29_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r7);
 
             var udata_r5 = restoredCtx.$implicit;
@@ -5408,7 +5447,39 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](10, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](12, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "a", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_29_Template_a_click_14_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r7);
+
+            var udata_r5 = restoredCtx.$implicit;
+
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r8.sendingGccDataforEdit(udata_r5);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](15, "i", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "button", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](17, "i", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -5432,21 +5503,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](10, 4, udata_r5.createdTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](udata_r5.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](12, 5, udata_r5.createdTime, "medium"));
         }
       }
 
-      function GlobalGccAcMaintenanceComponent_ng_container_26_Template(rf, ctx) {
+      function GlobalGccAcMaintenanceComponent_ng_container_30_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -5456,9 +5531,9 @@
         }
       }
 
-      function GlobalGccAcMaintenanceComponent_tr_45_Template(rf, ctx) {
+      function GlobalGccAcMaintenanceComponent_tr_49_Template(rf, ctx) {
         if (rf & 1) {
-          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr");
 
@@ -5466,14 +5541,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "a", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_45_Template_a_click_2_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GlobalGccAcMaintenanceComponent_tr_49_Template_a_click_2_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r11);
 
-            var accdata_r8 = restoredCtx.$implicit;
+            var accdata_r9 = restoredCtx.$implicit;
 
-            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
 
-            return ctx_r9.sendingaccDataforEdit(accdata_r8);
+            return ctx_r10.sendingaccDataforEdit(accdata_r9);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3);
@@ -5506,37 +5581,37 @@
         }
 
         if (rf & 2) {
-          var accdata_r8 = ctx.$implicit;
+          var accdata_r9 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accdata_r8.permission);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accdata_r9.permission);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accdata_r8.creatorId);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accdata_r9.creatorId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accdata_r8.approvedStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accdata_r9.approvedStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](10, 4, accdata_r8.createdTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](10, 4, accdata_r9.createdTime, "medium"));
         }
       }
 
-      function GlobalGccAcMaintenanceComponent_ng_container_46_Template(rf, ctx) {
+      function GlobalGccAcMaintenanceComponent_ng_container_50_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -5731,7 +5806,7 @@
               icon: 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this27.apiService.deleteGCCuserdata(globalGlCodeId, UserId).subscribe(function (resp) {
+                _this27.apiService.deleteGCCuserdata(globalGlCodeId).subscribe(function (resp) {
                   if (resp == true) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                       title: 'Record Is Deleted',
@@ -5773,7 +5848,7 @@
               icon: 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this28.apiService.deleteACCuserdata(globalAccClassId, UserId).subscribe(function (resp) {
+                _this28.apiService.deleteACCuserdata(globalAccClassId).subscribe(function (resp) {
                   if (resp == true) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                       title: 'Record Is Deleted',
@@ -5864,9 +5939,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵloadQuery"]()) && (ctx.dtElements = _t);
           }
         },
-        decls: 49,
+        decls: 53,
         vars: 11,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", 2, "color", "red", 3, "click"], [1, "fa", "fa-edit"], [1, "btn", 2, "color", "red"], [1, "fa", "fa-trash"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function GlobalGccAcMaintenanceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
@@ -5935,7 +6010,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](22, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Record Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](25, "Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](26, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](27, "Action");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -5943,61 +6030,61 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](25, GlobalGccAcMaintenanceComponent_tr_25_Template, 11, 7, "tr", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](26, GlobalGccAcMaintenanceComponent_ng_container_26_Template, 5, 0, "ng-container", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](27, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](28, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "div", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "div", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "h4");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](32, "Account Class ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](29, GlobalGccAcMaintenanceComponent_tr_29_Template, 18, 8, "tr", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "table", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](30, GlobalGccAcMaintenanceComponent_ng_container_30_Template, 5, 0, "ng-container", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](34, "thead");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](31, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](35, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "th");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](37, "Permission");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "br");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "div", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](39, "Created By");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](34, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](35, "h4");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](36, "Account Class ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](37, "table", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "thead");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "tr");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](41, "Auth Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](41, "Permission");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](43, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](43, "Created By");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](45, "Auth Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](47, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -6005,19 +6092,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](48, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](45, GlobalGccAcMaintenanceComponent_tr_45_Template, 11, 7, "tr", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](49, GlobalGccAcMaintenanceComponent_tr_49_Template, 11, 7, "tr", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](46, GlobalGccAcMaintenanceComponent_ng_container_46_Template, 5, 0, "ng-container", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](47, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](50, GlobalGccAcMaintenanceComponent_ng_container_50_Template, 5, 0, "ng-container", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](48, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](51, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](52, "br");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -6037,7 +6124,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dtOptions", ctx.dtOptions[0])("dtTrigger", ctx.dtTrigger1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.udfData);
 
@@ -8156,7 +8243,7 @@
               if (result.isConfirmed === true) {
                 var globalGlCodeId = _this37.auditlogDataforGeneralLedger.globalGlCodeId;
 
-                _this37.apiService.deleteGCCuserdata(globalGlCodeId, UserId).subscribe(function (resp) {
+                _this37.apiService.deleteGCCuserdata(globalGlCodeId).subscribe(function (resp) {
                   if (resp == true) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record Is Deleted',
@@ -8521,7 +8608,7 @@
               if (result.isConfirmed === true) {
                 var globalGlCodeId = _this43.auditlogDataforAccountClass.globalGlCodeId;
 
-                _this43.apiService.deleteGCCuserdata(globalGlCodeId, UserId).subscribe(function (resp) {
+                _this43.apiService.deleteGCCuserdata(globalGlCodeId).subscribe(function (resp) {
                   if (resp == true) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record Is Deleted',
@@ -11100,7 +11187,7 @@
         }
       }
 
-      function TransactionCodeMaintenanceComponent_tr_20_Template(rf, ctx) {
+      function TransactionCodeMaintenanceComponent_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
@@ -11110,7 +11197,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function TransactionCodeMaintenanceComponent_tr_20_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function TransactionCodeMaintenanceComponent_tr_24_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
 
             var transactionData_r3 = restoredCtx.$implicit;
@@ -11136,7 +11223,39 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](8, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](10, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "a", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function TransactionCodeMaintenanceComponent_tr_24_Template_a_click_12_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
+
+            var transactionData_r3 = restoredCtx.$implicit;
+
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+
+            return ctx_r6.sendingDataforEdit(transactionData_r3);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](13, "i", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](15, "i", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -11156,21 +11275,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](8, 3, transactionData_r3.creatorDtStamp, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](transactionData_r3.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](10, 4, transactionData_r3.creatorDtStamp, "medium"));
         }
       }
 
-      function TransactionCodeMaintenanceComponent_ng_container_21_Template(rf, ctx) {
+      function TransactionCodeMaintenanceComponent_ng_container_25_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -11304,9 +11427,9 @@
       _TransactionCodeMaintenanceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _TransactionCodeMaintenanceComponent,
         selectors: [["npr-transaction-code-maintenance"]],
-        decls: 22,
+        decls: 26,
         vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", 2, "color", "red", 3, "click"], [1, "fa", "fa-edit"], [1, "btn", 2, "color", "red"], [1, "fa", "fa-trash"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function TransactionCodeMaintenanceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -11359,7 +11482,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "DATE");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "Record Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "DATE");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](22, "Action");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -11367,15 +11502,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, TransactionCodeMaintenanceComponent_tr_20_Template, 9, 6, "tr", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](24, TransactionCodeMaintenanceComponent_tr_24_Template, 16, 7, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, TransactionCodeMaintenanceComponent_ng_container_21_Template, 5, 0, "ng-container", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](25, TransactionCodeMaintenanceComponent_ng_container_25_Template, 5, 0, "ng-container", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -11395,7 +11530,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.transactionCodeData);
 
@@ -12680,7 +12815,7 @@
         selectors: [["npr-transaction-code-new"]],
         decls: 37,
         vars: 13,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "col-lg-4", "col-sm-6"], ["for", "roleName", 1, "formLbl"], ["id", "outlineNgSelect", "formControlName", "userId", "aria-label", "Default select example", 1, "form-select"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], ["formArrayName", "transactionData", 1, "row", "gy-4"], ["class", "row", "style", "margin-top: 20px;", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [3, "value"], [1, "row", 2, "margin-top", "20px", 3, "formGroupName"], [1, "col-lg-4", "col-sm-4"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], ["id", "transactionCode", "formControlName", "trnCode", "placeholder", "Transaction Code", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "transactionDes", "formControlName", "trnDesc", "type", "text", "placeholder", "Transaction Description", "value", "", 1, "form-control", 3, "readonly"], [3, "ngStyle"], [2, "cursor", "pointer", 3, "click"], [1, "ddIcon"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "colorRed"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "col-lg-4", "col-sm-6"], ["for", "roleName", 1, "formLbl"], ["id", "outlineNgSelect", "formControlName", "userId", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], ["formArrayName", "transactionData", 1, "row", "gy-4"], ["class", "row", "style", "margin-top: 20px;", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [3, "value"], [1, "row", 2, "margin-top", "20px", 3, "formGroupName"], [1, "col-lg-4", "col-sm-4"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], ["id", "transactionCode", "formControlName", "trnCode", "placeholder", "Transaction Code", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "transactionDes", "formControlName", "trnDesc", "type", "text", "placeholder", "Transaction Description", "value", "", 1, "form-control", 3, "readonly"], [3, "ngStyle"], [2, "cursor", "pointer", 3, "click"], [1, "ddIcon"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "colorRed"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
         template: function TransactionCodeNewComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -14477,7 +14612,7 @@
         }
       }
 
-      function UserGccAcMaintenanceComponent_tr_39_Template(rf, ctx) {
+      function UserGccAcMaintenanceComponent_tr_43_Template(rf, ctx) {
         if (rf & 1) {
           var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
@@ -14487,7 +14622,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "a", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function UserGccAcMaintenanceComponent_tr_39_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function UserGccAcMaintenanceComponent_tr_43_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r7);
 
             var trnData_r5 = restoredCtx.$implicit;
@@ -14519,7 +14654,39 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](10, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](12, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "a", 25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function UserGccAcMaintenanceComponent_tr_43_Template_a_click_14_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r7);
+
+            var trnData_r5 = restoredCtx.$implicit;
+
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r8.sendingUserGCCforEdit(trnData_r5);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](15, "i", 26);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "button", 27);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](17, "i", 28);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -14543,13 +14710,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](10, 4, trnData_r5.createdTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](trnData_r5.recordStatus);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](12, 5, trnData_r5.createdTime, "medium"));
         }
       }
 
-      function UserGccAcMaintenanceComponent_tr_56_Template(rf, ctx) {
+      function UserGccAcMaintenanceComponent_tr_60_Template(rf, ctx) {
         if (rf & 1) {
-          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr");
 
@@ -14557,14 +14728,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "a", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function UserGccAcMaintenanceComponent_tr_56_Template_a_click_2_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function UserGccAcMaintenanceComponent_tr_60_Template_a_click_2_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r11);
 
-            var accData_r8 = restoredCtx.$implicit;
+            var accData_r9 = restoredCtx.$implicit;
 
-            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
 
-            return ctx_r9.sendingUserACCforEdit(accData_r8);
+            return ctx_r10.sendingUserACCforEdit(accData_r9);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3);
@@ -14597,23 +14768,23 @@
         }
 
         if (rf & 2) {
-          var accData_r8 = ctx.$implicit;
+          var accData_r9 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accData_r8.userId);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accData_r9.userId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accData_r8.permission);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accData_r9.permission);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accData_r8.trnDesc);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](accData_r9.trnDesc);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](10, 4, accData_r8.createdTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](10, 4, accData_r9.createdTime, "medium"));
         }
       }
 
@@ -14960,9 +15131,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵloadQuery"]()) && (ctx.dtElements = _t);
           }
         },
-        decls: 57,
+        decls: 61,
         vars: 12,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle"], [1, "titleStyle"], [1, "formStyle", 3, "formGroup"], [1, "row", "gy-4"], [1, "col-lg-4", "col-sm-6"], ["id", "outlineNgSelect", "formControlName", "userId", "aria-label", "Default select example", 1, "form-select", 3, "change", "keyup"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-lg-4"], [1, "btn", "btnOutlinePrimary", "active", 3, "disabled", "click"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [3, "value"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "dbCardStyle"], [1, "titleStyle"], [1, "formStyle", 3, "formGroup"], [1, "row", "gy-4"], [1, "col-lg-4", "col-sm-6"], ["id", "outlineNgSelect", "formControlName", "userId", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px", 3, "change", "keyup"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-lg-4"], [1, "btn", "btnOutlinePrimary", "active", 3, "disabled", "click"], [1, "dbCardStyle", "dbCardStyle2", "p-0"], [1, "titleCol"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], ["datatable", "", "id", "dbTable2", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], [3, "value"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", 2, "color", "red", 3, "click"], [1, "fa", "fa-edit"], [1, "btn", 2, "color", "red"], [1, "fa", "fa-trash"]],
         template: function UserGccAcMaintenanceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
@@ -15089,7 +15260,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](37, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](37, "Record Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](39, "Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](41, "Action");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -15097,55 +15280,55 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](39, UserGccAcMaintenanceComponent_tr_39_Template, 11, 7, "tr", 20);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](43, UserGccAcMaintenanceComponent_tr_43_Template, 18, 8, "tr", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "div", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "div", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "div", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "h4");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "div", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](43, "Account Class");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "h4");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](47, "Account Class");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "table", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](48, "table", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "thead");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](49, "thead");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "th");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](48, "User ID");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](49, "th");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](50, "Permission");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](50, "tr");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](51, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](52, "Auth Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](52, "User ID");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](54, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](54, "Permission");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](56, "Auth Status");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](57, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](58, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -15153,9 +15336,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](59, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](56, UserGccAcMaintenanceComponent_tr_56_Template, 11, 7, "tr", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](60, UserGccAcMaintenanceComponent_tr_60_Template, 11, 7, "tr", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -15191,7 +15374,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dtOptions", ctx.dtOptions[0])("dtTrigger", ctx.dtTrigger1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.transactionData);
 
@@ -16409,7 +16592,7 @@
         selectors: [["npr-user-gcc-ac-new"]],
         decls: 21,
         vars: 2,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active", 3, "click"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", 3, "click"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], ["class", "formStyle", 3, "formGroup", 4, "ngIf"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "formStyle", 3, "formGroup"], [1, "row", "gy-4"], [1, "col-lg-4", "col-sm-6"], ["for", "roleName", 1, "formLbl"], ["id", "outlineNgSelect", "formControlName", "userId", "aria-label", "Default select example", 1, "form-select"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-lg-4"], [1, "row", "g-2"], ["class", "col-lg-6", 4, "ngIf"], ["formArrayName", "medUserGlCodeDetails"], [1, "row", "gy-2"], ["for", "permission", 1, "formLbl"], [1, "colorRed"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "pt-3"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-sm-auto"], [1, "row", "g-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [3, "value"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-4", 1, "radio-label"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "glCode", "type", "text", "required", "", "formControlName", "glCode", "placeholder", "GL Code", "value", "", 1, "form-control", 3, "readonly"], ["id", "glCodeDesc", "type", "text", "required", "", "formControlName", "glDesc", "placeholder", "GL Code Description", "value", "", 1, "form-control", 3, "readonly"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["formControlName", "userId", "oninput", "this.value = this.value.toUpperCase()", "list", "allusers", "id", "exampleDataList", "placeholder", "Select User ID", 1, "form-control"], ["id", "allusers"], [2, "margin-top", "20px"], ["id", "radio-5", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-5", 1, "radio-label"], ["id", "radio-6", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-6", 1, "radio-label"], ["id", "accClass", "type", "text", "required", "", "formControlName", "glCode", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "accClassDesc", "type", "text", "required", "", "formControlName", "glDesc", "placeholder", "Account Class Description", "value", "", 1, "form-control", 3, "readonly"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active", 3, "click"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", 3, "click"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], ["class", "formStyle", 3, "formGroup", 4, "ngIf"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "formStyle", 3, "formGroup"], [1, "row", "gy-4"], [1, "col-lg-4", "col-sm-6"], ["for", "roleName", 1, "formLbl"], ["id", "outlineNgSelect", "formControlName", "userId", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px"], ["hidden", "", "value", "", "disabled", "", "selected", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-lg-4"], [1, "row", "g-2"], ["class", "col-lg-6", 4, "ngIf"], ["formArrayName", "medUserGlCodeDetails"], [1, "row", "gy-2"], ["for", "permission", 1, "formLbl"], [1, "colorRed"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "pt-3"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-sm-auto"], [1, "row", "g-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [3, "value"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-4", 1, "radio-label"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "glCode", "type", "text", "required", "", "formControlName", "glCode", "placeholder", "GL Code", "value", "", 1, "form-control", 3, "readonly"], ["id", "glCodeDesc", "type", "text", "required", "", "formControlName", "glDesc", "placeholder", "GL Code Description", "value", "", 1, "form-control", 3, "readonly"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["formControlName", "userId", "oninput", "this.value = this.value.toUpperCase()", "list", "allusers", "id", "exampleDataList", "placeholder", "Select User ID", 1, "form-control"], ["id", "allusers"], [2, "margin-top", "20px"], ["id", "radio-5", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-5", 1, "radio-label"], ["id", "radio-6", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-6", 1, "radio-label"], ["id", "accClass", "type", "text", "required", "", "formControlName", "glCode", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "accClassDesc", "type", "text", "required", "", "formControlName", "glDesc", "placeholder", "Account Class Description", "value", "", 1, "form-control", 3, "readonly"]],
         template: function UserGccAcNewComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
