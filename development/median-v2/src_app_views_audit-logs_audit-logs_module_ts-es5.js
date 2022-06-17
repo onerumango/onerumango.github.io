@@ -13607,19 +13607,26 @@
             var _this61 = this;
 
             console.log(this.auditlogdata);
-            this.auditlogdata.forEach(function (element) {
-              element.timeForExport = _this61.pipe.transform(element.timeForExport, 'dd-MMM-yy');
-              element.updatedAt = _this61.pipe.transform(element.updatedAt, 'dd-MMM-yy');
-              element.creatorDtStamp = _this61.pipe.transform(element.creatorDtStamp, 'dd-MMM-yy');
+            this.http.get("".concat(this.API_URL) + "/auditLogs/getAllAuditLogs?pageNo=".concat(0, "&pageSize=", this.totalRecords)).subscribe(function (resp) {
+              _this61.arrayData = resp.result;
+
+              _this61.arrayData.forEach(function (element) {
+                element.timeForExport = _this61.pipe.transform(element.timeForExport, 'dd-MMM-yy');
+                element.updatedAt = _this61.pipe.transform(element.updatedAt, 'dd-MMM-yy');
+                element.creatorDtStamp = _this61.pipe.transform(element.creatorDtStamp, 'dd-MMM-yy');
+                element.verifierDtStamp = _this61.pipe.transform(element.verifierDtStamp, 'dd-MMM-yy');
+              });
+
+              _this61.excelService.exportAsExcelFile(_this61.arrayData, 'Audit_Report');
             });
-            this.excelService.exportAsExcelFile(this.auditlogdata, 'Audit_Report');
           }
         }, {
           key: "downloadLog",
           value: function downloadLog(totalRecords, totalNoOfPages) {
             var _this62 = this;
 
-            this.http.get("".concat(this.API_URL) + "/auditLogs/getAllAuditLogs?pageSize=".concat(totalNoOfPages, "&pageSize=").concat(totalRecords)).subscribe(function (resp) {
+            // getSecurityPolicies?pageNo=${0}&pageSize=${1000}&sortBy=${sortBy}`
+            this.http.get("".concat(this.API_URL) + "/auditLogs/getAllAuditLogs?pageNo=".concat(0, "&pageSize=", totalRecords)).subscribe(function (resp) {
               _this62.convert(resp.result);
             });
           }
@@ -13631,7 +13638,7 @@
             var rows = [];
             var itemNew = data;
             itemNew.forEach(function (element) {
-              var date = new Date(element.timeForExport).toLocaleDateString("en-us");
+              var date = new Date(element.creatorDtStamp).toLocaleDateString("en-us");
               console.log(date);
               var temp = [element.log, element.creatorId, element.actionPerformBy, element.record, element.action, date];
               rows.push(temp);

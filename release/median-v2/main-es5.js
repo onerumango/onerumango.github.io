@@ -5959,12 +5959,7 @@
         }, {
           key: "deleteglobalGCRow",
           value: function deleteglobalGCRow(id) {
-            return this.http["delete"]("".concat(_API_URL, "/globalAccGL/deletegGlDetailById/").concat(id));
-          }
-        }, {
-          key: "deleteglobalGLRow",
-          value: function deleteglobalGLRow(id) {
-            return this.http["delete"]("".concat(_API_URL, "/globalAccGL/deleteAcDetailById/").concat(id));
+            return this.http["delete"]("".concat(_API_URL, "/deletegGlDetailByIdRow/").concat(id));
           }
         }, {
           key: "deleteUserData",
@@ -6101,13 +6096,13 @@
           }
         }, {
           key: "deleteGCCuserdata",
-          value: function deleteGCCuserdata(globalGlCodeId, userId) {
-            return this.http["delete"]("".concat(_API_URL, "/globalAccGL/deletegGlData/").concat(globalGlCodeId, "/").concat(userId));
+          value: function deleteGCCuserdata(id) {
+            return this.http["delete"]("".concat(_API_URL, "/deletegGlDetailById/").concat(id));
           }
         }, {
           key: "deleteACCuserdata",
-          value: function deleteACCuserdata(globalAccClassId, userId) {
-            return this.http["delete"]("".concat(_API_URL, "/globalAccGL/deleteAcData/").concat(globalAccClassId, "/").concat(userId));
+          value: function deleteACCuserdata(id) {
+            return this.http["delete"]("".concat(_API_URL, "/deletegGlDetailById/").concat(id));
           }
         }, {
           key: "updateGlCodeData",

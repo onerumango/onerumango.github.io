@@ -6555,15 +6555,21 @@ class AuditLogsComponent {
     }
     exportAsXLSX() {
         console.log(this.auditlogdata);
-        this.auditlogdata.forEach(element => {
-            element.timeForExport = this.pipe.transform(element.timeForExport, 'dd-MMM-yy');
-            element.updatedAt = this.pipe.transform(element.updatedAt, 'dd-MMM-yy');
-            element.creatorDtStamp = this.pipe.transform(element.creatorDtStamp, 'dd-MMM-yy');
+        this.http.get(`${this.API_URL}` + `/auditLogs/getAllAuditLogs?pageNo=${0}&pageSize=${this.totalRecords}`)
+            .subscribe(resp => {
+            this.arrayData = resp.result;
+            this.arrayData.forEach(element => {
+                element.timeForExport = this.pipe.transform(element.timeForExport, 'dd-MMM-yy');
+                element.updatedAt = this.pipe.transform(element.updatedAt, 'dd-MMM-yy');
+                element.creatorDtStamp = this.pipe.transform(element.creatorDtStamp, 'dd-MMM-yy');
+                element.verifierDtStamp = this.pipe.transform(element.verifierDtStamp, 'dd-MMM-yy');
+            });
+            this.excelService.exportAsExcelFile(this.arrayData, 'Audit_Report');
         });
-        this.excelService.exportAsExcelFile(this.auditlogdata, 'Audit_Report');
     }
     downloadLog(totalRecords, totalNoOfPages) {
-        this.http.get(`${this.API_URL}` + `/auditLogs/getAllAuditLogs?pageSize=${totalNoOfPages}&pageSize=${totalRecords}`)
+        // getSecurityPolicies?pageNo=${0}&pageSize=${1000}&sortBy=${sortBy}`
+        this.http.get(`${this.API_URL}` + `/auditLogs/getAllAuditLogs?pageNo=${0}&pageSize=${totalRecords}`)
             .subscribe(resp => {
             this.convert(resp.result);
         });
@@ -6574,7 +6580,7 @@ class AuditLogsComponent {
         var rows = [];
         var itemNew = data;
         itemNew.forEach(element => {
-            var date = new Date(element.timeForExport).toLocaleDateString("en-us");
+            var date = new Date(element.creatorDtStamp).toLocaleDateString("en-us");
             console.log(date);
             var temp = [element.log, element.creatorId, element.actionPerformBy, element.record, element.action, date];
             rows.push(temp);
