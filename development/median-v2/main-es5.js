@@ -407,6 +407,7 @@
 
                 sessionStorage.clear();
                 localStorage.clear();
+                window.location.reload();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: "Logout Successfully",
                   icon: 'success'
@@ -5621,7 +5622,7 @@
             medGlobalGlCodeDetails: [],
             permission: '',
             recordStatus: '',
-            versionNo: '',
+            modNo: '',
             activeTab: ''
           });
           this.globalAccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
@@ -5631,11 +5632,11 @@
             approverId: '',
             createdTime: '',
             creatorId: '',
-            globalAccClassId: '',
-            medGlobalAccountClassDetails: [],
+            globalGlCodeId: '',
+            medGlobalGlCodeDetails: [],
             permission: '',
             recordStatus: '',
-            versionNo: '',
+            modNo: '',
             activeTab: ''
           });
           this.userGCCSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
@@ -6056,7 +6057,7 @@
         }, {
           key: "onClckOfOperationACC",
           value: function onClckOfOperationACC(operation, userIdLoggedIn, data) {
-            return this.http.put("".concat(_API_URL, "/globalAccGL/globalAcc/").concat(operation, "/").concat(userIdLoggedIn), data);
+            return this.http.put("".concat(_API_URL, "/globalAccGL/globalgl/").concat(operation, "/").concat(userIdLoggedIn), data);
           }
         }, {
           key: "onClckOfOperationGCCUser",
@@ -6066,7 +6067,7 @@
         }, {
           key: "onClckOfOperationACCUser",
           value: function onClckOfOperationACCUser(operation, userIdLoggedIn, data) {
-            return this.http.put("".concat(_API_URL, "/userAccGL/userAccClass/").concat(operation, "/").concat(userIdLoggedIn, " "), data);
+            return this.http.put("".concat(_API_URL, "/userAccGL/userGl/").concat(operation, "/").concat(userIdLoggedIn, " "), data);
           }
         }, {
           key: "getAccData",
@@ -6116,7 +6117,7 @@
         }, {
           key: "updateACCCodeData",
           value: function updateACCCodeData(updatData, operation, userIdLoggedIn) {
-            return this.http.put("".concat(_median, "/globalAccGL/globalAcc/").concat(operation, "/").concat(userIdLoggedIn, " "), updatData);
+            return this.http.put("".concat(_median, "/globalAccGL/globalgl/").concat(operation, "/").concat(userIdLoggedIn, " "), updatData);
           }
         }, {
           key: "updateUserGlCodeData",
@@ -6126,7 +6127,7 @@
         }, {
           key: "updateUserACCCodeData",
           value: function updateUserACCCodeData(updatData, operation, userIdLoggedIn) {
-            return this.http.put("".concat(_median, "/userAccGL/userAccClass/").concat(operation, "/").concat(userIdLoggedIn), updatData);
+            return this.http.put("".concat(_median, "/userAccGL/userGl/").concat(operation, "/").concat(userIdLoggedIn), updatData);
           }
         }, {
           key: "saveAccountCodeData",

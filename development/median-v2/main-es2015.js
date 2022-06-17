@@ -227,6 +227,7 @@ class HeaderComponent {
                 this.localStoreService.clear();
                 sessionStorage.clear();
                 localStorage.clear();
+                window.location.reload();
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Logout Successfully",
                     icon: 'success'
@@ -2862,7 +2863,7 @@ class ApiService {
             medGlobalGlCodeDetails: [],
             permission: '',
             recordStatus: '',
-            versionNo: '',
+            modNo: '',
             activeTab: '',
         });
         this.globalAccSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
@@ -2872,11 +2873,11 @@ class ApiService {
             approverId: '',
             createdTime: '',
             creatorId: '',
-            globalAccClassId: '',
-            medGlobalAccountClassDetails: [],
+            globalGlCodeId: '',
+            medGlobalGlCodeDetails: [],
             permission: '',
             recordStatus: '',
-            versionNo: '',
+            modNo: '',
             activeTab: ''
         });
         this.userGCCSummary = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
@@ -3174,13 +3175,13 @@ class ApiService {
         return this.http.put(`${API_URL}/globalAccGL/globalgl/${operation}/${userIdLoggedIn} `, data);
     }
     onClckOfOperationACC(operation, userIdLoggedIn, data) {
-        return this.http.put(`${API_URL}/globalAccGL/globalAcc/${operation}/${userIdLoggedIn}`, data);
+        return this.http.put(`${API_URL}/globalAccGL/globalgl/${operation}/${userIdLoggedIn}`, data);
     }
     onClckOfOperationGCCUser(operation, userIdLoggedIn, data) {
         return this.http.put(`${API_URL}/userAccGL/userGl/${operation}/${userIdLoggedIn}   `, data);
     }
     onClckOfOperationACCUser(operation, userIdLoggedIn, data) {
-        return this.http.put(`${API_URL}/userAccGL/userAccClass/${operation}/${userIdLoggedIn} `, data);
+        return this.http.put(`${API_URL}/userAccGL/userGl/${operation}/${userIdLoggedIn} `, data);
     }
     getAccData(type) {
         return this.http.get(`${median}/globalAccGL/getAllGlobalGlData/${type}`);
@@ -3210,13 +3211,13 @@ class ApiService {
         return this.http.put(`${median}/globalAccGL/globalgl/${operation}/${userIdLoggedIn} `, updatData);
     }
     updateACCCodeData(updatData, operation, userIdLoggedIn) {
-        return this.http.put(`${median}/globalAccGL/globalAcc/${operation}/${userIdLoggedIn} `, updatData);
+        return this.http.put(`${median}/globalAccGL/globalgl/${operation}/${userIdLoggedIn} `, updatData);
     }
     updateUserGlCodeData(updatData, operation, userIdLoggedIn) {
         return this.http.put(`${median}/userAccGL/userGl/${operation}/${userIdLoggedIn}`, updatData);
     }
     updateUserACCCodeData(updatData, operation, userIdLoggedIn) {
-        return this.http.put(`${median}/userAccGL/userAccClass/${operation}/${userIdLoggedIn}`, updatData);
+        return this.http.put(`${median}/userAccGL/userGl/${operation}/${userIdLoggedIn}`, updatData);
     }
     saveAccountCodeData(trnData, userId) {
         return this.http.post(`${median}/globalAccGL/globalsaveGl/${userId}`, trnData);

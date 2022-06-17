@@ -1915,19 +1915,36 @@
               this.secuityService.saveDataSecurity(this.securityForm.value).subscribe(function (response) {
                 _this8.securityData = response;
 
-                if (response) {
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Record is Created"
-                  }); // this.enablesubmit = false;
+                if (_this8.edit = false) {
+                  if (response) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Record is Created"
+                    }); // this.enablesubmit = false;
 
-                  _this8.auditlog();
+                    _this8.auditlog(); // this.edit = false;
 
-                  _this8.edit = false;
-                  _this8.formTouched = !_this8.securityForm.touched;
+
+                    _this8.formTouched = !_this8.securityForm.touched;
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Saving Failed"
+                    });
+                  }
                 } else {
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                    text: "Saving Failed"
-                  });
+                  if (response) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Record is Updated"
+                    }); // this.enablesubmit = false;
+
+                    _this8.auditlog(); // this.edit = false;
+
+
+                    _this8.formTouched = !_this8.securityForm.touched;
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: "Update Failed"
+                    });
+                  }
                 }
               });
             }
@@ -1967,22 +1984,20 @@
         }, {
           key: "fetchSecurityPolicyService",
           value: function fetchSecurityPolicyService(resp) {
-            ;
-
             if (resp) {
               this.securityData = resp;
               console.log(this.securityData);
               this.assignCheckValue(this.securityData);
 
-              if (this.securityData.recordStatus == 'O') {
+              if (this.securityData.recordStatus == 'O' || this.securityData.recordStatus == 'Open') {
                 this.securityData.recordStatus = 'OPEN';
-              } else if (this.securityData.recordStatus == 'C') {
+              } else if (this.securityData.recordStatus == 'C' || this.securityData.recordStatus == 'Close') {
                 this.securityData.recordStatus = 'CLOSE';
               }
 
-              if (this.securityData.authStatus == 'A') {
+              if (this.securityData.authStatus == 'A' || this.securityData.authStatus == 'Authorized') {
                 this.securityData.authStatus = 'AUTHORIZED';
-              } else if (this.securityData.authStatus == 'U') {
+              } else if (this.securityData.authStatus == 'U' || this.securityData.authStatus == 'Unauthorized') {
                 this.securityData.authStatus = 'UNAUTHORIZED';
               }
 
@@ -2168,9 +2183,9 @@
               this.securityData.recordStatus = 'CLOSE';
             }
 
-            if (this.securityData.authStatus == 'A') {
+            if (this.securityData.authStatus == 'A' || this.securityData.authStatus == 'Authorized') {
               this.securityData.authStatus = 'AUTHORIZED';
-            } else if (this.securityData.authStatus == 'U') {
+            } else if (this.securityData.authStatus == 'U' || this.securityData.authStatus == 'Unauthorized') {
               this.securityData.authStatus = 'UNAUTHORIZED';
             }
 

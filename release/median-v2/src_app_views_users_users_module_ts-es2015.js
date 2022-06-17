@@ -2037,7 +2037,7 @@ class UserNewComponent {
                     _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required,
                     _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.minLength(this.usersmin),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.maxLength(this.usersmax),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern(/^[A-Z0-9@._]{0,35}$/),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^(?=.*[A-Z])[A-Z0-9@._]*'),
                     UsernameValidator.cannotContainSpace,
                 ],
             ],
