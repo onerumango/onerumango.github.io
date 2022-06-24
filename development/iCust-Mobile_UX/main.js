@@ -1415,6 +1415,12 @@ let ApiService = class ApiService {
         return this.http.post(`${API_URL}/token/api/qr-code-generator`, data, { responseType: 'blob' });
         // return this.http.get<any>(`${API_URL1}/token/api/fetch-qr-code/${data}`).pipe(catchError(this.errorHandler));
     }
+    fetchWalletInfo(customerId) {
+        return this.http.get(`${API_URL}/cash-deposit/api/fetchWalletInfo?customerId=${customerId}`);
+    }
+    updateAddToWallet(model) {
+        return this.http.put(`${API_URL}/cash-deposit/api/updateAddToWallet`, model);
+    }
     saveAccount(data) {
         return this.http.post(`${API_URL}/customerdata/upsertCustomerDetails`, data);
     }
@@ -2711,10 +2717,10 @@ const rootRouterConfig = [
         path: 'transaction-popup',
         loadChildren: () => Promise.all(/*! import() | views-transaction-popup-transaction-popup-module */[__webpack_require__.e("default~transaction-transaction-module~views-transaction-popup-transaction-popup-module"), __webpack_require__.e("views-transaction-popup-transaction-popup-module")]).then(__webpack_require__.bind(null, /*! ./views/transaction-popup/transaction-popup.module */ "rf77")).then(m => m.TransactionPopupPageModule)
     },
-    // {
-    //   path: 'profile',
-    //   loadChildren: () => import('./views/profile/profile.module').then( m => m.ProfilePageModule)
-    // },
+    {
+        path: 'wallet',
+        loadChildren: () => __webpack_require__.e(/*! import() | views-wallet-wallet-module */ "views-wallet-wallet-module").then(__webpack_require__.bind(null, /*! ./views/wallet/wallet.module */ "PSIy")).then(m => m.WalletModule)
+    },
     // {
     //   path: 'home',
     //   loadChildren: () => import('./views/home/home.module').then( m => m.HomePageModule)
