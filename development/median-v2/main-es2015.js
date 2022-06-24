@@ -226,6 +226,15 @@ class HeaderComponent {
         if (item === 'Account Closure Maintenance') {
             this.router.navigate(['/account-closure-maintenance/account-closure-summary']);
         }
+        if (item === 'Profile') {
+            this.router.navigate(['/profile']);
+        }
+        if (item === 'Change Password') {
+            this.router.navigate(['/change-password']);
+        }
+        if (item === 'Logout') {
+            this.router.navigate(['/session/login']);
+        }
     }
     onChangeSearch(search) {
         // fetch remote data from here
@@ -278,6 +287,7 @@ class HeaderComponent {
         this.screenwisePermissions.next(permissionlist);
         this.screenwisePermissions.subscribe(message => this.screenpermissions = message);
         console.log("screen permissions final", this.screenpermissions);
+        this.screenpermissions.push('Profile', 'Change Password', 'Logout');
     }
     getUser() {
         this.api.fetchMedUser(JSON.parse(this.user1).userId).subscribe((response) => {

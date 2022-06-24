@@ -19141,13 +19141,16 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
+                console.log(_this7.externalSystemSummry);
                 _this7.externalSystemSummry.modifiedBy = _this7.currentUser;
+                console.log(_this7.externalSystemSummry.modifiedBy);
 
                 _this7.apiService.closingTheRecord(_this7.externalSystemSummry).subscribe(function (closeResp) {
                   console.log(closeResp);
                   _this7.externalSystemSummry = closeResp;
 
                   if (_this7.externalSystemSummry) {
+                    console.log(_this7.externalSystemSummry);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Record is  Closed',
                       icon: 'success'
@@ -20717,7 +20720,13 @@
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/common/http */
+      53882);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! rxjs */
       79441);
       /* harmony import */
@@ -20729,43 +20738,53 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! sweetalert2 */
+      18190);
+      /* harmony import */
+
+
+      var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/core */
       2316);
       /* harmony import */
 
 
-      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
       94761);
       /* harmony import */
 
 
-      var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
       31443);
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! src/app/shared/services/role.service */
       77382);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
 
 
-      var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var angular_datatables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! angular-datatables */
       50481);
 
@@ -20779,153 +20798,281 @@
 
       function ExternalSystemComponent_div_6_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "a", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "a", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](3, _c0))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](4, _c1));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](3, _c0))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](4, _c1));
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r0.roleCodes["new"].labelDescription);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r0.roleCodes["new"].labelDescription);
+        }
+      }
+
+      function ExternalSystemComponent_tr_28_button_17_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExternalSystemComponent_tr_28_button_17_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r10);
+
+            var item_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r8.close(item_r3);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "close");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ExternalSystemComponent_tr_28_button_18_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExternalSystemComponent_tr_28_button_18_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r13);
+
+            var item_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r11.open(item_r3);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Open");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ExternalSystemComponent_tr_28_button_19_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExternalSystemComponent_tr_28_button_19_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r16);
+
+            var item_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r14["delete"](item_r3);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ExternalSystemComponent_tr_28_button_20_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExternalSystemComponent_tr_28_button_20_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r19);
+
+            var item_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r17.auth(item_r3);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Authorize");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         }
       }
 
       function ExternalSystemComponent_tr_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ExternalSystemComponent_tr_28_Template_span_click_2_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExternalSystemComponent_tr_28_Template_span_click_2_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r21);
 
             var item_r3 = restoredCtx.$implicit;
 
-            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
 
-            return ctx_r4.sendingDataforEdit(item_r3);
+            return ctx_r20.sendingDataforEdit(item_r3);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](14, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](14, "date");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "button", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "span", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](17, "i", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](17, ExternalSystemComponent_tr_28_button_17_Template, 4, 0, "button", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](18, ExternalSystemComponent_tr_28_button_18_Template, 4, 0, "button", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "button", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](19, ExternalSystemComponent_tr_28_button_19_Template, 4, 0, "button", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "i", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](20, ExternalSystemComponent_tr_28_button_20_Template, 4, 0, "button", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
           var item_r3 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r3.extSysCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.extSysCode);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r3.extSysName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.extSysName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r3.department);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.department);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r3.authStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.authStatus);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r3.recordStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.recordStatus);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](14, 6, item_r3.modifiedTime, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](14, 10, item_r3.modifiedTime, "medium"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (item_r3.recordStatus == "O" || item_r3.recordStatus == "Open" || item_r3.recordStatus == "OPEN") && (item_r3.verifiedOnce == "Y" || item_r3.verifiedOnce == "YES"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r3.recordStatus == "C");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r3.verifiedOnce == "N" || item_r3.verifiedOnce == "NO");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r3.authStatus == "U" || item_r3.authStatus == "UNAUTHORIZED");
         }
       }
 
       function ExternalSystemComponent_ng_container_29_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 21);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Please wait... ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
         }
       }
 
@@ -20938,7 +21085,7 @@
           this.router = router;
           this.roleService = roleService;
           this.dtOptions = {};
-          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
+          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__.Subject();
           this.isLoading = false;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
         }
@@ -20959,6 +21106,7 @@
               processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
+            this.currentUser = localStorage.getItem("userFromLogin");
             this.gettingExternalSummry();
             this.roleService.fetchScreenPermissions('External System');
             this.roleService.screenLabelList.subscribe(function (message) {
@@ -20979,10 +21127,222 @@
             this.isLoading = true;
             this.apiService.getAllExt().subscribe(function (summryResp) {
               _this19.externalSummaryData = summryResp.result;
-              console.log(_this19.externalSummaryData);
               _this19.isLoading = false;
 
               _this19.dtTrigger.next();
+            });
+          }
+        }, {
+          key: "auditLog",
+          value: function auditLog() {
+            if (this.externalSystemSummry.authStatus === 'U') {
+              this.externalSystemSummry.authStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.externalSystemSummry.authStatus === 'A') {
+              this.externalSystemSummry.authStatus = 'AUTHORIZED';
+            }
+
+            if (this.externalSystemSummry.recordStatus === 'O') {
+              this.externalSystemSummry.recordStatus = 'OPEN';
+            }
+
+            if (this.externalSystemSummry.recordStatus === 'C') {
+              this.externalSystemSummry.recordStatus = 'CLOSED';
+            }
+
+            if (this.externalSystemSummry.verifiedOnce === 'N') {
+              this.externalSystemSummry.verifiedOnce = 'NO';
+            }
+
+            if (this.externalSystemSummry.verifiedOnce === 'Y') {
+              this.externalSystemSummry.verifiedOnce = 'YES';
+            }
+          }
+        }, {
+          key: "close",
+          value: function close(item) {
+            var _this20 = this;
+
+            this.externalSystemSummry = item;
+            console.log(this.externalSystemSummry);
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to close record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                console.log(_this20.externalSystemSummry);
+                _this20.externalSystemSummry.modifiedBy = _this20.currentUser;
+                console.log(_this20.externalSystemSummry.modifiedBy);
+
+                _this20.apiService.closingTheRecord(_this20.externalSystemSummry).subscribe(function (closeResp) {
+                  console.log(closeResp);
+                  _this20.externalSystemSummry = closeResp;
+
+                  if (_this20.externalSystemSummry) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is  Closed',
+                      icon: 'success'
+                    });
+
+                    _this20.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Close the Recored!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "open",
+          value: function open(item) {
+            var _this21 = this;
+
+            console.log(item);
+            this.externalSystemSummry = item;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to re-open record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                _this21.apiService.reopeningTheRecord(_this21.externalSystemSummry).subscribe(function (openResp) {
+                  console.log(openResp);
+                  _this21.externalSystemSummry = openResp;
+
+                  if (_this21.externalSystemSummry) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Reopened',
+                      icon: 'success'
+                    });
+
+                    _this21.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Reopen the Record!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "delete",
+          value: function _delete(item) {
+            var _this22 = this;
+
+            console.log(item);
+            this.externalSystemSummry = item;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to delete record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                _this22.apiService.onClickOfDeleteOfUpdateExcel(_this22.externalSystemSummry).subscribe(function (resp) {
+                  console.log(resp);
+
+                  if (resp === true) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Deleted',
+                      icon: 'success'
+                    });
+
+                    _this22.router.navigateByUrl('/external-system/extSys-summary');
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Delete User Data!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "auth",
+          value: function auth(item) {
+            var _this23 = this;
+
+            console.log(item);
+            this.externalSystemSummry = item;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                if (_this23.externalSystemSummry.modifiedBy === _this23.currentUser) {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: "Maker cannot authorize the record",
+                    icon: 'error'
+                  });
+                  return;
+                }
+
+                _this23.apiService.authorizingTheRecordExternal(_this23.externalSystemSummry, _this23.currentUser).subscribe(function (authResp) {
+                  _this23.externalSystemSummry = authResp;
+
+                  _this23.auditLog();
+
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    title: 'Record is Authorized ',
+                    icon: 'success'
+                  });
+                }); // }
+
+              }
             });
           }
         }, {
@@ -21008,140 +21368,145 @@
               this.router.navigate(['/external-system/extSys-edit']);
             }
           }
+        }, {
+          key: "refreshPage",
+          value: function refreshPage() {
+            window.location.reload();
+          }
         }]);
 
         return _ExternalSystemComponent;
       }();
 
       _ExternalSystemComponent.ɵfac = function ExternalSystemComponent_Factory(t) {
-        return new (t || _ExternalSystemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService));
+        return new (t || _ExternalSystemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService));
       };
 
-      _ExternalSystemComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+      _ExternalSystemComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
         type: _ExternalSystemComponent,
         selectors: [["npr-external-system"]],
         decls: 30,
         vars: 5,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "routerLinkActive"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", 2, "color", "red"], [1, "fa", "fa-trash"], [1, "fa", "fa-edit"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "routerLinkActive"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [2, "display", "flex", "gap", "50px"], ["class", "iconBtn", "color", "primary", 3, "click", 4, "ngIf"], ["color", "primary", 1, "iconBtn", 3, "click"], [1, "btnTooltip"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["src", "assets/images/open.svg", "alt", "..."], ["src", "assets/images/delete.svg", "alt", "..."], ["src", "assets/images/authorize.svg", "alt", "Authorize"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function ExternalSystemComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "External System");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "External System");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, ExternalSystemComponent_div_6_Template, 3, 5, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, ExternalSystemComponent_div_6_Template, 3, 5, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "a", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "a", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Exit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9, "Exit");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "table", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "table", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "thead");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "thead");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "External System Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](14, "External System Code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "External System Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](16, "External System Name");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "Department");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](18, "Department");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "Auth Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20, "Auth Status");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](22, "Record Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](22, "Record Status");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](24, "Date");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "Action");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](26, "Action");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](28, ExternalSystemComponent_tr_28_Template, 20, 9, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, ExternalSystemComponent_tr_28_Template, 21, 13, "tr", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](29, ExternalSystemComponent_ng_container_29_Template, 5, 0, "ng-container", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](29, ExternalSystemComponent_ng_container_29_Template, 5, 0, "ng-container", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.roleCodes["new"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.roleCodes["new"]);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.externalSummaryData);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.externalSummaryData);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.isLoading);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.isLoading);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, angular_datatables__WEBPACK_IMPORTED_MODULE_4__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkActive],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, angular_datatables__WEBPACK_IMPORTED_MODULE_5__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkActive],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJleHRlcm5hbC1zeXN0ZW0uY29tcG9uZW50LnNjc3MifQ== */"]
       });
       /***/
@@ -22358,16 +22723,16 @@
         _createClass(_ProcessCodeMappingEditComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this20 = this;
+            var _this24 = this;
 
             setTimeout(function () {
-              _this20.newRolePermissions();
+              _this24.newRolePermissions();
             }, 2000);
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this20.roleCodes = message;
+              return _this24.roleCodes = message;
             });
             setTimeout(function () {
-              console.log(_this20.roleCodes);
+              console.log(_this24.roleCodes);
             }, 3000);
             this.currentUser = localStorage.getItem("userFromLogin");
             this.processCodeEditForm = this.formBuilder.group({
@@ -22441,122 +22806,122 @@
         }, {
           key: "gettingProcessCode",
           value: function gettingProcessCode() {
-            var _this21 = this;
+            var _this25 = this;
 
             this.apiService.getProcessCode().subscribe(function (summaryData) {
-              _this21.processCodeSummary = summaryData;
+              _this25.processCodeSummary = summaryData;
               var retrievedObject = localStorage.getItem('processCodeSummary');
-              _this21.processCodeSummary = JSON.parse(retrievedObject);
-              console.log("this.processCodeSummary", _this21.processCodeSummary);
-              var extCode = _this21.processCodeSummary.extSysCode;
-              var extSysName = _this21.processCodeSummary.extSysName;
-              var minlimit = _this21.processCodeSummary.maxUploadLimit;
-              var process = _this21.processCodeSummary.processCode;
-              var treasuryrefReq = _this21.processCodeSummary.treasuryrefRequired;
-              var autoUpload = _this21.processCodeSummary.autoUpload;
-              var backDateAllow = _this21.processCodeSummary.backDateAllow;
-              var fCYRateVariance = _this21.processCodeSummary.fCYRateVariance;
-              var sftpRequired = _this21.processCodeSummary.sftpRequired;
-              var futureDateAllow = _this21.processCodeSummary.futureDateAllow;
-              var wuFile = _this21.processCodeSummary.wuFile;
+              _this25.processCodeSummary = JSON.parse(retrievedObject);
+              console.log("this.processCodeSummary", _this25.processCodeSummary);
+              var extCode = _this25.processCodeSummary.extSysCode;
+              var extSysName = _this25.processCodeSummary.extSysName;
+              var minlimit = _this25.processCodeSummary.maxUploadLimit;
+              var process = _this25.processCodeSummary.processCode;
+              var treasuryrefReq = _this25.processCodeSummary.treasuryrefRequired;
+              var autoUpload = _this25.processCodeSummary.autoUpload;
+              var backDateAllow = _this25.processCodeSummary.backDateAllow;
+              var fCYRateVariance = _this25.processCodeSummary.fCYRateVariance;
+              var sftpRequired = _this25.processCodeSummary.sftpRequired;
+              var futureDateAllow = _this25.processCodeSummary.futureDateAllow;
+              var wuFile = _this25.processCodeSummary.wuFile;
 
-              _this21.processCodeEditForm.controls.wuFile.setValue(wuFile);
+              _this25.processCodeEditForm.controls.wuFile.setValue(wuFile);
 
-              var mandatoryFieldImposed = _this21.processCodeSummary.mandatoryFieldImposed;
+              var mandatoryFieldImposed = _this25.processCodeSummary.mandatoryFieldImposed;
 
-              _this21.processCodeEditForm.controls.mandatoryFieldImposed.setValue(mandatoryFieldImposed);
+              _this25.processCodeEditForm.controls.mandatoryFieldImposed.setValue(mandatoryFieldImposed);
 
-              var acft = _this21.processCodeSummary.acft;
+              var acft = _this25.processCodeSummary.acft;
 
-              _this21.processCodeEditForm.controls.acft.setValue(acft);
+              _this25.processCodeEditForm.controls.acft.setValue(acft);
 
-              _this21.processCodeEditForm.controls.extSysCode.setValue(extCode);
+              _this25.processCodeEditForm.controls.extSysCode.setValue(extCode);
 
-              _this21.processCodeEditForm.controls.extSysName.setValue(extSysName);
+              _this25.processCodeEditForm.controls.extSysName.setValue(extSysName);
 
-              _this21.processCodeEditForm.controls.processCode.setValue(process);
+              _this25.processCodeEditForm.controls.processCode.setValue(process);
 
-              _this21.processCodeEditForm.controls.maxUploadLimit.setValue(minlimit);
+              _this25.processCodeEditForm.controls.maxUploadLimit.setValue(minlimit);
 
-              _this21.processCodeEditForm.controls.treasuryrefRequired.setValue(treasuryrefReq);
+              _this25.processCodeEditForm.controls.treasuryrefRequired.setValue(treasuryrefReq);
 
-              _this21.processCodeEditForm.controls.autoUpload.setValue(autoUpload);
+              _this25.processCodeEditForm.controls.autoUpload.setValue(autoUpload);
 
-              _this21.processCodeEditForm.controls.backDateAllow.setValue(backDateAllow);
+              _this25.processCodeEditForm.controls.backDateAllow.setValue(backDateAllow);
 
-              _this21.processCodeEditForm.controls.fCYRateVariance.setValue(fCYRateVariance);
+              _this25.processCodeEditForm.controls.fCYRateVariance.setValue(fCYRateVariance);
 
-              _this21.processCodeEditForm.controls.sftpRequired.setValue(sftpRequired);
+              _this25.processCodeEditForm.controls.sftpRequired.setValue(sftpRequired);
 
-              _this21.processCodeEditForm.controls.futureDateAllow.setValue(futureDateAllow);
+              _this25.processCodeEditForm.controls.futureDateAllow.setValue(futureDateAllow);
 
-              _this21.processCodeEditForm.controls.id.setValue(_this21.processCodeSummary.id);
+              _this25.processCodeEditForm.controls.id.setValue(_this25.processCodeSummary.id);
 
-              _this21.processCodeEditForm.controls.recordStatus.setValue(_this21.processCodeSummary.recordStatus);
+              _this25.processCodeEditForm.controls.recordStatus.setValue(_this25.processCodeSummary.recordStatus);
 
-              _this21.processCodeEditForm.controls.verifiedOnce.setValue(_this21.processCodeSummary.verifiedOnce);
+              _this25.processCodeEditForm.controls.verifiedOnce.setValue(_this25.processCodeSummary.verifiedOnce);
 
-              _this21.processCodeEditForm.controls.versionNo.setValue(_this21.processCodeSummary.versionNo);
+              _this25.processCodeEditForm.controls.versionNo.setValue(_this25.processCodeSummary.versionNo);
 
-              _this21.processCodeEditForm.controls.verifierId.setValue(_this21.processCodeSummary.verifierId);
+              _this25.processCodeEditForm.controls.verifierId.setValue(_this25.processCodeSummary.verifierId);
 
-              _this21.processCodeEditForm.controls.verifierDtStamp.setValue(_this21.processCodeSummary.verifierDtStamp);
+              _this25.processCodeEditForm.controls.verifierDtStamp.setValue(_this25.processCodeSummary.verifierDtStamp);
 
               if (autoUpload == true) {
-                _this21.showFilefield = true;
-                var fileName = _this21.processCodeSummary.fileName;
-                var filePath = _this21.processCodeSummary.filePath;
+                _this25.showFilefield = true;
+                var fileName = _this25.processCodeSummary.fileName;
+                var filePath = _this25.processCodeSummary.filePath;
 
-                _this21.processCodeEditForm.controls.fileName.setValue(fileName);
+                _this25.processCodeEditForm.controls.fileName.setValue(fileName);
 
-                _this21.processCodeEditForm.controls.filePath.setValue(filePath);
+                _this25.processCodeEditForm.controls.filePath.setValue(filePath);
               }
 
               if (backDateAllow == true) {
-                _this21.showbackDateValue = true;
-                var bdav = _this21.processCodeSummary.bdav;
+                _this25.showbackDateValue = true;
+                var bdav = _this25.processCodeSummary.bdav;
 
-                _this21.processCodeEditForm.controls.bdav.setValue(bdav);
+                _this25.processCodeEditForm.controls.bdav.setValue(bdav);
               }
 
               if (fCYRateVariance == true) {
-                _this21.showfCYExchangeValue = true;
-                var fCYPercentage = _this21.processCodeSummary.fCYPercentage;
+                _this25.showfCYExchangeValue = true;
+                var fCYPercentage = _this25.processCodeSummary.fCYPercentage;
 
-                _this21.processCodeEditForm.controls.fCYPercentage.setValue(fCYPercentage);
+                _this25.processCodeEditForm.controls.fCYPercentage.setValue(fCYPercentage);
               }
 
               if (futureDateAllow == true) {
-                _this21.showFutureDate = true;
-                var fdav = _this21.processCodeSummary.fdav;
+                _this25.showFutureDate = true;
+                var fdav = _this25.processCodeSummary.fdav;
 
-                _this21.processCodeEditForm.controls.fdav.setValue(fdav);
+                _this25.processCodeEditForm.controls.fdav.setValue(fdav);
               }
 
               if (sftpRequired == true) {
-                _this21.showsftpValues = true;
-                var ipAddress = _this21.processCodeSummary.sftpIpaddress;
+                _this25.showsftpValues = true;
+                var ipAddress = _this25.processCodeSummary.sftpIpaddress;
 
-                _this21.processCodeEditForm.controls.sftpIpaddress.setValue(ipAddress);
+                _this25.processCodeEditForm.controls.sftpIpaddress.setValue(ipAddress);
 
-                var userName = _this21.processCodeSummary.sftpUsername;
+                var userName = _this25.processCodeSummary.sftpUsername;
 
-                _this21.processCodeEditForm.controls.sftpUsername.setValue(userName);
+                _this25.processCodeEditForm.controls.sftpUsername.setValue(userName);
 
-                var path = _this21.processCodeSummary.sftpPath;
+                var path = _this25.processCodeSummary.sftpPath;
 
-                _this21.processCodeEditForm.controls.sftpPath.setValue(path);
+                _this25.processCodeEditForm.controls.sftpPath.setValue(path);
 
-                var port = _this21.processCodeSummary.sftpPort;
+                var port = _this25.processCodeSummary.sftpPort;
 
-                _this21.processCodeEditForm.controls.sftpPort.setValue(port);
+                _this25.processCodeEditForm.controls.sftpPort.setValue(port);
 
-                var password = _this21.processCodeSummary.sftpPassword;
+                var password = _this25.processCodeSummary.sftpPassword;
 
-                _this21.processCodeEditForm.controls.sftpPassword.setValue(password);
+                _this25.processCodeEditForm.controls.sftpPassword.setValue(password);
               }
 
-              _this21.auditLog();
+              _this25.auditLog();
             });
           }
         }, {
@@ -22567,10 +22932,10 @@
         }, {
           key: "getextSysCodeData",
           value: function getextSysCodeData() {
-            var _this22 = this;
+            var _this26 = this;
 
             this.apiService.getAllExt().subscribe(function (data) {
-              _this22.extSysCodeData = data;
+              _this26.extSysCodeData = data;
             });
           }
         }, {
@@ -22623,7 +22988,7 @@
         }, {
           key: "canExit",
           value: function canExit() {
-            var _this23 = this;
+            var _this27 = this;
 
             var isExit = false;
 
@@ -22640,13 +23005,13 @@
                 if (result.isConfirmed === true) {
                   isExit = true;
 
-                  _this23.cdr.markForCheck();
+                  _this27.cdr.markForCheck();
 
                   return isExit;
                 } else {
                   isExit = false;
 
-                  _this23.cdr.markForCheck();
+                  _this27.cdr.markForCheck();
 
                   return isExit;
                 }
@@ -22657,7 +23022,7 @@
                 if (isExit === true) {
                   isExit = true;
 
-                  _this23.cdr.markForCheck();
+                  _this27.cdr.markForCheck();
 
                   resolve(true);
                 }
@@ -22707,21 +23072,21 @@
         }, {
           key: "finalSubmitofEditForm",
           value: function finalSubmitofEditForm(formValue) {
-            var _this24 = this;
+            var _this28 = this;
 
             this.processCodeEditForm.controls.recordStatus.setValue('O');
             this.processCodeEditForm.controls.creatorId.setValue(this.currentUser);
             this.apiService.updateExtSys(this.processCodeEditForm.value).subscribe(function (resp) {
-              _this24.processCodeSummary = resp;
+              _this28.processCodeSummary = resp;
 
-              if (_this24.processCodeSummary) {
+              if (_this28.processCodeSummary) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   title: 'Record is Updated',
                   icon: 'success'
                 });
-                _this24.submitEdit = true; // this.formTouched=!this.processCodeEditForm.touched;
+                _this28.submitEdit = true; // this.formTouched=!this.processCodeEditForm.touched;
 
-                _this24.auditLog();
+                _this28.auditLog();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   title: 'Failed to Update Data!',
@@ -22740,7 +23105,7 @@
         }, {
           key: "onClickOfAuth",
           value: function onClickOfAuth() {
-            var _this25 = this;
+            var _this29 = this;
 
             if (this.processCodeSummary.creatorId == this.currentUser) {
               console.log(this.processCodeSummary);
@@ -22764,19 +23129,19 @@
 
                 if (result.isConfirmed === true) {
                   var payload = {};
-                  payload.externalSystemName = _this25.processCodeSummary.extSysName;
-                  payload.loggedInUser = _this25.currentUser, payload.processCode = _this25.processCodeSummary.processCode;
-                  _this25.extName = _this25.processCodeSummary.extSysName;
+                  payload.externalSystemName = _this29.processCodeSummary.extSysName;
+                  payload.loggedInUser = _this29.currentUser, payload.processCode = _this29.processCodeSummary.processCode;
+                  _this29.extName = _this29.processCodeSummary.extSysName;
 
-                  _this25.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
-                    _this25.processCodeSummary = authResp;
-                    console.log("Auth", _this25.processCodeSummary);
+                  _this29.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
+                    _this29.processCodeSummary = authResp;
+                    console.log("Auth", _this29.processCodeSummary);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: ' Record is Authorized',
                       icon: 'success'
                     });
 
-                    _this25.auditLog();
+                    _this29.auditLog();
                   });
                 }
               });
@@ -22785,7 +23150,7 @@
         }, {
           key: "onClickOfClose",
           value: function onClickOfClose() {
-            var _this26 = this;
+            var _this30 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -22801,23 +23166,23 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this26.processCodeSummary.modifiedBy = _this26.currentUser;
-                _this26.extName = _this26.processCodeSummary.extSysName;
+                _this30.processCodeSummary.modifiedBy = _this30.currentUser;
+                _this30.extName = _this30.processCodeSummary.extSysName;
                 var payload = {};
-                payload.externalSystemName = _this26.processCodeSummary.extSysName;
-                payload.loggedInUser = _this26.currentUser, payload.processCode = _this26.processCodeSummary.processCode;
+                payload.externalSystemName = _this30.processCodeSummary.extSysName;
+                payload.loggedInUser = _this30.currentUser, payload.processCode = _this30.processCodeSummary.processCode;
 
-                _this26.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
+                _this30.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
                   console.log(closeResp);
-                  _this26.processCodeSummary = closeResp;
+                  _this30.processCodeSummary = closeResp;
 
-                  if (_this26.processCodeSummary) {
+                  if (_this30.processCodeSummary) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Record is Closed',
                       icon: 'success'
                     });
 
-                    _this26.auditLog();
+                    _this30.auditLog();
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Failed to Close the Recored!',
@@ -22838,7 +23203,7 @@
         }, {
           key: "onClickOfReopen",
           value: function onClickOfReopen() {
-            var _this27 = this;
+            var _this31 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -22854,22 +23219,22 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this27.extName = _this27.processCodeSummary.extSysName;
+                _this31.extName = _this31.processCodeSummary.extSysName;
                 var payload = {};
-                payload.externalSystemName = _this27.processCodeSummary.extSysName;
-                payload.loggedInUser = _this27.currentUser, payload.processCode = _this27.processCodeSummary.processCode;
+                payload.externalSystemName = _this31.processCodeSummary.extSysName;
+                payload.loggedInUser = _this31.currentUser, payload.processCode = _this31.processCodeSummary.processCode;
 
-                _this27.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
+                _this31.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
                   console.log(openResp);
-                  _this27.processCodeSummary = openResp;
+                  _this31.processCodeSummary = openResp;
 
-                  if (_this27.processCodeSummary) {
+                  if (_this31.processCodeSummary) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Record is Reopened',
                       icon: 'success'
                     });
 
-                    _this27.auditLog();
+                    _this31.auditLog();
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Failed to Reoped the Recored!',
@@ -22890,7 +23255,7 @@
         }, {
           key: "OndeleteofUser",
           value: function OndeleteofUser() {
-            var _this28 = this;
+            var _this32 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -22906,9 +23271,9 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this28.extName = _this28.processCodeSummary.extSysName;
+                _this32.extName = _this32.processCodeSummary.extSysName;
 
-                _this28.apiService.deleteProcessRecord(_this28.extName, _this28.processCodeSummary.processCode, _this28.currentUser).subscribe(function (resp) {
+                _this32.apiService.deleteProcessRecord(_this32.extName, _this32.processCodeSummary.processCode, _this32.currentUser).subscribe(function (resp) {
                   console.log(resp);
 
                   if (resp === "extSys has been deleted!") {
@@ -22917,7 +23282,7 @@
                       icon: 'success'
                     });
 
-                    _this28.router.navigateByUrl('/external-system/processCodeMapping');
+                    _this32.router.navigateByUrl('/external-system/processCodeMapping');
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       text: 'Failed to Delete User Data!',
@@ -24955,10 +25320,10 @@
         }, {
           key: "getextSysCodeData",
           value: function getextSysCodeData() {
-            var _this29 = this;
+            var _this33 = this;
 
             this.apiService.getAllExt().subscribe(function (data) {
-              _this29.extSysCodeData = data.result;
+              _this33.extSysCodeData = data.result;
             });
           }
         }, {
@@ -24984,7 +25349,7 @@
         }, {
           key: "canExit",
           value: function canExit() {
-            var _this30 = this;
+            var _this34 = this;
 
             var isExit = false;
 
@@ -25001,13 +25366,13 @@
                 if (result.isConfirmed === true) {
                   isExit = true;
 
-                  _this30.cdr.markForCheck();
+                  _this34.cdr.markForCheck();
 
                   return isExit;
                 } else {
                   isExit = false;
 
-                  _this30.cdr.markForCheck();
+                  _this34.cdr.markForCheck();
 
                   return isExit;
                 }
@@ -25018,7 +25383,7 @@
                 if (isExit === true) {
                   isExit = true;
 
-                  _this30.cdr.markForCheck();
+                  _this34.cdr.markForCheck();
 
                   resolve(true);
                 }
@@ -25131,23 +25496,23 @@
         }, {
           key: "finalSubmitofForm",
           value: function finalSubmitofForm(formValue) {
-            var _this31 = this;
+            var _this35 = this;
 
             this.processCodeForm.controls.creatorId.setValue(this.currentUser);
             this.apiService.createExtSys(this.processCodeForm.value).subscribe(function (resp) {
-              _this31.auditlogData = resp;
+              _this35.auditlogData = resp;
 
-              _this31.auditLog();
+              _this35.auditLog();
 
-              console.log("Audit Data", _this31.auditlogData, _this31.auditlogData.creatorId);
+              console.log("Audit Data", _this35.auditlogData, _this35.auditlogData.creatorId);
 
-              if (_this31.auditlogData) {
+              if (_this35.auditlogData) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Record is Created!',
                   icon: 'success'
                 });
-                _this31.submit = true;
-                _this31.formTouched = !_this31.processCodeForm.touched; // this.processCodeForm.reset();
+                _this35.submit = true;
+                _this35.formTouched = !_this35.processCodeForm.touched; // this.processCodeForm.reset();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Failed to Save Data!',
@@ -25172,21 +25537,21 @@
         }, {
           key: "updateSubmitofForm",
           value: function updateSubmitofForm(formValue) {
-            var _this32 = this;
+            var _this36 = this;
 
             this.processCodeForm.controls.creatorId.setValue(this.currentUser);
             this.apiService.createExtSys(this.processCodeForm.value).subscribe(function (resp) {
-              _this32.auditlogData = resp;
+              _this36.auditlogData = resp;
 
-              if (_this32.auditlogData) {
+              if (_this36.auditlogData) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Record is Updated',
                   icon: 'success'
                 });
-                _this32.showSubmit = false;
-                _this32.formTouched = !_this32.processCodeForm.touched; // this.processCodeForm.reset();
+                _this36.showSubmit = false;
+                _this36.formTouched = !_this36.processCodeForm.touched; // this.processCodeForm.reset();
 
-                _this32.auditLog();
+                _this36.auditLog();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Failed to Update Data!',
@@ -25205,7 +25570,7 @@
         }, {
           key: "onClickOfAuth",
           value: function onClickOfAuth() {
-            var _this33 = this;
+            var _this37 = this;
 
             if (this.auditlogData.creatorId == this.currentUser) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -25228,19 +25593,19 @@
 
                 if (result.isConfirmed === true) {
                   var payload = {};
-                  payload.externalSystemName = _this33.auditlogData.extSysName;
-                  payload.loggedInUser = _this33.currentUser, payload.processCode = _this33.auditlogData.processCode;
-                  _this33.extName = _this33.auditlogData.extSysName;
+                  payload.externalSystemName = _this37.auditlogData.extSysName;
+                  payload.loggedInUser = _this37.currentUser, payload.processCode = _this37.auditlogData.processCode;
+                  _this37.extName = _this37.auditlogData.extSysName;
 
-                  _this33.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
-                    _this33.auditlogData = authResp;
-                    console.log("Auth", _this33.auditlogData);
+                  _this37.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
+                    _this37.auditlogData = authResp;
+                    console.log("Auth", _this37.auditlogData);
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: ' Record is Authorized',
                       icon: 'success'
                     });
 
-                    _this33.auditLog();
+                    _this37.auditLog();
                   });
                 }
               });
@@ -25249,7 +25614,7 @@
         }, {
           key: "onClickOfClose",
           value: function onClickOfClose() {
-            var _this34 = this;
+            var _this38 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -25265,23 +25630,23 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this34.auditlogData.modifiedBy = _this34.currentUser;
-                _this34.extName = _this34.auditlogData.extSysName;
+                _this38.auditlogData.modifiedBy = _this38.currentUser;
+                _this38.extName = _this38.auditlogData.extSysName;
                 var payload = {};
-                payload.externalSystemName = _this34.auditlogData.extSysName;
-                payload.loggedInUser = _this34.currentUser, payload.processCode = _this34.auditlogData.processCode;
+                payload.externalSystemName = _this38.auditlogData.extSysName;
+                payload.loggedInUser = _this38.currentUser, payload.processCode = _this38.auditlogData.processCode;
 
-                _this34.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
+                _this38.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
                   console.log(closeResp);
-                  _this34.auditlogData = closeResp;
+                  _this38.auditlogData = closeResp;
 
-                  if (_this34.auditlogData) {
+                  if (_this38.auditlogData) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record is Closed',
                       icon: 'success'
                     });
 
-                    _this34.auditLog();
+                    _this38.auditLog();
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Failed to Close the Recored!',
@@ -25302,7 +25667,7 @@
         }, {
           key: "onClickOfReopen",
           value: function onClickOfReopen() {
-            var _this35 = this;
+            var _this39 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -25319,21 +25684,21 @@
 
               if (result.isConfirmed === true) {
                 var payload = {};
-                payload.externalSystemName = _this35.auditlogData.extSysName;
-                payload.loggedInUser = _this35.currentUser, payload.processCode = _this35.auditlogData.processCode;
-                _this35.extName = _this35.auditlogData.extSysName;
+                payload.externalSystemName = _this39.auditlogData.extSysName;
+                payload.loggedInUser = _this39.currentUser, payload.processCode = _this39.auditlogData.processCode;
+                _this39.extName = _this39.auditlogData.extSysName;
 
-                _this35.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
+                _this39.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
                   console.log(openResp);
-                  _this35.auditlogData = openResp;
+                  _this39.auditlogData = openResp;
 
-                  if (_this35.auditlogData) {
+                  if (_this39.auditlogData) {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record is Reopened',
                       icon: 'success'
                     });
 
-                    _this35.auditLog();
+                    _this39.auditLog();
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Failed to Reoped the Recored!',
@@ -25354,7 +25719,7 @@
         }, {
           key: "OndeleteofUser",
           value: function OndeleteofUser() {
-            var _this36 = this;
+            var _this40 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
@@ -25368,9 +25733,9 @@
               'icon': 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this36.extName = _this36.auditlogData.extSysName;
+                _this40.extName = _this40.auditlogData.extSysName;
 
-                _this36.apiService.deleteProcessRecord(_this36.extName, _this36.auditlogData.processCode, _this36.currentUser).subscribe(function (resp) {
+                _this40.apiService.deleteProcessRecord(_this40.extName, _this40.auditlogData.processCode, _this40.currentUser).subscribe(function (resp) {
                   console.log(resp);
 
                   if (resp === "extSys has been deleted!") {
@@ -25379,7 +25744,7 @@
                       icon: 'success'
                     });
 
-                    _this36.router.navigateByUrl('/external-system/processCodeMapping');
+                    _this40.router.navigateByUrl('/external-system/processCodeMapping');
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       text: 'Failed to Delete User Data!',
@@ -25395,7 +25760,7 @@
                       icon: 'success'
                     });
 
-                    _this36.router.navigateByUrl('/external-system/processCodeMapping');
+                    _this40.router.navigateByUrl('/external-system/processCodeMapping');
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       text: 'Failed to Delete User Data!',
@@ -26151,7 +26516,13 @@
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/common/http */
+      53882);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! rxjs */
       79441);
       /* harmony import */
@@ -26163,175 +26534,313 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! sweetalert2 */
+      18190);
+      /* harmony import */
+
+
+      var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/core */
       2316);
       /* harmony import */
 
 
-      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! src/app/shared/services/api.service */
       94761);
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! src/app/shared/services/role.service */
       77382);
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/forms */
       1707);
       /* harmony import */
 
 
-      var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! src/app/shared/services/toast.service */
       31443);
       /* harmony import */
 
 
-      var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var angular_datatables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! angular-datatables */
       50481);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/common */
       54364);
 
+      function ProcessCodeMappingComponent_tr_30_button_17_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ProcessCodeMappingComponent_tr_30_button_17_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r9);
+
+            var item_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r7.close(item_r2);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "close");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ProcessCodeMappingComponent_tr_30_button_18_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ProcessCodeMappingComponent_tr_30_button_18_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r12);
+
+            var item_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r10.open(item_r2);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Open");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ProcessCodeMappingComponent_tr_30_button_19_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ProcessCodeMappingComponent_tr_30_button_19_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r15);
+
+            var item_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r13["delete"](item_r2);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ProcessCodeMappingComponent_tr_30_button_20_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ProcessCodeMappingComponent_tr_30_button_20_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r18);
+
+            var item_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+
+            var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+
+            return ctx_r16.auth(item_r2);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Authorize");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+      }
+
       function ProcessCodeMappingComponent_tr_30_Template(rf, ctx) {
         if (rf & 1) {
-          var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "span", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "span", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProcessCodeMappingComponent_tr_30_Template_span_click_6_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ProcessCodeMappingComponent_tr_30_Template_span_click_6_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r20);
 
             var item_r2 = restoredCtx.$implicit;
 
-            var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
 
-            return ctx_r3.sendingDataforEdit(item_r2);
+            return ctx_r19.sendingDataforEdit(item_r2);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](14, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](14, "date");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "button", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "span", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](17, "i", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](17, ProcessCodeMappingComponent_tr_30_button_17_Template, 4, 0, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](18, ProcessCodeMappingComponent_tr_30_button_18_Template, 4, 0, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "button", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](19, ProcessCodeMappingComponent_tr_30_button_19_Template, 4, 0, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "i", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](20, ProcessCodeMappingComponent_tr_30_button_20_Template, 4, 0, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
           var item_r2 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r2.processCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r2.processCode);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r2.extSysCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r2.extSysCode);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r2.extSysName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r2.extSysName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r2.authStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r2.authStatus);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r2.recordStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r2.recordStatus);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](14, 6, item_r2.creatorDtStamp, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](14, 10, item_r2.creatorDtStamp, "medium"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (item_r2.recordStatus == "O" || item_r2.recordStatus == "Open" || item_r2.recordStatus == "OPEN") && (item_r2.verifiedOnce == "Y" || item_r2.verifiedOnce == "YES"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r2.recordStatus == "C");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r2.verifiedOnce == "N" || item_r2.verifiedOnce == "NO");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r2.authStatus == "U" || item_r2.authStatus == "UNAUTHORIZED" || item_r2.authStatus == "Unauthorized");
         }
       }
 
       function ProcessCodeMappingComponent_ng_container_31_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 21);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Please wait... ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
         }
       }
 
@@ -26357,7 +26866,7 @@
           this.formBuilder = formBuilder;
           this.toastService = toastService;
           this.dtOptions = {};
-          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
+          this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__.Subject();
           this.isLoading = false;
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
@@ -26366,7 +26875,7 @@
         _createClass(_ProcessCodeMappingComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this37 = this;
+            var _this41 = this;
 
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -26379,12 +26888,41 @@
               processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
             };
+            this.currentUser = localStorage.getItem("userFromLogin");
             this.getprocessCodeMappingSummry();
             this.roleService.fetchScreenPermissions('Process Code Mapping');
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this37.roleCodes = message;
+              return _this41.roleCodes = message;
             });
             console.log(this.roleCodes);
+          }
+        }, {
+          key: "auditLog",
+          value: function auditLog() {
+            if (this.processCodeSummary.authStatus == 'U' || this.processCodeSummary.authStatus == 'Unauthorized') {
+              this.processCodeSummary.authStatus = 'UNAUTHORIZED';
+            }
+
+            if (this.processCodeSummary.authStatus == 'A' || this.processCodeSummary.authStatus == 'Authorized') {
+              this.processCodeSummary.authStatus = 'AUTHORIZED';
+            }
+
+            if (this.processCodeSummary.recordStatus == 'O') {
+              this.processCodeSummary.recordStatus = 'OPEN';
+            }
+
+            if (this.processCodeSummary.recordStatus == 'C') {
+              this.processCodeSummary.recordStatus = 'CLOSED';
+            }
+
+            if (this.processCodeSummary.verifiedOnce == 'N') {
+              console.log("NO");
+              this.processCodeSummary.verifiedOnce = 'NO';
+            }
+
+            if (this.processCodeSummary.verifiedOnce == 'Y') {
+              this.processCodeSummary.verifiedOnce = 'YES';
+            }
           }
         }, {
           key: "ngOnDestroy",
@@ -26394,7 +26932,7 @@
         }, {
           key: "getprocessCodeMappingSummry",
           value: function getprocessCodeMappingSummry() {
-            var _this38 = this;
+            var _this42 = this;
 
             this.isLoading = true;
             this.apiService.getAllExtSys().subscribe(function (data) {
@@ -26404,7 +26942,7 @@
               try {
                 var _loop = function _loop() {
                   var item = _step.value;
-                  item.authStatus = _this38.statusArr.find(function (i) {
+                  item.authStatus = _this42.statusArr.find(function (i) {
                     return i.startsWith(item.authStatus);
                   });
                 };
@@ -26418,11 +26956,210 @@
                 _iterator.f();
               }
 
-              _this38.processCodeMappingSummry = data.result;
-              _this38.isLoading = false;
+              _this42.processCodeMappingSummry = data.result;
+              _this42.isLoading = false;
 
-              _this38.dtTrigger.next();
+              _this42.dtTrigger.next();
             });
+          }
+        }, {
+          key: "close",
+          value: function close(item) {
+            var _this43 = this;
+
+            console.log(item);
+            this.processCodeSummary = item;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                _this43.processCodeSummary.modifiedBy = _this43.currentUser;
+                _this43.extName = _this43.processCodeSummary.extSysName;
+                var payload = {};
+                payload.externalSystemName = _this43.processCodeSummary.extSysName;
+                payload.loggedInUser = _this43.currentUser, payload.processCode = _this43.processCodeSummary.processCode;
+
+                _this43.apiService.closingProcessCodeRecord(payload).subscribe(function (closeResp) {
+                  console.log(closeResp);
+                  _this43.processCodeSummary = closeResp;
+
+                  if (_this43.processCodeSummary) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Closed',
+                      icon: 'success'
+                    });
+
+                    _this43.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Close the Recored!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "open",
+          value: function open(item) {
+            var _this44 = this;
+
+            this.processCodeSummary = item;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Reopen the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                _this44.extName = _this44.processCodeSummary.extSysName;
+                var payload = {};
+                payload.externalSystemName = _this44.processCodeSummary.extSysName;
+                payload.loggedInUser = _this44.currentUser, payload.processCode = _this44.processCodeSummary.processCode;
+
+                _this44.apiService.reopeningProcessCodeRecord(payload).subscribe(function (openResp) {
+                  console.log(openResp);
+                  _this44.processCodeSummary = openResp;
+
+                  if (_this44.processCodeSummary) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Reopened',
+                      icon: 'success'
+                    });
+
+                    _this44.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Reoped the Recored!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "delete",
+          value: function _delete(item) {
+            var _this45 = this;
+
+            this.processCodeSummary = item;
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to Delete the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                _this45.extName = _this45.processCodeSummary.extSysName;
+
+                _this45.apiService.deleteProcessRecord(_this45.extName, _this45.processCodeSummary.processCode, _this45.currentUser).subscribe(function (resp) {
+                  console.log(resp);
+
+                  if (resp === "extSys has been deleted!") {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is Deleted',
+                      icon: 'success'
+                    });
+
+                    _this45.router.navigateByUrl('/external-system/processCodeMapping');
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Failed to Delete User Data!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  console.log(error.error.message);
+                });
+              }
+            });
+          }
+        }, {
+          key: "auth",
+          value: function auth(item) {
+            var _this46 = this;
+
+            this.processCodeSummary = item;
+
+            if (this.processCodeSummary.creatorId == this.currentUser) {
+              console.log(this.processCodeSummary);
+              sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                title: 'Maker Cannot Authorized the Record!',
+                icon: 'error'
+              });
+            } else {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+                text: 'You are trying to Authorize the record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                'icon': 'info'
+              }).then(function (result) {
+                console.log("this is reopen ", result);
+
+                if (result.isConfirmed === true) {
+                  var payload = {};
+                  payload.externalSystemName = _this46.processCodeSummary.extSysName;
+                  payload.loggedInUser = _this46.currentUser, payload.processCode = _this46.processCodeSummary.processCode;
+                  _this46.extName = _this46.processCodeSummary.extSysName;
+
+                  _this46.apiService.authProcessCodeRecord(payload).subscribe(function (authResp) {
+                    _this46.processCodeSummary = authResp;
+                    console.log("Auth", _this46.processCodeSummary);
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: ' Record is Authorized',
+                      icon: 'success'
+                    });
+
+                    _this46.auditLog();
+                  });
+                }
+              });
+            }
           }
         }, {
           key: "sendingDataforEdit",
@@ -26512,146 +27249,146 @@
       }();
 
       _ProcessCodeMappingComponent.ɵfac = function ProcessCodeMappingComponent_Factory(t) {
-        return new (t || _ProcessCodeMappingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__.ToastService));
+        return new (t || _ProcessCodeMappingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__.ToastService));
       };
 
-      _ProcessCodeMappingComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+      _ProcessCodeMappingComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
         type: _ProcessCodeMappingComponent,
         selectors: [["npr-process-code-mapping"]],
         decls: 32,
         vars: 10,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "routerLinkActive"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", 2, "color", "red"], [1, "fa", "fa-trash"], [1, "fa", "fa-edit"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "routerLinkActive"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [2, "display", "flex", "gap", "50px"], ["class", "iconBtn", "color", "primary", 3, "click", 4, "ngIf"], ["color", "primary", 1, "iconBtn", 3, "click"], [1, "btnTooltip"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["src", "assets/images/open.svg", "alt", "..."], ["src", "assets/images/delete.svg", "alt", "..."], ["src", "assets/images/authorize.svg", "alt", "Authorize"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function ProcessCodeMappingComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Process Code Mapping");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Process Code Mapping");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "a", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "a", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8, "New");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](8, "New");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "a", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "a", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "Exit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11, "Exit");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "table", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "table", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "thead");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "thead");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Process Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](16, "Process Code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "External System Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](18, "External System Code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "External System Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20, "External System Name");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](22, "Auth Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](22, "Auth Status");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "Record Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](24, "Record Status");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](26, "Date");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "th");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](28, "Action");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](28, "Action");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](30, ProcessCodeMappingComponent_tr_30_Template, 20, 9, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](30, ProcessCodeMappingComponent_tr_30_Template, 21, 13, "tr", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, ProcessCodeMappingComponent_ng_container_31_Template, 5, 0, "ng-container", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](31, ProcessCodeMappingComponent_ng_container_31_Template, 5, 0, "ng-container", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c0))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](8, _c1));
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c0))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](8, _c1));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](9, _c2));
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](9, _c2));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.processCodeMappingSummry);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.processCodeMappingSummry);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.isLoading);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.isLoading);
           }
         },
-        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkActive, angular_datatables__WEBPACK_IMPORTED_MODULE_4__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe],
+        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkActive, angular_datatables__WEBPACK_IMPORTED_MODULE_5__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.DatePipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9jZXNzLWNvZGUtbWFwcGluZy5jb21wb25lbnQuc2NzcyJ9 */"]
       });
       /***/
@@ -27272,7 +28009,7 @@
         }, {
           key: "onSaveOfFcyDealNumber",
           value: function onSaveOfFcyDealNumber(data) {
-            var _this39 = this;
+            var _this47 = this;
 
             data = this.treasuryReferenceData;
             console.log('onSaveOfFcyDealNumber', data);
@@ -27284,7 +28021,7 @@
                   title: "Record saved successfully",
                   icon: "success"
                 });
-                _this39.disableSave = true;
+                _this47.disableSave = true;
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   title: 'Failed Save the Record'
@@ -27295,24 +28032,24 @@
         }, {
           key: "fetchingBatchNumber",
           value: function fetchingBatchNumber() {
-            var _this40 = this;
+            var _this48 = this;
 
             this.isLoading = true;
             this.apiService.fetchingBatchNo().subscribe(function (batchNumberResp) {
-              _this40.selectedBatchNumber = batchNumberResp;
-              _this40.isLoading = false;
+              _this48.selectedBatchNumber = batchNumberResp;
+              _this48.isLoading = false;
 
-              _this40.cdr.markForCheck();
+              _this48.cdr.markForCheck();
 
-              _this40.dtTrigger.next();
+              _this48.dtTrigger.next();
 
-              console.log('this.selectedBatchNumber', _this40.selectedBatchNumber);
+              console.log('this.selectedBatchNumber', _this48.selectedBatchNumber);
             });
           }
         }, {
           key: "onOptionsChange",
           value: function onOptionsChange(event) {
-            var _this41 = this;
+            var _this49 = this;
 
             var value = event.target.value;
 
@@ -27326,15 +28063,15 @@
                     title: 'No Data for Batch:' + value,
                     icon: 'warning'
                   });
-                  _this41.showTable = false;
+                  _this49.showTable = false;
                 } else {
-                  _this41.treasuryReferenceData = batchResp;
-                  _this41.showTable = true; // // this.createUserDefinedFields1(this.treasuryReferenceData);
+                  _this49.treasuryReferenceData = batchResp;
+                  _this49.showTable = true; // // this.createUserDefinedFields1(this.treasuryReferenceData);
                   // this.UdfForm = this.fb.group({
                   //   userDefinedFields: this.fb.array([this.createUserDefinedFields1(this.treasuryReferenceData)]),
                   // });
 
-                  console.log(_this41.treasuryReferenceData); // for(let i = 0;i<=this.treasuryReferenceData.length;i++){
+                  console.log(_this49.treasuryReferenceData); // for(let i = 0;i<=this.treasuryReferenceData.length;i++){
                   //   console.log(this.treasuryReferenceData[i].acumenJournal);
                   //   console.log("UdfForm: ", this.UdfForm);
                   // ((this.UdfForm.get('controls') as FormArray).at(i) as FormGroup).get('userDefinedFields').patchValue(this.treasuryReferenceData[i].acumenJournal);
@@ -27364,7 +28101,7 @@
         }, {
           key: "canExit",
           value: function canExit() {
-            var _this42 = this;
+            var _this50 = this;
 
             var isExit = false;
 
@@ -27381,13 +28118,13 @@
                 if (result.isConfirmed === true) {
                   isExit = true;
 
-                  _this42.cdr.markForCheck();
+                  _this50.cdr.markForCheck();
 
                   return isExit;
                 } else {
                   isExit = false;
 
-                  _this42.cdr.markForCheck();
+                  _this50.cdr.markForCheck();
 
                   return isExit;
                 }
@@ -27398,7 +28135,7 @@
                 if (isExit === true) {
                   isExit = true;
 
-                  _this42.cdr.markForCheck();
+                  _this50.cdr.markForCheck();
 
                   resolve(true);
                 }
