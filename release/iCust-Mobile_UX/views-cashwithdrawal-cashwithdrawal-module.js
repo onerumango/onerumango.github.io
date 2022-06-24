@@ -1,5 +1,50 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["views-cashwithdrawal-cashwithdrawal-module"],{
 
+/***/ "2g2N":
+/*!*******************************************!*\
+  !*** ./src/app/services/toast.service.ts ***!
+  \*******************************************/
+/*! exports provided: ToastService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToastService", function() { return ToastService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+let ToastService = class ToastService {
+    constructor(toast) {
+        this.toast = toast;
+    }
+    showToast(msg) {
+        this.myToast = this.toast.create({
+            message: msg,
+            duration: 3000
+        }).then((toastData) => {
+            toastData.present();
+        });
+    }
+    dismissToast() {
+        this.myToast = this.toast.dismiss();
+    }
+};
+ToastService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] }
+];
+ToastService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], ToastService);
+
+
+
+/***/ }),
+
 /***/ "94kh":
 /*!***************************************************************!*\
   !*** ./src/app/views/cashwithdrawal/cashwithdrawal.module.ts ***!
@@ -120,13 +165,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/api.service */ "H+bZ");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "wd/R");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/services/data.service */ "EnSQ");
-/* harmony import */ var src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/components/branch/branch.component */ "z5an");
-/* harmony import */ var src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/services/loading.service */ "7ch9");
-/* harmony import */ var src_app_components_time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/components/time-slots/time-slots.component */ "5aLK");
+/* harmony import */ var src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/toast.service */ "2g2N");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "wd/R");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/services/data.service */ "EnSQ");
+/* harmony import */ var src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/components/branch/branch.component */ "z5an");
+/* harmony import */ var src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/services/loading.service */ "7ch9");
+/* harmony import */ var src_app_components_time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/app/components/time-slots/time-slots.component */ "5aLK");
+
 
 
 
@@ -144,13 +191,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CashwithdrawalPage = class CashwithdrawalPage {
-    constructor(router, modalController, fb, loading, datepipe, api, toastCtrl, shareDataService, cdr) {
+    constructor(router, modalController, fb, loading, datepipe, api, toastService, toastCtrl, shareDataService, cdr) {
         this.router = router;
         this.modalController = modalController;
         this.fb = fb;
         this.loading = loading;
         this.datepipe = datepipe;
         this.api = api;
+        this.toastService = toastService;
         this.toastCtrl = toastCtrl;
         this.shareDataService = shareDataService;
         this.cdr = cdr;
@@ -386,7 +434,7 @@ let CashwithdrawalPage = class CashwithdrawalPage {
     presentModal() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
-                component: src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_11__["BranchComponent"],
+                component: src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_12__["BranchComponent"],
                 id: "branchModal",
                 componentProps: {}
             });
@@ -435,7 +483,7 @@ let CashwithdrawalPage = class CashwithdrawalPage {
         this.accountNum = form.accountNumber;
         this.transactionAmount = form.transactionAmount;
         console.log(this.transactionAmount);
-        this.transDate = moment__WEBPACK_IMPORTED_MODULE_8__(new Date(form.transactionDate)).format("DD-MM-YYYY").toString();
+        this.transDate = moment__WEBPACK_IMPORTED_MODULE_9__(new Date(form.transactionDate)).format("DD-MM-YYYY").toString();
         localStorage.setItem("AccountNumber", form.accountNumber);
         localStorage.setItem("TransactionDate", this.transDate);
         localStorage.setItem("TransactionAmount", form.transactionAmount);
@@ -592,7 +640,7 @@ let CashwithdrawalPage = class CashwithdrawalPage {
     savingAccountFun(filteredResponseSavingAccount) {
         console.log(filteredResponseSavingAccount);
         this.users = filteredResponseSavingAccount.custAccount;
-        this.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["getCurrencySymbol"])(filteredResponseSavingAccount.custAccount[0].accountCurrency, "narrow");
+        this.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(filteredResponseSavingAccount.custAccount[0].accountCurrency, "narrow");
         this.currentBalance = this.users[0].amount;
         if (this.accountInfo.accountId != null) {
             this.slideOneForm.get('accountNumber').patchValue(this.accountInfo.accountId);
@@ -645,13 +693,13 @@ let CashwithdrawalPage = class CashwithdrawalPage {
         }
     }
     format24HrsTo12Hrs(time) {
-        var formatted = moment__WEBPACK_IMPORTED_MODULE_8__(time, "HH:mm").format("LT");
+        var formatted = moment__WEBPACK_IMPORTED_MODULE_9__(time, "HH:mm").format("LT");
         return formatted;
     }
     openPopup() {
         console.log("popup");
         this.modalController.create({
-            component: src_app_components_time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_13__["TimeSlotsComponent"],
+            component: src_app_components_time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_14__["TimeSlotsComponent"],
             componentProps: {
                 date: this.slideOneForm.get('transactionDate').value,
             }
@@ -670,11 +718,12 @@ CashwithdrawalPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
-    { type: src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_12__["LoadingService"] },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_9__["DatePipe"] },
+    { type: src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_13__["LoadingService"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_10__["DatePipe"] },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_7__["ApiService"] },
+    { type: src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_8__["ToastService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ToastController"] },
-    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_10__["DataService"] },
+    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"] },
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] }
 ];
 CashwithdrawalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
