@@ -14270,7 +14270,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,table.dataTable.dtr-inlin
   font-style: normal;
 }
 
-#ngSelectOption{
+#ngSelectOption {
   border-style: none;
 }
 
@@ -14311,24 +14311,26 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,table.dataTable.dtr-inlin
   border-style: none;
 }
 
-.close{
+.close {
   float: right;
-    outline: none;
-    border: none;
- 
-    background-color: white;
-    font-size: 30px;
-    color: darkgrey;
-    margin-right:0.5%
+  outline: none;
+  border: none;
+
+  background-color: white;
+  font-size: 30px;
+  color: darkgrey;
+  margin-right: 0.5%
 }
 
-#marginTitle{
+#marginTitle {
   margin-left: 3.5%;
-    margin-bottom: 2%;
+  margin-bottom: 2%;
 
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
   cursor: default;
   color: lightgray !important;
   border: 1px solid transparent;
@@ -14520,7 +14522,7 @@ button:focus,
   box-shadow: none;
 }
 
-.theme2 .ng-select .ng-select-container{
+.theme2 .ng-select .ng-select-container {
   color: #747274;
   background-color: #1b1b29;
   /* background-color: rgb(107, 24, 24); */
@@ -14539,8 +14541,9 @@ button:focus,
   align-items: center;
 }
 
-.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
-  color:none;
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  color: none;
   background-color: none;
 }
 
@@ -14765,6 +14768,77 @@ button:focus,
 .tColor:hover .themeText,
 .tColor.active .themeText {
   color: var(--primary-color);
+}
+
+.theme2 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.theme2 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.theme2 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #323248 !important;
+}
+
+.theme2 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: #E6224A !important;
+  background: var(--primaryColor) !important;
+  color: var(--bs-white) !important;
+}
+
+.theme2 .dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: lightgray !important;
+  background: #323248 !important;
+}
+
+.theme2 .iconBtn {
+  background: transparent;
+  border: none;
+}
+
+.theme2 .dataTables_wrapper .dataTables_length select {
+  background-color: #bfbfbf !important;
+  color: #747274 !important;
+  ;
+  border: unset;
+}
+
+.theme2 input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* border: 1px solid green; */
+  -webkit-text-fill-color: #92929f;
+  -webkit-box-shadow: 0 0 0px 1000px #1b1b29 inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.theme1 input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* border: 1px solid green; */
+  /* -webkit-text-fill-color: #92929f; */
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.theme2 input:autofill {
+  background-color: #1b1b29 !important;
+  color: #92929f !important;
+}
+
+.theme1 input:autofill {
+  background-color: #ffffff !important;
+  /* color: #92929f !important; */
 }
 
 .tColor.theme1 {
@@ -15856,7 +15930,6 @@ table.dataTable.tableStyle.dtr-inline.collapsed>tbody>tr>th.dtr-control::before 
   font-size: 12px;
   color: #212529;
   background-color: var(--bs-white);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 5px center;
   background-size: 14px 10px;
@@ -16084,19 +16157,19 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control::before {
   margin: 20px;
 }
 
-.accountClosureCard{
+.accountClosureCard {
   margin-bottom: 20px;
 }
 
-.accountClosureCard1{
+.accountClosureCard1 {
   margin-left: 2.5%;
-  margin-top:-2%
+  margin-top: -2%
 }
 
-.accountClosureCard2{
+.accountClosureCard2 {
   margin-left: 2%;
   margin-bottom: 2%;
-  margin-top:2%
+  margin-top: 2%
 }
 
 .csCardStyleText {
@@ -16340,7 +16413,7 @@ ul.nav.nav-tabs li+li {
   background: var(--lightColor);
 }
 
-.justify{
+.justify {
   justify-content: center;
 }
 
@@ -16453,8 +16526,46 @@ table.tableStyle thead tr th.tblehead {
 
 .theme2 .checkStyle input:checked+label:before,
 .theme2 .checkStyle input:checked+label:after {
-  border-color: #011945;
-  border-color: var(--secondaryColor);
+  border-color: #E6224A;
+  border-color: var(--primaryColor);
+}
+
+.theme2 .swal2-popup {
+  background: #323248 !important;
+  color: lightgray !important;
+}
+
+.theme2 .autocomplete-container .input-container input {
+  background: #323248 !important;
+  color: lightgray !important;
+}
+
+.theme2 .autocomplete-container .suggestions-container ul {
+  background: #323248 !important;
+  color: lightgray !important;
+}
+
+.theme2 .autocomplete-container .suggestions-container ul li a {
+  color: lightgray !important;
+}
+
+.theme2 .autocomplete-container .input-container .x i {
+  background: transparent !important;
+}
+
+.theme2 .form-check .form-check-input {
+  background-color: #747274 !important;
+  color: lightgray !important;
+}
+
+.theme2 textarea, input[type="password"] {
+  background: #1b1b29 !important;
+  color: #6d6d80 !important;
+}
+
+.theme1 textarea, input[type="password"] {
+  background: #ffffff !important;
+  /* color: #6d6d80 !important;  */
 }
 
 .darkgreyClr {
@@ -17050,7 +17161,7 @@ table.tableStyle thead tr th.tblehead {
   background-color: #011945 !important;
 }
 
-.loading-page-center{
+.loading-page-center {
   text-align: center;
   margin-top: 5%;
 }
@@ -17059,7 +17170,7 @@ table.tableStyle thead tr th.tblehead {
   background-color: #dc3545 !important;
 }
 
-#outlineNgSelect > div{
+#outlineNgSelect>div {
   box-shadow: none;
 }
 
@@ -17142,72 +17253,72 @@ table.tableStyle thead tr th.tblehead {
   mask: url('rule-mapping.svg') no-repeat center;
 }
 
-.externalSystemIcon{
+.externalSystemIcon {
   -webkit-mask: url('external-system.svg') no-repeat center;
   mask: url('external-system.svg') no-repeat center;
 }
 
-.processCodeMappingIcon{
+.processCodeMappingIcon {
   -webkit-mask: url('process-code.svg') no-repeat center;
   mask: url('process-code.svg') no-repeat center;
 }
 
-.templateMappingIcon{
+.templateMappingIcon {
   -webkit-mask: url('excel-mapping.svg') no-repeat center;
   mask: url('excel-mapping.svg') no-repeat center;
 }
 
-.uploadIcon{
+.uploadIcon {
   -webkit-mask: url('upload-excel.svg') no-repeat center;
   mask: url('upload-excel.svg') no-repeat center;
 }
 
-.authorizeIcon{
+.authorizeIcon {
   -webkit-mask: url('authorize.svg') no-repeat center;
   mask: url('authorize.svg') no-repeat center;
 }
 
-.rejectionIcon{
+.rejectionIcon {
   -webkit-mask: url('file-x.svg') no-repeat center;
   mask: url('file-x.svg') no-repeat center;
 }
 
-.authorizeModificationIcon{
+.authorizeModificationIcon {
   -webkit-mask: url('pencil-square.svg') no-repeat center;
   mask: url('pencil-square.svg') no-repeat center;
 }
 
-.tresuryIcon{
+.tresuryIcon {
   -webkit-mask: url('treasury-reference.svg') no-repeat center;
   mask: url('treasury-reference.svg') no-repeat center;
 }
 
-.processMonitoringIcon{
+.processMonitoringIcon {
   -webkit-mask: url('process.svg') no-repeat center;
   mask: url('process.svg') no-repeat center;
 }
 
-.customerSearchIcon{
+.customerSearchIcon {
   -webkit-mask: url('customer-search.svg') no-repeat center;
   mask: url('customer-search.svg') no-repeat center;
 }
 
-.initiateIcon{
+.initiateIcon {
   -webkit-mask: url('inititate-account.svg') no-repeat center;
   mask: url('inititate-account.svg') no-repeat center;
 }
 
-.processAccountClosureIcon{
+.processAccountClosureIcon {
   -webkit-mask: url('account-closer.svg') no-repeat center;
   mask: url('account-closer.svg') no-repeat center;
 }
 
-.accountClosureIcon{
+.accountClosureIcon {
   -webkit-mask: url('grommet-maintenance.svg') no-repeat center;
   mask: url('grommet-maintenance.svg') no-repeat center;
 }
 
-.chargeIcon{
+.chargeIcon {
   -webkit-mask: url('charge-maintenance.svg') no-repeat center;
   mask: url('charge-maintenance.svg') no-repeat center;
 }
@@ -17240,7 +17351,6 @@ table.tableStyle thead tr th.tblehead {
 #auditLogsTable .dataTables_empty {
   display: none;
 }
-
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[1].use[2]!./node_modules/font-awesome/css/font-awesome.css ***!
   \****************************************************************************************************************************************************************************************************************************************/
@@ -21171,8 +21281,8 @@ a:hover {
 
 .theme2 .dataTables_wrapper .dataTables_filter input {
   border: unset;
-  background-color: #323248;
-  color: #cdcdde;
+  background-color: #323248 !important;
+  color: #cdcdde !important;
 }
 
 .theme2 .dataTables_wrapper .dataTables_length select {
@@ -21299,7 +21409,7 @@ a:hover {
 }
 
 .theme2 input {
-  background-color: none !important;
+  background-color: #1b1b29 !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }

@@ -1641,8 +1641,8 @@ a:hover {
 
 .theme2 .dataTables_wrapper .dataTables_filter input {
   border: unset;
-  background-color: #323248;
-  color: #cdcdde;
+  background-color: #323248 !important;
+  color: #cdcdde !important;
 }
 
 .theme2 .dataTables_wrapper .dataTables_length select {
@@ -1765,7 +1765,7 @@ a:hover {
 }
 
 .theme2 input {
-  background-color: none !important;
+  background-color: #1b1b29 !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }

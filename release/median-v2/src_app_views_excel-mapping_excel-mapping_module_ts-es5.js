@@ -1716,6 +1716,7 @@
               this.apiService.getExcelMappingDataforEdit(this.extCode, this.processNAme, this.extSys).subscribe(function (editResp) {
                 console.log("This. is new Resp", editResp);
                 _this3.newDataResponse = editResp;
+                debugger;
                 localStorage.setItem('newDataResponse', JSON.stringify(_this3.newDataResponse));
                 var retrievedObject = localStorage.getItem('newDataResponse');
                 _this3.newDataResponse = JSON.parse(retrievedObject);
@@ -4308,9 +4309,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "span", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_28_Template_span_click_4_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_28_Template_a_click_4_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r21);
 
             var exdata_r3 = restoredCtx.$implicit;

@@ -4221,7 +4221,7 @@ const environment = {
     //MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
     // ACC_CLOSER_URL: 'http://192.168.0.14:8082/medianAccountClosure'
     MEDIAN_URL: 'http://192.168.0.14:8082/medianv2',
-    ACC_CLOSER_URL: 'http://192.168.0.14:8082/medianAccountClosure'
+    ACC_CLOSER_URL: 'http://192.168.0.14:8082/medianv2'
 };
 
 
