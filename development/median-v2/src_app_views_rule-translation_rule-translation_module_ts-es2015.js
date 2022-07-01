@@ -1049,12 +1049,14 @@ class RuleTranslationDetailsComponent {
         console.log(this.translationDTO);
         this.rules.editruleTranslation("update", this.currentUser, updatedFormData).subscribe(ruleTranslationResp => {
             console.log(ruleTranslationResp);
+            this.ruleTRespData = ruleTranslationResp;
             if (ruleTranslationResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Record is Updated',
                     icon: 'success' });
                 this.submit = false;
                 this.showAuditLog = true;
                 this.editValue = false;
+                this.hideSubmit = false;
                 this.formTouched = !this.ruleTransForm.touched;
             }
         }, (err) => {

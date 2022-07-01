@@ -761,7 +761,7 @@ function CustomerSearchComponent_div_30_Template(rf, ctx) { if (rf & 1) {
 } }
 function CustomerSearchComponent_div_42_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, " Account Number should be the combination of Alphanumeric characters ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, " Enter Valid Account Number ");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 } }
 function CustomerSearchComponent_div_43_Template(rf, ctx) { if (rf & 1) {
@@ -1106,7 +1106,7 @@ class CustomerSearchComponent {
         this.accountForm = this.formBuilder.group({
             firstName: [""],
             customerNumber: [""],
-            accountNumber: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern("(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$")]],
+            accountNumber: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern("((?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$|[0-9]*)")]],
             mobileNo: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.min(1000000000), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.max(9999999999)]],
             lastName: [""],
             customerName: [""],
@@ -1375,7 +1375,11 @@ class CustomerSearchComponent {
     }
     keyPressAlphanumeric(event) {
         var inp = String.fromCharCode(event.keyCode);
+        var charCode = (event.which) ? event.which : event.keyCode;
         if (/[a-zA-Z0-9]/.test(inp)) {
+            return true;
+        }
+        else if ((charCode < 48 || charCode > 57)) {
             return true;
         }
         else {
@@ -1401,7 +1405,7 @@ class CustomerSearchComponent {
         this.accountForm = this.formBuilder.group({
             firstName: [data ? data.firstName : ""],
             customerNumber: [data ? data.customerNumber : ""],
-            accountNumber: [data ? data.accountNumber : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern("(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$")]],
+            accountNumber: [data ? data.accountNumber : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern("((?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$|[0-9]*)")]],
             mobileNo: [data ? data.mobileNo : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.min(1000000000), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.max(9999999999)]],
             lastName: [data ? data.lastName : ""],
             customerName: [data ? data.customerName : ""],

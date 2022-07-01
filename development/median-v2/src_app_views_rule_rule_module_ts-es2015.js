@@ -1202,6 +1202,8 @@ class RuleDetails2Component {
             this.ruleConfig.approvedEver = 'Y';
         }
         this.rules.editRuleConfig("update", this.ruleConfig, this.currentUser).subscribe((data) => {
+            this.ruleConfig = data;
+            console.log(this.ruleConfig);
             if (data) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Record is Updated',
                     icon: 'success' });
@@ -1209,6 +1211,8 @@ class RuleDetails2Component {
                 // this.toastService.successMessage('Record Saved Successfully!.', '');
                 this.ModifyCreateRule = true;
                 this.submit = false;
+                this.showRuleValidation = false;
+                this.hideSubmit = false;
             }
         }, err => {
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Failed To Save the Record', icon: 'error' });

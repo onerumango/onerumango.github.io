@@ -2067,6 +2067,7 @@
             console.log(this.translationDTO);
             this.rules.editruleTranslation("update", this.currentUser, updatedFormData).subscribe(function (ruleTranslationResp) {
               console.log(ruleTranslationResp);
+              _this6.ruleTRespData = ruleTranslationResp;
 
               if (ruleTranslationResp) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -2076,6 +2077,7 @@
                 _this6.submit = false;
                 _this6.showAuditLog = true;
                 _this6.editValue = false;
+                _this6.hideSubmit = false;
                 _this6.formTouched = !_this6.ruleTransForm.touched;
               }
             }, function (err) {

@@ -2320,6 +2320,9 @@
             }
 
             this.rules.editRuleConfig("update", this.ruleConfig, this.currentUser).subscribe(function (data) {
+              _this10.ruleConfig = data;
+              console.log(_this10.ruleConfig);
+
               if (data) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   text: 'Record is Updated',
@@ -2329,6 +2332,8 @@
 
                 _this10.ModifyCreateRule = true;
                 _this10.submit = false;
+                _this10.showRuleValidation = false;
+                _this10.hideSubmit = false;
               }
             }, function (err) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
