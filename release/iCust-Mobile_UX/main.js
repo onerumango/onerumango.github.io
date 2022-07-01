@@ -1364,6 +1364,9 @@ let ApiService = class ApiService {
         this.Index = new rxjs__WEBPACK_IMPORTED_MODULE_5__["BehaviorSubject"]({
             index: '',
         });
+        this.firstTimeLogin = new rxjs__WEBPACK_IMPORTED_MODULE_5__["BehaviorSubject"]({
+            firstTimeLogin: '',
+        });
     }
     sendOtp(otp) {
         this.shareOtp.next(otp);
@@ -1495,6 +1498,21 @@ let ApiService = class ApiService {
     }
     getNumberOfCrowd(tokenBranch) {
         return this.http.get(`${API_URL}/token/api/fetchTokenCountByBranch?tokenBranch=${tokenBranch}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
+    }
+    setFirstTimeLogin(firstTimeLogin) {
+        this.Index.next(firstTimeLogin);
+    }
+    getFirstTimeLogin() {
+        return this.firstTimeLogin.asObservable();
+    }
+    validatePassword(phoneNumber, password) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
+            .append('phoneNumber', phoneNumber)
+            .append('password', password);
+        return this.http.get(`${API_URL}/customerdata/validateCutomerPassword?${params}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(this.errorHandler));
+    }
+    updateCustomerPassword(model) {
+        return this.http.put(`${API_URL}/customerdata/updateCustomerPassword`, model);
     }
 };
 ApiService.ctorParameters = () => [
@@ -2765,6 +2783,10 @@ const rootRouterConfig = [
         path: 'otp',
         loadChildren: () => Promise.all(/*! import() | views-otp-otp-module */[__webpack_require__.e("default~views-login-login-module~views-otp-otp-module"), __webpack_require__.e("views-otp-otp-module")]).then(__webpack_require__.bind(null, /*! ./views/otp/otp.module */ "CVe6")).then(m => m.OtpPageModule)
     },
+    {
+        path: 'notification',
+        loadChildren: () => __webpack_require__.e(/*! import() | views-notification-notification-module */ "views-notification-notification-module").then(__webpack_require__.bind(null, /*! ./views/notification/notification.module */ "rL3p")).then(m => m.NotificationPageModule)
+    }
 ];
 
 
