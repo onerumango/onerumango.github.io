@@ -1927,6 +1927,9 @@
                   });
                 } else {
                   _this10.eamilAuditLog = editResp;
+
+                  _this10.auditLog();
+
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: 'Record is Updated',
                     icon: 'success'
@@ -1934,6 +1937,7 @@
                   _this10.formTouched = !_this10.emailForm.touched;
                   _this10.modifyScreen = true;
                   _this10.submitBtn = false;
+                  _this10.editFlag = true;
                 }
               });
             }

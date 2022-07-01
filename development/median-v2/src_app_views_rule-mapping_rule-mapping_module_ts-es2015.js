@@ -2116,8 +2116,17 @@ class RuleMappingDetailsComponent {
                 }
                 else {
                     let payloadObj = {};
+                    console.log(this.ruleMappingDataForPayload);
                     payloadObj = this.ruleMappingDataForPayload;
                     payloadObj.msgMappingDetails = this.rulemappingDetail;
+                    console.log(payloadObj);
+                    if (payloadObj.recordStatus == 'OPEN') {
+                        payloadObj.recordStatus = 'O';
+                    }
+                    if (payloadObj.recordStatus == 'CLOSE') {
+                        payloadObj.recordStatus = 'C';
+                    }
+                    console.log(payloadObj);
                     this.rulemap.editRuleMapping("auth", this.currentUser, payloadObj).subscribe((resp) => {
                         this.authorizeDone = true;
                         this.addSysRespData = resp;
@@ -2352,6 +2361,7 @@ class RuleMappingDetailsComponent {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({ text: 'Record is Updated',
                     icon: 'success' });
                 this.submit = false;
+                this.hideFetch = false;
                 this.formTouched = !this.ruleMappingForm.touched;
             }
         }, (err) => {

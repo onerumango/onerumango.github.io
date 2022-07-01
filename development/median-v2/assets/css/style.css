@@ -1966,7 +1966,7 @@ a:hover {
   border: 1px solid #efefef;
   height: 45px;
   font-size: 13px;
-  color: var(--themeColor);
+  color:#b4b1b4;
 }
 
 .formStyle input::-webkit-outer-spin-button,

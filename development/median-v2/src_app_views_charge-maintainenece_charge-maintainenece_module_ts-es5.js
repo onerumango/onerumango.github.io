@@ -907,9 +907,9 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [3]
+                'targets': [5]
               }],
-              order: [[3, 'desc']],
+              order: [[5, 'desc']],
               processing: true,
               lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
               retrieve: true

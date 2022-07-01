@@ -6185,7 +6185,7 @@
             }
 
             if (value === "messageConfiguration" && this.basicInfoForm.value.messsageType !== "A") {
-              if ((this.messageConfigurationForm.value.sysChannel[0].messageChannel === "TCP/IP" || this.messageConfigurationForm.value.sysChannel[0].messageChannel === "Https/Http" || this.messageConfigurationForm.value.sysChannel[0].messageFormat === "JSON" || this.messageConfigurationForm.value.sysChannel[0].messageFormat === "XML") && this.basicInfoForm.value.messsageType != "A") {
+              if ((this.messageConfigurationForm.value.sysChannel[0].messageChannel === "TCP/IP" || this.messageConfigurationForm.value.sysChannel[0].messageChannel === "Https/Http" || this.messageConfigurationForm.value.sysChannel[0].messageFormat === "JSON" || this.messageConfigurationForm.value.sysChannel[0].messageFormat === "XML" || this.messageConfigurationForm.value.sysChannel[0].messageChannel === "DB Connection") && this.basicInfoForm.value.messsageType != "A") {
                 this.messageConfigurationForm.value.sysChannel[0].messageType = this.basicInfoForm.value.messsageType;
                 this.basicConfiguration = false;
                 this.messageConfiguration = false;
@@ -6258,6 +6258,7 @@
           value: function fetchDatabaseTable() {
             var _this5 = this;
 
+            this.messageConfigurationForm.value.sysChannel[0].messageType = this.basicInfoForm.value.messsageType;
             console.log(this.messageConfigurationForm.value.sysChannel[0]);
             this.addSystem.pingDataSource(this.messageConfigurationForm.value.sysChannel[0].dbConnectString, this.messageConfigurationForm.value.sysChannel[0].dbServiceName, this.messageConfigurationForm.value.sysChannel[0].dbUsername, this.messageConfigurationForm.value.sysChannel[0].dbPassword).subscribe(function (resp) {
               console.log("resp from backend for fetching database tables ", resp);

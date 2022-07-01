@@ -1187,6 +1187,7 @@ class EmailManagementCreateComponent {
                 }
                 else {
                     this.eamilAuditLog = editResp;
+                    this.auditLog();
                     sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                         text: 'Record is Updated',
                         icon: 'success'
@@ -1194,6 +1195,7 @@ class EmailManagementCreateComponent {
                     this.formTouched = !this.emailForm.touched;
                     this.modifyScreen = true;
                     this.submitBtn = false;
+                    this.editFlag = true;
                 }
             });
         }

@@ -3968,8 +3968,20 @@
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Maker cannot authorize the record!'); // this.toastService.successMessage('Maker cannot authorize!', '');
                 } else {
                   var payloadObj = {};
+                  console.log(_this17.ruleMappingDataForPayload);
                   payloadObj = _this17.ruleMappingDataForPayload;
                   payloadObj.msgMappingDetails = _this17.rulemappingDetail;
+                  console.log(payloadObj);
+
+                  if (payloadObj.recordStatus == 'OPEN') {
+                    payloadObj.recordStatus = 'O';
+                  }
+
+                  if (payloadObj.recordStatus == 'CLOSE') {
+                    payloadObj.recordStatus = 'C';
+                  }
+
+                  console.log(payloadObj);
 
                   _this17.rulemap.editRuleMapping("auth", _this17.currentUser, payloadObj).subscribe(function (resp) {
                     _this17.authorizeDone = true;
@@ -4286,6 +4298,7 @@
                   icon: 'success'
                 });
                 _this25.submit = false;
+                _this25.hideFetch = false;
                 _this25.formTouched = !_this25.ruleMappingForm.touched;
               }
             }, function (err) {

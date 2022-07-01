@@ -3119,7 +3119,9 @@ class AddSystemComponent {
                 this.messageConfigurationForm.value.sysChannel[0].messageFormat ===
                     "JSON" ||
                 this.messageConfigurationForm.value.sysChannel[0].messageFormat ===
-                    "XML") &&
+                    "XML" ||
+                this.messageConfigurationForm.value.sysChannel[0].messageChannel ===
+                    "DB Connection") &&
                 this.basicInfoForm.value.messsageType != "A") {
                 this.messageConfigurationForm.value.sysChannel[0].messageType =
                     this.basicInfoForm.value.messsageType;
@@ -3196,6 +3198,7 @@ class AddSystemComponent {
         }
     }
     fetchDatabaseTable() {
+        this.messageConfigurationForm.value.sysChannel[0].messageType = this.basicInfoForm.value.messsageType;
         console.log(this.messageConfigurationForm.value.sysChannel[0]);
         this.addSystem
             .pingDataSource(this.messageConfigurationForm.value.sysChannel[0].dbConnectString, this.messageConfigurationForm.value.sysChannel[0].dbServiceName, this.messageConfigurationForm.value.sysChannel[0].dbUsername, this.messageConfigurationForm.value.sysChannel[0].dbPassword)
