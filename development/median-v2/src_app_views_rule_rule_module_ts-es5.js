@@ -1332,7 +1332,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", !ctx_r30.submit || ctx_r30.ruleForm.get("sysRuleDetails").invalid || ctx_r30.ruleForm.get("validationSystems").invalid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r30.ruleForm.get("sysRuleDetails").invalid || ctx_r30.ruleForm.get("validationSystems").invalid);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
 
