@@ -16,6 +16,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/api.service */ "H+bZ");
+/* harmony import */ var src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/custom-validators.service */ "APJC");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
 
 
 
@@ -23,18 +29,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ChangePasswordPage = class ChangePasswordPage {
-    constructor(fb, router) {
+    constructor(fb, router, api, toastCtrl) {
         this.fb = fb;
         this.router = router;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
         this.currShowPassword = false;
         this.newShowPassword = false;
         this.reEnterShowPassword = false;
+        this.firstTimeLogin = 'N';
     }
     ngOnInit() {
+        this.firstTimeLogin = localStorage.getItem('firstTimeLogin');
+        if (this.firstTimeLogin == null || this.firstTimeLogin == undefined || this.firstTimeLogin == '') {
+            this.firstTimeLogin = 'N';
+        }
+        this.customerPhonenum = localStorage.getItem('customerPhonenum');
+        console.log("<===> ", this.firstTimeLogin === 'Y' ? 'YES' : 'NO');
         this.changePasswordForm = this.fb.group({
-            currentPassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
-            newPassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
-            newPasswordConfirmation: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
+            currentPassword: ['', this.firstTimeLogin === 'Y' ? [] : [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
+            newPassword: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].compose([
+                    // 1. Password Field is Required
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required,
+                    // 2. check whether the entered password has a number
+                    src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_7__["CustomValidatorsService"].patternValidator(/\d/, { hasNumber: true }),
+                    // 3. check whether the entered password has upper case letter
+                    src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_7__["CustomValidatorsService"].patternValidator(/[A-Z]/, { hasCapitalCase: true }),
+                    // 4. check whether the entered password has a lower-case letter
+                    src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_7__["CustomValidatorsService"].patternValidator(/[a-z]/, { hasSmallCase: true }),
+                    // 5. check whether the entered password has a special character
+                    src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_7__["CustomValidatorsService"].patternValidator(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/, {
+                        hasSpecialCharacters: true
+                    }),
+                    // 6. Has a minimum length of 8 characters
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(8)
+                ])],
+            newPasswordConfirmation: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required])],
+        }, {
+            // check whether our password and confirm password match
+            validator: src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_7__["CustomValidatorsService"].passwordMatchValidator
         });
         console.log(this.changePasswordForm.value);
     }
@@ -51,14 +84,52 @@ let ChangePasswordPage = class ChangePasswordPage {
     }
     save() {
         console.log(this.changePasswordForm.value);
+        var obj = {
+            "phoneNumber": this.customerPhonenum,
+            "custPassword": this.changePasswordForm.value.newPasswordConfirmation
+        };
+        this.api.updateCustomerPassword(obj).subscribe(data => {
+            if (data.hasOwnProperty("content")) {
+                if (data.content.toString().includes('No record exists for given phone number')) {
+                    this.openToast('No record exists for given phone number');
+                }
+            }
+            else {
+                localStorage.setItem('firstTimeLogin', 'N');
+                if (this.firstTimeLogin == 'Y') {
+                    this.openToast('Created password successfully');
+                    this.router.navigateByUrl('/otp');
+                }
+                else {
+                    this.openToast('Updated password successfully');
+                }
+            }
+        }, error => {
+        });
+    }
+    openToast(message) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = yield this.toastCtrl.create({
+                message: `${message}`,
+                duration: 5000
+            });
+            toast.present();
+        });
     }
     previous() {
-        this.router.navigate(['/tabs/profile']);
+        if (this.firstTimeLogin === 'Y') {
+            this.router.navigateByUrl('/login');
+        }
+        else {
+            this.router.navigate(['/tabs/profile']);
+        }
     }
 };
 ChangePasswordPage.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["ToastController"] }
 ];
 ChangePasswordPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -67,6 +138,55 @@ ChangePasswordPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         styles: [_change_password_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
 ], ChangePasswordPage);
+
+
+
+/***/ }),
+
+/***/ "APJC":
+/*!*******************************************************!*\
+  !*** ./src/app/services/custom-validators.service.ts ***!
+  \*******************************************************/
+/*! exports provided: CustomValidatorsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomValidatorsService", function() { return CustomValidatorsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+let CustomValidatorsService = class CustomValidatorsService {
+    constructor() { }
+    static patternValidator(regex, error) {
+        return (control) => {
+            if (!control.value) {
+                // if control is empty return no error
+                return null;
+            }
+            // test the value of the control against the regexp supplied
+            const valid = regex.test(control.value);
+            // if true, return no error (no error), else return error passed in the second parameter
+            return valid ? null : error;
+        };
+    }
+    static passwordMatchValidator(control) {
+        const password = control.get('newPassword').value; // get password from our password form control
+        const confirmPassword = control.get('newPasswordConfirmation').value; // get password from our confirmPassword form control
+        // compare is the password math
+        if (password !== confirmPassword) {
+            // if they don't match, set an error in our confirmPassword form control
+            control.get('newPasswordConfirmation').setErrors({ NoPassswordMatch: true });
+        }
+    }
+};
+CustomValidatorsService.ctorParameters = () => [];
+CustomValidatorsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CustomValidatorsService);
 
 
 
@@ -94,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar  class=\"new-background-color\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous()\"></ion-icon>\r\n    <span class=\"text\" style=\"margin-left: 2%;\">Change Password</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n \r\n  <form  [formGroup]=\"changePasswordForm\">\r\n\r\n    <ion-list>\r\n      <ion-item>\r\n        <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">Current Password</ion-label>\r\n    <ion-input placeholder=\"Enter Current Password\" [type]=\"currShowPassword ? 'text' : 'password'\"\r\n    formControlName=\"currentPassword\"></ion-input>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('current')\" ion-button clear small item-end [name]=\"currShowPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">New Password</ion-label>\r\n        <ion-input [type]=\"newShowPassword ? 'text' : 'password'\" placeholder=\"Enter New Password\" formControlName=\"newPassword\"\r\n        ></ion-input>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('new')\" ion-button clear small item-end [name]=\"newShowPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">Re-enter New Password</ion-label>\r\n        <ion-input [type]=\"reEnterShowPassword ? 'text' : 'password'\" placeholder=\"Re-enter Current Password\" formControlName=\"newPasswordConfirmation\"></ion-input>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('reenter')\" ion-button clear small item-end [name]=\"reEnterShowPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n      </ion-item>\r\n    </ion-list>\r\n    <!-- <div >\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Current Password</ion-label>\r\n    <ion-input placeholder=\"Enter Current Password\" [type]=\"showPassword ? 'text' : 'password'\"\r\n    formControlName=\"currentPassword\" ngDefaultControl></ion-input>\r\n    <button class=\"suffix-icon\" (click)=\"onPasswordToggle()\" ion-button clear small item-end icon-only>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle()\" ion-button clear small item-end [name]=\"showPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n    </button>\r\n      </ion-item>\r\n    \r\n    </div>\r\n    <div class=\"inputCard\">\r\n      <ion-label>New Password</ion-label>\r\n      <ion-input class=\"box\" placeholder=\"Enter New Password\" formControlName=\"newPassword\" ngDefaultControl></ion-input>\r\n    \r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-label>Re-enter New Password</ion-label>\r\n        <ion-input class=\"box\" placeholder=\"Re-enter Current Password\" formControlName=\"newPasswordConfirmation\" ngDefaultControl></ion-input>\r\n      \r\n        </div> -->\r\n\r\n    </form>\r\n  \r\n     \r\n  \r\n  </ion-content>\r\n  <div>\r\n    <ion-button  expand=\"block\" shape=\"round\" style=\"height:56px;margin-left:16pt;margin-right:16pt;margin-bottom: 31px;\"\r\n    (click)=\"save()\">Save Changes</ion-button>\r\n    </div>\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar  class=\"new-background-color\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous()\"></ion-icon>\r\n    <span class=\"text\" style=\"margin-left: 2%;\">Change Password</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n \r\n  <form  [formGroup]=\"changePasswordForm\">\r\n\r\n    <ion-list>\r\n      <ion-item *ngIf=\"firstTimeLogin == 'N' \">\r\n        <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">Current Password</ion-label>\r\n    <ion-input placeholder=\"Enter Current Password\" [type]=\"currShowPassword ? 'text' : 'password'\"\r\n    formControlName=\"currentPassword\"></ion-input>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('current')\" ion-button clear small item-end [name]=\"currShowPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">New Password</ion-label>\r\n        <ion-input [type]=\"newShowPassword ? 'text' : 'password'\" placeholder=\"Enter New Password\" formControlName=\"newPassword\"\r\n        ></ion-input>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('new')\" ion-button clear small item-end [name]=\"newShowPassword ? 'eye' : 'eye-off'\"></ion-icon> \r\n    </ion-item>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].invalid && (changePasswordForm.controls['newPassword'].dirty\r\n     || changePasswordForm.controls['newPassword'].touched)\" class=\"alert\">\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('required')\" style=\"color :red;\">\r\n      <span slot=\"error\">Password is required</span>\r\n    </div>\r\n  </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('minlength')\"  style=\"color :red;\">\r\n      <span slot=\"error\"> Must be at least 8 characters!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasNumber')\"  style=\"color :red;\">\r\n      <span slot=\"error\"> Must contain at least 1 number!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasCapitalCase')\"  style=\"color :red;\">\r\n      <span slot=\"error\"> Must contain at least 1 in Capital Case!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasSmallCase')\"  style=\"color :red;\">\r\n      <span slot=\"error\"> Must contain at least 1 Letter in small Case!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasSpecialCharacters')\"  style=\"color :red;\">\r\n      <span slot=\"error\"> Must contain at least 1 Special Character!</span>\r\n    </div>\r\n      <ion-item>\r\n        <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">Re-enter New Password</ion-label>\r\n        <ion-input [type]=\"reEnterShowPassword ? 'text' : 'password'\" placeholder=\"Re-enter Current Password\" formControlName=\"newPasswordConfirmation\"></ion-input>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('reenter')\" ion-button clear small item-end [name]=\"reEnterShowPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n      </ion-item>\r\n    <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].invalid && (changePasswordForm.controls['newPasswordConfirmation'].dirty || changePasswordForm.controls['newPasswordConfirmation'].touched)\" class=\"alert\">\r\n      <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].hasError('required')\"  style=\"color :red;\">\r\n        Confirm Password is Required!\r\n      </div>\r\n\r\n      <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].hasError('NoPassswordMatch')\"  style=\"color :red;\">\r\n        Password do not match\r\n      </div>\r\n    </div>\r\n\r\n\r\n    </ion-list>\r\n    <!-- <div >\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Current Password</ion-label>\r\n    <ion-input placeholder=\"Enter Current Password\" [type]=\"showPassword ? 'text' : 'password'\"\r\n    formControlName=\"currentPassword\" ngDefaultControl></ion-input>\r\n    <button class=\"suffix-icon\" (click)=\"onPasswordToggle()\" ion-button clear small item-end icon-only>\r\n      <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle()\" ion-button clear small item-end [name]=\"showPassword ? 'eye' : 'eye-off'\"></ion-icon>\r\n    </button>\r\n      </ion-item>\r\n    \r\n    </div>\r\n    <div class=\"inputCard\">\r\n      <ion-label>New Password</ion-label>\r\n      <ion-input class=\"box\" placeholder=\"Enter New Password\" formControlName=\"newPassword\" ngDefaultControl></ion-input>\r\n    \r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-label>Re-enter New Password</ion-label>\r\n        <ion-input class=\"box\" placeholder=\"Re-enter Current Password\" formControlName=\"newPasswordConfirmation\" ngDefaultControl></ion-input>\r\n      \r\n        </div> -->\r\n\r\n    </form>\r\n  \r\n     \r\n  \r\n  </ion-content>\r\n  <div>\r\n    <ion-button  expand=\"block\" shape=\"round\" style=\"height:56px;margin-left:16pt;margin-right:16pt;margin-bottom: 31px;\"\r\n    (click)=\"save()\">Save Changes</ion-button>\r\n    </div>\r\n\r\n\r\n\r\n");
 
 /***/ }),
 

@@ -1395,8 +1395,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/api.service */ "H+bZ");
 /* harmony import */ var _login_login_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../login/login.page */ "Klcu");
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-toastr */ "5eHb");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-toastr */ "5eHb");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
 
 
 
@@ -1421,23 +1425,36 @@ let OtpPage = class OtpPage {
         this.otpValid = false;
         this.verifyOtpModel = new verifyotpModel();
         this.oTpModel = new _login_login_page__WEBPACK_IMPORTED_MODULE_7__["otpModel"]();
+        this.showPassword = false;
+        this.showOtp = false;
+        this.userPasswordUpdate = new rxjs__WEBPACK_IMPORTED_MODULE_8__["Subject"]();
+        this.userPasswordUpdate
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["debounceTime"])(1000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["distinctUntilChanged"])())
+            .subscribe((value) => {
+            console.log('----', value);
+            this.validatePassword(value);
+        });
     }
     ngOnInit() {
+        this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.otpForm = this.fb.group({
             phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
-            otp: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]]
+            otp: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]]
         });
         this.PhoneNumLogin = localStorage.getItem('PhoneNumLogin');
         console.log(localStorage.getItem('PhoneNumLogin'));
-        this.api.getOtpToken.subscribe(otp => {
-            console.log("Subject otp", otp);
-            if (otp.length === 6) {
-                this.otpToken = otp;
-                console.log("this is otpToken", this.otpToken);
-                this.otpForm.get('otp').patchValue(this.otpToken);
-                this.openToast1("OTP auto populated successfully!");
-            }
-        });
+        // this.api.getOtpToken.subscribe(otp =>{
+        //   console.log("Subject otp",otp);
+        // })
+    }
+    onPasswordToggle(showType) {
+        if (showType === 'new') {
+            this.showPassword = !this.showPassword;
+        }
+        if (showType === 'otp') {
+            this.showOtp = !this.showOtp;
+        }
     }
     numberOnly(event) {
         console.log("event", event);
@@ -1455,6 +1472,7 @@ let OtpPage = class OtpPage {
         this.api.getOtp(this.oTpModel).subscribe(otpResp => {
             console.log("Response Success", otpResp);
             this.otpResponse = otpResp;
+            localStorage.setItem('firstTimeLogin', 'N');
             /* Added validation for un-registered mobile nummber is entered */
             console.log(this.otpResponse);
             if (this.otpResponse.otpVal.userId === "New Customer" || (this.otpResponse.otpVal.userId === '' && this.otpResponse.otpVal.userId === null)) {
@@ -1480,6 +1498,38 @@ let OtpPage = class OtpPage {
     // customerPhonenum(arg0: string, customerPhonenum: any) {
     // throw new Error('Method not implemented.');
     //}
+    validatePassword(password) {
+        console.log('password ==> ', password);
+        this.api.validatePassword(this.customerPhonenum, password)
+            .subscribe(data => {
+            console.log("data", data);
+            if (data.hasOwnProperty("content")) {
+                if (data.content.toString().includes('Wrong Password')) {
+                    this.openToast1('Wrong Password');
+                    this.otpToken = null;
+                    console.log("this is otpToken", this.otpToken);
+                    this.otpForm.get('otp').patchValue(this.otpToken);
+                }
+                else {
+                    localStorage.setItem('firstTimeLogin', 'N');
+                    this.api.getOtpToken.subscribe(otp => {
+                        console.log('otp:: ', otp, this.otpToken);
+                        if (otp != null && otp != undefined) {
+                            if (otp.length === 6) {
+                                this.otpToken = otp;
+                                console.log("this is otpToken", this.otpToken);
+                                this.otpForm.get('otp').patchValue(this.otpToken);
+                                this.openToast1("OTP auto populated successfully!");
+                            }
+                        }
+                        else {
+                        }
+                    });
+                }
+            }
+        }, error => {
+        });
+    }
     validateOtp(otpValue) {
         console.log("Phonenumber for OTP", otpValue, otpValue.otp, this.otpToken);
         console.log(otpValue.otp);
@@ -1550,8 +1600,8 @@ OtpPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] },
-    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["ToastController"] }
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_10__["ToastrService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_11__["ToastController"] }
 ];
 OtpPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -1624,7 +1674,7 @@ OtpPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <!-- <div class=\"float-right-lg\"> -->\r\n    <div class=\"top-right-quarter-circle\"></div>\r\n  <!-- </div> -->\r\n  \r\n \r\n    <form *ngIf=\"otpForm\" [formGroup]=\"otpForm\"  novalidate style=\"height: 890px;\">\r\n      <div class=\"login-logo\">\r\n        <img src=\"assets\\images\\BL1.png\" alt=\"Ionic logo\">\r\n      </div>\r\n    <div style=\"padding-top: -60%;\">\r\n\r\n    \r\n      <div class=\"titleCard\">\r\n        <ion-text>\r\n          <h2 style=\"color:black\">Sign In</h2>\r\n          <h5 style=\"color: gray;\">Enter your details to get started</h5>\r\n        </ion-text>\r\n      </div>\r\n    \r\n    \r\n      <!-- <div class=\"inputCard\" >\r\n       <ion-label position=\"floating\">Phone number</ion-label>\r\n        <ion-input class=\"box\" formControlName=\"phoneNo\"></ion-input>\r\n    </div> -->\r\n    \r\n    <div class=\"inputCard\">\r\n      <ion-label position=\"floating\">OTP</ion-label>\r\n       <ion-input class=\"box\" formControlName=\"otp\" (keypress)=\"numberOnly($event)\" numbersOnly minLength = \"6\"  maxLength = \"6\"></ion-input>\r\n    </div>\r\n    \r\n    <div class=\"inputCardButton\">\r\n      <!-- <ion-button expand=\"block\" shape=\"round\" (click) =\"getOtp(loginForm.value)\"\r\n      >Continue</ion-button> -->\r\n      <ion-button expand=\"block\" shape=\"round\" (click) =\"validateOtp(otpForm.value) \"\r\n      >Log In</ion-button>\r\n      <!-- (click)=\"goToCashWithdrawal(loginForm.value)\" ;goToCashWithdrawal(otpForm.value)-->\r\n    </div>\r\n    \r\n    <div class=\"inputCardButton1\">\r\n      <!-- <ion-button expand=\"block\" shape=\"round\" (click) =\"getOtp(loginForm.value)\"\r\n      >Continue</ion-button> -->\r\n      <ion-button expand=\"block\" shape=\"round\" (click) =\"goBack() \"\r\n      >Go Back</ion-button>\r\n      <!-- (click)=\"goToCashWithdrawal(loginForm.value)\" ;goToCashWithdrawal(otpForm.value)-->\r\n    </div>\r\n    <div class=\"ion-padding-top\">\r\n      <p style=\"padding-left: 20%;display: inline;\">Didn't Received your OTP? </p>\r\n      <p (click) =\"getOtp()\"   style=\"display: inline; font-weight: bolder; cursor: pointer;\">Resend</p>\r\n  \r\n    </div>\r\n  </div>\r\n    </form> <div class=\"top-left-quarter-circle\"></div>\r\n  </ion-content>\r\n  \r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <!-- <div class=\"float-right-lg\"> -->\r\n    <div class=\"top-right-quarter-circle\"></div>\r\n  <!-- </div> -->\r\n  \r\n \r\n    <form *ngIf=\"otpForm\" [formGroup]=\"otpForm\"  novalidate style=\"height: 890px;\">\r\n      <div class=\"login-logo\">\r\n        <img src=\"assets\\images\\BL1.png\" alt=\"Ionic logo\">\r\n      </div>\r\n    <div style=\"padding-top: -60%;\">\r\n\r\n    \r\n      <div class=\"titleCard\">\r\n        <ion-text>\r\n          <h2 style=\"color:black\">Sign In</h2>\r\n          <h5 style=\"color: gray;\">Enter your details to get started</h5>\r\n        </ion-text>\r\n      </div>\r\n    \r\n    \r\n      <!-- <div class=\"inputCard\" >\r\n       <ion-label position=\"floating\">Phone number</ion-label>\r\n        <ion-input class=\"box\" formControlName=\"phoneNo\"></ion-input>\r\n    </div> -->\r\n    <ion-list>\r\n      <ion-item >\r\n          <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">Password</ion-label>\r\n           <ion-input class=\"box\" placeholder=\"Enter Password\" [type]=\"showPassword ? 'text' : 'password'\" formControlName=\"password\" (ngModelChange)=\"userPasswordUpdate.next($event)\"></ion-input>\r\n           <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('new')\" ion-button clear small item-end [name]=\"showPassword ? 'eye' : 'eye-off'\"></ion-icon> \r\n      </ion-item>\r\n      <ion-item >\r\n          <ion-label style=\"font-size: 26px;color:#1F618D;font-weight: 600;\" position=\"stacked\">OTP</ion-label>\r\n           <ion-input class=\"box\" [type]=\"showOtp ? 'text' : 'password'\" placeholder=\"Enter Otp\" formControlName=\"otp\" (keypress)=\"numberOnly($event)\" numbersOnly minLength = \"6\"  maxLength = \"6\"></ion-input>\r\n           <ion-icon  class=\"suffix-icon\" (click)=\"onPasswordToggle('otp')\" ion-button clear small item-end [name]=\"showOtp ? 'eye' : 'eye-off'\"></ion-icon> \r\n          </ion-item>\r\n          \r\n    </ion-list>\r\n\r\n    <div class=\"inputCardButton\">\r\n      <!-- <ion-button expand=\"block\" shape=\"round\" (click) =\"getOtp(loginForm.value)\"\r\n      >Continue</ion-button> -->\r\n      <ion-button expand=\"block\" shape=\"round\" (click) =\"validateOtp(otpForm.value) \"\r\n      >Log In</ion-button>\r\n      <!-- (click)=\"goToCashWithdrawal(loginForm.value)\" ;goToCashWithdrawal(otpForm.value)-->\r\n    </div>\r\n    \r\n    <div class=\"inputCardButton1\">\r\n      <!-- <ion-button expand=\"block\" shape=\"round\" (click) =\"getOtp(loginForm.value)\"\r\n      >Continue</ion-button> -->\r\n      <ion-button expand=\"block\" shape=\"round\" (click) =\"goBack() \"\r\n      >Go Back</ion-button>\r\n      <!-- (click)=\"goToCashWithdrawal(loginForm.value)\" ;goToCashWithdrawal(otpForm.value)-->\r\n    </div>\r\n    <div class=\"ion-padding-top\">\r\n      <p style=\"padding-left: 20%;display: inline;\">Didn't Received your OTP? </p>\r\n      <p (click) =\"getOtp()\"   style=\"display: inline; font-weight: bolder; cursor: pointer;\">Resend</p>\r\n  \r\n    </div>\r\n  </div>\r\n    </form> <div class=\"top-left-quarter-circle\"></div>\r\n  </ion-content>\r\n  \r\n\r\n");
 
 /***/ }),
 
@@ -1637,7 +1687,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 30%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n\n.maincard {\n  background-color: white;\n}\n\n.box {\n  border-color: #403E39;\n  border-width: thin;\n  border-style: solid;\n  border-radius: 10px;\n  width: 85%;\n  height: 45px;\n}\n\n.inputCard {\n  padding-top: 3%;\n  padding-left: 10%;\n}\n\n.inputCardButton {\n  padding-top: 16%;\n  padding-left: 10%;\n}\n\n.inputCardButton1 {\n  padding-top: 6%;\n  padding-left: 10%;\n}\n\n.titleCard {\n  padding-left: 5%;\n}\n\n.login-logo {\n  padding: 20px;\n  min-height: 190px;\n  text-align: center;\n}\n\n.login-logo img {\n  max-width: 120px;\n  margin-top: -9%;\n}\n\n.fieldCard {\n  padding-top: 50%;\n  padding-left: 5%;\n}\n\n.subtitle {\n  padding-left: 5%;\n}\n\n.top-right-quarter-circle {\n  width: 300px;\n  height: 290px;\n  margin-top: -30%;\n  margin-left: 50%;\n  border-radius: 250px 0 250px 250px;\n  background-color: #d8d8d8;\n}\n\n.top-left-quarter-circle {\n  width: 200px;\n  height: 160px;\n  margin-top: -20%;\n  border-radius: 0 300px 0 0;\n  background-color: #d8d8d8;\n}\n\nion-button {\n  width: 85%;\n  height: 45px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxvdHAucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFFRCxrQkFBQTtFQUNDLE9BQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FBQUo7O0FBRUU7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFDSjs7QUFFRTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUVBLGNBQUE7RUFFQSxTQUFBO0FBREo7O0FBSUU7RUFDRSxxQkFBQTtBQURKOztBQUdFO0VBQ0MsdUJBQUE7QUFBSDs7QUFHRTtFQUNFLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7QUFBSjs7QUFHRTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQUFKOztBQUVFO0VBQ0UsZ0JBQUE7RUFDQSxpQkFBQTtBQUNKOztBQUNFO0VBQ0MsZUFBQTtFQUNBLGlCQUFBO0FBRUg7O0FBQUU7RUFFSSxnQkFBQTtBQUVOOztBQUFFO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUFHSjs7QUFBRTtFQUNFLGdCQUFBO0VBQ0EsZUFBQTtBQUdKOztBQUFFO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQUdKOztBQUFFO0VBQ0UsZ0JBQUE7QUFHSjs7QUFBQTtFQUNJLFlBQUE7RUFDQSxhQUFBO0VBQ0QsZ0JBQUE7RUFDQSxnQkFBQTtFQUVDLGtDQUFBO0VBQ0EseUJBQUE7QUFFSjs7QUFBRTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7RUFFQSwwQkFBQTtFQUNBLHlCQUFBO0FBRUo7O0FBQUU7RUFDRSxVQUFBO0VBQ0EsWUFBQTtBQUdKIiwiZmlsZSI6Im90cC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBcclxuICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgdG9wOiAzMCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgfVxyXG4gICNjb250YWluZXIgc3Ryb25nIHtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAyNnB4O1xyXG4gIH1cclxuICBcclxuICAjY29udGFpbmVyIHAge1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDIycHg7XHJcbiAgXHJcbiAgICBjb2xvcjogIzhjOGM4YztcclxuICBcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbiAgXHJcbiAgI2NvbnRhaW5lciBhIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICB9XHJcbiAgLm1haW5jYXJke1xyXG4gICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgXHJcbiAgLmJveCB7XHJcbiAgICBib3JkZXItY29sb3I6ICM0MDNFMzk7XHJcbiAgICBib3JkZXItd2lkdGg6IHRoaW47XHJcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIHdpZHRoOiA4NSU7XHJcbiAgICBoZWlnaHQ6IDQ1cHg7XHJcbiAgIFxyXG4gIH1cclxuICAuaW5wdXRDYXJke1xyXG4gICAgcGFkZGluZy10b3A6IDMlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgfVxyXG4gIC5pbnB1dENhcmRCdXR0b257XHJcbiAgICBwYWRkaW5nLXRvcDogMTYlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgfVxyXG4gIC5pbnB1dENhcmRCdXR0b24xe1xyXG4gICBwYWRkaW5nLXRvcDogNiU7XHJcbiAgIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIH1cclxuICAudGl0bGVDYXJkXHJcbiAge1xyXG4gICAgICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gIH1cclxuICAubG9naW4tbG9nbyB7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWluLWhlaWdodDogMTkwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2dpbi1sb2dvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDEyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogLTklO1xyXG4gIH1cclxuICBcclxuICAuZmllbGRDYXJke1xyXG4gICAgcGFkZGluZy10b3A6IDUwJTtcclxuICAgIHBhZGRpbmctbGVmdDogNSU7XHJcbiAgfVxyXG5cclxuICAuc3VidGl0bGV7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gIH1cclxuIFxyXG4udG9wLXJpZ2h0LXF1YXJ0ZXItY2lyY2xlIHtcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgIGhlaWdodDogMjkwcHg7XHJcbiAgIG1hcmdpbi10b3A6IC0zMCU7XHJcbiAgIG1hcmdpbi1sZWZ0OiA1MCU7XHJcbiAgIFxyXG4gICAgYm9yZGVyLXJhZGl1czogMjUwcHggMCAyNTBweCAyNTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTYsIDIxNiwgMjE2KTtcclxuICB9XHJcbiAgLnRvcC1sZWZ0LXF1YXJ0ZXItY2lyY2xlIHtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDogMTYwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAtMjAlO1xyXG4gICAgXHJcbiAgICBib3JkZXItcmFkaXVzOiAwIDMwMHB4IDAgMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTYsIDIxNiwgMjE2KTtcclxuICB9XHJcbiAgaW9uLWJ1dHRvbntcclxuICAgIHdpZHRoOiA4NSU7XHJcbiAgICBoZWlnaHQ6IDQ1cHg7XHJcbn1cclxuXHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 30%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n\n.maincard {\n  background-color: white;\n}\n\n.box {\n  border-color: #403E39;\n  border-width: thin;\n  border-style: solid;\n  border-radius: 10px;\n  width: 85%;\n  height: 45px;\n}\n\n.inputCard {\n  padding-top: 3%;\n  padding-left: 10%;\n}\n\n.inputCardButton {\n  padding-top: 16%;\n  padding-left: 10%;\n}\n\n.inputCardButton1 {\n  padding-top: 6%;\n  padding-left: 10%;\n}\n\n.titleCard {\n  padding-left: 5%;\n}\n\n.login-logo {\n  padding: 20px;\n  min-height: 190px;\n  text-align: center;\n}\n\n.login-logo img {\n  max-width: 120px;\n  margin-top: -9%;\n}\n\n.fieldCard {\n  padding-top: 50%;\n  padding-left: 5%;\n}\n\n.subtitle {\n  padding-left: 5%;\n}\n\n.top-right-quarter-circle {\n  width: 300px;\n  height: 290px;\n  margin-top: -30%;\n  margin-left: 50%;\n  border-radius: 250px 0 250px 250px;\n  background-color: #d8d8d8;\n}\n\n.top-left-quarter-circle {\n  width: 200px;\n  height: 160px;\n  margin-top: -20%;\n  border-radius: 0 300px 0 0;\n  background-color: #d8d8d8;\n}\n\nion-button {\n  width: 85%;\n  height: 45px;\n}\n\n.suffix-icon {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  margin-right: 40px;\n  font-size: xx-large;\n  color: #1F618D;\n}\n\nion-item {\n  margin-top: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxvdHAucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFFRCxrQkFBQTtFQUNDLE9BQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FBQUo7O0FBRUU7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFDSjs7QUFFRTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUVBLGNBQUE7RUFFQSxTQUFBO0FBREo7O0FBSUU7RUFDRSxxQkFBQTtBQURKOztBQUdFO0VBQ0MsdUJBQUE7QUFBSDs7QUFHRTtFQUNFLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7QUFBSjs7QUFHRTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQUFKOztBQUVFO0VBQ0UsZ0JBQUE7RUFDQSxpQkFBQTtBQUNKOztBQUNFO0VBQ0MsZUFBQTtFQUNBLGlCQUFBO0FBRUg7O0FBQUU7RUFFSSxnQkFBQTtBQUVOOztBQUFFO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUFHSjs7QUFBRTtFQUNFLGdCQUFBO0VBQ0EsZUFBQTtBQUdKOztBQUFFO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQUdKOztBQUFFO0VBQ0UsZ0JBQUE7QUFHSjs7QUFBQTtFQUNJLFlBQUE7RUFDQSxhQUFBO0VBQ0QsZ0JBQUE7RUFDQSxnQkFBQTtFQUVDLGtDQUFBO0VBQ0EseUJBQUE7QUFFSjs7QUFBRTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7RUFFQSwwQkFBQTtFQUNBLHlCQUFBO0FBRUo7O0FBQUU7RUFDRSxVQUFBO0VBQ0EsWUFBQTtBQUdKOztBQUFBO0VBQ0Usa0JBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0FBR0Y7O0FBREE7RUFDRSxnQkFBQTtBQUlGIiwiZmlsZSI6Im90cC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBcclxuICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgdG9wOiAzMCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgfVxyXG4gICNjb250YWluZXIgc3Ryb25nIHtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAyNnB4O1xyXG4gIH1cclxuICBcclxuICAjY29udGFpbmVyIHAge1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDIycHg7XHJcbiAgXHJcbiAgICBjb2xvcjogIzhjOGM4YztcclxuICBcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbiAgXHJcbiAgI2NvbnRhaW5lciBhIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICB9XHJcbiAgLm1haW5jYXJke1xyXG4gICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgXHJcbiAgLmJveCB7XHJcbiAgICBib3JkZXItY29sb3I6ICM0MDNFMzk7XHJcbiAgICBib3JkZXItd2lkdGg6IHRoaW47XHJcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIHdpZHRoOiA4NSU7XHJcbiAgICBoZWlnaHQ6IDQ1cHg7XHJcbiAgIFxyXG4gIH1cclxuICAuaW5wdXRDYXJke1xyXG4gICAgcGFkZGluZy10b3A6IDMlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgfVxyXG4gIC5pbnB1dENhcmRCdXR0b257XHJcbiAgICBwYWRkaW5nLXRvcDogMTYlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgfVxyXG4gIC5pbnB1dENhcmRCdXR0b24xe1xyXG4gICBwYWRkaW5nLXRvcDogNiU7XHJcbiAgIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIH1cclxuICAudGl0bGVDYXJkXHJcbiAge1xyXG4gICAgICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gIH1cclxuICAubG9naW4tbG9nbyB7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWluLWhlaWdodDogMTkwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2dpbi1sb2dvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDEyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogLTklO1xyXG4gIH1cclxuICBcclxuICAuZmllbGRDYXJke1xyXG4gICAgcGFkZGluZy10b3A6IDUwJTtcclxuICAgIHBhZGRpbmctbGVmdDogNSU7XHJcbiAgfVxyXG5cclxuICAuc3VidGl0bGV7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gIH1cclxuIFxyXG4udG9wLXJpZ2h0LXF1YXJ0ZXItY2lyY2xlIHtcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgIGhlaWdodDogMjkwcHg7XHJcbiAgIG1hcmdpbi10b3A6IC0zMCU7XHJcbiAgIG1hcmdpbi1sZWZ0OiA1MCU7XHJcbiAgIFxyXG4gICAgYm9yZGVyLXJhZGl1czogMjUwcHggMCAyNTBweCAyNTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTYsIDIxNiwgMjE2KTtcclxuICB9XHJcbiAgLnRvcC1sZWZ0LXF1YXJ0ZXItY2lyY2xlIHtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDogMTYwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAtMjAlO1xyXG4gICAgXHJcbiAgICBib3JkZXItcmFkaXVzOiAwIDMwMHB4IDAgMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTYsIDIxNiwgMjE2KTtcclxuICB9XHJcbiAgaW9uLWJ1dHRvbntcclxuICAgIHdpZHRoOiA4NSU7XHJcbiAgICBoZWlnaHQ6IDQ1cHg7XHJcbn1cclxuXHJcbi5zdWZmaXgtaWNvbiB7IFxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTsgXHJcbiAgYm90dG9tOiAwOyBcclxuICByaWdodDogMDsgXHJcbiAgbWFyZ2luLXJpZ2h0OjQwcHg7XHJcbiAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICBjb2xvcjojMUY2MThEO1xyXG59XHJcbmlvbi1pdGVte1xyXG4gIG1hcmdpbi10b3A6NTBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
