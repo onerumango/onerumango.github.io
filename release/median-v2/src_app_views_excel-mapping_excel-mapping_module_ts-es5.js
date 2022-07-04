@@ -423,33 +423,13 @@
 
       function ExcelMappingEditComponent_div_23_Template(rf, ctx) {
         if (rf & 1) {
-          var _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 25);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "button", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "a", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_23_Template_button_click_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r17);
-
-            var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-
-            return ctx_r16.getAllMappingData(ctx_r16.updateMappingForm.get("extCode").value, ctx_r16.updateMappingForm.get("proCode").value, ctx_r16.updateMappingForm.get("currency").value, ctx_r16.updateMappingForm.get("sheetNumber").value);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Fetch ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "a", 27);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](6, "Exit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Exit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -459,15 +439,9 @@
         }
 
         if (rf & 2) {
-          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r4.updateMappingForm.invalid);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](2, _c0));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](1, _c0));
         }
       }
 
@@ -475,13 +449,13 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "label", 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "label", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Data Starting Row");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "input", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "input", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         }
@@ -499,11 +473,11 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "input", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "input", 30);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "label", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "label", 31);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](4, "Is Header Present");
 
@@ -525,7 +499,7 @@
 
       function ExcelMappingEditComponent_div_26_tr_28_option_7_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "option", 56);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "option", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
 
@@ -533,38 +507,38 @@
         }
 
         if (rf & 2) {
-          var item_r26 = ctx.$implicit;
+          var item_r24 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r26.type);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r24.type);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r26.type);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r24.type);
         }
       }
 
       function ExcelMappingEditComponent_div_26_tr_28_a_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "a", 57);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "a", 56);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_tr_28_a_28_Template_a_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r27);
 
-            var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+            var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
 
-            var i_r23 = ctx_r28.index;
-            var item_r22 = ctx_r28.$implicit;
+            var i_r21 = ctx_r26.index;
+            var item_r20 = ctx_r26.$implicit;
 
-            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+            var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
 
-            return ctx_r27.removeSubArray(i_r23, item_r22);
+            return ctx_r25.removeSubArray(i_r21, item_r20);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "img", 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "img", 57);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -574,28 +548,28 @@
 
       function ExcelMappingEditComponent_div_26_tr_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "input", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "input", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "select", 43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "select", 42);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("change", function ExcelMappingEditComponent_div_26_tr_28_Template_select_change_4_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r31);
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r29);
 
-            var i_r23 = restoredCtx.index;
+            var i_r21 = restoredCtx.index;
 
-            var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+            var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
 
-            return ctx_r30.checkTypeStatus(i_r23);
+            return ctx_r28.checkTypeStatus(i_r21);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "option", 18);
@@ -604,7 +578,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_26_tr_28_option_7_Template, 2, 2, "option", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_26_tr_28_option_7_Template, 2, 2, "option", 43);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -612,15 +586,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 45);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "div", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](11, "input", 46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](11, "input", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "label", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "label", 46);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "span", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "span", 47);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](14, "Is Mandatory?");
 
@@ -636,43 +610,43 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](16, "input", 49);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](16, "input", 48);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](18, "input", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](18, "input", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](20, "input", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](20, "input", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](22, "input", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](22, "input", 51);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](24, "input", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](24, "input", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](26, "input", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](26, "input", 53);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, ExcelMappingEditComponent_div_26_tr_28_a_28_Template, 3, 0, "a", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, ExcelMappingEditComponent_div_26_tr_28_a_28_Template, 3, 0, "a", 54);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -680,79 +654,79 @@
         }
 
         if (rf & 2) {
-          var i_r23 = ctx.index;
+          var i_r21 = ctx.index;
 
-          var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+          var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroupName", i_r23);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", !ctx_r18.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroupName", i_r21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵattribute"]("disabled", !ctx_r18.editFlag ? "" : null);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", !ctx_r16.editFlag);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵattribute"]("disabled", !ctx_r16.editFlag ? "" : null);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r18.dataTypes);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r16.dataTypes);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "mandatoryCheck_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "mandatoryCheck_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("for", "mandatoryCheck_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("for", "mandatoryCheck_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "headerName_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "headerName_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "dateFormat_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "dateFormat_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "mappingColumn_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "mappingColumn_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "delimeter_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "delimeter_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "defaultValue_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "defaultValue_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "repeatedTillNextValue_", i_r23, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpropertyInterpolate1"]("id", "repeatedTillNextValue_", i_r21, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r16.editFlag);
         }
       }
 
       function ExcelMappingEditComponent_div_26_a_31_Template(rf, ctx) {
         if (rf & 1) {
-          var _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "a", 59);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "a", 58);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "span", 60);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "span", 59);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_a_31_Template_span_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r31);
 
-            var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+            var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
 
-            return ctx_r32.addSubArray();
+            return ctx_r30.addSubArray();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "img", 61);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "img", 60);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -762,16 +736,16 @@
 
       function ExcelMappingEditComponent_div_26_div_32_button_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 66);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_button_3_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r41);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r39);
 
-            var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+            var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
 
-            return ctx_r40.updateMappingData(ctx_r40.addForm.value, ctx_r40.updateMappingForm.value);
+            return ctx_r38.updateMappingData(ctx_r38.addForm.value, ctx_r38.updateMappingForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, "Save ");
@@ -780,26 +754,90 @@
         }
 
         if (rf & 2) {
-          var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+          var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r34.dataSaved);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r32.dataSaved);
         }
       }
 
       function ExcelMappingEditComponent_div_26_div_32_div_4_Template(rf, ctx) {
         if (rf & 1) {
+          var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 67);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_4_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r41);
+
+            var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+
+            return ctx_r40.enableEditFlag();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r33.roleCodes.edit.labelDescription);
+        }
+      }
+
+      function ExcelMappingEditComponent_div_26_div_32_div_5_Template(rf, ctx) {
+        if (rf & 1) {
           var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 63);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 68);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_4_Template_button_click_1_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_5_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r43);
 
             var ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
 
-            return ctx_r42.enableEditFlag();
+            return ctx_r42.onClickOfAuth(ctx_r42.addForm.value, ctx_r42.updateMappingForm.value);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r34.roleCodes.auth.labelDescription);
+        }
+      }
+
+      function ExcelMappingEditComponent_div_26_div_32_div_6_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 69);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_6_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r45);
+
+            var ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+
+            return ctx_r44.onClickOfClose(ctx_r44.addForm.value, ctx_r44.updateMappingForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
@@ -814,24 +852,24 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r35.roleCodes.edit.labelDescription);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r35.roleCodes.close.labelDescription);
         }
       }
 
-      function ExcelMappingEditComponent_div_26_div_32_div_5_Template(rf, ctx) {
+      function ExcelMappingEditComponent_div_26_div_32_div_7_Template(rf, ctx) {
         if (rf & 1) {
-          var _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 70);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_5_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r45);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_7_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r47);
 
-            var ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+            var ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
 
-            return ctx_r44.onClickOfAuth(ctx_r44.addForm.value, ctx_r44.updateMappingForm.value);
+            return ctx_r46.onClickOfReopen(ctx_r46.addForm.value, ctx_r46.updateMappingForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
@@ -846,86 +884,22 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r36.roleCodes.auth.labelDescription);
-        }
-      }
-
-      function ExcelMappingEditComponent_div_26_div_32_div_6_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 64);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 70);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_6_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r47);
-
-            var ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-
-            return ctx_r46.onClickOfClose(ctx_r46.addForm.value, ctx_r46.updateMappingForm.value);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r37.roleCodes.close.labelDescription);
-        }
-      }
-
-      function ExcelMappingEditComponent_div_26_div_32_div_7_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r49 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 64);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 71);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_7_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r49);
-
-            var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-
-            return ctx_r48.onClickOfReopen(ctx_r48.addForm.value, ctx_r48.updateMappingForm.value);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r38.roleCodes.reopen.labelDescription);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r36.roleCodes.reopen.labelDescription);
         }
       }
 
       function ExcelMappingEditComponent_div_26_div_32_div_8_button_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+          var _r50 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 67);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingEditComponent_div_26_div_32_div_8_button_1_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r52);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r50);
 
-            var ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
+            var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
 
-            return ctx_r51.finalSubmit(ctx_r51.updateMappingForm.value, ctx_r51.addForm.value);
+            return ctx_r49.finalSubmit(ctx_r49.updateMappingForm.value, ctx_r49.addForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, "Save");
@@ -936,47 +910,47 @@
 
       function ExcelMappingEditComponent_div_26_div_32_div_8_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, ExcelMappingEditComponent_div_26_div_32_div_8_button_1_Template, 2, 0, "button", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, ExcelMappingEditComponent_div_26_div_32_div_8_button_1_Template, 2, 0, "button", 71);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+          var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r39.editFlag && !ctx_r39.copyData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r37.editFlag && !ctx_r37.copyData);
         }
       }
 
       function ExcelMappingEditComponent_div_26_div_32_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 61);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 63);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 62);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](3, ExcelMappingEditComponent_div_26_div_32_button_3_Template, 2, 1, "button", 65);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](3, ExcelMappingEditComponent_div_26_div_32_button_3_Template, 2, 1, "button", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, ExcelMappingEditComponent_div_26_div_32_div_4_Template, 3, 1, "div", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, ExcelMappingEditComponent_div_26_div_32_div_4_Template, 3, 1, "div", 65);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](5, ExcelMappingEditComponent_div_26_div_32_div_5_Template, 3, 1, "div", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](5, ExcelMappingEditComponent_div_26_div_32_div_5_Template, 3, 1, "div", 65);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, ExcelMappingEditComponent_div_26_div_32_div_6_Template, 3, 1, "div", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, ExcelMappingEditComponent_div_26_div_32_div_6_Template, 3, 1, "div", 65);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_26_div_32_div_7_Template, 3, 1, "div", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](7, ExcelMappingEditComponent_div_26_div_32_div_7_Template, 3, 1, "div", 65);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](8, ExcelMappingEditComponent_div_26_div_32_div_8_Template, 2, 1, "div", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](8, ExcelMappingEditComponent_div_26_div_32_div_8_Template, 2, 1, "div", 65);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "a", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "a", 26);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11, "Exit");
 
@@ -990,31 +964,31 @@
         }
 
         if (rf & 2) {
-          var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+          var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r20.editFlag && ctx_r20.copyData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.editFlag && ctx_r18.copyData);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r20.mappingResponse && !ctx_r20.editFlag && ctx_r20.recordStatus == "OPEN" && ctx_r20.roleCodes.edit && ctx_r20.copyData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.newDataResponse && !ctx_r18.editFlag && ctx_r18.recordStatus == "OPEN" && ctx_r18.roleCodes.edit && ctx_r18.copyData);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r20.mappingResponse && !ctx_r20.editFlag && ctx_r20.authStatus == "UNAUTHORIZED" && ctx_r20.roleCodes.auth && ctx_r20.copyData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.newDataResponse && !ctx_r18.editFlag && ctx_r18.authStatus == "UNAUTHORIZED" && ctx_r18.roleCodes.auth && ctx_r18.copyData);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r20.recordStatus == "OPEN" && !ctx_r20.editFlag && ctx_r20.copyData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.recordStatus == "OPEN" && !ctx_r18.editFlag && ctx_r18.copyData);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r20.recordStatus == "CLOSED" && !ctx_r20.editFlag && ctx_r20.copyData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.recordStatus == "CLOSED" && !ctx_r18.editFlag && ctx_r18.copyData);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r20.mappingResponse && ctx_r20.editFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r18.newDataResponse && ctx_r18.editFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
@@ -1026,27 +1000,27 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 73);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 72);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "div", 77);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "div", 76);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](7, "img", 78);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](7, "img", 77);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "h2");
 
@@ -1070,25 +1044,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](18, "div", 81);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](18, "div", 80);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](19, "img", 82);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](19, "img", 81);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](22, "h2");
 
@@ -1114,25 +1088,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "div", 82);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "img", 84);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "img", 83);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](34, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](34, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](35, "h2");
 
@@ -1156,25 +1130,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](43, "div", 85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](43, "div", 84);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](44, "img", 86);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](44, "img", 85);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "h2");
 
@@ -1198,25 +1172,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](51, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](51, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](52, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](52, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](54, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](54, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "div", 87);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "div", 86);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](56, "img", 88);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](56, "img", 87);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](57, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](58, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](57, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](58, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](59, "h2");
 
@@ -1242,25 +1216,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](64, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](64, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](65, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](65, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](67, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](67, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "div", 89);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "div", 88);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](69, "img", 90);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](69, "img", 89);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](70, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](71, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](70, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](71, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](72, "h2");
 
@@ -1284,25 +1258,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](76, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](76, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](77, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](77, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](79, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](79, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](80, "div", 91);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](80, "div", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](81, "img", 92);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](81, "img", 91);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](82, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](83, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](82, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](83, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](84, "h2");
 
@@ -1326,25 +1300,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](88, "div", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](88, "div", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](89, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](89, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](90, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](90, "div", 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](91, "div", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](91, "div", 63);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](92, "div", 91);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](92, "div", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](93, "img", 90);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](93, "img", 89);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](94, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](95, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](94, "div", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](95, "div", 79);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](96, "h2");
 
@@ -1374,39 +1348,39 @@
         }
 
         if (rf & 2) {
-          var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+          var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r21.modifiedBy);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r19.modifiedBy);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](26, 8, ctx_r21.modifiedTime, "MM/dd/yyyy, h:mm a"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](26, 8, ctx_r19.modifiedTime, "MM/dd/yyyy, h:mm a"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r21.recordStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r19.recordStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r21.authorizedBy);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r19.authorizedBy);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](63, 11, ctx_r21.authorizedTime, "MM/dd/yyyy, h:mm a"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](63, 11, ctx_r19.authorizedTime, "MM/dd/yyyy, h:mm a"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r21.firstTimeAuth);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r19.firstTimeAuth);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r21.authStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r19.authStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r21.version);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r19.version);
         }
       }
 
@@ -1414,13 +1388,13 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "form", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "form", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "fieldset", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "fieldset", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "table", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "table", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "thead");
 
@@ -1490,15 +1464,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "tbody", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "tbody", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, ExcelMappingEditComponent_div_26_tr_28_Template, 29, 13, "tr", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, ExcelMappingEditComponent_div_26_tr_28_Template, 29, 13, "tr", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "tr");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](31, ExcelMappingEditComponent_div_26_a_31_Template, 3, 0, "a", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](31, ExcelMappingEditComponent_div_26_a_31_Template, 3, 0, "a", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1512,7 +1486,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](32, ExcelMappingEditComponent_div_26_div_32_Template, 12, 8, "div", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](32, ExcelMappingEditComponent_div_26_div_32_Template, 12, 8, "div", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](33, ExcelMappingEditComponent_div_26_div_33_Template, 100, 14, "div", 14);
 
@@ -1534,7 +1508,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](25);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r7.addForm.get("subArray")["controls"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r7.addForm.get("excelMappingDetails")["controls"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
@@ -1542,11 +1516,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r7.mappingResponse);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r7.newDataResponse);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r7.mappingResponse);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r7.newDataResponse);
         }
       }
 
@@ -1589,7 +1563,7 @@
             isActive: false
           }, {
             id: 4,
-            type: 'VarChar',
+            type: 'varchar_0',
             isActive: false
           }];
           this.showDialog = false;
@@ -1601,6 +1575,7 @@
           value: function ngOnInit() {
             var _this = this;
 
+            this.currentUser = localStorage.getItem("userFromLogin");
             setTimeout(function () {
               _this.newRolePermissions();
             }, 2000);
@@ -1610,21 +1585,30 @@
             setTimeout(function () {
               console.log(_this.roleCodes);
             }, 3000);
-            console.log("role codes", this.roleCodes);
+            console.log("role codes", this.roleCodes); // this.updateMappingForm = this.fb.group({
+            //   extCode: [""],
+            //   proCode: [""],
+            //   startingRow: [""],
+            //   currency: [""],
+            //   sheetNumber: [""],
+            //   headerRepeated: [""],
+            // });
+
             this.updateMappingForm = this.fb.group({
-              extCode: [""],
-              proCode: [""],
-              startingRow: [""],
-              currency: [""],
+              processName: [""],
+              extSysCode: [""],
+              extSys: ["May30"],
+              userId: [this.currentUser],
               sheetNumber: [""],
-              headerRepeated: [""]
+              headerRepeated: [false],
+              startingRow: [""],
+              currency: [""]
             });
             this.addForm = this.fb.group({
-              subArray: this.fb.array([this.getSubArray()])
+              excelMappingDetails: this.fb.array([this.getSubArray()])
             });
             this.getExtCodeforDropdown();
             this.gettingSummaryData();
-            this.currentUser = localStorage.getItem("userFromLogin");
           }
         }, {
           key: "newRolePermissions",
@@ -1681,26 +1665,49 @@
             return this.fb.group({
               columnnName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
               dataType: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-              excelMappingColumn: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.maxLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.pattern('^[a-zA-Z \-#,@,%\']+')]],
-              // mandatory: false,
-              id: [''],
-              mandatory: [""],
-              headerName: [''],
+              mandatory: [false],
+              // mandatory: [""],
+              headerName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
               dateFormat: [{
                 value: '',
                 disabled: true
               }],
-              authStatus: [''],
-              modifiedBy: [''],
-              authorizedBy: [''],
-              version: [''],
-              modifiedTime: [''],
-              authorizedTime: [''],
-              recordStatus: [''],
+              // dateFormat: [''],
+              // authStatus: [''],
+              // modifiedBy: [''],
+              // modifiedBy: ['JILU'],
+              // authorizedBy: [''],
+              // version: [''],
+              // modifiedTime: [''],
+              // authorizedTime: [''],
+              // recordStatus: [''],
               delimeter: [''],
               defaultValue: [''],
               repeatedTillNextValue: [''],
-              firstTimeAuth: ['']
+              // excelMappingColumn:[''],
+              tableMappingColumn: [''],
+              mappingMasterId: [''],
+              mappingDetailId: [''],
+              excelMappingColumn: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.maxLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.pattern('^[a-zA-Z \-#,@,%\']+')]] // columnnName: ['', [Validators.required]],
+              // dataType: [null, [Validators.required]],
+              // excelMappingColumn: ['', [Validators.minLength(1), Validators.maxLength(3), Validators.pattern('^[a-zA-Z \-#,@,%\']+')]],
+              // mandatory: false,
+              // id:[''],
+              // mandatory: [""],
+              // headerName: [''],
+              // dateFormat: [{ value: '', disabled: true }],
+              // authStatus: [''],
+              // modifiedBy: [''],
+              // authorizedBy: [''],
+              // version: [''],
+              // modifiedTime: [''],
+              // authorizedTime: [''],
+              // recordStatus: [''],
+              // delimeter: [''],
+              // defaultValue: [''],
+              // repeatedTillNextValue: [''],
+              // firstTimeAuth:['']
+
             });
           }
         }, {
@@ -1716,48 +1723,70 @@
             });
 
             if (this.summryResponse) {
-              this.extCode = this.summryResponse.extSysCode;
+              this.extSysCode = this.summryResponse.extSysCode;
               this.processNAme = this.summryResponse.processName;
               this.extSys = this.summryResponse.extSys;
-              this.updateMappingForm.controls.extCode.setValue(this.extCode);
-              this.updateMappingForm.controls.proCode.setValue(this.processNAme);
-              this.apiService.getExcelMappingDataforEdit(this.extCode, this.processNAme, this.extSys).subscribe(function (editResp) {
+              this.currency = this.summryResponse.currency;
+              this.sheetNumber = this.summryResponse.sheetNumber;
+              this.updateMappingForm.controls.extSysCode.setValue(this.extSysCode);
+              this.updateMappingForm.controls.processName.setValue(this.processNAme); //  this.apiService.getExcelMappingDataforEdit(this.extSysCode,this.processNAme,this.extSys).subscribe((editResp) =>{
+
+              this.apiService.getTemplateMappingDataforEdit(this.extSys, this.processNAme, this.currency, this.sheetNumber).subscribe(function (editResp) {
                 console.log("This. is new Resp", editResp);
                 _this3.newDataResponse = editResp;
-                localStorage.setItem('newDataResponse', JSON.stringify(_this3.newDataResponse));
-                var retrievedObject = localStorage.getItem('newDataResponse');
-                _this3.newDataResponse = JSON.parse(retrievedObject);
-                _this3.ccyData = _this3.newDataResponse.currency;
-                _this3.sheetData = _this3.newDataResponse.sheetNo;
+                localStorage.setItem('newDataResponse', JSON.stringify(_this3.newDataResponse)); // var retrievedObject = localStorage.getItem('newDataResponse');
+                // this.newDataResponse = JSON.parse(retrievedObject);
 
-                if (_this3.newDataResponse.currency.length === 1) {
-                  _this3.currency = _this3.newDataResponse.currency[0];
-                  _this3.sheetNumb = _this3.newDataResponse.currencySheetMap[_this3.ccyData];
-                  _this3.showFieldCurrency = true;
-                  _this3.showFieldsheetNum = true;
-                  _this3.showFetch = false;
+                console.log(_this3.newDataResponse, "After");
+                _this3.showFieldCurrency = true;
+                _this3.showFieldsheetNum = true;
 
-                  _this3.updateMappingForm.controls.currency.setValue(_this3.currency);
+                _this3.updateMappingForm.controls.currency.setValue(_this3.newDataResponse.currency);
 
-                  _this3.updateMappingForm.controls.sheetNumber.setValue(_this3.sheetNumb);
+                _this3.updateMappingForm.controls.sheetNumber.setValue(_this3.newDataResponse.sheetNumber);
 
-                  _this3.getAllMappingData(_this3.extCode, _this3.processNAme, _this3.currency, _this3.sheetNumb);
-                } else {
-                  _this3.showFetch = true;
-                }
+                var startingRow = _this3.newDataResponse.startingRow;
+                var headerRepeated = _this3.newDataResponse.headerRepeated;
+
+                _this3.updateMappingForm.controls.startingRow.setValue(startingRow);
+
+                _this3.updateMappingForm.controls.headerRepeated.setValue(headerRepeated);
+
+                _this3.showCurrencyDropdown = false;
+
+                _this3.auditLog();
+
+                _this3.patchData(_this3.newDataResponse.excelMappingDetails); // this.cdr.markForCheck();
+                // this.cdr.markForCheck();
+                // this.getAllMappingData(this.extSysCode,this.processNAme,this.newDataResponse.currency,this.newDataResponse.sheetNumber);
+                // console.log(this.sheetData,this.ccyData);
+                // if(this.newDataResponse.currency.length === 1){
+                //   this.currency = this.newDataResponse.currency[0];
+                //   this.sheetNumb = this.newDataResponse.currencySheetMap[this.ccyData];
+                //   this.showFieldCurrency = true;
+                //   this.showFieldsheetNum = true;
+                //   this.showFetch = false;
+                //   this.updateMappingForm.controls.currency.setValue(this.currency);
+                //   this.updateMappingForm.controls.sheetNumber.setValue(this.sheetNumb);
+                //   this.getAllMappingData(this.extSysCode,this.processNAme,this.currency,this.sheetNumb);
+                // }
+                // else{
+                //   this.showFetch = true;
+                // }
+
               }); // this.getProcess(this.extCode);
             }
           }
         }, {
           key: "getAllMappingData",
-          value: function getAllMappingData(extCode, proCode, currenyVal, sheetNumber) {
+          value: function getAllMappingData(extSysCode, processName, currenyVal, sheetNumber) {
             var _this4 = this;
 
-            console.log("Checking ?", extCode, proCode, currenyVal, sheetNumber);
-            this.apiService.fetchAllName(extCode, proCode, currenyVal).subscribe(function (filenames) {
+            console.log("Checking ?", extSysCode, processName, currenyVal, sheetNumber);
+            this.apiService.fetchAllName(extSysCode, processName, currenyVal).subscribe(function (filenames) {
               _this4.fileNames = filenames;
             });
-            this.apiService.getAllMappingByExtSysAndProcessCode(extCode, proCode, currenyVal, sheetNumber).subscribe(function (mappingResponse) {
+            this.apiService.getAllMappingByExtSysAndProcessCode(extSysCode, processName, currenyVal, sheetNumber).subscribe(function (mappingResponse) {
               _this4.mappingResponse = mappingResponse;
               localStorage.setItem('mappingResponse', JSON.stringify(_this4.mappingResponse));
               var retrievedObject = localStorage.getItem('mappingResponse');
@@ -1797,9 +1826,10 @@
         }, {
           key: "getCurrencyData",
           value: function getCurrencyData(event, type) {
-            var selectedCurrency = event.target.value;
-            var sheetNum = this.newDataResponse.currencySheetMap[selectedCurrency];
-            this.updateMappingForm.controls.sheetNumber.setValue(sheetNum);
+            console.log(event.target.value, type);
+            var selectedCurrency = event.target.value; // const sheetNum = this.newDataResponse.currencySheetMap[selectedCurrency];   
+
+            this.updateMappingForm.controls.sheetNumber.setValue(this.sheetNumber);
             this.showFieldsheetNum = true; // if(data.sheetNumber != this.sheetNumber  && data.processCode != this.poojaprocess2 && data.currency != this.currency)
             // {
             //   this.disablefetchbtn = false;
@@ -1825,14 +1855,14 @@
           }
         }, {
           key: "getProcess",
-          value: function getProcess(extCode) {
+          value: function getProcess(extSysCode) {
             var _this6 = this;
 
-            this.apiService.getProcessNameByExtSysCode(extCode).subscribe(function (response) {
+            this.apiService.getProcessNameByExtSysCode(extSysCode).subscribe(function (response) {
               _this6.processResp = response;
               _this6.processName = _this6.processResp;
 
-              _this6.getExtSysNameByExtSysCode(extCode);
+              _this6.getExtSysNameByExtSysCode(extSysCode);
             });
           }
         }, {
@@ -1843,15 +1873,30 @@
             this.apiService.getExtSysNameByExtSysCode(extSysCode).subscribe(function (data) {
               _this7.extNameValue = data;
             });
-          }
+          } // getProcessName(processCode, extCodefromSummry) {
+          //   this.extSysCode = extCodefromSummry;
+          //   this.excelprocess = processCode;
+          //   this.apiService.getCurrencyOnExtNameAndProcssCode(this.extSysCode, this.excelprocess, this.extCode).subscribe(data => {
+          //     this.ccyData = data;
+          //     console.log("Currency", this.ccyData);
+          //     if (this.ccyData.length == 0) {
+          //       Swal.fire({
+          //         title: 'No Currency Found For the Process code!',
+          //         icon: 'warning'
+          //       });
+          //       return;
+          //     }
+          //   });
+          // } 
+
         }, {
           key: "getProcessName",
-          value: function getProcessName(processCode, extCodefromSummry) {
+          value: function getProcessName(extSysCode, processCode, extNameValue) {
             var _this8 = this;
 
-            this.extSysCode = extCodefromSummry;
-            this.excelprocess = processCode;
-            this.apiService.getCurrencyOnExtNameAndProcssCode(this.extSysCode, this.excelprocess, this.extCode).subscribe(function (data) {
+            // this.extSysCode = extCodefromSummry;
+            // this.excelprocess = processCode;
+            this.apiService.getCurrencyOnExtNameAndProcssCode(extSysCode, processCode, extNameValue).subscribe(function (data) {
               _this8.ccyData = data;
               console.log("Currency", _this8.ccyData);
 
@@ -1867,27 +1912,33 @@
         }, {
           key: "patchData",
           value: function patchData(formdata) {
-            var control = this.addForm.controls.subArray;
+            console.log(formdata);
+            var control = this.addForm.controls.excelMappingDetails;
             control.controls = [];
 
             for (var i = 0; i < formdata.length; i++) {
               control.push(this.getSubArray());
+              console.log("Inside for loop");
             }
 
+            console.log(control);
+            console.log(this.addForm); // console.log("Outside for loop",this.addForm.controls.excelMappingDetails);
+
             this.addForm.patchValue({
-              subArray: formdata
+              excelMappingDetails: formdata
             });
+            console.log(this.addForm);
           }
         }, {
           key: "addSubArray",
           value: function addSubArray() {
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
             control.push(this.getSubArray());
           }
         }, {
           key: "getSubArrayFormGroup",
           value: function getSubArrayFormGroup(index) {
-            var control = this.addForm.controls.subArray;
+            var control = this.addForm.controls.excelMappingDetails;
             var fg = control.get([index]);
             return fg.value;
           }
@@ -1899,21 +1950,22 @@
         }, {
           key: "t",
           get: function get() {
-            return this.f.subArray;
+            return this.f.excelMappingDetails;
           }
         }, {
           key: "auditLog",
           value: function auditLog() {
             var _a, _b, _c, _d, _e, _f, _g, _h;
 
-            this.authStatus = (_a = this.mappingResponse[0]) === null || _a === void 0 ? void 0 : _a.authStatus;
-            this.recordStatus = (_b = this.mappingResponse[0]) === null || _b === void 0 ? void 0 : _b.recordStatus;
-            this.modifiedBy = (_c = this.mappingResponse[0]) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-            this.modifiedTime = (_d = this.mappingResponse[0]) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-            this.authorizedBy = (_e = this.mappingResponse[0]) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-            this.authorizedTime = (_f = this.mappingResponse[0]) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-            this.version = (_g = this.mappingResponse[0]) === null || _g === void 0 ? void 0 : _g.version;
-            this.firstTimeAuth = (_h = this.mappingResponse[0]) === null || _h === void 0 ? void 0 : _h.firstTimeAuth;
+            console.log(this.newDataResponse);
+            this.authStatus = (_a = this.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+            this.recordStatus = (_b = this.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+            this.modifiedBy = (_c = this.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputBy;
+            this.modifiedTime = (_d = this.newDataResponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
+            this.authorizedBy = (_e = this.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+            this.authorizedTime = (_f = this.newDataResponse) === null || _f === void 0 ? void 0 : _f.authorizedDtStamp;
+            this.version = (_g = this.newDataResponse) === null || _g === void 0 ? void 0 : _g.version;
+            this.firstTimeAuth = (_h = this.newDataResponse) === null || _h === void 0 ? void 0 : _h.firstTimeAuth;
             console.log("AuditLog", this.authStatus, this.recordStatus, this.modifiedBy, this.authorizedBy);
 
             if (this.authStatus === 'U') {
@@ -1943,7 +1995,7 @@
         }, {
           key: "checkTypeStatus",
           value: function checkTypeStatus(i) {
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
             var fg = control.get([i]);
 
             if (fg.value.dataType == 'Date') {
@@ -1957,7 +2009,7 @@
           key: "mandatoryCheck",
           value: function mandatoryCheck(values, i) {
             var value = values.currentTarget.checked;
-            var control = this.addForm.get('subArray');
+            var control = this.addForm.get('excelMappingDetails');
             control.at(i).get('mandatory').setValue(value);
             console.log("value", value, i);
           }
@@ -1966,9 +2018,9 @@
           value: function enableEditFlag() {
             this.editFlag = true;
             this.showCurrencyDropdown = true;
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
 
-            for (var i = 0; i <= this.addForm.get('subArray')['controls'].length; i++) {
+            for (var i = 0; i <= this.addForm.get('excelMappingDetails')['controls'].length; i++) {
               var fg = control.get([i]);
               console.log(fg.value);
 
@@ -1995,10 +2047,10 @@
             this.copyData = false;
             this.processResp = [];
             this.excelprocess = '';
-            excelCopyData.subArray.forEach(function (element) {
+            excelCopyData.excelMappingDetails.forEach(function (element) {
               element.id = null;
             });
-            console.log(excelCopyData.subArray);
+            console.log(excelCopyData.excelMappingDetails);
           }
         }, {
           key: "updateMappingData",
@@ -2007,13 +2059,13 @@
 
             this.submitted = true;
             this.progress = true;
-            this.extCodeValue = excelForm.extCode;
-            this.proCodeValue = excelForm.proCode;
+            this.extCodeValue = excelForm.extSysCode;
+            this.proCodeValue = excelForm.processName;
             this.isCheckedValue = excelForm.headerRepeated;
             this.startingValue = excelForm.startingRow;
             this.currencyValue = excelForm.currency;
             this.sheetNumberValue = excelForm.sheetNumber;
-            var modifiedBy = subArrayForm.subArray[0].modifiedBy;
+            var modifiedBy = subArrayForm.excelMappingDetails[0].inputBy;
             modifiedBy = this.currentUser;
 
             if (this.addForm.invalid) {
@@ -2024,11 +2076,14 @@
               return;
             }
 
-            this.apiService.updateMappingData(subArrayForm, this.extCodeValue, this.proCodeValue, this.extCodeValue, this.startingValue, this.isCheckedValue, this.currentUser, this.currencyValue, this.sheetNumberValue).subscribe(function (updateData) {
-              _this9.mappingResponse = updateData;
-              console.log(_this9.mappingResponse);
+            var obj = Object.assign(Object.assign({}, excelForm), subArrayForm); // this.apiService.updateMappingData(subArrayForm,this.extCodeValue,this.proCodeValue,this.extCodeValue,
+            //   this.startingValue,this.isCheckedValue,this.currentUser,this.currencyValue,this.sheetNumberValue)
 
-              if (_this9.mappingResponse) {
+            this.apiService.excelMappingAuditLog(obj, 'update').subscribe(function (updateData) {
+              _this9.newDataResponse = updateData;
+              console.log(_this9.newDataResponse);
+
+              if (_this9.newDataResponse) {
                 _this9.editFlag = false;
                 _this9.showCurrencyDropdown = false;
                 _this9.dataSaved = true;
@@ -2057,9 +2112,9 @@
 
             this.currentUser = localStorage.getItem("userFromLogin");
             console.log("this.currentUser", this.currentUser, addForm, updateForm);
-            this.extCodeValue = updateForm.extCode;
-            this.extNameValue = updateForm.extCode;
-            this.proCodeValue = updateForm.proCode;
+            this.extCodeValue = updateForm.extSysCode;
+            this.extNameValue = updateForm.extSysCode;
+            this.proCodeValue = updateForm.processName;
             this.currencyValue = updateForm.currency;
 
             if (this.modifiedBy === this.currentUser) {
@@ -2079,21 +2134,22 @@
                 icon: 'info'
               }).then(function (result) {
                 if (result.isConfirmed === true) {
-                  _this10.apiService.onAuthorizingTheRecordOfExcelMApping(addForm, _this10.extNameValue, _this10.proCodeValue, _this10.extCodeValue, _this10.currentUser, _this10.currencyValue).subscribe(function (authResp) {
+                  // this.apiService.onAuthorizingTheRecordOfExcelMApping(addForm,this.extNameValue,this.proCodeValue,this.extCodeValue, this.currentUser,this.currencyValue)
+                  _this10.apiService.excelMappingAuditLog(_this10.newDataResponse, 'authorize').subscribe(function (authResp) {
                     var _a, _b, _c, _d, _e, _f, _g, _h;
 
-                    _this10.mappingResponse = authResp;
+                    _this10.newDataResponse = authResp;
 
-                    if (_this10.mappingResponse) {
-                      _this10.authStatus = (_a = _this10.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                      _this10.recordStatus = (_b = _this10.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus; // this.modifiedBy = this.mappingResponse?.modifiedBy;
+                    if (_this10.newDataResponse) {
+                      _this10.authStatus = (_a = _this10.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                      _this10.recordStatus = (_b = _this10.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus; // this.modifiedBy = this.mappingResponse?.modifiedBy;
 
-                      _this10.modifiedTime = (_c = _this10.mappingResponse) === null || _c === void 0 ? void 0 : _c.inputDtStamp;
-                      _this10.authorizedBy = (_d = _this10.mappingResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
-                      _this10.authorizedTime = (_e = _this10.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
-                      _this10.version = (_f = _this10.mappingResponse) === null || _f === void 0 ? void 0 : _f.version;
-                      _this10.firstTimeAuth = (_g = _this10.mappingResponse) === null || _g === void 0 ? void 0 : _g.firstTimeAuth;
-                      _this10.modifiedBy = (_h = _this10.mappingResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
+                      _this10.modifiedTime = (_c = _this10.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputDtStamp;
+                      _this10.authorizedBy = (_d = _this10.newDataResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
+                      _this10.authorizedTime = (_e = _this10.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
+                      _this10.version = (_f = _this10.newDataResponse) === null || _f === void 0 ? void 0 : _f.version;
+                      _this10.firstTimeAuth = (_g = _this10.newDataResponse) === null || _g === void 0 ? void 0 : _g.firstTimeAuth;
+                      _this10.modifiedBy = (_h = _this10.newDataResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
 
                       if (_this10.authStatus === 'U') {
                         _this10.authStatus = 'UNAUTHORIZED';
@@ -2136,11 +2192,11 @@
 
             console.log(addForm);
             console.log(updateForm);
-            this.extCodeValue = updateForm.extCode;
-            this.extNameValue = updateForm.extCode;
-            this.proCodeValue = updateForm.proCode;
+            this.extCodeValue = updateForm.extSysCode;
+            this.extNameValue = updateForm.extSysCode;
+            this.proCodeValue = updateForm.processName;
             this.currencyValue = updateForm.currency;
-            this.currentUser = this.mappingResponse.modifiedBy;
+            this.currentUser = this.newDataResponse.inputBy;
             console.log(this.extCodeValue);
             console.log(this.extNameValue);
             console.log(this.proCodeValue);
@@ -2157,20 +2213,21 @@
               icon: 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this11.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm, _this11.extCodeValue, _this11.proCodeValue, _this11.extNameValue, _this11.currencyValue).subscribe(function (closeResp) {
+                // this.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
+                _this11.apiService.excelMappingAuditLog(_this11.newDataResponse, 'close').subscribe(function (closeResp) {
                   var _a, _b, _c, _d, _e, _f, _g;
 
                   console.log(closeResp);
-                  _this11.mappingResponse = closeResp;
+                  _this11.newDataResponse = closeResp;
 
-                  if (_this11.mappingResponse) {
-                    _this11.authStatus = (_a = _this11.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                    _this11.recordStatus = (_b = _this11.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                    _this11.modifiedBy = (_c = _this11.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                    _this11.modifiedTime = (_d = _this11.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                    _this11.authorizedBy = (_e = _this11.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                    _this11.authorizedTime = (_f = _this11.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                    _this11.version = (_g = _this11.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
+                  if (_this11.newDataResponse) {
+                    _this11.authStatus = (_a = _this11.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                    _this11.recordStatus = (_b = _this11.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                    _this11.modifiedBy = (_c = _this11.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputBy;
+                    _this11.modifiedTime = (_d = _this11.newDataResponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
+                    _this11.authorizedBy = (_e = _this11.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                    _this11.authorizedTime = (_f = _this11.newDataResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                    _this11.version = (_g = _this11.newDataResponse) === null || _g === void 0 ? void 0 : _g.version;
 
                     if (_this11.authStatus === 'U') {
                       _this11.authStatus = 'UNAUTHORIZED';
@@ -2216,11 +2273,11 @@
           value: function onClickOfReopen(addForm, updateForm) {
             var _this12 = this;
 
-            this.extCodeValue = updateForm.extCode;
-            this.extNameValue = updateForm.extCode;
-            this.proCodeValue = updateForm.proCode;
+            this.extCodeValue = updateForm.extSysCode;
+            this.extNameValue = updateForm.extSysCode;
+            this.proCodeValue = updateForm.processName;
             this.currencyValue = updateForm.currency;
-            this.currentUser = this.mappingResponse.modifiedBy;
+            this.currentUser = this.newDataResponse.inputBy;
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to re-open record. ' + ' Do you want to proceed?',
@@ -2235,20 +2292,21 @@
               console.log("this is reopen ", result);
 
               if (result.isConfirmed === true) {
-                _this12.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm, _this12.extCodeValue, _this12.proCodeValue, _this12.extNameValue, _this12.currencyValue).subscribe(function (openResp) {
+                // this.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
+                _this12.apiService.excelMappingAuditLog(_this12.newDataResponse, 'reopen').subscribe(function (openResp) {
                   var _a, _b, _c, _d, _e, _f, _g;
 
                   console.log(openResp);
-                  _this12.mappingResponse = openResp;
+                  _this12.newDataResponse = openResp;
 
-                  if (_this12.mappingResponse) {
-                    _this12.authStatus = (_a = _this12.mappingResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                    _this12.recordStatus = (_b = _this12.mappingResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                    _this12.modifiedBy = (_c = _this12.mappingResponse) === null || _c === void 0 ? void 0 : _c.modifiedBy;
-                    _this12.modifiedTime = (_d = _this12.mappingResponse) === null || _d === void 0 ? void 0 : _d.modifiedTime;
-                    _this12.authorizedBy = (_e = _this12.mappingResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                    _this12.authorizedTime = (_f = _this12.mappingResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                    _this12.version = (_g = _this12.mappingResponse) === null || _g === void 0 ? void 0 : _g.version;
+                  if (_this12.newDataResponse) {
+                    _this12.authStatus = (_a = _this12.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                    _this12.recordStatus = (_b = _this12.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                    _this12.modifiedBy = (_c = _this12.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputBy;
+                    _this12.modifiedTime = (_d = _this12.newDataResponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
+                    _this12.authorizedBy = (_e = _this12.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                    _this12.authorizedTime = (_f = _this12.newDataResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                    _this12.version = (_g = _this12.newDataResponse) === null || _g === void 0 ? void 0 : _g.version;
 
                     if (_this12.authStatus === 'U') {
                       _this12.authStatus = 'UNAUTHORIZED';
@@ -2305,7 +2363,7 @@
           value: function getRowIdx(i) {
             var _this13 = this;
 
-            var control = this.addForm.controls.subArray;
+            var control = this.addForm.controls.excelMappingDetails;
             var fg = control.get([i]);
             var idx = fg.get('id').value;
             this.apiService.deleteMappingRow(idx).subscribe(function (e) {
@@ -2339,20 +2397,20 @@
 
             console.log("Form", excelForm, subArrayForm);
             this.submitted = true;
-            this.extCodeValue = excelForm.extCode;
-            this.proCodeValue = excelForm.proCode;
+            this.extCodeValue = excelForm.extSysCode;
+            this.proCodeValue = excelForm.processName;
             this.isCheckedValue = excelForm.headerRepeated;
             this.startingValue = excelForm.startingRow;
             this.currencyValue = excelForm.currency;
             this.sheetNumberValue = excelForm.sheetNumber;
 
-            if (this.addForm.controls.subArray.invalid) {}
+            if (this.addForm.controls.excelMappingDetails.invalid) {}
 
             this.apiService.columnData(subArrayForm, this.extCodeValue, this.proCodeValue, this.isCheckedValue, this.startingValue, this.extCodeValue, this.currencyValue, this.currentUser, this.sheetNumberValue).subscribe(function (response) {
-              _this14.mappingResponse = response;
-              console.log("this.mappingResponse", _this14.mappingResponse);
+              _this14.newDataResponse = response;
+              console.log("this.mappingResponse", _this14.newDataResponse);
 
-              if (_this14.mappingResponse) {
+              if (_this14.newDataResponse) {
                 _this14.is_edit = true;
 
                 _this14.auditLog();
@@ -2393,7 +2451,7 @@
         selectors: [["npr-excel-mapping-edit"]],
         decls: 27,
         vars: 11,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-2"], ["for", "extCode", 1, "formLbl"], [1, "colorRed"], ["id", "extCode", "type", "text", "required", "", "formControlName", "extCode", "placeholder", "External System", "value", "", 1, "form-control", 3, "readonly"], ["for", "proCode", 1, "formLbl"], ["id", "proCode", "type", "text", "required", "", "formControlName", "proCode", "placeholder", "Process Code", "value", "", 1, "form-control", 3, "readonly"], ["class", "col-lg-2", 4, "ngIf"], ["class", "row gy-4  col-lg-4 ", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "required", "", "formControlName", "currency", "placeholder", "Currency ", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "currency", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], [1, "form-class", 3, "value"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "text", "required", "", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "sheetNumber", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], [1, "row", "gy-4", "col-lg-4"], [1, "col-lg-4"], ["href", "excel-mapping-new.html", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "text", "required", "", "formControlName", "startingRow", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "headerRepeated", "formControlName", "headerRepeated", 3, "readonly"], ["for", "headerRepeated"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], [3, "disabled"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "subArray"], [3, "formGroupName", 4, "ngFor", "ngForOf"], ["href", "javascript:void(0)", "class", "addIcon primarybg", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], [2, "display", "none"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id"], ["href", "javascript:void(0)", "class", "deleteIcon2", 3, "click", 4, "ngIf"], [3, "value"], ["href", "javascript:void(0)", 1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["href", "javascript:void(0)", 1, "addIcon", "primarybg"], [3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "disabled", "click", 4, "ngIf"], ["class", "col-auto", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["class", "btn smBtn minWdSmBtn btnUpdate", "color", "primary", 3, "click", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-2"], ["for", "extSysCode", 1, "formLbl"], [1, "colorRed"], ["id", "extSysCode", "type", "text", "required", "", "formControlName", "extSysCode", "placeholder", "External System", "value", "", 1, "form-control", 3, "readonly"], ["for", "processName", 1, "formLbl"], ["id", "processName", "type", "text", "required", "", "formControlName", "processName", "placeholder", "Process Code", "value", "", 1, "form-control", 3, "readonly"], ["class", "col-lg-2", 4, "ngIf"], ["class", "row gy-4  col-lg-4 ", 4, "ngIf"], ["class", "dbCardStyle", 4, "ngIf"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "required", "", "formControlName", "currency", "placeholder", "Currency ", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "currency", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], [1, "form-class", 3, "value"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "text", "required", "", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "sheetNumber", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], [1, "row", "gy-4", "col-lg-4"], [1, "col-lg-4"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "text", "required", "", "formControlName", "startingRow", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "headerRepeated", "formControlName", "headerRepeated", 3, "readonly"], ["for", "headerRepeated"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], [3, "disabled"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "excelMappingDetails"], [3, "formGroupName", 4, "ngFor", "ngForOf"], ["href", "javascript:void(0)", "class", "addIcon primarybg", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], [2, "display", "none"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id"], ["href", "javascript:void(0)", "class", "deleteIcon2", 3, "click", 4, "ngIf"], [3, "value"], ["href", "javascript:void(0)", 1, "deleteIcon2", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["href", "javascript:void(0)", 1, "addIcon", "primarybg"], [3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "disabled", "click", 4, "ngIf"], ["class", "col-auto", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["class", "btn smBtn minWdSmBtn btnUpdate", "color", "primary", 3, "click", 4, "ngIf"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], ["src", "assets/images/maker-icon.svg", "alt", "..."], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], ["src", "assets/images/checker-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/auth-status-icon.svg", "alt", "..."]],
         template: function ExcelMappingEditComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
@@ -2458,7 +2516,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](22, ExcelMappingEditComponent_div_22_Template, 9, 1, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](23, ExcelMappingEditComponent_div_23_Template, 7, 3, "div", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](23, ExcelMappingEditComponent_div_23_Template, 4, 2, "div", 13);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](24, ExcelMappingEditComponent_div_24_Template, 4, 1, "div", 12);
 
@@ -2510,15 +2568,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.newDataResponse);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.newDataResponse);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.mappingResponse);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.newDataResponse);
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouterLinkWithHref, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroupName],
@@ -2850,7 +2908,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("id", "mappingColumn_", i_r10, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("id", "excelMappingColumn", i_r10, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("readonly", ctx_r2.editFlag);
 
@@ -3040,20 +3098,31 @@
         _createClass(_ExcelMappingNewComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            // this.excelMappingForm = this.fb.group({
+            //   extCode: [""],
+            //   proCode: [""],
+            //   startingRow: [""],
+            //   currency: [""],
+            //   sheetNumber: [""],
+            //   headerRepeated: [false],
+            // });
+            this.currentUser = localStorage.getItem("userFromLogin");
             this.excelMappingForm = this.fb.group({
-              extCode: [""],
-              proCode: [""],
-              startingRow: [""],
-              currency: [""],
+              processName: [""],
+              extSysCode: [""],
+              extSys: ["May30"],
+              userId: [this.currentUser],
               sheetNumber: [""],
-              headerRepeated: [false]
+              headerRepeated: [false],
+              startingRow: [""],
+              currency: [""]
             });
             this.addForm = this.fb.group({
-              subArray: this.fb.array([this.getSubArray()])
+              excelMappingDetails: this.fb.array([this.getSubArray()])
             });
             this.getAllExtsysNameAndProcessCodeOnAuthStatus(); // localStorage.setItem("userIdForChangePassword", localStorage.getItem("currentUser"));
 
-            this.currentUser = localStorage.getItem("userFromLogin");
+            console.log(this.currentUser);
           }
         }, {
           key: "auditLog",
@@ -3089,10 +3158,9 @@
           key: "getSubArray",
           value: function getSubArray() {
             return this.fb.group({
-              id: [''],
+              // id:[''],
               columnnName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
               dataType: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-              mappingColumn: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern('^[a-zA-Z \-#,@,%\']+')]],
               mandatory: [false],
               // mandatory: [""],
               headerName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
@@ -3100,17 +3168,22 @@
                 value: '',
                 disabled: true
               }],
-              authStatus: [''],
-              modifiedBy: [''],
+              // dateFormat: [''],
+              // authStatus: [''],
+              // modifiedBy: [''],
               // modifiedBy: ['JILU'],
-              authorizedBy: [''],
-              version: [''],
-              modifiedTime: [''],
-              authorizedTime: [''],
-              recordStatus: [''],
+              // authorizedBy: [''],
+              // version: [''],
+              // modifiedTime: [''],
+              // authorizedTime: [''],
+              // recordStatus: [''],
               delimeter: [''],
               defaultValue: [''],
-              repeatedTillNextValue: ['']
+              repeatedTillNextValue: [''],
+              // excelMappingColumn:[''],
+              tableMappingColumn: [''],
+              mappingMasterId: [''],
+              excelMappingColumn: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern('^[a-zA-Z \-#,@,%\']+')]]
             });
           }
         }, {
@@ -3156,7 +3229,7 @@
               _this18.processName = _this18.processResp;
 
               if (_this18.processName.length === 1 && _this18.processName != undefined) {
-                _this18.excelMappingForm.get('proCode').setValue(_this18.processName[0]);
+                _this18.excelMappingForm.get('processName').setValue(_this18.processName[0]);
               }
 
               _this18.getExtSysNameByExtSysCode(extSysCode);
@@ -3172,14 +3245,14 @@
           key: "mandatoryCheck",
           value: function mandatoryCheck(values, i) {
             var value = values.currentTarget.checked;
-            var control = this.addForm.get('subArray');
+            var control = this.addForm.get('excelMappingDetails');
             control.at(i).get('mandatory').setValue(value);
             console.log("value", value, i);
           }
         }, {
           key: "addSubArray",
           value: function addSubArray() {
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
             console.log("const control", control);
             control.push(this.getSubArray());
           }
@@ -3187,26 +3260,26 @@
           key: "patchData",
           value: function patchData(formdata) {
             console.log("formdata");
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
 
             for (var i = 0; i < formdata.length; i++) {
               control.push(this.getSubArray());
             }
 
             this.addForm.patchValue({
-              subArray: formdata
+              excelMappingDetails: formdata
             });
           }
         }, {
           key: "removeSubArray",
           value: function removeSubArray(i) {
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
             control.removeAt(i);
           }
         }, {
           key: "clearAllSubArray",
           value: function clearAllSubArray() {
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
 
             while (control.length) {
               control.removeAt(control.length - 1);
@@ -3222,13 +3295,13 @@
         }, {
           key: "t",
           get: function get() {
-            return this.f.subArray;
+            return this.f.excelMappingDetails;
           }
         }, {
           key: "checkTypeStatus",
           value: function checkTypeStatus(i) {
             //console.log(i);
-            var control = this.addForm.controls['subArray'];
+            var control = this.addForm.controls['excelMappingDetails'];
             var fg = control.get([i]);
 
             if (fg.value.dataType == 'Date') {
@@ -3248,18 +3321,22 @@
           value: function finalSubmit(excelForm, subArrayForm) {
             var _this19 = this;
 
-            this.submitted = true;
-            this.extCodeValue = excelForm.extCode;
-            this.proCodeValue = excelForm.proCode;
-            this.isCheckedValue = excelForm.headerRepeated;
-            this.startingValue = excelForm.startingRow;
-            this.currencyValue = excelForm.currency;
-            this.sheetNumberValue = excelForm.sheetNumber;
-            subArrayForm.subArray[0].modifiedBy = this.currentUser;
+            console.log(excelForm);
+            console.log(subArrayForm);
+            this.submitted = true; // this.extCodeValue = excelForm.extSysCode;
+            // this.proCodeValue = excelForm.processName;
+            // this.isCheckedValue = excelForm.headerRepeated;
+            // this.startingValue = excelForm.startingRow;
+            // this.currencyValue = excelForm.currency;
+            // this.sheetNumberValue = excelForm.sheetNumber;
 
-            if (this.addForm.controls.subArray.invalid) {}
+            subArrayForm.excelMappingDetails[0].modifiedBy = this.currentUser;
 
-            this.apiService.columnData(subArrayForm, this.extCodeValue, this.proCodeValue, this.isCheckedValue, this.startingValue, this.extCodeValue, this.currencyValue, this.currentUser, this.sheetNumberValue).subscribe(function (response) {
+            if (this.addForm.controls.excelMappingDetails.invalid) {}
+
+            var obj = Object.assign(Object.assign({}, excelForm), subArrayForm); // this.apiService.columnData(subArrayForm, this.extCodeValue, this.proCodeValue, this.isCheckedValue, this.startingValue, this.extCodeValue, this.currencyValue, this.currentUser, this.sheetNumberValue)
+
+            this.apiService.createTemplateMap(obj).subscribe(function (response) {
               _this19.dataFromresponse = response;
               console.log("this.dataFromresponse", _this19.dataFromresponse);
 
@@ -3339,16 +3416,17 @@
             var _this21 = this;
 
             this.submitted = true;
-            this.progress = true;
-            this.extCodeValue = excelForm.extCode;
-            this.proCodeValue = excelForm.proCode;
-            this.isCheckedValue = excelForm.headerRepeated;
-            this.startingValue = excelForm.startingRow;
-            this.currencyValue = excelForm.currency;
-            this.sheetNumberValue = excelForm.sheetNumber;
-            var modifiedBy = subArrayForm.subArray[0].modifiedBy;
+            this.progress = true; // this.extCodeValue =  excelForm.extSysCode;
+            // this.proCodeValue =  excelForm.processName;
+            // this.isCheckedValue =  excelForm.headerRepeated;
+            // this.startingValue = excelForm.startingRow;
+            // this.currencyValue = excelForm.currency;
+            // this.sheetNumberValue = excelForm.sheetNumber;
+
+            var modifiedBy = subArrayForm.excelMappingDetails[0].modifiedBy;
             modifiedBy = this.currentUser;
-            subArrayForm.subArray[0].excelMappingColumn = subArrayForm.subArray[0].mappingColumn;
+            subArrayForm.excelMappingDetails[0].excelMappingColumn = subArrayForm.excelMappingDetails[0].mappingColumn;
+            var obj = Object.assign(Object.assign({}, excelForm), subArrayForm);
 
             if (this.addForm.invalid) {
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -3356,9 +3434,11 @@
                 icon: 'warning'
               });
               return;
-            }
+            } // this.apiService.updateMappingData(subArrayForm,this.extCodeValue,this.proCodeValue,this.extCodeValue,
+            //   this.startingValue,this.isCheckedValue,this.currentUser,this.currencyValue,this.sheetNumberValue)
 
-            this.apiService.updateMappingData(subArrayForm, this.extCodeValue, this.proCodeValue, this.extCodeValue, this.startingValue, this.isCheckedValue, this.currentUser, this.currencyValue, this.sheetNumberValue).subscribe(function (updateData) {
+
+            this.apiService.createTemplateMap(obj).subscribe(function (updateData) {
               _this21.dataFromresponse = updateData;
               console.log(_this21.dataFromresponse);
 
@@ -3389,9 +3469,9 @@
 
             this.currentUser = localStorage.getItem("userFromLogin");
             console.log("this.currentUser", this.currentUser, addForm, updateForm);
-            this.extCodeValue = updateForm.extCode;
-            this.extNameValue = updateForm.extCode;
-            this.proCodeValue = updateForm.proCode;
+            this.extCodeValue = updateForm.extSysCode;
+            this.extNameValue = updateForm.extSysCode;
+            this.proCodeValue = updateForm.processName;
             this.currencyValue = updateForm.currency;
             this.modifiedBy = (_a = this.dataFromresponse[0]) === null || _a === void 0 ? void 0 : _a.modifiedBy;
 
@@ -3461,7 +3541,7 @@
         selectors: [["npr-excel-mapping-new"]],
         decls: 99,
         vars: 21,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["href", "excel-mapping-new.html", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mt-2", "mb-4"], [1, "pageTitle", "darkgreyClr"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-4"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["id", "outlineNgSelect", "formControlName", "extCode", "required", "", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "proCode", 1, "formLbl"], ["formControlName", "proCode", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "number", "formControlName", "startingRow", "required", "", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "formControlName", "currency", "name", "currency", "required", "", "placeholder", "Currency", "value", "", "minlength", "1", "maxlength", "3", "onkeydown", "return /[A-Z]/i.test(event.key)", "oninput", "this.value = this.value.toUpperCase()", 1, "form-control", 3, "readonly"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "number", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "fcyRate", "formControlName", "headerRepeated"], ["for", "fcyRate"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "subArray"], [4, "ngFor", "ngForOf"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "form-class", 3, "value"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], [2, "display", "none"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "mappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id", "readonly"], [1, "deleteIcon2"], [3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["href", "excel-mapping-new.html", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mt-2", "mb-4"], [1, "pageTitle", "darkgreyClr"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-4"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["id", "outlineNgSelect", "formControlName", "extSysCode", "required", "", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "processName", 1, "formLbl"], ["formControlName", "processName", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "number", "formControlName", "startingRow", "required", "", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "formControlName", "currency", "name", "currency", "required", "", "placeholder", "Currency", "value", "", "minlength", "1", "maxlength", "3", "onkeydown", "return /[A-Z]/i.test(event.key)", "oninput", "this.value = this.value.toUpperCase()", 1, "form-control", 3, "readonly"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "number", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "fcyRate", "formControlName", "headerRepeated"], ["for", "fcyRate"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "excelMappingDetails"], [4, "ngFor", "ngForOf"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "form-class", 3, "value"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], [2, "display", "none"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id", "readonly"], [1, "deleteIcon2"], [3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"]],
         template: function ExcelMappingNewComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -3533,7 +3613,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "ng-select", 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("change", function ExcelMappingNewComponent_Template_ng_select_change_22_listener() {
-              return ctx.getProcess(ctx.excelMappingForm.get("extCode").value);
+              return ctx.getProcess(ctx.excelMappingForm.get("extSysCode").value);
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "ng-option", 16);
@@ -3565,7 +3645,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](31, "select", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("change", function ExcelMappingNewComponent_Template_select_change_31_listener() {
-              return ctx.getProcessName(ctx.excelMappingForm.get("proCode").value, ctx.excelMappingForm.get("extCode").value);
+              return ctx.getProcessName(ctx.excelMappingForm.get("processName").value, ctx.excelMappingForm.get("extSysCode").value);
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](32, "option", 16);
@@ -3844,7 +3924,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.addForm.get("subArray")["controls"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.addForm.get("excelMappingDetails")["controls"]);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
 
@@ -4198,13 +4278,13 @@
         }
       }
 
-      function ExcelMappingComponent_tr_32_button_16_Template(rf, ctx) {
+      function ExcelMappingComponent_tr_32_button_20_Template(rf, ctx) {
         if (rf & 1) {
           var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_16_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_20_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r10);
 
             var exdata_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
@@ -4220,13 +4300,13 @@
         }
       }
 
-      function ExcelMappingComponent_tr_32_button_17_Template(rf, ctx) {
+      function ExcelMappingComponent_tr_32_button_21_Template(rf, ctx) {
         if (rf & 1) {
           var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_17_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_21_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r13);
 
             var exdata_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
@@ -4242,13 +4322,13 @@
         }
       }
 
-      function ExcelMappingComponent_tr_32_button_18_Template(rf, ctx) {
+      function ExcelMappingComponent_tr_32_button_22_Template(rf, ctx) {
         if (rf & 1) {
           var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 21);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_18_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_22_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r16);
 
             var exdata_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
@@ -4264,13 +4344,13 @@
         }
       }
 
-      function ExcelMappingComponent_tr_32_button_19_Template(rf, ctx) {
+      function ExcelMappingComponent_tr_32_button_23_Template(rf, ctx) {
         if (rf & 1) {
           var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_19_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ExcelMappingComponent_tr_32_button_23_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r19);
 
             var exdata_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
@@ -4340,19 +4420,31 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](14, "date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "td");
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](16, ExcelMappingComponent_tr_32_button_16_Template, 2, 0, "button", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](17, ExcelMappingComponent_tr_32_button_17_Template, 2, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](18, "date");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](18, ExcelMappingComponent_tr_32_button_18_Template, 2, 0, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](19, ExcelMappingComponent_tr_32_button_19_Template, 2, 0, "button", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](20, ExcelMappingComponent_tr_32_button_20_Template, 2, 0, "button", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](21, ExcelMappingComponent_tr_32_button_21_Template, 2, 0, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](22, ExcelMappingComponent_tr_32_button_22_Template, 2, 0, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](23, ExcelMappingComponent_tr_32_button_23_Template, 2, 0, "button", 16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -4376,6 +4468,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](exdata_r3.currency);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](exdata_r3.sheetNumber);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](exdata_r3.authStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
@@ -4384,7 +4484,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](14, 10, exdata_r3.inputDtStamp, "medium"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](18, 12, exdata_r3.inputDtStamp, "medium"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
 
@@ -4520,8 +4620,8 @@
                 _iterator.f();
               }
 
-              console.log(_this23.excelData);
               _this23.excelData = data.result;
+              console.log(_this23.excelData);
               _this23.isLoading = false;
 
               _this23.dtTrigger.next();
@@ -4820,7 +4920,9 @@
               extSysCode: element.extSysCode,
               extSys: element.extSys,
               processName: element.processName,
-              authStatus: element.authStatus
+              authStatus: element.authStatus,
+              currency: element.currency,
+              sheetNumber: element.sheetNumber
             });
             this.router.navigate(['/excel-mapping/excel-mapping-edit']);
           }
@@ -4937,7 +5039,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](32, ExcelMappingComponent_tr_32_Template, 20, 13, "tr", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](32, ExcelMappingComponent_tr_32_Template, 24, 15, "tr", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
