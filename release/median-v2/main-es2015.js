@@ -3595,7 +3595,7 @@ class ApiService {
         return this.http.get(`${this.excelmap}/fetchExcelMapping?externalSystem=${externalSystem}&processCode=${processCode}&currency=${currency}&sheetNumber=${sheetNumber}`);
     }
     getAllExtsysNameAndProcessCodeOnAuthStatus() {
-        return this.http.get(`${this.uriForExt}/gettingExtsysNameAndProcessCodeOnAuthStatus`);
+        return this.http.get(`${this.uriForExt}/getAllExternalSystemMap`);
     }
     getAllExtCode() {
         return this.http.get(`${this.uriForExt}` + '/getAllExtCode');

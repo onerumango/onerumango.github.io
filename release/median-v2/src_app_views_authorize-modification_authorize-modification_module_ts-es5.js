@@ -1022,7 +1022,7 @@
               }],
               order: [[4, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
             this.dtOptions[1] = {
               pagingType: 'full_numbers',

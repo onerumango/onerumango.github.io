@@ -2179,8 +2179,8 @@ class RoleListComponent {
             columnDefs: [{ type: 'date', targets: [4] }],
             order: [[4, 'desc']],
             lengthMenu: [
-                [5, 10, 20, -1],
-                [5, 10, 20, 30],
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
             ],
         };
         this.roleService.fetchScreenPermissions('Roles');

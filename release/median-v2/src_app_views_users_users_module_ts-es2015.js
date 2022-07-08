@@ -871,8 +871,8 @@ class UserListComponent {
             order: [[5, 'desc']],
             processing: true,
             lengthMenu: [
-                [5, 10, 20, -1],
-                [5, 10, 20, 30],
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
             ],
             // columnDefs: [ { type: 'date', 'targets': [5] } ],
             // order: [[5, 'desc']],
@@ -880,7 +880,6 @@ class UserListComponent {
         this.getAllUsers();
         this.roleService.fetchScreenPermissions('Users');
         this.roleService.screenLabelList.subscribe((message) => (this.roleCodes = message));
-        console.log(this.roleCodes);
     }
     ngOnDestroy() {
         // Do not forget to unsubscribe the event
@@ -938,6 +937,7 @@ class UserListComponent {
                 intime: this.currentUser.intime,
                 outtime: this.currentUser.outtime,
                 pwdChangeDate: this.currentUser.pwdChangeDate,
+                passwordGenerationType: this.currentUser.passwordGenerationType
             },
         };
         localStorage.setItem('userNavObj', JSON.stringify(this.currentUser));
@@ -2049,6 +2049,7 @@ class UserNewComponent {
             .getAllSecurityPolicy(this.dataTableConfig.pageNo, this.dataTableConfig.pageSize, this.dataTableConfig.sortBy)
             .subscribe((dataresp) => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             this.securityDetails = dataresp;
+            console.log(this.securityDetails);
             if (this.securityDetails.result[0].passwordGenerationType == 'Auto') {
                 this.isPswd = false;
                 this.userForm.get('password').clearValidators();
@@ -2079,6 +2080,7 @@ class UserNewComponent {
         this.editFlag = false;
         this.user_id = localStorage.getItem('userFromLogin').replace(/['"]+/g, '');
         this.role = sessionStorage.getItem('user_role');
+        console.log(this.editUserScreen, "Edit User Screen");
         if (this.editUserScreen.queryParams.userId != '') {
             this.buildUserForm(this.editUserScreen.queryParams, true);
         }
@@ -2126,7 +2128,7 @@ class UserNewComponent {
         this.modifyUserObject.statusForUser =
             this.editUserScreen.queryParams.statusForUser;
         this.modifyUserObject.passwordGenerationType =
-            this.editUserScreen.queryParams.statusForUser;
+            this.editUserScreen.queryParams.passwordGenerationType;
         if (this.modifyUserObject.statusForUser === undefined) {
             this.modifyUserObject.statusForUser = 'Enable';
         }
@@ -2142,7 +2144,19 @@ class UserNewComponent {
         }
         this.modifyUserObject.pwdChangeDate =
             this.editUserScreen.queryParams.pwdChangeDate;
+        console.log(this.modifyUserObject, "ModifyUserObject");
+        console.log(localStorage.getItem('userNavObj'), "UserNavObj");
         this.userObjWithAudit = this.modifyUserObject;
+        this.userNavObj = localStorage.getItem('userNavObj');
+        console.log(JSON.parse(this.userNavObj), "userNavObj");
+        if (JSON.parse(this.userNavObj) != null) {
+            this.buildUserForm(JSON.parse(this.userNavObj));
+            this.getProfileImage(JSON.parse(this.userNavObj).userId);
+            this.userObjWithAudit = JSON.parse(this.userNavObj);
+            console.log(this.userObjWithAudit);
+            this.editFlag = true;
+            this.modifyScreen = true;
+        }
         if (this.modifyUserObject.userId) {
             this.modifyScreen = true;
             this.editFlag = true;
@@ -2154,15 +2168,6 @@ class UserNewComponent {
         // console.log(this.roleCodes);
         this.activeEditOnInit();
         // this.userForm.disable();
-        this.userNavObj = localStorage.getItem('userNavObj');
-        console.log(JSON.parse(this.userNavObj));
-        if (JSON.parse(this.userNavObj) != null) {
-            this.buildUserForm(JSON.parse(this.userNavObj));
-            this.getProfileImage(JSON.parse(this.userNavObj).userId);
-            this.userObjWithAudit = JSON.parse(this.userNavObj);
-            this.editFlag = true;
-            this.modifyScreen = true;
-        }
     }
     buildUserForm(data, isResponse) {
         this.securityApi.fetchSecurityPolicyService().subscribe((resp) => {
@@ -2238,7 +2243,7 @@ class UserNewComponent {
         // this.passwordRegex = this.passwordRegex + '.{' + this.minPass + ',' + this.maxPass + '}';
         // // this.passwordRegex = "(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^!-@]*[!-@]).{10,15}";
         // this.errorMsg = 'Password must contain atleast one ' + this.errorMsg + '.';
-        // console.log(this.passwordRegex);
+        console.log(data);
         this.userForm = this.formBuilder.group({
             userId: [
                 data.userId ? data.userId : '',

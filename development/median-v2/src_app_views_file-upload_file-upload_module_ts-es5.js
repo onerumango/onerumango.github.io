@@ -2566,7 +2566,7 @@
                 type: 'date',
                 targets: [6]
               }],
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
             this.dtOptions[1] = {
               pagingType: 'full_numbers',
@@ -2575,7 +2575,7 @@
               retrieve: true,
               // order: [[6, 'desc']],
               // columnDefs: [ { type: 'date', 'targets': [6] } ],
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
             setTimeout(function () {
               _this2.newRolePermissions();
@@ -7034,14 +7034,14 @@
               }],
               order: [[4, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
             this.dtOptions[1] = {
               pagingType: 'full_numbers',
               pageLength: 5,
               processing: true,
               retrieve: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
           }
         }, {

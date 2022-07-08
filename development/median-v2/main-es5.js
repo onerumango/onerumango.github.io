@@ -6057,7 +6057,9 @@
             extSysCode: '',
             processName: '',
             extSys: '',
-            authStatus: ''
+            authStatus: '',
+            currency: '',
+            sheetNumber: ''
           }); // this._baseURL = AppConstants.baseURL + '/role';
 
           this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles' + '/fetchAllRolesSummary';
@@ -6715,9 +6717,14 @@
             return this.http.get("".concat(this.excelmap, "/getExcelMappingInfo?extSysCode=").concat(extSysCode, "&processName=").concat(processName, "&extSys=").concat(extSys));
           }
         }, {
+          key: "getTemplateMappingDataforEdit",
+          value: function getTemplateMappingDataforEdit(externalSystem, processCode, currency, sheetNumber) {
+            return this.http.get("".concat(this.excelmap, "/fetchExcelMapping?externalSystem=").concat(externalSystem, "&processCode=").concat(processCode, "&currency=").concat(currency, "&sheetNumber=").concat(sheetNumber));
+          }
+        }, {
           key: "getAllExtsysNameAndProcessCodeOnAuthStatus",
           value: function getAllExtsysNameAndProcessCodeOnAuthStatus() {
-            return this.http.get("".concat(this.uriForExt, "/gettingExtsysNameAndProcessCodeOnAuthStatus"));
+            return this.http.get("".concat(this.uriForExt, "/getAllExternalSystemMap"));
           }
         }, {
           key: "getAllExtCode",
@@ -6780,6 +6787,16 @@
           key: "onAuthorizingTheRecordOfExcelMApping",
           value: function onAuthorizingTheRecordOfExcelMApping(model, extNameValue, processCode, extSysCode, userId, ccy) {
             return this.http.put("".concat(this.uriForMap, "/authOfRecord/").concat(extNameValue, "/").concat(processCode, "/").concat(extSysCode, "/").concat(userId, "/").concat(ccy), model);
+          }
+        }, {
+          key: "excelMappingAuditLog",
+          value: function excelMappingAuditLog(model, operation) {
+            return this.http.put("".concat(this.uriForMap, "/excelMapping/").concat(operation), model);
+          }
+        }, {
+          key: "createTemplateMap",
+          value: function createTemplateMap(obj) {
+            return this.http.post("".concat(_API_URL, "/excelmap/createExcelMapping"), obj);
           }
         }, {
           key: "onClcikOFCloseOfUpdateExcelMApping",

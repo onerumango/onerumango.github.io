@@ -3176,6 +3176,8 @@ class ApiService {
             processName: '',
             extSys: '',
             authStatus: '',
+            currency: '',
+            sheetNumber: ''
         });
         // this._baseURL = AppConstants.baseURL + '/role';
         this._baseURL = _config_app_constant__WEBPACK_IMPORTED_MODULE_0__.AppConstants.baseURL + '/medRoles' + '/fetchAllRolesSummary';
@@ -3589,8 +3591,11 @@ class ApiService {
     getExcelMappingDataforEdit(extSysCode, processName, extSys) {
         return this.http.get(`${this.excelmap}/getExcelMappingInfo?extSysCode=${extSysCode}&processName=${processName}&extSys=${extSys}`);
     }
+    getTemplateMappingDataforEdit(externalSystem, processCode, currency, sheetNumber) {
+        return this.http.get(`${this.excelmap}/fetchExcelMapping?externalSystem=${externalSystem}&processCode=${processCode}&currency=${currency}&sheetNumber=${sheetNumber}`);
+    }
     getAllExtsysNameAndProcessCodeOnAuthStatus() {
-        return this.http.get(`${this.uriForExt}/gettingExtsysNameAndProcessCodeOnAuthStatus`);
+        return this.http.get(`${this.uriForExt}/getAllExternalSystemMap`);
     }
     getAllExtCode() {
         return this.http.get(`${this.uriForExt}` + '/getAllExtCode');
@@ -3627,6 +3632,12 @@ class ApiService {
     }
     onAuthorizingTheRecordOfExcelMApping(model, extNameValue, processCode, extSysCode, userId, ccy) {
         return this.http.put(`${this.uriForMap}/authOfRecord/${extNameValue}/${processCode}/${extSysCode}/${userId}/${ccy}`, model);
+    }
+    excelMappingAuditLog(model, operation) {
+        return this.http.put(`${this.uriForMap}/excelMapping/${operation}`, model);
+    }
+    createTemplateMap(obj) {
+        return this.http.post(`${API_URL}/excelmap/createExcelMapping`, obj);
     }
     onClcikOFCloseOfUpdateExcelMApping(model, extNameValue, processCode, extSysCode, ccy) {
         return this.http.put(`${this.uriForMap}/closeOfRecord/${extNameValue}/${processCode}/${extSysCode}/${ccy}`, model);

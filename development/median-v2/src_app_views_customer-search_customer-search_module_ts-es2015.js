@@ -1117,15 +1117,20 @@ class CustomerSearchComponent {
             pagingType: "full_numbers",
             pageLength: 5,
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ],
             retrieve: true
         };
         this.dtOptions1 = {
             pagingType: "full_numbers",
             pageLength: 5,
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
-            retrieve: true
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ], retrieve: true
         };
         this.api.getAccountBlocking().subscribe(resp => {
             if (resp.exit === 'clickedOnExitFromAccountBlocking') {

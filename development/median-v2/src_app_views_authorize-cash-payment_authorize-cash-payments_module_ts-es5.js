@@ -820,7 +820,8 @@
               pagingType: "full_numbers",
               pageLength: 5,
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              // lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
             this.buldForm("");
           }

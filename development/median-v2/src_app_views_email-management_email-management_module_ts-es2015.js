@@ -1053,38 +1053,37 @@ class EmailManagementCreateComponent {
             });
             return;
         }
-        // let object = {
-        //   emailType : 'Account_Block', 
-        //   makerId: this.loggedInUser,
-        // }
-        this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(authresp => {
-            if (authresp) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                    text: 'Record is Authorized',
-                    icon: 'success'
-                });
-                this.eamilAuditLog = authresp;
-                this.auditLog();
-            }
-            else {
-                // this.iziToast.show({
-                //   message: `You Authorized The Record`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme: "dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                    text: 'Record Authorization is Failed',
-                    icon: 'error'
-                });
-            }
-        });
+        else {
+            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info',
+            }).then((result) => {
+                if (result.isConfirmed === true) {
+                    this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(authresp => {
+                        if (authresp) {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                                text: 'Record is Authorized',
+                                icon: 'success'
+                            });
+                            this.eamilAuditLog = authresp;
+                            this.auditLog();
+                        }
+                        else {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                                text: 'Record Authorization is Failed',
+                                icon: 'error'
+                            });
+                        }
+                    });
+                }
+            });
+        }
         this.ref.markForCheck();
     }
     onclickOfReopenOfEamilManagement() {
@@ -1527,7 +1526,10 @@ class EmailManagementComponent {
             columnDefs: [{ type: 'date', 'targets': [2] }],
             order: [[2, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ],
             // columnDefs: [ { type: 'date', 'targets': [5] } ],
             // order: [[5, 'desc']],
         };
