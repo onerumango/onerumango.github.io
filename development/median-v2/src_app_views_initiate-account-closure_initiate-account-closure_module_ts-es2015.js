@@ -1127,12 +1127,12 @@ function InitiateAccountClosureComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx_r0.roleCodes.new.labelDescription);
 } }
-function InitiateAccountClosureComponent_tr_26_Template(rf, ctx) { if (rf & 1) {
+function InitiateAccountClosureComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "a", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_26_Template_a_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6); const users_r4 = restoredCtx.$implicit; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r5.getDataFromSummary(users_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_28_Template_a_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6); const users_r4 = restoredCtx.$implicit; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r5.getDataFromSummary(users_r4); });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -1151,6 +1151,10 @@ function InitiateAccountClosureComponent_tr_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](16, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const users_r4 = ctx.$implicit;
@@ -1161,13 +1165,15 @@ function InitiateAccountClosureComponent_tr_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.accountType);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.accountNumber);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.fileName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.status);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.makerId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.verifiedStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](users_r4.recordStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](16, 8, users_r4.inputTime, "medium"));
 } }
 const _c0 = function () { return ["/dashboard"]; };
 class InitiateAccountClosureComponent {
@@ -1179,6 +1185,7 @@ class InitiateAccountClosureComponent {
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
         // this.dtOptions = {};
         this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+        this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
     }
     ngOnInit() {
         setTimeout(() => {
@@ -1190,7 +1197,10 @@ class InitiateAccountClosureComponent {
             columnDefs: [{ type: 'date', 'targets': [5] }],
             order: [[5, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ],
         };
         this.currentUser = localStorage.getItem('currentUser').replace(/['"]+/g, '');
         this.gettingAccClosureSummary(this.currentUser);
@@ -1271,6 +1281,11 @@ class InitiateAccountClosureComponent {
         console.log("this account closure Summary");
         this.accClosureServiceSum.gettingAccountClosureSummary(currentUser).subscribe(backendResp => {
             console.log(backendResp);
+            this.SummaryData = backendResp;
+            for (let users of this.SummaryData) {
+                users.verifiedStatus = this.statusArr.find((i) => i.startsWith(users.verifiedStatus));
+                users.recordStatus = this.statusArr.find((i) => i.startsWith(users.recordStatus));
+            }
             this.summaryDetails = backendResp;
             this.dtTrigger.next();
             // this.dataSource = new MatTableDataSource<FetchUserForSingleAccClosureReqDTO>(this.summaryDetails);
@@ -1278,9 +1293,12 @@ class InitiateAccountClosureComponent {
             // console.log(this.summaryDetails);
         });
     }
+    check(users) {
+        console.log(users);
+    }
 }
 InitiateAccountClosureComponent.ɵfac = function InitiateAccountClosureComponent_Factory(t) { return new (t || InitiateAccountClosureComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_account_closure_service_service__WEBPACK_IMPORTED_MODULE_1__.AccountClosureServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router)); };
-InitiateAccountClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: InitiateAccountClosureComponent, selectors: [["npr-initiate-account-closure"]], decls: 27, vars: 6, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 3, "routerLink", "click"]], template: function InitiateAccountClosureComponent_Template(rf, ctx) { if (rf & 1) {
+InitiateAccountClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: InitiateAccountClosureComponent, selectors: [["npr-initiate-account-closure"]], decls: 29, vars: 6, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 3, "routerLink", "click"]], template: function InitiateAccountClosureComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
@@ -1306,21 +1324,24 @@ InitiateAccountClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMP
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "account type");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "account number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "status");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "file name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "maker id");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "auth status");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "maker id");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "record status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "date");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](26, InitiateAccountClosureComponent_tr_26_Template, 14, 7, "tr", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, InitiateAccountClosureComponent_tr_28_Template, 17, 11, "tr", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -1332,9 +1353,9 @@ InitiateAccountClosureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMP
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](5, _c0));
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](18);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.summaryDetails);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_3__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbml0aWF0ZS1hY2NvdW50LWNsb3N1cmUuY29tcG9uZW50LnNjc3MifQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_3__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbml0aWF0ZS1hY2NvdW50LWNsb3N1cmUuY29tcG9uZW50LnNjc3MifQ== */"] });
 
 
 /***/ }),

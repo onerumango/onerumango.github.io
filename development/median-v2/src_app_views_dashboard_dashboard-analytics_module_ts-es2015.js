@@ -1434,8 +1434,8 @@ class DashboardAnalyticsComponent {
             order: [[5, 'desc']],
             processing: true,
             lengthMenu: [
-                [5, 10, 20, -1],
-                [5, 10, 20, 30],
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
             ],
         };
         this.getDataForDashboard();
@@ -1452,6 +1452,9 @@ class DashboardAnalyticsComponent {
         console.log(user);
         this.currentUser = user;
         // this.route.navigate(["users/modify"]);
+        this.userApi.setIndexValue({
+            index: 'edit',
+        });
         const navigationExtras = {
             queryParams: {
                 // 'id': this.modifyUserObject.id,
@@ -1485,11 +1488,54 @@ class DashboardAnalyticsComponent {
                 pwdChangeDate: this.currentUser.pwdChangeDate,
             },
         };
+        localStorage.setItem('userNavObj', JSON.stringify(this.currentUser));
         // console.log(this.currentUser.intime, this.currentUser.outtime);
         //console.log(this.currentUser);department
         this.userApi.sendNavParam(navigationExtras);
         this.route.navigate(['users/new']);
     }
+    // modifyUser(user: User) {
+    //   console.log(user);
+    //   this.currentUser = user;
+    //   // this.route.navigate(["users/modify"]);
+    //   const navigationExtras: NavigationExtras = {
+    //     queryParams: {
+    //       // 'id': this.modifyUserObject.id,
+    //       userId: this.currentUser.userId,
+    //       userName: this.currentUser.userName,
+    //       email: this.currentUser.email,
+    //       ldapUserId: this.currentUser.ldapUserId,
+    //       failedAttempts: this.currentUser.failedAttempts,
+    //       mobile: this.currentUser.mobile,
+    //       authStatus: this.currentUser.verifiedStatus,
+    //       recordStatus: this.currentUser.recordStatus,
+    //       autoAuth: this.currentUser.autoAuth,
+    //       emailNotification: this.currentUser.emailNotification,
+    //       maintAllowed: this.currentUser.maintAllowed,
+    //       smsNotification: this.currentUser.smsNotification,
+    //       userAccessOption: this.currentUser.userAccessOption,
+    //       roleForUser: this.currentUser.roleForUser,
+    //       creatorId: this.currentUser.creatorId,
+    //       creatorDtStamp: this.currentUser.creatorDtStamp,
+    //       verifierId: this.currentUser.verifierId,
+    //       verifierDtStamp: this.currentUser.verifierDtStamp,
+    //       encryptedPassword: this.currentUser.encryptedPassword,
+    //       updatedBy: this.currentUser.updatedBy,
+    //       fristTimeAuth: this.currentUser.verifiedOnce,
+    //       newRoleForUser: this.currentUser.newRoleForUser,
+    //       versionNo: this.currentUser.versionNo,
+    //       statusForUser: this.currentUser.statusForUser,
+    //       department: this.currentUser.department,
+    //       intime: this.currentUser.intime,
+    //       outtime: this.currentUser.outtime,
+    //       pwdChangeDate: this.currentUser.pwdChangeDate,
+    //     },
+    //   };
+    //   // console.log(this.currentUser.intime, this.currentUser.outtime);
+    //   //console.log(this.currentUser);department
+    //   this.userApi.sendNavParam(navigationExtras);
+    //   this.route.navigate(['users/new']);
+    // }
     getDataForDashboard() {
         this.api.getData().subscribe((data) => {
             this.datafordashboard = data;

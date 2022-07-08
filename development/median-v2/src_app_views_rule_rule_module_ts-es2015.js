@@ -1333,6 +1333,7 @@ class RuleDetails2Component {
                     console.log(this.ruleConfig);
                     this.rules.editRuleConfig("auth", this.ruleConfig, this.currentUser).subscribe(authResp => {
                         console.log(authResp);
+                        debugger;
                         if (authResp) {
                             this.ruleConfig = authResp;
                             this.authorizeDone = true;
@@ -1357,12 +1358,16 @@ class RuleDetails2Component {
             confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
         }).then((result => {
             console.log("this is reopen ", result);
+            console.log(this.multipleValidation);
+            console.log(this.arrRuleValidation);
+            // console.log(this.ruleConfig);
+            console.log(this.currentUser);
             if (result.isConfirmed === true) {
                 this.ruleConfig.mdmtValidationSystemData = this.multipleValidation;
                 this.ruleConfig.mdmtValidationSystemData.forEach(el => {
                     el.ruleId = this.ruleConfig.ruleId;
                 });
-                // console.log(this.ruleConfig);
+                console.log(this.ruleConfig);
                 this.arrRuleValidation.forEach(el => { el.ruleId = this.ruleConfig.ruleId; });
                 console.log(this.arrRuleValidation);
                 this.ruleConfig.sysRuleDetails = this.arrRuleValidation;
@@ -1370,9 +1375,11 @@ class RuleDetails2Component {
                 this.ruleConfig.approvedEver == 'NO' ? this.ruleConfig.approvedEver = 'N' : (this.ruleConfig.approvedEver == 'YES' ? this.ruleConfig.approvedEver = 'Y' : this.ruleConfig.approvedEver);
                 this.ruleConfig.approvedStatus == 'UNAUTHORIZED' ? this.ruleConfig.approvedStatus = 'U' : (this.ruleConfig.approvedStatus == 'AUTHORIZED' ? this.ruleConfig.approvedStatus = 'A' : this.ruleConfig.approvedStatus);
                 this.ruleConfig.recordStatus == 'OPEN' ? this.ruleConfig.recordStatus = 'O' : (this.ruleConfig.recordStatus == 'CLOSED' ? this.ruleConfig.recordStatus = 'C' : this.ruleConfig.recordStatus);
+                console.log(this.ruleConfig);
                 console.log(this.reopenBtn);
                 this.rules.editRuleConfig("close", this.ruleConfig, this.currentUser).subscribe(closeResp => {
                     console.log(closeResp);
+                    debugger;
                     if (closeResp) {
                         this.ruleConfig = closeResp;
                         this.editBtn = true;
@@ -1403,6 +1410,11 @@ class RuleDetails2Component {
             confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
         }).then((result => {
             console.log("this is reopen ", result);
+            console.log(this.multipleValidation);
+            console.log(this.arrRuleValidation);
+            console.log(this.ruleConfig);
+            console.log(this.currentUser);
+            debugger;
             if (result.isConfirmed === true) {
                 this.ruleConfig.mdmtValidationSystemData = this.multipleValidation;
                 this.ruleConfig.mdmtValidationSystemData.forEach(el => {
@@ -1416,6 +1428,8 @@ class RuleDetails2Component {
                 this.ruleConfig.approvedEver == 'NO' ? this.ruleConfig.approvedEver = 'N' : (this.ruleConfig.approvedEver == 'YES' ? this.ruleConfig.approvedEver = 'Y' : this.ruleConfig.approvedEver);
                 this.ruleConfig.approvedStatus == 'UNAUTHORIZED' ? this.ruleConfig.approvedStatus = 'U' : (this.ruleConfig.approvedStatus == 'AUTHORIZED' ? this.ruleConfig.approvedStatus = 'A' : this.ruleConfig.approvedStatus);
                 this.ruleConfig.recordStatus == 'OPEN' ? this.ruleConfig.recordStatus = 'O' : (this.ruleConfig.recordStatus == 'CLOSED' ? this.ruleConfig.recordStatus = 'C' : this.ruleConfig.recordStatus);
+                console.log(this.ruleConfig);
+                debugger;
                 this.rules.editRuleConfig("open", this.ruleConfig, this.currentUser).subscribe(openResp => {
                     console.log(openResp);
                     if (openResp) {
@@ -1432,6 +1446,8 @@ class RuleDetails2Component {
         }));
     }
     deleteRule() {
+        console.log(this.ruleConfig);
+        console.log(this.arrRuleValidation);
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
             text: 'You are trying to delete record. ' + ' Do you want to proceed?',
@@ -1447,8 +1463,10 @@ class RuleDetails2Component {
                 this.ruleConfig.mdmtValidationSystemData = this.multipleValidation;
                 this.ruleConfig.mdmtValidationSystemData.forEach(el => {
                     el.ruleId = this.ruleConfig.ruleId;
+                    console.log(this.ruleConfig.mdmtValidationSystemData);
                 });
-                // console.log(this.ruleConfig);
+                console.log(this.arrRuleValidation);
+                debugger;
                 this.arrRuleValidation.forEach(el => { el.ruleId = this.ruleConfig.ruleId; });
                 console.log(this.arrRuleValidation);
                 this.ruleConfig.sysRuleDetails = this.arrRuleValidation;
@@ -3196,18 +3214,25 @@ class MultipleValidation {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "RuleListComponent": function() { return /* binding */ RuleListComponent; }
+/* harmony export */   "RuleListComponent": function() { return /* binding */ RuleListComponent; },
+/* harmony export */   "RuleConfig": function() { return /* binding */ RuleConfig; },
+/* harmony export */   "RuleValidation": function() { return /* binding */ RuleValidation; },
+/* harmony export */   "RuleDto": function() { return /* binding */ RuleDto; },
+/* harmony export */   "MultipleValidation": function() { return /* binding */ MultipleValidation; }
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 79441);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 79441);
 /* harmony import */ var src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/fmosNewRolePermissions */ 35383);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/services/rule.service */ 50511);
-/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/role.service */ 77382);
-/* harmony import */ var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/toast.service */ 31443);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/add-system.service */ 91973);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 54364);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2 */ 18190);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/rule.service */ 50511);
+/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/role.service */ 77382);
+/* harmony import */ var src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/toast.service */ 31443);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/services/add-system.service */ 91973);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular-datatables */ 50481);
+
 
 
 
@@ -3221,68 +3246,101 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = function () { return ["/createrule/create"]; };
 const _c1 = function () { return ["active"]; };
 function RuleListComponent_div_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "a", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "a", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](3, _c0))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](4, _c1));
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r0.roleCodes.new.labelDescription);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](3, _c0))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](4, _c1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r0.roleCodes.new.labelDescription);
+} }
+function RuleListComponent_tr_26_button_16_Template(rf, ctx) { if (rf & 1) {
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RuleListComponent_tr_26_button_16_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r9); const data_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit; const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](); return ctx_r7.close(data_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "img", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+} }
+function RuleListComponent_tr_26_button_17_Template(rf, ctx) { if (rf & 1) {
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RuleListComponent_tr_26_button_17_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r12); const data_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit; const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](); return ctx_r10.open(data_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "img", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+} }
+function RuleListComponent_tr_26_button_18_Template(rf, ctx) { if (rf & 1) {
+    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RuleListComponent_tr_26_button_18_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r15); const data_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit; const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](); return ctx_r13.delete(data_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "img", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 } }
 function RuleListComponent_tr_26_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "a", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function RuleListComponent_tr_26_Template_a_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r5); const data_r3 = restoredCtx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r4.editRule(data_r3); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](12, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "button", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](15, "Action");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tr");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "a", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RuleListComponent_tr_26_Template_a_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r17); const data_r3 = restoredCtx.$implicit; const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](); return ctx_r16.editRule(data_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](12, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](14, "button", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RuleListComponent_tr_26_Template_button_click_14_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r17); const data_r3 = restoredCtx.$implicit; const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](); return ctx_r18.auth(data_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](15, "img", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](16, RuleListComponent_tr_26_button_16_Template, 2, 0, "button", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](17, RuleListComponent_tr_26_button_17_Template, 2, 0, "button", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](18, RuleListComponent_tr_26_button_18_Template, 2, 0, "button", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const data_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", data_r3.ruleId, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", data_r3.ruleName, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](data_r3.approvedStatus);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](data_r3.recordStatus);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](12, 5, data_r3.createdTime, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", data_r3.ruleId, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", data_r3.ruleName, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](data_r3.approvedStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](data_r3.recordStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](12, 9, data_r3.createdTime, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", !(data_r3.approvedStatus == "U" || data_r3.approvedStatus == "UNAUTHORIZED"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (data_r3.recordStatus == "O" || data_r3.recordStatus == "Open" || data_r3.recordStatus == "OPEN") && (data_r3.approvedEver == "Y" || data_r3.approvedEver == "YES"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (data_r3.recordStatus == "CLOSED" || data_r3.recordStatus == "Close" || data_r3.recordStatus == "c" || data_r3.recordStatus == "C") && (data_r3.approvedEver == "YES" || data_r3.approvedEver == "Y"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", data_r3.approvedEver == "N" || data_r3.approvedEver == "NO");
 } }
 function RuleListComponent_ng_container_27_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "span", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Please wait... ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "span", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Please wait... ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](4, "span", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
 } }
 const _c2 = function () { return ["/dashboard"]; };
 class RuleListComponent {
@@ -3294,10 +3352,13 @@ class RuleListComponent {
         this.addSystem = addSystem;
         this.cdr = cdr;
         this.rulesData = [];
-        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_7__.Subject();
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_8__.Subject();
         this.dtOptions = {};
         this.isLoading = false;
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+        this.ruleDto = new RuleDto();
+        this.ruleConfig = new RuleConfig();
+        this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
     }
     ngOnInit() {
         this.dtOptions = {
@@ -3306,10 +3367,14 @@ class RuleListComponent {
             columnDefs: [{ type: 'date', 'targets': [5] }],
             order: [[5, 'desc']],
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ],
             // columnDefs: [ { type: 'date', 'targets': [5] } ],
             // order: [[5, 'desc']],
         };
+        this.currentUser = localStorage.getItem('userFromLogin');
         this.fetchRules();
         this.roleService.fetchScreenPermissions('Create Rule');
         this.roleService.screenLabelList.subscribe(message => this.roleCodes = message);
@@ -3321,6 +3386,10 @@ class RuleListComponent {
             .subscribe((resp) => {
             console.log(resp);
             // this.toastService.successMessage('Data Fetched Successfully!.', '');
+            for (let data of resp.result) {
+                data.approvedStatus = this.statusArr.find((i) => i.startsWith(data.approvedStatus));
+                data.recordStatus = this.statusArr.find((i) => i.startsWith(data.recordStatus));
+            }
             this.rulesData = resp.result;
             this.isLoading = false;
             this.cdr.markForCheck();
@@ -3338,66 +3407,256 @@ class RuleListComponent {
         // Do not forget to unsubscribe the event
         this.dtTrigger.unsubscribe();
     }
+    close(data) {
+        console.log(data);
+        this.ruleConfig = data;
+        this.arrRuleValidation = [data];
+        this.multipleValidation = [];
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to close record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            console.log("this is reopen ", result);
+            console.log(this.multipleValidation);
+            console.log(this.arrRuleValidation);
+            console.log(this.ruleConfig);
+            console.log(this.currentUser);
+            if (result.isConfirmed === true) {
+                this.ruleService.editRuleConfig("close", data, this.currentUser).subscribe(closeResp => {
+                    console.log(closeResp);
+                    if (closeResp) {
+                        this.ruleConfig = closeResp;
+                        this.editBtn = true;
+                        this.authBtn = true;
+                        this.deleted = false;
+                        this.reopenBtn = false;
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Closed" }).then(() => window.location.reload());
+                    }
+                }, err => {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Failed to close the Record" });
+                });
+            }
+        }));
+    }
+    open(data) {
+        this.ruleConfig = data;
+        this.arrRuleValidation = [data];
+        this.multipleValidation = [];
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to re-open record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            console.log("this is reopen ", result);
+            console.log(this.multipleValidation);
+            console.log(this.arrRuleValidation);
+            console.log(this.ruleConfig);
+            console.log(this.currentUser);
+            if (result.isConfirmed === true) {
+                this.ruleService.editRuleConfig("open", data, this.currentUser).subscribe(openResp => {
+                    console.log(openResp);
+                    if (openResp) {
+                        this.ruleConfig = openResp;
+                        this.authBtnHide = false;
+                        this.editBtn = false;
+                        this.authBtn = false;
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Reopened" }).then(() => window.location.reload());
+                    }
+                }, err => {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Failed to open the Record" });
+                });
+            }
+        }));
+    }
+    delete(data) {
+        console.log(data);
+        this.ruleConfig = data;
+        this.arrRuleValidation = [data];
+        this.multipleValidation = [];
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to delete record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.ruleConfig.mdmtValidationSystemData = this.multipleValidation;
+                this.ruleConfig.mdmtValidationSystemData.forEach(el => {
+                    el.ruleId = this.ruleConfig.ruleId;
+                });
+                this.arrRuleValidation.forEach(el => { el.ruleId = this.ruleConfig.ruleId; });
+                console.log(this.arrRuleValidation);
+                this.ruleConfig.sysRuleDetails = this.arrRuleValidation;
+                console.log(this.ruleConfig);
+                this.ruleService.onDeleteRuleCongif(this.ruleConfig.sysRuleId, this.currentUser).subscribe((response) => {
+                    if (response) {
+                        this.deleted = true;
+                        this.editBtn = true;
+                        this.authBtn = true;
+                        this.closeBtn = true;
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: 'Record is Deleted',
+                            icon: 'success'
+                        }).then(() => window.location.reload());
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire("Failed to delete the reocrd");
+                    }
+                });
+            }
+        }));
+    }
+    auth(data) {
+        this.ruleConfig = data;
+        console.log(this.ruleConfig.creatorId);
+        this.arrRuleValidation = [data];
+        this.multipleValidation = [];
+        console.log(this.currentUser);
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info'
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                if (this.ruleConfig.creatorId == this.currentUser) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Maker cannot authorize the record!" });
+                }
+                else {
+                    // this.ruleConfig.mdmtValidationSystemData = this.multipleValidation;
+                    // this.ruleConfig.mdmtValidationSystemData.forEach(el => {
+                    //   el.ruleId = this.ruleConfig.ruleId;
+                    // })
+                    // // console.log(this.ruleConfig);
+                    // this.arrRuleValidation.forEach(el => { el.ruleId = this.ruleConfig.ruleId });
+                    // console.log(this.ruleConfig);
+                    // this.ruleConfig.sysRuleDetails = this.arrRuleValidation;
+                    // this.ruleConfig.approverId= this.currentUser;
+                    // this.ruleConfig.approvedEver == 'NO'? this.ruleConfig.approvedEver = 'N' : (this.ruleConfig.approvedEver == 'YES'? this.ruleConfig.approvedEver = 'Y' : this.ruleConfig.approvedEver);
+                    // this.ruleConfig.approvedStatus == 'UNAUTHORIZED'? this.ruleConfig.approvedStatus = 'U' : (this.ruleConfig.approvedStatus == 'AUTHORIZED'? this.ruleConfig.approvedStatus = 'A' : this.ruleConfig.approvedStatus);
+                    // this.ruleConfig.recordStatus == "OPEN" ? this.ruleConfig.recordStatus = 'O' : (this.ruleConfig.recordStatus == 'CLOSE'? this.ruleConfig.recordStatus = 'C' : this.ruleConfig.recordStatus);
+                    if (this.ruleConfig.approvedStatus === 'UNAUTHORIZED') {
+                        this.ruleConfig.approvedStatus = 'U';
+                    }
+                    if (this.ruleConfig.approvedStatus === 'AUTHORIZED') {
+                        this.ruleConfig.approvedStatus = 'A';
+                    }
+                    if (this.ruleConfig.recordStatus === 'OPEN') {
+                        this.ruleConfig.recordStatus = 'O';
+                    }
+                    if (this.ruleConfig.recordStatus === 'CLOSE') {
+                        this.ruleConfig.recordStatus = 'C';
+                    }
+                    if (this.ruleConfig.approvedEver === 'NO') {
+                        this.ruleConfig.approvedEver = 'N';
+                    }
+                    if (this.ruleConfig.approvedEver === 'YES') {
+                        this.ruleConfig.approvedEver = 'Y';
+                    }
+                    console.log(this.ruleConfig);
+                    this.ruleService.editRuleConfig("auth", data, this.currentUser).subscribe(authResp => {
+                        console.log(authResp);
+                        if (authResp) {
+                            this.ruleConfig = authResp;
+                            this.authorizeDone = true;
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Authorized" }).then(() => window.location.reload());
+                        }
+                    }, (err) => {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Failed To Authorize" });
+                    });
+                }
+            }
+        }));
+    }
 }
-RuleListComponent.ɵfac = function RuleListComponent_Factory(t) { return new (t || RuleListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_1__.RuleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_3__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_4__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef)); };
-RuleListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: RuleListComponent, selectors: [["npr-rule-list"]], decls: 28, vars: 7, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "routerLinkActive"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function RuleListComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Create Rule");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, RuleListComponent_div_6_Template, 3, 5, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9, "Exit");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "table", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "thead");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](14, "Rule Id");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](16, "Rule Name");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](18, "Auth Status");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20, "Record Status");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](22, "Date");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](24, "Action");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](26, RuleListComponent_tr_26_Template, 16, 8, "tr", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](27, RuleListComponent_ng_container_27_Template, 5, 0, "ng-container", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+RuleListComponent.ɵfac = function RuleListComponent_Factory(t) { return new (t || RuleListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_rule_service__WEBPACK_IMPORTED_MODULE_2__.RuleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_4__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](src_app_shared_services_add_system_service__WEBPACK_IMPORTED_MODULE_5__.AddSystemService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef)); };
+RuleListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({ type: RuleListComponent, selectors: [["npr-rule-list"]], decls: 28, vars: 7, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", "id", "dbTable1", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "routerLinkActive"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "..."], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "..."], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function RuleListComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "h2", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Create Rule");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](6, RuleListComponent_div_6_Template, 3, 5, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](7, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "a", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9, "Exit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "table", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "thead");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](12, "tr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](14, "Rule Id");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](15, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](16, "Rule Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](18, "Auth Status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](19, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](20, "Record Status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](21, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](22, "Date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](24, "Action");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](25, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](26, RuleListComponent_tr_26_Template, 19, 12, "tr", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](27, RuleListComponent_ng_container_27_Template, 5, 0, "ng-container", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.roleCodes.new);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](6, _c2));
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.rulesData);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.isLoading);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_5__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkActive], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJydWxlLWxpc3QuY29tcG9uZW50LnNjc3MifQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.roleCodes.new);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](6, _c2));
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", ctx.rulesData);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.isLoading);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_6__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterLinkActive], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJydWxlLWxpc3QuY29tcG9uZW50LnNjc3MifQ== */"] });
+class RuleConfig {
+}
+class RuleValidation {
+}
+class RuleDto {
+}
+class MultipleValidation {
+}
 
 
 /***/ }),

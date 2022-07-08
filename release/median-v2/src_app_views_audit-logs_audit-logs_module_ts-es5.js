@@ -394,7 +394,8 @@
                 'targets': [5]
               }],
               order: [[5, 'desc']],
-              lengthMenu: [[5, 10, 20, 30], [5, 10, 20, 30]],
+              // lengthMenu: [[5, 10, 20, 30], [5, 10, 20, 30]],
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]],
               ajax: function ajax(dataTablesParameters, callback) {
                 dataTablesParameters.minNumber = dataTablesParameters.start + 1;
                 dataTablesParameters.maxNumber = dataTablesParameters.start + dataTablesParameters.length;

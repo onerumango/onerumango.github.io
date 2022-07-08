@@ -727,7 +727,10 @@ class ProcessAccountClosureComponent {
             retrieve: true,
             order: [[3, 'desc']],
             columnDefs: [{ type: 'date', 'targets': [3] }],
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ],
         };
     }
     ngOnDestroy() {

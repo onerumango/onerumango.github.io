@@ -476,14 +476,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AccountClosureMaintenanceSummaryComponent": function() { return /* binding */ AccountClosureMaintenanceSummaryComponent; }
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 79441);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 79441);
 /* harmony import */ var src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/fmosNewRolePermissions */ 35383);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/services/role.service */ 77382);
-/* harmony import */ var src_app_shared_services_acc_closure_maintenance_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/acc-closure-maintenance-service.service */ 23637);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 54364);
-/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-datatables */ 50481);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2 */ 18190);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/role.service */ 77382);
+/* harmony import */ var src_app_shared_services_acc_closure_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/acc-closure-maintenance-service.service */ 23637);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-datatables */ 50481);
+
 
 
 
@@ -493,58 +496,91 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function AccountClosureMaintenanceSummaryComponent_div_6_Template(rf, ctx) { if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "a", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_div_6_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r2.new(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "a", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_div_6_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r2.new(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx_r0.roleCodes.new.labelDescription);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r0.roleCodes.new.labelDescription);
+} }
+function AccountClosureMaintenanceSummaryComponent_tr_26_button_16_Template(rf, ctx) { if (rf & 1) {
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_button_16_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10); const data_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit; const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r8.close(data_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} }
+function AccountClosureMaintenanceSummaryComponent_tr_26_button_17_Template(rf, ctx) { if (rf & 1) {
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_button_17_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r13); const data_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit; const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r11.open(data_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} }
+function AccountClosureMaintenanceSummaryComponent_tr_26_button_18_Template(rf, ctx) { if (rf & 1) {
+    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_button_18_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r16); const data_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit; const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r14.delete(data_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } }
 function AccountClosureMaintenanceSummaryComponent_tr_26_Template(rf, ctx) { if (rf & 1) {
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "a", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_Template_a_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6); const data_r4 = restoredCtx.$implicit; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r5.edit(data_r4); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](12, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "button", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Action");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "a", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_Template_a_click_2_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r18); const data_r4 = restoredCtx.$implicit; const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r17.edit(data_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](12, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "button", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AccountClosureMaintenanceSummaryComponent_tr_26_Template_button_click_14_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r18); const data_r4 = restoredCtx.$implicit; const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r19.auth(data_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](15, "img", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](16, AccountClosureMaintenanceSummaryComponent_tr_26_button_16_Template, 2, 0, "button", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](17, AccountClosureMaintenanceSummaryComponent_tr_26_button_17_Template, 2, 0, "button", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, AccountClosureMaintenanceSummaryComponent_tr_26_button_18_Template, 2, 0, "button", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const data_r4 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.accountType);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.approvedStatus);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.recordStatus);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r4.inputBy);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](12, 5, data_r4.inputTime, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r4.accountType);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r4.verifiedStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r4.recordStatus);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r4.inputBy);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](12, 9, data_r4.inputTime, "medium"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !(data_r4.verifiedStatus == "U" || data_r4.verifiedStatus == "UNAUTHORIZED"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (data_r4.recordStatus == "O" || data_r4.recordStatus == "Open" || data_r4.recordStatus == "OPEN") && (data_r4.verifiedOnce == "Y" || data_r4.verifiedOnce == "YES"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (data_r4.recordStatus == "CLOSED" || data_r4.recordStatus == "Close" || data_r4.recordStatus == "c" || data_r4.recordStatus == "C") && (data_r4.verifiedOnce == "YES" || data_r4.verifiedOnce == "Y"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r4.verifiedOnce == "N" || data_r4.verifiedOnce == "NO");
 } }
 const _c0 = function () { return ["/dashboard"]; };
 class AccountClosureMaintenanceSummaryComponent {
@@ -553,10 +589,12 @@ class AccountClosureMaintenanceSummaryComponent {
         this.accClosureService = accClosureService;
         this.router = router;
         this.dtOptions = {};
-        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
         this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
+        this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
     }
     ngOnInit() {
+        this.currentUser = localStorage.getItem("userFromLogin");
         setTimeout(() => {
             this.newRolePermissions();
         }, 2000);
@@ -568,7 +606,10 @@ class AccountClosureMaintenanceSummaryComponent {
             pagingType: "full_numbers",
             pageLength: 5,
             processing: true,
-            lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]]
+            lengthMenu: [
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
+            ],
         };
         this.getAccountClosureMaintenancesummary();
     }
@@ -580,6 +621,10 @@ class AccountClosureMaintenanceSummaryComponent {
             .gettingAccountClosureMaintenance()
             .subscribe((summaryResp) => {
             this.respArray = summaryResp;
+            for (let data of summaryResp) {
+                data.verifiedStatus = this.statusArr.find((i) => i.startsWith(data.verifiedStatus));
+                data.recordStatus = this.statusArr.find((i) => i.startsWith(data.recordStatus));
+            }
             this.dtTrigger.next();
         });
     }
@@ -593,6 +638,181 @@ class AccountClosureMaintenanceSummaryComponent {
         });
         this.router.navigateByUrl("/account-closure-maintenance");
     }
+    auditLog() {
+        if (this.accAuditDetails.recordStatus == "O") {
+            this.accAuditDetails.recordStatus = "OPEN";
+        }
+        if (this.accAuditDetails.recordStatus == "C") {
+            this.accAuditDetails.recordStatus = "CLOSE";
+        }
+        if (this.accAuditDetails.verifiedStatus == "U") {
+            this.accAuditDetails.verifiedStatus = "UNAUTHORIZED";
+        }
+        if (this.accAuditDetails.verifiedStatus == "A") {
+            this.accAuditDetails.verifiedStatus = "AUTHORIZED";
+        }
+        if (this.accAuditDetails.verifiedOnce == "Y") {
+            this.accAuditDetails.verifiedOnce = "YES";
+        }
+        if (this.accAuditDetails.verifiedOnce == "N") {
+            this.accAuditDetails.verifiedOnce = "NO";
+        }
+    }
+    close(data) {
+        this.index = data.accountType;
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Close record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.accClosureService
+                    .onClosingTheRecord(this.index, this.currentUser)
+                    .subscribe((closeResp) => {
+                    this.accAuditDetails = closeResp;
+                    if (this.accAuditDetails) {
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: "Record is Closed",
+                            icon: 'success'
+                        });
+                    }
+                });
+            }
+        }));
+    }
+    open(data) {
+        console.log(data);
+        this.index = data.accountType;
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Reopen record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                this.accClosureService
+                    .onReopningTheRecord(this.index, this.currentUser)
+                    .subscribe((reopnResp) => {
+                    console.log(reopnResp);
+                    this.accAuditDetails = reopnResp;
+                    if (this.accAuditDetails.recordStatus === "O") {
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Reopened",
+                            icon: 'success' }
+                        // type: "success"
+                        );
+                    }
+                    else {
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be opened ",
+                            icon: 'error' });
+                    }
+                });
+            }
+        }));
+    }
+    delete(data) {
+        this.index = data;
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Delete record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            if (result.isConfirmed === true) {
+                // this.payload.accountingEntries = this.AccountEntryForm.value.accountingEntries;
+                // this.payload.userDefinedFields = this.UdfForm.value.userDefinedFields;
+                // console.log("payload ", this.payload);
+                console.log(this.index, this.currentUser, data);
+                this.accClosureService.onDelete(this.index, this.currentUser, data).subscribe((reopnResp) => {
+                    console.log({ reopnResp });
+                    if (reopnResp === "Record Deleted Successfully") {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Deleted",
+                            icon: 'success' }
+                        // type: "success"
+                        );
+                        this.router.navigateByUrl('/account-closure-maintenance/account-closure-summary');
+                    }
+                    else {
+                        this.auditLog();
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be Deleted ",
+                            icon: 'error' });
+                    }
+                }, error => {
+                    console.log(error.error.text);
+                    if (error.error.text === "Record Deleted Successfully") {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Deleted",
+                            icon: 'success' });
+                        this.router.navigateByUrl('/account-closure-maintenance/account-closure-summary');
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be Deleted ",
+                            icon: 'error' });
+                    }
+                });
+            }
+        }));
+    }
+    auth(data) {
+        this.index = data.accountType;
+        this.accAuditDetails = data;
+        console.log(this.currentUser);
+        console.log(this.accAuditDetails);
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+            text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+            showCancelButton: true,
+            confirmButtonColor: '#3e54b8',
+            cancelButtonColor: '#d33',
+            // confirmButtonText: 'PROCEED.'
+            cancelButtonText: 'NO',
+            confirmButtonText: 'YES', 'icon': 'info', iconColor: "#d33"
+        }).then((result => {
+            console.log("this is reopen ", result);
+            if (result.isConfirmed === true) {
+                if (this.currentUser === this.accAuditDetails.inputBy) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Maker Cannot Authorize Record!',
+                        icon: 'error' });
+                    return;
+                }
+                this.accClosureService
+                    .onAuthofAccMaint(this.index, this.currentUser)
+                    .subscribe((authResp) => {
+                    this.accAuditDetails = authResp;
+                    this.auditLog();
+                    if (this.accAuditDetails.accountType === "" ||
+                        this.accAuditDetails.accountType == null) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Maker cannot authorize the record",
+                            icon: 'error'
+                        });
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                            text: "Record is Authorized"
+                        }
+                        // type: "success"
+                        );
+                    }
+                });
+            }
+        }));
+    }
     edit(data) {
         this.accClosureService.setIndex({
             index: data.accountType,
@@ -601,62 +821,62 @@ class AccountClosureMaintenanceSummaryComponent {
         this.router.navigateByUrl("/account-closure-maintenance");
     }
 }
-AccountClosureMaintenanceSummaryComponent.ɵfac = function AccountClosureMaintenanceSummaryComponent_Factory(t) { return new (t || AccountClosureMaintenanceSummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_1__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_acc_closure_maintenance_service_service__WEBPACK_IMPORTED_MODULE_2__.AccClosureMaintenanceServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router)); };
-AccountClosureMaintenanceSummaryComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: AccountClosureMaintenanceSummaryComponent, selectors: [["npr-account-closure-maintenance-summary"]], decls: 27, vars: 6, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "primaryColor", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"]], template: function AccountClosureMaintenanceSummaryComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Account Closure Maintenance Summary");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](6, AccountClosureMaintenanceSummaryComponent_div_6_Template, 3, 1, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Exit");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "table", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "thead");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "Account Type");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "Auth Status");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "Record Status");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "Maker Id");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Date");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "Action");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](26, AccountClosureMaintenanceSummaryComponent_tr_26_Template, 16, 8, "tr", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+AccountClosureMaintenanceSummaryComponent.ɵfac = function AccountClosureMaintenanceSummaryComponent_Factory(t) { return new (t || AccountClosureMaintenanceSummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_2__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_services_acc_closure_maintenance_service_service__WEBPACK_IMPORTED_MODULE_3__.AccClosureMaintenanceServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router)); };
+AccountClosureMaintenanceSummaryComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: AccountClosureMaintenanceSummaryComponent, selectors: [["npr-account-closure-maintenance-summary"]], decls: 27, vars: 6, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0)", 1, "primaryColor", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "..."], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "..."]], template: function AccountClosureMaintenanceSummaryComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Account Closure Maintenance Summary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, AccountClosureMaintenanceSummaryComponent_div_6_Template, 3, 1, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "a", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Exit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "table", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "thead");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "tr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Account Type");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Auth Status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "Record Status");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "Maker Id");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](22, "Date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "Action");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, AccountClosureMaintenanceSummaryComponent_tr_26_Template, 19, 12, "tr", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.roleCodes.new);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](5, _c0));
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.respArray);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_3__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhY2NvdW50LWNsb3N1cmUtbWFpbnRlbmFuY2Utc3VtbWFyeS5jb21wb25lbnQuc2NzcyJ9 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.roleCodes.new);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](5, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.respArray);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLinkWithHref, angular_datatables__WEBPACK_IMPORTED_MODULE_4__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhY2NvdW50LWNsb3N1cmUtbWFpbnRlbmFuY2Utc3VtbWFyeS5jb21wb25lbnQuc2NzcyJ9 */"] });
 
 
 /***/ }),
@@ -1572,6 +1792,7 @@ class AccountClosureMaintenanceComponent {
                     deleteRecord1.removeAt(element);
                 });
                 this.isAddPairVisible.splice(index, 2);
+                this.isAddPairVisible.splice(0, 0, true);
                 this.isAddDisabled = false;
             }
             else {
@@ -1678,22 +1899,20 @@ class AccountClosureMaintenanceComponent {
                 this.accClosureService
                     .onReopningTheRecord(this.index, this.currentUser)
                     .subscribe((reopnResp) => {
+                    console.log(reopnResp);
+                    console.log(this.currentUser);
                     this.accAuditDetails = reopnResp;
                     if (this.accAuditDetails.recordStatus === "O") {
                         this.auditLog();
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                            text: "Record is Reopened",
-                            icon: 'success'
-                        }
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record is Reopened",
+                            icon: 'success' }
                         // type: "success"
                         );
                     }
                     else {
                         this.auditLog();
-                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                            text: "Record cannot be opened ",
-                            icon: 'error'
-                        });
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Record cannot be opened ",
+                            icon: 'error' });
                     }
                 });
             }

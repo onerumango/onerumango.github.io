@@ -551,8 +551,8 @@ class SecurityPolicySummaryComponent {
             order: [[0, 'desc']],
             processing: true,
             lengthMenu: [
-                [5, 10, 20, -1],
-                [5, 10, 20, 30],
+                [5, 10, 20, 30, -1],
+                [5, 10, 20, 30, "ALL"],
             ],
             // columnDefs: [ { type: 'date', 'targets': [5] } ],
             // order: [[5, 'desc']],

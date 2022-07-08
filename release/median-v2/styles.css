@@ -14523,7 +14523,7 @@ button:focus,
 }
 
 .theme2 .ng-select .ng-select-container {
-  color: #747274;
+  color: #747274 !important;
   background-color: #1b1b29;
   /* background-color: rgb(107, 24, 24); */
   border-radius: 4px;
@@ -21409,7 +21409,7 @@ a:hover {
 }
 
 .theme2 input {
-  background-color: #1b1b29 !important;
+  background-color: none !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }
@@ -21612,7 +21612,11 @@ a:hover {
   border: 1px solid #efefef;
   height: 45px;
   font-size: 13px;
-  color:#b4b1b4;
+  color:black;
+}
+
+.ng-select .ng-select-container {
+  color: #787274;
 }
 
 .formStyle input::-webkit-outer-spin-button,

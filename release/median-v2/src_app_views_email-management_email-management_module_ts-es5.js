@@ -1779,40 +1779,38 @@
                 icon: 'error'
               });
               return;
-            } // let object = {
-            //   emailType : 'Account_Block', 
-            //   makerId: this.loggedInUser,
-            // }
+            } else {
+              sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                text: 'You are trying to Authorize record. ' + ' Do you want to proceed?',
+                showCancelButton: true,
+                confirmButtonColor: '#E6224A',
+                cancelButtonColor: '#011945',
+                // confirmButtonText: 'PROCEED.'
+                cancelButtonText: 'NO',
+                confirmButtonText: 'YES',
+                icon: 'info'
+              }).then(function (result) {
+                if (result.isConfirmed === true) {
+                  _this7.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', _this7.loggedInUser).subscribe(function (authresp) {
+                    if (authresp) {
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                        text: 'Record is Authorized',
+                        icon: 'success'
+                      });
+                      _this7.eamilAuditLog = authresp;
 
+                      _this7.auditLog();
+                    } else {
+                      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                        text: 'Record Authorization is Failed',
+                        icon: 'error'
+                      });
+                    }
+                  });
+                }
+              });
+            }
 
-            this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(function (authresp) {
-              if (authresp) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  text: 'Record is Authorized',
-                  icon: 'success'
-                });
-                _this7.eamilAuditLog = authresp;
-
-                _this7.auditLog();
-              } else {
-                // this.iziToast.show({
-                //   message: `You Authorized The Record`,
-                //   image: "assets/images/user.png",
-                //   icon: 'ico ico-success',
-                //   theme: "dark",
-                //   layout: 2,
-                //   // imageWidth:50,
-                //   balloon: false,
-                //   position: "topRight",
-                //   progressBarColor: "green",
-                //   pauseOnHover: true,
-                // });
-                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
-                  text: 'Record Authorization is Failed',
-                  icon: 'error'
-                });
-              }
-            });
             this.ref.markForCheck();
           }
         }, {
@@ -2599,7 +2597,7 @@
               }],
               order: [[2, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
               // order: [[5, 'desc']],
 
             };

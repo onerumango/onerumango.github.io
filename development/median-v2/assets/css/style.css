@@ -1765,7 +1765,7 @@ a:hover {
 }
 
 .theme2 input {
-  background-color: #1b1b29 !important;
+  background-color: none !important;
   border-color: #1b1b29 !important;
   color: #92929f !important;
 }
@@ -1966,9 +1966,11 @@ a:hover {
   border: 1px solid #efefef;
   height: 45px;
   font-size: 13px;
-  color:#b4b1b4;
+  color:black;
 }
-
+.ng-select .ng-select-container {
+  color: #787274;
+}
 .formStyle input::-webkit-outer-spin-button,
 .formStyle input::-webkit-inner-spin-button {
   -webkit-appearance: none;

@@ -6724,7 +6724,7 @@
         }, {
           key: "getAllExtsysNameAndProcessCodeOnAuthStatus",
           value: function getAllExtsysNameAndProcessCodeOnAuthStatus() {
-            return this.http.get("".concat(this.uriForExt, "/gettingExtsysNameAndProcessCodeOnAuthStatus"));
+            return this.http.get("".concat(this.uriForExt, "/getAllExternalSystemMap"));
           }
         }, {
           key: "getAllExtCode",

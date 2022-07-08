@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -613,57 +619,23 @@
         }
       }
 
-      function ChargeMaintainenceSummaryComponent_tr_29_button_17_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_17_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r12);
-
-            var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
-
-            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-
-            return ctx_r10.close(data_r5);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "close");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "img", 17);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        }
-      }
-
       function ChargeMaintainenceSummaryComponent_tr_29_button_18_Template(rf, ctx) {
         if (rf & 1) {
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_18_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r11);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
 
-            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r13.open(data_r5);
+            return ctx_r9.close(data_r5);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Open");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "img", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -671,27 +643,21 @@
 
       function ChargeMaintainenceSummaryComponent_tr_29_button_19_Template(rf, ctx) {
         if (rf & 1) {
-          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_19_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r14);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
 
-            var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r16["delete"](data_r5);
+            return ctx_r12.open(data_r5);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Delete");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "img", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -699,27 +665,21 @@
 
       function ChargeMaintainenceSummaryComponent_tr_29_button_20_Template(rf, ctx) {
         if (rf & 1) {
-          var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_button_20_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r17);
 
             var data_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
 
-            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r19.auth(data_r5);
+            return ctx_r15["delete"](data_r5);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Authorize");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "img", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -727,7 +687,7 @@
 
       function ChargeMaintainenceSummaryComponent_tr_29_Template(rf, ctx) {
         if (rf & 1) {
-          var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+          var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
 
@@ -736,13 +696,13 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "a", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_Template_a_click_2_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r23);
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
 
             var data_r5 = restoredCtx.$implicit;
 
-            var ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+            var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-            return ctx_r22.edit(data_r5);
+            return ctx_r18.edit(data_r5);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
@@ -785,17 +745,27 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "span", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](17, ChargeMaintainenceSummaryComponent_tr_29_button_17_Template, 4, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ChargeMaintainenceSummaryComponent_tr_29_Template_button_click_16_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, ChargeMaintainenceSummaryComponent_tr_29_button_18_Template, 4, 0, "button", 14);
+            var data_r5 = restoredCtx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](19, ChargeMaintainenceSummaryComponent_tr_29_button_19_Template, 4, 0, "button", 14);
+            var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, ChargeMaintainenceSummaryComponent_tr_29_button_20_Template, 4, 0, "button", 14);
+            return ctx_r20.auth(data_r5);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](17, "img", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, ChargeMaintainenceSummaryComponent_tr_29_button_18_Template, 2, 0, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](19, ChargeMaintainenceSummaryComponent_tr_29_button_19_Template, 2, 0, "button", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, ChargeMaintainenceSummaryComponent_tr_29_button_20_Template, 2, 0, "button", 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -804,6 +774,8 @@
 
         if (rf & 2) {
           var data_r5 = ctx.$implicit;
+
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
@@ -819,7 +791,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r5.approvedStatus);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r5.verifiedStatus);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
@@ -829,21 +801,21 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](14, 10, data_r5.inputTime, "medium"));
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (data_r5.recordStatus == "O" || data_r5.recordStatus == "Open" || data_r5.recordStatus == "OPEN") && (data_r5.verifiedOnce == "Y" || data_r5.verifiedOnce == "YES"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !(data_r5.verifiedStatus == "U" || data_r5.verifiedStatus == "UNAUTHORIZED"));
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r5.recordStatus == "C");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r5.verifiedOnce == "N" || data_r5.verifiedOnce == "NO");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (data_r5.recordStatus == "O" || data_r5.recordStatus == "Open") && (data_r5.verifiedOnce == "Y" || data_r5.verifiedOnce == "YES"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r5.verifiedStatus == "U" || data_r5.verifiedStatus == "UNAUTHORIZED");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (data_r5.recordStatus == "C" || data_r5.recordStatus == "CLOSED" || data_r5.recordStatus == "Close") && (data_r5.verifiedOnce == "Y" || data_r5.verifiedOnce == "YES"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", data_r5.verifiedOnce == "NO" || data_r5.verifiedOnce == "N" && ctx_r1.roleCodes["delete"]);
         }
       }
 
@@ -851,13 +823,13 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span", 25);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Please wait... ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span", 26);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -885,6 +857,7 @@
           this.roleCodes = new src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__.permissionsLabels();
           this.dtOptions = {};
           this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
+          this.statusArr = ['Authorized', 'Unauthorized', 'Open', 'Close'];
         }
 
         _createClass(_ChargeMaintainenceSummaryComponent, [{
@@ -911,7 +884,8 @@
               }],
               order: [[5, 'desc']],
               processing: true,
-              lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+              // lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 30]],
+              lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]],
               retrieve: true
             };
             this.getChargeMaintainenceSummary();
@@ -928,6 +902,29 @@
 
             this.isLoading = true;
             this.apiService.gettingChargeMaintenance().subscribe(function (dataresp) {
+              var _iterator = _createForOfIteratorHelper(dataresp),
+                  _step;
+
+              try {
+                var _loop = function _loop() {
+                  var data = _step.value;
+                  data.verifiedStatus = _this3.statusArr.find(function (i) {
+                    return i.startsWith(data.verifiedStatus);
+                  });
+                  data.recordStatus = _this3.statusArr.find(function (i) {
+                    return i.startsWith(data.recordStatus);
+                  });
+                };
+
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  _loop();
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
+
               console.log(dataresp);
               _this3.respArray = dataresp;
               _this3.isLoading = false;
@@ -963,6 +960,7 @@
           value: function close(data) {
             var _this4 = this;
 
+            console.log(data);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
               text: 'You are trying to Close record. ' + ' Do you want to proceed?',
@@ -1134,6 +1132,11 @@
             });
           }
         }, {
+          key: "check",
+          value: function check(data) {
+            console.log(data);
+          }
+        }, {
           key: "refreshPage",
           value: function refreshPage() {
             window.location.reload();
@@ -1152,7 +1155,7 @@
         selectors: [["npr-charge-maintainence-summary"]],
         decls: 31,
         vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], [2, "display", "flex", "gap", "50px"], ["class", "iconBtn", "color", "primary", 3, "click", 4, "ngIf"], ["color", "primary", 1, "iconBtn", 3, "click"], [1, "btnTooltip"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["src", "assets/images/open.svg", "alt", "..."], ["src", "assets/images/delete.svg", "alt", "..."], ["src", "assets/images/authorize.svg", "alt", "Authorize"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 2, "cursor", "pointer", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Delete.", 3, "click", 4, "ngIf"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "..."], ["title", "Delete.", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "..."], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function ChargeMaintainenceSummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
