@@ -288,6 +288,7 @@ let ChequedepositPage = class ChequedepositPage {
                 if (modelData !== null) {
                     let branch = modelData.data;
                     console.log('Modal Data for branch: ', modelData.data);
+                    this.tokenCount = modelData.data.data.tokenCount;
                     this.slideOneForm.get('transactionBranch').patchValue(modelData.data['data'].branchName);
                 }
             });
