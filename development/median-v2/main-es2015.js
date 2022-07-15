@@ -3207,6 +3207,12 @@ class ApiService {
     getAllExt() {
         return this.http.get(`${this.ext}` + `/getExt?pageNo=${0}&pageSize=${1000}`);
     }
+    // getAllAuthExt(): Observable<any> {
+    //   return this.http.get(`${this.uriForExt}` + `/getAllAuthExtCode`);
+    // }
+    getAllAuthExt() {
+        return this.http.get(`${this.ext}` + `/gettingExtsysCodeonAuthSatus`);
+    }
     modifyExtSysService(modifyextSys) {
         return this.http.put(`${this.uriForExt}` + `/modifyextSys`, modifyextSys);
     }
@@ -3452,8 +3458,8 @@ class ApiService {
     getUploadPermission(extSysName, processName) {
         return this.http.get(`${API_URL}/excelDataProcessing/getUploadPermission/${extSysName}/${processName}`);
     }
-    getProcessNamesBasedOnExtSysNameService(extSysName) {
-        return this.http.get(`${API_URL}/excelDataProcessing/getProcessCodeByExtSysName/${extSysName}`);
+    getProcessNamesBasedOnExtSysNameService(extSysCode) {
+        return this.http.get(`${API_URL}/excelDataProcessing/getProcessCodeByExtSysName?extSysCode=${extSysCode}`);
     }
     getAllTransactionCode(user_id) {
         return this.http.get(`${API_URL}/config/getTrnData/${user_id}`);
