@@ -6105,6 +6105,14 @@
           key: "getAllExt",
           value: function getAllExt() {
             return this.http.get("".concat(this.ext) + "/getExt?pageNo=".concat(0, "&pageSize=", 1000));
+          } // getAllAuthExt(): Observable<any> {
+          //   return this.http.get(`${this.uriForExt}` + `/getAllAuthExtCode`);
+          // }
+
+        }, {
+          key: "getAllAuthExt",
+          value: function getAllAuthExt() {
+            return this.http.get("".concat(this.ext) + "/gettingExtsysCodeonAuthSatus");
           }
         }, {
           key: "modifyExtSysService",
@@ -6507,8 +6515,8 @@
           }
         }, {
           key: "getProcessNamesBasedOnExtSysNameService",
-          value: function getProcessNamesBasedOnExtSysNameService(extSysName) {
-            return this.http.get("".concat(_API_URL, "/excelDataProcessing/getProcessCodeByExtSysName/").concat(extSysName));
+          value: function getProcessNamesBasedOnExtSysNameService(extSysCode) {
+            return this.http.get("".concat(_API_URL, "/excelDataProcessing/getProcessCodeByExtSysName?extSysCode=").concat(extSysCode));
           }
         }, {
           key: "getAllTransactionCode",

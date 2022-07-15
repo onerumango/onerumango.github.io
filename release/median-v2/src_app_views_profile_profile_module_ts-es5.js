@@ -168,6 +168,7 @@
           this.hide2 = true;
           this.submit = false;
           this.uploadBtn = false;
+          this.isSaveEnable = false;
         }
 
         _createClass(_ProfileComponent, [{
@@ -233,6 +234,7 @@
           key: "changeTheme",
           value: function changeTheme(value) {
             // 
+            this.isSaveEnable = true;
             this.selectedTheme = value;
             var lastBg = this.lastBg;
             $(document).on('click', '.tColor', function (e) {
@@ -248,6 +250,8 @@
         }, {
           key: "saveTheme",
           value: function saveTheme(theme) {
+            var _this3 = this;
+
             console.log(theme);
             this.userApi.saveTheme(JSON.parse(this.user).userId, theme).subscribe(function (resp) {
               console.log(resp);
@@ -260,6 +264,7 @@
               }
             }, function (error) {
               if (error.error.text === 'Saved successfully') {
+                _this3.isSaveEnable = false;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: "Saved successfully",
                   icon: 'success'
@@ -270,7 +275,7 @@
         }, {
           key: "submitPhoto",
           value: function submitPhoto() {
-            var _this3 = this;
+            var _this4 = this;
 
             if (this.profilePicture) {
               console.log(this.profilePicture);
@@ -290,7 +295,7 @@
                     text: "Image Uploaded Successfully",
                     icon: "success"
                   });
-                  _this3.uploadBtn = true;
+                  _this4.uploadBtn = true;
                 }
               });
             }
@@ -298,7 +303,7 @@
         }, {
           key: "delete",
           value: function _delete() {
-            var _this4 = this;
+            var _this5 = this;
 
             sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
               text: 'You are trying to delete image. ' + ' Do you want to proceed?',
@@ -311,9 +316,9 @@
               icon: 'info'
             }).then(function (result) {
               if (result.isConfirmed === true) {
-                _this4.url = null;
+                _this5.url = null;
 
-                _this4.userApi.deleteProfileImage(JSON.parse(_this4.user).userId).subscribe(function (resp) {
+                _this5.userApi.deleteProfileImage(JSON.parse(_this5.user).userId).subscribe(function (resp) {
                   console.log("resp after deletion ", resp);
 
                   if (resp === true) {
@@ -339,8 +344,8 @@
         type: _ProfileComponent,
         selectors: [["npr-profile"]],
         decls: 64,
-        vars: 5,
-        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "theme1", 1, "tColor", "theme1", 3, "click"], ["data-id", "theme2", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
+        vars: 6,
+        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "theme1", 1, "tColor", "theme1", 3, "click"], ["data-id", "theme2", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
         template: function ProfileComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
@@ -553,13 +558,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "a", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "button", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_a_click_59_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_button_click_59_listener() {
               return ctx.saveTheme(ctx.selectedTheme);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](60, " Save ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](60, "Save ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -567,7 +572,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](61, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "a", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "a", 35);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](63, "Exit");
 
@@ -597,9 +602,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx.submit);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](41);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](4, _c0));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx.isSaveEnable);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](5, _c0));
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLinkWithHref],

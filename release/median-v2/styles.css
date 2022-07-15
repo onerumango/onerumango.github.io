@@ -16192,7 +16192,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control::before {
 }
 
 .csCardStyleIconBg2 {
-  background-color: #FEF3F1;
+  background-color: #F1FEF2;
 }
 
 .csCardStyleIconBg3 {
@@ -21440,6 +21440,11 @@ a:hover {
   box-shadow: unset !important;
 }
 
+.theme2 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  color: #92929f !important;
+  background-color:  #1b1b29 !important;
+}
+
 .theme2 .dropdown-list .filter-textbox {
   border-bottom: unset !important;
   background: #383854 !important;
@@ -21670,7 +21675,7 @@ a:hover {
 }
 
 .csCardStyleIconBg2 {
-  background-color: #fef3f1;
+  background-color: #f1fef2;
 }
 
 .csCardStyleIconBg3 {
@@ -22362,3 +22367,41 @@ ul.nav.nav-tabs li + li {
   }
 }
 
+.faClass{
+    font-size: 22px;
+    position: relative;
+    left: 2px;
+    color: #F75F44;
+}
+
+.faClassChecker{
+  font-size: 25px;
+  position: relative;
+  left: 2px;
+  color: #44D5AF;
+}
+
+.faClassFirstTimeAuth{
+  font-size: 22px;
+  position: relative;
+  left: 2px;
+  color: #5086F0;
+}
+
+.faClassAuth{
+  font-size: 22px;
+  position: relative;
+  left: 2px;
+  color: #52B9CF;
+}
+
+.faRecordStatus{
+  font-size: 22px;
+  position: relative;
+  left: 2px;
+  color: #BA73DB;
+}
+
+.modImage{
+  width:22px;
+}
