@@ -2898,6 +2898,15 @@ class RuleDetailsComponent {
                     this.sourceMsg = false;
                 }
                 this.ruleForm.get('sourceSystems').patchValue(this.sourceSysData);
+                if (resp.messageType) {
+                    if (resp.messageType == 'Incoming') {
+                        resp.messageType = 'I';
+                    }
+                    if (resp.messageType == 'OutGoing') {
+                        resp.messageType = 'O';
+                    }
+                    this.sourceMsg = false;
+                }
                 this.ruleConfig.sourceTranslationId = resp.transId;
                 this.gettingoperationAndServiceFroSourceSystem(this.sourcesystem, resp.messageType);
             }
@@ -2995,6 +3004,15 @@ class RuleDetailsComponent {
                 this.ruleForm.get('validationSystems').at(i).get('service').patchValue(this.validationTransData.serviceName);
                 this.ruleForm.get('validationSystems').at(i).get('operation').patchValue(this.validationTransData.operationName);
                 this.ruleForm.get('validationSystems').at(i).get('messageType').patchValue(this.validationTransData.messageType);
+                if (resp.messageType) {
+                    if (resp.messageType == 'Incoming') {
+                        resp.messageType = 'I';
+                    }
+                    if (resp.messageType == 'OutGoing') {
+                        resp.messageType = 'O';
+                    }
+                    this.sourceMsg = false;
+                }
                 this.gettingoperationSndservForValidation(this.validationData, resp.messageType);
             }
         });
@@ -3483,8 +3501,8 @@ class RuleListComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [5] }],
-            order: [[5, 'desc']],
+            columnDefs: [{ type: 'date', 'targets': [4] }],
+            order: [[4, 'desc']],
             processing: true,
             lengthMenu: [
                 [5, 10, 20, 30, -1],

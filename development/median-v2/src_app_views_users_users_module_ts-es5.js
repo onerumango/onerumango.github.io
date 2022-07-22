@@ -1598,9 +1598,9 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                targets: [5]
+                targets: [6]
               }],
-              order: [[5, 'desc']],
+              order: [[6, 'desc']],
               processing: true,
               lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
               // order: [[5, 'desc']],
@@ -3704,6 +3704,7 @@
           this.userObj = new src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_1__.User();
           this.modifyScreen = false;
           this.submit = true;
+          this.isDisable = true;
           this.errorMsg = '';
           this.isPswd = true;
           this.dataTableConfig = {
@@ -3722,7 +3723,7 @@
             var _a;
 
             this.userApi.getIndexValue().subscribe(function (resp) {
-              console.log('index value ', resp);
+              console.log('index value', resp);
 
               if (resp.index === '') {
                 _this15.createUser();
@@ -4225,7 +4226,7 @@
           value: function onClickOfReOpenOfModifyUsers() {
             var _this24 = this;
 
-            //console.log('on click of reopen of Modify user');
+            //console.log('on of reopen of Modify user');
             this.modifyUserObject.creatorId = this.currentUser;
             sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
               text: 'You are trying to Reopen record. ' + ' Do you want to proceed?',
@@ -4382,6 +4383,11 @@
               //console.log('gettingBackendData', gettingBackendData);
               _this27.modifyUserObject = gettingBackendData; //console.log(this.modifyUserObject);
             });
+          }
+        }, {
+          key: "button",
+          value: function button() {
+            this.isDisable = false;
           }
         }, {
           key: "onModifyFormSubmit",

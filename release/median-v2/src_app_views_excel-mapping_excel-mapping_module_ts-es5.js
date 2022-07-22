@@ -3564,6 +3564,7 @@
           this.formTouched = true;
           this.showDialog = false;
           this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+          this.checkMandatory = false;
         }
 
         _createClass(_ExcelMappingNewComponent, [{
@@ -3664,9 +3665,19 @@
           }
         }, {
           key: "mandatoryRequired",
-          value: function mandatoryRequired(values) {
-            var value = values.currentTarget.checked;
-            console.log("value", value);
+          value: function mandatoryRequired(values, index) {
+            console.log(values);
+            console.log(index);
+
+            if (values == true) {
+              console.log("Inside True");
+              this.checkMandatory = false;
+            }
+
+            if (values == false) {
+              console.log("Inside False");
+            } // const value = values.currentTarget.checked;
+
           }
         }, {
           key: "getAllExternalSystem",
@@ -3804,7 +3815,35 @@
         }, {
           key: "finalSubmit",
           value: function finalSubmit(excelForm, subArrayForm) {
-            var _this17 = this;
+            console.log(subArrayForm);
+            var mandCnt = 0;
+
+            for (var n = 0; n < subArrayForm.excelMappingDetails.length; n++) {
+              console.log(subArrayForm.excelMappingDetails[n].mandatory);
+
+              if (subArrayForm.excelMappingDetails[n].mandatory == true) {
+                console.log("Inside If");
+                mandCnt += 1;
+              }
+
+              console.log(mandCnt);
+            }
+
+            if (mandCnt < 2) {
+              console.log("More than 2 rows");
+              sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                text: 'Add atleast two mininum rows with mandatory condition',
+                icon: 'info'
+              }); // this.toast.error(`Add atleast two min rows with mandatory condition`, '', {
+              //   timeOut: 3000,
+              //   progressBar: true,
+              //   tapToDismiss: true,
+              //   closeButton: true,
+              //   easeTime: 300,
+              //   extendedTimeOut: 1000
+              // });
+              // return;
+            }
 
             excelForm.extSys = this.externalSystsemCodes;
             this.submitted = true; // this.extCodeValue = excelForm.extSysCode;
@@ -3815,32 +3854,33 @@
             // this.sheetNumberValue = excelForm.sheetNumber;
 
             subArrayForm.excelMappingDetails[0].modifiedBy = this.currentUser;
-            var obj = Object.assign(Object.assign({}, excelForm), subArrayForm);
-            console.log(obj); // this.apiService.columnData(subArrayForm, this.extCodeValue, this.proCodeValue, this.isCheckedValue, this.startingValue, this.extCodeValue, this.currencyValue, this.currentUser, this.sheetNumberValue)
-
-            this.apiService.createTemplateMap(obj).subscribe(function (response) {
-              _this17.dataFromresponse = response;
-              console.log("this.dataFromresponse", _this17.dataFromresponse);
-
-              if (_this17.dataFromresponse) {
-                _this17.is_edit = true;
-                console.log("sucess");
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Mapped Successfully!',
-                  icon: 'success'
-                });
-                _this17.editFlag = true; // this.excelMappingForm.reset();
-                // this.addForm.reset();
-
-                return;
-              } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Mapping Failed!',
-                  icon: 'error'
-                });
-              } // Failed ExternalSystem And ProcessCode Already Mapped!
-
-            });
+            var obj = Object.assign(Object.assign({}, excelForm), subArrayForm); // console.log(obj);
+            // this.apiService.columnData(subArrayForm, this.extCodeValue, this.proCodeValue, this.isCheckedValue, this.startingValue, this.extCodeValue, this.currencyValue, this.currentUser, this.sheetNumberValue)
+            // this.apiService.createTemplateMap(obj)
+            //   .subscribe(response => {
+            //     this.dataFromresponse = response;
+            //     console.log("this.dataFromresponse", this.dataFromresponse);
+            //     if (this.dataFromresponse) {
+            //       this.is_edit = true;
+            //       console.log("sucess");
+            //       this.auditLog();
+            //       Swal.fire({
+            //         title: 'Mapped Successfully!',
+            //         icon: 'success'
+            //       });
+            //       this.editFlag = true;
+            //       // this.excelMappingForm.reset();
+            //       // this.addForm.reset();
+            //       return;
+            //     } 
+            //     else {
+            //       Swal.fire({
+            //         title: 'Mapping Failed!',
+            //         icon: 'error'
+            //       });
+            //     }
+            //     // Failed ExternalSystem And ProcessCode Already Mapped!
+            //   });
           }
         }, {
           key: "enableEditFlag",
@@ -3851,7 +3891,7 @@
         }, {
           key: "canExit",
           value: function canExit() {
-            var _this18 = this;
+            var _this17 = this;
 
             var isExit = false;
 
@@ -3868,13 +3908,13 @@
                 if (result.isConfirmed === true) {
                   isExit = true;
 
-                  _this18.cdr.markForCheck();
+                  _this17.cdr.markForCheck();
 
                   return isExit;
                 } else {
                   isExit = false;
 
-                  _this18.cdr.markForCheck();
+                  _this17.cdr.markForCheck();
 
                   return isExit;
                 }
@@ -3885,7 +3925,7 @@
                 if (isExit === true) {
                   isExit = true;
 
-                  _this18.cdr.markForCheck();
+                  _this17.cdr.markForCheck();
 
                   resolve(true);
                 }
@@ -3895,7 +3935,7 @@
         }, {
           key: "onClickOfReopen",
           value: function onClickOfReopen(addForm, updateForm) {
-            var _this19 = this;
+            var _this18 = this;
 
             this.extCodeValue = updateForm.extSysCode;
             this.extNameValue = updateForm.extSysCode;
@@ -3917,11 +3957,95 @@
 
               if (result.isConfirmed === true) {
                 // this.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
-                _this19.apiService.excelMappingAuditLog(_this19.dataFromresponse, 'reopen').subscribe(function (openResp) {
+                _this18.apiService.excelMappingAuditLog(_this18.dataFromresponse, 'reopen').subscribe(function (openResp) {
                   var _a, _b, _c, _d, _e, _f, _g;
 
                   console.log(openResp);
-                  _this19.dataFromresponse = openResp;
+                  _this18.dataFromresponse = openResp;
+
+                  if (_this18.dataFromresponse) {
+                    _this18.authStatus = (_a = _this18.dataFromresponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                    _this18.recordStatus = (_b = _this18.dataFromresponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                    _this18.modifiedBy = (_c = _this18.dataFromresponse) === null || _c === void 0 ? void 0 : _c.inputBy;
+                    _this18.modifiedTime = (_d = _this18.dataFromresponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
+                    _this18.authorizedBy = (_e = _this18.dataFromresponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                    _this18.authorizedTime = (_f = _this18.dataFromresponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                    _this18.version = (_g = _this18.dataFromresponse) === null || _g === void 0 ? void 0 : _g.version;
+
+                    if (_this18.authStatus === 'U') {
+                      _this18.authStatus = 'UNAUTHORIZED';
+                    }
+
+                    if (_this18.authStatus === 'A') {
+                      _this18.authStatus = 'AUTHORIZED';
+                    }
+
+                    if (_this18.recordStatus === 'C') {
+                      _this18.recordStatus = 'CLOSED';
+                    }
+
+                    if (_this18.recordStatus === 'O') {
+                      _this18.recordStatus = 'OPEN';
+                    }
+
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                      title: 'Record is Reopened',
+                      icon: 'success'
+                    });
+
+                    _this18.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                      title: 'Failed to Reopen the Record!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "onClickOfClose",
+          value: function onClickOfClose(addForm, updateForm) {
+            var _this19 = this;
+
+            // console.log(addForm);
+            // console.log(updateForm);
+            // this.extCodeValue =  updateForm.extSysCode;
+            // this.extNameValue =  updateForm.extSysCode;
+            // this.proCodeValue =  updateForm.processName;
+            // this.currencyValue = updateForm.currency;
+            //  this.currentUser = this.newDataResponse.inputBy;
+            //  console.log(this.extCodeValue);
+            //  console.log(this.extNameValue);
+            //  console.log(this.proCodeValue);
+            //  console.log(this.currencyValue);
+            //  console.log(this.currentUser);
+            console.log(this.dataFromresponse);
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+              text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#E6224A',
+              cancelButtonColor: '#011945',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              icon: 'info'
+            }).then(function (result) {
+              if (result.isConfirmed === true) {
+                // this.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
+                _this19.apiService.excelMappingAuditLog(_this19.dataFromresponse, 'close').subscribe(function (closeResp) {
+                  var _a, _b, _c, _d, _e, _f, _g;
+
+                  console.log(closeResp);
+                  _this19.dataFromresponse = closeResp;
 
                   if (_this19.dataFromresponse) {
                     _this19.authStatus = (_a = _this19.dataFromresponse) === null || _a === void 0 ? void 0 : _a.authStatus;
@@ -3949,95 +4073,11 @@
                     }
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      title: 'Record is Reopened',
-                      icon: 'success'
-                    });
-
-                    _this19.auditLog();
-                  } else {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      title: 'Failed to Reopen the Record!',
-                      icon: 'error'
-                    });
-                  }
-                }, function (error) {
-                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpErrorResponse) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      text: 'Server Error!',
-                      icon: 'error'
-                    });
-                  }
-                });
-              }
-            });
-          }
-        }, {
-          key: "onClickOfClose",
-          value: function onClickOfClose(addForm, updateForm) {
-            var _this20 = this;
-
-            // console.log(addForm);
-            // console.log(updateForm);
-            // this.extCodeValue =  updateForm.extSysCode;
-            // this.extNameValue =  updateForm.extSysCode;
-            // this.proCodeValue =  updateForm.processName;
-            // this.currencyValue = updateForm.currency;
-            //  this.currentUser = this.newDataResponse.inputBy;
-            //  console.log(this.extCodeValue);
-            //  console.log(this.extNameValue);
-            //  console.log(this.proCodeValue);
-            //  console.log(this.currencyValue);
-            //  console.log(this.currentUser);
-            console.log(this.dataFromresponse);
-            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-              text: 'You are trying to Close the record. ' + ' Do you want to proceed?',
-              showCancelButton: true,
-              confirmButtonColor: '#E6224A',
-              cancelButtonColor: '#011945',
-              // confirmButtonText: 'PROCEED.'
-              cancelButtonText: 'NO',
-              confirmButtonText: 'YES',
-              icon: 'info'
-            }).then(function (result) {
-              if (result.isConfirmed === true) {
-                // this.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
-                _this20.apiService.excelMappingAuditLog(_this20.dataFromresponse, 'close').subscribe(function (closeResp) {
-                  var _a, _b, _c, _d, _e, _f, _g;
-
-                  console.log(closeResp);
-                  _this20.dataFromresponse = closeResp;
-
-                  if (_this20.dataFromresponse) {
-                    _this20.authStatus = (_a = _this20.dataFromresponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                    _this20.recordStatus = (_b = _this20.dataFromresponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                    _this20.modifiedBy = (_c = _this20.dataFromresponse) === null || _c === void 0 ? void 0 : _c.inputBy;
-                    _this20.modifiedTime = (_d = _this20.dataFromresponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
-                    _this20.authorizedBy = (_e = _this20.dataFromresponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                    _this20.authorizedTime = (_f = _this20.dataFromresponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                    _this20.version = (_g = _this20.dataFromresponse) === null || _g === void 0 ? void 0 : _g.version;
-
-                    if (_this20.authStatus === 'U') {
-                      _this20.authStatus = 'UNAUTHORIZED';
-                    }
-
-                    if (_this20.authStatus === 'A') {
-                      _this20.authStatus = 'AUTHORIZED';
-                    }
-
-                    if (_this20.recordStatus === 'C') {
-                      _this20.recordStatus = 'CLOSED';
-                    }
-
-                    if (_this20.recordStatus === 'O') {
-                      _this20.recordStatus = 'OPEN';
-                    }
-
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Record is Closed',
                       icon: 'success'
                     });
 
-                    _this20.auditLog();
+                    _this19.auditLog();
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                       title: 'Failed to Close the Recored!',
@@ -4058,7 +4098,7 @@
         }, {
           key: "updateMappingData",
           value: function updateMappingData(subArrayForm, excelForm) {
-            var _this21 = this;
+            var _this20 = this;
 
             this.submitted = true;
             this.progress = true; // this.extCodeValue =  excelForm.extSysCode;
@@ -4084,21 +4124,21 @@
 
 
             this.apiService.createTemplateMap(obj).subscribe(function (updateData) {
-              _this21.dataFromresponse = updateData;
-              console.log(_this21.dataFromresponse);
+              _this20.dataFromresponse = updateData;
+              console.log(_this20.dataFromresponse);
 
-              if (_this21.dataFromresponse) {
-                _this21.editFlag = false; // this.showCurrencyDropdown = false;
+              if (_this20.dataFromresponse) {
+                _this20.editFlag = false; // this.showCurrencyDropdown = false;
 
-                _this21.dataSaved = true; // this.auditLog();
+                _this20.dataSaved = true; // this.auditLog();
 
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: 'Record is Updated!',
                   icon: 'success'
                 });
-                _this21.formTouched = !_this21.excelMappingForm.touched;
+                _this20.formTouched = !_this20.excelMappingForm.touched;
 
-                _this21.cdr.markForCheck();
+                _this20.cdr.markForCheck();
               } else {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: 'Failed to update ',
@@ -4186,7 +4226,7 @@
         selectors: [["npr-excel-mapping-new"]],
         decls: 104,
         vars: 26,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["href", "excel-mapping-new.html", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-4"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["id", "outlineNgSelect", "formControlName", "extSysCode", "required", "", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "processName", 1, "formLbl"], ["formControlName", "processName", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], [1, "form-class", 3, "value"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "number", "formControlName", "startingRow", "required", "", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "formControlName", "currency", "name", "currency", "required", "", "placeholder", "Currency", "value", "", "minlength", "1", "maxlength", "3", "onkeydown", "/[A-Z]/i.test(event.key)", "oninput", "this.value = this.value.toUpperCase()", 1, "form-control", 3, "readonly"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "number", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "fcyRate", "formControlName", "headerRepeated"], ["for", "fcyRate"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mt-2", "mb-4"], [1, "pageTitle", "darkgreyClr"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "excelMappingDetails"], [4, "ngFor", "ngForOf"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control1", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select1", 3, "change"], [1, "checkboxdiv"], ["required", "", "type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control1", 3, "id", "readonly"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control1", 3, "id", "readonly"], [1, "deleteIcon2"], [3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], ["cclass", "btn smBtn minWdSmBtn btnPrimary", "color", "primary", 3, "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "col-auto"], ["href", "excel-mapping-new.html", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-4"], ["for", "extSystem", 1, "formLbl"], [1, "colorRed"], ["id", "outlineNgSelect", "formControlName", "extSysCode", "required", "", "aria-label", "Default select example", 1, "form-select", 2, "width", "200px", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["class", "form-class", 3, "value", 4, "ngFor", "ngForOf"], ["for", "processName", 1, "formLbl"], ["formControlName", "processName", "required", "", "aria-label", "Default select example", 1, "form-select", 3, "change"], [1, "form-class", 3, "value"], ["for", "startingRow", 1, "formLbl"], ["id", "startingRow", "type", "number", "formControlName", "startingRow", "required", "", "placeholder", "Data Starting Row", "value", "", 1, "form-control", 3, "readonly"], ["for", "currency", 1, "formLbl"], ["id", "currency", "type", "text", "formControlName", "currency", "name", "currency", "required", "", "placeholder", "Currency", "value", "", "minlength", "1", "maxlength", "3", "onkeydown", "/[A-Z]/i.test(event.key)", "oninput", "this.value = this.value.toUpperCase()", 1, "form-control", 3, "readonly"], ["for", "sheetNumber", 1, "formLbl"], ["id", "sheetNumber", "type", "number", "formControlName", "sheetNumber", "placeholder", "Sheet Number", "value", "", 1, "form-control", 3, "readonly"], [1, "checkStyle"], ["type", "checkbox", "id", "fcyRate", "formControlName", "headerRepeated"], ["for", "fcyRate"], ["action", "", "novalidate", "", 1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mt-2", "mb-4"], [1, "pageTitle", "darkgreyClr"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle1", "responsive", "nowrap", "vAlignMdl"], ["formArrayName", "excelMappingDetails"], [4, "ngFor", "ngForOf"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], [3, "formGroupName"], ["id", "sourceCode", "type", "text", "formControlName", "columnnName", "placeholder", "Name", "value", "", 1, "form-control", 3, "readonly"], ["formControlName", "dataType", "placeholder", "Choose DataType", "aria-label", "Default select example", 1, "form-select", 3, "change"], [1, "checkboxdiv"], ["type", "checkbox", "formControlName", "mandatory", 3, "id"], [3, "for"], ["type", "text", "formControlName", "headerName", "placeholder", "Header Name", "value", "", 1, "form-control", 3, "id", "readonly"], ["type", "text", "formControlName", "dateFormat", "placeholder", "Date Format", "value", "", 1, "form-control", 3, "id", "readonly"], ["type", "text", "formControlName", "excelMappingColumn", "placeholder", "Mapping Column", "value", "", 1, "form-control", 3, "id", "readonly"], ["type", "text", "formControlName", "delimeter", "placeholder", "Delimeter", "value", "", 1, "form-control", 3, "id", "readonly"], ["type", "text", "formControlName", "defaultValue", "placeholder", "Default Value", "value", "", 1, "form-control", 3, "id", "readonly"], ["type", "text", "formControlName", "repeatedTillNextValue", "placeholder", "Repeated Till Next Value", "value", "", 1, "form-control", 3, "id", "readonly"], [1, "deleteIcon2"], [3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary"], ["cclass", "btn smBtn minWdSmBtn btnPrimary", "color", "primary", 3, "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."]],
         template: function ExcelMappingNewComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -4624,9 +4664,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.dataFromresponse);
           }
         },
-        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkActive, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_9__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_9__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MinLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.CheckboxRequiredValidator],
+        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkWithHref, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterLinkActive, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_9__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_9__.NgOptionComponent, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MinLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupName],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
-        styles: [".form-class[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #797979;\n  background-color: #fff;\n  background-clip: padding-box;\n  border-bottom: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-left: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-right: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\ntable.tableStyle1[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #A6AAB5;\n  font-size: 10px;\n  text-transform: uppercase;\n  border-bottom: 1px solid #F5F5F5;\n}\n\n.form-control1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\n.form-control1[_ngcontent-%COMP%]:disabled, .form-control1[readonly][_ngcontent-%COMP%] {\n  background-color: #e9ecef;\n  opacity: 1;\n}\n\n.form-select1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 2.25rem 0.375rem 0.75rem;\n  -moz-padding-start: calc(0.75rem - 3px);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right 0.75rem center;\n  background-size: 16px 12px;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n\n.checkboxdiv[_ngcontent-%COMP%] {\n  padding-left: 25px;\n  padding-bottom: 15px;\n  cursor: pointer;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n  pointer-events: all !important;\n}\n\n.madatoryLabel[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4Y2VsLW1hcHBpbmctbmV3LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSxnQ0FBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0VBQ0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0EsK0JBQUE7RUFDQSx3QkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFFQSx3RUFBQTtBQUFKOztBQUVBO0VBQ0MsY0FBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUdHLGdDQUFBO0FBREo7O0FBR0E7RUFDSSxjQUFBO0VBQ0EsV0FBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSw0QkFBQTtFQUNBLHlCQUFBO0VBQ0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSx3RUFBQTtBQUFKOztBQUVBOztFQUVJLHlCQUFBO0VBQ0EsVUFBQTtBQUNKOztBQUNBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSwwQ0FBQTtFQUNBLHVDQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSxpUEFBQTtFQUNBLDRCQUFBO0VBQ0EseUNBQUE7RUFDQSwwQkFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSx3RUFBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtBQUVKOztBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtFQUNBLGVBQUE7QUFHSjs7QUFDQTtFQUNJLG1CQUFBO0VBQ0EsOEJBQUE7QUFFSjs7QUFDQTtFQUVJLGFBQUE7QUFDSiIsImZpbGUiOiJleGNlbC1tYXBwaW5nLW5ldy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb3JtLWNsYXNzIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAuMzc1cmVtIC43NXJlbTtcclxuICAgIGZvbnQtc2l6ZTogMXJlbTtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBsaW5lLWhlaWdodDogMS41O1xyXG4gICAgY29sb3I6ICM3OTc5Nzk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWJlYmViO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2ViZWJlYjtcclxuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjZWJlYmViO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIC8vIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcclxuICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciAuMTVzIGVhc2UtaW4tb3V0LCBib3gtc2hhZG93IC4xNXMgZWFzZS1pbi1vdXRcclxufVxyXG50YWJsZS50YWJsZVN0eWxlMSB0aGVhZCB0ciB0aCB7XHJcblx0Y29sb3I6ICNBNkFBQjU7XHJcblx0Zm9udC1zaXplOiAxMHB4O1xyXG5cdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0Ly8gbGV0dGVyLXNwYWNpbmc6IDFweDtcclxuICAgIC8vIHBhZGRpbmc6IDE4cHggMTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjRjVGNUY1IDtcclxufVxyXG4uZm9ybS1jb250cm9sMSB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZzogLjM3NXJlbSAuNzVyZW07XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjMjEyNTI5O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2VkNGRhO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcclxuICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciAuMTVzIGVhc2UtaW4tb3V0LCBib3gtc2hhZG93IC4xNXMgZWFzZS1pbi1vdXRcclxufVxyXG4uZm9ybS1jb250cm9sMTpkaXNhYmxlZCxcclxuLmZvcm0tY29udHJvbDFbcmVhZG9ubHldIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNlOWVjZWY7XHJcbiAgICBvcGFjaXR5OiAxXHJcbn1cclxuLmZvcm0tc2VsZWN0MSB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZzogLjM3NXJlbSAyLjI1cmVtIC4zNzVyZW0gLjc1cmVtO1xyXG4gICAgLW1vei1wYWRkaW5nLXN0YXJ0OiBjYWxjKDAuNzVyZW0gLSAzcHgpO1xyXG4gICAgZm9udC1zaXplOiAxMHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgICBjb2xvcjogIzIxMjUyOTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNjc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDE2IDE2JyUzZSUzY3BhdGggZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMzNDNhNDAnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgc3Ryb2tlLXdpZHRoPScyJyBkPSdNMiA1bDYgNiA2LTYnLyUzZSUzYy9zdmclM2VcIik7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQgLjc1cmVtIGNlbnRlcjtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogMTZweCAxMnB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcclxuICAgIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcclxuICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciAuMTVzIGVhc2UtaW4tb3V0LCBib3gtc2hhZG93IC4xNXMgZWFzZS1pbi1vdXQ7XHJcbiAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBhcHBlYXJhbmNlOiBub25lXHJcbn1cclxuLmNoZWNrYm94ZGl2e1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyNXB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDE1cHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBcclxufVxyXG5cclxuLmRpc2FibGVkIHtcclxuICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7XHJcbiAgICBwb2ludGVyLWV2ZW50czogYWxsICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuLm1hZGF0b3J5TGFiZWxcclxue1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG4iXX0= */"]
+        styles: [".form-class[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #797979;\n  background-color: #fff;\n  background-clip: padding-box;\n  border-bottom: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-left: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-right: 1px solid #ebebeb;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\ntable.tableStyle1[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #A6AAB5;\n  font-size: 10px;\n  text-transform: uppercase;\n  border-bottom: 1px solid #F5F5F5;\n}\n\n.form-control1[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\n.form-control1[_ngcontent-%COMP%]:disabled, .form-control1[readonly][_ngcontent-%COMP%] {\n  background-color: #e9ecef;\n  opacity: 1;\n}\n\n.checkboxdiv[_ngcontent-%COMP%] {\n  padding-left: 25px;\n  padding-bottom: 15px;\n  cursor: pointer;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n  pointer-events: all !important;\n}\n\n.madatoryLabel[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4Y2VsLW1hcHBpbmctbmV3LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSxnQ0FBQTtFQUNBLHdCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0VBQ0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0EsK0JBQUE7RUFDQSx3QkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFFQSx3RUFBQTtBQUFKOztBQUVBO0VBQ0MsY0FBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUdHLGdDQUFBO0FBREo7O0FBR0E7RUFDSSxjQUFBO0VBQ0EsV0FBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSw0QkFBQTtFQUNBLHlCQUFBO0VBQ0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSx3RUFBQTtBQUFKOztBQUVBOztFQUVJLHlCQUFBO0VBQ0EsVUFBQTtBQUNKOztBQXNCQTtFQUNJLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxlQUFBO0FBbkJKOztBQXVCQTtFQUNJLG1CQUFBO0VBQ0EsOEJBQUE7QUFwQko7O0FBdUJBO0VBRUksYUFBQTtBQXJCSiIsImZpbGUiOiJleGNlbC1tYXBwaW5nLW5ldy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb3JtLWNsYXNzIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAuMzc1cmVtIC43NXJlbTtcclxuICAgIGZvbnQtc2l6ZTogMXJlbTtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBsaW5lLWhlaWdodDogMS41O1xyXG4gICAgY29sb3I6ICM3OTc5Nzk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWJlYmViO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2ViZWJlYjtcclxuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjZWJlYmViO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIC8vIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcclxuICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciAuMTVzIGVhc2UtaW4tb3V0LCBib3gtc2hhZG93IC4xNXMgZWFzZS1pbi1vdXRcclxufVxyXG50YWJsZS50YWJsZVN0eWxlMSB0aGVhZCB0ciB0aCB7XHJcblx0Y29sb3I6ICNBNkFBQjU7XHJcblx0Zm9udC1zaXplOiAxMHB4O1xyXG5cdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0Ly8gbGV0dGVyLXNwYWNpbmc6IDFweDtcclxuICAgIC8vIHBhZGRpbmc6IDE4cHggMTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjRjVGNUY1IDtcclxufVxyXG4uZm9ybS1jb250cm9sMSB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZzogLjM3NXJlbSAuNzVyZW07XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjMjEyNTI5O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2VkNGRhO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcclxuICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciAuMTVzIGVhc2UtaW4tb3V0LCBib3gtc2hhZG93IC4xNXMgZWFzZS1pbi1vdXRcclxufVxyXG4uZm9ybS1jb250cm9sMTpkaXNhYmxlZCxcclxuLmZvcm0tY29udHJvbDFbcmVhZG9ubHldIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNlOWVjZWY7XHJcbiAgICBvcGFjaXR5OiAxXHJcbn1cclxuLy8gLmZvcm0tc2VsZWN0MSB7XHJcbi8vICAgICBkaXNwbGF5OiBibG9jaztcclxuLy8gICAgIHdpZHRoOiAxMDAlO1xyXG4vLyAgICAgcGFkZGluZzogLjM3NXJlbSAyLjI1cmVtIC4zNzVyZW0gLjc1cmVtO1xyXG4vLyAgICAgLW1vei1wYWRkaW5nLXN0YXJ0OiBjYWxjKDAuNzVyZW0gLSAzcHgpO1xyXG4vLyAgICAgZm9udC1zaXplOiAxMHB4O1xyXG4vLyAgICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuLy8gICAgIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbi8vICAgICBjb2xvcjogIzIxMjUyOTtcclxuLy8gICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbi8vICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNjc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDE2IDE2JyUzZSUzY3BhdGggZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMzNDNhNDAnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgc3Ryb2tlLXdpZHRoPScyJyBkPSdNMiA1bDYgNiA2LTYnLyUzZSUzYy9zdmclM2VcIik7XHJcbi8vICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4vLyAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQgLjc1cmVtIGNlbnRlcjtcclxuLy8gICAgIGJhY2tncm91bmQtc2l6ZTogMTZweCAxMnB4O1xyXG4vLyAgICAgYm9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcclxuLy8gICAgIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcclxuLy8gICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciAuMTVzIGVhc2UtaW4tb3V0LCBib3gtc2hhZG93IC4xNXMgZWFzZS1pbi1vdXQ7XHJcbi8vICAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbi8vICAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbi8vICAgICBhcHBlYXJhbmNlOiBub25lXHJcbi8vIH1cclxuLmNoZWNrYm94ZGl2e1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyNXB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDE1cHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBcclxufVxyXG5cclxuLmRpc2FibGVkIHtcclxuICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7XHJcbiAgICBwb2ludGVyLWV2ZW50czogYWxsICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuLm1hZGF0b3J5TGFiZWxcclxue1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG4iXX0= */"]
       });
       /***/
     },
@@ -5212,7 +5252,7 @@
         _createClass(_ExcelMappingComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this22 = this;
+            var _this21 = this;
 
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -5229,7 +5269,7 @@
             this.getexcelMappingSummary();
             this.roleService.fetchScreenPermissions('Template Mapping');
             this.roleService.screenLabelList.subscribe(function (message) {
-              return _this22.roleCodes = message;
+              return _this21.roleCodes = message;
             });
             console.log(this.roleCodes);
           }
@@ -5264,11 +5304,11 @@
         }, {
           key: "getexcelMappingSummary",
           value: function getexcelMappingSummary() {
-            var _this23 = this;
+            var _this22 = this;
 
             this.isLoading = true;
             this.apiService.getMappingSummary().subscribe(function (data) {
-              _this23.mappingResponse = data;
+              _this22.mappingResponse = data;
 
               var _iterator = _createForOfIteratorHelper(data.result),
                   _step;
@@ -5276,10 +5316,10 @@
               try {
                 var _loop = function _loop() {
                   var exdata = _step.value;
-                  exdata.authStatus = _this23.statusArr.find(function (i) {
+                  exdata.authStatus = _this22.statusArr.find(function (i) {
                     return i.startsWith(exdata.authStatus);
                   });
-                  exdata.recordStatus = _this23.statusArr.find(function (i) {
+                  exdata.recordStatus = _this22.statusArr.find(function (i) {
                     return i.startsWith(exdata.recordStatus);
                   });
                 };
@@ -5293,17 +5333,17 @@
                 _iterator.f();
               }
 
-              _this23.excelData = data.result;
-              console.log(_this23.excelData);
-              _this23.isLoading = false;
+              _this22.excelData = data.result;
+              console.log(_this22.excelData);
+              _this22.isLoading = false;
 
-              _this23.dtTrigger.next();
+              _this22.dtTrigger.next();
             });
           }
         }, {
           key: "close",
           value: function close(exdata) {
-            var _this24 = this;
+            var _this23 = this;
 
             console.log(exdata);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -5319,11 +5359,87 @@
             }).then(function (result) {
               if (result.isConfirmed === true) {
                 // this.apiService.onClcikOFCloseOfUpdateExcelMApping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
-                _this24.apiService.excelMappingAuditLog(exdata, 'close').subscribe(function (closeResp) {
+                _this23.apiService.excelMappingAuditLog(exdata, 'close').subscribe(function (closeResp) {
                   var _a, _b, _c, _d, _e, _f, _g;
 
                   console.log(closeResp);
-                  _this24.newDataResponse = closeResp;
+                  _this23.newDataResponse = closeResp;
+
+                  if (_this23.newDataResponse) {
+                    _this23.authStatus = (_a = _this23.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                    _this23.recordStatus = (_b = _this23.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
+                    _this23.modifiedBy = (_c = _this23.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputBy;
+                    _this23.modifiedTime = (_d = _this23.newDataResponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
+                    _this23.authorizedBy = (_e = _this23.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
+                    _this23.authorizedTime = (_f = _this23.newDataResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
+                    _this23.version = (_g = _this23.newDataResponse) === null || _g === void 0 ? void 0 : _g.version;
+
+                    if (_this23.authStatus === 'U') {
+                      _this23.authStatus = 'UNAUTHORIZED';
+                    }
+
+                    if (_this23.authStatus === 'A') {
+                      _this23.authStatus = 'AUTHORIZED';
+                    }
+
+                    if (_this23.recordStatus === 'C') {
+                      _this23.recordStatus = 'CLOSED';
+                    }
+
+                    if (_this23.recordStatus === 'O') {
+                      _this23.recordStatus = 'OPEN';
+                    }
+
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Record is  Closed',
+                      icon: 'success'
+                    }).then(function () {
+                      return window.location.reload();
+                    }); // this.getexcelMappingSummary();
+
+                    _this23.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      title: 'Failed to Close the Recored!',
+                      icon: 'error'
+                    });
+                  }
+                }, function (error) {
+                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                      text: 'Server Error!',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+            });
+          }
+        }, {
+          key: "open",
+          value: function open(exdata) {
+            var _this24 = this;
+
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
+              text: 'You are trying to re-open record. ' + ' Do you want to proceed?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              // confirmButtonText: 'PROCEED.'
+              cancelButtonText: 'NO',
+              confirmButtonText: 'YES',
+              'icon': 'info'
+            }).then(function (result) {
+              console.log("this is reopen ", result);
+
+              if (result.isConfirmed === true) {
+                // this.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
+                _this24.apiService.excelMappingAuditLog(exdata, 'reopen').subscribe(function (openResp) {
+                  var _a, _b, _c, _d, _e, _f, _g;
+
+                  console.log(openResp);
+                  _this24.newDataResponse = openResp;
 
                   if (_this24.newDataResponse) {
                     _this24.authStatus = (_a = _this24.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
@@ -5351,89 +5467,13 @@
                     }
 
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      title: 'Record is  Closed',
-                      icon: 'success'
-                    }).then(function () {
-                      return window.location.reload();
-                    }); // this.getexcelMappingSummary();
-
-                    _this24.auditLog();
-                  } else {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      title: 'Failed to Close the Recored!',
-                      icon: 'error'
-                    });
-                  }
-                }, function (error) {
-                  if (_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpErrorResponse) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                      text: 'Server Error!',
-                      icon: 'error'
-                    });
-                  }
-                });
-              }
-            });
-          }
-        }, {
-          key: "open",
-          value: function open(exdata) {
-            var _this25 = this;
-
-            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-              //text: 'Unable to process' + 'Error ' + this.responseforfileupload.errorMessage + 'Do you want to Proceed??',
-              text: 'You are trying to re-open record. ' + ' Do you want to proceed?',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              // confirmButtonText: 'PROCEED.'
-              cancelButtonText: 'NO',
-              confirmButtonText: 'YES',
-              'icon': 'info'
-            }).then(function (result) {
-              console.log("this is reopen ", result);
-
-              if (result.isConfirmed === true) {
-                // this.apiService.onClcikOfReopenOfUpdateExcelMapping(addForm,this.extCodeValue,this.proCodeValue,this.extNameValue,this.currencyValue)
-                _this25.apiService.excelMappingAuditLog(exdata, 'reopen').subscribe(function (openResp) {
-                  var _a, _b, _c, _d, _e, _f, _g;
-
-                  console.log(openResp);
-                  _this25.newDataResponse = openResp;
-
-                  if (_this25.newDataResponse) {
-                    _this25.authStatus = (_a = _this25.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                    _this25.recordStatus = (_b = _this25.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus;
-                    _this25.modifiedBy = (_c = _this25.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputBy;
-                    _this25.modifiedTime = (_d = _this25.newDataResponse) === null || _d === void 0 ? void 0 : _d.inputDtStamp;
-                    _this25.authorizedBy = (_e = _this25.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedBy;
-                    _this25.authorizedTime = (_f = _this25.newDataResponse) === null || _f === void 0 ? void 0 : _f.authorizedTime;
-                    _this25.version = (_g = _this25.newDataResponse) === null || _g === void 0 ? void 0 : _g.version;
-
-                    if (_this25.authStatus === 'U') {
-                      _this25.authStatus = 'UNAUTHORIZED';
-                    }
-
-                    if (_this25.authStatus === 'A') {
-                      _this25.authStatus = 'AUTHORIZED';
-                    }
-
-                    if (_this25.recordStatus === 'C') {
-                      _this25.recordStatus = 'CLOSED';
-                    }
-
-                    if (_this25.recordStatus === 'O') {
-                      _this25.recordStatus = 'OPEN';
-                    }
-
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Record is Reopened',
                       icon: 'success'
                     }).then(function () {
                       return window.location.reload();
                     });
 
-                    _this25.auditLog();
+                    _this24.auditLog();
                   } else {
                     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                       title: 'Failed to Reopen the Record!',
@@ -5459,7 +5499,7 @@
         }, {
           key: "auth",
           value: function auth(exdata) {
-            var _this26 = this;
+            var _this25 = this;
 
             console.log(exdata);
             this.currentUser = localStorage.getItem("userFromLogin");
@@ -5482,44 +5522,44 @@
               }).then(function (result) {
                 if (result.isConfirmed === true) {
                   // this.apiService.onAuthorizingTheRecordOfExcelMApping(addForm,this.extNameValue,this.proCodeValue,this.extCodeValue, this.currentUser,this.currencyValue)
-                  _this26.apiService.excelMappingAuditLog(exdata, 'authorize').subscribe(function (authResp) {
+                  _this25.apiService.excelMappingAuditLog(exdata, 'authorize').subscribe(function (authResp) {
                     var _a, _b, _c, _d, _e, _f, _g, _h;
 
-                    _this26.newDataResponse = authResp;
+                    _this25.newDataResponse = authResp;
 
-                    if (_this26.newDataResponse) {
-                      _this26.authStatus = (_a = _this26.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
-                      _this26.recordStatus = (_b = _this26.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus; // this.modifiedBy = this.mappingResponse?.modifiedBy;
+                    if (_this25.newDataResponse) {
+                      _this25.authStatus = (_a = _this25.newDataResponse) === null || _a === void 0 ? void 0 : _a.authStatus;
+                      _this25.recordStatus = (_b = _this25.newDataResponse) === null || _b === void 0 ? void 0 : _b.recordStatus; // this.modifiedBy = this.mappingResponse?.modifiedBy;
 
-                      _this26.modifiedTime = (_c = _this26.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputDtStamp;
-                      _this26.authorizedBy = (_d = _this26.newDataResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
-                      _this26.authorizedTime = (_e = _this26.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
-                      _this26.version = (_f = _this26.newDataResponse) === null || _f === void 0 ? void 0 : _f.version;
-                      _this26.firstTimeAuth = (_g = _this26.newDataResponse) === null || _g === void 0 ? void 0 : _g.firstTimeAuth;
-                      _this26.modifiedBy = (_h = _this26.newDataResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
+                      _this25.modifiedTime = (_c = _this25.newDataResponse) === null || _c === void 0 ? void 0 : _c.inputDtStamp;
+                      _this25.authorizedBy = (_d = _this25.newDataResponse) === null || _d === void 0 ? void 0 : _d.authorizedBy;
+                      _this25.authorizedTime = (_e = _this25.newDataResponse) === null || _e === void 0 ? void 0 : _e.authorizedDtStamp;
+                      _this25.version = (_f = _this25.newDataResponse) === null || _f === void 0 ? void 0 : _f.version;
+                      _this25.firstTimeAuth = (_g = _this25.newDataResponse) === null || _g === void 0 ? void 0 : _g.firstTimeAuth;
+                      _this25.modifiedBy = (_h = _this25.newDataResponse) === null || _h === void 0 ? void 0 : _h.inputBy;
 
-                      if (_this26.authStatus === 'U') {
-                        _this26.authStatus = 'UNAUTHORIZED';
+                      if (_this25.authStatus === 'U') {
+                        _this25.authStatus = 'UNAUTHORIZED';
                       }
 
-                      if (_this26.authStatus === 'A') {
-                        _this26.authStatus = 'AUTHORIZED';
+                      if (_this25.authStatus === 'A') {
+                        _this25.authStatus = 'AUTHORIZED';
                       }
 
-                      if (_this26.recordStatus === 'C') {
-                        _this26.recordStatus = 'CLOSED';
+                      if (_this25.recordStatus === 'C') {
+                        _this25.recordStatus = 'CLOSED';
                       }
 
-                      if (_this26.recordStatus === 'O') {
-                        _this26.recordStatus = 'OPEN';
+                      if (_this25.recordStatus === 'O') {
+                        _this25.recordStatus = 'OPEN';
                       }
 
-                      if (_this26.firstTimeAuth === 'Y') {
-                        _this26.firstTimeAuth = 'YES';
+                      if (_this25.firstTimeAuth === 'Y') {
+                        _this25.firstTimeAuth = 'YES';
                       }
 
-                      if (_this26.firstTimeAuth === 'N') {
-                        _this26.firstTimeAuth = 'NO';
+                      if (_this25.firstTimeAuth === 'N') {
+                        _this25.firstTimeAuth = 'NO';
                       }
 
                       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({

@@ -1064,7 +1064,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag && ctx_r3.eamilAuditLog.recordStatus == "OPEN");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag && (ctx_r3.eamilAuditLog.recordStatus == "OPEN" || ctx_r3.eamilAuditLog.recordStatus == "Open"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -1076,11 +1076,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSED") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSED" || ctx_r3.eamilAuditLog.recordStatus == "Closed") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "O" || ctx_r3.eamilAuditLog.recordStatus == "OPEN") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "O" || ctx_r3.eamilAuditLog.recordStatus == "OPEN" || ctx_r3.eamilAuditLog.recordStatus == "Open") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -1541,6 +1541,7 @@
             this.eamilAuditLog.verifiedTime = this.editAddSysResp.queryParams.authtym;
             this.eamilAuditLog.verifiedBy = this.editAddSysResp.queryParams.authBy;
             this.eamilAuditLog.emailType = this.editAddSysResp.queryParams.emailType;
+            console.log(this.eamilAuditLog);
 
             if (this.editAddSysResp.queryParams.emailType == 'Account_Block') {
               this.buildEmailForm(this.eamilAuditLog);
@@ -2768,9 +2769,9 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [2]
+                'targets': [3]
               }],
-              order: [[2, 'desc']],
+              order: [[3, 'desc']],
               processing: true,
               lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
               // order: [[5, 'desc']],

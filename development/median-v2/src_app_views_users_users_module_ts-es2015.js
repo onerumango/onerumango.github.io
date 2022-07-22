@@ -867,8 +867,8 @@ class UserListComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', targets: [5] }],
-            order: [[5, 'desc']],
+            columnDefs: [{ type: 'date', targets: [6] }],
+            order: [[6, 'desc']],
             processing: true,
             lengthMenu: [
                 [5, 10, 20, 30, -1],
@@ -1997,6 +1997,7 @@ class UserNewComponent {
         this.userObj = new src_app_shared_models_users__WEBPACK_IMPORTED_MODULE_1__.User();
         this.modifyScreen = false;
         this.submit = true;
+        this.isDisable = true;
         this.errorMsg = '';
         this.isPswd = true;
         this.dataTableConfig = {
@@ -2009,7 +2010,7 @@ class UserNewComponent {
     ngOnInit() {
         var _a;
         this.userApi.getIndexValue().subscribe((resp) => {
-            console.log('index value ', resp);
+            console.log('index value', resp);
             if (resp.index === '') {
                 this.createUser();
             }
@@ -2489,7 +2490,7 @@ class UserNewComponent {
         // });
     }
     onClickOfReOpenOfModifyUsers() {
-        //console.log('on click of reopen of Modify user');
+        //console.log('on of reopen of Modify user');
         this.modifyUserObject.creatorId = this.currentUser;
         sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
             text: 'You are trying to Reopen record. ' + ' Do you want to proceed?',
@@ -2631,6 +2632,9 @@ class UserNewComponent {
             this.modifyUserObject = gettingBackendData;
             //console.log(this.modifyUserObject);
         });
+    }
+    button() {
+        this.isDisable = false;
     }
     onModifyFormSubmit() {
         (this.modifyUserObject.userId = this.userForm.get('userId').value),
