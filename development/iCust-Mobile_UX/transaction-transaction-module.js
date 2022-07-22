@@ -9618,12 +9618,14 @@ let TransactionPage = class TransactionPage {
                 }
                 if (dataLoad != 'download') {
                     this.transactionDataArr = data;
+                    this.totalElements = data.totalElements;
+                    this.pushArray(this.trxnArrayList, this.transactionDataArr.content);
                 }
                 if (dataLoad === 'download') {
+                    // this.transactionDataArr = [];
+                    // this.trxnArrayList = [];
                     this.loadAllTransactionData(data.content);
                 }
-                this.totalElements = data.totalElements;
-                this.pushArray(this.trxnArrayList, this.transactionDataArr.content);
                 if (dataLoad === 'scroll') {
                     event.target.disabled = false;
                 }
