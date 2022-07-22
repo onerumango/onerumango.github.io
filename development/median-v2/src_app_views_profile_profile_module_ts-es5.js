@@ -236,6 +236,11 @@
             // 
             this.isSaveEnable = true;
             this.selectedTheme = value;
+            console.log(this.selectedTheme); // this.saveTheme(value)
+          }
+        }, {
+          key: "updateTheme",
+          value: function updateTheme() {
             var lastBg = this.lastBg;
             $(document).on('click', '.tColor', function (e) {
               e.preventDefault();
@@ -245,18 +250,19 @@
               localStorage.setItem('SELECTED_THEME', bgClass);
               lastBg = bgClass;
               $('.ddParent').removeClass('actDD');
-            }); // this.saveTheme(value)
+            });
           }
         }, {
           key: "saveTheme",
           value: function saveTheme(theme) {
             var _this3 = this;
 
-            console.log(theme);
+            // this.updateTheme();
             this.userApi.saveTheme(JSON.parse(this.user).userId, theme).subscribe(function (resp) {
               console.log(resp);
 
               if (resp === 'Saved successfully') {
+                console.log(resp);
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   text: "Saved successfully",
                   icon: 'success'
@@ -271,6 +277,7 @@
                 });
               }
             });
+            window.location.reload();
           }
         }, {
           key: "submitPhoto",
@@ -345,7 +352,7 @@
         selectors: [["npr-profile"]],
         decls: 64,
         vars: 6,
-        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "theme1", 1, "tColor", "theme1", 3, "click"], ["data-id", "theme2", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
+        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "selectedTheme?'theme1':'theme2'", 1, "tColor", "theme1", 3, "click"], ["data-id", "selectedTheme", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
         template: function ProfileComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();

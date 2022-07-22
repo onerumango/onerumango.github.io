@@ -19728,6 +19728,7 @@ a:hover {
 
 img {
   max-width: 100%;
+  min-width:12px;
 }
 
 :focus,
@@ -21397,13 +21398,13 @@ a:hover {
 
 .theme2 .form-control {
   background-color: #1b1b29 !important;
-  border-color: #1b1b29 !important;
+  border-color: #7b7b86 !important;
   color: #92929f !important;
 }
 
 .theme2 .form-select {
   background-color: #1b1b29 !important;
-  border-color: #1b1b29 !important;
+  border-color: #a5a5be !important;
   color: #92929f !important;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
@@ -21441,6 +21442,11 @@ a:hover {
 }
 
 .theme2 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  color: #92929f !important;
+  background-color:  #1b1b29 !important;
+}
+
+.theme2 .form-class {
   color: #92929f !important;
   background-color:  #1b1b29 !important;
 }

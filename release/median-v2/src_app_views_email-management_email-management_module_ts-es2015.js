@@ -599,15 +599,15 @@ function EmailManagementCreateComponent_div_31_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag && ctx_r3.eamilAuditLog.recordStatus == "OPEN");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag && (ctx_r3.eamilAuditLog.recordStatus == "OPEN" || ctx_r3.eamilAuditLog.recordStatus == "Open"));
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r3.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.verifiedStatus == "U" || ctx_r3.eamilAuditLog.verifiedStatus == "UNAUTHORIZED") && ctx_r3.editFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSED") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "C" || ctx_r3.eamilAuditLog.recordStatus == "CLOSED" || ctx_r3.eamilAuditLog.recordStatus == "Closed") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "O" || ctx_r3.eamilAuditLog.recordStatus == "OPEN") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (ctx_r3.eamilAuditLog.recordStatus == "O" || ctx_r3.eamilAuditLog.recordStatus == "OPEN" || ctx_r3.eamilAuditLog.recordStatus == "Open") && ctx_r3.editFlag && ctx_r3.eamilAuditLog.verifiedOnce == "YES");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r3.editFlag && ctx_r3.roleCodes.delete && (ctx_r3.eamilAuditLog.verifiedOnce == "NO" || ctx_r3.eamilAuditLog.verifiedOnce == "N") && (ctx_r3.eamilAuditLog.verifiedStatus == "U" || ctx_r3.eamilAuditLog.verifiedStatus == "UNAUTHORIZED"));
 } }
@@ -861,6 +861,7 @@ class EmailManagementCreateComponent {
         this.eamilAuditLog.verifiedTime = this.editAddSysResp.queryParams.authtym;
         this.eamilAuditLog.verifiedBy = this.editAddSysResp.queryParams.authBy;
         this.eamilAuditLog.emailType = this.editAddSysResp.queryParams.emailType;
+        console.log(this.eamilAuditLog);
         if (this.editAddSysResp.queryParams.emailType == 'Account_Block') {
             this.buildEmailForm(this.eamilAuditLog);
             this.getScreenDetails();
@@ -1617,8 +1618,8 @@ class EmailManagementComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', 'targets': [2] }],
-            order: [[2, 'desc']],
+            columnDefs: [{ type: 'date', 'targets': [3] }],
+            order: [[3, 'desc']],
             processing: true,
             lengthMenu: [
                 [5, 10, 20, 30, -1],

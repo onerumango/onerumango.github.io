@@ -5591,6 +5591,18 @@
 
                 _this20.ruleForm.get('sourceSystems').patchValue(_this20.sourceSysData);
 
+                if (resp.messageType) {
+                  if (resp.messageType == 'Incoming') {
+                    resp.messageType = 'I';
+                  }
+
+                  if (resp.messageType == 'OutGoing') {
+                    resp.messageType = 'O';
+                  }
+
+                  _this20.sourceMsg = false;
+                }
+
                 _this20.ruleConfig.sourceTranslationId = resp.transId;
 
                 _this20.gettingoperationAndServiceFroSourceSystem(_this20.sourcesystem, resp.messageType);
@@ -5721,6 +5733,18 @@
                 _this23.ruleForm.get('validationSystems').at(i).get('operation').patchValue(_this23.validationTransData.operationName);
 
                 _this23.ruleForm.get('validationSystems').at(i).get('messageType').patchValue(_this23.validationTransData.messageType);
+
+                if (resp.messageType) {
+                  if (resp.messageType == 'Incoming') {
+                    resp.messageType = 'I';
+                  }
+
+                  if (resp.messageType == 'OutGoing') {
+                    resp.messageType = 'O';
+                  }
+
+                  _this23.sourceMsg = false;
+                }
 
                 _this23.gettingoperationSndservForValidation(_this23.validationData, resp.messageType);
               }
@@ -6608,9 +6632,9 @@
               pageLength: 5,
               columnDefs: [{
                 type: 'date',
-                'targets': [5]
+                'targets': [4]
               }],
-              order: [[5, 'desc']],
+              order: [[4, 'desc']],
               processing: true,
               lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]] // columnDefs: [ { type: 'date', 'targets': [5] } ],
               // order: [[5, 'desc']],

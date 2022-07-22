@@ -547,8 +547,8 @@ class SecurityPolicySummaryComponent {
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 5,
-            columnDefs: [{ type: 'date', targets: [5] }],
-            order: [[0, 'desc']],
+            columnDefs: [{ type: 'date', targets: [4] }],
+            order: [[4, 'desc']],
             processing: true,
             lengthMenu: [
                 [5, 10, 20, 30, -1],

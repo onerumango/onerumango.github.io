@@ -1045,6 +1045,11 @@
               pagingType: "full_numbers",
               pageLength: 5,
               processing: true,
+              columnDefs: [{
+                type: 'date',
+                'targets': [4]
+              }],
+              order: [[4, 'desc']],
               lengthMenu: [[5, 10, 20, 30, -1], [5, 10, 20, 30, "ALL"]]
             };
             this.getAccountClosureMaintenancesummary();
@@ -2808,7 +2813,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](96, "h2");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](97, "Modification No");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](97, "Modification Number");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
