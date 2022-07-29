@@ -3266,6 +3266,7 @@ class ApiService {
         return this.http.get(`${API_URL}/config/getTrnData/${UserId}`);
     }
     setSummaryDataTransactionCode(summaryData) {
+        console.log(summaryData);
         this.transactionCodeSummryData.next(summaryData);
     }
     getSummaryDataTransactionCode() {
@@ -3603,11 +3604,14 @@ class ApiService {
     getAllExtsysNameAndProcessCodeOnAuthStatus() {
         return this.http.get(`${this.uriForExt}/getAllExternalSystemMap`);
     }
+    getAllExtsysNameOnAuthStatus() {
+        return this.http.get(`${this.uriForExt}/getAllExternalSystem`);
+    }
     getAllExtCode() {
         return this.http.get(`${this.uriForExt}` + '/getAllExtCode');
     }
     getProcessNameByExtSysCode(extSysCode) {
-        return this.http.get(`${this.uriForExt}/processCodeByExtCode/${extSysCode}`);
+        return this.http.get(`${this.uriForExt}/getAllProcessCodeForExternalSystem/${extSysCode}`);
     }
     getExtSysNameByExtSysCode(extSysCode) {
         return this.http.get(`${this.uriForMap}/getExtsysByExtCode/${extSysCode}`, { responseType: 'text' });
