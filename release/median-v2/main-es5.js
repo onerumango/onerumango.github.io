@@ -6201,6 +6201,7 @@
         }, {
           key: "setSummaryDataTransactionCode",
           value: function setSummaryDataTransactionCode(summaryData) {
+            console.log(summaryData);
             this.transactionCodeSummryData.next(summaryData);
           }
         }, {
@@ -6735,6 +6736,11 @@
             return this.http.get("".concat(this.uriForExt, "/getAllExternalSystemMap"));
           }
         }, {
+          key: "getAllExtsysNameOnAuthStatus",
+          value: function getAllExtsysNameOnAuthStatus() {
+            return this.http.get("".concat(this.uriForExt, "/getAllExternalSystem"));
+          }
+        }, {
           key: "getAllExtCode",
           value: function getAllExtCode() {
             return this.http.get("".concat(this.uriForExt) + '/getAllExtCode');
@@ -6742,7 +6748,7 @@
         }, {
           key: "getProcessNameByExtSysCode",
           value: function getProcessNameByExtSysCode(extSysCode) {
-            return this.http.get("".concat(this.uriForExt, "/processCodeByExtCode/").concat(extSysCode));
+            return this.http.get("".concat(this.uriForExt, "/getAllProcessCodeForExternalSystem/").concat(extSysCode));
           }
         }, {
           key: "getExtSysNameByExtSysCode",

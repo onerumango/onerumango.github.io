@@ -1019,7 +1019,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r29.isDisable);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", !ctx_r29.myform.dirty && ctx_r29.isDisable);
         }
       }
 
@@ -2733,6 +2733,7 @@
         }, {
           key: "clickRoleAction",
           value: function clickRoleAction(roles, action, event) {
+            this.isDisable = false;
             console.log(this.roleScreenList);
             console.log(roles, "Roles");
             console.log(action, "action");

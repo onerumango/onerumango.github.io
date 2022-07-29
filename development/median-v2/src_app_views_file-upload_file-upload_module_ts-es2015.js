@@ -2437,7 +2437,7 @@ class FileUploadComponent {
                 if (this.responseforfileupload.errorMessage) {
                     console.log("here is error of duplicate record");
                     this.disablebtn2 = true;
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + "Template Mapping is Not Authorized");
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + this.responseforfileupload.errorMessage);
                     if (this.responseforfileupload.errorMessage === "Ppossible duplicate data") {
                         this.excelDataProcessingReqDTO.proceedDuplicates = true;
                         sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({

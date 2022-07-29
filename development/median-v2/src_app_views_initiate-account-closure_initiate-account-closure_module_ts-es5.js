@@ -1272,8 +1272,8 @@
             console.log(this.accountClosureForm.controls.accountType.value);
             this.sendAccountType = this.accountClosureForm.controls.accountType.value;
             console.log(this.accountClosureForm.controls.closureType.value);
-            this.sendClosureType = this.accountClosureForm.controls.closureType.value; // this.currentFileUpload = this.selectedFiles.item(0);
-
+            this.sendClosureType = this.accountClosureForm.controls.closureType.value;
+            this.currentFileUpload = this.selectedFiles.item(0);
             this.showSubmitProgressBar = true;
 
             if (!this.sendAccountType) {
@@ -2057,13 +2057,13 @@
         }
       }
 
-      function InitiateAccountClosureComponent_tr_29_button_20_Template(rf, ctx) {
+      function InitiateAccountClosureComponent_tr_31_button_20_Template(rf, ctx) {
         if (rf & 1) {
           var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_29_button_20_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_31_button_20_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10);
 
             var users_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -2079,13 +2079,13 @@
         }
       }
 
-      function InitiateAccountClosureComponent_tr_29_button_21_Template(rf, ctx) {
+      function InitiateAccountClosureComponent_tr_31_button_21_Template(rf, ctx) {
         if (rf & 1) {
           var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_29_button_21_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_31_button_21_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r13);
 
             var users_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -2101,13 +2101,13 @@
         }
       }
 
-      function InitiateAccountClosureComponent_tr_29_button_22_Template(rf, ctx) {
+      function InitiateAccountClosureComponent_tr_31_button_22_Template(rf, ctx) {
         if (rf & 1) {
           var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_29_button_22_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_31_button_22_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r16);
 
             var users_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().$implicit;
@@ -2123,7 +2123,7 @@
         }
       }
 
-      function InitiateAccountClosureComponent_tr_29_Template(rf, ctx) {
+      function InitiateAccountClosureComponent_tr_31_Template(rf, ctx) {
         if (rf & 1) {
           var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
@@ -2133,7 +2133,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_29_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_31_Template_a_click_2_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r18);
 
             var users_r4 = restoredCtx.$implicit;
@@ -2191,7 +2191,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_29_Template_button_click_18_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateAccountClosureComponent_tr_31_Template_button_click_18_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r18);
 
             var users_r4 = restoredCtx.$implicit;
@@ -2205,11 +2205,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, InitiateAccountClosureComponent_tr_29_button_20_Template, 2, 0, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, InitiateAccountClosureComponent_tr_31_button_20_Template, 2, 0, "button", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, InitiateAccountClosureComponent_tr_29_button_21_Template, 2, 0, "button", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, InitiateAccountClosureComponent_tr_31_button_21_Template, 2, 0, "button", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](22, InitiateAccountClosureComponent_tr_29_button_22_Template, 2, 0, "button", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](22, InitiateAccountClosureComponent_tr_31_button_22_Template, 2, 0, "button", 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -2552,7 +2552,7 @@
       _InitiateAccountClosureComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _InitiateAccountClosureComponent,
         selectors: [["npr-initiate-account-closure"]],
-        decls: 30,
+        decls: 32,
         vars: 6,
         consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "table-responsive"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "nowrap", "vAlignMdl", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "primaryColor", 3, "routerLink", "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "..."], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "..."], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "..."]],
         template: function InitiateAccountClosureComponent_Template(rf, ctx) {
@@ -2637,13 +2637,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "th");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](29, "action");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](29, InitiateAccountClosureComponent_tr_29_Template, 23, 15, "tr", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, InitiateAccountClosureComponent_tr_31_Template, 23, 15, "tr", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -2669,7 +2675,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.summaryDetails);
           }
