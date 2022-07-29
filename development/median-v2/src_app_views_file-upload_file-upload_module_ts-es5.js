@@ -4394,7 +4394,7 @@
                 if (_this20.responseforfileupload.errorMessage) {
                   console.log("here is error of duplicate record");
                   _this20.disablebtn2 = true;
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + "Template Mapping is Not Authorized");
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire('Unable to upload', 'Error: ' + _this20.responseforfileupload.errorMessage);
 
                   if (_this20.responseforfileupload.errorMessage === "Ppossible duplicate data") {
                     _this20.excelDataProcessingReqDTO.proceedDuplicates = true;

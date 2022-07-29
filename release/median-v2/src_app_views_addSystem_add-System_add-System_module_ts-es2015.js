@@ -1111,7 +1111,7 @@ function AddSystemComponent_div_1_form_9_div_21_div_3_Template(rf, ctx) { if (rf
 } if (rf & 2) {
     const ctx_r89 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r89.submitFlag || !ctx_r89.tcpForm.valid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r89.submitFlag || !ctx_r89.tcpForm.dirty || !ctx_r89.tcpForm.valid);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx_r89.submitFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);

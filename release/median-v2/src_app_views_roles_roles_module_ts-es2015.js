@@ -551,7 +551,7 @@ function RoleDetailsComponent_div_55_div_3_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r29.isDisable);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", !ctx_r29.myform.dirty && ctx_r29.isDisable);
 } }
 function RoleDetailsComponent_div_55_div_4_Template(rf, ctx) { if (rf & 1) {
     const _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
@@ -1707,6 +1707,7 @@ class RoleDetailsComponent {
         // console.log(this.checkAll);
     }
     clickRoleAction(roles, action, event) {
+        this.isDisable = false;
         console.log(this.roleScreenList);
         console.log(roles, "Roles");
         console.log(action, "action");
