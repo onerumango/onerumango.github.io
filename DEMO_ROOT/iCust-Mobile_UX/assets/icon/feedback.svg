@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Group_1234" data-name="Group 1234" transform="translate(-32 -669)">
+    <g id="Group_752" data-name="Group 752" transform="translate(0 -263)">
+      <rect id="Rectangle_703" data-name="Rectangle 703" width="48" height="48" rx="10" transform="translate(32 932)" fill="#eff7ff"/>
+    </g>
+    <path id="Icon_material-feedback" data-name="Icon material-feedback" d="M24.892,3H5.432a2.429,2.429,0,0,0-2.42,2.432L3,27.325,7.865,22.46H24.892a2.44,2.44,0,0,0,2.432-2.432V5.432A2.44,2.44,0,0,0,24.892,3ZM16.379,17.595H13.946V15.162h2.432Zm0-4.865H13.946V7.865h2.432Z" transform="translate(40.838 678)" fill="#456efe"/>
+  </g>
+</svg>
