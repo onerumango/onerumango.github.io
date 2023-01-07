@@ -1,0 +1,629 @@
+@import "~@angular/material/theming";
+@import 'egret.theme';
+
+$fontConfig: (
+  display-4: mat-typography-level(112px, 112px, 400, "Montserrat", -0.0134em),
+  display-3: mat-typography-level(56px, 56px, 400, "Montserrat", -0.0089em),
+  display-2: mat-typography-level(45px, 48px, 400, "Montserrat", 0em),
+  display-1: mat-typography-level(34px, 40px, 400, "Montserrat", 0.0074em),
+  headline: mat-typography-level(24px, 32px, 400, "Montserrat", 0em),
+  title: mat-typography-level(20px, 32px, 500, "Montserrat", 0.0075em),
+  subheading-2: mat-typography-level(16px, 28px, 400, "Montserrat", 0.0094em),
+  subheading-1: mat-typography-level(15px, 24px, 500, "Montserrat", 0.0067em),
+  card-title: mat-typography-level(15px, 24px, 500, "Montserrat", 0.0067em),
+  body-2: mat-typography-level(14px, 24px, 500, "Montserrat", 0.0179em),
+  body-1: mat-typography-level(14px, 20px, 400, "Montserrat", 0.0179em),
+  button: mat-typography-level(14px, 14px, 500, "Montserrat", 0.0893em),
+  caption: mat-typography-level(12px, 20px, 400, "Montserrat", 0.0333em),
+  input: mat-typography-level(inherit, 1.125, 400, "Montserrat", 1.5px),
+);
+
+// Foreground Elements
+// Light Theme Text
+$dark-text: #000000;
+$dark-primary-text: $body-color;
+$dark-accent-text: rgba($dark-primary-text, 0.54);
+$dark-disabled-text: rgba($dark-primary-text, 0.38);
+$dark-dividers: rgba($dark-primary-text, 0.12);
+$dark-focused: rgba($dark-primary-text, 0.12);
+
+$mat-light-theme-foreground: (
+  base: black,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $dark-disabled-text,
+  disabled-button: rgba($dark-text, 0.26),
+  disabled-text: $dark-disabled-text,
+  elevation: black,
+  secondary-text: $dark-accent-text,
+  hint-text: $dark-disabled-text,
+  accent-text: $dark-accent-text,
+  icon: $dark-accent-text,
+  icons: $dark-accent-text,
+  text: $dark-primary-text,
+  slider-min: $dark-primary-text,
+  slider-off: rgba($dark-text, 0.26),
+  slider-off-active: $dark-disabled-text,
+);
+
+// Foreground Elements
+// Dark Theme Text
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+$light-accent-text: rgba($light-primary-text, 0.7);
+$light-disabled-text: rgba($light-primary-text, 0.5);
+$light-dividers: rgba($light-primary-text, 0.12);
+$light-focused: rgba($light-primary-text, 0.12);
+
+$mat-dark-theme-foreground: (
+  base: $light-text,
+  divider: $light-dividers,
+  dividers: $light-dividers,
+  disabled: $light-disabled-text,
+  disabled-button: rgba($light-text, 0.3),
+  disabled-text: $light-disabled-text,
+  elevation: black,
+  hint-text: $light-disabled-text,
+  secondary-text: $light-accent-text,
+  accent-text: $light-accent-text,
+  icon: $light-text,
+  icons: $light-text,
+  text: $light-text,
+  slider-min: $light-text,
+  slider-off: rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3),
+);
+
+// Background config
+// Light Theme
+$light-background: #fafafa;
+$light-bg-darker-5: darken($light-background, 5%);
+$light-bg-darker-10: darken($light-background, 10%);
+$light-bg-darker-20: darken($light-background, 20%);
+$light-bg-darker-30: darken($light-background, 30%);
+$light-bg-lighter-5: lighten($light-background, 5%);
+$dark-bg-tooltip: lighten(#2c2c2c, 20%);
+$dark-bg-alpha-4: rgba(#2c2c2c, 0.04);
+$dark-bg-alpha-12: rgba(#2c2c2c, 0.12);
+
+$mat-light-theme-background: (
+  background: $light-background,
+  status-bar: $light-bg-darker-20,
+  app-bar: $light-bg-darker-5,
+  hover: $dark-bg-alpha-4,
+  card: $light-bg-lighter-5,
+  dialog: $light-bg-lighter-5,
+  tooltip: $dark-bg-tooltip,
+  disabled-button: $dark-bg-alpha-12,
+  raised-button: $light-bg-lighter-5,
+  focused-button: $dark-focused,
+  selected-button: $light-bg-darker-20,
+  selected-disabled-button: $light-bg-darker-30,
+  disabled-button-toggle: $light-bg-darker-10,
+  unselected-chip: $light-bg-darker-10,
+  disabled-list-option: $light-bg-darker-10,
+);
+
+// Background config
+// Dark Theme
+$dark-background: #1a2038;
+$dark-bg-lighter-5: lighten($dark-background, 5%);
+$dark-bg-lighter-10: lighten($dark-background, 10%);
+$dark-bg-lighter-20: lighten($dark-background, 20%);
+$dark-bg-lighter-30: lighten($dark-background, 30%);
+$light-bg-alpha-4: rgba(#fafafa, 0.04);
+$light-bg-alpha-12: rgba(#fafafa, 0.12);
+
+$mat-dark-theme-background: (
+  background: $dark-background,
+  status-bar: $dark-bg-lighter-20,
+  app-bar: $dark-bg-lighter-5,
+  hover: $light-bg-alpha-4,
+  card: $dark-bg-lighter-5,
+  dialog: $dark-bg-lighter-5,
+  tooltip: $dark-bg-lighter-20,
+  disabled-button: $light-bg-alpha-12,
+  raised-button: $dark-bg-lighter-5,
+  focused-button: $light-focused,
+  selected-button: $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle: $dark-bg-lighter-10,
+  unselected-chip: $dark-bg-lighter-20,
+  disabled-list-option: $dark-bg-lighter-10,
+);
+
+$config: mat-typography-config();
+@include mat-card-typography($config);
+
+// Compute font config
+@include mat-core($fontConfig);
+
+
+
+
+// Theme Config
+$default-primary-palette: (
+  main: #0081ff,
+  lighter: #b3d9ff,
+  darker: #0064ff,
+  200: #0081ff,
+  // For slide toggle,
+    contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+$default-theme-primary: mat-palette($default-primary-palette, main, lighter, darker);
+
+$default-accent-palette: (
+  main: #ff8a48,
+  lighter: #ffdcc8,
+  darker: #ff6d30,
+  200: #ff8a48,
+  // For slide toggle,
+    contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $dark-primary-text,
+    ),
+);
+$default-theme-accent: mat-palette($default-accent-palette, main, lighter, darker);
+
+$default-warn-palette: (
+  main: #ff3d57,
+  lighter: #ffc5cd,
+  darker: #ff273c,
+  200: #ff3d57,
+  // For slide toggle,
+    contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+
+$default-theme-warn: mat-palette($default-warn-palette, main, lighter, darker);
+
+$default-theme: mat-light-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
+$altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
+//$altTheme: mat-light-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
+// @debug $theme;
+
+// MAIN THEME INIT
+.egret-navy {
+  @include angular-material-theme($default-theme);
+  @include egret-theme($default-theme);
+  //background-color: #456EFE;
+  color: black;
+}
+
+// DARK THEME INIT
+.egret-dark-purple {
+  @include angular-material-theme($altTheme);
+  @include egret-theme($altTheme);
+  color: #000000;
+//  background-color: #ffffff;
+}
+
+.egret-navy .mat-toolbar {
+  background:#456EFE;
+  color: white;
+}
+.egret-dark-purple .mat-toolbar {
+  background:#1e1e2d;
+  color: white;
+}
+.egret-dark-purple .highcharts-background{
+  background-color: gray;
+}
+.egret-dark-purple .mat-drawer-container{
+  background: #000000;
+}
+.egret-dark-purple .mat-card{
+  background: #1e1e2d;
+  color:#cdcdde ;
+}
+.egret-dark-purple .container{
+  background: #000000;
+}
+.egret-dark-purple .content{
+  background: #000000;
+}
+.egret-dark-purple .search-box input{
+  background: #000000;
+  color:#cdcdde;
+}
+.egret-dark-purple .mat-flat-button {
+  background: #1e1e2d;
+  color:#cdcdde;
+}
+.egret-dark-purple .app-admin-container .rightside-content-hold {
+  background: black;
+}
+.egret-dark-purple .mat-menu-item {
+  background: #1e1e2d;
+  color: white;
+}
+.egret-dark-purple .title{
+  color: #cdcdde;
+}
+.egret-dark-purple h6,
+.h6{
+  color: white;
+}
+.egret-dark-purple .mat-menu-content{
+  background: #1e1e2d;
+} 
+.egret-dark-purple .mat-icon.mat-primary {
+  color: #fafafa;
+}
+.egret-navy .mat-dialog-container {
+  background: white;
+}
+.egret-dark-purple .mat-dialog-container {
+  background: #1e1e2d;
+  color:#A6AAB5;
+}
+.egret-dark-purple .sidebar-panel .navigation-hold {
+  background: #1e1e2d;
+  color:#fafafa;
+}
+.egret-dark-purple .sidebar-panel {
+  background: #1a1a27;
+}
+.egret-dark-purple .card-text-label {
+  color: #cdcdde;
+}
+.egret-dark-purple .mat-header-cell {
+  color: #565674;
+  background: #1e1e2d;
+}
+.egret-dark-purple .mat-cell, .egret-dark-purple .mat-footer-cell {
+  color: white;
+  background: #1e1e2d;
+}
+ .egret-dark-purple .mat-paginator-container{
+  color:  #A6AAB5;
+  background: #1e1e2d;
+}
+.egret-dark-purple .mat-hint {
+  color: #A6AAB5;
+}
+.egret-dark-purple .text-muted, .mat-heading-label {
+  color: #A6AAB5;
+}
+.egret-dark-purple .revertStyle {
+  color: #cdcdde;
+}
+.egret-dark-purple .revertStyle1 {
+  color: #cdcdde;
+}
+.egret-dark-purple .centeralign{
+  background: #1e1e2d;
+  border: 1px solid darkblue;
+}
+.egret-dark-purple .mat-drawer {
+    background-color: #1e1e2d;
+    color: white;
+}
+.egret-dark-purple .mat-error {
+  color: white;
+}
+.egret-dark-purple .donutChart {
+  background: gray;
+}
+.egret-dark-purple .mat-button.mat-primary, .egret-dark-purple .mat-icon-button.mat-primary, .egret-dark-purple .mat-stroked-button.mat-primary {
+  color: white;
+}
+.egret-dark-purple .mat-expansion-panel-header {
+  background-color: #1e1e2d;
+}
+.egret-dark-purple .tbchargeDetailsTbl{
+  color: #cdcdde;
+}
+.egret-dark-purple .thchargeDetailsTbl{
+  color: #cdcdde;
+}
+.egret-dark-purple .btn {
+  background-color: #1e1e2d;
+  color: #cdcdde;
+}
+.egret-dark-purple .mat-form-field-suffix .mat-icon {
+   color: gray;
+}
+.egret-dark-purple .mat-bg-primary {
+  background-color: #1e1e2d;
+}
+.egret-dark-purple .small-head{
+  color: #cdcdde;
+}
+.egret-dark-purple .notification-list .notific-item .message {
+  color: #cdcdde;
+}
+.egret-dark-purple .mat-form-field-appearance-outline .mat-form-field-flex {
+  background: #1b1b29;
+  color: #92929f !important;
+  border-color: #1b1b29 !important;
+}
+.egret-dark-purple .innerLabelSpan{
+  color: #cdcdde;
+}
+.egret-dark-purple  .col2 {
+  color: #cdcdde;;
+}
+.egret-dark-purple  .col4{
+  color: #cdcdde;;
+}
+.egret-dark-purple  .mat-expansion-panel-body {
+  background: #1b1b29;
+}
+.backIcon {
+  color: #92929f;
+}
+// .egret-dark-purple .form-holder {
+//   padding: 16px;
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   min-width: 25%;
+// }
+
+// .egret-dark-purple .signup-form {
+//   padding: 20px 20px 70px 20px;
+// }
+// .egret-dark-purple .body {
+//   margin: 0;
+//   padding: 0;
+//   font-weight: 400;
+//   font-size: 0.875rem;
+//   line-height: 1.5;
+//   font-family: Archivo, "Helvetica Neue", sans-serif;
+// }
+// .egret-dark-purple .h-full-screen {
+//   height: 100vh;
+// }
+.egret-dark-purple .mat-form-field-full-width .mat-label{
+  color:#000000;
+}
+.egret-dark-purple .mat-form-field-appearance-outline .mat-form-field-outline {
+ // color: rgb(31 18 18 / 30%);
+  color:#3b3b59;
+}
+.egret-dark-purple .mat-form-field-label {
+  color: lightblue;
+}
+.egret-dark-purple .ngx-datatable.material .datatable-header .datatable-header-cell {
+  background-color: gray !important;
+}
+// .yellow .app-admin-container .rightside-content-hold {
+//   background: yellow;
+// }
+.blue .app-admin-container .rightside-content-hold {
+  background: blue;
+}
+.red .app-admin-container .rightside-content-hold {
+  background: red;
+}
+.yellow .topbar.mat-toolbar {
+  background: yellowgreen;
+}
+
+// blue color theme 
+// .blue {
+//   @include angular-material-theme($altTheme);
+//   @include egret-theme($altTheme);
+//  // color: #000000;
+// //  background-color: #ffffff;
+// }
+
+.blue .topbar.mat-toolbar {
+  background: blueviolet;
+}
+.blue .mat-card {
+  color: #ffffff;
+  background: blueviolet;
+}
+.blue .text-large {
+  color: white;
+}
+.blue .small-head{
+  color: white;
+}
+.blue .search-box input{
+  background: blue;
+}
+.blue .mat-dialog-container {
+  background: blue;
+  color: white;
+}
+.blue .mat-drawer-inner-container {
+  color: white;
+  background: royalblue;
+}
+.blue .notification-list .notific-item .message {
+  color: white;
+}
+.blue .mat-menu-content{
+  background: royalblue;
+}
+.blue .mat-icon {
+  color: white;
+}
+.blue .mat-icon-button {
+  background: royalblue;
+}
+.blue .text-blue {
+  color: white;
+}
+.blue .mat-form-field-label-wrapper {
+  color: black;
+}
+   .blue h3, .h3 {
+  color: white;
+}
+.blue h4, .h4 {
+  color: white;
+}
+.blue  .justify-content-center {
+  color: white; 
+}
+.blue .mat-menu-item {
+  background: royalblue;
+  color: white;
+}
+.blue .mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+  background: royalblue;
+}
+.blue .sidebar-panel {
+  background: royalblue;
+}
+.blue .sidebar-panel .navigation-hold {
+  color: white;
+  background: royalblue;
+}
+.blue .mat-expansion-panel-body {
+  background: royalblue;
+}
+.blue .mat-form-field{
+  color: white;
+}
+
+        // red color theme
+
+.red .mat-card {
+  color: #ffffff;
+  background: red;
+}
+.red .topbar.mat-toolbar {
+  background: red;
+}
+.red .text-large {
+  color: white;
+}
+.red .small-head{
+  color: white;
+}
+.red .mat-dialog-container {
+  background: red;
+  color: white;
+}
+.red .mat-drawer-inner-container {
+  color: white;
+  background: red;
+}
+.red .notification-list .notific-item .message {
+  color: white;
+}
+.red .mat-menu-content{
+  background: darkred;
+}
+.red .mat-icon {
+  color: white;
+}
+.red  .justify-content-center {
+  color: white; 
+}
+.red .mat-menu-item {
+  background: darkred;
+  color: white;
+}
+.red .mat-form-field-label-wrapper {
+  color: black;
+}
+.red h3, .h3 {
+  color: white;
+}
+.red h4, .h4 {
+  color: white;
+}
+.red .search-box input{
+  background: red;
+}
+.red .mat-icon-button {
+  background: coral;
+}
+.red .mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+  background: whitesmoke;
+}
+.red .sidebar-panel {
+  background: red;
+}
+.red .sidebar-panel .navigation-hold {
+  color: white;
+  background: red;
+}
+.red .mat-expansion-panel-body {
+  background: darkred;
+}
+.red .mat-form-field{
+  color: white;
+}
+
+// yellow theme
+
+.yellow .mat-dialog-container {
+  background: yellow;
+  //color: white;
+}
+.yellow .mat-drawer-inner-container {
+ // color: white;
+  background: yellow;
+}
+// .yellow .notification-list .notific-item .message {
+//   color: white;
+// }
+.yellow .mat-menu-content{
+  background: yellowgreen;
+}
+.yellow .mat-menu-item {
+  background: yellowgreen;
+}
+.yellow .text-white {
+  color: black;
+}
+.yellow .search-box input{
+  background: yellow;
+}
+.yellow .sidebar-panel {
+  background: yellow;
+}
+.yellow .mat-card {
+  background: yellow;
+}
+.yellow .sidebar-panel .navigation-hold {
+  color: black;
+  background: yellow;
+}
+// .yellow .mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+//   background: black;
+// }
+.yellow .mat-expansion-panel-body {
+  background: yellowgreen;
+}
+.yellow .mat-expansion-panel-header {
+  background:yellowgreen;
+}
+.yellow .mat-raised-button {
+  background:yellowgreen;
+}
+
+.blue .input.mat-input-element {
+  color: black;
+}
+.red .input.mat-input-element {
+  color: black;
+}
+.yellow .input.mat-input-element {
+  color: black;
+}
+.red .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  color: black;
+}
+.blue .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  color: black;
+}
