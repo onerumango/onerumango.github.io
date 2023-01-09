@@ -396,11 +396,12 @@ class OtpComponent {
             this.verifyOtpModel.sourceValue = this.customerPhoneNum;
             this.verifyOtpModel.otp = otpValue.otpNumber;
             this.verifyOtpModel.type = '';
+            this.verifyOtpModel.isMobileLogin = false;
             console.log("model", this.verifyOtpModel);
             this.apiService.verifyOtp(this.verifyOtpModel).subscribe(otpResp => {
                 console.log('otpResp :: ', otpResp);
                 if (otpResp != null) {
-                    if (otpResp.userId != '' && otpResp.userId != null) {
+                    if (otpResp.data.userId != '' && otpResp.data.userId != null) {
                         // this.router.navigateByUrl('/others/services');
                         /* TO-DO: need to uncomment this.openDialog() for fingerprint verification */
                         // this.openDialog(otpResp);
@@ -423,9 +424,9 @@ class OtpComponent {
                             }
                         }
                         else {
-                            this.openDialog(otpResp);
+                            this.openDialog(otpResp.data);
                         }
-                        localStorage.setItem('userId', otpResp.userId);
+                        localStorage.setItem('userId', otpResp.data.userId);
                         this.snack.open(`Validation successful`, 'OK', {
                             duration: 4000,
                             verticalPosition: 'top',
@@ -433,7 +434,7 @@ class OtpComponent {
                         });
                     }
                     else {
-                        this.snack.open(`${otpResp.responseMessage}`, 'OK', {
+                        this.snack.open(`${otpResp.data.responseMessage}`, 'OK', {
                             duration: 4000,
                             verticalPosition: 'top',
                             horizontalPosition: 'right'
@@ -471,7 +472,7 @@ class OtpComponent {
                 horizontalPosition: 'right'
             });
             /* Added validation for un-registered mobile nummber is entered */
-            if (this.otpResponse.otpVal.userId === "New Customer" || (this.otpResponse.otpVal.userId === '' && this.otpResponse.otpVal.userId === null)) {
+            if (this.otpResponse.data.otpVal.userId === "New Customer" || (this.otpResponse.data.otpVal.userId === '' && this.otpResponse.data.otpVal.userId === null)) {
                 this.cdk.detectChanges();
                 // this.userResp = true;
             }
@@ -1072,18 +1073,19 @@ class LoginComponent {
             this.oTpModel.source = 'customer';
             this.oTpModel.source_key = 'mobile';
             this.oTpModel.source_value = phone.phoneNumber;
+            this.oTpModel.isMobileLogin = false;
             console.log("model", this.oTpModel);
             this.apiService.getOtp(this.oTpModel).subscribe(otpResp => {
                 var _a;
                 console.log("cust resp", otpResp);
-                if (!(otpResp === null || otpResp === void 0 ? void 0 : otpResp.icust) || !otpResp.otpVal) {
+                if (!(otpResp === null || otpResp === void 0 ? void 0 : otpResp.data.icust) || !otpResp.data.otpVal) {
                     this.snack.open("No customer exists with this mobile number.", "", {
                         duration: 4000,
                         verticalPosition: 'top',
                         horizontalPosition: 'right'
                     });
                 }
-                else if (((_a = otpResp === null || otpResp === void 0 ? void 0 : otpResp.icust) === null || _a === void 0 ? void 0 : _a.custStatus) != "APPROVED" && ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.icust) && otpResp.otpVal)) {
+                else if (((_a = otpResp === null || otpResp === void 0 ? void 0 : otpResp.data.icust) === null || _a === void 0 ? void 0 : _a.custStatus) != "APPROVED" && ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.data.icust) && otpResp.data.otpVal)) {
                     this.snack.open("Customer Id is not Approved.", "", {
                         duration: 4000,
                         verticalPosition: 'top',
@@ -1092,7 +1094,7 @@ class LoginComponent {
                 }
                 else {
                     console.log("Response Success", otpResp);
-                    this.otpResp = otpResp;
+                    this.otpResp = otpResp.data;
                     this.custStatus = this.otpResp.otpVal.userId;
                     localStorage.setItem("customerValidation", this.custStatus);
                     /* Added validation for un-registered mobile nummber is entered */
@@ -1624,6 +1626,7 @@ class WalkInCustomerComponent {
             this.oTpModel.source = 'customer';
             this.oTpModel.source_key = 'mobile';
             this.oTpModel.source_value = phone.phoneNumber;
+            this.oTpModel.isMobileLogin = false;
             console.log("model", this.oTpModel);
             this.apiService.getOtp(this.oTpModel).subscribe(otpResp => {
                 console.log("cust resp", otpResp);
@@ -1642,7 +1645,7 @@ class WalkInCustomerComponent {
                 //   });
                 // } else {
                 console.log("Response Success", otpResp);
-                this.otpResp = otpResp;
+                this.otpResp = otpResp.data;
                 this.custStatus = this.otpResp.otpVal.userId;
                 localStorage.setItem("customerValidation", this.custStatus);
                 /* Added validation for un-registered mobile nummber is entered */
@@ -1654,7 +1657,7 @@ class WalkInCustomerComponent {
                 //   });
                 // } 
                 // else {
-                this.fpCaptureService.userDataService(otpResp);
+                this.fpCaptureService.userDataService(otpResp.data);
                 this.router.navigateByUrl('/sessions/otp');
                 // }
                 // }
@@ -1776,6 +1779,240 @@ WalkInCustomerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
 
 /***/ }),
 
+/***/ "VQ1A":
+/*!***********************************************************************!*\
+  !*** ./src/app/views/sessions/branch-login/branch-login.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: BranchLoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BranchLoginComponent", function() { return BranchLoginComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/shared/services/api.service */ "nm5K");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/flex-layout/flex */ "XiUz");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/form-field */ "kmnG");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/select */ "d3UM");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/radio */ "QibW");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function BranchLoginComponent_mat_option_18_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const data_r5 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", data_r5.kioskCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r5, " ");
+} }
+function BranchLoginComponent_div_29_Template(rf, ctx) { if (rf & 1) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h5", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "OTP type");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-radio-group", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-radio-button", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function BranchLoginComponent_div_29_Template_mat_radio_button_change_4_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.onChangeValue($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " E-mail ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-radio-button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function BranchLoginComponent_div_29_Template_mat_radio_button_change_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.onChangeValue($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " Mobile ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function BranchLoginComponent_div_30_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Email");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-select");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-option", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "1234");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-option", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "5678");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-option", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "9078");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "p", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Get otp");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function BranchLoginComponent_div_31_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Mobile");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-select");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-option", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "1234");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-option", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "5678");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-option", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "9078");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "p", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Get otp");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function BranchLoginComponent_div_33_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Reset");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Login");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+class BranchLoginComponent {
+    constructor(ApiService) {
+        this.ApiService = ApiService;
+        this.kioskCode = [];
+    }
+    ngOnInit() {
+        this.fetchKioskCode();
+    }
+    fetchKioskCode() {
+        this.ApiService.fetchKioskSystemDetails().subscribe((data) => {
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].authStatus === 'A') {
+                    this.kioskCode.push(data[i]);
+                    console.log('auth', i);
+                }
+            }
+        });
+    }
+    onChangeOption(event) {
+        console.log(event);
+        this.optionType = event.value;
+    }
+    onChangeValue(event) {
+        this.radioType = event.value;
+    }
+}
+BranchLoginComponent.ɵfac = function BranchLoginComponent_Factory(t) { return new (t || BranchLoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"])); };
+BranchLoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BranchLoginComponent, selectors: [["app-branch-login"]], decls: 34, vars: 5, consts: [[1, "branch_login_page"], [1, "card_container"], ["fxFlex", "100%", "fxLayout", "row-wrap", "fxLayoutGap", "10%"], [1, "border-text"], [1, "header"], [1, "border-text1"], ["fxLayoutGap", "5%", 1, "Branch_code"], ["appearance", "outline", "fxFlex", "50%", 1, "field-value", 2, "outline", "none"], ["matInput", "", "readonly", ""], ["appearance", "outline", "fxFlex", "50%", 1, "field-value"], ["name", "kioskCode", "formControlName", "kioskCode"], [3, "value", 4, "ngFor", "ngForOf"], [1, "pass_code1"], ["aria-label", "Select an option", "fxLayout", "row", "fxLayoutGap", "5%", 1, "pass_code"], ["value", "1", "fxFlex", "50%", 1, "field-value", 3, "change"], ["mat-raised-button", "", 1, "click_btn", 2, "width", "100%", "color", "grey"], ["value", "2", "fxFlex", "50%", 1, "field-value", 3, "change"], [4, "ngIf"], ["fxLayout", "row", "class", "reset", 4, "ngIf"], [3, "value"], [1, "otp_code"], ["fxLayout", "", "fxLayoutAlign", "center center", "fxLayoutGap", "30px", 1, "email_code"], ["value", "3", "fxFlex", "50%", 3, "change"], ["value", "4", "fxFlex", "50%", 3, "change"], ["appearance", "outline", "fxFlex", "50%", 1, "email_value"], ["value", "1234"], ["value", "5678"], ["value", "9078"], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn"], [1, "submitBtn"], ["fxLayout", "row", 1, "reset"], ["fxLayoutGap", "20px", 1, "full-width", 2, "margin-left", "8%"], ["mat-flat-button", "", 1, "brnch-reset"], ["mat-flat-button", "", 1, "brnch_login"]], template: function BranchLoginComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Demo Bank");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h1", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Welcome To DemoBank!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "kiosk Branch Login");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-form-field", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Branch Code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "input", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-form-field", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mat-label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "KIOSK System code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-select", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, BranchLoginComponent_mat_option_18_Template, 2, 2, "mat-option", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "h5", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "choose the option");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-radio-group", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-radio-button", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function BranchLoginComponent_Template_mat_radio_button_change_23_listener($event) { return ctx.onChangeOption($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "button", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Passcode");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-radio-button", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function BranchLoginComponent_Template_mat_radio_button_change_26_listener($event) { return ctx.onChangeOption($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "button", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "OTP");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, BranchLoginComponent_div_29_Template, 8, 0, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, BranchLoginComponent_div_30_Template, 14, 0, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, BranchLoginComponent_div_31_Template, 14, 0, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, BranchLoginComponent_div_33_Template, 6, 0, "div", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.kioskCode);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.optionType == 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.radioType == 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.radioType == 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.optionType == 1 || ctx.optionType == 2);
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_2__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultFlexDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_5__["MatInput"], _angular_material_select__WEBPACK_IMPORTED_MODULE_6__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_9__["MatRadioGroup"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_9__["MatRadioButton"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatOption"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultLayoutAlignDirective"]], styles: ["mat-card.card_container[_ngcontent-%COMP%] {\n  width: 90%;\n  height: 530px;\n  min-height: 500px;\n  padding: 0;\n  margin: 70px;\n  background-image: url(\"/assets/images/branch-login-background.png\");\n}\nmat-card.card_container[_ngcontent-%COMP%]   .border-text[_ngcontent-%COMP%] {\n  margin-top: 22px;\n  text-align: left;\n  font-family: \"big caslon\", medium;\n  margin-left: 5%;\n  color: #004B94;\n  font-size: 22px;\n  font: normal normal medium 33px/40px Big Caslon;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n  text-align: center;\n  color: black;\n  font-size: 30px;\n  font-family: \"poppins\", medium;\n  margin-top: 27px;\n  margin-left: 10%;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .border-text1[_ngcontent-%COMP%] {\n  text-align: right;\n  font-size: 22px;\n  font-family: \"poppins\", light;\n  margin-top: 25px;\n  margin-left: -1%;\n  color: #051A2D;\n  letter-spacing: 0.14px;\n  font: normal normal 300 22px/33px Poppins;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .Branch_code[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 100px;\n  left: 20%;\n  width: 60%;\n  border-radius: 5px;\n  height: 50px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .pass_code[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 230px;\n  left: 20%;\n  width: 60%;\n  border-radius: 5px;\n  height: 50px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .pass_code[_ngcontent-%COMP%]   mat-radio-button[_ngcontent-%COMP%] {\n  position: relative;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .pass_code1[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 181px;\n  left: 20%;\n  font: normal normal 300 22px/33px Poppins;\n  letter-spacing: 0.14px;\n  color: #051A2D;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .click_btn[_ngcontent-%COMP%] {\n  height: 57px;\n  border-radius: 10px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .otp_code[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 290px;\n  left: 20%;\n  font: normal normal 300 22px/33px Poppins;\n  letter-spacing: 0.14px;\n  color: #B4B4B4;\n  font-size: 15px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .email_code[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 320px;\n  left: 20%;\n  font: normal normal 300 22px/33px Poppins;\n  letter-spacing: 0.14px;\n  color: #B4B4B4;\n  font-size: 15px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .email_value[_ngcontent-%COMP%] {\n  left: 625px;\n  position: absolute;\n  top: 320px;\n  width: 29%;\n  border-radius: 10px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .reset[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 450px;\n  left: 20%;\n  width: 60%;\n  border-radius: 5px;\n  height: 50px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .brnch-reset[_ngcontent-%COMP%] {\n  width: 287px !important;\n  height: 43px;\n  border-radius: 97px;\n  background: #FFFEFE 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  margin-left: -45px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .brnch_login[_ngcontent-%COMP%] {\n  width: 408px !important;\n  height: 43px;\n  border-radius: 97px;\n  background: transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  border: 1px solid #00000000;\n  color: #FFFFFF;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .submitBtn[_ngcontent-%COMP%] {\n  color: #FFFFFF;\n  font-size: 14px;\n  font: normal normal medium 20px/59px Poppins;\n  letter-spacing: 0px;\n}\nmat-card.card_container[_ngcontent-%COMP%]   .Nextbtn[_ngcontent-%COMP%] {\n  height: 34px;\n  background: transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  position: absolute;\n  top: 50%;\n  right: 0;\n  transform: translateY(-50%);\n}\n  .branch_login_page .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 10px;\n  height: 60px;\n}\n  .pass_code .mat-radio-label .mat-radio-container {\n  position: absolute;\n  top: 55%;\n  left: 20px;\n  transform: translateY(-50%);\n  z-index: 2;\n}\n  .pass_code .mat-radio-label-content {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcYnJhbmNoLWxvZ2luLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBQTtFQUNBLGFBQUE7RUFDQSxpQkFBQTtFQUNBLFVBQUE7RUFDQSxZQUFBO0VBQ0EsbUVBQUE7QUFDSjtBQUFJO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGlDQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsK0NBQUE7QUFFUjtBQUFJO0VBQ0ssa0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLDhCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBQUVUO0FBQUk7RUFDSSxpQkFBQTtFQUNBLGVBQUE7RUFDQSw2QkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSx5Q0FBQTtBQUVSO0FBQUk7RUFDSSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0FBRVI7QUFBSTtFQUNJLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7QUFFUjtBQURRO0VBQ0ksa0JBQUE7QUFHWjtBQUFJO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxTQUFBO0VBQ0EseUNBQUE7RUFDQSxzQkFBQTtFQUNBLGNBQUE7QUFFUjtBQUNJO0VBQ0ksWUFBQTtFQUNBLG1CQUFBO0FBQ1I7QUFDSTtFQUNJLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsU0FBQTtFQUNBLHlDQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQUNSO0FBQ0k7RUFFSSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxTQUFBO0VBQ0EseUNBQUE7RUFDQSxzQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0FBQVI7QUFFSTtFQUNJLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxVQUFBO0VBQ0EsbUJBQUE7QUFBUjtBQUVJO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtBQUFSO0FBRUk7RUFDRyx1QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxrQkFBQTtBQUFQO0FBRUk7RUFFSSx1QkFBQTtFQUNELFlBQUE7RUFDQSxtQkFBQTtFQUNBLG9HQUFBO0VBQ0EsMkJBQUE7RUFDQSxjQUFBO0FBRFA7QUFHSTtFQUNJLGNBQUE7RUFDQSxlQUFBO0VBQ0EsNENBQUE7RUFDQSxtQkFBQTtBQURSO0FBSU07RUFDRSxZQUFBO0VBQ0Esb0dBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUFGUjtBQU1BO0VBQ0ksdUJBQUE7RUFDQSxtQkFBQTtFQUNBLFlBQUE7QUFISjtBQVFRO0VBQ0ksa0JBQUE7RUFDQSxRQUFBO0VBQ0EsVUFBQTtFQUNBLDJCQUFBO0VBQ0EsVUFBQTtBQUxaO0FBT1E7RUFDSSxXQUFBO0FBTFoiLCJmaWxlIjoiYnJhbmNoLWxvZ2luLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsibWF0LWNhcmQuY2FyZF9jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDkwJTtcclxuICAgIGhlaWdodDogNTMwcHg7XHJcbiAgICBtaW4taGVpZ2h0OiA1MDBweDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBtYXJnaW46IDcwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIvYXNzZXRzL2ltYWdlcy9icmFuY2gtbG9naW4tYmFja2dyb3VuZC5wbmdcIik7XHJcbiAgICAuYm9yZGVyLXRleHQge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDIycHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgICAgICBmb250LWZhbWlseTogJ2JpZyBjYXNsb24nLG1lZGl1bTtcclxuICAgICAgICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgICAgICAgY29sb3I6ICMwMDRCOTQ7XHJcbiAgICAgICAgZm9udC1zaXplOiAyMnB4O1xyXG4gICAgICAgIGZvbnQ6IG5vcm1hbCBub3JtYWwgbWVkaXVtIDMzcHgvNDBweCBCaWcgQ2FzbG9uO1xyXG4gICAgICB9XHJcbiAgICAuaGVhZGVye1xyXG4gICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICAgZm9udC1zaXplOiAzMHB4O1xyXG4gICAgICAgICBmb250LWZhbWlseTogJ3BvcHBpbnMnLG1lZGl1bTtcclxuICAgICAgICAgbWFyZ2luLXRvcDogMjdweDtcclxuICAgICAgICAgbWFyZ2luLWxlZnQ6IDEwJTtcclxuICAgIH1cclxuICAgIC5ib3JkZXItdGV4dDF7XHJcbiAgICAgICAgdGV4dC1hbGlnbjpyaWdodCA7XHJcbiAgICAgICAgZm9udC1zaXplOiAyMnB4O1xyXG4gICAgICAgIGZvbnQtZmFtaWx5OiAncG9wcGlucycsbGlnaHQ7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjVweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTElO1xyXG4gICAgICAgIGNvbG9yOiAjMDUxQTJEO1xyXG4gICAgICAgIGxldHRlci1zcGFjaW5nOiAwLjE0cHg7XHJcbiAgICAgICAgZm9udDogbm9ybWFsIG5vcm1hbCAzMDAgMjJweC8zM3B4IFBvcHBpbnM7XHJcbiAgICB9XHJcbiAgICAuQnJhbmNoX2NvZGV7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IDEwMHB4O1xyXG4gICAgICAgIGxlZnQ6IDIwJTtcclxuICAgICAgICB3aWR0aDogNjAlO1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgICAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICB9XHJcbiAgICAucGFzc19jb2Rle1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiAyMzBweDtcclxuICAgICAgICBsZWZ0OiAyMCU7XHJcbiAgICAgICAgd2lkdGg6IDYwJTtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgICAgIG1hdC1yYWRpby1idXR0b24ge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLnBhc3NfY29kZTF7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IDE4MXB4O1xyXG4gICAgICAgIGxlZnQ6IDIwJTtcclxuICAgICAgICBmb250OiBub3JtYWwgbm9ybWFsIDMwMCAyMnB4LzMzcHggUG9wcGlucztcclxuICAgICAgICBsZXR0ZXItc3BhY2luZzogMC4xNHB4O1xyXG4gICAgICAgIGNvbG9yOiAjMDUxQTJEO1xyXG4gICAgfVxyXG5cclxuICAgIC5jbGlja19idG57XHJcbiAgICAgICAgaGVpZ2h0OiA1N3B4O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICB9XHJcbiAgICAub3RwX2NvZGV7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IDI5MHB4O1xyXG4gICAgICAgIGxlZnQ6IDIwJTtcclxuICAgICAgICBmb250OiBub3JtYWwgbm9ybWFsIDMwMCAyMnB4LzMzcHggUG9wcGlucztcclxuICAgICAgICBsZXR0ZXItc3BhY2luZzogMC4xNHB4O1xyXG4gICAgICAgIGNvbG9yOiAjQjRCNEI0O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIH1cclxuICAgIC5lbWFpbF9jb2Rle1xyXG4gICAgICAgIC8vIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiAzMjBweDtcclxuICAgICAgICBsZWZ0OiAyMCU7XHJcbiAgICAgICAgZm9udDogbm9ybWFsIG5vcm1hbCAzMDAgMjJweC8zM3B4IFBvcHBpbnM7XHJcbiAgICAgICAgbGV0dGVyLXNwYWNpbmc6IDAuMTRweDtcclxuICAgICAgICBjb2xvcjogI0I0QjRCNDtcclxuICAgICAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICB9XHJcbiAgICAuZW1haWxfdmFsdWV7XHJcbiAgICAgICAgbGVmdDogNjI1cHg7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogMzIwcHg7XHJcbiAgICAgICAgd2lkdGg6IDI5JTtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgfVxyXG4gICAgLnJlc2V0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiA0NTBweDtcclxuICAgICAgICBsZWZ0OiAyMCU7XHJcbiAgICAgICAgd2lkdGg6IDYwJTtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgfVxyXG4gICAgLmJybmNoLXJlc2V0e1xyXG4gICAgICAgd2lkdGg6IDI4N3B4ICFpbXBvcnRhbnQ7XHJcbiAgICAgICBoZWlnaHQ6IDQzcHg7XHJcbiAgICAgICBib3JkZXItcmFkaXVzOiA5N3B4O1xyXG4gICAgICAgYmFja2dyb3VuZDogI0ZGRkVGRSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICAgICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gICAgICAgbWFyZ2luLWxlZnQ6IC00NXB4O1xyXG4gICAgfVxyXG4gICAgLmJybmNoX2xvZ2lue1xyXG4gICAgICAgIC8vIHdpZHRoOiA1MDBweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIHdpZHRoOiA0MDhweCAhaW1wb3J0YW50O1xyXG4gICAgICAgaGVpZ2h0OiA0M3B4O1xyXG4gICAgICAgYm9yZGVyLXJhZGl1czogOTdweDtcclxuICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MUEyRCAwJSwgIzAwNEM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjMDAwMDAwMDA7XHJcbiAgICAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIH1cclxuICAgIC5zdWJtaXRCdG4ge1xyXG4gICAgICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgICBmb250OiBub3JtYWwgbm9ybWFsIG1lZGl1bSAyMHB4LzU5cHggUG9wcGlucztcclxuICAgICAgICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gICAgICAgIC8vIG1hcmdpbi10b3A6IC03cHg7XHJcbiAgICAgIH1cclxuICAgICAgLk5leHRidG4ge1xyXG4gICAgICAgIGhlaWdodDogMzRweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFBMkQgMCUsICMwMDRDOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IDUwJTtcclxuICAgICAgICByaWdodDogMDtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICAgIH1cclxufVxyXG5cclxuOjpuZy1kZWVwIC5icmFuY2hfbG9naW5fcGFnZSAubWF0LWZvcm0tZmllbGQtYXBwZWFyYW5jZS1vdXRsaW5lIC5tYXQtZm9ybS1maWVsZC1vdXRsaW5lIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIGhlaWdodDogNjBweDtcclxufVxyXG5cclxuOjpuZy1kZWVwIC5wYXNzX2NvZGV7XHJcbiAgICAubWF0LXJhZGlvLWxhYmVsIHtcclxuICAgICAgICAubWF0LXJhZGlvLWNvbnRhaW5lciB7XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICAgICAgdG9wOiA1NSU7XHJcbiAgICAgICAgICAgIGxlZnQ6IDIwcHg7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgICAgICAgICAgei1pbmRleDogMjtcclxuICAgICAgICB9XHJcbiAgICAgICAgJi1jb250ZW50IHtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59Il19 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BranchLoginComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-branch-login',
+                templateUrl: './branch-login.component.html',
+                styleUrls: ['./branch-login.component.scss']
+            }]
+    }], function () { return [{ type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "VVaf":
 /*!***************************************************!*\
   !*** ./src/app/views/sessions/sessions.module.ts ***!
@@ -1799,18 +2036,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _error_error_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./error/error.component */ "NjAb");
 /* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./signin/signin.component */ "Ekgz");
 /* harmony import */ var _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./fingerprint/fingerprint.component */ "hxFr");
-/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "lDzL");
-/* harmony import */ var app_shared_shared_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! app/shared/shared.module */ "PCNd");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ng2-charts */ "LPYB");
-/* harmony import */ var _otp_otp_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./otp/otp.component */ "KvEN");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./login/login.component */ "OoMb");
-/* harmony import */ var _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular-material-extensions/select-country */ "6xI8");
-/* harmony import */ var _others_scanner_scanner_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../others/scanner/scanner.component */ "qxMs");
-/* harmony import */ var _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @zxing/ngx-scanner */ "IyRd");
-/* harmony import */ var _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./logout-popup/logout-popup.component */ "8n/o");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/dialog */ "0IaG");
-/* harmony import */ var _otp_onlynumber_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./otp/onlynumber.directive */ "Kj45");
-/* harmony import */ var _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./walk-in-customer/walk-in-customer.component */ "UXNm");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/checkbox */ "bSwM");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/chips */ "A5z7");
+/* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/grid-list */ "zkoq");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/list */ "MutI");
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/menu */ "STbY");
+/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/progress-bar */ "bv9b");
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/radio */ "QibW");
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/slide-toggle */ "1jcm");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/tabs */ "wZkO");
+/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "lDzL");
+/* harmony import */ var app_shared_shared_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! app/shared/shared.module */ "PCNd");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ng2-charts */ "LPYB");
+/* harmony import */ var _otp_otp_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./otp/otp.component */ "KvEN");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./login/login.component */ "OoMb");
+/* harmony import */ var _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular-material-extensions/select-country */ "6xI8");
+/* harmony import */ var _others_scanner_scanner_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../others/scanner/scanner.component */ "qxMs");
+/* harmony import */ var _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @zxing/ngx-scanner */ "IyRd");
+/* harmony import */ var _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./logout-popup/logout-popup.component */ "8n/o");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/material/dialog */ "0IaG");
+/* harmony import */ var _otp_onlynumber_directive__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./otp/onlynumber.directive */ "Kj45");
+/* harmony import */ var _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./walk-in-customer/walk-in-customer.component */ "UXNm");
+/* harmony import */ var _branch_login_branch_login_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./branch-login/branch-login.component */ "VQ1A");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/form-field */ "kmnG");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1851,55 +2118,56 @@ SessionsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInj
             _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"],
             ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["PerfectScrollbarModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-            _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_18__["MatSelectCountryModule"].forRoot('en'),
-            // MatListModule,
-            // MatIconModule,
-            // MatButtonModule,
-            // MatCardModule,
-            // MatMenuModule,
-            // MatSlideToggleModule,
-            // MatGridListModule,
-            // MatChipsModule,
-            // MatCheckboxModule,
-            // MatRadioModule,
-            // MatTabsModule,
-            // MatInputModule,
-            // MatProgressBarModule,
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"],
+            _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_31__["MatSelectCountryModule"].forRoot('en'),
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_20__["MatListModule"],
+            _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__["MatIconModule"],
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButtonModule"],
+            _angular_material_card__WEBPACK_IMPORTED_MODULE_14__["MatCardModule"],
+            _angular_material_menu__WEBPACK_IMPORTED_MODULE_21__["MatMenuModule"],
+            _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_24__["MatSlideToggleModule"],
+            _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_17__["MatGridListModule"],
+            _angular_material_chips__WEBPACK_IMPORTED_MODULE_16__["MatChipsModule"],
+            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_15__["MatCheckboxModule"],
+            _angular_material_radio__WEBPACK_IMPORTED_MODULE_23__["MatRadioModule"],
+            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_25__["MatTabsModule"],
+            _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_22__["MatProgressBarModule"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_35__["MatDialogModule"],
             _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"],
-            _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_13__["NgxDatatableModule"],
-            ng2_charts__WEBPACK_IMPORTED_MODULE_15__["ChartsModule"],
-            app_shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"],
-            _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_20__["ZXingScannerModule"],
+            _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__["NgxDatatableModule"],
+            ng2_charts__WEBPACK_IMPORTED_MODULE_28__["ChartsModule"],
+            app_shared_shared_module__WEBPACK_IMPORTED_MODULE_27__["SharedModule"],
+            _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_33__["ZXingScannerModule"],
+            _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__["MatFormFieldModule"],
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(_sessions_routing__WEBPACK_IMPORTED_MODULE_8__["SessionsRoutes"]),
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](SessionsModule, { declarations: [_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"], _others_scanner_scanner_component__WEBPACK_IMPORTED_MODULE_19__["ScannerComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_10__["ErrorComponent"], _signin_signin_component__WEBPACK_IMPORTED_MODULE_11__["SigninComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"], _otp_otp_component__WEBPACK_IMPORTED_MODULE_16__["OtpComponent"], _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_21__["LogoutPopupComponent"], _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__["FingerprintComponent"], _otp_onlynumber_directive__WEBPACK_IMPORTED_MODULE_23__["OnlynumberDirective"], _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_24__["WalkInCustomerComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+        ], _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](SessionsModule, { declarations: [_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"], _others_scanner_scanner_component__WEBPACK_IMPORTED_MODULE_32__["ScannerComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_10__["ErrorComponent"], _signin_signin_component__WEBPACK_IMPORTED_MODULE_11__["SigninComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_30__["LoginComponent"], _otp_otp_component__WEBPACK_IMPORTED_MODULE_29__["OtpComponent"], _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_34__["LogoutPopupComponent"], _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__["FingerprintComponent"], _otp_onlynumber_directive__WEBPACK_IMPORTED_MODULE_36__["OnlynumberDirective"], _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_37__["WalkInCustomerComponent"], _branch_login_branch_login_component__WEBPACK_IMPORTED_MODULE_38__["BranchLoginComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
         _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
         app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_5__["SharedMaterialModule"],
         _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"],
         ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["PerfectScrollbarModule"],
-        _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_18__["MatSelectCountryModule"], 
-        // MatListModule,
-        // MatIconModule,
-        // MatButtonModule,
-        // MatCardModule,
-        // MatMenuModule,
-        // MatSlideToggleModule,
-        // MatGridListModule,
-        // MatChipsModule,
-        // MatCheckboxModule,
-        // MatRadioModule,
-        // MatTabsModule,
-        // MatInputModule,
-        // MatProgressBarModule,
-        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"],
+        _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_31__["MatSelectCountryModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_20__["MatListModule"],
+        _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__["MatIconModule"],
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButtonModule"],
+        _angular_material_card__WEBPACK_IMPORTED_MODULE_14__["MatCardModule"],
+        _angular_material_menu__WEBPACK_IMPORTED_MODULE_21__["MatMenuModule"],
+        _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_24__["MatSlideToggleModule"],
+        _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_17__["MatGridListModule"],
+        _angular_material_chips__WEBPACK_IMPORTED_MODULE_16__["MatChipsModule"],
+        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_15__["MatCheckboxModule"],
+        _angular_material_radio__WEBPACK_IMPORTED_MODULE_23__["MatRadioModule"],
+        _angular_material_tabs__WEBPACK_IMPORTED_MODULE_25__["MatTabsModule"],
+        _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_22__["MatProgressBarModule"],
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_35__["MatDialogModule"],
         _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"],
-        _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_13__["NgxDatatableModule"],
-        ng2_charts__WEBPACK_IMPORTED_MODULE_15__["ChartsModule"],
-        app_shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"],
-        _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_20__["ZXingScannerModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]] }); })();
+        _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__["NgxDatatableModule"],
+        ng2_charts__WEBPACK_IMPORTED_MODULE_28__["ChartsModule"],
+        app_shared_shared_module__WEBPACK_IMPORTED_MODULE_27__["SharedModule"],
+        _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_33__["ZXingScannerModule"],
+        _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__["MatFormFieldModule"],
+        _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]], exports: [_angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](SessionsModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -1912,30 +2180,34 @@ SessionsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInj
                     _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"],
                     ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["PerfectScrollbarModule"],
                     _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                    _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_18__["MatSelectCountryModule"].forRoot('en'),
-                    // MatListModule,
-                    // MatIconModule,
-                    // MatButtonModule,
-                    // MatCardModule,
-                    // MatMenuModule,
-                    // MatSlideToggleModule,
-                    // MatGridListModule,
-                    // MatChipsModule,
-                    // MatCheckboxModule,
-                    // MatRadioModule,
-                    // MatTabsModule,
-                    // MatInputModule,
-                    // MatProgressBarModule,
-                    _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"],
+                    _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_31__["MatSelectCountryModule"].forRoot('en'),
+                    _angular_material_list__WEBPACK_IMPORTED_MODULE_20__["MatListModule"],
+                    _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__["MatIconModule"],
+                    _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButtonModule"],
+                    _angular_material_card__WEBPACK_IMPORTED_MODULE_14__["MatCardModule"],
+                    _angular_material_menu__WEBPACK_IMPORTED_MODULE_21__["MatMenuModule"],
+                    _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_24__["MatSlideToggleModule"],
+                    _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_17__["MatGridListModule"],
+                    _angular_material_chips__WEBPACK_IMPORTED_MODULE_16__["MatChipsModule"],
+                    _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_15__["MatCheckboxModule"],
+                    _angular_material_radio__WEBPACK_IMPORTED_MODULE_23__["MatRadioModule"],
+                    _angular_material_tabs__WEBPACK_IMPORTED_MODULE_25__["MatTabsModule"],
+                    _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_22__["MatProgressBarModule"],
+                    _angular_material_dialog__WEBPACK_IMPORTED_MODULE_35__["MatDialogModule"],
                     _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"],
-                    _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_13__["NgxDatatableModule"],
-                    ng2_charts__WEBPACK_IMPORTED_MODULE_15__["ChartsModule"],
-                    app_shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"],
-                    _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_20__["ZXingScannerModule"],
+                    _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__["NgxDatatableModule"],
+                    ng2_charts__WEBPACK_IMPORTED_MODULE_28__["ChartsModule"],
+                    app_shared_shared_module__WEBPACK_IMPORTED_MODULE_27__["SharedModule"],
+                    _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_33__["ZXingScannerModule"],
+                    _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__["MatFormFieldModule"],
+                    _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"],
                     _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(_sessions_routing__WEBPACK_IMPORTED_MODULE_8__["SessionsRoutes"]),
                 ],
-                entryComponents: [_fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__["FingerprintComponent"], _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_21__["LogoutPopupComponent"]],
-                declarations: [_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"], _others_scanner_scanner_component__WEBPACK_IMPORTED_MODULE_19__["ScannerComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_10__["ErrorComponent"], _signin_signin_component__WEBPACK_IMPORTED_MODULE_11__["SigninComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"], _otp_otp_component__WEBPACK_IMPORTED_MODULE_16__["OtpComponent"], _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_21__["LogoutPopupComponent"], _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__["FingerprintComponent"], _otp_onlynumber_directive__WEBPACK_IMPORTED_MODULE_23__["OnlynumberDirective"], _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_24__["WalkInCustomerComponent"]]
+                entryComponents: [_fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__["FingerprintComponent"], _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_34__["LogoutPopupComponent"]],
+                declarations: [_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"], _others_scanner_scanner_component__WEBPACK_IMPORTED_MODULE_32__["ScannerComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_10__["ErrorComponent"], _signin_signin_component__WEBPACK_IMPORTED_MODULE_11__["SigninComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_30__["LoginComponent"], _otp_otp_component__WEBPACK_IMPORTED_MODULE_29__["OtpComponent"], _logout_popup_logout_popup_component__WEBPACK_IMPORTED_MODULE_34__["LogoutPopupComponent"], _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_12__["FingerprintComponent"], _otp_onlynumber_directive__WEBPACK_IMPORTED_MODULE_36__["OnlynumberDirective"], _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_37__["WalkInCustomerComponent"], _branch_login_branch_login_component__WEBPACK_IMPORTED_MODULE_38__["BranchLoginComponent"]],
+                exports: [
+                    _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"]
+                ]
             }]
     }], null, null); })();
 
@@ -1960,6 +2232,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./fingerprint/fingerprint.component */ "hxFr");
 /* harmony import */ var _walk_in_customer_walk_in_customer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./walk-in-customer/walk-in-customer.component */ "UXNm");
 /* harmony import */ var _others_appointment_id_appointment_id_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../others/appointment-id/appointment-id.component */ "Rfrn");
+/* harmony import */ var _branch_login_branch_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./branch-login/branch-login.component */ "VQ1A");
+
 
 
 
@@ -2012,6 +2286,10 @@ const SessionsRoutes = [
             {
                 path: "scanFinger",
                 component: _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_5__["FingerprintComponent"],
+            },
+            {
+                path: "branch-login",
+                component: _branch_login_branch_login_component__WEBPACK_IMPORTED_MODULE_8__["BranchLoginComponent"],
             },
         ]
     }

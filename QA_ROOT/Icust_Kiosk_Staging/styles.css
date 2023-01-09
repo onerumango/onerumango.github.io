@@ -215,6 +215,9 @@ button.toast-close-button {
     width: 16px;
     height: 10px;
   }
+.snackbar{
+    margin-top: 13% !important;
+  }
 .currency-flag-lg {
     width: 36px;
     height: 24px;
@@ -2531,6 +2534,7 @@ b {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 48px;
+  background-color: #FFFFFF;
 }
 .app-admin-container.navigation-top .sidebar-panel {
   overflow: hidden;
