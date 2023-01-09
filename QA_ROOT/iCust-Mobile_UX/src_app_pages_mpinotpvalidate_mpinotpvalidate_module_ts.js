@@ -457,6 +457,182 @@ MpinotpvalidatePage = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
+/***/ 26009:
+/*!**********************************************************!*\
+  !*** ./src/app/services/finger-print-capture.service.ts ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": () => (/* binding */ API_URL),
+/* harmony export */   "FingerPrintCaptureService": () => (/* binding */ FingerPrintCaptureService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 84505);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 88759);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 92340);
+
+
+
+
+
+
+
+const API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.BASE_URL;
+let FingerPrintCaptureService = class FingerPrintCaptureService {
+    constructor(http, toastCtrl) {
+        this.http = http;
+        this.toastCtrl = toastCtrl;
+        this.userData = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject('');
+        this.getJSON_rd = function (url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('RDSERVICE', url, true);
+            xhr.responseType = 'text';
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status == 200) {
+                    callback(null, xhr.response);
+                }
+                else {
+                    callback(status);
+                }
+            };
+            xhr.send();
+        };
+    }
+    userDataService(data) {
+        this.userData.next(data);
+    }
+    /* NOTE:
+    biometric call type: webapi
+    lisence: used 60 free trail version
+    desc: currently using this service for finger print capturing
+     */
+    CallingSGIFPGetData() {
+        return this.http.get('http://localhost:8000/SGIFPCapture')
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((result) => {
+            console.log('result-->', result);
+            return result;
+        }));
+    }
+    handleError(arg0, arg1) {
+        throw new Error('Method not implemented.');
+    }
+    /* NOTE:
+    biometric call type: registered device service
+    lisence: paid
+    desc: currently not using this service
+     */
+    rdservice() {
+        var port;
+        var urlStr = '';
+        urlStr = 'http://localhost:11100/';
+        this.getJSON_rd(urlStr, function (err, data) {
+            if (err != null) {
+                alert('Something went wrong: ' + err);
+            }
+            else {
+                alert('Response:-' + String(data));
+            }
+        });
+    }
+    saveBiometric(capFingerPrint, fingerName, cId, screen) {
+        return this.http.post(`${API_URL}/rest/upload/saveOrUpdateBio/${fingerName}/${cId}/${screen}`, capFingerPrint);
+    }
+    errorCodeService(errorCode) {
+        var error = '';
+        if (errorCode == 1) {
+            error = 'Creation failed : A driver is missing/not correctly configured';
+        }
+        if (errorCode == 3) {
+            error = 'Please check again. Either driver is corrupted or Device is not connected';
+        }
+        if (errorCode == 2) {
+            error = 'Function failed ';
+        }
+        if (errorCode == 51) {
+            error = 'System file load failure';
+        }
+        if (errorCode == 52) {
+            error = 'Sensor chip initialization failed';
+        }
+        if (errorCode == 53) {
+            error = 'Sensor line dropped';
+        }
+        if (errorCode == 54) {
+            error = 'Timeout/Failed to scan. Clean your fingers and try again';
+        }
+        if (errorCode == 103 || errorCode == 104 || errorCode == 106) {
+            error = 'Match failed , try again';
+        }
+        console.log('error :: ', error);
+        this.openToast(`${error}`);
+    }
+    getCustInfoByFp(page, size, fingerIndex) {
+        var params;
+        console.log(`fingerIndex ${fingerIndex} and page ${page}`);
+        params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpParams().append('fingerIndex', fingerIndex); //.append('page', page);
+        return this.http.get(`${API_URL}/rest/upload/getCustomerDataByFp?${params}`);
+    }
+    getCustInfoByCustomerId(customerId) {
+        var params;
+        console.log(`customerId ${customerId}`);
+        params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpParams().append('customerId', customerId);
+        return this.http.get(`${API_URL}/rest/upload/getCustomerDataByFp?${params}`);
+    }
+    /* To-Do: https api capture */
+    CallingSGIFPCapture() {
+        console.log(" in service ");
+        return this.http.get('https://localhost:8443/SGIFPCapture')
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((result) => {
+            console.log('result-->', result);
+            return result;
+        }));
+    }
+    /* To-Do: https api capture */
+    CallingSGIFPMatch(templeData1, templeData2) {
+        var secuLicc = "ae7VmpMA9ZwEGVYVr1LMWrqjCEx+eFmya9VX0v+vNfQ=";
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpParams()
+            .append('template1', templeData1)
+            .append('template2', templeData2);
+        //  .append('licstr',secuLicc);
+        //  .append('licstr',secuLicc);
+        // http://localhost:8000/SGIMatchScore
+        return this.http.post(`https://localhost:8443/SGIMatchScore`, params)
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((result) => {
+            // console.log('result-->', result)
+            return result;
+        }));
+    }
+    openToast(message) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastCtrl.create({
+                message: `${message}`,
+                duration: 5000,
+                position: 'middle'
+            });
+            toast.present();
+        });
+    }
+};
+FingerPrintCaptureService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController }
+];
+FingerPrintCaptureService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Injectable)({
+        providedIn: 'root'
+    })
+], FingerPrintCaptureService);
+
+
+
+/***/ }),
+
 /***/ 29343:
 /*!****************************************************************************!*\
   !*** ./src/app/pages/mpinotpvalidate/mpinotpvalidate.page.scss?ngResource ***!

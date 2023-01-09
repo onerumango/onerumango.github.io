@@ -91,16 +91,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SecuritycenterPage": () => (/* binding */ SecuritycenterPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _securitycenter_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./securitycenter.page.html?ngResource */ 5038);
 /* harmony import */ var _securitycenter_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./securitycenter.page.scss?ngResource */ 84046);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
 /* harmony import */ var _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/fingerprint-aio/ngx */ 63427);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
 
 
 
@@ -125,27 +125,35 @@ let SecuritycenterPage = class SecuritycenterPage {
         this.setmpinFlag = true;
         this.isFaceId = false;
         this.isFingerPrint = false;
+        this.isBioFeature = false;
+        this.isAndroid = false;
     }
     ngOnInit() {
-        var _a, _b, _c;
         this.buildBioAuthStateForm();
         this.currentUser = this.dataService.getCurrentUser();
         this.isDevice = this.platform.is('cordova');
-        this.isFaceId = ((_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.faceLoginEnable) ? true : false;
-        this.isFingerPrint = ((_b = this.currentUser) === null || _b === void 0 ? void 0 : _b.fingerprintLoginEnable) ? true : false;
-        this.setmpinFlag = ((_c = this.currentUser) === null || _c === void 0 ? void 0 : _c.mpinActive) ? true : false;
-        this.bioForm.get('isFaceId').patchValue(this.isFaceId);
-        this.bioForm.get('isFingerPrint').patchValue(this.isFingerPrint);
-        this.onChanges();
+        this.platform.ready().then(() => {
+            if (this.platform.is("android")) {
+                this.isAndroid = true;
+            }
+            if (this.platform.is('ios') || this.platform.is("iphone") || this.platform.is("ipad")) {
+                this.isAndroid = false;
+            }
+        });
         this.cdr.markForCheck();
     }
     buildBioAuthStateForm() {
         this.bioForm = this.fb.group({
-            isFaceId: [false, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-            isFingerPrint: [false, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]
+            faceId: [null],
+            fingerPrint: [null]
         });
     }
     ionViewWillEnter() {
+        var _a, _b, _c;
+        this.currentUser = this.dataService.getCurrentUser();
+        this.isFaceId = ((_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.faceLoginEnable) ? true : false;
+        this.isFingerPrint = ((_b = this.currentUser) === null || _b === void 0 ? void 0 : _b.fingerprintLoginEnable) ? true : false;
+        this.setmpinFlag = ((_c = this.currentUser) === null || _c === void 0 ? void 0 : _c.mpinActive) ? true : false;
     }
     goToHome() {
         this.router.navigate(['/profile']);
@@ -162,107 +170,69 @@ let SecuritycenterPage = class SecuritycenterPage {
     goToLoginActivity() {
         this.router.navigate(['/loginactivity']);
     }
-    onChanges() {
+    updateFinger(e) {
         var _a;
-        let customerId = (_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.customerId;
-        this.bioForm.get('isFaceId').valueChanges.subscribe(res => {
-            var _a, _b;
-            if (res) {
-                this.faio.isAvailable().then((result) => {
-                    var _a, _b, _c;
-                    if (result === "face" || result === "biometric") {
-                        let payload = {
-                            customerId: customerId,
-                            faceLoginEnable: (_a = this.bioForm.get('isFaceId')) === null || _a === void 0 ? void 0 : _a.value,
-                            fingerprintLoginEnable: (_b = this.bioForm.get('isFingerPrint')) === null || _b === void 0 ? void 0 : _b.value
-                        };
-                        this.apiProvider.registerFaceIdORFingerPrint(payload).subscribe((res) => {
-                            localStorage.setItem('customer_details', JSON.stringify(res.data));
-                            this.dataService.isLoggedIn.next(true);
-                            this.presentToast("Biometric Authentication has been Enabled!");
-                        }, err => {
-                            console.log(err);
-                        });
-                    }
-                    else {
-                        this.presentToast("Biometric Authentication Not Available in your device!");
-                        (_c = this.bioForm.get('isFaceId')) === null || _c === void 0 ? void 0 : _c.patchValue(false);
-                    }
-                    this.cdr.markForCheck();
-                }).catch((error) => {
-                    var _a;
-                    this.presentToast("Biometric Authentication Not Available in your device!");
-                    (_a = this.bioForm.get('isFaceId')) === null || _a === void 0 ? void 0 : _a.patchValue(false);
-                });
+        let title = 'fingerprint';
+        if ((_a = this.bioForm.get('fingerPrint')) === null || _a === void 0 ? void 0 : _a.value) {
+            this.checkHardwareAvailability(title, true);
+        }
+        else {
+            this.setBioAuth(title, false);
+        }
+    }
+    updateFaceId(e) {
+        var _a;
+        let title = 'faceId';
+        if ((_a = this.bioForm.get('faceId')) === null || _a === void 0 ? void 0 : _a.value) {
+            this.checkHardwareAvailability(title, true);
+        }
+        else {
+            this.setBioAuth(title, false);
+        }
+    }
+    checkHardwareAvailability(title, status) {
+        this.faio.isAvailable().then((result) => {
+            console.log("result of bio", result);
+            if (result === "finger" || result === "face" || result === "biometric") {
+                this.isBioFeature = true;
+                this.setBioAuth(title, status);
             }
             else {
-                console.log("update");
-                let payload = {
-                    customerId: customerId,
-                    faceLoginEnable: (_a = this.bioForm.get('isFaceId')) === null || _a === void 0 ? void 0 : _a.value,
-                    fingerprintLoginEnable: (_b = this.bioForm.get('isFingerPrint')) === null || _b === void 0 ? void 0 : _b.value
-                };
-                this.apiProvider.registerFaceIdORFingerPrint(payload).subscribe((res) => {
-                    localStorage.setItem('customer_details', JSON.stringify(res.data));
-                    this.dataService.isLoggedIn.next(true);
-                    this.presentToast("Biometric Authentication has been Enabled!");
-                    this.cdr.markForCheck();
-                }, err => {
-                    console.log(err);
-                });
+                this.isBioFeature = false;
             }
+        }).catch((error) => {
+            console.log(error);
+            this.presentToast("BIOMETRIC UNAVAILABLE!");
         });
-        this.bioForm.get('isFingerPrint').valueChanges.subscribe(res => {
-            var _a, _b;
-            if (res) {
-                this.faio.isAvailable().then((result) => {
-                    var _a, _b, _c;
-                    if (result === "face" || result === "biometric") {
-                        let payload = {
-                            customerId: customerId,
-                            faceLoginEnable: (_a = this.bioForm.get('isFaceId')) === null || _a === void 0 ? void 0 : _a.value,
-                            fingerprintLoginEnable: (_b = this.bioForm.get('isFingerPrint')) === null || _b === void 0 ? void 0 : _b.value
-                        };
-                        this.apiProvider.registerFaceIdORFingerPrint(payload).subscribe((res) => {
-                            localStorage.setItem('customer_details', JSON.stringify(res.data));
-                            this.dataService.isLoggedIn.next(true);
-                            this.presentToast("Biometric Authentication has been Enabled!");
-                        }, err => {
-                            console.log(err);
-                        });
-                    }
-                    else {
-                        this.presentToast("Biometric Authentication Not Available in your device!");
-                        (_c = this.bioForm.get('isFingerPrint')) === null || _c === void 0 ? void 0 : _c.patchValue(false);
-                    }
-                    this.cdr.markForCheck();
-                }).catch((error) => {
-                    var _a;
-                    this.presentToast("Biometric Authentication Not Available in your device!");
-                    (_a = this.bioForm.get('isFingerPrint')) === null || _a === void 0 ? void 0 : _a.patchValue(false);
-                    this.cdr.markForCheck();
-                });
+    }
+    setBioAuth(title, status) {
+        var _a, _b, _c;
+        let payload = {
+            customerId: (_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.customerId,
+            faceLoginEnable: (_b = this.bioForm.get('faceId')) === null || _b === void 0 ? void 0 : _b.value,
+            fingerprintLoginEnable: (_c = this.bioForm.get('fingerPrint')) === null || _c === void 0 ? void 0 : _c.value
+        };
+        this.apiProvider.registerFaceIdORFingerPrint(payload).subscribe((res) => {
+            localStorage.setItem('customer_details', JSON.stringify(res.data));
+            this.dataService.isLoggedIn.next(true);
+            if (status) {
+                if (this.isFaceId || this.isFingerPrint) {
+                    return;
+                }
+                else {
+                    this.presentToast(`${title} Enabled Successfully!`);
+                }
             }
             else {
-                console.log("update");
-                let payload = {
-                    customerId: customerId,
-                    faceLoginEnable: (_a = this.bioForm.get('isFaceId')) === null || _a === void 0 ? void 0 : _a.value,
-                    fingerprintLoginEnable: (_b = this.bioForm.get('isFingerPrint')) === null || _b === void 0 ? void 0 : _b.value
-                };
-                this.apiProvider.registerFaceIdORFingerPrint(payload).subscribe((res) => {
-                    localStorage.setItem('customer_details', JSON.stringify(res.data));
-                    this.dataService.isLoggedIn.next(true);
-                    this.presentToast("Biometric Authentication has been Enabled!");
-                    this.cdr.markForCheck();
-                }, err => {
-                    console.log(err);
-                });
+                this.presentToast(`${title} Disabled Successfully!`);
             }
+            this.cdr.markForCheck();
+        }, (err) => {
+            console.log(err);
         });
     }
     presentToast(msg, position) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastController.create({
                 message: msg,
                 duration: 800,
@@ -273,17 +243,17 @@ let SecuritycenterPage = class SecuritycenterPage {
     }
 };
 SecuritycenterPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ChangeDetectorRef },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef },
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__.DataService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ToastController },
     { type: _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_4__.FingerprintAIO },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.Platform },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.Platform },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService }
 ];
-SecuritycenterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+SecuritycenterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-securitycenter',
         template: _securitycenter_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_securitycenter_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -310,7 +280,7 @@ module.exports = "ion-avatar {\n  --border-radius: unset;\n}\n\n.avatar-img {\n 
   \**************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goToHome()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n\r\n  <ion-item class=\"item\" (click)=\"changePassword()\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/key-sec.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      Change Password\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n\r\n  <ion-item class=\"item\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/transaction-sec.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      My Transaction Limits\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n\r\n  <ion-item class=\"item\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/card-service.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      Manage Your Card\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n\r\n  <ion-item class=\"item\" (click)=\"goToLoginActivity()\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/transaction-sec.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      Login Activity\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n  <form *ngIf=\"bioForm\" [formGroup]=\"bioForm\">\r\n    <ion-item class=\"item\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/finger-sec.svg\" alt=\"Ionic logo\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\"> Enable/Disable Fingerprint</ion-label>\r\n      <ion-toggle slot=\"end\" formControlName=\"isFingerPrint\" [disabled]=\"!isDevice\">\r\n      </ion-toggle>\r\n    </ion-item>\r\n\r\n    <ion-item class=\"item\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/face-id-sec.svg\" alt=\"Ionic logo\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\">Enable/Disable Face ID</ion-label>\r\n      <ion-toggle slot=\"end\" formControlName=\"isFaceId\" [disabled]=\"!isDevice\">\r\n      </ion-toggle>\r\n    </ion-item>\r\n  </form>\r\n\r\n\r\n  <div *ngIf=\"setmpinFlag; else showChangeMpin\">\r\n    <ion-item class=\"item\" lines=\"none\" (click)=\"changempin()\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/feather-lock-sec.svg\" alt=\"MPIN\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\">\r\n        Change login mPIN\r\n      </ion-label>\r\n      <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n    </ion-item>\r\n  </div>\r\n\r\n  <ng-template #showChangeMpin>\r\n    <ion-item class=\"item\" lines=\"none\" (click)=\"setmpin()\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/feather-lock-sec.svg\" alt=\"MPIN\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\">\r\n        Set login mPIN\r\n      </ion-label>\r\n      <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n    </ion-item>\r\n  </ng-template>\r\n\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goToHome()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n\r\n  <ion-item class=\"item\" (click)=\"changePassword()\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/key-sec.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      Change Password\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n\r\n  <ion-item class=\"item\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/transaction-sec.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      My Transaction Limits\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n\r\n  <ion-item class=\"item\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/card-service.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      Manage Your Card\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n\r\n  <ion-item class=\"item\" (click)=\"goToLoginActivity()\">\r\n    <ion-avatar slot=\"start\">\r\n      <img class=\"avatar-img\" src=\"assets/icon/security/transaction-sec.svg\" alt=\"Ionic logo\">\r\n    </ion-avatar>\r\n    <ion-label class=\"labelCard\">\r\n      Login Activity\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n  <form *ngIf=\"bioForm\" [formGroup]=\"bioForm\">\r\n    <ion-item class=\"item\" *ngIf=\"isAndroid\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/finger-sec.svg\" alt=\"Ionic logo\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\"> Enable/Disable Fingerprint</ion-label>\r\n      <ion-toggle slot=\"end\" enableOnOffLabels=\"false\" (ngModelChange)=\"updateFinger()\" [checked]=\"isFingerPrint\" formControlName=\"fingerPrint\">\r\n      </ion-toggle>\r\n    </ion-item>\r\n\r\n    <!-- [disabled]=\"!isDevice\" -->\r\n    <ion-item class=\"item\" *ngIf=\"!isAndroid\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/face-id-sec.svg\" alt=\"Ionic logo\">  \r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\">Enable/Disable Face ID</ion-label>\r\n      <ion-toggle slot=\"end\" enableOnOffLabels=\"false\" (ngModelChange)=\"updateFaceId()\" [checked]=\"isFaceId\" formControlName=\"faceId\">\r\n      </ion-toggle>\r\n    </ion-item>\r\n  </form>\r\n\r\n\r\n  <div *ngIf=\"setmpinFlag; else showChangeMpin\">\r\n    <ion-item class=\"item\" lines=\"none\" (click)=\"changempin()\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/feather-lock-sec.svg\" alt=\"MPIN\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\">\r\n        Change login mPIN\r\n      </ion-label>\r\n      <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n    </ion-item>\r\n  </div>\r\n\r\n  <ng-template #showChangeMpin>\r\n    <ion-item class=\"item\" lines=\"none\" (click)=\"setmpin()\">\r\n      <ion-avatar slot=\"start\">\r\n        <img class=\"avatar-img\" src=\"assets/icon/security/feather-lock-sec.svg\" alt=\"MPIN\">\r\n      </ion-avatar>\r\n      <ion-label class=\"labelCard\">\r\n        Set login mPIN\r\n      </ion-label>\r\n      <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n    </ion-item>\r\n  </ng-template>\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 

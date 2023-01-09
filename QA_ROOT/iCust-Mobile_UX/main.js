@@ -40,6 +40,10 @@ const routes = [
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("src_app_pages_change-password_change-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/change-password/change-password.module */ 68292)).then((m) => m.ChangePasswordPageModule),
     },
     {
+        path: 'internet',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_no-internet_no-internet_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/no-internet/no-internet.module */ 62692)).then((m) => m.NoInternetPageModule),
+    },
+    {
         path: 'mpin',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("default-src_app_pages_setmpin_setmpin_page_ts"), __webpack_require__.e("src_app_pages_mpin_mpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/mpin/mpin.module */ 73777)).then(m => m.MpinPageModule)
     },
@@ -224,19 +228,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component.html?ngResource */ 33383);
 /* harmony import */ var _app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss?ngResource */ 79259);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/device-access.service */ 34910);
 /* harmony import */ var _pages_unlockapp_unlockapp_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/unlockapp/unlockapp.page */ 80581);
 /* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/api.service */ 5830);
 /* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/data.service */ 52468);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 91714);
 /* harmony import */ var _services_back_button_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/back-button.service */ 97219);
+/* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/network/ngx */ 99118);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 12378);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 88623);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 64139);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 36312);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 29361);
+
+
+
 
 
 
@@ -252,7 +265,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, statusBar, api, config, device, dataService, modalCtrl, router, alert, sanitizer, menu, cdr, backButtonService) {
+    constructor(platform, statusBar, api, config, device, dataService, modalCtrl, router, alert, sanitizer, menu, network, cdr, backButtonService) {
         this.platform = platform;
         this.statusBar = statusBar;
         this.api = api;
@@ -264,18 +277,40 @@ let AppComponent = class AppComponent {
         this.alert = alert;
         this.sanitizer = sanitizer;
         this.menu = menu;
+        this.network = network;
         this.cdr = cdr;
         this.backButtonService = backButtonService;
         this.isFaceId = false;
         this.isFingerPrint = false;
         this.i = 0;
+        this.appIsOnline$ = undefined;
         //Check Permission on App Start
         this.device.getPhonePermission();
         this.initializeApp();
+        this.platform.resume.subscribe(() => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            console.log('Resume event detected');
+            localStorage.setItem('isShowed', "yes");
+        }));
+        this.platform.pause.subscribe(() => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            console.log('Pause event detected');
+            localStorage.setItem('isShowed', "no");
+        }));
     }
     ngOnInit() {
         var _a, _b, _c, _d, _e;
         this.currentUser = this.dataService.getCurrentUser();
+        this.checkInternet().subscribe(isOnline => {
+            this.checkInterent = isOnline;
+            console.log('interent', this.checkInterent);
+            if (this.checkInterent == true) {
+                console.log('Internet is working.');
+            }
+            else {
+                console.log('Internet is slow or not working.');
+                this.router.navigate(['internet'], { replaceUrl: true });
+            }
+            this.cdr.markForCheck();
+        });
         if (this.platform.is("cordova")) {
             if (this.currentUser !== null) {
                 this.getProfilePicture((_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.customerId);
@@ -324,8 +359,24 @@ let AppComponent = class AppComponent {
         });
         this.cdr.markForCheck();
     }
+    checkInternet() {
+        if (!window || !navigator || !('onLine' in navigator))
+            return;
+        this.appIsOnline$ = rxjs__WEBPACK_IMPORTED_MODULE_10__.Observable.create(observer => {
+            observer.next(true);
+        }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.mapTo)(true));
+        if (this.platform.is('cordova')) {
+            // on Device - when platform is cordova
+            this.appIsOnline$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.merge)(this.network.onConnect().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.mapTo)(true)), this.network.onDisconnect().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.mapTo)(false)));
+        }
+        else {
+            // on Browser - when platform is Browser
+            this.appIsOnline$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.merge)((0,rxjs__WEBPACK_IMPORTED_MODULE_13__.of)(navigator.onLine), (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.fromEvent)(window, 'online').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.mapTo)(true)), (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.fromEvent)(window, 'offline').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.mapTo)(false)));
+        }
+        return this.appIsOnline$;
+    }
     initUserContext() {
-        setInterval(() => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+        setInterval(() => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             this.getCurrentUser();
         }), 1000);
     }
@@ -340,7 +391,7 @@ let AppComponent = class AppComponent {
         });
     }
     presentModal() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalCtrl.create({
                 component: _pages_unlockapp_unlockapp_page__WEBPACK_IMPORTED_MODULE_3__.UnlockappPage,
             });
@@ -385,7 +436,7 @@ let AppComponent = class AppComponent {
         this.router.navigate(['notification']);
     }
     logoutApp() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             let alret = yield this.alert.create({
                 header: "Logout",
                 subHeader: "Are you sure want to Log out?",
@@ -414,22 +465,23 @@ let AppComponent = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.Platform },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.Platform },
     { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__.StatusBar },
     { type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.Config },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.Config },
     { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_2__.DeviceAccess },
     { type: _services_data_service__WEBPACK_IMPORTED_MODULE_5__.DataService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ModalController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.AlertController },
-    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__.DomSanitizer },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.MenuController },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ChangeDetectorRef },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.ModalController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_16__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.AlertController },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__.DomSanitizer },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.MenuController },
+    { type: _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_8__.Network },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_18__.ChangeDetectorRef },
     { type: _services_back_button_service__WEBPACK_IMPORTED_MODULE_7__.BackButtonService }
 ];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.Component)({
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_18__.Component)({
         selector: 'app-root',
         template: _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -451,29 +503,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 91714);
 /* harmony import */ var _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/barcode-scanner/ngx */ 5684);
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 6018);
-/* harmony import */ var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-owl-carousel-o */ 14978);
+/* harmony import */ var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ngx-owl-carousel-o */ 14978);
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ 40287);
 /* harmony import */ var mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mapmyindia-map-cordova-ionic-beta */ 64540);
 /* harmony import */ var mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var swiper_angular__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! swiper/angular */ 341);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var swiper_angular__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! swiper/angular */ 341);
 /* harmony import */ var _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/android-permissions/ngx */ 61832);
 /* harmony import */ var _directives_directive_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./directives/directive.module */ 27589);
 /* harmony import */ var _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/fingerprint-aio/ngx */ 63427);
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/file/ngx */ 12358);
 /* harmony import */ var _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/file-path/ngx */ 74375);
 /* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/crop/ngx */ 82475);
+/* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic-native/network/ngx */ 99118);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
 
 
 
@@ -497,19 +551,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_14__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_15__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_16__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_15__.BrowserModule,
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__.BrowserAnimationsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HttpClientModule,
-            ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_18__.CarouselModule,
-            swiper_angular__WEBPACK_IMPORTED_MODULE_19__.SwiperModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_20__.IonicModule.forRoot({
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__.BrowserModule,
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__.BrowserAnimationsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_19__.HttpClientModule,
+            ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_20__.CarouselModule,
+            swiper_angular__WEBPACK_IMPORTED_MODULE_21__.SwiperModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_22__.IonicModule.forRoot({
                 rippleEffect: true,
                 mode: 'md'
             }),
@@ -527,7 +583,9 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
             _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_7__.AndroidPermissions,
             _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_9__.FingerprintAIO,
             mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__.mmi,
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_21__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_20__.IonicRouteStrategy }
+            _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_13__.Network,
+            _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_14__.UniqueDeviceID,
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_23__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_22__.IonicRouteStrategy }
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
@@ -740,8 +798,7 @@ let ApiService = class ApiService {
         return this.http.post(`${API_URL}/rest/otp/generateOtp`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     verifyOtp(data) {
-        return this.http.put(`${API_URL}/rest/otp/validateOtp`, data);
-        // return this.http.put<any>(`${API_URL}/rest/otp/validateOtp`, data).pipe(catchError(this.errorHandler));
+        return this.http.put(`${API_URL}/rest/otp/validateOtp`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     cashWithdrawalSave(data) {
         console.log("enter inside api");
@@ -1100,6 +1157,8 @@ let DataService = class DataService {
         this.getAppointmentId = this.sendAppointmentId.asObservable();
         this.isLoggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(null);
         this.share = this.isLoggedIn.asObservable();
+        this.isAppOpened = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(false);
+        this.shareAppState = this.isAppOpened.asObservable();
     }
     shareTransactionId(params) {
         this.sendTransactionId.next(params);
@@ -1150,15 +1209,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/android-permissions/ngx */ 61832);
-/* harmony import */ var _capacitor_device__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @capacitor/device */ 4744);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
 
 
 
 
 let DeviceAccess = class DeviceAccess {
-    constructor(androidPermissions) {
+    constructor(androidPermissions, uniqueDeviceID) {
         this.androidPermissions = androidPermissions;
+        this.uniqueDeviceID = uniqueDeviceID;
     }
     getPhonePermission() {
         this.androidPermissions
@@ -1186,15 +1246,20 @@ let DeviceAccess = class DeviceAccess {
         });
     }
     getDeviceId() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
-            const info = (yield _capacitor_device__WEBPACK_IMPORTED_MODULE_1__.Device.getId()).uuid;
-            return info || '';
+        this.uniqueDeviceID.get()
+            .then((uuid) => {
+            const deviceUUID = uuid;
+            return deviceUUID || '';
+        })
+            .catch((error) => {
+            return '';
         });
     }
     ;
 };
 DeviceAccess.ctorParameters = () => [
-    { type: _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_0__.AndroidPermissions }
+    { type: _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_0__.AndroidPermissions },
+    { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_1__.UniqueDeviceID }
 ];
 DeviceAccess = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
@@ -1217,15 +1282,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ShowMessageService": () => (/* binding */ ShowMessageService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ 60598);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
 
 
 
 let ShowMessageService = class ShowMessageService {
-    constructor() {
+    constructor(toastController, alertController, router) {
+        this.toastController = toastController;
+        this.alertController = alertController;
+        this.router = router;
         this.errorData = [
             { "code": 400, "message": "Bad Request" },
             { "code": 401, "message": "Unauthorized" },
@@ -1239,53 +1308,63 @@ let ShowMessageService = class ShowMessageService {
         ];
     }
     errorMessage(status, errorResp) {
-        console.log("show msg", status);
-        console.log(errorResp);
-        console.log("err msg : " + errorResp.error.message);
         var errCode = status.toString();
         var errDesc = errorResp.error.message;
         if (errDesc === null || errDesc === undefined) {
             let i = 0;
             while (i < this.errorData.length) {
                 if (this.errorData[i].code === status) {
-                    // this.toast.error(this.errorData[i].message, '', {
-                    //   timeOut: 3000,
-                    //   progressBar: true,
-                    //   tapToDismiss: true,
-                    //   closeButton: true,
-                    //   easeTime: 300,
-                    //   extendedTimeOut: 1000
-                    // });
-                    // Swal.fire('Oops', this.errorData[i].message, 'error');
-                    // Swal.fire({
-                    //   title: this.errorData[i].message ,
-                    //   text:"<p style='font-size: 20px>status</p>",
-                    //   width: 600
-                    // })
                     errDesc = this.errorData[i].message;
                 }
                 i++;
             }
         }
         if (errDesc) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                icon: 'error',
-                // title:"Error Code : "+this.errorData[i].code ,
-                // text:"Error message : "+this.errorData[i].message,
-                title: "Error Code : " + errCode,
-                text: "Error message : " + errDesc.substring(0, 200),
-                width: 500,
-                // timer: 10000,
-                // timerProgressBar: true,
-                confirmButtonText: "OK",
-                confirmButtonColor: '#456EFE'
-            });
+            this.noNetworkAlert();
         }
     }
+    noNetworkAlert() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            if (this.alert != null) {
+                this.alert.dismiss();
+            }
+            this.alert = yield this.alertController.create({
+                header: 'Alert',
+                subHeader: "There seems to be a low network coverage area. Please try again later.",
+                cssClass: 'logout-alert',
+                buttons: [
+                    {
+                        role: 'Done',
+                        cssClass: 'alert-done',
+                        text: "Cancel"
+                    }
+                ],
+            });
+            yield this.alert.present();
+            const { role } = yield this.alert.onDidDismiss();
+            if (role == 'Done') {
+                this.router.navigate(['login-landing'], { replaceUrl: true });
+            }
+        });
+    }
+    presentToast(msg, position) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: msg,
+                duration: 800,
+                position: position || 'bottom'
+            });
+            toast.present();
+        });
+    }
 };
-ShowMessageService.ctorParameters = () => [];
-ShowMessageService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+ShowMessageService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+];
+ShowMessageService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
         providedIn: 'root'
     })
 ], ShowMessageService);
@@ -1617,7 +1696,7 @@ module.exports = ".mainDiv {\n  margin-top: 30px;\n}\n\n.new-background-color {\
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.11</h6>\r\n          <p class=\"app-font version-color\">Build 11</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.12</h6>\r\n          <p class=\"app-font version-color\">Build 12</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 

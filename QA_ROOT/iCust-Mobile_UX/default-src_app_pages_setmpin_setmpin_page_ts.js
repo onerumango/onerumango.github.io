@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
-/* harmony import */ var src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/device-access.service */ 34910);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
 
 
 
@@ -35,13 +35,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SetmpinPage = class SetmpinPage {
-    constructor(router, location, api, fb, toastCtrl, device, dataService) {
+    constructor(router, location, api, fb, toastCtrl, uniqueDeviceID, dataService) {
         this.router = router;
         this.location = location;
         this.api = api;
         this.fb = fb;
         this.toastCtrl = toastCtrl;
-        this.device = device;
+        this.uniqueDeviceID = uniqueDeviceID;
         this.dataService = dataService;
         this.isLoading = false;
         this.newMpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl();
@@ -67,6 +67,10 @@ let SetmpinPage = class SetmpinPage {
             mpin: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
             confirmMpin: [],
         });
+        this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
+    }
+    ionViewWillEnter() {
+        this.getUniqueDeviceID();
     }
     back() {
         this.location.back();
@@ -84,6 +88,17 @@ let SetmpinPage = class SetmpinPage {
             toast.present();
         });
     }
+    getUniqueDeviceID() {
+        this.uniqueDeviceID.get()
+            .then((uuid) => {
+            console.log(uuid);
+            this.deviceUUID = uuid;
+        })
+            .catch((error) => {
+            console.log(error);
+            this.deviceUUID = "";
+        });
+    }
     setMpin() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
             if (!this.newMpin.value || this.newMpin.value < 4 || !this.mpin.value || this.mpin.value.length < 4) {
@@ -94,10 +109,9 @@ let SetmpinPage = class SetmpinPage {
                 this.openToast('New and current mPin did not match');
                 return;
             }
-            const deviceId = yield this.device.getDeviceId();
             this.mpinobj.phoneNumber = this.customerPhonenum;
             this.mpinobj.mpin = this.mpin.value;
-            this.mpinobj.deviceId = deviceId;
+            this.mpinobj.deviceId = this.deviceUUID;
             if (this.newMpin.value !== this.mpin.value) {
                 this.openToast('mPin did not match');
                 return;
@@ -106,14 +120,14 @@ let SetmpinPage = class SetmpinPage {
                 .setMpin(this.mpinobj)
                 .subscribe((res) => {
                 if (res.status == 200) {
-                    localStorage.setItem('deviceId', deviceId);
+                    localStorage.setItem('deviceId', this.deviceUUID);
                     localStorage.setItem('customer_details', JSON.stringify(res.data));
                     this.dataService.isLoggedIn.next(true);
                     const navigationExtras = {
                         queryParams: {
                             'screenDetails': 'Set Login mPIN!',
                             'screenDescription': 'Your mPIN has been registered successfully',
-                            'screenName': 'setmpin'
+                            'screenName': this.screenNames.queryParams.screenName == "forgotmpin" ? 'forgotmpin' : 'setmpin'
                         },
                     };
                     this.api.sendNavParam(navigationExtras);
@@ -134,7 +148,7 @@ SetmpinPage.ctorParameters = () => [
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
-    { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_4__.DeviceAccess },
+    { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_4__.UniqueDeviceID },
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__.DataService }
 ];
 SetmpinPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([

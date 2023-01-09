@@ -575,10 +575,10 @@ let TimeSlotsComponent = class TimeSlotsComponent {
         const selectedDate = this.date.split('T')[0];
         console.log(selectedDate);
         const dt = new Date();
-        const currentDate = dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate();
+        const currentDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().length < 2 ? '0' + (dt.getMonth() + 1) : (dt.getMonth() + 1)}-${dt.getDate().toString().length < 2 ? ('0' + dt.getDate()) : dt.getDate()}`;
         console.log({ currentDate });
         const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: 'numeric', minute: 'numeric' });
-        if ((selectedDate) <= currentDate) {
+        if (new Date(selectedDate) <= new Date(currentDate)) {
             this.TimeSolts.forEach((ele, i) => {
                 const time = ele.time.split(":")[0].length < 2 ? '0' + ele.time : ele.time;
                 if (time < currentTime) {
@@ -688,7 +688,7 @@ let TimeSlotsComponent = class TimeSlotsComponent {
             console.log("in else");
             this.TimeSolts.forEach((element, i) => {
                 // const index = this.dateCollection.indexOf(element.time);
-                console.log(this.TimeSolts, i, element.time);
+                // console.log(this.TimeSolts, i, element.time);
                 if (!element.booked && element.time == time) {
                     this.TimeSolts[i].available = false;
                 }

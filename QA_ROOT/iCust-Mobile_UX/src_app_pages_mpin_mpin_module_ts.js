@@ -94,16 +94,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MpinPage": () => (/* binding */ MpinPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _mpin_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mpin.page.html?ngResource */ 40741);
 /* harmony import */ var _mpin_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mpin.page.scss?ngResource */ 89951);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var _setmpin_setmpin_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../setmpin/setmpin.page */ 76088);
 /* harmony import */ var src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/device-access.service */ 34910);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
+
 
 
 
@@ -115,13 +117,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let MpinPage = class MpinPage {
-    constructor(router, fb, api, toastCtrl, device) {
+    constructor(router, fb, api, toastCtrl, device, uniqueDeviceID) {
         this.router = router;
         this.fb = fb;
         this.api = api;
         this.toastCtrl = toastCtrl;
         this.device = device;
-        this.mpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl();
+        this.uniqueDeviceID = uniqueDeviceID;
+        this.mpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl();
         this.mpinobj = new _setmpin_setmpin_page__WEBPACK_IMPORTED_MODULE_3__.mpinObjects();
         this.isLoading = false;
         this.config = {
@@ -139,9 +142,23 @@ let MpinPage = class MpinPage {
     ngOnInit() {
         this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.mpinForm = this.fb.group({
-            phoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
-            mpin: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
-            deviceId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+            phoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+            mpin: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+            deviceId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+        });
+    }
+    ionViewWillEnter() {
+        this.getUniqueDeviceID();
+    }
+    getUniqueDeviceID() {
+        this.uniqueDeviceID.get()
+            .then((uuid) => {
+            console.log(uuid);
+            this.deviceUUID = uuid;
+        })
+            .catch((error) => {
+            console.log(error);
+            this.deviceUUID = "";
         });
     }
     back() {
@@ -151,16 +168,14 @@ let MpinPage = class MpinPage {
         this.router.navigateByUrl('/forgotmpin');
     }
     goToDashboard() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, function* () {
             if (!this.mpin.value || this.mpin.value.length < 4) {
                 this.openToast('Enter a valid mPin');
                 return;
             }
-            const deviceId = yield this.device.getDeviceId();
-            console.log(deviceId);
             console.log(this.mpin.value);
             this.mpinobj.mpin = this.mpin.value;
-            this.mpinobj.deviceId = deviceId;
+            this.mpinobj.deviceId = this.deviceUUID;
             this.api.authenticateMpin(this.mpinobj).subscribe((resp) => {
                 console.log('validate password-- ', resp);
                 resp = resp.body;
@@ -201,7 +216,7 @@ let MpinPage = class MpinPage {
         });
     }
     openToast(message) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
                 message: `${message}`,
                 duration: 2500,
@@ -212,14 +227,15 @@ let MpinPage = class MpinPage {
     }
 };
 MpinPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__.Router },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ToastController },
-    { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_4__.DeviceAccess }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
+    { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_4__.DeviceAccess },
+    { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_5__.UniqueDeviceID }
 ];
-MpinPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
+MpinPage = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
         selector: 'app-mpin',
         template: _mpin_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_mpin_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

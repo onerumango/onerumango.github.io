@@ -117,6 +117,9 @@ let SuccessMessagePage = class SuccessMessagePage {
         if (this.screenNames.queryParams.screenName == "setmpin") {
             this.router.navigate(['profile'], { replaceUrl: true });
         }
+        else if (this.screenNames.queryParams.screenName == "forgotmpin") {
+            this.router.navigate(['login-landing'], { replaceUrl: true });
+        }
         else if (this.screenNames.queryParams.screenName == "new-passwordchange") {
             this.router.navigate(['login'], { replaceUrl: true });
         }

@@ -148,6 +148,7 @@ let OtpPage = class OtpPage {
         this.otp = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl();
         this.countryCode = '+91';
         this.errMsg = '';
+        this.isLoading = false;
         this.config = {
             allowNumbersOnly: true,
             length: 6,
@@ -161,8 +162,6 @@ let OtpPage = class OtpPage {
         };
     }
     ngOnInit() {
-        var _a;
-        this.routerData = this.router.getCurrentNavigation().extras.state;
         this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.otpForm = this.fb.group({
             phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
@@ -171,9 +170,6 @@ let OtpPage = class OtpPage {
         });
         this.PhoneNumLogin = localStorage.getItem('customerPhonenum');
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
-        if ((_a = this.routerData) === null || _a === void 0 ? void 0 : _a.resetPass) {
-            this.getOTP();
-        }
     }
     onOtpChange() {
     }
@@ -181,78 +177,81 @@ let OtpPage = class OtpPage {
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
         this.oTpModel.source_value = this.customerPhonenum;
-        console.log('model', this.oTpModel);
-        this.api.getOtp(this.oTpModel).subscribe((otpResp) => {
-            console.log('Response Success', otpResp, otpResp.otpVal.token);
+        this.oTpModel.isMobileLogin = true;
+        this.api.getOtp(this.oTpModel).subscribe((res) => {
+            if (res.status == 200) {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+            else {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+        }, (err) => {
+            this.openToast(err);
         });
+        ;
     }
     resendOTP() {
         this.ngOtpInput.setValue('');
         this.getOTP();
     }
-    validateOtp(otpValue) {
+    validateOtp() {
         console.log(this.customerPhonenum);
         this.verifyOtpModel.sourceKey = 'mobile';
         this.verifyOtpModel.sourceValue = this.customerPhonenum;
         this.verifyOtpModel.otp = this.otp.value;
         this.verifyOtpModel.type = '';
-        console.log(this.verifyOtpModel);
+        this.verifyOtpModel.isMobileLogin = true;
+        this.isLoading = true;
         this.api.verifyOtp(this.verifyOtpModel).subscribe((otpResp) => {
-            var _a;
-            console.log('otpres:: ', otpResp);
-            this.otpResponse = otpResp;
-            /* Validation resp */
-            if ((_a = this.routerData) === null || _a === void 0 ? void 0 : _a.resetPass) {
-                this.router.navigateByUrl('/new-passwordchange');
-            }
-            else {
-                if (this.otpResponse.userId !== '' ||
-                    this.otpResponse.userId !== null) {
-                    this.goToCashWithdrawal(this.otpForm);
+            var _a, _b, _c, _d, _e;
+            if ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.status) == 200) {
+                sessionStorage.setItem('customer_id', (_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.customerId);
+                localStorage.setItem('firstName', (_b = otpResp['data']) === null || _b === void 0 ? void 0 : _b.firstName);
+                localStorage.setItem('lastName', (_c = otpResp['data']) === null || _c === void 0 ? void 0 : _c.lastName);
+                localStorage.setItem('customer_id', (_d = otpResp['data']) === null || _d === void 0 ? void 0 : _d.customerId);
+                localStorage.setItem('customer_details', JSON.stringify(otpResp['data']));
+                if (((_e = otpResp['data']) === null || _e === void 0 ? void 0 : _e.firstTimeLogin) == "Y") {
+                    this.router.navigateByUrl('/new-passwordchange');
                 }
                 else {
-                    this.router.navigateByUrl('/login');
+                    // TODO:
+                    if (this.screenNames) {
+                        if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
+                            const navigationExtras = {
+                                queryParams: {
+                                    'screenName': 'forgotmpin'
+                                },
+                            };
+                            this.api.sendNavParam(navigationExtras);
+                            this.router.navigateByUrl('/setmpin');
+                        }
+                        else {
+                            this.router.navigate(['dashboard'], { replaceUrl: true });
+                            this.otpForm.reset();
+                            this.dataService.isLoggedIn.next(true);
+                            this.openToast(otpResp === null || otpResp === void 0 ? void 0 : otpResp.message);
+                        }
+                    }
                 }
             }
+            else {
+                this.router.navigateByUrl('/login');
+                this.openToast(otpResp === null || otpResp === void 0 ? void 0 : otpResp.message);
+            }
+            this.isLoading = false;
         }, (err) => {
             this.errMsg = 'Please enter a valid OTP';
             setTimeout(() => this.errMsg = '', 3000);
+            this.isLoading = false;
         });
     }
     goBack() {
         this.router.navigateByUrl('/login');
     }
-    goToCashWithdrawal(otpForm) {
-        otpForm.customerPhonenum = localStorage.getItem('customerPhonenum');
-        console.log(otpForm.customerPhonenum);
-        this.api.custpomerDetails(otpForm.customerPhonenum).subscribe((resp) => {
-            if (resp != null) {
-                const cards = JSON.stringify(resp.custAccount.filter((card) => card.status === 'APPROVED'));
-                localStorage.setItem('cardData', cards);
-                sessionStorage.setItem('customer_id', resp.customerId);
-                localStorage.setItem('firstName', resp === null || resp === void 0 ? void 0 : resp.firstName);
-                localStorage.setItem('lastName', resp === null || resp === void 0 ? void 0 : resp.lastName);
-                localStorage.setItem('customer_id', resp.customerId);
-                localStorage.setItem('customer_details', JSON.stringify(resp));
-                // this.openToast1('Login Successful');
-                console.log(this.screenNames);
-                if (this.screenNames) {
-                    if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
-                        this.router.navigateByUrl('/setmpin');
-                    }
-                    else {
-                        this.router.navigate(['dashboard'], { replaceUrl: true });
-                        this.otpForm.reset();
-                        this.dataService.isLoggedIn.next(true);
-                    }
-                }
-            }
-        });
-    }
-    openToast() {
+    openToast(message) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
-                message: 'Please enter the valid OTP Number',
+                message: `${message}`,
                 duration: 2500,
                 position: 'bottom',
             });
@@ -318,7 +317,7 @@ module.exports = "section {\n  position: relative;\n  background: url(\"/assets/
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\">\r\n        <img src=\"assets/images/Demobank.svg\" class=\"w-100\" />\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form\r\n        *ngIf=\"otpForm\"\r\n        [formGroup]=\"otpForm\"\r\n        class=\"form_container\"\r\n        novalidate\r\n      >\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"font_bold otp_title\">OTP Authentication</h4>\r\n            <p class=\"otp-text\">An authentication code has been sent to</p>\r\n            <h6 class=\"font_bold mt-1\">({{countryCode}}) {{customerPhonenum}}</h6>\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"otp\" [config]=\"config\" #ngOtpInput></ng-otp-input>\r\n          <p class=\"err_msg\">{{errMsg}}</p>\r\n        </div>\r\n      \r\n        <!-- OTP INPUT END -->\r\n        <ion-grid>\r\n          <ion-row  class=\"ion-justify-content-around\">\r\n            <ion-col>\r\n              <div class=\"forgot my-2\">\r\n                <a class=\"text-center\" (click)=\"resendOTP()\">Resend code</a>\r\n              </div>\r\n            </ion-col>\r\n            <ion-col>\r\n              <div class=\"forgot my-2\">\r\n                <a class=\"text-center\" (click)=\"obscureText()\">{{ config?.isPasswordInput ? 'View OTP' : 'Hide OTP'}}</a>\r\n              </div>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </form>\r\n      <div>\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button\r\n            expand=\"full\"\r\n            shape=\"round\"\r\n            (click)=\"validateOtp(otpForm.value)\"\r\n          >\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\">\r\n        <img src=\"assets/images/Demobank.svg\" class=\"w-100\" />\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form\r\n        *ngIf=\"otpForm\"\r\n        [formGroup]=\"otpForm\"\r\n        class=\"form_container\"\r\n        novalidate\r\n      >\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"font_bold otp_title\">OTP Authentication</h4>\r\n            <p class=\"otp-text\">An authentication code has been sent to</p>\r\n            <h6 class=\"font_bold mt-1\">({{countryCode}}) {{customerPhonenum}}</h6>\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"otp\" [config]=\"config\" #ngOtpInput></ng-otp-input>\r\n          <p class=\"err_msg\">{{errMsg}}</p>\r\n        </div>\r\n      \r\n        <!-- OTP INPUT END -->\r\n        <ion-grid>\r\n          <ion-row  class=\"ion-justify-content-around\">\r\n            <ion-col>\r\n              <div class=\"forgot my-2\">\r\n                <a class=\"text-center\" (click)=\"resendOTP()\">Resend code</a>\r\n              </div>\r\n            </ion-col>\r\n            <ion-col>\r\n              <div class=\"forgot my-2\">\r\n                <a class=\"text-center\" (click)=\"obscureText()\">{{ config?.isPasswordInput ? 'View OTP' : 'Hide OTP'}}</a>\r\n              </div>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </form>\r\n      <div>\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button\r\n            expand=\"full\"\r\n            shape=\"round\"\r\n            (click)=\"validateOtp()\"\r\n          >\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
