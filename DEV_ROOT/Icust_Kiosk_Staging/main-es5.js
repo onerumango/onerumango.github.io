@@ -6616,8 +6616,8 @@
         type: FeedbackComponent,
         selectors: [["app-feedback"]],
         decls: 32,
-        vars: 2,
-        consts: [[1, "full-width"], ["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "text"], ["fxLayout", "column", "fxLayoutGap", "5%", "fxLayoutAlign", "space-between center", 1, ""], [1, "text-inside"], [1, "para"], ["fxLayoutGap", "space-between", 1, "text-inside", "emoji_wrapper", 3, "formControl"], ["value", "1", 3, "change"], ["src", "assets/images/feedback1.png", "alt", ""], ["src", "assets/images/feedback-1-1.png", "alt", "", 1, "checked"], ["value", "2", 3, "change"], ["src", "assets/images/feedback2.png", "alt", ""], ["src", "assets/images/feedback-2-1.png", "alt", "", 1, "checked"], ["value", "3", 3, "change"], ["src", "assets/images/feedback3.png", "alt", ""], ["src", "assets/images/feedback-3-1.png", "alt", "", 1, "checked"], ["value", "4", 3, "change"], ["src", "assets/images/feedback4.png", "alt", ""], ["src", "assets/images/feedback-4-1.png", "alt", "", 1, "checked"], ["value", "5", 3, "change"], ["src", "assets/images/feedback5.png", "alt", ""], ["src", "assets/images/feedback-5-1.png", "alt", "", 1, "checked"], ["fxLayout", "row", "fxLayoutGap", "20px"], ["mat-button", "", 1, "buttonScan", 3, "click"], ["mat-button", "", 1, "buttonContinue", 3, "click"]],
+        vars: 3,
+        consts: [[1, "full-width"], ["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "text"], ["fxLayout", "column", "fxLayoutGap", "5%", "fxLayoutAlign", "space-between center", 1, ""], [1, "text-inside"], [1, "para"], ["fxLayoutGap", "space-between", 1, "text-inside", "emoji_wrapper", 3, "formControl"], ["value", "1", 3, "change"], ["src", "assets/images/feedback1.png", "alt", ""], ["src", "assets/images/feedback-1-1.png", "alt", "", 1, "checked"], ["value", "2", 3, "change"], ["src", "assets/images/feedback2.png", "alt", ""], ["src", "assets/images/feedback-2-1.png", "alt", "", 1, "checked"], ["value", "3", 3, "change"], ["src", "assets/images/feedback3.png", "alt", ""], ["src", "assets/images/feedback-3-1.png", "alt", "", 1, "checked"], ["value", "4", 3, "change"], ["src", "assets/images/feedback4.png", "alt", ""], ["src", "assets/images/feedback-4-1.png", "alt", "", 1, "checked"], ["value", "5", 3, "change"], ["src", "assets/images/feedback5.png", "alt", ""], ["src", "assets/images/feedback-5-1.png", "alt", "", 1, "checked"], ["fxLayout", "row", "fxLayoutGap", "20px"], ["mat-button", "", 1, "buttonScan", 2, "background-color", "#ffff", 3, "click"], ["mat-button", "", 1, "buttonContinue", 3, "disabled", "click"]],
         template: function FeedbackComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -6761,6 +6761,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControl", ctx.rating);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", !ctx.ratingOfCustomer);
           }
         },
         directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIcon"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutGapDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutAlignDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControlDirective"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_9__["MatRadioGroup"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_9__["MatRadioButton"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"]],
@@ -7842,8 +7846,7 @@
         }, {
           key: "goToClose",
           value: function goToClose() {
-            this.dialogRef.close();
-            this.router.navigateByUrl("/others/kioskHome");
+            this.dialogRef.close(); // this.router.navigateByUrl("/others/kioskHome");
           }
         }, {
           key: "feedBack",
@@ -9549,7 +9552,7 @@
         }, {
           key: "fetchKioskSystemDetails",
           value: function fetchKioskSystemDetails() {
-            return this.http.get("".concat(API_URL, "/kisokSystem/fetchKioskSystemDetails")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+            return this.http.get("".concat(API_URL, "/kioskSystem/fetchKioskSystemDetails")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }]);
 

@@ -40438,7 +40438,7 @@ class AppointmentIdComponent {
                 });
             }
             else if (resp.status == 500) {
-                this.snack.open("Please Generate Token With In Respective Time Slot.", "OK", {
+                this.snack.open("Your Appointment/QR code is expired.Please generate a appintment/QR code.", "OK", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right",

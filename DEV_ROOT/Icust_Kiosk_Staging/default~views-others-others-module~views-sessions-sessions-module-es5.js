@@ -48727,7 +48727,7 @@
                   horizontalPosition: "right"
                 });
               } else if (resp.status == 500) {
-                _this14.snack.open("Please Generate Token With In Respective Time Slot.", "OK", {
+                _this14.snack.open("Your Appointment/QR code is expired.Please generate a appintment/QR code.", "OK", {
                   duration: 4000,
                   verticalPosition: "top",
                   horizontalPosition: "right"
