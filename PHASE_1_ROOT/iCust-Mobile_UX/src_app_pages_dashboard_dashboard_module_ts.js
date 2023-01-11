@@ -199,14 +199,18 @@ let DashboardPage = class DashboardPage {
                 }
             }
         }, 2000);
-        this.cardInfoInterval = setInterval(() => this.getCustomerAccounts(), 10 * 1000);
         this.cdr.markForCheck();
+    }
+    ionViewWillEnter() {
+        this.cardInfoInterval = setInterval(() => this.getCustomerAccounts(), 3 * 1000);
     }
     getCustomerAccounts() {
         this.api.getCustomerAccounts(this.phoneNumber).subscribe((resp) => {
             var _a, _b;
             console.log('backend resp in home', resp);
             resp.custAccount = resp.custAccount.filter((card) => card.status === 'APPROVED');
+            this.cards = resp.custAccount;
+            localStorage.setItem('cardData', JSON.stringify(resp.custAccount));
             this.cards = resp.custAccount;
             localStorage.setItem('loginRespAccountId', (_b = (_a = this.cards) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.accountId);
             this.dataService.shareAccountInfo(this.cards[0]);
