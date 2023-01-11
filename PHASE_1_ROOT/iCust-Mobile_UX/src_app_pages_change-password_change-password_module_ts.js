@@ -127,19 +127,9 @@ let ChangePasswordPage = class ChangePasswordPage {
         this.firstTimeLogin = 'N';
     }
     ngOnInit() {
-        this.firstTimeLogin = localStorage.getItem('firstTimeLogin');
-        if (this.firstTimeLogin == null ||
-            this.firstTimeLogin == undefined ||
-            this.firstTimeLogin == '') {
-            this.firstTimeLogin = 'N';
-        }
         this.customerPhonenum = localStorage.getItem('customerPhonenum');
-        console.log('<===> ', this.firstTimeLogin === 'Y' ? 'YES' : 'NO');
         this.changePasswordForm = this.fb.group({
-            currentPassword: [
-                '',
-                this.firstTimeLogin === 'Y' ? [] : [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-            ],
+            currentPassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
             newPassword: [
                 '',
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.compose([
@@ -163,15 +153,11 @@ let ChangePasswordPage = class ChangePasswordPage {
                     _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.minLength(8),
                 ]),
             ],
-            newPasswordConfirmation: [
-                '',
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]),
-            ],
+            newPasswordConfirmation: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required])],
         }, {
             // check whether our password and confirm password match
             validator: src_app_services_custom_validators_service__WEBPACK_IMPORTED_MODULE_3__.CustomValidatorsService.passwordMatchValidator,
         });
-        console.log(this.changePasswordForm.value);
     }
     save() {
         console.log(this.changePasswordForm.value);
@@ -185,71 +171,22 @@ let ChangePasswordPage = class ChangePasswordPage {
             this.openToast('Current Password and New password can not be same');
             return;
         }
-        if (this.firstTimeLogin === 'Y') {
-            var obj = {
-                phoneNumber: this.customerPhonenum,
-                custPassword: this.changePasswordForm.value.newPasswordConfirmation,
-            };
-            this.api.updateCustomerPassword(obj).subscribe((data) => {
-                if (data.hasOwnProperty('content')) {
-                    if (data.content
-                        .toString()
-                        .includes('No record exists for given phone number')) {
-                        this.openToast('No record exists for given phone number');
-                    }
-                }
-                else {
-                    localStorage.setItem('firstTimeLogin', 'Y');
-                    if (this.firstTimeLogin == 'Y') {
-                        this.openToast('Created password successfully');
-                        this.router.navigate(['/profile']);
-                    }
-                }
-            });
-        }
-        else {
-            this.api
-                .validatePassword(localStorage.getItem('customerPhonenum'), this.changePasswordForm.value.currentPassword)
-                .subscribe((res) => {
-                console.log('validate pass -- ', res);
-                if (res.hasOwnProperty('message')) {
-                    if (res.message.toString().includes('Wrong Password')) {
-                        this.openToast('Incorrect Current Password');
-                    }
-                    else {
-                        var obj = {
-                            phoneNumber: this.customerPhonenum,
-                            custPassword: this.changePasswordForm.value.newPasswordConfirmation,
-                        };
-                        this.api.updateCustomerPassword(obj).subscribe((data) => {
-                            if (data.hasOwnProperty('content')) {
-                                if (data.content
-                                    .toString()
-                                    .includes('No record exists for given phone number')) {
-                                    this.openToast('No record exists for given phone number');
-                                }
-                            }
-                            else {
-                                localStorage.setItem('firstTimeLogin', 'N');
-                                if (this.firstTimeLogin == 'Y') {
-                                    this.openToast('Created password successfully');
-                                    this.router.navigateByUrl('/otp');
-                                }
-                                else {
-                                    this.openToast('Updated password successfully');
-                                }
-                            }
-                        }, (error) => {
-                            console.log('Error: ', error);
-                            this.openToast('Unable to update password');
-                        });
-                    }
-                }
-            }, (err) => {
-                console.log('Error:: ', err);
-                this.openToast('Something went wrong!');
-            });
-        }
+        var obj = {
+            phoneNumber: this.customerPhonenum,
+            custPassword: this.changePasswordForm.value.newPasswordConfirmation,
+        };
+        this.api.updateCustomerPassword(obj).subscribe((res) => {
+            if (res.status == 200) {
+                this.openToast('Updated password successfully');
+            }
+            else {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+            this.goBack();
+        }, (error) => {
+            console.log('Error: ', error);
+            this.openToast('Unable to update password');
+        });
     }
     openToast(message) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
@@ -261,13 +198,8 @@ let ChangePasswordPage = class ChangePasswordPage {
             toast.present();
         });
     }
-    previous() {
-        if (this.firstTimeLogin === 'Y') {
-            this.router.navigateByUrl('/login');
-        }
-        else {
-            this.location.back();
-        }
+    goBack() {
+        this.location.back();
     }
 };
 ChangePasswordPage.ctorParameters = () => [
@@ -354,7 +286,7 @@ module.exports = ".new-background-color {\n  --background: #ecf3f2;\n  height: 1
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"previous()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ firstTimeLogin == 'N' ? 'Change Password' : 'Create Password'}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <form [formGroup]=\"changePasswordForm\" *ngIf=\"changePasswordForm\">\r\n\r\n    <mat-form-field class=\"full-width mt-2\" appearance=\"outline\" *ngIf=\"firstTimeLogin == 'N' \">\r\n      <mat-label>Current Password</mat-label>\r\n      <input name=\"password\" matInput placeholder=\"Enter Current Password\"\r\n        [type]=\"hide ? 'text' : 'password'\" formControlName=\"currentPassword\" />\r\n      <button mat-icon-button matSuffix (click)=\"hide = !hide\">\r\n        <mat-icon color=\"primary\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n      </button>\r\n    </mat-form-field>\r\n\r\n\r\n\r\n    <mat-form-field class=\"full-width mt-2\" appearance=\"outline\">\r\n      <mat-label>New Password</mat-label>\r\n      <input name=\"password\" matInput [type]=\"new-hide ? 'text' : 'password'\" placeholder=\"Enter New Password\"\r\n        formControlName=\"newPassword\" />\r\n      <button mat-icon-button matSuffix (click)=\"new-hide = !new-hide\">\r\n        <mat-icon color=\"primary\">{{new-hide ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n      </button>\r\n\r\n      <div *ngIf=\"changePasswordForm.controls['newPassword'].invalid && (changePasswordForm.controls['newPassword'].dirty\r\n     || changePasswordForm.controls['newPassword'].touched)\" class=\"alert\">\r\n        <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('required')\" style=\"color: red\">\r\n          <span slot=\"error\">Password is required</span>\r\n        </div>\r\n      </div>\r\n    </mat-form-field>\r\n\r\n\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('minlength')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must be at least 8 characters!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasNumber')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 number!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasCapitalCase')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 in Capital Case!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasSmallCase')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 Letter in small Case!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasSpecialCharacters')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 Special Character!</span>\r\n    </div>\r\n\r\n    <mat-form-field class=\"full-width mt-2\" appearance=\"outline\">\r\n      <mat-label>Re-enter New Password</mat-label>\r\n      <input name=\"password\" matInput [type]=\"re-hide ? 'text' : 'password'\"\r\n        placeholder=\"Re-enter Current Password\" formControlName=\"newPasswordConfirmation\" />\r\n      <button mat-icon-button matSuffix (click)=\"re-hide = !re-hide\">\r\n        <mat-icon color=\"primary\">{{re-hide ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n      </button>\r\n\r\n      <div\r\n        *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].invalid && (changePasswordForm.controls['newPasswordConfirmation'].dirty || changePasswordForm.controls['newPasswordConfirmation'].touched)\"\r\n        class=\"alert\">\r\n        <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].hasError('required')\"\r\n          style=\"color: red; padding-left: 20px;\">\r\n          Confirm Password is Required!\r\n        </div>\r\n\r\n        <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].hasError('NoPassswordMatch')\"\r\n          style=\"color: red; padding-left: 20px;\">\r\n          Password do not match\r\n        </div>\r\n      </div>\r\n    </mat-form-field>\r\n  </form>\r\n\r\n  <div>\r\n    <ion-button *ngIf=\"firstTimeLogin == 'N' \" expand=\"block\" shape=\"round\" style=\"\r\n        height: 56px;\r\n        margin-left: 16pt;\r\n        margin-right: 16pt;\r\n        margin-bottom: 31px;\r\n      \" (click)=\"save()\">Save Changes</ion-button>\r\n  </div>\r\n  <div>\r\n    <ion-button *ngIf=\"firstTimeLogin == 'Y' \" expand=\"block\" shape=\"round\" style=\"\r\n        height: 56px;\r\n        margin-left: 16pt;\r\n        margin-right: 16pt;\r\n        margin-bottom: 31px;\r\n      \" (click)=\"save()\">Save</ion-button>\r\n  </div>\r\n\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Change Password</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <form [formGroup]=\"changePasswordForm\" *ngIf=\"changePasswordForm\">\r\n\r\n    <mat-form-field class=\"full-width mt-2\" appearance=\"outline\">\r\n      <mat-label>Current Password</mat-label>\r\n      <input name=\"password\" matInput placeholder=\"Enter Current Password\" [type]=\"cpass ? 'text' : 'password'\"\r\n        formControlName=\"currentPassword\" />\r\n      <button mat-icon-button matSuffix (click)=\"cpass = !cpass\">\r\n        <mat-icon color=\"primary\">{{cpass ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n      </button>\r\n    </mat-form-field>\r\n\r\n\r\n\r\n    <mat-form-field class=\"full-width mt-2\" appearance=\"outline\">\r\n      <mat-label>New Password</mat-label>\r\n      <input name=\"password\" matInput [type]=\"npass ? 'text' : 'password'\" placeholder=\"Enter New Password\"\r\n        formControlName=\"newPassword\" />\r\n      <button mat-icon-button matSuffix (click)=\"npass = !npass\">\r\n        <mat-icon color=\"primary\">{{npass ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n      </button>\r\n\r\n      <div *ngIf=\"changePasswordForm.controls['newPassword'].invalid && (changePasswordForm.controls['newPassword'].dirty\r\n     || changePasswordForm.controls['newPassword'].touched)\" class=\"alert\">\r\n        <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('required')\" style=\"color: red\">\r\n          <span slot=\"error\">Password is required</span>\r\n        </div>\r\n      </div>\r\n    </mat-form-field>\r\n\r\n\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('minlength')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must be at least 8 characters!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasNumber')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 number!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasCapitalCase')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 in Capital Case!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasSmallCase')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 Letter in small Case!</span>\r\n    </div>\r\n    <div *ngIf=\"changePasswordForm.controls['newPassword'].hasError('hasSpecialCharacters')\"\r\n      style=\"color: red; padding-left: 20px;\">\r\n      <span slot=\"error\"> Must contain at least 1 Special Character!</span>\r\n    </div>\r\n\r\n    <mat-form-field class=\"full-width mt-2\" appearance=\"outline\">\r\n      <mat-label>Re-enter New Password</mat-label>\r\n      <input name=\"password\" matInput [type]=\"repass ? 'text' : 'password'\" placeholder=\"Re-enter Current Password\"\r\n        formControlName=\"newPasswordConfirmation\" />\r\n      <button mat-icon-button matSuffix (click)=\"repass = !repass\">\r\n        <mat-icon color=\"primary\">{{repass ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n      </button>\r\n\r\n      <div\r\n        *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].invalid && (changePasswordForm.controls['newPasswordConfirmation'].dirty || changePasswordForm.controls['newPasswordConfirmation'].touched)\"\r\n        class=\"alert\">\r\n        <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].hasError('required')\"\r\n          style=\"color: red; padding-left: 20px;\">\r\n          Confirm Password is Required!\r\n        </div>\r\n\r\n        <div *ngIf=\"changePasswordForm.controls['newPasswordConfirmation'].hasError('NoPassswordMatch')\"\r\n          style=\"color: red; padding-left: 20px;\">\r\n          Password do not match\r\n        </div>\r\n      </div>\r\n    </mat-form-field>\r\n  </form>\r\n\r\n  <div>\r\n    <ion-button expand=\"block\" shape=\"round\" style=\"\r\n        height: 56px;\r\n        margin-left: 16pt;\r\n        margin-right: 16pt;\r\n        margin-bottom: 31px;\r\n      \" (click)=\"save()\">Save Changes</ion-button>\r\n  </div>\r\n\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 
