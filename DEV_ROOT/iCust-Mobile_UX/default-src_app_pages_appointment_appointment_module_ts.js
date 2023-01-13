@@ -48,13 +48,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppointmentPageModule": () => (/* binding */ AppointmentPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _appointment_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appointment-routing.module */ 1213);
 /* harmony import */ var _appointment_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./appointment.page */ 96648);
+/* harmony import */ var src_app_components_components_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/components.module */ 45642);
+
 
 
 
@@ -64,13 +66,14 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppointmentPageModule = class AppointmentPageModule {
 };
-AppointmentPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
+AppointmentPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormsModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicModule,
+            src_app_components_components_module__WEBPACK_IMPORTED_MODULE_2__.ComponentsModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormsModule,
             _appointment_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppointmentPageRoutingModule,
         ],
         declarations: [_appointment_page__WEBPACK_IMPORTED_MODULE_1__.AppointmentPage]
@@ -154,6 +157,10 @@ let AppointmentPage = class AppointmentPage {
         this.originalTransArr = [];
         this.quickOptions = [
             {
+                id: 0,
+                options: "Recent Transaction"
+            },
+            {
                 id: 1,
                 options: '7 days',
                 data: 'SEVENDAYS',
@@ -185,11 +192,7 @@ let AppointmentPage = class AppointmentPage {
         this.loginRespAccountId = localStorage.getItem('loginRespAccountId');
         this.phoneNumber = localStorage.getItem('customerPhonenum');
         this.accountsData = JSON.parse(localStorage.getItem('cardData'));
-        this.loggedInCust = sessionStorage.getItem('customer_id');
-        this.accountsData.forEach((v, k) => {
-            this.accountIdArray.push(v.accountId);
-        });
-        console.log(this.accountIdArray);
+        this.loggedInCust = sessionStorage.getItem('customer_id') || localStorage.getItem('customer_id');
         this.shareDataService.getAccountInfo.subscribe((data) => {
             this.accountInfo = data;
             if (this.accountInfo != null && this.accountInfo != undefined) {
@@ -210,7 +213,13 @@ let AppointmentPage = class AppointmentPage {
         this.priviousDate = this.getYesterdayDate();
         this.priviousDate = this.priviousDate.toISOString();
         // this.getBeforeDateBasedOnDays(this.selectNoOfDaysVal);
+        this.compareWith = this.compareWithFn;
+        this.appointmentForm.get('filterOption').patchValue(this.quickOptions[0]);
     }
+    compareWithFn(o1, o2) {
+        return o1 === o2;
+    }
+    ;
     ionViewDidEnter() {
         var _a, _b;
         this.slideNo = localStorage.getItem('slideNo') || 0;
@@ -279,14 +288,6 @@ let AppointmentPage = class AppointmentPage {
             yield actionSheet.present();
         });
     }
-    //   onSelectAccountId(event){
-    //     console.log(event.target.value);
-    //     this.accountIdNum=event.target.value;
-    //     this.fetchAppointmentsInfoandFilter(null,null,null,this.loggedInCust,this.accountIdNum);
-    // }
-    // fetchAppointmentsInfoandFilter(filterOption?:any,fromDate?:any,toDate?:any,customerId?:any,accountNumber?:any){
-    //   console.log(filterOption,fromDate,toDate,customerId,accountNumber);
-    // }
     selectAction(action) {
         console.log(action, "Action");
         console.log(this.transactionDataArr, "Appointment List");
@@ -307,14 +308,13 @@ let AppointmentPage = class AppointmentPage {
         console.log(filterArray, "After push");
     }
     OnselectQuickOption(event, val) {
-        // this.getAppointmentByCustomerId('quickOption',null,this.filterOptions,null,null,this.loggedInCust,null);
-        // this.fetchAppointmentsInfoandFilter(this.filterOptions,null,null,this.loggedInCust,this.accountIdNum);
         if (event.target.value.options == 'Select Date Range') {
             this.addCustomTask();
         }
         else {
             this.getAppointmentByCustomerId(val, this.loggedInCust, null);
             this.filterOptions = event.target.value.data;
+            this.selectedFilter = event.target.value;
         }
     }
     addCustomTask() {
@@ -333,50 +333,6 @@ let AppointmentPage = class AppointmentPage {
             return yield modal.present();
         });
     }
-    // async addCustomTask() {
-    //   console.log("addCustomTask");
-    //   const alert = await this.alertController.create({
-    //     header: 'Duration',
-    //     cssClass:'alertCancel',
-    //     inputs: [
-    //       {
-    //         name: 'selectdaterange',
-    //         type: 'text',
-    //         placeholder: 'Select date range',
-    //         disabled:true
-    //       },
-    //       {
-    //         name: 'task',
-    //         type: 'date',
-    //         placeholder: 'From date'
-    //       },
-    //       {
-    //         name: 'To Date',
-    //         type: 'date',
-    //         placeholder: 'To date'
-    //       }
-    //     ],
-    //     buttons: [
-    //       {
-    //         text: 'Confirm',
-    //         role: 'cancel',
-    //         cssClass: 'primary',
-    //         // handler: () => {
-    //         //   return false;
-    //         // }
-    //       },
-    //       {
-    //         text: 'Cancel',
-    //         role: 'cancel',
-    //         cssClass: 'secondary',
-    //         // handler: () => {
-    //         //   return false;
-    //         // }
-    //       },
-    //     ]
-    //   });
-    //   await alert.present();
-    //   };
     compareAccNo(val1) {
         var _a;
         const accountsList = JSON.parse(localStorage.getItem('cardData')) || [];
@@ -406,7 +362,6 @@ let AppointmentPage = class AppointmentPage {
             this.isNoOfDays = true;
         }
     }
-    // getAppointmentByCustomerId(dataLoad,event,filterOption?:any,fromDate?:any,toDate?:any,customerId?:any,accountNumber?:any) {
     getAppointmentByCustomerId(Value, custId, accId) {
         console.log(Value);
         if (Value.filterOption) {
@@ -424,55 +379,44 @@ let AppointmentPage = class AppointmentPage {
             .fetchAppointmentInfo(Value.filterOption, Value.fromDate, Value.toDate, custId, accId)
             .subscribe((data) => {
             this.loadingService.dismiss();
-            if (data != null || data != undefined) {
-                this.displayInfo = false;
-                console.log('data:::', data);
-                this.originalTransArr = data;
-                // if (Value.fromDate != null && Value.dataLoad != 'download') {
-                //   if (this.page == 0) {
-                //     // console.log('from date not null :: ',formattedFromDate);
-                //     this.transactionDataArr = [];
-                //     this.trxnArrayList = [];
-                //   }
-                // }
-                // if (dataLoad != 'download') {
-                console.log('onload........');
-                this.transactionDataArr = data.data;
-                console.log(this.transactionDataArr);
-                this.totalElements = data;
-                if (this.transactionDataArr == null) {
-                    this.trxnArrayList = [];
-                }
-                console.log(this.trxnArrayList);
-                if (this.transactionDataArr != null) {
-                    this.trxnArrayList = [];
-                    this.pushArray(this.trxnArrayList, this.transactionDataArr);
-                }
-                // }
-                // if (dataLoad === 'download') {
-                //   // this.transactionDataArr = [];
-                //   // this.trxnArrayList = [];
-                //   this.loadAllTransactionData(data);
-                // }
-                // if (dataLoad === 'scroll') {
-                //   event.target.disabled = false;
-                // }
-            }
-            else {
-                console.log('else part.....');
+            console.log('data:::', data);
+            if (data.status === 404) {
+                this.loadingService.dismiss();
                 this.transactionDataArr = [];
                 this.trxnArrayList = [];
-                if (this.trxnArrayList.length == 0) {
+                this.displayInfo = true;
+                this.message = 'There are no appoinments to display';
+            }
+            else {
+                if (data != null || data != undefined) {
+                    this.displayInfo = false;
+                    this.originalTransArr = data;
+                    this.transactionDataArr = data.data;
+                    console.log(this.transactionDataArr);
+                    this.totalElements = data;
+                    if (this.transactionDataArr == null) {
+                        this.trxnArrayList = [];
+                    }
+                    console.log(this.trxnArrayList);
+                    if (this.transactionDataArr != null) {
+                        this.trxnArrayList = [];
+                        this.pushArray(this.trxnArrayList, this.transactionDataArr);
+                    }
+                }
+                else {
+                    this.loadingService.dismiss();
+                    console.log('else part.....');
+                    this.transactionDataArr = [];
+                    this.trxnArrayList = [];
                     this.displayInfo = true;
-                    this.message = 'There are no transactions to display';
+                    this.message = 'There are no appoinments to display';
                 }
             }
             this.cdr.markForCheck();
         }, (err) => {
-            console.error('error :', err);
+            this.loadingService.dismiss();
             if (err.error == null) {
                 this.transactionDataArr = [];
-                this.loadingService.dismiss();
                 this.trxnArrayList = [];
                 this.displayInfo = true;
                 this.message = 'There are no transactions to display';
@@ -517,6 +461,7 @@ let AppointmentPage = class AppointmentPage {
             }
             else {
                 console.log('else part.....');
+                this.loadingService.dismiss();
                 this.transactionDataArr = [];
                 this.trxnArrayList = [];
                 if (this.trxnArrayList.length == 0) {
@@ -527,9 +472,9 @@ let AppointmentPage = class AppointmentPage {
             this.cdr.markForCheck();
         }, (err) => {
             console.error('error :', err);
+            this.loadingService.dismiss();
             if (err.error == null) {
                 this.transactionDataArr = [];
-                this.loadingService.dismiss();
                 this.trxnArrayList = [];
                 this.displayInfo = true;
                 this.message = 'There are no transactions to display';
@@ -667,6 +612,7 @@ let AppointmentPage = class AppointmentPage {
             this.loadingService.dismiss();
             console.log('backend resp in home', resp);
             this.customerDetails = resp;
+            this.loggedInCust = resp.customerId;
             // console.log("phonenumber resp:", resp);
             this.accountNumber = resp.custAccount.accountId;
             this.custAccountData = resp.custAccount;
@@ -696,6 +642,7 @@ let AppointmentPage = class AppointmentPage {
     onClick(event) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             console.log(event);
+            localStorage.setItem('AppointmentDetails', JSON.stringify(event));
             let modal = yield this.modalCtrl.create({
                 component: _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
                 componentProps: {
@@ -762,7 +709,7 @@ AppointmentPage = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-header .header {\n  padding: 6% 8% 6% 3%;\n  display: flex;\n}\nion-header .header ion-icon {\n  font-size: larger;\n}\nion-header .header_title {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\nion-header .header_title ion-title {\n  font-weight: bold;\n  text-align: left;\n  padding-left: 11%;\n  margin-top: -5px;\n}\nion-header .header_title ion-icon {\n  color: #5dade2;\n  padding-top: 5px;\n}\n.dateField {\n  border: none;\n  width: 150px;\n}\n.selectAccId {\n  width: 100%;\n}\n.shareIcon {\n  width: 50px;\n}\n.date_range ion-label {\n  padding: 0 4%;\n}\n.dateLabel {\n  color: #5499c7;\n  font-weight: 400px;\n}\n.resetBtn {\n  background: #c0392b;\n  border-radius: 6px;\n  width: 175px;\n  height: 50px;\n}\n.downloadBtn {\n  background: #5dade2;\n  border-radius: 6px;\n  width: 174px;\n  height: 50px;\n}\n.btnColumn {\n  display: flex;\n  justify-content: center;\n}\n.statuscls {\n  font-size: 10px;\n}\n.quickOption {\n  background-color: #8c0;\n  height: 80px;\n}\n.toolbar-bg {\n  margin-top: 0px;\n  background: rgba(31, 107, 255, 0.2) !important;\n  width: auto;\n  height: 60px;\n  padding: 1px;\n}\np {\n  font-size: 12px;\n}\n.transactionCard {\n  min-height: 525px;\n  width: 100%;\n}\n#wrapper {\n  margin-left: auto;\n  margin-right: auto;\n  height: auto;\n  width: 75%;\n}\n.text-right {\n  text-align: end;\n}\n.secondary-text {\n  line-height: 1.5rem;\n  text-align: center;\n  color: #1f6bff !important;\n}\n.event {\n  flex-flow: row wrap;\n  box-sizing: border-box;\n  display: flex;\n}\n.cusNameClass {\n  font-size: small;\n}\n.cusHistoryContent {\n  color: #aba9a9;\n  font-size: 10px;\n}\n.email-icon {\n  color: #707070;\n  cursor: pointer;\n  float: right;\n  font-size: large;\n}\n.imgStyle {\n  margin-left: 10px;\n  margin-right: 10px;\n  height: 35px;\n  width: 30px;\n}\n.search-results {\n  height: 35rem;\n  overflow: scroll;\n}\n.dateLabel {\n  color: #5499c7;\n  font-weight: 400px;\n}\n.ion_list ion-label {\n  font-weight: bold;\n}\n.ion_list ion-label h3 {\n  font-size: 17px;\n  font-weight: bold;\n  line-height: 2;\n}\n.ion_list ion-label p {\n  font-size: 15px;\n  font-weight: bold;\n  color: #999;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcG9pbnRtZW50LnBhZ2Uuc2NzcyIsIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXEdpdEh1YiUyMFJlcG9zaXRvcnklMjBvbGRcXGlDdXN0TW9iaWxlLXYyXFxzcmNcXGFwcFxccGFnZXNcXGFwcG9pbnRtZW50XFxhcHBvaW50bWVudC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0U7RUFDRSxvQkFBQTtFQUNBLGFBQUE7QUNBSjtBREdJO0VBQ0UsaUJBQUE7QUNETjtBRElJO0VBQ0UsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsV0FBQTtBQ0ZOO0FESU07RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQ0ZSO0FES007RUFDRSxjQUFBO0VBRUEsZ0JBQUE7QUNKUjtBRFVBO0VBQ0UsWUFBQTtFQUNBLFlBQUE7QUNQRjtBRFVBO0VBQ0UsV0FBQTtBQ1BGO0FEVUE7RUFDRSxXQUFBO0FDUEY7QURVQTtFQUNFLGFBQUE7QUNQRjtBRFVBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0FDUEY7QURVQTtFQUNFLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ1BGO0FEVUE7RUFDRSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUNQRjtBRFVBO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0FDUEY7QURTQTtFQUNFLGVBQUE7QUNORjtBRFFBO0VBQ0Usc0JBQUE7RUFDQSxZQUFBO0FDTEY7QURRQTtFQUNFLGVBQUE7RUFDQSw4Q0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ0xGO0FEUUE7RUFDRSxlQUFBO0FDTEY7QURRQTtFQUNFLGlCQUFBO0VBQ0EsV0FBQTtBQ0xGO0FEUUE7RUFDRSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFVBQUE7QUNMRjtBRFFBO0VBQ0UsZUFBQTtBQ0xGO0FEUUE7RUFDRSxtQkFBQTtFQUVBLGtCQUFBO0VBQ0EseUJBQUE7QUNORjtBRFNBO0VBQ0UsbUJBQUE7RUFDQSxzQkFBQTtFQUNBLGFBQUE7QUNORjtBRFdBO0VBQ0UsZ0JBQUE7QUNSRjtBRFdBO0VBQ0UsY0FBQTtFQUNBLGVBQUE7QUNSRjtBRFdBO0VBQ0UsY0FBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUNSRjtBRFdBO0VBQ0UsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0FDUkY7QURXQTtFQUNFLGFBQUE7RUFDQSxnQkFBQTtBQ1JGO0FEV0E7RUFDRSxjQUFBO0VBQ0Esa0JBQUE7QUNSRjtBRFlFO0VBQ0UsaUJBQUE7QUNUSjtBRFdJO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtBQ1ROO0FEWUk7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0FDVk4iLCJmaWxlIjoiYXBwb2ludG1lbnQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlciB7XHJcbiAgLmhlYWRlciB7XHJcbiAgICBwYWRkaW5nOiA2JSA4JSA2JSAzJTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcblxyXG4gICAgLy8ganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgaW9uLWljb24ge1xyXG4gICAgICBmb250LXNpemU6IGxhcmdlcjtcclxuICAgIH1cclxuXHJcbiAgICAmX3RpdGxlIHtcclxuICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICB3aWR0aDogMTAwJTtcclxuXHJcbiAgICAgIGlvbi10aXRsZSB7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgICAgICBwYWRkaW5nLWxlZnQ6IDExJTtcclxuICAgICAgICBtYXJnaW4tdG9wOiAtNXB4O1xyXG4gICAgICB9XHJcblxyXG4gICAgICBpb24taWNvbiB7XHJcbiAgICAgICAgY29sb3I6ICM1ZGFkZTI7XHJcbiAgICAgICAgLy8gcGFkZGluZy1sZWZ0OiAzMjNweDtcclxuICAgICAgICBwYWRkaW5nLXRvcDogNXB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4uZGF0ZUZpZWxkIHtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uc2VsZWN0QWNjSWQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uc2hhcmVJY29uIHtcclxuICB3aWR0aDogNTBweFxyXG59XHJcblxyXG4uZGF0ZV9yYW5nZSBpb24tbGFiZWwge1xyXG4gIHBhZGRpbmc6IDAgNCU7XHJcbn1cclxuXHJcbi5kYXRlTGFiZWwge1xyXG4gIGNvbG9yOiAjNTQ5OWM3O1xyXG4gIGZvbnQtd2VpZ2h0OiA0MDBweDtcclxufVxyXG5cclxuLnJlc2V0QnRuIHtcclxuICBiYWNrZ3JvdW5kOiAjYzAzOTJiO1xyXG4gIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICB3aWR0aDogMTc1cHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG59XHJcblxyXG4uZG93bmxvYWRCdG4ge1xyXG4gIGJhY2tncm91bmQ6ICM1ZGFkZTI7XHJcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gIHdpZHRoOiAxNzRweDtcclxuICBoZWlnaHQ6IDUwcHg7XHJcbn1cclxuXHJcbi5idG5Db2x1bW4ge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXJcclxufVxyXG4uc3RhdHVzY2xze1xyXG4gIGZvbnQtc2l6ZTogMTBweDtcclxufVxyXG4ucXVpY2tPcHRpb24ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICM4YzA7XHJcbiAgaGVpZ2h0OiA4MHB4O1xyXG59XHJcblxyXG4udG9vbGJhci1iZyB7XHJcbiAgbWFyZ2luLXRvcDogMHB4O1xyXG4gIGJhY2tncm91bmQ6IHJnYmEoMzEsIDEwNywgMjU1LCAwLjIpICFpbXBvcnRhbnQ7XHJcbiAgd2lkdGg6IGF1dG87XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIHBhZGRpbmc6IDFweDtcclxufVxyXG5cclxucCB7XHJcbiAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4udHJhbnNhY3Rpb25DYXJkIHtcclxuICBtaW4taGVpZ2h0OiA1MjVweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuI3dyYXBwZXIge1xyXG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gIG1hcmdpbi1yaWdodDogYXV0bztcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgd2lkdGg6IDc1JTtcclxufVxyXG5cclxuLnRleHQtcmlnaHQge1xyXG4gIHRleHQtYWxpZ246IGVuZDtcclxufVxyXG5cclxuLnNlY29uZGFyeS10ZXh0IHtcclxuICBsaW5lLWhlaWdodDogMS41cmVtO1xyXG4gIC8vICBsaW5lLWhlaWdodDogMC41cmVtO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjogIzFmNmJmZiAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uZXZlbnQge1xyXG4gIGZsZXgtZmxvdzogcm93IHdyYXA7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIC8vIG92ZXJmbG93LXk6IHNjcm9sbDtcclxuICAvLyBoZWlnaHQ6IDUyNXB4O1xyXG59XHJcblxyXG4uY3VzTmFtZUNsYXNzIHtcclxuICBmb250LXNpemU6IHNtYWxsO1xyXG59XHJcblxyXG4uY3VzSGlzdG9yeUNvbnRlbnQge1xyXG4gIGNvbG9yOiAjYWJhOWE5O1xyXG4gIGZvbnQtc2l6ZTogMTBweDtcclxufVxyXG5cclxuLmVtYWlsLWljb24ge1xyXG4gIGNvbG9yOiAjNzA3MDcwO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgZm9udC1zaXplOiBsYXJnZTtcclxufVxyXG5cclxuLmltZ1N0eWxlIHtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbiAgaGVpZ2h0OiAzNXB4O1xyXG4gIHdpZHRoOiAzMHB4O1xyXG59XHJcblxyXG4uc2VhcmNoLXJlc3VsdHMge1xyXG4gIGhlaWdodDogMzVyZW07XHJcbiAgb3ZlcmZsb3c6IHNjcm9sbDtcclxufVxyXG5cclxuLmRhdGVMYWJlbCB7XHJcbiAgY29sb3I6ICM1NDk5Yzc7XHJcbiAgZm9udC13ZWlnaHQ6IDQwMHB4O1xyXG59XHJcblxyXG4uaW9uX2xpc3Qge1xyXG4gIGlvbi1sYWJlbCB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuXHJcbiAgICBoMyB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgIGxpbmUtaGVpZ2h0OiAyO1xyXG4gICAgfVxyXG5cclxuICAgIHAge1xyXG4gICAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICBjb2xvcjogIzk5OTtcclxuICAgIH1cclxuICB9XHJcbn1cclxuLy8gLmNvbnN0cnVjdGVkIHN0eWxlc2hlZXRcclxuXHJcbi8vIC5jb25zdHJ1Y3RlZCBzdHlsZXNoZWV0XHJcbi8vIDpob3N0IGJ1dHRvbiB7XHJcbiBcclxuLy8gICAtLXBhZGRpbmctaW5saW5lOiBub25lICFpbXBvcnRhbnQ7XHJcbi8vIH1cclxuLy8gOmhvc3QgYnV0dG9uIHtcclxuLy8gaW9uLWRhdGV0aW1lLWJ1dHRvbiB7XHJcbi8vICAgcGFkZGluZy1pbmxpbmU6IG5vbmU7XHJcbi8vICAgcGFkZGluZy1pbmxpbmUtc3RhcnQ6IG5vbmU7XHJcbi8vICAgcGFkZGluZy1pbmxpbmUtZW5kOiBub25lO1xyXG4vLyB9XHJcbiIsImlvbi1oZWFkZXIgLmhlYWRlciB7XG4gIHBhZGRpbmc6IDYlIDglIDYlIDMlO1xuICBkaXNwbGF5OiBmbGV4O1xufVxuaW9uLWhlYWRlciAuaGVhZGVyIGlvbi1pY29uIHtcbiAgZm9udC1zaXplOiBsYXJnZXI7XG59XG5pb24taGVhZGVyIC5oZWFkZXJfdGl0bGUge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHdpZHRoOiAxMDAlO1xufVxuaW9uLWhlYWRlciAuaGVhZGVyX3RpdGxlIGlvbi10aXRsZSB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nLWxlZnQ6IDExJTtcbiAgbWFyZ2luLXRvcDogLTVweDtcbn1cbmlvbi1oZWFkZXIgLmhlYWRlcl90aXRsZSBpb24taWNvbiB7XG4gIGNvbG9yOiAjNWRhZGUyO1xuICBwYWRkaW5nLXRvcDogNXB4O1xufVxuXG4uZGF0ZUZpZWxkIHtcbiAgYm9yZGVyOiBub25lO1xuICB3aWR0aDogMTUwcHg7XG59XG5cbi5zZWxlY3RBY2NJZCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uc2hhcmVJY29uIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5kYXRlX3JhbmdlIGlvbi1sYWJlbCB7XG4gIHBhZGRpbmc6IDAgNCU7XG59XG5cbi5kYXRlTGFiZWwge1xuICBjb2xvcjogIzU0OTljNztcbiAgZm9udC13ZWlnaHQ6IDQwMHB4O1xufVxuXG4ucmVzZXRCdG4ge1xuICBiYWNrZ3JvdW5kOiAjYzAzOTJiO1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIHdpZHRoOiAxNzVweDtcbiAgaGVpZ2h0OiA1MHB4O1xufVxuXG4uZG93bmxvYWRCdG4ge1xuICBiYWNrZ3JvdW5kOiAjNWRhZGUyO1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIHdpZHRoOiAxNzRweDtcbiAgaGVpZ2h0OiA1MHB4O1xufVxuXG4uYnRuQ29sdW1uIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG5cbi5zdGF0dXNjbHMge1xuICBmb250LXNpemU6IDEwcHg7XG59XG5cbi5xdWlja09wdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM4YzA7XG4gIGhlaWdodDogODBweDtcbn1cblxuLnRvb2xiYXItYmcge1xuICBtYXJnaW4tdG9wOiAwcHg7XG4gIGJhY2tncm91bmQ6IHJnYmEoMzEsIDEwNywgMjU1LCAwLjIpICFpbXBvcnRhbnQ7XG4gIHdpZHRoOiBhdXRvO1xuICBoZWlnaHQ6IDYwcHg7XG4gIHBhZGRpbmc6IDFweDtcbn1cblxucCB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cblxuLnRyYW5zYWN0aW9uQ2FyZCB7XG4gIG1pbi1oZWlnaHQ6IDUyNXB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuI3dyYXBwZXIge1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xuICBoZWlnaHQ6IGF1dG87XG4gIHdpZHRoOiA3NSU7XG59XG5cbi50ZXh0LXJpZ2h0IHtcbiAgdGV4dC1hbGlnbjogZW5kO1xufVxuXG4uc2Vjb25kYXJ5LXRleHQge1xuICBsaW5lLWhlaWdodDogMS41cmVtO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiAjMWY2YmZmICFpbXBvcnRhbnQ7XG59XG5cbi5ldmVudCB7XG4gIGZsZXgtZmxvdzogcm93IHdyYXA7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG5cbi5jdXNOYW1lQ2xhc3Mge1xuICBmb250LXNpemU6IHNtYWxsO1xufVxuXG4uY3VzSGlzdG9yeUNvbnRlbnQge1xuICBjb2xvcjogI2FiYTlhOTtcbiAgZm9udC1zaXplOiAxMHB4O1xufVxuXG4uZW1haWwtaWNvbiB7XG4gIGNvbG9yOiAjNzA3MDcwO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGZsb2F0OiByaWdodDtcbiAgZm9udC1zaXplOiBsYXJnZTtcbn1cblxuLmltZ1N0eWxlIHtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgaGVpZ2h0OiAzNXB4O1xuICB3aWR0aDogMzBweDtcbn1cblxuLnNlYXJjaC1yZXN1bHRzIHtcbiAgaGVpZ2h0OiAzNXJlbTtcbiAgb3ZlcmZsb3c6IHNjcm9sbDtcbn1cblxuLmRhdGVMYWJlbCB7XG4gIGNvbG9yOiAjNTQ5OWM3O1xuICBmb250LXdlaWdodDogNDAwcHg7XG59XG5cbi5pb25fbGlzdCBpb24tbGFiZWwge1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5pb25fbGlzdCBpb24tbGFiZWwgaDMge1xuICBmb250LXNpemU6IDE3cHg7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBsaW5lLWhlaWdodDogMjtcbn1cbi5pb25fbGlzdCBpb24tbGFiZWwgcCB7XG4gIGZvbnQtc2l6ZTogMTVweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjOTk5O1xufSJdfQ== */";
+module.exports = "ion-header .header ion-icon {\n  font-size: larger;\n}\nion-header .header_title {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\nion-header .header_title ion-title {\n  font-weight: bold;\n  text-align: left;\n  padding-left: 11%;\n  margin-top: -5px;\n}\nion-header .header_title ion-icon {\n  color: #5dade2;\n  padding-top: 5px;\n}\n::ng-deep .wider-popover-apt {\n  --width: 100%;\n  --max-width: 100%;\n  --offset-x: -12px;\n}\n.dateField {\n  border: none;\n  width: 150px;\n}\n.selectAccId {\n  width: 100%;\n}\n.shareIcon {\n  width: 50px;\n}\n.date_range ion-label {\n  padding: 0 4%;\n}\n.dateLabel {\n  color: #5499c7;\n  font-weight: 400px;\n}\n.resetBtn {\n  background: #c0392b;\n  border-radius: 6px;\n  width: 175px;\n  height: 50px;\n}\n.downloadBtn {\n  background: #5dade2;\n  border-radius: 6px;\n  width: 174px;\n  height: 50px;\n}\n.btnColumn {\n  display: flex;\n  justify-content: center;\n}\n.statuscls {\n  font-size: 10px;\n}\n.quickOption {\n  background-color: #8c0;\n  height: 80px;\n}\n.toolbar-bg {\n  margin-top: 0px;\n  background: rgba(31, 107, 255, 0.2) !important;\n  width: auto;\n  height: 60px;\n  padding: 1px;\n}\np {\n  font-size: 12px;\n}\n.transactionCard {\n  min-height: 525px;\n  width: 100%;\n}\n#wrapper {\n  margin-left: auto;\n  margin-right: auto;\n  height: auto;\n  width: 75%;\n}\n.text-right {\n  text-align: end;\n}\n.secondary-text {\n  line-height: 1.5rem;\n  text-align: center;\n  color: #1f6bff !important;\n}\n.event {\n  flex-flow: row wrap;\n  box-sizing: border-box;\n  display: flex;\n}\n.cusNameClass {\n  font-size: small;\n}\n.cusHistoryContent {\n  color: #aba9a9;\n  font-size: 10px;\n}\n.email-icon {\n  color: #707070;\n  cursor: pointer;\n  float: right;\n  font-size: large;\n}\n.imgStyle {\n  margin-left: 10px;\n  margin-right: 10px;\n  height: 35px;\n  width: 30px;\n}\n.search-results {\n  height: 35rem;\n  overflow: scroll;\n}\n.dateLabel {\n  color: #5499c7;\n  font-weight: 400px;\n}\n.ion_list ion-label {\n  font-weight: bold;\n}\n.ion_list ion-label h3 {\n  font-size: 17px;\n  font-weight: bold;\n  line-height: 2;\n}\n.ion_list ion-label p {\n  font-size: 13px;\n  font-weight: bold;\n  color: #999;\n}\n.pl-80 {\n  padding-left: 95%;\n  color: #456EFE !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcG9pbnRtZW50LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFSTtFQUNFLGlCQUFBO0FBRE47QUFJSTtFQUNFLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFdBQUE7QUFGTjtBQUlNO0VBQ0UsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFGUjtBQUtNO0VBQ0UsY0FBQTtFQUVBLGdCQUFBO0FBSlI7QUFVQTtFQUNFLGFBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0FBUEY7QUFVQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0FBUEY7QUFVQTtFQUNFLFdBQUE7QUFQRjtBQVVBO0VBQ0UsV0FBQTtBQVBGO0FBVUE7RUFDRSxhQUFBO0FBUEY7QUFVQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtBQVBGO0FBVUE7RUFDRSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUFQRjtBQVVBO0VBQ0UsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0FBUEY7QUFVQTtFQUNFLGFBQUE7RUFDQSx1QkFBQTtBQVBGO0FBVUE7RUFDRSxlQUFBO0FBUEY7QUFVQTtFQUNFLHNCQUFBO0VBQ0EsWUFBQTtBQVBGO0FBVUE7RUFDRSxlQUFBO0VBQ0EsOENBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUFQRjtBQVVBO0VBQ0UsZUFBQTtBQVBGO0FBVUE7RUFDRSxpQkFBQTtFQUNBLFdBQUE7QUFQRjtBQVVBO0VBQ0UsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxVQUFBO0FBUEY7QUFVQTtFQUNFLGVBQUE7QUFQRjtBQVVBO0VBQ0UsbUJBQUE7RUFFQSxrQkFBQTtFQUNBLHlCQUFBO0FBUkY7QUFXQTtFQUNFLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxhQUFBO0FBUkY7QUFhQTtFQUNFLGdCQUFBO0FBVkY7QUFhQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBVkY7QUFhQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0FBVkY7QUFhQTtFQUNFLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtBQVZGO0FBYUE7RUFDRSxhQUFBO0VBQ0EsZ0JBQUE7QUFWRjtBQWFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0FBVkY7QUFjRTtFQUNFLGlCQUFBO0FBWEo7QUFhSTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7QUFYTjtBQWNJO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsV0FBQTtBQVpOO0FBOEJBO0VBQ0UsaUJBQUE7RUFDQSx5QkFBQTtBQTNCRiIsImZpbGUiOiJhcHBvaW50bWVudC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyIHtcclxuICAuaGVhZGVyIHtcclxuICAgIGlvbi1pY29uIHtcclxuICAgICAgZm9udC1zaXplOiBsYXJnZXI7XHJcbiAgICB9XHJcblxyXG4gICAgJl90aXRsZSB7XHJcbiAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgICBpb24tdGl0bGUge1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICAgICAgcGFkZGluZy1sZWZ0OiAxMSU7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogLTVweDtcclxuICAgICAgfVxyXG5cclxuICAgICAgaW9uLWljb24ge1xyXG4gICAgICAgIGNvbG9yOiAjNWRhZGUyO1xyXG4gICAgICAgIC8vIHBhZGRpbmctbGVmdDogMzIzcHg7XHJcbiAgICAgICAgcGFkZGluZy10b3A6IDVweDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG5cclxuOjpuZy1kZWVwIC53aWRlci1wb3BvdmVyLWFwdCB7XHJcbiAgLS13aWR0aDogMTAwJTtcclxuICAtLW1heC13aWR0aDogMTAwJTtcclxuICAtLW9mZnNldC14OiAtMTJweDtcclxufVxyXG5cclxuLmRhdGVGaWVsZCB7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLnNlbGVjdEFjY0lkIHtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnNoYXJlSWNvbiB7XHJcbiAgd2lkdGg6IDUwcHhcclxufVxyXG5cclxuLmRhdGVfcmFuZ2UgaW9uLWxhYmVsIHtcclxuICBwYWRkaW5nOiAwIDQlO1xyXG59XHJcblxyXG4uZGF0ZUxhYmVsIHtcclxuICBjb2xvcjogIzU0OTljNztcclxuICBmb250LXdlaWdodDogNDAwcHg7XHJcbn1cclxuXHJcbi5yZXNldEJ0biB7XHJcbiAgYmFja2dyb3VuZDogI2MwMzkyYjtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgd2lkdGg6IDE3NXB4O1xyXG4gIGhlaWdodDogNTBweDtcclxufVxyXG5cclxuLmRvd25sb2FkQnRuIHtcclxuICBiYWNrZ3JvdW5kOiAjNWRhZGUyO1xyXG4gIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICB3aWR0aDogMTc0cHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG59XHJcblxyXG4uYnRuQ29sdW1uIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyXHJcbn1cclxuXHJcbi5zdGF0dXNjbHMge1xyXG4gIGZvbnQtc2l6ZTogMTBweDtcclxufVxyXG5cclxuLnF1aWNrT3B0aW9uIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOGMwO1xyXG4gIGhlaWdodDogODBweDtcclxufVxyXG5cclxuLnRvb2xiYXItYmcge1xyXG4gIG1hcmdpbi10b3A6IDBweDtcclxuICBiYWNrZ3JvdW5kOiByZ2JhKDMxLCAxMDcsIDI1NSwgMC4yKSAhaW1wb3J0YW50O1xyXG4gIHdpZHRoOiBhdXRvO1xyXG4gIGhlaWdodDogNjBweDtcclxuICBwYWRkaW5nOiAxcHg7XHJcbn1cclxuXHJcbnAge1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxufVxyXG5cclxuLnRyYW5zYWN0aW9uQ2FyZCB7XHJcbiAgbWluLWhlaWdodDogNTI1cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiN3cmFwcGVyIHtcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxuICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIHdpZHRoOiA3NSU7XHJcbn1cclxuXHJcbi50ZXh0LXJpZ2h0IHtcclxuICB0ZXh0LWFsaWduOiBlbmQ7XHJcbn1cclxuXHJcbi5zZWNvbmRhcnktdGV4dCB7XHJcbiAgbGluZS1oZWlnaHQ6IDEuNXJlbTtcclxuICAvLyAgbGluZS1oZWlnaHQ6IDAuNXJlbTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6ICMxZjZiZmYgIWltcG9ydGFudDtcclxufVxyXG5cclxuLmV2ZW50IHtcclxuICBmbGV4LWZsb3c6IHJvdyB3cmFwO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICAvLyBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgLy8gaGVpZ2h0OiA1MjVweDtcclxufVxyXG5cclxuLmN1c05hbWVDbGFzcyB7XHJcbiAgZm9udC1zaXplOiBzbWFsbDtcclxufVxyXG5cclxuLmN1c0hpc3RvcnlDb250ZW50IHtcclxuICBjb2xvcjogI2FiYTlhOTtcclxuICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuXHJcbi5lbWFpbC1pY29uIHtcclxuICBjb2xvcjogIzcwNzA3MDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIGZvbnQtc2l6ZTogbGFyZ2U7XHJcbn1cclxuXHJcbi5pbWdTdHlsZSB7XHJcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG4gIGhlaWdodDogMzVweDtcclxuICB3aWR0aDogMzBweDtcclxufVxyXG5cclxuLnNlYXJjaC1yZXN1bHRzIHtcclxuICBoZWlnaHQ6IDM1cmVtO1xyXG4gIG92ZXJmbG93OiBzY3JvbGw7XHJcbn1cclxuXHJcbi5kYXRlTGFiZWwge1xyXG4gIGNvbG9yOiAjNTQ5OWM3O1xyXG4gIGZvbnQtd2VpZ2h0OiA0MDBweDtcclxufVxyXG5cclxuLmlvbl9saXN0IHtcclxuICBpb24tbGFiZWwge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcblxyXG4gICAgaDMge1xyXG4gICAgICBmb250LXNpemU6IDE3cHg7XHJcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICBsaW5lLWhlaWdodDogMjtcclxuICAgIH1cclxuXHJcbiAgICBwIHtcclxuICAgICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgY29sb3I6ICM5OTk7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4vLyAuY29uc3RydWN0ZWQgc3R5bGVzaGVldFxyXG5cclxuLy8gLmNvbnN0cnVjdGVkIHN0eWxlc2hlZXRcclxuLy8gOmhvc3QgYnV0dG9uIHtcclxuXHJcbi8vICAgLS1wYWRkaW5nLWlubGluZTogbm9uZSAhaW1wb3J0YW50O1xyXG4vLyB9XHJcbi8vIDpob3N0IGJ1dHRvbiB7XHJcbi8vIGlvbi1kYXRldGltZS1idXR0b24ge1xyXG4vLyAgIHBhZGRpbmctaW5saW5lOiBub25lO1xyXG4vLyAgIHBhZGRpbmctaW5saW5lLXN0YXJ0OiBub25lO1xyXG4vLyAgIHBhZGRpbmctaW5saW5lLWVuZDogbm9uZTtcclxuLy8gfVxyXG4ucGwtODAge1xyXG4gIHBhZGRpbmctbGVmdDogOTUlO1xyXG4gIGNvbG9yOiAjNDU2RUZFICFpbXBvcnRhbnQ7XHJcbn0iXX0= */";
 
 /***/ }),
 
@@ -772,7 +719,7 @@ module.exports = "ion-header .header {\n  padding: 6% 8% 6% 3%;\n  display: flex
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header >\r\n  <ion-toolbar>\r\n    <div class=\"header\">\r\n      <ion-icon name=\"chevron-back-outline\" size=\"large\" (click)=\"goBack()\"></ion-icon>\r\n      <div class=\"header_title\">\r\n        <ion-title>Appointment History</ion-title>\r\n          <ion-icon name=\"funnel-outline\" (click)=\"openActionSheet()\"></ion-icon>\r\n     \r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n  \r\n</ion-header>\r\n\r\n<div>\r\n  <form [formGroup]=\"appointmentForm\">\r\n  <ion-row *ngIf=\"enableDate\">\r\n    <ion-col class=\"date_range\">\r\n      <ion-label position=\"floating\" class=\"dateLabel\">From date</ion-label>\r\n      <ion-item>\r\n        <!--  [max]=\"currentDate2\"  -->\r\n        <ion-datetime-button datetime=\"datetime1\" showTimeLabel=\"false\"></ion-datetime-button>\r\n        <ion-modal [keepContentsMounted]=\"true\">\r\n          <ng-template>\r\n            <ion-datetime\r\n            presentation=\"date\"\r\n            id=\"datetime1\"\r\n            [max]=\"currentDate2\"\r\n            formControlName=\"fromDate\"\r\n            \r\n            displayFormat=\"DDD. MMM DD, YY\"\r\n            ></ion-datetime>\r\n          </ng-template>\r\n         \r\n        </ion-modal>\r\n        <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n        <!-- <ion-datetime\r\n          presentation=\"fromDate\"\r\n          [(ngModel)]=\"fromDate\"\r\n          [max]=\"currentDate2\"\r\n          (ionChange)=\"checkFromDate($event)\"\r\n        ></ion-datetime> -->\r\n      </ion-item>\r\n    </ion-col>\r\n    <ion-col class=\"date_range\">\r\n      <ion-label position=\"floating\" class=\"dateLabel\">To date</ion-label>\r\n      <ion-item>\r\n        <!-- [min]=\"fromDateVal\" [max]=\"currentDate2\" -->\r\n        <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n        <ion-modal [keepContentsMounted]=\"true\">\r\n          <ng-template>\r\n            <ion-datetime\r\n            presentation=\"date\"\r\n            id=\"datetime\"\r\n            [max]=\"currentDate2\"\r\n            formControlName=\"toDate\"\r\n            (ionChange)=\"checktoDate(appointmentForm.value)\"\r\n            displayFormat=\"DDD. MMM DD, YY\"\r\n            ></ion-datetime>\r\n          </ng-template>\r\n        \r\n        </ion-modal>\r\n        <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n       \r\n        <!-- <ion-datetime\r\n          [(ngModel)]=\"toDate\"\r\n          [max]=\"currentDate2\"\r\n          (ionChange)=\"changed($event,isNoOfDays)\"\r\n        ></ion-datetime> -->\r\n      </ion-item>\r\n    </ion-col>\r\n  </ion-row>\r\n   <ion-row>\r\n    <ion-col>\r\n      <ion-list>\r\n        <ion-item>\r\n          <ion-select class=\"selectAccId\" interface=\"popover\"  formControlName=\"filterOption\" placeholder=\"Quick Options\" (ionChange)=\"OnselectQuickOption($event,appointmentForm.value)\">\r\n            <ion-select-option *ngFor=\"let item of quickOptions\" [value]=\"item\">\r\n                <div class=\"select_option\" class=\"quickOption\" >\r\n                  <div class=\"acc_num\" >{{item.options}}</div>\r\n                </div>\r\n              </ion-select-option>\r\n          </ion-select>\r\n        </ion-item>\r\n      </ion-list>\r\n    </ion-col>\r\n  </ion-row> \r\n\r\n  <ion-row>\r\n    <ion-col>\r\n    \r\n    </ion-col>\r\n    <ion-col>\r\n    </ion-col>\r\n  </ion-row>\r\n  <!-- <ion-row>\r\n    <ion-col class=\"btnColumn\">\r\n      <ion-button\r\n        (click)=\"reset()\"\r\n        color=\"light\"\r\n        fill=\"outline\"\r\n        class=\"resetBtn\"\r\n      >\r\n        <ion-icon name=\"share-social\" class=\"shareIcon\" (click)=\"reset()\"></ion-icon> \r\n       Share Details\r\n      </ion-button>\r\n    </ion-col>\r\n    <ion-col class=\"btnColumn\">\r\n      <ion-button\r\n        (click)=\"downloadPdf(trxnArrayList,fromDate,toDate)\"\r\n        class=\"downloadBtn\"\r\n        color=\"light\"\r\n        fill=\"outline\"\r\n      >\r\n        <ion-icon\r\n          name=\"add-outline\"\r\n          (click)=\"downloadPdf(trxnArrayList,fromDate,toDate)\"\r\n        ></ion-icon\r\n        >&nbsp; Download\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row> -->\r\n  <!-- <ion-col > -->\r\n  <!-- <ion-item style=\"margin-top:5px; color:red; border-radius: 10px;\"> -->\r\n\r\n  <!-- </ion-item> -->\r\n  <!-- <ion-item style=\"margin-top:5px; color:red; border-radius: 10px;\"> -->\r\n\r\n  <!-- </ion-item> -->\r\n  <!-- </ion-col> -->\r\n</form>\r\n</div>\r\n\r\n<ion-content>\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n    <ion-list class=\"ion_list\">\r\n      <ion-item *ngFor=\"let trans of trxnArrayList;\" (click)=\"onClick(trans)\">\r\n        <!-- <ion-button slot=\"start\">\r\n        <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n      </ion-button> -->\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-label>\r\n                <h3>{{trans.trnType}}</h3>\r\n                <p>\r\n                  Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{\r\n                  trans.creatorDtStamp }}\r\n                </p>\r\n              </ion-label>\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-label\r\n                [color]=\"trans.appointmentStatus == 'COMPLETED' || trans.appointmentStatus == 'SCHEDULED' ? 'success' : 'danger'\"\r\n                class=\"text-xs text-right\"\r\n              >\r\n                {{trans.transactionAmount |\r\n                currency:trans.transactionCurrency:'symbol':'1.0-1'}} <br>\r\n               <p class=\"statuscls\">{{trans.appointmentStatus}}</p> \r\n              </ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n\r\n    <ion-infinite-scroll\r\n      threshold=\"100px\"\r\n      (ionInfinite)=\"onScrollingFinished($event)\"\r\n    >\r\n      <ion-infinite-scroll-content\r\n        loadingSpinner=\"bubbles\"\r\n        loadingText=\"Loading more data...\"\r\n      >\r\n      </ion-infinite-scroll-content>\r\n    </ion-infinite-scroll>\r\n  </div>\r\n</ion-content>\r\n<!-- <app-footer></app-footer> -->";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" size=\"large\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"header_title\">Appointment History</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openActionSheet()\">\r\n        <ion-icon slot=\"icon-only\" name=\"funnel-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <ion-toolbar>\r\n    <div>\r\n      <form [formGroup]=\"appointmentForm\">\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-list>\r\n              <ion-item>\r\n                <ion-select class=\"selectAccId\" [interfaceOptions]=\"{'cssClass': 'wider-popover-apt'}\"\r\n                  interface=\"popover\" formControlName=\"filterOption\" placeholder=\"Quick Options\"\r\n                  (ionChange)=\"OnselectQuickOption($event,appointmentForm.value)\" [compareWith]=\"compareWith\">\r\n                  <ion-select-option *ngFor=\"let item of quickOptions\" [value]=\"item\">\r\n                    <div class=\"select_option\" class=\"quickOption\">\r\n                      <div class=\"acc_num\">{{item.options}}</div>\r\n                    </div>\r\n                  </ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n            </ion-list>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\" class=\"text-center\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n    <ion-list class=\"ion_list\">\r\n      <ion-item *ngFor=\"let trans of trxnArrayList;\" (click)=\"onClick(trans)\">\r\n        <!-- <ion-button slot=\"start\">\r\n        <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n      </ion-button> -->\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-label>\r\n                <h3>{{trans.trnType}}</h3>\r\n                <p>\r\n                  <small>\r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{\r\n                    trans.creatorDtStamp }}\r\n                  </small>\r\n                </p>\r\n              </ion-label>\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-label\r\n                [color]=\"trans.appointmentStatus == 'COMPLETED' || trans.appointmentStatus == 'SCHEDULED' ? 'success' : 'danger'\"\r\n                class=\"text-xs text-right\">\r\n                <small>{{trans.transactionAmount |\r\n                  currency:trans.transactionCurrency:'symbol':'1.0-1'}}</small> <br>\r\n                <p class=\"statuscls\"><small>{{trans.appointmentStatus}}</small></p>\r\n              </ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n\r\n    <ion-infinite-scroll threshold=\"100px\" (ionInfinite)=\"onScrollingFinished($event)\">\r\n      <ion-infinite-scroll-content loadingSpinner=\"bubbles\" loadingText=\"Loading more data...\">\r\n      </ion-infinite-scroll-content>\r\n    </ion-infinite-scroll>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
 
 /***/ })
 

@@ -100,17 +100,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "otpModel": () => (/* binding */ otpModel),
 /* harmony export */   "verifyotpModel": () => (/* binding */ verifyotpModel)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _otp_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./otp.page.html?ngResource */ 93684);
 /* harmony import */ var _otp_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./otp.page.scss?ngResource */ 79706);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 92218);
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-toastr */ 34101);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 92218);
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-toastr */ 34101);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
+
 
 
 
@@ -127,7 +129,7 @@ class otpModel {
 class verifyotpModel {
 }
 let OtpPage = class OtpPage {
-    constructor(cdk, router, fb, api, toastr, toastCtrl, _location) {
+    constructor(cdk, router, fb, api, toastr, toastCtrl, _location, dataService) {
         this.cdk = cdk;
         this.router = router;
         this.fb = fb;
@@ -135,121 +137,129 @@ let OtpPage = class OtpPage {
         this.toastr = toastr;
         this.toastCtrl = toastCtrl;
         this._location = _location;
+        this.dataService = dataService;
         this.otpValue = null;
         this.otpValid = false;
         this.verifyOtpModel = new verifyotpModel();
         this.oTpModel = new otpModel();
         this.showPassword = false;
         this.showOtp = false;
-        this.userPasswordUpdate = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
-        this.otp = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl();
+        this.userPasswordUpdate = new rxjs__WEBPACK_IMPORTED_MODULE_4__.Subject();
+        this.otp = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl();
+        this.countryCode = '+91';
+        this.errMsg = '';
+        this.isLoading = false;
+        this.config = {
+            allowNumbersOnly: true,
+            length: 6,
+            isPasswordInput: true,
+            disableAutoFocus: false,
+            placeholder: '',
+            inputStyles: {
+                'width': '40px',
+                'height': '40px'
+            }
+        };
     }
     ngOnInit() {
-        var _a;
-        this.routerData = this.router.getCurrentNavigation().extras.state;
         this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.otpForm = this.fb.group({
-            phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
-            otp: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
-            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+            phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+            otp: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
         });
         this.PhoneNumLogin = localStorage.getItem('customerPhonenum');
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
-        // console.log(this.screenNames);
-        if ((_a = this.routerData) === null || _a === void 0 ? void 0 : _a.resetPass) {
-            this.getOTP();
-        }
     }
-    numberOnly(event) {
-        const charCode = event.which ? event.which : event.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
-        }
-        return true;
+    onOtpChange() {
     }
     getOTP() {
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
         this.oTpModel.source_value = this.customerPhonenum;
-        console.log('model', this.oTpModel);
-        this.api.getOtp(this.oTpModel).subscribe((otpResp) => {
-            console.log('Response Success', otpResp, otpResp.otpVal.token);
+        this.oTpModel.isMobileLogin = true;
+        this.api.getOtp(this.oTpModel).subscribe((res) => {
+            if (res.status == 200) {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+            else {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+        }, (err) => {
+            this.openToast(err);
         });
+        ;
     }
     resendOTP() {
+        this.ngOtpInput.setValue('');
         this.getOTP();
     }
-    validateOtp(otpValue) {
+    validateOtp() {
         console.log(this.customerPhonenum);
         this.verifyOtpModel.sourceKey = 'mobile';
         this.verifyOtpModel.sourceValue = this.customerPhonenum;
         this.verifyOtpModel.otp = this.otp.value;
         this.verifyOtpModel.type = '';
-        console.log(this.verifyOtpModel);
+        this.verifyOtpModel.isMobileLogin = true;
+        this.isLoading = true;
         this.api.verifyOtp(this.verifyOtpModel).subscribe((otpResp) => {
-            var _a;
-            console.log('otpres:: ', otpResp);
-            this.otpResponse = otpResp;
-            /* Validation resp */
-            if ((_a = this.routerData) === null || _a === void 0 ? void 0 : _a.resetPass) {
-                this.router.navigateByUrl('/new-passwordchange');
-            }
-            else {
-                if (this.otpResponse.userId !== '' ||
-                    this.otpResponse.userId !== null) {
-                    this.goToCashWithdrawal(this.otpForm);
+            var _a, _b, _c, _d, _e;
+            if ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.status) == 200) {
+                sessionStorage.setItem('customer_id', (_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.customerId);
+                localStorage.setItem('firstName', (_b = otpResp['data']) === null || _b === void 0 ? void 0 : _b.firstName);
+                localStorage.setItem('lastName', (_c = otpResp['data']) === null || _c === void 0 ? void 0 : _c.lastName);
+                localStorage.setItem('customer_id', (_d = otpResp['data']) === null || _d === void 0 ? void 0 : _d.customerId);
+                localStorage.setItem('customer_details', JSON.stringify(otpResp['data']));
+                if (((_e = otpResp['data']) === null || _e === void 0 ? void 0 : _e.firstTimeLogin) == "Y") {
+                    this.router.navigateByUrl('/new-passwordchange');
                 }
                 else {
-                    this.router.navigateByUrl('/login');
+                    // TODO:
+                    if (this.screenNames) {
+                        if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
+                            const navigationExtras = {
+                                queryParams: {
+                                    'screenName': 'forgotmpin'
+                                },
+                            };
+                            this.api.sendNavParam(navigationExtras);
+                            this.router.navigateByUrl('/setmpin');
+                        }
+                        else {
+                            this.router.navigate(['dashboard'], { replaceUrl: true });
+                            this.otpForm.reset();
+                            this.dataService.isLoggedIn.next(true);
+                            this.openToast(otpResp === null || otpResp === void 0 ? void 0 : otpResp.message);
+                        }
+                    }
                 }
             }
+            else {
+                this.router.navigateByUrl('/login');
+                this.openToast(otpResp === null || otpResp === void 0 ? void 0 : otpResp.message);
+            }
+            this.isLoading = false;
         }, (err) => {
-            console.log(err);
-            this.openToast();
+            this.errMsg = 'Please enter a valid OTP';
+            setTimeout(() => this.errMsg = '', 3000);
+            this.isLoading = false;
         });
     }
     goBack() {
         this.router.navigateByUrl('/login');
     }
-    goToCashWithdrawal(otpForm) {
-        otpForm.customerPhonenum = localStorage.getItem('customerPhonenum');
-        console.log(otpForm.customerPhonenum);
-        this.api.custpomerDetails(otpForm.customerPhonenum).subscribe((resp) => {
-            if (resp != null) {
-                const cards = JSON.stringify(resp.custAccount.filter((card) => card.status === 'APPROVED'));
-                localStorage.setItem('cardData', cards);
-                sessionStorage.setItem('customer_id', resp.customerId);
-                localStorage.setItem('firstName', resp === null || resp === void 0 ? void 0 : resp.firstName);
-                localStorage.setItem('lastName', resp === null || resp === void 0 ? void 0 : resp.lastName);
-                localStorage.setItem('customer_id', resp.customerId);
-                localStorage.setItem('customer_details', JSON.stringify(resp));
-                // this.openToast1('Login Successful');
-                console.log(this.screenNames);
-                if (this.screenNames) {
-                    if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
-                        console.log("else if");
-                        this.router.navigateByUrl('/setmpin');
-                    }
-                    else {
-                        // this.router.navigate(['dashboard']);
-                        this.router.navigateByUrl('/dashboard');
-                    }
-                }
-            }
-        });
-    }
-    openToast() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+    openToast(message) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
-                message: 'Please enter the valid OTP Number',
-                duration: 5000,
-                position: 'middle',
+                message: `${message}`,
+                duration: 2500,
+                position: 'bottom',
             });
             toast.present();
         });
     }
     openToast1(errorMessage) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
                 message: `${errorMessage}`,
                 duration: 2500,
@@ -261,18 +271,26 @@ let OtpPage = class OtpPage {
     back() {
         this._location.back();
     }
+    obscureText() {
+        this.config.isPasswordInput = !this.config.isPasswordInput;
+        this.cdk.markForCheck();
+    }
 };
 OtpPage.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.ChangeDetectorRef },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__.Router },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_8__.ToastrService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_10__.Location }
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_9__.ToastrService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ToastController },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_11__.Location },
+    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__.DataService }
 ];
-OtpPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+OtpPage.propDecorators = {
+    ngOtpInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.ViewChild, args: ['ngOtpInput', { static: false },] }]
+};
+OtpPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-otp',
         template: _otp_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_otp_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -289,7 +307,7 @@ OtpPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "section {\n  position: relative;\n  background: url('3@3x.png');\n  background-repeat: round;\n  color: #fff;\n  height: 40%;\n}\n\n.logo-icon {\n  margin: 0 auto;\n  text-align: start;\n  width: 175px;\n  height: 45px;\n  margin-top: 62px;\n  opacity: 100%;\n}\n\n.back-nav {\n  padding: 19px 0px 0px 0px;\n}\n\n.back-nav-color {\n  color: #000000 !important;\n}\n\n.item-box-white {\n  width: 100%;\n  height: 100%;\n  background: #ffffff;\n  border-radius: 60px 0 0 0;\n  height: 60%;\n  position: absolute;\n}\n\n.login-logo {\n  padding: 20px;\n  min-height: 140px;\n  margin-top: 15%;\n  text-align: center;\n}\n\n.login-logo img {\n  max-width: 120px;\n  margin-top: -9%;\n}\n\n.otp-text {\n  color: #A2A0A8;\n}\n\n.forgot,\na {\n  text-align: center;\n  font-size: 18px;\n  color: #456EFE !important;\n  margin-top: 10px;\n  display: block;\n  text-decoration: none;\n}\n\n.fieldCard {\n  padding-top: 50%;\n  padding-left: 5%;\n}\n\n.subtitle {\n  padding-left: 5%;\n}\n\n.form-box {\n  padding: 25px;\n  height: 100%;\n  position: relative;\n  top: -10%;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.font_bold {\n  font-weight: 700;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm90cC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxHaXRIdWIlMjBSZXBvc2l0b3J5JTIwb2xkXFxpQ3VzdE1vYmlsZS12Mlxcc3JjXFxhcHBcXHBhZ2VzXFxvdHBcXG90cC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0Esd0JBQUE7RUFDQSxXQUFBO0VBQ0EsV0FBQTtBQ0NGOztBREVBO0VBQ0UsY0FBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDRjs7QURFQTtFQUNFLHlCQUFBO0FDQ0Y7O0FERUE7RUFDRSx5QkFBQTtBQ0NGOztBREVBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxhQUFBO0VBRUEsaUJBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7QUNBRjs7QURHQTtFQUNFLGdCQUFBO0VBQ0EsZUFBQTtBQ0FGOztBREdBO0VBQ0UsY0FBQTtBQ0FGOztBREdBOztFQUVFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EscUJBQUE7QUNBRjs7QURHQTtFQUNFLGdCQUFBO0VBQ0EsZ0JBQUE7QUNBRjs7QURHQTtFQUNFLGdCQUFBO0FDQUY7O0FER0E7RUFDRSxhQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLDhCQUFBO0FDQUY7O0FERUE7RUFDRSxnQkFBQTtBQ0NGIiwiZmlsZSI6Im90cC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJzZWN0aW9uIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgYmFja2dyb3VuZDogdXJsKCcuLi8uLi8uLi9hc3NldHMvaW1hZ2VzLzNAM3gucG5nJyk7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IHJvdW5kO1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIGhlaWdodDogNDAlO1xyXG59XHJcblxyXG4ubG9nby1pY29uIHtcclxuICBtYXJnaW46IDAgYXV0bztcclxuICB0ZXh0LWFsaWduOiBzdGFydDtcclxuICB3aWR0aDogMTc1cHg7XHJcbiAgaGVpZ2h0OiA0NXB4O1xyXG4gIG1hcmdpbi10b3A6IDYycHg7XHJcbiAgb3BhY2l0eTogMTAwJTtcclxufVxyXG5cclxuLmJhY2stbmF2IHtcclxuICBwYWRkaW5nOiAxOXB4IDBweCAwcHggMHB4O1xyXG59XHJcblxyXG4uYmFjay1uYXYtY29sb3Ige1xyXG4gIGNvbG9yOiAjMDAwMDAwICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5pdGVtLWJveC13aGl0ZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGJhY2tncm91bmQ6ICNmZmZmZmY7XHJcbiAgYm9yZGVyLXJhZGl1czogNjBweCAwIDAgMDtcclxuICBoZWlnaHQ6IDYwJTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuXHJcbi5sb2dpbi1sb2dvIHtcclxuICBwYWRkaW5nOiAyMHB4O1xyXG4gIC8vIG1pbi1oZWlnaHQ6IDE5MHB4O1xyXG4gIG1pbi1oZWlnaHQ6IDE0MHB4O1xyXG4gIG1hcmdpbi10b3A6IDE1JTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5sb2dpbi1sb2dvIGltZyB7XHJcbiAgbWF4LXdpZHRoOiAxMjBweDtcclxuICBtYXJnaW4tdG9wOiAtOSU7XHJcbn1cclxuXHJcbi5vdHAtdGV4dCB7XHJcbiAgY29sb3I6ICNBMkEwQTg7XHJcbn1cclxuXHJcbi5mb3Jnb3QsXHJcbmEge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBmb250LXNpemU6IDE4cHg7XHJcbiAgY29sb3I6ICM0NTZFRkUgIWltcG9ydGFudDtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxuLmZpZWxkQ2FyZCB7XHJcbiAgcGFkZGluZy10b3A6IDUwJTtcclxuICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG59XHJcblxyXG4uc3VidGl0bGUge1xyXG4gIHBhZGRpbmctbGVmdDogNSU7XHJcbn1cclxuXHJcbi5mb3JtLWJveCB7XHJcbiAgcGFkZGluZzogMjVweDtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIHRvcDogLTEwJTtcclxuICBib3R0b206IDBweDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgcmlnaHQ6IDBweDtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG59XHJcbi5mb250X2JvbGR7XHJcbiAgZm9udC13ZWlnaHQ6IDcwMDtcclxufSIsInNlY3Rpb24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGJhY2tncm91bmQ6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZXMvM0AzeC5wbmdcIik7XG4gIGJhY2tncm91bmQtcmVwZWF0OiByb3VuZDtcbiAgY29sb3I6ICNmZmY7XG4gIGhlaWdodDogNDAlO1xufVxuXG4ubG9nby1pY29uIHtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIHRleHQtYWxpZ246IHN0YXJ0O1xuICB3aWR0aDogMTc1cHg7XG4gIGhlaWdodDogNDVweDtcbiAgbWFyZ2luLXRvcDogNjJweDtcbiAgb3BhY2l0eTogMTAwJTtcbn1cblxuLmJhY2stbmF2IHtcbiAgcGFkZGluZzogMTlweCAwcHggMHB4IDBweDtcbn1cblxuLmJhY2stbmF2LWNvbG9yIHtcbiAgY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcbn1cblxuLml0ZW0tYm94LXdoaXRlIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogI2ZmZmZmZjtcbiAgYm9yZGVyLXJhZGl1czogNjBweCAwIDAgMDtcbiAgaGVpZ2h0OiA2MCU7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbn1cblxuLmxvZ2luLWxvZ28ge1xuICBwYWRkaW5nOiAyMHB4O1xuICBtaW4taGVpZ2h0OiAxNDBweDtcbiAgbWFyZ2luLXRvcDogMTUlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5sb2dpbi1sb2dvIGltZyB7XG4gIG1heC13aWR0aDogMTIwcHg7XG4gIG1hcmdpbi10b3A6IC05JTtcbn1cblxuLm90cC10ZXh0IHtcbiAgY29sb3I6ICNBMkEwQTg7XG59XG5cbi5mb3Jnb3QsXG5hIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXNpemU6IDE4cHg7XG4gIGNvbG9yOiAjNDU2RUZFICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5maWVsZENhcmQge1xuICBwYWRkaW5nLXRvcDogNTAlO1xuICBwYWRkaW5nLWxlZnQ6IDUlO1xufVxuXG4uc3VidGl0bGUge1xuICBwYWRkaW5nLWxlZnQ6IDUlO1xufVxuXG4uZm9ybS1ib3gge1xuICBwYWRkaW5nOiAyNXB4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAtMTAlO1xuICBib3R0b206IDBweDtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG5cbi5mb250X2JvbGQge1xuICBmb250LXdlaWdodDogNzAwO1xufSJdfQ== */";
+module.exports = "section {\n  position: relative;\n  background: url(\"/assets/images/3@3x.png\");\n  background-repeat: round;\n  color: #fff;\n  height: 40%;\n}\n\nion-toolbar {\n  --background: transparent;\n  --color: white;\n}\n\n.logo-icon {\n  margin: 0 auto;\n  text-align: start;\n  width: 175px;\n  height: 45px;\n  margin-top: 62px;\n  opacity: 100%;\n}\n\n.back-nav {\n  padding: 19px 0px 0px 0px;\n}\n\n.back-nav-color {\n  color: #000000 !important;\n}\n\n.item-box-white {\n  width: 100%;\n  height: 100%;\n  background: #ffffff;\n  border-radius: 60px 0 0 0;\n  height: 60%;\n  position: absolute;\n}\n\n.login-logo {\n  padding: 20px;\n  min-height: 140px;\n  margin-top: 15%;\n  text-align: center;\n}\n\n.login-logo img {\n  max-width: 120px;\n  margin-top: -9%;\n}\n\n.otp_title {\n  font-size: 23px;\n}\n\n.otp-text {\n  color: #A2A0A8;\n  font-size: 15px;\n  font-weight: 400;\n  margin: 0;\n}\n\n.forgot,\na {\n  text-align: center;\n  font-size: 18px;\n  font-weight: 600;\n  color: #456EFE !important;\n  margin-top: 10px;\n  display: block;\n  text-decoration: none;\n}\n\n.fieldCard {\n  padding-top: 50%;\n  padding-left: 5%;\n}\n\n.subtitle {\n  padding-left: 5%;\n}\n\n.form-box {\n  padding: 25px;\n  height: 100%;\n  position: relative;\n  top: -10%;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.font_bold {\n  font-weight: 700;\n}\n\n.err_msg {\n  color: #ff3e3e;\n  transition: all 0.34s;\n  margin-top: 20px;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm90cC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUNBLDBDQUFBO0VBQ0Esd0JBQUE7RUFDQSxXQUFBO0VBQ0EsV0FBQTtBQUNGOztBQUVBO0VBQ0UseUJBQUE7RUFDQSxjQUFBO0FBQ0Y7O0FBRUE7RUFDRSxjQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQUNGOztBQUVBO0VBQ0UseUJBQUE7QUFDRjs7QUFFQTtFQUNFLHlCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7QUFDRjs7QUFFQTtFQUNFLGFBQUE7RUFFQSxpQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtBQUFGOztBQUdBO0VBQ0UsZ0JBQUE7RUFDQSxlQUFBO0FBQUY7O0FBR0E7RUFDRSxlQUFBO0FBQUY7O0FBR0E7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsU0FBQTtBQUFGOztBQUdBOztFQUVFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxxQkFBQTtBQUFGOztBQUdBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQUFGOztBQUdBO0VBQ0UsZ0JBQUE7QUFBRjs7QUFHQTtFQUNFLGFBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsOEJBQUE7QUFBRjs7QUFHQTtFQUNFLGdCQUFBO0FBQUY7O0FBR0E7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FBQUYiLCJmaWxlIjoib3RwLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInNlY3Rpb24ge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBiYWNrZ3JvdW5kOiB1cmwoJy9hc3NldHMvaW1hZ2VzLzNAM3gucG5nJyk7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IHJvdW5kO1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIGhlaWdodDogNDAlO1xyXG59XHJcblxyXG5pb24tdG9vbGJhciB7XHJcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAtLWNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLmxvZ28taWNvbiB7XHJcbiAgbWFyZ2luOiAwIGF1dG87XHJcbiAgdGV4dC1hbGlnbjogc3RhcnQ7XHJcbiAgd2lkdGg6IDE3NXB4O1xyXG4gIGhlaWdodDogNDVweDtcclxuICBtYXJnaW4tdG9wOiA2MnB4O1xyXG4gIG9wYWNpdHk6IDEwMCU7XHJcbn1cclxuXHJcbi5iYWNrLW5hdiB7XHJcbiAgcGFkZGluZzogMTlweCAwcHggMHB4IDBweDtcclxufVxyXG5cclxuLmJhY2stbmF2LWNvbG9yIHtcclxuICBjb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uaXRlbS1ib3gtd2hpdGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIGJvcmRlci1yYWRpdXM6IDYwcHggMCAwIDA7XHJcbiAgaGVpZ2h0OiA2MCU7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG59XHJcblxyXG4ubG9naW4tbG9nbyB7XHJcbiAgcGFkZGluZzogMjBweDtcclxuICAvLyBtaW4taGVpZ2h0OiAxOTBweDtcclxuICBtaW4taGVpZ2h0OiAxNDBweDtcclxuICBtYXJnaW4tdG9wOiAxNSU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4ubG9naW4tbG9nbyBpbWcge1xyXG4gIG1heC13aWR0aDogMTIwcHg7XHJcbiAgbWFyZ2luLXRvcDogLTklO1xyXG59XHJcblxyXG4ub3RwX3RpdGxlIHtcclxuICBmb250LXNpemU6IDIzcHg7XHJcbn1cclxuXHJcbi5vdHAtdGV4dCB7XHJcbiAgY29sb3I6ICNBMkEwQTg7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcblxyXG4uZm9yZ290LFxyXG5hIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZm9udC1zaXplOiAxOHB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgY29sb3I6ICM0NTZFRkUgIWltcG9ydGFudDtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxuLmZpZWxkQ2FyZCB7XHJcbiAgcGFkZGluZy10b3A6IDUwJTtcclxuICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG59XHJcblxyXG4uc3VidGl0bGUge1xyXG4gIHBhZGRpbmctbGVmdDogNSU7XHJcbn1cclxuXHJcbi5mb3JtLWJveCB7XHJcbiAgcGFkZGluZzogMjVweDtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIHRvcDogLTEwJTtcclxuICBib3R0b206IDBweDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgcmlnaHQ6IDBweDtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG59XHJcblxyXG4uZm9udF9ib2xkIHtcclxuICBmb250LXdlaWdodDogNzAwO1xyXG59XHJcblxyXG4uZXJyX21zZyB7XHJcbiAgY29sb3I6ICNmZjNlM2U7XHJcbiAgdHJhbnNpdGlvbjogYWxsIDAuMzRzO1xyXG4gIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59Il19 */";
 
 /***/ }),
 
@@ -299,7 +317,7 @@ module.exports = "section {\n  position: relative;\n  background: url('3@3x.png'
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <div class=\"back-nav\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon\r\n          slot=\"icon-only\"\r\n          name=\"chevron-back-outline\"\r\n          class=\"back-nav-color\"\r\n        ></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\">\r\n        <img src=\"assets/images/Demobank.svg\" class=\"w-100\" />\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form\r\n        *ngIf=\"otpForm\"\r\n        [formGroup]=\"otpForm\"\r\n        class=\"form_container\"\r\n        novalidate\r\n      >\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"font_bold\">OTP Authentication</h4>\r\n            <p class=\"otp-text\">An authentication code has been sent to</p>\r\n            <h6 class=\"font_bold\">{{customerPhonenum}}</h6>\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"otp\" [config]=\"{length:6}\"></ng-otp-input>\r\n        </div>\r\n        <!-- OTP INPUT END -->\r\n        <div class=\"forgot my-5\">\r\n          <a class=\"text-center\" (click)=\"resendOTP()\">Resend code</a>\r\n        </div>\r\n      </form>\r\n      <div>\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button\r\n            expand=\"full\"\r\n            shape=\"round\"\r\n            (click)=\"validateOtp(otpForm.value)\"\r\n          >\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\">\r\n        <img src=\"assets/images/Demobank.svg\" class=\"w-100\" />\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form\r\n        *ngIf=\"otpForm\"\r\n        [formGroup]=\"otpForm\"\r\n        class=\"form_container\"\r\n        novalidate\r\n      >\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"font_bold otp_title\">OTP Authentication</h4>\r\n            <p class=\"otp-text\">An authentication code has been sent to</p>\r\n            <h6 class=\"font_bold mt-1\">({{countryCode}}) {{customerPhonenum}}</h6>\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"otp\" [config]=\"config\" #ngOtpInput></ng-otp-input>\r\n          <p class=\"err_msg\">{{errMsg}}</p>\r\n        </div>\r\n      \r\n        <!-- OTP INPUT END -->\r\n        <ion-grid>\r\n          <ion-row  class=\"ion-justify-content-around\">\r\n            <ion-col>\r\n              <div class=\"forgot my-2\">\r\n                <a class=\"text-center\" (click)=\"resendOTP()\">Resend code</a>\r\n              </div>\r\n            </ion-col>\r\n            <ion-col>\r\n              <div class=\"forgot my-2\">\r\n                <a class=\"text-center\" (click)=\"obscureText()\">{{ config?.isPasswordInput ? 'View OTP' : 'Hide OTP'}}</a>\r\n              </div>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </form>\r\n      <div>\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button\r\n            expand=\"full\"\r\n            shape=\"round\"\r\n            (click)=\"validateOtp()\"\r\n          >\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
