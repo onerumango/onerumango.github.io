@@ -53,16 +53,16 @@ let AppointmentpopupPage = class AppointmentpopupPage {
         this.myAngularxQrCode = 'Your QR code data string';
     }
     ngOnInit() {
-        var _a, _b;
+        var _a;
         this.phoneNumber = localStorage.getItem('customerPhonenum');
         this.api.getIndex().subscribe(resp => {
             console.log(resp.index);
             this.assignProductCode(resp.index);
         });
-        this.dataTransactionId = this.dataRoute.snapshot.params['transactionId'];
         localStorage.getItem('AccountNumber');
         localStorage.getItem('TransactionDate');
         localStorage.getItem('TransactionTime');
+        console.log(this.value);
         this.appointmentDetails = JSON.parse(localStorage.getItem('AppointmentDetails'));
         console.log("NEW", this.appointmentDetails);
         if (this.appointmentDetails) {
@@ -77,8 +77,7 @@ let AppointmentpopupPage = class AppointmentpopupPage {
             this.accounttype = this.appointmentDetails.accountType;
             console.log(this.accounttype);
             this.accountcurrency = this.appointmentDetails.accountCurrency;
-            this.dataTransactionId = (_a = this.appointmentDetails) === null || _a === void 0 ? void 0 : _a.transactionId;
-            this.tranType = (_b = this.appointmentDetails) === null || _b === void 0 ? void 0 : _b.trnType;
+            this.tranType = (_a = this.appointmentDetails) === null || _a === void 0 ? void 0 : _a.trnType;
             this.remarks = this.appointmentDetails.remarks;
             console.log(this.remarks);
             this.generateQRCode();
@@ -96,7 +95,8 @@ let AppointmentpopupPage = class AppointmentpopupPage {
         this.router.navigate(['dashboard']);
     }
     generateQRCode() {
-        this.tokenObjects.transactionId = this.dataTransactionId;
+        var _a;
+        this.tokenObjects.transactionId = (_a = this.value) === null || _a === void 0 ? void 0 : _a.transactionId;
         this.tokenObjects.accountId = this.accountNum;
         this.tokenObjects.transactionDate = moment__WEBPACK_IMPORTED_MODULE_2__(new Date(localStorage.getItem('TransactionDate'))).format("DD-MM-YYYY");
         this.tokenObjects.transactionDate = localStorage.getItem('TransactionDate');
@@ -210,7 +210,7 @@ let AppointmentpopupPage = class AppointmentpopupPage {
     }
     addToWallet() {
         let payload = {
-            transactionId: this.dataTransactionId,
+            transactionId: this.value.transactionId,
             addToWallet: true
         };
         this.api.updateAddToWallet(payload).subscribe(res => {
