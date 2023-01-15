@@ -3059,7 +3059,7 @@
         },
         decls: 15,
         vars: 6,
-        consts: [["fxLayout", "row", "fxLayoutAlign", "end stretch"], [1, "mat-18", 2, "cursor", "pointer", 3, "click"], ["class", "errorMsg", 4, "ngIf"], ["fxLayout", "row", "fxFlex", "100", "fxLayoutAlign", "space-between"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], ["class", "m-333", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "start center", "class", "infoDiv", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 4, "ngIf"], [4, "ngIf"], [1, "errorMsg"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click"], [1, "icon4", 3, "ngClass"], [1, "labelClass"], [1, "m-333"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", "class", "searchBox", 4, "ngIf"], ["class", "main-folder-div", 4, "ngIf"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", 1, "searchBox"], ["fxFlex", "7%", 1, "searchIcon-div"], ["matPrefix", "", "mat-icon-button", "", 4, "ngIf"], ["fxFlex", "90%", "class", "full-width", "class", "searchInput", 4, "ngIf"], ["fxFlex", "7%", 1, "tooltip"], ["matPrefix", "", "mat-icon-button", "", 3, "click"], [3, "ngClass"], [1, "tooltiptext"], ["matPrefix", "", "mat-icon-button", ""], [1, "searchIcon"], ["fxFlex", "90%", 1, "searchInput"], ["matInput", "", "type", "text", 3, "ngModel", "ngModelChange", "keypress"], ["input", ""], [1, "main-folder-div"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "full-width"], ["class", "operation-card", "fxLayout", "column", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "operation-card"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "folderDiv", 3, "ngClass", "click"], ["fxLayout", "row"], ["mat-card-avatar", ""], ["fxLayout", "row", "fxLayoutAlign", "center center", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "column", 1, "folder-details"], ["fxLayout", "row", "fxLayoutGap", "5px", 1, "label-font"], [1, "label1"], [1, "label2"], [1, "id-font"], ["fxLayoutAlign", "center", 1, "icon"], [1, "colon-icon", 3, "matMenuTriggerFor"], ["src", "../../../../assets/images/colon-symbol.png", "alt", "", 1, "colonIcon"], ["xPosition", "before"], ["menu", "matMenu"], ["fxLayout", "column", "fxLayoutGap", "10px"], ["class", "actionList", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "defaultImage"], [1, "imageText"], ["fxLayout", "row", 1, "defaultImage"], ["alt", "", 1, "defaultImage", 3, "src"], [1, "actionList", 3, "click"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "10px"], [1, "actionIcon"], [1, "actionTitle"], ["fxLayout", "row", "fxLayoutAlign", "start center", 1, "infoDiv"], [1, "infoIcon"], [1, "infoText"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "30"], ["fxFlex", "40", "fxFlexAlign", "center"], [1, "text-center"], ["mode", "indeterminate"], ["fxLayout", "column wrap"], ["fxFlex", "100", "fxLayoutAlign", "end stretch"], ["fxFlex", "25", "fxLayoutAlign", "start stretch", "fxLayoutGap", "space-around"], ["type", "text", "placeholder", "icust search", 3, "keyup"], ["fxFlex", "25", "fxLayoutAlign", "start stretch"], ["id", "kycList", 4, "ngFor", "ngForOf"], ["id", "kycList"], ["id", "listmat"], ["color", "primary", "id", "ic"], ["mat-line", "", 2, "margin-left", "100px"], ["mat-line", "", 2, "margin-left", "100px", "color", "rgb(223, 217, 217)"], ["fxLayoutAlign", "end ", 2, "margin-left", "500px"], ["src", "../../../../assets/images/colon-symbol.png", "alt", ""]],
+        consts: [["fxLayout", "row", "fxLayoutAlign", "end stretch"], [1, "mat-18", 2, "cursor", "pointer", 3, "click"], ["class", "errorMsg", 4, "ngIf"], ["fxLayout", "row", "fxFlex", "100", "fxLayoutAlign", "space-between"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], ["class", "m-333", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "start center", "class", "infoDiv", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 4, "ngIf"], [4, "ngIf"], [1, "errorMsg"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click"], [1, "icon4", 3, "ngClass"], [1, "labelClass"], [1, "m-333"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", "class", "searchBox", 4, "ngIf"], ["class", "main-folder-div", 4, "ngIf"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", 1, "searchBox"], ["fxFlex", "7%", 1, "searchIcon-div"], ["matPrefix", "", "mat-icon-button", "", 4, "ngIf"], ["fxFlex", "90%", "class", "full-width", "class", "searchInput", 4, "ngIf"], ["fxFlex", "7%", 1, "tooltip"], ["matPrefix", "", "mat-icon-button", "", 3, "click"], [3, "ngClass"], [1, "tooltiptext"], ["matPrefix", "", "mat-icon-button", ""], [1, "searchIcon"], ["fxFlex", "90%", 1, "searchInput"], ["matInput", "", "type", "text", 3, "ngModel", "ngModelChange", "keypress"], ["input", ""], [1, "main-folder-div"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "full-width"], ["class", "operation-card", "fxLayout", "column", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "operation-card"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "folderDiv", 3, "ngClass", "click"], ["fxLayout", "row"], ["mat-card-avatar", ""], ["fxLayout", "row", "fxLayoutAlign", "center center", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "column", 1, "folder-details"], ["fxLayout", "row", "fxLayoutGap", "5px", 1, "label-font"], [1, "label1"], [1, "label2"], [1, "id-font"], ["fxLayoutAlign", "center", 1, "icon"], [1, "colon-icon", 3, "matMenuTriggerFor"], ["src", "assets/images/colon-symbol.png", "alt", "", 1, "colonIcon"], ["xPosition", "before"], ["menu", "matMenu"], ["fxLayout", "column", "fxLayoutGap", "10px"], ["class", "actionList", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "defaultImage"], [1, "imageText"], ["fxLayout", "row", 1, "defaultImage"], ["alt", "", 1, "defaultImage", 3, "src"], [1, "actionList", 3, "click"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "10px"], [1, "actionIcon"], [1, "actionTitle"], ["fxLayout", "row", "fxLayoutAlign", "start center", 1, "infoDiv"], [1, "infoIcon"], [1, "infoText"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "30"], ["fxFlex", "40", "fxFlexAlign", "center"], [1, "text-center"], ["mode", "indeterminate"], ["fxLayout", "column wrap"], ["fxFlex", "100", "fxLayoutAlign", "end stretch"], ["fxFlex", "25", "fxLayoutAlign", "start stretch", "fxLayoutGap", "space-around"], ["type", "text", "placeholder", "icust search", 3, "keyup"], ["fxFlex", "25", "fxLayoutAlign", "start stretch"], ["id", "kycList", 4, "ngFor", "ngForOf"], ["id", "kycList"], ["id", "listmat"], ["color", "primary", "id", "ic"], ["mat-line", "", 2, "margin-left", "100px"], ["mat-line", "", 2, "margin-left", "100px", "color", "rgb(223, 217, 217)"], ["fxLayoutAlign", "end ", 2, "margin-left", "500px"], ["src", "assets/images/colon-symbol.png", "alt", ""]],
         template: function SearchComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -4064,7 +4064,7 @@
         },
         decls: 79,
         vars: 13,
-        consts: [[1, "topbar", "mat-indigo"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click", 4, "ngIf"], [1, "topbar-branding"], ["routerLink", "/others/dashboard", 2, "padding-bottom", "20%", "font-size", "larger", "color", "white"], ["fxFlex", ""], [1, "icons-padding"], ["mat-icon-button", ""], [3, "click"], ["mat-icon-button", "", "matTooltip", "Notifications", 1, "topbar-button-right", 3, "click"], ["class", "notification-number mat-bg-warn", 4, "ngIf"], ["mat-icon-button", "", "id", "schemeToggle", "matTooltip", "Theme Change", 1, "topbar-button-right", 3, "matMenuTriggerFor"], ["themeMenu", "matMenu"], ["cols", "2", "rowHeight", "48px", 1, "theme-list"], [3, "click", 4, "ngFor", "ngForOf"], ["mat-icon-button", "", 1, "topbar-button-right", "mr-4", "img-button"], ["src", "assets/images/face-7.jpg", "alt", ""], [3, "matMenuTriggerFor"], ["accountMenu", "matMenu"], ["role", "list", 1, "notification-list"], ["matRipple", "", 1, "d-flex", "mb-16", "mx-8"], [1, "w-40", "h-40", "mr-16", "rounded-circle", "mat-bg-chip", "d-flex", "align-items-center", "justify-content-center"], [1, "d-flex", "flex-column", "justify-content-center", "flex-grow-1"], [1, "mb-4"], [1, "text-muted"], ["mat-icon-button", "", 3, "click"], ["color", "primary", 1, "text-muted"], ["role", "listitem", "routerLinkActive", "open", 1, "notific-item"], ["color", "primary", 1, "notific-icon", "mr-16"], ["fxLayout", "row"], [1, "message", "mx-4"], ["color", "primary", 1, "editbutton", 3, "click"], ["color", "primary", 1, "editlang", 3, "click"], ["mat-menu-item", "", 3, "click"], [2, "font-size", "medium"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click"], [1, "notification-number", "mat-bg-warn"], ["mat-menu-item", "", 3, "title"], [1, "egret-swatch"], ["class", "active-icon", 4, "ngIf"], [1, "active-icon"]],
+        consts: [[1, "topbar", "toolbarBackground", 2, "background", "transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box !important"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click", 4, "ngIf"], [1, "topbar-branding"], ["routerLink", "/others/dashboard", 2, "padding-bottom", "20%", "font-size", "larger", "color", "white"], ["fxFlex", ""], [1, "icons-padding"], ["mat-icon-button", ""], [3, "click"], ["mat-icon-button", "", "matTooltip", "Notifications", 1, "topbar-button-right", 3, "click"], ["class", "notification-number mat-bg-warn", 4, "ngIf"], ["mat-icon-button", "", "id", "schemeToggle", "matTooltip", "Theme Change", 1, "topbar-button-right", 3, "matMenuTriggerFor"], ["themeMenu", "matMenu"], ["cols", "2", "rowHeight", "48px", 1, "theme-list"], [3, "click", 4, "ngFor", "ngForOf"], ["mat-icon-button", "", 1, "topbar-button-right", "mr-4", "img-button"], ["src", "assets/images/face-7.jpg", "alt", ""], [3, "matMenuTriggerFor"], ["accountMenu", "matMenu"], ["role", "list", 1, "notification-list"], ["matRipple", "", 1, "d-flex", "mb-16", "mx-8"], [1, "w-40", "h-40", "mr-16", "rounded-circle", "mat-bg-chip", "d-flex", "align-items-center", "justify-content-center"], [1, "d-flex", "flex-column", "justify-content-center", "flex-grow-1"], [1, "mb-4"], [1, "text-muted"], ["mat-icon-button", "", 3, "click"], ["color", "primary", 1, "text-muted"], ["role", "listitem", "routerLinkActive", "open", 1, "notific-item"], ["color", "primary", 1, "notific-icon", "mr-16"], ["fxLayout", "row"], [1, "message", "mx-4"], ["color", "primary", 1, "editbutton", 3, "click"], ["color", "primary", 1, "editlang", 3, "click"], ["mat-menu-item", "", 3, "click"], [2, "font-size", "medium"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click"], [1, "notification-number", "mat-bg-warn"], ["mat-menu-item", "", 3, "title"], [1, "egret-swatch"], ["class", "active-icon", 4, "ngIf"], [1, "active-icon"]],
         template: function HeaderSideComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -4075,7 +4075,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "a", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "YES BANK");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "DemoBank");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5753,6 +5753,10 @@
                   type: 'link',
                   state: 'clearingholiday'
                 }]
+              }, {
+                name: 'Kiosk Login',
+                type: 'link',
+                state: 'kioskLogin'
               }, {
                 name: 'Product Maintenance',
                 type: 'link',
@@ -10982,6 +10986,7 @@
             this.setUserAndToken(null, false);
             this.ls.setItem("notification", false);
             this.ls.setItem("browserId", null);
+            this.ls.setItem("denomRequired", null);
             this.router.navigateByUrl("sessions/signin");
           }
         }, {
@@ -11328,8 +11333,8 @@
           }
         }, {
           key: "isStateCodePresent",
-          value: function isStateCodePresent(state) {
-            return this.http.get("".concat(API_URL, "/countryStateMaint/isStateCodePresent?stateCode=").concat(state)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          value: function isStateCodePresent(country, state) {
+            return this.http.get("".concat(API_URL, "/countryStateMaint/isStateCodePresent?countryCode=").concat(country, "&stateCode=").concat(state)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "isStateCode2Present",
@@ -11383,7 +11388,14 @@
         }, {
           key: "deleteCity",
           value: function deleteCity(id) {
-            return this.http["delete"]("".concat(API_URL, "/iccity/deleteCity?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+            return this.http["delete"]("".concat(API_URL, "/iccity/deleteCity?id=").concat(id), {
+              responseType: 'text'
+            }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "updateCityAuditLog",
+          value: function updateCityAuditLog(payload) {
+            return this.http.put("".concat(API_URL, "/iccity/updateCityAuditLog"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           } //City Ends
 
         }, {
@@ -12178,9 +12190,9 @@
           }
         }, {
           key: "editCurrencyMaintById",
-          value: function editCurrencyMaintById(currencyId) {
-            console.log(currencyId);
-            return this.http.post("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMaintById"), currencyId).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          value: function editCurrencyMaintById(currencyCode) {
+            console.log(currencyCode);
+            return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMaintByCurrencyCode?currencyCode=").concat(currencyCode)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "upsertCurrencyMaintDetails",
@@ -12194,8 +12206,8 @@
           }
         }, {
           key: "deleteCurrencyMaint",
-          value: function deleteCurrencyMaint(currencyId) {
-            return this.http["delete"]("".concat(API_URL, "/currencyMaint-api/deleteCurrencyMaint?currencyCode=").concat(currencyId.currencyCode, "&country=").concat(currencyId.country)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          value: function deleteCurrencyMaint(id) {
+            return this.http["delete"]("".concat(API_URL, "/currencyMaint-api/deleteCurrencyMaint?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "getCurrencyDetails",
@@ -12364,12 +12376,12 @@
         }, {
           key: "deleteIndividualToken",
           value: function deleteIndividualToken(tellerId) {
-            return this.http.get("".concat(API_URL, "/teller/notifications/delete?notificationId=").concat(tellerId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+            return this.http["delete"]("".concat(API_URL, "/teller/notifications/delete?notificationId=").concat(tellerId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "deleteAllToken",
           value: function deleteAllToken(tellerId) {
-            return this.http.get("".concat(API_URL, "/teller/notifications/deleteAll?tellerId=").concat(tellerId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+            return this.http["delete"]("".concat(API_URL, "/teller/notifications/deleteAll?tellerId=").concat(tellerId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "getCustomerCategory",
@@ -12385,6 +12397,11 @@
           key: "saveCustomerCategory",
           value: function saveCustomerCategory(dtu) {
             return this.http.post("".concat(API_URL, "/maintenance/UpsertCustomerCategoryDetails"), dtu); // .pipe(catchError(this.errorHandler));
+          }
+        }, {
+          key: "updateCustomerAuditLog",
+          value: function updateCustomerAuditLog(payload) {
+            return this.http.put("".concat(API_URL, "/maintenance/updateCustomerAuditLog"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "getCustomerCategoryById",
@@ -12410,6 +12427,36 @@
           key: "getCustomerChargeCategoryById",
           value: function getCustomerChargeCategoryById(id) {
             return this.http.get("".concat(API_URL, "/maintenance/fetchCustomerChargeCategoryById?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "updateCustomerChargeAuditLog",
+          value: function updateCustomerChargeAuditLog(payload) {
+            return this.http.put("".concat(API_URL, "/maintenance/updateCustomerChargeAuditLog"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "createKioskBranch",
+          value: function createKioskBranch(data) {
+            return this.http.post("".concat(API_URL, "/kioskSystem/upsertDetails"), data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "getKioskLoginDetails",
+          value: function getKioskLoginDetails() {
+            return this.http.get("".concat(API_URL, "/kioskSystem/fetchKioskSystemDetails")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "deleteKioskLoginById",
+          value: function deleteKioskLoginById(id) {
+            return this.http["delete"]("".concat(API_URL, "/kioskSystem/deleteKioskSystem?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "getAuditLogsForKioskMaintenance",
+          value: function getAuditLogsForKioskMaintenance(payload) {
+            return this.http.put("".concat(API_URL, "/kioskSystem/updateKioskSystemAuditLog"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "getKioskDataById",
+          value: function getKioskDataById(id) {
+            return this.http.get("".concat(API_URL, "/kioskSystem/fetchKioskSystemById?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }]);
 
@@ -13856,7 +13903,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "YES BANK");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "YES BANK 6");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 

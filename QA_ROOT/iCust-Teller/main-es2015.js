@@ -1648,7 +1648,7 @@ SearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.inputElement = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.progressBar = _t.first);
-    } }, outputs: { search: "search" }, decls: 15, vars: 6, consts: [["fxLayout", "row", "fxLayoutAlign", "end stretch"], [1, "mat-18", 2, "cursor", "pointer", 3, "click"], ["class", "errorMsg", 4, "ngIf"], ["fxLayout", "row", "fxFlex", "100", "fxLayoutAlign", "space-between"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], ["class", "m-333", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "start center", "class", "infoDiv", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 4, "ngIf"], [4, "ngIf"], [1, "errorMsg"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click"], [1, "icon4", 3, "ngClass"], [1, "labelClass"], [1, "m-333"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", "class", "searchBox", 4, "ngIf"], ["class", "main-folder-div", 4, "ngIf"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", 1, "searchBox"], ["fxFlex", "7%", 1, "searchIcon-div"], ["matPrefix", "", "mat-icon-button", "", 4, "ngIf"], ["fxFlex", "90%", "class", "full-width", "class", "searchInput", 4, "ngIf"], ["fxFlex", "7%", 1, "tooltip"], ["matPrefix", "", "mat-icon-button", "", 3, "click"], [3, "ngClass"], [1, "tooltiptext"], ["matPrefix", "", "mat-icon-button", ""], [1, "searchIcon"], ["fxFlex", "90%", 1, "searchInput"], ["matInput", "", "type", "text", 3, "ngModel", "ngModelChange", "keypress"], ["input", ""], [1, "main-folder-div"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "full-width"], ["class", "operation-card", "fxLayout", "column", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "operation-card"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "folderDiv", 3, "ngClass", "click"], ["fxLayout", "row"], ["mat-card-avatar", ""], ["fxLayout", "row", "fxLayoutAlign", "center center", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "column", 1, "folder-details"], ["fxLayout", "row", "fxLayoutGap", "5px", 1, "label-font"], [1, "label1"], [1, "label2"], [1, "id-font"], ["fxLayoutAlign", "center", 1, "icon"], [1, "colon-icon", 3, "matMenuTriggerFor"], ["src", "../../../../assets/images/colon-symbol.png", "alt", "", 1, "colonIcon"], ["xPosition", "before"], ["menu", "matMenu"], ["fxLayout", "column", "fxLayoutGap", "10px"], ["class", "actionList", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "defaultImage"], [1, "imageText"], ["fxLayout", "row", 1, "defaultImage"], ["alt", "", 1, "defaultImage", 3, "src"], [1, "actionList", 3, "click"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "10px"], [1, "actionIcon"], [1, "actionTitle"], ["fxLayout", "row", "fxLayoutAlign", "start center", 1, "infoDiv"], [1, "infoIcon"], [1, "infoText"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "30"], ["fxFlex", "40", "fxFlexAlign", "center"], [1, "text-center"], ["mode", "indeterminate"], ["fxLayout", "column wrap"], ["fxFlex", "100", "fxLayoutAlign", "end stretch"], ["fxFlex", "25", "fxLayoutAlign", "start stretch", "fxLayoutGap", "space-around"], ["type", "text", "placeholder", "icust search", 3, "keyup"], ["fxFlex", "25", "fxLayoutAlign", "start stretch"], ["id", "kycList", 4, "ngFor", "ngForOf"], ["id", "kycList"], ["id", "listmat"], ["color", "primary", "id", "ic"], ["mat-line", "", 2, "margin-left", "100px"], ["mat-line", "", 2, "margin-left", "100px", "color", "rgb(223, 217, 217)"], ["fxLayoutAlign", "end ", 2, "margin-left", "500px"], ["src", "../../../../assets/images/colon-symbol.png", "alt", ""]], template: function SearchComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, outputs: { search: "search" }, decls: 15, vars: 6, consts: [["fxLayout", "row", "fxLayoutAlign", "end stretch"], [1, "mat-18", 2, "cursor", "pointer", 3, "click"], ["class", "errorMsg", 4, "ngIf"], ["fxLayout", "row", "fxFlex", "100", "fxLayoutAlign", "space-between"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], ["class", "m-333", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "start center", "class", "infoDiv", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 4, "ngIf"], [4, "ngIf"], [1, "errorMsg"], ["fxLayout", "column", "fxLayoutAlign", "center center", 3, "ngClass", "click"], [1, "icon4", 3, "ngClass"], [1, "labelClass"], [1, "m-333"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", "class", "searchBox", 4, "ngIf"], ["class", "main-folder-div", 4, "ngIf"], ["fxLayoutAlign", "center center", "fxLayoutGap", "space-around", 1, "searchBox"], ["fxFlex", "7%", 1, "searchIcon-div"], ["matPrefix", "", "mat-icon-button", "", 4, "ngIf"], ["fxFlex", "90%", "class", "full-width", "class", "searchInput", 4, "ngIf"], ["fxFlex", "7%", 1, "tooltip"], ["matPrefix", "", "mat-icon-button", "", 3, "click"], [3, "ngClass"], [1, "tooltiptext"], ["matPrefix", "", "mat-icon-button", ""], [1, "searchIcon"], ["fxFlex", "90%", 1, "searchInput"], ["matInput", "", "type", "text", 3, "ngModel", "ngModelChange", "keypress"], ["input", ""], [1, "main-folder-div"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "full-width"], ["class", "operation-card", "fxLayout", "column", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "operation-card"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "folderDiv", 3, "ngClass", "click"], ["fxLayout", "row"], ["mat-card-avatar", ""], ["fxLayout", "row", "fxLayoutAlign", "center center", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "column", 1, "folder-details"], ["fxLayout", "row", "fxLayoutGap", "5px", 1, "label-font"], [1, "label1"], [1, "label2"], [1, "id-font"], ["fxLayoutAlign", "center", 1, "icon"], [1, "colon-icon", 3, "matMenuTriggerFor"], ["src", "assets/images/colon-symbol.png", "alt", "", 1, "colonIcon"], ["xPosition", "before"], ["menu", "matMenu"], ["fxLayout", "column", "fxLayoutGap", "10px"], ["class", "actionList", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "defaultImage"], [1, "imageText"], ["fxLayout", "row", 1, "defaultImage"], ["alt", "", 1, "defaultImage", 3, "src"], [1, "actionList", 3, "click"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "10px"], [1, "actionIcon"], [1, "actionTitle"], ["fxLayout", "row", "fxLayoutAlign", "start center", 1, "infoDiv"], [1, "infoIcon"], [1, "infoText"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "30"], ["fxFlex", "40", "fxFlexAlign", "center"], [1, "text-center"], ["mode", "indeterminate"], ["fxLayout", "column wrap"], ["fxFlex", "100", "fxLayoutAlign", "end stretch"], ["fxFlex", "25", "fxLayoutAlign", "start stretch", "fxLayoutGap", "space-around"], ["type", "text", "placeholder", "icust search", 3, "keyup"], ["fxFlex", "25", "fxLayoutAlign", "start stretch"], ["id", "kycList", 4, "ngFor", "ngForOf"], ["id", "kycList"], ["id", "listmat"], ["color", "primary", "id", "ic"], ["mat-line", "", 2, "margin-left", "100px"], ["mat-line", "", 2, "margin-left", "100px", "color", "rgb(223, 217, 217)"], ["fxLayoutAlign", "end ", 2, "margin-left", "500px"], ["src", "assets/images/colon-symbol.png", "alt", ""]], template: function SearchComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SearchComponent_Template_mat_icon_click_1_listener() { return ctx.closeDialog(); });
@@ -2218,12 +2218,12 @@ class HeaderSideComponent {
     }
 }
 HeaderSideComponent.ɵfac = function HeaderSideComponent_Factory(t) { return new (t || HeaderSideComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_layout_service__WEBPACK_IMPORTED_MODULE_2__["LayoutService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_navigation_service__WEBPACK_IMPORTED_MODULE_8__["NavigationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_theme_service__WEBPACK_IMPORTED_MODULE_1__["ThemeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__["JwtAuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_7__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_10__["ApiService"])); };
-HeaderSideComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderSideComponent, selectors: [["app-header-side"]], inputs: { notificPanel: "notificPanel", profilePanel: "profilePanel" }, decls: 79, vars: 13, consts: [[1, "topbar", "mat-indigo"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click", 4, "ngIf"], [1, "topbar-branding"], ["routerLink", "/others/dashboard", 2, "padding-bottom", "20%", "font-size", "larger", "color", "white"], ["fxFlex", ""], [1, "icons-padding"], ["mat-icon-button", ""], [3, "click"], ["mat-icon-button", "", "matTooltip", "Notifications", 1, "topbar-button-right", 3, "click"], ["class", "notification-number mat-bg-warn", 4, "ngIf"], ["mat-icon-button", "", "id", "schemeToggle", "matTooltip", "Theme Change", 1, "topbar-button-right", 3, "matMenuTriggerFor"], ["themeMenu", "matMenu"], ["cols", "2", "rowHeight", "48px", 1, "theme-list"], [3, "click", 4, "ngFor", "ngForOf"], ["mat-icon-button", "", 1, "topbar-button-right", "mr-4", "img-button"], ["src", "assets/images/face-7.jpg", "alt", ""], [3, "matMenuTriggerFor"], ["accountMenu", "matMenu"], ["role", "list", 1, "notification-list"], ["matRipple", "", 1, "d-flex", "mb-16", "mx-8"], [1, "w-40", "h-40", "mr-16", "rounded-circle", "mat-bg-chip", "d-flex", "align-items-center", "justify-content-center"], [1, "d-flex", "flex-column", "justify-content-center", "flex-grow-1"], [1, "mb-4"], [1, "text-muted"], ["mat-icon-button", "", 3, "click"], ["color", "primary", 1, "text-muted"], ["role", "listitem", "routerLinkActive", "open", 1, "notific-item"], ["color", "primary", 1, "notific-icon", "mr-16"], ["fxLayout", "row"], [1, "message", "mx-4"], ["color", "primary", 1, "editbutton", 3, "click"], ["color", "primary", 1, "editlang", 3, "click"], ["mat-menu-item", "", 3, "click"], [2, "font-size", "medium"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click"], [1, "notification-number", "mat-bg-warn"], ["mat-menu-item", "", 3, "title"], [1, "egret-swatch"], ["class", "active-icon", 4, "ngIf"], [1, "active-icon"]], template: function HeaderSideComponent_Template(rf, ctx) { if (rf & 1) {
+HeaderSideComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderSideComponent, selectors: [["app-header-side"]], inputs: { notificPanel: "notificPanel", profilePanel: "profilePanel" }, decls: 79, vars: 13, consts: [[1, "topbar", "toolbarBackground", 2, "background", "transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box !important"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click", 4, "ngIf"], [1, "topbar-branding"], ["routerLink", "/others/dashboard", 2, "padding-bottom", "20%", "font-size", "larger", "color", "white"], ["fxFlex", ""], [1, "icons-padding"], ["mat-icon-button", ""], [3, "click"], ["mat-icon-button", "", "matTooltip", "Notifications", 1, "topbar-button-right", 3, "click"], ["class", "notification-number mat-bg-warn", 4, "ngIf"], ["mat-icon-button", "", "id", "schemeToggle", "matTooltip", "Theme Change", 1, "topbar-button-right", 3, "matMenuTriggerFor"], ["themeMenu", "matMenu"], ["cols", "2", "rowHeight", "48px", 1, "theme-list"], [3, "click", 4, "ngFor", "ngForOf"], ["mat-icon-button", "", 1, "topbar-button-right", "mr-4", "img-button"], ["src", "assets/images/face-7.jpg", "alt", ""], [3, "matMenuTriggerFor"], ["accountMenu", "matMenu"], ["role", "list", 1, "notification-list"], ["matRipple", "", 1, "d-flex", "mb-16", "mx-8"], [1, "w-40", "h-40", "mr-16", "rounded-circle", "mat-bg-chip", "d-flex", "align-items-center", "justify-content-center"], [1, "d-flex", "flex-column", "justify-content-center", "flex-grow-1"], [1, "mb-4"], [1, "text-muted"], ["mat-icon-button", "", 3, "click"], ["color", "primary", 1, "text-muted"], ["role", "listitem", "routerLinkActive", "open", 1, "notific-item"], ["color", "primary", 1, "notific-icon", "mr-16"], ["fxLayout", "row"], [1, "message", "mx-4"], ["color", "primary", 1, "editbutton", 3, "click"], ["color", "primary", 1, "editlang", 3, "click"], ["mat-menu-item", "", 3, "click"], [2, "font-size", "medium"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click"], [1, "notification-number", "mat-bg-warn"], ["mat-menu-item", "", 3, "title"], [1, "egret-swatch"], ["class", "active-icon", 4, "ngIf"], [1, "active-icon"]], template: function HeaderSideComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderSideComponent_button_1_Template, 3, 0, "button", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "a", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "YES BANK");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "DemoBank");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 4);
@@ -3142,6 +3142,7 @@ class ProfileComponent {
                             { name: 'Currency Holidays', type: 'link', state: 'currencyholiday' },
                             { name: 'Clearing Holidays', type: 'link', state: 'clearingholiday' }
                         ] },
+                    { name: 'Kiosk Login', type: 'link', state: 'kioskLogin' },
                     { name: 'Product Maintenance', type: 'link', state: 'product' },
                     { name: 'Workflow Maintenance', type: 'link', state: 'material' },
                     { name: 'Customer Maintenance', type: 'link', state: 'material' },
@@ -6113,6 +6114,7 @@ class JwtAuthService {
         this.setUserAndToken(null, false);
         this.ls.setItem("notification", false);
         this.ls.setItem("browserId", null);
+        this.ls.setItem("denomRequired", null);
         this.router.navigateByUrl("sessions/signin");
     }
     isLoggedIn() {
@@ -6339,9 +6341,9 @@ class ApiService {
             .get(`${API_URL}/countryMaint/isCountryCode2Present?countryCode2=${country}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
-    isStateCodePresent(state) {
+    isStateCodePresent(country, state) {
         return this.http
-            .get(`${API_URL}/countryStateMaint/isStateCodePresent?stateCode=${state}`)
+            .get(`${API_URL}/countryStateMaint/isStateCodePresent?countryCode=${country}&stateCode=${state}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     isStateCode2Present(state) {
@@ -6393,7 +6395,12 @@ class ApiService {
     }
     deleteCity(id) {
         return this.http
-            .delete(`${API_URL}/iccity/deleteCity?id=${id}`)
+            .delete(`${API_URL}/iccity/deleteCity?id=${id}`, { responseType: 'text' })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    updateCityAuditLog(payload) {
+        return this.http
+            .put(`${API_URL}/iccity/updateCityAuditLog`, payload)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     //City Ends
@@ -7175,9 +7182,10 @@ class ApiService {
             .get(`${API_URL}/currencyMaint-api/fetchCurrencyMaintInfo`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
-    editCurrencyMaintById(currencyId) {
-        console.log(currencyId);
-        return this.http.post(`${API_URL}/currencyMaint-api/fetchCurrencyMaintById`, currencyId).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    editCurrencyMaintById(currencyCode) {
+        console.log(currencyCode);
+        return this.http.get(`${API_URL}/currencyMaint-api/fetchCurrencyMaintByCurrencyCode?currencyCode=${currencyCode}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     upsertCurrencyMaintDetails(data) {
         return this.http
@@ -7189,9 +7197,9 @@ class ApiService {
             .put(`${API_URL}/currencyMaint-api/updateCurrencyMaintAuditLog`, payload)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
-    deleteCurrencyMaint(currencyId) {
+    deleteCurrencyMaint(id) {
         return this.http
-            .delete(`${API_URL}/currencyMaint-api/deleteCurrencyMaint?currencyCode=${currencyId.currencyCode}&country=${currencyId.country}`)
+            .delete(`${API_URL}/currencyMaint-api/deleteCurrencyMaint?id=${id}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     getCurrencyDetails() {
@@ -7319,10 +7327,10 @@ class ApiService {
         return this.http.get(`${API_URL}/teller/notifications/getTellerNotifications?tellerId=${tellerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     deleteIndividualToken(tellerId) {
-        return this.http.get(`${API_URL}/teller/notifications/delete?notificationId=${tellerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+        return this.http.delete(`${API_URL}/teller/notifications/delete?notificationId=${tellerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     deleteAllToken(tellerId) {
-        return this.http.get(`${API_URL}/teller/notifications/deleteAll?tellerId=${tellerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+        return this.http.delete(`${API_URL}/teller/notifications/deleteAll?tellerId=${tellerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     getCustomerCategory() {
         return this.http
@@ -7337,6 +7345,11 @@ class ApiService {
     saveCustomerCategory(dtu) {
         return this.http.post(`${API_URL}/maintenance/UpsertCustomerCategoryDetails`, dtu);
         // .pipe(catchError(this.errorHandler));
+    }
+    updateCustomerAuditLog(payload) {
+        return this.http
+            .put(`${API_URL}/maintenance/updateCustomerAuditLog`, payload)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     getCustomerCategoryById(id) {
         return this.http
@@ -7360,6 +7373,36 @@ class ApiService {
     getCustomerChargeCategoryById(id) {
         return this.http
             .get(`${API_URL}/maintenance/fetchCustomerChargeCategoryById?id=${id}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    updateCustomerChargeAuditLog(payload) {
+        return this.http
+            .put(`${API_URL}/maintenance/updateCustomerChargeAuditLog`, payload)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    createKioskBranch(data) {
+        return this.http
+            .post(`${API_URL}/kioskSystem/upsertDetails`, data)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    getKioskLoginDetails() {
+        return this.http
+            .get(`${API_URL}/kioskSystem/fetchKioskSystemDetails`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    deleteKioskLoginById(id) {
+        return this.http
+            .delete(`${API_URL}/kioskSystem/deleteKioskSystem?id=${id}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    getAuditLogsForKioskMaintenance(payload) {
+        return this.http
+            .put(`${API_URL}/kioskSystem/updateKioskSystemAuditLog`, payload)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    getKioskDataById(id) {
+        return this.http
+            .get(`${API_URL}/kioskSystem/fetchKioskSystemById?id=${id}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
 }
@@ -8109,7 +8152,7 @@ HeaderTopComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "YES BANK");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "YES BANK 6");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "span", 6);
