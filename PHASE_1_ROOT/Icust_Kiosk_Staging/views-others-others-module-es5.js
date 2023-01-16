@@ -145,6 +145,12 @@
       var _details_information_details_information_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./details-information/details-information.component */
       "0hBt");
+      /* harmony import */
+
+
+      var _angular_material_radio__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! @angular/material/radio */
+      "QibW");
 
       var components = [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_3__["FooterComponent"], _account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_4__["AccountInformationFormComponent"], _transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_5__["TransactionInformationFormComponent"], _form_form_component__WEBPACK_IMPORTED_MODULE_14__["FormComponent"], _denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_16__["DenominationInfoComponent"], _details_information_details_information_component__WEBPACK_IMPORTED_MODULE_17__["DetailsInformationComponent"]];
 
@@ -159,13 +165,13 @@
         factory: function CoreFormModule_Factory(t) {
           return new (t || CoreFormModule)();
         },
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], _pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_12__["SharedPipesModule"], _directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_11__["SharedDirectivesModule"], _shared_material_module__WEBPACK_IMPORTED_MODULE_13__["SharedMaterialModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"]]]
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], _pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_12__["SharedPipesModule"], _directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_11__["SharedDirectivesModule"], _shared_material_module__WEBPACK_IMPORTED_MODULE_13__["SharedMaterialModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_18__["MatRadioModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CoreFormModule, {
           declarations: [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_3__["FooterComponent"], _account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_4__["AccountInformationFormComponent"], _transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_5__["TransactionInformationFormComponent"], _form_form_component__WEBPACK_IMPORTED_MODULE_14__["FormComponent"], _denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_16__["DenominationInfoComponent"], _details_information_details_information_component__WEBPACK_IMPORTED_MODULE_17__["DetailsInformationComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], _pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_12__["SharedPipesModule"], _directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_11__["SharedDirectivesModule"], _shared_material_module__WEBPACK_IMPORTED_MODULE_13__["SharedMaterialModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], _pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_12__["SharedPipesModule"], _directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_11__["SharedDirectivesModule"], _shared_material_module__WEBPACK_IMPORTED_MODULE_13__["SharedMaterialModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_18__["MatRadioModule"]],
           exports: [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_3__["FooterComponent"], _account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_4__["AccountInformationFormComponent"], _transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_5__["TransactionInformationFormComponent"], _form_form_component__WEBPACK_IMPORTED_MODULE_14__["FormComponent"], _denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_16__["DenominationInfoComponent"], _details_information_details_information_component__WEBPACK_IMPORTED_MODULE_17__["DetailsInformationComponent"]]
         });
       })();
@@ -177,7 +183,7 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
             declarations: components,
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], _pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_12__["SharedPipesModule"], _directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_11__["SharedDirectivesModule"], _shared_material_module__WEBPACK_IMPORTED_MODULE_13__["SharedMaterialModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_6__["FlexLayoutModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], _pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_12__["SharedPipesModule"], _directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_11__["SharedDirectivesModule"], _shared_material_module__WEBPACK_IMPORTED_MODULE_13__["SharedMaterialModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_18__["MatRadioModule"]],
             exports: components
           }]
         }], null, null);
@@ -5538,39 +5544,982 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/forms */
+      "3Pt+");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "dNgK");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
+      /* harmony import */
+
+
+      var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! app/shared/services/api.service */
+      "nm5K");
+      /* harmony import */
+
+
+      var app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! app/shared/services/Dialog/dialog.service */
+      "LP5l");
+      /* harmony import */
+
+
+      var app_shared_models_otp_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! app/shared/models/otp.model */
+      "V4gq");
+      /* harmony import */
+
+
+      var app_shared_models_tokenObjects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! app/shared/models/tokenObjects */
+      "JLZh");
+      /* harmony import */
+
+
+      var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! app/shared/services/data.service */
+      "iiaH");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! @angular/material/card */
+      "Wp6s");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "XiUz");
+      /* harmony import */
+
+
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! @angular/material/form-field */
+      "kmnG");
+      /* harmony import */
+
+
+      var _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! @angular/material/radio */
+      "QibW");
+      /* harmony import */
+
+
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! @angular/material/select */
+      "d3UM");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! @angular/material/input */
+      "qFsG");
+      /* harmony import */
+
+
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! @angular/material/core */
+      "FKr1");
+
+      function DetailsInformationComponent_mat_option_20_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 28);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DetailsInformationComponent_mat_option_20_Template_mat_option_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10);
+
+            var country_r7 = ctx.$implicit;
+
+            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r9.onForexCountryChange(country_r7);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 29);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "div", 30);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var country_r7 = ctx.$implicit;
+
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r7.currencyCode);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](country_r7.currencyCode);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r0.addCurrencyImage(country_r7.currencyCode), " alignImage");
+        }
+      }
+
+      function DetailsInformationComponent_mat_form_field_27_mat_option_6_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 28);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DetailsInformationComponent_mat_form_field_27_mat_option_6_Template_mat_option_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15);
+
+            var countrys_r12 = ctx.$implicit;
+
+            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r14.onReceiveCountryChange(countrys_r12);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 29);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "div", 30);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var countrys_r12 = ctx.$implicit;
+
+          var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", countrys_r12.currencyCode);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](countrys_r12.currencyCode);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r11.addCurrencyImage1(countrys_r12.currencyCode), " alignImage");
+        }
+      }
+
+      function DetailsInformationComponent_mat_form_field_27_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Receive currency*");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-select", 31);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, DetailsInformationComponent_mat_form_field_27_mat_option_6_Template, 5, 5, "mat-option", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag ", ctx_r2.currencyImage2, "");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r2.countryValues);
+        }
+      }
+
+      function DetailsInformationComponent_mat_form_field_28_mat_option_6_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 28);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DetailsInformationComponent_mat_form_field_28_mat_option_6_Template_mat_option_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r20);
+
+            var countrys_r17 = ctx.$implicit;
+
+            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r19.onReceiveCountryChange(countrys_r17);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 29);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "div", 30);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var countrys_r17 = ctx.$implicit;
+
+          var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", countrys_r17.currencyCode);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](countrys_r17.currencyCode);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r16.addCurrencyImage1(countrys_r17.currencyCode), " alignImage");
+        }
+      }
+
+      function DetailsInformationComponent_mat_form_field_28_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Pay currency*");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-select", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, DetailsInformationComponent_mat_form_field_28_mat_option_6_Template, 5, 5, "mat-option", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag ", ctx_r3.currencyImage2, "");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r3.countryValues);
+        }
+      }
+
+      function DetailsInformationComponent_mat_form_field_29_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Receive amount*");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 33, 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function DetailsInformationComponent_mat_form_field_30_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Pay amount*");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 34, 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
 
       var DetailsInformationComponent = /*#__PURE__*/function () {
-        function DetailsInformationComponent() {
+        function DetailsInformationComponent(router, formBuilder, dialogService, apiService, fb, ls, snack, changeDef, elRef, renderer, dialog, cdr, dataService) {
           _classCallCheck(this, DetailsInformationComponent);
+
+          this.router = router;
+          this.formBuilder = formBuilder;
+          this.dialogService = dialogService;
+          this.apiService = apiService;
+          this.fb = fb;
+          this.ls = ls;
+          this.snack = snack;
+          this.changeDef = changeDef;
+          this.elRef = elRef;
+          this.renderer = renderer;
+          this.dialog = dialog;
+          this.cdr = cdr;
+          this.dataService = dataService;
+          this.forexTransaction = 'Forex Transaction';
+          this.ifQRvariable = false;
+          this.productCode = "FTX";
+          this.tokenOrigin = "Kiosk";
+          this.custPref = "N";
+          this.entityCode = "ENTCD";
+          this.bankCode = "BNKC";
+          this.tokenBranch = "1234";
+          this.accounttypeArray = [];
+          this.idList = [];
+          this.tokenObjects = new app_shared_models_tokenObjects__WEBPACK_IMPORTED_MODULE_9__["TokenObjects"]();
+          this.enableContinue = true;
+          this.isedit = false;
+          this.currencyImage = ""; // accountNoList[]: any[];
+
+          this.accountNoList = [];
+          this.showAccountNum = true;
+          this.showAccoutType = true;
+          this.oTpModel = new app_shared_models_otp_model__WEBPACK_IMPORTED_MODULE_8__["otpModel"]();
+          this.enableBtn = true;
+          this.enableBtn1 = false;
+          this.accountDropdown = false;
+          this.flag1 = false;
+          this.denomRequired = "";
+          this.hideDetails = false;
+          this.hideAccNum = false;
+          this.subscriptions = [];
+          this.checked = true;
+
+          this.onChange = function () {};
+
+          this.onTouched = function () {};
         }
 
         _createClass(DetailsInformationComponent, [{
+          key: "value",
+          get: function get() {
+            return this.detailsForm.value;
+          },
+          set: function set(value) {
+            this.detailsForm.setValue(value);
+            this.onChange(value);
+            this.onTouched();
+          }
+        }, {
+          key: "emailControl",
+          get: function get() {
+            return this.detailsForm.controls.email;
+          }
+        }, {
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            var _this24 = this;
+
+            this.chqPage = localStorage.getItem('chq_page');
+            this.phoneNumber = localStorage.getItem("phonenumFromLogin");
+            console.log("Tranaform", this.phoneNumber);
+            this.appointmentId = this.ls.getItem("TransactionType");
+            this.transBranch = localStorage.getItem("TRANSACTIONBRANCH");
+            this.detailsForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+              customerId: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              forexTransType: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("purchase", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              forexCurrency: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              transactionBranch: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              forexAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              totalTransactionAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              negotiatedRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              totalChargeAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              exchangeRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              documentNumber: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              documentId: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+              receiveCurrency: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+              receiveAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+              payCurrency: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+              payAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
+            });
+            this.detailsForm.controls.forexTransType.setValue('purchase');
+            console.log(this.detailsForm);
+            this.custValidation = localStorage.getItem('customerValidation');
+            this.custNameFromLogin = localStorage.getItem('FromLogin');
+
+            if (this.custValidation == 'New Customer' || this.custNameFromLogin != null) {
+              this.hideAccNum = false;
+              this.showAccountNum = false;
+              this.showAccoutType = false;
+            }
+
+            if (this.appointmentId) {
+              if (this.appointmentId.data.appointmentId) {
+                this.cashWithdrawlData();
+              }
+            }
+
+            if (this.phoneNumber && this.custNameFromLogin == null && this.appointmentId == null) {
+              this.ifQRvariable = false;
+              this.hideAccNum = true;
+              this.showAccountNum = true;
+              this.showAccoutType = true;
+              console.log('New Customer');
+              this.gettingallTansactionDetails(this.phoneNumber);
+            }
+
+            this.getCountrynameValues();
+            this.subscriptions.push(this.detailsForm.valueChanges.subscribe(function (value) {
+              _this24.onChange(value);
+
+              _this24.onTouched();
+            }));
+            console.log(this.detailsForm);
+          }
+        }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            this.subscriptions.forEach(function (s) {
+              return s.unsubscribe();
+            });
+          }
+        }, {
+          key: "registerOnChange",
+          value: function registerOnChange(fn) {
+            this.onChange = fn;
+          }
+        }, {
+          key: "writeValue",
+          value: function writeValue(value) {
+            if (value) {
+              this.value = value;
+            }
+
+            if (value === null) {
+              this.detailsForm.reset();
+            }
+          }
+        }, {
+          key: "registerOnTouched",
+          value: function registerOnTouched(fn) {
+            this.onTouched = fn;
+          }
+        }, {
+          key: "validate",
+          value: function validate(_) {
+            return this.detailsForm.valid ? null : {
+              profile: {
+                valid: false
+              }
+            };
+          }
+        }, {
+          key: "getCountrynameValues",
+          value: function getCountrynameValues() {
+            var _this25 = this;
+
+            this.apiService.getCountryValues().subscribe(function (allCountryValues) {
+              _this25.countryValues = allCountryValues;
+              console.log(_this25.countryValues);
+            });
+          }
+        }, {
+          key: "onForexCountryChange",
+          value: function onForexCountryChange(country) {
+            var currency = country.currencyCode;
+            console.log(currency);
+            this.forexCurrency = currency;
+            this.currencyImage = "currency-flag-" + currency.toLowerCase();
+          }
+        }, {
+          key: "onReceiveCountryChange",
+          value: function onReceiveCountryChange(country) {
+            var currency = country.currencyCode;
+            console.log(currency);
+            this.currencyImage2 = "currency-flag-" + currency.toLowerCase();
+            this.fetchExchangeRateForCurrency(currency);
+          }
+        }, {
+          key: "addCurrencyImage",
+          value: function addCurrencyImage(currency) {
+            return currency.toLowerCase();
+          }
+        }, {
+          key: "addCurrencyImage1",
+          value: function addCurrencyImage1(currency) {
+            return currency.toLowerCase();
+          }
+        }, {
+          key: "fetchExchangeRateForCurrency",
+          value: function fetchExchangeRateForCurrency(currency) {
+            var _this26 = this;
+
+            this.apiService.fetchExchangeRateForCurrency(currency, this.forexCurrency).subscribe(function (resp) {
+              console.log(resp);
+              _this26.exchangerateResp = resp;
+              _this26.denomRequired = resp === null || resp === void 0 ? void 0 : resp.denomRequired;
+
+              if (resp.denomRequired == "yes") {
+                _this26.enableBtn = false;
+                _this26.enableBtn1 = false;
+              }
+            });
+            console.log(this.titleData);
+
+            if (this.exchangerateResp) {
+              if (this.titleData == 'Cash Withdrawal' || this.titleData == 'Cheque Withdrawal') {
+                this.detailsForm.controls.exchangeRate.setValue(this.exchangerateResp[0].sellRate);
+              }
+
+              if (this.titleData == 'Cash Deposit' || this.titleData == 'Cheque Deposit') {
+                this.detailsForm.controls.exchangeRate.setValue(this.exchangerateResp[0].buyRate);
+              }
+            }
+          }
+        }, {
+          key: "cashWithdrawlData",
+          value: function cashWithdrawlData() {
+            var _this27 = this;
+
+            this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
+              console.log(resp);
+              _this27.cashData = resp.data;
+              _this27.custID = resp.data.customerId;
+              _this27.ifQRvariable = true;
+              _this27.hideAccNum = false;
+              _this27.hideDetails = true;
+              _this27.flag1 = false; // this.displayFlag=true;
+              // this.userName = resp.data.holderName;
+              // this.currencyCode = resp.data.accountCurrency;
+              // this.accountForm.controls.accountType.setValue(resp.data.accountType);
+              // this.accountForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              // this.accountForm.controls.accountNumber.setValue(
+              //   resp.data.accountNumber
+              // );
+              // this.accountForm.controls.accountCurrency.setValue(
+              //   resp.data.accountCurrency
+              // );
+
+              console.log(resp.data.accountCurrency); // this.currencyImage =
+              //   'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              //   this.currencyImage =
+
+              'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              console.log(_this27.currencyImage);
+
+              _this27.dataService.sendaccountFormData(_this27.cashData);
+            });
+            console.log(this.cashData); // this.denomRequired='yes';
+          }
+        }, {
+          key: "gettingallTansactionDetails",
+          value: function gettingallTansactionDetails(phoneNumber) {
+            var _this28 = this;
+
+            console.log("gfhg");
+            this.phoneNumber = localStorage.getItem('phonenumFromLogin');
+            this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
+              console.log('All Transaction Details', allTransactionResp); // this.accountCurrency1 = allTransactionResp.accountCurrency;
+              // this.currencyCode = allTransactionResp.currencyCode;
+              // console.log(this.currencyCode);
+              // this.userName =
+              //   (allTransactionResp.firstName
+              //     ? allTransactionResp.firstName + ' '
+              //     : ' ') +
+              //   (allTransactionResp.middleName
+              //     ? allTransactionResp.middleName + ' '
+              //     : ' ') +
+              //   (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              // this.accountForm.controls.holderName.setValue(this.userName);
+              // // this.setBalance(allTransactionResp.custAccount);
+              // this.custID = allTransactionResp.customerId;
+
+              _this28.detailsForm.controls.customerId.setValue(allTransactionResp.customerId);
+
+              _this28.detailsForm.controls.forexTransType.setValue('purchase');
+
+              if (_this28.detailsForm.value.forexTransType == 'purchase') {
+                // this.isPurchase= true;
+                console.log("Purchase");
+              } // this.accountForm.controls.accountCurrency.setValue(
+              //   allTransactionResp.accountCurrency
+              // );
+              // console.log('Cust', this.custID);
+              // this.custAccountData = allTransactionResp.custAccount;
+              // this.accounttypeArray = [...this.custAccountData].filter(
+              //   ({ accountType }, index) =>
+              //     ![...this.custAccountData]
+              //       .map((obj) => obj.accountType)
+              //       .includes(accountType, index + 1)
+              // );
+              // console.log(this.accounttypeArray);
+              // for (let i = 0; i < this.custAccountData.length; i++) {
+              //   if (this.custAccountData[i].status == 'APPROVED') {
+              //     // if(this.custAccountData[i].status == 'APPROVED'){
+              //     console.log(this.custAccountData[i].primaryAcc);
+              //     if (this.custAccountData[i].primaryAcc) {
+              //       console.log(this.custAccountData[i]);
+              //       this.accountForm.controls.accountNumber.setValue(this.custAccountData[i].accountId);
+              //       this.accountForm.controls.accountType.setValue(this.custAccountData[i].accountType);
+              //       console.log(this.accountForm.controls.accountType);
+              //       //this.cashwithdrawForm.controls..setValue();
+              //     }else{
+              //       this.accountForm.controls.accountNumber.setValue(this.accountNoList[0]);
+              //     }
+              //     this.accountNoList.push(this.custAccountData[i]);
+              //     // }
+              //     this.accountNoList.push(this.custAccountData[i]);
+              //   }
+              // }
+
+
+              console.log(_this28.accountNoList); // if (this.custAccountData && this.accountNoList.length <= 1) {
+              //   this.accountDropdown = false;
+              //   this.hideDetails = true;
+              //   this.hideAccNum = true;
+              //   const accTyp = allTransactionResp.custAccount[0].accountType;
+              //   this.accountForm.controls.accountType.setValue(accTyp);
+              //   this.custAccountNumber(this.accountNoList[0]);
+              // } else {
+              //   this.accountDropdown = true;
+              //   this.hideDetails = true;
+              //   this.hideAccNum = true;
+              //   const accTyp = allTransactionResp.custAccount[0].accountType;
+              //   this.accountForm.controls.accountType.setValue(accTyp);
+              //   this.custAccountNumber(allTransactionResp.custAccount[0]);
+              // }
+            });
+          }
+        }, {
+          key: "changeTransType",
+          value: function changeTransType(event) {
+            console.log(event); // this.detailsForm.controls.transType.setValue(
+            //   'purchase'
+            //   );
+            //   if(this.detailsForm.value.transType == 'purchase'){
+            //     console.log("Purchase")
+            //   }
+
+            console.log(this.detailsForm);
+          }
         }]);
 
         return DetailsInformationComponent;
       }();
 
       DetailsInformationComponent.ɵfac = function DetailsInformationComponent_Factory(t) {
-        return new (t || DetailsInformationComponent)();
+        return new (t || DetailsInformationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_10__["DataService"]));
       };
 
       DetailsInformationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: DetailsInformationComponent,
         selectors: [["app-details-information"]],
-        decls: 2,
-        vars: 0,
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
+          provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALUE_ACCESSOR"],
+          useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () {
+            return DetailsInformationComponent;
+          }),
+          multi: true
+        }, {
+          provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALIDATORS"],
+          useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () {
+            return DetailsInformationComponent;
+          }),
+          multi: true
+        }])],
+        decls: 62,
+        vars: 10,
+        consts: [[1, "section"], ["fxFlex", "100%"], [2, "font-size", "15px", "color", "#004c97"], [2, "flex-direction", "column", 3, "formGroup"], ["fxFlex", "row wrap", "fxLayoutGap", "1%", "fxFlex", "100%"], ["color", "primary", "formControlName", "forexTransType", "aria-label", "Select an option", 3, "change"], ["value", "purchase", 2, "padding", "0 1rem", 3, "checked"], ["value", "sale"], ["fxFlex", "row wrap", "fxLayoutGap", "4%", "fxFlex", "100%", 1, "form_row_wrap"], ["appearance", "outline", "fxFlex", "36%", 2, "border-radius", "12px"], ["fxFlex", "11%"], ["formControlName", "forexCurrency"], [3, "value", "click", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "60%", 2, "border-radius", "12px"], ["matInput", "", "formControlName", "forexAmount"], ["myRef", ""], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "36%", 4, "ngIf"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "60%", 4, "ngIf"], ["matInput", "", "placeholder", "negotiate rate", "formControlName", "negotiatedRate", "type", "text"], ["formControlName", "documentId"], ["value", "passport"], ["value", "visa"], ["formControlName", "exchangeRate"], [1, "hint"], ["appearance", "outline", "fxFlex", "100%", 2, "border-radius", "12px"], ["matInput", "", "formControlName", "documentNumber"], ["matInput", "", "placeholder", "Total Charge Amount", "formControlName", "totalChargeAmount", "type", "text"], ["matInput", "", "placeholder", "Total Transaction Amount", "formControlName", "totalTransactionAmount", "type", "text"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "3.5%", "margin-left", "4%"], ["formControlName", "receiveCurrency"], ["formControlName", "payCurrency"], ["matInput", "", "formControlName", "receiveAmount"], ["matInput", "", "formControlName", "payAmount"]],
         template: function DetailsInformationComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "details-information works!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card-title", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Details Information");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "form", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Transaction type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-radio-group", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function DetailsInformationComponent_Template_mat_radio_group_change_8_listener($event) {
+              return ctx.changeTransType($event.value);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-radio-button", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Purchase ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-radio-button", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Sale");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-form-field", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Forex currency*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-select", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, DetailsInformationComponent_mat_option_20_Template, 5, 5, "mat-option", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Forex amount *");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "input", 14, 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, DetailsInformationComponent_mat_form_field_27_Template, 7, 4, "mat-form-field", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, DetailsInformationComponent_mat_form_field_28_Template, 7, 4, "mat-form-field", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, DetailsInformationComponent_mat_form_field_29_Template, 5, 0, "mat-form-field", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, DetailsInformationComponent_mat_form_field_30_Template, 5, 0, "mat-form-field", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "mat-form-field", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "input", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, " negotiate rate*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Document ID*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "mat-select", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "mat-option", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, " passport ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "mat-option", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, " visa ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "p", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Exchange rate : ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "mat-form-field", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Document Number*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](51, "input", 25, 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "mat-form-field", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](55, "input", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Total Charge Amount*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](59, "input", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "Total Transaction Amount*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.detailsForm);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx.checked);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag ", ctx.currencyImage, "");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.countryValues);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.detailsForm.get("forexTransType").value == "sale");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.detailsForm.get("forexTransType").value == "purchase");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.detailsForm.get("forexTransType").value == "sale");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.detailsForm.get("forexTransType").value == "purchase");
+          }
         },
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkZXRhaWxzLWluZm9ybWF0aW9uLmNvbXBvbmVudC5zY3NzIn0= */"]
+        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCardTitle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatLabel"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormField"], _angular_material_select__WEBPACK_IMPORTED_MODULE_15__["MatSelect"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgForOf"], _angular_material_input__WEBPACK_IMPORTED_MODULE_17__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgIf"], _angular_material_core__WEBPACK_IMPORTED_MODULE_18__["MatOption"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutDirective"]],
+        styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n  box-shadow: unset !important;\n}\n\n.checkBox[_ngcontent-%COMP%] {\n  border-radius: 50%;\n}\n\n.transType[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcZGV0YWlscy1pbmZvcm1hdGlvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLCtDQUFBO0VBQ0EsbUJBQUE7RUFDQSw0QkFBQTtBQUNKOztBQUNFO0VBQ0Usa0JBQUE7QUFFSjs7QUFBRTtFQUNFLG1CQUFBO0VBQ0EsZ0JBQUE7QUFHSiIsImZpbGUiOiJkZXRhaWxzLWluZm9ybWF0aW9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjY291bnRJbmZvQ2FyZCB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZjJmMmYyIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE4cHg7XHJcbiAgICBib3gtc2hhZG93OiB1bnNldCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuY2hlY2tCb3gge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIH1cclxuICAudHJhbnNUeXBlIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIH0iXX0= */"],
+        changeDetection: 0
       });
       /*@__PURE__*/
 
@@ -5580,10 +6529,50 @@
           args: [{
             selector: 'app-details-information',
             templateUrl: './details-information.component.html',
-            styleUrls: ['./details-information.component.scss']
+            styleUrls: ['./details-information.component.scss'],
+            providers: [{
+              provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALUE_ACCESSOR"],
+              useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () {
+                return DetailsInformationComponent;
+              }),
+              multi: true
+            }, {
+              provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALIDATORS"],
+              useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () {
+                return DetailsInformationComponent;
+              }),
+              multi: true
+            }],
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush
           }]
         }], function () {
-          return [];
+          return [{
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+          }, {
+            type: app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"]
+          }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+          }, {
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+          }, {
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
+          }, {
+            type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_10__["DataService"]
+          }];
         }, null);
       })();
       /***/
@@ -6130,7 +7119,7 @@
       !*** ./src/app/views/others/forex-service/forex-service.component.ts ***!
       \***********************************************************************/
 
-    /*! exports provided: ForexServiceComponent */
+    /*! exports provided: ForexServiceComponent, ForexTokenObj */
 
     /***/
     function wk0(module, __webpack_exports__, __webpack_require__) {
@@ -6143,6 +7132,12 @@
       __webpack_require__.d(__webpack_exports__, "ForexServiceComponent", function () {
         return ForexServiceComponent;
       });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ForexTokenObj", function () {
+        return ForexTokenObj;
+      });
       /* harmony import */
 
 
@@ -6152,38 +7147,675 @@
       /* harmony import */
 
 
-      var _shared_core_form_details_information_details_information_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/forms */
+      "3Pt+");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! app/shared/services/api.service */
+      "nm5K");
+      /* harmony import */
+
+
+      var app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! app/shared/services/Dialog/dialog.service */
+      "LP5l");
+      /* harmony import */
+
+
+      var app_shared_models_otp_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! app/shared/models/otp.model */
+      "V4gq");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "dNgK");
+      /* harmony import */
+
+
+      var _otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../otp-verify/otp-verify.component */
+      "zAir");
+      /* harmony import */
+
+
+      var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! app/shared/services/data.service */
+      "iiaH");
+      /* harmony import */
+
+
+      var _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ../../../shared/core-form/header/header.component */
+      "NynZ");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "XiUz");
+      /* harmony import */
+
+
+      var _shared_core_form_details_information_details_information_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../../../shared/core-form/details-information/details-information.component */
       "0hBt");
+      /* harmony import */
+
+
+      var _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ../../../shared/core-form/footer/footer.component */
+      "7hDA");
+      /* harmony import */
+
+
+      var _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! ../../../shared/core-form/denomination-info/denomination-info.component */
+      "bCWT");
+
+      function ForexServiceComponent_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-denomination-info", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
 
       var ForexServiceComponent = /*#__PURE__*/function () {
-        function ForexServiceComponent() {
+        function ForexServiceComponent(formBuilder, ls, apiService, router, dialogService, dialog, snack, _location, dataService) {
           _classCallCheck(this, ForexServiceComponent);
+
+          this.formBuilder = formBuilder;
+          this.ls = ls;
+          this.apiService = apiService;
+          this.router = router;
+          this.dialogService = dialogService;
+          this.dialog = dialog;
+          this.snack = snack;
+          this._location = _location;
+          this.dataService = dataService;
+          this.title = "Cash Forex Transaction";
+          this.forexToken = new ForexTokenObj();
+          this.denomRequired = '';
+          this.denomCodeArray = [{
+            key: 'count2000',
+            value: 2000
+          }, {
+            key: 'count500',
+            value: 500
+          }, {
+            key: 'count200',
+            value: 200
+          }, {
+            key: 'count100',
+            value: 100
+          }, {
+            key: 'count50',
+            value: 50
+          }, {
+            key: 'count20',
+            value: 20
+          }, {
+            key: 'count10',
+            value: 10
+          }, {
+            key: 'count1',
+            value: 1
+          }];
+          this.ifQRvariable = false;
+          this.tokenOrigin = "Kiosk";
+          this.enableContinue = true;
+          this.custPref = "N";
+          this.entityCode = "ENTCD";
+          this.bankCode = "BNKC";
+          this.tokenBranch = "KN";
+          this.oTpModel = new app_shared_models_otp_model__WEBPACK_IMPORTED_MODULE_7__["otpModel"]();
+          this.displayDenom = false;
         }
 
         _createClass(ForexServiceComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            var _this29 = this;
+
+            localStorage.setItem('chq_page', this.title);
+            this.custValidation = localStorage.getItem("customerValidation");
+            this.forexForm = this.formBuilder.group({
+              detailInfo: [],
+              denomination: [],
+              entityCode: [this.entityCode, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              bankCode: [this.bankCode, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              tokenBranch: [this.tokenBranch, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              customerCategory: [this.custPref, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              tokenNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              productCode: ['FTX', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+              tokenOrigin: ['Kiosk', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+              estimatedWaitTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              narrative: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
+            });
+            console.log("Cash withdrawal", this.forexForm);
+            this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
+            this.phoneNumber = localStorage.getItem("phonenumFromLogin");
+            this.appointmentId = this.ls.getItem("TransactionType");
+            this.transBranch = localStorage.getItem("TRANSACTIONBRANCH");
+            this.dataService.gettransactionFormdata.subscribe(function (transaction) {
+              console.log(Object.keys(transaction).length === 0, transaction.constructor === Object);
+
+              if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
+                _this29.transactiondata = transaction;
+                console.log(_this29.transactiondata);
+
+                if (_this29.transactiondata.transactionAmount) {
+                  _this29.displayDenom = true;
+                }
+              }
+            });
+            this.dataService.getdenominationFormdata.subscribe(function (denomination) {
+              if (denomination) {
+                console.log("Account component?", denomination);
+                _this29.denominationdata = denomination;
+              }
+            });
+            this.dataService.getaccountFormdata.subscribe(function (data) {
+              if (Object.keys(data).length != 0 && data.constructor === Object) {
+                _this29.appointmentDetails = data;
+                console.log("Account component?", _this29.appointmentDetails.appointmentId);
+              }
+            });
+          }
+        }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            localStorage.removeItem('chq_page');
+          }
+        }, {
+          key: "onSubmit",
+          value: function onSubmit(event) {
+            console.log("On submit form", this.forexForm, event);
+
+            if (event == 'showAccountNum') {
+              console.log("First Condition");
+              this.onSaveofCashWithdraw(this.forexForm.value, this.ifQRvariable, this.denominationdata);
+            }
+
+            if (event == 'NotshowAccountNum') {
+              console.log("Second Condition");
+              this.getOTP(this.forexForm.value, this.ifQRvariable, this.denominationdata);
+            }
+          }
+        }, {
+          key: "onSaveofCashWithdraw",
+          value: function onSaveofCashWithdraw(form, type, cdForm) {
+            var _this30 = this;
+
+            var _a, _b, _c, _d, _e;
+
+            console.log(form, type, cdForm); // this.dataService.getNavParam.subscribe(denomRequired=>{
+            //   if(denomRequired){
+            //     console.log("Account component?",denomRequired);
+            //     this.denomRequired=denomRequired;
+            //   }
+            // })
+            // form.transactionBranch = this.transBranch;
+
+            if (this.qrData) {
+              if (this.qrData.transactionBranch) {
+                this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
+                  _this30.qrBranchCode = response;
+                });
+              }
+            }
+
+            var denominationData = {};
+            var denominationDataArray = [];
+
+            if (this.denomRequired == 'yes') {
+              for (var i = 0; i < this.denomCodeArray.length; i++) {
+                if (cdForm.value[this.denomCodeArray[i].key]) {
+                  // denominationData.transactionId = this.cashdepositFor;
+                  denominationData.denominationKey = this.denomCodeArray[i].value;
+                  denominationData.denominationValue = +cdForm.value[this.denomCodeArray[i].key];
+                  denominationData.currency = this.forexForm.value.transactionCurrency; // denominationData.amountAvailiable = 15200 - (cdForm.value[this.denomCodeArray[i].key] * this.denomCodeArray[i].value);
+
+                  denominationDataArray.push(denominationData);
+                  console.log(denominationDataArray);
+                  denominationData = {};
+                }
+              }
+            } // form.tokenBranch = "KN";
+
+
+            if ((_a = this.appointmentDetails) === null || _a === void 0 ? void 0 : _a.appointmentId) {
+              console.log(this.appointmentDetails); //   this.Token.customerId=this.appointmentDetails.customerId,
+              //   this.Token.accountNumber=this.appointmentDetails.accountNumber,
+              //   this.Token.accountType=this.appointmentDetails.accountType,
+              //   this.Token.accountCurrency=this.appointmentDetails.accountCurrency,
+              //   this.Token.accountBalance=this.appointmentDetails.accountBalance,
+              //   this.Token.accountBranch=this.appointmentDetails.accountBranch,
+              //   this.Token.holderName=this.appointmentDetails.holderName,
+              //   this.Token.transactionCurrency=this.appointmentDetails.transactionCurrency,
+              //   this.Token.transactionAmount=this.appointmentDetails.transactionAmount;
+              //   this.Token.transactionId=this.appointmentDetails.transactionId,
+              //   this.Token.totalChargeAmount=this.appointmentDetails.totalChargeAmount,
+              //   this.Token.totalTransactionAmount=this.appointmentDetails.totalTransactionAmount,
+              //   this.Token.transactionBranch=this.transBranch,
+              //   this.Token.entityCode=this.entityCode,
+              //   this.Token.bankCode=this.bankCode,
+              //   this.Token.tokenBranch=this.tokenBranch,
+              //   this.Token.customerCategory=this.custPref,
+              //   this.Token.productCode='CHW',
+              //   this.Token.tokenOrigin=this.tokenOrigin,
+              //   this.Token.tokenNumber="",
+              //   this.Token.estimatedWaitTime="",
+              //   this.Token.exchangeRate="",
+              //   this.Token.accountAmount="",
+              //   this.Token.narrative="",
+              //  //  this.Token.denomination=[],
+              //   this.Token.totalAmount=""
+
+              if (this.denomRequired == 'yes') {//this.Token.denomination=denominationDataArray;
+              } // }
+              // console.log("Not a qrvariable",this.Token);
+
+            } //  console.log("Not a qrvariable",this.ifQRvariable ,this.appointmentDetails);
+            // if(!this.appointmentDetails)
+            else {
+                console.log(form); // let payload = {
+
+                console.log("Not a qrvariable", form.detailInfo.transType);
+                this.forexToken.customerId = form.detailInfo.customerId, this.forexToken.transType = form.detailInfo.transType, this.forexToken.forexCurrency = form.detailInfo.forexCurrency, //this.forexToken.transactionBranch=form.detailInfo.accountCurrency,
+                this.forexToken.forexAmount = form.detailInfo.forexAmount, this.forexToken.negotiatedRate = form.detailInfo.negotiatedRate, //this.forexToken.holderName=form.detailInfo.holderName,
+                this.forexToken.totalTransactionAmount = form.detailInfo.totalTransactionAmount, this.forexToken.exchangeRate = form.detailInfo.exchangeRate, //this.forexToken.transactionAmount=form.transaction.transactionAmount.replace(/,/g, "");
+                this.forexToken.documentNumber = form.detailInfo.documentNumber, this.forexToken.totalChargeAmount = form.detailInfo.totalChargeAmount, this.forexToken.totalTransactionAmount = form.detailInfo.totalTransactionAmount, this.forexToken.exchangeRate = form.detailInfo.exchangeRate;
+                this.forexToken.documentNumber = form.detailInfo.documentNumber, this.forexToken.documentId = form.detailInfo.documentId;
+                console.log(form.detailInfo);
+
+                if (form.detailInfo.transType == "purchase") {
+                  this.forexToken.payCurrency = ((_b = form.detailInfo) === null || _b === void 0 ? void 0 : _b.payCurrency) ? form.detailInfo.payCurrency : '';
+                  this.forexToken.payAmount = ((_c = form.detailInfo) === null || _c === void 0 ? void 0 : _c.payAmount) ? form.detailInfo.payAmount : '';
+                }
+
+                if (form.detailInfo.transType == "sale") {
+                  this.forexToken.receiveCurrency = ((_d = form.detailInfo) === null || _d === void 0 ? void 0 : _d.receiveCurrency) ? form.detailInfo.receiveCurrency : '', this.forexToken.receiveAmount = ((_e = form.detailInfo) === null || _e === void 0 ? void 0 : _e.receiveAmount) ? form.detailInfo.receiveAmount : '';
+                }
+
+                this.forexToken.transactionBranch = this.transBranch, this.forexToken.entityCode = this.entityCode, this.forexToken.bankCode = this.bankCode, this.forexToken.tokenBranch = this.tokenBranch, this.forexToken.customerCategory = this.custPref, this.forexToken.productCode = 'FTX', this.forexToken.tokenOrigin = this.tokenOrigin, this.forexToken.tokenNumber = "", this.forexToken.estimatedWaitTime = "", this.forexToken.accountAmount = "", this.forexToken.narrative = "", //  this.Token.denomination=[],
+                this.forexToken.totalAmount = "";
+
+                if (this.denomRequired == 'yes') {
+                  this.forexToken.denomination = denominationDataArray;
+                } // }
+
+
+                console.log("Not a qrvariable", this.forexToken);
+              } // else{
+            //    console.log("else")
+            //   this.Token.customerId=form.account.customerId,
+            //   this.Token.accountNumber=form.account.accountNumber,
+            //   this.Token.accountType=form.account.accountType,
+            //   this.Token.accountCurrency=form.account.accountCurrency,
+            //   this.Token.accountBalance=form.account.accountBalance,
+            //   this.Token.accountBranch=form.account.accountBranch,
+            //   this.Token.holderName=form.account.holderName,
+            //   this.Token.transactionCurrency=form.transaction.transactionCurrency,
+            //   this.Token.transactionAmount=form.transaction.transactionAmount;
+            //   this.Token.transactionId=form.transaction.transactionId,
+            //   this.Token.totalChargeAmount=form.transaction.totalChargeAmount,
+            //   this.Token.totalTransactionAmount=form.transaction.totalTransactionAmount,
+            //   this.Token.transactionBranch=this.transBranch,
+            //   this.Token.entityCode=this.entityCode,
+            //   this.Token.bankCode=this.bankCode,
+            //   this.Token.tokenBranch=this.tokenBranch,
+            //   this.Token.customerCategory=this.custPref,
+            //   this.Token.productCode='CHW',
+            //   this.Token.tokenOrigin=this.tokenOrigin,
+            //   this.Token.tokenNumber="",
+            //   this.Token.estimatedWaitTime="",
+            //   this.Token.exchangeRate="",
+            //   this.Token.accountAmount="",
+            //   this.Token.narrative="",
+            //  //  this.Token.denomination=[],
+            //   this.Token.totalAmount=""
+            //   if(this.denomRequired == 'yes'){
+            //    this.Token.denomination=denominationDataArray;
+            //       }
+            // }
+            // if(this.appointmentId && this.appointmentId.data){
+            //   form.transactionId = this.appointmentId.data.transactionId;
+            //   form.transactionStatus = this.appointmentId.data.transactionStatus;
+            // }
+            // console.log(form.transactionId,form.transactionStatus);
+            // console.log("before api call :: ",this.Token);
+
+
+            this.apiService.saveofCashDeposit(this.forexToken).subscribe(function (cashWithdrawResp) {
+              console.log("Response Success, Data Saved", cashWithdrawResp);
+              _this30.cashWithdrawResponse = cashWithdrawResp;
+              _this30.tokenNum = _this30.cashWithdrawResponse.tokenNumber;
+              _this30.estimatedTime = _this30.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this30.tokenNum);
+              localStorage.setItem("estimatedTiming", _this30.estimatedTime);
+              _this30.enableContinue = false;
+
+              if (_this30.cashWithdrawResponse) {
+                _this30.dialogService.tokenGenerationDialog();
+              }
+            }); //   this.tokenObjects.productCode = this.productCode;
+            //   this.tokenObjects.accountNumber = form.accountNumber;
+            //   console.log(this.tokenObjects.accountNumber);
+            //   if(this.tokenObjects.productCode !== null || this.tokenObjects.accountNumber !==null){
+            //   this.apiService.generateToken(this.tokenObjects).subscribe(tokenResp=>{
+            //     console.log( "Token Generated", tokenResp);
+            //     this.tokResponse = tokenResp;
+            //     if(this.tokResponse){
+            //       this.tokenNum = this.tokResponse.tokenNumber;
+            //       this.estimatedTime = this.tokResponse.estimatedWaitTime;
+            //       localStorage.setItem("tokenNumer",this.tokenNum);
+            //       localStorage.setItem("estimatedTiming",this.estimatedTime);
+            //       form.tokenNo = this.tokenNum;
+            //       form.customerId = this.ls.getItem("customerId");
+            //       this.apiService.saveofCashDeposit(form).subscribe(cashWithdrawResp=>{
+            //         console.log( "Response Success, Data Saved", cashWithdrawResp);
+            //         this.cashWithdrawResponse = cashWithdrawResp;
+            //         console.log(this.cashWithdrawResponse);
+            //         // this.cashwithdrawForm.reset();
+            //         this.enableContinue=false;
+            //         // this.ngOnInit();
+            //         this.dialogService.tokenGenerationDialog();
+            //       });
+            //     }
+            //   });
+            // }
+          }
+        }, {
+          key: "getOTP",
+          value: function getOTP(formData, type, cdForm) {
+            var _this31 = this;
+
+            console.log("Get Otp", formData, type);
+            this.phonenum = this.ls.getItem('otpPhoneNum');
+            this.cashwithDrwValues = formData;
+            this.cashwithDrwType = type;
+            this.oTpModel.source = 'customer';
+            this.oTpModel.source_key = 'mobile';
+            this.oTpModel.source_value = this.phonenum;
+            var amount = 50000;
+            var transamountwithoutcomma = this.cashwithDrwValues.transaction.transactionAmount.replace(/,/g, "");
+            console.log(transamountwithoutcomma);
+
+            if (transamountwithoutcomma > amount) {
+              this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
+                if (otpResp) {
+                  _this31.openDialogOTP(_this31.phonenum);
+
+                  _this31.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                    duration: 4000,
+                    verticalPosition: 'top',
+                    horizontalPosition: 'right'
+                  });
+                }
+              });
+            } else {
+              console.log("Else");
+              this.getOTPforSave(this.cashwithDrwValues, this.cashwithDrwType, '');
+            }
+          }
+        }, {
+          key: "openDialogOTP",
+          value: function openDialogOTP(numbr) {
+            var _this32 = this;
+
+            var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__["OtpVerifyComponent"], {
+              data: {
+                number: numbr,
+                type: "numbr"
+              },
+              disableClose: true
+            });
+            dialogRef.afterClosed().subscribe(function (submit) {
+              console.log("submit", submit);
+
+              if (submit) {
+                _this32.getOTPforSave(_this32.cashwithDrwValues, _this32.cashwithDrwType, '');
+              }
+            });
+          }
+        }, {
+          key: "getOTPforSave",
+          value: function getOTPforSave(formData, type, cdForm) {
+            var _this33 = this;
+
+            console.log(formData);
+            var denominationData = {};
+            var denominationDataArray = [];
+
+            if (this.denomRequired == 'yes') {
+              for (var i = 0; i < this.denomCodeArray.length; i++) {
+                if (cdForm.value[this.denomCodeArray[i].key]) {
+                  // denominationData.transactionId = this.cashdepositFor;
+                  denominationData.denominationKey = this.denomCodeArray[i].value;
+                  denominationData.denominationValue = +cdForm.value[this.denomCodeArray[i].key];
+                  denominationData.currency = this.forexForm.value.transactionCurrency; // denominationData.amountAvailiable = 15200 - (cdForm.value[this.denomCodeArray[i].key] * this.denomCodeArray[i].value);
+
+                  denominationDataArray.push(denominationData);
+                  console.log(denominationDataArray);
+                  denominationData = {};
+                }
+              }
+            }
+
+            console.log(this.custValidation);
+
+            if (this.custValidation == "New Customer") {
+              // this.Token.customerId=formData.account.customerId,
+              //  this.Token.accountNumber=formData.account.accountNumber,
+              //  this.Token.accountType=formData.account.accountType,
+              //  this.Token.accountCurrency=formData.account.accountCurrency,
+              //  this.Token.accountBalance=formData.account.accountBalance,
+              //  this.Token.accountBranch=formData.account.accountBranch,
+              //  this.Token.holderName=formData.account.holderName,
+              //  this.Token.transactionCurrency=formData.transaction.transactionCurrency,
+              //  this.Token.transactionAmount=formData.transaction.transactionAmount.replace(/,/g, "");
+              //  this.Token.transactionId=formData.transaction.transactionId,
+              //  this.Token.totalChargeAmount=formData.transaction.totalChargeAmount,
+              //  this.Token.totalTransactionAmount=formData.transaction.totalTransactionAmount,
+              //  this.Token.transactionBranch=this.transBranch,
+              //  this.Token.entityCode=this.entityCode,
+              //  this.Token.bankCode=this.bankCode,
+              //  this.Token.tokenBranch=this.tokenBranch,
+              //  this.Token.customerCategory=this.custPref,
+              //  this.Token.productCode='CHW',
+              //  this.Token.tokenOrigin=this.tokenOrigin,
+              //  this.Token.tokenNumber="",
+              //  this.Token.estimatedWaitTime="",
+              //  this.Token.exchangeRate="",
+              //  this.Token.accountAmount="",
+              //  this.Token.narrative="",
+              //  this.Token.denomination=[],
+              //  this.Token.totalAmount=""
+              if (this.denomRequired == 'yes') {// this.Token.denomination=denominationDataArray;
+              } //  this.accountNum = formData.account.accountNumber;
+              //  this.Token.customerId = formData.account.customerId?formData.account.customerId:0;
+              //  this.Token.accountCurrency = formData.account.accountCurrency;
+              //  this.Token.transactionCurrency = formData.transaction.transactionCurrency;
+              //  this.Token.transactionAmount = formData.transaction.transactionAmount.replace(/,/g, '');
+              //  this.Token.productCode='CHW',
+              //  this.Token.tokenOrigin = this.tokenOrigin;
+              //  this.Token.accountBalance = this.accountBal;
+              //  if(this.denomRequired == 'yes'){
+              //   this.Token.denomination = denominationDataArray;
+              //  }
+
+            } // if(this.appointmentId && this.appointmentId.data){
+            //   this.Token.transactionId = this.appointmentId.data.transactionId;
+            //   this.Token.transactionStatus = this.appointmentId.data.transactionStatus;
+            // }
+            // console.log(this.Token);
+            // this.Token.customerId=formData.account.customerId,
+            //  this.Token.accountNumber=formData.account.accountNumber,
+            //  this.Token.accountType=formData.account.accountType,
+            //  this.Token.accountCurrency=formData.account.accountCurrency,
+            //  this.Token.accountBalance=formData.account.accountBalance,
+            //  this.Token.accountBranch=formData.account.accountBranch,
+            //  this.Token.holderName=formData.account.holderName,
+            //  this.Token.transactionCurrency=formData.transaction.transactionCurrency,
+            //  this.Token.transactionAmount=formData.transaction.transactionAmount.replace(/,/g, "");
+            //  this.Token.transactionId=formData.transaction.transactionId,
+            //  this.Token.totalChargeAmount=formData.transaction.totalChargeAmount,
+            //  this.Token.totalTransactionAmount=formData.transaction.totalTransactionAmount,
+            //  this.Token.transactionBranch=this.transBranch,
+            //  this.Token.entityCode=this.entityCode,
+            //  this.Token.bankCode=this.bankCode,
+            //  this.Token.tokenBranch=this.tokenBranch,
+            //  this.Token.customerCategory=this.custPref,
+            //  this.Token.productCode='CHW',
+            //  this.Token.tokenOrigin=this.tokenOrigin,
+            //  this.Token.tokenNumber="",
+            //  this.Token.estimatedWaitTime="",
+            //  this.Token.exchangeRate="",
+            //  this.Token.accountAmount="",
+            //  this.Token.narrative="",
+            //  this.Token.denomination=[],
+            //  this.Token.totalAmount="",
+            // this.Token.customerId=formData.account.customerId?formData.account.customerId:0;
+            // this.Token.transactionBranch = this.transBranch;
+            // this.Token.transactionAmount = formData.transaction.transactionAmount.replace(/,/g, '');
+            // this.Token.accountType = formData.account.accountType;
+            // this.Token.accountNumber = formData.account.accountNumber;
+            // this.Token.holderName = formData.account.holderName;
+            // this.Token.productCode='CHW',
+            // this.Token.tokenOrigin = this.tokenOrigin;
+            // this.Token.accountBalance = this.accountBal;
+            // console.log("before api call :: ",this.Token);
+
+
+            this.apiService.saveofCashwithdraw(this.forexToken).subscribe(function (cashWithdrawResp) {
+              console.log("Response Success, Data Saved", cashWithdrawResp);
+              _this33.cashWithdrawResponse = cashWithdrawResp;
+              _this33.tokenNum = _this33.cashWithdrawResponse.tokenNumber;
+              _this33.estimatedTime = _this33.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this33.tokenNum);
+              localStorage.setItem("estimatedTiming", _this33.estimatedTime);
+              _this33.enableContinue = false;
+
+              if (_this33.cashWithdrawResponse) {
+                _this33.dialogService.tokenGenerationDialog();
+              }
+            });
+          }
+        }, {
+          key: "onReset",
+          value: function onReset() {
+            this.forexForm.reset();
+          }
+        }, {
+          key: "redirectToHome",
+          value: function redirectToHome() {
+            this.dataService.removetransactionFormData(this.transactiondata);
+            this.dataService.removeaccountFormData(this.appointmentDetails);
+            this.dataService.removedenominationFormData(this.denominationdata);
+            this.router.navigateByUrl('/others/kioskHome');
+          }
+        }, {
+          key: "back",
+          value: function back() {
+            this._location.back();
+          }
         }]);
 
         return ForexServiceComponent;
       }();
 
       ForexServiceComponent.ɵfac = function ForexServiceComponent_Factory(t) {
-        return new (t || ForexServiceComponent)();
+        return new (t || ForexServiceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"]));
       };
 
       ForexServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ForexServiceComponent,
         selectors: [["app-forex-service"]],
-        decls: 1,
-        vars: 0,
+        decls: 7,
+        vars: 4,
+        consts: [[3, "title"], [3, "formGroup"], ["fxLayout", "column"], ["formControlName", "detailInfo"], ["style", "margin-top: -4%;", 4, "ngIf"], [2, "margin-top", "-1%"], ["saveText", "Continue", 3, "cancelDisabled", "save", "cancel", "exit"], [2, "margin-top", "-4%"], ["formControlName", "denomination"]],
         template: function ForexServiceComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-details-information");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-header", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "app-details-information", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ForexServiceComponent_div_4_Template, 2, 0, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "app-footer", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("save", function ForexServiceComponent_Template_app_footer_save_6_listener($event) {
+              return ctx.onSubmit($event);
+            })("cancel", function ForexServiceComponent_Template_app_footer_cancel_6_listener() {
+              return ctx.redirectToHome();
+            })("exit", function ForexServiceComponent_Template_app_footer_exit_6_listener() {
+              return ctx.back();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("title", ctx.title);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.forexForm);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.displayDenom);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("cancelDisabled", false);
           }
         },
-        directives: [_shared_core_form_details_information_details_information_component__WEBPACK_IMPORTED_MODULE_1__["DetailsInformationComponent"]],
+        directives: [_shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _shared_core_form_details_information_details_information_component__WEBPACK_IMPORTED_MODULE_14__["DetailsInformationComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_15__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_16__["DenominationInfoComponent"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmb3JleC1zZXJ2aWNlLmNvbXBvbmVudC5zY3NzIn0= */"]
       });
       /*@__PURE__*/
@@ -6197,9 +7829,31 @@
             styleUrls: ['./forex-service.component.scss']
           }]
         }], function () {
-          return [];
+          return [{
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+          }, {
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]
+          }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+          }, {
+            type: app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"]
+          }, {
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialog"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__["MatSnackBar"]
+          }, {
+            type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]
+          }, {
+            type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"]
+          }];
         }, null);
       })();
+
+      var ForexTokenObj = function ForexTokenObj() {
+        _classCallCheck(this, ForexTokenObj);
+      };
       /***/
 
     },
@@ -6452,7 +8106,7 @@
         _createClass(CheqDComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this24 = this;
+            var _this34 = this;
 
             localStorage.setItem('chq_page', this.title);
             this.custValidation = localStorage.getItem("customerValidation");
@@ -6478,10 +8132,10 @@
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
                 console.log("Account component?", transaction);
-                _this24.transactiondata = transaction;
+                _this34.transactiondata = transaction;
 
-                if (_this24.transactiondata.transactionAmount) {
-                  _this24.displayDenom = true;
+                if (_this34.transactiondata.transactionAmount) {
+                  _this34.displayDenom = true;
                 }
               }
             }); // this.dataService.getdenominationFormdata.subscribe(denomination=>{
@@ -6494,17 +8148,22 @@
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 console.log("Account component?", data);
-                _this24.appointmentDetails = data;
-                console.log("Account component?", _this24.appointmentDetails.appointmentId);
+                _this34.appointmentDetails = data;
+                console.log("Account component?", _this34.appointmentDetails.appointmentId);
               }
+            });
+            this.dataService.getNavParam.subscribe(function (title) {
+              console.log(title);
+              _this34.titleData = title;
             });
           }
         }, {
           key: "redirectToHome",
           value: function redirectToHome() {
             this.dataService.removetransactionFormData(this.transactiondata);
-            this.dataService.removeaccountFormData(this.appointmentDetails); // this.dataService.removedenominationFormData(this.denominationdata);
-
+            this.dataService.removeaccountFormData(this.appointmentDetails);
+            this.dataService.removeNavParam(this.titleData);
+            this.dataService.removedenominationFormData(this.denominationdata);
             this.router.navigateByUrl('/others/kioskHome');
           }
         }, {
@@ -6523,7 +8182,7 @@
         }, {
           key: "onSaveofchequeDeposit",
           value: function onSaveofchequeDeposit(form, type, cdForm) {
-            var _this25 = this;
+            var _this35 = this;
 
             var _a;
 
@@ -6540,7 +8199,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this25.qrBranchCode = response;
+                  _this35.qrBranchCode = response;
                   console.log(response);
                 });
               }
@@ -6630,22 +8289,22 @@
 
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cheqWithdrawResp) {
               console.log("Response Success, Data Saved", cheqWithdrawResp);
-              _this25.cheqDepositResponse = cheqWithdrawResp;
-              _this25.tokenNum = _this25.cheqDepositResponse.tokenNumber;
-              _this25.estimatedTime = _this25.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this25.tokenNum);
-              localStorage.setItem("estimatedTiming", _this25.estimatedTime);
-              _this25.enableContinue = false;
+              _this35.cheqDepositResponse = cheqWithdrawResp;
+              _this35.tokenNum = _this35.cheqDepositResponse.tokenNumber;
+              _this35.estimatedTime = _this35.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this35.tokenNum);
+              localStorage.setItem("estimatedTiming", _this35.estimatedTime);
+              _this35.enableContinue = false;
 
-              if (_this25.cheqDepositResponse) {
-                _this25.dialogService.tokenGenerationDialog();
+              if (_this35.cheqDepositResponse) {
+                _this35.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this26 = this;
+            var _this36 = this;
 
             this.phonenum = this.ls.getItem('phonenumFromLogin');
             this.chequedepositValues = formData;
@@ -6662,9 +8321,9 @@
             if (transamountwithoutcomma >= amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this26.openDialogOTP(_this26.phonenum);
+                  _this36.openDialogOTP(_this36.phonenum);
 
-                  _this26.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this36.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -6678,7 +8337,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this27 = this;
+            var _this37 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__["OtpVerifyComponent"], {
               data: {
@@ -6689,14 +8348,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this27.getOTPforSave(_this27.chequedepositValues, _this27.chequedepositype, _this27.cheqDepositForm);
+                _this37.getOTPforSave(_this37.chequedepositValues, _this37.chequedepositype, _this37.cheqDepositForm);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this28 = this;
+            var _this38 = this;
 
             console.log(formData); // let denominationData: any = {};
             //     let denominationDataArray: any[] = [];
@@ -6741,15 +8400,15 @@
             console.log("before api call :: ", this.Token);
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this28.cheqDepositResponse = cashDepositResp;
-              _this28.tokenNum = _this28.cheqDepositResponse.tokenNumber;
-              _this28.estimatedTime = _this28.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this28.tokenNum);
-              localStorage.setItem("estimatedTiming", _this28.estimatedTime);
-              _this28.enableContinue = false;
+              _this38.cheqDepositResponse = cashDepositResp;
+              _this38.tokenNum = _this38.cheqDepositResponse.tokenNumber;
+              _this38.estimatedTime = _this38.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this38.tokenNum);
+              localStorage.setItem("estimatedTiming", _this38.estimatedTime);
+              _this38.enableContinue = false;
 
-              if (_this28.cheqDepositResponse) {
-                _this28.dialogService.tokenGenerationDialog();
+              if (_this38.cheqDepositResponse) {
+                _this38.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -7177,6 +8836,176 @@
       var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/material/icon */
       "NFeN");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+
+      function CaptureChequeDetailsComponent_div_12_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CaptureChequeDetailsComponent_div_12_Template_div_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+
+            var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r5.scanChequeFront();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Front ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function CaptureChequeDetailsComponent_div_13_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Front ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r1.capturedImageFront, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        }
+      }
+
+      function CaptureChequeDetailsComponent_div_14_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CaptureChequeDetailsComponent_div_14_Template_div_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8);
+
+            var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r7.scanChequeBack();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Back ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function CaptureChequeDetailsComponent_div_15_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Back ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r3.capturedImageBack, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        }
+      }
+
+      function CaptureChequeDetailsComponent_div_16_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CaptureChequeDetailsComponent_div_16_Template_button_click_1_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10);
+
+            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r9.cancel();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Cancel");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CaptureChequeDetailsComponent_div_16_Template_button_click_3_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10);
+
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r11.submit();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Submit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
 
       var CaptureChequeDetailsComponent = /*#__PURE__*/function () {
         function CaptureChequeDetailsComponent(dialog, dialogRef, router) {
@@ -7185,6 +9014,8 @@
           this.dialog = dialog;
           this.dialogRef = dialogRef;
           this.router = router;
+          this.flag = false;
+          this.flag1 = false;
         }
 
         _createClass(CaptureChequeDetailsComponent, [{
@@ -7192,24 +9023,50 @@
           value: function ngOnInit() {}
         }, {
           key: "scanChequeFront",
-          value: function scanChequeFront(e) {
+          value: function scanChequeFront() {
+            var _this39 = this;
+
             console.log("front click");
             var dialogRef = this.dialog.open(_ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_3__["OcrScanPageComponent"], {
-              width: '60%',
-              height: '65%'
+              width: '100%',
+              height: '80%'
             });
-            this.router.navigateByUrl('/others/cheq-deposit');
+            dialogRef.afterClosed().subscribe(function (result) {
+              _this39.capturedImageFront = sessionStorage.getItem('sysImage');
+              _this39.flag = true;
+              console.log("1", _this39.flag);
+            });
           }
         }, {
           key: "scanChequeBack",
-          value: function scanChequeBack(e) {
+          value: function scanChequeBack() {
+            var _this40 = this;
+
             console.log("back click");
+            var dialogRef = this.dialog.open(_ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_3__["OcrScanPageComponent"], {
+              width: '100%',
+              height: '80%'
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+              _this40.capturedImageBack = sessionStorage.getItem('sysImage');
+              _this40.flag1 = true;
+              console.log("1", _this40.flag1);
+            });
           }
         }, {
           key: "back",
           value: function back() {
             this.dialogRef.close();
-            this.router.navigateByUrl('/others/cheq-deposit');
+          }
+        }, {
+          key: "cancel",
+          value: function cancel() {
+            this.dialogRef.close();
+          }
+        }, {
+          key: "submit",
+          value: function submit() {
+            this.dialogRef.close();
           }
         }]);
 
@@ -7223,9 +9080,9 @@
       CaptureChequeDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: CaptureChequeDetailsComponent,
         selectors: [["app-capture-cheque-details"]],
-        decls: 22,
-        vars: 0,
-        consts: [[1, "section"], ["fxLayout", "row", "fxLayoutAlign", "start", "fxLayoutGap", "16px"], [2, "cursor", "pointer", 3, "click"], [2, "font-weight", "bold"], [1, "row"], [1, "column", 3, "click"], [1, "card"], [1, "card1"], ["src", "assets/images/imgCap.svg", "alt", ""]],
+        decls: 17,
+        vars: 5,
+        consts: [[1, "section"], ["fxLayout", "row", "fxLayoutAlign", "start", "fxLayoutGap", "16px"], [2, "cursor", "pointer", 3, "click"], [2, "font-weight", "bold"], [1, "row"], ["class", "column", 3, "click", 4, "ngIf"], ["class", "column", 4, "ngIf"], ["class", "pt-30", "fxLayout", "row", "fxLayoutAlign", "space-between center", 4, "ngIf"], [1, "column", 3, "click"], [1, "card"], [1, "card1"], ["src", "assets/images/imgCap.svg", "alt", ""], [1, "column"], ["height", "100px", "width", "100%", 3, "src"], ["src", "assets/images/tickMark.svg", "alt", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "pt-30"], ["mat-flat-button", "", 1, "cancelBtn", 3, "click"], ["mat-flat-button", "", 1, "submitBtn", 3, "click"]],
         template: function CaptureChequeDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -7254,7 +9111,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "It is a long established fact that a reader will be distracted by the readable content of a page ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " It is a long established fact that a reader will be distracted by the readable content of a page ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "br");
 
@@ -7266,53 +9123,45 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, CaptureChequeDetailsComponent_div_12_Template, 5, 0, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CaptureChequeDetailsComponent_Template_div_click_12_listener($event) {
-              return ctx.scanChequeFront($event);
-            });
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, CaptureChequeDetailsComponent_div_13_Template, 6, 1, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, CaptureChequeDetailsComponent_div_14_Template, 5, 0, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "img", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, CaptureChequeDetailsComponent_div_15_Template, 6, 1, "div", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Front");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CaptureChequeDetailsComponent_Template_div_click_17_listener($event) {
-              return ctx.scanChequeBack($event);
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "img", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "back");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, CaptureChequeDetailsComponent_div_16_Template, 5, 0, "div", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.flag == false);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.flag == true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.flag1 == false);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.flag1 == true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.flag == true || ctx.flag1 == true);
+          }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutGapDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"]],
-        styles: ["p[_ngcontent-%COMP%] {\n  color: #6e6e6e;\n  font-size: 15px;\n  padding-left: 45px;\n}\n\n.column[_ngcontent-%COMP%] {\n  float: left;\n  width: 50%;\n  padding: 0 10px;\n}\n\n\n\n.row[_ngcontent-%COMP%] {\n  margin: 0 -5px;\n}\n\n\n\n.row[_ngcontent-%COMP%]:after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n\n\n.card[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\n  \n  padding: 8px;\n  text-align: center;\n  background-color: #f1f1f1;\n  height: 50mm;\n  padding-top: 10px;\n  color: #004c97;\n}\n\n.card1[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\n  \n  padding: 16px;\n  text-align: center;\n  height: 40mm;\n  padding-top: 50px;\n  margin-bottom: 1%;\n}\n\n\n\n@media screen and (max-width: 600px) {\n  .column[_ngcontent-%COMP%] {\n    width: 100%;\n    display: block;\n    margin-bottom: 20px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2FwdHVyZS1jaGVxdWUtZGV0YWlscy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtBQUNKOztBQUVFLG1FQUFBOztBQUNBO0VBQU0sY0FBQTtBQUVSOztBQUFFLG1DQUFBOztBQUNBO0VBQ0UsV0FBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0FBR0o7O0FBQUUsNEJBQUE7O0FBQ0E7RUFDRSwwQ0FBQTtFQUE0QyxnQ0FBQTtFQUM1QyxZQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7QUFJSjs7QUFGRTtFQUNFLDBDQUFBO0VBQTRDLGdDQUFBO0VBQzVDLGFBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0FBTUo7O0FBSEUsdUVBQUE7O0FBQ0E7RUFDRTtJQUNFLFdBQUE7SUFDQSxjQUFBO0lBQ0EsbUJBQUE7RUFNSjtBQUNGIiwiZmlsZSI6ImNhcHR1cmUtY2hlcXVlLWRldGFpbHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJwe1xyXG4gICAgY29sb3I6ICM2ZTZlNmU7XHJcbiAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDQ1cHg7XHJcbn1cclxuXHJcbi5jb2x1bW4ge1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gICAgcGFkZGluZzogMCAxMHB4O1xyXG4gIH1cclxuICBcclxuICAvKiBSZW1vdmUgZXh0cmEgbGVmdCBhbmQgcmlnaHQgbWFyZ2lucywgZHVlIHRvIHBhZGRpbmcgaW4gY29sdW1ucyAqL1xyXG4gIC5yb3cge21hcmdpbjogMCAtNXB4O31cclxuICBcclxuICAvKiBDbGVhciBmbG9hdHMgYWZ0ZXIgdGhlIGNvbHVtbnMgKi9cclxuICAucm93OmFmdGVyIHtcclxuICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICBkaXNwbGF5OiB0YWJsZTtcclxuICAgIGNsZWFyOiBib3RoO1xyXG4gIH1cclxuICBcclxuICAvKiBTdHlsZSB0aGUgY291bnRlciBjYXJkcyAqL1xyXG4gIC5jYXJkIHtcclxuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsgLyogdGhpcyBhZGRzIHRoZSBcImNhcmRcIiBlZmZlY3QgKi9cclxuICAgIHBhZGRpbmc6IDhweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmMWYxZjE7XHJcbiAgICBoZWlnaHQ6IDUwbW07XHJcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcclxuICAgIGNvbG9yOiAjMDA0Yzk3O1xyXG4gIH1cclxuICAuY2FyZDEge1xyXG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpOyAvKiB0aGlzIGFkZHMgdGhlIFwiY2FyZFwiIGVmZmVjdCAqL1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGhlaWdodDogNDBtbTtcclxuICAgIHBhZGRpbmctdG9wOiA1MHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMSU7XHJcbiAgfVxyXG4gIFxyXG4gIC8qIFJlc3BvbnNpdmUgY29sdW1ucyAtIG9uZSBjb2x1bW4gbGF5b3V0ICh2ZXJ0aWNhbCkgb24gc21hbGwgc2NyZWVucyAqL1xyXG4gIEBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYwMHB4KSB7XHJcbiAgICAuY29sdW1uIHtcclxuICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gICAgfVxyXG4gIH0iXX0= */"]
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutGapDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"]],
+        styles: ["p[_ngcontent-%COMP%] {\n  color: #6e6e6e;\n  font-size: 15px;\n  padding-left: 45px;\n}\n\n.column[_ngcontent-%COMP%] {\n  float: left;\n  width: 50%;\n  padding: 0 10px;\n}\n\n\n\n.row[_ngcontent-%COMP%] {\n  margin: 0 -5px;\n}\n\n\n\n.row[_ngcontent-%COMP%]:after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n\n\n.card[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\n  \n  padding: 8px;\n  text-align: center;\n  background-color: #f1f1f1;\n  height: 50mm;\n  padding-top: 10px;\n  color: #004c97;\n}\n\n.card1[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\n  \n  padding: 16px;\n  text-align: center;\n  height: 40mm;\n  padding-top: 50px;\n  margin-bottom: 1%;\n}\n\n\n\n@media screen and (max-width: 600px) {\n  .column[_ngcontent-%COMP%] {\n    width: 100%;\n    display: block;\n    margin-bottom: 20px;\n  }\n}\n\n.submitBtn[_ngcontent-%COMP%] {\n  width: 30%;\n  margin-right: 18%;\n  height: 38px;\n  color: #FFFFFF;\n  background: transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.cancelBtn[_ngcontent-%COMP%] {\n  width: 30%;\n  height: 38px;\n  margin-left: 18%;\n  color: #E50000;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 6px #00000029;\n  border-radius: 28px;\n  opacity: 100%;\n}\n\n.pt-30[_ngcontent-%COMP%] {\n  padding-top: 30px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2FwdHVyZS1jaGVxdWUtZGV0YWlscy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtBQUNKOztBQUVFLG1FQUFBOztBQUNBO0VBQU0sY0FBQTtBQUVSOztBQUFFLG1DQUFBOztBQUNBO0VBQ0UsV0FBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0FBR0o7O0FBQUUsNEJBQUE7O0FBQ0E7RUFDRSwwQ0FBQTtFQUE0QyxnQ0FBQTtFQUM1QyxZQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7QUFJSjs7QUFGRTtFQUNFLDBDQUFBO0VBQTRDLGdDQUFBO0VBQzVDLGFBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0FBTUo7O0FBQUUsdUVBQUE7O0FBQ0E7RUFDRTtJQUNFLFdBQUE7SUFDQSxjQUFBO0lBQ0EsbUJBQUE7RUFHSjtBQUNGOztBQUFFO0VBQ0UsVUFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxvR0FBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7QUFFSjs7QUFBQTtFQUNJLFVBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsK0NBQUE7RUFDQSxpQ0FBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtBQUdKOztBQUFBO0VBQ0UsaUJBQUE7QUFHRiIsImZpbGUiOiJjYXB0dXJlLWNoZXF1ZS1kZXRhaWxzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsicHtcclxuICAgIGNvbG9yOiAjNmU2ZTZlO1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgcGFkZGluZy1sZWZ0OiA0NXB4O1xyXG59XHJcblxyXG4uY29sdW1uIHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIHBhZGRpbmc6IDAgMTBweDtcclxuICB9XHJcbiAgXHJcbiAgLyogUmVtb3ZlIGV4dHJhIGxlZnQgYW5kIHJpZ2h0IG1hcmdpbnMsIGR1ZSB0byBwYWRkaW5nIGluIGNvbHVtbnMgKi9cclxuICAucm93IHttYXJnaW46IDAgLTVweDt9XHJcbiAgXHJcbiAgLyogQ2xlYXIgZmxvYXRzIGFmdGVyIHRoZSBjb2x1bW5zICovXHJcbiAgLnJvdzphZnRlciB7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgZGlzcGxheTogdGFibGU7XHJcbiAgICBjbGVhcjogYm90aDtcclxuICB9XHJcbiAgXHJcbiAgLyogU3R5bGUgdGhlIGNvdW50ZXIgY2FyZHMgKi9cclxuICAuY2FyZCB7XHJcbiAgICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsIDAsIDAsIDAuMik7IC8qIHRoaXMgYWRkcyB0aGUgXCJjYXJkXCIgZWZmZWN0ICovXHJcbiAgICBwYWRkaW5nOiA4cHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xyXG4gICAgaGVpZ2h0OiA1MG1tO1xyXG4gICAgcGFkZGluZy10b3A6IDEwcHg7XHJcbiAgICBjb2xvcjogIzAwNGM5NztcclxuICB9XHJcbiAgLmNhcmQxIHtcclxuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsgLyogdGhpcyBhZGRzIHRoZSBcImNhcmRcIiBlZmZlY3QgKi9cclxuICAgIHBhZGRpbmc6IDE2cHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBoZWlnaHQ6IDQwbW07XHJcbiAgICBwYWRkaW5nLXRvcDogNTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDElO1xyXG4gICAgLy8gYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLy4uL2Fzc2V0cy9pbWFnZXMvdGlja01hcmsuc3ZnXCIpO1xyXG4gICAgLy8gYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICAgIC8vIGJhY2tncm91bmQtcG9zaXRpb24teTogLTIwdmg7XHJcbiAgfVxyXG4gIFxyXG4gIC8qIFJlc3BvbnNpdmUgY29sdW1ucyAtIG9uZSBjb2x1bW4gbGF5b3V0ICh2ZXJ0aWNhbCkgb24gc21hbGwgc2NyZWVucyAqL1xyXG4gIEBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYwMHB4KSB7XHJcbiAgICAuY29sdW1uIHtcclxuICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gICAgfVxyXG4gIH1cclxuXHJcbiAgLnN1Ym1pdEJ0bntcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE4JTtcclxuICAgIGhlaWdodDogMzhweDtcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxQTJEIDAlLCAjMDA0Qzk3IDEwMCUpIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDI4cHg7XHJcbiAgICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxufVxyXG4uY2FuY2VsQnRue1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICAgIGhlaWdodDogMzhweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAxOCU7XHJcbiAgICBjb2xvcjogI0U1MDAwMDtcclxuICAgIGJhY2tncm91bmQ6ICNGRkZGRkYgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDNweCA2cHggIzAwMDAwMDI5O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjhweDtcclxuICAgIG9wYWNpdHk6IDEwMCU7XHJcbn1cclxuXHJcbi5wdC0zMHtcclxuICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAvLyBtYXJnaW4tbGVmdDogOCU7XHJcbn0iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -8029,7 +9878,7 @@
 
       function AccountInformationFormComponent_div_6_input_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 20);
         }
 
         if (rf & 2) {
@@ -8039,7 +9888,7 @@
 
       function AccountInformationFormComponent_div_6_input_5_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 20);
         }
 
         if (rf & 2) {
@@ -8049,7 +9898,7 @@
 
       function AccountInformationFormComponent_div_6_mat_select_6_mat_option_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -8071,7 +9920,7 @@
         if (rf & 1) {
           var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function AccountInformationFormComponent_div_6_mat_select_6_Template_mat_select_selectionChange_0_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14);
@@ -8081,7 +9930,7 @@
             return ctx_r13.getAccountType($event.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AccountInformationFormComponent_div_6_mat_select_6_mat_option_1_Template, 2, 2, "mat-option", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AccountInformationFormComponent_div_6_mat_select_6_mat_option_1_Template, 2, 2, "mat-option", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -8097,7 +9946,7 @@
 
       function AccountInformationFormComponent_div_6_span_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -8115,7 +9964,7 @@
 
       function AccountInformationFormComponent_div_6_input_12_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 25);
         }
 
         if (rf & 2) {
@@ -8125,7 +9974,7 @@
 
       function AccountInformationFormComponent_div_6_mat_select_13_mat_option_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -8147,7 +9996,7 @@
         if (rf & 1) {
           var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 26);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function AccountInformationFormComponent_div_6_mat_select_13_Template_mat_select_selectionChange_0_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r18);
@@ -8157,7 +10006,7 @@
             return ctx_r17.fetchByAccountNum($event.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AccountInformationFormComponent_div_6_mat_select_13_mat_option_1_Template, 2, 2, "mat-option", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AccountInformationFormComponent_div_6_mat_select_13_mat_option_1_Template, 2, 2, "mat-option", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -8173,9 +10022,9 @@
 
       function AccountInformationFormComponent_div_6_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label");
 
@@ -8183,15 +10032,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AccountInformationFormComponent_div_6_input_4_Template, 1, 1, "input", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AccountInformationFormComponent_div_6_input_4_Template, 1, 1, "input", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, AccountInformationFormComponent_div_6_input_5_Template, 1, 1, "input", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, AccountInformationFormComponent_div_6_input_5_Template, 1, 1, "input", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, AccountInformationFormComponent_div_6_mat_select_6_Template, 2, 1, "mat-select", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, AccountInformationFormComponent_div_6_mat_select_6_Template, 2, 1, "mat-select", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-form-field", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-form-field", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-label");
 
@@ -8199,13 +10048,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, AccountInformationFormComponent_div_6_span_11_Template, 2, 1, "span", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, AccountInformationFormComponent_div_6_span_11_Template, 2, 1, "span", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, AccountInformationFormComponent_div_6_input_12_Template, 1, 1, "input", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, AccountInformationFormComponent_div_6_input_12_Template, 1, 1, "input", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, AccountInformationFormComponent_div_6_mat_select_13_Template, 2, 1, "mat-select", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, AccountInformationFormComponent_div_6_mat_select_13_Template, 2, 1, "mat-select", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8231,7 +10080,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.flag1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.displayFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -8245,7 +10094,7 @@
 
       function AccountInformationFormComponent_div_7_span_5_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -8265,9 +10114,9 @@
         if (rf & 1) {
           var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label");
 
@@ -8275,11 +10124,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, AccountInformationFormComponent_div_7_span_5_Template, 2, 1, "span", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, AccountInformationFormComponent_div_7_span_5_Template, 2, 1, "span", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "input", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "input", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function AccountInformationFormComponent_div_7_Template_input_change_6_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21);
@@ -8295,7 +10144,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-form-field", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-form-field", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-label");
 
@@ -8303,7 +10152,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "input", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "input", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8315,7 +10164,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.flag1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.displayFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -8323,21 +10172,11 @@
         }
       }
 
-      function AccountInformationFormComponent_div_9_Template(rf, ctx) {
+      function AccountInformationFormComponent_p_12_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 28);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 27);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Account Balance ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 28);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -8345,17 +10184,17 @@
         if (rf & 2) {
           var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("", ctx_r2.curr, "", ctx_r2.formatAmount(ctx_r2.accountBal), "");
         }
       }
 
-      function AccountInformationFormComponent_div_10_Template(rf, ctx) {
+      function AccountInformationFormComponent_div_13_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Holder Name ");
 
@@ -8379,11 +10218,11 @@
         }
       }
 
-      function AccountInformationFormComponent_div_11_Template(rf, ctx) {
+      function AccountInformationFormComponent_div_14_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 30);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Account Branch ");
 
@@ -8449,6 +10288,7 @@
           this.enableBtn1 = false;
           this.accountDropdown = false;
           this.flag1 = false;
+          this.displayFlag = false;
           this.denomRequired = '';
           this.hideDetails = false;
           this.hideAccNum = false;
@@ -8477,7 +10317,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this29 = this;
+            var _this41 = this;
 
             this.phoneNumber = localStorage.getItem('phonenumFromLogin');
             this.appointmentId = this.ls.getItem('TransactionType');
@@ -8493,45 +10333,40 @@
             });
             this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
             setTimeout(function () {
-              if (_this29.qrData != null) {
-                console.log('Account', _this29.qrData);
-                console.log(_this29.accountForm);
-                _this29.hideDetails = true;
-                _this29.hideAccNum = true;
-                _this29.currencyCode = _this29.qrData.accountCurrency;
-                _this29.userName = _this29.qrData.holderName;
-                _this29.accountBal = _this29.qrData.accountBalance;
+              if (_this41.qrData != null) {
+                console.log('Account', _this41.qrData);
+                console.log(_this41.accountForm);
+                _this41.hideDetails = true;
+                _this41.hideAccNum = true;
+                _this41.currencyCode = _this41.qrData.accountCurrency;
+                _this41.userName = _this41.qrData.holderName;
+                _this41.accountBal = _this41.qrData.accountBalance;
 
-                _this29.accountForm.controls.customerId.setValue(_this29.qrData.customerId);
+                _this41.accountForm.controls.customerId.setValue(_this41.qrData.customerId);
 
-                _this29.accountForm.controls.accountType.setValue(_this29.qrData.accountType);
+                _this41.accountForm.controls.accountType.setValue(_this41.qrData.accountType);
 
-                _this29.accountForm.controls.accountNumber.setValue(_this29.qrData.accountId);
+                _this41.accountForm.controls.accountNumber.setValue(_this41.qrData.accountId);
 
-                _this29.accountForm.controls.accountBranch.setValue(_this29.qrData.accountBranch);
+                _this41.accountForm.controls.accountBranch.setValue(_this41.qrData.accountBranch);
 
-                _this29.accountForm.controls.holderName.setValue(_this29.qrData.holderName);
+                _this41.accountForm.controls.holderName.setValue(_this41.qrData.holderName);
 
-                _this29.accountForm.controls.accountCurrency.setValue(_this29.qrData.accountCurrency);
+                _this41.accountForm.controls.accountCurrency.setValue(_this41.qrData.accountCurrency);
 
-                _this29.accountForm.controls.accountBalance.setValue(_this29.qrData.accountBalance); // this.accountForm.controls.accountBalance.setValue(this.qrData.accountBalance);
+                _this41.accountForm.controls.accountBalance.setValue(_this41.qrData.accountBalance); // this.accountForm.controls.accountBalance.setValue(this.qrData.accountBalance);
 
 
-                console.log(_this29.accountForm);
+                console.log(_this41.accountForm);
               }
             }, 1000);
-            console.log(this.accountForm.controls);
             this.custValidation = localStorage.getItem('customerValidation');
             this.custNameFromLogin = localStorage.getItem('FromLogin');
 
-            if (this.custValidation == 'New Customer') {
+            if (this.custValidation == 'New Customer' || this.custNameFromLogin != null) {
               this.hideAccNum = false;
               this.showAccountNum = false;
               this.showAccoutType = false;
-            }
-
-            if (this.custNameFromLogin != null) {
-              this.showAccountNum = false;
             }
 
             console.log('CWH :: ' + this.accountForm.value);
@@ -8556,9 +10391,9 @@
             this.gettransactionBranch('account_branch');
             this.getBankInformation('KN');
             this.subscriptions.push(this.accountForm.valueChanges.subscribe(function (value) {
-              _this29.onChange(value);
+              _this41.onChange(value);
 
-              _this29.onTouched();
+              _this41.onTouched();
             }));
           }
         }, {
@@ -8601,121 +10436,129 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this30 = this;
+            var _this42 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this30.denomRequired = resp.denomRequired;
+              _this42.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this30.enableBtn = false;
-                _this30.enableBtn1 = false;
+                _this42.enableBtn = false;
+                _this42.enableBtn1 = false;
               }
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this31 = this;
+            var _this43 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this31.trasactionBranches = branches;
+              _this43.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this32 = this;
+            var _this44 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this32.branchData = data;
-              console.log(_this32.branchData);
+              _this44.branchData = data;
+              console.log(_this44.branchData);
               data.forEach(function (element, index) {
-                _this32.branch = data[index].branchName;
-                console.log(_this32.branch); // this.accountForm.controls.accountBranch.setValue(this.branch);
+                _this44.branch = data[index].branchName; // console.log(this.branch);
+                // this.accountForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this33 = this;
+            var _this45 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this33.countryValues = allCountryValues;
-              console.log(_this33.countryValues);
+              _this45.countryValues = allCountryValues;
+              console.log(_this45.countryValues);
             });
           }
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this34 = this;
+            var _this46 = this;
 
             console.log("gfhg");
             this.phoneNumber = localStorage.getItem('phonenumFromLogin');
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log('All Transaction Details', allTransactionResp);
-              _this34.accountCurrency1 = allTransactionResp.accountCurrency;
-              _this34.currencyCode = allTransactionResp.currencyCode;
-              console.log(_this34.currencyCode);
-              _this34.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this46.accountCurrency1 = allTransactionResp.accountCurrency;
+              _this46.currencyCode = allTransactionResp.currencyCode;
+              console.log(_this46.currencyCode);
+              _this46.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this34.accountForm.controls.holderName.setValue(_this34.userName); // this.setBalance(allTransactionResp.custAccount);
+              _this46.accountForm.controls.holderName.setValue(_this46.userName); // this.setBalance(allTransactionResp.custAccount);
 
 
-              _this34.custID = allTransactionResp.customerId;
+              _this46.custID = allTransactionResp.customerId;
 
-              _this34.accountForm.controls.customerId.setValue(allTransactionResp.customerId);
+              _this46.accountForm.controls.customerId.setValue(allTransactionResp.customerId);
 
-              _this34.accountForm.controls.accountCurrency.setValue(allTransactionResp.accountCurrency);
+              _this46.accountForm.controls.accountCurrency.setValue(allTransactionResp.accountCurrency);
 
-              console.log('Cust', _this34.custID);
-              _this34.custAccountData = allTransactionResp.custAccount;
-              _this34.accounttypeArray = _toConsumableArray(_this34.custAccountData).filter(function (_ref3, index) {
+              console.log('Cust', _this46.custID);
+              _this46.custAccountData = allTransactionResp.custAccount;
+              _this46.accounttypeArray = _toConsumableArray(_this46.custAccountData).filter(function (_ref3, index) {
                 var accountType = _ref3.accountType;
-                return !_toConsumableArray(_this34.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this46.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this34.accounttypeArray);
+              console.log(_this46.accounttypeArray);
 
-              for (var i = 0; i < _this34.custAccountData.length; i++) {
-                if (_this34.custAccountData[i].status == 'APPROVED') {
+              for (var i = 0; i < _this46.custAccountData.length; i++) {
+                if (_this46.custAccountData[i].status == 'APPROVED') {
                   // if(this.custAccountData[i].status == 'APPROVED'){
-                  console.log(_this34.custAccountData[i].primaryAcc);
+                  console.log(_this46.custAccountData[i].primaryAcc);
 
-                  if (_this34.custAccountData[i].primaryAcc) {
-                    console.log(_this34.custAccountData[i]); //this.cashwithdrawForm.controls..setValue();
+                  if (_this46.custAccountData[i].primaryAcc) {
+                    console.log(_this46.custAccountData[i]);
+
+                    _this46.accountForm.controls.accountNumber.setValue(_this46.custAccountData[i].accountId);
+
+                    _this46.accountForm.controls.accountType.setValue(_this46.custAccountData[i].accountType);
+
+                    console.log(_this46.accountForm.controls.accountType); //this.cashwithdrawForm.controls..setValue();
+                  } else {
+                    _this46.accountForm.controls.accountNumber.setValue(_this46.accountNoList[0]);
                   }
 
-                  _this34.accountNoList.push(_this34.custAccountData[i]); // }
+                  _this46.accountNoList.push(_this46.custAccountData[i]); // }
 
 
-                  _this34.accountNoList.push(_this34.custAccountData[i]);
+                  _this46.accountNoList.push(_this46.custAccountData[i]);
                 }
               }
 
-              console.log(_this34.accountNoList);
+              console.log(_this46.accountNoList);
 
-              if (_this34.custAccountData && _this34.accountNoList.length <= 1) {
-                _this34.accountDropdown = false;
-                _this34.hideDetails = true;
-                _this34.hideAccNum = true;
+              if (_this46.custAccountData && _this46.accountNoList.length <= 1) {
+                _this46.accountDropdown = false;
+                _this46.hideDetails = true;
+                _this46.hideAccNum = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this34.accountForm.controls.accountType.setValue(accTyp);
+                _this46.accountForm.controls.accountType.setValue(accTyp);
 
-                _this34.custAccountNumber(_this34.accountNoList[0]);
+                _this46.custAccountNumber(_this46.accountNoList[0]);
               } else {
-                _this34.accountDropdown = true;
-                _this34.hideDetails = true;
-                _this34.hideAccNum = true;
+                _this46.accountDropdown = true;
+                _this46.hideDetails = true;
+                _this46.hideAccNum = true;
                 var _accTyp3 = allTransactionResp.custAccount[0].accountType;
 
-                _this34.accountForm.controls.accountType.setValue(_accTyp3);
+                _this46.accountForm.controls.accountType.setValue(_accTyp3);
 
-                _this34.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this46.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -8741,12 +10584,14 @@
 
             if (this.accountNoList.length <= 1) {
               // this.cashwithdrawForm.controls.accountNumber.patchValue(this.accountNoList[0]);
-              this.flag1 = false; // this.getData(this.accountNoList[0]);
+              this.flag1 = false;
+              this.displayFlag = true; // this.getData(this.accountNoList[0]);
 
               this.accountForm.controls.accountNumber.setValue(this.accountNoList[0]);
             } else {
               this.accountForm.controls.accountNumber.setValue(this.accountNoList[0]);
               this.flag1 = true;
+              this.displayFlag = true;
             } //  this.cashwithdrawForm.controls.accountNumber.setValue(defaultId);
             // this.cashwithdrawForm.controls.accountType.setValue(defaultId);
             //  this.accountForm.controls.accountCurrency.setValue(custype.accountCurrency);
@@ -8784,43 +10629,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this35 = this;
+            var _this47 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this35.cashData = resp.data;
-              _this35.custID = resp.data.customerId;
-              _this35.ifQRvariable = true;
-              _this35.hideAccNum = false;
-              _this35.hideDetails = true;
-              _this35.flag1 = true;
-              _this35.userName = resp.data.holderName;
-              _this35.currencyCode = resp.data.accountCurrency;
+              _this47.cashData = resp.data;
+              _this47.custID = resp.data.customerId;
+              _this47.ifQRvariable = true;
+              _this47.hideAccNum = false;
+              _this47.hideDetails = true;
+              _this47.flag1 = false;
+              _this47.displayFlag = true;
+              _this47.userName = resp.data.holderName;
+              _this47.currencyCode = resp.data.accountCurrency;
 
-              _this35.accountForm.controls.accountType.setValue(resp.data.accountType);
+              _this47.accountForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this35.accountForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this47.accountForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this35.accountForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this47.accountForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this35.accountForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this47.accountForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this35.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              console.log(resp.data.accountCurrency); // this.currencyImage =
+              //   'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              //   this.currencyImage =
 
-              _this35.dataService.sendaccountFormData(_this35.cashData);
+              'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              console.log(_this47.currencyImage);
+
+              _this47.dataService.sendaccountFormData(_this47.cashData);
             });
             console.log(this.cashData); // this.denomRequired='yes';
           }
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this36 = this;
+            var _this48 = this;
 
             console.log('Account Numebr', accNum);
             this.flag1 = true;
+            this.displayFlag = true;
             this.ifQRvariable = true;
 
-            if (this.custValidation == 'New Customer') {
+            if (this.custValidation == 'New Customer' || this.custNameFromLogin != null) {
               this.hideAccNum = false;
             } else {
               this.hideAccNum = true;
@@ -8830,63 +10682,64 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('statement', res);
 
-              _this36.accountForm.controls.accountCurrency.setValue(res.currency);
+              _this48.accountForm.controls.accountCurrency.setValue(res.currency);
 
               if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
-                _this36.snack.open("Account Number Doesn't Exist", "OK", {
+                _this48.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right',
                   panelClass: ['snackbar']
                 });
 
-                _this36.accountForm.reset();
+                _this48.accountForm.reset();
 
-                _this36.userName = '';
-                _this36.accountBal = '';
-                _this36.curr = '';
+                _this48.userName = '';
+                _this48.accountBal = '';
+                _this48.curr = '';
               } else {
                 console.log('Account Number Rsp', res);
 
-                _this36.dataService.sendaccountFormData(res);
+                _this48.dataService.sendaccountFormData(res);
 
-                _this36.userName = res.accHolderName;
-                _this36.accountBal = res.accBalance;
-                _this36.custmerID = res.customerId;
-                _this36.accountNumber = res.accountId;
-                _this36.accountForm.value.accountBalance = res.accBalance;
-                console.log(_this36.accountForm);
+                _this48.userName = res.accHolderName;
+                _this48.accountBal = res.accBalance;
+                _this48.custmerID = res.customerId;
+                _this48.accountNumber = res.accountId;
+                _this48.accountForm.value.accountBalance = res.accBalance;
+                console.log(_this48.accountForm);
 
-                _this36.accountForm.controls.accountBranch.setValue(res.accountBranch);
+                _this48.accountForm.controls.accountBranch.setValue(res.accountBranch);
 
-                _this36.accountForm.controls.customerId.setValue(res.customerId);
+                _this48.accountForm.controls.customerId.setValue(res.customerId);
 
-                _this36.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
+                _this48.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
 
-                _this36.accountForm.controls.accountType.setValue(res.accountType); // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
-
-
-                _this36.accountForm.controls.holderName.setValue(_this36.userName);
-
-                _this36.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this48.accountForm.controls.accountType.setValue(res.accountType); // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
 
 
-                _this36.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-                _this36.accountCurrency1 = res.currency;
-                console.log(_this36.ifQRvariable);
+                _this48.accountForm.controls.holderName.setValue(_this48.userName);
 
-                _this36.custAmountBal(accNum);
+                _this48.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+
+
+                _this48.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                _this48.accountCurrency1 = res.currency;
+                console.log(_this48.ifQRvariable);
+
+                _this48.custAmountBal(accNum);
               }
 
-              _this36.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this36.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this36.phonenum);
+              _this48.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this48.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this48.phonenum);
               });
             });
           }
         }, {
           key: "getAccountType",
           value: function getAccountType(event) {
+            console.log("get Account Type");
             this.accountNoList = [];
             this.isedit = false;
             this.accountNum1 = _toConsumableArray(this.custAccountData).filter(function (accounNum, index) {
@@ -8909,11 +10762,13 @@
             if (this.accountNoList.length <= 1) {
               // this.cashwithdrawForm.controls.accountNumber.patchValue(this.accountNoList[0]);
               this.flag1 = false;
+              this.displayFlag = true;
               this.getData(this.accountNoList[0]);
               this.accountForm.controls.accountNumber.setValue(this.accountNoList[0]);
             } else {
               this.getData(this.accountNoList[0]);
               this.flag1 = true;
+              this.displayFlag = true;
             }
           }
         }, {
@@ -8988,9 +10843,9 @@
           }),
           multi: true
         }])],
-        decls: 12,
+        decls: 15,
         vars: 6,
-        consts: [[1, "section"], [2, "font-size", "15px", "color", "#004c97", "margin-left", "1%"], ["fxFlex", "calc(13%-25px)", "fxFlex", "100%", 1, "accountInfoCard"], [3, "formGroup"], ["fxLayoutGap", "50px", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutGap", "10%", 2, "justify-content", "space-between", "margin-left", "2%"], ["fxLayout", "column", "formControlName", "accountBalance", 4, "ngIf"], ["fxLayout", "column", "formControlName", "holderName", 4, "ngIf"], ["fxLayout", "column", "formControlName", "accountBranch", 4, "ngIf"], ["fxLayoutGap", "50px"], ["appearance", "outline", "fxFlex", "35%", 2, "border-radius", "12px"], ["matInput", "", "type", "text", "class", "full-width", "formControlName", "accountType", 3, "readonly", 4, "ngIf"], ["formControlName", "accountType", 3, "selectionChange", 4, "ngIf"], ["appearance", "outline", "fxFlex", "65%", 2, "border-radius", "12px"], [2, "display", "flex"], ["class", "currency_code", 4, "ngIf"], ["matInput", "", "type", "text", "class", "full-width", "formControlName", "accountNumber", 3, "readonly", 4, "ngIf"], ["formControlName", "accountNumber", 3, "selectionChange", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "accountType", 1, "full-width", 3, "readonly"], ["formControlName", "accountType", 3, "selectionChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [1, "currency_code"], ["matInput", "", "type", "text", "formControlName", "accountNumber", 1, "full-width", 3, "readonly"], ["formControlName", "accountNumber", 3, "selectionChange"], ["type", "text", "formControlName", "accountNumber", "placeholder", "Account Number", "matInput", "", 3, "change"], ["fxLayout", "column", "formControlName", "accountBalance"], [1, "totalAmount"], [1, "hint"], ["fxLayout", "column", "formControlName", "holderName"], ["fxLayout", "column", "formControlName", "accountBranch"]],
+        consts: [[1, "section"], [2, "font-size", "15px", "color", "#004c97", "margin-left", "1%"], ["fxFlex", "calc(13%-25px)", "fxFlex", "100%", 1, "accountInfoCard"], [3, "formGroup"], ["fxLayoutGap", "50px", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutGap", "10%", 2, "justify-content", "space-between", "margin-left", "2%"], ["fxLayout", "column", "formControlName", "accountBalance"], [1, "totalAmount"], ["class", "hint", 4, "ngIf"], ["fxLayout", "column", "formControlName", "holderName", 4, "ngIf"], ["fxLayout", "column", "formControlName", "accountBranch", "class", "acBranch", 4, "ngIf"], ["fxLayoutGap", "50px"], ["appearance", "outline", "fxFlex", "35%", 2, "border-radius", "12px"], ["matInput", "", "type", "text", "class", "full-width", "formControlName", "accountType", 3, "readonly", 4, "ngIf"], ["formControlName", "accountType", 3, "selectionChange", 4, "ngIf"], ["appearance", "outline", "fxFlex", "65%", 2, "border-radius", "12px"], [2, "display", "flex"], ["class", "currency_code", 4, "ngIf"], ["matInput", "", "type", "text", "class", "full-width", "formControlName", "accountNumber", 3, "readonly", 4, "ngIf"], ["formControlName", "accountNumber", 3, "selectionChange", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "accountType", 1, "full-width", 3, "readonly"], ["formControlName", "accountType", 3, "selectionChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [1, "currency_code"], ["matInput", "", "type", "text", "formControlName", "accountNumber", 1, "full-width", 3, "readonly"], ["formControlName", "accountNumber", 3, "selectionChange"], ["type", "text", "formControlName", "accountNumber", "placeholder", "Account Number", "matInput", "", 3, "change"], [1, "hint"], ["fxLayout", "column", "formControlName", "holderName"], ["fxLayout", "column", "formControlName", "accountBranch", 1, "acBranch"]],
         template: function AccountInformationFormComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -9013,11 +10868,21 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, AccountInformationFormComponent_div_9_Template, 5, 2, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, AccountInformationFormComponent_div_10_Template, 5, 1, "div", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-hint", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, AccountInformationFormComponent_div_11_Template, 5, 1, "div", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Account Balance ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, AccountInformationFormComponent_p_12_Template, 2, 2, "p", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, AccountInformationFormComponent_div_13_Template, 5, 1, "div", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, AccountInformationFormComponent_div_14_Template, 5, 1, "div", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -9043,7 +10908,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.showAccountNum);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideAccNum);
 
@@ -9056,8 +10921,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideDetails);
           }
         },
-        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatHint"]],
-        styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n  box-shadow: unset !important;\n}\n\n.hint[_ngcontent-%COMP%] {\n  text-transform: capitalize;\n  font-weight: 600;\n  margin-left: 1%;\n  margin-bottom: 0;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n}\n\n  .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 7px;\n  box-shadow: 0px 3px 15px #00000017;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: smaller;\n  color: #304156;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\n.tooltip[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: hidden;\n  min-width: 200px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  background-color: #fe6700;\n  color: #fff;\n  text-align: start;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: transparent #fe6700 transparent transparent;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: white;\n}\n\n#denominationDiv[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: auto auto;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\ninput[_ngcontent-%COMP%] {\n  border: 0;\n  outline: 0;\n  background-color: #f9fafb;\n  font-weight: bold;\n}\n\ninput[_ngcontent-%COMP%]:focus {\n  outline: none !important;\n}\n\n.pb1[_ngcontent-%COMP%] {\n  padding-bottom: 1%;\n}\n\n.operationTypeClass[_ngcontent-%COMP%] {\n  color: #a1a1a1;\n  margin: auto;\n}\n\n.quantityClass[_ngcontent-%COMP%] {\n  color: #000000;\n  margin: auto;\n  font-weight: 500;\n}\n\n.paddingclass[_ngcontent-%COMP%] {\n  padding: 2%;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8, 0 1px 0 #f8f8f8, 0 5px 8px 0 #e9e9e9;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field {\n  width: 100% !important;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper > div.mat-form-field-flex > div.mat-form-field-suffix > mat-icon > svg {\n  margin-bottom: -8px;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper {\n  padding-bottom: 0.8rem;\n}\n\ninput[_ngcontent-%COMP%]::-webkit-outer-spin-button, input[_ngcontent-%COMP%]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%]   .readonly-block[_ngcontent-%COMP%] {\n  pointer-events: none;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  width: 553px;\n  height: 50px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 30%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  font-weight: bold;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  width: 263px;\n  height: 50px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.currency_code[_ngcontent-%COMP%] {\n  border: 2px solid #004c97;\n  border-radius: 4px;\n  padding: 2px 4px;\n  font-size: 9px;\n  color: #004c97;\n  font-weight: 600;\n  margin-right: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcYWNjb3VudC1pbmZvcm1hdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsK0NBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSwwQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0FBRUY7O0FBQUE7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLCtCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUFHRjs7QUFEQTtFQUNFLHlDQUFBO0VBQ0EseUJBQUE7QUFJRjs7QUFGQTtFQUNFLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQ0FBQTtBQUtGOztBQUhBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0FBTUY7O0FBSEE7RUFDRSx5QkFBQTtFQUNBLHNCQUFBO0FBTUY7O0FBSkE7RUFDRSxrQkFBQTtFQUNBLHFCQUFBO0FBT0Y7O0FBTEE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMEJBQUE7RUFBQSx1QkFBQTtFQUFBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUFRRjs7QUFIQTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUVBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5REFBQTtBQUtGOztBQUhBO0VBQ0UsbUJBQUE7QUFNRjs7QUFIQTtFQUNFLFlBQUE7QUFNRjs7QUFIQTtFQUNFLGFBQUE7RUFDQSxnQ0FBQTtBQU1GOztBQUhBO0VBQ0UseUJBQUE7RUFDQSxzQkFBQTtBQU1GOztBQUhBO0VBQ0UsU0FBQTtFQUNBLFVBQUE7RUFDQSx5QkFBQTtFQUNBLGlCQUFBO0FBTUY7O0FBSkE7RUFDRSx3QkFBQTtBQU9GOztBQUpBO0VBQ0Usa0JBQUE7QUFPRjs7QUFKQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0FBT0Y7O0FBSkE7RUFDRSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0FBT0Y7O0FBSkE7RUFDRSxXQUFBO0FBT0Y7O0FBSkE7RUFDRSx3RUFBQTtBQU9GOztBQUpBO0VBQ0Usc0JBQUE7QUFPRjs7QUFKQTtFQVNFLG1CQUFBO0FBREY7O0FBSUE7RUFLRSxzQkFBQTtBQUxGOztBQU9BOztFQUVFLHdCQUFBO0VBQ0EsU0FBQTtBQUpGOztBQU9BO0VBQ0UsbUJBQUE7QUFKRjs7QUFPQTtFQUNFLG9CQUFBO0FBSkY7O0FBTUE7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLG9HQUFBO0VBRUEsbUJBQUE7RUFDQSx1QkFBQTtBQUpGOztBQU1BO0VBQ0UsbUJBQUE7RUFDQSxVQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtBQUhGOztBQUtBO0VBQ0UsaUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxtQkFBQTtBQUZGOztBQUtBO0VBQ0UseUJBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FBRkYiLCJmaWxlIjoiYWNjb3VudC1pbmZvcm1hdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjY291bnRJbmZvQ2FyZCB7XHJcbiAgYmFja2dyb3VuZDogI2YyZjJmMiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICBib3gtc2hhZG93OiB1bnNldCAhaW1wb3J0YW50O1xyXG59XHJcbi5oaW50IHtcclxuICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG4gIG1hcmdpbi1sZWZ0OiAxJTtcclxuICBtYXJnaW4tYm90dG9tOiAwO1xyXG59XHJcbi5pbnB1dE1hdE5hbWUge1xyXG4gIGZsZXgtZ3JvdzogMTtcclxuICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogMCAzcHQgNnB0ICMwMDAwMDAyOTtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgcGFkZGluZzogMTNweDtcclxufVxyXG5tYXQtbGFiZWx7XHJcbiAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgTWVkaXVtICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICM3MDcwNzAgIWltcG9ydGFudDtcclxufVxyXG46Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZSAubWF0LWZvcm0tZmllbGQtb3V0bGluZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgYm9yZGVyLXJhZGl1czogN3B4O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbn1cclxuLnRvdGFsQW1vdW50IHtcclxuICBmb250LXNpemU6IHNtYWxsZXI7XHJcbiAgY29sb3I6ICMzMDQxNTY7XHJcbiAgLy8gcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG59XHJcbi5pbnB1dENhcmQge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG4udG9vbHRpcCB7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG4udG9vbHRpcCAudG9vbHRpcHRleHQge1xyXG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICBtaW4td2lkdGg6IDIwMHB4O1xyXG4gIHdpZHRoOiBtYXgtY29udGVudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmU2NzAwO1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIHRleHQtYWxpZ246IHN0YXJ0O1xyXG4gIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICBwYWRkaW5nOiA1cHggMDtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgei1pbmRleDogMTtcclxuICAvLyB0b3A6IC00OXB4O1xyXG4gIC8vIGxlZnQ6IDEzMCU7XHJcbn1cclxuXHJcbi50b29sdGlwIC50b29sdGlwdGV4dDo6YWZ0ZXIge1xyXG4gIGNvbnRlbnQ6ICcnO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAvLyB0b3A6IDUwJTtcclxuICByaWdodDogMTAwJTtcclxuICBtYXJnaW4tdG9wOiAtNXB4O1xyXG4gIGJvcmRlci13aWR0aDogNXB4O1xyXG4gIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudCAjZmU2NzAwIHRyYW5zcGFyZW50IHRyYW5zcGFyZW50O1xyXG59XHJcbi50b29sdGlwOmhvdmVyIC50b29sdGlwdGV4dCB7XHJcbiAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxufVxyXG5cclxuLnRleHRjb2xvciB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4jZGVub21pbmF0aW9uRGl2IHtcclxuICBkaXNwbGF5OiBncmlkO1xyXG4gIGdyaWQtdGVtcGxhdGUtY29sdW1uczogYXV0byBhdXRvO1xyXG59XHJcblxyXG4uaW5wdXRDYXJkIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmYWZiO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmlucHV0IHtcclxuICBib3JkZXI6IDA7XHJcbiAgb3V0bGluZTogMDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmYWZiO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbmlucHV0OmZvY3VzIHtcclxuICBvdXRsaW5lOiBub25lICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5wYjEge1xyXG4gIHBhZGRpbmctYm90dG9tOiAxJTtcclxufVxyXG5cclxuLm9wZXJhdGlvblR5cGVDbGFzcyB7XHJcbiAgY29sb3I6ICNhMWExYTE7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG59XHJcblxyXG4ucXVhbnRpdHlDbGFzcyB7XHJcbiAgY29sb3I6ICMwMDAwMDA7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn1cclxuXHJcbi5wYWRkaW5nY2xhc3Mge1xyXG4gIHBhZGRpbmc6IDIlO1xyXG59XHJcblxyXG4uaW5wdXRDYXJkOm5vdChbY2xhc3MqPSdtYXQtZWxldmF0aW9uLXonXSkge1xyXG4gIGJveC1zaGFkb3c6IDAgMnB4IDFweCAtMXB4ICNmOGY4ZjgsIDAgMXB4IDAgI2Y4ZjhmOCwgMCA1cHggOHB4IDAgI2U5ZTllOTtcclxufVxyXG5cclxuOmhvc3QgOjpuZy1kZWVwIG1hdC1zZWxlY3QtY291bnRyeSA+IG1hdC1mb3JtLWZpZWxkIHtcclxuICB3aWR0aDogMTAwJSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG46aG9zdFxyXG4gIDo6bmctZGVlcFxyXG4gIG1hdC1zZWxlY3QtY291bnRyeVxyXG4gID4gbWF0LWZvcm0tZmllbGRcclxuICA+IGRpdi5tYXQtZm9ybS1maWVsZC13cmFwcGVyXHJcbiAgPiBkaXYubWF0LWZvcm0tZmllbGQtZmxleFxyXG4gID4gZGl2Lm1hdC1mb3JtLWZpZWxkLXN1ZmZpeFxyXG4gID4gbWF0LWljb25cclxuICA+IHN2ZyB7XHJcbiAgbWFyZ2luLWJvdHRvbTogLThweDtcclxufVxyXG5cclxuOmhvc3RcclxuICA6Om5nLWRlZXBcclxuICBtYXQtc2VsZWN0LWNvdW50cnlcclxuICA+IG1hdC1mb3JtLWZpZWxkXHJcbiAgPiBkaXYubWF0LWZvcm0tZmllbGQtd3JhcHBlciB7XHJcbiAgcGFkZGluZy1ib3R0b206IDAuOHJlbTtcclxufVxyXG5pbnB1dDo6LXdlYmtpdC1vdXRlci1zcGluLWJ1dHRvbixcclxuaW5wdXQ6Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24ge1xyXG4gIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICBtYXJnaW46IDA7XHJcbn1cclxuXHJcbi5yZWFkb25seS13cmFwcGVyIHtcclxuICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xyXG59XHJcblxyXG4ucmVhZG9ubHktd3JhcHBlciAucmVhZG9ubHktYmxvY2sge1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG59XHJcbi5jb250aW51ZUJ0biB7XHJcbiAgd2lkdGg6IDU1M3B4O1xyXG4gIGhlaWdodDogNTBweDtcclxuICBjb2xvcjogI2ZmZmZmZjtcclxuICAvKiBVSSBQcm9wZXJ0aWVzICovXHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxYTJkIDAlLCAjMDA0Yzk3IDEwMCUpIDAlIDAlXHJcbiAgICBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm9yZGVyLXJhZGl1czogMjhweDtcclxuICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxufVxyXG4uZXhpdEJ0biB7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICB3aWR0aDogMzAlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XHJcbiAgY29sb3I6ICNlNTAwMDA7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLmJhY2tCdG4ge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIHdpZHRoOiAyNjNweDtcclxuICBoZWlnaHQ6IDUwcHg7XHJcbiAgYmFja2dyb3VuZDogI2ZmZmZmZiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm94LXNoYWRvdzogMHB4IDNweCAxNXB4ICMwMDAwMDAxNztcclxuICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG59XHJcblxyXG4uY3VycmVuY3lfY29kZSB7XHJcbiAgYm9yZGVyOiAycHggc29saWQgIzAwNGM5NztcclxuICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbiAgcGFkZGluZzogMnB4IDRweDtcclxuICBmb250LXNpemU6IDlweDtcclxuICBjb2xvcjogIzAwNGM5NztcclxuICBmb250LXdlaWdodDogNjAwO1xyXG4gIG1hcmdpbi1yaWdodDogMTBweDtcclxufVxyXG4iXX0= */"],
+        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutGapDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatHint"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"]],
+        styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n  box-shadow: unset !important;\n}\n\n.hint[_ngcontent-%COMP%] {\n  text-transform: capitalize;\n  font-weight: 600;\n  margin-left: 1%;\n  margin-bottom: 0;\n}\n\n.acBranch[_ngcontent-%COMP%] {\n  margin-right: 55px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n  margin-left: 3% !important;\n}\n\n  .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 7px;\n  box-shadow: 0px 3px 15px #00000017;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: smaller;\n  color: #304156;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\n.tooltip[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: hidden;\n  min-width: 200px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  background-color: #fe6700;\n  color: #fff;\n  text-align: start;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: transparent #fe6700 transparent transparent;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: white;\n}\n\n#denominationDiv[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: auto auto;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\ninput[_ngcontent-%COMP%] {\n  border: 0;\n  outline: 0;\n  background-color: #f9fafb;\n  font-weight: bold;\n}\n\ninput[_ngcontent-%COMP%]:focus {\n  outline: none !important;\n}\n\n.pb1[_ngcontent-%COMP%] {\n  padding-bottom: 1%;\n}\n\n.operationTypeClass[_ngcontent-%COMP%] {\n  color: #a1a1a1;\n  margin: auto;\n}\n\n.quantityClass[_ngcontent-%COMP%] {\n  color: #000000;\n  margin: auto;\n  font-weight: 500;\n}\n\n.paddingclass[_ngcontent-%COMP%] {\n  padding: 2%;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8, 0 1px 0 #f8f8f8, 0 5px 8px 0 #e9e9e9;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field {\n  width: 100% !important;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper > div.mat-form-field-flex > div.mat-form-field-suffix > mat-icon > svg {\n  margin-bottom: -8px;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper {\n  padding-bottom: 0.8rem;\n}\n\ninput[_ngcontent-%COMP%]::-webkit-outer-spin-button, input[_ngcontent-%COMP%]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%]   .readonly-block[_ngcontent-%COMP%] {\n  pointer-events: none;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  width: 553px;\n  height: 50px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 30%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  font-weight: bold;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  width: 263px;\n  height: 50px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.currency_code[_ngcontent-%COMP%] {\n  background-color: #004C9724;\n  border: 2px solid #004c97;\n  border-radius: 4px;\n  padding: 2px 4px;\n  font-size: 9px;\n  color: #004c97;\n  font-weight: 600;\n  margin-right: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcYWNjb3VudC1pbmZvcm1hdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsK0NBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSwwQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0FBRUY7O0FBQUE7RUFDRSxrQkFBQTtBQUdGOztBQURBO0VBQ0UsWUFBQTtFQUNBLGVBQUE7RUFDQSwrQkFBQTtFQUNBLHNCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FBSUY7O0FBRkE7RUFDRSx5Q0FBQTtFQUNBLHlCQUFBO0VBQ0EsMEJBQUE7QUFLRjs7QUFIQTtFQUNFLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQ0FBQTtBQU1GOztBQUpBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0FBT0Y7O0FBSkE7RUFDRSx5QkFBQTtFQUNBLHNCQUFBO0FBT0Y7O0FBTEE7RUFDRSxrQkFBQTtFQUNBLHFCQUFBO0FBUUY7O0FBTkE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMEJBQUE7RUFBQSx1QkFBQTtFQUFBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUFTRjs7QUFKQTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUVBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5REFBQTtBQU1GOztBQUpBO0VBQ0UsbUJBQUE7QUFPRjs7QUFKQTtFQUNFLFlBQUE7QUFPRjs7QUFKQTtFQUNFLGFBQUE7RUFDQSxnQ0FBQTtBQU9GOztBQUpBO0VBQ0UseUJBQUE7RUFDQSxzQkFBQTtBQU9GOztBQUpBO0VBQ0UsU0FBQTtFQUNBLFVBQUE7RUFDQSx5QkFBQTtFQUNBLGlCQUFBO0FBT0Y7O0FBTEE7RUFDRSx3QkFBQTtBQVFGOztBQUxBO0VBQ0Usa0JBQUE7QUFRRjs7QUFMQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0FBUUY7O0FBTEE7RUFDRSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0FBUUY7O0FBTEE7RUFDRSxXQUFBO0FBUUY7O0FBTEE7RUFDRSx3RUFBQTtBQVFGOztBQUxBO0VBQ0Usc0JBQUE7QUFRRjs7QUFMQTtFQVNFLG1CQUFBO0FBQUY7O0FBR0E7RUFLRSxzQkFBQTtBQUpGOztBQU1BOztFQUVFLHdCQUFBO0VBQ0EsU0FBQTtBQUhGOztBQU1BO0VBQ0UsbUJBQUE7QUFIRjs7QUFNQTtFQUNFLG9CQUFBO0FBSEY7O0FBS0E7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLG9HQUFBO0VBRUEsbUJBQUE7RUFDQSx1QkFBQTtBQUhGOztBQUtBO0VBQ0UsbUJBQUE7RUFDQSxVQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtBQUZGOztBQUlBO0VBQ0UsaUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxtQkFBQTtBQURGOztBQUlBO0VBQ0UsMkJBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUFERiIsImZpbGUiOiJhY2NvdW50LWluZm9ybWF0aW9uLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWNjb3VudEluZm9DYXJkIHtcclxuICBiYWNrZ3JvdW5kOiAjZjJmMmYyIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3JkZXItcmFkaXVzOiAxOHB4O1xyXG4gIGJveC1zaGFkb3c6IHVuc2V0ICFpbXBvcnRhbnQ7XHJcbn1cclxuLmhpbnQge1xyXG4gIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgbWFyZ2luLWxlZnQ6IDElO1xyXG4gIG1hcmdpbi1ib3R0b206IDA7XHJcbn1cclxuLmFjQnJhbmNoe1xyXG4gIG1hcmdpbi1yaWdodDogNTVweDtcclxufVxyXG4uaW5wdXRNYXROYW1lIHtcclxuICBmbGV4LWdyb3c6IDE7XHJcbiAgbWFyZ2luLXRvcDogNXB4O1xyXG4gIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gIHBhZGRpbmc6IDEzcHg7XHJcbn1cclxubWF0LWxhYmVse1xyXG4gIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIE1lZGl1bSAhaW1wb3J0YW50O1xyXG4gIGNvbG9yOiAjNzA3MDcwICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luLWxlZnQ6IDMlICFpbXBvcnRhbnQ7XHJcbn1cclxuOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1hcHBlYXJhbmNlLW91dGxpbmUgLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGJvcmRlci1yYWRpdXM6IDdweDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG59XHJcbi50b3RhbEFtb3VudCB7XHJcbiAgZm9udC1zaXplOiBzbWFsbGVyO1xyXG4gIGNvbG9yOiAjMzA0MTU2O1xyXG4gIC8vIHBhZGRpbmctbGVmdDogMTBweDtcclxufVxyXG4uaW5wdXRDYXJkIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmYWZiO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuLnRvb2x0aXAge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuLnRvb2x0aXAgLnRvb2x0aXB0ZXh0IHtcclxuICB2aXNpYmlsaXR5OiBoaWRkZW47XHJcbiAgbWluLXdpZHRoOiAyMDBweDtcclxuICB3aWR0aDogbWF4LWNvbnRlbnQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZlNjcwMDtcclxuICBjb2xvcjogI2ZmZjtcclxuICB0ZXh0LWFsaWduOiBzdGFydDtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgcGFkZGluZzogNXB4IDA7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHotaW5kZXg6IDE7XHJcbiAgLy8gdG9wOiAtNDlweDtcclxuICAvLyBsZWZ0OiAxMzAlO1xyXG59XHJcblxyXG4udG9vbHRpcCAudG9vbHRpcHRleHQ6OmFmdGVyIHtcclxuICBjb250ZW50OiAnJztcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgLy8gdG9wOiA1MCU7XHJcbiAgcmlnaHQ6IDEwMCU7XHJcbiAgbWFyZ2luLXRvcDogLTVweDtcclxuICBib3JkZXItd2lkdGg6IDVweDtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgI2ZlNjcwMCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcclxufVxyXG4udG9vbHRpcDpob3ZlciAudG9vbHRpcHRleHQge1xyXG4gIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbn1cclxuXHJcbi50ZXh0Y29sb3Ige1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuI2Rlbm9taW5hdGlvbkRpdiB7XHJcbiAgZGlzcGxheTogZ3JpZDtcclxuICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IGF1dG8gYXV0bztcclxufVxyXG5cclxuLmlucHV0Q2FyZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG5pbnB1dCB7XHJcbiAgYm9yZGVyOiAwO1xyXG4gIG91dGxpbmU6IDA7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5pbnB1dDpmb2N1cyB7XHJcbiAgb3V0bGluZTogbm9uZSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ucGIxIHtcclxuICBwYWRkaW5nLWJvdHRvbTogMSU7XHJcbn1cclxuXHJcbi5vcGVyYXRpb25UeXBlQ2xhc3Mge1xyXG4gIGNvbG9yOiAjYTFhMWExO1xyXG4gIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuLnF1YW50aXR5Q2xhc3Mge1xyXG4gIGNvbG9yOiAjMDAwMDAwO1xyXG4gIG1hcmdpbjogYXV0bztcclxuICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG4ucGFkZGluZ2NsYXNzIHtcclxuICBwYWRkaW5nOiAyJTtcclxufVxyXG5cclxuLmlucHV0Q2FyZDpub3QoW2NsYXNzKj0nbWF0LWVsZXZhdGlvbi16J10pIHtcclxuICBib3gtc2hhZG93OiAwIDJweCAxcHggLTFweCAjZjhmOGY4LCAwIDFweCAwICNmOGY4ZjgsIDAgNXB4IDhweCAwICNlOWU5ZTk7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCBtYXQtc2VsZWN0LWNvdW50cnkgPiBtYXQtZm9ybS1maWVsZCB7XHJcbiAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuOmhvc3RcclxuICA6Om5nLWRlZXBcclxuICBtYXQtc2VsZWN0LWNvdW50cnlcclxuICA+IG1hdC1mb3JtLWZpZWxkXHJcbiAgPiBkaXYubWF0LWZvcm0tZmllbGQtd3JhcHBlclxyXG4gID4gZGl2Lm1hdC1mb3JtLWZpZWxkLWZsZXhcclxuICA+IGRpdi5tYXQtZm9ybS1maWVsZC1zdWZmaXhcclxuICA+IG1hdC1pY29uXHJcbiAgPiBzdmcge1xyXG4gIG1hcmdpbi1ib3R0b206IC04cHg7XHJcbn1cclxuXHJcbjpob3N0XHJcbiAgOjpuZy1kZWVwXHJcbiAgbWF0LXNlbGVjdC1jb3VudHJ5XHJcbiAgPiBtYXQtZm9ybS1maWVsZFxyXG4gID4gZGl2Lm1hdC1mb3JtLWZpZWxkLXdyYXBwZXIge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwLjhyZW07XHJcbn1cclxuaW5wdXQ6Oi13ZWJraXQtb3V0ZXItc3Bpbi1idXR0b24sXHJcbmlucHV0Ojotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uIHtcclxuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcblxyXG4ucmVhZG9ubHktd3JhcHBlciB7XHJcbiAgY3Vyc29yOiBub3QtYWxsb3dlZDtcclxufVxyXG5cclxuLnJlYWRvbmx5LXdyYXBwZXIgLnJlYWRvbmx5LWJsb2NrIHtcclxuICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxufVxyXG4uY29udGludWVCdG4ge1xyXG4gIHdpZHRoOiA1NTNweDtcclxuICBoZWlnaHQ6IDUwcHg7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJVxyXG4gICAgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI4cHg7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbn1cclxuLmV4aXRCdG4ge1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xyXG4gIGNvbG9yOiAjZTUwMDAwO1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbi5iYWNrQnRuIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICB3aWR0aDogMjYzcHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG4gIGJhY2tncm91bmQ6ICNmZmZmZmYgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgYm9yZGVyLXJhZGl1czogMjVweDtcclxufVxyXG5cclxuLmN1cnJlbmN5X2NvZGUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDRDOTcyNDtcclxuICBib3JkZXI6IDJweCBzb2xpZCAjMDA0Yzk3O1xyXG4gIGJvcmRlci1yYWRpdXM6IDRweDtcclxuICBwYWRkaW5nOiAycHggNHB4O1xyXG4gIGZvbnQtc2l6ZTogOXB4O1xyXG4gIGNvbG9yOiAjMDA0Yzk3O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG59XHJcbiJdfQ== */"],
         changeDetection: 0
       });
       /*@__PURE__*/
@@ -9444,7 +11309,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Transaction currency*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Transaction currency1*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -9925,7 +11790,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this37 = this;
+            var _this49 = this;
 
             this.chqPage = localStorage.getItem('chq_page');
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
@@ -9948,23 +11813,23 @@
             this.qrData = JSON.parse(JSON.parse(localStorage.getItem("scannerData"))); //this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
 
             setTimeout(function () {
-              if (_this37.qrData != null) {
-                console.log("Account", _this37.qrData);
+              if (_this49.qrData != null) {
+                console.log("Account", _this49.qrData);
 
-                _this37.getChargeDetails(_this37.qrData.accountId, "");
+                _this49.getChargeDetails(_this49.qrData.accountId, "");
 
-                _this37.transactionForm.controls.transactionAmount.setValue(_this37.qrData.transactionAmount);
+                _this49.transactionForm.controls.transactionAmount.setValue(_this49.qrData.transactionAmount);
 
-                _this37.transactionForm.controls.transactionCurrency.setValue(_this37.qrData.transactionCurrency);
+                _this49.transactionForm.controls.transactionCurrency.setValue(_this49.qrData.transactionCurrency);
 
-                console.log(_this37.accountForm);
-                _this37.customerID = _this37.qrData.customerId;
-                _this37.currencyImage = 'currency-flag-' + _this37.qrData.transactionCurrency.toLowerCase();
+                console.log(_this49.accountForm);
+                _this49.customerID = _this49.qrData.customerId;
+                _this49.currencyImage = 'currency-flag-' + _this49.qrData.transactionCurrency.toLowerCase();
 
-                if (_this37.qrData.transactionBranch != null && _this37.qrData.transactionBranch != '') {
-                  _this37.accountForm.controls.transactionBranch.setValue(_this37.qrData.transactionBranch);
+                if (_this49.qrData.transactionBranch != null && _this49.qrData.transactionBranch != '') {
+                  _this49.accountForm.controls.transactionBranch.setValue(_this49.qrData.transactionBranch);
                 } else {
-                  _this37.transactionForm.controls.transactionBranch.setValue('Kasthuri Nagar');
+                  _this49.transactionForm.controls.transactionBranch.setValue('Kasthuri Nagar');
                 }
 
                 console.log("GetChargeDetails");
@@ -9973,22 +11838,24 @@
             this.custValidation = localStorage.getItem("customerValidation");
             this.custNameFromLogin = localStorage.getItem("FromLogin");
 
-            if (this.custValidation == "New Customer") {
+            if (this.custValidation == "New Customer" || this.custNameFromLogin != null) {
+              console.log("Inside New customer");
               this.hideAccNum = false;
-              this.showAccountNum = false;
+              this.showAccountNum = true;
               this.showAccoutType = false;
-            }
+            } // if () {
+            //   console.log("Inside");
+            //   this.showAccountNum = true;
+            // }
 
-            if (this.custNameFromLogin != null) {
-              console.log("Inside");
-              this.showAccountNum = false;
-            }
 
             console.log("CWH :: " + this.custNameFromLogin, this.appointmentId, this.phoneNumber);
 
             if (this.phoneNumber && this.custNameFromLogin == null && this.appointmentId == null) {
               console.log("Calling");
               this.ifQRvariable = false;
+              this.hideAccNum = true;
+              this.showAccountNum = true;
               this.gettingallTansactionDetails(this.phoneNumber);
             }
 
@@ -10002,31 +11869,30 @@
             // }
 
             this.subscriptions.push(this.transactionForm.valueChanges.subscribe(function (value) {
-              _this37.onChange(value);
+              _this49.onChange(value);
 
-              _this37.onTouched();
+              _this49.onTouched();
             }));
             this.dataService.getaccountFormdata.subscribe(function (data) {
               var _a, _b;
 
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 // if(data){
-                _this37.details = data;
-                console.log(_this37.details);
+                _this49.details = data;
+                console.log(_this49.details);
 
-                _this37.transactionForm.controls.transactionCurrency.setValue(((_a = _this37.details) === null || _a === void 0 ? void 0 : _a.accountCurrency) ? _this37.details.accountCurrency : (_b = _this37.details) === null || _b === void 0 ? void 0 : _b.currency); // this.currencyImage = "currency-flag-" + this.details?.accountCurrency?this.details.accountCurrency.toLowerCase():this.details?.currency.toLowerCase();
+                _this49.transactionForm.controls.transactionCurrency.setValue(((_a = _this49.details) === null || _a === void 0 ? void 0 : _a.accountCurrency) ? _this49.details.accountCurrency : (_b = _this49.details) === null || _b === void 0 ? void 0 : _b.currency);
 
-
-                if (_this37.details.appointmentId) {
-                  console.log(_this37.details);
-
-                  _this37.cashWithdrawlData(_this37.details);
+                if (_this49.details.appointmentId) {
+                  _this49.cashWithdrawlData(_this49.details);
                 }
 
-                console.log(_this37.custValidation);
+                console.log(_this49.custValidation);
 
-                if (_this37.custValidation == "New Customer") {
-                  _this37.setValueForWalkInCustomer(data);
+                if (_this49.custValidation == "New Customer" || _this49.custNameFromLogin != null) {
+                  _this49.showAccountNum = true;
+
+                  _this49.setValueForWalkInCustomer(data);
                 } // else{
                 // }
 
@@ -10034,7 +11900,8 @@
             });
             this.dataService.getNavParam.subscribe(function (title) {
               console.log(title);
-              _this37.titleData = title;
+              _this49.titleData = title;
+              _this49.trnType = title;
             });
           }
         }, {
@@ -10079,25 +11946,24 @@
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this38 = this;
+            var _this50 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this38.branchData = data;
-              console.log(_this38.branchData);
+              _this50.branchData = data;
+              console.log(_this50.branchData);
               data.forEach(function (element, index) {
-                _this38.branch = data[index].branchName;
-                console.log(_this38.branch);
+                _this50.branch = data[index].branchName; // console.log(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this39 = this;
+            var _this51 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this39.countryValues = allCountryValues;
-              console.log(_this39.countryValues);
+              _this51.countryValues = allCountryValues;
+              console.log(_this51.countryValues);
             });
           }
         }, {
@@ -10111,53 +11977,65 @@
         }, {
           key: "fetchExchangeRateForCurrency",
           value: function fetchExchangeRateForCurrency(currency) {
-            var _this40 = this;
+            var _this52 = this;
 
-            console.log(currency, this.accountCurrency);
             this.apiService.fetchExchangeRateForCurrency(currency, this.accountCurrency).subscribe(function (resp) {
               console.log(resp);
-              _this40.exchangerateResp = resp;
-              _this40.denomRequired = resp.denomRequired;
+              _this52.exchangerateResp = resp;
+              _this52.denomRequired = resp === null || resp === void 0 ? void 0 : resp.denomRequired;
 
               if (resp.denomRequired == "yes") {
-                _this40.enableBtn = false;
-                _this40.enableBtn1 = false;
+                _this52.enableBtn = false;
+                _this52.enableBtn1 = false;
               }
             });
+            console.log(this.titleData);
+
+            if (this.exchangerateResp) {
+              if (this.titleData == 'Cash Withdrawal' || this.titleData == 'Cheque Withdrawal') {
+                this.transactionForm.controls.exchangeRate.setValue(this.exchangerateResp[0].sellRate);
+              }
+
+              if (this.titleData == 'Cash Deposit' || this.titleData == 'Cheque Deposit') {
+                this.transactionForm.controls.exchangeRate.setValue(this.exchangerateResp[0].buyRate);
+              }
+            }
           }
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this41 = this;
+            var _this53 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this41.denomRequired = resp.denomRequired;
+              _this53.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == "yes") {
-                _this41.enableBtn = false;
-                _this41.enableBtn1 = false;
+                _this53.enableBtn = false;
+                _this53.enableBtn1 = false;
               }
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this42 = this;
+            var _this54 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log("branches :: ", branches);
-              _this42.trasactionBranches = branches;
+              _this54.trasactionBranches = branches;
             });
           }
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData(data) {
-            // this.apiService
+            var _a, _b; // this.apiService
             //   .getAppointmentId(this.appointmentId.data.appointmentId)
             //   .subscribe((resp: any) => {
             //     console.log(resp);
             // this.cashData =data;
+
+
             console.log(data);
             this.custID = data.customerId;
             this.ifQRvariable = true;
@@ -10165,60 +12043,62 @@
             this.hideDetails = true;
             this.userName = data.holderName;
             this.accountCurrency = data.accountCurrency;
-            this.transactionForm.controls.transactionCurrency.setValue(data.accountCurrency ? data.accountCurrency : '');
+            this.transactionForm.controls.transactionCurrency.setValue(data.accountCurrency ? data.accountCurrency : ''); // this.currencyImage = 'currencys-flag-'+data.accountCurrency?data.accountCurrency.toLowerCase():''.toLowerCase();
+
+            this.currencyImage = true ? "currency-flag-" + this.details.accountCurrency.toLowerCase() : undefined;
             this.transactionForm.controls.transactionAmount.setValue(data.transactionAmount);
             this.transactionForm.controls.chequeType.setValue(data.chequeType);
             this.transactionForm.controls.chequeNumber.setValue(data.chequeNumber);
-            this.currencyImage = true ? data.accountCurrency.toLowerCase() : undefined;
             console.log(this.currencyImage);
             this.getChargeDetails(data.accountNumber, ""); // this.transactionForm.controls.accountType.setValue(resp.data.accountType);
             // this.transactionForm.controls.accountNumber.setValue(resp.data.accountNumber);
             // this.transactionForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
             // });
             // this.denomRequired='yes';
+            // debugger
           }
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this43 = this;
+            var _this55 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this43.custID = allTransactionResp.customerId;
-              console.log("Cust", _this43.accountCurrency);
-              _this43.custAccountData = allTransactionResp.custAccount;
-              _this43.accounttypeArray = _toConsumableArray(_this43.custAccountData).filter(function (_ref4, index) {
+              _this55.custID = allTransactionResp.customerId;
+              console.log("Cust", _this55.accountCurrency);
+              _this55.custAccountData = allTransactionResp.custAccount;
+              _this55.accounttypeArray = _toConsumableArray(_this55.custAccountData).filter(function (_ref4, index) {
                 var accountType = _ref4.accountType;
-                return !_toConsumableArray(_this43.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this55.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this43.accounttypeArray);
+              console.log(_this55.accounttypeArray);
 
-              for (var i = 0; i < _this43.custAccountData.length; i++) {
-                if (_this43.custAccountData[i].status == "APPROVED") {
-                  _this43.accountNoList.push(_this43.custAccountData[i]);
+              for (var i = 0; i < _this55.custAccountData.length; i++) {
+                if (_this55.custAccountData[i].status == "APPROVED") {
+                  _this55.accountNoList.push(_this55.custAccountData[i]);
                 }
               }
 
-              _this43.accountCurrency = _this43.accountNoList[0].accountCurrency;
-              console.log(_this43.accountNoList);
+              _this55.accountCurrency = _this55.accountNoList[0].accountCurrency;
+              console.log(_this55.accountNoList);
 
-              if (_this43.custAccountData && _this43.accountNoList.length <= 1) {
-                _this43.accountDropdown = false;
-                _this43.hideDetails = true;
-                _this43.hideAccNum = true;
+              if (_this55.custAccountData && _this55.accountNoList.length <= 1) {
+                _this55.accountDropdown = false;
+                _this55.hideDetails = true;
+                _this55.hideAccNum = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType; // this.transactionForm.controls.accountType.setValue(accTyp);
 
-                _this43.custAccountNumber(_this43.accountNoList[0]);
+                _this55.custAccountNumber(_this55.accountNoList[0]);
               } else {
-                _this43.accountDropdown = true;
-                _this43.hideDetails = true;
-                _this43.hideAccNum = true;
+                _this55.accountDropdown = true;
+                _this55.hideDetails = true;
+                _this55.hideAccNum = true;
                 var _accTyp4 = allTransactionResp.custAccount[0].accountType; // this.transactionForm.controls.accountType.setValue(accTyp);
 
-                _this43.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this55.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -10255,7 +12135,8 @@
             //  this.transactionForm.controls.accountBranch.setValue(this.branch);
 
 
-            this.transactionForm.controls.transactionCurrency.setValue(custype.accountCurrency); //this.cashwithdrawForm.controls.transactionAmount.setValue(custype.amount);
+            this.transactionForm.controls.transactionCurrency.setValue(custype.accountCurrency);
+            this.accountCurrency = custype.accountCurrency; //this.cashwithdrawForm.controls.transactionAmount.setValue(custype.amount);
             //  this.cashwithdrawForm.controls.accountType.setValue(custype.accountType);
 
             console.log("AccountCurrency", custype.accountCurrency);
@@ -10276,23 +12157,18 @@
           key: "OnInput",
           value: function OnInput(event) {
             this.transAmt = event.target.value;
-            console.log(event.target.value);
+            console.log(this.titleData);
             this.totalAmount = 0; // this.denomRequired='yes';
             // this.transactionForm.controls.transactionCurrency.setValue(custype.accountCurrency);
 
             console.log('data :: ', this.idList[0]); //  this.accountBal = this.idList[0].amount;
 
-            console.log(this.accountBal);
+            console.log(this.accountBal, this.showAccountNum);
             localStorage.setItem("AccountBal", this.accountBal); //  this.cashwithdrawForm.controls.accountNumber.setValue(this.idList[0].accountId);
 
             this.custAmountBal(this.accountNoList[0]);
             this.denomRequired = 'yes';
             this.dataService.sendNavParam(this.denomRequired);
-
-            if (this.exchangerateResp) {
-              this.transactionForm.controls.exchangeRate.setValue(this.exchangerateResp[0].sellRate);
-            }
-
             this.dataService.sendtransactionFormData(this.transactionForm.value); //  this.transactionForm.controls.accountBranch.setValue(custype.accountBranch);
             //  this.getChargeDetails(this.accountNoList[0],custype.amount);
             // }
@@ -10301,6 +12177,7 @@
             var savedInput = this.transAmount; // this.transAmount = '';
             // this.changeDef.detectChanges();
 
+            console.log(this.accountBal, this.titleData);
             var lastCharIsPoint = false;
 
             if (savedInput.charAt(savedInput.length - 1) === ".") {
@@ -10317,16 +12194,20 @@
 
             this.changeDef.detectChanges();
             this.balance = localStorage.getItem("AccountBal");
+            console.log(this.trnType);
+            console.log(localStorage.getItem('trnType'));
 
-            if (parseFloat(this.balance) < parseFloat(this.transAmt)) {
-              console.log("Bigger");
-              this.snack.open("Transaction Amount should not exceed than Account Balance", "OK", {
-                duration: 2000,
-                verticalPosition: "top",
-                horizontalPosition: "right",
-                panelClass: ['snackbar']
-              });
-              this.enableContinue = false;
+            if (localStorage.getItem('trnType') == "Cash Withdrawal" || localStorage.getItem('trnType') == "Cheque Withdrawal") {
+              if (parseFloat(this.balance) < parseFloat(this.transAmt)) {
+                console.log("Bigger");
+                this.snack.open("Insufficient Account Balance", "OK", {
+                  duration: 2000,
+                  verticalPosition: "top",
+                  horizontalPosition: "right",
+                  panelClass: ['snackbar']
+                });
+                this.enableContinue = false;
+              }
             } else {
               this.enableContinue = true;
             }
@@ -10358,20 +12239,20 @@
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this44 = this;
+            var _this56 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this44.chargeDetails = resp;
+              _this56.chargeDetails = resp;
 
-              _this44.transactionForm.controls.totalChargeAmount.setValue(_this44.chargeDetails ? _this44.chargeDetails[0].amount : "");
+              _this56.transactionForm.controls.totalChargeAmount.setValue(_this56.chargeDetails ? _this56.chargeDetails[0].amount : "");
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this44.totalTransAmount = Number(_this44.cashData.transactionAmount) + Number(_this44.chargeDetails[0].amount);
+                _this56.totalTransAmount = Number(_this56.cashData.transactionAmount) + Number(_this56.chargeDetails[0].amount);
 
-                _this44.transactionForm.controls.totalTransactionAmount.setValue(_this44.totalTransAmount);
+                _this56.transactionForm.controls.totalTransactionAmount.setValue(_this56.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -10380,10 +12261,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this44.totalTransAmount = Number(amount) + Number(_this44.chargeDetails ? _this44.chargeDetails[0].amount : "");
-                console.log(_this44.totalTransAmount);
+                _this56.totalTransAmount = Number(amount) + Number(_this56.chargeDetails ? _this56.chargeDetails[0].amount : "");
+                console.log(_this56.totalTransAmount);
 
-                _this44.transactionForm.controls.totalTransactionAmount.setValue(_this44.totalTransAmount);
+                _this56.transactionForm.controls.totalTransactionAmount.setValue(_this56.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -10466,7 +12347,7 @@
         }])],
         decls: 35,
         vars: 14,
-        consts: [[1, "section"], [2, "font-size", "15px", "color", "#004c97", "margin-left", "1%"], [1, "transaction_form", 3, "formGroup"], ["fxLayoutGap", "50px", "fxLayout", "column"], ["fxFlex", "row wrap", "fxLayoutGap", "4%", "fxFlex", "100%", "class", "form_row_wrap", 4, "ngIf"], ["fxFlex", "row wrap", "fxLayoutGap", "4%", "fxFlex", "100%", 1, "form_row_wrap"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "36%", 4, "ngIf"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "60%", 4, "ngIf"], ["fxLayout", "row", 2, "padding", "0 1rem"], [4, "ngIf"], ["fxLayout", "column wrap", "fxFlex", "100%", "class", "mat_form_field_margin", 4, "ngIf"], ["appearance", "outline", "fxFlex", "33%", 1, "mat_form_field_margin", 2, "border-radius", "12px"], ["matInput", "", "readonly", "", "formControlName", "totalChargeAmount", "placeholder", "Total Charge Amount"], ["fxFlex", "33%", "appearance", "outline", "fxLayoutGap", "5%", 1, "mat_form_field_margin", 2, "border-radius", "12px", "position", "relative"], ["matInput", "", "fxFlex", "95", "type", "text", "readonly", "", "onlyNumber", "", "formControlName", "totalTransactionAmount", "placeholder", "Total Transaction Amount"], [1, "tooltip"], ["fxflex", "5", "width", "80%", 3, "src"], [1, "tooltiptext"], [1, "totalAmount", "textcolor", 2, "margin-top", "10px", "margin-bottom", "6px"], [1, "totalAmount", "textcolor"], [1, "totalAmount", "textcolor", 2, "margin-right", "10px"], ["formControlName", "exchangeRate", 4, "ngIf"], ["class", "errormsge", 4, "ngIf"], ["appearance", "outline", "fxFlex", "36%", 2, "border-radius", "12px"], [1, "totalAmount"], ["formControlName", "chequeType"], ["value", "Self"], ["value", "Bearer"], ["value", "Banker"], ["value", "Traveller"], ["appearance", "outline", "fxFlex", "60%", 2, "border-radius", "12px"], ["matInput", "", "onlyNumber", "", "maxlength", "6", "class", "full-width", "formControlName", "chequeNumber", 4, "ngIf"], ["matInput", "", "onlyNumber", "", "maxlength", "6", "formControlName", "chequeNumber", 1, "full-width"], ["fxFlex", "11%"], ["matInput", "", "type", "text", "formControlName", "transactionCurrency", 3, "readonly", 4, "ngIf"], ["formControlName", "transactionCurrency", 3, "disabled", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "transactionCurrency", 3, "readonly"], ["formControlName", "transactionCurrency", 3, "disabled"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "3%", "margin-left", "4%"], ["formControlName", "transactionCurrency", "placeholder", "Select Transaction Currency"], ["matInput", "", "formControlName", "transactionAmount", 3, "ngModel", "value", "ngModelChange", "keyup", "focus"], ["myRef", ""], ["matInput", "", "type", "text", "formControlName", "transactionAmount", 3, "readonly", 4, "ngIf"], ["matInput", "", "class", "full-width", "formControlName", "transactionAmount", 3, "ngModel", "value", "readonly", "ngModelChange", "keyup", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "transactionAmount", 3, "readonly"], ["matInput", "", "formControlName", "transactionAmount", 1, "full-width", 3, "ngModel", "value", "readonly", "ngModelChange", "keyup"], ["fxLayoutGap", "5%", 4, "ngIf"], ["fxLayoutGap", "5%"], ["appearance", "outline", "fxFlex", "100%", 2, "border-radius", "12px"], ["type", "text", "formControlName", "accountNumber", "placeholder", "Account Number", "matInput", "", 3, "change"], ["appearance", "outline", "fxFlex", "100%", 1, "mat_form_field_margin", 2, "border-radius", "12px"], ["type", "text", "formControlName", "issuingbank", "placeholder", "Issuing Bank", "matInput", ""], ["fxLayout", "column wrap", "fxFlex", "100%", 1, "mat_form_field_margin"], ["fxFlex", "35%", "appearance", "outline"], ["matInput", "", "formControlName", "negotiatedRate", "placeholder", "Negotiated rate"], ["formControlName", "exchangeRate"], [1, "hint"], [1, "errormsge"], ["src", "assets/images/exchangemessageicon.png", "alt", ""], [1, "errortext"]],
+        consts: [[1, "section"], [2, "font-size", "15px", "color", "#004c97", "margin-left", "1%"], [1, "transaction_form", 3, "formGroup"], ["fxLayoutGap", "50px", "fxLayout", "column"], ["fxFlex", "row wrap", "fxLayoutGap", "4%", "fxFlex", "100%", "class", "form_row_wrap", 4, "ngIf"], ["fxFlex", "row wrap", "fxLayoutGap", "4%", "fxFlex", "100%", 1, "form_row_wrap"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "36%", 4, "ngIf"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "60%", 4, "ngIf"], ["fxLayout", "row", 2, "padding", "0 1rem"], [4, "ngIf"], ["fxLayout", "column wrap", "fxFlex", "100%", "class", "mat_form_field_margin", 4, "ngIf"], ["appearance", "outline", "fxFlex", "36%", 1, "mat_form_field_margin", 2, "border-radius", "12px"], ["matInput", "", "readonly", "", "formControlName", "totalChargeAmount", "placeholder", "Total Charge Amount"], ["fxFlex", "36%", "appearance", "outline", "fxLayoutGap", "5%", 1, "mat_form_field_margin", 2, "border-radius", "12px", "position", "relative"], ["matInput", "", "fxFlex", "95", "type", "text", "readonly", "", "onlyNumber", "", "formControlName", "totalTransactionAmount", "placeholder", "Total Transaction Amount"], [1, "tooltip"], ["fxflex", "5", "width", "80%", 3, "src"], [1, "tooltiptext"], [1, "totalAmount", "textcolor", 2, "margin-top", "10px", "margin-bottom", "6px"], [1, "totalAmount", "textcolor"], [1, "totalAmount", "textcolor", 2, "margin-right", "10px"], ["formControlName", "exchangeRate", 4, "ngIf"], ["class", "errormsge", 4, "ngIf"], ["appearance", "outline", "fxFlex", "36%", 2, "border-radius", "12px"], [1, "totalAmount"], ["formControlName", "chequeType"], ["value", "Self"], ["value", "Bearer"], ["value", "Banker"], ["value", "Traveller"], ["appearance", "outline", "fxFlex", "60%", 2, "border-radius", "12px"], ["matInput", "", "onlyNumber", "", "maxlength", "6", "class", "full-width", "formControlName", "chequeNumber", 4, "ngIf"], ["matInput", "", "onlyNumber", "", "maxlength", "6", "formControlName", "chequeNumber", 1, "full-width"], ["fxFlex", "11%"], ["matInput", "", "type", "text", "formControlName", "transactionCurrency", 3, "readonly", 4, "ngIf"], ["formControlName", "transactionCurrency", 3, "disabled", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "transactionCurrency", 3, "readonly"], ["formControlName", "transactionCurrency", 3, "disabled"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "3.5%", "margin-left", "4%"], ["formControlName", "transactionCurrency", "placeholder", "Select Transaction Currency"], ["matInput", "", "formControlName", "transactionAmount", 3, "ngModel", "value", "ngModelChange", "keyup", "focus"], ["myRef", ""], ["matInput", "", "type", "text", "formControlName", "transactionAmount", 3, "readonly", 4, "ngIf"], ["matInput", "", "class", "full-width", "formControlName", "transactionAmount", 3, "ngModel", "value", "readonly", "ngModelChange", "keyup", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "transactionAmount", 3, "readonly"], ["matInput", "", "formControlName", "transactionAmount", 1, "full-width", 3, "ngModel", "value", "readonly", "ngModelChange", "keyup"], ["fxLayoutGap", "5%", 4, "ngIf"], ["fxLayoutGap", "5%"], ["appearance", "outline", "fxFlex", "100%", 2, "border-radius", "12px"], ["type", "text", "formControlName", "accountNumber", "placeholder", "Account Number", "matInput", "", 3, "change"], ["appearance", "outline", "fxFlex", "100%", 1, "mat_form_field_margin", 2, "border-radius", "12px"], ["type", "text", "formControlName", "issuingbank", "placeholder", "Issuing Bank", "matInput", ""], ["fxLayout", "column wrap", "fxFlex", "100%", 1, "mat_form_field_margin"], ["fxFlex", "35%", "appearance", "outline"], ["matInput", "", "formControlName", "negotiatedRate", "placeholder", "Negotiated rate"], ["formControlName", "exchangeRate"], [1, "hint"], [1, "errormsge"], ["src", "assets/images/exchangemessageicon.png", "alt", ""], [1, "errortext"]],
         template: function TransactionInformationFormComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -10579,7 +12460,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.chqPage === "Cheque Deposit" || ctx.chqPage === "Cheque Withdrawal");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.chqPage == "Cheque Deposit" || ctx.chqPage == "Cheque Withdrawal");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -10632,7 +12513,7 @@
         },
         directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCardTitle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutGapDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_17__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_18__["MatOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["MaxLengthValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatError"]],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["DecimalPipe"]],
-        styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n}\n\n.hint[_ngcontent-%COMP%] {\n  margin-left: 2%;\n}\n\n.errortext[_ngcontent-%COMP%] {\n  color: #000000;\n  padding-left: 20px;\n}\n\n.errormsge[_ngcontent-%COMP%] {\n  display: flex;\n  margin-left: 20px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n  .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 7px;\n  box-shadow: 0px 3px 15px #00000017;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: smaller;\n  color: #304156;\n  padding-left: 20px;\n  margin-left: 20px !important;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n}\n\n.tooltip[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  transform: translateY(-50%);\n  display: inline-block;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: hidden;\n  min-width: 200px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  color: #fff;\n  text-align: start;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 5px;\n  border-style: solid;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: visible;\n  left: 70%;\n  top: -150%;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: white;\n}\n\n#denominationDiv[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: auto auto;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\ninput[_ngcontent-%COMP%] {\n  border: 0;\n  outline: 0;\n  background-color: #f9fafb;\n  font-weight: bold;\n}\n\ninput[_ngcontent-%COMP%]:focus {\n  outline: none !important;\n}\n\n.pb1[_ngcontent-%COMP%] {\n  padding-bottom: 1%;\n}\n\n.operationTypeClass[_ngcontent-%COMP%] {\n  color: #a1a1a1;\n  margin: auto;\n}\n\n.quantityClass[_ngcontent-%COMP%] {\n  color: #000000;\n  margin: auto;\n  font-weight: 500;\n}\n\n.paddingclass[_ngcontent-%COMP%] {\n  padding: 2%;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8, 0 1px 0 #f8f8f8, 0 5px 8px 0 #e9e9e9;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field {\n  width: 100% !important;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper > div.mat-form-field-flex > div.mat-form-field-suffix > mat-icon > svg {\n  margin-bottom: -8px;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper {\n  padding-bottom: 0.8rem;\n}\n\ninput[_ngcontent-%COMP%]::-webkit-outer-spin-button, input[_ngcontent-%COMP%]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%]   .readonly-block[_ngcontent-%COMP%] {\n  pointer-events: none;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  width: 553px;\n  height: 50px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 30%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  font-weight: bold;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  width: 263px;\n  height: 50px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.transaction_form[_ngcontent-%COMP%]   .form_row_wrap[_ngcontent-%COMP%] {\n  justify-content: space-between;\n  padding: 0 1rem;\n  margin-bottom: 0 !important;\n}\n\n.mat_form_field_margin[_ngcontent-%COMP%]:not(:last-child) {\n  margin-right: 1rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcdHJhbnNhY3Rpb24taW5mb3JtYXRpb24tZm9ybS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtDQUFBO0VBQ0EsbUJBQUE7QUFDRjs7QUFDQTtFQUNFLGVBQUE7QUFFRjs7QUFBQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtBQUdGOztBQURBO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0FBSUY7O0FBRkE7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLCtCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUFLRjs7QUFIQTtFQUNFLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQ0FBQTtBQU1GOztBQUpBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSw0QkFBQTtBQU9GOztBQUxBO0VBQ0UseUJBQUE7RUFDQSxzQkFBQTtBQVFGOztBQU5BO0VBQ0UseUNBQUE7RUFDQSx5QkFBQTtBQVNGOztBQVBBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0VBQ0EscUJBQUE7QUFVRjs7QUFSQTtFQUNFLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSwwQkFBQTtFQUFBLHVCQUFBO0VBQUEsa0JBQUE7RUFHQSxvR0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQVNGOztBQUpBO0VBQ0UsV0FBQTtFQUNBLGtCQUFBO0VBRUEsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxtQkFBQTtBQU1GOztBQUhBO0VBQ0UsbUJBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtBQU1GOztBQUhBO0VBQ0UsWUFBQTtBQU1GOztBQUhBO0VBQ0UsYUFBQTtFQUNBLGdDQUFBO0FBTUY7O0FBSEE7RUFDRSx5QkFBQTtFQUNBLHNCQUFBO0FBTUY7O0FBSEE7RUFDRSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0VBQ0EsaUJBQUE7QUFNRjs7QUFKQTtFQUNFLHdCQUFBO0FBT0Y7O0FBSkE7RUFDRSxrQkFBQTtBQU9GOztBQUpBO0VBQ0UsY0FBQTtFQUNBLFlBQUE7QUFPRjs7QUFKQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFPRjs7QUFKQTtFQUNFLFdBQUE7QUFPRjs7QUFKQTtFQUNFLHdFQUFBO0FBT0Y7O0FBSkE7RUFDRSxzQkFBQTtBQU9GOztBQUpBO0VBU0UsbUJBQUE7QUFERjs7QUFJQTtFQUtFLHNCQUFBO0FBTEY7O0FBT0E7O0VBRUUsd0JBQUE7RUFDQSxTQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtBQUpGOztBQU9BO0VBQ0Usb0JBQUE7QUFKRjs7QUFNQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0Esb0dBQUE7RUFFQSxtQkFBQTtFQUNBLHVCQUFBO0FBSkY7O0FBTUE7RUFDRSxtQkFBQTtFQUNBLFVBQUE7RUFDQSx5QkFBQTtFQUNBLGNBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0FBSEY7O0FBS0E7RUFDRSxpQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLG1CQUFBO0FBRkY7O0FBTUU7RUFDRSw4QkFBQTtFQUNBLGVBQUE7RUFDQSwyQkFBQTtBQUhKOztBQU9BO0VBQ0Usa0JBQUE7QUFKRiIsImZpbGUiOiJ0cmFuc2FjdGlvbi1pbmZvcm1hdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjY291bnRJbmZvQ2FyZCB7XHJcbiAgYmFja2dyb3VuZDogI2YyZjJmMiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm9yZGVyLXJhZGl1czogMThweDtcclxufVxyXG4uaGludCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDIlO1xyXG59XHJcbi5lcnJvcnRleHR7XHJcbiAgY29sb3I6ICMwMDAwMDA7XHJcbiAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG59XHJcbi5lcnJvcm1zZ2V7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBtYXJnaW4tbGVmdDogMjBweDtcclxufVxyXG4uaW5wdXRNYXROYW1lIHtcclxuICBmbGV4LWdyb3c6IDE7XHJcbiAgbWFyZ2luLXRvcDogNXB4O1xyXG4gIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gIHBhZGRpbmc6IDEzcHg7XHJcbn1cclxuOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1hcHBlYXJhbmNlLW91dGxpbmUgLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGJvcmRlci1yYWRpdXM6IDdweDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG59XHJcbi50b3RhbEFtb3VudCB7XHJcbiAgZm9udC1zaXplOiBzbWFsbGVyO1xyXG4gIGNvbG9yOiAjMzA0MTU2O1xyXG4gIHBhZGRpbmctbGVmdDogMjBweDtcclxuICBtYXJnaW4tbGVmdDogMjBweCAhaW1wb3J0YW50O1xyXG59XHJcbi5pbnB1dENhcmQge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5tYXQtbGFiZWx7XHJcbiAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgTWVkaXVtICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICM3MDcwNzAgIWltcG9ydGFudDtcclxufVxyXG4udG9vbHRpcCB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuLnRvb2x0aXAgLnRvb2x0aXB0ZXh0IHtcclxuICB2aXNpYmlsaXR5OiBoaWRkZW47XHJcbiAgbWluLXdpZHRoOiAyMDBweDtcclxuICB3aWR0aDogbWF4LWNvbnRlbnQ7XHJcbiAgLy8gbWFyZ2luLXRvcDogLTEwJTtcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjZmU2NzAwO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MWRlZywgIzA1MUEyRCAwJSwgIzAwNEM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgY29sb3I6ICNmZmY7XHJcbiAgdGV4dC1hbGlnbjogc3RhcnQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gIHBhZGRpbmc6IDVweCAwO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAxO1xyXG4gIC8vIHRvcDogLTQ5cHg7XHJcbiAgLy8gbGVmdDogMTMwJTtcclxufVxyXG5cclxuLnRvb2x0aXAgLnRvb2x0aXB0ZXh0OjphZnRlciB7XHJcbiAgY29udGVudDogJyc7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIC8vIHRvcDogNTAlO1xyXG4gIHJpZ2h0OiAxMDAlO1xyXG4gIG1hcmdpbi10b3A6IC01cHg7XHJcbiAgYm9yZGVyLXdpZHRoOiA1cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAvLyBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50ICNmZTY3MDAgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQ7XHJcbn1cclxuLnRvb2x0aXA6aG92ZXIgLnRvb2x0aXB0ZXh0IHtcclxuICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gIGxlZnQ6NzAlO1xyXG4gIHRvcDogLTE1MCU7XHJcbn1cclxuXHJcbi50ZXh0Y29sb3Ige1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuI2Rlbm9taW5hdGlvbkRpdiB7XHJcbiAgZGlzcGxheTogZ3JpZDtcclxuICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IGF1dG8gYXV0bztcclxufVxyXG5cclxuLmlucHV0Q2FyZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG5pbnB1dCB7XHJcbiAgYm9yZGVyOiAwO1xyXG4gIG91dGxpbmU6IDA7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5pbnB1dDpmb2N1cyB7XHJcbiAgb3V0bGluZTogbm9uZSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ucGIxIHtcclxuICBwYWRkaW5nLWJvdHRvbTogMSU7XHJcbn1cclxuXHJcbi5vcGVyYXRpb25UeXBlQ2xhc3Mge1xyXG4gIGNvbG9yOiAjYTFhMWExO1xyXG4gIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuLnF1YW50aXR5Q2xhc3Mge1xyXG4gIGNvbG9yOiAjMDAwMDAwO1xyXG4gIG1hcmdpbjogYXV0bztcclxuICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG4ucGFkZGluZ2NsYXNzIHtcclxuICBwYWRkaW5nOiAyJTtcclxufVxyXG5cclxuLmlucHV0Q2FyZDpub3QoW2NsYXNzKj0nbWF0LWVsZXZhdGlvbi16J10pIHtcclxuICBib3gtc2hhZG93OiAwIDJweCAxcHggLTFweCAjZjhmOGY4LCAwIDFweCAwICNmOGY4ZjgsIDAgNXB4IDhweCAwICNlOWU5ZTk7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCBtYXQtc2VsZWN0LWNvdW50cnkgPiBtYXQtZm9ybS1maWVsZCB7XHJcbiAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuOmhvc3RcclxuICA6Om5nLWRlZXBcclxuICBtYXQtc2VsZWN0LWNvdW50cnlcclxuICA+IG1hdC1mb3JtLWZpZWxkXHJcbiAgPiBkaXYubWF0LWZvcm0tZmllbGQtd3JhcHBlclxyXG4gID4gZGl2Lm1hdC1mb3JtLWZpZWxkLWZsZXhcclxuICA+IGRpdi5tYXQtZm9ybS1maWVsZC1zdWZmaXhcclxuICA+IG1hdC1pY29uXHJcbiAgPiBzdmcge1xyXG4gIG1hcmdpbi1ib3R0b206IC04cHg7XHJcbn1cclxuXHJcbjpob3N0XHJcbiAgOjpuZy1kZWVwXHJcbiAgbWF0LXNlbGVjdC1jb3VudHJ5XHJcbiAgPiBtYXQtZm9ybS1maWVsZFxyXG4gID4gZGl2Lm1hdC1mb3JtLWZpZWxkLXdyYXBwZXIge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwLjhyZW07XHJcbn1cclxuaW5wdXQ6Oi13ZWJraXQtb3V0ZXItc3Bpbi1idXR0b24sXHJcbmlucHV0Ojotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uIHtcclxuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcblxyXG4ucmVhZG9ubHktd3JhcHBlciB7XHJcbiAgY3Vyc29yOiBub3QtYWxsb3dlZDtcclxufVxyXG5cclxuLnJlYWRvbmx5LXdyYXBwZXIgLnJlYWRvbmx5LWJsb2NrIHtcclxuICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxufVxyXG4uY29udGludWVCdG4ge1xyXG4gIHdpZHRoOiA1NTNweDtcclxuICBoZWlnaHQ6IDUwcHg7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJVxyXG4gICAgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI4cHg7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbn1cclxuLmV4aXRCdG4ge1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xyXG4gIGNvbG9yOiAjZTUwMDAwO1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbi5iYWNrQnRuIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICB3aWR0aDogMjYzcHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG4gIGJhY2tncm91bmQ6ICNmZmZmZmYgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgYm9yZGVyLXJhZGl1czogMjVweDtcclxufVxyXG5cclxuLnRyYW5zYWN0aW9uX2Zvcm0ge1xyXG4gIC5mb3JtX3Jvd193cmFwIHtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIHBhZGRpbmc6IDAgMXJlbTtcclxuICAgIG1hcmdpbi1ib3R0b206IDAgIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbi5tYXRfZm9ybV9maWVsZF9tYXJnaW46bm90KDpsYXN0LWNoaWxkKSB7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxcmVtO1xyXG59Il19 */"],
+        styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n}\n\n.hint[_ngcontent-%COMP%] {\n  margin-left: 2%;\n}\n\n.errortext[_ngcontent-%COMP%] {\n  color: #000000;\n  padding-left: 20px;\n}\n\n.errormsge[_ngcontent-%COMP%] {\n  display: flex;\n  margin-left: 20px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n  .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 7px;\n  box-shadow: 0px 3px 15px #00000017;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: smaller;\n  color: #304156;\n  padding-left: 20px;\n  margin-left: 20px !important;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n  margin-left: 3% !important;\n}\n\n.tooltip[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  transform: translateY(-50%);\n  display: inline-block;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: hidden;\n  min-width: 200px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  color: #fff;\n  text-align: start;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 5px;\n  border-style: solid;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: visible;\n  right: 115%;\n  top: -110%;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: white;\n}\n\n#denominationDiv[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: auto auto;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n}\n\ninput[_ngcontent-%COMP%] {\n  border: 0;\n  outline: 0;\n  background-color: #f9fafb;\n  font-weight: bold;\n}\n\ninput[_ngcontent-%COMP%]:focus {\n  outline: none !important;\n}\n\n.pb1[_ngcontent-%COMP%] {\n  padding-bottom: 1%;\n}\n\n.operationTypeClass[_ngcontent-%COMP%] {\n  color: #a1a1a1;\n  margin: auto;\n}\n\n.quantityClass[_ngcontent-%COMP%] {\n  color: #000000;\n  margin: auto;\n  font-weight: 500;\n}\n\n.paddingclass[_ngcontent-%COMP%] {\n  padding: 2%;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8, 0 1px 0 #f8f8f8, 0 5px 8px 0 #e9e9e9;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field {\n  width: 100% !important;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper > div.mat-form-field-flex > div.mat-form-field-suffix > mat-icon > svg {\n  margin-bottom: -8px;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper {\n  padding-bottom: 0.8rem;\n}\n\ninput[_ngcontent-%COMP%]::-webkit-outer-spin-button, input[_ngcontent-%COMP%]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%]   .readonly-block[_ngcontent-%COMP%] {\n  pointer-events: none;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  width: 553px;\n  height: 50px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 30%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  font-weight: bold;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  width: 263px;\n  height: 50px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.transaction_form[_ngcontent-%COMP%]   .form_row_wrap[_ngcontent-%COMP%] {\n  justify-content: space-between;\n  padding: 0 1rem;\n  margin-bottom: 0 !important;\n}\n\n.mat_form_field_margin[_ngcontent-%COMP%]:not(:last-child) {\n  margin-right: 1rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcdHJhbnNhY3Rpb24taW5mb3JtYXRpb24tZm9ybS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtDQUFBO0VBQ0EsbUJBQUE7QUFDRjs7QUFDQTtFQUNFLGVBQUE7QUFFRjs7QUFBQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtBQUdGOztBQURBO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0FBSUY7O0FBRkE7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLCtCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUFLRjs7QUFIQTtFQUNFLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQ0FBQTtBQU1GOztBQUpBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSw0QkFBQTtBQU9GOztBQUxBO0VBQ0UseUJBQUE7RUFDQSxzQkFBQTtBQVFGOztBQU5BO0VBQ0UseUNBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBU0Y7O0FBUEE7RUFDRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7RUFDQSxxQkFBQTtBQVVGOztBQVJBO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtFQUNBLDBCQUFBO0VBQUEsdUJBQUE7RUFBQSxrQkFBQTtFQUdBLG9HQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBU0Y7O0FBSkE7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7RUFFQSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0FBTUY7O0FBSEE7RUFDRSxtQkFBQTtFQUNBLFdBQUE7RUFDQSxVQUFBO0FBTUY7O0FBSEE7RUFDRSxZQUFBO0FBTUY7O0FBSEE7RUFDRSxhQUFBO0VBQ0EsZ0NBQUE7QUFNRjs7QUFIQTtFQUNFLHlCQUFBO0VBQ0Esc0JBQUE7QUFNRjs7QUFIQTtFQUNFLFNBQUE7RUFDQSxVQUFBO0VBQ0EseUJBQUE7RUFDQSxpQkFBQTtBQU1GOztBQUpBO0VBQ0Usd0JBQUE7QUFPRjs7QUFKQTtFQUNFLGtCQUFBO0FBT0Y7O0FBSkE7RUFDRSxjQUFBO0VBQ0EsWUFBQTtBQU9GOztBQUpBO0VBQ0UsY0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQU9GOztBQUpBO0VBQ0UsV0FBQTtBQU9GOztBQUpBO0VBQ0Usd0VBQUE7QUFPRjs7QUFKQTtFQUNFLHNCQUFBO0FBT0Y7O0FBSkE7RUFTRSxtQkFBQTtBQURGOztBQUlBO0VBS0Usc0JBQUE7QUFMRjs7QUFPQTs7RUFFRSx3QkFBQTtFQUNBLFNBQUE7QUFKRjs7QUFPQTtFQUNFLG1CQUFBO0FBSkY7O0FBT0E7RUFDRSxvQkFBQTtBQUpGOztBQU1BO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxvR0FBQTtFQUVBLG1CQUFBO0VBQ0EsdUJBQUE7QUFKRjs7QUFNQTtFQUNFLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7QUFIRjs7QUFLQTtFQUNFLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSwrQ0FBQTtFQUNBLGtDQUFBO0VBQ0EsbUJBQUE7QUFGRjs7QUFNRTtFQUNFLDhCQUFBO0VBQ0EsZUFBQTtFQUNBLDJCQUFBO0FBSEo7O0FBT0E7RUFDRSxrQkFBQTtBQUpGIiwiZmlsZSI6InRyYW5zYWN0aW9uLWluZm9ybWF0aW9uLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWNjb3VudEluZm9DYXJkIHtcclxuICBiYWNrZ3JvdW5kOiAjZjJmMmYyIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3JkZXItcmFkaXVzOiAxOHB4O1xyXG59XHJcbi5oaW50IHtcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuLmVycm9ydGV4dHtcclxuICBjb2xvcjogIzAwMDAwMDtcclxuICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbn1cclxuLmVycm9ybXNnZXtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG59XHJcbi5pbnB1dE1hdE5hbWUge1xyXG4gIGZsZXgtZ3JvdzogMTtcclxuICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogMCAzcHQgNnB0ICMwMDAwMDAyOTtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgcGFkZGluZzogMTNweDtcclxufVxyXG46Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZSAubWF0LWZvcm0tZmllbGQtb3V0bGluZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgYm9yZGVyLXJhZGl1czogN3B4O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbn1cclxuLnRvdGFsQW1vdW50IHtcclxuICBmb250LXNpemU6IHNtYWxsZXI7XHJcbiAgY29sb3I6ICMzMDQxNTY7XHJcbiAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyMHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuLmlucHV0Q2FyZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcbm1hdC1sYWJlbHtcclxuICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBNZWRpdW0gIWltcG9ydGFudDtcclxuICBjb2xvcjogIzcwNzA3MCAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi1sZWZ0OiAzJSAhaW1wb3J0YW50O1xyXG59XHJcbi50b29sdGlwIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG4udG9vbHRpcCAudG9vbHRpcHRleHQge1xyXG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICBtaW4td2lkdGg6IDIwMHB4O1xyXG4gIHdpZHRoOiBtYXgtY29udGVudDtcclxuICAvLyBtYXJnaW4tdG9wOiAtMTAlO1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6ICNmZTY3MDA7XHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkxZGVnLCAjMDUxQTJEIDAlLCAjMDA0Qzk3IDEwMCUpIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBjb2xvcjogI2ZmZjtcclxuICB0ZXh0LWFsaWduOiBzdGFydDtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgcGFkZGluZzogNXB4IDA7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHotaW5kZXg6IDE7XHJcbiAgLy8gdG9wOiAtNDlweDtcclxuICAvLyBsZWZ0OiAxMzAlO1xyXG59XHJcblxyXG4udG9vbHRpcCAudG9vbHRpcHRleHQ6OmFmdGVyIHtcclxuICBjb250ZW50OiAnJztcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgLy8gdG9wOiA1MCU7XHJcbiAgcmlnaHQ6IDEwMCU7XHJcbiAgbWFyZ2luLXRvcDogLTVweDtcclxuICBib3JkZXItd2lkdGg6IDVweDtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIC8vIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgI2ZlNjcwMCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcclxufVxyXG4udG9vbHRpcDpob3ZlciAudG9vbHRpcHRleHQge1xyXG4gIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgcmlnaHQ6MTE1JTtcclxuICB0b3A6IC0xMTAlO1xyXG59XHJcblxyXG4udGV4dGNvbG9yIHtcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbiNkZW5vbWluYXRpb25EaXYge1xyXG4gIGRpc3BsYXk6IGdyaWQ7XHJcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBhdXRvIGF1dG87XHJcbn1cclxuXHJcbi5pbnB1dENhcmQge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5cclxuaW5wdXQge1xyXG4gIGJvcmRlcjogMDtcclxuICBvdXRsaW5lOiAwO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuaW5wdXQ6Zm9jdXMge1xyXG4gIG91dGxpbmU6IG5vbmUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnBiMSB7XHJcbiAgcGFkZGluZy1ib3R0b206IDElO1xyXG59XHJcblxyXG4ub3BlcmF0aW9uVHlwZUNsYXNzIHtcclxuICBjb2xvcjogI2ExYTFhMTtcclxuICBtYXJnaW46IGF1dG87XHJcbn1cclxuXHJcbi5xdWFudGl0eUNsYXNzIHtcclxuICBjb2xvcjogIzAwMDAwMDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgZm9udC13ZWlnaHQ6IDUwMDtcclxufVxyXG5cclxuLnBhZGRpbmdjbGFzcyB7XHJcbiAgcGFkZGluZzogMiU7XHJcbn1cclxuXHJcbi5pbnB1dENhcmQ6bm90KFtjbGFzcyo9J21hdC1lbGV2YXRpb24teiddKSB7XHJcbiAgYm94LXNoYWRvdzogMCAycHggMXB4IC0xcHggI2Y4ZjhmOCwgMCAxcHggMCAjZjhmOGY4LCAwIDVweCA4cHggMCAjZTllOWU5O1xyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAgbWF0LXNlbGVjdC1jb3VudHJ5ID4gbWF0LWZvcm0tZmllbGQge1xyXG4gIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjpob3N0XHJcbiAgOjpuZy1kZWVwXHJcbiAgbWF0LXNlbGVjdC1jb3VudHJ5XHJcbiAgPiBtYXQtZm9ybS1maWVsZFxyXG4gID4gZGl2Lm1hdC1mb3JtLWZpZWxkLXdyYXBwZXJcclxuICA+IGRpdi5tYXQtZm9ybS1maWVsZC1mbGV4XHJcbiAgPiBkaXYubWF0LWZvcm0tZmllbGQtc3VmZml4XHJcbiAgPiBtYXQtaWNvblxyXG4gID4gc3ZnIHtcclxuICBtYXJnaW4tYm90dG9tOiAtOHB4O1xyXG59XHJcblxyXG46aG9zdFxyXG4gIDo6bmctZGVlcFxyXG4gIG1hdC1zZWxlY3QtY291bnRyeVxyXG4gID4gbWF0LWZvcm0tZmllbGRcclxuICA+IGRpdi5tYXQtZm9ybS1maWVsZC13cmFwcGVyIHtcclxuICBwYWRkaW5nLWJvdHRvbTogMC44cmVtO1xyXG59XHJcbmlucHV0Ojotd2Via2l0LW91dGVyLXNwaW4tYnV0dG9uLFxyXG5pbnB1dDo6LXdlYmtpdC1pbm5lci1zcGluLWJ1dHRvbiB7XHJcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gIG1hcmdpbjogMDtcclxufVxyXG5cclxuLnJlYWRvbmx5LXdyYXBwZXIge1xyXG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XHJcbn1cclxuXHJcbi5yZWFkb25seS13cmFwcGVyIC5yZWFkb25seS1ibG9jayB7XHJcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbn1cclxuLmNvbnRpbnVlQnRuIHtcclxuICB3aWR0aDogNTUzcHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQgMCUsICMwMDRjOTcgMTAwJSkgMCUgMCVcclxuICAgIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3JkZXItcmFkaXVzOiAyOHB4O1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG59XHJcbi5leGl0QnRuIHtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIHdpZHRoOiAzMCU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICBjb2xvcjogI2U1MDAwMDtcclxuICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4uYmFja0J0biB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgd2lkdGg6IDI2M3B4O1xyXG4gIGhlaWdodDogNTBweDtcclxuICBiYWNrZ3JvdW5kOiAjZmZmZmZmIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbn1cclxuXHJcbi50cmFuc2FjdGlvbl9mb3JtIHtcclxuICAuZm9ybV9yb3dfd3JhcCB7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICBwYWRkaW5nOiAwIDFyZW07XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcblxyXG4ubWF0X2Zvcm1fZmllbGRfbWFyZ2luOm5vdCg6bGFzdC1jaGlsZCkge1xyXG4gIG1hcmdpbi1yaWdodDogMXJlbTtcclxufSJdfQ== */"],
         changeDetection: 0
       });
       /*@__PURE__*/
@@ -12648,7 +14529,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this45 = this;
+            var _this57 = this;
 
             this.cashwithdrawForm.controls.transactionAmount.reset();
             this.cashwithdrawForm.controls.totalTransactionAmount.setValue(this.cashwithdrawForm.controls.totalChargeAmount.value);
@@ -12659,40 +14540,40 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('Account Number Rsp', res);
 
-              _this45.getChargeDetails(accNum, '');
+              _this57.getChargeDetails(accNum, '');
 
-              _this45.userName = res.accHolderName;
-              _this45.accountBal = res.accBalance;
-              _this45.custmerID = res.customerId;
-              _this45.accountNumber = res.accountId;
-              _this45.accountCurrency = res.accountCurrency;
-              _this45.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["getCurrencySymbol"])(res.currency, "narrow");
+              _this57.userName = res.accHolderName;
+              _this57.accountBal = res.accBalance;
+              _this57.custmerID = res.customerId;
+              _this57.accountNumber = res.accountId;
+              _this57.accountCurrency = res.accountCurrency;
+              _this57.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this45.cashwithdrawForm.controls.accountType.setValue(res.accountType);
+              _this57.cashwithdrawForm.controls.accountType.setValue(res.accountType);
 
-              _this45.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
+              _this57.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this45.cashwithdrawForm.controls.holderName.setValue(_this45.userName);
+              _this57.cashwithdrawForm.controls.holderName.setValue(_this57.userName);
 
-              _this45.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+              _this57.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
 
 
-              _this45.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this57.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-              _this45.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
+              _this57.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this45.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
+              _this57.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
 
-              _this45.accountCurrency = res.currency;
-              console.log(_this45.ifQRvariable);
+              _this57.accountCurrency = res.currency;
+              console.log(_this57.ifQRvariable);
 
-              _this45.custAmountBal(accNum);
+              _this57.custAmountBal(accNum);
 
-              _this45.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
+              _this57.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
 
-              _this45.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this45.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this45.phonenum);
+              _this57.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this57.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this57.phonenum);
               });
             });
           } //  numberWithCommas = (transAmt) => {
@@ -12703,35 +14584,35 @@
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this46 = this;
+            var _this58 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this46.trasactionBranches = branches;
+              _this58.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this47 = this;
+            var _this59 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this47.branchData = data;
-              console.log(_this47.branchData);
+              _this59.branchData = data;
+              console.log(_this59.branchData);
               data.forEach(function (element, index) {
-                _this47.branch = data[index].branchName;
-                console.log(_this47.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
+                _this59.branch = data[index].branchName;
+                console.log(_this59.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this48 = this;
+            var _this60 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this48.countryValues = allCountryValues;
-              console.log(_this48.countryValues);
+              _this60.countryValues = allCountryValues;
+              console.log(_this60.countryValues);
             });
           }
         }, {
@@ -12741,54 +14622,54 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this49 = this;
+            var _this61 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this49.accountCurrency = allTransactionResp.accountCurrency;
-              _this49.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this61.accountCurrency = allTransactionResp.accountCurrency;
+              _this61.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this49.cashwithdrawForm.controls.holderName.setValue(_this49.userName); // this.setBalance(allTransactionResp.custAccount);
+              _this61.cashwithdrawForm.controls.holderName.setValue(_this61.userName); // this.setBalance(allTransactionResp.custAccount);
 
 
-              _this49.custID = allTransactionResp.customerId;
-              console.log("Cust", _this49.custID);
-              _this49.custAccountData = allTransactionResp.custAccount;
-              _this49.accounttypeArray = _toConsumableArray(_this49.custAccountData).filter(function (_ref5, index) {
+              _this61.custID = allTransactionResp.customerId;
+              console.log("Cust", _this61.custID);
+              _this61.custAccountData = allTransactionResp.custAccount;
+              _this61.accounttypeArray = _toConsumableArray(_this61.custAccountData).filter(function (_ref5, index) {
                 var accountType = _ref5.accountType;
-                return !_toConsumableArray(_this49.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this61.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this49.accounttypeArray);
+              console.log(_this61.accounttypeArray);
 
-              for (var i = 0; i < _this49.custAccountData.length; i++) {
-                if (_this49.custAccountData[i].status == 'APPROVED') {
-                  _this49.accountNoList.push(_this49.custAccountData[i]);
+              for (var i = 0; i < _this61.custAccountData.length; i++) {
+                if (_this61.custAccountData[i].status == 'APPROVED') {
+                  _this61.accountNoList.push(_this61.custAccountData[i]);
                 }
               }
 
-              console.log(_this49.accountNoList);
+              console.log(_this61.accountNoList);
 
-              if (_this49.custAccountData && _this49.accountNoList.length <= 1) {
-                _this49.accountDropdown = false;
-                _this49.hideDetails = true;
-                _this49.hideAccNum = true;
+              if (_this61.custAccountData && _this61.accountNoList.length <= 1) {
+                _this61.accountDropdown = false;
+                _this61.hideDetails = true;
+                _this61.hideAccNum = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this49.cashwithdrawForm.controls.accountType.setValue(accTyp);
+                _this61.cashwithdrawForm.controls.accountType.setValue(accTyp);
 
-                _this49.custAccountNumber(_this49.accountNoList[0]);
+                _this61.custAccountNumber(_this61.accountNoList[0]);
               } else {
-                _this49.accountDropdown = true;
-                _this49.hideDetails = true;
-                _this49.hideAccNum = true;
+                _this61.accountDropdown = true;
+                _this61.hideDetails = true;
+                _this61.hideAccNum = true;
                 var _accTyp5 = allTransactionResp.custAccount[0].accountType;
 
-                _this49.cashwithdrawForm.controls.accountType.setValue(_accTyp5);
+                _this61.cashwithdrawForm.controls.accountType.setValue(_accTyp5);
 
-                _this49.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this61.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -12924,7 +14805,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this50 = this;
+            var _this62 = this;
 
             this.cashwithDrwValues = formData;
             this.cashwithDrwType = type;
@@ -12939,9 +14820,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this50.openDialogOTP(_this50.phonenum);
+                  _this62.openDialogOTP(_this62.phonenum);
 
-                  _this50.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this62.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -12955,7 +14836,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this51 = this;
+            var _this63 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_11__["OtpVerifyComponent"], {
               data: {
@@ -12968,14 +14849,14 @@
               console.log("submit", submit);
 
               if (submit) {
-                _this51.getOTPforSave(_this51.cashwithDrwValues, _this51.cashwithDrwType, _this51.cashwithDrwform);
+                _this63.getOTPforSave(_this63.cashwithDrwValues, _this63.cashwithDrwType, _this63.cashwithDrwform);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this52 = this;
+            var _this64 = this;
 
             var denominationData = {};
             var denominationDataArray = [];
@@ -13028,15 +14909,15 @@
             console.log("before api call :: ", formData);
             this.apiService.saveofCashwithdraw(formData).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this52.cashWithdrawResponse = cashWithdrawResp;
-              _this52.tokenNum = _this52.cashWithdrawResponse.tokenNumber;
-              _this52.estimatedTime = _this52.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this52.tokenNum);
-              localStorage.setItem("estimatedTiming", _this52.estimatedTime);
-              _this52.enableContinue = false;
+              _this64.cashWithdrawResponse = cashWithdrawResp;
+              _this64.tokenNum = _this64.cashWithdrawResponse.tokenNumber;
+              _this64.estimatedTime = _this64.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this64.tokenNum);
+              localStorage.setItem("estimatedTiming", _this64.estimatedTime);
+              _this64.enableContinue = false;
 
-              if (_this52.cashWithdrawResponse) {
-                _this52.dialogService.tokenGenerationDialog();
+              if (_this64.cashWithdrawResponse) {
+                _this64.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -13075,14 +14956,14 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this53 = this;
+            var _this65 = this;
 
             form.transactionBranch = this.transBranch;
 
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this53.qrBranchCode = response;
+                  _this65.qrBranchCode = response;
                 });
               }
             }
@@ -13157,15 +15038,15 @@
             console.log("before api call :: ", form);
             this.apiService.saveofCashDeposit(form).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this53.cashWithdrawResponse = cashWithdrawResp;
-              _this53.tokenNum = _this53.cashWithdrawResponse.tokenNumber;
-              _this53.estimatedTime = _this53.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this53.tokenNum);
-              localStorage.setItem("estimatedTiming", _this53.estimatedTime);
-              _this53.enableContinue = false;
+              _this65.cashWithdrawResponse = cashWithdrawResp;
+              _this65.tokenNum = _this65.cashWithdrawResponse.tokenNumber;
+              _this65.estimatedTime = _this65.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this65.tokenNum);
+              localStorage.setItem("estimatedTiming", _this65.estimatedTime);
+              _this65.enableContinue = false;
 
-              if (_this53.cashWithdrawResponse) {
-                _this53.dialogService.tokenGenerationDialog();
+              if (_this65.cashWithdrawResponse) {
+                _this65.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = form.accountNumber;
@@ -13305,53 +15186,53 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this54 = this;
+            var _this66 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this54.cashData = resp.data;
-              _this54.custID = resp.data.customerId;
-              _this54.ifQRvariable = true;
-              _this54.hideAccNum = false;
-              _this54.hideDetails = true;
-              _this54.userName = resp.data.holderName;
-              _this54.accountCurrency = resp.data.accountCurrency;
+              _this66.cashData = resp.data;
+              _this66.custID = resp.data.customerId;
+              _this66.ifQRvariable = true;
+              _this66.hideAccNum = false;
+              _this66.hideDetails = true;
+              _this66.userName = resp.data.holderName;
+              _this66.accountCurrency = resp.data.accountCurrency;
 
-              _this54.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
+              _this66.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this54.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this66.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this54.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this66.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this54.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this66.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this54.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this66.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this54.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this66.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this54.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this66.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this54.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this54.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              _this66.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this66.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
             }); // this.denomRequired='yes';
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this55 = this;
+            var _this67 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this55.chargeDetails = resp;
+              _this67.chargeDetails = resp;
 
-              _this55.cashwithdrawForm.controls.totalChargeAmount.setValue(_this55.chargeDetails ? _this55.chargeDetails[0].amount : '');
+              _this67.cashwithdrawForm.controls.totalChargeAmount.setValue(_this67.chargeDetails ? _this67.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this55.totalTransAmount = Number(_this55.cashData.transactionAmount) + Number(_this55.chargeDetails[0].amount);
+                _this67.totalTransAmount = Number(_this67.cashData.transactionAmount) + Number(_this67.chargeDetails[0].amount);
 
-                _this55.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this55.totalTransAmount);
+                _this67.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this67.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -13360,10 +15241,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this55.totalTransAmount = Number(amount) + Number(_this55.chargeDetails ? _this55.chargeDetails[0].amount : '');
-                console.log(_this55.totalTransAmount);
+                _this67.totalTransAmount = Number(amount) + Number(_this67.chargeDetails ? _this67.chargeDetails[0].amount : '');
+                console.log(_this67.totalTransAmount);
 
-                _this55.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this55.totalTransAmount);
+                _this67.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this67.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -13373,15 +15254,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this56 = this;
+            var _this68 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this56.denomRequired = resp.denomRequired;
+              _this68.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this56.enableBtn = false;
-                _this56.enableBtn1 = false;
+                _this68.enableBtn = false;
+                _this68.enableBtn1 = false;
               }
             });
           }
@@ -14126,7 +16007,13 @@
       /* harmony import */
 
 
-      var _forex_service_forex_service_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(
+      var ngx_webcam__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(
+      /*! ngx-webcam */
+      "QKVY");
+      /* harmony import */
+
+
+      var _forex_service_forex_service_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(
       /*! ./forex-service/forex-service.component */
       "2wk0");
 
@@ -14141,13 +16028,13 @@
         factory: function OthersModule_Factory(t) {
           return new (t || OthersModule)();
         },
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggleModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_7__["MatChipsModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_37__["MatDialogModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_16__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_17__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_18__["NgxDatatableModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"].forRoot('de'), _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_others_routing__WEBPACK_IMPORTED_MODULE_22__["OthersRoutes"]), _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"], app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]]]
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"], ngx_webcam__WEBPACK_IMPORTED_MODULE_58__["WebcamModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggleModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_7__["MatChipsModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_37__["MatDialogModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_16__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_17__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_18__["NgxDatatableModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"].forRoot('de'), _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_others_routing__WEBPACK_IMPORTED_MODULE_22__["OthersRoutes"]), _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"], app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](OthersModule, {
-          declarations: [_app_blank_app_blank_component__WEBPACK_IMPORTED_MODULE_21__["AppBlankComponent"], _cheque_withdrawal_cheque_withdrawal_component__WEBPACK_IMPORTED_MODULE_23__["ChequeWithdrawalComponent"], _cheque_withdrawal1_cheque_withdrawal1_component__WEBPACK_IMPORTED_MODULE_24__["ChequeWithdrawal1Component"], _cash_withdrawal_cash_withdrawal_component__WEBPACK_IMPORTED_MODULE_25__["CashWithdrawalComponent"], _cash_deposit_cash_deposit_component__WEBPACK_IMPORTED_MODULE_26__["CashDepositComponent"], _cheque_deposit_cheque_deposit_component__WEBPACK_IMPORTED_MODULE_27__["ChequeDepositComponent"], _forex_transaction_forex_transaction_component__WEBPACK_IMPORTED_MODULE_28__["ForexTransactionComponent"], _loan_payment_loan_payment_component__WEBPACK_IMPORTED_MODULE_29__["LoanPaymentComponent"], _deposit_topup_deposit_topup_component__WEBPACK_IMPORTED_MODULE_30__["DepositTopupComponent"], _utility_billpayment_utility_billpayment_component__WEBPACK_IMPORTED_MODULE_31__["UtilityBillpaymentComponent"], _select_service_select_service_component__WEBPACK_IMPORTED_MODULE_32__["SelectServiceComponent"], _authenticate_authenticate_component__WEBPACK_IMPORTED_MODULE_35__["AuthenticateComponent"], _token_generation_token_generation_component__WEBPACK_IMPORTED_MODULE_38__["TokenGenerationComponent"], app_shared_directives_onlynumber_directive__WEBPACK_IMPORTED_MODULE_40__["OnlynumberDirective"], _search_search_component__WEBPACK_IMPORTED_MODULE_41__["SearchComponent"], _otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_42__["OtpVerifyComponent"], _appointment_id_appointment_id_component__WEBPACK_IMPORTED_MODULE_43__["AppointmentIdComponent"], _kiosk_homepage_kiosk_homepage_component__WEBPACK_IMPORTED_MODULE_44__["KioskHomepageComponent"], _newcashwithdrawal_newcashwithdrawal_component__WEBPACK_IMPORTED_MODULE_45__["NewcashwithdrawalComponent"], _newcashdeposit_newcashdeposit_component__WEBPACK_IMPORTED_MODULE_46__["NewcashdepositComponent"], _newchequedeposit_newchequedeposit_component__WEBPACK_IMPORTED_MODULE_47__["NewchequedepositComponent"], _cw_service_cw_service_component__WEBPACK_IMPORTED_MODULE_49__["CwServiceComponent"], _cheq_w_cheq_w_component__WEBPACK_IMPORTED_MODULE_50__["CheqWComponent"], _exit_screen_exit_screen_component__WEBPACK_IMPORTED_MODULE_51__["ExitScreenComponent"], _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_52__["FeedbackComponent"], _cd_service_cd_service_component__WEBPACK_IMPORTED_MODULE_53__["CdServiceComponent"], _cheq_d_cheq_d_component__WEBPACK_IMPORTED_MODULE_54__["CheqDComponent"], _scan_your_cheque_scan_your_cheque_component__WEBPACK_IMPORTED_MODULE_55__["ScanYourChequeComponent"], _capture_cheque_details_capture_cheque_details_component__WEBPACK_IMPORTED_MODULE_56__["CaptureChequeDetailsComponent"], _ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_57__["OcrScanPageComponent"], _forex_service_forex_service_component__WEBPACK_IMPORTED_MODULE_58__["ForexServiceComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggleModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_7__["MatChipsModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_37__["MatDialogModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_16__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_17__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_18__["NgxDatatableModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"], app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]]
+          declarations: [_app_blank_app_blank_component__WEBPACK_IMPORTED_MODULE_21__["AppBlankComponent"], _cheque_withdrawal_cheque_withdrawal_component__WEBPACK_IMPORTED_MODULE_23__["ChequeWithdrawalComponent"], _cheque_withdrawal1_cheque_withdrawal1_component__WEBPACK_IMPORTED_MODULE_24__["ChequeWithdrawal1Component"], _cash_withdrawal_cash_withdrawal_component__WEBPACK_IMPORTED_MODULE_25__["CashWithdrawalComponent"], _cash_deposit_cash_deposit_component__WEBPACK_IMPORTED_MODULE_26__["CashDepositComponent"], _cheque_deposit_cheque_deposit_component__WEBPACK_IMPORTED_MODULE_27__["ChequeDepositComponent"], _forex_transaction_forex_transaction_component__WEBPACK_IMPORTED_MODULE_28__["ForexTransactionComponent"], _loan_payment_loan_payment_component__WEBPACK_IMPORTED_MODULE_29__["LoanPaymentComponent"], _deposit_topup_deposit_topup_component__WEBPACK_IMPORTED_MODULE_30__["DepositTopupComponent"], _utility_billpayment_utility_billpayment_component__WEBPACK_IMPORTED_MODULE_31__["UtilityBillpaymentComponent"], _select_service_select_service_component__WEBPACK_IMPORTED_MODULE_32__["SelectServiceComponent"], _authenticate_authenticate_component__WEBPACK_IMPORTED_MODULE_35__["AuthenticateComponent"], _token_generation_token_generation_component__WEBPACK_IMPORTED_MODULE_38__["TokenGenerationComponent"], app_shared_directives_onlynumber_directive__WEBPACK_IMPORTED_MODULE_40__["OnlynumberDirective"], _search_search_component__WEBPACK_IMPORTED_MODULE_41__["SearchComponent"], _otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_42__["OtpVerifyComponent"], _appointment_id_appointment_id_component__WEBPACK_IMPORTED_MODULE_43__["AppointmentIdComponent"], _kiosk_homepage_kiosk_homepage_component__WEBPACK_IMPORTED_MODULE_44__["KioskHomepageComponent"], _newcashwithdrawal_newcashwithdrawal_component__WEBPACK_IMPORTED_MODULE_45__["NewcashwithdrawalComponent"], _newcashdeposit_newcashdeposit_component__WEBPACK_IMPORTED_MODULE_46__["NewcashdepositComponent"], _newchequedeposit_newchequedeposit_component__WEBPACK_IMPORTED_MODULE_47__["NewchequedepositComponent"], _cw_service_cw_service_component__WEBPACK_IMPORTED_MODULE_49__["CwServiceComponent"], _cheq_w_cheq_w_component__WEBPACK_IMPORTED_MODULE_50__["CheqWComponent"], _exit_screen_exit_screen_component__WEBPACK_IMPORTED_MODULE_51__["ExitScreenComponent"], _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_52__["FeedbackComponent"], _cd_service_cd_service_component__WEBPACK_IMPORTED_MODULE_53__["CdServiceComponent"], _cheq_d_cheq_d_component__WEBPACK_IMPORTED_MODULE_54__["CheqDComponent"], _scan_your_cheque_scan_your_cheque_component__WEBPACK_IMPORTED_MODULE_55__["ScanYourChequeComponent"], _capture_cheque_details_capture_cheque_details_component__WEBPACK_IMPORTED_MODULE_56__["CaptureChequeDetailsComponent"], _ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_57__["OcrScanPageComponent"], _forex_service_forex_service_component__WEBPACK_IMPORTED_MODULE_59__["ForexServiceComponent"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"], ngx_webcam__WEBPACK_IMPORTED_MODULE_58__["WebcamModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggleModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_7__["MatChipsModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_37__["MatDialogModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_16__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_17__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_18__["NgxDatatableModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"], app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]]
         });
       })();
       /*@__PURE__*/
@@ -14157,8 +16044,8 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OthersModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggleModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_7__["MatChipsModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_37__["MatDialogModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_16__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_17__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_18__["NgxDatatableModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"].forRoot('de'), _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_others_routing__WEBPACK_IMPORTED_MODULE_22__["OthersRoutes"]), _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"], app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]],
-            declarations: [_app_blank_app_blank_component__WEBPACK_IMPORTED_MODULE_21__["AppBlankComponent"], _cheque_withdrawal_cheque_withdrawal_component__WEBPACK_IMPORTED_MODULE_23__["ChequeWithdrawalComponent"], _cheque_withdrawal1_cheque_withdrawal1_component__WEBPACK_IMPORTED_MODULE_24__["ChequeWithdrawal1Component"], _cash_withdrawal_cash_withdrawal_component__WEBPACK_IMPORTED_MODULE_25__["CashWithdrawalComponent"], _cash_deposit_cash_deposit_component__WEBPACK_IMPORTED_MODULE_26__["CashDepositComponent"], _cheque_deposit_cheque_deposit_component__WEBPACK_IMPORTED_MODULE_27__["ChequeDepositComponent"], _forex_transaction_forex_transaction_component__WEBPACK_IMPORTED_MODULE_28__["ForexTransactionComponent"], _loan_payment_loan_payment_component__WEBPACK_IMPORTED_MODULE_29__["LoanPaymentComponent"], _deposit_topup_deposit_topup_component__WEBPACK_IMPORTED_MODULE_30__["DepositTopupComponent"], _utility_billpayment_utility_billpayment_component__WEBPACK_IMPORTED_MODULE_31__["UtilityBillpaymentComponent"], _select_service_select_service_component__WEBPACK_IMPORTED_MODULE_32__["SelectServiceComponent"], _authenticate_authenticate_component__WEBPACK_IMPORTED_MODULE_35__["AuthenticateComponent"], _token_generation_token_generation_component__WEBPACK_IMPORTED_MODULE_38__["TokenGenerationComponent"], app_shared_directives_onlynumber_directive__WEBPACK_IMPORTED_MODULE_40__["OnlynumberDirective"], _search_search_component__WEBPACK_IMPORTED_MODULE_41__["SearchComponent"], _otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_42__["OtpVerifyComponent"], _appointment_id_appointment_id_component__WEBPACK_IMPORTED_MODULE_43__["AppointmentIdComponent"], _kiosk_homepage_kiosk_homepage_component__WEBPACK_IMPORTED_MODULE_44__["KioskHomepageComponent"], _newcashwithdrawal_newcashwithdrawal_component__WEBPACK_IMPORTED_MODULE_45__["NewcashwithdrawalComponent"], _newcashdeposit_newcashdeposit_component__WEBPACK_IMPORTED_MODULE_46__["NewcashdepositComponent"], _newchequedeposit_newchequedeposit_component__WEBPACK_IMPORTED_MODULE_47__["NewchequedepositComponent"], _cw_service_cw_service_component__WEBPACK_IMPORTED_MODULE_49__["CwServiceComponent"], _cheq_w_cheq_w_component__WEBPACK_IMPORTED_MODULE_50__["CheqWComponent"], _exit_screen_exit_screen_component__WEBPACK_IMPORTED_MODULE_51__["ExitScreenComponent"], _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_52__["FeedbackComponent"], _cd_service_cd_service_component__WEBPACK_IMPORTED_MODULE_53__["CdServiceComponent"], _cheq_d_cheq_d_component__WEBPACK_IMPORTED_MODULE_54__["CheqDComponent"], _scan_your_cheque_scan_your_cheque_component__WEBPACK_IMPORTED_MODULE_55__["ScanYourChequeComponent"], _capture_cheque_details_capture_cheque_details_component__WEBPACK_IMPORTED_MODULE_56__["CaptureChequeDetailsComponent"], _ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_57__["OcrScanPageComponent"], _forex_service_forex_service_component__WEBPACK_IMPORTED_MODULE_58__["ForexServiceComponent"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"], ngx_webcam__WEBPACK_IMPORTED_MODULE_58__["WebcamModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggleModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_7__["MatChipsModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_37__["MatDialogModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_16__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_17__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_18__["NgxDatatableModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_19__["ChartsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"].forRoot('de'), _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_others_routing__WEBPACK_IMPORTED_MODULE_22__["OthersRoutes"]), _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"], app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]],
+            declarations: [_app_blank_app_blank_component__WEBPACK_IMPORTED_MODULE_21__["AppBlankComponent"], _cheque_withdrawal_cheque_withdrawal_component__WEBPACK_IMPORTED_MODULE_23__["ChequeWithdrawalComponent"], _cheque_withdrawal1_cheque_withdrawal1_component__WEBPACK_IMPORTED_MODULE_24__["ChequeWithdrawal1Component"], _cash_withdrawal_cash_withdrawal_component__WEBPACK_IMPORTED_MODULE_25__["CashWithdrawalComponent"], _cash_deposit_cash_deposit_component__WEBPACK_IMPORTED_MODULE_26__["CashDepositComponent"], _cheque_deposit_cheque_deposit_component__WEBPACK_IMPORTED_MODULE_27__["ChequeDepositComponent"], _forex_transaction_forex_transaction_component__WEBPACK_IMPORTED_MODULE_28__["ForexTransactionComponent"], _loan_payment_loan_payment_component__WEBPACK_IMPORTED_MODULE_29__["LoanPaymentComponent"], _deposit_topup_deposit_topup_component__WEBPACK_IMPORTED_MODULE_30__["DepositTopupComponent"], _utility_billpayment_utility_billpayment_component__WEBPACK_IMPORTED_MODULE_31__["UtilityBillpaymentComponent"], _select_service_select_service_component__WEBPACK_IMPORTED_MODULE_32__["SelectServiceComponent"], _authenticate_authenticate_component__WEBPACK_IMPORTED_MODULE_35__["AuthenticateComponent"], _token_generation_token_generation_component__WEBPACK_IMPORTED_MODULE_38__["TokenGenerationComponent"], app_shared_directives_onlynumber_directive__WEBPACK_IMPORTED_MODULE_40__["OnlynumberDirective"], _search_search_component__WEBPACK_IMPORTED_MODULE_41__["SearchComponent"], _otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_42__["OtpVerifyComponent"], _appointment_id_appointment_id_component__WEBPACK_IMPORTED_MODULE_43__["AppointmentIdComponent"], _kiosk_homepage_kiosk_homepage_component__WEBPACK_IMPORTED_MODULE_44__["KioskHomepageComponent"], _newcashwithdrawal_newcashwithdrawal_component__WEBPACK_IMPORTED_MODULE_45__["NewcashwithdrawalComponent"], _newcashdeposit_newcashdeposit_component__WEBPACK_IMPORTED_MODULE_46__["NewcashdepositComponent"], _newchequedeposit_newchequedeposit_component__WEBPACK_IMPORTED_MODULE_47__["NewchequedepositComponent"], _cw_service_cw_service_component__WEBPACK_IMPORTED_MODULE_49__["CwServiceComponent"], _cheq_w_cheq_w_component__WEBPACK_IMPORTED_MODULE_50__["CheqWComponent"], _exit_screen_exit_screen_component__WEBPACK_IMPORTED_MODULE_51__["ExitScreenComponent"], _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_52__["FeedbackComponent"], _cd_service_cd_service_component__WEBPACK_IMPORTED_MODULE_53__["CdServiceComponent"], _cheq_d_cheq_d_component__WEBPACK_IMPORTED_MODULE_54__["CheqDComponent"], _scan_your_cheque_scan_your_cheque_component__WEBPACK_IMPORTED_MODULE_55__["ScanYourChequeComponent"], _capture_cheque_details_capture_cheque_details_component__WEBPACK_IMPORTED_MODULE_56__["CaptureChequeDetailsComponent"], _ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_57__["OcrScanPageComponent"], _forex_service_forex_service_component__WEBPACK_IMPORTED_MODULE_59__["ForexServiceComponent"]],
             entryComponents: [_authenticate_authenticate_component__WEBPACK_IMPORTED_MODULE_35__["AuthenticateComponent"], _token_generation_token_generation_component__WEBPACK_IMPORTED_MODULE_38__["TokenGenerationComponent"]]
           }]
         }], null, null);
@@ -14431,7 +16318,7 @@
         _createClass(CdServiceComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this57 = this;
+            var _this69 = this;
 
             localStorage.setItem('chq_page', this.title);
             this.custValidation = localStorage.getItem("customerValidation");
@@ -14456,25 +16343,29 @@
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
                 console.log("Account component?", transaction);
-                _this57.transactiondata = transaction;
+                _this69.transactiondata = transaction;
 
-                if (_this57.transactiondata.transactionAmount) {
-                  _this57.displayDenom = true;
+                if (_this69.transactiondata.transactionAmount) {
+                  _this69.displayDenom = true;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this57.denominationdata = denomination;
+                _this69.denominationdata = denomination;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 console.log("Account component?", data);
-                _this57.appointmentDetails = data;
-                console.log("Account component?", _this57.appointmentDetails.appointmentId);
+                _this69.appointmentDetails = data;
+                console.log("Account component?", _this69.appointmentDetails.appointmentId);
               }
+            });
+            this.dataService.getNavParam.subscribe(function (title) {
+              console.log(title);
+              _this69.titleData = title;
             });
           }
         }, {
@@ -14505,12 +16396,13 @@
             this.dataService.removetransactionFormData(this.transactiondata);
             this.dataService.removeaccountFormData(this.appointmentDetails);
             this.dataService.removedenominationFormData(this.denominationdata);
+            this.dataService.removeNavParam(this.titleData);
             this.router.navigateByUrl('/others/kioskHome');
           }
         }, {
           key: "onSaveofcashDeposit",
           value: function onSaveofcashDeposit(form, type, cdForm) {
-            var _this58 = this;
+            var _this70 = this;
 
             var _a; //formData.transactionBranch = this.transBranch;
 
@@ -14520,7 +16412,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this58.qrBranchCode = response;
+                  _this70.qrBranchCode = response;
                 });
               }
             }
@@ -14624,22 +16516,22 @@
 
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this58.cashWithdrawResponse = cashWithdrawResp;
-              _this58.tokenNum = _this58.cashWithdrawResponse.tokenNumber;
-              _this58.estimatedTime = _this58.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this58.tokenNum);
-              localStorage.setItem("estimatedTiming", _this58.estimatedTime);
-              _this58.enableContinue = false;
+              _this70.cashWithdrawResponse = cashWithdrawResp;
+              _this70.tokenNum = _this70.cashWithdrawResponse.tokenNumber;
+              _this70.estimatedTime = _this70.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this70.tokenNum);
+              localStorage.setItem("estimatedTiming", _this70.estimatedTime);
+              _this70.enableContinue = false;
 
-              if (_this58.cashWithdrawResponse) {
-                _this58.dialogService.tokenGenerationDialog();
+              if (_this70.cashWithdrawResponse) {
+                _this70.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this59 = this;
+            var _this71 = this;
 
             console.log("Get Otp", formData, type);
             this.phonenum = this.ls.getItem('phonenumFromLogin');
@@ -14660,9 +16552,9 @@
                 if (otpResp) {
                   console.log('otp2', otpResp);
 
-                  _this59.openDialogOTP(_this59.phonenum);
+                  _this71.openDialogOTP(_this71.phonenum);
 
-                  _this59.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this71.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -14682,7 +16574,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this60 = this;
+            var _this72 = this;
 
             console.log("num", numbr);
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_8__["OtpVerifyComponent"], {
@@ -14694,14 +16586,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this60.getOTPforSave(_this60.cashdepositValues, _this60.cashdepositType, '');
+                _this72.getOTPforSave(_this72.cashdepositValues, _this72.cashdepositType, '');
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this61 = this;
+            var _this73 = this;
 
             console.log(formData);
             var denominationData = {};
@@ -14753,15 +16645,15 @@
             console.log("before api call :: ", this.Token);
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this61.cashDepositResponse = cashDepositResp;
-              _this61.tokenNum = _this61.cashDepositResponse.tokenNumber;
-              _this61.estimatedTime = _this61.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this61.tokenNum);
-              localStorage.setItem("estimatedTiming", _this61.estimatedTime);
-              _this61.enableContinue = false;
+              _this73.cashDepositResponse = cashDepositResp;
+              _this73.tokenNum = _this73.cashDepositResponse.tokenNumber;
+              _this73.estimatedTime = _this73.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this73.tokenNum);
+              localStorage.setItem("estimatedTiming", _this73.estimatedTime);
+              _this73.enableContinue = false;
 
-              if (_this61.cashDepositResponse) {
-                _this61.dialogService.tokenGenerationDialog();
+              if (_this73.cashDepositResponse) {
+                _this73.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -14983,7 +16875,7 @@
         _createClass(HeaderComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this62 = this;
+            var _this74 = this;
 
             this.chqPage = localStorage.getItem('chq_page');
             this.appointmentId = this.ls.getItem("TransactionType");
@@ -14991,20 +16883,24 @@
             this.custNameFromLogin = localStorage.getItem("FromLogin");
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
-                _this62.transactiondata = transaction;
+                _this74.transactiondata = transaction;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (account) {
               console.log(Object.keys(account).length === 0, account.constructor === Object);
 
               if (Object.keys(account).length != 0 && account.constructor === Object) {
-                _this62.accountData = account;
+                _this74.accountData = account;
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
-                _this62.denominationdata = denomination;
+                _this74.denominationdata = denomination;
               }
+            });
+            this.dataService.getNavParam.subscribe(function (title) {
+              console.log(title);
+              _this74.titleData = title;
             });
           }
         }, {
@@ -15048,6 +16944,7 @@
             this.dataService.removetransactionFormData(this.transactiondata);
             this.dataService.removeaccountFormData(this.accountData);
             this.dataService.removedenominationFormData(this.denominationdata);
+            this.dataService.removeNavParam(this.titleData);
 
             this._location.back();
           }
@@ -15135,6 +17032,940 @@
           }]
         });
       })();
+      /***/
+
+    },
+
+    /***/
+    "QKVY":
+    /*!*********************************************************************!*\
+      !*** ./node_modules/ngx-webcam/__ivy_ngcc__/fesm2015/ngx-webcam.js ***!
+      \*********************************************************************/
+
+    /*! exports provided: WebcamComponent, WebcamImage, WebcamInitError, WebcamMirrorProperties, WebcamModule, WebcamUtil */
+
+    /***/
+    function QKVY(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "WebcamComponent", function () {
+        return WebcamComponent;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "WebcamImage", function () {
+        return WebcamImage;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "WebcamInitError", function () {
+        return WebcamInitError;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "WebcamMirrorProperties", function () {
+        return WebcamMirrorProperties;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "WebcamModule", function () {
+        return WebcamModule;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "WebcamUtil", function () {
+        return WebcamUtil;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /**
+       * Container class for a captured webcam image
+       * @author basst314, davidshen84
+       */
+
+
+      var _c0 = ["video"];
+      var _c1 = ["canvas"];
+
+      function WebcamComponent_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WebcamComponent_div_3_Template_div_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
+
+            var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r3.rotateVideoInput(true);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      var WebcamImage = /*#__PURE__*/function () {
+        function WebcamImage(imageAsDataUrl, mimeType, imageData) {
+          _classCallCheck(this, WebcamImage);
+
+          this._mimeType = null;
+          this._imageAsBase64 = null;
+          this._imageAsDataUrl = null;
+          this._imageData = null;
+          this._mimeType = mimeType;
+          this._imageAsDataUrl = imageAsDataUrl;
+          this._imageData = imageData;
+        }
+        /**
+         * Extracts the Base64 data out of the given dataUrl.
+         * @param dataUrl the given dataUrl
+         * @param mimeType the mimeType of the data
+         */
+
+
+        _createClass(WebcamImage, [{
+          key: "imageAsBase64",
+          get:
+          /**
+           * Get the base64 encoded image data
+           * @returns base64 data of the image
+           */
+          function get() {
+            return this._imageAsBase64 ? this._imageAsBase64 : this._imageAsBase64 = WebcamImage.getDataFromDataUrl(this._imageAsDataUrl, this._mimeType);
+          }
+          /**
+           * Get the encoded image as dataUrl
+           * @returns the dataUrl of the image
+           */
+
+        }, {
+          key: "imageAsDataUrl",
+          get: function get() {
+            return this._imageAsDataUrl;
+          }
+          /**
+           * Get the ImageData object associated with the canvas' 2d context.
+           * @returns the ImageData of the canvas's 2d context.
+           */
+
+        }, {
+          key: "imageData",
+          get: function get() {
+            return this._imageData;
+          }
+        }], [{
+          key: "getDataFromDataUrl",
+          value: function getDataFromDataUrl(dataUrl, mimeType) {
+            return dataUrl.replace("data:".concat(mimeType, ";base64,"), '');
+          }
+        }]);
+
+        return WebcamImage;
+      }();
+
+      var WebcamUtil = /*#__PURE__*/function () {
+        function WebcamUtil() {
+          _classCallCheck(this, WebcamUtil);
+        }
+
+        _createClass(WebcamUtil, null, [{
+          key: "getAvailableVideoInputs",
+          value:
+          /**
+           * Lists available videoInput devices
+           * @returns a list of media device info.
+           */
+          function getAvailableVideoInputs() {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+              return Promise.reject('enumerateDevices() not supported.');
+            }
+
+            return new Promise(function (resolve, reject) {
+              navigator.mediaDevices.enumerateDevices().then(function (devices) {
+                resolve(devices.filter(function (device) {
+                  return device.kind === 'videoinput';
+                }));
+              })["catch"](function (err) {
+                reject(err.message || err);
+              });
+            });
+          }
+        }]);
+
+        return WebcamUtil;
+      }();
+
+      var WebcamComponent = /*#__PURE__*/function () {
+        function WebcamComponent() {
+          _classCallCheck(this, WebcamComponent);
+
+          /** Defines the max width of the webcam area in px */
+          this.width = 640;
+          /** Defines the max height of the webcam area in px */
+
+          this.height = 480;
+          /** Defines base constraints to apply when requesting video track from UserMedia */
+
+          this.videoOptions = WebcamComponent.DEFAULT_VIDEO_OPTIONS;
+          /** Flag to enable/disable camera switch. If enabled, a switch icon will be displayed if multiple cameras were found */
+
+          this.allowCameraSwitch = true;
+          /** Flag to control whether an ImageData object is stored into the WebcamImage object. */
+
+          this.captureImageData = false;
+          /** The image type to use when capturing snapshots */
+
+          this.imageType = WebcamComponent.DEFAULT_IMAGE_TYPE;
+          /** The image quality to use when capturing snapshots (number between 0 and 1) */
+
+          this.imageQuality = WebcamComponent.DEFAULT_IMAGE_QUALITY;
+          /** EventEmitter which fires when an image has been captured */
+
+          this.imageCapture = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+          /** Emits a mediaError if webcam cannot be initialized (e.g. missing user permissions) */
+
+          this.initError = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+          /** Emits when the webcam video was clicked */
+
+          this.imageClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+          /** Emits the active deviceId after the active video device was switched */
+
+          this.cameraSwitched = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+          /** available video devices */
+
+          this.availableVideoInputs = [];
+          /** Indicates whether the video device is ready to be switched */
+
+          this.videoInitialized = false;
+          /** Index of active video in availableVideoInputs */
+
+          this.activeVideoInputIndex = -1;
+          /** MediaStream object in use for streaming UserMedia data */
+
+          this.mediaStream = null;
+          /** width and height of the active video stream */
+
+          this.activeVideoSettings = null;
+        }
+        /**
+         * If the given Observable emits, an image will be captured and emitted through 'imageCapture' EventEmitter
+         */
+
+
+        _createClass(WebcamComponent, [{
+          key: "trigger",
+          set: function set(trigger) {
+            var _this75 = this;
+
+            if (this.triggerSubscription) {
+              this.triggerSubscription.unsubscribe();
+            } // Subscribe to events from this Observable to take snapshots
+
+
+            this.triggerSubscription = trigger.subscribe(function () {
+              _this75.takeSnapshot();
+            });
+          }
+          /**
+           * If the given Observable emits, the active webcam will be switched to the one indicated by the emitted value.
+           * @param switchCamera Indicates which webcam to switch to
+           *   true: cycle forwards through available webcams
+           *   false: cycle backwards through available webcams
+           *   string: activate the webcam with the given id
+           */
+
+        }, {
+          key: "switchCamera",
+          set: function set(switchCamera) {
+            var _this76 = this;
+
+            if (this.switchCameraSubscription) {
+              this.switchCameraSubscription.unsubscribe();
+            } // Subscribe to events from this Observable to switch video device
+
+
+            this.switchCameraSubscription = switchCamera.subscribe(function (value) {
+              if (typeof value === 'string') {
+                // deviceId was specified
+                _this76.switchToVideoInput(value);
+              } else {
+                // direction was specified
+                _this76.rotateVideoInput(value !== false);
+              }
+            });
+          }
+          /**
+           * Get MediaTrackConstraints to request streaming the given device
+           * @param deviceId
+           * @param baseMediaTrackConstraints base constraints to merge deviceId-constraint into
+           * @returns
+           */
+
+        }, {
+          key: "ngAfterViewInit",
+          value: function ngAfterViewInit() {
+            var _this77 = this;
+
+            this.detectAvailableDevices().then(function () {
+              // start video
+              _this77.switchToVideoInput(null);
+            })["catch"](function (err) {
+              _this77.initError.next({
+                message: err
+              }); // fallback: still try to load webcam, even if device enumeration failed
+
+
+              _this77.switchToVideoInput(null);
+            });
+          }
+        }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            this.stopMediaTracks();
+            this.unsubscribeFromSubscriptions();
+          }
+          /**
+           * Takes a snapshot of the current webcam's view and emits the image as an event
+           */
+
+        }, {
+          key: "takeSnapshot",
+          value: function takeSnapshot() {
+            // set canvas size to actual video size
+            var _video = this.nativeVideoElement;
+            var dimensions = {
+              width: this.width,
+              height: this.height
+            };
+
+            if (_video.videoWidth) {
+              dimensions.width = _video.videoWidth;
+              dimensions.height = _video.videoHeight;
+            }
+
+            var _canvas = this.canvas.nativeElement;
+            _canvas.width = dimensions.width;
+            _canvas.height = dimensions.height; // paint snapshot image to canvas
+
+            var context2d = _canvas.getContext('2d');
+
+            context2d.drawImage(_video, 0, 0); // read canvas content as image
+
+            var mimeType = this.imageType ? this.imageType : WebcamComponent.DEFAULT_IMAGE_TYPE;
+            var quality = this.imageQuality ? this.imageQuality : WebcamComponent.DEFAULT_IMAGE_QUALITY;
+
+            var dataUrl = _canvas.toDataURL(mimeType, quality); // get the ImageData object from the canvas' context.
+
+
+            var imageData = null;
+
+            if (this.captureImageData) {
+              imageData = context2d.getImageData(0, 0, _canvas.width, _canvas.height);
+            }
+
+            this.imageCapture.next(new WebcamImage(dataUrl, mimeType, imageData));
+          }
+          /**
+           * Switches to the next/previous video device
+           * @param forward
+           */
+
+        }, {
+          key: "rotateVideoInput",
+          value: function rotateVideoInput(forward) {
+            if (this.availableVideoInputs && this.availableVideoInputs.length > 1) {
+              var increment = forward ? 1 : this.availableVideoInputs.length - 1;
+              var nextInputIndex = (this.activeVideoInputIndex + increment) % this.availableVideoInputs.length;
+              this.switchToVideoInput(this.availableVideoInputs[nextInputIndex].deviceId);
+            }
+          }
+          /**
+           * Switches the camera-view to the specified video device
+           */
+
+        }, {
+          key: "switchToVideoInput",
+          value: function switchToVideoInput(deviceId) {
+            this.videoInitialized = false;
+            this.stopMediaTracks();
+            this.initWebcam(deviceId, this.videoOptions);
+          }
+          /**
+           * Event-handler for video resize event.
+           * Triggers Angular change detection so that new video dimensions get applied
+           */
+
+        }, {
+          key: "videoResize",
+          value: function videoResize() {// here to trigger Angular change detection
+          }
+        }, {
+          key: "videoWidth",
+          get: function get() {
+            var videoRatio = this.getVideoAspectRatio();
+            return Math.min(this.width, this.height * videoRatio);
+          }
+        }, {
+          key: "videoHeight",
+          get: function get() {
+            var videoRatio = this.getVideoAspectRatio();
+            return Math.min(this.height, this.width / videoRatio);
+          }
+        }, {
+          key: "videoStyleClasses",
+          get: function get() {
+            var classes = '';
+
+            if (this.isMirrorImage()) {
+              classes += 'mirrored ';
+            }
+
+            return classes.trim();
+          }
+        }, {
+          key: "nativeVideoElement",
+          get: function get() {
+            return this.video.nativeElement;
+          }
+          /**
+           * Returns the video aspect ratio of the active video stream
+           */
+
+        }, {
+          key: "getVideoAspectRatio",
+          value: function getVideoAspectRatio() {
+            // calculate ratio from video element dimensions if present
+            var videoElement = this.nativeVideoElement;
+
+            if (videoElement.videoWidth && videoElement.videoWidth > 0 && videoElement.videoHeight && videoElement.videoHeight > 0) {
+              return videoElement.videoWidth / videoElement.videoHeight;
+            } // nothing present - calculate ratio based on width/height params
+
+
+            return this.width / this.height;
+          }
+          /**
+           * Init webcam live view
+           */
+
+        }, {
+          key: "initWebcam",
+          value: function initWebcam(deviceId, userVideoTrackConstraints) {
+            var _this78 = this;
+
+            var _video = this.nativeVideoElement;
+
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+              // merge deviceId -> userVideoTrackConstraints
+              var videoTrackConstraints = WebcamComponent.getMediaConstraintsForDevice(deviceId, userVideoTrackConstraints);
+              navigator.mediaDevices.getUserMedia({
+                video: videoTrackConstraints
+              }).then(function (stream) {
+                _this78.mediaStream = stream;
+                _video.srcObject = stream;
+
+                _video.play();
+
+                _this78.activeVideoSettings = stream.getVideoTracks()[0].getSettings();
+                var activeDeviceId = WebcamComponent.getDeviceIdFromMediaStreamTrack(stream.getVideoTracks()[0]);
+
+                _this78.cameraSwitched.next(activeDeviceId); // Initial detect may run before user gave permissions, returning no deviceIds. This prevents later camera switches. (#47)
+                // Run detect once again within getUserMedia callback, to make sure this time we have permissions and get deviceIds.
+
+
+                _this78.detectAvailableDevices().then(function () {
+                  _this78.activeVideoInputIndex = activeDeviceId ? _this78.availableVideoInputs.findIndex(function (mediaDeviceInfo) {
+                    return mediaDeviceInfo.deviceId === activeDeviceId;
+                  }) : -1;
+                  _this78.videoInitialized = true;
+                })["catch"](function () {
+                  _this78.activeVideoInputIndex = -1;
+                  _this78.videoInitialized = true;
+                });
+              })["catch"](function (err) {
+                _this78.initError.next({
+                  message: err.message,
+                  mediaStreamError: err
+                });
+              });
+            } else {
+              this.initError.next({
+                message: 'Cannot read UserMedia from MediaDevices.'
+              });
+            }
+          }
+        }, {
+          key: "getActiveVideoTrack",
+          value: function getActiveVideoTrack() {
+            return this.mediaStream ? this.mediaStream.getVideoTracks()[0] : null;
+          }
+        }, {
+          key: "isMirrorImage",
+          value: function isMirrorImage() {
+            if (!this.getActiveVideoTrack()) {
+              return false;
+            } // check for explicit mirror override parameter
+
+
+            {
+              var mirror = 'auto';
+
+              if (this.mirrorImage) {
+                if (typeof this.mirrorImage === 'string') {
+                  mirror = String(this.mirrorImage).toLowerCase();
+                } else {
+                  // WebcamMirrorProperties
+                  if (this.mirrorImage.x) {
+                    mirror = this.mirrorImage.x.toLowerCase();
+                  }
+                }
+              }
+
+              switch (mirror) {
+                case 'always':
+                  return true;
+
+                case 'never':
+                  return false;
+              }
+            } // default: enable mirroring if webcam is user facing
+
+            return WebcamComponent.isUserFacing(this.getActiveVideoTrack());
+          }
+          /**
+           * Stops all active media tracks.
+           * This prevents the webcam from being indicated as active,
+           * even if it is no longer used by this component.
+           */
+
+        }, {
+          key: "stopMediaTracks",
+          value: function stopMediaTracks() {
+            if (this.mediaStream && this.mediaStream.getTracks) {
+              // getTracks() returns all media tracks (video+audio)
+              this.mediaStream.getTracks().forEach(function (track) {
+                return track.stop();
+              });
+            }
+          }
+          /**
+           * Unsubscribe from all open subscriptions
+           */
+
+        }, {
+          key: "unsubscribeFromSubscriptions",
+          value: function unsubscribeFromSubscriptions() {
+            if (this.triggerSubscription) {
+              this.triggerSubscription.unsubscribe();
+            }
+
+            if (this.switchCameraSubscription) {
+              this.switchCameraSubscription.unsubscribe();
+            }
+          }
+          /**
+           * Reads available input devices
+           */
+
+        }, {
+          key: "detectAvailableDevices",
+          value: function detectAvailableDevices() {
+            var _this79 = this;
+
+            return new Promise(function (resolve, reject) {
+              WebcamUtil.getAvailableVideoInputs().then(function (devices) {
+                _this79.availableVideoInputs = devices;
+                resolve(devices);
+              })["catch"](function (err) {
+                _this79.availableVideoInputs = [];
+                reject(err);
+              });
+            });
+          }
+        }], [{
+          key: "getMediaConstraintsForDevice",
+          value: function getMediaConstraintsForDevice(deviceId, baseMediaTrackConstraints) {
+            var result = baseMediaTrackConstraints ? baseMediaTrackConstraints : this.DEFAULT_VIDEO_OPTIONS;
+
+            if (deviceId) {
+              result.deviceId = {
+                exact: deviceId
+              };
+            }
+
+            return result;
+          }
+          /**
+           * Tries to harvest the deviceId from the given mediaStreamTrack object.
+           * Browsers populate this object differently; this method tries some different approaches
+           * to read the id.
+           * @param mediaStreamTrack
+           * @returns deviceId if found in the mediaStreamTrack
+           */
+
+        }, {
+          key: "getDeviceIdFromMediaStreamTrack",
+          value: function getDeviceIdFromMediaStreamTrack(mediaStreamTrack) {
+            if (mediaStreamTrack.getSettings && mediaStreamTrack.getSettings() && mediaStreamTrack.getSettings().deviceId) {
+              return mediaStreamTrack.getSettings().deviceId;
+            } else if (mediaStreamTrack.getConstraints && mediaStreamTrack.getConstraints() && mediaStreamTrack.getConstraints().deviceId) {
+              var deviceIdObj = mediaStreamTrack.getConstraints().deviceId;
+              return WebcamComponent.getValueFromConstrainDOMString(deviceIdObj);
+            }
+          }
+          /**
+           * Tries to harvest the facingMode from the given mediaStreamTrack object.
+           * Browsers populate this object differently; this method tries some different approaches
+           * to read the value.
+           * @param mediaStreamTrack
+           * @returns facingMode if found in the mediaStreamTrack
+           */
+
+        }, {
+          key: "getFacingModeFromMediaStreamTrack",
+          value: function getFacingModeFromMediaStreamTrack(mediaStreamTrack) {
+            if (mediaStreamTrack) {
+              if (mediaStreamTrack.getSettings && mediaStreamTrack.getSettings() && mediaStreamTrack.getSettings().facingMode) {
+                return mediaStreamTrack.getSettings().facingMode;
+              } else if (mediaStreamTrack.getConstraints && mediaStreamTrack.getConstraints() && mediaStreamTrack.getConstraints().facingMode) {
+                var facingModeConstraint = mediaStreamTrack.getConstraints().facingMode;
+                return WebcamComponent.getValueFromConstrainDOMString(facingModeConstraint);
+              }
+            }
+          }
+          /**
+           * Determines whether the given mediaStreamTrack claims itself as user facing
+           * @param mediaStreamTrack
+           */
+
+        }, {
+          key: "isUserFacing",
+          value: function isUserFacing(mediaStreamTrack) {
+            var facingMode = WebcamComponent.getFacingModeFromMediaStreamTrack(mediaStreamTrack);
+            return facingMode ? 'user' === facingMode.toLowerCase() : false;
+          }
+          /**
+           * Extracts the value from the given ConstrainDOMString
+           * @param constrainDOMString
+           */
+
+        }, {
+          key: "getValueFromConstrainDOMString",
+          value: function getValueFromConstrainDOMString(constrainDOMString) {
+            if (constrainDOMString) {
+              if (constrainDOMString instanceof String) {
+                return String(constrainDOMString);
+              } else if (Array.isArray(constrainDOMString) && Array(constrainDOMString).length > 0) {
+                return String(constrainDOMString[0]);
+              } else if (typeof constrainDOMString === 'object') {
+                if (constrainDOMString['exact']) {
+                  return String(constrainDOMString['exact']);
+                } else if (constrainDOMString['ideal']) {
+                  return String(constrainDOMString['ideal']);
+                }
+              }
+            }
+
+            return null;
+          }
+        }]);
+
+        return WebcamComponent;
+      }();
+
+      WebcamComponent.ɵfac = function WebcamComponent_Factory(t) {
+        return new (t || WebcamComponent)();
+      };
+
+      WebcamComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: WebcamComponent,
+        selectors: [["webcam"]],
+        viewQuery: function WebcamComponent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstaticViewQuery"](_c0, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstaticViewQuery"](_c1, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.video = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.canvas = _t.first);
+          }
+        },
+        inputs: {
+          width: "width",
+          height: "height",
+          videoOptions: "videoOptions",
+          allowCameraSwitch: "allowCameraSwitch",
+          captureImageData: "captureImageData",
+          imageType: "imageType",
+          imageQuality: "imageQuality",
+          trigger: "trigger",
+          switchCamera: "switchCamera",
+          mirrorImage: "mirrorImage"
+        },
+        outputs: {
+          imageCapture: "imageCapture",
+          initError: "initError",
+          imageClick: "imageClick",
+          cameraSwitched: "cameraSwitched"
+        },
+        decls: 6,
+        vars: 7,
+        consts: [[1, "webcam-wrapper", 3, "click"], ["autoplay", "", "muted", "", "playsinline", "", 3, "width", "height", "resize"], ["video", ""], ["class", "camera-switch", 3, "click", 4, "ngIf"], [3, "width", "height"], ["canvas", ""], [1, "camera-switch", 3, "click"]],
+        template: function WebcamComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WebcamComponent_Template_div_click_0_listener() {
+              return ctx.imageClick.next();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "video", 1, 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("resize", function WebcamComponent_Template_video_resize_1_listener() {
+              return ctx.videoResize();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WebcamComponent_div_3_Template, 1, 0, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "canvas", 4, 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.videoStyleClasses);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("width", ctx.videoWidth)("height", ctx.videoHeight);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.allowCameraSwitch && ctx.availableVideoInputs.length > 1 && ctx.videoInitialized);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("width", ctx.width)("height", ctx.height);
+          }
+        },
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"]],
+        styles: [".webcam-wrapper[_ngcontent-%COMP%]{display:inline-block;line-height:0;position:relative}.webcam-wrapper[_ngcontent-%COMP%]   video.mirrored[_ngcontent-%COMP%]{transform:scaleX(-1)}.webcam-wrapper[_ngcontent-%COMP%]   canvas[_ngcontent-%COMP%]{display:none}.webcam-wrapper[_ngcontent-%COMP%]   .camera-switch[_ngcontent-%COMP%]{background-color:rgba(0,0,0,.1);background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAE9UlEQVR42u2aT2hdRRTGf+cRQqghSqihdBFDkRISK2KDfzDWxHaRQHEhaINKqa1gKQhd6EZLN+IidCH+Q0oWIkVRC21BQxXRitVaSbKoJSGtYGoK2tQ/tU1jY5v0c5F54Xl7b/KSO/PyEt+3e5f75p7zzZwzZ74zUEIJJfyfYaEGllQGVAGZlENdBy6Z2cSiYFTSKkkfS/pH/nBF0kFJdUW9AiRVASeAukD8DgNrzOySrwEzng18KaDzALXuG8W3AiStAvqBisBRNg40mtlPxbYCOgvgPO4bncWW+JpVeDQXRQhIygDfA00F5r0XuNfMrgclQFI98DDQCNQA5ZFXqoCWBVp8XwHRHeEqcN7loy/NbHBesyqpQ1KfFj/6nC+ZvFaApFrgPaCZpYVvgCfNbDiRAElNwGFg+RIt/X8H2s2s9wYCJDUAR4HqJX7++RN40MwGpgmQVAH0AQ2BPz4AHHPl8nBOAqtyFWQjsA6oL4Ada81sPDv7uwImod8kvSJp9RyS8O2SXnb/DYVd2Y9VSroQ4ANXJO2WVJmixqh0kzMWwL4LkiqRtDnA4D1zmfE8j9g9AezcnAHaPcfXdbfdnPZ2Yps6+DwAvO/Z1naTdApY7Xng48BDZnY1MpMVQBuw3iXc5Tnb0wBwBPjUzP6eoezuArZ6svM0geJLkvZEYnl3nkntoqROSbckSW2Suj3ZOIangc7GPJuUtNGdFIfmMeavktoSSKiW9LMPw30Q8JqkekmjCbOZRhuclLQjgYSNxUBAj6RyZ9ATgUJpUtJTCSR8vpAEXHAyWK5BXYFIGHOlepSAloUk4NEYgyoknQhEwhFJ0e8h6VSaQeerCb5uZgdi9utxYBNwOUD93hIVXswM4INCi6K9wAszFC2DwLOBDjHbYp59karIUnRdzYy/3ClqVklaUhfwTICj7K25OqA7a4wWagVsm4Me/xzwg2cCqqONFzO7DPxSCAJi436GUBgHHguQD2oTlJ55oSzP9ybccsttSJw1szdjFOSnI/8dTCGZHwcORp4Nx7y3B1iZ8/sm4MW8/Euxg5wIsS/HaAp3zeP4/G7obRDXI4jiTIA22H7Xdc7X+S3A5lC7QBQ357aq3VAjCeSkwUfAJrfvz+R8A9ADLAtZB+TinpjC5JMA+//jwPZZnF8G7J+L8z4IWB/zbG+gIujVWfLBW/NStVMmqaG4POJRsIjix7h8IGnLQuoBbQki5sVAJHyYm7YkNaRRtXwQ8G1cHpX0iKRrgUjYno17Sf0LrQhJUkdCeHWkVITGJI0k1QeS3ikGSUzOyJUJJNznYneuOCnpTldcxa2kP3xJYqOeSDjqZG8ShJLnE8TTuMS6Iyu1BW7djZqkfo9N0QOuYJmYQddfB7RG+gLTNzqAY9FrL+5/nwEbvDdJJe3zzOrhNP3AWRqmk55t3ZcBuj3b2gb0Sbrbo/NNzk7fFzu7s/E5EiC+rrmeQU0Kx2skvRFoOx2ZzlmSdgbsw49JetvtBpk8nM64d/cGbNtJ0s7cGyJlwHeEv+t3nqnLSgPAUOSGyG3AHUxdzqoJbEcvcL+ZTeTeEapzJKxgaeOcc/7Mf06D7kFrguS0VDAMtGadv+E47DT9tcChJej8ISfpD+abgTe45uOkFi8mnQ+JBVQ+d4VXuOptjavcyot8pq86mfwk8LWZnaOEEkoooYQSSojDv8AhQNeGfe0jAAAAAElFTkSuQmCC\");background-position:50%;background-repeat:no-repeat;background-size:80%;border-radius:5px;cursor:pointer;height:48px;position:absolute;right:13px;top:10px;transition:background-color .2s ease;width:48px}.webcam-wrapper[_ngcontent-%COMP%]   .camera-switch[_ngcontent-%COMP%]:hover{background-color:rgba(0,0,0,.18)}"]
+      });
+      WebcamComponent.DEFAULT_VIDEO_OPTIONS = {
+        facingMode: 'environment'
+      };
+      WebcamComponent.DEFAULT_IMAGE_TYPE = 'image/jpeg';
+      WebcamComponent.DEFAULT_IMAGE_QUALITY = 0.92;
+      WebcamComponent.propDecorators = {
+        width: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        height: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        videoOptions: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        allowCameraSwitch: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        mirrorImage: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        captureImageData: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        imageType: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        imageQuality: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        imageCapture: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        initError: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        imageClick: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        cameraSwitched: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        video: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ['video', {
+            "static": true
+          }]
+        }],
+        canvas: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ['canvas', {
+            "static": true
+          }]
+        }],
+        trigger: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        switchCamera: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }]
+      };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](WebcamComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'webcam',
+            template: "<div class=\"webcam-wrapper\" (click)=\"imageClick.next();\">\r\n  <video #video [width]=\"videoWidth\" [height]=\"videoHeight\" [class]=\"videoStyleClasses\" autoplay muted playsinline (resize)=\"videoResize()\"></video>\r\n  <div class=\"camera-switch\" *ngIf=\"allowCameraSwitch && availableVideoInputs.length > 1 && videoInitialized\" (click)=\"rotateVideoInput(true)\"></div>\r\n  <canvas #canvas [width]=\"width\" [height]=\"height\"></canvas>\r\n</div>\r\n",
+            styles: [".webcam-wrapper{display:inline-block;line-height:0;position:relative}.webcam-wrapper video.mirrored{transform:scaleX(-1)}.webcam-wrapper canvas{display:none}.webcam-wrapper .camera-switch{background-color:rgba(0,0,0,.1);background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAE9UlEQVR42u2aT2hdRRTGf+cRQqghSqihdBFDkRISK2KDfzDWxHaRQHEhaINKqa1gKQhd6EZLN+IidCH+Q0oWIkVRC21BQxXRitVaSbKoJSGtYGoK2tQ/tU1jY5v0c5F54Xl7b/KSO/PyEt+3e5f75p7zzZwzZ74zUEIJJfyfYaEGllQGVAGZlENdBy6Z2cSiYFTSKkkfS/pH/nBF0kFJdUW9AiRVASeAukD8DgNrzOySrwEzng18KaDzALXuG8W3AiStAvqBisBRNg40mtlPxbYCOgvgPO4bncWW+JpVeDQXRQhIygDfA00F5r0XuNfMrgclQFI98DDQCNQA5ZFXqoCWBVp8XwHRHeEqcN7loy/NbHBesyqpQ1KfFj/6nC+ZvFaApFrgPaCZpYVvgCfNbDiRAElNwGFg+RIt/X8H2s2s9wYCJDUAR4HqJX7++RN40MwGpgmQVAH0AQ2BPz4AHHPl8nBOAqtyFWQjsA6oL4Ada81sPDv7uwImod8kvSJp9RyS8O2SXnb/DYVd2Y9VSroQ4ANXJO2WVJmixqh0kzMWwL4LkiqRtDnA4D1zmfE8j9g9AezcnAHaPcfXdbfdnPZ2Yps6+DwAvO/Z1naTdApY7Xng48BDZnY1MpMVQBuw3iXc5Tnb0wBwBPjUzP6eoezuArZ6svM0geJLkvZEYnl3nkntoqROSbckSW2Suj3ZOIangc7GPJuUtNGdFIfmMeavktoSSKiW9LMPw30Q8JqkekmjCbOZRhuclLQjgYSNxUBAj6RyZ9ATgUJpUtJTCSR8vpAEXHAyWK5BXYFIGHOlepSAloUk4NEYgyoknQhEwhFJ0e8h6VSaQeerCb5uZgdi9utxYBNwOUD93hIVXswM4INCi6K9wAszFC2DwLOBDjHbYp59karIUnRdzYy/3ClqVklaUhfwTICj7K25OqA7a4wWagVsm4Me/xzwg2cCqqONFzO7DPxSCAJi436GUBgHHguQD2oTlJ55oSzP9ybccsttSJw1szdjFOSnI/8dTCGZHwcORp4Nx7y3B1iZ8/sm4MW8/Euxg5wIsS/HaAp3zeP4/G7obRDXI4jiTIA22H7Xdc7X+S3A5lC7QBQ357aq3VAjCeSkwUfAJrfvz+R8A9ADLAtZB+TinpjC5JMA+//jwPZZnF8G7J+L8z4IWB/zbG+gIujVWfLBW/NStVMmqaG4POJRsIjix7h8IGnLQuoBbQki5sVAJHyYm7YkNaRRtXwQ8G1cHpX0iKRrgUjYno17Sf0LrQhJUkdCeHWkVITGJI0k1QeS3ikGSUzOyJUJJNznYneuOCnpTldcxa2kP3xJYqOeSDjqZG8ShJLnE8TTuMS6Iyu1BW7djZqkfo9N0QOuYJmYQddfB7RG+gLTNzqAY9FrL+5/nwEbvDdJJe3zzOrhNP3AWRqmk55t3ZcBuj3b2gb0Sbrbo/NNzk7fFzu7s/E5EiC+rrmeQU0Kx2skvRFoOx2ZzlmSdgbsw49JetvtBpk8nM64d/cGbNtJ0s7cGyJlwHeEv+t3nqnLSgPAUOSGyG3AHUxdzqoJbEcvcL+ZTeTeEapzJKxgaeOcc/7Mf06D7kFrguS0VDAMtGadv+E47DT9tcChJej8ISfpD+abgTe45uOkFi8mnQ+JBVQ+d4VXuOptjavcyot8pq86mfwk8LWZnaOEEkoooYQSSojDv8AhQNeGfe0jAAAAAElFTkSuQmCC\");background-position:50%;background-repeat:no-repeat;background-size:80%;border-radius:5px;cursor:pointer;height:48px;position:absolute;right:13px;top:10px;transition:background-color .2s ease;width:48px}.webcam-wrapper .camera-switch:hover{background-color:rgba(0,0,0,.18)}"]
+          }]
+        }], function () {
+          return [];
+        }, {
+          width: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          height: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          videoOptions: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          allowCameraSwitch: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          captureImageData: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          imageType: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          imageQuality: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          imageCapture: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+          }],
+          initError: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+          }],
+          imageClick: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+          }],
+          cameraSwitched: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+          }],
+          trigger: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          switchCamera: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          mirrorImage: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+          }],
+          video: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: ['video', {
+              "static": true
+            }]
+          }],
+          canvas: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: ['canvas', {
+              "static": true
+            }]
+          }]
+        });
+      })();
+
+      var COMPONENTS = [WebcamComponent];
+
+      var WebcamModule = function WebcamModule() {
+        _classCallCheck(this, WebcamModule);
+      };
+
+      WebcamModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+        type: WebcamModule
+      });
+      WebcamModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+        factory: function WebcamModule_Factory(t) {
+          return new (t || WebcamModule)();
+        },
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]]
+      });
+
+      (function () {
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](WebcamModule, {
+          declarations: function declarations() {
+            return [WebcamComponent];
+          },
+          imports: function imports() {
+            return [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]];
+          },
+          exports: function exports() {
+            return [WebcamComponent];
+          }
+        });
+      })();
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](WebcamModule, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+          args: [{
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]],
+            declarations: [COMPONENTS],
+            exports: [COMPONENTS]
+          }]
+        }], null, null);
+      })();
+
+      var WebcamInitError = function WebcamInitError() {
+        _classCallCheck(this, WebcamInitError);
+
+        this.message = null;
+        this.mediaStreamError = null;
+      };
+
+      var WebcamMirrorProperties = function WebcamMirrorProperties() {
+        _classCallCheck(this, WebcamMirrorProperties);
+      };
+      /**
+       * Generated bundle index. Do not edit.
+       */
+      //# sourceMappingURL=ngx-webcam.js.map
+
       /***/
 
     },
@@ -15410,7 +18241,7 @@
         _createClass(CwServiceComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this63 = this;
+            var _this80 = this;
 
             localStorage.setItem('chq_page', this.title);
             this.custValidation = localStorage.getItem("customerValidation");
@@ -15459,25 +18290,29 @@
               console.log(Object.keys(transaction).length === 0, transaction.constructor === Object);
 
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
-                _this63.transactiondata = transaction;
-                console.log(_this63.transactiondata);
+                _this80.transactiondata = transaction;
+                console.log(_this80.transactiondata);
 
-                if (_this63.transactiondata.transactionAmount) {
-                  _this63.displayDenom = true;
+                if (_this80.transactiondata.transactionAmount) {
+                  _this80.displayDenom = true;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this63.denominationdata = denomination;
+                _this80.denominationdata = denomination;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
-                _this63.appointmentDetails = data;
-                console.log("Account component?", _this63.appointmentDetails.appointmentId);
+                _this80.appointmentDetails = data;
+                console.log("Account component?", _this80.appointmentDetails.appointmentId);
               }
+            });
+            this.dataService.getNavParam.subscribe(function (title) {
+              console.log(title);
+              _this80.titleData = title;
             });
           }
         }, {
@@ -15514,7 +18349,7 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this64 = this;
+            var _this81 = this;
 
             var _a;
 
@@ -15529,7 +18364,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this64.qrBranchCode = response;
+                  _this81.qrBranchCode = response;
                 });
               }
             }
@@ -15632,15 +18467,15 @@
             console.log("before api call :: ", this.Token);
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this64.cashWithdrawResponse = cashWithdrawResp;
-              _this64.tokenNum = _this64.cashWithdrawResponse.tokenNumber;
-              _this64.estimatedTime = _this64.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this64.tokenNum);
-              localStorage.setItem("estimatedTiming", _this64.estimatedTime);
-              _this64.enableContinue = false;
+              _this81.cashWithdrawResponse = cashWithdrawResp;
+              _this81.tokenNum = _this81.cashWithdrawResponse.tokenNumber;
+              _this81.estimatedTime = _this81.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this81.tokenNum);
+              localStorage.setItem("estimatedTiming", _this81.estimatedTime);
+              _this81.enableContinue = false;
 
-              if (_this64.cashWithdrawResponse) {
-                _this64.dialogService.tokenGenerationDialog();
+              if (_this81.cashWithdrawResponse) {
+                _this81.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = form.accountNumber;
@@ -15672,7 +18507,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this65 = this;
+            var _this82 = this;
 
             console.log("Get Otp", formData, type);
             this.phonenum = this.ls.getItem('phonenumFromLogin');
@@ -15689,9 +18524,9 @@
             if (transamountwithoutcomma >= amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this65.openDialogOTP(_this65.phonenum);
+                  _this82.openDialogOTP(_this82.phonenum);
 
-                  _this65.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this82.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -15706,7 +18541,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this66 = this;
+            var _this83 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__["OtpVerifyComponent"], {
               data: {
@@ -15719,14 +18554,14 @@
               console.log("submit", submit);
 
               if (submit) {
-                _this66.getOTPforSave(_this66.cashwithDrwValues, _this66.cashwithDrwType, '');
+                _this83.getOTPforSave(_this83.cashwithDrwValues, _this83.cashwithDrwType, '');
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this67 = this;
+            var _this84 = this;
 
             console.log(formData);
             var denominationData = {};
@@ -15789,15 +18624,15 @@
             console.log("before api call :: ", this.Token);
             this.apiService.saveofCashwithdraw(this.Token).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this67.cashWithdrawResponse = cashWithdrawResp;
-              _this67.tokenNum = _this67.cashWithdrawResponse.tokenNumber;
-              _this67.estimatedTime = _this67.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this67.tokenNum);
-              localStorage.setItem("estimatedTiming", _this67.estimatedTime);
-              _this67.enableContinue = false;
+              _this84.cashWithdrawResponse = cashWithdrawResp;
+              _this84.tokenNum = _this84.cashWithdrawResponse.tokenNumber;
+              _this84.estimatedTime = _this84.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this84.tokenNum);
+              localStorage.setItem("estimatedTiming", _this84.estimatedTime);
+              _this84.enableContinue = false;
 
-              if (_this67.cashWithdrawResponse) {
-                _this67.dialogService.tokenGenerationDialog();
+              if (_this84.cashWithdrawResponse) {
+                _this84.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -15812,6 +18647,7 @@
             this.dataService.removetransactionFormData(this.transactiondata);
             this.dataService.removeaccountFormData(this.appointmentDetails);
             this.dataService.removedenominationFormData(this.denominationdata);
+            this.dataService.removeNavParam(this.titleData);
             this.router.navigateByUrl('/others/kioskHome');
           }
         }, {
@@ -18477,7 +21313,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this68 = this;
+            var _this85 = this;
 
             this.cashdepositForm.controls.transactionAmount.reset();
             this.cashdepositForm.controls.totalTransactionAmount.setValue(this.cashdepositForm.controls.totalChargeAmount.value);
@@ -18486,71 +21322,71 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('Account Number Rsp', res);
 
-              _this68.getChargeDetails(accNum, ''); // this.isLoading = false;
+              _this85.getChargeDetails(accNum, ''); // this.isLoading = false;
 
 
-              _this68.userName = res.accHolderName;
-              _this68.accountBal = res.accBalance;
-              _this68.custmerID = res.customerId;
-              _this68.accountNumber = res.accountId;
-              _this68.accountCurrency = res.accountCurrency;
-              _this68.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
+              _this85.userName = res.accHolderName;
+              _this85.accountBal = res.accBalance;
+              _this85.custmerID = res.customerId;
+              _this85.accountNumber = res.accountId;
+              _this85.accountCurrency = res.accountCurrency;
+              _this85.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this68.cashdepositForm.controls.accountType.setValue(res.accountType);
+              _this85.cashdepositForm.controls.accountType.setValue(res.accountType);
 
-              _this68.cashdepositForm.controls.accountCurrency.setValue(res.currency);
+              _this85.cashdepositForm.controls.accountCurrency.setValue(res.currency);
 
-              _this68.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
+              _this85.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this68.cashdepositForm.controls.holderName.setValue(_this68.userName);
+              _this85.cashdepositForm.controls.holderName.setValue(_this85.userName);
 
-              _this68.getCountrynameValues();
+              _this85.getCountrynameValues();
 
-              _this68.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-              _this68.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this85.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this85.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-              _this68.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
+              _this85.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this68.custAmountBal(accNum);
+              _this85.custAmountBal(accNum);
 
-              _this68.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
+              _this85.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
 
-              _this68.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this68.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this68.phonenum);
+              _this85.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this85.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this85.phonenum);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this69 = this;
+            var _this86 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this69.countryValues = allCountryValues;
+              _this86.countryValues = allCountryValues;
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this70 = this;
+            var _this87 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this70.trasactionBranches = branches;
+              _this87.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this71 = this;
+            var _this88 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this71.branchData = data;
-              console.log(_this71.branchData);
+              _this88.branchData = data;
+              console.log(_this88.branchData);
               data.forEach(function (element, index) {
-                _this71.branch = data[index].branchName;
-                console.log(_this71.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
+                _this88.branch = data[index].branchName;
+                console.log(_this88.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
@@ -18588,47 +21424,47 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this72 = this;
+            var _this89 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this72.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this89.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this72.cashdepositForm.controls.holderName.setValue(_this72.userName);
+              _this89.cashdepositForm.controls.holderName.setValue(_this89.userName);
 
-              _this72.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
+              _this89.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
 
-              _this72.custAccountData = allTransactionResp.custAccount;
-              _this72.accounttypeArray = _toConsumableArray(_this72.custAccountData).filter(function (_ref6, index) {
+              _this89.custAccountData = allTransactionResp.custAccount;
+              _this89.accounttypeArray = _toConsumableArray(_this89.custAccountData).filter(function (_ref6, index) {
                 var accountType = _ref6.accountType;
-                return !_toConsumableArray(_this72.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this89.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
 
-              for (var j = 0; j < _this72.custAccountData.length; j++) {
-                if (_this72.custAccountData[j].status == 'APPROVED') {
-                  _this72.accountNoList.push(_this72.custAccountData[j]);
+              for (var j = 0; j < _this89.custAccountData.length; j++) {
+                if (_this89.custAccountData[j].status == 'APPROVED') {
+                  _this89.accountNoList.push(_this89.custAccountData[j]);
                 }
               }
 
-              if (_this72.custAccountData && _this72.accountNoList.length <= 1) {
-                _this72.accountDropdown = false;
-                _this72.hideDetails = true;
+              if (_this89.custAccountData && _this89.accountNoList.length <= 1) {
+                _this89.accountDropdown = false;
+                _this89.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this72.cashdepositForm.controls.accountType.setValue(accTyp);
+                _this89.cashdepositForm.controls.accountType.setValue(accTyp);
 
-                _this72.custAccountNumber(_this72.accountNoList[0]);
+                _this89.custAccountNumber(_this89.accountNoList[0]);
               } else {
-                _this72.accountDropdown = true;
-                _this72.hideDetails = true;
+                _this89.accountDropdown = true;
+                _this89.hideDetails = true;
                 var _accTyp6 = allTransactionResp.custAccount[0].accountType;
 
-                _this72.cashdepositForm.controls.accountType.setValue(_accTyp6);
+                _this89.cashdepositForm.controls.accountType.setValue(_accTyp6);
 
-                _this72.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this89.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -18767,7 +21603,7 @@
         }, {
           key: "onSaveofcashDeposit",
           value: function onSaveofcashDeposit(formData, type, cdForm) {
-            var _this73 = this;
+            var _this90 = this;
 
             formData.transactionBranch = this.transBranch;
             console.log("Data", formData, type, cdForm);
@@ -18775,7 +21611,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this73.qrBranchCode = response;
+                  _this90.qrBranchCode = response;
                 });
               }
             }
@@ -18853,15 +21689,15 @@
 
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this73.cashDepositResponse = cashDepositResp;
-              _this73.tokenNum = _this73.cashDepositResponse.tokenNumber;
-              _this73.estimatedTime = _this73.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this73.tokenNum);
-              localStorage.setItem("estimatedTiming", _this73.estimatedTime);
-              _this73.enableContinue = false;
+              _this90.cashDepositResponse = cashDepositResp;
+              _this90.tokenNum = _this90.cashDepositResponse.tokenNumber;
+              _this90.estimatedTime = _this90.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this90.tokenNum);
+              localStorage.setItem("estimatedTiming", _this90.estimatedTime);
+              _this90.enableContinue = false;
 
-              if (_this73.cashDepositResponse) {
-                _this73.dialogService.tokenGenerationDialog();
+              if (_this90.cashDepositResponse) {
+                _this90.dialogService.tokenGenerationDialog();
               }
             });
           } // OTP And Save
@@ -18869,7 +21705,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this74 = this;
+            var _this91 = this;
 
             this.cashdepositValues = formData;
             this.cashdeposiform = type;
@@ -18884,9 +21720,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this74.openDialogOTP(_this74.phonenum);
+                  _this91.openDialogOTP(_this91.phonenum);
 
-                  _this74.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this91.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -18900,7 +21736,7 @@
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this75 = this;
+            var _this92 = this;
 
             formData.transactionBranch = this.transBranch;
             var denominationData = {};
@@ -18961,22 +21797,22 @@
             console.log(formData.transactionId, formData.transactionStatus);
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this75.cashDepositResponse = cashDepositResp;
-              _this75.tokenNum = _this75.cashDepositResponse.tokenNumber;
-              _this75.estimatedTime = _this75.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this75.tokenNum);
-              localStorage.setItem("estimatedTiming", _this75.estimatedTime);
-              _this75.enableContinue = false;
+              _this92.cashDepositResponse = cashDepositResp;
+              _this92.tokenNum = _this92.cashDepositResponse.tokenNumber;
+              _this92.estimatedTime = _this92.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this92.tokenNum);
+              localStorage.setItem("estimatedTiming", _this92.estimatedTime);
+              _this92.enableContinue = false;
 
-              if (_this75.cashDepositResponse) {
-                _this75.dialogService.tokenGenerationDialog();
+              if (_this92.cashDepositResponse) {
+                _this92.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this76 = this;
+            var _this93 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_9__["OtpVerifyComponent"], {
               data: {
@@ -18987,7 +21823,7 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this76.getOTPforSave(_this76.cashdepositValues, _this76.cashdeposiform, _this76.cashdepositType);
+                _this93.getOTPforSave(_this93.cashdepositValues, _this93.cashdeposiform, _this93.cashdepositType);
               }
             });
           }
@@ -19094,50 +21930,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this77 = this;
+            var _this94 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log("resp ::", resp);
-              _this77.cashData = resp.data;
-              _this77.custID = resp.data.customerId;
-              _this77.ifQRvariable = true;
+              _this94.cashData = resp.data;
+              _this94.custID = resp.data.customerId;
+              _this94.ifQRvariable = true;
 
-              _this77.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
+              _this94.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this77.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this94.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this77.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this94.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this77.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this94.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this77.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this94.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this77.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this94.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this77.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this94.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this77.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this77.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
-              console.log("amount::", _this77.cashdepositForm.controls.transactionAmount.value);
+              _this94.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this94.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              console.log("amount::", _this94.cashdepositForm.controls.transactionAmount.value);
             });
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this78 = this;
+            var _this95 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this78.chargeDetails = resp;
+              _this95.chargeDetails = resp;
 
-              _this78.cashdepositForm.controls.totalChargeAmount.setValue(_this78.chargeDetails ? _this78.chargeDetails[0].amount : '');
+              _this95.cashdepositForm.controls.totalChargeAmount.setValue(_this95.chargeDetails ? _this95.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this78.totalTransAmount = Number(_this78.cashData.transactionAmount) + Number(_this78.chargeDetails[0].amount);
+                _this95.totalTransAmount = Number(_this95.cashData.transactionAmount) + Number(_this95.chargeDetails[0].amount);
 
-                _this78.cashdepositForm.controls.totalTransactionAmount.setValue(_this78.totalTransAmount);
+                _this95.cashdepositForm.controls.totalTransactionAmount.setValue(_this95.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -19146,10 +21982,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this78.totalTransAmount = Number(amount) + Number(_this78.chargeDetails ? _this78.chargeDetails[0].amount : '');
-                console.log(_this78.totalTransAmount);
+                _this95.totalTransAmount = Number(amount) + Number(_this95.chargeDetails ? _this95.chargeDetails[0].amount : '');
+                console.log(_this95.totalTransAmount);
 
-                _this78.cashdepositForm.controls.totalTransactionAmount.setValue(_this78.totalTransAmount);
+                _this95.cashdepositForm.controls.totalTransactionAmount.setValue(_this95.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -19178,15 +22014,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this79 = this;
+            var _this96 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this79.denomRequired = resp.denomRequired;
+              _this96.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this79.enableBtn = false;
-                _this79.enableBtn1 = false;
+                _this96.enableBtn = false;
+                _this96.enableBtn1 = false;
               }
             });
           }
@@ -20967,20 +23803,20 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this80 = this;
+            var _this97 = this;
 
             console.log(this.cdForm);
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (transaction) {
                 console.log("Account component?", transaction);
-                _this80.transactiondata = transaction;
+                _this97.transactiondata = transaction;
               }
             });
             this.dataService.getNavParam.subscribe(function (denomRequired) {
               if (denomRequired) {
                 console.log("Account component?", denomRequired);
-                _this80.denomRequired = denomRequired;
-                console.log(_this80.transactiondata.transactionAmounts);
+                _this97.denomRequired = denomRequired;
+                console.log(_this97.transactiondata.transactionAmounts);
               }
             });
           }
@@ -21093,7 +23929,7 @@
         }])],
         decls: 24,
         vars: 10,
-        consts: [[2, "height", "94.5%"], ["cdForm", "ngForm"], [2, "font-size", "15px", "color", "#004C97", "margin-left", "1%"], ["id", "denominationDiv", 1, "pH10", "full-width"], ["class", "paddingclass", "fxLayoutAlign", "center center", 4, "ngIf"], ["class", "paddingclass", "fxLayoutAlign", "start center", 4, "ngIf"], ["fxLayout", "row wrap", 1, "pH10", "full-width"], ["fxFlex", "53%", "fxFlex.xs", "100%"], ["appearance", "outline", 1, "inputCard"], ["matInput", "", "name", "totalAmount", "readonly", "", 1, "full-width", "inputClass", 3, "ngModel", "ngModelChange"], [1, "pl10", 2, "width", "150%"], [4, "ngIf"], ["fxLayoutAlign", "center center", 1, "paddingclass"], ["fxFlex", "20%"], [1, "quantityClass", "text-small"], ["fxFlex", "10%"], [1, "operationTypeClass", "text-small"], ["fxFlex", "70%"], [1, "inputCard"], ["type", "text", "matInput", "", "name", "count2000", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count2000", ""], [1, "pl10"], ["fxLayoutAlign", "start center", 1, "paddingclass"], ["type", "text", "matInput", "", "name", "count500", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count500", ""], ["type", "text", "matInput", "", "name", "count200", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count200", ""], ["type", "text", "matInput", "", "name", "count100", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count100", ""], ["type", "text", "matInput", "", "name", "count50", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count50", ""], ["type", "text", "matInput", "", "name", "count20", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count20", ""], ["type", "text", "matInput", "", "name", "count10", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count10", ""], ["type", "text", "matInput", "", "name", "count1", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"]],
+        consts: [[2, "height", "94.9%"], ["cdForm", "ngForm"], [2, "font-size", "15px", "color", "#004C97", "margin-left", "1%"], ["id", "denominationDiv", 1, "pH10", "full-width"], ["class", "paddingclass", "fxLayoutAlign", "center center", 4, "ngIf"], ["class", "paddingclass", "fxLayoutAlign", "start center", 4, "ngIf"], ["fxLayout", "row wrap", 1, "pH10", "full-width"], ["fxFlex", "53%", "fxFlex.xs", "100%"], ["appearance", "outline", 1, "inputCard"], ["matInput", "", "name", "totalAmount", "readonly", "", 1, "full-width", "inputClass", 3, "ngModel", "ngModelChange"], [1, "pl10", 2, "width", "150%"], [4, "ngIf"], ["fxLayoutAlign", "center center", 1, "paddingclass"], ["fxFlex", "20%"], [1, "quantityClass", "text-small"], ["fxFlex", "10%"], [1, "operationTypeClass", "text-small"], ["fxFlex", "70%"], [1, "inputCard"], ["type", "text", "matInput", "", "name", "count2000", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count2000", ""], [1, "pl10"], ["fxLayoutAlign", "start center", 1, "paddingclass"], ["type", "text", "matInput", "", "name", "count500", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count500", ""], ["type", "text", "matInput", "", "name", "count200", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count200", ""], ["type", "text", "matInput", "", "name", "count100", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count100", ""], ["type", "text", "matInput", "", "name", "count50", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count50", ""], ["type", "text", "matInput", "", "name", "count20", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count20", ""], ["type", "text", "matInput", "", "name", "count10", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"], ["count10", ""], ["type", "text", "matInput", "", "name", "count1", "ngModel", "", 1, "full-width", "inputClass", 3, "keyup", "keypress"]],
         template: function DenominationInfoComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 0);
@@ -23767,7 +26603,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this81 = this;
+            var _this98 = this;
 
             this.cashdepositForm.controls.transactionAmount.reset();
             this.cashdepositForm.controls.totalTransactionAmount.setValue(this.cashdepositForm.controls.totalChargeAmount.value);
@@ -23776,71 +26612,71 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('Account Number Rsp', res);
 
-              _this81.getChargeDetails(accNum, ''); // this.isLoading = false;
+              _this98.getChargeDetails(accNum, ''); // this.isLoading = false;
 
 
-              _this81.userName = res.accHolderName;
-              _this81.accountBal = res.accBalance;
-              _this81.custmerID = res.customerId;
-              _this81.accountNumber = res.accountId;
-              _this81.accountCurrency = res.accountCurrency;
-              _this81.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
+              _this98.userName = res.accHolderName;
+              _this98.accountBal = res.accBalance;
+              _this98.custmerID = res.customerId;
+              _this98.accountNumber = res.accountId;
+              _this98.accountCurrency = res.accountCurrency;
+              _this98.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this81.cashdepositForm.controls.accountType.setValue(res.accountType);
+              _this98.cashdepositForm.controls.accountType.setValue(res.accountType);
 
-              _this81.cashdepositForm.controls.accountCurrency.setValue(res.currency);
+              _this98.cashdepositForm.controls.accountCurrency.setValue(res.currency);
 
-              _this81.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
+              _this98.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this81.cashdepositForm.controls.holderName.setValue(_this81.userName);
+              _this98.cashdepositForm.controls.holderName.setValue(_this98.userName);
 
-              _this81.getCountrynameValues();
+              _this98.getCountrynameValues();
 
-              _this81.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-              _this81.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this98.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this98.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-              _this81.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
+              _this98.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this81.custAmountBal(accNum);
+              _this98.custAmountBal(accNum);
 
-              _this81.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
+              _this98.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
 
-              _this81.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this81.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this81.phonenum);
+              _this98.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this98.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this98.phonenum);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this82 = this;
+            var _this99 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this82.countryValues = allCountryValues;
+              _this99.countryValues = allCountryValues;
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this83 = this;
+            var _this100 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this83.trasactionBranches = branches;
+              _this100.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this84 = this;
+            var _this101 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this84.branchData = data;
-              console.log(_this84.branchData);
+              _this101.branchData = data;
+              console.log(_this101.branchData);
               data.forEach(function (element, index) {
-                _this84.branch = data[index].branchName;
-                console.log(_this84.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
+                _this101.branch = data[index].branchName;
+                console.log(_this101.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
@@ -23878,47 +26714,47 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this85 = this;
+            var _this102 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this85.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this102.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this85.cashdepositForm.controls.holderName.setValue(_this85.userName);
+              _this102.cashdepositForm.controls.holderName.setValue(_this102.userName);
 
-              _this85.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
+              _this102.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
 
-              _this85.custAccountData = allTransactionResp.custAccount;
-              _this85.accounttypeArray = _toConsumableArray(_this85.custAccountData).filter(function (_ref7, index) {
+              _this102.custAccountData = allTransactionResp.custAccount;
+              _this102.accounttypeArray = _toConsumableArray(_this102.custAccountData).filter(function (_ref7, index) {
                 var accountType = _ref7.accountType;
-                return !_toConsumableArray(_this85.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this102.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
 
-              for (var j = 0; j < _this85.custAccountData.length; j++) {
-                if (_this85.custAccountData[j].status == 'APPROVED') {
-                  _this85.accountNoList.push(_this85.custAccountData[j]);
+              for (var j = 0; j < _this102.custAccountData.length; j++) {
+                if (_this102.custAccountData[j].status == 'APPROVED') {
+                  _this102.accountNoList.push(_this102.custAccountData[j]);
                 }
               }
 
-              if (_this85.custAccountData && _this85.accountNoList.length <= 1) {
-                _this85.accountDropdown = false;
-                _this85.hideDetails = true;
+              if (_this102.custAccountData && _this102.accountNoList.length <= 1) {
+                _this102.accountDropdown = false;
+                _this102.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this85.cashdepositForm.controls.accountType.setValue(accTyp);
+                _this102.cashdepositForm.controls.accountType.setValue(accTyp);
 
-                _this85.custAccountNumber(_this85.accountNoList[0]);
+                _this102.custAccountNumber(_this102.accountNoList[0]);
               } else {
-                _this85.accountDropdown = true;
-                _this85.hideDetails = true;
+                _this102.accountDropdown = true;
+                _this102.hideDetails = true;
                 var _accTyp7 = allTransactionResp.custAccount[0].accountType;
 
-                _this85.cashdepositForm.controls.accountType.setValue(_accTyp7);
+                _this102.cashdepositForm.controls.accountType.setValue(_accTyp7);
 
-                _this85.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this102.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -24057,7 +26893,7 @@
         }, {
           key: "onSaveofcashDeposit",
           value: function onSaveofcashDeposit(formData, type, cdForm) {
-            var _this86 = this;
+            var _this103 = this;
 
             formData.transactionBranch = this.transBranch;
             console.log("Data", formData, type, cdForm);
@@ -24065,7 +26901,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this86.qrBranchCode = response;
+                  _this103.qrBranchCode = response;
                 });
               }
             }
@@ -24143,15 +26979,15 @@
 
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this86.cashDepositResponse = cashDepositResp;
-              _this86.tokenNum = _this86.cashDepositResponse.tokenNumber;
-              _this86.estimatedTime = _this86.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this86.tokenNum);
-              localStorage.setItem("estimatedTiming", _this86.estimatedTime);
-              _this86.enableContinue = false;
+              _this103.cashDepositResponse = cashDepositResp;
+              _this103.tokenNum = _this103.cashDepositResponse.tokenNumber;
+              _this103.estimatedTime = _this103.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this103.tokenNum);
+              localStorage.setItem("estimatedTiming", _this103.estimatedTime);
+              _this103.enableContinue = false;
 
-              if (_this86.cashDepositResponse) {
-                _this86.dialogService.tokenGenerationDialog();
+              if (_this103.cashDepositResponse) {
+                _this103.dialogService.tokenGenerationDialog();
               }
             });
           } // OTP And Save
@@ -24159,7 +26995,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this87 = this;
+            var _this104 = this;
 
             this.cashdepositValues = formData;
             this.cashdeposiform = type;
@@ -24174,9 +27010,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this87.openDialogOTP(_this87.phonenum);
+                  _this104.openDialogOTP(_this104.phonenum);
 
-                  _this87.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this104.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -24190,7 +27026,7 @@
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this88 = this;
+            var _this105 = this;
 
             formData.transactionBranch = this.transBranch;
             var denominationData = {};
@@ -24251,22 +27087,22 @@
             console.log(formData.transactionId, formData.transactionStatus);
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this88.cashDepositResponse = cashDepositResp;
-              _this88.tokenNum = _this88.cashDepositResponse.tokenNumber;
-              _this88.estimatedTime = _this88.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this88.tokenNum);
-              localStorage.setItem("estimatedTiming", _this88.estimatedTime);
-              _this88.enableContinue = false;
+              _this105.cashDepositResponse = cashDepositResp;
+              _this105.tokenNum = _this105.cashDepositResponse.tokenNumber;
+              _this105.estimatedTime = _this105.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this105.tokenNum);
+              localStorage.setItem("estimatedTiming", _this105.estimatedTime);
+              _this105.enableContinue = false;
 
-              if (_this88.cashDepositResponse) {
-                _this88.dialogService.tokenGenerationDialog();
+              if (_this105.cashDepositResponse) {
+                _this105.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this89 = this;
+            var _this106 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_11__["OtpVerifyComponent"], {
               data: {
@@ -24277,7 +27113,7 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this89.getOTPforSave(_this89.cashdepositValues, _this89.cashdeposiform, _this89.cashdepositType);
+                _this106.getOTPforSave(_this106.cashdepositValues, _this106.cashdeposiform, _this106.cashdepositType);
               }
             });
           }
@@ -24384,50 +27220,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this90 = this;
+            var _this107 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log("resp ::", resp);
-              _this90.cashData = resp.data;
-              _this90.custID = resp.data.customerId;
-              _this90.ifQRvariable = true;
+              _this107.cashData = resp.data;
+              _this107.custID = resp.data.customerId;
+              _this107.ifQRvariable = true;
 
-              _this90.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
+              _this107.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this90.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this107.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this90.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this107.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this90.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this107.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this90.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this107.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this90.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this107.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this90.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this107.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this90.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this90.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
-              console.log("amount::", _this90.cashdepositForm.controls.transactionAmount.value);
+              _this107.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this107.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              console.log("amount::", _this107.cashdepositForm.controls.transactionAmount.value);
             });
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this91 = this;
+            var _this108 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this91.chargeDetails = resp;
+              _this108.chargeDetails = resp;
 
-              _this91.cashdepositForm.controls.totalChargeAmount.setValue(_this91.chargeDetails ? _this91.chargeDetails[0].amount : '');
+              _this108.cashdepositForm.controls.totalChargeAmount.setValue(_this108.chargeDetails ? _this108.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this91.totalTransAmount = Number(_this91.cashData.transactionAmount) + Number(_this91.chargeDetails[0].amount);
+                _this108.totalTransAmount = Number(_this108.cashData.transactionAmount) + Number(_this108.chargeDetails[0].amount);
 
-                _this91.cashdepositForm.controls.totalTransactionAmount.setValue(_this91.totalTransAmount);
+                _this108.cashdepositForm.controls.totalTransactionAmount.setValue(_this108.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -24436,10 +27272,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this91.totalTransAmount = Number(amount) + Number(_this91.chargeDetails ? _this91.chargeDetails[0].amount : '');
-                console.log(_this91.totalTransAmount);
+                _this108.totalTransAmount = Number(amount) + Number(_this108.chargeDetails ? _this108.chargeDetails[0].amount : '');
+                console.log(_this108.totalTransAmount);
 
-                _this91.cashdepositForm.controls.totalTransactionAmount.setValue(_this91.totalTransAmount);
+                _this108.cashdepositForm.controls.totalTransactionAmount.setValue(_this108.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -24468,15 +27304,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this92 = this;
+            var _this109 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this92.denomRequired = resp.denomRequired;
+              _this109.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this92.enableBtn = false;
-                _this92.enableBtn1 = false;
+                _this109.enableBtn = false;
+                _this109.enableBtn1 = false;
               }
             });
           }
@@ -26094,7 +28930,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this93 = this;
+            var _this110 = this;
 
             this.chequedepositForm.controls.transactionAmount.reset();
             this.chequedepositForm.controls.totalTransactionAmount.setValue(this.chequedepositForm.controls.totalChargeAmount.value);
@@ -26103,44 +28939,44 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log("Account Number Rsp", res);
 
-              _this93.getChargeDetails(accNum, "");
+              _this110.getChargeDetails(accNum, "");
 
-              _this93.userName = res.accHolderName;
-              _this93.accountBal = res.accBalance;
-              _this93.custmerID = res.customerId;
-              _this93.accountNumber = res.accountId;
-              _this93.accountCurrency = res.accountCurrency;
-              _this93.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
+              _this110.userName = res.accHolderName;
+              _this110.accountBal = res.accBalance;
+              _this110.custmerID = res.customerId;
+              _this110.accountNumber = res.accountId;
+              _this110.accountCurrency = res.accountCurrency;
+              _this110.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this93.chequedepositForm.controls.accountType.setValue(res.accountType);
+              _this110.chequedepositForm.controls.accountType.setValue(res.accountType);
 
-              _this93.chequedepositForm.controls.accountCurrency.setValue(res.currency);
+              _this110.chequedepositForm.controls.accountCurrency.setValue(res.currency);
 
-              _this93.chequedepositForm.controls.accountBranch.setValue(res.accountBranch);
+              _this110.chequedepositForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this93.chequedepositForm.controls.holderName.setValue(_this93.userName);
+              _this110.chequedepositForm.controls.holderName.setValue(_this110.userName);
 
-              _this93.currencyImage = "currency-flag-" + res.currency.toLowerCase();
-              _this93.currencyImage = "currency-flag-" + res.currency.toLowerCase();
+              _this110.currencyImage = "currency-flag-" + res.currency.toLowerCase();
+              _this110.currencyImage = "currency-flag-" + res.currency.toLowerCase();
 
-              _this93.getCountrynameValues();
+              _this110.getCountrynameValues();
 
-              _this93.chequedepositForm.controls.transactionCurrency.setValue(res.currency);
+              _this110.chequedepositForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this93.custAmountBal(accNum);
+              _this110.custAmountBal(accNum);
 
-              _this93.chequedepositForm.controls.transactionBranch.setValue("Kasturi Nagar");
+              _this110.chequedepositForm.controls.transactionBranch.setValue("Kasturi Nagar");
 
-              _this93.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this93.phonenum = resp[0].phoneNumber;
-                localStorage.setItem("otpPhoneNum", _this93.phonenum);
+              _this110.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this110.phonenum = resp[0].phoneNumber;
+                localStorage.setItem("otpPhoneNum", _this110.phonenum);
               });
             });
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this94 = this;
+            var _this111 = this;
 
             this.chequedepositValues = formData;
             this.chequedepositype = type;
@@ -26155,9 +28991,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this94.openDialogOTP(_this94.phonenum);
+                  _this111.openDialogOTP(_this111.phonenum);
 
-                  _this94.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this111.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -26171,7 +29007,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this95 = this;
+            var _this112 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_9__["OtpVerifyComponent"], {
               data: {
@@ -26182,14 +29018,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this95.getOTPforSave(_this95.chequedepositValues, _this95.chequedepositype, _this95.chequedepositform);
+                _this112.getOTPforSave(_this112.chequedepositValues, _this112.chequedepositype, _this112.chequedepositform);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this96 = this;
+            var _this113 = this;
 
             formData.transactionBranch = this.transBranch;
 
@@ -26227,15 +29063,15 @@
             formData.accountBalance = this.accountBal;
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this96.cashDepositResponse = cashDepositResp;
-              _this96.tokenNum = _this96.cashDepositResponse.tokenNumber;
-              _this96.estimatedTime = _this96.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this96.tokenNum);
-              localStorage.setItem("estimatedTiming", _this96.estimatedTime);
-              _this96.enableContinue = false;
+              _this113.cashDepositResponse = cashDepositResp;
+              _this113.tokenNum = _this113.cashDepositResponse.tokenNumber;
+              _this113.estimatedTime = _this113.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this113.tokenNum);
+              localStorage.setItem("estimatedTiming", _this113.estimatedTime);
+              _this113.enableContinue = false;
 
-              if (_this96.cashDepositResponse) {
-                _this96.dialogService.tokenGenerationDialog();
+              if (_this113.cashDepositResponse) {
+                _this113.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -26252,35 +29088,35 @@
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this97 = this;
+            var _this114 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log("branches :: ", branches);
-              _this97.trasactionBranches = branches;
+              _this114.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this98 = this;
+            var _this115 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this98.branchData = data;
-              console.log(_this98.branchData);
+              _this115.branchData = data;
+              console.log(_this115.branchData);
               data.forEach(function (element, index) {
-                _this98.branch = data[index].branchName;
-                console.log(_this98.branch); // this.chequedepositForm.controls.accountBranch.setValue(this.branch);
+                _this115.branch = data[index].branchName;
+                console.log(_this115.branch); // this.chequedepositForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this99 = this;
+            var _this116 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this99.countryValues = allCountryValues;
-              console.log(_this99.countryValues);
+              _this116.countryValues = allCountryValues;
+              console.log(_this116.countryValues);
             });
           }
         }, {
@@ -26321,47 +29157,47 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this100 = this;
+            var _this117 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this100.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + " " : " ") + (allTransactionResp.middleName ? allTransactionResp.middleName + " " : " ") + (allTransactionResp.lastName ? allTransactionResp.lastName : " ");
+              _this117.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + " " : " ") + (allTransactionResp.middleName ? allTransactionResp.middleName + " " : " ") + (allTransactionResp.lastName ? allTransactionResp.lastName : " ");
 
-              _this100.chequedepositForm.controls.holderName.setValue(_this100.userName);
+              _this117.chequedepositForm.controls.holderName.setValue(_this117.userName);
 
-              _this100.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
+              _this117.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
 
-              _this100.custAccountData = allTransactionResp.custAccount;
-              _this100.accounttypeArray = _toConsumableArray(_this100.custAccountData).filter(function (_ref8, index) {
+              _this117.custAccountData = allTransactionResp.custAccount;
+              _this117.accounttypeArray = _toConsumableArray(_this117.custAccountData).filter(function (_ref8, index) {
                 var accountType = _ref8.accountType;
-                return !_toConsumableArray(_this100.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this117.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
 
-              for (var j = 0; j < _this100.custAccountData.length; j++) {
-                if (_this100.custAccountData[j].status == "APPROVED") {
-                  _this100.accountNoList.push(_this100.custAccountData[j]);
+              for (var j = 0; j < _this117.custAccountData.length; j++) {
+                if (_this117.custAccountData[j].status == "APPROVED") {
+                  _this117.accountNoList.push(_this117.custAccountData[j]);
                 }
               }
 
-              if (_this100.custAccountData && _this100.accountNoList.length <= 1) {
-                _this100.accountDropdown = false;
-                _this100.hideDetails = true;
+              if (_this117.custAccountData && _this117.accountNoList.length <= 1) {
+                _this117.accountDropdown = false;
+                _this117.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this100.chequedepositForm.controls.accountType.setValue(accTyp);
+                _this117.chequedepositForm.controls.accountType.setValue(accTyp);
 
-                _this100.custAccountNumber(_this100.accountNoList[0]);
+                _this117.custAccountNumber(_this117.accountNoList[0]);
               } else {
-                _this100.accountDropdown = true;
-                _this100.hideDetails = true;
+                _this117.accountDropdown = true;
+                _this117.hideDetails = true;
                 var _accTyp8 = allTransactionResp.custAccount[0].accountType;
 
-                _this100.chequedepositForm.controls.accountType.setValue(_accTyp8);
+                _this117.chequedepositForm.controls.accountType.setValue(_accTyp8);
 
-                _this100.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this117.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -26495,7 +29331,7 @@
         }, {
           key: "onSaveofchequeDeposit",
           value: function onSaveofchequeDeposit(formData, type) {
-            var _this101 = this;
+            var _this118 = this;
 
             formData.transactionBranch = this.transBranch;
             formData.tokenBranch = "KN";
@@ -26503,7 +29339,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this101.qrBranchCode = response;
+                  _this118.qrBranchCode = response;
                 });
               }
             }
@@ -26554,15 +29390,15 @@
             console.log(formData.transactionId, formData.transactionStatus);
             this.apiService.saveofCashDeposit(formData).subscribe(function (chequeDepositResp) {
               console.log(" Response Success", chequeDepositResp);
-              _this101.chequeDepositResponse = chequeDepositResp;
-              _this101.tokenNum = _this101.chequeDepositResponse.tokenNumber;
-              _this101.estimatedTime = _this101.chequeDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this101.tokenNum);
-              localStorage.setItem("estimatedTiming", _this101.estimatedTime);
-              _this101.enableContinue = false;
+              _this118.chequeDepositResponse = chequeDepositResp;
+              _this118.tokenNum = _this118.chequeDepositResponse.tokenNumber;
+              _this118.estimatedTime = _this118.chequeDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this118.tokenNum);
+              localStorage.setItem("estimatedTiming", _this118.estimatedTime);
+              _this118.enableContinue = false;
 
-              if (_this101.chequeDepositResponse) {
-                _this101.dialogService.tokenGenerationDialog();
+              if (_this118.chequeDepositResponse) {
+                _this118.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = formData.accountNumber;
@@ -26651,20 +29487,20 @@
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this102 = this;
+            var _this119 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this102.chargeDetails = resp;
+              _this119.chargeDetails = resp;
 
-              _this102.chequedepositForm.controls.totalChargeAmount.setValue(_this102.chargeDetails ? _this102.chargeDetails[0].amount : "");
+              _this119.chequedepositForm.controls.totalChargeAmount.setValue(_this119.chargeDetails ? _this119.chargeDetails[0].amount : "");
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this102.totalTransAmount = Number(_this102.cashData.transactionAmount) + Number(_this102.chargeDetails ? _this102.chargeDetails[0].amount : "");
+                _this119.totalTransAmount = Number(_this119.cashData.transactionAmount) + Number(_this119.chargeDetails ? _this119.chargeDetails[0].amount : "");
 
-                _this102.chequedepositForm.controls.totalTransactionAmount.setValue(_this102.totalTransAmount);
+                _this119.chequedepositForm.controls.totalTransactionAmount.setValue(_this119.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -26673,10 +29509,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this102.totalTransAmount = Number(amount) + Number(_this102.chargeDetails ? _this102.chargeDetails[0].amount : "");
-                console.log(_this102.totalTransAmount);
+                _this119.totalTransAmount = Number(amount) + Number(_this119.chargeDetails ? _this119.chargeDetails[0].amount : "");
+                console.log(_this119.totalTransAmount);
 
-                _this102.chequedepositForm.controls.totalTransactionAmount.setValue(_this102.totalTransAmount);
+                _this119.chequedepositForm.controls.totalTransactionAmount.setValue(_this119.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -26714,32 +29550,32 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this103 = this;
+            var _this120 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this103.cashData = resp.data;
-              _this103.custID = resp.data.customerId;
-              _this103.ifQRvariable = true;
+              _this120.cashData = resp.data;
+              _this120.custID = resp.data.customerId;
+              _this120.ifQRvariable = true;
 
-              _this103.chequedepositForm.controls.accountType.setValue(resp.data.accountType);
+              _this120.chequedepositForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this103.chequedepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this120.chequedepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this103.chequedepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this120.chequedepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this103.chequedepositForm.controls.chequeNumber.setValue(resp.data.chequeNumber);
+              _this120.chequedepositForm.controls.chequeNumber.setValue(resp.data.chequeNumber);
 
-              _this103.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this120.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this103.chequedepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this120.chequedepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this103.chequedepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this120.chequedepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this103.chequedepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this120.chequedepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this103.currencyImage = "currency-flag-" + resp.data.accountCurrency.toLowerCase();
-              _this103.currencyImage = "currency-flag-" + resp.data.transactionCurrency.toLowerCase();
+              _this120.currencyImage = "currency-flag-" + resp.data.accountCurrency.toLowerCase();
+              _this120.currencyImage = "currency-flag-" + resp.data.transactionCurrency.toLowerCase();
             });
           }
         }]);
@@ -27957,48 +30793,210 @@
 
       var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/material/dialog */
-      "0IaG"); // import { Observable, Subject } from 'rxjs';
-      // import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
+      "0IaG");
+      /* harmony import */
 
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
+      /* harmony import */
+
+
+      var ngx_webcam__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ngx-webcam */
+      "QKVY");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/material/card */
+      "Wp6s");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "XiUz");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
 
       var OcrScanPageComponent = /*#__PURE__*/function () {
-        function OcrScanPageComponent(dialogRef) {
+        function OcrScanPageComponent(dialogRef, router) {
           _classCallCheck(this, OcrScanPageComponent);
 
           this.dialogRef = dialogRef;
-        } // private trigger: Subject<any> = new Subject();
-        // public webcamImage: WebcamImage;
-        // private nextWebcam: Subject<any> = new Subject();
-        // sysImage = '';
-
+          this.router = router;
+          this.flag = false;
+          this.retakeFlag = true;
+          this.submitFlag = true;
+          this.trigger = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+          this.nextWebcam = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+          this.sysImage = '';
+        }
 
         _createClass(OcrScanPageComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
+        }, {
+          key: "getSnapshot",
+          value: function getSnapshot() {
+            this.flag = true;
+            this.trigger.next();
+          }
+        }, {
+          key: "captureImg",
+          value: function captureImg(webcamImage) {
+            this.webcamImage = webcamImage;
+            this.sysImage = webcamImage === null || webcamImage === void 0 ? void 0 : webcamImage.imageAsDataUrl;
+            sessionStorage.setItem("sysImage", this.sysImage);
+            console.info('got webcam image', this.sysImage);
+          }
+        }, {
+          key: "invokeObservable",
+          get: function get() {
+            return this.trigger.asObservable();
+          }
+        }, {
+          key: "nextWebcamObservable",
+          get: function get() {
+            return this.nextWebcam.asObservable();
+          }
+        }, {
+          key: "retake",
+          value: function retake() {
+            this.flag = false;
+            this.retakeFlag = false;
+            this.submitFlag = false;
+          }
+        }, {
+          key: "submit",
+          value: function submit() {
+            this.dialogRef.close();
+            sessionStorage.getItem('sysImage');
+          }
         }]);
 
         return OcrScanPageComponent;
       }();
 
       OcrScanPageComponent.ɵfac = function OcrScanPageComponent_Factory(t) {
-        return new (t || OcrScanPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]));
+        return new (t || OcrScanPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]));
       };
 
       OcrScanPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: OcrScanPageComponent,
         selectors: [["app-ocr-scan-page"]],
-        decls: 2,
-        vars: 0,
+        decls: 16,
+        vars: 6,
+        consts: [[1, "container", "mt-5"], [1, "col-md-12"], [3, "hidden", "trigger", "imageCapture"], [1, "col-12", 3, "hidden"], ["height", "300px", "width", "100%", 3, "src"], [1, "scan", "full-width"], ["fxLayout", "row", "fxLayoutAlign", "space-evenly center"], ["mat-flat-button", "", 1, "camBtn", 3, "hidden", "click"], ["src", "assets/images/redcam.svg"], [1, "retakeBtn"], ["src", "assets/images/cambgr.svg", 3, "click"], ["src", "assets/images/submitIcon.svg"], [1, "submitBtn"]],
         template: function OcrScanPageComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "ocr-scan-page works!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "webcam", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("imageCapture", function OcrScanPageComponent_Template_webcam_imageCapture_2_listener($event) {
+              return ctx.captureImg($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-card", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OcrScanPageComponent_Template_button_click_7_listener() {
+              return ctx.retake();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "img", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Retake");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "img", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OcrScanPageComponent_Template_img_click_11_listener() {
+              return ctx.getSnapshot();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OcrScanPageComponent_Template_button_click_12_listener() {
+              return ctx.submit();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "img", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "span", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Submit");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.flag)("trigger", ctx.invokeObservable);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", !ctx.flag);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.sysImage, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.retakeFlag);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.submitFlag);
+          }
         },
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJvY3Itc2Nhbi1wYWdlLmNvbXBvbmVudC5zY3NzIn0= */"]
+        directives: [ngx_webcam__WEBPACK_IMPORTED_MODULE_4__["WebcamComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"]],
+        styles: [".scan[_ngcontent-%COMP%] {\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  height: 50%;\n}\n\n.camBtn[_ngcontent-%COMP%] {\n  width: 15%;\n  height: 38px;\n  color: #E50000;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 6px #00000029;\n  border-radius: 28px;\n  opacity: 100%;\n}\n\n.retakeBtn[_ngcontent-%COMP%] {\n  color: #FF3333;\n  padding-left: 15px;\n}\n\n.submitBtn[_ngcontent-%COMP%] {\n  color: #004C97;\n  padding-left: 15px;\n}\n\n.is-hidden[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcb2NyLXNjYW4tcGFnZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG9HQUFBO0VBRUEsY0FBQTtFQUNBLHVCQUFBO0VBQ0EsV0FBQTtBQUFKOztBQUdFO0VBQ0UsVUFBQTtFQUNBLFlBQUE7RUFFQSxjQUFBO0VBQ0EsK0NBQUE7RUFDQSxpQ0FBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtBQURKOztBQUdBO0VBQ0ksY0FBQTtFQUNBLGtCQUFBO0FBQUo7O0FBR0E7RUFDSSxjQUFBO0VBQ0Esa0JBQUE7QUFBSjs7QUFHQTtFQUNFLGFBQUE7QUFBRiIsImZpbGUiOiJvY3Itc2Nhbi1wYWdlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNjYW4ge1xyXG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxYTJkIDAlLCAjMDA0Yzk3IDEwMCUpIDAlIDAlXHJcbiAgICAgIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgICBoZWlnaHQ6IDUwJTtcclxuICB9XHJcblxyXG4gIC5jYW1CdG57XHJcbiAgICB3aWR0aDogMTUlO1xyXG4gICAgaGVpZ2h0OiAzOHB4O1xyXG4gICAgLy8gbWFyZ2luLWxlZnQ6IDE4JTtcclxuICAgIGNvbG9yOiAjRTUwMDAwO1xyXG4gICAgYmFja2dyb3VuZDogI0ZGRkZGRiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBib3gtc2hhZG93OiAwcHggM3B4IDZweCAjMDAwMDAwMjk7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyOHB4O1xyXG4gICAgb3BhY2l0eTogMTAwJTtcclxufVxyXG4ucmV0YWtlQnRue1xyXG4gICAgY29sb3I6ICNGRjMzMzM7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbn1cclxuXHJcbi5zdWJtaXRCdG57XHJcbiAgICBjb2xvcjogIzAwNEM5NyA7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbn1cclxuXHJcbi5pcy1oaWRkZW4ge1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn0iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -28013,6 +31011,8 @@
         }], function () {
           return [{
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
           }];
         }, null);
       })();
@@ -28456,7 +31456,7 @@
         }, {
           key: "goToOperations",
           value: function goToOperations(index) {
-            var _this104 = this;
+            var _this121 = this;
 
             console.log(index);
 
@@ -28473,8 +31473,10 @@
             });
             this.dataService.sendNavParam(this.enableList[0].title);
             console.log(this.enableList);
+            console.log(this.enableList[0].title);
+            localStorage.setItem('trnType', this.enableList[0].title);
             this.timer = setTimeout(function () {
-              _this104.router.navigateByUrl("/".concat(_this104.enableList[0].link));
+              _this121.router.navigateByUrl("/".concat(_this121.enableList[0].link));
             }, 200); // this.router.navigateByUrl(`/${this.enableList[0].link}`);
           }
         }, {
@@ -28889,7 +31891,7 @@
         _createClass(CheqWComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this105 = this;
+            var _this122 = this;
 
             localStorage.setItem('chq_page', this.title);
             this.custValidation = localStorage.getItem("customerValidation");
@@ -28914,25 +31916,29 @@
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
                 console.log("Account component?", transaction);
-                _this105.transactiondata = transaction;
+                _this122.transactiondata = transaction;
 
-                if (_this105.transactiondata.transactionAmount) {
-                  _this105.displayDenom = true;
+                if (_this122.transactiondata.transactionAmount) {
+                  _this122.displayDenom = true;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this105.denominationdata = denomination;
+                _this122.denominationdata = denomination;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 console.log("Account component?", data);
-                _this105.appointmentDetails = data;
-                console.log("Account component?", _this105.appointmentDetails.appointmentId);
+                _this122.appointmentDetails = data;
+                console.log("Account component?", _this122.appointmentDetails.appointmentId);
               }
+            });
+            this.dataService.getNavParam.subscribe(function (title) {
+              console.log(title);
+              _this122.titleData = title;
             });
           }
         }, {
@@ -28954,12 +31960,13 @@
             this.dataService.removetransactionFormData(this.transactiondata);
             this.dataService.removeaccountFormData(this.appointmentDetails);
             this.dataService.removedenominationFormData(this.denominationdata);
+            this.dataService.removeNavParam(this.titleData);
             this.router.navigateByUrl('/others/kioskHome');
           }
         }, {
           key: "onSaveofchequeDeposit",
           value: function onSaveofchequeDeposit(form, type, cdForm) {
-            var _this106 = this;
+            var _this123 = this;
 
             var _a, _b, _c, _d, _e;
 
@@ -28969,7 +31976,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this106.qrBranchCode = response;
+                  _this123.qrBranchCode = response;
                   console.log(response);
                 });
               }
@@ -29070,22 +32077,22 @@
             console.log(this.Token);
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cheqWithdrawResp) {
               console.log("Response Success, Data Saved", cheqWithdrawResp);
-              _this106.cheqDepositResponse = cheqWithdrawResp;
-              _this106.tokenNum = _this106.cheqDepositResponse.tokenNumber;
-              _this106.estimatedTime = _this106.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this106.tokenNum);
-              localStorage.setItem("estimatedTiming", _this106.estimatedTime);
-              _this106.enableContinue = false;
+              _this123.cheqDepositResponse = cheqWithdrawResp;
+              _this123.tokenNum = _this123.cheqDepositResponse.tokenNumber;
+              _this123.estimatedTime = _this123.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this123.tokenNum);
+              localStorage.setItem("estimatedTiming", _this123.estimatedTime);
+              _this123.enableContinue = false;
 
-              if (_this106.cheqDepositResponse) {
-                _this106.dialogService.tokenGenerationDialog();
+              if (_this123.cheqDepositResponse) {
+                _this123.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this107 = this;
+            var _this124 = this;
 
             this.phonenum = this.ls.getItem('phonenumFromLogin');
             this.chequewithdrawValues = formData;
@@ -29102,9 +32109,9 @@
             if (transamountwithoutcomma >= amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this107.openDialogOTP(_this107.phonenum);
+                  _this124.openDialogOTP(_this124.phonenum);
 
-                  _this107.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this124.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -29118,7 +32125,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this108 = this;
+            var _this125 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__["OtpVerifyComponent"], {
               data: {
@@ -29129,14 +32136,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this108.getOTPforSave(_this108.chequewithdrawValues, _this108.chequewithdrawtype, _this108.chequewithdrawalForm);
+                _this125.getOTPforSave(_this125.chequewithdrawValues, _this125.chequewithdrawtype, _this125.chequewithdrawalForm);
               }
             });
           }
         }, {
           key: "getOTPforSave1",
           value: function getOTPforSave1(formData, type, cdForm) {
-            var _this109 = this;
+            var _this126 = this;
 
             formData.transactionBranch = this.transBranch;
 
@@ -29174,22 +32181,22 @@
             formData.accountBalance = this.accountBal;
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this109.cheqDepositResponse = cashDepositResp;
-              _this109.tokenNum = _this109.cheqDepositResponse.tokenNumber;
-              _this109.estimatedTime = _this109.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this109.tokenNum);
-              localStorage.setItem("estimatedTiming", _this109.estimatedTime);
-              _this109.enableContinue = false;
+              _this126.cheqDepositResponse = cashDepositResp;
+              _this126.tokenNum = _this126.cheqDepositResponse.tokenNumber;
+              _this126.estimatedTime = _this126.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this126.tokenNum);
+              localStorage.setItem("estimatedTiming", _this126.estimatedTime);
+              _this126.enableContinue = false;
 
-              if (_this109.cheqDepositResponse) {
-                _this109.dialogService.tokenGenerationDialog();
+              if (_this126.cheqDepositResponse) {
+                _this126.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this110 = this;
+            var _this127 = this;
 
             console.log(formData);
             var denominationData = {};
@@ -29241,15 +32248,15 @@
             console.log("before api call :: ", this.Token);
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this110.cheqDepositResponse = cashDepositResp;
-              _this110.tokenNum = _this110.cheqDepositResponse.tokenNumber;
-              _this110.estimatedTime = _this110.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this110.tokenNum);
-              localStorage.setItem("estimatedTiming", _this110.estimatedTime);
-              _this110.enableContinue = false;
+              _this127.cheqDepositResponse = cashDepositResp;
+              _this127.tokenNum = _this127.cheqDepositResponse.tokenNumber;
+              _this127.estimatedTime = _this127.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this127.tokenNum);
+              localStorage.setItem("estimatedTiming", _this127.estimatedTime);
+              _this127.enableContinue = false;
 
-              if (_this110.cheqDepositResponse) {
-                _this110.dialogService.tokenGenerationDialog();
+              if (_this127.cheqDepositResponse) {
+                _this127.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -29668,7 +32675,7 @@
         }, {
           key: "validateOtp",
           value: function validateOtp(otpValue) {
-            var _this111 = this;
+            var _this128 = this;
 
             console.log("OTP validaion", otpValue);
 
@@ -29692,21 +32699,21 @@
 
                 if (otpResp.data != null) {
                   if (otpResp.data.userId != '' && otpResp.data.userId != null && otpResp.data.status == 'SUCCESS') {
-                    _this111.afterSubmit.emit(true);
+                    _this128.afterSubmit.emit(true);
 
                     localStorage.setItem('userId', otpResp.data.userId);
 
-                    _this111.snack.open("Validation successful", 'OK', {
+                    _this128.snack.open("Validation successful", 'OK', {
                       duration: 4000,
                       verticalPosition: 'bottom',
                       horizontalPosition: 'right'
                     });
 
-                    _this111.dialogRef.close(true);
+                    _this128.dialogRef.close(true);
                   } else {
-                    _this111.dialogRef.close(false);
+                    _this128.dialogRef.close(false);
 
-                    _this111.snack.open("".concat(otpResp.data.responseMessage), 'OK', {
+                    _this128.snack.open("".concat(otpResp.data.responseMessage), 'OK', {
                       duration: 4000,
                       verticalPosition: 'bottom',
                       horizontalPosition: 'right'
@@ -29714,9 +32721,9 @@
                   }
                 }
               }, function (error) {
-                console.log(error.status); // this.errorStatus = error.status;
+                console.log("wrong otp", error.status); // this.errorStatus = error.status;
 
-                _this111.snack.open("Incorrect OTP. Please try again.", 'OK', {
+                _this128.snack.open("Incorrect OTP. Please try again.", 'OK', {
                   duration: 4000,
                   verticalPosition: 'bottom',
                   horizontalPosition: 'right'
@@ -31993,7 +35000,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this112 = this;
+            var _this129 = this;
 
             this.cashwithdrawForm.controls.transactionAmount.reset();
             this.cashwithdrawForm.controls.totalTransactionAmount.setValue(this.cashwithdrawForm.controls.totalChargeAmount.value);
@@ -32003,54 +35010,54 @@
               if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
                 console.log('statement');
 
-                _this112.snack.open("Account Number Doesn't Exist", "OK", {
+                _this129.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'bottom',
                   horizontalPosition: 'right'
                 });
 
-                _this112.cashwithdrawForm.reset();
+                _this129.cashwithdrawForm.reset();
 
-                _this112.userName = '';
-                _this112.accountBal = '';
-                _this112.curr = '';
+                _this129.userName = '';
+                _this129.accountBal = '';
+                _this129.curr = '';
               } else {
                 console.log('Account Number Rsp', res);
 
-                _this112.getChargeDetails(accNum, '');
+                _this129.getChargeDetails(accNum, '');
 
-                _this112.userName = res.accHolderName;
-                _this112.accountBal = res.accBalance;
-                _this112.custmerID = res.customerId;
-                _this112.accountNumber = res.accountId;
-                _this112.accountCurrency = res.accountCurrency;
-                _this112.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
+                _this129.userName = res.accHolderName;
+                _this129.accountBal = res.accBalance;
+                _this129.custmerID = res.customerId;
+                _this129.accountNumber = res.accountId;
+                _this129.accountCurrency = res.accountCurrency;
+                _this129.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
 
-                _this112.cashwithdrawForm.controls.accountType.setValue(res.accountType);
+                _this129.cashwithdrawForm.controls.accountType.setValue(res.accountType);
 
-                _this112.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
+                _this129.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
 
-                _this112.cashwithdrawForm.controls.holderName.setValue(_this112.userName);
+                _this129.cashwithdrawForm.controls.holderName.setValue(_this129.userName);
 
-                _this112.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this129.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
 
 
-                _this112.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                _this129.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-                _this112.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
+                _this129.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
 
-                _this112.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
+                _this129.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
 
-                console.log(_this112.ifQRvariable);
+                console.log(_this129.ifQRvariable);
 
-                _this112.custAmountBal(accNum);
+                _this129.custAmountBal(accNum);
 
-                _this112.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
+                _this129.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
               }
 
-              _this112.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this112.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this112.phonenum);
+              _this129.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this129.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this129.phonenum);
               });
             });
           } //  numberWithCommas = (transAmt) => {
@@ -32061,35 +35068,35 @@
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this113 = this;
+            var _this130 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this113.trasactionBranches = branches;
+              _this130.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this114 = this;
+            var _this131 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this114.branchData = data;
-              console.log(_this114.branchData);
+              _this131.branchData = data;
+              console.log(_this131.branchData);
               data.forEach(function (element, index) {
-                _this114.branch = data[index].branchName;
-                console.log(_this114.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
+                _this131.branch = data[index].branchName;
+                console.log(_this131.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this115 = this;
+            var _this132 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this115.countryValues = allCountryValues;
-              console.log(_this115.countryValues);
+              _this132.countryValues = allCountryValues;
+              console.log(_this132.countryValues);
             });
           }
         }, {
@@ -32099,51 +35106,51 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this116 = this;
+            var _this133 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this116.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this133.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this116.cashwithdrawForm.controls.holderName.setValue(_this116.userName); // this.setBalance(allTransactionResp.custAccount);
+              _this133.cashwithdrawForm.controls.holderName.setValue(_this133.userName); // this.setBalance(allTransactionResp.custAccount);
 
 
-              _this116.custID = allTransactionResp.customerId;
-              console.log("Cust", _this116.custID);
-              _this116.custAccountData = allTransactionResp.custAccount;
-              _this116.accounttypeArray = _toConsumableArray(_this116.custAccountData).filter(function (_ref9, index) {
+              _this133.custID = allTransactionResp.customerId;
+              console.log("Cust", _this133.custID);
+              _this133.custAccountData = allTransactionResp.custAccount;
+              _this133.accounttypeArray = _toConsumableArray(_this133.custAccountData).filter(function (_ref9, index) {
                 var accountType = _ref9.accountType;
-                return !_toConsumableArray(_this116.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this133.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this116.accounttypeArray);
+              console.log(_this133.accounttypeArray);
 
-              for (var i = 0; i < _this116.custAccountData.length; i++) {
-                if (_this116.custAccountData[i].status == 'APPROVED') {
-                  _this116.accountNoList.push(_this116.custAccountData[i]);
+              for (var i = 0; i < _this133.custAccountData.length; i++) {
+                if (_this133.custAccountData[i].status == 'APPROVED') {
+                  _this133.accountNoList.push(_this133.custAccountData[i]);
                 }
               }
 
-              console.log(_this116.accountNoList);
+              console.log(_this133.accountNoList);
 
-              if (_this116.custAccountData && _this116.accountNoList.length <= 1) {
-                _this116.accountDropdown = false;
-                _this116.hideDetails = true;
+              if (_this133.custAccountData && _this133.accountNoList.length <= 1) {
+                _this133.accountDropdown = false;
+                _this133.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this116.cashwithdrawForm.controls.accountType.setValue(accTyp);
+                _this133.cashwithdrawForm.controls.accountType.setValue(accTyp);
 
-                _this116.custAccountNumber(_this116.accountNoList[0]);
+                _this133.custAccountNumber(_this133.accountNoList[0]);
               } else {
-                _this116.accountDropdown = true;
-                _this116.hideDetails = true;
+                _this133.accountDropdown = true;
+                _this133.hideDetails = true;
                 var _accTyp9 = allTransactionResp.custAccount[0].accountType;
 
-                _this116.cashwithdrawForm.controls.accountType.setValue(_accTyp9);
+                _this133.cashwithdrawForm.controls.accountType.setValue(_accTyp9);
 
-                _this116.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this133.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -32273,7 +35280,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this117 = this;
+            var _this134 = this;
 
             this.cashwithDrwValues = formData;
             this.cashwithDrwType = type;
@@ -32288,9 +35295,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this117.openDialogOTP(_this117.phonenum);
+                  _this134.openDialogOTP(_this134.phonenum);
 
-                  _this117.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this134.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -32304,7 +35311,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this118 = this;
+            var _this135 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_9__["OtpVerifyComponent"], {
               data: {
@@ -32317,14 +35324,14 @@
               console.log("submit", submit);
 
               if (submit) {
-                _this118.getOTPforSave(_this118.cashwithDrwValues, _this118.cashwithDrwType, _this118.cashwithDrwform);
+                _this135.getOTPforSave(_this135.cashwithDrwValues, _this135.cashwithDrwType, _this135.cashwithDrwform);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this119 = this;
+            var _this136 = this;
 
             var denominationData = {};
             var denominationDataArray = [];
@@ -32377,15 +35384,15 @@
             console.log("before api call :: ", formData);
             this.apiService.saveofCashwithdraw(formData).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this119.cashWithdrawResponse = cashWithdrawResp;
-              _this119.tokenNum = _this119.cashWithdrawResponse.tokenNumber;
-              _this119.estimatedTime = _this119.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this119.tokenNum);
-              localStorage.setItem("estimatedTiming", _this119.estimatedTime);
-              _this119.enableContinue = false;
+              _this136.cashWithdrawResponse = cashWithdrawResp;
+              _this136.tokenNum = _this136.cashWithdrawResponse.tokenNumber;
+              _this136.estimatedTime = _this136.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this136.tokenNum);
+              localStorage.setItem("estimatedTiming", _this136.estimatedTime);
+              _this136.enableContinue = false;
 
-              if (_this119.cashWithdrawResponse) {
-                _this119.dialogService.tokenGenerationDialog();
+              if (_this136.cashWithdrawResponse) {
+                _this136.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -32422,14 +35429,14 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this120 = this;
+            var _this137 = this;
 
             form.transactionBranch = this.transBranch;
 
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this120.qrBranchCode = response;
+                  _this137.qrBranchCode = response;
                 });
               }
             }
@@ -32504,15 +35511,15 @@
             console.log("before api call :: ", form);
             this.apiService.saveofCashDeposit(form).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this120.cashWithdrawResponse = cashWithdrawResp;
-              _this120.tokenNum = _this120.cashWithdrawResponse.tokenNumber;
-              _this120.estimatedTime = _this120.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this120.tokenNum);
-              localStorage.setItem("estimatedTiming", _this120.estimatedTime);
-              _this120.enableContinue = false;
+              _this137.cashWithdrawResponse = cashWithdrawResp;
+              _this137.tokenNum = _this137.cashWithdrawResponse.tokenNumber;
+              _this137.estimatedTime = _this137.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this137.tokenNum);
+              localStorage.setItem("estimatedTiming", _this137.estimatedTime);
+              _this137.enableContinue = false;
 
-              if (_this120.cashWithdrawResponse) {
-                _this120.dialogService.tokenGenerationDialog();
+              if (_this137.cashWithdrawResponse) {
+                _this137.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = form.accountNumber;
@@ -32651,50 +35658,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this121 = this;
+            var _this138 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this121.cashData = resp.data;
-              _this121.custID = resp.data.customerId;
-              _this121.ifQRvariable = true;
-              _this121.accountCurrency = resp.accountCurrency;
+              _this138.cashData = resp.data;
+              _this138.custID = resp.data.customerId;
+              _this138.ifQRvariable = true;
+              _this138.accountCurrency = resp.accountCurrency;
 
-              _this121.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
+              _this138.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this121.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this138.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this121.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this138.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this121.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this138.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this121.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this138.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this121.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this138.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this121.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this138.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this121.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this121.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              _this138.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this138.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
             }); // this.denomRequired='yes';
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this122 = this;
+            var _this139 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this122.chargeDetails = resp;
+              _this139.chargeDetails = resp;
 
-              _this122.cashwithdrawForm.controls.totalChargeAmount.setValue(_this122.chargeDetails ? _this122.chargeDetails[0].amount : '');
+              _this139.cashwithdrawForm.controls.totalChargeAmount.setValue(_this139.chargeDetails ? _this139.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this122.totalTransAmount = Number(_this122.cashData.transactionAmount) + Number(_this122.chargeDetails[0].amount);
+                _this139.totalTransAmount = Number(_this139.cashData.transactionAmount) + Number(_this139.chargeDetails[0].amount);
 
-                _this122.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this122.totalTransAmount);
+                _this139.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this139.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -32703,10 +35710,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this122.totalTransAmount = Number(amount) + Number(_this122.chargeDetails ? _this122.chargeDetails[0].amount : '');
-                console.log(_this122.totalTransAmount);
+                _this139.totalTransAmount = Number(amount) + Number(_this139.chargeDetails ? _this139.chargeDetails[0].amount : '');
+                console.log(_this139.totalTransAmount);
 
-                _this122.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this122.totalTransAmount);
+                _this139.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this139.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -32716,15 +35723,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this123 = this;
+            var _this140 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this123.denomRequired = resp.denomRequired;
+              _this140.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this123.enableBtn = false;
-                _this123.enableBtn1 = false;
+                _this140.enableBtn = false;
+                _this140.enableBtn1 = false;
               }
             });
           }
