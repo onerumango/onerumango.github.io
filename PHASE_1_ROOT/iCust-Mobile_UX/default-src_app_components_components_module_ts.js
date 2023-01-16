@@ -73,12 +73,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ComponentsModule": () => (/* binding */ ComponentsModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./footer/footer.component */ 64662);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pipes/pipes.module */ 35503);
 /* harmony import */ var _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./avatar-photo/avatar-photo.component */ 77964);
 /* harmony import */ var _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./branch/branch.component */ 6156);
@@ -87,6 +87,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./time-slots/time-slots.component */ 19023);
 /* harmony import */ var _download_download_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./download/download.component */ 51022);
 /* harmony import */ var _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../shared/shared-material.module */ 84390);
+/* harmony import */ var _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./alert-internet/alert-internet.component */ 82014);
+
 
 
 
@@ -103,8 +105,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let ComponentsModule = class ComponentsModule {
 };
-ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.NgModule)({
+ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.NgModule)({
         declarations: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__.BranchComponent,
             _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_2__.AvatarPhotoComponent,
@@ -112,7 +114,8 @@ ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
             _map_map_component__WEBPACK_IMPORTED_MODULE_4__.MapComponent,
             _search_search_component__WEBPACK_IMPORTED_MODULE_5__.SearchComponent,
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,
-            _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent
+            _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent,
+            _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent
         ],
         exports: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__.BranchComponent,
@@ -121,14 +124,15 @@ ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
             _map_map_component__WEBPACK_IMPORTED_MODULE_4__.MapComponent,
             _search_search_component__WEBPACK_IMPORTED_MODULE_5__.SearchComponent,
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,
-            _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent
+            _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent,
+            _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent
         ],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_12__.IonicModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormsModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_12__.CommonModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.IonicModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormsModule,
             _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_1__.PipesModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_13__.ReactiveFormsModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.ReactiveFormsModule,
             _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__.SharedMaterialModule
         ],
     })

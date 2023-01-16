@@ -95,18 +95,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ForexTransactionPage": () => (/* binding */ ForexTransactionPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _forex_transaction_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./forex-transaction.page.html?ngResource */ 206);
 /* harmony import */ var _forex_transaction_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forex-transaction.page.scss?ngResource */ 88991);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/branch/branch.component */ 6156);
 /* harmony import */ var src_app_components_time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/time-slots/time-slots.component */ 19023);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/loading.service */ 4471);
+/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
+
 
 
 
@@ -123,12 +125,13 @@ let ForexTransactionPage = class ForexTransactionPage {
     // changeSelectedCountryCode(value: string): void {
     //   this.selectedCountryCode = value;
     // }
-    constructor(fb, api, loading, router, modalController) {
+    constructor(fb, api, loading, router, modalController, dataService) {
         this.fb = fb;
         this.api = api;
         this.loading = loading;
         this.router = router;
         this.modalController = modalController;
+        this.dataService = dataService;
         this.flag = true;
         this.accountCurrencyFlag = 'in';
         this.submitted = true;
@@ -400,6 +403,9 @@ let ForexTransactionPage = class ForexTransactionPage {
         ];
     }
     ngOnInit() {
+        var _a;
+        this.currentUser = this.dataService.getCurrentUser();
+        console.log(this.currentUser);
         const dt = new Date();
         this.minDate = dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + (dt.getDate() < 10 ? ('0' + dt.getDate()) : dt.getDate());
         this.phoneNumber = localStorage.getItem('customerPhonenum');
@@ -408,29 +414,61 @@ let ForexTransactionPage = class ForexTransactionPage {
             console.log('>>get router data -- :', this.routerData);
         }
         this.forexForm = this.fb.group({
-            accountNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            accountCurrency: ['INR', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            accountBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            holderName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            accountBalance: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            transactionType: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            transactionCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            fxAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            exchangeRate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            totalChargeAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            totalTransactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            trasactionBranchFlag: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            transactionBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            transactionDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            timeSlot: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            remark: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
-            transactionTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
+            transactionId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            customerId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            productCode: ['FTX', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            tokenOrigin: ['Mobile', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            accountNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            accountBalance: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            accountCurrency: [(_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.currencyCode, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            transactionCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            transactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            transactionType: ['buy', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            branchFlag: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            accountBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            transactionDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            transactionBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            isMobileTrans: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            transactionTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            exchangeRate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            accountAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            totalChargeAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            narrative: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            denomination: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            totalAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            createdBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            createdTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            modifiedBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            modifiedTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            recordStatus: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            authStatus: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            version: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            totalTransactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]],
+            remarks: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]]
         });
-        console.log(this.forexForm.value);
-        console.log(this.countries);
+        this.forexForm.get('branchFlag').valueChanges.subscribe(val => {
+            localStorage.setItem("BranchFlag", val);
+            this.brnflg = val;
+            if (this.brnflg == false && val == false) {
+                this.forexForm.controls.transactionBranch.patchValue(this.trnBrn);
+                this.nearestBrn = true;
+            }
+            else {
+                this.nearestBrn = false;
+                this.accBranch = localStorage.getItem("AccBranch");
+                this.forexForm.controls.transactionBranch.patchValue(this.accBranch);
+            }
+            if (this.brnflg == true && val == false) {
+                this.forexForm.controls.transactionBranch.patchValue(this.accBranch);
+                this.nearestBrn = true;
+            }
+        });
         this.loadData();
         let today = new Date().toISOString();
         this.forexForm.get('transactionDate').patchValue(today);
+    }
+    trnBrn(trnBrn) {
+        throw new Error('Method not implemented.');
     }
     loadData() {
         this.loading.present();
@@ -445,7 +483,7 @@ let ForexTransactionPage = class ForexTransactionPage {
             this.currentBalance = this.users[0].amount;
             this.selectedCountryCode = resp.countryCode.toLowerCase();
             this.transactionCurrencyModel = resp.currencyCode;
-            this.curr = (0,_angular_common__WEBPACK_IMPORTED_MODULE_7__.getCurrencySymbol)(resp.custAccount[0].accountCurrency, 'narrow');
+            this.curr = (0,_angular_common__WEBPACK_IMPORTED_MODULE_8__.getCurrencySymbol)(resp.custAccount[0].accountCurrency, 'narrow');
             this.api.getChargeDetails(this.forexForm.get('accountNumber').value).subscribe(resp => {
                 var _a;
                 console.log('getChargeDetails', resp);
@@ -465,7 +503,6 @@ let ForexTransactionPage = class ForexTransactionPage {
             if (button === 'disable1') {
                 if (v.accountBranch != '' &&
                     v.accountNumber != '' &&
-                    v.fxAmount != '' &&
                     v.transactionCurrency != '' &&
                     v.transactionAmount != 0) {
                     this.submitted = false;
@@ -505,6 +542,7 @@ let ForexTransactionPage = class ForexTransactionPage {
     // selectedCountryCode = 'ad';
     // // countryCodes = ['ad', 'ae', 'af', 'ag', 'al', 'ai'];
     selectCurrencyCode(code) {
+        var _a;
         //console.log(code);
         console.log(code);
         const currencyCode = code.detail.value.currency;
@@ -517,7 +555,7 @@ let ForexTransactionPage = class ForexTransactionPage {
                 this.routerData.data.transactionCurrency.toLowerCase();
             this.forexForm.controls.transactionCurrency.patchValue(this.routerData.data.transactionCurrency);
         }
-        if (this.selectedCountryCode && !this.forexForm.get('accountCurrency').value.toLowerCase().includes(this.selectedCountryCode)) {
+        if (this.selectedCountryCode && !((_a = this.forexForm.get('accountCurrency')) === null || _a === void 0 ? void 0 : _a.value.toLowerCase().includes(this.selectedCountryCode))) {
             this.api.getCurrencyExRate(this.forexForm.get('accountCurrency').value, currencyCode).subscribe(resp => {
                 var _a, _b;
                 console.log(resp);
@@ -585,7 +623,7 @@ let ForexTransactionPage = class ForexTransactionPage {
         this.router.navigate(['dashboard']);
     }
     presentModal() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
                 component: src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_2__.BranchComponent,
                 id: "branchModal",
@@ -608,27 +646,30 @@ let ForexTransactionPage = class ForexTransactionPage {
         var _a;
         // this.router.navigate(['/currencyconverter']);
         this.router.navigateByUrl('/currencyconverter', {
-            state: { data: {
-                    amount: this.forexForm.get('fxAmount').value,
+            state: {
+                data: {
+                    amount: this.forexForm.get('transactionAmount').value,
                     transType: this.forexForm.get('transactionType').value,
                     exchangeRate: this.forexForm.get('exchangeRate').value,
                     fromCurrencyFlag: this.accountCurrencyFlag,
                     toCurrencyFlag: this.selectedCountryCode,
                     fromCurrency: this.forexForm.get('accountCurrency').value,
                     toCurrency: (_a = this.forexForm.get('transactionCurrency').value) === null || _a === void 0 ? void 0 : _a.currency,
-                } },
+                }
+            },
         });
     }
 };
 ForexTransactionPage.ctorParameters = () => [
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService },
     { type: src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_5__.LoadingService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_9__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_11__.ModalController },
+    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_6__.DataService }
 ];
-ForexTransactionPage = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
+ForexTransactionPage = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.Component)({
         selector: 'app-forex-transaction',
         template: _forex_transaction_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_forex_transaction_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -711,7 +752,7 @@ module.exports = "* {\n  font-family: \"Montserrat\" !important;\n  /* Add !impo
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header *ngIf=\"flag\">\r\n  <ion-toolbar class=\"forex_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous1()\"></ion-icon>\r\n    <span class=\"text\">Forex Transaction</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content *ngIf=\"flag\">\r\n  <div>\r\n    <form [formGroup]=\"forexForm\">\r\n      <div class=\"inputCard\">\r\n        <ion-label>Account Number*</ion-label>\r\n        <!-- <ion-input class=\"box\"></ion-input> -->\r\n        <ion-select class=\"box\" mode=\"ios\" formControlName=\"accountNumber\" ngDefaultControl\r\n          (ionChange)=\"accountEvent($event)\">\r\n          <ion-select-option *ngFor=\"let user of users\" [value]=\"user.accountId\">{{user.accountId}}</ion-select-option>\r\n        </ion-select>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\" formControlName=\"accountBalance\" ngDefaultControl>Account\r\n          Balance : {{curr}} {{currentBalance}}</ion-label>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\" formControlName=\"holderName\" ngDefaultControl>Holder Name :\r\n          Manoj</ion-label>\r\n      </div>\r\n\r\n\r\n      <div class=\"inputCard\">\r\n        <div class=\"box7\">\r\n          <ion-label>Account Currency</ion-label>\r\n          <ion-card class=\"box\">\r\n            <div class=\"currency_row\">\r\n              <ngx-flag-picker [selectedCountryCode]=\"accountCurrencyFlag\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n                [showArrow]=\"!isShow\">\r\n              </ngx-flag-picker>\r\n              <ion-input placeholder=\"Account Currency\" formControlName=\"accountCurrency\" readonly>\r\n              </ion-input>\r\n            </div>\r\n          </ion-card>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Account Branch*</ion-label>\r\n        <ion-input class=\"box\" placeholder=\"Account Branch\" formControlName=\"accountBranch\" ngDefaultControl readonly>\r\n        </ion-input>\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Transaction Type*</ion-label>\r\n        <ion-radio-group formControlName=\"transactionType\" (ionChange)=\"changeTransactionType($event)\" ngDefaultControl>\r\n          <ion-row>\r\n            <div class=\"ion_col\">\r\n              <ion-radio mode=\"md\" item-left value=\"buy\"></ion-radio> &nbsp;&nbsp;\r\n              <ion-label position=\"start\">Buy</ion-label>\r\n            </div>\r\n\r\n            <div class=\"ion_col\">\r\n              <ion-radio mode=\"md\" item-left value=\"sell\"></ion-radio> &nbsp;&nbsp;\r\n              <ion-label>Sell</ion-label>\r\n            </div>\r\n          </ion-row>\r\n        </ion-radio-group>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n\r\n        <div class=\"box7\">\r\n          <ion-card class=\"box\">\r\n            <div class=\"currency_row\">\r\n              <ngx-flag-picker [selectedCountryCode]=\"selectedCountryCode\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n                [showArrow]=\"!isShow\">\r\n              </ngx-flag-picker>\r\n              <ion-select mode=\"ios\" placeholder=\"Transaction Currency\" formControlName=\"transactionCurrency\"\r\n                [placeholder]=\"transactionCurrencyModel\" [compareWith]=\"compareWith\"\r\n                (ionChange)=\"selectCurrencyCode($event)\">\r\n                <ion-select-option *ngFor=\"let user of countries\" [value]=\"user\">\r\n                  {{user.currency}}\r\n                  <!-- {{user.currency + ' : ' + user.countryName}} -->\r\n                </ion-select-option>\r\n              </ion-select>\r\n            </div>\r\n          </ion-card>\r\n        </div>\r\n      </div>\r\n      <!-- <div class=\"inputCard\">\r\n    <ion-label>Transaction Currency</ion-label>\r\n    <ion-input class=\"box\">\r\n    <ngx-flag-picker\r\n    [selectedCountryCode]=\"selectedCountryCode\"\r\n    showFlags=\"isShow\"\r\n    showArrow=\"!isShow\"\r\n    [countryCodes]=\"countryCodes\"\r\n    (changedCountryCode)=\"changeSelectedCountryCode($event)\">\r\n  </ngx-flag-picker>\r\n</ion-input>\r\n    </div> -->\r\n      <!--     \r\n    <div class=\"inputCard\">\r\n      <ion-label>Transaction Currency</ion-label>\r\n       <ion-select [compareWith]=\"compareWith\" class=\"box\">\r\n      <ion-select-option *ngFor=\"let user of countries\" [value]=\"user\">\r\n      \r\n      </ion-select-option>\r\n      </ion-select> -->\r\n      <!-- <ngx-flag-picker  -->\r\n      <!-- [selectedCountryCode]=\"selectedCountryCode\"\r\n      [countryCodes]=\"countryCodes\"\r\n    \r\n      (changedCountryCode)=\"changeSelectedCountryCode($event)\"> -->\r\n      <!-- </ngx-flag-picker>\r\n   \r\n  </div> -->\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-input class=\"box\" placeholder=\"Fx Amount\" formControlName=\"fxAmount\" (keyup)=\"handleExchangeRate($event)\" ngDefaultControl></ion-input>\r\n      </div>\r\n      <div class=\"inputCard\"\r\n        *ngIf=\"selectedCountryCode && !forexForm.get('accountCurrency').value.toLowerCase().includes(selectedCountryCode)\">\r\n        <ion-router-link (click)=\"currencyScreen()\" class=\"underline\">Check the Currency Converter</ion-router-link>\r\n      </div>\r\n      <div class=\"inputCard\"\r\n        *ngIf=\"selectedCountryCode && !forexForm.get('accountCurrency').value.toLowerCase().includes(selectedCountryCode)\">\r\n        <ion-input class=\"box\" placeholder=\"Exchange Rate\" formControlName=\"exchangeRate\" name=\"exchangeRate\"\r\n          ngDefaultControl></ion-input>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-input class=\"box\" placeholder=\"Total Charge Amount\" name=\"chargeAMount\" formControlName=\"totalChargeAmount\"\r\n          ngDefaultControl></ion-input>\r\n      </div>\r\n      <div class=\"inputCard total_trans_row\">\r\n        <ion-input class=\"box\" placeholder=\"Total Transaction Amount\" formControlName=\"totalTransactionAmount\"\r\n          ngDefaultControl></ion-input>\r\n        <span class=\"info_btn\">i</span>\r\n      </div>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\"\r\n          [disabled]=\"validateDisablebutton('disable1') || submitted ||   transAmt > currentBalance\"\r\n          (click)=\"next()\"\r\n          >Next</ion-button>\r\n        </div>\r\n\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" fill=\"clear\" style=\"color: black\" (click)=\"previous1()\">Cancel\r\n          </ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-header *ngIf=\"!flag\">\r\n  <ion-toolbar class=\"forex_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous()\"></ion-icon>\r\n    <span class=\"text\">Forex Transaction</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content *ngIf=\"!flag\">\r\n  <div>\r\n    <form [formGroup]=\"forexForm\">\r\n\r\n\r\n      <div class=\"trans_branch\">\r\n        <ion-label>Do you wish to perform this transaction in your branch?</ion-label>\r\n        <!-- <ion-label></ion-label> -->\r\n        <ion-radio-group formControlName=\"trasactionBranchFlag\" ngDefaultControl>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label position=\"start\">Yes</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagYes\" [value]=\"true\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label>No</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagNo\" [value]=\"false\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-radio-group>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-router-link (click)=\"presentModal()\" [hidden]=\"forexForm.get('trasactionBranchFlag').value\"\r\n          class=\"underline\">Click here to find nearest branch</ion-router-link>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Transaction Branch*</ion-label>\r\n          <ion-item lines=\"none\" class=\"box\">\r\n            <ion-input placeholder=\"Transaction Branch\" formControlName=\"transactionBranch\" ngDefaultControl\r\n              readonly></ion-input>\r\n            <ion-icon *ngIf=\"forexForm.get('trasactionBranchFlag').value == true\" name=\"home-outline\" color=\"primary\"\r\n                slot=\"end\"></ion-icon>\r\n            <ion-icon *ngIf=\"forexForm.get('trasactionBranchFlag').value == false\" name=\"navigate-circle-outline\"\r\n              color=\"primary\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Transaction date*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n            <ion-modal [keepContentsMounted]=\"true\">\r\n              <ng-template>\r\n                <ion-datetime presentation=\"date\" id=\"datetime\" [max]=\"maxDate\"\r\n                  formControlName=\"transactionDate\" \r\n                  displayFormat=\"DDD. MMM DD, YY\" \r\n                  [showDefaultTitle]=\"true\" \r\n                  #datetime>\r\n                </ion-datetime>\r\n              </ng-template>\r\n            </ion-modal>\r\n            <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-card class=\"box ml-0\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input formControlName=\"transactionTime\" placeholder=\"Time Slot\" [readonly]=\"true\"></ion-input>\r\n            <!-- <ion-datetime displayFormat=\"hh:mm A\"  placeholder=\"Select time slot\" formControlName=\"transactionTime\"></ion-datetime> -->\r\n            <ion-icon name=\"alarm-outline\" slot=\"end\" (click)=\"openPopup()\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-textarea placeholder=\"Remark\" class=\"box1\" formControlName=\"remark\" ngDefaultControl></ion-textarea>\r\n      </div>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" \r\n          (click)=\"save(forexForm.value)\"\r\n          [disabled]=\"validateDisablebutton('disable2') || submitted1\"\r\n          >Save</ion-button>\r\n        </div>\r\n\r\n        <div>\r\n          <ion-button shape=\"round\" fill=\"clear\" (click)=\"previous()\" style=\"color: black\">Back</ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-header *ngIf=\"flag\">\r\n  <ion-toolbar class=\"forex_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous1()\"></ion-icon>\r\n    <span class=\"text\">Forex Transaction</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content *ngIf=\"flag\">\r\n  <div>\r\n    <form [formGroup]=\"forexForm\">\r\n      <div class=\"inputCard\">\r\n        <ion-label>Account Number*</ion-label>\r\n        <!-- <ion-input class=\"box\"></ion-input> -->\r\n        <ion-select class=\"box\" mode=\"ios\" formControlName=\"accountNumber\" ngDefaultControl\r\n          (ionChange)=\"accountEvent($event)\">\r\n          <ion-select-option *ngFor=\"let user of users\" [value]=\"user.accountId\">{{user.accountId}}</ion-select-option>\r\n        </ion-select>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\" formControlName=\"accountBalance\" ngDefaultControl>Account\r\n          Balance : {{curr}} {{currentBalance}}</ion-label>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\" ngDefaultControl>Holder Name : {{ currentUser?.firstName }}</ion-label>\r\n      </div>\r\n\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Currency : {{ currentUser?.currencyCode }}</ion-label>\r\n        <!-- <div class=\"box7\">\r\n          <ion-label>Account Currency</ion-label>\r\n          <ion-card class=\"box\">\r\n            <div class=\"currency_row\">\r\n              <ngx-flag-picker [selectedCountryCode]=\"accountCurrencyFlag\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n                [showArrow]=\"!isShow\">\r\n              </ngx-flag-picker>\r\n              <ion-input placeholder=\"Account Currency\" formControlName=\"accountCurrency\" readonly>\r\n              </ion-input>\r\n            </div>\r\n          </ion-card>\r\n        </div> -->\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Account Branch*</ion-label>\r\n        <ion-input class=\"box\" placeholder=\"Account Branch\" formControlName=\"accountBranch\" ngDefaultControl readonly>\r\n        </ion-input>\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Transaction Type*</ion-label>\r\n        <ion-radio-group formControlName=\"transactionType\" (ionChange)=\"changeTransactionType($event)\" ngDefaultControl>\r\n          <ion-row>\r\n            <div class=\"ion_col\">\r\n              <ion-radio mode=\"md\" item-left value=\"buy\"></ion-radio> &nbsp;&nbsp;\r\n              <ion-label position=\"start\">Buy</ion-label>\r\n            </div>\r\n\r\n            <div class=\"ion_col\">\r\n              <ion-radio mode=\"md\" item-left value=\"sell\"></ion-radio> &nbsp;&nbsp;\r\n              <ion-label>Sell</ion-label>\r\n            </div>\r\n          </ion-row>\r\n        </ion-radio-group>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n\r\n        <div class=\"box7\">\r\n          <ion-card class=\"box\">\r\n            <div class=\"currency_row\">\r\n              <ngx-flag-picker [selectedCountryCode]=\"selectedCountryCode\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n                [showArrow]=\"!isShow\">\r\n              </ngx-flag-picker>\r\n              <ion-select mode=\"ios\" placeholder=\"Transaction Currency\" formControlName=\"transactionCurrency\"\r\n                [placeholder]=\"transactionCurrencyModel\" [compareWith]=\"compareWith\"\r\n                (ionChange)=\"selectCurrencyCode($event)\">\r\n                <ion-select-option *ngFor=\"let user of countries\" [value]=\"user\">\r\n                  {{user.currency}}\r\n                  <!-- {{user.currency + ' : ' + user.countryName}} -->\r\n                </ion-select-option>\r\n              </ion-select>\r\n            </div>\r\n          </ion-card>\r\n        </div>\r\n      </div>\r\n      <!-- <div class=\"inputCard\">\r\n    <ion-label>Transaction Currency</ion-label>\r\n    <ion-input class=\"box\">\r\n    <ngx-flag-picker\r\n    [selectedCountryCode]=\"selectedCountryCode\"\r\n    showFlags=\"isShow\"\r\n    showArrow=\"!isShow\"\r\n    [countryCodes]=\"countryCodes\"\r\n    (changedCountryCode)=\"changeSelectedCountryCode($event)\">\r\n  </ngx-flag-picker>\r\n</ion-input>\r\n    </div> -->\r\n      <!--     \r\n    <div class=\"inputCard\">\r\n      <ion-label>Transaction Currency</ion-label>\r\n       <ion-select [compareWith]=\"compareWith\" class=\"box\">\r\n      <ion-select-option *ngFor=\"let user of countries\" [value]=\"user\">\r\n      \r\n      </ion-select-option>\r\n      </ion-select> -->\r\n      <!-- <ngx-flag-picker  -->\r\n      <!-- [selectedCountryCode]=\"selectedCountryCode\"\r\n      [countryCodes]=\"countryCodes\"\r\n    \r\n      (changedCountryCode)=\"changeSelectedCountryCode($event)\"> -->\r\n      <!-- </ngx-flag-picker>\r\n   \r\n  </div> -->\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-input class=\"box\" placeholder=\"Fx Amount\" formControlName=\"transactionAmount\" (keyup)=\"handleExchangeRate($event)\" ngDefaultControl></ion-input>\r\n      </div>\r\n      <div class=\"inputCard\"\r\n        *ngIf=\"selectedCountryCode && !forexForm.get('accountCurrency').value.toLowerCase().includes(selectedCountryCode)\">\r\n        <ion-router-link (click)=\"currencyScreen()\" class=\"underline\">Check the Currency Converter</ion-router-link>\r\n      </div>\r\n      <div class=\"inputCard\"\r\n        *ngIf=\"selectedCountryCode && !forexForm.get('accountCurrency').value.toLowerCase().includes(selectedCountryCode)\">\r\n        <ion-input class=\"box\" placeholder=\"Exchange Rate\" formControlName=\"exchangeRate\" name=\"exchangeRate\"\r\n          ngDefaultControl></ion-input>\r\n      </div>\r\n      <div class=\"inputCard\">\r\n        <ion-input class=\"box\" placeholder=\"Total Charge Amount\" name=\"chargeAMount\" formControlName=\"totalChargeAmount\"\r\n          ngDefaultControl></ion-input>\r\n      </div>\r\n      <div class=\"inputCard total_trans_row\">\r\n        <ion-input class=\"box\" placeholder=\"Total Transaction Amount\" formControlName=\"totalTransactionAmount\"\r\n          ngDefaultControl></ion-input>\r\n        <span class=\"info_btn\">i</span>\r\n      </div>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\"\r\n          [disabled]=\"validateDisablebutton('disable1') || submitted ||   transactionAmount > currentBalance\"\r\n          (click)=\"next()\"\r\n          >Next</ion-button>\r\n        </div>\r\n\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" fill=\"clear\" style=\"color: black\" (click)=\"previous1()\">Cancel\r\n          </ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-header *ngIf=\"!flag\">\r\n  <ion-toolbar class=\"forex_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous()\"></ion-icon>\r\n    <span class=\"text\">Forex Transaction</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content *ngIf=\"!flag\">\r\n  <div>\r\n    <form [formGroup]=\"forexForm\">\r\n\r\n\r\n      <div class=\"trans_branch\">\r\n        <ion-label>Do you wish to perform this transaction in your branch?</ion-label>\r\n        <!-- <ion-label></ion-label> -->\r\n        <ion-radio-group formControlName=\"trasactionBranch\" ngDefaultControl>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label position=\"start\">Yes</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagYes\" [value]=\"true\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label>No</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagNo\" [value]=\"false\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-radio-group>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-router-link (click)=\"presentModal()\" [hidden]=\"forexForm.get('trasactionBranch').value\"\r\n          class=\"underline\">Click here to find nearest branch</ion-router-link>\r\n      </div>\r\n\r\n    \r\n      <div class=\"inputCard2\">\r\n        <ion-label>Transaction Branch*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input\r\n              appearence=\"none\"\r\n              formControlName=\"transactionBranch\"\r\n              [readonly]=\"forexForm.get('branchFlag').value ? true : false\"\r\n            >\r\n            </ion-input>\r\n            <ion-icon\r\n              *ngIf=\"forexForm.get('branchFlag').value == true\"\r\n              name=\"home-outline\"\r\n              color=\"primary\"\r\n              slot=\"end\"\r\n            ></ion-icon>\r\n            <ion-icon\r\n              *ngIf=\"forexForm.get('branchFlag').value == false\"\r\n              name=\"navigate-circle-outline\"\r\n              color=\"primary\"\r\n              slot=\"end\"\r\n            ></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n        <ion-note\r\n          style=\"color: red; top: 13px\"\r\n          *ngIf=\"f.transactionBranch.errors?.required && f.transactionBranch.touched\"\r\n        >\r\n          <small>Transaction Branch Required</small>\r\n        </ion-note>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-label>Transaction date*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n            <ion-modal [keepContentsMounted]=\"true\">\r\n              <ng-template>\r\n                <ion-datetime presentation=\"date\" id=\"datetime\" [max]=\"maxDate\"\r\n                  formControlName=\"transactionDate\" \r\n                  displayFormat=\"DDD. MMM DD, YY\" \r\n                  [showDefaultTitle]=\"true\" \r\n                  #datetime>\r\n                </ion-datetime>\r\n              </ng-template>\r\n            </ion-modal>\r\n            <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-card class=\"box ml-0\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input formControlName=\"transactionTime\" placeholder=\"Time Slot\" [readonly]=\"true\"></ion-input>\r\n            <!-- <ion-datetime displayFormat=\"hh:mm A\"  placeholder=\"Select time slot\" formControlName=\"transactionTime\"></ion-datetime> -->\r\n            <ion-icon name=\"alarm-outline\" slot=\"end\" (click)=\"openPopup()\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard\">\r\n        <ion-textarea placeholder=\"Remark\" class=\"box1\" formControlName=\"remarks\" ngDefaultControl></ion-textarea>\r\n      </div>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" \r\n          (click)=\"save(forexForm.value)\"\r\n          [disabled]=\"validateDisablebutton('disable2') || submitted1\"\r\n          >Save</ion-button>\r\n        </div>\r\n\r\n        <div>\r\n          <ion-button shape=\"round\" fill=\"clear\" (click)=\"previous()\" style=\"color: black\">Back</ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

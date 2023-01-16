@@ -94,14 +94,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ForgettPasswordPage": () => (/* binding */ ForgettPasswordPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _forgett_password_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./forgett-password.page.html?ngResource */ 54985);
 /* harmony import */ var _forgett_password_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forgett-password.page.scss?ngResource */ 91199);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
+/* harmony import */ var _login_login_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login/login.page */ 3058);
+
 
 
 
@@ -115,8 +117,9 @@ let ForgettPasswordPage = class ForgettPasswordPage {
         this.router = router;
         this.toastCtrl = toastCtrl;
         this.api = api;
-        this.phoneNumber = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl('');
+        this.phoneNumber = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl('');
         this.isLoading = false;
+        this.oTpModel = new _login_login_page__WEBPACK_IMPORTED_MODULE_3__.otpModel();
     }
     ngOnInit() {
         if (this.routerData = this.router.getCurrentNavigation().extras.state) {
@@ -127,46 +130,57 @@ let ForgettPasswordPage = class ForgettPasswordPage {
     back() {
         this.router.navigateByUrl('/login');
     }
-    openToast(message) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
-            const toast = yield this.toastCtrl.create({
-                message: `${message}`,
-                duration: 2500,
-                position: 'middle',
-            });
-            toast.present();
-        });
-    }
     getOtp() {
+        this.oTpModel.source = 'customer';
+        this.oTpModel.source_key = 'mobile';
+        this.oTpModel.source_value = this.phoneNumber.value;
+        this.oTpModel.isMobileLogin = true;
         const pattern = /^([\+0-9]{3}[0-9]{10}|[0-9]{10})$/;
         if (pattern.test(this.phoneNumber.value)) {
             this.isLoading = true;
-            this.api.custpomerDetails(this.phoneNumber.value).subscribe((resp) => {
-                this.isLoading = false;
-                if (resp.custStatus === 'APPROVED') {
-                    resp.custAccount = resp.custAccount.filter((card) => card.status === 'APPROVED');
+            this.api.getOtp(this.oTpModel).subscribe((res) => {
+                if (res.status == 200) {
                     localStorage.setItem('customerPhonenum', this.phoneNumber.value);
-                    this.router.navigateByUrl('/otp', { state: { resetPass: true } });
+                    const navigationExtras = {
+                        queryParams: {
+                            'screenName': 'forget-password'
+                        },
+                    };
+                    this.api.sendNavParam(navigationExtras);
+                    this.router.navigate(['otp']);
+                    this.openToast(res === null || res === void 0 ? void 0 : res.message);
                 }
                 else {
-                    this.openToast('Your account status is not approved');
-                    this.router.navigate(['login'], { replaceUrl: true });
-                    this.isLoading = false;
+                    this.openToast(res === null || res === void 0 ? void 0 : res.message);
                 }
+                this.isLoading = false;
+            }, (err) => {
+                this.openToast(err);
+                this.isLoading = false;
             });
         }
         else {
             this.openToast('Enter valid phone number');
         }
     }
+    openToast(message) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastCtrl.create({
+                message: `${message}`,
+                duration: 2500,
+                position: 'bottom',
+            });
+            toast.present();
+        });
+    }
 };
 ForgettPasswordPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ToastController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService }
 ];
-ForgettPasswordPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+ForgettPasswordPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-forgett-password',
         template: _forgett_password_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_forgett_password_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

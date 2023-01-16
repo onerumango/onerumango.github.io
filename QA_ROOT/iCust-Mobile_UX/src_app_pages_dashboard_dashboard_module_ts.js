@@ -110,8 +110,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ 63587);
-/* harmony import */ var _unlockapp_unlockapp_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../unlockapp/unlockapp.page */ 80581);
-/* harmony import */ var src_app_app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/app.component */ 55041);
+/* harmony import */ var src_app_app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/app.component */ 55041);
+/* harmony import */ var src_app_components_alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/alert-internet/alert-internet.component */ 82014);
 
 
 
@@ -177,11 +177,6 @@ let DashboardPage = class DashboardPage {
         localStorage.setItem('slideNo', '0');
         var customerDetails = JSON.parse(localStorage.getItem('customer_details'));
         this.getCustomerAccounts();
-        console.log(customerDetails.mpin);
-        localStorage.setItem('mpin', customerDetails.mpin);
-        if (customerDetails.firstTimeLogin == "Y") {
-            this.addCustomTask();
-        }
         this.accountType = customerDetails.accountType;
         this.emailAddress = customerDetails.primaryEmailAdress;
         this.dataService.getAvatarUrl.subscribe((data) => {
@@ -220,13 +215,13 @@ let DashboardPage = class DashboardPage {
             console.log(err);
         });
     }
-    addCustomTask() {
+    openNoInternet() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             let modal = yield this.modalCtrl.create({
-                component: _unlockapp_unlockapp_page__WEBPACK_IMPORTED_MODULE_6__.UnlockappPage,
-                cssClass: 'small-modal',
+                component: src_app_components_alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_7__.AlertInternetComponent,
+                cssClass: 'small-modal'
             });
-            return yield modal.present();
+            modal.present();
         });
     }
     cancel() {
@@ -352,7 +347,7 @@ DashboardPage.ctorParameters = () => [
 ];
 DashboardPage.propDecorators = {
     modal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ViewChild, args: ['modal',] }],
-    sidemenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ViewChild, args: [src_app_app_component__WEBPACK_IMPORTED_MODULE_7__.AppComponent,] }],
+    sidemenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ViewChild, args: [src_app_app_component__WEBPACK_IMPORTED_MODULE_6__.AppComponent,] }],
     swiper: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ViewChild, args: ['swiper', { static: false },] }]
 };
 DashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([

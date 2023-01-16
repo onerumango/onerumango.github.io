@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _wallet_popup_wallet_popup_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../wallet-popup/wallet-popup.component */ 62093);
+/* harmony import */ var _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../appointmentpopup/appointmentpopup.page */ 14808);
 
 
 
@@ -36,17 +36,14 @@ let WalletListComponent = class WalletListComponent {
     }
     ngOnInit() {
         this.currentUser = JSON.parse(localStorage.getItem('customer_details'));
-        console.log("USer", this.currentUser);
         this.getSavedWalletByCustomerId();
     }
     // Fetch List of Wallet Items
     getSavedWalletByCustomerId() {
-        console.log("USer", this.currentUser['customerId']);
         this.apiService.fetchWalletInfo(this.currentUser['customerId'])
             .subscribe((result) => {
             if (result.status == 200) {
                 this.walletList = result.data;
-                console.log("Wallet items", result);
             }
             else {
                 this.walletList = [];
@@ -57,11 +54,12 @@ let WalletListComponent = class WalletListComponent {
     }
     openTicketModal(data) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            console.log("Data check", data);
             if (data != null) {
                 const modal = yield this.modalController.create({
-                    component: _wallet_popup_wallet_popup_component__WEBPACK_IMPORTED_MODULE_3__.WalletPopupComponent,
+                    component: _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
                     componentProps: {
-                        data: data ? data : {}
+                        value: data ? data : {}
                     }
                 });
                 modal.onDidDismiss().then((modelData) => {

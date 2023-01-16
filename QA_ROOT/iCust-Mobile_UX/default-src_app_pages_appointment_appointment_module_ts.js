@@ -148,6 +148,7 @@ let AppointmentPage = class AppointmentPage {
         this.enableDate = false;
         this.currentDate = new Date();
         this.currentDate2 = new Date().toISOString();
+        this.trnxArrCopy = [];
         this.trxnArrayList = [];
         this.transactionDataArrDownLoad = [];
         this.accountsData = [];
@@ -228,6 +229,7 @@ let AppointmentPage = class AppointmentPage {
     }
     openActionSheet() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            console.log(this.transactionDataArr);
             const actionSheet = yield this.actionSheetController.create({
                 // header: 'Albums',
                 // subHeader: 'Subtitle',
@@ -240,14 +242,33 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Completed',
                         // icon: 'share',
                         handler: () => {
-                            this.trxnArrayList = this.transactionDataArr.filter((trans) => trans.tokenStatus === 'COMPLETED');
+                            this.apiService.filterAppointment('COMPLETED').subscribe(resp => {
+                                console.log(resp);
+                                if (resp)
+                                    this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
+                            }, error => {
+                                console.log(error);
+                            });
+                            // this.trxnArrayList = this.transactionDataArr.filter(
+                            //   (trans) => trans.tokenStatus === 'COMPLETED'
+                            // );
+                            // console.log("txnlist------",this.transactionDataArr)
                         },
                     },
                     {
                         text: 'Failed',
                         // icon: 'share',
                         handler: () => {
-                            this.trxnArrayList = this.transactionDataArr.filter((trans) => trans.tokenStatus === 'FAILED');
+                            this.apiService.filterAppointment('FAILED').subscribe(resp => {
+                                console.log(resp);
+                                if (resp)
+                                    this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
+                            }, error => {
+                                console.log(error);
+                            });
+                            // this.trxnArrayList = this.transactionDataArr.filter(
+                            //   (trans) => trans.tokenStatus === 'FAILED'
+                            // );
                             // this.selectAction('CANCELED');
                         },
                     },
@@ -256,7 +277,17 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.trxnArrayList = this.transactionDataArr.filter((trans) => trans.appointmentStatus === 'INPROGRESS');
+                            this.apiService.filterAppointment('INPROGRESS').subscribe(resp => {
+                                console.log(resp);
+                                if (resp)
+                                    this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
+                            }, error => {
+                                console.log(error);
+                            });
+                            // this.trxnArrayList = this.transactionDataArr.filter(
+                            //   (trans) => trans.appointmentStatus === 'INPROGRESS'
+                            // );
+                            // console.log("txnlist",this.trxnArrayList)
                         },
                     },
                     {
@@ -264,15 +295,33 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.trxnArrayList = this.transactionDataArr.filter((trans) => trans.appointmentStatus === 'SCHEDULED');
+                            this.apiService.filterAppointment('SCHEDULED').subscribe(resp => {
+                                console.log(resp);
+                                if (resp)
+                                    this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
+                            }, error => {
+                                console.log(error);
+                            });
+                            // this.trxnArrayList = this.transactionDataArr.filter(
+                            //   (trans) => trans.appointmentStatus === 'SCHEDULED'
+                            // );
                         },
                     },
                     {
                         text: 'Cancelled',
                         // icon: 'share',
                         handler: () => {
+                            this.apiService.filterAppointment('CANCELED').subscribe(resp => {
+                                console.log(resp);
+                                if (resp)
+                                    this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
+                            }, error => {
+                                console.log(error);
+                            });
                             // this.selectAction('CANCELED');
-                            this.trxnArrayList = this.transactionDataArr.filter((trans) => trans.appointmentStatus === 'CANCELED');
+                            // this.trxnArrayList = this.transactionDataArr.filter(
+                            //   (trans) => trans.appointmentStatus === 'CANCELED'
+                            // );
                         },
                     },
                     {
@@ -495,9 +544,9 @@ let AppointmentPage = class AppointmentPage {
             this.trxnArrayList.map((i) => console.log('trnx date', i.transactionDate));
         }
         else {
-            console.log('ghj');
             this.trxnArrayList = arr;
         }
+        this.trnxArrCopy = this.trxnArrayList;
         this.cdr.markForCheck();
         this.cdr.detectChanges();
     }

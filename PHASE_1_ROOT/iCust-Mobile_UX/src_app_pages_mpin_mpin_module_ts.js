@@ -117,12 +117,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let MpinPage = class MpinPage {
-    constructor(router, fb, api, toastCtrl, device, uniqueDeviceID) {
+    constructor(router, fb, api, toastCtrl, device, cdk, uniqueDeviceID) {
         this.router = router;
         this.fb = fb;
         this.api = api;
         this.toastCtrl = toastCtrl;
         this.device = device;
+        this.cdk = cdk;
         this.uniqueDeviceID = uniqueDeviceID;
         this.mpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl();
         this.mpinobj = new _setmpin_setmpin_page__WEBPACK_IMPORTED_MODULE_3__.mpinObjects();
@@ -130,12 +131,12 @@ let MpinPage = class MpinPage {
         this.config = {
             allowNumbersOnly: true,
             length: 4,
-            isPasswordInput: false,
+            isPasswordInput: true,
             disableAutoFocus: false,
-            placeholder: '',
+            placeholder: '*',
             inputStyles: {
-                'width': '40px',
-                'height': '40px'
+                'width': '50px',
+                'height': '50px'
             }
         };
     }
@@ -215,6 +216,10 @@ let MpinPage = class MpinPage {
             });
         });
     }
+    obscureText() {
+        this.config.isPasswordInput = !this.config.isPasswordInput;
+        this.cdk.markForCheck();
+    }
     openToast(message) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
@@ -232,6 +237,7 @@ MpinPage.ctorParameters = () => [
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
     { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_4__.DeviceAccess },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__.ChangeDetectorRef },
     { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_5__.UniqueDeviceID }
 ];
 MpinPage = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
@@ -262,7 +268,7 @@ module.exports = "section {\n  position: relative;\n  background: url(\"/assets/
   \******************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\"></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form class=\"form_container\" [formGroup]=\"mpinForm\" novalidate>\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"m_pin\">Enter your 4 digit mPIN</h4>\r\n            <p class=\"otp-text\">An authentiction need to enter your mPIN </p>\r\n            <!-- <h6>{{customerPhonenum}}</h6> -->\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"mpin\" [config]=\"config\"></ng-otp-input>\r\n        </div>\r\n         <!-- OTP INPUT END -->\r\n        <div class=\"forgot my-5\" (click)=\"forgotmpin()\">\r\n          <a class=\"text-center\">Forgot mPIN</a>\r\n        </div>\r\n      </form>\r\n      <div class=\"my-5\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\" (click)=\"goToDashboard()\">\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\"></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form class=\"form_container\" [formGroup]=\"mpinForm\" novalidate>\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"m_pin\">Enter your 4 digit mPIN</h4>\r\n            <p class=\"otp-text\">An authentiction need to enter your mPIN </p>\r\n            <!-- <h6>{{customerPhonenum}}</h6> -->\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"mpin\" [config]=\"config\"></ng-otp-input>\r\n        </div>\r\n         <!-- OTP INPUT END -->\r\n         <ion-grid>\r\n          <ion-row  class=\"ion-justify-content-around\">\r\n            <ion-col>\r\n              <div class=\"forgot my-3\">\r\n                <a class=\"text-center\" (click)=\"forgotmpin()\">Forgot mPIN</a>\r\n              </div>\r\n            </ion-col>\r\n            <ion-col>\r\n              <div class=\"forgot my-3\">\r\n                <a class=\"text-center\" (click)=\"obscureText()\">{{ config?.isPasswordInput ? 'View mPIN' : 'Hide mPIN'}}</a>\r\n              </div>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n\r\n      </form>\r\n      <div class=\"my-5\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\" (click)=\"goToDashboard()\">\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

@@ -758,6 +758,62 @@ CashdepositPage = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
 
 /***/ }),
 
+/***/ 4471:
+/*!*********************************************!*\
+  !*** ./src/app/services/loading.service.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LoadingService": () => (/* binding */ LoadingService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
+
+let LoadingService = class LoadingService {
+    constructor(loadingController) {
+        this.loadingController = loadingController;
+        this.isLoading = false;
+    }
+    present() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            this.isLoading = true;
+            return yield this.loadingController.create({
+                duration: 2500,
+            }).then(a => {
+                a.present().then(() => {
+                    console.log('presented');
+                    if (!this.isLoading) {
+                        a.dismiss().then(() => console.log('abort presenting'));
+                    }
+                });
+            });
+        });
+    }
+    dismiss() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            this.isLoading = false;
+            return yield this.loadingController.dismiss().then(() => console.log('dismissed'));
+        });
+    }
+};
+LoadingService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.LoadingController }
+];
+LoadingService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root'
+    })
+], LoadingService);
+
+
+
+/***/ }),
+
 /***/ 35318:
 /*!********************************************************************!*\
   !*** ./src/app/pages/cashdeposit/cashdeposit.page.scss?ngResource ***!

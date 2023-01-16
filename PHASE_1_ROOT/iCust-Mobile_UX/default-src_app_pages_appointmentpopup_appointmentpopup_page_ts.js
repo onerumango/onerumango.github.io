@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"],{
+(self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"],{
 
 /***/ 14808:
 /*!*****************************************************************!*\
@@ -204,8 +204,6 @@ let AppointmentpopupPage = class AppointmentpopupPage {
             this.tranType = this.trans.trnType;
             this.remarks = this.trans.remarks;
             this.generateQRCode();
-            // let objectURL = 'data:image/jpeg;base64,' + this.trans.qrCodeImage;
-            // this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
         });
     }
     addToWallet() {
@@ -246,62 +244,6 @@ AppointmentpopupPage = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
-/***/ 4471:
-/*!*********************************************!*\
-  !*** ./src/app/services/loading.service.ts ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LoadingService": () => (/* binding */ LoadingService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 93819);
-
-
-
-let LoadingService = class LoadingService {
-    constructor(loadingController) {
-        this.loadingController = loadingController;
-        this.isLoading = false;
-    }
-    present() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
-            this.isLoading = true;
-            return yield this.loadingController.create({
-                duration: 2500,
-            }).then(a => {
-                a.present().then(() => {
-                    console.log('presented');
-                    if (!this.isLoading) {
-                        a.dismiss().then(() => console.log('abort presenting'));
-                    }
-                });
-            });
-        });
-    }
-    dismiss() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
-            this.isLoading = false;
-            return yield this.loadingController.dismiss().then(() => console.log('dismissed'));
-        });
-    }
-};
-LoadingService.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.LoadingController }
-];
-LoadingService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
-        providedIn: 'root'
-    })
-], LoadingService);
-
-
-
-/***/ }),
-
 /***/ 97645:
 /*!******************************************************************************!*\
   !*** ./src/app/pages/appointmentpopup/appointmentpopup.page.scss?ngResource ***!
@@ -323,4 +265,4 @@ module.exports = "<ion-content>\r\n  <div class=\"rect\">\r\n    <ion-header cla
 /***/ })
 
 }]);
-//# sourceMappingURL=default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts.js.map
+//# sourceMappingURL=default-src_app_pages_appointmentpopup_appointmentpopup_page_ts.js.map

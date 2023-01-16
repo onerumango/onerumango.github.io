@@ -135,6 +135,7 @@ let NewPasswordchangePage = class NewPasswordchangePage {
     ngOnInit() {
         this.newPassword.patchValue('');
         this.confirmPassword.patchValue('');
+        this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
     }
     back() {
         this.router.navigateByUrl('/login');
@@ -150,20 +151,20 @@ let NewPasswordchangePage = class NewPasswordchangePage {
         }
         const data = {
             phoneNumber: this.phoneNumber,
+            currentPassword: "Rumango@123",
             custPassword: this.newPassword.value,
         };
         this.api.updateCustomerPassword(data).subscribe((resp) => {
             if ((resp === null || resp === void 0 ? void 0 : resp.status) == 200) {
                 const navigationExtras = {
                     queryParams: {
-                        'screenDetails': 'Password Changed!',
-                        'screenDescription': 'Your password has been changed successfully',
+                        'screenDetails': this.screenNames.queryParams.screenName == 'forget-password' ? 'Password Update' : 'Password Set',
+                        'screenDescription': this.screenNames.queryParams.screenName == 'forget-password' ? 'Password updated successfully!' : 'Password set successfully!',
                         'screenName': 'new-passwordchange'
                     },
                 };
                 this.api.sendNavParam(navigationExtras);
                 this.router.navigateByUrl('/success-message');
-                this.openToast('Password updated successfully');
                 this.newPassword.patchValue('');
                 this.confirmPassword.patchValue('');
             }
@@ -171,6 +172,8 @@ let NewPasswordchangePage = class NewPasswordchangePage {
                 this.router.navigate(['/login'], { replaceUrl: true });
                 this.openToast(resp === null || resp === void 0 ? void 0 : resp.message);
             }
+        }, (err) => {
+            this.openToast(err === null || err === void 0 ? void 0 : err.error);
         });
     }
 };

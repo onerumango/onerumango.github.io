@@ -502,7 +502,6 @@ let ChequedepositPage = class ChequedepositPage {
                     personName: this.slideOneForm.get('personName').value,
                 }];
         }
-        console.log(form);
         this.accountNum = form.accountNumber;
         this.transactionAmount = form.transactionAmount;
         console.log(this.transactionAmount);
@@ -567,24 +566,6 @@ let ChequedepositPage = class ChequedepositPage {
             return yield modal.present();
         });
     }
-    // accountEvent(event) {
-    //   console.log("event", event.detail.value)
-    //   this.api.accountBalance(event.detail.value).subscribe((accbal) => {
-    //     console.log('backend accbal', accbal.currentBalance);
-    //     this.valueSet(accbal.currentBalance);
-    //     this.currentBalance = accbal.amount;
-    //     this.slideOneForm.controls.transactionCurrency.patchValue(accbal.accountCurrency);
-    //     // this.slideOneForm.controls.transactionAmount.patchValue(accbal.amount);
-    //     this.slideOneForm.controls.accountBranch.patchValue(accbal.accountBranch);
-    //     this.slideOneForm.controls.transactionBranch.patchValue(accbal.accountBranch);
-    //     localStorage.setItem("AccBranch", accbal.accountBranch);
-    //     for (let i in this.currencies) {
-    //       this.selectedCountryCode = (this.currencies[i].countryCode).toLowerCase();
-    //       this.slideOneForm.controls.transactionCurrency.patchValue(this.currencies[i].countryCode);
-    //     }
-    //     // this.users=dropdown;
-    //   });
-    // }
     accountEvent(event) {
         this.isedit = false;
         console.log("event", event.detail.value);
@@ -654,52 +635,10 @@ let ChequedepositPage = class ChequedepositPage {
                 this.slideOneForm.controls.transactionBranch.patchValue(accbal.accountBranch);
                 this.nearestBrn = false;
             }
-            // if (accbal.lastTransactions != null) {
-            //   if (accbal.lastTransactions.length <= 2) {
-            //     this.slideOneForm.controls.transactionBranch.patchValue(accbal.accountBranch);
-            //   }
-            //   else {
-            //     var trnBrn = null;
-            //     var brnCnt = 0;
-            //     var brnOldCnt = 0;
-            //     console.log("Else", accbal.lastTransactions);
-            //     for (var i = 0; i < accbal.lastTransactions.length; i++) {
-            //       if (accbal.lastTransactions[i].transactionBranch != null) {
-            //         for (var n = 0; n < accbal.lastTransactions.length; n++) {
-            //           if (accbal.lastTransactions[n].transactionBranch != null) {
-            //             if (accbal.lastTransactions[i].transactionBranch === accbal.lastTransactions[n].transactionBranch) {
-            //               brnCnt = brnCnt + 1;
-            //             }
-            //             if (accbal.lastTransactions[i].transactionBranch != accbal.lastTransactions[n].transactionBranch) {
-            //               trnBrn = accbal.lastTransactions[i].accountBranch;
-            //             }
-            //           }
-            //         }
-            //       }
-            //       if (brnOldCnt < brnCnt && brnCnt >= 2) {
-            //         trnBrn = accbal.lastTransactions[i].transactionBranch;
-            //         brnOldCnt = brnCnt;
-            //       }
-            //       brnCnt = 0;
-            //     }
-            //     if (trnBrn != null) {
-            //       this.slideOneForm.controls.transactionBranch.patchValue(trnBrn);
-            //     } else {
-            //       this.slideOneForm.controls.transactionBranch.patchValue(accbal.accountBranch);
-            //     }
-            //   }
-            // }
-            // else {
-            //   this.slideOneForm.controls.transactionBranch.patchValue(accbal.accountBranch);
-            // }
-            // console.log(accbal.accountCurrency.countryName);
             for (let i in this.currencies) {
                 this.selectedCountryCode = (this.currencies[i].countryCode).toLowerCase();
                 this.slideOneForm.controls.transactionCurrency.patchValue(this.currencies[i].countryCode);
             }
-            // this.selectedCountryCode = (currency.code).toLowerCase();
-            // this.users=dropdown;
-            //8042666041 8042666055
         });
     }
     changeTransAmount(event) {
@@ -748,6 +687,62 @@ ChequedepositPage = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
         styles: [_chequedeposit_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], ChequedepositPage);
+
+
+
+/***/ }),
+
+/***/ 4471:
+/*!*********************************************!*\
+  !*** ./src/app/services/loading.service.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LoadingService": () => (/* binding */ LoadingService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
+
+let LoadingService = class LoadingService {
+    constructor(loadingController) {
+        this.loadingController = loadingController;
+        this.isLoading = false;
+    }
+    present() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            this.isLoading = true;
+            return yield this.loadingController.create({
+                duration: 2500,
+            }).then(a => {
+                a.present().then(() => {
+                    console.log('presented');
+                    if (!this.isLoading) {
+                        a.dismiss().then(() => console.log('abort presenting'));
+                    }
+                });
+            });
+        });
+    }
+    dismiss() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            this.isLoading = false;
+            return yield this.loadingController.dismiss().then(() => console.log('dismissed'));
+        });
+    }
+};
+LoadingService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.LoadingController }
+];
+LoadingService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root'
+    })
+], LoadingService);
 
 
 

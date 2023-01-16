@@ -2307,6 +2307,14 @@ ion-popover::part(content) {
 *::after {
   box-sizing: border-box;
 }
+ion-modal.internet-modal {
+  --height: 35%;
+  --width: 340px;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
 ion-alert.logout-alert .alert-wrapper {
   --min-width: 330px !important;
   --width: 330px !important;
