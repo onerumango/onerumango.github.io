@@ -67,6 +67,7 @@ let SetmpinPage = class SetmpinPage {
             mpin: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
             confirmMpin: [],
         });
+        this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
     }
     ionViewWillEnter() {
         this.getUniqueDeviceID();
@@ -126,7 +127,7 @@ let SetmpinPage = class SetmpinPage {
                         queryParams: {
                             'screenDetails': 'Set Login mPIN!',
                             'screenDescription': 'Your mPIN has been registered successfully',
-                            'screenName': 'setmpin'
+                            'screenName': this.screenNames.queryParams.screenName == "forgotmpin" ? 'forgotmpin' : 'setmpin'
                         },
                     };
                     this.api.sendNavParam(navigationExtras);

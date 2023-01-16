@@ -641,6 +641,8 @@ let AppointmentPage = class AppointmentPage {
     }
     onClick(event) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            console.log(event);
+            localStorage.setItem('AppointmentDetails', JSON.stringify(event));
             let modal = yield this.modalCtrl.create({
                 component: _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
                 componentProps: {

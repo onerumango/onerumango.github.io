@@ -114,8 +114,14 @@ let SuccessMessagePage = class SuccessMessagePage {
         this.description = this.screenNames.queryParams.screenDescription;
     }
     goBack() {
-        if (this, this.screenNames.queryParams.screenName == "setmpin") {
-            this.router.navigateByUrl('/mpin');
+        if (this.screenNames.queryParams.screenName == "setmpin") {
+            this.router.navigate(['profile'], { replaceUrl: true });
+        }
+        else if (this.screenNames.queryParams.screenName == "forgotmpin") {
+            this.router.navigate(['login-landing'], { replaceUrl: true });
+        }
+        else if (this.screenNames.queryParams.screenName == "new-passwordchange") {
+            this.router.navigate(['login'], { replaceUrl: true });
         }
         else {
             this.router.navigate(['securitycenter']);
@@ -144,7 +150,7 @@ SuccessMessagePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".otp-text {\n  color: #A2A0A8;\n}\n\n.otp-box {\n  margin-top: 60%;\n}\n\n.inputCardButton {\n  padding-top: 70%;\n  padding-left: 5%;\n  padding-right: 5%;\n}\n\n.inputCardButton ion-button {\n  width: 100%;\n  height: 45px;\n  --background: var(--primary-color);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN1Y2Nlc3MtbWVzc2FnZS5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxHaXRIdWIlMjBSZXBvc2l0b3J5JTIwb2xkXFxpQ3VzdE1vYmlsZS12Mlxcc3JjXFxhcHBcXHBhZ2VzXFxzdWNjZXNzLW1lc3NhZ2VcXHN1Y2Nlc3MtbWVzc2FnZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0o7O0FEQ0U7RUFDRSxlQUFBO0FDRUo7O0FEQUU7RUFDRSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUNHSjs7QURESTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0NBQUE7QUNHTiIsImZpbGUiOiJzdWNjZXNzLW1lc3NhZ2UucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm90cC10ZXh0IHtcclxuICAgIGNvbG9yOiAjQTJBMEE4O1xyXG4gIH1cclxuICAub3RwLWJveHtcclxuICAgIG1hcmdpbi10b3A6IDYwJTtcclxuICB9XHJcbiAgLmlucHV0Q2FyZEJ1dHRvbiB7XHJcbiAgICBwYWRkaW5nLXRvcDogNzAlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiA1JTtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDUlO1xyXG5cclxuICAgIGlvbi1idXR0b24ge1xyXG4gICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgaGVpZ2h0OiA0NXB4O1xyXG4gICAgICAtLWJhY2tncm91bmQ6IHZhcigtLXByaW1hcnktY29sb3IpO1xyXG4gICAgfVxyXG4gIH0iLCIub3RwLXRleHQge1xuICBjb2xvcjogI0EyQTBBODtcbn1cblxuLm90cC1ib3gge1xuICBtYXJnaW4tdG9wOiA2MCU7XG59XG5cbi5pbnB1dENhcmRCdXR0b24ge1xuICBwYWRkaW5nLXRvcDogNzAlO1xuICBwYWRkaW5nLWxlZnQ6IDUlO1xuICBwYWRkaW5nLXJpZ2h0OiA1JTtcbn1cbi5pbnB1dENhcmRCdXR0b24gaW9uLWJ1dHRvbiB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDQ1cHg7XG4gIC0tYmFja2dyb3VuZDogdmFyKC0tcHJpbWFyeS1jb2xvcik7XG59Il19 */";
+module.exports = ".otp-text {\n  color: #A2A0A8;\n}\n\n.otp-box {\n  margin-top: 60%;\n}\n\n.inputCardButton {\n  padding-top: 50%;\n  padding-left: 5%;\n  padding-right: 5%;\n}\n\n.inputCardButton ion-button {\n  width: 100%;\n  height: 45px;\n  --background: var(--primary-color);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN1Y2Nlc3MtbWVzc2FnZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUFDRjs7QUFDRTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0NBQUE7QUFDSiIsImZpbGUiOiJzdWNjZXNzLW1lc3NhZ2UucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm90cC10ZXh0IHtcclxuICBjb2xvcjogI0EyQTBBODtcclxufVxyXG5cclxuLm90cC1ib3gge1xyXG4gIG1hcmdpbi10b3A6IDYwJTtcclxufVxyXG5cclxuLmlucHV0Q2FyZEJ1dHRvbiB7XHJcbiAgcGFkZGluZy10b3A6IDUwJTtcclxuICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDUlO1xyXG5cclxuICBpb24tYnV0dG9uIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA0NXB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTtcclxuICB9XHJcbn0iXX0= */";
 
 /***/ }),
 

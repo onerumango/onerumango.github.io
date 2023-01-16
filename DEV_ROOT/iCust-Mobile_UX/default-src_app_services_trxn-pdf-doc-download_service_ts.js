@@ -2379,7 +2379,7 @@ function unzipSync(data) {
 
 /*!
  * 
- *               jsPDF AutoTable plugin v3.5.25
+ *               jsPDF AutoTable plugin v3.5.28
  *
  *               Copyright (c) 2022 Simon Bengtsson, https://github.com/simonbengtsson/jsPDF-AutoTable
  *               Licensed under the MIT License.
@@ -2392,7 +2392,7 @@ function unzipSync(data) {
       return __webpack_require__(/*! jspdf */ 84177);
     } catch (e) {}
   }());else { var i, a; }
-})(typeof this !== 'undefined' ? this : window, function (__WEBPACK_EXTERNAL_MODULE__84__) {
+})(typeof globalThis !== 'undefined' ? globalThis : typeof this !== 'undefined' ? this : typeof window !== 'undefined' ? window : typeof self !== 'undefined' ? self : global, function (__WEBPACK_EXTERNAL_MODULE__84__) {
   return (
     /******/
     function () {
@@ -2479,22 +2479,22 @@ function unzipSync(data) {
         /***/
         790:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_3516__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_3643__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
 
-          var htmlParser_1 = __nested_webpack_require_3516__(148);
+          var htmlParser_1 = __nested_webpack_require_3643__(148);
 
-          var autoTableText_1 = __nested_webpack_require_3516__(938);
+          var autoTableText_1 = __nested_webpack_require_3643__(938);
 
-          var documentHandler_1 = __nested_webpack_require_3516__(323);
+          var documentHandler_1 = __nested_webpack_require_3643__(323);
 
-          var inputParser_1 = __nested_webpack_require_3516__(587);
+          var inputParser_1 = __nested_webpack_require_3643__(587);
 
-          var tableDrawer_1 = __nested_webpack_require_3516__(49);
+          var tableDrawer_1 = __nested_webpack_require_3643__(49);
 
-          var tableCalculator_1 = __nested_webpack_require_3516__(858);
+          var tableCalculator_1 = __nested_webpack_require_3643__(858);
 
           function default_1(jsPDF) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -2939,7 +2939,7 @@ function unzipSync(data) {
         /***/
         259:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_18342__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_18469__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
@@ -2947,7 +2947,7 @@ function unzipSync(data) {
           // - No support for border spacing
           // - No support for transparency
 
-          var common_1 = __nested_webpack_require_18342__(200);
+          var common_1 = __nested_webpack_require_18469__(200);
 
           function parseCss(supportedFonts, element, scaleFactor, style, window) {
             var result = {};
@@ -3087,7 +3087,11 @@ function unzipSync(data) {
                 textColor: jsPDFDocument.getTextColor ? this.jsPDFDocument.getTextColor() : 0,
                 fontSize: jsPDFDocument.internal.getFontSize(),
                 fontStyle: jsPDFDocument.internal.getFont().fontStyle,
-                font: jsPDFDocument.internal.getFont().fontName
+                font: jsPDFDocument.internal.getFont().fontName,
+                // 0 for versions of jspdf without getLineWidth
+                lineWidth: jsPDFDocument.getLineWidth ? this.jsPDFDocument.getLineWidth() : 0,
+                // Black for versions of jspdf without getDrawColor
+                lineColor: jsPDFDocument.getDrawColor ? this.jsPDFDocument.getDrawColor() : 0
               };
             }
 
@@ -3242,15 +3246,15 @@ function unzipSync(data) {
         /***/
         148:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_29265__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_29714__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
           exports.parseHtml = void 0;
 
-          var cssParser_1 = __nested_webpack_require_29265__(259);
+          var cssParser_1 = __nested_webpack_require_29714__(259);
 
-          var config_1 = __nested_webpack_require_29265__(913);
+          var config_1 = __nested_webpack_require_29714__(913);
 
           function parseHtml(doc, input, window, includeHiddenHtml, useCss) {
             var _a, _b;
@@ -3363,21 +3367,21 @@ function unzipSync(data) {
         /***/
         587:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_33353__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_33802__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
           exports.parseInput = void 0;
 
-          var htmlParser_1 = __nested_webpack_require_33353__(148);
+          var htmlParser_1 = __nested_webpack_require_33802__(148);
 
-          var polyfills_1 = __nested_webpack_require_33353__(360);
+          var polyfills_1 = __nested_webpack_require_33802__(360);
 
-          var common_1 = __nested_webpack_require_33353__(200);
+          var common_1 = __nested_webpack_require_33802__(200);
 
-          var documentHandler_1 = __nested_webpack_require_33353__(323);
+          var documentHandler_1 = __nested_webpack_require_33802__(323);
 
-          var inputValidator_1 = __nested_webpack_require_33353__(291);
+          var inputValidator_1 = __nested_webpack_require_33802__(291);
 
           function parseInput(d, current) {
             var doc = new documentHandler_1.DocHandler(d);
@@ -3718,17 +3722,17 @@ function unzipSync(data) {
         /***/
         287:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_47212__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_47661__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
           exports.Column = exports.Cell = exports.Row = exports.Table = void 0;
 
-          var config_1 = __nested_webpack_require_47212__(913);
+          var config_1 = __nested_webpack_require_47661__(913);
 
-          var HookData_1 = __nested_webpack_require_47212__(662);
+          var HookData_1 = __nested_webpack_require_47661__(662);
 
-          var common_1 = __nested_webpack_require_47212__(200);
+          var common_1 = __nested_webpack_require_47661__(200);
 
           var Table =
           /** @class */
@@ -4042,21 +4046,21 @@ function unzipSync(data) {
         /***/
         858:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_58248__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_58697__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
           exports.createTable = void 0;
 
-          var documentHandler_1 = __nested_webpack_require_58248__(323);
+          var documentHandler_1 = __nested_webpack_require_58697__(323);
 
-          var models_1 = __nested_webpack_require_58248__(287);
+          var models_1 = __nested_webpack_require_58697__(287);
 
-          var widthCalculator_1 = __nested_webpack_require_58248__(189);
+          var widthCalculator_1 = __nested_webpack_require_58697__(189);
 
-          var config_1 = __nested_webpack_require_58248__(913);
+          var config_1 = __nested_webpack_require_58697__(913);
 
-          var polyfills_1 = __nested_webpack_require_58248__(360);
+          var polyfills_1 = __nested_webpack_require_58697__(360);
 
           function createTable(jsPDFDoc, input) {
             var doc = new documentHandler_1.DocHandler(jsPDFDoc);
@@ -4215,25 +4219,25 @@ function unzipSync(data) {
         /***/
         49:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_65263__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_65712__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
           exports.addPage = exports.drawTable = void 0;
 
-          var config_1 = __nested_webpack_require_65263__(913);
+          var config_1 = __nested_webpack_require_65712__(913);
 
-          var common_1 = __nested_webpack_require_65263__(200);
+          var common_1 = __nested_webpack_require_65712__(200);
 
-          var models_1 = __nested_webpack_require_65263__(287);
+          var models_1 = __nested_webpack_require_65712__(287);
 
-          var documentHandler_1 = __nested_webpack_require_65263__(323);
+          var documentHandler_1 = __nested_webpack_require_65712__(323);
 
-          var polyfills_1 = __nested_webpack_require_65263__(360);
+          var polyfills_1 = __nested_webpack_require_65712__(360);
 
-          var autoTableText_1 = __nested_webpack_require_65263__(938);
+          var autoTableText_1 = __nested_webpack_require_65712__(938);
 
-          var tablePrinter_1 = __nested_webpack_require_65263__(435);
+          var tablePrinter_1 = __nested_webpack_require_65712__(435);
 
           function drawTable(jsPDFDoc, table) {
             var settings = table.settings;
@@ -4650,12 +4654,12 @@ function unzipSync(data) {
         /***/
         435:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_81724__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_82173__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
 
-          var common_1 = __nested_webpack_require_81724__(200);
+          var common_1 = __nested_webpack_require_82173__(200);
 
           var getPageAvailableWidth = function (doc, table) {
             var margins = (0, common_1.parseSpacing)(table.settings.margin, 0);
@@ -4763,15 +4767,15 @@ function unzipSync(data) {
         /***/
         189:
         /***/
-        function (__unused_webpack_module, exports, __nested_webpack_require_85751__) {
+        function (__unused_webpack_module, exports, __nested_webpack_require_86200__) {
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
           exports.ellipsize = exports.resizeColumns = exports.calculateWidths = void 0;
 
-          var common_1 = __nested_webpack_require_85751__(200);
+          var common_1 = __nested_webpack_require_86200__(200);
 
-          var tablePrinter_1 = __nested_webpack_require_85751__(435);
+          var tablePrinter_1 = __nested_webpack_require_86200__(435);
           /**
            * Calculate the column widths
            */
@@ -5062,7 +5066,13 @@ function unzipSync(data) {
                 } else if (cell.styles.overflow === 'hidden') {
                   cell.text = ellipsize(cell.text, textSpace, cell.styles, doc, '');
                 } else if (typeof cell.styles.overflow === 'function') {
-                  cell.text = cell.styles.overflow(cell.text, textSpace);
+                  var result = cell.styles.overflow(cell.text, textSpace);
+
+                  if (typeof result === 'string') {
+                    cell.text = [result];
+                  } else {
+                    cell.text = result;
+                  }
                 }
 
                 cell.contentHeight = cell.getContentHeight(doc.scaleFactor());
@@ -5149,7 +5159,7 @@ function unzipSync(data) {
 
       /******/
 
-      function __nested_webpack_require_100986__(moduleId) {
+      function __nested_webpack_require_101618__(moduleId) {
         /******/
         // Check if module is in cache
 
@@ -5187,7 +5197,7 @@ function unzipSync(data) {
 
         /******/
 
-        __webpack_modules__[moduleId].call(module.exports, module, module.exports, __nested_webpack_require_100986__);
+        __webpack_modules__[moduleId].call(module.exports, module, module.exports, __nested_webpack_require_101618__);
         /******/
 
         /******/
@@ -5213,15 +5223,15 @@ function unzipSync(data) {
         });
         exports.Cell = exports.Column = exports.Row = exports.Table = exports.CellHookData = exports.__drawTable = exports.__createTable = exports.applyPlugin = void 0;
 
-        var applyPlugin_1 = __nested_webpack_require_100986__(790);
+        var applyPlugin_1 = __nested_webpack_require_101618__(790);
 
-        var inputParser_1 = __nested_webpack_require_100986__(587);
+        var inputParser_1 = __nested_webpack_require_101618__(587);
 
-        var tableDrawer_1 = __nested_webpack_require_100986__(49);
+        var tableDrawer_1 = __nested_webpack_require_101618__(49);
 
-        var tableCalculator_1 = __nested_webpack_require_100986__(858);
+        var tableCalculator_1 = __nested_webpack_require_101618__(858);
 
-        var models_1 = __nested_webpack_require_100986__(287);
+        var models_1 = __nested_webpack_require_101618__(287);
 
         Object.defineProperty(exports, "Table", {
           enumerable: true,
@@ -5230,7 +5240,7 @@ function unzipSync(data) {
           }
         });
 
-        var HookData_1 = __nested_webpack_require_100986__(662);
+        var HookData_1 = __nested_webpack_require_101618__(662);
 
         Object.defineProperty(exports, "CellHookData", {
           enumerable: true,
@@ -5239,7 +5249,7 @@ function unzipSync(data) {
           }
         });
 
-        var models_2 = __nested_webpack_require_100986__(287);
+        var models_2 = __nested_webpack_require_101618__(287);
 
         Object.defineProperty(exports, "Cell", {
           enumerable: true,
@@ -5271,9 +5281,8 @@ function unzipSync(data) {
           var input = (0, inputParser_1.parseInput)(d, options);
           var table = (0, tableCalculator_1.createTable)(d, input);
           (0, tableDrawer_1.drawTable)(d, table);
-        }
+        } // Experimental export
 
-        exports["default"] = autoTable; // Experimental export
 
         function __createTable(d, options) {
           var input = (0, inputParser_1.parseInput)(d, options);
@@ -5290,7 +5299,7 @@ function unzipSync(data) {
 
         try {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
-          var jsPDF = __nested_webpack_require_100986__(84); // Webpack imported jspdf instead of jsPDF for some reason
+          var jsPDF = __nested_webpack_require_101618__(84); // Webpack imported jspdf instead of jsPDF for some reason
           // while it seemed to work everywhere else.
 
 
@@ -5300,6 +5309,8 @@ function unzipSync(data) {
           // 1.5.3 so we need to silence potential errors to support using for example
           // the nodejs jspdf dist files with the exported applyPlugin
         }
+
+        exports["default"] = autoTable;
       }();
       /******/
 

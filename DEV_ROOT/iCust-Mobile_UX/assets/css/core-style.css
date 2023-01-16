@@ -474,14 +474,14 @@ ion-toolbar {
     font-family: inherit;
 }
 
-.form-box button {
+/* .form-box button {
     margin-top: 15px;
 }
 
 .form-box button:hover {
     background: #be2623 !important;
     color: #FFF !important;
-}
+} */
 
 .form-control:focus {
     color: #231F20;
@@ -848,9 +848,10 @@ ion-toolbar {
     border: 1px solid rgb(215, 215, 215);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-bottom: 25px;
     z-index: 999;
+    filter: drop-shadow(10px 10px 33px #00000029);
 }
 
 .footer ul {
@@ -863,7 +864,7 @@ ion-toolbar {
 
 .footer ul li {
     display: inline-block;
-    width: 33.33%;
+    width: 25%;
     text-align: center;
     position: relative;
 }
@@ -885,13 +886,13 @@ ion-toolbar {
 }
 
 .footer ul li .icon {
-    width: 20px;
-    height: 20px;
+    width: 75px;
+    height: 75px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
     display: block;
-    position: relative
+    position: relative;
 }
 
 .footer ul li .icon.active .hover,

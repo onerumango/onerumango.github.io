@@ -1388,7 +1388,9 @@ const environment = {
     production: false,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
     // ICUST_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
+    // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
     BASE_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
+    // BASE_URL: 'http://192.168.0.14:8071/Icust-Digital-Banking',
 };
 
 

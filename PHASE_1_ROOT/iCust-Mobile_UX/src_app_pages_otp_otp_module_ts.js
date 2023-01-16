@@ -162,8 +162,6 @@ let OtpPage = class OtpPage {
         };
     }
     ngOnInit() {
-        var _a;
-        this.routerData = this.router.getCurrentNavigation().extras.state;
         this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.otpForm = this.fb.group({
             phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
@@ -172,9 +170,6 @@ let OtpPage = class OtpPage {
         });
         this.PhoneNumLogin = localStorage.getItem('customerPhonenum');
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
-        if ((_a = this.routerData) === null || _a === void 0 ? void 0 : _a.resetPass) {
-            this.getOTP();
-        }
     }
     onOtpChange() {
     }
@@ -182,10 +177,18 @@ let OtpPage = class OtpPage {
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
         this.oTpModel.source_value = this.customerPhonenum;
-        console.log('model', this.oTpModel);
-        this.api.getOtp(this.oTpModel).subscribe((otpResp) => {
-            console.log('Response Success', otpResp, otpResp.otpVal.token);
+        this.oTpModel.isMobileLogin = true;
+        this.api.getOtp(this.oTpModel).subscribe((res) => {
+            if (res.status == 200) {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+            else {
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+        }, (err) => {
+            this.openToast(err);
         });
+        ;
     }
     resendOTP() {
         this.ngOtpInput.setValue('');
@@ -214,6 +217,12 @@ let OtpPage = class OtpPage {
                     // TODO:
                     if (this.screenNames) {
                         if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
+                            const navigationExtras = {
+                                queryParams: {
+                                    'screenName': 'forgotmpin'
+                                },
+                            };
+                            this.api.sendNavParam(navigationExtras);
                             this.router.navigateByUrl('/setmpin');
                         }
                         else {

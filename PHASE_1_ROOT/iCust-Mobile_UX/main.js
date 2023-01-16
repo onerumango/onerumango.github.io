@@ -1283,14 +1283,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ShowMessageService": () => (/* binding */ ShowMessageService)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 93819);
 
 
 
+
 let ShowMessageService = class ShowMessageService {
-    constructor(toastController) {
+    constructor(toastController, alertController, router) {
         this.toastController = toastController;
+        this.alertController = alertController;
+        this.router = router;
         this.errorData = [
             { "code": 400, "message": "Bad Request" },
             { "code": 401, "message": "Unauthorized" },
@@ -1316,8 +1320,32 @@ let ShowMessageService = class ShowMessageService {
             }
         }
         if (errDesc) {
-            this.presentToast("Error message : " + errDesc.substring(0, 200));
+            this.noNetworkAlert();
         }
+    }
+    noNetworkAlert() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            if (this.alert != null) {
+                this.alert.dismiss();
+            }
+            this.alert = yield this.alertController.create({
+                header: 'Alert',
+                subHeader: "There seems to be a low network coverage area. Please try again later.",
+                cssClass: 'logout-alert',
+                buttons: [
+                    {
+                        role: 'Done',
+                        cssClass: 'alert-done',
+                        text: "Cancel"
+                    }
+                ],
+            });
+            yield this.alert.present();
+            const { role } = yield this.alert.onDidDismiss();
+            if (role == 'Done') {
+                this.router.navigate(['login-landing'], { replaceUrl: true });
+            }
+        });
     }
     presentToast(msg, position) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
@@ -1331,10 +1359,12 @@ let ShowMessageService = class ShowMessageService {
     }
 };
 ShowMessageService.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.ToastController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
 ];
 ShowMessageService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
         providedIn: 'root'
     })
 ], ShowMessageService);
@@ -1358,6 +1388,7 @@ const environment = {
     production: false,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
     // ICUST_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
+    // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
     BASE_URL: 'http://192.168.0.14:8071/Icust-Digital-Banking',
 };
 
@@ -1666,7 +1697,7 @@ module.exports = ".mainDiv {\n  margin-top: 30px;\n}\n\n.new-background-color {\
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.11</h6>\r\n          <p class=\"app-font version-color\">Build 11</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.12</h6>\r\n          <p class=\"app-font version-color\">Build 12</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 

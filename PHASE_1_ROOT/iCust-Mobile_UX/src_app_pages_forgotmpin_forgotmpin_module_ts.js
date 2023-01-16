@@ -118,7 +118,6 @@ let ForgotmpinPage = class ForgotmpinPage {
         this.oTpModel = new _login_login_page__WEBPACK_IMPORTED_MODULE_3__.otpModel();
     }
     ngOnInit() {
-        // this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.loginForm = this.fb.group({
             phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
         });
@@ -133,22 +132,25 @@ let ForgotmpinPage = class ForgotmpinPage {
             this.oTpModel.source = 'customer';
             this.oTpModel.source_key = 'mobile';
             this.oTpModel.source_value = phone.phoneNo;
-            this.api.getOtp(this.oTpModel).subscribe((otpResp) => {
-                console.log('Response Success', otpResp, phone.phoneNo);
-                // if(otpResp){
-                localStorage.setItem('customerPhonenum', otpResp.otpVal.sourceValue);
-                // }
-                if (Object.keys(otpResp).length === 0) {
-                    this.openToast('No data found for Phone No. :' + phone.phoneNo);
+            this.oTpModel.isMobileLogin = true;
+            this.api.getOtp(this.oTpModel).subscribe((res) => {
+                var _a, _b;
+                if (res.status == 200) {
+                    localStorage.setItem('customerPhonenum', (_b = (_a = res['data']) === null || _a === void 0 ? void 0 : _a.otpVal) === null || _b === void 0 ? void 0 : _b.sourceValue);
+                    this.router.navigate(['otp']);
+                    this.openToast(res === null || res === void 0 ? void 0 : res.message);
+                    const navigationExtras = {
+                        queryParams: {
+                            'screenName': 'forgotmpin'
+                        },
+                    };
+                    this.api.sendNavParam(navigationExtras);
+                    this.loginForm.reset();
+                }
+                else {
+                    this.openToast(res === null || res === void 0 ? void 0 : res.message);
                 }
             });
-            const navigationExtras = {
-                queryParams: {
-                    'screenName': 'forgotmpin'
-                },
-            };
-            this.api.sendNavParam(navigationExtras);
-            this.router.navigateByUrl('/otp');
         }
         else {
             this.openToast('Enter valid phone number');
@@ -159,7 +161,7 @@ let ForgotmpinPage = class ForgotmpinPage {
             const toast = yield this.toastCtrl.create({
                 message: `${message}`,
                 duration: 2500,
-                position: 'middle',
+                position: 'bottom',
             });
             toast.present();
         });
