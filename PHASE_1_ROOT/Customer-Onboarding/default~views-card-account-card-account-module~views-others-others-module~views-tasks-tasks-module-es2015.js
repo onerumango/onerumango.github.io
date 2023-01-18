@@ -65234,6 +65234,7 @@ class NewCustomerOnboardingComponent {
         obj.verificationType = "onboarding";
         obj.custIdProofs = this.passportProof;
         obj.customerSubmit = false;
+        obj.phoneNumber = this.ls.getItem('onboardingPhoneNumber');
         console.log(this.passportProof);
         console.log(passportPayload);
         this.apiService.insertNewUserOnboarding(obj).subscribe((result) => {

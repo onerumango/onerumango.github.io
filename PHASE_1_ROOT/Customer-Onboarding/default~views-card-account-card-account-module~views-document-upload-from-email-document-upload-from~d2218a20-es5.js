@@ -41026,6 +41026,28 @@
         }
       }
 
+      function KycBranchVerifySummaryComponent_div_10_div_43_div_17_div_4_div_3_div_8_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 79);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 80);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Download ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var docs_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3).$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", docs_r40[1] == null ? null : docs_r40[1].fileUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        }
+      }
+
       function KycBranchVerifySummaryComponent_div_10_div_43_div_17_div_4_div_3_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 46);
@@ -41050,15 +41072,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 50);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 79);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "a", 80);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Download ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, KycBranchVerifySummaryComponent_div_10_div_43_div_17_div_4_div_3_div_8_Template, 3, 1, "div", 81);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -41076,9 +41090,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](docs_r40[1] == null ? null : docs_r40[1].fileName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", docs_r40[1] == null ? null : docs_r40[1].fileUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", docs_r40[1] == null ? null : docs_r40[1].fileUrl);
         }
       }
 
@@ -41090,7 +41104,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, KycBranchVerifySummaryComponent_div_10_div_43_div_17_div_4_div_3_Template, 11, 3, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, KycBranchVerifySummaryComponent_div_10_div_43_div_17_div_4_div_3_Template, 9, 3, "div", 76);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -41142,7 +41156,7 @@
 
       function KycBranchVerifySummaryComponent_div_10_div_43_Template(rf, ctx) {
         if (rf & 1) {
-          var _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
 
@@ -41183,13 +41197,13 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-icon", 58);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function KycBranchVerifySummaryComponent_div_10_div_43_Template_mat_icon_click_14_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r54);
 
             var i_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().index;
 
-            var ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r50.editDocuments(i_r3);
+            return ctx_r52.editDocuments(i_r3);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "edit");
@@ -41282,21 +41296,21 @@
         }
 
         if (rf & 2) {
-          var i_r57 = ctx.index;
+          var i_r59 = ctx.index;
 
-          var ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
+          var ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r55.custBiometric[i_r57] == null ? null : ctx_r55.custBiometric[i_r57].bioName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r57.custBiometric[i_r59] == null ? null : ctx_r57.custBiometric[i_r59].bioName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r55.custBiometric[i_r57] == null ? null : ctx_r55.custBiometric[i_r57].image, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r57.custBiometric[i_r59] == null ? null : ctx_r57.custBiometric[i_r59].image, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r55.custBiometric[i_r57] == null ? null : ctx_r55.custBiometric[i_r57].fingerName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r57.custBiometric[i_r59] == null ? null : ctx_r57.custBiometric[i_r59].fingerName);
         }
       }
 
@@ -41310,17 +41324,17 @@
         }
 
         if (rf & 2) {
-          var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r56 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r54.custBiometric);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r56.custBiometric);
         }
       }
 
       function KycBranchVerifySummaryComponent_div_10_div_44_Template(rf, ctx) {
         if (rf & 1) {
-          var _r60 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
 
@@ -41340,7 +41354,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-card", 81);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-card", 82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 39);
 
@@ -41361,13 +41375,13 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-icon", 58);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function KycBranchVerifySummaryComponent_div_10_div_44_Template_mat_icon_click_14_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r60);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r62);
 
             var i_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().index;
 
-            var ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r58.editBiometric(i_r3);
+            return ctx_r60.editBiometric(i_r3);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "edit");
@@ -41436,21 +41450,21 @@
 
       function KycBranchVerifySummaryComponent_div_10_div_45_Template(rf, ctx) {
         if (rf & 1) {
-          var _r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r64 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 82);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 83);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 84);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function KycBranchVerifySummaryComponent_div_10_div_45_Template_div_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r62);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r64);
 
-            var ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r61.approveDetails("REJECTED");
+            return ctx_r63.approveDetails("REJECTED");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon", 84);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon", 85);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " highlight_off ");
 
@@ -41458,7 +41472,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "\xA0\xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "label", 85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "label", 86);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Reject");
 
@@ -41466,17 +41480,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 86);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 87);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function KycBranchVerifySummaryComponent_div_10_div_45_Template_div_click_7_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r62);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r64);
 
-            var ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r63.approveDetails("APPROVED");
+            return ctx_r65.approveDetails("APPROVED");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-icon", 87);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-icon", 88);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "check_circle");
 
@@ -41484,7 +41498,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\xA0\xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "label", 88);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "label", 89);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Approve");
 
@@ -42139,7 +42153,7 @@
         selectors: [["app-kyc-branch-verify-summary"]],
         decls: 11,
         vars: 2,
-        consts: [["fxLayoutAlign", "center"], [4, "ngIf"], ["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], [1, "boxing"], ["class", "main", 4, "ngFor", "ngForOf"], [1, "main"], ["fxLayout", "row", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "KYC Information", "style", "border-radius: 0px; width: 800px;", 4, "ngFor", "ngForOf"], ["label", "KYC Information", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "column", "fxLayoutAlign", "space-around start", 1, "full-width"], [1, "full-width", 2, "padding", "1rem 1rem"], [2, "font-size", "18px"], [1, "divider1"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem 0"], ["fxFlex", "100%", "fxFlex.xs", "100%"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px", "width", "750px"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "full-width", 2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "hint"], [1, "mat12"], [1, "mat1"], ["label", "Basic Information", 2, "border-radius", "0px", "width", "800px"], [1, "full-width", 2, "padding", "1rem"], [2, "padding-bottom", "1rem"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [1, "editbtn", 3, "hidden", "click"], ["label", "Communication Address", 2, "border-radius", "0px", "width", "800px"], [4, "ngFor", "ngForOf"], ["fxFlex", "50%", "fxFlex.xs", "100%"], ["fxFlex", "25%", "fxFlex.xs", "100%"], ["fxFlex", "40%", "fxFlex.xs", "100%"], ["fxFlex", "60%", "fxFlex.xs", "100%"], ["class", "hint", 4, "ngIf"], ["class", "mat12", 4, "ngIf"], ["label", "Scheduled Appointment", "fxFlex", "85", 2, "border-radius", "0px", "width", "800px"], ["class", "mat-elevation-z0", "style", "border: 1px solid #f5f5f5;padding: 16px; width: 750px;", 4, "ngFor", "ngForOf"], ["fxFlex", "30%", "fxFlex.xs", "100%"], ["fxFlex", "75%", "fxFlex.xs", "100%"], ["label", "Documents Upload", 2, "border-radius", "0px", "width", "800px"], [2, "padding", "1rem 0"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["style", "color: grey;", 4, "ngIf"], [2, "color", "grey"], ["class", "full-width", 4, "ngFor", "ngForOf"], [2, "text-align", "center"], ["required", "", "alt", "", 1, "formImg2", 3, "src"], [2, "margin-top", "35px", "margin-left", "40px"], ["download", "", 2, "color", "#4A56E2", "text-decoration", "underline", 3, "href"], ["label", "Biometric Verification", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
+        consts: [["fxLayoutAlign", "center"], [4, "ngIf"], ["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], [1, "boxing"], ["class", "main", 4, "ngFor", "ngForOf"], [1, "main"], ["fxLayout", "row", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "KYC Information", "style", "border-radius: 0px; width: 800px;", 4, "ngFor", "ngForOf"], ["label", "KYC Information", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "column", "fxLayoutAlign", "space-around start", 1, "full-width"], [1, "full-width", 2, "padding", "1rem 1rem"], [2, "font-size", "18px"], [1, "divider1"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem 0"], ["fxFlex", "100%", "fxFlex.xs", "100%"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px", "width", "750px"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "full-width", 2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "hint"], [1, "mat12"], [1, "mat1"], ["label", "Basic Information", 2, "border-radius", "0px", "width", "800px"], [1, "full-width", 2, "padding", "1rem"], [2, "padding-bottom", "1rem"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [1, "editbtn", 3, "hidden", "click"], ["label", "Communication Address", 2, "border-radius", "0px", "width", "800px"], [4, "ngFor", "ngForOf"], ["fxFlex", "50%", "fxFlex.xs", "100%"], ["fxFlex", "25%", "fxFlex.xs", "100%"], ["fxFlex", "40%", "fxFlex.xs", "100%"], ["fxFlex", "60%", "fxFlex.xs", "100%"], ["class", "hint", 4, "ngIf"], ["class", "mat12", 4, "ngIf"], ["label", "Scheduled Appointment", "fxFlex", "85", 2, "border-radius", "0px", "width", "800px"], ["class", "mat-elevation-z0", "style", "border: 1px solid #f5f5f5;padding: 16px; width: 750px;", 4, "ngFor", "ngForOf"], ["fxFlex", "30%", "fxFlex.xs", "100%"], ["fxFlex", "75%", "fxFlex.xs", "100%"], ["label", "Documents Upload", 2, "border-radius", "0px", "width", "800px"], [2, "padding", "1rem 0"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["style", "color: grey;", 4, "ngIf"], [2, "color", "grey"], ["class", "full-width", 4, "ngFor", "ngForOf"], [2, "text-align", "center"], ["required", "", "alt", "", 1, "formImg2", 3, "src"], [2, "margin-top", "35px", "margin-left", "40px"], ["download", "", 2, "color", "#4A56E2", "text-decoration", "underline", 3, "href"], ["style", "margin-top: 35px;margin-left: 40px;", 4, "ngIf"], ["label", "Biometric Verification", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
         template: function KycBranchVerifySummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form");

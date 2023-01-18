@@ -10653,6 +10653,11 @@
           value: function getAuthorizedCityInfo() {
             return this.http.get("".concat(API_URL, "/iccity/fetchAllAuthCities")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           }
+        }, {
+          key: "countryCurrencyFlaglists",
+          value: function countryCurrencyFlaglists(data) {
+            return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMainByCountryCode?country=").concat(data)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
         }]);
 
         return ApiService;
