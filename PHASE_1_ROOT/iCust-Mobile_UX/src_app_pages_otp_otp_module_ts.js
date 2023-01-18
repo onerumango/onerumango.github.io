@@ -206,6 +206,13 @@ let OtpPage = class OtpPage {
             var _a, _b, _c, _d, _e;
             if ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.status) == 200) {
                 if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == "Y") {
+                    localStorage.setItem('customerPhonenum', this.customerPhonenum);
+                    const navigationExtras = {
+                        queryParams: {
+                            'screenName': 'reset'
+                        },
+                    };
+                    this.api.sendNavParam(navigationExtras);
                     this.router.navigateByUrl('/new-passwordchange');
                 }
                 else {

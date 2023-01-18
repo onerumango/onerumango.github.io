@@ -140,7 +140,17 @@ let NewPasswordchangePage = class NewPasswordchangePage {
     back() {
         this.router.navigateByUrl('/login');
     }
-    updatePassword() {
+    continue() {
+        if (this.screenNames.queryParams.screenName == 'forget-password') {
+            this.resetPassword();
+            return;
+        }
+        else {
+            this.setFirstTimePassword();
+            return;
+        }
+    }
+    resetPassword() {
         if (this.newPassword.value === '' || this.confirmPassword.value === '') {
             this.openToast('Fill all fields');
             return;
@@ -151,10 +161,9 @@ let NewPasswordchangePage = class NewPasswordchangePage {
         }
         const data = {
             phoneNumber: this.phoneNumber,
-            currentPassword: "Rumango@123",
-            custPassword: this.newPassword.value,
+            newPassword: this.newPassword.value,
         };
-        this.api.updateCustomerPassword(data).subscribe((resp) => {
+        this.api.resetPassword(data).subscribe((resp) => {
             if ((resp === null || resp === void 0 ? void 0 : resp.status) == 200) {
                 const navigationExtras = {
                     queryParams: {
@@ -174,6 +183,42 @@ let NewPasswordchangePage = class NewPasswordchangePage {
             }
         }, (err) => {
             this.openToast(err === null || err === void 0 ? void 0 : err.error);
+        });
+    }
+    setFirstTimePassword() {
+        if (this.newPassword.value === '' || this.confirmPassword.value === '') {
+            this.openToast('Fill all fields');
+            return;
+        }
+        if (this.newPassword.value !== this.confirmPassword.value) {
+            this.openToast("Passwords didn't match");
+            return;
+        }
+        var obj = {
+            phoneNumber: this.phoneNumber,
+            currentPassword: "Rumango@123",
+            newPassword: this.newPassword.value,
+        };
+        this.api.updateCustomerPassword(obj).subscribe((res) => {
+            if (res.status == 200) {
+                const navigationExtras = {
+                    queryParams: {
+                        'screenDetails': this.screenNames.queryParams.screenName == 'forget-password' ? 'Password Update' : 'Password Set',
+                        'screenDescription': this.screenNames.queryParams.screenName == 'forget-password' ? 'Password updated successfully!' : 'Password set successfully!',
+                        'screenName': 'new-passwordchange'
+                    },
+                };
+                this.api.sendNavParam(navigationExtras);
+                this.router.navigateByUrl('/success-message');
+                this.newPassword.patchValue('');
+                this.confirmPassword.patchValue('');
+            }
+            else {
+                this.router.navigate(['/login'], { replaceUrl: true });
+                this.openToast(res === null || res === void 0 ? void 0 : res.message);
+            }
+        }, (error) => {
+            this.openToast('Unable to set password');
         });
     }
 };
@@ -210,7 +255,7 @@ module.exports = "section {\n  position: relative;\n  background: url(\"/assets/
   \**********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\" /></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form class=\"form_container\" novalidate >\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"new_pass\">New Password</h4>\r\n            <p class=\"otp-text\">\r\n              Enter your new password and don’t forget It again because it take\r\n              time to return it\r\n            </p>\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"my-4\">\r\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n            <mat-label>New Password</mat-label>\r\n            <input matInput type=\"text\" class=\"form-control\" [formControl]=\"newPassword\" placeholder=\"New password\"\r\n              name=\"new-password\" autocomplete=\"off\" minLength=\"4\" />\r\n          </mat-form-field>\r\n  \r\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n            <mat-label>Confirm Password</mat-label>\r\n            <input matInput type=\"text\" class=\"form-control\" [formControl]=\"confirmPassword\" placeholder=\"Confirm Password\"\r\n              name=\"repeat-password\" autocomplete=\"off\" minLength=\"4\" />\r\n          </mat-form-field>\r\n        </div>\r\n      \r\n        <!-- OTP INPUT END -->\r\n      </form>\r\n      <div class=\"my-5\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\" (click)=\"updatePassword()\">\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\" /></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form class=\"form_container\" novalidate >\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4 class=\"new_pass\">New Password</h4>\r\n            <p class=\"otp-text\">\r\n              Enter your new password and don’t forget It again because it take\r\n              time to return it\r\n            </p>\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div class=\"my-4\">\r\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n            <mat-label>New Password</mat-label>\r\n            <input matInput type=\"text\" class=\"form-control\" [formControl]=\"newPassword\" placeholder=\"New password\"\r\n              name=\"new-password\" autocomplete=\"off\" minLength=\"4\" />\r\n          </mat-form-field>\r\n  \r\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n            <mat-label>Confirm Password</mat-label>\r\n            <input matInput type=\"text\" class=\"form-control\" [formControl]=\"confirmPassword\" placeholder=\"Confirm Password\"\r\n              name=\"repeat-password\" autocomplete=\"off\" minLength=\"4\" />\r\n          </mat-form-field>\r\n        </div>\r\n      \r\n        <!-- OTP INPUT END -->\r\n      </form>\r\n      <div class=\"my-5\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\" (click)=\"continue()\">\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

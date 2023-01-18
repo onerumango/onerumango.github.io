@@ -144,9 +144,10 @@ let FeedbackPage = class FeedbackPage {
             this.location.back();
         }
         else {
-            localStorage.clear();
-            sessionStorage.clear();
-            this.router.navigate(['login'], { replaceUrl: true });
+            // NO NEED TO CLEAR THE SESSION AS PER THE DISCUSSION
+            // localStorage.clear();
+            // sessionStorage.clear();
+            this.router.navigate(['login-landing'], { replaceUrl: true });
         }
     }
     previous1() {

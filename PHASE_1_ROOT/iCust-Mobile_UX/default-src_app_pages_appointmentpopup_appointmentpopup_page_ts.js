@@ -37,11 +37,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppointmentpopupPage = class AppointmentpopupPage {
-    constructor(router, dataRoute, api, sanitizer, toastService, alertController, modalCtrl, shareDataService) {
+    constructor(router, dataRoute, api, sanitizer, actionSheetCtrl, toastService, alertController, modalCtrl, shareDataService) {
         this.router = router;
         this.dataRoute = dataRoute;
         this.api = api;
         this.sanitizer = sanitizer;
+        this.actionSheetCtrl = actionSheetCtrl;
         this.toastService = toastService;
         this.alertController = alertController;
         this.modalCtrl = modalCtrl;
@@ -89,7 +90,7 @@ let AppointmentpopupPage = class AppointmentpopupPage {
     assignProductCode(index) {
         this.productCode = index;
     }
-    next() {
+    close() {
         localStorage.removeItem('AppointmentDetails');
         this.modalCtrl.dismiss();
         this.router.navigate(['dashboard']);
@@ -218,12 +219,60 @@ let AppointmentpopupPage = class AppointmentpopupPage {
             console.error(err);
         });
     }
+    openSheet() {
+        var _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, function* () {
+            const actionSheet = yield this.actionSheetCtrl.create({
+                header: 'Appointment Token Share',
+                animated: true,
+                buttons: [
+                    {
+                        text: 'Share via Email',
+                        icon: 'share',
+                        data: {
+                            action: 'share',
+                        },
+                    }, {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        icon: 'close',
+                        data: {
+                            action: 'cancel',
+                        },
+                    },
+                ],
+            });
+            yield actionSheet.present();
+            const result = yield actionSheet.onDidDismiss();
+            if (((_a = result === null || result === void 0 ? void 0 : result.data) === null || _a === void 0 ? void 0 : _a.action) == 'share') {
+                this.share();
+            }
+            else {
+                return;
+            }
+        });
+    }
+    share() {
+        if (navigator.share) {
+            navigator.share({
+                title: `${this.tranType}`,
+                text: `Your appointment token is : ${this.appointmentId}`,
+            }).then(() => {
+                console.log('Successful share');
+                this.toastService.showToast('Successfully shared!');
+            })
+                .catch((error) => {
+                this.toastService.showToast('Unable to share!');
+            });
+        }
+    }
 };
 AppointmentpopupPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__.Router },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.DomSanitizer },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ActionSheetController },
     { type: src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_5__.ToastService },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.AlertController },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController },
@@ -260,7 +309,7 @@ module.exports = ".rect {\n  margin-top: 50pt;\n  background-color: #456efe;\n  
   \******************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <div class=\"rect\">\r\n    <ion-header class=\"head\">\r\n      <ion-toolbar class=\"new-background-color\" style=\"--border-width: 0\">\r\n        <div class=\"header_title\">\r\n          <p class=\"text\">{{tranType}}</p>\r\n          <ion-icon name=\"close\" class=\"\" slot=\"end\" (click)=\"next()\"></ion-icon>\r\n        </div>\r\n        <div class=\"token\">\r\n          <p class=\"token_number\">Appointment Id</p>\r\n          <div class=\"token_value_row\">\r\n            <div (click)=\"editTransaction()\" *ngIf=\"appointmentStatus == 'SCHEDULED'\">\r\n              <ion-icon name=\"pencil\"></ion-icon>\r\n            </div>\r\n            <p class=\"token_value\">{{appointmentId}}</p>\r\n            <div *ngIf=\"appointmentStatus == 'SCHEDULED'\">\r\n              <ion-icon name=\"trash-outline\" (click)=\"presentAlert()\"></ion-icon>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n\r\n    <div class=\"innerRect\">\r\n      <span class=\"circle\"></span>\r\n      <div class=\"inputCard\">\r\n        <ion-label style=\"opacity: 51%\">Account Number</ion-label>\r\n        <ion-label class=\"display\">{{accountNum}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Account Type</ion-label>\r\n        <ion-label class=\"display\">{{accounttype}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Account Currency</ion-label>\r\n        <ion-label class=\"display\">{{accountcurrency}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Amount</ion-label>\r\n        <ion-label class=\"display\">{{transAmount}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Branch</ion-label>\r\n        <ion-label class=\"display\">{{branch}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Date</ion-label>\r\n        <ion-label class=\"display\">{{transDate}}</ion-label>\r\n        <ion-label style=\"opacity: 51%\">Time Slot</ion-label>\r\n        <ion-label class=\"display\">{{transTime}}</ion-label>\r\n\r\n      <div *ngIf=\"remarks\">\r\n        <ion-label  style=\"opacity: 51%\">Remark</ion-label>\r\n        <ion-label class=\"display\">{{remarks}}</ion-label>\r\n      </div>\r\n        \r\n\r\n        <ion-label style=\"opacity: 51%\">Appointment Status</ion-label>\r\n        <ion-label class=\"display\">{{appointmentStatus}}</ion-label>\r\n      </div>\r\n\r\n      <!-- <img [src]=\"imageToShow\"> -->\r\n      <!-- <img [src]=\"image\"> -->\r\n      <div class=\"qr_img\">\r\n        <img [src]=\"imageURL\" />\r\n      </div>\r\n\r\n      <ion-label class=\"inputCard\" style=\"display: block; opacity: 70%; font-size: 16pt\" (click)=\"addToWallet()\">Add to\r\n        wallet</ion-label>\r\n    </div>\r\n\r\n    <div class=\"inputCard\"></div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <div class=\"rect\">\r\n    <ion-header class=\"head\">\r\n      <ion-toolbar class=\"new-background-color\" style=\"--border-width: 0\">\r\n        <div class=\"header_title\">\r\n          <p class=\"text\">{{tranType}}</p>\r\n          <ion-buttons slot=\"end\">\r\n            <ion-button (click)=\"openSheet()\">\r\n              <ion-icon slot=\"icon-only\" name=\"share-social\"></ion-icon>\r\n            </ion-button>\r\n            <ion-button (click)=\"close()\">\r\n              <ion-icon name=\"close\" class=\"\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-buttons>\r\n        </div>\r\n        <div class=\"token\">\r\n          <p class=\"token_number\">Appointment Id</p>\r\n          <div class=\"token_value_row\">\r\n            <div (click)=\"editTransaction()\" *ngIf=\"appointmentStatus == 'SCHEDULED'\">\r\n              <ion-icon name=\"pencil\"></ion-icon>\r\n            </div>\r\n            \r\n            <p class=\"token_value\">{{appointmentId}}</p>\r\n            <div *ngIf=\"appointmentStatus == 'SCHEDULED'\">\r\n              <ion-icon name=\"trash-outline\" (click)=\"presentAlert()\"></ion-icon>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n\r\n    <div class=\"innerRect\">\r\n      <span class=\"circle\"></span>\r\n      <div class=\"inputCard\">\r\n        <ion-label style=\"opacity: 51%\">Account Number</ion-label>\r\n        <ion-label class=\"display\">{{accountNum}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Account Type</ion-label>\r\n        <ion-label class=\"display\">{{accounttype}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Account Currency</ion-label>\r\n        <ion-label class=\"display\">{{accountcurrency}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Amount</ion-label>\r\n        <ion-label class=\"display\">{{transAmount}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Branch</ion-label>\r\n        <ion-label class=\"display\">{{branch}}</ion-label>\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Date</ion-label>\r\n        <ion-label class=\"display\">{{transDate}}</ion-label>\r\n        <ion-label style=\"opacity: 51%\">Time Slot</ion-label>\r\n        <ion-label class=\"display\">{{transTime}}</ion-label>\r\n\r\n      <div *ngIf=\"remarks\">\r\n        <ion-label  style=\"opacity: 51%\">Remark</ion-label>\r\n        <ion-label class=\"display\">{{remarks}}</ion-label>\r\n      </div>\r\n        \r\n\r\n        <ion-label style=\"opacity: 51%\">Appointment Status</ion-label>\r\n        <ion-label class=\"display\">{{appointmentStatus}}</ion-label>\r\n      </div>\r\n\r\n      <!-- <img [src]=\"imageToShow\"> -->\r\n      <!-- <img [src]=\"image\"> -->\r\n      <div class=\"qr_img\">\r\n        <img [src]=\"imageURL\" />\r\n      </div>\r\n\r\n      <ion-label class=\"inputCard\" style=\"display: block; opacity: 70%; font-size: 16pt\" (click)=\"addToWallet()\">Add to\r\n        wallet</ion-label>\r\n    </div>\r\n\r\n    <div class=\"inputCard\"></div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

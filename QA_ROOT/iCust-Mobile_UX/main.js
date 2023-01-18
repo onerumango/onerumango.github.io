@@ -178,10 +178,6 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_fingerprint_fingerprint_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/fingerprint/fingerprint.module */ 82006)).then(m => m.FingerprintPageModule)
     },
     {
-        path: 'mpinotpvalidate',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_mpinotpvalidate_mpinotpvalidate_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/mpinotpvalidate/mpinotpvalidate.module */ 56166)).then(m => m.MpinotpvalidatePageModule)
-    },
-    {
         path: 'success-message',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_success-message_success-message_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/success-message/success-message.module */ 81178)).then(m => m.SuccessMessagePageModule)
     },
@@ -774,15 +770,12 @@ let ApiService = class ApiService {
         return this.http.put(`${API_URL}/rest/otp/validateOtp`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     cashWithdrawalSave(data) {
-        console.log("enter inside api");
         return this.http.post(`${API_URL}/cash-withdrawal-service`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     cashDepositSave(data) {
-        console.log("cashDepositSave----------", data);
         return this.http.post(`${API_URL}/cash-deposit/api`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     chequeWithdrawalSave(data) {
-        console.log("enter inside api");
         return this.http.post(`${API_URL}/cheque-withdrawal`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     chequeDepositSave(data) {
@@ -808,7 +801,6 @@ let ApiService = class ApiService {
     }
     generateQRCode(data) {
         return this.http.post(`${API_URL}/token/api/qr-code-generator`, data, { responseType: 'blob' });
-        // return this.http.get<any>(`${API_URL1}/token/api/fetch-qr-code/${data}`).pipe(catchError(this.errorHandler));
     }
     fetchWalletInfo(customerId) {
         return this.http.get(`${API_URL}/cash-deposit/api/fetchWalletInfo?customerId=${customerId}`);
@@ -816,9 +808,6 @@ let ApiService = class ApiService {
     appointmentBooking(data) {
         return this.http.put(`${API_URL}/cash-deposit/api/updateScheduledAppointment`, data);
     }
-    // updateAppointmentBooking(data: any) {
-    //   return this.http.put(`${API_URL}/cash-deposit/api/updateScheduledAppointment`, data,);
-    // }
     updateAddToWallet(model) {
         return this.http.put(`${API_URL}/cash-deposit/api/updateAddToWallet`, model);
     }
@@ -835,49 +824,40 @@ let ApiService = class ApiService {
         return this.http.get(`${API_URL}/currency`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     gettingAvailableSlots(selectedDate) {
-        console.log(selectedDate);
         return this.http.get(`${API_URL}/rest/data/customer/availableslots?scheduledDate=${selectedDate}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     gettingBookedSlots(selectedDate) {
-        console.log(selectedDate);
         return this.http.get(`${API_URL}/cash-deposit/api/fetchBookedSlots?transactionDate=${selectedDate}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     getDashboardDataNew(customerId) {
         return this.http.get(`${API_URL}/teller-service/api/mobile/${customerId}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     fetchAppointmentInfo(filterOption, formattedFromDate, formattedToDate, customerId, accountNumber) {
-        console.log(formattedFromDate);
         var opt;
         if ((customerId != null || customerId != undefined || customerId != '') && ((formattedFromDate == null && formattedToDate == null) && filterOption == null)) {
-            console.log("append");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId);
         }
         else if (((formattedFromDate != null || formattedFromDate != '') && (formattedToDate != null || formattedToDate != ''))
             && customerId != null && filterOption == null) {
-            console.log("append1");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId)
                 .append('fromDate', formattedFromDate)
                 .append('toDate', formattedToDate);
         }
         else if ((customerId != null && filterOption != null && formattedFromDate == null && formattedToDate == null)) {
-            console.log("append2");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId)
                 .append('filterOption', filterOption);
         }
         else {
-            console.log("append3");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId)
                 .append('fromDate', formattedFromDate)
                 .append('toDate', formattedToDate)
                 .append('filterOption', filterOption);
         }
-        console.log(opt);
         return this.http.get(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?${opt}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
-        // return this.http.get<any>(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?filterOption=${filterOption}&fromDate=${fromDate}&toDate=${toDate}&customerId=${customerId}&accountNumber=${accountNumber}`).pipe(catchError(this.errorHandler));
     }
     getTransactionByAccountId(accountId, page, formattedFromDate, formattedToDate, size) {
         var params;
@@ -952,11 +932,8 @@ let ApiService = class ApiService {
     getFirstTimeLogin() {
         return this.firstTimeLogin.asObservable();
     }
-    validatePassword(phoneNumber, password) {
-        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
-            .append('phoneNumber', phoneNumber)
-            .append('password', password);
-        return this.http.get(`${API_URL}/customerdata/validateCutomerPassword?${params}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    validatePassword(loginModel) {
+        return this.http.post(`${API_URL}/customerdata/validateCutomerPassword`, loginModel).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     setMpin(data) {
         return this.http.post(`${API_URL}/customerLogin/generateMpin`, data);
@@ -970,8 +947,11 @@ let ApiService = class ApiService {
     updateCustomerPassword(model) {
         return this.http.put(`${API_URL}/customerdata/updateCustomerPassword`, model);
     }
-    getExchangeRate(country1 = 'INR') {
-        let url = 'https://api.exchangerate.host/latest?base=' + country1;
+    resetPassword(model) {
+        return this.http.post(`${API_URL}/customerdata/resetCustomerPassword`, model);
+    }
+    getExchangeRate(currency) {
+        let url = 'https://api.exchangerate.host/latest?base=' + currency;
         return this.http.get(url).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     registerFaceIdORFingerPrint(bioAuthModel) {
@@ -1350,7 +1330,8 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
-    // ICUST_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
+    // BASE_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
+    // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
     BASE_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:8071/Icust-Digital-Banking',
 };
@@ -1660,7 +1641,7 @@ module.exports = ".box {\n  width: 60px;\n  height: 60px;\n  background: #FFEDED
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.13</h6>\r\n          <p class=\"app-font version-color\">Build 13</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.14</h6>\r\n          <p class=\"app-font version-color\">Build 14</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 

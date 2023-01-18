@@ -164,13 +164,13 @@ let MapComponent = class MapComponent {
         this.typesSelectOptions = [];
         this.markers = [];
         this.infoWindows = [];
+        this.center = [];
+        this.map = new mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_5__.mmi();
     }
-    ngOnInit() {
-        this.setupMap();
-        this.getBankBranches();
-    }
+    ngOnInit() { }
     ionViewWillEnter() {
-        this.maps = new mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_5__.mmi();
+        this.setupMap();
+        this.getLocation();
     }
     getBankBranches() {
         this.apiService.getBranchByCity('Bangalore').subscribe((data) => {
@@ -178,186 +178,30 @@ let MapComponent = class MapComponent {
             this.getMarkers();
         });
     }
+    getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.showPosition);
+        }
+    }
+    showPosition(position) {
+        console.log("postion", position.coords.latitude, position.coords.longitude);
+        this.center = [position.coords.latitude, position.coords.longitude];
+        console.log(this.center);
+    }
     setupMap() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
-            this.map = new mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_5__.mmi();
+            this.getLocation();
+            console.log("center test 1", this.center);
+            console.log("center test 2", [10.6500315, 78.9919185]);
             this.map.loadMaps(this.gmap.nativeElement, {
                 key: '1d833ae339c7284f8104fc7482107c66',
                 zoom: 5,
+                zoomControl: true,
+                hybrid: true,
+                center: [10.6500315, 78.9919185],
                 location: { control: true, initial: true, bounds: true },
             });
-            //  Commented google map init
-            // const styledMapType = [
-            //   {
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#f5f5f5"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "elementType": "labels.icon",
-            //     "stylers": [
-            //       {
-            //         "visibility": "off"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#616161"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "elementType": "labels.text.stroke",
-            //     "stylers": [
-            //       {
-            //         "color": "#f5f5f5"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "administrative.land_parcel",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#bdbdbd"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "poi",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#eeeeee"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "poi",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#757575"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "poi.park",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#cadaca"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "poi.park",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#9e9e9e"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "road",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#ffffff"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "road.arterial",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#757575"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "road.highway",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#dadada"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "road.highway",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#616161"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "road.local",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#9e9e9e"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "transit.line",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#e5e5e5"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "transit.station",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#eeeeee"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "water",
-            //     "elementType": "geometry",
-            //     "stylers": [
-            //       {
-            //         "color": "#d2e6e8"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     "featureType": "water",
-            //     "elementType": "labels.text.fill",
-            //     "stylers": [
-            //       {
-            //         "color": "#9e9e9e"
-            //       }
-            //     ]
-            //   }
-            // ] as google.maps.MapOptions['styles'];
-            // this.google = await this._mapsService.getGoogleMaps();
-            // const latLng = new google.maps.LatLng(12.9716, 77.5946);
-            // this.map = new this.google.maps.Map(this.gmap.nativeElement, {
-            //   center: latLng,
-            //   zoom: 14,
-            //   styles: styledMapType,
-            //   mapTypeControl: true,
-            //   mapTypeControlOptions: {
-            //     style: this.google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-            //   }
-            // });
+            this.getBankBranches();
         });
     }
     getMarkers() {
@@ -384,7 +228,7 @@ let MapComponent = class MapComponent {
                         },
                     ],
                 ];
-                this.maps.marker(mrker_arr, {
+                this.map.marker(mrker_arr, {
                     iconUrl: 'assets/icon/map.png',
                     iconSize: [36, 51],
                     popupAnchor: [0, -16],
@@ -394,30 +238,6 @@ let MapComponent = class MapComponent {
                 });
             }
         }
-    }
-    // UNUSED METHOD FOR TEMP GOOGLEMAP START
-    setupMarker(location) {
-        const svgIcon = {
-            path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
-            fillColor: '#4a4a4a',
-            fillOpacity: 0.9,
-            scale: 0.8,
-            strokeWeight: 0,
-        };
-        const mrkr = new this.google.maps.Marker({
-            position: new this.google.maps.LatLng(Number(location.lattitude), Number(location.longitude)),
-            label: {
-                text: location.branchName,
-                fontSize: '1.6rem',
-                fontWeight: '400',
-                fontFamily: "'PlantinMTPro', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif",
-            },
-            map: this.map,
-            icon: svgIcon,
-        });
-        this.markers = [...this.markers, mrkr];
-        this.setUpInfoWindow(location, mrkr);
-        return mrkr;
     }
     focusMarker(type, index) {
         const marker = type.markers[index];
@@ -1462,7 +1282,7 @@ Loader.CALLBACK_NAME = '_dk_google_maps_loader_cb';
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJicmFuY2guY29tcG9uZW50LnNjc3MifQ== */";
+module.exports = "ion-item::part(native) {\n  height: auto !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJyYW5jaC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHVCQUFBO0FBQ0oiLCJmaWxlIjoiYnJhbmNoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW06OnBhcnQobmF0aXZlKSB7XHJcbiAgICBoZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcclxufSJdfQ== */";
 
 /***/ }),
 
