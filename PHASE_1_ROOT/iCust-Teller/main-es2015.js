@@ -344,7 +344,7 @@ EgretSideNavToggleDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -5068,7 +5068,7 @@ const rootRouterConfig = [
         children: [
             {
                 path: 'others',
-                loadChildren: () => Promise.all(/*! import() | views-others-others-module */[__webpack_require__.e("default~views-others-others-module~views-settings-settings-module~views-video-verification-video-ver~6754191d"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module~views-sessions-sessions-module"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module"), __webpack_require__.e("default~views-others-others-module~views-video-verification-video-verification-module"), __webpack_require__.e("common"), __webpack_require__.e("views-others-others-module")]).then(__webpack_require__.bind(null, /*! ./views/others/others.module */ "KVVp")).then(m => m.OthersModule),
+                loadChildren: () => Promise.all(/*! import() | views-others-others-module */[__webpack_require__.e("default~views-others-others-module~views-settings-settings-module~views-video-verification-video-ver~6754191d"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module~views-sessions-sessions-module"), __webpack_require__.e("default~views-others-others-module~views-video-verification-video-verification-module"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module"), __webpack_require__.e("common"), __webpack_require__.e("views-others-others-module")]).then(__webpack_require__.bind(null, /*! ./views/others/others.module */ "KVVp")).then(m => m.OthersModule),
             }, {
                 path: 'settings',
                 loadChildren: () => Promise.all(/*! import() | views-settings-settings-module */[__webpack_require__.e("default~views-others-others-module~views-settings-settings-module~views-video-verification-video-ver~6754191d"), __webpack_require__.e("views-settings-settings-module")]).then(__webpack_require__.bind(null, /*! ./views/settings/settings.module */ "Ty4v")).then(m => m.SettingsModule),
@@ -7424,16 +7424,6 @@ class ApiService {
     downloadReportConfiguration(tellerId, fromDate, toDate) {
         return this.http
             .get(`http://192.168.0.14:8081/BirtReport/downloadTransactionReport?tellerId=7&fromDate=2023-01-10&toDate=2023-01-10`)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
-    }
-    getRecentTransactionFilter(tellerId, filterOption) {
-        return this.http
-            .get(`${API_URL}/cash-deposit/api/fetchTellerRecentTrans?tellerId=${tellerId}&filterOption=${filterOption}`)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
-    }
-    getRecentTransactionFilterBasedOnDate(tellerId, fromDate, toDate) {
-        return this.http
-            .get(`${API_URL}/cash-deposit/api/fetchTellerRecentTrans?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${toDate}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
 }

@@ -723,7 +723,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */
+      /*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */
       "zUnb");
       /***/
     },
@@ -9159,7 +9159,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | views-others-others-module */
-            [__webpack_require__.e("default~views-others-others-module~views-settings-settings-module~views-video-verification-video-ver~6754191d"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module~views-sessions-sessions-module"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module"), __webpack_require__.e("default~views-others-others-module~views-video-verification-video-verification-module"), __webpack_require__.e("common"), __webpack_require__.e("views-others-others-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~views-others-others-module~views-settings-settings-module~views-video-verification-video-ver~6754191d"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module~views-sessions-sessions-module"), __webpack_require__.e("default~views-others-others-module~views-video-verification-video-verification-module"), __webpack_require__.e("default~views-maintenance-maintenance-module~views-others-others-module"), __webpack_require__.e("common"), __webpack_require__.e("views-others-others-module")]).then(__webpack_require__.bind(null,
             /*! ./views/others/others.module */
             "KVVp")).then(function (m) {
               return m.OthersModule;
@@ -12486,16 +12486,6 @@
           key: "downloadReportConfiguration",
           value: function downloadReportConfiguration(tellerId, fromDate, toDate) {
             return this.http.get("http://192.168.0.14:8081/BirtReport/downloadTransactionReport?tellerId=7&fromDate=2023-01-10&toDate=2023-01-10").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
-          }
-        }, {
-          key: "getRecentTransactionFilter",
-          value: function getRecentTransactionFilter(tellerId, filterOption) {
-            return this.http.get("".concat(API_URL, "/cash-deposit/api/fetchTellerRecentTrans?tellerId=").concat(tellerId, "&filterOption=").concat(filterOption)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
-          }
-        }, {
-          key: "getRecentTransactionFilterBasedOnDate",
-          value: function getRecentTransactionFilterBasedOnDate(tellerId, fromDate, toDate) {
-            return this.http.get("".concat(API_URL, "/cash-deposit/api/fetchTellerRecentTrans?tellerId=").concat(tellerId, "&fromDate=").concat(fromDate, "&toDate=").concat(toDate)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }]);
 

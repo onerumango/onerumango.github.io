@@ -627,10 +627,3 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
 .blue .mat-form-field-appearance-outline .mat-form-field-wrapper {
   color: black;
 }
-.myapp-no-padding-dialog .mat-dialog-container {   
-  background: #FFFEFE 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 15px #00000017;
-  border: 1px solid #DBDBDB;
-  border-radius: 12px;
-  padding:0px;
-}

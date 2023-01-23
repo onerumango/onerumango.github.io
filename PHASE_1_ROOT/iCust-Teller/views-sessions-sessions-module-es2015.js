@@ -136,13 +136,12 @@ module.exports = uuid;
 /*!***********************************************************!*\
   !*** ./src/app/views/sessions/signin/signin.component.ts ***!
   \***********************************************************/
-/*! exports provided: SigninComponent, User */
+/*! exports provided: SigninComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SigninComponent", function() { return SigninComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "0IaG");
@@ -229,7 +228,6 @@ class SigninComponent {
             this.spinner.show();
             this.jwtService.loginIcut(this.signinForm.value).subscribe((res) => {
                 console.log("ress", res);
-                this.userResp = res;
                 this.spinner.hide();
                 if ((res === null || res === void 0 ? void 0 : res.data) == null && res.message == "Account blocked, Max failed attempts reached") {
                     this.toastr.error(`${res.message}`, `Error!`, {
@@ -246,10 +244,8 @@ class SigninComponent {
                     }
                     else {
                         this.currentDate = new Date();
-                        this.changePwdDate = new Date(this.userResp.pwdChangeDate);
-                        console.log(this.changePwdDate);
+                        this.changePwdDate = new Date(); //this.user.pwdChangeDate // get data from backend
                         this.differnceInTime = this.currentDate - this.changePwdDate;
-                        console.log(this.differnceInTime);
                         this.differnceInDays = Math.floor(this.differnceInTime / (1000 * 3600 * 24));
                         this.finalDiff = this.pswdExpiry - this.differnceInDays;
                         console.log(this.finalDiff, this.pswdExpiry, this.differnceInDays);
@@ -267,12 +263,6 @@ class SigninComponent {
                             localStorage.setItem('branchName', res.branchName);
                             localStorage.setItem('userName', res.userName);
                             localStorage.setItem("browserId", this.browserKey);
-                            console.log(this.finalDiff);
-                            if (this.finalDiff > 0 && this.finalDiff <= this.notifyPswdExpry) {
-                                this.toastr.error("Your password will expire in " +
-                                    `${this.finalDiff}` +
-                                    " day(s)", "");
-                            }
                             this.router.navigateByUrl('/others/dashboard');
                             this.showToast(res);
                         }
@@ -421,8 +411,6 @@ SigninComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
                 styleUrls: ['./signin.component.scss']
             }]
     }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: _shared_services_layout_service__WEBPACK_IMPORTED_MODULE_9__["LayoutService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }, { type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__["JwtAuthService"] }, { type: _shared_services_theme_service__WEBPACK_IMPORTED_MODULE_8__["ThemeService"] }, { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }, { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_7__["ToastrService"] }, { type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_11__["ApiService"] }, { type: ngx_spinner__WEBPACK_IMPORTED_MODULE_6__["NgxSpinnerService"] }]; }, null); })();
-class User {
-}
 
 
 /***/ }),
