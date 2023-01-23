@@ -234,7 +234,7 @@
       !*** ./src/app/views/sessions/signin/signin.component.ts ***!
       \***********************************************************/
 
-    /*! exports provided: SigninComponent */
+    /*! exports provided: SigninComponent, User */
 
     /***/
     function Ekgz(module, __webpack_exports__, __webpack_require__) {
@@ -246,6 +246,12 @@
 
       __webpack_require__.d(__webpack_exports__, "SigninComponent", function () {
         return SigninComponent;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "User", function () {
+        return User;
       });
       /* harmony import */
 
@@ -420,6 +426,7 @@
               this.spinner.show();
               this.jwtService.loginIcut(this.signinForm.value).subscribe(function (res) {
                 console.log("ress", res);
+                _this2.userResp = res;
 
                 _this2.spinner.hide();
 
@@ -436,9 +443,10 @@
 
                   if (_this2.pswdExpiry === 0 && _this2.notifyPswdExpry === 0) {} else {
                     _this2.currentDate = new Date();
-                    _this2.changePwdDate = new Date(); //this.user.pwdChangeDate // get data from backend
-
+                    _this2.changePwdDate = new Date(_this2.userResp.pwdChangeDate);
+                    console.log(_this2.changePwdDate);
                     _this2.differnceInTime = _this2.currentDate - _this2.changePwdDate;
+                    console.log(_this2.differnceInTime);
                     _this2.differnceInDays = Math.floor(_this2.differnceInTime / (1000 * 3600 * 24));
                     _this2.finalDiff = _this2.pswdExpiry - _this2.differnceInDays;
                     console.log(_this2.finalDiff, _this2.pswdExpiry, _this2.differnceInDays);
@@ -458,6 +466,11 @@
                       localStorage.setItem('branchName', res.branchName);
                       localStorage.setItem('userName', res.userName);
                       localStorage.setItem("browserId", _this2.browserKey);
+                      console.log(_this2.finalDiff);
+
+                      if (_this2.finalDiff > 0 && _this2.finalDiff <= _this2.notifyPswdExpry) {
+                        _this2.toastr.error("Your password will expire in " + "".concat(_this2.finalDiff) + " day(s)", "");
+                      }
 
                       _this2.router.navigateByUrl('/others/dashboard');
 
@@ -741,6 +754,10 @@
           }];
         }, null);
       })();
+
+      var User = /*#__PURE__*/_createClass(function User() {
+        _classCallCheck(this, User);
+      });
       /***/
 
     },
