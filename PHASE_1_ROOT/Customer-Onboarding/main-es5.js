@@ -10654,6 +10654,16 @@
             return this.http.get("".concat(API_URL, "/iccity/fetchAllAuthCities")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           }
         }, {
+          key: "deleteCorporateDirector",
+          value: function deleteCorporateDirector(corporateId, customerId) {
+            return this.http["delete"]("".concat(API_URL, "/corporateCustomer/deleteCorporateDirectorInfo?corporateId=").concat(corporateId, "&customerId=").concat(customerId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "fetchCurrencyInfo",
+          value: function fetchCurrencyInfo(country) {
+            return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMainByCountryCode?country=").concat(country)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
           key: "countryCurrencyFlaglists",
           value: function countryCurrencyFlaglists(data) {
             return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMainByCountryCode?country=").concat(data)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));

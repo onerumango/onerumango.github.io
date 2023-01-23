@@ -514,13 +514,13 @@
         }
 
         if (rf & 2) {
-          var prefix_r79 = ctx.$implicit;
+          var prefix_r80 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", prefix_r79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", prefix_r80);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", prefix_r79, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", prefix_r80, " ");
         }
       }
 
@@ -566,13 +566,13 @@
         }
 
         if (rf & 2) {
-          var country_r80 = ctx.$implicit;
+          var country_r81 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r81);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r80, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r81, " ");
         }
       }
 
@@ -586,13 +586,13 @@
         }
 
         if (rf & 2) {
-          var residence_r81 = ctx.$implicit;
+          var residence_r82 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", residence_r81);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", residence_r82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", residence_r81, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", residence_r82, " ");
         }
       }
 
@@ -628,13 +628,13 @@
         }
 
         if (rf & 2) {
-          var country_r82 = ctx.$implicit;
+          var country_r83 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r82);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r83);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r82, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r83, " ");
         }
       }
 
@@ -658,13 +658,13 @@
         }
 
         if (rf & 2) {
-          var doc_r83 = ctx.$implicit;
+          var doc_r84 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", doc_r83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", doc_r84);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", doc_r83, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", doc_r84, " ");
         }
       }
 
@@ -718,13 +718,13 @@
         }
 
         if (rf & 2) {
-          var gender_r84 = ctx.$implicit;
+          var gender_r85 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", gender_r84);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", gender_r85);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", gender_r84, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", gender_r85, " ");
         }
       }
 
@@ -738,7 +738,17 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_106_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_hint_101_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-hint", 104);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0 Prefix and Gender does not match! ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_107_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -748,19 +758,19 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_113_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_114_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
         }
 
         if (rf & 2) {
-          var ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
+          var ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r52.currencyCode, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r53.currencyCode, "");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_118_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_119_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
@@ -770,17 +780,17 @@
         }
 
         if (rf & 2) {
-          var citizenship_r85 = ctx.$implicit;
+          var citizenship_r86 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", citizenship_r85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", citizenship_r86);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", citizenship_r85, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", citizenship_r86, " ");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_119_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_120_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -790,7 +800,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_125_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_126_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
@@ -800,17 +810,17 @@
         }
 
         if (rf & 2) {
-          var status_r86 = ctx.$implicit;
+          var status_r87 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", status_r86);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", status_r87);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", status_r86, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", status_r87, " ");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_131_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_132_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -820,7 +830,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_137_div_1_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_138_div_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
@@ -830,7 +840,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_137_div_2_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_138_div_2_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
@@ -840,31 +850,31 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_137_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_138_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_137_div_1_Template, 2, 0, "div", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_138_div_1_Template, 2, 0, "div", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_137_div_2_Template, 2, 0, "div", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_138_div_2_Template, 2, 0, "div", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
+          var ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r57.applicant.get("idNumber").hasError("required"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r58.applicant.get("idNumber").hasError("required"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r57.applicant.get("idNumber").hasError("pattern"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r58.applicant.get("idNumber").hasError("pattern"));
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_150_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_151_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -874,7 +884,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_151_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_152_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -884,7 +894,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_157_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_158_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
@@ -894,17 +904,17 @@
         }
 
         if (rf & 2) {
-          var addressType_r89 = ctx.$implicit;
+          var addressType_r90 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", addressType_r89);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", addressType_r90);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", addressType_r89, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", addressType_r90, " ");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_158_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_159_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -914,7 +924,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_164_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_165_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -924,9 +934,9 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_h5_165_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_h5_166_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h5", 103);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h5", 105);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Please enter valid Zip Code!(5-10 digits) ");
 
@@ -934,7 +944,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_171_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_172_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
@@ -944,17 +954,17 @@
         }
 
         if (rf & 2) {
-          var city_r90 = ctx.$implicit;
+          var city_r91 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", city_r90);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", city_r91);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", city_r90, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", city_r91, " ");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_172_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_173_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -964,7 +974,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_179_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_180_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -974,7 +984,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_180_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_181_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -984,19 +994,19 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_187_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_188_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
         }
 
         if (rf & 2) {
-          var ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
+          var ctx_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r68.editCountryCode, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r69.editCountryCode, "");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_189_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_190_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
@@ -1006,17 +1016,17 @@
         }
 
         if (rf & 2) {
-          var country_r91 = ctx.$implicit;
+          var country_r92 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r91);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r92);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r91, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r92, " ");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_190_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_191_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1026,7 +1036,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_196_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_197_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
@@ -1036,17 +1046,17 @@
         }
 
         if (rf & 2) {
-          var state_r92 = ctx.$implicit;
+          var state_r93 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", state_r92.stateName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", state_r93.stateName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", state_r92.stateName, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", state_r93.stateName, "");
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_197_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_198_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1056,7 +1066,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_210_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_211_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1066,7 +1076,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_211_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_212_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1076,9 +1086,9 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_212_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_213_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 106);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0 \xA0 Please Enter Correct Mobile Number ");
 
@@ -1086,7 +1096,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_218_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_219_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1096,7 +1106,7 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_225_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_226_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1106,9 +1116,9 @@
         }
       }
 
-      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_226_Template(rf, ctx) {
+      function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_227_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 106);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0 \xA0 Please Enter Correct Landline Number ");
 
@@ -1118,7 +1128,7 @@
 
       function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r94 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r95 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 59);
 
@@ -1141,11 +1151,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-slide-toggle", 61);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_slide_toggle_change_8_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r93 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r94 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r93.toggleChanges($event);
+            return ctx_r94.toggleChanges($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1165,6 +1175,14 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-select", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_14_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
+
+            var ctx_r96 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+            return ctx_r96.onChangeData(ctx_r96.applicant.get("gender").value);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_15_Template, 2, 2, "mat-option", 18);
 
@@ -1189,11 +1207,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "input", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_21_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r95 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r97 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r95.letterOnly($event);
+            return ctx_r97.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1247,11 +1265,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "mat-select", 72);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_38_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r96 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r98 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r96.onSelectionBirthCountry($event.value);
+            return ctx_r98.onSelectionBirthCountry($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_39_Template, 2, 2, "mat-option", 18);
@@ -1307,11 +1325,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "mat-select", 74);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_54_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r97 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r99 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r97.onSelectionResidance($event.value);
+            return ctx_r99.onSelectionResidance($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "mat-option", 75);
@@ -1343,11 +1361,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "mat-select", 76);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_63_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r98 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r100 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r98.changeIdType(ctx_r98.applicant.get("idType").value);
+            return ctx_r100.changeIdType(ctx_r100.applicant.get("idType").value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](64, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_64_Template, 2, 2, "mat-option", 18);
@@ -1415,11 +1433,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "input", 80);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_86_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r99 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r101 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r99.letterOnly($event);
+            return ctx_r101.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1443,11 +1461,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "input", 81);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_92_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
-            var ctx_r100 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r102 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r100.letterOnly($event);
+            return ctx_r102.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1470,385 +1488,291 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "mat-select", 82);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_98_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
+
+            var ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+            return ctx_r103.onChangeData($event.value);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](99, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_99_Template, 2, 2, "mat-option", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](100, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_100_Template, 2, 0, "mat-error", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, "Birth Place *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](105, "input", 83);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](106, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_106_Template, 2, 0, "mat-error", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](101, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_hint_101_Template, 2, 0, "mat-hint", 83);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "div", 84);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "mat-form-field", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "mat-form-field", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, "Citizenship By");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "div", 69);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "div", 70);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](113, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_113_Template, 1, 3, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, "Birth Place *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](106, "input", 84);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "mat-select", 85);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_115_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
-
-            var ctx_r101 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
-
-            return ctx_r101.onSelectionCitizionship($event.value);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "mat-option", 75);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, "--Select--");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](118, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_118_Template, 2, 2, "mat-option", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](107, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_107_Template, 2, 0, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](119, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_119_Template, 2, 0, "mat-error", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "div", 85);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](110, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, "Citizenship By");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "div", 69);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "div", 70);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](114, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_114_Template, 1, 3, "div", 71);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "div", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "mat-form-field", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "mat-select", 86);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](123, "Marital Status");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "mat-select", 86);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](125, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_125_Template, 2, 2, "mat-option", 18);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](129, "Occupation Type *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "input", 87);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_130_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
-
-            var ctx_r102 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
-
-            return ctx_r102.letterOnly($event);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](131, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_131_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](132, "div", 88);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](135, "Unique ID Number *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](136, "input", 89);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](137, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_137_Template, 3, 2, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](138, "mat-accordion");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "mat-expansion-panel", 39);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "mat-expansion-panel-header");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](141, "mat-panel-title");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](142, "Communication Address ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "div", 12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "div", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](145, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](147, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](148, "Address Line 1 *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](149, "textarea", 90);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](150, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_150_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](151, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_151_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](153, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](155, "Residence Type *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "mat-select", 91);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](157, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_157_Template, 2, 2, "mat-option", 18);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](158, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_158_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](159, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](162, "Zip Code *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](163, "input", 92);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_163_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
-
-            var ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
-
-            return ctx_r103.onKeyPress1($event);
-          })("keyup", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keyup_163_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_116_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r104 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r104.isAllSameDigit($event);
-          })("change", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_change_163_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            return ctx_r104.onSelectionCitizionship($event.value);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "mat-option", 75);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](118, "--Select--");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](119, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_119_Template, 2, 2, "mat-option", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](120, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_120_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "div", 68);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](124, "Marital Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "mat-select", 87);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](126, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_126_Template, 2, 2, "mat-option", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](130, "Occupation Type *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "input", 88);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_131_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r105 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r105.getCityandStateByZipcode(ctx_r105.applicant.get("country").value, $event.target.value);
+            return ctx_r105.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](164, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_164_Template, 2, 0, "mat-error", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](132, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_132_Template, 2, 0, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](165, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_h5_165_Template, 2, 0, "h5", 93);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "div", 89);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, "Unique ID Number *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](137, "input", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](167, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](169, "City *");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](138, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_138_Template, 3, 2, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](170, "mat-select", 94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_170_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "mat-accordion");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "mat-expansion-panel", 39);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](141, "mat-expansion-panel-header");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "mat-panel-title");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](143, "Communication Address ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "div", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](145, "div", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](147, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](149, "Address Line 1 *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](150, "textarea", 91);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](151, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_151_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](152, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_152_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](153, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](155, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](156, "Residence Type *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "mat-select", 92);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](158, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_158_Template, 2, 2, "mat-option", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](159, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_159_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](162, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](163, "Zip Code *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](164, "input", 93);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_164_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r106 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r106.onCityChange();
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](171, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_171_Template, 2, 2, "mat-option", 18);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](172, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_172_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](173, "div", 20);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](174, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](177, "Address Line 2 *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](178, "textarea", 95);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](179, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_179_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](180, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_180_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](181, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](184, "Country *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 69);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "div", 70);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](187, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_187_Template, 1, 3, "div", 71);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](188, "mat-select", 96);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_188_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            return ctx_r106.onKeyPress1($event);
+          })("keyup", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keyup_164_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r107 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r107.getStateName($event.value, true);
-          })("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_188_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            return ctx_r107.isAllSameDigit($event);
+          })("change", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_change_164_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r108 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r108.getCountrySelection1($event.value);
+            return ctx_r108.getCityandStateByZipcode(ctx_r108.applicant.get("country").value, $event.target.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](189, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_189_Template, 2, 2, "mat-option", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](165, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_165_Template, 2, 0, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](190, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_190_Template, 2, 0, "mat-error", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](166, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_h5_166_Template, 2, 0, "h5", 94);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](167, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](191, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "mat-form-field", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](192, "mat-form-field", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](169, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](193, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](194, "State *");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](170, "City *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](195, "mat-select", 97);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "mat-select", 95);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_195_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_171_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r109 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r109.onStateChange();
+            return ctx_r109.onCityChange();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](196, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_196_Template, 2, 2, "mat-option", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](172, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_172_Template, 2, 2, "mat-option", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](197, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_197_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](173, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_173_Template, 2, 0, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1856,131 +1780,235 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](174, "div", 20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](198, "mat-accordion");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](199, "mat-expansion-panel", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "mat-form-field", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "mat-expansion-panel-header");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](177, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](201, "mat-panel-title");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](202, "Contact Information ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](178, "Address Line 2 *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](179, "textarea", 96);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](203, "div", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](180, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_180_Template, 2, 0, "mat-error", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](204, "div", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](205, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](206, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](208, "Mobile Number *");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](181, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_181_Template, 2, 0, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](209, "input", 98);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_209_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](184, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](185, "Country *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "div", 69);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](187, "div", 70);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](188, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_div_188_Template, 1, 3, "div", 71);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](189, "mat-select", 97);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_189_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r110 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r110.onKeyPress1($event);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](210, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_210_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](211, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_211_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](212, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_212_Template, 2, 0, "mat-error", 99);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](213, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](214, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](215, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](216, "E-mail *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](217, "input", 100);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](218, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_218_Template, 2, 0, "mat-error", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](219, "div", 20);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](220, "div", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "mat-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](222, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](223, "Landline Number ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](224, "input", 101);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_224_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+            return ctx_r110.getStateName($event.value, true);
+          })("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_189_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r111 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r111.onKeyPress1($event);
+            return ctx_r111.getCountrySelection1($event.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](225, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_225_Template, 2, 0, "mat-error", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](190, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_190_Template, 2, 2, "mat-option", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](226, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_226_Template, 2, 0, "mat-error", 99);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](191, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_191_Template, 2, 0, "mat-error", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](192, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](193, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](194, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](195, "State *");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](227, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](196, "mat-select", 98);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "button", 102);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_button_click_228_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_mat_select_selectionChange_196_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
 
             var ctx_r112 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r112.onSubmit();
+            return ctx_r112.onStateChange();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](229, "mat-icon");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](197, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_option_197_Template, 2, 2, "mat-option", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](230, " UPDATE APPLICANT ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](198, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_198_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](199, "mat-accordion");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "mat-expansion-panel", 39);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](201, "mat-expansion-panel-header");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](202, "mat-panel-title");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](203, "Contact Information ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](204, "div", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](205, "div", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](206, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](208, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](209, "Mobile Number *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](210, "input", 99);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_210_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
+
+            var ctx_r113 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+            return ctx_r113.onKeyPress1($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](211, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_211_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](212, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_212_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](213, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_213_Template, 2, 0, "mat-error", 100);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](214, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](215, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](216, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](217, "E-mail *");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](218, "input", 101);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](219, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_219_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](220, "div", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](222, "mat-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](223, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](224, "Landline Number ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](225, "input", 102);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_input_keypress_225_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
+
+            var ctx_r114 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+            return ctx_r114.onKeyPress1($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](226, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_226_Template, 2, 0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](227, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_mat_error_227_Template, 2, 0, "mat-error", 100);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](229, "button", 103);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template_button_click_229_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r95);
+
+            var ctx_r115 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+            return ctx_r115.onSubmit();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](230, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](231, " UPDATE APPLICANT ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2085,6 +2113,10 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r19.applicant.get("gender").hasError("required"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r19.prefixFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
@@ -2286,7 +2318,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_container_27_Template, 2, 4, "ng-container", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template, 231, 55, "ng-template", null, 53, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, CardCustomerInformationComponent_form_17_mat_expansion_panel_37_ng_template_28_Template, 232, 56, "ng-template", null, 53, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2339,7 +2371,7 @@
 
       function CardCustomerInformationComponent_form_17_div_38_mat_icon_23_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 126);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 128);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "check_circle");
 
@@ -2359,7 +2391,7 @@
 
       function CardCustomerInformationComponent_form_17_div_38_mat_hint_25_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-hint", 127);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-hint", 129);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Duplicate CIF Number");
 
@@ -2369,7 +2401,7 @@
 
       function CardCustomerInformationComponent_form_17_div_38_mat_hint_26_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-hint", 128);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-hint", 130);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Enter valid CIF Number!");
 
@@ -2379,9 +2411,9 @@
 
       function CardCustomerInformationComponent_form_17_div_38_mat_option_30_div_3_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 137);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 139);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3", 138);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3", 140);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
@@ -2395,29 +2427,29 @@
         }
 
         if (rf & 2) {
-          var option_r170 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var option_r173 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](4, 3, option_r170 == null ? null : option_r170.firstName, 0, 1)), " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](4, 3, option_r173 == null ? null : option_r173.firstName, 0, 1)), " ");
         }
       }
 
       function CardCustomerInformationComponent_form_17_div_38_mat_option_30_div_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 139);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 141);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 140);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 142);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var option_r170 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var option_r173 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", option_r170 == null ? null : option_r170.profileImage, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", option_r173 == null ? null : option_r173.profileImage, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         }
       }
 
@@ -2425,17 +2457,17 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 129);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 131);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 130);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 132);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CardCustomerInformationComponent_form_17_div_38_mat_option_30_div_3_Template, 5, 7, "div", 131);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CardCustomerInformationComponent_form_17_div_38_mat_option_30_div_3_Template, 5, 7, "div", 133);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CardCustomerInformationComponent_form_17_div_38_mat_option_30_div_4_Template, 2, 1, "div", 132);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CardCustomerInformationComponent_form_17_div_38_mat_option_30_div_4_Template, 2, 1, "div", 134);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 133);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 135);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h5", 134);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h5", 136);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
 
@@ -2447,7 +2479,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h6", 135);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h6", 137);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
 
@@ -2455,7 +2487,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-icon", 136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-icon", 138);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "keyboard_arrow_right");
 
@@ -2469,25 +2501,25 @@
         }
 
         if (rf & 2) {
-          var option_r170 = ctx.$implicit;
+          var option_r173 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r170.customerId);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r173.customerId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (option_r170 == null ? null : option_r170.profileImage) == "not_available");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (option_r173 == null ? null : option_r173.profileImage) == "not_available");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (option_r170 == null ? null : option_r170.profileImage) != "not_available");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (option_r173 == null ? null : option_r173.profileImage) != "not_available");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](8, 7, option_r170 == null ? null : option_r170.firstName), " ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](9, 9, option_r170 == null ? null : option_r170.middleName), " ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](10, 11, option_r170 == null ? null : option_r170.lastName), " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](8, 7, option_r173 == null ? null : option_r173.firstName), " ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](9, 9, option_r173 == null ? null : option_r173.middleName), " ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](10, 11, option_r173 == null ? null : option_r173.lastName), " ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("#", option_r170 == null ? null : option_r170.cifNumber, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("#", option_r173 == null ? null : option_r173.cifNumber, "");
         }
       }
 
@@ -2527,9 +2559,9 @@
         }
 
         if (rf & 2) {
-          var ctx_r123 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r126 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r123.birthCountryFlag, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r126.birthCountryFlag, "");
         }
       }
 
@@ -2543,13 +2575,13 @@
         }
 
         if (rf & 2) {
-          var country_r175 = ctx.$implicit;
+          var country_r178 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r175);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r178);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r175, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r178, " ");
         }
       }
 
@@ -2563,13 +2595,13 @@
         }
 
         if (rf & 2) {
-          var residence_r176 = ctx.$implicit;
+          var residence_r179 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", residence_r176);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", residence_r179);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", residence_r176, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", residence_r179, " ");
         }
       }
 
@@ -2589,9 +2621,9 @@
         }
 
         if (rf & 2) {
-          var ctx_r127 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r130 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r127.ResideceCurrency, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r130.ResideceCurrency, "");
         }
       }
 
@@ -2605,13 +2637,13 @@
         }
 
         if (rf & 2) {
-          var country_r177 = ctx.$implicit;
+          var country_r180 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r177);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r180);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r177, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r180, " ");
         }
       }
 
@@ -2635,13 +2667,13 @@
         }
 
         if (rf & 2) {
-          var doc_r178 = ctx.$implicit;
+          var doc_r181 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", doc_r178);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", doc_r181);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", doc_r178, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", doc_r181, " ");
         }
       }
 
@@ -2691,27 +2723,27 @@
         }
 
         if (rf & 2) {
-          var _r180 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+          var _r183 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
 
-          var ctx_r132 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("required", ctx_r132.applicant.get("idType").value !== "Aadhar card")("matDatepicker", _r180)("min", ctx_r132.validDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("required", ctx_r135.applicant.get("idType").value !== "Aadhar card")("matDatepicker", _r183)("min", ctx_r135.validDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("for", _r180);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("for", _r183);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r132.applicant.get("expiryDate").hasError("required"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r135.applicant.get("expiryDate").hasError("required"));
         }
       }
 
       function CardCustomerInformationComponent_form_17_div_38_div_89_Template(rf, ctx) {
         if (rf & 1) {
-          var _r182 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r185 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 14);
 
@@ -2723,14 +2755,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " \xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-slide-toggle", 141);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-slide-toggle", 143);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function CardCustomerInformationComponent_form_17_div_38_div_89_Template_mat_slide_toggle_ngModelChange_4_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r182);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r185);
 
-            var ctx_r181 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r184 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r181.isChecked = $event;
+            return ctx_r184.isChecked = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2741,11 +2773,11 @@
         }
 
         if (rf & 2) {
-          var ctx_r133 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r136 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r133.isChecked)("disabled", ctx_r133.listOfAccounts.length == 0 ? true : false);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r136.isChecked)("disabled", ctx_r136.listOfAccounts.length == 0 ? true : false);
         }
       }
 
@@ -2759,13 +2791,13 @@
         }
 
         if (rf & 2) {
-          var prefix_r183 = ctx.$implicit;
+          var prefix_r186 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", prefix_r183);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", prefix_r186);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", prefix_r183, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", prefix_r186, " ");
         }
       }
 
@@ -2789,13 +2821,13 @@
         }
 
         if (rf & 2) {
-          var gender_r184 = ctx.$implicit;
+          var gender_r187 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", gender_r184);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", gender_r187);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", gender_r184, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", gender_r187, " ");
         }
       }
 
@@ -2829,13 +2861,13 @@
         }
 
         if (rf & 2) {
-          var citizenship_r185 = ctx.$implicit;
+          var citizenship_r188 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", citizenship_r185);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", citizenship_r188);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", citizenship_r185, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", citizenship_r188, " ");
         }
       }
 
@@ -2859,13 +2891,13 @@
         }
 
         if (rf & 2) {
-          var status_r186 = ctx.$implicit;
+          var status_r189 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", status_r186);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", status_r189);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", status_r186, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", status_r189, " ");
         }
       }
 
@@ -2911,15 +2943,15 @@
         }
 
         if (rf & 2) {
-          var ctx_r144 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r147 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r144.applicant.get("idNumber").hasError("required"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r147.applicant.get("idNumber").hasError("required"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r144.applicant.get("idNumber").hasError("pattern"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r147.applicant.get("idNumber").hasError("pattern"));
         }
       }
 
@@ -2953,13 +2985,13 @@
         }
 
         if (rf & 2) {
-          var addressType_r189 = ctx.$implicit;
+          var addressType_r192 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", addressType_r189);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", addressType_r192);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", addressType_r189, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", addressType_r192, " ");
         }
       }
 
@@ -3003,13 +3035,13 @@
         }
 
         if (rf & 2) {
-          var city_r190 = ctx.$implicit;
+          var city_r193 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", city_r190);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", city_r193);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", city_r190, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", city_r193, " ");
         }
       }
 
@@ -3049,9 +3081,9 @@
         }
 
         if (rf & 2) {
-          var ctx_r155 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r158 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r155.countryCode, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r158.countryCode, "");
         }
       }
 
@@ -3065,13 +3097,13 @@
         }
 
         if (rf & 2) {
-          var country_r191 = ctx.$implicit;
+          var country_r194 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r191);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", country_r194);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r191, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", country_r194, " ");
         }
       }
 
@@ -3095,13 +3127,13 @@
         }
 
         if (rf & 2) {
-          var state_r192 = ctx.$implicit;
+          var state_r195 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", state_r192.stateName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", state_r195.stateName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", state_r192.stateName, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", state_r195.stateName, " ");
         }
       }
 
@@ -3137,7 +3169,7 @@
 
       function CardCustomerInformationComponent_form_17_div_38_mat_error_224_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 106);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0 \xA0 Please Enter Correct Mobile Number ");
 
@@ -3177,7 +3209,7 @@
 
       function CardCustomerInformationComponent_form_17_div_38_mat_error_239_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error", 106);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0 \xA0 Please Enter Correct Landline Number ");
 
@@ -3187,7 +3219,7 @@
 
       function CardCustomerInformationComponent_form_17_div_38_a_242_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 142);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 144);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "mat-icon");
 
@@ -3197,24 +3229,24 @@
         }
 
         if (rf & 2) {
-          var ctx_r167 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r170 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r167.applicant.invalid || ctx_r167.isDuplicateCIF);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r170.applicant.invalid || ctx_r170.isDuplicateCIF);
         }
       }
 
       function CardCustomerInformationComponent_form_17_div_38_ng_template_243_Template(rf, ctx) {
         if (rf & 1) {
-          var _r194 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r197 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 143);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 145);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardCustomerInformationComponent_form_17_div_38_ng_template_243_Template_a_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r194);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r197);
 
-            var ctx_r193 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r196 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r193.onSubmit();
+            return ctx_r196.onSubmit();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "mat-icon");
@@ -3227,17 +3259,17 @@
 
       function CardCustomerInformationComponent_form_17_div_38_Template(rf, ctx) {
         if (rf & 1) {
-          var _r196 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r199 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 105);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 107);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-accordion");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-expansion-panel", 106);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-expansion-panel", 108);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-expansion-panel-header", 107);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-expansion-panel-header", 109);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-panel-title", 108);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-panel-title", 110);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Create Applicant 2");
 
@@ -3245,7 +3277,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mat-divider", 109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mat-divider", 111);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 60);
 
@@ -3259,14 +3291,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " \xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-slide-toggle", 110);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-slide-toggle", 112);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function CardCustomerInformationComponent_form_17_div_38_Template_mat_slide_toggle_change_12_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r195 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r198 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r195.toggleChanges($event);
+            return ctx_r198.toggleChanges($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3281,9 +3313,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 111);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 113);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 112);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 114);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-form-field", 15);
 
@@ -3293,37 +3325,37 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "input", 113);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "input", 115);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_22_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r197 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r200 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r197._keyPress($event);
+            return ctx_r200._keyPress($event);
           })("change", function CardCustomerInformationComponent_form_17_div_38_Template_input_change_22_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r198 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r201 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r198.fetchByCif(ctx_r198.applicant.get("cifNumber").value, ctx_r198.applicant.get("existingCustomer").value);
+            return ctx_r201.fetchByCif(ctx_r201.applicant.get("cifNumber").value, ctx_r201.applicant.get("existingCustomer").value);
           })("keyup", function CardCustomerInformationComponent_form_17_div_38_Template_input_keyup_22_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r199 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r202 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r199.onKeyPress($event);
+            return ctx_r202.onKeyPress($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, CardCustomerInformationComponent_form_17_div_38_mat_icon_23_Template, 2, 0, "mat-icon", 114);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, CardCustomerInformationComponent_form_17_div_38_mat_icon_23_Template, 2, 0, "mat-icon", 116);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, CardCustomerInformationComponent_form_17_div_38_mat_error_24_Template, 2, 0, "mat-error", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, CardCustomerInformationComponent_form_17_div_38_mat_hint_25_Template, 2, 0, "mat-hint", 115);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, CardCustomerInformationComponent_form_17_div_38_mat_hint_25_Template, 2, 0, "mat-hint", 117);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, CardCustomerInformationComponent_form_17_div_38_mat_hint_26_Template, 2, 0, "mat-hint", 116);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, CardCustomerInformationComponent_form_17_div_38_mat_hint_26_Template, 2, 0, "mat-hint", 118);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -3331,7 +3363,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "mat-autocomplete", 117, 118);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "mat-autocomplete", 119, 120);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, CardCustomerInformationComponent_form_17_div_38_mat_option_30_Template, 15, 13, "mat-option", 18);
 
@@ -3356,11 +3388,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "input", 80);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_35_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r200 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r203 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r200.letterOnly($event);
+            return ctx_r203.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3384,11 +3416,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "input", 81);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_41_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r201 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r204 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r201.letterOnly($event);
+            return ctx_r204.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3444,11 +3476,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "mat-select", 72);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_59_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r202 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r205 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r202.onBirthCountry($event.value);
+            return ctx_r205.onBirthCountry($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](60, CardCustomerInformationComponent_form_17_div_38_mat_option_60_Template, 2, 2, "mat-option", 18);
@@ -3504,11 +3536,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "mat-select", 74);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_75_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r203 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r206 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r203.onOtherSelectionResidance($event.value);
+            return ctx_r206.onOtherSelectionResidance($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "mat-option", 75);
@@ -3540,11 +3572,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "mat-select", 76);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_84_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r204 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r207 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r204.changeIdType(ctx_r204.applicant.get("idType").value);
+            return ctx_r207.changeIdType(ctx_r207.applicant.get("idType").value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](85, CardCustomerInformationComponent_form_17_div_38_mat_option_85_Template, 2, 2, "mat-option", 18);
@@ -3557,15 +3589,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](87, CardCustomerInformationComponent_form_17_div_38_div_87_Template, 9, 5, "div", 119);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](87, CardCustomerInformationComponent_form_17_div_38_div_87_Template, 9, 5, "div", 121);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "div", 20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](89, CardCustomerInformationComponent_form_17_div_38_div_89_Template, 6, 2, "div", 120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](89, CardCustomerInformationComponent_form_17_div_38_div_89_Template, 6, 2, "div", 122);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", null, 121);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", null, 123);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "label");
 
@@ -3587,6 +3619,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "mat-select", 63);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_98_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
+
+            var ctx_r208 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r208.onChangeData(ctx_r208.applicant.get("gender").value);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](99, CardCustomerInformationComponent_form_17_div_38_mat_option_99_Template, 2, 2, "mat-option", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3597,7 +3637,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "div", 122);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "div", 124);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "mat-form-field", 15);
 
@@ -3610,11 +3650,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "input", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_105_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r205 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r209 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r205.letterOnly($event);
+            return ctx_r209.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3634,6 +3674,14 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](110, "mat-select", 82);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_110_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
+
+            var ctx_r210 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r210.onChangeData($event.value);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](111, CardCustomerInformationComponent_form_17_div_38_mat_option_111_Template, 2, 2, "mat-option", 18);
 
@@ -3655,7 +3703,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](117, "input", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](117, "input", 84);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](118, CardCustomerInformationComponent_form_17_div_38_mat_error_118_Template, 2, 0, "mat-error", 19);
 
@@ -3685,14 +3733,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "mat-select", 85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "mat-select", 86);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_127_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r206 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r211 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r206.onSelectionCitizionship1($event.value);
+            return ctx_r211.onSelectionCitizionship1($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "mat-option", 75);
@@ -3723,7 +3771,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](136, "mat-select", 86);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](136, "mat-select", 87);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](137, CardCustomerInformationComponent_form_17_div_38_mat_option_137_Template, 2, 2, "mat-option", 18);
 
@@ -3743,14 +3791,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "input", 87);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "input", 88);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_142_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r207 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r212 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r207.letterOnly($event);
+            return ctx_r212.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3771,14 +3819,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "input", 123);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "input", 125);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_148_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r208 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r213 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r208.keyPressAlphanumeric($event);
+            return ctx_r213.keyPressAlphanumeric($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3821,7 +3869,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](161, "textarea", 90);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](161, "textarea", 91);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](162, CardCustomerInformationComponent_form_17_div_38_mat_error_162_Template, 2, 0, "mat-error", 19);
 
@@ -3841,7 +3889,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "mat-select", 91);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "mat-select", 92);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](169, CardCustomerInformationComponent_form_17_div_38_mat_option_169_Template, 2, 2, "mat-option", 18);
 
@@ -3863,26 +3911,26 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "input", 92);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "input", 93);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_175_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r209 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r214 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r209.onKeyPress1($event);
+            return ctx_r214.onKeyPress1($event);
           })("keyup", function CardCustomerInformationComponent_form_17_div_38_Template_input_keyup_175_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r210 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r215 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r210.isAllSameDigit($event);
+            return ctx_r215.isAllSameDigit($event);
           })("change", function CardCustomerInformationComponent_form_17_div_38_Template_input_change_175_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r211 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r216 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r211.getCityandStateByZipcode(ctx_r211.applicant.get("country").value, $event.value);
+            return ctx_r216.getCityandStateByZipcode(ctx_r216.applicant.get("country").value, $event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3905,14 +3953,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "mat-select", 94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "mat-select", 95);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_182_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r212 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r217 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r212.onCityChange();
+            return ctx_r217.onCityChange();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](183, CardCustomerInformationComponent_form_17_div_38_mat_option_183_Template, 2, 2, "mat-option", 18);
@@ -3939,7 +3987,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](190, "textarea", 95);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](190, "textarea", 96);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](191, CardCustomerInformationComponent_form_17_div_38_mat_error_191_Template, 2, 0, "mat-error", 19);
 
@@ -3969,20 +4017,20 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "mat-select", 96);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "mat-select", 97);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_200_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r213 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r218 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r213.getStateName($event.value, true);
+            return ctx_r218.getStateName($event.value, true);
           })("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_200_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r214 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r219 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r214.getCountrySelection($event.value);
+            return ctx_r219.getCountrySelection($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](201, CardCustomerInformationComponent_form_17_div_38_mat_option_201_Template, 2, 2, "mat-option", 18);
@@ -4005,14 +4053,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "mat-select", 97);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "mat-select", 98);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function CardCustomerInformationComponent_form_17_div_38_Template_mat_select_selectionChange_207_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r215 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r220 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r215.onStateChange();
+            return ctx_r220.onStateChange();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](208, CardCustomerInformationComponent_form_17_div_38_mat_option_208_Template, 2, 2, "mat-option", 18);
@@ -4061,14 +4109,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "input", 98);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "input", 99);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_221_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r216 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r221 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r216.onKeyPress1($event);
+            return ctx_r221.onKeyPress1($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4079,7 +4127,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](224, CardCustomerInformationComponent_form_17_div_38_mat_error_224_Template, 2, 0, "mat-error", 99);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](224, CardCustomerInformationComponent_form_17_div_38_mat_error_224_Template, 2, 0, "mat-error", 100);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4093,7 +4141,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](229, "input", 100);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](229, "input", 101);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](230, CardCustomerInformationComponent_form_17_div_38_mat_error_230_Template, 2, 0, "mat-error", 19);
 
@@ -4117,14 +4165,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](237, "input", 101);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](237, "input", 102);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CardCustomerInformationComponent_form_17_div_38_Template_input_keypress_237_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r199);
 
-            var ctx_r217 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r222 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r217.onKeyPress1($event);
+            return ctx_r222.onKeyPress1($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4133,7 +4181,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](239, CardCustomerInformationComponent_form_17_div_38_mat_error_239_Template, 2, 0, "mat-error", 99);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](239, CardCustomerInformationComponent_form_17_div_38_mat_error_239_Template, 2, 0, "mat-error", 100);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4147,9 +4195,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](241, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](242, CardCustomerInformationComponent_form_17_div_38_a_242_Template, 3, 1, "a", 124);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](242, CardCustomerInformationComponent_form_17_div_38_a_242_Template, 3, 1, "a", 126);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](243, CardCustomerInformationComponent_form_17_div_38_ng_template_243_Template, 3, 0, "ng-template", null, 125, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](243, CardCustomerInformationComponent_form_17_div_38_ng_template_243_Template, 3, 0, "ng-template", null, 127, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4165,19 +4213,19 @@
         }
 
         if (rf & 2) {
-          var _r117 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](29);
+          var _r120 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](29);
 
-          var _r122 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](51);
+          var _r125 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](51);
 
-          var _r134 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](91);
+          var _r137 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](91);
 
-          var _r168 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](244);
+          var _r171 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](244);
 
           var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("expanded", ctx_r5.cardCustomerForm.get("numOfApplicants").value === ctx_r5.listOfAccounts.length ? false : true);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("expanded", ctx_r5.cardCustomerForm.get("numOfApplicants").value && ctx_r5.cardCustomerForm.get("numOfApplicants").value === ctx_r5.listOfAccounts.length ? false : true);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
@@ -4185,7 +4233,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControl", ctx_r5.cifNumberForm)("matAutocomplete", _r117)("readonly", ctx_r5.applicant.get("existingCustomer").value == true ? false : true);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControl", ctx_r5.cifNumberForm)("matAutocomplete", _r120)("readonly", ctx_r5.applicant.get("existingCustomer").value == true ? false : true);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -4217,11 +4265,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matDatepicker", _r122)("max", ctx_r5.tomorrow)("max", ctx_r5.maxDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matDatepicker", _r125)("max", ctx_r5.tomorrow)("max", ctx_r5.maxDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("for", _r122);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("for", _r125);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -4273,7 +4321,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.listOfAccounts.length == 0)("ngIfElse", _r134);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.listOfAccounts.length == 0)("ngIfElse", _r137);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
@@ -4413,24 +4461,24 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.applicant.invalid || ctx_r5.isDuplicateCIF || ctx_r5.disableSaveBtn)("ngIfElse", _r168);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.applicant.invalid || ctx_r5.isDuplicateCIF || ctx_r5.disableSaveBtn)("ngIfElse", _r171);
         }
       }
 
       function CardCustomerInformationComponent_form_17_ng_container_42_Template(rf, ctx) {
         if (rf & 1) {
-          var _r219 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r224 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 144);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 146);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardCustomerInformationComponent_form_17_ng_container_42_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r219);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r224);
 
-            var ctx_r218 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r223 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r218.goToNext();
+            return ctx_r223.goToNext();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Next ");
@@ -4451,16 +4499,16 @@
 
       function CardCustomerInformationComponent_form_17_ng_template_43_Template(rf, ctx) {
         if (rf & 1) {
-          var _r221 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r226 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 144);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 146);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardCustomerInformationComponent_form_17_ng_template_43_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r221);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r226);
 
-            var ctx_r220 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r225 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r220.goToNext();
+            return ctx_r225.goToNext();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Next ");
@@ -4477,7 +4525,7 @@
 
       function CardCustomerInformationComponent_form_17_Template(rf, ctx) {
         if (rf & 1) {
-          var _r223 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r228 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 11);
 
@@ -4496,6 +4544,20 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-select", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function CardCustomerInformationComponent_form_17_Template_mat_select_ngModelChange_7_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r228);
+
+            var ctx_r227 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r227.selectedOwnership = $event;
+          })("selectionChange", function CardCustomerInformationComponent_form_17_Template_mat_select_selectionChange_7_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r228);
+
+            var ctx_r229 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r229.selectOwnershipChange($event);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-option", 17);
 
@@ -4588,11 +4650,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "mat-slide-toggle", 29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function CardCustomerInformationComponent_form_17_Template_mat_slide_toggle_change_34_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r223);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r228);
 
-            var ctx_r222 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r230 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r222.goToggle($event);
+            return ctx_r230.goToggle($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4622,11 +4684,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "button", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardCustomerInformationComponent_form_17_Template_button_click_40_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r223);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r228);
 
-            var ctx_r224 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r231 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r224.goBack();
+            return ctx_r231.goBack();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, " Back ");
@@ -4649,7 +4711,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r0.cardCustomerForm);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("compareWith", ctx_r0.compareObjects)("ngModel", ctx_r0.selectedOwnership)("value", ctx_r0.selectedOwnership);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.arrayOwnership);
 
@@ -4675,7 +4741,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.selectedApplicant == null && ctx_r0.cardCustomerForm.get("numOfApplicants").value !== ctx_r0.listOfAccounts.length);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.cardCustomerForm.get("numOfApplicants").value && ctx_r0.selectedApplicant == null && ctx_r0.cardCustomerForm.get("numOfApplicants").value !== ctx_r0.listOfAccounts.length);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -4746,6 +4812,8 @@
           this.isCountry = false;
           this.showExpiryDate = true;
           this.pinCodeErr = false;
+          this.prefixFlag = false;
+          this.selectedOwnership = 'Self';
           this.tomorrow.setDate(this.tomorrow.getDate()), this.validDate.setDate(this.validDate.getDate());
         }
 
@@ -4778,6 +4846,7 @@
             this.getAllAuthCities(); // this.getStateName("state");
             // this.getCityName("city");
 
+            this.prefixFlag = true;
             this.getDocumentType("document_type");
             this.getMaritalStatus("maritial_Status"); // this.onFocusOutEvent('783',0);
 
@@ -4989,6 +5058,24 @@
           value: function letterOnly(event) {
             var charCode = event.keyCode;
             if (charCode > 64 && charCode < 91 || charCode > 96 && charCode < 123 || charCode == 8) return true;else return false;
+          }
+        }, {
+          key: "onChangeData",
+          value: function onChangeData(gender) {
+            var prefix = this.applicant.value.prefix;
+
+            if (prefix && this.applicant.value.gender) {
+              if (prefix == "Mr" && gender == "Male" || (prefix == "Ms" || prefix == "Mrs") && gender == "Female") {
+                this.prefixFlag = true;
+              } else {
+                this.prefixFlag = false;
+                this.snack.open("Prefix and Gender does not match!", "OK", {
+                  duration: 4000,
+                  verticalPosition: "top",
+                  horizontalPosition: "right"
+                });
+              }
+            }
           }
         }, {
           key: "toggleDetails",
@@ -5836,6 +5923,17 @@
             });
           }
         }, {
+          key: "selectOwnershipChange",
+          value: function selectOwnershipChange(event) {
+            console.log(event);
+            this.selectedOwnership = event.value;
+          }
+        }, {
+          key: "compareObjects",
+          value: function compareObjects(o1, o2) {
+            return o1 === o2;
+          }
+        }, {
           key: "uploadImage",
           value: function uploadImage() {
             console.log("Upload Image");
@@ -6028,7 +6126,7 @@
         },
         decls: 18,
         vars: 1,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_personal_information_re_vw8a.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "row wrap"], [1, "p-0"], ["visible", "true"], ["novalidate", "", 3, "formGroup", 4, "ngIf"], ["novalidate", "", 3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "ownership", "name", "owner", "required", "", 1, "graycolor"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [4, "ngIf", "ngIfElse"], [1, "mb-1"], ["fxFlex", "100", "fxLayoutGap", "16px", "fxLayoutAlign", "end end", 2, "padding-right", "15px"], [1, "m-0", "text-right"], ["mode", "determinate", 1, "rounded", 2, "height", "5px", 3, "color", "value"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "hint"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], [1, "mt-12"], ["multi", "true"], ["class", "mb-8", "expanded", "true", 4, "ngFor", "ngForOf"], ["class", "mt-16", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 3, "click"], ["hideBtn", ""], [3, "value"], ["formControlName", "numOfApplicants", "name", "account"], ["expanded", "true", 1, "mb-8"], [1, "check-circle"], [1, "ml-8"], [2, "margin-bottom", "-16px !important"], ["mat-card-avatar", ""], [3, "name"], [1, "m-0", "mr-16"], ["fxFlex", ""], ["mat-sm-chip", "", 3, "color", "selected", 4, "ngIf"], [1, "mat-caption"], ["fxLayout", "row", "fxFlex", "1 1 0%", "fxLayoutAlign", "end end"], [1, "group-btn-bg"], ["showEdit", ""], ["mat-icon-button", "", "color", "warn", 3, "click", 4, "ngIf"], ["detailApplicant", ""], ["mat-sm-chip", "", 3, "color", "selected"], ["type", "reset", "mat-icon-button", "", "color", "primary", 3, "click"], ["type", "submit", "mat-icon-button", "", "color", "primary", 3, "click"], ["mat-icon-button", "", "color", "warn", 3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "mt-32", 3, "formGroup"], ["formGroupName", "applicantDetails"], ["formControlName", "existingCustomer", 3, "change"], [1, "mb-16"], ["name", "prefix", "formControlName", "prefix"], ["matInput", "", "name", "mname", "formControlName", "middleName", "placeholder", "Middle Name", 3, "keypress"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "dateOfBirth", "placeholder", "Date of birth", 3, "matDatepicker", "max"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], [1, "p-1"], ["fxFlex", "20"], ["matPrefix", ""], [3, "class", 4, "ngIf"], ["name", "birthCountry", "formControlName", "birthCountry", "required", "", 3, "selectionChange"], ["name", "residenceType", "formControlName", "residenceStatus"], ["formControlName", "countryOfResidence", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["disabled", ""], ["name", "idtype", "formControlName", "idType", 3, "selectionChange"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "expiryDate", "placeholder", "ID Type Valid Till", 3, "required", "matDatepicker", "min"], ["appDatepicker1", ""], ["formControlName", "primaryCustomer"], ["matInput", "", "name", "fname", "formControlName", "firstName", "placeholder", "First Name", 3, "keypress"], ["matInput", "", "name", "lname", "formControlName", "lastName", "placeholder", "Last Name", 3, "keypress"], ["name", "gender", "formControlName", "gender"], ["matInput", "", "name", "bplace", "formControlName", "placeOfBirth", "placeholder", "Birth Place"], [1, "pb-1", "info"], ["formControlName", "nationality", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["name", "maritalStatus", "formControlName", "maritalStatus", "required", ""], ["matInput", "", "name", "occupation", "formControlName", "occupationType", "placeholder", "Occupation Type", 3, "keypress"], [1, "pb-1", "info3"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID Number", "maxlength", "12", "pattern", "^[+]?([0-9]+(?:[\\.][0-9]*)?|\\.[0-9]+)$"], ["matInput", "", "formControlName", "address1", "placeholder", "Address 1"], ["name", "addressType", "formControlName", "addressType"], ["minlength", "5", "maxlength", "10", "matInput", "", "name", "a_zip", "formControlName", "zipCode", "onlyNumber", "", "placeholder", "Zip Code", 3, "keypress", "keyup", "change"], ["style", "color: #E74C3C;", 4, "ngIf"], ["name", "city", "formControlName", "city", 3, "selectionChange"], ["matInput", "", "formControlName", "address2", "placeholder", "Address 2"], ["name", "country", "formControlName", "country", 3, "selectionChange"], ["name", "state", "formControlName", "state", 3, "selectionChange"], ["maxlength", "10", "matInput", "", "formControlName", "phoneNumber", "name", "phone", "placeholder", "Mobile Number", 3, "keypress"], ["style", "margin-top:-20px", 4, "ngIf"], ["matInput", "", "name", "email", "formControlName", "primaryEmailAdress", "placeholder", "e-mail"], ["maxlength", "10", "matInput", "", "name", "mobile", "formControlName", "landlineNumber", "placeholder", "Landline Number", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], [2, "color", "#E74C3C"], [2, "margin-top", "-20px"], [1, "mt-16"], [1, "mb-8", "borderStyle", 3, "expanded"], [1, "marginData"], [1, "textDesign"], [1, "design"], ["formControlName", "existingCustomer", 3, "disabled", "change"], ["fxLayout", "row", "fxLayoutGap", "2px", "fxLayoutAlign", "space-between"], ["fxFlex", "100", "fxFlexAlign", "center", 1, "boxsize"], ["matInput", "", "required", "", "formControlName", "cifNumber", "name", "cif", "placeholder", "CIF Number", 3, "formControl", "matAutocomplete", "readonly", "keypress", "change", "keyup"], ["matSuffix", "", "color", "primary", 4, "ngIf"], ["class", "err-msg", 4, "ngIf"], ["class", "hintColor", 4, "ngIf"], [1, "card-cust-auto-cif"], ["auto", "matAutocomplete"], ["class", "pb-1", 4, "ngIf"], ["class", "pb-1", 4, "ngIf", "ngIfElse"], ["show", ""], [1, "pb-1", "info1"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID", "maxlength", "12", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", 4, "ngIf", "ngIfElse"], ["openSave", ""], ["matSuffix", "", "color", "primary"], [1, "err-msg"], [1, "hintColor"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [1, "cif-0", 2, "margin-top", "0px"], [1, "right-arrow1"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large", "color", "white"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "primaryCustomer", 3, "ngModel", "disabled", "ngModelChange"], ["mat-button", "", "color", "primary", 3, "disabled"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_personal_information_re_vw8a.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "row wrap"], [1, "p-0"], ["visible", "true"], ["novalidate", "", 3, "formGroup", 4, "ngIf"], ["novalidate", "", 3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "ownership", "name", "owner", "required", "", 1, "graycolor", 3, "compareWith", "ngModel", "value", "ngModelChange", "selectionChange"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [4, "ngIf", "ngIfElse"], [1, "mb-1"], ["fxFlex", "100", "fxLayoutGap", "16px", "fxLayoutAlign", "end end", 2, "padding-right", "15px"], [1, "m-0", "text-right"], ["mode", "determinate", 1, "rounded", 2, "height", "5px", 3, "color", "value"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "hint"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], [1, "mt-12"], ["multi", "true"], ["class", "mb-8", "expanded", "true", 4, "ngFor", "ngForOf"], ["class", "mt-16", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 3, "click"], ["hideBtn", ""], [3, "value"], ["formControlName", "numOfApplicants", "name", "account"], ["expanded", "true", 1, "mb-8"], [1, "check-circle"], [1, "ml-8"], [2, "margin-bottom", "-16px !important"], ["mat-card-avatar", ""], [3, "name"], [1, "m-0", "mr-16"], ["fxFlex", ""], ["mat-sm-chip", "", 3, "color", "selected", 4, "ngIf"], [1, "mat-caption"], ["fxLayout", "row", "fxFlex", "1 1 0%", "fxLayoutAlign", "end end"], [1, "group-btn-bg"], ["showEdit", ""], ["mat-icon-button", "", "color", "warn", 3, "click", 4, "ngIf"], ["detailApplicant", ""], ["mat-sm-chip", "", 3, "color", "selected"], ["type", "reset", "mat-icon-button", "", "color", "primary", 3, "click"], ["type", "submit", "mat-icon-button", "", "color", "primary", 3, "click"], ["mat-icon-button", "", "color", "warn", 3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "mt-32", 3, "formGroup"], ["formGroupName", "applicantDetails"], ["formControlName", "existingCustomer", 3, "change"], [1, "mb-16"], ["name", "prefix", "formControlName", "prefix", 3, "selectionChange"], ["matInput", "", "name", "mname", "formControlName", "middleName", "placeholder", "Middle Name", 3, "keypress"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "dateOfBirth", "placeholder", "Date of birth", 3, "matDatepicker", "max"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], [1, "p-1"], ["fxFlex", "20"], ["matPrefix", ""], [3, "class", 4, "ngIf"], ["name", "birthCountry", "formControlName", "birthCountry", "required", "", 3, "selectionChange"], ["name", "residenceType", "formControlName", "residenceStatus"], ["formControlName", "countryOfResidence", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["disabled", ""], ["name", "idtype", "formControlName", "idType", 3, "selectionChange"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "expiryDate", "placeholder", "ID Type Valid Till", 3, "required", "matDatepicker", "min"], ["appDatepicker1", ""], ["formControlName", "primaryCustomer"], ["matInput", "", "name", "fname", "formControlName", "firstName", "placeholder", "First Name", 3, "keypress"], ["matInput", "", "name", "lname", "formControlName", "lastName", "placeholder", "Last Name", 3, "keypress"], ["name", "gender", "formControlName", "gender", 3, "selectionChange"], ["class", "ErrMsg", 4, "ngIf"], ["matInput", "", "name", "bplace", "formControlName", "placeOfBirth", "placeholder", "Birth Place"], [1, "pb-1", "info"], ["formControlName", "nationality", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["name", "maritalStatus", "formControlName", "maritalStatus", "required", ""], ["matInput", "", "name", "occupation", "formControlName", "occupationType", "placeholder", "Occupation Type", 3, "keypress"], [1, "pb-1", "info3"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID Number", "maxlength", "12", "pattern", "^[+]?([0-9]+(?:[\\.][0-9]*)?|\\.[0-9]+)$"], ["matInput", "", "formControlName", "address1", "placeholder", "Address 1"], ["name", "addressType", "formControlName", "addressType"], ["minlength", "5", "maxlength", "10", "matInput", "", "name", "a_zip", "formControlName", "zipCode", "onlyNumber", "", "placeholder", "Zip Code", 3, "keypress", "keyup", "change"], ["style", "color: #E74C3C;", 4, "ngIf"], ["name", "city", "formControlName", "city", 3, "selectionChange"], ["matInput", "", "formControlName", "address2", "placeholder", "Address 2"], ["name", "country", "formControlName", "country", 3, "selectionChange"], ["name", "state", "formControlName", "state", 3, "selectionChange"], ["maxlength", "10", "matInput", "", "formControlName", "phoneNumber", "name", "phone", "placeholder", "Mobile Number", 3, "keypress"], ["style", "margin-top:-20px", 4, "ngIf"], ["matInput", "", "name", "email", "formControlName", "primaryEmailAdress", "placeholder", "e-mail"], ["maxlength", "10", "matInput", "", "name", "mobile", "formControlName", "landlineNumber", "placeholder", "Landline Number", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], [1, "ErrMsg"], [2, "color", "#E74C3C"], [2, "margin-top", "-20px"], [1, "mt-16"], [1, "mb-8", "borderStyle", 3, "expanded"], [1, "marginData"], [1, "textDesign"], [1, "design"], ["formControlName", "existingCustomer", 3, "disabled", "change"], ["fxLayout", "row", "fxLayoutGap", "2px", "fxLayoutAlign", "space-between"], ["fxFlex", "100", "fxFlexAlign", "center", 1, "boxsize"], ["matInput", "", "required", "", "formControlName", "cifNumber", "name", "cif", "placeholder", "CIF Number", 3, "formControl", "matAutocomplete", "readonly", "keypress", "change", "keyup"], ["matSuffix", "", "color", "primary", 4, "ngIf"], ["class", "err-msg", 4, "ngIf"], ["class", "hintColor", 4, "ngIf"], [1, "card-cust-auto-cif"], ["auto", "matAutocomplete"], ["class", "pb-1", 4, "ngIf"], ["class", "pb-1", 4, "ngIf", "ngIfElse"], ["show", ""], [1, "pb-1", "info1"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID", "maxlength", "12", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", 4, "ngIf", "ngIfElse"], ["openSave", ""], ["matSuffix", "", "color", "primary"], [1, "err-msg"], [1, "hintColor"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [1, "cif-0", 2, "margin-top", "0px"], [1, "right-arrow1"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large", "color", "white"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "primaryCustomer", 3, "ngModel", "disabled", "ngModelChange"], ["mat-button", "", "color", "primary", 3, "disabled"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"]],
         template: function CardCustomerInformationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -6083,7 +6181,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, CardCustomerInformationComponent_form_17_Template, 45, 13, "form", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, CardCustomerInformationComponent_form_17_Template, 45, 16, "form", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -11153,44 +11251,54 @@
         return ["/cardaccount/applicationEnrichment/list"];
       };
 
-      var _c14 = function _c14() {
-        return ["/cardaccount/underwritingStage/list"];
-      };
+      var _c14 = "/cardaccount/applicationEnrichment/intrest-details";
 
       var _c15 = function _c15() {
-        return ["/cardaccount/underwritingStage/credit-rating"];
+        return [_c14];
       };
 
       var _c16 = function _c16() {
-        return ["/cardaccount/underwritingStage/qualitative"];
+        return ["/cardaccount/applicationEnrichment/charge-details"];
       };
 
       var _c17 = function _c17() {
-        return ["/cardaccount/assessmentStage/list"];
+        return ["/cardaccount/underwritingStage/list"];
       };
 
-      var _c18 = "/cardaccount/assessmentStage/application-assessment/list";
+      var _c18 = function _c18() {
+        return ["/cardaccount/underwritingStage/credit-rating"];
+      };
 
       var _c19 = function _c19() {
-        return [_c18];
+        return ["/cardaccount/underwritingStage/qualitative"];
       };
 
       var _c20 = function _c20() {
-        return ["/cardaccount/SupervisorApprovalStage/list"];
+        return ["/cardaccount/assessmentStage/list"];
       };
 
-      var _c21 = "/cardaccount/SupervisorApprovalStage/list/approvalDetails";
+      var _c21 = "/cardaccount/assessmentStage/application-assessment/list";
 
       var _c22 = function _c22() {
         return [_c21];
       };
 
       var _c23 = function _c23() {
+        return ["/cardaccount/SupervisorApprovalStage/list"];
+      };
+
+      var _c24 = "/cardaccount/SupervisorApprovalStage/list/approvalDetails";
+
+      var _c25 = function _c25() {
+        return [_c24];
+      };
+
+      var _c26 = function _c26() {
         return ["/cardaccount/DigitalSigning/list"];
       };
 
-      var _c24 = function _c24() {
-        return ["/cardaccount/DigitalSigning/options"];
+      var _c27 = function _c27() {
+        return ["/cardaccount/digitalsigning/options"];
       };
 
       var CardAccountComponent = /*#__PURE__*/function () {
@@ -11250,7 +11358,8 @@
             this.isCardAccountService = this.ls.getItem('CARD_ACC_SERVICE_DONE');
             this.isDocumentUploadDone = this.ls.getItem('CARD_DOCUMENT_STAGE_DONE');
             this.isDocumentUpload = this.ls.getItem('CARD_DOCUMENT_DONE');
-            this.isCardApplicationEnrichmentDone = this.ls.getItem('CARD_ENRICHMENT_DONE'); // this.isEnrichmentDone= this.ls.getItem('LOAN_ENRICHMENT_DONE');
+            this.isCardApplicationEnrichmentDone = this.ls.getItem('CARD_ENRICHMENT_DONE');
+            console.log('isCardApplicationEnrichmentDone', this.isCardApplicationEnrichmentDone); // this.isEnrichmentDone= this.ls.getItem('LOAN_ENRICHMENT_DONE');
 
             this.isCardInterestDetails = this.ls.getItem('CARD_INTEREST_DETAILS_DONE');
             this.isCardChargeDetails = this.ls.getItem('CARD_CHARGE_DETAILS_DONE');
@@ -11274,8 +11383,7 @@
               _this41.isCardAccountService = _this41.ls.getItem('CARD_ACC_SERVICE_DONE'); // this.isAccountServices = this.ls.getItem('CARD_ACCOUNT_SERVICES_DONE');
 
               _this41.isDocumentUploadDone = _this41.ls.getItem('CARD_DOCUMENT_STAGE_DONE');
-              _this41.isDocumentUpload = _this41.ls.getItem('CARD_DOCUMENT_DONE');
-              _this41.isCardApplicationEnrichmentDone = _this41.ls.getItem('CARD_ENRICHMENT_DONE'); // this.isEnrichmentDone= this.ls.getItem('LOAN_ENRICHMENT_DONE');
+              _this41.isDocumentUpload = _this41.ls.getItem('CARD_DOCUMENT_DONE'); // this.isEnrichmentDone= this.ls.getItem('LOAN_ENRICHMENT_DONE');
 
               _this41.isCardInterestDetails = _this41.ls.getItem('CARD_INTEREST_DETAILS_DONE');
               _this41.isCardChargeDetails = _this41.ls.getItem('CARD_CHARGE_DETAILS_DONE');
@@ -11310,8 +11418,8 @@
         type: CardAccountComponent,
         selectors: [["app-card-account"]],
         decls: 188,
-        vars: 79,
-        consts: [[1, "matcard-size1"], [1, "m-333"], [1, "topSection", 2, "background-color", "white !important"], ["EgretSideNavToggle", "", 1, "app-sidebar", 2, "width", "300px"], [1, "sidenav-header"], [1, "sidenav-hold"], ["appDropdown", "", 1, "sidenav", "mt-32"], ["appDropdownLink", "", "routerLinkActive", "open"], [1, "lvl1"], ["appDropdownToggle", "", 3, "ngClass"], [1, "sidenav-mat-icon", 3, "ngClass"], [1, "item-name", "lvl1"], ["fxFlex", ""], [1, "menu-caret"], ["appDropdown", "", 1, "lvl2", 2, "margin-right", "8px"], ["routerLinkActive", "open"], [1, "side-menu", 3, "routerLink", "ngClass"], [1, "item-name", "lvl2", 2, "margin-left", "10px"], [1, "side-menu", 3, "ngClass", "routerLink"], ["appDropdownToggle", "", 3, "ngClass", "routerLink"], [1, "side-menu", 3, "ngClass"], [1, "side-menu", 3, "routerLink"], ["fxLayout", "row", "fxLayoutWrap", "wrap", 1, "app-wrap"], [1, "full-width", "mt-32"]],
+        vars: 84,
+        consts: [[1, "matcard-size1"], [1, "m-333"], [1, "topSection", 2, "background-color", "white !important"], ["EgretSideNavToggle", "", 1, "app-sidebar", 2, "width", "300px"], [1, "sidenav-header"], [1, "sidenav-hold"], ["appDropdown", "", 1, "sidenav", "mt-32"], ["appDropdownLink", "", "routerLinkActive", "open"], [1, "lvl1"], ["appDropdownToggle", "", 3, "ngClass"], [1, "sidenav-mat-icon", 3, "ngClass"], [1, "item-name", "lvl1"], ["fxFlex", ""], [1, "menu-caret"], ["appDropdown", "", 1, "lvl2", 2, "margin-right", "8px"], ["routerLinkActive", "open"], [1, "side-menu", 3, "routerLink", "ngClass"], [1, "item-name", "lvl2", 2, "margin-left", "10px"], [1, "side-menu", 3, "ngClass", "routerLink"], ["appDropdownToggle", "", 3, "ngClass", "routerLink"], ["fxLayout", "row", "fxLayoutWrap", "wrap", 1, "app-wrap"], [1, "full-width", "mt-32"]],
         template: function CardAccountComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -11580,7 +11688,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "li", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "a", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "a", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "span", 17);
 
@@ -11596,7 +11704,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "li", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "a", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "a", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "span", 17);
 
@@ -11868,7 +11976,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "li", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "a", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "a", 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](177, "span", 17);
 
@@ -11910,9 +12018,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "div", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "div", 21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](187, "router-outlet");
 
@@ -11938,31 +12046,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](56, _c0))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](59, _c0))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](57, _c2))("ngClass", ctx.isCardInitiationDone ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](60, _c2))("ngClass", ctx.isCardInitiationDone ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](58, _c4))("ngClass", ctx.isCardCustomerInformationScreen ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](61, _c4))("ngClass", ctx.isCardCustomerInformationScreen ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardFinancialDetailsScreen ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](59, _c6));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardFinancialDetailsScreen ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](62, _c6));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardPrefrenceDone ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](60, _c8));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardPrefrenceDone ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](63, _c8));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](61, _c10))("ngClass", ctx.isCardAccountService ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](64, _c10))("ngClass", ctx.isCardAccountService ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isDocumentUploadDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](62, _c11));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isDocumentUploadDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](65, _c11));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -11970,15 +12078,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](63, _c11))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](66, _c11))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isDocumentUpload ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](64, _c12));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isDocumentUpload ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](67, _c12));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardApplicationEnrichmentDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](65, _c13));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardApplicationEnrichmentDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](68, _c13));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -11986,19 +12094,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardApplicationEnrichmentDone ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](66, _c13));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardApplicationEnrichmentDone ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](69, _c13));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardInterestDetails ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](70, _c15))("ngClass", ctx.isCardInterestDetails ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardChargeDetails ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](71, _c16))("ngClass", ctx.isCardChargeDetails ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isApplicationUnderWritingStageDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](67, _c14));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isApplicationUnderWritingStageDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](72, _c17));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -12006,19 +12114,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](68, _c14))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](73, _c17))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardCreditRatingDetails ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](69, _c15));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardCreditRatingDetails ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](74, _c18));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardQualitativeScoreboard ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](70, _c16));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardQualitativeScoreboard ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](75, _c19));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardAssessmentStageDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](71, _c17));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardAssessmentStageDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](76, _c20));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -12026,15 +12134,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](72, _c17))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](77, _c20))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](73, _c19))("ngClass", ctx.isAssessmentReport ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](78, _c22))("ngClass", ctx.isAssessmentReport ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardSupervisorApprovalDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](74, _c20));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardSupervisorApprovalDone ? "active" : "notActive")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](79, _c23));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -12042,11 +12150,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](75, _c20))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](80, _c23))("ngClass", ctx.isCardApplicationStageDone ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](76, _c22))("ngClass", ctx.isApprovedDetails ? "enable" : "disable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](81, _c25))("ngClass", ctx.isApprovedDetails ? "enable" : "disable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
@@ -12058,11 +12166,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](77, _c23));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardDigitalSigningDone ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](82, _c26));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardDigitalSigning ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](78, _c24));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isCardDigitalSigning ? "enable" : "disable")("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](83, _c27));
           }
         },
         directives: [_angular_material_sidenav__WEBPACK_IMPORTED_MODULE_5__["MatSidenavContainer"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_5__["MatSidenav"], _shared_directives_egret_side_nav_toggle_directive__WEBPACK_IMPORTED_MODULE_6__["EgretSideNavToggleDirective"], _shared_directives_dropdown_directive__WEBPACK_IMPORTED_MODULE_7__["AppDropdownDirective"], _shared_directives_dropdown_link_directive__WEBPACK_IMPORTED_MODULE_8__["DropdownLinkDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkActive"], _shared_directives_dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_9__["DropdownAnchorDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_11__["DefaultClassDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__["MatIcon"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]],
@@ -15611,9 +15719,11 @@
               console.log("else");
               this.showEditOption = false;
               this.api.getFlexcubeDetails("intrestDetails", this.accountType).subscribe(function (response) {
-                _this52.onChangeInterest(response.length);
+                if (response) {
+                  _this52.onChangeInterest(response.length);
 
-                _this52["in"].patchValue(response);
+                  _this52["in"].patchValue(response);
+                }
               });
             }
 
@@ -15633,12 +15743,15 @@
             this.api.cardInterestFetchById(this.cardId).subscribe(function (resp) {
               _this53.loader.close();
 
-              console.log("resp from backend ", _this53.resp);
-              _this53.resp = resp;
+              console.log("resp from backend ", resp);
 
-              _this53.onChangeInterest(_this53.resp.length);
+              if (resp) {
+                _this53.resp = resp;
 
-              _this53["in"].patchValue(_this53.resp);
+                _this53.onChangeInterest(_this53.resp.length);
+
+                _this53["in"].patchValue(_this53.resp);
+              }
             }, function (err) {// this.loader.close();
             });
           }
@@ -16993,6 +17106,7 @@
           value: function goNext() {
             this.ls.setItem('CARD_DOCUMENT_STAGE_DONE', true);
             this.ls.setItem('CARD_DOCUMENT_DONE', true);
+            this.ls.setItem('CARD_ENRICHMENT_DONE', true);
             this.accountService.refresh.next();
             this.router.navigate(["/cardaccount/applicationEnrichment/list"]);
           }
@@ -20133,6 +20247,7 @@
             this.api.getCardFinancialDetails(this.cardId).subscribe(function (result) {
               console.log(result);
               var index = result.length - 1;
+              console.log(result[index]);
 
               _this70.buildFinacialFormGroup(result[index]);
             });
@@ -21177,7 +21292,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "legend", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Account Statement");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Account Services");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -23080,7 +23195,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Customer Account Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Customer Account Number ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -23188,7 +23303,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Name On Card");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Name On Card *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -23465,6 +23580,7 @@
               nameOnCard: [data ? data.nameOnCard : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
               addOnCard: [addOnCard == 'true' ? true : false]
             });
+            this.selectedCurrency = data === null || data === void 0 ? void 0 : data.currency;
             this.formControlValueChanged();
           }
         }, {
@@ -23679,7 +23795,7 @@
         selectors: [["app-card-initiation"]],
         decls: 79,
         vars: 18,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_opinion_dxp8.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title"], [1, "p-0"], ["visible", "true"], ["fxLayout", "column", 3, "formGroup"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "pb-1"], [1, "hint"], ["name", "scholarshipOrBusinessEligible", "formControlName", "existingCustomer", 2, "margin-left", "1cm", 3, "change"], ["class", "flex-grow-1", "fxFlex", "100%", "fxLayout", "column", 4, "ngIf"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "cardType", "placeholder", "Select", 3, "selectionChange"], ["value", "Debit", 4, "ngIf"], ["value", "Credit"], ["value", "Forex", 4, "ngIf"], [4, "ngIf"], ["class", "pb-1", 4, "ngIf"], ["formControlName", "affinityProgram", "placeholder", "Select"], ["value", "Affinity Program1"], ["value", "Affinity Program2"], ["matInput", "", "class", "alignment", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["matInput", "", "class", "alignment", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["formControlName", "employmentType", "placeholder", "Select"], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], ["fxFlex", "100%", "fxLayout", "column", 1, "flex-grow-1"], ["fxFlex", "100%"], [2, "color", "#03a9f4"], ["mat-button", "", 2, "text-decoration", "underline", 3, "disabled", "click"], ["value", "Debit"], ["value", "Forex"], ["matInput", "", "type", "text", "formControlName", "cifNumber", "placeholder", "CIF Number", 1, "alignment", 3, "formControl", "matAutocomplete", "keypress", "change", "keyup"], ["auto", "matAutocomplete"], [3, "value"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [2, "margin-top", "0px"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "currency", "placeholder", "Select", 3, "ngModel", "ngModelChange"], ["value", ""], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "currency", "placeholder", "currency", "name", "currency", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", "name", "nameOnCard", "required", "", 1, "alignment", 3, "keypress"], ["formControlName", "customerAccount"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "customerAccount", "placeholder", "Customer Account Number", "name", "customerAccount", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", 1, "alignment", 3, "keypress"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_opinion_dxp8.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title"], [1, "p-0"], ["visible", "true"], ["fxLayout", "column", 3, "formGroup"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "pb-1"], [1, "hint"], ["name", "scholarshipOrBusinessEligible", "formControlName", "existingCustomer", 2, "margin-left", "1cm", 3, "change"], ["class", "flex-grow-1", "fxFlex", "100%", "fxLayout", "column", 4, "ngIf"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "cardType", "placeholder", "Select", 3, "selectionChange"], ["value", "Debit", 4, "ngIf"], ["value", "Credit"], ["value", "Forex", 4, "ngIf"], [4, "ngIf"], ["class", "pb-1", 4, "ngIf"], ["formControlName", "affinityProgram", "placeholder", "Select"], ["value", "Affinity Program1"], ["value", "Affinity Program2"], ["matInput", "", "class", "alignment", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["matInput", "", "class", "alignment", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["formControlName", "employmentType", "placeholder", "Select"], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], ["fxFlex", "100%", "fxLayout", "column", 1, "flex-grow-1"], ["fxFlex", "100%"], [2, "color", "#03a9f4"], ["mat-button", "", 2, "text-decoration", "underline", 3, "disabled", "click"], ["value", "Debit"], ["value", "Forex"], ["matInput", "", "type", "text", "formControlName", "cifNumber", "placeholder", "CIF Number", 1, "alignment", 3, "formControl", "matAutocomplete", "keypress", "change", "keyup"], ["auto", "matAutocomplete"], [3, "value"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [2, "margin-top", "0px"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "currency", "placeholder", "Select", 3, "ngModel", "ngModelChange"], ["value", ""], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "currency", "placeholder", "currency", "name", "currency", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", "name", "nameOnCard", 1, "alignment", 3, "keypress"], ["formControlName", "customerAccount"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "customerAccount", "placeholder", "Customer Account Number", "name", "customerAccount", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", 1, "alignment", 3, "keypress"]],
         template: function CardInitiationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -24030,10 +24146,10 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.isExistingCustomer || ctx.cardInitiationForm.value.cardType !== "Credit" ? !ctx.cardInitiationForm.valid : !ctx.cardInitiationForm.valid || !ctx.isGoForKyc);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.isExistingCustomer || ctx.cardInitiationForm.get("cardType").value !== "Credit" ? !ctx.cardInitiationForm.valid : !ctx.cardInitiationForm.valid || !ctx.isGoForKyc);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardContent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutGapDirective"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_11__["MatSlideToggle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgIf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_14__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_15__["MatOption"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutAlignDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatError"], _angular_material_input__WEBPACK_IMPORTED_MODULE_17__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteTrigger"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocomplete"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardAvatar"], _angular_material_list__WEBPACK_IMPORTED_MODULE_19__["MatListAvatarCssMatStyler"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RequiredValidator"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardContent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutGapDirective"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_11__["MatSlideToggle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgIf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_14__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_15__["MatOption"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutAlignDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatError"], _angular_material_input__WEBPACK_IMPORTED_MODULE_17__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteTrigger"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocomplete"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardAvatar"], _angular_material_list__WEBPACK_IMPORTED_MODULE_19__["MatListAvatarCssMatStyler"]],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_12__["UpperCasePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["SlicePipe"]],
         styles: [".inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.alignment[_ngcontent-%COMP%] {\n  border-style: none !important;\n  outline: none;\n}\n\n.hint[_ngcontent-%COMP%] {\n  padding-left: 0.8rem;\n  color: gray;\n  font-size: 13px;\n}\n\n.Back[_ngcontent-%COMP%] {\n  margin: 12px 0px 12px 0px;\n  margin-left: -15%;\n  width: 150px;\n  color: white;\n  background-color: #A0A0A0;\n  border-radius: 45px;\n}\n\n.Next[_ngcontent-%COMP%] {\n  margin: 12px 0px 12px 0px;\n  margin-right: -13%;\n  width: 150px;\n  background-color: #426af5;\n  color: white;\n  border-radius: 55px;\n}\n\n.container[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  padding-left: 20px;\n}\n\n.line[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 90px;\n}\n\n.text[_ngcontent-%COMP%] {\n  padding-left: 10px;\n  padding-right: 10px;\n}\n\n.inputMatLastName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.Back[_ngcontent-%COMP%] {\n  margin: 12px 0px 12px 0px;\n  margin-left: -14%;\n  width: 150px;\n  color: white;\n  background-color: #A0A0A0;\n  border-radius: 45px;\n}\n\n.Next[_ngcontent-%COMP%] {\n  margin: 12px 0px 12px 0px;\n  margin-right: -13%;\n  width: 150px;\n  background-color: #426af5;\n  color: white;\n  border-radius: 55px;\n}\n\n.button[_ngcontent-%COMP%] {\n  display: flex;\n  margin-bottom: 20px;\n  gap: 20px;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding-left: 11%;\n  padding-right: 14%;\n  background-color: white;\n}\n\n#toggle[_ngcontent-%COMP%] {\n  margin-top: -2%;\n  margin-left: 6.3cm;\n}\n\n  .cdk-overlay-pane {\n  min-width: 270px !important;\n  padding: 7px 0;\n}\n\n  .mat-card-avatar {\n  max-width: 15% !important;\n}\n\n.example-header-image-dropdown[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  margin-right: 8px;\n  background-size: cover;\n  background-color: #AED6F1;\n  max-width: 15% !important;\n  width: 25px;\n  height: 35px;\n  border-radius: 50%;\n}\n\n.main-title[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 20px;\n}\n\n .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {\n  background-color: whitesmoke;\n}\n\n  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {\n  background-color: #24CCA7;\n}\n\n  .mat-autocomplete-panel {\n  margin: 10px !important;\n  min-width: 107% !important;\n  left: -6% !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGNhcmQtaW5pdGlhdGlvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVk7RUFFWixlQUFlO0VBR2YsK0JBQStCO0VBRS9CLHNCQUFzQjtFQUd0QixnQkFBZ0I7RUFDaEIsYUFBYTtBQUxqQjs7QUFTRTtFQUNFLDZCQUE2QjtFQUM3QixhQUFhO0FBTmpCOztBQVFFO0VBQ0Usb0JBQW9CO0VBQ3BCLFdBQVc7RUFFWCxlQUFlO0FBTm5COztBQVFFO0VBRUUseUJBQXlCO0VBQ3pCLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osWUFBWTtFQUNaLHlCQUF5QjtFQUN6QixtQkFBbUI7QUFOdkI7O0FBU0U7RUFDRSx5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsWUFBWTtFQUNaLG1CQUFtQjtBQU52Qjs7QUFRRTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0FBTHRCOztBQVFFO0VBQ0UsT0FBTztFQUNQLGlCQUFpQjtBQUxyQjs7QUFRRTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFMdkI7O0FBT0U7RUFDRSxZQUFZO0VBRVosZUFBZTtFQUdmLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFWakI7O0FBaUJBO0VBRUUseUJBQXlCO0VBQ3pCLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osWUFBWTtFQUNaLHlCQUF5QjtFQUN6QixtQkFBbUI7QUFmckI7O0FBa0JBO0VBQ0UseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1oseUJBQW1DO0VBQ25DLFlBQVk7RUFDWixtQkFBbUI7QUFmckI7O0FBaUJBO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixTQUFTO0VBQ1QsZUFBZTtFQUNmLDhCQUE4QjtFQUM5QixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLHVCQUF1QjtBQWR6Qjs7QUFnQkE7RUFFRSxlQUFjO0VBQ2Qsa0JBQWtCO0FBZHBCOztBQWlCQTtFQUNFLDJCQUEyQjtFQUMzQixjQUFjO0FBZGhCOztBQWlCQTtFQUNFLHlCQUF5QjtBQWQzQjs7QUF3QkE7RUFDRSxzQkFBc0I7RUFDdEIsaUJBQWlCO0VBQ2pCLHNCQUFzQjtFQUN0Qix5QkFBeUI7RUFDekIseUJBQXlCO0VBQ3pCLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0FBckJwQjs7QUF1QkE7RUFDRSxnQkFBZ0I7RUFDaEIsZUFBZTtBQXBCakI7O0FBc0JBO0VBQ0UsNEJBQTRCO0FBbkI5Qjs7QUFzQkE7RUFDRSx5QkFBeUI7QUFuQjNCOztBQXFCQTtFQUNBLHVCQUF1QjtFQUN2QiwwQkFBMEI7RUFDMUIsb0JBQW9CO0FBbEJwQiIsImZpbGUiOiJjYXJkLWluaXRpYXRpb24uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW5wdXRNYXROYW1lIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIG1hcmdpbi10b3A6IDVweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcbiAgXHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgLy8gICBtYXgtaGVpZ2h0OiAxMDBweDtcclxuICAgIC8vIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gICAgcGFkZGluZzogMTNweDtcclxuICBcclxuICAgIC8vIHdpZHRoOiA0NTBweDtcclxuICB9XHJcbiAgLmFsaWdubWVudCB7XHJcbiAgICBib3JkZXItc3R5bGU6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgfVxyXG4gIC5oaW50IHtcclxuICAgIHBhZGRpbmctbGVmdDogMC44cmVtO1xyXG4gICAgY29sb3I6IGdyYXk7XHJcbiAgICAvLyBvcGFjaXR5OiA3MCU7XHJcbiAgICBmb250LXNpemU6IDEzcHg7XHJcbiAgfVxyXG4gIC5CYWNrIHtcclxuXHJcbiAgICBtYXJnaW46IDEycHggMHB4IDEycHggMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xNSU7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQTBBMEEwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNDVweDtcclxuICB9XHJcbiAgXHJcbiAgLk5leHQge1xyXG4gICAgbWFyZ2luOiAxMnB4IDBweCAxMnB4IDBweDtcclxuICAgIG1hcmdpbi1yaWdodDogLTEzJTtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYig2NiwgMTA2LCAyNDUpO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTVweDtcclxuICB9XHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gIH1cclxuICBcclxuICAubGluZSB7XHJcbiAgICBmbGV4OiAxO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDkwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC50ZXh0IHtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDEwcHg7XHJcbiAgfVxyXG4gIC5pbnB1dE1hdExhc3ROYW1lIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIG1hcmdpbi10b3A6IDVweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcbiAgXHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgLy8gICBtYXgtaGVpZ2h0OiAxMDBweDtcclxuICAgIC8vIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gICAgcGFkZGluZzogMTNweDtcclxuICBcclxuICAgIC8vIHdpZHRoOiAyMDBweDtcclxuICBcclxuICB9XHJcbiBcclxuXHJcbi5CYWNrIHtcclxuXHJcbiAgbWFyZ2luOiAxMnB4IDBweCAxMnB4IDBweDtcclxuICBtYXJnaW4tbGVmdDogLTE0JTtcclxuICB3aWR0aDogMTUwcHg7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNBMEEwQTA7XHJcbiAgYm9yZGVyLXJhZGl1czogNDVweDtcclxufVxyXG5cclxuLk5leHQge1xyXG4gIG1hcmdpbjogMTJweCAwcHggMTJweCAwcHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAtMTMlO1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoNjYsIDEwNiwgMjQ1KTtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgYm9yZGVyLXJhZGl1czogNTVweDtcclxufVxyXG4uYnV0dG9uIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgZ2FwOiAyMHB4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgcGFkZGluZy1sZWZ0OiAxMSU7XHJcbiAgcGFkZGluZy1yaWdodDogMTQlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbiN0b2dnbGV7XHJcblxyXG4gIG1hcmdpbi10b3A6LTIlO1xyXG4gIG1hcmdpbi1sZWZ0OiA2LjNjbTtcclxufVxyXG5cclxuOjpuZy1kZWVwIC5jZGstb3ZlcmxheS1wYW5lIHtcclxuICBtaW4td2lkdGg6IDI3MHB4ICFpbXBvcnRhbnQ7XHJcbiAgcGFkZGluZzogN3B4IDA7XHJcbn1cclxuXHJcbjo6bmctZGVlcCAubWF0LWNhcmQtYXZhdGFyIHtcclxuICBtYXgtd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4vLyA6Om5nLWRlZXAgLmNkay1vdmVybGF5LWNvbnRhaW5lciAuY2RrLW92ZXJsYXktcGFuZSB7XHJcbi8vIH1cclxuLy8gOjpuZy1kZWVwIC5jZGstb3ZlcmxheS1jb250YWluZXIgLmNkay1vdmVybGF5LXBhbmUjY2RrLW92ZXJsYXktMCB7XHJcbi8vICAgd2lkdGg6IDQ1MHB4ICFpbXBvcnRhbnQ7XHJcbi8vICAgbGVmdDogMzUwcHggIWltcG9ydGFudDtcclxuLy8gfVxyXG5cclxuLmV4YW1wbGUtaGVhZGVyLWltYWdlLWRyb3Bkb3duIHtcclxuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gIG1hcmdpbi1yaWdodDogOHB4O1xyXG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI0FFRDZGMTtcclxuICBtYXgtd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG4gIHdpZHRoOiAyNXB4O1xyXG4gIGhlaWdodDogMzVweDtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbn1cclxuLm1haW4tdGl0bGV7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuOjpuZy1kZWVwLm1hdC1zbGlkZS10b2dnbGUubWF0LWNoZWNrZWQ6bm90KC5tYXQtZGlzYWJsZWQpIC5tYXQtc2xpZGUtdG9nZ2xlLXRodW1iIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlO1xyXG59XHJcblxyXG46Om5nLWRlZXAgLm1hdC1zbGlkZS10b2dnbGUubWF0LWNoZWNrZWQ6bm90KC5tYXQtZGlzYWJsZWQpIC5tYXQtc2xpZGUtdG9nZ2xlLWJhciB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzI0Q0NBNztcclxufVxyXG46Om5nLWRlZXAgLm1hdC1hdXRvY29tcGxldGUtcGFuZWx7XHJcbm1hcmdpbjogMTBweCAhaW1wb3J0YW50O1xyXG5taW4td2lkdGg6IDEwNyUgIWltcG9ydGFudDtcclxubGVmdDogLTYlICFpbXBvcnRhbnQ7XHJcblxyXG59Il19 */"]
       });
