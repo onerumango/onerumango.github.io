@@ -8119,6 +8119,7 @@ class ApprovalDetailsComponent {
             console.log("resp after updating", resp);
             this.ls.setItem('approvalStage', true);
             this.ls.setItem('APPROVAL_DETAILS_DONE', true);
+            this.ls.setItem('CARD_DIGITAL_STAGE_DONE', true);
             this.accountService.refresh.next();
             this.snack.open('Approval Details Saved!', 'OK', {
                 duration: 4000,

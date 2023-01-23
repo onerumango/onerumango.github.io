@@ -21122,6 +21122,9 @@ opacity: 1;
   color: #0F0F0F;
   opacity: 1;
 }
+.charge{
+  transform: translateY(6px);
+}
 .idSize{
   font-size: 11px;
    color: #B2B2B2;

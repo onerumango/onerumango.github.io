@@ -5950,6 +5950,14 @@ class ApiService {
             .get(`${API_URL}/iccity/fetchAllAuthCities`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
+    deleteCorporateDirector(corporateId, customerId) {
+        return this.http.delete(`${API_URL}/corporateCustomer/deleteCorporateDirectorInfo?corporateId=${corporateId}&customerId=${customerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    fetchCurrencyInfo(country) {
+        return this.http
+            .get(`${API_URL}/currencyMaint-api/fetchCurrencyMainByCountryCode?country=${country}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
     countryCurrencyFlaglists(data) {
         return this.http.get(`${API_URL}/currencyMaint-api/fetchCurrencyMainByCountryCode?country=${data}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }

@@ -15291,6 +15291,8 @@
 
               _this56.ls.setItem('APPROVAL_DETAILS_DONE', true);
 
+              _this56.ls.setItem('CARD_DIGITAL_STAGE_DONE', true);
+
               _this56.accountService.refresh.next();
 
               _this56.snack.open('Approval Details Saved!', 'OK', {
