@@ -49855,17 +49855,47 @@ class AppointmentIdComponent {
     }
     fetchByApointment(appointmentId) {
         console.log(appointmentId);
-        this.apiService
-            .getAppointmentId(appointmentId.appointmentId)
-            .subscribe((resp) => {
+        if (!appointmentId.appointmentId) {
+            return this.snack.open("Please Enter Valid Appointment ID", "OK", {
+                duration: 4000,
+                verticalPosition: "top",
+                horizontalPosition: "right",
+            });
+        }
+        this.apiService.getAppointmentId(appointmentId.appointmentId).subscribe((resp) => {
             console.log(resp);
             this.transactionType = resp;
             if (resp.data == null) {
-                this.snack.open("Please Generate Token With In Respective Time Slot", "OK", {
-                    duration: 4000,
-                    verticalPosition: "top",
-                    horizontalPosition: "right",
-                });
+                if (resp.message === "Please Enter Valid Appointment ID") {
+                    return this.snack.open("Please Enter Valid Appointment ID", "OK", {
+                        duration: 4000,
+                        verticalPosition: "top",
+                        horizontalPosition: "right",
+                    });
+                }
+                if (resp.message === "Token already generated for give AppointmentId") {
+                    return this.snack.open("Token already generated for give AppointmentId", "OK", {
+                        duration: 4000,
+                        verticalPosition: "top",
+                        horizontalPosition: "right",
+                    });
+                }
+                if (resp.message ===
+                    "Please Generate Token With In Respective Time Slot") {
+                    return this.snack.open("Please Generate Token With In Respective Time Slot", "OK", {
+                        duration: 4000,
+                        verticalPosition: "top",
+                        horizontalPosition: "right",
+                    });
+                }
+                if (resp.message ===
+                    "Your appointment/ QR Code is expired. Please generate a new appointment/QR Code.") {
+                    return this.snack.open("Your appointment/ QR Code is expired. Please generate a new appointment/QR Code.", "OK", {
+                        duration: 4000,
+                        verticalPosition: "top",
+                        horizontalPosition: "right",
+                    });
+                }
             }
             else {
                 this.ls.setItem("TransactionType", resp);
@@ -49888,8 +49918,8 @@ class AppointmentIdComponent {
                 }
             }
         }, (err) => {
-            console.log(err);
-            this.snack.open("This appointmentID is already exist", "OK", {
+            console.log("Error: ", err);
+            return this.snack.open("Please Generate Token With In Respective Time Slot", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right",
