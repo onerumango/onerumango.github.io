@@ -94,22 +94,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppointmentPage": () => (/* binding */ AppointmentPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _appointment_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appointment.page.html?ngResource */ 25204);
 /* harmony import */ var _appointment_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./appointment.page.scss?ngResource */ 87918);
 /* harmony import */ var _services_trxn_pdf_doc_download_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/trxn-pdf-doc-download.service */ 72734);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
 /* harmony import */ var src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/loading.service */ 4471);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 86712);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 86527);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 86712);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 86527);
 /* harmony import */ var _daterange_daterange_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../daterange/daterange.page */ 36675);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../appointmentpopup/appointmentpopup.page */ 14808);
+/* harmony import */ var _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../token-v2/token-v2.page */ 68106);
+
 
 
 
@@ -202,11 +204,11 @@ let AppointmentPage = class AppointmentPage {
         });
         this.loadData();
         this.appointmentForm = this.fb.group({
-            accountNumber: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            filterOption: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            customerId: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
+            accountNumber: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            filterOption: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            customerId: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
         });
         // this.getAppointmentByCustomerId('onload',null,null,null,null,null,null);
         this.getAppointmentByCustomerId('', this.loggedInCust, '');
@@ -228,7 +230,7 @@ let AppointmentPage = class AppointmentPage {
         this.accountIdArrayVal = (_b = (_a = this.accountsData) === null || _a === void 0 ? void 0 : _a[this.slideNo]) === null || _b === void 0 ? void 0 : _b.accountId;
     }
     openActionSheet() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             console.log(this.transactionDataArr);
             const actionSheet = yield this.actionSheetController.create({
                 // header: 'Albums',
@@ -367,7 +369,7 @@ let AppointmentPage = class AppointmentPage {
         }
     }
     addCustomTask() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             let modal = yield this.modalCtrl.create({
                 component: _daterange_daterange_page__WEBPACK_IMPORTED_MODULE_6__.DaterangePage,
                 cssClass: 'small-modal',
@@ -375,8 +377,8 @@ let AppointmentPage = class AppointmentPage {
             modal.onDidDismiss().then((modelData) => {
                 this.enableDate = true;
                 return this.appointmentForm.patchValue({
-                    fromDate: [(new Date(modelData.data)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-                    toDate: [(new Date(modelData.role)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
+                    fromDate: [(new Date(modelData.data)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+                    toDate: [(new Date(modelData.role)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
                 });
             });
             return yield modal.present();
@@ -403,9 +405,9 @@ let AppointmentPage = class AppointmentPage {
             console.log('Today is: ' + d.toLocaleString());
             d.setDate(d.getDate() - event.target.value);
             console.log('<br>5 days ago was: ' + d.toLocaleString());
-            const formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(d, 'yyyy-MM-dd');
+            const formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(d, 'yyyy-MM-dd');
             this.fromDate = formatFromDate;
-            const formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'yyyy-MM-dd');
+            const formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'yyyy-MM-dd');
             this.toDate = formatToDate;
             console.log('formatFromDate :: ', formatFromDate, ' ::formatToDate::  ', formatToDate);
             this.isNoOfDays = true;
@@ -417,10 +419,10 @@ let AppointmentPage = class AppointmentPage {
             Value.filterOption = Value.filterOption.data;
         }
         if (Value.fromDate) {
-            Value.fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(Value.fromDate), 'yyyy-MM-dd');
+            Value.fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(Value.fromDate), 'yyyy-MM-dd');
         }
         if (Value.toDate) {
-            Value.toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(Value.toDate), 'yyyy-MM-dd');
+            Value.toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(Value.toDate), 'yyyy-MM-dd');
             // Value.toDate='2022-11-12';
         }
         this.loadingService.present();
@@ -565,15 +567,15 @@ let AppointmentPage = class AppointmentPage {
         console.log('change event :: ', event);
         var formatFromDate = null;
         var formatToDate = null;
-        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'yyyy-MM-dd');
+        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'yyyy-MM-dd');
         if (!isNoOfDays) {
-            const formattedFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.fromDate), "yyyy-MM-dd'T'HH:mm:ss");
+            const formattedFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.fromDate), "yyyy-MM-dd'T'HH:mm:ss");
             this.formattedFromDate = formattedFromDate;
             // console.log('fromDate :: ',this.formattedFromDate);
-            const formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.toDate), "yyyy-MM-dd'T'HH:mm:ss");
+            const formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.toDate), "yyyy-MM-dd'T'HH:mm:ss");
             this.formattedToDate = formattedToDate;
-            formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.fromDate), 'yyyy-MM-dd');
-            formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.toDate), 'yyyy-MM-dd');
+            formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.fromDate), 'yyyy-MM-dd');
+            formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.toDate), 'yyyy-MM-dd');
             this.compareDates(formatToDate, formatFromDate, event, currDate, isNoOfDays);
         }
         else {
@@ -617,15 +619,15 @@ let AppointmentPage = class AppointmentPage {
     }
     checkToDate(event) {
         console.log(event.target.value);
-        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'yyyy-MM-dd');
-        this.formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(event.target.value), 'yyyy-MM-dd');
+        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'yyyy-MM-dd');
+        this.formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(event.target.value), 'yyyy-MM-dd');
         console.log('formatted:: ', currDate, this.formattedToDate);
-        this.fromDateVal = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.fromDate).toISOString();
+        this.fromDateVal = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.fromDate).toISOString();
         this.toDate = '';
         // this.getAppointmentByCustomerId('fromDate','','',this.formattedFromDate,this.formattedToDate,this.loggedInCust,this.accountIdNum);
     }
     openAlert(message) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertController.create({
                 header: 'Alert',
                 message: `${message}`,
@@ -689,11 +691,11 @@ let AppointmentPage = class AppointmentPage {
         this.location.back();
     }
     onClick(event) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             console.log(event);
             localStorage.setItem('AppointmentDetails', JSON.stringify(event));
             let modal = yield this.modalCtrl.create({
-                component: _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
+                component: event.trnType == "Forex Transaction" ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
                 componentProps: {
                     value: event,
                 },
@@ -704,11 +706,6 @@ let AppointmentPage = class AppointmentPage {
             return yield modal.present();
         });
     }
-    // const modal = await modalController.create({ component: UploadPage });
-    // const { data } = await modal.onDidDismiss();
-    // if (data) {
-    //    this.getData();
-    // }
     downloadPdf(trxnArrayList, fromDate, toDate) {
         console.log('inside download pdf', trxnArrayList, fromDate, toDate);
         if (fromDate == undefined || fromDate == null) {
@@ -719,29 +716,29 @@ let AppointmentPage = class AppointmentPage {
         }
     }
     loadAllTransactionData(data) {
-        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'dd-MM-yyyy HH:mm:ss');
+        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'dd-MM-yyyy HH:mm:ss');
         this.pdfService.createPdf(data, this.customerDetails, currDate);
     }
 };
 AppointmentPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_12__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.AlertController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.NavController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_13__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.NavController },
     { type: src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_5__.LoadingService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.ModalController },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_14__.ChangeDetectorRef },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_15__.Location },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ChangeDetectorRef },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_16__.Location },
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__.DataService },
     { type: _services_trxn_pdf_doc_download_service__WEBPACK_IMPORTED_MODULE_2__.TrxnPdfDocDownloadService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ActionSheetController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.ActionSheetController }
 ];
 AppointmentPage.propDecorators = {
-    infiniteScroll: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_14__.ViewChild, args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_13__.IonInfiniteScroll,] }]
+    infiniteScroll: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ViewChild, args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_14__.IonInfiniteScroll,] }]
 };
-AppointmentPage = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_14__.Component)({
+AppointmentPage = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_15__.Component)({
         selector: 'app-appointment',
         template: _appointment_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_appointment_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

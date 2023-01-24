@@ -199,6 +199,9 @@ let DashboardPage = class DashboardPage {
     ionViewWillEnter() {
         this.cardInfoInterval = setInterval(() => this.getCustomerAccounts(), 3 * 1000);
     }
+    ionViewDidEnter() {
+        this.getCountries();
+    }
     getCustomerAccounts() {
         this.api.getCustomerAccounts(this.phoneNumber).subscribe((resp) => {
             var _a, _b;
@@ -285,6 +288,24 @@ let DashboardPage = class DashboardPage {
             console.log(error);
         });
     }
+    getCountries() {
+        this.api.getCurrencyValues().subscribe((res) => {
+            localStorage.setItem('COUNTRIES', JSON.stringify(res));
+            // TODO LATER
+            // let countryItems: any = [];
+            // for (let index = 0; index < res.length; index++) {
+            //   const data = res[index];
+            //   let item = {
+            //     name: data.countryName,
+            //     alpha2Code: data.countryCode,
+            //     alpha3Code: data.currencyCode,
+            //     numericCode: '276'
+            //   }
+            //   countryItems.push(item);
+            // }
+            // localStorage.setItem('COUNTRIES_NEW', JSON.stringify(countryItems));
+        });
+    }
     searchModal() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
@@ -306,7 +327,7 @@ let DashboardPage = class DashboardPage {
         this.router.navigate(['chequewithdrawal']);
     }
     goToForexTransaction() {
-        this.router.navigate(['forex-transaction']);
+        this.router.navigate(['forextransaction']);
     }
     goToLoanPayment() {
         this.router.navigate(['loan-payment']);

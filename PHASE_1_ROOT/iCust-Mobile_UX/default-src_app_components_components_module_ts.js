@@ -73,12 +73,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ComponentsModule": () => (/* binding */ ComponentsModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./footer/footer.component */ 64662);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pipes/pipes.module */ 35503);
 /* harmony import */ var _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./avatar-photo/avatar-photo.component */ 77964);
 /* harmony import */ var _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./branch/branch.component */ 6156);
@@ -88,6 +88,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _download_download_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./download/download.component */ 51022);
 /* harmony import */ var _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../shared/shared-material.module */ 84390);
 /* harmony import */ var _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./alert-internet/alert-internet.component */ 82014);
+/* harmony import */ var _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./denomination-slide/denomination-slide.component */ 9340);
+
 
 
 
@@ -105,8 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let ComponentsModule = class ComponentsModule {
 };
-ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.NgModule)({
+ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.NgModule)({
         declarations: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__.BranchComponent,
             _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_2__.AvatarPhotoComponent,
@@ -115,7 +117,8 @@ ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
             _search_search_component__WEBPACK_IMPORTED_MODULE_5__.SearchComponent,
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,
             _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent,
-            _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent
+            _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent,
+            _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__.DenominationSlideComponent
         ],
         exports: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__.BranchComponent,
@@ -125,18 +128,54 @@ ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
             _search_search_component__WEBPACK_IMPORTED_MODULE_5__.SearchComponent,
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,
             _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent,
-            _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent
+            _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent,
+            _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__.DenominationSlideComponent
         ],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_12__.CommonModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.IonicModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormsModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_13__.CommonModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.IonicModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormsModule,
             _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_1__.PipesModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.ReactiveFormsModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_15__.ReactiveFormsModule,
             _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__.SharedMaterialModule
         ],
     })
 ], ComponentsModule);
+
+
+
+/***/ }),
+
+/***/ 9340:
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/denomination-slide/denomination-slide.component.ts ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DenominationSlideComponent": () => (/* binding */ DenominationSlideComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _denomination_slide_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./denomination-slide.component.html?ngResource */ 76634);
+/* harmony import */ var _denomination_slide_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./denomination-slide.component.scss?ngResource */ 24869);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+let DenominationSlideComponent = class DenominationSlideComponent {
+    constructor() { }
+    ngOnInit() { }
+};
+DenominationSlideComponent.ctorParameters = () => [];
+DenominationSlideComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: 'app-denomination-slide',
+        template: _denomination_slide_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_denomination_slide_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], DenominationSlideComponent);
 
 
 
@@ -459,6 +498,16 @@ module.exports = ".circle {\n  border-radius: 50%;\n  width: 45px;\n  height: 45
 
 /***/ }),
 
+/***/ 24869:
+/*!********************************************************************************************!*\
+  !*** ./src/app/components/denomination-slide/denomination-slide.component.scss?ngResource ***!
+  \********************************************************************************************/
+/***/ ((module) => {
+
+module.exports = ".denomination-slide {\n  background: #F3F3F3;\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n  color: #484848;\n  margin-top: -25px;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n}\n\n.denom-count {\n  color: #484848;\n  font-size: 10px;\n}\n\n.denom-sub {\n  color: #6c757d;\n  font-size: 8px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlbm9taW5hdGlvbi1zbGlkZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7RUFDQSwrQkFBQTtFQUNBLGdDQUFBO0FBQ0o7O0FBRUE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQUNKOztBQUVBO0VBQ0ksY0FBQTtFQUNBLGNBQUE7QUFDSiIsImZpbGUiOiJkZW5vbWluYXRpb24tc2xpZGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVub21pbmF0aW9uLXNsaWRlIHtcclxuICAgIGJhY2tncm91bmQ6ICNGM0YzRjM7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE2cHg7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG4gICAgcGFkZGluZy10b3A6IDZweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA2cHg7XHJcbiAgICBjb2xvcjogIzQ4NDg0ODtcclxuICAgIG1hcmdpbi10b3A6IC0yNXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMTJweDtcclxuICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAxMnB4O1xyXG59XHJcblxyXG4uZGVub20tY291bnQge1xyXG4gICAgY29sb3I6ICM0ODQ4NDg7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuXHJcbi5kZW5vbS1zdWIge1xyXG4gICAgY29sb3I6ICM2Yzc1N2Q7XHJcbiAgICBmb250LXNpemU6IDhweDtcclxufSJdfQ== */";
+
+/***/ }),
+
 /***/ 95938:
 /*!************************************************************************!*\
   !*** ./src/app/components/download/download.component.scss?ngResource ***!
@@ -496,6 +545,16 @@ module.exports = "div[scrollx=true] {\n  display: flex;\n  flex-wrap: nowrap;\n 
 /***/ ((module) => {
 
 module.exports = "<div class=\"circle\" [ngStyle]=\"{'background-color':  circleColor }\">\r\n    <img *ngIf=\"!showInitials\" src=\"{{photoUrl}}\">\r\n\r\n    <div *ngIf=\"showInitials\" class=\"initials\">\r\n        {{ initials }}\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 76634:
+/*!********************************************************************************************!*\
+  !*** ./src/app/components/denomination-slide/denomination-slide.component.html?ngResource ***!
+  \********************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<div class=\"denomination-slide\">\r\n  <div class=\"row my-3\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">2000 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">500 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row my1\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">200 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">100 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row my-3\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">50 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">20 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row my-3\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">10 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">1 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n    <mat-label>Denomination Total</mat-label>\r\n    <input matInput type=\"text\">\r\n  </mat-form-field>\r\n</div>\r\n";
 
 /***/ }),
 

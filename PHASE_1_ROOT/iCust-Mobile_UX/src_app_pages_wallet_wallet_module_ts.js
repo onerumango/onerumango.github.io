@@ -11,14 +11,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "WalletListComponent": () => (/* binding */ WalletListComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _wallet_list_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wallet-list.component.html?ngResource */ 41827);
 /* harmony import */ var _wallet_list_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wallet-list.component.scss?ngResource */ 19816);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../appointmentpopup/appointmentpopup.page */ 14808);
+/* harmony import */ var _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../token-v2/token-v2.page */ 68106);
+
 
 
 
@@ -53,11 +55,11 @@ let WalletListComponent = class WalletListComponent {
         });
     }
     openTicketModal(data) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             console.log("Data check", data);
             if (data != null) {
                 const modal = yield this.modalController.create({
-                    component: _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
+                    component: (data === null || data === void 0 ? void 0 : data.trnType) == "Forex Transaction" ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
                     componentProps: {
                         value: data ? data : {}
                     }
@@ -76,12 +78,12 @@ let WalletListComponent = class WalletListComponent {
     }
 };
 WalletListComponent.ctorParameters = () => [
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__.Location },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_6__.Location },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController }
 ];
-WalletListComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+WalletListComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-wallet-list',
         template: _wallet_list_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_wallet_list_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

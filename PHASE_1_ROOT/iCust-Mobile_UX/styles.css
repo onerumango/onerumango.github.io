@@ -2280,10 +2280,44 @@ button.swiper-pagination-bullet {
 }
 :root {
   --ion-font-family: "Montserrat";
-  --primary-color: #456efe;
+  --primary-color: #004C97;
+  --ion-color-bank: #004C97;
+  --ion-color-bank-rgb: 0, 76, 151;
+  --ion-color-bank-contrast: #ffffff;
+  --ion-color-bank-contrast-rgb: 255, 255, 255;
+  --ion-color-bank-shade: #004385;
+  --ion-color-bank-tint: #1a5ea1;
+}
+.ion-color-bank {
+  --ion-color-base: var(--ion-color-bank);
+  --ion-color-base-rgb: var(--ion-color-bank-rgb);
+  --ion-color-contrast: var(--ion-color-bank-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-bank-contrast-rgb);
+  --ion-color-shade: var(--ion-color-bank-shade);
+  --ion-color-tint: var(--ion-color-bank-tint);
 }
 .app-font {
   font-family: "Montserrat" !important;
+}
+.secondary {
+  background-image: linear-gradient(90deg, #051A2D, #004C97);
+  color: #ffffff;
+}
+.inactive-bg {
+  background: #E3E3E3;
+  color: #707070;
+}
+.active-bg {
+  background-image: linear-gradient(90deg, #051A2D, #004C97);
+  color: #ffffff;
+}
+.action-button {
+  top: -6px;
+  right: -5px;
+  height: 40px;
+  position: relative;
+  width: 120px;
+  text-align: center;
 }
 ion-toolbar {
   --min-height: 75px;
@@ -2300,22 +2334,31 @@ ion-popover::part(content) {
   border-bottom-left-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
 }
-.mat-form-field-appearance-outline .mat-form-field-outline-thick {
-  opacity: unset !important;
+ion-segment {
+  --background: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 56px;
+}
+ion-segment-button {
+  padding: 4px 0;
+  margin: 0;
+  border-radius: 13px;
+  --background-checked: var(--ion-color-primary) !important;
+  --color-checked: white;
+  --indicator-color: transparent !important;
+}
+.mat-form-field {
+  font-family: "Montserrat" !important;
 }
 .selection-text {
   font-size: 16px;
 }
-.mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #6c757d;
+.error {
+  color: #dc3545;
+  font-size: 12px;
 }
 .swiper-pagination-bullets {
   position: unset !important;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 ion-modal.internet-modal {
   --height: 35%;

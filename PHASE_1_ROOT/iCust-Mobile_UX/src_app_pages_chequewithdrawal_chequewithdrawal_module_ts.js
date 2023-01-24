@@ -170,7 +170,6 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
         this.editMode = false;
         this.isShow = true;
         this.selectedCountryCode = '';
-        this.getCountrynameValues();
     }
     ngOnInit() {
         var _a;
@@ -181,41 +180,16 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
         }
         this.phoneNumber = localStorage.getItem('customerPhonenum');
         this.customerId = sessionStorage.getItem('customer_id');
-        this.slideOneForm = this.fb.group({
-            transactionId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            customerId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            chequeDepositId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            productCode: ['CQW', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            tokenOrigin: ['Mobile', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            accountNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            accountBalance: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            accountCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            transactionCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            transactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            branchFlag: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            accountBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            transactionDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            transactionBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            isMobileTrans: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            transactionTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            exchangeRate: [''],
-            accountAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            totalChargeAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            narrative: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            denomination: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            totalAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            createdBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            createdTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            modifiedBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            modifiedTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            recordStatus: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            authStatus: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            version: [''],
-            remarks: [''],
-            totalTransactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            chequeNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.maxLength(12)]],
-        });
-        console.log(this.slideOneForm.value);
+        this.currencies = JSON.parse(localStorage.getItem('COUNTRIES'));
+        if (this.editMode) {
+            const countryCode = this.currencies.filter((i) => { var _a, _b; return i.currencyCode === ((_b = (_a = this.routerData) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.transactionCurrency); });
+            this.selectedCurrency = countryCode[0];
+        }
+        else {
+            const countryCode = this.currencies.filter((i) => i.currencyCode === "INR");
+            this.selectedCurrency = countryCode[0];
+        }
+        this.buildForm();
         this.loadData();
         this.slideOneForm.get('branchFlag').valueChanges.subscribe(val => {
             localStorage.setItem("BranchFlag", val);
@@ -252,6 +226,115 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
         let today = new Date().toISOString();
         this.slideOneForm.get('transactionDate').patchValue(today);
     }
+    getCurrencyFormat(val) {
+        if (val) {
+            let data = val.toLocaleString('en-US');
+            console.log(data);
+            return data;
+        }
+    }
+    numberWithCommas(amount) {
+        if (amount) {
+            const formattedNumber = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            return formattedNumber;
+        }
+    }
+    // Only Integer Numbers
+    keyPressNumbers(event) {
+        var charCode = (event.which) ? event.which : event.keyCode;
+        // Only Numbers 0-9
+        if ((charCode < 48 || charCode > 57)) {
+            event.preventDefault();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    onScreenRefresh() {
+        var _a;
+        this.editMode = ((_a = this.routerData) === null || _a === void 0 ? void 0 : _a.data) ? true : false;
+        this.phoneNumber = localStorage.getItem('customerPhonenum');
+        this.customerId = sessionStorage.getItem('customer_id');
+        this.currencies = JSON.parse(localStorage.getItem('COUNTRIES'));
+        if (this.editMode) {
+            const countryCode = this.currencies.filter((i) => { var _a, _b; return i.currencyCode === ((_b = (_a = this.routerData) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.transactionCurrency); });
+            this.selectedCurrency = countryCode[0];
+        }
+        else {
+            const countryCode = this.currencies.filter((i) => i.currencyCode === "INR");
+            this.selectedCurrency = countryCode[0];
+        }
+        this.buildForm();
+        this.loadData();
+        this.slideOneForm.get('branchFlag').valueChanges.subscribe(val => {
+            localStorage.setItem("BranchFlag", val);
+            this.brnflg = val;
+            if (this.brnflg == false && val == false) {
+                this.slideOneForm.controls.transactionBranch.patchValue(this.trnBrn);
+                this.nearestBrn = true;
+            }
+            else {
+                this.nearestBrn = false;
+                this.accBranch = localStorage.getItem("AccBranch");
+                console.log(this.accBranch);
+                this.slideOneForm.controls.transactionBranch.patchValue(this.accBranch);
+            }
+            if (this.brnflg == true && val == false) {
+                console.log(this.accBranch);
+                this.slideOneForm.controls.transactionBranch.patchValue(this.accBranch);
+                this.nearestBrn = true;
+            }
+        });
+        this.slideOneForm.get('accountNumber').valueChanges.subscribe(val => {
+            if (val) {
+                this.accountEvent(val);
+            }
+        });
+        this.shareDataService.getAccountInfo.subscribe(data => {
+            this.accountInfo = data;
+            this.api.getNumberOfCrowd(this.accountInfo.accountBranch)
+                .subscribe((data1) => {
+                this.tokenCount = data1.tokenCount || '0';
+            });
+        });
+    }
+    buildForm() {
+        this.slideOneForm = this.fb.group({
+            transactionId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            customerId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            chequeDepositId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            productCode: ['CQW', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            tokenOrigin: ['Mobile', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            accountNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            accountBalance: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            accountCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            transactionCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            transactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            branchFlag: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            accountBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            transactionDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            transactionBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            isMobileTrans: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            transactionTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            exchangeRate: [''],
+            accountAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            totalChargeAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            narrative: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            denomination: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            totalAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            createdBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            createdTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            modifiedBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            modifiedTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            recordStatus: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            authStatus: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            version: [''],
+            remarks: [''],
+            totalTransactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            chequeNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.maxLength(12)]],
+        });
+    }
     loadData() {
         this.loading.present();
         this.api.custpomerDetails(this.phoneNumber).subscribe((resp) => {
@@ -280,8 +363,7 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
             if (button === 'disable2') {
                 if (v.transactionBranch != '' &&
                     v.transactionDate != '' &&
-                    v.transactionTime != '' &&
-                    v.accountNo != '') {
+                    v.transactionTime != '') {
                     this.submitted1 = false;
                 }
                 else {
@@ -295,25 +377,6 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
     }
     numberOnlyValidation(event) {
         this.transAmt = event.target.value;
-        console.log(event.target.value);
-        this.IntValue = Math.floor(this.slideOneForm.value.transactionAmount).toString().length;
-        if (this.IntValue > 1) {
-            let value;
-            value = this.slideOneForm.value.transactionAmount;
-            this.transAmount = value;
-            const pattern = value;
-            let lastCharIsPoint = false;
-            if (pattern.charAt(pattern.length - 1) === '.') {
-                lastCharIsPoint = true;
-            }
-            const num = pattern.replace(/[^0-9.]/g, '');
-            this.transAmt = Number(num);
-            this.transAmount = this.transAmt.toLocaleString('en-US');
-            if (lastCharIsPoint) {
-                this.transAmount = this.transAmount.concat('.');
-            }
-            this.cdr.detectChanges();
-        }
         this.transAmt = this.transAmt.toString().replace(/,/g, '');
         if (parseFloat(this.currentBalance) < parseFloat(this.transAmt)) {
             this.openToast1();
@@ -327,7 +390,7 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
             const toast = yield this.toastCtrl.create({
                 message: 'Transaction Amount should not exceed than Account Balance',
                 duration: 2000,
-                position: 'middle'
+                position: 'bottom'
             });
             toast.present();
         });
@@ -335,50 +398,49 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
     compareWith(o1, o2) {
         return o1 && o2 ? o1.id === o2.id : o1 === o2;
     }
-    getCountrynameValues() {
-        this.api.getCurrencyValues().subscribe((res) => {
-            this.currencies = res;
-            console.log(this.currencies);
-            if (this.editMode) {
-                const countryCode = this.currencies.filter((i) => { var _a, _b; return i.currencyCode === ((_b = (_a = this.routerData) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.transactionCurrency); });
-                this.selectedCurrency = countryCode[0];
-            }
-            else {
-                const countryCode = this.currencies.filter((i) => i.currencyCode === "INR");
-                this.selectedCurrency = countryCode[0];
-            }
-        });
-    }
     selectCurrencyCode(e) {
-        console.log("Checking final?", e);
-        const filteredCurrency = this.currencies.filter((i) => i.currencyCode === e);
-        this.selectedCountryCode = filteredCurrency[0].countryCode.toLowerCase();
-        this.getExChangeRate(filteredCurrency[0].currencyCode);
+        var _a;
+        if (typeof e !== "undefined") {
+            const filteredCurrency = (_a = this.currencies) === null || _a === void 0 ? void 0 : _a.filter((i) => i.currencyCode === e);
+            this.selectedCountryCode = filteredCurrency[0].countryCode.toLowerCase();
+            this.getExChangeRate(filteredCurrency[0].currencyCode);
+        }
+        else {
+            return;
+        }
     }
     getExChangeRate(currency) {
         this.api.getExchangeRate(this.accountInfo.accountCurrency).subscribe((res) => {
-            var _a, _b, _c;
+            var _a, _b, _c, _d;
             const code = this.currencies.filter((x) => x.currencyCode == currency);
             let filteredCurrency = code[0].currencyCode;
             const rate = (_a = res === null || res === void 0 ? void 0 : res.rates) === null || _a === void 0 ? void 0 : _a[filteredCurrency];
             console.log("Rate?", rate);
             this.slideOneForm.get('exchangeRate').patchValue(rate);
-            let updatedAmount = (Number((_b = this.slideOneForm.get('transactionAmount')) === null || _b === void 0 ? void 0 : _b.value) * Number((_c = this.slideOneForm.get('exchangeRate')) === null || _c === void 0 ? void 0 : _c.value)) + this.chargeAmount;
+            let transactionAmount;
+            if ((_b = this.slideOneForm.get('transactionAmount')) === null || _b === void 0 ? void 0 : _b.value) {
+                transactionAmount = (_c = this.slideOneForm.get('transactionAmount')) === null || _c === void 0 ? void 0 : _c.value;
+                let updatedAmount = (Number(transactionAmount) * Number((_d = this.slideOneForm.get('exchangeRate')) === null || _d === void 0 ? void 0 : _d.value)) + this.chargeAmount;
+                if (!isNaN(Number(updatedAmount))) {
+                    console.log(Number(updatedAmount));
+                    this.slideOneForm.get('totalTransactionAmount').patchValue(Number(updatedAmount));
+                    this.updateTransAmount();
+                    this.cdr.markForCheck();
+                }
+            }
+        });
+    }
+    updateTransAmount() {
+        var _a, _b, _c;
+        let transactionAmount;
+        if ((_a = this.slideOneForm.get('transactionAmount')) === null || _a === void 0 ? void 0 : _a.value) {
+            transactionAmount = (_b = this.slideOneForm.get('transactionAmount')) === null || _b === void 0 ? void 0 : _b.value;
+            let updatedAmount = (Number(transactionAmount) * Number((_c = this.slideOneForm.get('exchangeRate')) === null || _c === void 0 ? void 0 : _c.value)) + this.chargeAmount;
             if (!isNaN(Number(updatedAmount))) {
                 console.log(Number(updatedAmount));
                 this.slideOneForm.get('totalTransactionAmount').patchValue(Number(updatedAmount));
                 this.cdr.markForCheck();
             }
-        });
-        this.updateTransAmount();
-    }
-    updateTransAmount() {
-        var _a, _b;
-        let updatedAmount = (Number((_a = this.slideOneForm.get('transactionAmount')) === null || _a === void 0 ? void 0 : _a.value) * Number((_b = this.slideOneForm.get('exchangeRate')) === null || _b === void 0 ? void 0 : _b.value)) + this.chargeAmount;
-        if (!isNaN(Number(updatedAmount))) {
-            console.log(Number(updatedAmount));
-            this.slideOneForm.get('totalTransactionAmount').patchValue(Number(updatedAmount));
-            this.cdr.markForCheck();
         }
     }
     upsertAccount(filteredResponseSavingAccount) {
@@ -507,9 +569,9 @@ let ChequewithdrawalPage = class ChequewithdrawalPage {
             });
             modal.onDidDismiss().then((res) => {
                 this.routerData = res;
-                console.log(this.routerData);
+                console.log("Getting Back Data", this.routerData);
                 this.flag = true;
-                this.ngOnInit();
+                this.onScreenRefresh();
             });
             return yield modal.present();
         });
@@ -722,7 +784,7 @@ module.exports = ".transactionAmounterrormsg {\n  color: red;\n  font-size: smal
   \******************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header *ngIf=\"flag\">\r\n  <ion-toolbar class=\"forex_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous1()\"></ion-icon>\r\n\r\n    <span class=\"text\">{{title}}</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"flag\" class=\"ion-padding\">\r\n  <div>\r\n    <form [formGroup]=\"slideOneForm\" *ngIf=\"slideOneForm\">\r\n\r\n      <ion-item fill=\"outline\" class=\"my-1\">\r\n        <ion-label position=\"floating\" class=\"t-20\">Account Number*</ion-label>\r\n        <ion-select *ngIf=\"!accountflag\" [compareWith]=\"compareWith\" interface=\"popover\"\r\n          [interfaceOptions]=\"{'cssClass': 'wider-popover-acc-num'}\" formControlName=\"accountNumber\"\r\n          (ionChange)=\"accountEvent($event)\" ngDefaultControl>\r\n          <ion-select-option *ngFor=\"let user of users\" [value]=\"user.accountId\">{{user.accountId}}\r\n          </ion-select-option>\r\n        </ion-select>\r\n        <ion-input mode=\"ios\" *ngIf=\"accountflag\" formControlName=\"accountNumber\" type=\"text\" readonly\r\n          (ionChange)=\"accountEvent($event)\">\r\n        </ion-input>\r\n      </ion-item>\r\n\r\n      <div class=\"inputCard1\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Balance : {{curr }} {{currentBalance}}</ion-label>\r\n      </div>\r\n\r\n      <div class=\"inputCard1\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Branch :\r\n          {{slideOneForm.controls.accountBranch.value}}</ion-label>\r\n      </div>\r\n\r\n      <div class=\"inputCard1\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Currency :\r\n          {{slideOneForm.controls.accountCurrency.value}}</ion-label>\r\n      </div>\r\n\r\n\r\n      <mat-form-field class=\"full-width my-2\" appearance=\"outline\" style=\"width: 100%;\">\r\n        <mat-label position=\"floating\" class=\"t-20\">Transaction Currency</mat-label>\r\n        <mat-select [(ngModel)]=\"transactionCurrency\" (ngModelChange)=\"selectCurrencyCode($event)\"\r\n          [ngModelOptions]=\"{standalone: true}\" formControlName=\"transactionCurrency\">\r\n          <mat-select-trigger class=\"selection-text\">\r\n            <ngx-flag-picker [selectedCountryCode]=\"selectedCountryCode\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n              [showArrow]=\"!isShow\" slot=\"start\">\r\n            </ngx-flag-picker>\r\n            <span class=\"selection-text\">\r\n              {{ slideOneForm.get('transactionCurrency')?.value }}\r\n            </span>\r\n          </mat-select-trigger>\r\n\r\n          <mat-option *ngFor=\"let currency of currencies\" [value]=\"currency.currencyCode\">\r\n            {{currency.currencyCode}}\r\n          </mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <ion-item fill=\"outline\">\r\n        <ion-label position=\"floating\">Transaction Amount*</ion-label>\r\n        <ion-input #myRef [(ngModel)]=\"transAmount\" (keyup)=\"updateTransAmount()\" formControlName=\"transactionAmount\"\r\n          type=\"text\" min=\"1\" (keyup)=\"numberOnlyValidation($event)\"></ion-input>\r\n      </ion-item>\r\n\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\">\r\n        <ion-label position=\"floating\">Cheque Number*</ion-label>\r\n        <ion-input formControlName=\"chequeNumber\" type=\"tel\" maxLength=\"12\"></ion-input>\r\n      </ion-item>\r\n\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\"\r\n        *ngIf=\"selectedCountryCode && !slideOneForm.get('accountCurrency').value.toLowerCase().includes(selectedCountryCode)\">\r\n        <ion-label position=\"floating\">Exchange Rate</ion-label>\r\n        <ion-input placeholder=\"Exchange Rate\" formControlName=\"exchangeRate\" name=\"exchangeRate\" ngDefaultControl\r\n          readonly=\"true\"></ion-input>\r\n      </ion-item>\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\">\r\n        <ion-label position=\"floating\">Total Charge Amount*</ion-label>\r\n        <ion-input placeholder=\"Total Charge Amount\" name=\"chargeAMount\" formControlName=\"totalChargeAmount\"\r\n          name=\"totalchargeAmount\" ngDefaultControl readonly=\"true\"></ion-input>\r\n      </ion-item>\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\">\r\n        <ion-label position=\"floating\">Total Transaction Amount*</ion-label>\r\n        <ion-input placeholder=\"Placeholder\" placeholder=\"Total Transaction Amount\"\r\n          formControlName=\"totalTransactionAmount\" ngDefaultControl readonly=\"true\"></ion-input>\r\n        <span class=\"info_btn\">i</span>\r\n      </ion-item>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" (click)=\"goToNextPage()\"\r\n            [disabled]=\"validateDisablebutton('disable1') ||!transAmount || submitted ||  transAmt > currentBalance\">\r\n            Next</ion-button>\r\n        </div>\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" fill=\"clear\" style=\"color: black\" (click)=\"goToHomepage()\">Cancel\r\n          </ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-header *ngIf=\"!flag\">\r\n  <ion-toolbar>\r\n    <ion-icon class=\"backIcon\" name=\"chevron-back-outline\" (click)=\"goToPreviousPage()\"></ion-icon>\r\n    <span class=\"text\">{{title}}</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"!flag\" class=\"ion-padding\">\r\n  <div>\r\n    <form [formGroup]=\"slideOneForm\">\r\n    \r\n      <div style=\"padding-left: 5%; padding-top: 8%; padding-right: 5%\">\r\n        <ion-label>Do you wish to perform this transaction in your home\r\n          branch?</ion-label>\r\n        <ion-radio-group name=\"branchFlags\" formControlName=\"branchFlag\">\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label position=\"start\">Yes</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagYes\" [value]=\"true\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label>No</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagNo\" [value]=\"false\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-radio-group>\r\n      </div>\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-router-link (click)=\"presentModal()\" [hidden]=\"!nearestBrn\" class=\"underline\">Click here to find the\r\n          nearest branch</ion-router-link>\r\n      </div>\r\n      <br />\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-label>Transaction Branch*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input appearence=\"none\" formControlName=\"transactionBranch\"\r\n              [readonly]=\"slideOneForm.get('branchFlag').value ? true : false\">\r\n            </ion-input>\r\n            <ion-icon *ngIf=\"slideOneForm.get('branchFlag').value == true\" name=\"home-outline\" color=\"primary\"\r\n              slot=\"end\"></ion-icon>\r\n            <ion-icon *ngIf=\"slideOneForm.get('branchFlag').value == false\" name=\"navigate-circle-outline\"\r\n              color=\"primary\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n        <ion-note style=\"color: red; margin-left: 22px; top: 13px\"\r\n          *ngIf=\"f.transactionBranch.errors?.required && f.transactionBranch.touched\">\r\n          <small>Transaction Branch Required</small>\r\n        </ion-note>\r\n      </div>\r\n      <p class=\"crowdsCount\">\r\n        Number of Crowds : {{ tokenCount || 0 }}\r\n      </p>\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-label>Transaction date*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n            <ion-modal [keepContentsMounted]=\"true\">\r\n              <ng-template>\r\n                <ion-datetime presentation=\"date\" id=\"datetime\" displayFormat=\"DDD. MMM DD, YY\" [min]=\"minDate\"\r\n                  [max]=\"maxDate\" placeholder=\"Select date\" formControlName=\"transactionDate\" [showDefaultTitle]=\"true\"\r\n                  [showDefaultButtons]=\"true\" #datetime></ion-datetime>\r\n              </ng-template>\r\n            </ion-modal>\r\n            <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-label>Time Slot*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input formControlName=\"transactionTime\" [readonly]=\"true\"></ion-input>\r\n            <!-- <ion-datetime displayFormat=\"hh:mm A\"  placeholder=\"Select time slot\" formControlName=\"transactionTime\"></ion-datetime> -->\r\n            <ion-icon name=\"alarm-outline\" slot=\"end\" (click)=\"openPopup()\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard2\" *ngIf=\"title == 'Cheque Withdrawal' || title =='Cheque Deposit'\">\r\n        <ion-label position=\"stacked\">Remark</ion-label>\r\n        <ion-input class=\"chequeCard\" formControlName=\"remarks\"></ion-input>\r\n      </div>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" (click)=\"save(slideOneForm.value)\"\r\n            [disabled]=\"validateDisablebutton('disable2')  || submitted1\">Next</ion-button>\r\n        </div>\r\n\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" fill=\"clear\" style=\"color: black\" (click)=\"goToPreviousPage()\">Back\r\n          </ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-header *ngIf=\"flag\">\r\n  <ion-toolbar class=\"forex_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"previous1()\"></ion-icon>\r\n\r\n    <span class=\"text\">{{title}}</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"flag\" class=\"ion-padding\">\r\n  <div>\r\n    <form [formGroup]=\"slideOneForm\" *ngIf=\"slideOneForm\">\r\n\r\n      <ion-item fill=\"outline\" class=\"my-1\">\r\n        <ion-label position=\"floating\" class=\"t-20\">Account Number*</ion-label>\r\n        <ion-select *ngIf=\"!accountflag\" [compareWith]=\"compareWith\" interface=\"popover\"\r\n          [interfaceOptions]=\"{'cssClass': 'wider-popover-acc-num'}\" formControlName=\"accountNumber\"\r\n          (ionChange)=\"accountEvent($event)\" ngDefaultControl>\r\n          <ion-select-option *ngFor=\"let user of users\" [value]=\"user.accountId\">{{user.accountId}}\r\n          </ion-select-option>\r\n        </ion-select>\r\n        <ion-input mode=\"ios\" *ngIf=\"accountflag\" formControlName=\"accountNumber\" type=\"text\" readonly\r\n          (ionChange)=\"accountEvent($event)\">\r\n        </ion-input>\r\n      </ion-item>\r\n\r\n      <div class=\"inputCard1\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Balance : {{curr }} {{currentBalance}}</ion-label>\r\n      </div>\r\n\r\n      <div class=\"inputCard1\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Branch :\r\n          {{slideOneForm.controls.accountBranch.value}}</ion-label>\r\n      </div>\r\n\r\n      <div class=\"inputCard1\">\r\n        <ion-label position=\"stacked\" class=\"labelCard\">Account Currency :\r\n          {{slideOneForm.controls.accountCurrency.value}}</ion-label>\r\n      </div>\r\n\r\n\r\n      <mat-form-field class=\"full-width my-2\" appearance=\"outline\" style=\"width: 100%;\">\r\n        <mat-label position=\"floating\" class=\"t-20\">Transaction Currency</mat-label>\r\n        <mat-select [(ngModel)]=\"transactionCurrency\" (ngModelChange)=\"selectCurrencyCode($event)\"\r\n          [ngModelOptions]=\"{standalone: true}\" formControlName=\"transactionCurrency\">\r\n          <mat-select-trigger class=\"selection-text\">\r\n            <ngx-flag-picker [selectedCountryCode]=\"selectedCountryCode\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n              [showArrow]=\"!isShow\" slot=\"start\">\r\n            </ngx-flag-picker>\r\n            <span class=\"selection-text\">\r\n              {{ slideOneForm.get('transactionCurrency')?.value }}\r\n            </span>\r\n          </mat-select-trigger>\r\n\r\n          <mat-option *ngFor=\"let currency of currencies\" [value]=\"currency.currencyCode\">\r\n            {{currency.currencyCode}}\r\n          </mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <!-- [value]=\"numberWithCommas(slideOneForm.get('transactionAmount')?.value)\" -->\r\n\r\n      <ion-item fill=\"outline\">\r\n        <ion-label position=\"floating\">Transaction Amount*</ion-label>\r\n        <ion-input #myRef [(ngModel)]=\"transAmount\" (keyup)=\"updateTransAmount()\" formControlName=\"transactionAmount\"\r\n          type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\" (keyup)=\"numberOnlyValidation($event)\"\r\n          ></ion-input>\r\n      </ion-item>\r\n      <span class=\"error\" *ngIf=\"transAmt > currentBalance\">\r\n        Transaction Amount cannot be greater than Account Balance\r\n      </span>\r\n\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\">\r\n        <ion-label position=\"floating\">Cheque Number*</ion-label>\r\n        <ion-input formControlName=\"chequeNumber\" type=\"tel\" maxLength=\"12\"></ion-input>\r\n      </ion-item>\r\n\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\"\r\n        *ngIf=\"selectedCountryCode && !slideOneForm.get('accountCurrency')?.value.toLowerCase().includes(selectedCountryCode)\">\r\n        <ion-label position=\"floating\">Exchange Rate</ion-label>\r\n        <ion-input placeholder=\"Exchange Rate\" formControlName=\"exchangeRate\" name=\"exchangeRate\" ngDefaultControl\r\n          readonly=\"true\"></ion-input>\r\n      </ion-item>\r\n\r\n      <ion-item fill=\"outline\" class=\"my-3\">\r\n        <ion-label position=\"floating\">Total Charge Amount*</ion-label>\r\n        <ion-input placeholder=\"Total Charge Amount\" name=\"chargeAMount\" formControlName=\"totalChargeAmount\"\r\n          name=\"totalchargeAmount\" ngDefaultControl readonly=\"true\"></ion-input>\r\n      </ion-item>\r\n      <!-- [value]=\"numberWithCommas(slideOneForm.get('totalTransactionAmount')?.value)\" -->\r\n      \r\n      <ion-item fill=\"outline\" class=\"my-3\">\r\n        <ion-label position=\"floating\">Total Transaction Amount*</ion-label>\r\n        <ion-input placeholder=\"Placeholder\" placeholder=\"Total Transaction Amount\"\r\n          formControlName=\"totalTransactionAmount\" ngDefaultControl readonly=\"true\"\r\n          ></ion-input>\r\n        <span class=\"info_btn\">i</span>\r\n      </ion-item>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" (click)=\"goToNextPage()\"\r\n            [disabled]=\"validateDisablebutton('disable1') || !transAmount || submitted ||  transAmt > currentBalance\">\r\n            Next</ion-button>\r\n        </div>\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" fill=\"clear\" style=\"color: black\" (click)=\"goToHomepage()\">Cancel\r\n          </ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-header *ngIf=\"!flag\">\r\n  <ion-toolbar>\r\n    <ion-icon class=\"backIcon\" name=\"chevron-back-outline\" (click)=\"goToPreviousPage()\"></ion-icon>\r\n    <span class=\"text\">{{title}}</span>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"!flag\" class=\"ion-padding\">\r\n  <div>\r\n    <form *ngIf=\"slideOneForm\" [formGroup]=\"slideOneForm\">\r\n\r\n      <div style=\"padding-left: 5%; padding-top: 8%; padding-right: 5%\">\r\n        <ion-label>Do you wish to perform this transaction in your home\r\n          branch?</ion-label>\r\n        <ion-radio-group name=\"branchFlags\" formControlName=\"branchFlag\">\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label position=\"start\">Yes</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagYes\" [value]=\"true\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n\r\n            <ion-col>\r\n              <ion-item lines=\"none\">\r\n                <ion-label>No</ion-label>\r\n                <ion-radio mode=\"md\" item-left name=\"flagNo\" [value]=\"false\"></ion-radio>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-radio-group>\r\n      </div>\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-router-link (click)=\"presentModal()\" [hidden]=\"!nearestBrn\" class=\"underline\">Click here to find the\r\n          nearest branch</ion-router-link>\r\n      </div>\r\n      <br />\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-label>Transaction Branch*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input appearence=\"none\" formControlName=\"transactionBranch\"\r\n              [readonly]=\"slideOneForm.get('branchFlag').value ? true : false\">\r\n            </ion-input>\r\n            <ion-icon *ngIf=\"slideOneForm.get('branchFlag').value == true\" name=\"home-outline\" color=\"primary\"\r\n              slot=\"end\"></ion-icon>\r\n            <ion-icon *ngIf=\"slideOneForm.get('branchFlag').value == false\" name=\"navigate-circle-outline\"\r\n              color=\"primary\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n        <ion-note style=\"color: red; margin-left: 22px; top: 13px\"\r\n          *ngIf=\"f.transactionBranch.errors?.required && f.transactionBranch.touched\">\r\n          <small>Transaction Branch Required</small>\r\n        </ion-note>\r\n      </div>\r\n      <p class=\"crowdsCount\">\r\n        Number of Crowds : {{ tokenCount || 0 }}\r\n      </p>\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-label>Transaction date*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n            <ion-modal [keepContentsMounted]=\"true\">\r\n              <ng-template>\r\n                <ion-datetime presentation=\"date\" id=\"datetime\" displayFormat=\"DDD. MMM DD, YY\" [min]=\"minDate\"\r\n                  [max]=\"maxDate\" placeholder=\"Select date\" formControlName=\"transactionDate\" [showDefaultTitle]=\"true\"\r\n                  [showDefaultButtons]=\"true\" #datetime></ion-datetime>\r\n              </ng-template>\r\n            </ion-modal>\r\n            <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard2\">\r\n        <ion-label>Time Slot*</ion-label>\r\n        <ion-card class=\"box\">\r\n          <ion-item lines=\"none\">\r\n            <ion-input formControlName=\"transactionTime\" [readonly]=\"true\"></ion-input>\r\n            <!-- <ion-datetime displayFormat=\"hh:mm A\"  placeholder=\"Select time slot\" formControlName=\"transactionTime\"></ion-datetime> -->\r\n            <ion-icon name=\"alarm-outline\" slot=\"end\" (click)=\"openPopup()\"></ion-icon>\r\n          </ion-item>\r\n        </ion-card>\r\n      </div>\r\n\r\n      <div class=\"inputCard2\" *ngIf=\"title == 'Cheque Withdrawal' || title =='Cheque Deposit'\">\r\n        <ion-label position=\"stacked\">Remark</ion-label>\r\n        <ion-input class=\"chequeCard\" formControlName=\"remarks\"></ion-input>\r\n      </div>\r\n\r\n      <div class=\"ion-padding-top\">\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" (click)=\"save(slideOneForm.value)\"\r\n            [disabled]=\"validateDisablebutton('disable2')  || submitted1\">Next</ion-button>\r\n        </div>\r\n\r\n        <div>\r\n          <ion-button expand=\"block\" shape=\"round\" fill=\"clear\" style=\"color: black\" (click)=\"goToPreviousPage()\">Back\r\n          </ion-button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 
