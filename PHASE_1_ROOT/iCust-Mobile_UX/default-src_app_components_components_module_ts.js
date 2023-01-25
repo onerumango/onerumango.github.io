@@ -156,21 +156,122 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DenominationSlideComponent": () => (/* binding */ DenominationSlideComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _denomination_slide_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./denomination-slide.component.html?ngResource */ 76634);
 /* harmony import */ var _denomination_slide_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./denomination-slide.component.scss?ngResource */ 24869);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 90587);
+
 
 
 
 
 let DenominationSlideComponent = class DenominationSlideComponent {
-    constructor() { }
-    ngOnInit() { }
+    constructor(fb) {
+        this.fb = fb;
+        this.denomination_keys = [{
+                key: "two_thousand",
+                value: 2000,
+            },
+            {
+                key: "five_hundred",
+                value: 500,
+            }, {
+                key: "two_hundred",
+                value: 200,
+            }, {
+                key: "one_hundred",
+                value: 100,
+            }, {
+                key: "fifty",
+                value: 50,
+            }, {
+                key: "twenty",
+                value: 20,
+            }, {
+                key: "ten",
+                value: 10,
+            }, {
+                key: "one",
+                value: 1,
+            },
+        ];
+        this.total = 0;
+        this.amountEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+    }
+    ngOnInit() {
+        this.buildDenomForm();
+        let data = JSON.parse(localStorage.getItem(this.unique_key)) || null;
+        if (data != null) {
+            this.denominationForm.patchValue(data.data);
+            this.calculateTotalAmount();
+        }
+        this.denominationForm.valueChanges.subscribe(val => {
+            let sum = 0;
+            Object.keys(this.denominationForm.controls).forEach(key => {
+                var _a;
+                for (let index = 0; index < this.denomination_keys.length; index++) {
+                    const denomItem = this.denomination_keys[index];
+                    if (denomItem.key == key) {
+                        sum += denomItem.value * Number((_a = this.denominationForm.get(`${key}`)) === null || _a === void 0 ? void 0 : _a.value);
+                    }
+                }
+            });
+            this.total = sum;
+            this.saveDenom();
+        });
+    }
+    buildDenomForm() {
+        this.denominationForm = this.fb.group({
+            two_thousand: '',
+            five_hundred: '',
+            two_hundred: '',
+            one_hundred: '',
+            fifty: '',
+            twenty: '',
+            ten: '',
+            one: '',
+        });
+    }
+    calculateTotalAmount() {
+        let sum = 0;
+        Object.keys(this.denominationForm.controls).forEach(key => {
+            var _a;
+            for (let index = 0; index < this.denomination_keys.length; index++) {
+                const denomItem = this.denomination_keys[index];
+                if (denomItem.key == key) {
+                    sum += denomItem.value * Number((_a = this.denominationForm.get(`${key}`)) === null || _a === void 0 ? void 0 : _a.value);
+                }
+            }
+        });
+        this.total = sum;
+    }
+    remove_me() {
+        this.parentRef.remove(this.unique_key);
+    }
+    saveDenom() {
+        let denomPayload = {
+            title: this.unique_key,
+            total: this.total,
+            data: this.denominationForm.value
+        };
+        localStorage.setItem(this.unique_key, JSON.stringify(denomPayload));
+    }
+    ngOnDestroy() {
+        this.saveDenom();
+    }
 };
-DenominationSlideComponent.ctorParameters = () => [];
-DenominationSlideComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+DenominationSlideComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormBuilder }
+];
+DenominationSlideComponent.propDecorators = {
+    amountEvent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Output }],
+    denomArea: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Input }],
+    isFrmOpened: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Input }],
+    isFtmOpened: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Input }]
+};
+DenominationSlideComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({
         selector: 'app-denomination-slide',
         template: _denomination_slide_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_denomination_slide_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -504,7 +605,7 @@ module.exports = ".circle {\n  border-radius: 50%;\n  width: 45px;\n  height: 45
   \********************************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".denomination-slide {\n  background: #F3F3F3;\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n  color: #484848;\n  margin-top: -25px;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n}\n\n.denom-count {\n  color: #484848;\n  font-size: 10px;\n}\n\n.denom-sub {\n  color: #6c757d;\n  font-size: 8px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlbm9taW5hdGlvbi1zbGlkZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7RUFDQSwrQkFBQTtFQUNBLGdDQUFBO0FBQ0o7O0FBRUE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQUNKOztBQUVBO0VBQ0ksY0FBQTtFQUNBLGNBQUE7QUFDSiIsImZpbGUiOiJkZW5vbWluYXRpb24tc2xpZGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVub21pbmF0aW9uLXNsaWRlIHtcclxuICAgIGJhY2tncm91bmQ6ICNGM0YzRjM7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE2cHg7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG4gICAgcGFkZGluZy10b3A6IDZweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA2cHg7XHJcbiAgICBjb2xvcjogIzQ4NDg0ODtcclxuICAgIG1hcmdpbi10b3A6IC0yNXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMTJweDtcclxuICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAxMnB4O1xyXG59XHJcblxyXG4uZGVub20tY291bnQge1xyXG4gICAgY29sb3I6ICM0ODQ4NDg7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuXHJcbi5kZW5vbS1zdWIge1xyXG4gICAgY29sb3I6ICM2Yzc1N2Q7XHJcbiAgICBmb250LXNpemU6IDhweDtcclxufSJdfQ== */";
+module.exports = ".denomination-slide {\n  background: #F3F3F3;\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n  color: #484848;\n  margin-top: -25px;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  position: relative;\n}\n\n.denom-count {\n  color: #484848;\n  font-size: 10px;\n}\n\n.denom-sub {\n  color: #6c757d;\n  font-size: 8px;\n}\n\n.white-box {\n  width: 30px;\n  height: 30px;\n  background: #ffffff;\n  border-radius: 50%;\n  text-align: center;\n  margin-left: 46%;\n  z-index: 1;\n  position: relative;\n  margin-top: -10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlbm9taW5hdGlvbi1zbGlkZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7RUFDQSwrQkFBQTtFQUNBLGdDQUFBO0VBRUEsa0JBQUE7QUFBSjs7QUFHQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0FBQUo7O0FBR0E7RUFDSSxjQUFBO0VBQ0EsY0FBQTtBQUFKOztBQUdBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFVBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0FBQUoiLCJmaWxlIjoiZGVub21pbmF0aW9uLXNsaWRlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRlbm9taW5hdGlvbi1zbGlkZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjRjNGM0YzO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxNnB4O1xyXG4gICAgcGFkZGluZy1yaWdodDogMTZweDtcclxuICAgIHBhZGRpbmctdG9wOiA2cHg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogNnB4O1xyXG4gICAgY29sb3I6ICM0ODQ4NDg7XHJcbiAgICBtYXJnaW4tdG9wOiAtMjVweDtcclxuICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDEycHg7XHJcbiAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogMTJweDtcclxuICAgIC8vIHotaW5kZXg6IC0xO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uZGVub20tY291bnQge1xyXG4gICAgY29sb3I6ICM0ODQ4NDg7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuXHJcbi5kZW5vbS1zdWIge1xyXG4gICAgY29sb3I6ICM2Yzc1N2Q7XHJcbiAgICBmb250LXNpemU6IDhweDtcclxufVxyXG5cclxuLndoaXRlLWJveCB7XHJcbiAgICB3aWR0aDogMzBweDtcclxuICAgIGhlaWdodDogMzBweDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmZmZmY7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogNDYlO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIG1hcmdpbi10b3A6IC0xMHB4O1xyXG5cclxufSJdfQ== */";
 
 /***/ }),
 
@@ -554,7 +655,7 @@ module.exports = "<div class=\"circle\" [ngStyle]=\"{'background-color':  circle
   \********************************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<div class=\"denomination-slide\">\r\n  <div class=\"row my-3\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">2000 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">500 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row my1\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">200 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">100 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row my-3\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">50 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">20 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row my-3\">\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">10 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"row\">\r\n        <div class=\"col-5 align-self-center\">\r\n          <span class=\"denom-count\">1 <span class=\"denom-sub\">x</span> </span>\r\n        </div>\r\n        <div class=\"col-7 align-self-center\">\r\n          <ion-input style=\"background: #ffffff;border-radius: 5px;\"></ion-input>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n    <mat-label>Denomination Total</mat-label>\r\n    <input matInput type=\"text\">\r\n  </mat-form-field>\r\n</div>\r\n";
+module.exports = "<div class=\"denomination-slide\">\r\n  <form *ngIf=\"denominationForm\" [formGroup]=\"denominationForm\">\r\n    <div class=\"row my-3\">\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">2000 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"two_thousand\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">500 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"five_hundred\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row my1\">\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">200 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"two_hundred\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">100 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"one_hundred\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row my-3\">\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">50 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"fifty\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">20 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"twenty\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row my-3\">\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">10 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"ten\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <div class=\"row\">\r\n          <div class=\"col-5 align-self-center\">\r\n            <span class=\"denom-count\">1 <span class=\"denom-sub\">x</span> </span>\r\n          </div>\r\n          <div class=\"col-7 align-self-center\">\r\n            <ion-input style=\"background: #ffffff;border-radius: 5px;\" formControlName=\"one\"></ion-input>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Denomination Total {{unique_key}}</mat-label>\r\n      <input matInput type=\"text\" [value]=\"total\" readonly=\"true\">\r\n    </mat-form-field>\r\n  </form>\r\n</div>\r\n<div class=\"white-box\" (click)=\"remove_me()\">\r\n  <img src=\"assets/icon/arrow.svg\" class=\"arrow-icon\">\r\n</div>\r\n";
 
 /***/ }),
 
