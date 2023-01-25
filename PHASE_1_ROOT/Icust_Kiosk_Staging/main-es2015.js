@@ -4585,12 +4585,17 @@ class DataService {
         this.accountFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.transactionFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.denominationFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+        this.forexTransTypeData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+        this.getforexTransTypeData = this.forexTransTypeData.asObservable();
         this.getaccountFormdata = this.accountFormData.asObservable();
         this.gettransactionFormdata = this.transactionFormData.asObservable();
         this.getdenominationFormdata = this.denominationFormData.asObservable();
     }
     sendNavParam(params) {
         this.paramSource.next(params);
+    }
+    sendNavforexTransType(params) {
+        this.forexTransTypeData.next(params);
     }
     shareSearchItem(params) {
         this.searchItem.next(params);
