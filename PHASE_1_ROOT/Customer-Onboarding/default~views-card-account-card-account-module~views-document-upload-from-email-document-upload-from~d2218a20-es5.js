@@ -12835,7 +12835,7 @@
 
             this.customerId = sessionStorage.getItem('customer_id');
             this.refreshedCustId = this.data.customerId;
-            console.log('customer id :: ', this.customerId, this.refreshedCustId);
+            if (this.data.customerId) this.customerId = this.data.customerId;
             console.log('data :: ', this.data.bioData);
 
             if (this.data.bioData.length > 0) {
@@ -12943,7 +12943,7 @@
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
             var _this34 = this;
 
-            console.log('save biometric');
+            console.log('save biometric', capFingerPrint, fingerName, cId);
             var screen = 'kyc-verification';
             this.fingerPrintService.saveBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (data) {
               _this34.progressbarValue = 100;
@@ -19049,6 +19049,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.customerId = sessionStorage.getItem('customer_id');
+            if (this.data.customerId) this.customerId = this.data.customerId;
             this.refreshedCustId = this.data.customerId;
             console.log('customer id :: ', this.customerId, this.refreshedCustId);
           }
@@ -27974,6 +27975,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.customerId = sessionStorage.getItem('customer_id');
+            if (this.data.customerId) this.customerId = this.data.customerId;
             this.refreshedCustId = this.data.customerId;
             console.log('customer id :: ', this.customerId, this.refreshedCustId);
           }
@@ -39861,7 +39863,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-hint", 51);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " Cif Number ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " CIF Number ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -41958,6 +41960,7 @@
             var arr = ["4", "5", "11", "12"];
 
             for (var key in arr) {
+              this.custBiometric = [];
               var bioName;
 
               if (Object.prototype.hasOwnProperty.call(arr, key)) {

@@ -390,7 +390,7 @@
             this.api.getOtpValidating(this.update).subscribe(function (resp) {
               console.log("response from backend", resp);
 
-              if (resp) {
+              if (resp.data != null) {
                 if (resp && _this.type == "Mobile Number") {
                   _this.closeClick();
 
@@ -406,6 +406,12 @@
                     type: _this.update.sourceKey
                   });
                 }
+              } else {
+                _this.snack.open('Entered Invalid OTP', 'OK', {
+                  duration: 4000,
+                  verticalPosition: 'top',
+                  horizontalPosition: 'right'
+                });
               }
             }, function (error) {
               console.log('error : ', error.responseMessage, error);
@@ -2832,7 +2838,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](110, "mat-card", 89);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](111, "input", 90);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](111, "input", 90);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function KycVerificationComponent_form_4_Template_input_keypress_111_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
+
+            var ctx_r129 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+            return ctx_r129._keyPress1($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](112, KycVerificationComponent_form_4_mat_hint_112_Template, 2, 1, "mat-hint", 91);
 
@@ -2859,9 +2875,9 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function KycVerificationComponent_form_4_Template_input_keypress_119_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r129 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r130 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r129._keyPress($event);
+            return ctx_r130._keyPress($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -2945,9 +2961,9 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function KycVerificationComponent_form_4_Template_textarea_keypress_144_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r130 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r131 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r130.keyPressAlphanumeric($event);
+            return ctx_r131.keyPressAlphanumeric($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -2977,9 +2993,9 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function KycVerificationComponent_form_4_Template_textarea_keypress_151_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r131 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r132 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r131.keyPressAlphanumeric($event);
+            return ctx_r132.keyPressAlphanumeric($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -3045,9 +3061,9 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function KycVerificationComponent_form_4_Template_mat_select_selectionChange_169_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r132 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r133 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r132.getStateName($event.value, true);
+            return ctx_r133.getStateName($event.value, true);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](170, "mat-option", 21);
@@ -3085,15 +3101,15 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function KycVerificationComponent_form_4_Template_input_keyup_179_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r133 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r134 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r133.isAllSameDigit($event, 0);
+            return ctx_r134.isAllSameDigit($event, 0);
           })("change", function KycVerificationComponent_form_4_Template_input_change_179_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r134 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r134.getCityandStateByZipcode(ctx_r134.kycVerificationForm.get("communicationAddress.country").value, $event.target.value, "communication");
+            return ctx_r135.getCityandStateByZipcode(ctx_r135.kycVerificationForm.get("communicationAddress.country").value, $event.target.value, "communication");
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -3129,9 +3145,9 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function KycVerificationComponent_form_4_Template_mat_select_selectionChange_188_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r136 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r135.onStateChange("communication");
+            return ctx_r136.onStateChange("communication");
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](189, "mat-option", 21);
@@ -3169,9 +3185,9 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function KycVerificationComponent_form_4_Template_mat_select_selectionChange_198_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r120);
 
-            var ctx_r136 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r137 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r136.onCityChange("communication");
+            return ctx_r137.onCityChange("communication");
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](199, "mat-option", 21);
@@ -3490,6 +3506,8 @@
           this.otpmodel = new _kyc_basic_information_kyc_basic_information_component__WEBPACK_IMPORTED_MODULE_8__["OtpModel"]();
           this.billing = true;
           this.basicInfoSavedAlready = false;
+          this.verify = "verify";
+          this.emailVerify = "verify";
           this.isCifValid = false;
           this.radioFlag = "Auto";
           this.arrayState = [];
@@ -3616,8 +3634,6 @@
               documentsList: this.fb.array([this.createItem()])
             });
             this.preventBackButton();
-            this.verify = 'verify';
-            this.emailVerify = 'verify';
             this.api.getverify1().subscribe(function (resp) {
               if (resp.verify == 'verified') {
                 _this4.assignVerify(resp);
@@ -4117,7 +4133,7 @@
           value: function onChangeGender(event) {
             var prefix = this.kycVerificationForm.value.prefix;
 
-            if (prefix == "Mr" && event.value == "Male" || (prefix == "Ms" || prefix == "Mrs") && event.value == "Female") {
+            if (prefix == "Mr" && event.value == "Male" || prefix == "Ms" && event.value == "Female" || prefix == "Mrs" && (event.value == "Male" || event.value == "Female")) {
               this.prefixFlag = true;
             } else {
               this.prefixFlag = false;
@@ -4133,7 +4149,7 @@
           value: function onChangePrefix(event) {
             var gender = this.kycVerificationForm.value.gender;
 
-            if (gender == "Male" && event.value == "Mr" || (event.value == "Ms" || event.value == "Mrs") && gender == "Female") {
+            if (gender == "Male" && event.value == "Mr" || (event.value == "Ms" || event.value == "Mrs") && (gender == "Male" || gender == "Female")) {
               this.prefixFlag = true;
             } else {
               this.prefixFlag = false;
@@ -4422,27 +4438,28 @@
           value: function getOtpMobile(email) {
             this.otpmodel.source = "customer";
             this.otpmodel.source_key = "mobile";
-            this.otpmodel.source_value = email.phoneNumber; // if(this.verify == 'verify'){ 
+            this.otpmodel.source_value = email.phoneNumber;
 
-            this.api.getOtp(this.otpmodel).subscribe(function (resp) {// this.otpValidate = resp.data.otpVal.sourceValue;
-              // console.log(this.otpValidate);
-              // localStorage.setItem(this.otpValidate,'otpValidate')
-            });
-            this.openDialog1(email.phoneNumber); // }_
+            if (this.verify == 'verify') {
+              this.api.getOtp(this.otpmodel).subscribe(function (resp) {// this.otpValidate = resp.data.otpVal.sourceValue;
+                // console.log(this.otpValidate);
+                // localStorage.setItem(this.otpValidate,'otpValidate')
+              });
+              this.openDialog1(email.phoneNumber);
+              this.mobileVerified = email.phoneNumber;
+            }
           }
         }, {
           key: "openDialog1",
           value: function openDialog1(phoneNUmber) {
-            if (this.verify == 'verify') {
-              var dialogRef = this.dialog.open(_fingerprint_authentication_fingerprint_authentication_component__WEBPACK_IMPORTED_MODULE_7__["FingerprintAuthenticationComponent"], {
-                data: {
-                  number: phoneNUmber,
-                  type: "Mobile Number"
-                },
-                disableClose: true
-              });
-              dialogRef.afterClosed().subscribe(function (submit) {});
-            }
+            var dialogRef = this.dialog.open(_fingerprint_authentication_fingerprint_authentication_component__WEBPACK_IMPORTED_MODULE_7__["FingerprintAuthenticationComponent"], {
+              data: {
+                number: phoneNUmber,
+                type: "Mobile Number"
+              },
+              disableClose: true
+            });
+            dialogRef.afterClosed().subscribe(function (submit) {});
           } // public onFileChanged(event) {
           //   this.selectedFiles = event.target.files[0];
           //   let reader = new FileReader();
@@ -4884,35 +4901,59 @@
           value: function getOtp(email) {
             this.otpmodel.source = "customer";
             this.otpmodel.source_key = "email";
-            this.otpmodel.source_value = email.primaryEmailAdress; // if(this.verify == 'verify'){
+            this.otpmodel.source_value = email.primaryEmailAdress;
+            console.log(this.otpmodel.source_value);
 
-            this.api.getOtp(this.otpmodel).subscribe(function (resp) {});
-            this.openDialogEmail(email.primaryEmailAdress); // }
+            if (this.emailVerify == 'verify') {
+              this.api.getOtp(this.otpmodel).subscribe(function (resp) {});
+              this.openDialogEmail(email.primaryEmailAdress);
+              this.emailVerified = email.primaryEmailAdress;
+            }
           }
         }, {
           key: "_keyPress",
           value: function _keyPress(event) {
-            // console.log("key",event);
+            console.log("key", event);
             var pattern = /[0-9]/;
             var inputChar = String.fromCharCode(event.charCode);
+            console.log(inputChar);
 
             if (!pattern.test(inputChar)) {
               event.preventDefault();
+            }
+
+            if (this.verify == 'verified') {
+              if (event != this.mobileVerified) {
+                this.verify = 'verify';
+              } else {
+                this.verify = 'verified';
+              }
+            }
+          }
+        }, {
+          key: "_keyPress1",
+          value: function _keyPress1(event) {
+            if (this.emailVerify == 'verified') {
+              if (event != this.emailVerified) {
+                this.emailVerify = 'verify';
+              } else {
+                this.emailVerify = 'verified';
+              }
             }
           }
         }, {
           key: "openDialogEmail",
           value: function openDialogEmail(email) {
-            if (this.verify == 'verify') {
-              var dialogRef = this.dialog.open(_fingerprint_authentication_fingerprint_authentication_component__WEBPACK_IMPORTED_MODULE_7__["FingerprintAuthenticationComponent"], {
-                data: {
-                  number: email,
-                  type: "email id"
-                },
-                disableClose: true
-              });
-              dialogRef.afterClosed().subscribe(function (submit) {});
-            }
+            var dialogRef = this.dialog.open(_fingerprint_authentication_fingerprint_authentication_component__WEBPACK_IMPORTED_MODULE_7__["FingerprintAuthenticationComponent"], {
+              data: {
+                number: email,
+                type: "email id"
+              },
+              disableClose: true
+            });
+            dialogRef.afterClosed().subscribe(function (submit) {
+              console.log(submit);
+            });
           }
         }, {
           key: "toMakeButton",
@@ -5009,7 +5050,7 @@
         },
         decls: 13,
         vars: 8,
-        consts: [[3, "formGroup"], ["formArrayName", "documentsList", "class", "parentMatCardContent", 4, "ngFor", "ngForOf"], [1, "m-333", 2, "padding-left", "3.9%", "padding-right", "3.2%"], [1, "marginTopKyc"], [3, "formGroup", 4, "ngIf"], [1, "button1"], [1, "BackButton", 3, "click"], ["id", "kychide", 1, "hide", 3, "click"], ["kychide", ""], ["mat-stroked-button", "", "id", "n", 3, "ngClass", "disabled", "click"], ["formArrayName", "documentsList", 1, "parentMatCardContent"], ["fxLayout", "row", "fxLayoutGap", "25px", 1, "aadharForm", 3, "formGroupName"], ["fxFlex", "30%", "fxFlex.xs", "100%", 1, "mainAadhar"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "5px"], [1, "pb-1"], [1, "toggleGroup1"], ["color", "primary", "class", "toggleGroup", 3, "checked", "ngStyle", "value", "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "20px"], [1, "aadharDoc"], [1, "widthCard", "inputMatcard", "width", 3, "ngClass"], ["formControlName", "documentName", 3, "valueChange"], ["value", ""], ["value", "Aadhar card"], ["fxFlex", "50%", "fxFlex.xs", "100%", 4, "ngIf"], ["class", "aadharUpload", 4, "ngIf"], ["color", "primary", 1, "toggleGroup", 3, "checked", "ngStyle", "value", "click"], ["fxFlex", "50%", "fxFlex.xs", "100%"], [1, "inputMatcard", 3, "ngClass"], ["matInput", "", "formControlName", "docNum", "type", "number", "name", "Document Number", "maxLength", "12", "placeholder", "Document Number", 1, "width"], ["fxFlex", "50%", "fxFlex.xs", "50%", "class", "aadharDocNum", 4, "ngIf"], ["fxFlex", "50%", "fxFlex.xs", "50%", 1, "aadharDocNum"], ["fxLayout", "row", "fxLayoutAlign", "start center", 1, "aadharFetchDiv"], ["class", "aadharFetch", 3, "routerLink", "click", 4, "ngIf"], [1, "aadharFetch", 3, "routerLink", "click"], [1, "aadharUpload"], ["mat-raised-button", "", 3, "disabled", "click"], ["type", "file", "name", "fileData1", "formControlName", "fileData1", 1, "aadharInput", 3, "change"], ["fileData1", ""], [1, "aadharInput1"], ["class", "aadharCheck", 4, "ngIf"], ["type", "file", "name", "fileData2", "formControlName", "fileData2", 1, "aadharInput", 3, "change"], ["fileData2", ""], [1, "aadharCheck"], [1, "verificationHead"], [1, "line"], [1, "formSectionContainer"], [1, "formLeft"], ["mat-icon-button", "", 2, "float", "right", "padding-top", "8px", "padding-left", "30px", "cursor", "pointer"], ["type", "file", "input", "", "type", "file", "accept", "image/png, image/gif, image/jpg, image/jpeg", 1, "changeInput", 3, "change"], ["profileFile", ""], ["color", "primary"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], [2, "color", "red", "margin-left", "94%", "cursor", "pointer", 3, "click"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "start center"], ["type", "input", 1, "widthCard", "inputMatcard"], ["matInput", "", "formControlName", "cifNumber", "type", "number", "min", "0", "oninput", "validity.valid||(value='');", "name", "cifNumber", "value", "cifNumber", 1, "alignment", 3, "formControl", "matAutocomplete", "keyup"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], [1, "fechButtonDiv"], ["class", "fetchButton", 3, "click", 4, "ngIf"], ["class", "fetchButton", 3, "diameter", 4, "ngIf"], [1, "fechButtonDiv", 3, "hidden"], [1, "fetchButton", 3, "click"], ["id", "formfetch", 1, "form"], ["id", "fech", 1, "flex-grow-1"], [1, "flex-grow-2", 2, "margin-left", "-1px"], [1, "widthCard", "inputMatcard", 3, "ngClass"], ["formControlName", "prefix", 3, "selectionChange"], [4, "ngIf"], [1, "flex-grow-1"], [1, "inputMatName", 3, "ngClass"], ["matInput", "", "formControlName", "firstName", "autocomplete", "off", "type", "text", "name", "lastName", "value", "updateUserInfo.firstName", 1, "alignment", 3, "keypress"], [1, "inputMatNew"], ["matInput", "", "formControlName", "middleName", "type", "text", "name", "middleName", 1, "alignment", 3, "keypress"], [1, "inputMatLastName", 3, "ngClass"], ["matInput", "", "formControlName", "lastName", "autocomplete", "off", "type", "text", "name", "lastName", "value", "updateUserInfo.lastName", 1, "alignment", 3, "keypress"], [1, "form"], [1, "inputMatLastName", 2, "height", "48px", 3, "ngClass"], ["matInput", "", "formControlName", "dateOfBirth", "id", "dob", "name", "dateOfBirth", "readonly", "", "value", "dateOfBirth", 1, "alignment", 3, "matDatepicker", "max"], ["fxFlex", "8%", "id", "toggle"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, "inputMatcardMarritial", 3, "ngClass"], ["formControlName", "maritalStatus"], [1, "inputGender", 3, "ngClass"], ["formControlName", "gender", 3, "selectionChange"], ["class", "help-block", 4, "ngIf"], ["formControlName", "nationality"], ["fxLayout", "row", 1, "inputMatcardMail", 3, "ngClass"], ["matInput", "", "formControlName", "primaryEmailAdress", "autocomplete", "off", "type", "text", "name", "primaryEmailAdress"], ["class", "verification", 3, "click", 4, "ngIf"], ["fxLayout", "row", 1, "inputMatcard", 3, "ngClass"], ["matInput", "", "name", "phoneNumber", "autocomplete", "off", "maxLength", "10", "formControlName", "phoneNumber", 3, "keypress"], ["fxLayout", "row"], ["fxFlex", "100"], ["id", "bill"], [1, "billName"], ["formControlName", "isAddressSame"], ["class", "ml-8", "color", "primary", 3, "checked", "value", "change", 4, "ngFor", "ngForOf"], ["fxLayoutGap", "10px", "fxLayout", "row wrap", 1, "mt-32", "communicationForm"], ["fxFlex", "", "id", "communicationBlockForm", 1, "addressGrid"], [1, "spanDiv"], [1, "span"], [1, "divider"], ["formGroupName", "communicationAddress"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "space-between center"], ["fxFlex", "50%"], [1, "address-card", "inputMatcard3", 3, "ngClass"], ["matInput", "", "formControlName", "address1", "autocomplete", "off", "maxlength", "50", "name", "address1", 1, "full-width", 3, "keypress"], ["matInput", "", "formControlName", "address2", "autocomplete", "off", "maxlength", "50", "name", "address2", 1, "full-width", 3, "keypress"], ["formControlName", "residenceType"], ["formControlName", "country", 3, "selectionChange"], ["matInput", "", "formControlName", "zipCode", "autocomplete", "off", "onlyNumber", "", "type", "text", "matInput", "", "minLength", "5", "maxLength", "10", "name", "zipCode", 3, "keyup", "change"], ["style", "color: #E74C3C;", 4, "ngIf"], ["name", "state", "formControlName", "state", 3, "selectionChange"], ["name", "city", "formControlName", "city", 3, "selectionChange"], ["fxFlex", "", "class", "addressGrid", "id", "communicationBlockForm", 4, "ngIf"], ["alt", "", 1, "formImg", 3, "src"], [3, "value"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [2, "margin-top", "0px"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "90%", "margin-bottom", "50px", 3, "src"], [1, "fetchButton", 3, "diameter"], [1, "help-block"], [1, "verification", 3, "click"], ["color", "primary", 1, "ml-8", 3, "checked", "value", "change"], [2, "color", "#E74C3C"], ["formGroupName", "permanentAddress"], ["matInput", "", "formControlName", "address1", "maxlength", "50", "name", "address1", 1, "full-width", 3, "keypress"], ["fxFlex", "50"], ["matInput", "", "formControlName", "address2", "maxlength", "50", "name", "address2", 1, "full-width", 3, "keypress"], ["matInput", "", "formControlName", "zipCode", "onlyNumber", "", "type", "text", "matInput", "", "minLength", "6", "maxLength", "10", "name", "zipCode", 3, "keyup", "change"]],
+        consts: [[3, "formGroup"], ["formArrayName", "documentsList", "class", "parentMatCardContent", 4, "ngFor", "ngForOf"], [1, "m-333", 2, "padding-left", "3.9%", "padding-right", "3.2%"], [1, "marginTopKyc"], [3, "formGroup", 4, "ngIf"], [1, "button1"], [1, "BackButton", 3, "click"], ["id", "kychide", 1, "hide", 3, "click"], ["kychide", ""], ["mat-stroked-button", "", "id", "n", 3, "ngClass", "disabled", "click"], ["formArrayName", "documentsList", 1, "parentMatCardContent"], ["fxLayout", "row", "fxLayoutGap", "25px", 1, "aadharForm", 3, "formGroupName"], ["fxFlex", "30%", "fxFlex.xs", "100%", 1, "mainAadhar"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "5px"], [1, "pb-1"], [1, "toggleGroup1"], ["color", "primary", "class", "toggleGroup", 3, "checked", "ngStyle", "value", "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "20px"], [1, "aadharDoc"], [1, "widthCard", "inputMatcard", "width", 3, "ngClass"], ["formControlName", "documentName", 3, "valueChange"], ["value", ""], ["value", "Aadhar card"], ["fxFlex", "50%", "fxFlex.xs", "100%", 4, "ngIf"], ["class", "aadharUpload", 4, "ngIf"], ["color", "primary", 1, "toggleGroup", 3, "checked", "ngStyle", "value", "click"], ["fxFlex", "50%", "fxFlex.xs", "100%"], [1, "inputMatcard", 3, "ngClass"], ["matInput", "", "formControlName", "docNum", "type", "number", "name", "Document Number", "maxLength", "12", "placeholder", "Document Number", 1, "width", "alignment"], ["fxFlex", "50%", "fxFlex.xs", "50%", "class", "aadharDocNum", 4, "ngIf"], ["fxFlex", "50%", "fxFlex.xs", "50%", 1, "aadharDocNum"], ["fxLayout", "row", "fxLayoutAlign", "start center", 1, "aadharFetchDiv"], ["class", "aadharFetch", 3, "routerLink", "click", 4, "ngIf"], [1, "aadharFetch", 3, "routerLink", "click"], [1, "aadharUpload"], ["mat-raised-button", "", 3, "disabled", "click"], ["type", "file", "name", "fileData1", "formControlName", "fileData1", 1, "aadharInput", 3, "change"], ["fileData1", ""], [1, "aadharInput1"], ["class", "aadharCheck", 4, "ngIf"], ["type", "file", "name", "fileData2", "formControlName", "fileData2", 1, "aadharInput", 3, "change"], ["fileData2", ""], [1, "aadharCheck"], [1, "verificationHead"], [1, "line"], [1, "formSectionContainer"], [1, "formLeft"], ["mat-icon-button", "", 2, "float", "right", "padding-top", "8px", "padding-left", "30px", "cursor", "pointer"], ["type", "file", "input", "", "type", "file", "accept", "image/png, image/gif, image/jpg, image/jpeg", 1, "changeInput", 3, "change"], ["profileFile", ""], ["color", "primary"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], [2, "color", "red", "margin-left", "94%", "cursor", "pointer", 3, "click"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "start center"], ["type", "input", 1, "widthCard", "inputMatcard"], ["matInput", "", "formControlName", "cifNumber", "type", "number", "min", "0", "oninput", "validity.valid||(value='');", "name", "cifNumber", "value", "cifNumber", 1, "alignment", 3, "formControl", "matAutocomplete", "keyup"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], [1, "fechButtonDiv"], ["class", "fetchButton", 3, "click", 4, "ngIf"], ["class", "fetchButton", 3, "diameter", 4, "ngIf"], [1, "fechButtonDiv", 3, "hidden"], [1, "fetchButton", 3, "click"], ["id", "formfetch", 1, "form"], ["id", "fech", 1, "flex-grow-1"], [1, "flex-grow-2", 2, "margin-left", "-1px"], [1, "widthCard", "inputMatcard", 3, "ngClass"], ["formControlName", "prefix", 3, "selectionChange"], [4, "ngIf"], [1, "flex-grow-1"], [1, "inputMatName", 3, "ngClass"], ["matInput", "", "formControlName", "firstName", "autocomplete", "off", "type", "text", "name", "lastName", "value", "updateUserInfo.firstName", 1, "alignment", 3, "keypress"], [1, "inputMatNew"], ["matInput", "", "formControlName", "middleName", "type", "text", "name", "middleName", 1, "alignment", 3, "keypress"], [1, "inputMatLastName", 3, "ngClass"], ["matInput", "", "formControlName", "lastName", "autocomplete", "off", "type", "text", "name", "lastName", "value", "updateUserInfo.lastName", 1, "alignment", 3, "keypress"], [1, "form"], [1, "inputMatLastName", 2, "height", "48px", 3, "ngClass"], ["matInput", "", "formControlName", "dateOfBirth", "id", "dob", "name", "dateOfBirth", "readonly", "", "value", "dateOfBirth", 1, "alignment", 3, "matDatepicker", "max"], ["fxFlex", "8%", "id", "toggle"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, "inputMatcardMarritial", 3, "ngClass"], ["formControlName", "maritalStatus"], [1, "inputGender", 3, "ngClass"], ["formControlName", "gender", 3, "selectionChange"], ["class", "help-block", 4, "ngIf"], ["formControlName", "nationality"], ["fxLayout", "row", 1, "inputMatcardMail", 3, "ngClass"], ["matInput", "", "formControlName", "primaryEmailAdress", "autocomplete", "off", "type", "text", "name", "primaryEmailAdress", 1, "alignment", 3, "keypress"], ["class", "verification", 3, "click", 4, "ngIf"], ["fxLayout", "row", 1, "inputMatcard", 3, "ngClass"], ["matInput", "", "name", "phoneNumber", "autocomplete", "off", "maxLength", "10", "formControlName", "phoneNumber", 1, "alignment", 3, "keypress"], ["fxLayout", "row"], ["fxFlex", "100"], ["id", "bill"], [1, "billName"], ["formControlName", "isAddressSame"], ["class", "ml-8", "color", "primary", 3, "checked", "value", "change", 4, "ngFor", "ngForOf"], ["fxLayoutGap", "10px", "fxLayout", "row wrap", 1, "mt-32", "communicationForm"], ["fxFlex", "", "id", "communicationBlockForm", 1, "addressGrid"], [1, "spanDiv"], [1, "span"], [1, "divider"], ["formGroupName", "communicationAddress"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "space-between center"], ["fxFlex", "50%"], [1, "address-card", "inputMatcard3", 3, "ngClass"], ["matInput", "", "formControlName", "address1", "autocomplete", "off", "maxlength", "50", "name", "address1", 1, "full-width", 3, "keypress"], ["matInput", "", "formControlName", "address2", "autocomplete", "off", "maxlength", "50", "name", "address2", 1, "full-width", 3, "keypress"], ["formControlName", "residenceType"], ["formControlName", "country", 3, "selectionChange"], ["matInput", "", "formControlName", "zipCode", "autocomplete", "off", "onlyNumber", "", "type", "text", "matInput", "", "minLength", "5", "maxLength", "10", "name", "zipCode", 3, "keyup", "change"], ["style", "color: #E74C3C;", 4, "ngIf"], ["name", "state", "formControlName", "state", 3, "selectionChange"], ["name", "city", "formControlName", "city", 3, "selectionChange"], ["fxFlex", "", "class", "addressGrid", "id", "communicationBlockForm", 4, "ngIf"], ["alt", "", 1, "formImg", 3, "src"], [3, "value"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [2, "margin-top", "0px"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "90%", "margin-bottom", "50px", 3, "src"], [1, "fetchButton", 3, "diameter"], [1, "help-block"], [1, "verification", 3, "click"], ["color", "primary", 1, "ml-8", 3, "checked", "value", "change"], [2, "color", "#E74C3C"], ["formGroupName", "permanentAddress"], ["matInput", "", "formControlName", "address1", "maxlength", "50", "name", "address1", 1, "full-width", 3, "keypress"], ["fxFlex", "50"], ["matInput", "", "formControlName", "address2", "maxlength", "50", "name", "address2", 1, "full-width", 3, "keypress"], ["matInput", "", "formControlName", "zipCode", "onlyNumber", "", "type", "text", "matInput", "", "minLength", "6", "maxLength", "10", "name", "zipCode", 1, "alignment1", 3, "keyup", "change"]],
         template: function KycVerificationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);

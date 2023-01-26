@@ -1124,6 +1124,8 @@ class UploadSignEsignComponent {
         this.disableDone = true;
     }
     ngOnInit() {
+        this.accountId = this.ls.getItem('accountId');
+        this.customerId = this.ls.getItem('CIF_NUM_PRIMARY');
         this.image = this.ls.getItem('signedImage');
         if (this.image) {
             this.imageURL1 = this.image;
@@ -1132,11 +1134,19 @@ class UploadSignEsignComponent {
             this.imageURL1 = "not_available";
         }
         this.accountId = this.ls.getItem('accountId');
+        this.getSignatureDetails();
         // this.urlService.previousUrl$
         //   .subscribe((previousUrl: string) =>{
         //     console.log('resp-----',previousUrl);
         //     this.previousUrl = previousUrl
         //   });
+    }
+    getSignatureDetails() {
+        this.apiService.getDigitalsignById(this.accountId).subscribe((resp) => {
+            if (resp && resp[0].accountSignatureId) {
+                this.id = resp[0].accountSignatureId;
+            }
+        });
     }
     close1() {
         if (this.data.screen === "NewCustomerOnboarding") {
@@ -1194,17 +1204,21 @@ class UploadSignEsignComponent {
         const url = this.selectedFile;
         const uploadData = new FormData();
         const data = {
+            accountId: this.accountId,
             customerId: this.customerId,
-            documentName: "Signature",
+            documentName: this.customerId + "Signature",
             documentType: "10",
-            fileType: event.type,
-            fileName: event.name,
-            verificationType: "Digital Signing"
+            fileType: "image/jpeg",
+            fileName: "signature",
         };
         uploadData.append("data", JSON.stringify(data));
         uploadData.append("file", url);
+        uploadData.append('accType', "savings");
         this.apiService.upload(uploadData).subscribe((res) => {
             if (res) {
+                this.ls.setItem('signedImage', this.imageURL1);
+                this.ls.setItem('eSignStage', true);
+                this.ls.setItem('enable', true);
             }
         });
     }
@@ -1216,13 +1230,13 @@ class UploadSignEsignComponent {
     deleteImg() {
         this.dialogService.doConfirmDialog('').subscribe((response) => {
             if (response == "Yes") {
-                this.imageURL1 = "not_available";
-                this.ls.removeItem('signedImage');
-                this.profileFile.nativeElement.value = '';
-                this.apiService.deleteCustomerDoc(this.customerId, this.profileId).subscribe((data) => {
+                // this.profileFile.nativeElement.value = '';
+                this.apiService.deleteCustomerDoc(this.customerId, this.id).subscribe((data) => {
+                    this.imageURL1 = "not_available";
+                    this.ls.removeItem('signedImage');
+                    this.disableDone = true;
+                    this.ls.setItem('enable', false);
                 });
-                this.disableDone = true;
-                this.ls.setItem('enable', false);
             }
         });
     }

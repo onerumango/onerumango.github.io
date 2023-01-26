@@ -6761,7 +6761,8 @@ class CutomerFingerPrintComponent {
     ngOnInit() {
         this.customerId = sessionStorage.getItem('customer_id');
         this.refreshedCustId = this.data.customerId;
-        console.log('customer id :: ', this.customerId, this.refreshedCustId);
+        if (this.data.customerId)
+            this.customerId = this.data.customerId;
         console.log('data :: ', this.data.bioData);
         if (this.data.bioData.length > 0) {
             this.scan = "Done";
@@ -6850,7 +6851,7 @@ class CutomerFingerPrintComponent {
         console.log('error code', error);
     }
     saveBiometric(capFingerPrint, fingerName, cId) {
-        console.log('save biometric');
+        console.log('save biometric', capFingerPrint, fingerName, cId);
         let screen = 'kyc-verification';
         this.fingerPrintService.saveBiometric(capFingerPrint, fingerName, cId, screen)
             .subscribe(data => {
@@ -10168,6 +10169,8 @@ class KycIrisScanComponent {
     }
     ngOnInit() {
         this.customerId = sessionStorage.getItem('customer_id');
+        if (this.data.customerId)
+            this.customerId = this.data.customerId;
         this.refreshedCustId = this.data.customerId;
         console.log('customer id :: ', this.customerId, this.refreshedCustId);
     }
@@ -14926,6 +14929,8 @@ class KycFaceScanComponent {
     }
     ngOnInit() {
         this.customerId = sessionStorage.getItem('customer_id');
+        if (this.data.customerId)
+            this.customerId = this.data.customerId;
         this.refreshedCustId = this.data.customerId;
         console.log('customer id :: ', this.customerId, this.refreshedCustId);
     }
@@ -21016,7 +21021,7 @@ function KycBranchVerifySummaryComponent_div_10_div_38_mat_card_6_Template(rf, c
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-hint", 51);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " Cif Number ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " CIF Number ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-card", 52);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div");
@@ -22102,6 +22107,7 @@ class KycBranchVerifySummaryComponent {
     getBiometricDetails(customerId) {
         let arr = ["4", "5", "11", "12"];
         for (const key in arr) {
+            this.custBiometric = [];
             var bioName;
             if (Object.prototype.hasOwnProperty.call(arr, key)) {
                 const element = arr[key];
