@@ -450,6 +450,7 @@ let LoadingService = class LoadingService {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
             this.isLoading = true;
             return yield this.loadingController.create({
+                message: 'Fetching data.......',
                 duration: 2500,
             }).then(a => {
                 a.present().then(() => {

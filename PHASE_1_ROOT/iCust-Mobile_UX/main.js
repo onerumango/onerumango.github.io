@@ -494,23 +494,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 91714);
 /* harmony import */ var _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/barcode-scanner/ngx */ 5684);
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 6018);
-/* harmony import */ var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ngx-owl-carousel-o */ 14978);
+/* harmony import */ var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ngx-owl-carousel-o */ 14978);
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ 40287);
 /* harmony import */ var mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mapmyindia-map-cordova-ionic-beta */ 64540);
 /* harmony import */ var mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var swiper_angular__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! swiper/angular */ 341);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var swiper_angular__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! swiper/angular */ 341);
 /* harmony import */ var _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/android-permissions/ngx */ 61832);
 /* harmony import */ var _directives_directive_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./directives/directive.module */ 27589);
 /* harmony import */ var _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/fingerprint-aio/ngx */ 63427);
@@ -519,8 +519,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/crop/ngx */ 82475);
 /* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic-native/network/ngx */ 99118);
 /* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
-/* harmony import */ var _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular-material-extensions/select-country */ 96631);
+/* harmony import */ var _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular-material-extensions/select-country */ 96631);
 /* harmony import */ var _ionic_native_social_sharing_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/social-sharing/ngx */ 96772);
+/* harmony import */ var _ionic_native_clipboard_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/clipboard/ngx */ 42697);
 
 
 
@@ -548,23 +549,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_16__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_17__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_17__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_18__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__.BrowserModule,
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__.BrowserAnimationsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_20__.HttpClientModule,
-            ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_21__.CarouselModule,
-            swiper_angular__WEBPACK_IMPORTED_MODULE_22__.SwiperModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_23__.IonicModule.forRoot({
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__.BrowserModule,
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__.BrowserAnimationsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_21__.HttpClientModule,
+            ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_22__.CarouselModule,
+            swiper_angular__WEBPACK_IMPORTED_MODULE_23__.SwiperModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_24__.IonicModule.forRoot({
                 rippleEffect: true,
                 mode: 'md'
             }),
-            _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_24__.MatSelectCountryModule.forRoot('en'),
+            _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_25__.MatSelectCountryModule.forRoot('en'),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
             _directives_directive_module__WEBPACK_IMPORTED_MODULE_8__.DirectiveModule
         ],
@@ -577,12 +579,13 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_16__.__decorate)([
             _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_10__.File,
             _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_11__.FilePath,
             _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_12__.Crop,
+            _ionic_native_clipboard_ngx__WEBPACK_IMPORTED_MODULE_16__.Clipboard,
             _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_7__.AndroidPermissions,
             _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_9__.FingerprintAIO,
             mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__.mmi,
             _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_13__.Network,
             _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_14__.UniqueDeviceID,
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_25__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_23__.IonicRouteStrategy }
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_26__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_24__.IonicRouteStrategy }
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
@@ -990,8 +993,24 @@ let ApiService = class ApiService {
     deleteProfileImage(data) {
         return this.http.delete(`${API_URL}/customerdata/deleteCustDocument?customerId=${data.custId}&documentType=${data.documentType}`);
     }
-    filterAppointment(data) {
-        return this.http.get(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?customerId=61052&appointmentStatus=${data}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    filterAppointment(custId, status) {
+        return this.http.get(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?customerId=${custId}&appointmentStatus=${status}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    // const endpoint = "https://api.exchangeratesapi.io/latest";
+    fetchRatesByExternal(from, to, amount) {
+        const api_key = "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX";
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpHeaders()
+            .set('apikey', "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX");
+        let url = `https://api.apilayer.com/exchangerates_data/convert?from=${from}&to=${to}&amount=${amount}`;
+        return this.http.get(url, { 'headers': headers }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    fetchRate(base) {
+        const api_key = "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX";
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpHeaders()
+            .set('apikey', "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX");
+        let symbols = "INR,USD";
+        let url = `https://api.apilayer.com/exchangerates_data/latest?symbols=${symbols}&base=${base}`;
+        return this.http.get(url, { 'headers': headers }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
 };
 ApiService.ctorParameters = () => [
@@ -1157,6 +1176,12 @@ let DataService = class DataService {
     }
     getRandomColor(idx) {
         return '#456EFE';
+    }
+    formatCurrency(amount, currency) {
+        return Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency
+        }).format(amount);
     }
 };
 DataService.ctorParameters = () => [];
@@ -1350,8 +1375,8 @@ const environment = {
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
     // BASE_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
-    // BASE_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
     BASE_URL: 'http://192.168.0.14:8071/Icust-Digital-Banking',
+    // BASE_URL: 'http://192.168.0.14:8091/Icust-Digital-Banking',
 };
 
 
@@ -1637,7 +1662,7 @@ module.exports = webpackAsyncContext;
 /***/ ((module) => {
 
 "use strict";
-module.exports = "ion-content {\n  --ion-background-color: #f4f4f4;\n}\n\nion-avatar {\n  width: 60px !important;\n  height: 60px !important;\n}\n\n.bg-content {\n  background: #f4f4f4;\n}\n\n:host ::ng-deep .searchbar-input-container input {\n  background: none;\n  box-shadow: none;\n  padding-left: 10%;\n}\n\n:host ::ng-deep .searchbar-input-container ion-icon {\n  left: 0;\n}\n\n.version-color {\n  color: #102245;\n  font-size: 12px;\n  font-family: inherit;\n}\n\n:host ::ng-deep ion-segment {\n  --background: white;\n  height: 100%;\n}\n\n:host ::ng-deep ion-segment-button {\n  padding: 4px 0;\n  margin: 0;\n  border-radius: 13px;\n  --background-checked: var(--ion-color-primary) !important;\n  --color: #000;\n  --color-checked: white;\n  --indicator-color: transparent !important;\n}\n\n.profile-pic {\n  border: 5px solid #def0ff;\n}\n\n.profile-image {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  border-radius: 50%;\n  height: 4.5rem;\n  width: 4.5rem;\n  border: 5px solid #def0ff;\n}\n\n.head-block {\n  height: 100px !important;\n  top: 25px !important;\n}\n\n.headerbar {\n  background: #ffffff;\n  box-shadow: 0 5pt 5pt -2pt rgba(69, 110, 254, 0.1490196078) !important;\n}\n\nion-menu::part(container) {\n  width: 90%;\n  background: #f4f4f4;\n}\n\n.flex-container {\n  display: flex;\n  margin-bottom: 30px;\n  padding-left: 18px;\n}\n\n.username {\n  margin-top: 5px;\n  margin-left: 30px;\n  font-weight: 800;\n  color: #102245;\n}\n\n.mf-30 {\n  margin-left: 30px;\n}\n\n.label {\n  padding-left: 25px;\n  color: #102245;\n}\n\n.mt-18 {\n  margin-top: 18px;\n}\n\n.menu-list {\n  box-shadow: #c9c9c9;\n}\n\n.Item_title {\n  font-size: 16px;\n  font-weight: 700;\n  color: #102245;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxzQkFBQTtFQUNBLHVCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxtQkFBQTtBQUNGOztBQUdFO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBQUo7O0FBR0U7RUFDRSxPQUFBO0FBREo7O0FBSUE7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0FBREY7O0FBS0U7RUFDRSxtQkFBQTtFQUNBLFlBQUE7QUFGSjs7QUFLRTtFQUNFLGNBQUE7RUFDQSxTQUFBO0VBQ0EsbUJBQUE7RUFDQSx5REFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlDQUFBO0FBSEo7O0FBT0E7RUFDRSx5QkFBQTtBQUpGOztBQU9BO0VBQ0UsbUJBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLHlCQUFBO0FBSkY7O0FBT0E7RUFDRSx3QkFBQTtFQUNBLG9CQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtFQUNBLHNFQUFBO0FBSkY7O0FBT0E7RUFDRSxVQUFBO0VBQ0EsbUJBQUE7QUFKRjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBSkY7O0FBT0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUFKRjs7QUFPQTtFQUNFLGlCQUFBO0FBSkY7O0FBT0E7RUFDRSxrQkFBQTtFQUNBLGNBQUE7QUFKRjs7QUFPQTtFQUNFLGdCQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtBQUpGOztBQU9BO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUpGIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jb250ZW50IHtcclxuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjZjRmNGY0O1xyXG59XHJcblxyXG5pb24tYXZhdGFyIHtcclxuICB3aWR0aDogNjBweCAhaW1wb3J0YW50O1xyXG4gIGhlaWdodDogNjBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uYmctY29udGVudCB7XHJcbiAgYmFja2dyb3VuZDogI2Y0ZjRmNDtcclxufVxyXG5cclxuOmhvc3QgOjpuZy1kZWVwIC5zZWFyY2hiYXItaW5wdXQtY29udGFpbmVyIHtcclxuICBpbnB1dCB7XHJcbiAgICBiYWNrZ3JvdW5kOiBub25lO1xyXG4gICAgYm94LXNoYWRvdzogbm9uZTtcclxuICAgIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIH1cclxuXHJcbiAgaW9uLWljb24ge1xyXG4gICAgbGVmdDogMDtcclxuICB9XHJcbn1cclxuLnZlcnNpb24tY29sb3Ige1xyXG4gIGNvbG9yOiAjMTAyMjQ1O1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICBmb250LWZhbWlseTogaW5oZXJpdDtcclxufVxyXG5cclxuOmhvc3QgOjpuZy1kZWVwIHtcclxuICBpb24tc2VnbWVudCB7XHJcbiAgICAtLWJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gIH1cclxuXHJcbiAgaW9uLXNlZ21lbnQtYnV0dG9uIHtcclxuICAgIHBhZGRpbmc6IDRweCAwO1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTNweDtcclxuICAgIC0tYmFja2dyb3VuZC1jaGVja2VkOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSkgIWltcG9ydGFudDtcclxuICAgIC0tY29sb3I6ICMwMDA7XHJcbiAgICAtLWNvbG9yLWNoZWNrZWQ6IHdoaXRlO1xyXG4gICAgLS1pbmRpY2F0b3ItY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcblxyXG4ucHJvZmlsZS1waWMge1xyXG4gIGJvcmRlcjogNXB4IHNvbGlkICNkZWYwZmY7XHJcbn1cclxuXHJcbi5wcm9maWxlLWltYWdlIHtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgY29sb3I6ICNmZmY7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIGhlaWdodDogNC41cmVtO1xyXG4gIHdpZHRoOiA0LjVyZW07XHJcbiAgYm9yZGVyOiA1cHggc29saWQgI2RlZjBmZjtcclxufVxyXG5cclxuLmhlYWQtYmxvY2sge1xyXG4gIGhlaWdodDogMTAwcHggIWltcG9ydGFudDtcclxuICB0b3A6IDI1cHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmhlYWRlcmJhciB7XHJcbiAgYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICBib3gtc2hhZG93OiAwIDVwdCA1cHQgLTJwdCAjNDU2ZWZlMjYgIWltcG9ydGFudDtcclxufVxyXG5cclxuaW9uLW1lbnU6OnBhcnQoY29udGFpbmVyKSB7XHJcbiAgd2lkdGg6IDkwJTtcclxuICBiYWNrZ3JvdW5kOiAjZjRmNGY0O1xyXG59XHJcblxyXG4uZmxleC1jb250YWluZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcclxuICBwYWRkaW5nLWxlZnQ6IDE4cHg7XHJcbn1cclxuXHJcbi51c2VybmFtZSB7XHJcbiAgbWFyZ2luLXRvcDogNXB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA4MDA7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbn1cclxuXHJcbi5tZi0zMCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbn1cclxuXHJcbi5sYWJlbCB7XHJcbiAgcGFkZGluZy1sZWZ0OiAyNXB4O1xyXG4gIGNvbG9yOiAjMTAyMjQ1O1xyXG59XHJcblxyXG4ubXQtMTgge1xyXG4gIG1hcmdpbi10b3A6IDE4cHg7XHJcbn1cclxuXHJcbi5tZW51LWxpc3Qge1xyXG4gIGJveC1zaGFkb3c6ICNjOWM5Yzk7XHJcbn1cclxuXHJcbi5JdGVtX3RpdGxlIHtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICBjb2xvcjogIzEwMjI0NTtcclxufVxyXG4iXX0= */";
+module.exports = "ion-content {\n  --ion-background-color: #f4f4f4;\n}\n\nion-avatar {\n  width: 60px !important;\n  height: 60px !important;\n}\n\n.bg-content {\n  background: #f4f4f4;\n}\n\n:host ::ng-deep .searchbar-input-container input {\n  background: none;\n  box-shadow: none;\n  padding-left: 10%;\n}\n\n:host ::ng-deep .searchbar-input-container ion-icon {\n  left: 0;\n}\n\n.version-color {\n  color: #102245;\n  font-size: 12px;\n  font-family: inherit;\n}\n\n:host ::ng-deep ion-segment {\n  --background: white;\n  height: 100%;\n}\n\n:host ::ng-deep ion-segment-button {\n  padding: 4px 0;\n  margin: 0;\n  border-radius: 13px;\n  --background-checked: var(--ion-color-primary) !important;\n  --color: #000;\n  --color-checked: white;\n  --indicator-color: transparent !important;\n}\n\n.profile-pic {\n  border: 5px solid #def0ff;\n}\n\n.profile-image {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  border-radius: 50%;\n  height: 4.5rem;\n  width: 4.5rem;\n  border: 5px solid #def0ff;\n}\n\n.head-block {\n  height: 100px !important;\n  top: 25px !important;\n}\n\n.headerbar {\n  background: #ffffff;\n  box-shadow: 0 5pt 5pt -2pt rgba(69, 110, 254, 0.1490196078) !important;\n}\n\nion-menu::part(container) {\n  width: 90%;\n  background: #f4f4f4;\n}\n\n.flex-container {\n  display: flex;\n  margin-bottom: 30px;\n  padding-left: 18px;\n}\n\n.username {\n  margin-top: 5px;\n  margin-left: 30px;\n  font-weight: 800;\n  color: #102245;\n}\n\n.mf-30 {\n  margin-left: 30px;\n}\n\n.label {\n  padding-left: 25px;\n  color: #102245;\n}\n\n.mt-18 {\n  margin-top: 18px;\n}\n\n.menu-list {\n  box-shadow: #c9c9c9;\n}\n\n.Item_title {\n  font-size: 16px;\n  font-weight: 700;\n  color: #102245;\n}\n\n::ng-deep .logout-alert .alert-title.sc-ion-alert-md {\n  padding-left: 0;\n  text-align: center;\n}\n\n::ng-deep .logout-alert button.alert-button.alert-button-cancel {\n  margin-right: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxzQkFBQTtFQUNBLHVCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxtQkFBQTtBQUNGOztBQUdFO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBQUo7O0FBR0U7RUFDRSxPQUFBO0FBREo7O0FBSUE7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0FBREY7O0FBS0U7RUFDRSxtQkFBQTtFQUNBLFlBQUE7QUFGSjs7QUFLRTtFQUNFLGNBQUE7RUFDQSxTQUFBO0VBQ0EsbUJBQUE7RUFDQSx5REFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlDQUFBO0FBSEo7O0FBT0E7RUFDRSx5QkFBQTtBQUpGOztBQU9BO0VBQ0UsbUJBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLHlCQUFBO0FBSkY7O0FBT0E7RUFDRSx3QkFBQTtFQUNBLG9CQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtFQUNBLHNFQUFBO0FBSkY7O0FBT0E7RUFDRSxVQUFBO0VBQ0EsbUJBQUE7QUFKRjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBSkY7O0FBT0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUFKRjs7QUFPQTtFQUNFLGlCQUFBO0FBSkY7O0FBT0E7RUFDRSxrQkFBQTtFQUNBLGNBQUE7QUFKRjs7QUFPQTtFQUNFLGdCQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtBQUpGOztBQU9BO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUpGOztBQVFFO0VBQ0UsZUFBQTtFQUNBLGtCQUFBO0FBTEo7O0FBT0U7RUFDRSxlQUFBO0FBTEoiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQge1xyXG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNmNGY0ZjQ7XHJcbn1cclxuXHJcbmlvbi1hdmF0YXIge1xyXG4gIHdpZHRoOiA2MHB4ICFpbXBvcnRhbnQ7XHJcbiAgaGVpZ2h0OiA2MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5iZy1jb250ZW50IHtcclxuICBiYWNrZ3JvdW5kOiAjZjRmNGY0O1xyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAgLnNlYXJjaGJhci1pbnB1dC1jb250YWluZXIge1xyXG4gIGlucHV0IHtcclxuICAgIGJhY2tncm91bmQ6IG5vbmU7XHJcbiAgICBib3gtc2hhZG93OiBub25lO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgfVxyXG5cclxuICBpb24taWNvbiB7XHJcbiAgICBsZWZ0OiAwO1xyXG4gIH1cclxufVxyXG4udmVyc2lvbi1jb2xvciB7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbiAgZm9udC1zaXplOiAxMnB4O1xyXG4gIGZvbnQtZmFtaWx5OiBpbmhlcml0O1xyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAge1xyXG4gIGlvbi1zZWdtZW50IHtcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgfVxyXG5cclxuICBpb24tc2VnbWVudC1idXR0b24ge1xyXG4gICAgcGFkZGluZzogNHB4IDA7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxM3B4O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KSAhaW1wb3J0YW50O1xyXG4gICAgLS1jb2xvcjogIzAwMDtcclxuICAgIC0tY29sb3ItY2hlY2tlZDogd2hpdGU7XHJcbiAgICAtLWluZGljYXRvci1jb2xvcjogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbi5wcm9maWxlLXBpYyB7XHJcbiAgYm9yZGVyOiA1cHggc29saWQgI2RlZjBmZjtcclxufVxyXG5cclxuLnByb2ZpbGUtaW1hZ2Uge1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBjb2xvcjogI2ZmZjtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgaGVpZ2h0OiA0LjVyZW07XHJcbiAgd2lkdGg6IDQuNXJlbTtcclxuICBib3JkZXI6IDVweCBzb2xpZCAjZGVmMGZmO1xyXG59XHJcblxyXG4uaGVhZC1ibG9jayB7XHJcbiAgaGVpZ2h0OiAxMDBweCAhaW1wb3J0YW50O1xyXG4gIHRvcDogMjVweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uaGVhZGVyYmFyIHtcclxuICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIGJveC1zaGFkb3c6IDAgNXB0IDVwdCAtMnB0ICM0NTZlZmUyNiAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5pb24tbWVudTo6cGFydChjb250YWluZXIpIHtcclxuICB3aWR0aDogOTAlO1xyXG4gIGJhY2tncm91bmQ6ICNmNGY0ZjQ7XHJcbn1cclxuXHJcbi5mbGV4LWNvbnRhaW5lciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG4gIHBhZGRpbmctbGVmdDogMThweDtcclxufVxyXG5cclxuLnVzZXJuYW1lIHtcclxuICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiAgZm9udC13ZWlnaHQ6IDgwMDtcclxuICBjb2xvcjogIzEwMjI0NTtcclxufVxyXG5cclxuLm1mLTMwIHtcclxuICBtYXJnaW4tbGVmdDogMzBweDtcclxufVxyXG5cclxuLmxhYmVsIHtcclxuICBwYWRkaW5nLWxlZnQ6IDI1cHg7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbn1cclxuXHJcbi5tdC0xOCB7XHJcbiAgbWFyZ2luLXRvcDogMThweDtcclxufVxyXG5cclxuLm1lbnUtbGlzdCB7XHJcbiAgYm94LXNoYWRvdzogI2M5YzljOTtcclxufVxyXG5cclxuLkl0ZW1fdGl0bGUge1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBmb250LXdlaWdodDogNzAwO1xyXG4gIGNvbG9yOiAjMTAyMjQ1O1xyXG59XHJcblxyXG46Om5nLWRlZXAgLmxvZ291dC1hbGVydCB7XHJcbiAgLmFsZXJ0LXRpdGxlLnNjLWlvbi1hbGVydC1tZCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG4gIGJ1dHRvbi5hbGVydC1idXR0b24uYWxlcnQtYnV0dG9uLWNhbmNlbCB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDA7XHJcbiAgfVxyXG59XHJcbiJdfQ== */";
 
 /***/ }),
 
@@ -1659,7 +1684,7 @@ module.exports = ".box {\n  width: 60px;\n  height: 60px;\n  background: #FFEDED
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.16</h6>\r\n          <p class=\"app-font version-color\">Build 16</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.17</h6>\r\n          <p class=\"app-font version-color\">Build 17</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 

@@ -61,6 +61,7 @@ let WalletListComponent = class WalletListComponent {
                 const modal = yield this.modalController.create({
                     component: (data === null || data === void 0 ? void 0 : data.trnType) == "Forex Transaction" ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
                     componentProps: {
+                        screen: 'wallet',
                         value: data ? data : {}
                     }
                 });
@@ -279,7 +280,7 @@ module.exports = ".rect {\n  margin-top: 50pt;\n  background-color: #456EFE;\n  
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>My Wallet</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n \r\n    <ion-item  *ngFor=\"let item of walletList; let i = index\">\r\n      <ion-thumbnail slot=\"start\">\r\n        <img src=\"assets/icon/ticket-vector-icon-26.jpg\" />\r\n      </ion-thumbnail>\r\n      <ion-label>\r\n        <h2>{{ item?.trnType }}</h2>\r\n        <p>\r\n          {{ item.transactionCurrency }} {{ item?.transactionAmount }} @\r\n          {{ item?.transactionBranch }}\r\n        </p>\r\n        <p class=\"date\">{{ item?.transactionDate }} {{ item?.transactionTime }}</p>\r\n      </ion-label>\r\n      <ion-button fill=\"outline\" slot=\"end\" (click)=\"openTicketModal(item)\">View</ion-button>\r\n    </ion-item>\r\n \r\n\r\n  <p *ngIf=\"walletList.length == 0\" style=\"margin-top: 50%; text-align: center\" lines=\"none\">\r\n    No Saved Wallet\r\n  </p>\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>My Wallet</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-item *ngFor=\"let item of walletList; let i = index\">\r\n    <ion-thumbnail slot=\"start\">\r\n      <img src=\"assets/icon/ticket-vector-icon-26.jpg\" />\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h2>{{ item?.trnType }}</h2>\r\n      <ng-container *ngIf=\"item.trnType == 'Forex Transaction'; else showOtherTxn\">\r\n        <p class=\"date\">{{ item.forexTransAmount  |\r\n          currency:item.forexTransCurrency :'symbol':'1.0-1'}}</p>\r\n      </ng-container>\r\n      <ng-template #showOtherTxn>\r\n        <p class=\"date\">{{item.transactionAmount | currency:item.transactionCurrency :'symbol':'1.0-1'}}</p>\r\n      </ng-template>\r\n      <p class=\"date\">{{ item?.transactionDate }} {{ item?.transactionTime }}</p>\r\n    </ion-label>\r\n    <ion-button fill=\"outline\" slot=\"end\" (click)=\"openTicketModal(item)\">View</ion-button>\r\n  </ion-item>\r\n\r\n\r\n  <p *ngIf=\"walletList.length == 0\" style=\"margin-top: 50%; text-align: center\" lines=\"none\">\r\n    No Saved Wallet\r\n  </p>\r\n</ion-content>\r\n";
 
 /***/ }),
 

@@ -244,7 +244,7 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Completed',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment('COMPLETED').subscribe(resp => {
+                            this.apiService.filterAppointment(this.loggedInCust, 'COMPLETED').subscribe(resp => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
@@ -261,7 +261,7 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Failed',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment('FAILED').subscribe(resp => {
+                            this.apiService.filterAppointment(this.loggedInCust, 'FAILED').subscribe(resp => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
@@ -279,7 +279,7 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.apiService.filterAppointment('INPROGRESS').subscribe(resp => {
+                            this.apiService.filterAppointment(this.loggedInCust, 'INPROGRESS').subscribe(resp => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
@@ -297,7 +297,7 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.apiService.filterAppointment('SCHEDULED').subscribe(resp => {
+                            this.apiService.filterAppointment(this.loggedInCust, 'SCHEDULED').subscribe(resp => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
@@ -313,7 +313,7 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Cancelled',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment('CANCELED').subscribe(resp => {
+                            this.apiService.filterAppointment(this.loggedInCust, 'CANCELLED').subscribe(resp => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
@@ -363,6 +363,7 @@ let AppointmentPage = class AppointmentPage {
             this.addCustomTask();
         }
         else {
+            console.log(val, this.loggedInCust);
             this.getAppointmentByCustomerId(val, this.loggedInCust, null);
             this.filterOptions = event.target.value.data;
             this.selectedFilter = event.target.value;
@@ -765,7 +766,7 @@ module.exports = "ion-header .header ion-icon {\n  font-size: larger;\n}\nion-he
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" size=\"large\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"header_title\">Appointment History</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openActionSheet()\">\r\n        <ion-icon slot=\"icon-only\" name=\"funnel-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <ion-toolbar>\r\n    <div>\r\n      <form [formGroup]=\"appointmentForm\">\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-list>\r\n              <ion-item>\r\n                <ion-select class=\"selectAccId\" [interfaceOptions]=\"{'cssClass': 'wider-popover-apt'}\"\r\n                  interface=\"popover\" formControlName=\"filterOption\" placeholder=\"Quick Options\"\r\n                  (ionChange)=\"OnselectQuickOption($event,appointmentForm.value)\" [compareWith]=\"compareWith\">\r\n                  <ion-select-option *ngFor=\"let item of quickOptions\" [value]=\"item\">\r\n                    <div class=\"select_option\" class=\"quickOption\">\r\n                      <div class=\"acc_num\">{{item.options}}</div>\r\n                    </div>\r\n                  </ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n            </ion-list>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\" class=\"text-center\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n    <ion-list class=\"ion_list\">\r\n      <ion-item *ngFor=\"let trans of trxnArrayList;\" (click)=\"onClick(trans)\">\r\n        <!-- <ion-button slot=\"start\">\r\n        <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n      </ion-button> -->\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-label>\r\n                <h3>{{trans.trnType}}</h3>\r\n                <p>\r\n                  <small>\r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{\r\n                    trans.creatorDtStamp }}\r\n                  </small>\r\n                </p>\r\n              </ion-label>\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-label\r\n                [color]=\"trans.appointmentStatus == 'COMPLETED' || trans.appointmentStatus == 'SCHEDULED' ? 'success' : 'danger'\"\r\n                class=\"text-xs text-right\">\r\n                <ng-container *ngIf=\" trans.trnType == 'Forex Transaction'; else showOtherTxn\">\r\n                  <small>\r\n                    {{ trans.forexTransAmount  |\r\n                    currency:trans.forexCurrency :'symbol':'1.0-1'}}</small>\r\n                  <br>\r\n                </ng-container>\r\n                <ng-template #showOtherTxn>\r\n                  <small>\r\n                    {{trans.transactionAmount | currency:trans.transactionCurrency :'symbol':'1.0-1'}}\r\n                  </small>\r\n                  <br>\r\n                </ng-template>\r\n                <p class=\"statuscls\"><small>{{trans.appointmentStatus}}</small></p>\r\n              </ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n\r\n    <ion-infinite-scroll threshold=\"100px\" (ionInfinite)=\"onScrollingFinished($event)\">\r\n      <ion-infinite-scroll-content loadingSpinner=\"bubbles\" loadingText=\"Loading more data...\">\r\n      </ion-infinite-scroll-content>\r\n    </ion-infinite-scroll>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" size=\"large\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"header_title\">Appointment History</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openActionSheet()\">\r\n        <ion-icon slot=\"icon-only\" name=\"funnel-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <ion-toolbar>\r\n    <div>\r\n      <form [formGroup]=\"appointmentForm\">\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-list>\r\n              <ion-item>\r\n                <ion-select class=\"selectAccId\" [interfaceOptions]=\"{'cssClass': 'wider-popover-apt'}\"\r\n                  interface=\"popover\" formControlName=\"filterOption\" placeholder=\"Quick Options\"\r\n                  (ionChange)=\"OnselectQuickOption($event,appointmentForm.value)\" [compareWith]=\"compareWith\">\r\n                  <ion-select-option *ngFor=\"let item of quickOptions\" [value]=\"item\">\r\n                    <div class=\"select_option\" class=\"quickOption\">\r\n                      <div class=\"acc_num\">{{item.options}}</div>\r\n                    </div>\r\n                  </ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n            </ion-list>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\" class=\"text-center\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n    <ion-list class=\"ion_list\">\r\n      <ion-item *ngFor=\"let trans of trxnArrayList;\" (click)=\"onClick(trans)\">\r\n        <!-- <ion-button slot=\"start\">\r\n        <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n      </ion-button> -->\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-label>\r\n                <h3>{{trans.trnType}}</h3>\r\n                <p>\r\n                  <small>\r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{\r\n                    trans.creatorDtStamp }}\r\n                  </small>\r\n                </p>\r\n              </ion-label>\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-label\r\n                [color]=\"trans.appointmentStatus == 'COMPLETED' || trans.appointmentStatus == 'SCHEDULED' ? 'success' : 'danger'\"\r\n                class=\"text-xs text-right\">\r\n                <ng-container *ngIf=\" trans.trnType == 'Forex Transaction'; else showOtherTxn\">\r\n                  <small>\r\n                    {{ trans.forexTransAmount  |\r\n                    currency:trans.forexTransCurrency :'symbol':'1.0-1'}}</small>\r\n                  <br>\r\n                </ng-container>\r\n                <ng-template #showOtherTxn>\r\n                  <small>\r\n                    {{trans.transactionAmount | currency:trans.transactionCurrency :'symbol':'1.0-1'}}\r\n                  </small>\r\n                  <br>\r\n                </ng-template>\r\n                <p class=\"statuscls\"><small>{{trans.appointmentStatus}}</small></p>\r\n              </ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n\r\n    <ion-infinite-scroll threshold=\"100px\" (ionInfinite)=\"onScrollingFinished($event)\">\r\n      <ion-infinite-scroll-content loadingSpinner=\"bubbles\" loadingText=\"Loading more data...\">\r\n      </ion-infinite-scroll-content>\r\n    </ion-infinite-scroll>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
 
 /***/ })
 

@@ -97,8 +97,12 @@ let AppointmentpopupPage = class AppointmentpopupPage {
     }
     close() {
         localStorage.removeItem('AppointmentDetails');
-        this.modalCtrl.dismiss();
-        this.router.navigate(['dashboard']);
+        if (this.screen == 'wallet') {
+            this.modalCtrl.dismiss();
+        }
+        else {
+            this.modalCtrl.dismiss();
+        }
     }
     generateQRCode() {
         var _a;
@@ -288,7 +292,8 @@ AppointmentpopupPage.ctorParameters = () => [
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__.DataService }
 ];
 AppointmentpopupPage.propDecorators = {
-    value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.Input }]
+    value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.Input }],
+    screen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.Input }]
 };
 AppointmentpopupPage = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.Component)({
