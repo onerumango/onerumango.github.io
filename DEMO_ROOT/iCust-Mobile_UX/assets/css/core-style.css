@@ -848,9 +848,10 @@ ion-toolbar {
     border: 1px solid rgb(215, 215, 215);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-bottom: 25px;
     z-index: 999;
+    filter: drop-shadow(10px 10px 33px #00000029);
 }
 
 .footer ul {

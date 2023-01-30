@@ -90,10 +90,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SuccessMessagePage": () => (/* binding */ SuccessMessagePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _success_message_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./success-message.page.html?ngResource */ 37480);
 /* harmony import */ var _success_message_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./success-message.page.scss?ngResource */ 90994);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 
@@ -103,19 +103,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SuccessMessagePage = class SuccessMessagePage {
-    constructor(api, router) {
+    constructor(api, router, cdr) {
         this.api = api;
         this.router = router;
+        this.cdr = cdr;
     }
     ngOnInit() {
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
         console.log(this.screenNames);
         this.title = this.screenNames.queryParams.screenDetails;
         this.description = this.screenNames.queryParams.screenDescription;
+        this.cdr.markForCheck();
     }
     goBack() {
-        if (this, this.screenNames.queryParams.screenName == "setmpin") {
-            this.router.navigate(['mpin'], { replaceUrl: true });
+        if (this.screenNames.queryParams.screenName == "setmpin") {
+            this.router.navigate(['profile'], { replaceUrl: true });
+        }
+        else if (this.screenNames.queryParams.screenName == "forgotmpin") {
+            this.router.navigate(['login-landing'], { replaceUrl: true });
+        }
+        else if (this.screenNames.queryParams.screenName == "new-passwordchange") {
+            this.router.navigate(['login'], { replaceUrl: true });
         }
         else {
             this.router.navigate(['securitycenter']);
@@ -124,10 +132,11 @@ let SuccessMessagePage = class SuccessMessagePage {
 };
 SuccessMessagePage.ctorParameters = () => [
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.ChangeDetectorRef }
 ];
-SuccessMessagePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+SuccessMessagePage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-success-message',
         template: _success_message_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_success_message_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

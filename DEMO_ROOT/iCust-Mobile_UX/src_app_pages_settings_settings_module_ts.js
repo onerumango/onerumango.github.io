@@ -48,15 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SettingsPageModule": () => (/* binding */ SettingsPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _settings_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./settings-routing.module */ 82760);
 /* harmony import */ var _settings_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./settings.page */ 41902);
-/* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../components/components.module */ 45642);
-
 
 
 
@@ -66,13 +64,12 @@ __webpack_require__.r(__webpack_exports__);
 
 let SettingsPageModule = class SettingsPageModule {
 };
-SettingsPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
+SettingsPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormsModule,
-            _components_components_module__WEBPACK_IMPORTED_MODULE_2__.ComponentsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
             _settings_routing_module__WEBPACK_IMPORTED_MODULE_0__.SettingsPageRoutingModule
         ],
         declarations: [_settings_page__WEBPACK_IMPORTED_MODULE_1__.SettingsPage]
@@ -107,6 +104,8 @@ let SettingsPage = class SettingsPage {
     constructor(router) {
         this.router = router;
     }
+    ngOnInit() {
+    }
     notificationsPage() {
         this.router.navigate(['notifications']);
     }
@@ -124,8 +123,6 @@ let SettingsPage = class SettingsPage {
     }
     profilePage() {
         this.router.navigate(['profile']);
-    }
-    ngOnInit() {
     }
 };
 SettingsPage.ctorParameters = () => [
@@ -159,7 +156,7 @@ module.exports = ".switch {\n  position: relative;\n  display: inline-block;\n  
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "<app-sidebar></app-sidebar>\r\n<ion-content class=\"mainbackground\">\r\n  <div class=\"container\">\r\n    <div class=\"header\">\r\n      <div class=\"row\">\r\n        <div class=\"col-8\">\r\n          <div class=\"title\"><a (click)=\"profilePage()\" class=\"back-btn\"><i class=\"fas fa-angle-left\"></i></a>\r\n            Settings</div>\r\n        </div>\r\n        <div class=\"col-4 text-right\"><a class=\"pulse-animation notification-btn\" (click)=\"notificationsPage()\"><i\r\n              class=\"far fa-bell\"></i></a>\r\n          <div class=\"profile-pic\" (click)=\"profilePage()\"><img src=\"assets/images/user-profile.jpg\"\r\n              class=\"width-100\" /></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"body\">\r\n      <div class=\"settings\">\r\n        <div class=\"box\">\r\n          <div class=\"float-left\"><span class=\"label\">Language</span></div>\r\n          <div class=\"float-right\"><span class=\"value\"><span class=\"text-success\">EN</span> <i\r\n                class=\"fas fa-angle-right\"></i></span></div>\r\n        </div>\r\n        <div class=\"box\" (click)=\"changepasswordPage()\">\r\n          <div class=\"float-left\"><span class=\"label\">Change password</span></div>\r\n          <div class=\"float-right\"><span class=\"value\" (click)=\"changepasswordPage()\"><i\r\n                class=\"fas fa-angle-right\"></i></span></div>\r\n        </div>\r\n        <div class=\"box\" (click)=\"faqsPage()\">\r\n          <div class=\"float-left\"><span class=\"label\">FAQs</span></div>\r\n          <div class=\"float-right\"><span class=\"value\" (click)=\"faqsPage()\"><i class=\"fas fa-angle-right\"></i></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"box\">\r\n          <div class=\"float-left\"><span class=\"label\">Night Mode</span></div>\r\n          <div class=\"float-right\"><label class=\"switch\">\r\n              <input type=\"checkbox\" checked>\r\n              <span class=\"slider round\"></span>\r\n            </label></div>\r\n        </div>\r\n        <div class=\"box\">\r\n          <div class=\"float-left\"><span class=\"label\">Fingerprint login</span></div>\r\n          <div class=\"float-right\"><label class=\"switch\">\r\n              <input type=\"checkbox\">\r\n              <span class=\"slider round\"></span>\r\n            </label></div>\r\n        </div>\r\n        <div class=\"box\" (click)=\"feedbackPage()\">\r\n          <div class=\"float-left\"><span class=\"label\">Give feedback</span></div>\r\n          <div class=\"float-right\"><span class=\"value\" (click)=\"feedbackPage()\"><i\r\n                class=\"fas fa-angle-right\"></i></span></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"help-box\">\r\n        <div class=\"icon\"><img src=\"assets/images/help.svg\" class=\"w-100\" /></div>\r\n        <div class=\"name\">Help & Supports</div>\r\n        <a class=\"theme btn btn-primary\">Logout</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
+module.exports = "<app-sidebar></app-sidebar>\r\n<ion-content class=\"mainbackground\">\r\n  <div class=\"container\">\r\n    <div class=\"header\">\r\n      <div class=\"row\">\r\n        <div class=\"col-8\">\r\n          <div class=\"title\"><a (click)=\"profilePage()\" class=\"back-btn\"><i class=\"fas fa-angle-left\"></i></a>\r\n            Settings</div>\r\n        </div>\r\n        <div class=\"col-4 text-right\"><a class=\"pulse-animation notification-btn\" (click)=\"notificationsPage()\"><i\r\n              class=\"far fa-bell\"></i></a>\r\n          <div class=\"profile-pic\" (click)=\"profilePage()\"><img src=\"assets/images/user-profile.jpg\"\r\n              class=\"width-100\" /></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"body\">\r\n      <div class=\"settings\">\r\n        <div class=\"box\">\r\n          <div class=\"float-left\"><span class=\"label\">Language</span></div>\r\n          <div class=\"float-right\"><span class=\"value\"><span class=\"text-success\">EN</span> <i\r\n                class=\"fas fa-angle-right\"></i></span></div>\r\n        </div>\r\n        <div class=\"box\" (click)=\"changepasswordPage()\">\r\n          <div class=\"float-left\"><span class=\"label\">Change password</span></div>\r\n          <div class=\"float-right\"><span class=\"value\" (click)=\"changepasswordPage()\"><i\r\n                class=\"fas fa-angle-right\"></i></span></div>\r\n        </div>\r\n        <div class=\"box\" (click)=\"faqsPage()\">\r\n          <div class=\"float-left\"><span class=\"label\">FAQs</span></div>\r\n          <div class=\"float-right\"><span class=\"value\" (click)=\"faqsPage()\"><i class=\"fas fa-angle-right\"></i></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"box\">\r\n          <div class=\"float-left\"><span class=\"label\">Night Mode</span></div>\r\n          <div class=\"float-right\"><label class=\"switch\">\r\n              <input type=\"checkbox\" checked>\r\n              <span class=\"slider round\"></span>\r\n            </label></div>\r\n        </div>\r\n        <div class=\"box\">\r\n          <div class=\"float-left\"><span class=\"label\">Fingerprint login</span></div>\r\n          <div class=\"float-right\"><label class=\"switch\">\r\n              <input type=\"checkbox\">\r\n              <span class=\"slider round\"></span>\r\n            </label></div>\r\n        </div>\r\n        <div class=\"box\" (click)=\"feedbackPage()\">\r\n          <div class=\"float-left\"><span class=\"label\">Give feedback</span></div>\r\n          <div class=\"float-right\"><span class=\"value\" (click)=\"feedbackPage()\"><i\r\n                class=\"fas fa-angle-right\"></i></span></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"help-box\">\r\n        <div class=\"icon\"><img src=\"assets/images/help.svg\" class=\"w-100\" /></div>\r\n        <div class=\"name\">Help & Supports</div>\r\n        <a class=\"theme btn btn-primary\">Logout</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

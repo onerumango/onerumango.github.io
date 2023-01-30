@@ -93,9 +93,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _faceidrecognition_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./faceidrecognition.page.html?ngResource */ 59398);
 /* harmony import */ var _faceidrecognition_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./faceidrecognition.page.scss?ngResource */ 77225);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
+/* harmony import */ var _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/fingerprint-aio/ngx */ 63427);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
 
 
 
@@ -103,23 +107,78 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let FaceidrecognitionPage = class FaceidrecognitionPage {
-    constructor(router, dataService) {
+    constructor(router, faio, plt, toastController, dataService) {
         this.router = router;
+        this.faio = faio;
+        this.plt = plt;
+        this.toastController = toastController;
         this.dataService = dataService;
     }
     ngOnInit() {
         this.currentUser = this.dataService.getCurrentUser();
+    }
+    ionViewWillEnter() {
+        this.plt.ready().then(() => {
+            this.showBioDialog();
+        });
+    }
+    showBioDialog() {
+        this.faio.isAvailable().then((result) => {
+            console.log("result of bio", result);
+            if (result === "face" || result === "biometric") {
+                this.verify();
+            }
+            else {
+                this.presentToast("Biometric Authentication Not Available in your device!");
+                this.router.navigate(["login-landing"], { replaceUrl: true });
+            }
+        }).catch((error) => {
+            console.log(error);
+            this.presentToast("Biometric Authentication Not Available in your device!");
+            this.router.navigate(["dashboard"], { replaceUrl: true });
+        });
+    }
+    verify() {
+        this.faio.show({
+            title: 'Demobank Biometric Verification', // (Android Only) | optional | Default: "<APP_NAME> Biometric Sign On"
+        }).then((result) => {
+            localStorage.setItem("isBioAuth", "true");
+            this.router.navigate(["dashboard"], { replaceUrl: true });
+            this.presentToast("Biometric Verified!");
+        }).catch((error) => {
+            console.log("Bio error ", error);
+            if (error.code == -102) {
+                this.verify();
+            }
+            else {
+                this.presentToast(`${error.message}`);
+                this.router.navigate(["login-landing"], { replaceUrl: true });
+            }
+        });
+    }
+    presentToast(msg, position) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: msg,
+                duration: 800,
+                position: position || 'bottom'
+            });
+            toast.present();
+        });
     }
     back() {
         this.router.navigateByUrl('/login-landing');
     }
 };
 FaceidrecognitionPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_3__.FingerprintAIO },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.Platform },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ToastController },
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_2__.DataService }
 ];
 FaceidrecognitionPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-faceidrecognition',
         template: _faceidrecognition_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_faceidrecognition_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -136,7 +195,7 @@ FaceidrecognitionPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "section {\n  position: relative;\n  padding: 10em;\n  background: url(\"/assets/images/Group_750.png\");\n  color: #fff;\n  text-align: center;\n  height: 100%;\n}\n\n.otp-text {\n  color: #A2A0A8;\n  width: 240%;\n  margin-left: -60%;\n}\n\n.logo-icon {\n  margin: 0 auto;\n  text-align: start;\n  width: 130px;\n  height: 130px;\n  margin-top: -40px;\n}\n\n.logo {\n  width: 150px;\n}\n\n.back-nav {\n  margin-top: -110px;\n  margin-left: -190% !important;\n  width: 60px;\n}\n\n.back-nav-color {\n  color: #000000 !important;\n  width: 290px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZhY2VpZHJlY29nbml0aW9uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsYUFBQTtFQUVBLCtDQUFBO0VBRUEsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtBQURKOztBQUdBO0VBQ0ksY0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtBQUFKOztBQUVBO0VBQ0ksY0FBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7RUFDQSxpQkFBQTtBQUNKOztBQUNBO0VBQ0ksWUFBQTtBQUVKOztBQUNBO0VBQ0ksa0JBQUE7RUFDQSw2QkFBQTtFQUVBLFdBQUE7QUFDSjs7QUFFRTtFQUNFLHlCQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6ImZhY2VpZHJlY29nbml0aW9uLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInNlY3Rpb24ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgcGFkZGluZzogMTBlbTtcclxuICAgIC8vIGJhY2tncm91bmQ6ICNmNWY1ZjU7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoJy9hc3NldHMvaW1hZ2VzL0dyb3VwXzc1MC5wbmcnKTtcclxuICAgIC8vIGJhY2tncm91bmQtcmVwZWF0OiByb3VuZDtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcbi5vdHAtdGV4dCB7XHJcbiAgICBjb2xvcjogI0EyQTBBODtcclxuICAgIHdpZHRoOiAyNDAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IC02MCU7XHJcbiAgfVxyXG4ubG9nby1pY29uIHtcclxuICAgIG1hcmdpbjogMCBhdXRvO1xyXG4gICAgdGV4dC1hbGlnbjogc3RhcnQ7XHJcbiAgICB3aWR0aDogMTMwcHg7XHJcbiAgICBoZWlnaHQ6IDEzMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogLTQwcHg7XHJcbiAgfVxyXG4ubG9nbyB7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICAvLyBtYXJnaW4tdG9wOiAtMTUwcHg7XHJcbn1cclxuLmJhY2stbmF2IHtcclxuICAgIG1hcmdpbi10b3A6IC0xMTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMTkwJSAhaW1wb3J0YW50O1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcclxuICAgIHdpZHRoOiA2MHB4O1xyXG4gIH1cclxuICBcclxuICAuYmFjay1uYXYtY29sb3Ige1xyXG4gICAgY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIHdpZHRoOiAyOTBweDtcclxuICAgIC8vIG1hcmdpbi1sZWZ0OiAtNjBweCAhaW1wb3J0YW50O1xyXG4gICAgLy8gd2lkdGg6IDIwMCU7XHJcbiAgfVxyXG4gICJdfQ== */";
+module.exports = "ion-content {\n  --background: url(\"/assets/images/Group_750.png\");\n}\n\nion-toolbar {\n  --background: transparent;\n  --color: white;\n}\n\n.icon-content {\n  margin-top: 75px;\n}\n\n.otp-text {\n  color: #A2A0A8;\n}\n\n.back-nav-color {\n  color: #000000 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZhY2VpZHJlY29nbml0aW9uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlEQUFBO0FBQ0Y7O0FBRUE7RUFDRSx5QkFBQTtFQUNBLGNBQUE7QUFDRjs7QUFFQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxjQUFBO0FBQ0Y7O0FBRUE7RUFDRSx5QkFBQTtBQUNGIiwiZmlsZSI6ImZhY2VpZHJlY29nbml0aW9uLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jb250ZW50IHtcclxuICAtLWJhY2tncm91bmQ6IHVybCgnL2Fzc2V0cy9pbWFnZXMvR3JvdXBfNzUwLnBuZycpO1xyXG59XHJcblxyXG5pb24tdG9vbGJhciB7XHJcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAtLWNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLmljb24tY29udGVudCB7XHJcbiAgbWFyZ2luLXRvcDogNzVweDtcclxufVxyXG5cclxuLm90cC10ZXh0IHtcclxuICBjb2xvcjogI0EyQTBBODtcclxufVxyXG5cclxuLmJhY2stbmF2LWNvbG9yIHtcclxuICBjb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG59Il19 */";
 
 /***/ }),
 
@@ -146,7 +205,7 @@ module.exports = "section {\n  position: relative;\n  padding: 10em;\n  backgrou
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <div class=\"back-nav\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\"></div>\r\n    </div>\r\n\r\n    <div>\r\n      <ion-text>\r\n        <h4 style=\"color: #000000;font-weight: bold;\">Face ID</h4>\r\n        <p class=\"otp-text\">{{ currentUser?.firstName }} {{ currentUser?.lastName }} logs into his bank account using his Face ID</p>\r\n      </ion-text>\r\n    </div>\r\n  </section>\r\n</ion-content>\r\n";
+module.exports = "<ion-header class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"text-center\">\r\n      <img src=\"assets/images/Demobank.svg\">\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"text-center ion-padding icon-content\">\r\n    <h4 style=\"color: #000000;font-weight: bold;\">Face ID</h4>\r\n    <p class=\"otp-text\">\r\n      {{ currentUser?.firstName }} {{ currentUser?.lastName }} logs into his bank account using his Face ID\r\n    </p>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

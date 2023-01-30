@@ -29,23 +29,47 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 21053)).then((m) => m.LoginPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 21053)).then((m) => m.LoginPageModule),
     },
     {
         path: 'otp',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("src_app_pages_otp_otp_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/otp/otp.module */ 17631)).then((m) => m.OtpPageModule),
     },
     {
-        path: 'forgotpassword',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_forgotpassword_forgotpassword_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/forgotpassword/forgotpassword.module */ 95862)).then((m) => m.ForgotpasswordPageModule),
+        path: 'changepassword',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("src_app_pages_change-password_change-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/change-password/change-password.module */ 68292)).then((m) => m.ChangePasswordPageModule),
+    },
+    {
+        path: 'internet',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_no-internet_no-internet_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/no-internet/no-internet.module */ 62692)).then((m) => m.NoInternetPageModule),
+    },
+    {
+        path: 'mpin',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("default-src_app_pages_setmpin_setmpin_page_ts"), __webpack_require__.e("src_app_pages_mpin_mpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/mpin/mpin.module */ 73777)).then(m => m.MpinPageModule)
+    },
+    {
+        path: 'forgotmpin',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_forgotmpin_forgotmpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/forgotmpin/forgotmpin.module */ 92135)).then(m => m.ForgotmpinPageModule)
+    },
+    {
+        path: 'setmpin',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("default-src_app_pages_setmpin_setmpin_page_ts"), __webpack_require__.e("src_app_pages_setmpin_setmpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/setmpin/setmpin.module */ 90933)).then(m => m.SetmpinPageModule)
+    },
+    {
+        path: 'forget-password',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_forgett-password_forgett-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/forgett-password/forgett-password.module */ 4242)).then(m => m.ForgettPasswordPageModule)
+    },
+    {
+        path: 'new-passwordchange',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("src_app_pages_new-passwordchange_new-passwordchange_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/new-passwordchange/new-passwordchange.module */ 31307)).then(m => m.NewPasswordchangePageModule)
     },
     {
         path: 'settings',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_settings_settings_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/settings/settings.module */ 7850)).then((m) => m.SettingsPageModule),
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_settings_settings_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/settings/settings.module */ 7850)).then((m) => m.SettingsPageModule),
     },
     {
         path: 'profile',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/profile/profile.module */ 88558)).then((m) => m.ProfilePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/profile/profile.module */ 88558)).then((m) => m.ProfilePageModule),
     },
     {
         path: 'faq',
@@ -53,19 +77,11 @@ const routes = [
     },
     {
         path: 'dashboard',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/dashboard/dashboard.module */ 71659)).then((m) => m.DashboardPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/dashboard/dashboard.module */ 71659)).then((m) => m.DashboardPageModule),
     },
     {
         path: 'transaction',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_daterange_daterange_page_ts"), __webpack_require__.e("default-src_app_services_trxn-pdf-doc-download_service_ts"), __webpack_require__.e("src_app_pages_transaction_transaction_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/transaction/transaction.module */ 66924)).then((m) => m.TransactionPageModule),
-    },
-    {
-        path: 'changepassword',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_change-password_change-password_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/change-password/change-password.module */ 68292)).then((m) => m.ChangePasswordPageModule),
-    },
-    {
-        path: 'account-edit',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_account-edit_account-edit_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/account-edit/account-edit.module */ 60519)).then((m) => m.AccountEditPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_daterange_daterange_page_ts"), __webpack_require__.e("default-src_app_services_loading_service_ts-src_app_services_trxn-pdf-doc-download_service_ts"), __webpack_require__.e("src_app_pages_transaction_transaction_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/transaction/transaction.module */ 66924)).then((m) => m.TransactionPageModule),
     },
     {
         path: 'account',
@@ -73,7 +89,7 @@ const routes = [
     },
     {
         path: 'loginactivity',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_loginactivity_loginactivity_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/loginactivity/loginactivity.module */ 51278)).then((m) => m.LoginactivityPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("src_app_pages_loginactivity_loginactivity_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/loginactivity/loginactivity.module */ 51278)).then((m) => m.LoginactivityPageModule),
     },
     {
         path: 'token-generation',
@@ -100,16 +116,16 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_loan-payment_loan-payment_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/loan-payment/loan-payment.module */ 39576)).then((m) => m.LoanPaymentPageModule),
     },
     {
-        path: 'forex-transaction',
+        path: 'forex-cash-v2',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_pages_forex-transaction_forex-transaction_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/forex-transaction/forex-transaction.module */ 67890)).then((m) => m.ForexTransactionPageModule),
     },
     {
         path: 'currencyconverter',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_pages_currencyconverter_currencyconverter_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/currencyconverter/currencyconverter.module */ 14750)).then((m) => m.CurrencyconverterPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_currencyconverter_currencyconverter_page_ts"), __webpack_require__.e("src_app_pages_currencyconverter_currencyconverter_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/currencyconverter/currencyconverter.module */ 14750)).then((m) => m.CurrencyconverterPageModule),
     },
     {
         path: 'wallet',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("src_app_pages_wallet_wallet_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/wallet/wallet.module */ 33632)).then((m) => m.WalletModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("src_app_pages_wallet_wallet_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/wallet/wallet.module */ 33632)).then((m) => m.WalletModule),
     }, {
         path: 'notification',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_notification_notification_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/notification/notification.module */ 89770)).then((m) => m.NotificationPageModule),
@@ -119,19 +135,19 @@ const routes = [
     },
     {
         path: 'cashdeposit',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"), __webpack_require__.e("src_app_pages_cashdeposit_cashdeposit_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/cashdeposit/cashdeposit.module */ 19706)).then((m) => m.CashdepositPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("src_app_pages_cashdeposit_cashdeposit_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/cashdeposit/cashdeposit.module */ 19706)).then((m) => m.CashdepositPageModule),
     },
     {
         path: 'cashwithdrawal',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"), __webpack_require__.e("src_app_pages_cashwithdrawal_cashwithdrawal_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/cashwithdrawal/cashwithdrawal.module */ 41587)).then((m) => m.CashwithdrawalPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("src_app_pages_cashwithdrawal_cashwithdrawal_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/cashwithdrawal/cashwithdrawal.module */ 41587)).then((m) => m.CashwithdrawalPageModule),
     },
     {
         path: 'chequewithdrawal',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"), __webpack_require__.e("default-src_app_pages_operation_operation_page_ts"), __webpack_require__.e("src_app_pages_chequewithdrawal_chequewithdrawal_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/chequewithdrawal/chequewithdrawal.module */ 14314)).then((m) => m.ChequewithdrawalPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("default-src_app_pages_operation_operation_page_ts"), __webpack_require__.e("src_app_pages_chequewithdrawal_chequewithdrawal_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/chequewithdrawal/chequewithdrawal.module */ 14314)).then((m) => m.ChequewithdrawalPageModule),
     },
     {
         path: 'chequedeposit',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"), __webpack_require__.e("src_app_pages_chequedeposit_chequedeposit_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/chequedeposit/chequedeposit.module */ 90427)).then((m) => m.ChequedepositPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("src_app_pages_chequedeposit_chequedeposit_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/chequedeposit/chequedeposit.module */ 90427)).then((m) => m.ChequedepositPageModule),
     },
     {
         path: 'login-landing',
@@ -143,31 +159,11 @@ const routes = [
     },
     {
         path: 'appointment',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"), __webpack_require__.e("default-src_app_pages_daterange_daterange_page_ts"), __webpack_require__.e("default-src_app_services_trxn-pdf-doc-download_service_ts"), __webpack_require__.e("default-src_app_pages_appointment_appointment_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/appointment/appointment.module */ 43817)).then(m => m.AppointmentPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-src_app_pages_daterange_daterange_page_ts"), __webpack_require__.e("default-src_app_services_loading_service_ts-src_app_services_trxn-pdf-doc-download_service_ts"), __webpack_require__.e("default-src_app_pages_appointment_appointment_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/appointment/appointment.module */ 43817)).then(m => m.AppointmentPageModule)
     },
     {
         path: 'appointmentpopup',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts-src_app_services_loading_service_ts"), __webpack_require__.e("default-src_app_pages_daterange_daterange_page_ts"), __webpack_require__.e("default-src_app_services_trxn-pdf-doc-download_service_ts"), __webpack_require__.e("default-src_app_pages_appointment_appointment_module_ts"), __webpack_require__.e("src_app_pages_appointmentpopup_appointmentpopup_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/appointmentpopup/appointmentpopup.module */ 48198)).then(m => m.AppointmentpopupPageModule)
-    },
-    {
-        path: 'mpin',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("default-src_app_pages_setmpin_setmpin_page_ts"), __webpack_require__.e("src_app_pages_mpin_mpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/mpin/mpin.module */ 73777)).then(m => m.MpinPageModule)
-    },
-    {
-        path: 'forgotmpin',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_forgotmpin_forgotmpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/forgotmpin/forgotmpin.module */ 92135)).then(m => m.ForgotmpinPageModule)
-    },
-    {
-        path: 'setmpin',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("default-src_app_pages_setmpin_setmpin_page_ts"), __webpack_require__.e("src_app_pages_setmpin_setmpin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/setmpin/setmpin.module */ 90933)).then(m => m.SetmpinPageModule)
-    },
-    {
-        path: 'forget-password',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_forgett-password_forgett-password_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/forgett-password/forgett-password.module */ 4242)).then(m => m.ForgettPasswordPageModule)
-    },
-    {
-        path: 'new-passwordchange',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_new-passwordchange_new-passwordchange_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/new-passwordchange/new-passwordchange.module */ 31307)).then(m => m.NewPasswordchangePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-src_app_pages_daterange_daterange_page_ts"), __webpack_require__.e("default-src_app_services_loading_service_ts-src_app_services_trxn-pdf-doc-download_service_ts"), __webpack_require__.e("default-src_app_pages_appointment_appointment_module_ts"), __webpack_require__.e("src_app_pages_appointmentpopup_appointmentpopup_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/appointmentpopup/appointmentpopup.module */ 48198)).then(m => m.AppointmentpopupPageModule)
     },
     {
         path: 'securitycenter',
@@ -182,16 +178,12 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_fingerprint_fingerprint_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/fingerprint/fingerprint.module */ 82006)).then(m => m.FingerprintPageModule)
     },
     {
-        path: 'mpinotpvalidate',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_pages_login_login_page_ts"), __webpack_require__.e("src_app_pages_mpinotpvalidate_mpinotpvalidate_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/mpinotpvalidate/mpinotpvalidate.module */ 56166)).then(m => m.MpinotpvalidatePageModule)
-    },
-    {
         path: 'success-message',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_success-message_success-message_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/success-message/success-message.module */ 81178)).then(m => m.SuccessMessagePageModule)
     },
     {
         path: 'exchangerate',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_exchangerate_exchangerate_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./exchangerate/exchangerate.module */ 37637)).then(m => m.ExchangeratePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_pages_exchangerate_exchangerate_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/exchangerate/exchangerate.module */ 64966)).then(m => m.ExchangeratePageModule)
     },
     {
         path: 'changempin',
@@ -200,6 +192,14 @@ const routes = [
     {
         path: 'feedback',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_feedback_feedback_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/feedback/feedback.module */ 97792)).then(m => m.FeedbackPageModule)
+    },
+    {
+        path: 'forextransaction',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-src_app_pages_currencyconverter_currencyconverter_page_ts"), __webpack_require__.e("src_app_pages_v2_forex-cash-v2_forex-cash-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/forex-cash-v2/forex-cash-v2.module */ 34538)).then(m => m.ForexCashV2PageModule)
+    },
+    {
+        path: 'token-v2',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("src_app_pages_token-v2_token-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/token-v2/token-v2.module */ 43218)).then(m => m.TokenV2PageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -228,17 +228,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component.html?ngResource */ 33383);
 /* harmony import */ var _app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss?ngResource */ 79259);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _awesome_cordova_plugins_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/status-bar/ngx */ 59162);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/device-access.service */ 34910);
-/* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/api.service */ 5830);
-/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/data.service */ 52468);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/device-access.service */ 34910);
+/* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/api.service */ 5830);
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/data.service */ 52468);
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 91714);
+/* harmony import */ var _services_back_button_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/back-button.service */ 97219);
+/* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/network/ngx */ 99118);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 12378);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 88623);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 64139);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 36312);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 29361);
+
+
+
+
 
 
 
@@ -252,7 +263,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, statusBar, api, config, device, dataService, modalCtrl, router, alert, sanitizer, menu, cdr) {
+    constructor(platform, statusBar, api, config, device, dataService, modalCtrl, router, alert, sanitizer, menu, network, cdr, backButtonService) {
         this.platform = platform;
         this.statusBar = statusBar;
         this.api = api;
@@ -264,47 +275,73 @@ let AppComponent = class AppComponent {
         this.alert = alert;
         this.sanitizer = sanitizer;
         this.menu = menu;
+        this.network = network;
         this.cdr = cdr;
+        this.backButtonService = backButtonService;
+        this.isFaceId = false;
+        this.isFingerPrint = false;
+        this.i = 0;
+        this.appIsOnline$ = undefined;
         //Check Permission on App Start
         this.device.getPhonePermission();
         this.initializeApp();
+        this.platform.resume.subscribe(() => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+            console.log('Resume event detected');
+            localStorage.setItem('isShowed', "yes");
+        }));
+        this.platform.pause.subscribe(() => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+            console.log('Pause event detected');
+            localStorage.setItem('isShowed', "no");
+        }));
     }
     ngOnInit() {
         var _a, _b, _c, _d, _e;
         this.currentUser = this.dataService.getCurrentUser();
         console.log(this.currentUser);
+        this.checkInternet().subscribe(isOnline => {
+            this.checkInterent = isOnline;
+            console.log('interent', this.checkInterent);
+            if (this.checkInterent == true) {
+                console.log('Internet is working.');
+            }
+            else {
+                console.log('Internet is slow or not working.');
+                this.router.navigate(['internet'], { replaceUrl: true });
+            }
+            this.cdr.markForCheck();
+        });
         if (this.platform.is("cordova")) {
             if (this.currentUser !== null) {
                 this.getProfilePicture((_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.customerId);
                 if ((_b = this.currentUser) === null || _b === void 0 ? void 0 : _b.faceLoginEnable) {
-                    this.router.navigate(['login-landing']);
+                    this.router.navigate(['login-landing'], { replaceUrl: true });
                     // direct faceid open
                 }
                 else if ((_c = this.currentUser) === null || _c === void 0 ? void 0 : _c.fingerprintLoginEnable) {
-                    this.router.navigate(['login-landing']);
+                    this.router.navigate(['login-landing'], { replaceUrl: true });
                     // direct fingerprint tray open
                 }
                 else if ((_d = this.currentUser) === null || _d === void 0 ? void 0 : _d.mpinActive) {
                     // direct mpin login
-                    this.router.navigate(['login-landing']);
+                    this.router.navigate(['login-landing'], { replaceUrl: true });
                 }
                 else {
                     this.initUserContext();
-                    this.router.navigate(['dashboard']);
+                    this.router.navigate(['login-landing'], { replaceUrl: true });
                 }
             }
             else {
-                this.router.navigate(['login']);
+                this.router.navigate(['login'], { replaceUrl: true });
             }
         }
         else {
             if (this.currentUser !== null) {
                 this.initUserContext();
                 this.getProfilePicture((_e = this.currentUser) === null || _e === void 0 ? void 0 : _e.customerId);
-                this.router.navigate(['dashboard']);
+                this.router.navigate(['dashboard'], { replaceUrl: true });
             }
             else {
-                this.router.navigate(['home']);
+                this.router.navigate(['home'], { replaceUrl: true });
             }
         }
         this.dataService.getAvatarUrl.subscribe((data) => {
@@ -314,15 +351,31 @@ let AppComponent = class AppComponent {
             }
         });
         this.dataService.share.subscribe((data) => {
-            console.log("isrefresh", data);
             if (data) {
                 this.getCurrentUser();
                 this.cdr.markForCheck();
             }
         });
+        this.cdr.markForCheck();
+    }
+    checkInternet() {
+        if (!window || !navigator || !('onLine' in navigator))
+            return;
+        this.appIsOnline$ = rxjs__WEBPACK_IMPORTED_MODULE_9__.Observable.create(observer => {
+            observer.next(true);
+        }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.mapTo)(true));
+        if (this.platform.is('cordova')) {
+            // on Device - when platform is cordova
+            this.appIsOnline$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.merge)(this.network.onConnect().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.mapTo)(true)), this.network.onDisconnect().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.mapTo)(false)));
+        }
+        else {
+            // on Browser - when platform is Browser
+            this.appIsOnline$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.merge)((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(navigator.onLine), (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.fromEvent)(window, 'online').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.mapTo)(true)), (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.fromEvent)(window, 'offline').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.mapTo)(false)));
+        }
+        return this.appIsOnline$;
     }
     initUserContext() {
-        setInterval(() => (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        setInterval(() => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             this.getCurrentUser();
         }), 1000);
     }
@@ -333,8 +386,7 @@ let AppComponent = class AppComponent {
         this.platform.ready().then(() => {
             this.statusBar.overlaysWebView(false);
             this.statusBar.backgroundColorByHexString('#3B59FD'); //
-            const mode = this.config.get('mode');
-            console.log("Mode", mode);
+            this.backButtonService.init();
         });
     }
     toggle() {
@@ -375,20 +427,24 @@ let AppComponent = class AppComponent {
         this.router.navigate(['notification']);
     }
     logoutApp() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             let alret = yield this.alert.create({
-                subHeader: "Do you want to Sign Out",
+                header: "Logout",
+                subHeader: "Are you sure want to Log out?",
+                cssClass: 'logout-alert',
                 buttons: [
                     {
-                        text: "Yes",
+                        text: "Logout",
+                        cssClass: 'alert-button-confirm',
                         handler: () => {
                             this.goToFeedback();
                             this.menu.close();
-                            // this.logOut();
                         }
                     },
                     {
-                        text: "No"
+                        role: 'cancel',
+                        cssClass: 'alert-button-cancel',
+                        text: "Cancel"
                     }
                 ],
             });
@@ -400,21 +456,23 @@ let AppComponent = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform },
-    { type: _awesome_cordova_plugins_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__.StatusBar },
-    { type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Config },
-    { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_3__.DeviceAccess },
-    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_5__.DataService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.AlertController },
-    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.DomSanitizer },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.MenuController },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__.ChangeDetectorRef }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.Platform },
+    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__.StatusBar },
+    { type: _services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.Config },
+    { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_2__.DeviceAccess },
+    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_4__.DataService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.ModalController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_15__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.AlertController },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__.DomSanitizer },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.MenuController },
+    { type: _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_7__.Network },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_17__.ChangeDetectorRef },
+    { type: _services_back_button_service__WEBPACK_IMPORTED_MODULE_6__.BackButtonService }
 ];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_17__.Component)({
         selector: 'app-root',
         template: _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -436,27 +494,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
-/* harmony import */ var _awesome_cordova_plugins_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/status-bar/ngx */ 59162);
-/* harmony import */ var _awesome_cordova_plugins_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @awesome-cordova-plugins/barcode-scanner/ngx */ 62703);
-/* harmony import */ var _awesome_cordova_plugins_camera_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @awesome-cordova-plugins/camera/ngx */ 82543);
-/* harmony import */ var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-owl-carousel-o */ 14978);
-/* harmony import */ var _awesome_cordova_plugins_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @awesome-cordova-plugins/geolocation/ngx */ 75626);
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 91714);
+/* harmony import */ var _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/barcode-scanner/ngx */ 5684);
+/* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 6018);
+/* harmony import */ var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ngx-owl-carousel-o */ 14978);
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ 40287);
 /* harmony import */ var mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mapmyindia-map-cordova-ionic-beta */ 64540);
 /* harmony import */ var mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var swiper_angular__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! swiper/angular */ 341);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var swiper_angular__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! swiper/angular */ 341);
 /* harmony import */ var _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/android-permissions/ngx */ 61832);
 /* harmony import */ var _directives_directive_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./directives/directive.module */ 27589);
 /* harmony import */ var _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/fingerprint-aio/ngx */ 63427);
-/* harmony import */ var _awesome_cordova_plugins_file_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @awesome-cordova-plugins/file/ngx */ 50646);
+/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/file/ngx */ 12358);
+/* harmony import */ var _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/file-path/ngx */ 74375);
+/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/crop/ngx */ 82475);
+/* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic-native/network/ngx */ 99118);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
+/* harmony import */ var _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular-material-extensions/select-country */ 96631);
+/* harmony import */ var _ionic_native_social_sharing_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/social-sharing/ngx */ 96772);
 
 
 
@@ -478,39 +542,96 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_16__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_17__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__.BrowserModule,
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__.BrowserAnimationsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_15__.HttpClientModule,
-            ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_16__.CarouselModule,
-            swiper_angular__WEBPACK_IMPORTED_MODULE_17__.SwiperModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_18__.IonicModule.forRoot({
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__.BrowserModule,
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__.BrowserAnimationsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_20__.HttpClientModule,
+            ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_21__.CarouselModule,
+            swiper_angular__WEBPACK_IMPORTED_MODULE_22__.SwiperModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_23__.IonicModule.forRoot({
                 rippleEffect: true,
                 mode: 'md'
             }),
+            _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_24__.MatSelectCountryModule.forRoot('en'),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
             _directives_directive_module__WEBPACK_IMPORTED_MODULE_8__.DirectiveModule
         ],
         providers: [
-            _awesome_cordova_plugins_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__.StatusBar,
-            _awesome_cordova_plugins_camera_ngx__WEBPACK_IMPORTED_MODULE_4__.Camera,
-            _awesome_cordova_plugins_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_3__.BarcodeScanner,
-            _awesome_cordova_plugins_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__.Geolocation,
-            _awesome_cordova_plugins_file_ngx__WEBPACK_IMPORTED_MODULE_10__.File,
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__.StatusBar,
+            _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_4__.Camera,
+            _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_3__.BarcodeScanner,
+            _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__.Geolocation,
+            _ionic_native_social_sharing_ngx__WEBPACK_IMPORTED_MODULE_15__.SocialSharing,
+            _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_10__.File,
+            _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_11__.FilePath,
+            _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_12__.Crop,
             _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_7__.AndroidPermissions,
             _ionic_native_fingerprint_aio_ngx__WEBPACK_IMPORTED_MODULE_9__.FingerprintAIO,
             mapmyindia_map_cordova_ionic_beta__WEBPACK_IMPORTED_MODULE_6__.mmi,
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_18__.IonicRouteStrategy }
+            _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_13__.Network,
+            _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_14__.UniqueDeviceID,
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_25__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_23__.IonicRouteStrategy }
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ 82014:
+/*!***********************************************************************!*\
+  !*** ./src/app/components/alert-internet/alert-internet.component.ts ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AlertInternetComponent": () => (/* binding */ AlertInternetComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _alert_internet_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./alert-internet.component.html?ngResource */ 48451);
+/* harmony import */ var _alert_internet_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./alert-internet.component.scss?ngResource */ 36606);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
+
+
+
+let AlertInternetComponent = class AlertInternetComponent {
+    constructor(modalCtrl) {
+        this.modalCtrl = modalCtrl;
+    }
+    ngOnInit() { }
+    confirm() {
+        return this.modalCtrl.dismiss(this.name, 'confirm');
+    }
+};
+AlertInternetComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.ModalController }
+];
+AlertInternetComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+        selector: 'app-alert-internet',
+        template: _alert_internet_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_alert_internet_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], AlertInternetComponent);
 
 
 
@@ -661,19 +782,15 @@ let ApiService = class ApiService {
         return this.http.post(`${API_URL}/rest/otp/generateOtp`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     verifyOtp(data) {
-        return this.http.put(`${API_URL}/rest/otp/validateOtp`, data);
-        // return this.http.put<any>(`${API_URL}/rest/otp/validateOtp`, data).pipe(catchError(this.errorHandler));
+        return this.http.put(`${API_URL}/rest/otp/validateOtp`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     cashWithdrawalSave(data) {
-        console.log("enter inside api");
         return this.http.post(`${API_URL}/cash-withdrawal-service`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     cashDepositSave(data) {
-        console.log("cashDepositSave----------", data);
         return this.http.post(`${API_URL}/cash-deposit/api`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     chequeWithdrawalSave(data) {
-        console.log("enter inside api");
         return this.http.post(`${API_URL}/cheque-withdrawal`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     chequeDepositSave(data) {
@@ -683,6 +800,9 @@ let ApiService = class ApiService {
         return this.http.get(`${API_URL}/branch/fetchbranch/${city}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     custpomerDetails(phoneNo) {
+        return this.http.get(`${API_URL}/customerdata/getPhoneNo/${phoneNo}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    getCustomerAccounts(phoneNo) {
         return this.http.get(`${API_URL}/customerdata/getPhoneNo/${phoneNo}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     getProfileDetails(customerId) {
@@ -696,7 +816,6 @@ let ApiService = class ApiService {
     }
     generateQRCode(data) {
         return this.http.post(`${API_URL}/token/api/qr-code-generator`, data, { responseType: 'blob' });
-        // return this.http.get<any>(`${API_URL1}/token/api/fetch-qr-code/${data}`).pipe(catchError(this.errorHandler));
     }
     fetchWalletInfo(customerId) {
         return this.http.get(`${API_URL}/cash-deposit/api/fetchWalletInfo?customerId=${customerId}`);
@@ -704,9 +823,6 @@ let ApiService = class ApiService {
     appointmentBooking(data) {
         return this.http.put(`${API_URL}/cash-deposit/api/updateScheduledAppointment`, data);
     }
-    // updateAppointmentBooking(data: any) {
-    //   return this.http.put(`${API_URL}/cash-deposit/api/updateScheduledAppointment`, data,);
-    // }
     updateAddToWallet(model) {
         return this.http.put(`${API_URL}/cash-deposit/api/updateAddToWallet`, model);
     }
@@ -723,49 +839,40 @@ let ApiService = class ApiService {
         return this.http.get(`${API_URL}/currency`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     gettingAvailableSlots(selectedDate) {
-        console.log(selectedDate);
         return this.http.get(`${API_URL}/rest/data/customer/availableslots?scheduledDate=${selectedDate}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     gettingBookedSlots(selectedDate) {
-        console.log(selectedDate);
         return this.http.get(`${API_URL}/cash-deposit/api/fetchBookedSlots?transactionDate=${selectedDate}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     getDashboardDataNew(customerId) {
         return this.http.get(`${API_URL}/teller-service/api/mobile/${customerId}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     fetchAppointmentInfo(filterOption, formattedFromDate, formattedToDate, customerId, accountNumber) {
-        console.log(formattedFromDate);
         var opt;
         if ((customerId != null || customerId != undefined || customerId != '') && ((formattedFromDate == null && formattedToDate == null) && filterOption == null)) {
-            console.log("append");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId);
         }
         else if (((formattedFromDate != null || formattedFromDate != '') && (formattedToDate != null || formattedToDate != ''))
             && customerId != null && filterOption == null) {
-            console.log("append1");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId)
                 .append('fromDate', formattedFromDate)
                 .append('toDate', formattedToDate);
         }
         else if ((customerId != null && filterOption != null && formattedFromDate == null && formattedToDate == null)) {
-            console.log("append2");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId)
                 .append('filterOption', filterOption);
         }
         else {
-            console.log("append3");
             opt = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
                 .append('customerId', customerId)
                 .append('fromDate', formattedFromDate)
                 .append('toDate', formattedToDate)
                 .append('filterOption', filterOption);
         }
-        console.log(opt);
         return this.http.get(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?${opt}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
-        // return this.http.get<any>(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?filterOption=${filterOption}&fromDate=${fromDate}&toDate=${toDate}&customerId=${customerId}&accountNumber=${accountNumber}`).pipe(catchError(this.errorHandler));
     }
     getTransactionByAccountId(accountId, page, formattedFromDate, formattedToDate, size) {
         var params;
@@ -814,6 +921,14 @@ let ApiService = class ApiService {
         }
         return this.http.get(`${API_URL}/cash-deposit/api/fetchTransaction?${params}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
+    download(model) {
+        return this.http.post(`${API_URL}/cash-deposit/api/downloadAppointmentInfo`, model, {
+            responseType: 'blob'
+        });
+    }
+    shareStatementEmail(model) {
+        return this.http.post(`${API_URL}/cash-deposit/api/shareInfoThroughMail`, model);
+    }
     getByTransactionId(transId) {
         return this.http.get(`${API_URL}/cash-deposit/api/fetchByTransId/${transId}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
@@ -832,14 +947,14 @@ let ApiService = class ApiService {
     getFirstTimeLogin() {
         return this.firstTimeLogin.asObservable();
     }
-    validatePassword(phoneNumber, password) {
-        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpParams()
-            .append('phoneNumber', phoneNumber)
-            .append('password', password);
-        return this.http.get(`${API_URL}/customerdata/validateCutomerPassword?${params}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    validatePassword(loginModel) {
+        return this.http.post(`${API_URL}/customerdata/validateCutomerPassword`, loginModel).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
-    validateMpin(data) {
+    setMpin(data) {
         return this.http.post(`${API_URL}/customerLogin/generateMpin`, data);
+    }
+    changeMpin(data) {
+        return this.http.post(`${API_URL}/customerLogin/changeMpin`, data);
     }
     authenticateMpin(data) {
         return this.http.post(`${API_URL}/customerLogin/authenticate`, data);
@@ -847,12 +962,18 @@ let ApiService = class ApiService {
     updateCustomerPassword(model) {
         return this.http.put(`${API_URL}/customerdata/updateCustomerPassword`, model);
     }
-    getExchangeRate(country1 = 'INR') {
-        let url = 'https://api.exchangerate.host/latest?base=' + country1;
+    resetPassword(model) {
+        return this.http.post(`${API_URL}/customerdata/resetCustomerPassword`, model);
+    }
+    getExchangeRate(currency) {
+        let url = 'https://api.exchangerate.host/latest?base=' + currency;
         return this.http.get(url).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
-    registerFaceIdORFingerPrint(customerId, faceId, fingerPrint) {
-        return this.http.get(`${API_URL}/customerdata/updateLoginStatusEnable?customerId=${customerId}&faceLoginEnable=${faceId}&fingerprintLoginEnable=${fingerPrint}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    getNativeExchangeRate(fromCurrency, toCurrency) {
+        return this.http.get(`${API_URL}/currency-api/fetchExchangeRateForCurrency?currency1=${fromCurrency}&currency2=${toCurrency}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    registerFaceIdORFingerPrint(bioAuthModel) {
+        return this.http.post(`${API_URL}/customerdata/updateLoginStatusEnable`, bioAuthModel).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     getChargeDetails(accId) {
         return this.http.get(`${API_URL}/accountdata/getChargeDetails?accountId=${accId}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
@@ -863,14 +984,30 @@ let ApiService = class ApiService {
     storeFeedbackInfo(data) {
         return this.http.post(`${API_URL}/customerdata/storeFeedbackInfo`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
-    getCustomerAccounts(phoneNo) {
-        return this.http.get(`${API_URL}/customerdata/getPhoneNo/${phoneNo}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
-    }
     uploadProfileImage(data) {
         return this.http.post(`${API_URL}/rest/upload/uploadDoc`, data).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     deleteProfileImage(data) {
-        return this.http.delete(`${API_URL}/customerdata/deleteCustDocument?customerId=${data.custId}&id=${data.id}&documentName=Profile&documentType=1`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+        return this.http.delete(`${API_URL}/customerdata/deleteCustDocument?customerId=${data.custId}&documentType=${data.documentType}`);
+    }
+    filterAppointment(custId, status) {
+        return this.http.get(`${API_URL}/cash-deposit/api/fetchAppointmentInfo?customerId=${custId}&appointmentStatus=${status}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    // const endpoint = "https://api.exchangeratesapi.io/latest";
+    fetchRatesByExternal(from, to, amount) {
+        const api_key = "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX";
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpHeaders()
+            .set('apikey', "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX");
+        let url = `https://api.apilayer.com/exchangerates_data/convert?from=${from}&to=${to}&amount=${amount}`;
+        return this.http.get(url, { 'headers': headers }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    fetchRate(base) {
+        const api_key = "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX";
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpHeaders()
+            .set('apikey', "8p0w3rAgH0JF11YqJjcQy8F78d29UEAX");
+        let symbols = "INR,USD";
+        let url = `https://api.apilayer.com/exchangerates_data/latest?symbols=${symbols}&base=${base}`;
+        return this.http.get(url, { 'headers': headers }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
 };
 ApiService.ctorParameters = () => [
@@ -882,6 +1019,100 @@ ApiService = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
         providedIn: 'root'
     })
 ], ApiService);
+
+
+
+/***/ }),
+
+/***/ 97219:
+/*!*************************************************!*\
+  !*** ./src/app/services/back-button.service.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BackButtonService": () => (/* binding */ BackButtonService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
+
+
+let BackButtonService = class BackButtonService {
+    constructor(platform, router, navControlelr, alertController, toastController) {
+        this.platform = platform;
+        this.router = router;
+        this.navControlelr = navControlelr;
+        this.alertController = alertController;
+        this.toastController = toastController;
+        this.lastTimeBackButtonWasPressed = 0;
+        this.timePeriodToAction = 2000;
+    }
+    init() {
+        this.platform.backButton.subscribeWithPriority(10, () => (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            const currentUrl = this.router.url;
+            this.withAlert("Do you really want to exit?", () => {
+                navigator['app'].exitApp();
+            });
+            // if (currentUrl === "/dashboard") {
+            // this.withAlert("Do you really want to exit?", () => {
+            //   navigator['app'].exitApp();
+            // });
+            // } else {
+            //   this.navControlelr.back();
+            // }
+        }));
+    }
+    withDoublePress(message, action) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            const currentTime = new Date().getTime();
+            if (currentTime - this.lastTimeBackButtonWasPressed < this.timePeriodToAction) {
+                action();
+            }
+            else {
+                const toast = yield this.toastController.create({
+                    message: message,
+                    duration: this.timePeriodToAction
+                });
+                yield toast.present();
+                this.lastTimeBackButtonWasPressed = currentTime;
+            }
+        });
+    }
+    withAlert(message, action) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            const alert = yield this.alertController.create({
+                message: message,
+                buttons: [{
+                        text: "Cancel",
+                        role: "cancel"
+                    },
+                    {
+                        text: "OK",
+                        handler: action
+                    }]
+            });
+            yield alert.present();
+        });
+    }
+};
+BackButtonService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.Platform },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.NavController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.ToastController }
+];
+BackButtonService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+        providedIn: 'root'
+    })
+], BackButtonService);
 
 
 
@@ -916,6 +1147,8 @@ let DataService = class DataService {
         this.getAppointmentId = this.sendAppointmentId.asObservable();
         this.isLoggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(null);
         this.share = this.isLoggedIn.asObservable();
+        this.isAppOpened = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(false);
+        this.shareAppState = this.isAppOpened.asObservable();
     }
     shareTransactionId(params) {
         this.sendTransactionId.next(params);
@@ -939,37 +1172,13 @@ let DataService = class DataService {
         }
     }
     getRandomColor(idx) {
-        var col0 = '#0d856b';
-        var col1 = '#d66f1b';
-        var col2 = '#9f52e7';
-        var col3 = '#e9318d';
-        var col4 = '#1175a3';
-        var col5 = '#e93131';
-        var col6 = '#2316d3';
-        var col7 = '#f557f5';
-        var col8 = '#d6c31b';
-        var col9 = '#40d61b';
-        if (idx % 10 == 0)
-            return col0;
-        if (idx % 10 == 1)
-            return col1;
-        if (idx % 10 == 2)
-            return col2;
-        if (idx % 10 == 3)
-            return col3;
-        if (idx % 10 == 4)
-            return col4;
-        if (idx % 10 == 5)
-            return col5;
-        if (idx % 10 == 6)
-            return col6;
-        if (idx % 10 == 7)
-            return col7;
-        if (idx % 10 == 8)
-            return col8;
-        if (idx % 10 == 9)
-            return col9;
-        return '#d86315';
+        return '#456EFE';
+    }
+    formatCurrency(amount, currency) {
+        return Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency
+        }).format(amount);
     }
 };
 DataService.ctorParameters = () => [];
@@ -996,15 +1205,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/android-permissions/ngx */ 61832);
-/* harmony import */ var _capacitor_device__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @capacitor/device */ 4744);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
 
 
 
 
 let DeviceAccess = class DeviceAccess {
-    constructor(androidPermissions) {
+    constructor(androidPermissions, uniqueDeviceID) {
         this.androidPermissions = androidPermissions;
+        this.uniqueDeviceID = uniqueDeviceID;
     }
     getPhonePermission() {
         this.androidPermissions
@@ -1032,15 +1242,20 @@ let DeviceAccess = class DeviceAccess {
         });
     }
     getDeviceId() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
-            const info = (yield _capacitor_device__WEBPACK_IMPORTED_MODULE_1__.Device.getId()).uuid;
-            return info || '';
+        this.uniqueDeviceID.get()
+            .then((uuid) => {
+            const deviceUUID = uuid;
+            return deviceUUID || '';
+        })
+            .catch((error) => {
+            return '';
         });
     }
     ;
 };
 DeviceAccess.ctorParameters = () => [
-    { type: _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_0__.AndroidPermissions }
+    { type: _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_0__.AndroidPermissions },
+    { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_1__.UniqueDeviceID }
 ];
 DeviceAccess = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
@@ -1064,14 +1279,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ShowMessageService": () => (/* binding */ ShowMessageService)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ 60598);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var src_app_components_alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/components/alert-internet/alert-internet.component */ 82014);
+
+
 
 
 
 let ShowMessageService = class ShowMessageService {
-    constructor() {
+    constructor(toastController, modalController, router) {
+        this.toastController = toastController;
+        this.modalController = modalController;
+        this.router = router;
+        this.modal = null;
         this.errorData = [
             { "code": 400, "message": "Bad Request" },
             { "code": 401, "message": "Unauthorized" },
@@ -1085,53 +1307,47 @@ let ShowMessageService = class ShowMessageService {
         ];
     }
     errorMessage(status, errorResp) {
-        console.log("show msg", status);
-        console.log(errorResp);
-        console.log("err msg : " + errorResp.error.message);
-        var errCode = status.toString();
-        var errDesc = errorResp.error.message;
-        if (errDesc === null || errDesc === undefined) {
-            let i = 0;
-            while (i < this.errorData.length) {
-                if (this.errorData[i].code === status) {
-                    // this.toast.error(this.errorData[i].message, '', {
-                    //   timeOut: 3000,
-                    //   progressBar: true,
-                    //   tapToDismiss: true,
-                    //   closeButton: true,
-                    //   easeTime: 300,
-                    //   extendedTimeOut: 1000
-                    // });
-                    // Swal.fire('Oops', this.errorData[i].message, 'error');
-                    // Swal.fire({
-                    //   title: this.errorData[i].message ,
-                    //   text:"<p style='font-size: 20px>status</p>",
-                    //   width: 600
-                    // })
-                    errDesc = this.errorData[i].message;
-                }
-                i++;
+        if (status === 0) {
+            if (this.modal == null) {
+                return this.openNoInternet();
+            }
+            else {
+                return;
             }
         }
-        if (errDesc) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                icon: 'error',
-                // title:"Error Code : "+this.errorData[i].code ,
-                // text:"Error message : "+this.errorData[i].message,
-                title: "Error Code : " + errCode,
-                text: "Error message : " + errDesc.substring(0, 200),
-                width: 500,
-                // timer: 10000,
-                // timerProgressBar: true,
-                confirmButtonText: "OK",
-                confirmButtonColor: '#456EFE'
+    }
+    openNoInternet() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            this.modal = yield this.modalController.create({
+                component: src_app_components_alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_0__.AlertInternetComponent,
+                cssClass: 'internet-modal'
             });
-        }
+            yield this.modal.present();
+            const { role } = yield this.modal.onDidDismiss();
+            if (role == 'confirm') {
+                this.router.navigate(['login-landing'], { replaceUrl: true });
+                this.modal = null;
+            }
+        });
+    }
+    presentToast(msg, position) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: msg,
+                duration: 800,
+                position: position || 'bottom'
+            });
+            toast.present();
+        });
     }
 };
-ShowMessageService.ctorParameters = () => [];
+ShowMessageService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.ModalController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+];
 ShowMessageService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
         providedIn: 'root'
     })
 ], ShowMessageService);
@@ -1154,7 +1370,8 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // ICUST_URL: 'http://localhost:1212', // phase2 for local testing
-    // ICUST_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking'
+    // BASE_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking',
+    // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
     BASE_URL: 'http://192.168.0.14:8091/Icust-Digital-Banking',
 };
@@ -1254,12 +1471,12 @@ var map = {
 	],
 	"./ion-datetime-button.entry.js": [
 		17950,
-		"default-node_modules_ionic_core_dist_esm_parse-5b8a1541_js-node_modules_ionic_core_dist_esm_t-8d4d32",
+		"default-node_modules_ionic_core_dist_esm_data-cb72448c_js-node_modules_ionic_core_dist_esm_th-29e28e",
 		"node_modules_ionic_core_dist_esm_ion-datetime-button_entry_js"
 	],
 	"./ion-datetime_3.entry.js": [
 		79689,
-		"default-node_modules_ionic_core_dist_esm_parse-5b8a1541_js-node_modules_ionic_core_dist_esm_t-8d4d32",
+		"default-node_modules_ionic_core_dist_esm_data-cb72448c_js-node_modules_ionic_core_dist_esm_th-29e28e",
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-datetime_3_entry_js"
 	],
@@ -1279,6 +1496,7 @@ var map = {
 	],
 	"./ion-input.entry.js": [
 		83288,
+		"common",
 		"node_modules_ionic_core_dist_esm_ion-input_entry_js"
 	],
 	"./ion-item-option_3.entry.js": [
@@ -1441,7 +1659,18 @@ module.exports = webpackAsyncContext;
 /***/ ((module) => {
 
 "use strict";
-module.exports = "ion-content {\n  --ion-background-color: #F4F4F4;\n}\n\n:host ::ng-deep .searchbar-input-container input {\n  background: none;\n  box-shadow: none;\n  padding-left: 10%;\n}\n\n:host ::ng-deep .searchbar-input-container ion-icon {\n  left: 0;\n}\n\n:host ::ng-deep ion-segment {\n  --background: white;\n  height: 100%;\n}\n\n:host ::ng-deep ion-segment-button {\n  padding: 4px 0;\n  margin: 0;\n  border-radius: 13px;\n  --background-checked: var(--ion-color-primary) !important;\n  --color-checked: white;\n  --indicator-color: transparent !important;\n}\n\n.profile-pic {\n  border-radius: 50%;\n  width: 50px;\n  height: 50px;\n}\n\n.profile-image {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  border-radius: 50%;\n  height: 4.5rem;\n  width: 4.5rem;\n}\n\n.headerbar {\n  box-shadow: 0 5pt 5pt -2pt rgba(69, 110, 254, 0.1490196078) !important;\n}\n\nion-menu::part(container) {\n  width: 90%;\n  padding-top: 60px;\n  background-color: white !important;\n  margin-bottom: 50px;\n  background: #F4F4F4;\n}\n\n.flex-container {\n  display: flex;\n  margin-bottom: 30px;\n  padding-left: 18px;\n}\n\n.username {\n  margin-top: 5px;\n  margin-left: 30px;\n  font-weight: 800;\n  color: #102245;\n}\n\n.mf-30 {\n  margin-left: 30px;\n}\n\n.label {\n  padding-left: 25px;\n  color: #102245;\n}\n\n.mt-18 {\n  margin-top: 18px;\n}\n\n.menu-list {\n  box-shadow: #C9C9C9;\n}\n\n.Item_title {\n  font-size: 16px;\n  font-weight: 700;\n  color: #102245;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtCQUFBO0FBQ0Y7O0FBR0U7RUFDRSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUFBSjs7QUFHRTtFQUNFLE9BQUE7QUFESjs7QUFNRTtFQUNFLG1CQUFBO0VBQ0EsWUFBQTtBQUhKOztBQU1FO0VBQ0UsY0FBQTtFQUNBLFNBQUE7RUFDQSxtQkFBQTtFQUNBLHlEQUFBO0VBQ0Esc0JBQUE7RUFDQSx5Q0FBQTtBQUpKOztBQVFBO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQUxGOztBQVFBO0VBQ0UsbUJBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtBQUxGOztBQVFBO0VBQ0Usc0VBQUE7QUFMRjs7QUFRQTtFQUNFLFVBQUE7RUFDQSxpQkFBQTtFQUNBLGtDQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQUxGOztBQVFBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUFMRjs7QUFRQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUxGOztBQVFBO0VBQ0UsaUJBQUE7QUFMRjs7QUFRQTtFQUNFLGtCQUFBO0VBQ0EsY0FBQTtBQUxGOztBQVFBO0VBQ0UsZ0JBQUE7QUFMRjs7QUFRQTtFQUNFLG1CQUFBO0FBTEY7O0FBUUE7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FBTEYiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQge1xyXG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNGNEY0RjQ7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCAuc2VhcmNoYmFyLWlucHV0LWNvbnRhaW5lciB7XHJcbiAgaW5wdXQge1xyXG4gICAgYmFja2dyb3VuZDogbm9uZTtcclxuICAgIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxuICB9XHJcblxyXG4gIGlvbi1pY29uIHtcclxuICAgIGxlZnQ6IDA7XHJcbiAgfVxyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAge1xyXG4gIGlvbi1zZWdtZW50IHtcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgfVxyXG5cclxuICBpb24tc2VnbWVudC1idXR0b24ge1xyXG4gICAgcGFkZGluZzogNHB4IDA7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxM3B4O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KSAhaW1wb3J0YW50O1xyXG4gICAgLS1jb2xvci1jaGVja2VkOiB3aGl0ZTtcclxuICAgIC0taW5kaWNhdG9yLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuLnByb2ZpbGUtcGljIHtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgd2lkdGg6IDUwcHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG59XHJcblxyXG4ucHJvZmlsZS1pbWFnZSB7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBoZWlnaHQ6IDQuNXJlbTtcclxuICB3aWR0aDogNC41cmVtO1xyXG59XHJcblxyXG4uaGVhZGVyYmFyIHtcclxuICBib3gtc2hhZG93OiAwIDVwdCA1cHQgLTJwdCAjNDU2RUZFMjYgIWltcG9ydGFudDtcclxufVxyXG5cclxuaW9uLW1lbnU6OnBhcnQoY29udGFpbmVyKSB7XHJcbiAgd2lkdGg6IDkwJTtcclxuICBwYWRkaW5nLXRvcDogNjBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi1ib3R0b206IDUwcHg7XHJcbiAgYmFja2dyb3VuZDogI0Y0RjRGNDtcclxufVxyXG5cclxuLmZsZXgtY29udGFpbmVyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XHJcbiAgcGFkZGluZy1sZWZ0OiAxOHB4O1xyXG59XHJcblxyXG4udXNlcm5hbWUge1xyXG4gIG1hcmdpbi10b3A6IDVweDtcclxuICBtYXJnaW4tbGVmdDogMzBweDtcclxuICBmb250LXdlaWdodDogODAwO1xyXG4gIGNvbG9yOiAjMTAyMjQ1O1xyXG59XHJcblxyXG4ubWYtMzAge1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG59XHJcblxyXG4ubGFiZWwge1xyXG4gIHBhZGRpbmctbGVmdDogMjVweDtcclxuICBjb2xvcjogIzEwMjI0NTtcclxufVxyXG5cclxuLm10LTE4IHtcclxuICBtYXJnaW4tdG9wOiAxOHB4O1xyXG59XHJcblxyXG4ubWVudS1saXN0IHtcclxuICBib3gtc2hhZG93OiAjQzlDOUM5O1xyXG59XHJcblxyXG4uSXRlbV90aXRsZSB7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbn0iXX0= */";
+module.exports = "ion-content {\n  --ion-background-color: #f4f4f4;\n}\n\nion-avatar {\n  width: 60px !important;\n  height: 60px !important;\n}\n\n.bg-content {\n  background: #f4f4f4;\n}\n\n:host ::ng-deep .searchbar-input-container input {\n  background: none;\n  box-shadow: none;\n  padding-left: 10%;\n}\n\n:host ::ng-deep .searchbar-input-container ion-icon {\n  left: 0;\n}\n\n.version-color {\n  color: #102245;\n  font-size: 12px;\n  font-family: inherit;\n}\n\n:host ::ng-deep ion-segment {\n  --background: white;\n  height: 100%;\n}\n\n:host ::ng-deep ion-segment-button {\n  padding: 4px 0;\n  margin: 0;\n  border-radius: 13px;\n  --background-checked: var(--ion-color-primary) !important;\n  --color: #000;\n  --color-checked: white;\n  --indicator-color: transparent !important;\n}\n\n.profile-pic {\n  border: 5px solid #def0ff;\n}\n\n.profile-image {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  border-radius: 50%;\n  height: 4.5rem;\n  width: 4.5rem;\n  border: 5px solid #def0ff;\n}\n\n.head-block {\n  height: 100px !important;\n  top: 25px !important;\n}\n\n.headerbar {\n  background: #ffffff;\n  box-shadow: 0 5pt 5pt -2pt rgba(69, 110, 254, 0.1490196078) !important;\n}\n\nion-menu::part(container) {\n  width: 90%;\n  background: #f4f4f4;\n}\n\n.flex-container {\n  display: flex;\n  margin-bottom: 30px;\n  padding-left: 18px;\n}\n\n.username {\n  margin-top: 5px;\n  margin-left: 30px;\n  font-weight: 800;\n  color: #102245;\n}\n\n.mf-30 {\n  margin-left: 30px;\n}\n\n.label {\n  padding-left: 25px;\n  color: #102245;\n}\n\n.mt-18 {\n  margin-top: 18px;\n}\n\n.menu-list {\n  box-shadow: #c9c9c9;\n}\n\n.Item_title {\n  font-size: 16px;\n  font-weight: 700;\n  color: #102245;\n}\n\n::ng-deep .logout-alert .alert-title.sc-ion-alert-md {\n  padding-left: 0;\n  text-align: center;\n}\n\n::ng-deep .logout-alert button.alert-button.alert-button-cancel {\n  margin-right: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxzQkFBQTtFQUNBLHVCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxtQkFBQTtBQUNGOztBQUdFO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBQUo7O0FBR0U7RUFDRSxPQUFBO0FBREo7O0FBSUE7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0FBREY7O0FBS0U7RUFDRSxtQkFBQTtFQUNBLFlBQUE7QUFGSjs7QUFLRTtFQUNFLGNBQUE7RUFDQSxTQUFBO0VBQ0EsbUJBQUE7RUFDQSx5REFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlDQUFBO0FBSEo7O0FBT0E7RUFDRSx5QkFBQTtBQUpGOztBQU9BO0VBQ0UsbUJBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLHlCQUFBO0FBSkY7O0FBT0E7RUFDRSx3QkFBQTtFQUNBLG9CQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtFQUNBLHNFQUFBO0FBSkY7O0FBT0E7RUFDRSxVQUFBO0VBQ0EsbUJBQUE7QUFKRjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBSkY7O0FBT0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUFKRjs7QUFPQTtFQUNFLGlCQUFBO0FBSkY7O0FBT0E7RUFDRSxrQkFBQTtFQUNBLGNBQUE7QUFKRjs7QUFPQTtFQUNFLGdCQUFBO0FBSkY7O0FBT0E7RUFDRSxtQkFBQTtBQUpGOztBQU9BO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUpGOztBQVFFO0VBQ0UsZUFBQTtFQUNBLGtCQUFBO0FBTEo7O0FBT0U7RUFDRSxlQUFBO0FBTEoiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQge1xyXG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNmNGY0ZjQ7XHJcbn1cclxuXHJcbmlvbi1hdmF0YXIge1xyXG4gIHdpZHRoOiA2MHB4ICFpbXBvcnRhbnQ7XHJcbiAgaGVpZ2h0OiA2MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5iZy1jb250ZW50IHtcclxuICBiYWNrZ3JvdW5kOiAjZjRmNGY0O1xyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAgLnNlYXJjaGJhci1pbnB1dC1jb250YWluZXIge1xyXG4gIGlucHV0IHtcclxuICAgIGJhY2tncm91bmQ6IG5vbmU7XHJcbiAgICBib3gtc2hhZG93OiBub25lO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgfVxyXG5cclxuICBpb24taWNvbiB7XHJcbiAgICBsZWZ0OiAwO1xyXG4gIH1cclxufVxyXG4udmVyc2lvbi1jb2xvciB7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbiAgZm9udC1zaXplOiAxMnB4O1xyXG4gIGZvbnQtZmFtaWx5OiBpbmhlcml0O1xyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAge1xyXG4gIGlvbi1zZWdtZW50IHtcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgfVxyXG5cclxuICBpb24tc2VnbWVudC1idXR0b24ge1xyXG4gICAgcGFkZGluZzogNHB4IDA7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxM3B4O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KSAhaW1wb3J0YW50O1xyXG4gICAgLS1jb2xvcjogIzAwMDtcclxuICAgIC0tY29sb3ItY2hlY2tlZDogd2hpdGU7XHJcbiAgICAtLWluZGljYXRvci1jb2xvcjogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbi5wcm9maWxlLXBpYyB7XHJcbiAgYm9yZGVyOiA1cHggc29saWQgI2RlZjBmZjtcclxufVxyXG5cclxuLnByb2ZpbGUtaW1hZ2Uge1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBjb2xvcjogI2ZmZjtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgaGVpZ2h0OiA0LjVyZW07XHJcbiAgd2lkdGg6IDQuNXJlbTtcclxuICBib3JkZXI6IDVweCBzb2xpZCAjZGVmMGZmO1xyXG59XHJcblxyXG4uaGVhZC1ibG9jayB7XHJcbiAgaGVpZ2h0OiAxMDBweCAhaW1wb3J0YW50O1xyXG4gIHRvcDogMjVweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uaGVhZGVyYmFyIHtcclxuICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIGJveC1zaGFkb3c6IDAgNXB0IDVwdCAtMnB0ICM0NTZlZmUyNiAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5pb24tbWVudTo6cGFydChjb250YWluZXIpIHtcclxuICB3aWR0aDogOTAlO1xyXG4gIGJhY2tncm91bmQ6ICNmNGY0ZjQ7XHJcbn1cclxuXHJcbi5mbGV4LWNvbnRhaW5lciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG4gIHBhZGRpbmctbGVmdDogMThweDtcclxufVxyXG5cclxuLnVzZXJuYW1lIHtcclxuICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiAgZm9udC13ZWlnaHQ6IDgwMDtcclxuICBjb2xvcjogIzEwMjI0NTtcclxufVxyXG5cclxuLm1mLTMwIHtcclxuICBtYXJnaW4tbGVmdDogMzBweDtcclxufVxyXG5cclxuLmxhYmVsIHtcclxuICBwYWRkaW5nLWxlZnQ6IDI1cHg7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbn1cclxuXHJcbi5tdC0xOCB7XHJcbiAgbWFyZ2luLXRvcDogMThweDtcclxufVxyXG5cclxuLm1lbnUtbGlzdCB7XHJcbiAgYm94LXNoYWRvdzogI2M5YzljOTtcclxufVxyXG5cclxuLkl0ZW1fdGl0bGUge1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBmb250LXdlaWdodDogNzAwO1xyXG4gIGNvbG9yOiAjMTAyMjQ1O1xyXG59XHJcblxyXG46Om5nLWRlZXAgLmxvZ291dC1hbGVydCB7XHJcbiAgLmFsZXJ0LXRpdGxlLnNjLWlvbi1hbGVydC1tZCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG4gIGJ1dHRvbi5hbGVydC1idXR0b24uYWxlcnQtYnV0dG9uLWNhbmNlbCB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDA7XHJcbiAgfVxyXG59XHJcbiJdfQ== */";
+
+/***/ }),
+
+/***/ 36606:
+/*!************************************************************************************!*\
+  !*** ./src/app/components/alert-internet/alert-internet.component.scss?ngResource ***!
+  \************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = ".box {\n  width: 60px;\n  height: 60px;\n  background: #FFEDED;\n  color: #FFEDED;\n  margin: 0 auto;\n  text-align: center;\n}\n\n.alert {\n  font-family: inherit;\n}\n\n.no-internet-img {\n  width: 60px;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFsZXJ0LWludGVybmV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLG9CQUFBO0FBQ0o7O0FBRUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6ImFsZXJ0LWludGVybmV0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJveCB7XHJcbiAgICB3aWR0aDogNjBweDtcclxuICAgIGhlaWdodDogNjBweDtcclxuICAgIGJhY2tncm91bmQ6ICNGRkVERUQ7XHJcbiAgICBjb2xvcjogI0ZGRURFRDtcclxuICAgIG1hcmdpbjogMCBhdXRvO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uYWxlcnQge1xyXG4gICAgZm9udC1mYW1pbHk6IGluaGVyaXQ7XHJcbn1cclxuXHJcbi5uby1pbnRlcm5ldC1pbWcge1xyXG4gICAgd2lkdGg6IDYwcHg7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbn0iXX0= */";
 
 /***/ }),
 
@@ -1452,7 +1681,18 @@ module.exports = "ion-content {\n  --ion-background-color: #F4F4F4;\n}\n\n:host 
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar>\r\n          <div class=\"flex-container\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <div class=\"mr-2\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\" />\r\n              </div>\r\n            </ng-template>\r\n            <div class=\"user\">\r\n              <div class=\"username\">{{currentUser?.firstName}}</div>\r\n              <div class=\"mf-30\">{{currentUser?.primaryEmailAdress}}</div>\r\n            </div>\r\n          </div>\r\n\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content class=\"menu-list\">\r\n        <ion-list lines=\"none\">\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n        <ion-item class=\"ion-no-border\" lines=\"none\">\r\n          <ion-label class=\"text-center\">\r\n            <h6><small>Version : 0.0.7</small></h6>\r\n            <p><small>Build : 7</small></p>\r\n          </ion-label>\r\n        </ion-item>\r\n\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.17</h6>\r\n          <p class=\"app-font version-color\">Build 17</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+
+/***/ }),
+
+/***/ 48451:
+/*!************************************************************************************!*\
+  !*** ./src/app/components/alert-internet/alert-internet.component.html?ngResource ***!
+  \************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = "<ion-content class=\"ion-padding\">\r\n  <div class=\"alert text-center\">\r\n\r\n    <img class=\"no-internet-img\" src=\"assets/images/1226.svg\">\r\n\r\n    <div class=\"title\">\r\n      <h3>Alert</h3>\r\n      <p>There seems to be a low network coverage area. Please try again later.</p>\r\n    </div>\r\n  </div>\r\n\r\n  <ion-button shape=\"round\" expand=\"block\" (click)=\"confirm()\">Done</ion-button>\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 

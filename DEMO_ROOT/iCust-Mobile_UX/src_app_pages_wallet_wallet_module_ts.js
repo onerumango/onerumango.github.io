@@ -11,14 +11,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "WalletListComponent": () => (/* binding */ WalletListComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _wallet_list_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wallet-list.component.html?ngResource */ 41827);
 /* harmony import */ var _wallet_list_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wallet-list.component.scss?ngResource */ 19816);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _wallet_popup_wallet_popup_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../wallet-popup/wallet-popup.component */ 62093);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../appointmentpopup/appointmentpopup.page */ 14808);
+/* harmony import */ var _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../token-v2/token-v2.page */ 68106);
+
 
 
 
@@ -36,17 +38,14 @@ let WalletListComponent = class WalletListComponent {
     }
     ngOnInit() {
         this.currentUser = JSON.parse(localStorage.getItem('customer_details'));
-        console.log("USer", this.currentUser);
         this.getSavedWalletByCustomerId();
     }
     // Fetch List of Wallet Items
     getSavedWalletByCustomerId() {
-        console.log("USer", this.currentUser['customerId']);
         this.apiService.fetchWalletInfo(this.currentUser['customerId'])
             .subscribe((result) => {
             if (result.status == 200) {
                 this.walletList = result.data;
-                console.log("Wallet items", result);
             }
             else {
                 this.walletList = [];
@@ -56,12 +55,14 @@ let WalletListComponent = class WalletListComponent {
         });
     }
     openTicketModal(data) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            console.log("Data check", data);
             if (data != null) {
                 const modal = yield this.modalController.create({
-                    component: _wallet_popup_wallet_popup_component__WEBPACK_IMPORTED_MODULE_3__.WalletPopupComponent,
+                    component: (data === null || data === void 0 ? void 0 : data.trnType) == "Forex Transaction" ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
                     componentProps: {
-                        data: data ? data : {}
+                        screen: 'wallet',
+                        value: data ? data : {}
                     }
                 });
                 modal.onDidDismiss().then((modelData) => {
@@ -78,12 +79,12 @@ let WalletListComponent = class WalletListComponent {
     }
 };
 WalletListComponent.ctorParameters = () => [
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__.Location },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_6__.Location },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController }
 ];
-WalletListComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+WalletListComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-wallet-list',
         template: _wallet_list_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_wallet_list_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -105,14 +106,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "TokenObjects": () => (/* binding */ TokenObjects),
 /* harmony export */   "WalletPopupComponent": () => (/* binding */ WalletPopupComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _wallet_popup_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wallet-popup.component.html?ngResource */ 71326);
 /* harmony import */ var _wallet_popup_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wallet-popup.component.scss?ngResource */ 71578);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ 56908);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 
 
 
@@ -123,53 +123,46 @@ __webpack_require__.r(__webpack_exports__);
 class TokenObjects {
 }
 let WalletPopupComponent = class WalletPopupComponent {
-    constructor(modalController, api) {
+    constructor(modalController, api, sanitizer) {
         this.modalController = modalController;
         this.api = api;
+        this.sanitizer = sanitizer;
         this.tokenObjects = new TokenObjects();
     }
     ngOnInit() {
+        console.log("Data?", this.data);
         this.tokenObjects.transactionId = this.data.transactionId;
-        this.tokenObjects.accountId = localStorage.getItem('AccountNumber');
-        this.tokenObjects.transactionDate = moment__WEBPACK_IMPORTED_MODULE_2__(new Date(localStorage.getItem('TransactionDate'))).format("DD-MM-YYYY");
-        this.tokenObjects.transactionDate = localStorage.getItem('TransactionDate');
-        this.tokenObjects.timeSlot = localStorage.getItem('TransactionTime');
-        this.tokenObjects.productCode = this.data.productCode;
+        this.tokenObjects.accountId = this.data.accountNumber;
+        // this.tokenObjects.transactionDate = this.data.transactionDate;
+        // this.tokenObjects.timeSlot = this.data.TransactionTime;
+        // this.tokenObjects.productCode = this.data.productCode;
         this.tokenObjects.phoneNumber = this.data.phoneNumber;
         this.getQrCode(this.tokenObjects);
     }
     close() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
-            yield this.modalController.dismiss(true);
-        });
+        this.modalController.dismiss(true);
     }
     getQrCode(data) {
         this.api.generateQRCode(data).subscribe(tokenResp => {
             console.log("Token Response", tokenResp);
-            this.createImageFromBlob(tokenResp);
+            this.image = tokenResp;
+            this.imageURL = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(this.image));
+            // this.createImageFromBlob(tokenResp);
         }, err => {
             console.log("err : ", err);
         });
     }
-    createImageFromBlob(image) {
-        let reader = new FileReader();
-        reader.addEventListener("load", () => {
-            this.imageToShow = reader.result;
-        }, false);
-        if (image) {
-            reader.readAsDataURL(image);
-        }
-    }
 };
 WalletPopupComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ModalController },
-    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.ModalController },
+    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__.DomSanitizer }
 ];
 WalletPopupComponent.propDecorators = {
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.Input }]
+    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__.Input }]
 };
-WalletPopupComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+WalletPopupComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-wallet-popup',
         template: _wallet_popup_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_wallet_popup_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -267,7 +260,7 @@ WalletModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".wallet_header {\n  --background: #ecf3f2;\n  height: 88.5px;\n  padding-top: 20px;\n  display: inline-block;\n  vertical-align: middle;\n  color: black;\n  font-size: 20px;\n  font-family: \"Montserrat\" !important;\n}\n.wallet_header ion-title {\n  font-size: 20px;\n  font-weight: bold;\n  padding-left: 10%;\n  text-align: left;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndhbGxldC1saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUJBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7RUFFQSxxQkFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxvQ0FBQTtBQUFGO0FBRUU7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBQUoiLCJmaWxlIjoid2FsbGV0LWxpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2FsbGV0X2hlYWRlciB7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjZWNmM2YyO1xyXG4gIGhlaWdodDogODguNXB4O1xyXG4gIHBhZGRpbmctdG9wOiAyMHB4O1xyXG4gIC8vIG1hcmdpbi1sZWZ0OiAyJTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGZvbnQtZmFtaWx5OiBcIk1vbnRzZXJyYXRcIiAhaW1wb3J0YW50O1xyXG4gIC8vIHBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG4gIGlvbi10aXRsZSB7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICB9XHJcbn1cclxuIl19 */";
+module.exports = ".wallet_header {\n  --background: #ecf3f2;\n  height: 88.5px;\n  padding-top: 20px;\n  display: inline-block;\n  vertical-align: middle;\n  color: black;\n  font-size: 20px;\n  font-family: \"Montserrat\" !important;\n}\n.wallet_header ion-title {\n  font-size: 20px;\n}\nion-item::part(native) {\n  height: auto !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndhbGxldC1saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUJBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7RUFFQSxxQkFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxvQ0FBQTtBQUFGO0FBRUU7RUFDRSxlQUFBO0FBQUo7QUFJQTtFQUNFLHVCQUFBO0FBREYiLCJmaWxlIjoid2FsbGV0LWxpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2FsbGV0X2hlYWRlciB7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjZWNmM2YyO1xyXG4gIGhlaWdodDogODguNXB4O1xyXG4gIHBhZGRpbmctdG9wOiAyMHB4O1xyXG4gIC8vIG1hcmdpbi1sZWZ0OiAyJTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGZvbnQtZmFtaWx5OiBcIk1vbnRzZXJyYXRcIiAhaW1wb3J0YW50O1xyXG4gIC8vIHBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG4gIGlvbi10aXRsZSB7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgfVxyXG59XHJcblxyXG5pb24taXRlbTo6cGFydChuYXRpdmUpIHtcclxuICBoZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcclxufSJdfQ== */";
 
 /***/ }),
 
@@ -287,7 +280,7 @@ module.exports = ".rect {\n  margin-top: 50pt;\n  background-color: #456EFE;\n  
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header class=\"ion-no-border\">\r\n  <ion-toolbar class=\"wallet_header\">\r\n    <ion-icon name=\"chevron-back-outline\" (click)=\"back()\"></ion-icon>\r\n    <ion-title>My Wallet</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"toolbar-bg\">\r\n  <ion-list>\r\n    <ion-item button *ngFor=\"let item of walletList; let i = index\">\r\n      <ion-thumbnail slot=\"start\">\r\n        <img src=\"assets/icon/ticket-vector-icon-26.jpg\" />\r\n      </ion-thumbnail>\r\n      <ion-label>\r\n        <h2>{{ item?.trnType }}</h2>\r\n        <p>\r\n          {{ item.transactionCurrency }} {{ item?.transactionAmount }} @\r\n          {{ item?.transactionBranch }}\r\n        </p>\r\n        <p>{{ item?.transactionDate }} {{ item?.transactionTime }}</p>\r\n      </ion-label>\r\n      <ion-button fill=\"outline\" slot=\"end\" (click)=\"openTicketModal(item)\"\r\n        >View</ion-button\r\n      >\r\n    </ion-item>\r\n  </ion-list>\r\n\r\n  <p\r\n    *ngIf=\"walletList.length == 0\"\r\n    style=\"margin-top: 50%; text-align: center\"\r\n    lines=\"none\"\r\n  >\r\n    No Saved Wallet\r\n  </p>\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>My Wallet</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-item *ngFor=\"let item of walletList; let i = index\">\r\n    <ion-thumbnail slot=\"start\">\r\n      <img src=\"assets/icon/ticket-vector-icon-26.jpg\" />\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h2>{{ item?.trnType }}</h2>\r\n      <ng-container *ngIf=\"item.trnType == 'Forex Transaction'; else showOtherTxn\">\r\n        <p class=\"date\">{{ item.forexTransAmount  |\r\n          currency:item.forexTransCurrency :'symbol':'1.0-1'}}</p>\r\n      </ng-container>\r\n      <ng-template #showOtherTxn>\r\n        <p class=\"date\">{{item.transactionAmount | currency:item.transactionCurrency :'symbol':'1.0-1'}}</p>\r\n      </ng-template>\r\n      <p class=\"date\">{{ item?.transactionDate }} {{ item?.transactionTime }}</p>\r\n    </ion-label>\r\n    <ion-button fill=\"outline\" slot=\"end\" (click)=\"openTicketModal(item)\">View</ion-button>\r\n  </ion-item>\r\n\r\n\r\n  <p *ngIf=\"walletList.length == 0\" style=\"margin-top: 50%; text-align: center\" lines=\"none\">\r\n    No Saved Wallet\r\n  </p>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -297,7 +290,7 @@ module.exports = "<ion-header class=\"ion-no-border\">\r\n  <ion-toolbar class=\
   \**********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "\r\n\r\n<ion-content>\r\n  <div class=\"rect\">\r\n    <ion-header class=\"head\">\r\n      <ion-toolbar class=\"new-background-color\" style=\"--border-width: 0\">\r\n        <ion-icon\r\n          name=\"close\"\r\n          class=\"close\"\r\n          slot=\"end\"\r\n          (click)=\"close()\"\r\n        ></ion-icon>\r\n        <div class=\"text\" style=\"margin-left: 35px\">Appointment Summary</div>\r\n\r\n        <!-- <span class=\"text1\">Token Number <br> <span class=\"text2\" style=\"opacity:100%;\">{{tokenNo}}</span></span> -->\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <div class=\"innerRect\">\r\n      <span class=\"circle\"></span>\r\n      <div class=\"inputCard\">\r\n        <ion-label style=\"opacity: 51%\">Transaction Amount</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionAmount }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n\r\n        <!-- </div>\r\n  \r\n  \r\n  \r\n        <div class=\"inputCard\"> -->\r\n        <ion-label style=\"opacity: 51%\">Transaction Branch</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionBranch }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Date</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionDate }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n\r\n        <ion-label style=\"opacity: 51%\">Time Slot</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionTime }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n      </div>\r\n      <!-- <img src=\"data:image/png;base64,{{blobUrl}}\">  -->\r\n      <img [src]=\"imageToShow\" />\r\n      <!-- <qrcode [qrdata]=\"myAngularxQrCode\" [width]=\"256\" [errorCorrectionLevel]=\"'M'\"></qrcode> -->\r\n\r\n      <!-- <ion-label\r\n        class=\"inputCard\"\r\n        style=\"display: block; opacity: 70%; font-size: 16pt\"\r\n        (click)=\"addToWallet()\"\r\n        >Add to wallet</ion-label> -->\r\n    </div>\r\n\r\n    <div class=\"inputCard\"></div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "\r\n\r\n<ion-content>\r\n  <div class=\"rect\">\r\n    <ion-header class=\"head\">\r\n      <ion-toolbar class=\"new-background-color\" style=\"--border-width: 0\">\r\n        <ion-icon\r\n          name=\"close\"\r\n          class=\"close\"\r\n          slot=\"end\"\r\n          (click)=\"close()\"\r\n        ></ion-icon>\r\n        <div class=\"text\" style=\"margin-left: 35px\">Appointment Summary</div>\r\n\r\n        <!-- <span class=\"text1\">Token Number <br> <span class=\"text2\" style=\"opacity:100%;\">{{tokenNo}}</span></span> -->\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <div class=\"innerRect\">\r\n      <span class=\"circle\"></span>\r\n      <div class=\"inputCard\">\r\n        <ion-label style=\"opacity: 51%\">Transaction Amount</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionAmount }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n\r\n        <!-- </div>\r\n  \r\n  \r\n  \r\n        <div class=\"inputCard\"> -->\r\n        <ion-label style=\"opacity: 51%\">Transaction Branch</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionBranch }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n\r\n        <ion-label style=\"opacity: 51%\">Transaction Date</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionDate }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n\r\n        <ion-label style=\"opacity: 51%\">Time Slot</ion-label>\r\n        <ion-label class=\"display\">{{ data?.transactionTime }}</ion-label>\r\n        <!-- <ion-input class=\"box\" placeholder=\"Enter Current Password\"></ion-input> -->\r\n      </div>\r\n      <!-- <img src=\"data:image/png;base64,{{blobUrl}}\">  -->\r\n      <img [src]=\"imageURL\" />\r\n      <!-- <qrcode [qrdata]=\"myAngularxQrCode\" [width]=\"256\" [errorCorrectionLevel]=\"'M'\"></qrcode> -->\r\n\r\n      <!-- <ion-label\r\n        class=\"inputCard\"\r\n        style=\"display: block; opacity: 70%; font-size: 16pt\"\r\n        (click)=\"addToWallet()\"\r\n        >Add to wallet</ion-label> -->\r\n    </div>\r\n\r\n    <div class=\"inputCard\"></div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

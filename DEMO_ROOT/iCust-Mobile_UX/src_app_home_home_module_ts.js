@@ -106,8 +106,8 @@ let HomePage = class HomePage {
     }
     ngOnInit() {
         setTimeout(() => {
-            this.router.navigate(['login']);
-        }, 3000);
+            this.router.navigate(['login'], { replaceUrl: true });
+        }, 2000);
     }
 };
 HomePage.ctorParameters = () => [

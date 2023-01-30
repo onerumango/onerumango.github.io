@@ -12,16 +12,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SetmpinPage": () => (/* binding */ SetmpinPage),
 /* harmony export */   "mpinObjects": () => (/* binding */ mpinObjects)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _setmpin_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setmpin.page.html?ngResource */ 15533);
 /* harmony import */ var _setmpin_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./setmpin.page.scss?ngResource */ 61379);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/device-access.service */ 34910);
+/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ 83181);
+
 
 
 
@@ -33,16 +35,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SetmpinPage = class SetmpinPage {
-    constructor(router, location, api, fb, toastCtrl, device) {
+    constructor(router, location, api, fb, toastCtrl, uniqueDeviceID, dataService) {
         this.router = router;
         this.location = location;
         this.api = api;
         this.fb = fb;
         this.toastCtrl = toastCtrl;
-        this.device = device;
+        this.uniqueDeviceID = uniqueDeviceID;
+        this.dataService = dataService;
         this.isLoading = false;
-        this.newMpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl();
-        this.mpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl();
+        this.newMpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl();
+        this.mpin = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl();
         this.mpinobj = new mpinObjects();
         this.config = {
             allowNumbersOnly: true,
@@ -51,28 +54,32 @@ let SetmpinPage = class SetmpinPage {
             disableAutoFocus: false,
             placeholder: '',
             inputStyles: {
-                'width': '40px',
-                'height': '40px'
+                'width': '50px',
+                'height': '50px'
             }
         };
     }
     ngOnInit() {
         this.customerPhonenum = localStorage.getItem('customerPhonenum');
         this.mpinForm = this.fb.group({
-            phoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
-            mpin: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
-            deviceId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+            phoneNumber: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
+            deviceId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
+            mpin: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
+            confirmMpin: [],
         });
+        this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
+    }
+    ionViewWillEnter() {
+        this.getUniqueDeviceID();
     }
     back() {
-        // this.router.navigateByUrl('/securitycenter');
         this.location.back();
     }
     forgotmpin() {
         this.router.navigateByUrl('/forgotmpin');
     }
     openToast(message) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
                 message: `${message}`,
                 duration: 2500,
@@ -81,8 +88,19 @@ let SetmpinPage = class SetmpinPage {
             toast.present();
         });
     }
-    generateMpin(val) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+    getUniqueDeviceID() {
+        this.uniqueDeviceID.get()
+            .then((uuid) => {
+            console.log(uuid);
+            this.deviceUUID = uuid;
+        })
+            .catch((error) => {
+            console.log(error);
+            this.deviceUUID = "";
+        });
+    }
+    setMpin() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
             if (!this.newMpin.value || this.newMpin.value < 4 || !this.mpin.value || this.mpin.value.length < 4) {
                 this.openToast('Enter valid mPin');
                 return;
@@ -91,70 +109,50 @@ let SetmpinPage = class SetmpinPage {
                 this.openToast('New and current mPin did not match');
                 return;
             }
-            const deviceId = yield this.device.getDeviceId();
             this.mpinobj.phoneNumber = this.customerPhonenum;
             this.mpinobj.mpin = this.mpin.value;
-            this.mpinobj.deviceId = deviceId;
-            console.log(val);
-            console.log(this.newMpin.value);
-            console.log(this.mpin.value);
+            this.mpinobj.deviceId = this.deviceUUID;
             if (this.newMpin.value !== this.mpin.value) {
                 this.openToast('mPin did not match');
                 return;
             }
-            this.api.authenticateMpin(this.mpinobj).subscribe(resp => {
-                console.log(resp);
-                resp = resp === null || resp === void 0 ? void 0 : resp.body;
-                if (resp != null) {
-                    this.openToast('Current mPin can not be same as previous');
-                    // if (resp?.custStatus !== 'APPROVED') {
-                    //   this.openToast('Customer Id or Account Status is not approved');
-                    // }
+            this.api
+                .setMpin(this.mpinobj)
+                .subscribe((res) => {
+                if (res.status == 200) {
+                    localStorage.setItem('deviceId', this.deviceUUID);
+                    localStorage.setItem('customer_details', JSON.stringify(res.data));
+                    this.dataService.isLoggedIn.next(true);
+                    const navigationExtras = {
+                        queryParams: {
+                            'screenDetails': 'Set Login mPIN!',
+                            'screenDescription': 'Your mPIN has been registered successfully',
+                            'screenName': this.screenNames.queryParams.screenName == "forgotmpin" ? 'forgotmpin' : 'setmpin'
+                        },
+                    };
+                    this.api.sendNavParam(navigationExtras);
+                    this.router.navigateByUrl('/success-message');
                 }
                 else {
-                    this.validateMpin(this.mpinobj, deviceId);
+                    this.openToast(res.message);
                 }
-            }, (err) => {
-                console.log('Error: ', err.error);
-                this.validateMpin(this.mpinobj, deviceId);
+            }, (error) => {
+                this.isLoading = false;
             });
-        });
-    }
-    validateMpin(mpinobj, deviceId) {
-        this.api
-            .validateMpin(mpinobj)
-            .subscribe((data) => {
-            console.log('validate password-- ', data.status);
-            if (data.mpin) {
-                console.log("data");
-                localStorage.setItem('deviceId', deviceId);
-                const navigationExtras = {
-                    queryParams: {
-                        'screenDetails': 'mPIN Changed!',
-                        'screenDescription': 'Your mPIN has been changed successfully',
-                        'screenName': 'setmpin'
-                    },
-                };
-                this.api.sendNavParam(navigationExtras);
-                this.router.navigateByUrl('/success-message');
-                // this.router.navigate(['success-message']);
-            }
-        }, (error) => {
-            console.log('Error :: ', error);
-            this.isLoading = false;
         });
     }
 };
 SetmpinPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_7__.Location },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_8__.Location },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ToastController },
-    { type: src_app_services_device_access_service__WEBPACK_IMPORTED_MODULE_3__.DeviceAccess }
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
+    { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_4__.UniqueDeviceID },
+    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__.DataService }
 ];
-SetmpinPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
+SetmpinPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
         selector: 'app-setmpin',
         template: _setmpin_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_setmpin_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -183,7 +181,7 @@ module.exports = "section {\n  position: relative;\n  background: url('3@3x.png'
   \************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <div class=\"back-nav\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/logo.svg\" class=\"w-100\"></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form class=\"form_container\"  [formGroup]=\"mpinForm\" novalidate>\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4>Set mPIN</h4>\r\n            <p class=\"otp-text\">Set a Permanent mPIN of your choice for Your account.</p>\r\n            <!-- <h6>{{customerPhonenum}}</h6> -->\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div>\r\n          <p class=\"text-center\">Set new mPIN</p>\r\n        </div>\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"newMpin\" [config]=\"config\"></ng-otp-input>\r\n        </div>\r\n        <div>\r\n          <p class=\"text-center\">Confirm new mPIN</p>\r\n        </div>\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"mpin\" [config]=\"config\"></ng-otp-input>\r\n        </div>\r\n         <!-- OTP INPUT END -->\r\n        <!-- <div class=\"forgot my-5\" (click)=\"forgotmpin()\">\r\n          <a class=\"text-center\">Forgot mPIN</a>\r\n        </div> -->\r\n      </form>\r\n      <div class=\"my-5\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\" (click)=\"generateMpin(mpinForm)\">\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n    <div class=\"back-nav\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\"></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <form class=\"form_container\" [formGroup]=\"mpinForm\" novalidate>\r\n        <div class=\"otp-box text-left\">\r\n          <ion-text>\r\n            <h4>Set mPIN</h4>\r\n            <p class=\"otp-text\">Set a Permanent mPIN of your choice for Your account.</p>\r\n            <!-- <h6>{{customerPhonenum}}</h6> -->\r\n          </ion-text>\r\n        </div>\r\n        <!-- OTP INPUT START -->\r\n        <div>\r\n          <p class=\"text-center\">Set new mPIN</p>\r\n        </div>\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"newMpin\" [config]=\"config\"></ng-otp-input>\r\n        </div>\r\n        <div>\r\n          <p class=\"text-center\">Confirm new mPIN</p>\r\n        </div>\r\n        <div class=\"text-center my-5\">\r\n          <ng-otp-input [formCtrl]=\"mpin\" [config]=\"config\"></ng-otp-input>\r\n        </div>\r\n         <!-- OTP INPUT END -->\r\n        <!-- <div class=\"forgot my-5\" (click)=\"forgotmpin()\">\r\n          <a class=\"text-center\">Forgot mPIN</a>\r\n        </div> -->\r\n      </form>\r\n      <div class=\"my-5\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\" (click)=\"setMpin()\">\r\n            CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 
