@@ -234,7 +234,7 @@
       !*** ./src/app/views/sessions/signin/signin.component.ts ***!
       \***********************************************************/
 
-    /*! exports provided: SigninComponent */
+    /*! exports provided: SigninComponent, User */
 
     /***/
     function Ekgz(module, __webpack_exports__, __webpack_require__) {
@@ -246,6 +246,12 @@
 
       __webpack_require__.d(__webpack_exports__, "SigninComponent", function () {
         return SigninComponent;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "User", function () {
+        return User;
       });
       /* harmony import */
 
@@ -320,37 +326,43 @@
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! app/shared/services/api.service */
+      "nm5K");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "XiUz");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/form-field */
       "kmnG");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! @angular/material/input */
       "qFsG");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @angular/material/icon */
       "NFeN");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
 
@@ -375,7 +387,7 @@
       }
 
       var SigninComponent = /*#__PURE__*/function () {
-        function SigninComponent(fb, layout, router, jwtService, themeService, dialog, toastr, spinner) {
+        function SigninComponent(fb, layout, router, jwtService, themeService, dialog, toastr, apiService, spinner) {
           _classCallCheck(this, SigninComponent);
 
           this.fb = fb;
@@ -385,6 +397,7 @@
           this.themeService = themeService;
           this.dialog = dialog;
           this.toastr = toastr;
+          this.apiService = apiService;
           this.spinner = spinner;
           this.hide = true;
         }
@@ -392,51 +405,99 @@
         _createClass(SigninComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this = this;
+
             this.browserKey = Object(uuid__WEBPACK_IMPORTED_MODULE_10__["v4"])();
             this.signinForm = this.fb.group({
               username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
               password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
               systemCode: [this.browserKey]
             });
+            this.apiService.getSecurityPolicyDetails().subscribe(function (policy) {
+              _this.security = policy[0];
+            });
           }
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this = this;
+            var _this2 = this;
 
             if (!this.signinForm.invalid) {
               this.spinner.show();
               this.jwtService.loginIcut(this.signinForm.value).subscribe(function (res) {
                 console.log("ress", res);
+                _this2.userResp = res;
 
-                _this.spinner.hide();
+                _this2.spinner.hide();
 
-                if (res) {
-                  console.log("if res", res);
+                if ((res === null || res === void 0 ? void 0 : res.data) == null && res.message == "Account blocked, Max failed attempts reached") {
+                  _this2.toastr.error("".concat(res.message), "Error!", {
+                    progressAnimation: 'decreasing',
+                    progressBar: true,
+                    positionClass: 'toast-top-right',
+                    timeOut: 3000
+                  });
+                } else if (res) {
+                  _this2.notifyPswdExpry = _this2.security.notifyPasswordExpiryInDays;
+                  _this2.pswdExpiry = _this2.security.pswdExpiry;
 
-                  _this.jwtService.setUserAndToken(res, true);
+                  if (_this2.pswdExpiry === 0 && _this2.notifyPswdExpry === 0) {} else {
+                    _this2.currentDate = new Date();
+                    _this2.changePwdDate = new Date(_this2.userResp.pwdChangeDate);
+                    console.log(_this2.changePwdDate);
+                    _this2.differnceInTime = _this2.currentDate - _this2.changePwdDate;
+                    console.log(_this2.differnceInTime);
+                    _this2.differnceInDays = Math.floor(_this2.differnceInTime / (1000 * 3600 * 24));
+                    _this2.finalDiff = _this2.pswdExpiry - _this2.differnceInDays;
+                    console.log(_this2.finalDiff, _this2.pswdExpiry, _this2.differnceInDays);
 
-                  localStorage.setItem('branchName', res.branchName);
-                  localStorage.setItem('userName', res.userName);
-                  localStorage.setItem("browserId", _this.browserKey);
+                    if (_this2.finalDiff === 0 || _this2.finalDiff <= 0) {
+                      _this2.toastr.error("Error!", "Your Password is expired. Please reset your password.", {
+                        progressAnimation: 'decreasing',
+                        progressBar: true,
+                        positionClass: 'toast-top-right',
+                        timeOut: 3000
+                      });
+                    } else {
+                      console.log("if res", res);
 
-                  _this.router.navigateByUrl('/others/dashboard');
+                      _this2.jwtService.setUserAndToken(res, true);
 
-                  _this.showToast(res);
+                      localStorage.setItem('branchName', res.branchName);
+                      localStorage.setItem('userName', res.userName);
+                      localStorage.setItem("browserId", _this2.browserKey);
+                      console.log(_this2.finalDiff);
+
+                      if (_this2.finalDiff > 0 && _this2.finalDiff <= _this2.notifyPswdExpry) {
+                        _this2.toastr.error("Your password will expire in " + "".concat(_this2.finalDiff) + " day(s)", "");
+                      }
+
+                      _this2.router.navigateByUrl('/others/dashboard');
+
+                      _this2.showToast(res);
+                    }
+                  }
                 }
               }, function (err) {
                 console.log("err", err);
 
-                _this.spinner.hide();
+                _this2.spinner.hide();
 
                 if (err.error) {
-                  _this.toastr.error("".concat(err.error.message), "Error!", {
+                  _this2.toastr.error("".concat(err.error.message), "Error!", {
                     progressAnimation: 'decreasing',
                     progressBar: true,
                     positionClass: 'toast-top-right',
                     timeOut: 3000
                   });
                 }
+              });
+            } else if (this.signinForm.value.password === "" || this.signinForm.value.username === "") {
+              this.toastr.error("Error", "Please enter login credentials.", {
+                progressAnimation: 'decreasing',
+                progressBar: true,
+                positionClass: 'toast-top-right',
+                timeOut: 3000
               });
             }
           }
@@ -486,7 +547,7 @@
       }();
 
       SigninComponent.ɵfac = function SigninComponent_Factory(t) {
-        return new (t || SigninComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_services_layout_service__WEBPACK_IMPORTED_MODULE_9__["LayoutService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__["JwtAuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_services_theme_service__WEBPACK_IMPORTED_MODULE_8__["ThemeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_7__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_spinner__WEBPACK_IMPORTED_MODULE_6__["NgxSpinnerService"]));
+        return new (t || SigninComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_services_layout_service__WEBPACK_IMPORTED_MODULE_9__["LayoutService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__["JwtAuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_services_theme_service__WEBPACK_IMPORTED_MODULE_8__["ThemeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_7__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_11__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_spinner__WEBPACK_IMPORTED_MODULE_6__["NgxSpinnerService"]));
       };
 
       SigninComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -658,7 +719,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.signinForm.get("password").hasError("required"));
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_11__["DefaultLayoutDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_13__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RequiredValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_14__["NgIf"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatSuffix"], _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatError"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_14__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RequiredValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgIf"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatSuffix"], _angular_material_button__WEBPACK_IMPORTED_MODULE_17__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatError"]],
         styles: [".login_container[_ngcontent-%COMP%] {\n  padding: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.login_subtitle[_ngcontent-%COMP%] {\n  margin-top: 50px;\n  margin-bottom: 28px;\n  padding-left: 16px;\n}\n\n.login_form[_ngcontent-%COMP%] {\n  max-width: 408px;\n  width: 100%;\n  padding-left: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n\n.login_content[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 568px;\n  gap: 16px;\n  padding-left: 20px;\n}\n\n.login_heading[_ngcontent-%COMP%] {\n  letter-spacing: 0px;\n  color: #004C97;\n}\n\n.login_link_button[_ngcontent-%COMP%] {\n  color: #004C97;\n  outline: none;\n  background: none;\n  box-shadow: none;\n  border: none;\n  align-self: flex-end;\n  font-weight: bold;\n  margin-top: -10px;\n  float: right;\n}\n\n.login_horizontal[_ngcontent-%COMP%] {\n  height: 2px;\n  width: 100%;\n  background-color: #004C97;\n  height: 1px;\n  flex-grow: 1;\n  align-self: center;\n}\n\n.login_alternate_text[_ngcontent-%COMP%] {\n  width: 100%;\n  align-self: center;\n  margin: auto;\n  text-align: center;\n  color: #004C97;\n  font-weight: bold;\n}\n\n.login_button[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 58px;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 3px 3px 15px #0000000F;\n  border-radius: 15px;\n  border: none;\n}\n\n.login_alternate_signin[_ngcontent-%COMP%] {\n  display: flex;\n  margin-top: 20px;\n}\n\n.login_sigin[_ngcontent-%COMP%] {\n  background: transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 24px;\n  opacity: 1;\n  padding: 5px;\n  width: 100%;\n  color: white;\n  margin-top: 20px;\n}\n\n.login_image[_ngcontent-%COMP%] {\n  display: block;\n  display: flex;\n  overflow: hidden;\n  max-width: 760px;\n  min-height: 520px;\n  max-height: calc(100vh - 80px);\n}\n\n.login_image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.login_methods[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n}\n\n@media screen and (max-width: 1023px) {\n  .login_image[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .login_content[_ngcontent-%COMP%] {\n    padding-left: 0px;\n    max-width: 408px;\n  }\n}\n\n@media screen and (max-width: 767px) {\n  .login_container[_ngcontent-%COMP%] {\n    padding: 20px;\n  }\n  .login_form[_ngcontent-%COMP%] {\n    padding-left: 0;\n  }\n  .login_subtitle[_ngcontent-%COMP%] {\n    margin: 16px 0;\n  }\n}\n\n[_nghost-%COMP%]     .mat-form-field-outline-start {\n  border-radius: 15px 0 0 15px !important;\n  min-width: 10px !important;\n}\n\n[_nghost-%COMP%]     .mat-form-field-outline-end {\n  border-radius: 0 15px 15px 0 !important;\n}\n\n.loginMethodCard[_ngcontent-%COMP%] {\n  margin-right: 20px;\n  color: #004C97;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcc2lnbmluLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBYTtFQUNiLGFBQWE7RUFDYix1QkFBdUI7QUFDM0I7O0FBRUE7RUFDSSxnQkFBZ0I7RUFDaEIsbUJBQW1CO0VBQ25CLGtCQUFrQjtBQUN0Qjs7QUFFQTtFQUNJLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsU0FBUztBQUNiOztBQUVBO0VBQ0ksV0FBVztFQUNYLGdCQUFnQjtFQUNoQixTQUFTO0VBQ1Qsa0JBQWtCO0FBQ3RCOztBQUVBO0VBQ0ksbUJBQW1CO0VBQ25CLGNBQWM7QUFDbEI7O0FBRUE7RUFDSSxjQUFjO0VBQ2QsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLG9CQUFvQjtFQUNwQixpQkFBaUI7RUFDakIsaUJBQWlCO0VBQ2pCLFlBQVk7QUFDaEI7O0FBRUE7RUFDSSxXQUFXO0VBQ1gsV0FBVztFQUNYLHlCQUF5QjtFQUN6QixXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtBQUN0Qjs7QUFFQTtFQUNJLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsaUJBQWlCO0FBQ3JCOztBQUVBO0VBQ0ksYUFBYTtFQUNiLFNBQVM7RUFDVCx1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLFdBQVc7RUFDWCxZQUFZO0VBQ1osK0NBQStDO0VBQy9DLGtDQUFrQztFQUNsQyxtQkFBbUI7RUFFbkIsWUFBWTtBQUFoQjs7QUFHQTtFQUNJLGFBQWE7RUFDYixnQkFBZ0I7QUFBcEI7O0FBR0E7RUFDSSxvR0FBb0c7RUFDcEcsbUJBQW1CO0VBQ25CLFVBQVU7RUFDVixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixnQkFBZ0I7QUFBcEI7O0FBR0E7RUFDSSxjQUFjO0VBQ2QsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLDhCQUE4QjtBQUFsQzs7QUFHQTtFQUNJLFdBQVc7RUFDWCxvQkFBaUI7S0FBakIsaUJBQWlCO0FBQXJCOztBQUdBO0VBQ0ksYUFBYTtFQUNiLFNBQVM7QUFBYjs7QUFHQTtFQUNJO0lBQ0ksYUFBYTtFQUFuQjtFQUdFO0lBQ0ksaUJBQWlCO0lBQ2pCLGdCQUFnQjtFQUR0QjtBQUNGOztBQUlBO0VBQ0k7SUFDSSxhQUFhO0VBRG5CO0VBSUU7SUFDSSxlQUFlO0VBRnJCO0VBS0U7SUFDSSxjQUFjO0VBSHBCO0FBQ0Y7O0FBS0E7RUFDSSx1Q0FBdUM7RUFDdkMsMEJBQTBCO0FBRjlCOztBQUlBO0VBQ0ksdUNBQXVDO0FBRDNDOztBQUdBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQ0o7QUFEQSIsImZpbGUiOiJzaWduaW4uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW5fY29udGFpbmVyIHtcclxuICAgIHBhZGRpbmc6IDQwcHg7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5sb2dpbl9zdWJ0aXRsZSB7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjhweDtcclxuICAgIHBhZGRpbmctbGVmdDogMTZweDtcclxufVxyXG5cclxuLmxvZ2luX2Zvcm0ge1xyXG4gICAgbWF4LXdpZHRoOiA0MDhweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxNnB4O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBnYXA6IDE2cHg7XHJcbn1cclxuXHJcbi5sb2dpbl9jb250ZW50IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWF4LXdpZHRoOiA1NjhweDtcclxuICAgIGdhcDogMTZweDtcclxuICAgIHBhZGRpbmctbGVmdDogMjBweDtcclxufVxyXG5cclxuLmxvZ2luX2hlYWRpbmcge1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICAgIGNvbG9yOiAjMDA0Qzk3O1xyXG59XHJcblxyXG4ubG9naW5fbGlua19idXR0b24ge1xyXG4gICAgY29sb3I6ICMwMDRDOTc7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgYmFja2dyb3VuZDogbm9uZTtcclxuICAgIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbiAgICBhbGlnbi1zZWxmOiBmbGV4LWVuZDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgbWFyZ2luLXRvcDogLTEwcHg7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbn1cclxuXHJcbi5sb2dpbl9ob3Jpem9udGFsIHtcclxuICAgIGhlaWdodDogMnB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Qzk3O1xyXG4gICAgaGVpZ2h0OiAxcHg7XHJcbiAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICBhbGlnbi1zZWxmOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5sb2dpbl9hbHRlcm5hdGVfdGV4dCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjMDA0Qzk3O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuXHJcbi5sb2dpbl9idXR0b24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGdhcDogMTZweDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA1OHB4O1xyXG4gICAgYmFja2dyb3VuZDogI0ZGRkZGRiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBib3gtc2hhZG93OiAzcHggM3B4IDE1cHggIzAwMDAwMDBGO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICAgIC8vIHBhZGRpbmc6IDMycHg7XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbn1cclxuXHJcbi5sb2dpbl9hbHRlcm5hdGVfc2lnbmluIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG4ubG9naW5fc2lnaW4ge1xyXG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxQTJEIDAlLCAjMDA0Qzk3IDEwMCUpIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gICAgcGFkZGluZzogNXB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG4ubG9naW5faW1hZ2Uge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIG1heC13aWR0aDogNzYwcHg7XHJcbiAgICBtaW4taGVpZ2h0OiA1MjBweDtcclxuICAgIG1heC1oZWlnaHQ6IGNhbGMoMTAwdmggLSA4MHB4KTtcclxufVxyXG5cclxuLmxvZ2luX2ltYWdlIGltZyB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG59XHJcblxyXG4ubG9naW5fbWV0aG9kcyB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZ2FwOiAxNnB4O1xyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDIzcHgpIHtcclxuICAgIC5sb2dpbl9pbWFnZSB7XHJcbiAgICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgIH1cclxuXHJcbiAgICAubG9naW5fY29udGVudCB7XHJcbiAgICAgICAgcGFkZGluZy1sZWZ0OiAwcHg7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA0MDhweDtcclxuICAgIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY3cHgpIHtcclxuICAgIC5sb2dpbl9jb250YWluZXIge1xyXG4gICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgLmxvZ2luX2Zvcm0ge1xyXG4gICAgICAgIHBhZGRpbmctbGVmdDogMDtcclxuICAgIH1cclxuXHJcbiAgICAubG9naW5fc3VidGl0bGUge1xyXG4gICAgICAgIG1hcmdpbjogMTZweCAwO1xyXG4gICAgfVxyXG59XHJcbjpob3N0IDo6bmctZGVlcCAubWF0LWZvcm0tZmllbGQtb3V0bGluZS1zdGFydCB7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxNXB4IDAgMCAxNXB4ICFpbXBvcnRhbnQ7XHJcbiAgICBtaW4td2lkdGg6IDEwcHggIWltcG9ydGFudDtcclxufVxyXG46aG9zdCA6Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUtZW5kIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDAgMTVweCAxNXB4IDAgIWltcG9ydGFudDtcclxufVxyXG4ubG9naW5NZXRob2RDYXJke1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgY29sb3I6IzAwNEM5N1xyXG59Il19 */"]
       });
       /*@__PURE__*/
@@ -687,10 +748,16 @@
           }, {
             type: ngx_toastr__WEBPACK_IMPORTED_MODULE_7__["ToastrService"]
           }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_11__["ApiService"]
+          }, {
             type: ngx_spinner__WEBPACK_IMPORTED_MODULE_6__["NgxSpinnerService"]
           }];
         }, null);
       })();
+
+      var User = /*#__PURE__*/_createClass(function User() {
+        _classCallCheck(this, User);
+      });
       /***/
 
     },
@@ -1217,25 +1284,25 @@
         }, {
           key: "captureFingerPrintHttps",
           value: function captureFingerPrintHttps() {
-            var _this2 = this;
+            var _this3 = this;
 
             console.log("in component");
             this.fpCaptureService.CallingSGIFPCapture().subscribe(function (capturedData) {
               console.log('capturedData:: ', capturedData);
 
               if (capturedData.ErrorCode == 0) {
-                _this2.snack.open("Finding ,is registed customer", 'OK', {
+                _this3.snack.open("Finding ,is registed customer", 'OK', {
                   duration: 1000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this2.getFpDataForMatchOnPageLoad(capturedData.TemplateBase64);
+                _this3.getFpDataForMatchOnPageLoad(capturedData.TemplateBase64);
               } else {
-                _this2.getError(capturedData.ErrorCode);
+                _this3.getError(capturedData.ErrorCode);
               }
             }, function (error) {
-              _this2.snack.open("".concat(error), 'OK', {
+              _this3.snack.open("".concat(error), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -1245,7 +1312,7 @@
         }, {
           key: "getFpDataForMatchOnPageLoad",
           value: function getFpDataForMatchOnPageLoad(templateBase64) {
-            var _this3 = this;
+            var _this4 = this;
 
             console.log('TemplateBase64 :: ', templateBase64);
             this.fpCaptureService.getCustInfoByFp(0, 100, 4).subscribe(function (resp) {
@@ -1254,13 +1321,13 @@
 
               if (resp.totalPages - 1 == 0) {
                 Object.keys(resp.data).forEach(function (key) {
-                  _this3.matchFpFromUi(templateBase64, resp.data[key]);
+                  _this4.matchFpFromUi(templateBase64, resp.data[key]);
                 });
               } else {
                 for (var i = 0; i < resp.totalPages; i++) {
                   if (i == 0) {
                     Object.keys(resp.data).forEach(function (key) {
-                      _this3.matchFpFromUi(templateBase64, resp.data[key]);
+                      _this4.matchFpFromUi(templateBase64, resp.data[key]);
                     });
                   } else {// to-da: need to implement logic when more data is present
                   }
@@ -1271,7 +1338,7 @@
         }, {
           key: "matchFpFromUi",
           value: function matchFpFromUi(template1, data) {
-            var _this4 = this;
+            var _this5 = this;
 
             this.fpCaptureService.CallingSGIFPMatch(template1, data.fpTemplateBase64).subscribe(function (fpResp) {
               console.log('fpResp : ', fpResp);
@@ -1280,22 +1347,22 @@
                 var custId = data.customerId;
                 console.log("res", data);
 
-                _this4.jwtService.setUserAndToken(data, true);
+                _this5.jwtService.setUserAndToken(data, true);
 
-                _this4.router.navigateByUrl('/others/dashboard');
+                _this5.router.navigateByUrl('/others/dashboard');
 
-                _this4.ls.setItem('customer_id', custId);
+                _this5.ls.setItem('customer_id', custId);
 
-                _this4.cdr.markForCheck();
+                _this5.cdr.markForCheck();
 
-                _this4.cdr.detectChanges();
+                _this5.cdr.detectChanges();
 
-                _this4.dialogRef.close({
+                _this5.dialogRef.close({
                   message: 'Confirm',
                   custId: custId
                 });
 
-                _this4.snack.open("User found : ".concat(data.customerId), 'OK', {
+                _this5.snack.open("User found : ".concat(data.customerId), 'OK', {
                   duration: 1000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -1336,15 +1403,15 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
-            var _this5 = this;
+            var _this6 = this;
 
             var screen = 'Kisok Authenticate';
             this.fpCaptureService.saveBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (data) {
               console.log("after save ", data);
 
-              _this5.cdr.markForCheck();
+              _this6.cdr.markForCheck();
 
-              _this5.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
+              _this6.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'

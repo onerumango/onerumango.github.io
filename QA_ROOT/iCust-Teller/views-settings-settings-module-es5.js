@@ -173,7 +173,7 @@
         if (rf & 1) {
           var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportDetailsComponent_div_8_Template_div_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
@@ -185,7 +185,7 @@
             return ctx_r6.gotoReport(item_r4.reportName);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportDetailsComponent_div_8_Template_a_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
@@ -205,13 +205,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " \xA0\xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 36);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "span", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "span", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -233,7 +233,7 @@
         }
       }
 
-      function ReportDetailsComponent_mat_error_58_Template(rf, ctx) {
+      function ReportDetailsComponent_mat_error_56_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -277,6 +277,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.reportName = this.reprts[0].reportName;
+            this.tellerId = localStorage.getItem('tellerid');
             this.buildReportForm();
             this.resetForm();
           }
@@ -289,7 +290,7 @@
               accountNo: [data ? data.accountNo : null],
               fileType: [data ? data.fileType : ''],
               fromDate: [data ? data.fromDate : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
-              endDate: [data ? data.endDate : '']
+              endDate: [data ? data.endDate : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
             });
           }
         }, {
@@ -333,8 +334,8 @@
               customerId: this.reportForm.value.customerId,
               accountNo: this.reportForm.value.accountNo,
               fileType: this.reportForm.value.fileType,
-              fromDate: moment__WEBPACK_IMPORTED_MODULE_4__(this.reportForm.value.fromDate).format('DD-MM-YYYY'),
-              endDate: moment__WEBPACK_IMPORTED_MODULE_4__(this.reportForm.value.endDate).format('DD-MM-YYYY'),
+              fromDate: moment__WEBPACK_IMPORTED_MODULE_4__(this.reportForm.value.fromDate).format('YYYY-MM-DD'),
+              endDate: moment__WEBPACK_IMPORTED_MODULE_4__(this.reportForm.value.endDate).format('YYYY-MM-DD'),
               reportName: this.reportName
             }];
             this.reportupdate = this.reprts.filter(function (val) {
@@ -346,7 +347,7 @@
                window.open(data);
              }) */
 
-            this.apiService.getReport(this.reportupdate[0].reportId, this.reportupdate[0].date);
+            this.apiService.getReport(this.tellerId, moment__WEBPACK_IMPORTED_MODULE_4__(this.reportForm.value.fromDate).format('YYYY-MM-DD'), moment__WEBPACK_IMPORTED_MODULE_4__(this.reportForm.value.endDate).format('YYYY-MM-DD'));
           }
         }]);
 
@@ -360,9 +361,9 @@
       ReportDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ReportDetailsComponent,
         selectors: [["app-report-details"]],
-        decls: 73,
+        decls: 71,
         vars: 9,
-        consts: [["fxLayout", "row"], ["EgretSideNavToggle", "", 1, "app-sidebar", 2, "width", "300px"], [1, "sidenav-hold"], ["appDropdown", "", 1, "sidenav", "mt-32"], ["appDropdownLink", "", "routerLinkActive", "open"], ["class", "lvl1", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutWrap", "wrap", 1, "app-wrap"], [1, "full-width", "mt-32"], ["fxFlex", "100"], [1, "p-0"], [1, "title"], [1, "card-title-text"], [3, "formGroup"], ["fxLayout", "column", "fxLayoutGap", "25px"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "hint"], [1, "inputMatName"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "branch", "placeholder", "Enter Branch", 1, "alignment"], ["matInput", "", "type", "text", "autocomplete", "off", "name", "assetType", "placeholder", "Enter Customer Id", "formControlName", "customerId", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "accountNo", "placeholder", "Enter Account Number", 1, "alignment", 3, "keypress"], ["formControlName", "fileType", "placeholder", "Select Report Format"], ["disabled", "", "value", ""], ["value", "doc"], ["value", "Excel"], ["fxLayout", "row", 1, "inputMatName"], ["matInput", "", "name", "courseCommencementDate", "placeholder", "Select From date", "formControlName", "fromDate", "readonly", "", 3, "matDatepicker"], ["matSuffix", "", 2, "float", "right", 3, "for"], ["picker", ""], [4, "ngIf"], ["matInput", "", "name", "courseCommencementDate", "formControlName", "endDate", "placeholder", "Select End date", "readonly", "", 3, "matDatepicker"], ["picker1", ""], ["fxLayout", "row", "fxLayoutGap", "25px", 2, "padding-bottom", "40px", "padding-right", "40px", "float", "right"], ["mat-raised-button", "", "color", "primary", 3, "disabled", "click"], ["mat-raised-button", "", "color", "warn", 3, "click"], [1, "lvl1", 3, "click"], [3, "ngClass", "click"], [1, "item-name", "lvl1"], ["fxFlex", ""]],
+        consts: [["fxLayout", "row"], ["EgretSideNavToggle", "", 1, "app-sidebar", 2, "width", "300px"], [1, "sidenav-hold"], ["appDropdown", "", 1, "sidenav", "mt-32"], ["appDropdownLink", "", "routerLinkActive", "open"], ["class", "lvl1", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutWrap", "wrap", 1, "app-wrap"], [1, "full-width", "mt-32"], ["fxFlex", "100"], [1, "p-0"], [1, "title"], [1, "card-title-text"], [3, "formGroup"], ["fxLayout", "column", "fxLayoutGap", "25px"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "hint"], [1, "inputMatName"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "branch", "placeholder", "Enter Branch", 1, "alignment"], ["matInput", "", "type", "text", "autocomplete", "off", "name", "assetType", "placeholder", "Enter Customer Id", "formControlName", "customerId", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "accountNo", "placeholder", "Enter Account Number", 1, "alignment", 3, "keypress"], ["formControlName", "fileType", "placeholder", "Select Report Format"], ["disabled", "", "value", ""], ["value", "doc"], ["fxLayout", "row", 1, "inputMatName"], ["matInput", "", "name", "courseCommencementDate", "placeholder", "Select From date", "formControlName", "fromDate", "readonly", "", 3, "matDatepicker"], ["matSuffix", "", 2, "float", "right", 3, "for"], ["picker", ""], [4, "ngIf"], ["matInput", "", "name", "courseCommencementDate", "formControlName", "endDate", "placeholder", "Select End date", "readonly", "", 3, "matDatepicker"], ["picker1", ""], ["fxLayout", "row", "fxLayoutGap", "25px", 2, "padding-bottom", "40px", "padding-right", "40px", "float", "right"], ["mat-raised-button", "", "color", "primary", 3, "disabled", "click"], ["mat-raised-button", "", "color", "warn", 3, "click"], [1, "lvl1", 3, "click"], [3, "ngClass", "click"], [1, "item-name", "lvl1"], ["fxFlex", ""]],
         template: function ReportDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -515,13 +516,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "mat-option", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Doc");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "mat-option", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Excel");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "PDF");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -533,45 +528,45 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "mat-label", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "mat-label", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "From Date *");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "mat-card", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "input", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](55, "mat-datepicker-toggle", 27);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](56, "mat-datepicker", null, 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "From Date *");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](58, ReportDetailsComponent_mat_error_58_Template, 2, 0, "mat-error", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "mat-card", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "input", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](53, "mat-datepicker-toggle", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "mat-datepicker", null, 27);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "div", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "mat-label", 16);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "End Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](56, ReportDetailsComponent_mat_error_56_Template, 2, 0, "mat-error", 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "mat-card", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](63, "input", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "mat-label", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](64, "mat-datepicker-toggle", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "End Date *");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "mat-datepicker", null, 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "mat-card", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](61, "input", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](62, "mat-datepicker-toggle", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](63, "mat-datepicker", null, 30);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -585,27 +580,27 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "button", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "button", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportDetailsComponent_Template_button_click_68_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportDetailsComponent_Template_button_click_66_listener() {
               return ctx.apply();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, " Apply ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, " Apply ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "\xA0\xA0\xA0 ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "\xA0\xA0\xA0 ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "button", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "button", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportDetailsComponent_Template_button_click_71_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportDetailsComponent_Template_button_click_69_listener() {
               return ctx.resetForm();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, " Reset ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, " Reset ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -619,9 +614,9 @@
           }
 
           if (rf & 2) {
-            var _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](57);
+            var _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](55);
 
-            var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](66);
+            var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](64);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
@@ -635,7 +630,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.reportForm);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matDatepicker", _r1);
 
@@ -1312,25 +1307,19 @@
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
-      /*! @angular/material/card */
-      "Wp6s");
-      /* harmony import */
-
-
-      var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/material/select */
       "d3UM");
       /* harmony import */
 
 
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/material/core */
       "FKr1");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
 
@@ -1408,9 +1397,9 @@
       ChangeEmailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ChangeEmailComponent,
         selectors: [["app-change-email"]],
-        decls: 25,
+        decls: 28,
         vars: 2,
-        consts: [[1, "text-center", "mat-bg-white", "pt-16", "pb-16", "my-8"], [1, "m-0", "text-blue"], ["role", "list", 1, "notification-list"], [3, "formGroup"], [1, "centeralign"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [1, "inputCard"], [2, "padding-top", "5px", 3, "click"], ["appearance", "outline", 1, "half-width"], ["matInput", "", "formControlName", "email", 1, "box", 3, "placeholder"], ["matSuffix", ""], [1, "mat-list-text"], [1, "message", 3, "click"], [1, "Language", 2, "width", "30%", "margin-left", "33px"], ["appearance", "outline", "formControlName", "language", 2, "width", "100"], ["value", "English"], ["mat-raised-button", "", "color", "primary", 1, "mat-elevation-z0", 2, "color", "white", "padding", "0.2rem 4rem", "border-radius", "15px", 3, "click"]],
+        consts: [[1, "text-center", "prof_header", "mat-bg-white", "pt-16", "pb-16", "my-8"], [1, "m-0", "text-blue"], ["role", "list", 1, "notification-list"], ["fxLayout", "column", 1, "pl-35", "pr-35"], ["fxFlex", "100%"], ["fxLayout", "column", 3, "formGroup"], ["fxLayout", "column", "fxLayoutGap", "25px"], ["fxFlex", "50", "fxLayout", "column", 1, "pr-1"], ["fxFlex", "50", 1, "pb-1"], [2, "padding-top", "5px", 3, "click"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "formControlName", "email", 1, "box", 3, "placeholder"], ["matSuffix", ""], [3, "click"], ["appearance", "outline", "formControlName", "language", 1, "box"], ["value", "English"], [1, "alignright"], ["mat-raised-button", "", "color", "primary", 1, "save_btn", 3, "click"]],
         template: function ChangeEmailComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1425,79 +1414,91 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-nav-list", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "form", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "form", 5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h3", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangeEmailComponent_Template_h3_click_8_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "h3", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangeEmailComponent_Template_h3_click_10_listener() {
               return ctx.getProfile();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Change Email");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Change Email");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-form-field", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-form-field", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " Email");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "input", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-icon", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "email");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, " Email");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "input", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-icon", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "email");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "h4", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "h3", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangeEmailComponent_Template_h4_click_17_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangeEmailComponent_Template_h3_click_19_listener() {
               return ctx.getProfile();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Language");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Select Language");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-card", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "mat-form-field", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-select", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-select", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "mat-option", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-option", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "English");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "English");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "button", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangeEmailComponent_Template_button_click_23_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "button", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangeEmailComponent_Template_button_click_26_listener() {
               return ctx.save(ctx.changeEmailForm.value);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Save Changes");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Save Changes");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1511,7 +1512,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.changeEmailForm);
 
@@ -1520,8 +1521,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("placeholder", ctx.currentUser.email);
           }
         },
-        directives: [_angular_material_list__WEBPACK_IMPORTED_MODULE_6__["MatNavList"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatSuffix"], _angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCard"], _angular_material_select__WEBPACK_IMPORTED_MODULE_12__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_13__["MatOption"], _angular_material_button__WEBPACK_IMPORTED_MODULE_14__["MatButton"]],
-        styles: [".inputCard[_ngcontent-%COMP%] {\n  padding-top: 7%;\n  padding-left: 5%;\n  font-family: 'Montserrat' !important;\n}\n\n.matCard[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-family: 'Montserrat' !important;\n  text-transform: capitalize;\n}\n\n.mat-label[_ngcontent-%COMP%] {\n  color: #102245;\n  font-size: 14px;\n  font-family: 'Montserrat' !important;\n  margin-bottom: 13pt;\n}\n\n.message[_ngcontent-%COMP%] {\n  margin-left: 33px;\n}\n\n.centeralign[_ngcontent-%COMP%] {\n  justify-content: center;\n  padding-left: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGNoYW5nZS1lbWFpbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGVBQWU7RUFDZixnQkFBZ0I7RUFFaEIsb0NBQW9DO0FBQXhDOztBQUVBO0VBQ1EsZUFBZTtFQUNmLG9DQUFvQztFQUNwQywwQkFBMEI7QUFDbEM7O0FBQ0E7RUFFSSxjQUFhO0VBQ2IsZUFBZTtFQUNmLG9DQUFvQztFQUNwQyxtQkFBbUI7QUFDdkI7O0FBQ0E7RUFDSSxpQkFBaUI7QUFFckI7O0FBQUE7RUFDSSx1QkFBdUI7RUFDdkIsbUJBQW1CO0FBR3ZCIiwiZmlsZSI6ImNoYW5nZS1lbWFpbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbnB1dENhcmR7XHJcbiAgICBwYWRkaW5nLXRvcDogNyU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gICAgXHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbi5tYXRDYXJke1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgICAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbiAgICB9ICAgXHJcbi5tYXQtbGFiZWx7XHJcblxyXG4gICAgY29sb3I6IzEwMjI0NTtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEzcHQ7XHJcbn1cclxuLm1lc3NhZ2V7XHJcbiAgICBtYXJnaW4tbGVmdDogMzNweDtcclxufVxyXG4uY2VudGVyYWxpZ257XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIHBhZGRpbmctbGVmdDogMjUwcHg7XHJcbn0iXX0= */"]
+        directives: [_angular_material_list__WEBPACK_IMPORTED_MODULE_6__["MatNavList"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultFlexDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatSuffix"], _angular_material_select__WEBPACK_IMPORTED_MODULE_11__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_12__["MatOption"], _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButton"]],
+        styles: [".inputCard[_ngcontent-%COMP%] {\n  padding-top: 7%;\n  padding-left: 5%;\n  font-family: 'Montserrat' !important;\n  display: flex;\n  flex-direction: column;\n}\n\n.matCard[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-family: 'Montserrat' !important;\n  text-transform: capitalize;\n}\n\n.mat-label[_ngcontent-%COMP%] {\n  color: #102245;\n  font-size: 14px;\n  font-family: 'Montserrat' !important;\n  margin-bottom: 13pt;\n}\n\n.message[_ngcontent-%COMP%] {\n  margin-left: 33px;\n}\n\n.centeralign[_ngcontent-%COMP%] {\n  justify-content: center;\n}\n\n.prof_header[_ngcontent-%COMP%] {\n  display: flex !important;\n  justify-content: center;\n}\n\n.profile_box[_ngcontent-%COMP%] {\n  display: flex !important;\n  justify-content: center;\n  flex: none !important;\n  flex-direction: column;\n}\n\n.profile_btn[_ngcontent-%COMP%] {\n  margin: 0px 1% 0 6%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGNoYW5nZS1lbWFpbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGVBQWU7RUFDZixnQkFBZ0I7RUFFaEIsb0NBQW9DO0VBQ3BDLGFBQWE7RUFDYixzQkFBc0I7QUFBMUI7O0FBRUE7RUFDUSxlQUFlO0VBQ2Ysb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUNsQzs7QUFDQTtFQUVJLGNBQWE7RUFDYixlQUFlO0VBQ2Ysb0NBQW9DO0VBQ3BDLG1CQUFtQjtBQUN2Qjs7QUFDQTtFQUNJLGlCQUFpQjtBQUVyQjs7QUFBQTtFQUNJLHVCQUF1QjtBQUczQjs7QUFBQTtFQUNJLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFHM0I7O0FBREE7RUFDSSx3QkFBd0I7RUFDeEIsdUJBQXVCO0VBQ3ZCLHFCQUFxQjtFQUNyQixzQkFBc0I7QUFJMUI7O0FBRkE7RUFDSSxtQkFBb0I7QUFLeEIiLCJmaWxlIjoiY2hhbmdlLWVtYWlsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmlucHV0Q2FyZHtcclxuICAgIHBhZGRpbmctdG9wOiA3JTtcclxuICAgIHBhZGRpbmctbGVmdDogNSU7XHJcbiAgICBcclxuICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcgIWltcG9ydGFudDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgfVxyXG4ubWF0Q2FyZHtcclxuICAgICAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JyAhaW1wb3J0YW50O1xyXG4gICAgICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgfSAgIFxyXG4ubWF0LWxhYmVse1xyXG5cclxuICAgIGNvbG9yOiMxMDIyNDU7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxM3B0O1xyXG59XHJcbi5tZXNzYWdle1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMzcHg7XHJcbn1cclxuLmNlbnRlcmFsaWdue1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAvL3BhZGRpbmctbGVmdDogMjUwcHg7XHJcbn1cclxuLnByb2ZfaGVhZGVye1xyXG4gICAgZGlzcGxheTogZmxleCAhaW1wb3J0YW50O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuLnByb2ZpbGVfYm94e1xyXG4gICAgZGlzcGxheTogZmxleCAhaW1wb3J0YW50O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBmbGV4OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG59XHJcbi5wcm9maWxlX2J0bntcclxuICAgIG1hcmdpbjogMHB4IDElIDAgNiUgO1xyXG59XHJcbiJdfQ== */"]
       });
       /*@__PURE__*/
 
@@ -1609,33 +1610,33 @@
       /* harmony import */
 
 
-      var _angular_material_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! @angular/material/list */
-      "MutI");
-      /* harmony import */
-
-
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "XiUz");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/form-field */
       "kmnG");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/material/input */
       "qFsG");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/material/icon */
       "NFeN");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
       /* harmony import */
 
 
@@ -1643,8 +1644,152 @@
       /*! @angular/material/button */
       "bTqV");
 
+      function ChangePasswordComponent_mat_error_22_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r6.errorMsg);
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_22_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ChangePasswordComponent_mat_error_22_div_1_Template, 2, 1, "div", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.changePasswordForm.get("newPassword").errors.pattern);
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_23_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" New Password Password must contain Minimum ", ctx_r1.minPass, " digits. ");
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_24_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" New Password must contain Maximum ", ctx_r2.maxPass, " digits. ");
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_32_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.errorMsg);
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_32_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ChangePasswordComponent_mat_error_32_div_1_Template, 2, 1, "div", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.changePasswordForm.get("confirmnewPassword").errors.pattern);
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_33_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" New Password Password must contain Minimum ", ctx_r4.minPass, " digits. ");
+        }
+      }
+
+      function ChangePasswordComponent_mat_error_34_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" New Password must contain Maximum ", ctx_r5.maxPass, " digits. ");
+        }
+      }
+
       var ChangePasswordComponent = /*#__PURE__*/function () {
-        function ChangePasswordComponent(apiService, fb, ls, snack, router) {
+        function ChangePasswordComponent(apiService, fb, ls, snack, router, api) {
           _classCallCheck(this, ChangePasswordComponent);
 
           this.apiService = apiService;
@@ -1652,23 +1797,79 @@
           this.ls = ls;
           this.snack = snack;
           this.router = router;
+          this.api = api;
+          this.errorMsg = "";
         }
 
         _createClass(ChangePasswordComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this4 = this;
+
             this.currentUser = this.ls.getItem("ICUST_USER");
             this.userName = this.currentUser.userName;
-            this.changePasswordForm = this.fb.group({
-              currentPassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-              newPassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-              confirmnewPassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
+            this.changePasswordForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+              currentPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+              newPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(this.passwordRegex), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(this.maxPass), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(this.minPass)])]),
+              confirmnewPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required)
+            });
+            this.api.getSecurityPolicyDetails().subscribe(function (resp) {
+              _this4.security1 = resp;
+              console.log(_this4.security1);
+              _this4.ucase = _this4.security1[0].pswdComplexUcase;
+              _this4.lcase = _this4.security1[0].pswdComplexLcase;
+              console.log(_this4.lcase);
+              _this4.num = _this4.security1[0].pswdComplexNum;
+              console.log(_this4.num);
+              _this4.splc = _this4.security1[0].pswdComplexSplc;
+              _this4.minPass = _this4.security1[0].minPswdLength;
+              _this4.maxPass = _this4.security1[0].maxPswdLength;
+              console.log(_this4.maxPass);
+
+              if (_this4.security1[0].pswdComplexUcase == "true") {
+                _this4.passwordRegex = '(?=[^A-Z]*[A-Z])';
+                _this4.errorMsg = ' UpperCase';
+              }
+
+              if (_this4.security1[0].pswdComplexLcase == "true") {
+                _this4.passwordRegex = _this4.passwordRegex + '(?=[^a-z]*[a-z])';
+
+                if (_this4.errorMsg != '') {
+                  _this4.errorMsg = _this4.errorMsg + ', LowerCase';
+                } else {
+                  _this4.errorMsg = _this4.errorMsg + ' LowerCase';
+                }
+              }
+
+              if (_this4.splc == "true") {
+                _this4.passwordRegex = _this4.passwordRegex + '(?=.*[!@#$%^&*])';
+                if (_this4.errorMsg != '') _this4.errorMsg = _this4.errorMsg + ", Special Character";else _this4.errorMsg = _this4.errorMsg + " Special Character";
+              }
+
+              if (_this4.security1[0].pswdComplexNum == "true") {
+                _this4.passwordRegex = _this4.passwordRegex + '(?=[^0-9]*[0-9])';
+
+                if (_this4.errorMsg != '') {
+                  _this4.errorMsg = _this4.errorMsg + ', Number';
+                } else {
+                  _this4.errorMsg = _this4.errorMsg + ' Number';
+                }
+              }
+
+              _this4.passwordRegex = _this4.passwordRegex + ".{" + _this4.minPass + "," + _this4.maxPass + "}";
+              _this4.errorMsg = "Password must contain atleast one " + _this4.errorMsg + ".";
+              console.log(_this4.passwordRegex);
+              _this4.changePasswordForm = _this4.fb.group({
+                currentPassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+                newPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(_this4.passwordRegex), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(_this4.maxPass), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(_this4.minPass)])]),
+                confirmnewPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(_this4.passwordRegex), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(_this4.maxPass), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(_this4.minPass)])])
+              });
             });
           }
         }, {
           key: "save",
           value: function save() {
-            var _this4 = this;
+            var _this5 = this;
 
             if (this.changePasswordForm.value.newPassword === this.changePasswordForm.value.confirmnewPassword) {
               var payload = {
@@ -1679,10 +1880,10 @@
               console.log("payload", payload);
               this.apiService.changeTellerPassword(payload).subscribe(function (changePwsResp) {
                 if (changePwsResp) {
-                  _this4.router.navigateByUrl("sessions/signin");
+                  _this5.router.navigateByUrl("sessions/signin");
 
                   setTimeout(function () {
-                    _this4.snack.open("Password Changed Successfully!", "OK", {
+                    _this5.snack.open("Password Changed Successfully!", "OK", {
                       duration: 4000,
                       verticalPosition: "top",
                       horizontalPosition: "right"
@@ -1692,7 +1893,7 @@
               });
             } else {
               setTimeout(function () {
-                _this4.snack.open("New Password and Confirm Password values are not same!", "OK", {
+                _this5.snack.open("New Password and Confirm Password values are not same!", "OK", {
                   duration: 4000,
                   verticalPosition: "top",
                   horizontalPosition: "right"
@@ -1706,15 +1907,15 @@
       }();
 
       ChangePasswordComponent.ɵfac = function ChangePasswordComponent_Factory(t) {
-        return new (t || ChangePasswordComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]));
+        return new (t || ChangePasswordComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]));
       };
 
       ChangePasswordComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ChangePasswordComponent,
         selectors: [["app-change-password"]],
-        decls: 31,
-        vars: 2,
-        consts: [[1, "text-center", "mat-bg-white", "pt-16", "pb-16"], [1, "m-0", "text-blue"], ["role", "list", 1, "notification-list"], [3, "formGroup"], [1, "centeralign"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [1, "inputCard"], ["appearance", "outline", 1, "half-width"], ["matInput", "", "type", "password", "formControlName", "currentPassword", "placeholder", "Enter Current Password", 1, "box"], ["matSuffix", ""], ["matInput", "", "type", "password", "formControlName", "newPassword", "placeholder", "Enter New Password", 1, "box"], ["matInput", "", "type", "password", "formControlName", "confirmnewPassword", "placeholder", "Enter confirm Password", 1, "box"], [1, "alignright"], ["mat-raised-button", "", "color", "primary", 2, "color", "white", "padding", "0.2rem 4rem", "border-radius", "15px", 3, "disabled", "click"]],
+        decls: 38,
+        vars: 10,
+        consts: [[1, "text-center", "mat-bg-white", "pt-16", "pb-16"], [1, "m-0", "text-blue"], ["fxLayout", "column", 1, "pl-35", "pr-35"], ["fxFlex", "100%"], ["fxLayout", "column", 3, "formGroup"], ["fxLayout", "column", "fxLayoutGap", "25px"], ["fxFlex", "50", "fxLayout", "column", 1, "pr-1"], ["fxFlex", "50", 1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "type", "password", "formControlName", "currentPassword", "placeholder", "Enter Current Password", 1, "box"], ["matSuffix", ""], ["matInput", "", "type", "password", "formControlName", "newPassword", "placeholder", "Enter confirm Password", 1, "box", 3, "minlength", "maxlength"], [4, "ngIf"], ["matInput", "", "type", "password", "formControlName", "confirmnewPassword", "placeholder", "Enter confirm Password", 1, "box"], [1, "alignright"], ["mat-raised-button", "", "color", "primary", 1, "save_btn", 3, "disabled", "click"]],
         template: function ChangePasswordComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1727,51 +1928,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-nav-list", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "form", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "form", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-form-field", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-form-field", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Current Password*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "input", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-icon", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "password");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Current Password*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "input", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-icon", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mat-form-field", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "New Password*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "input", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-icon", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "password");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "password");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1779,37 +1960,73 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-form-field", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-form-field", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Confirm New Password*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "input", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-icon", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "password");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, " New Password*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "input", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-icon", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "password");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, ChangePasswordComponent_mat_error_22_Template, 2, 1, "mat-error", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, ChangePasswordComponent_mat_error_23_Template, 2, 1, "mat-error", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, ChangePasswordComponent_mat_error_24_Template, 2, 1, "mat-error", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-form-field", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Confirm New Password*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "input", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-icon", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "password");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](32, ChangePasswordComponent_mat_error_32_Template, 2, 1, "mat-error", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "button", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, ChangePasswordComponent_mat_error_33_Template, 2, 1, "mat-error", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangePasswordComponent_Template_button_click_29_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](34, ChangePasswordComponent_mat_error_34_Template, 2, 1, "mat-error", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "button", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangePasswordComponent_Template_button_click_36_listener() {
               return ctx.save();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, "Save");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "Save");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1825,17 +2042,47 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.changePasswordForm);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("minlength", ctx.minPass);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("maxlength", ctx.maxPass);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.changePasswordForm.get("newPassword").touched && !ctx.changePasswordForm.get("newPassword").valid);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.changePasswordForm.get("newPassword").hasError("minlength"));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.changePasswordForm.get("newPassword").hasError("maxlength"));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.changePasswordForm.get("confirmnewPassword").touched && !ctx.changePasswordForm.get("confirmnewPassword").valid);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.changePasswordForm.get("confirmnewPassword").hasError("minlength"));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.changePasswordForm.get("confirmnewPassword").hasError("maxlength"));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.changePasswordForm.invalid);
           }
         },
-        directives: [_angular_material_list__WEBPACK_IMPORTED_MODULE_6__["MatNavList"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatSuffix"], _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButton"]],
-        styles: [".inputCard[_ngcontent-%COMP%] {\n  padding-top: 7%;\n  padding-left: 5%;\n  font-family: 'Montserrat' !important;\n}\n\n.matCard[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-family: 'Montserrat' !important;\n  text-transform: capitalize;\n}\n\n.mat-label[_ngcontent-%COMP%] {\n  color: #102245;\n  font-size: 14px;\n  font-family: 'Montserrat' !important;\n  margin-bottom: 13pt;\n}\n\n.centeralign[_ngcontent-%COMP%] {\n  justify-content: center;\n  padding-left: 250px;\n}\n\n.alignright[_ngcontent-%COMP%] {\n  justify-content: center;\n  padding-left: 55px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2hhbmdlLXBhc3N3b3JkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBZTtFQUNmLGdCQUFnQjtFQUVoQixvQ0FBb0M7QUFBeEM7O0FBRUE7RUFDUSxlQUFlO0VBQ2Ysb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUNsQzs7QUFDQTtFQUVJLGNBQWE7RUFDYixlQUFlO0VBQ2Ysb0NBQW9DO0VBQ3BDLG1CQUFtQjtBQUN2Qjs7QUFDQTtFQUNJLHVCQUF1QjtFQUN2QixtQkFBbUI7QUFFdkI7O0FBQUE7RUFDSSx1QkFBdUI7RUFDdkIsa0JBQWtCO0FBR3RCIiwiZmlsZSI6ImNoYW5nZS1wYXNzd29yZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbnB1dENhcmR7XHJcbiAgICBwYWRkaW5nLXRvcDogNyU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDUlO1xyXG4gICAgXHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbi5tYXRDYXJke1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgICAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbiAgICB9ICAgXHJcbi5tYXQtbGFiZWx7XHJcblxyXG4gICAgY29sb3I6IzEwMjI0NTtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEzcHQ7XHJcbn1cclxuLmNlbnRlcmFsaWdue1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDI1MHB4O1xyXG59XHJcbi5hbGlnbnJpZ2h0e1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDU1cHg7XHJcbn0iXX0= */"]
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultFlexDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatSuffix"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["MinLengthValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["MaxLengthValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatError"]],
+        styles: [".inputCard[_ngcontent-%COMP%] {\n  padding-top: 10%;\n  padding-left: 5%;\n  display: flex;\n  font-family: 'Montserrat' !important;\n  flex-direction: column;\n}\n\n.matCard[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-family: 'Montserrat' !important;\n  text-transform: capitalize;\n}\n\n.mat-label[_ngcontent-%COMP%] {\n  color: #102245;\n  font-size: 14px;\n  font-family: 'Montserrat' !important;\n  margin-bottom: 13pt;\n}\n\n.centeralign[_ngcontent-%COMP%] {\n  justify-content: center;\n}\n\n.profile_box[_ngcontent-%COMP%] {\n  display: flex !important;\n  justify-content: center;\n  flex: none !important;\n  flex-direction: column;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2hhbmdlLXBhc3N3b3JkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixhQUFhO0VBQ2Isb0NBQW9DO0VBQ3BDLHNCQUFzQjtBQUMxQjs7QUFDQTtFQUNRLGVBQWU7RUFDZixvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBRWxDOztBQUFBO0VBRUksY0FBYTtFQUNiLGVBQWU7RUFDZixvQ0FBb0M7RUFDcEMsbUJBQW1CO0FBRXZCOztBQUFBO0VBQ0ksdUJBQXVCO0FBRzNCOztBQUFBO0VBQ0ksd0JBQXdCO0VBQ3hCLHVCQUF1QjtFQUN2QixxQkFBcUI7RUFDckIsc0JBQXNCO0FBRzFCIiwiZmlsZSI6ImNoYW5nZS1wYXNzd29yZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbnB1dENhcmR7XHJcbiAgICBwYWRkaW5nLXRvcDogMTAlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiA1JTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgfVxyXG4ubWF0Q2FyZHtcclxuICAgICAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JyAhaW1wb3J0YW50O1xyXG4gICAgICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgfSAgIFxyXG4ubWF0LWxhYmVse1xyXG5cclxuICAgIGNvbG9yOiMxMDIyNDU7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxM3B0O1xyXG59XHJcbi5jZW50ZXJhbGlnbntcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAvLyBwYWRkaW5nLWxlZnQ6IDI1MHB4O1xyXG59XHJcbi5wcm9maWxlX2JveHtcclxuICAgIGRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgZmxleDogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxufSJdfQ== */"]
       });
       /*@__PURE__*/
 
@@ -1858,6 +2105,8 @@
             type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"]
           }, {
             type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+          }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
           }];
         }, null);
       })();
@@ -1979,15 +2228,15 @@
         _createClass(SettingsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this5 = this;
+            var _this6 = this;
 
             this.currentUser = this.ls.getItem("ICUST_USER");
             this.getProfile();
             this.dataService.getIcustUser().subscribe(function (data) {
               if (data) {
-                _this5.currentUser = _this5.ls.getItem("ICUST_USER");
+                _this6.currentUser = _this6.ls.getItem("ICUST_USER");
                 setTimeout(function () {
-                  _this5.snack.open("Email Changed Successfully!", "OK", {
+                  _this6.snack.open("Email Changed Successfully!", "OK", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -1999,19 +2248,19 @@
         }, {
           key: "getProfile",
           value: function getProfile() {
-            var _this6 = this;
+            var _this7 = this;
 
             this.apiService.fetchTellerProfileInfo(this.currentUser.userId).subscribe(function (result) {
-              _this6.profileInfo = result;
+              _this7.profileInfo = result;
             });
           }
         }, {
           key: "language",
           value: function language() {
-            var _this7 = this;
+            var _this8 = this;
 
             this.apiService.fetchTellerProfileInfo(1).subscribe(function (result) {
-              _this7.router.navigateByUrl('/settings/change-password');
+              _this8.router.navigateByUrl('/settings/change-password');
             });
           }
         }, {

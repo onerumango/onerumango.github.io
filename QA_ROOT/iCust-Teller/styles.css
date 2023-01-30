@@ -7758,6 +7758,18 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .blue .mat-form-field-appearance-outline .mat-form-field-wrapper {
   color: black;
 }
+.myapp-no-padding-dialog .mat-dialog-container {
+  background: #FFFEFE 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 15px #00000017;
+  border: 1px solid #DBDBDB;
+  border-radius: 12px;
+  padding: 0px;
+}
+.cdk-overlay-container .cdk-overlay-pane .testClass {
+  margin-top: 30px;
+  margin-left: -30px;
+  min-width: calc(100% + 55px) !important;
+}
 .avatar-xs {
   width: 24px;
   height: 24px;
@@ -14374,6 +14386,21 @@ h1.title {
 }
 .add-text {
   padding-top: 10px;
+}
+.alignright {
+  display: flex !important;
+  justify-content: center;
+}
+.save_btn {
+  color: white;
+  padding: 0.2rem 4rem;
+  border-radius: 15px;
+}
+.pl-35 {
+  padding-left: 35%;
+}
+.pr-35 {
+  padding-right: 35%;
 }
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
