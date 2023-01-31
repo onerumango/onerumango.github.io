@@ -23,7 +23,7 @@ body {
   padding: 0;
   font-weight: $font-weight-base;
   font-size: $font-size-base;
-  line-height: 1.5;
+  line-height: 1.6;
   font-family: $font-family-base;
 }
 
@@ -164,6 +164,9 @@ code {
 .mat-indigo {
   background-color: #456EFE !important;
   color: #fff !important;
+}
+.mat-blueGradient{
+  background-image: linear-gradient(90deg, #051A2D, #004C97) !important;
 }
 .mat-brown {
   background-color: #785548 !important;

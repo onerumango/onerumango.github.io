@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap);
+
 /* You can add global styles to this file, and also import other style files */
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
 /* position */
@@ -195,10 +197,17 @@ button.toast-close-button {
   font-weight: normal;
   src: url('PhosphateInline.ttf');
 }
+@font-face {
+  font-family: 'SFPro';
+  font-style: normal;
+  font-weight: normal;
+  src: url('FontsFree-Net-SFProDisplay-Regular.ttf');
+}
 .currency-flag {
     /* display: inline-block; */
-    width: 27px;
-    height: 19px;
+    width: 23px;
+    height: 16px;
+    margin-left: 10px;
     /* border-radius: 50%; */
     background-size: cover;
     background-image:url('https://wise.com/public-resources/assets/flags/rectangle_fallback.png');
@@ -207,13 +216,16 @@ button.toast-close-button {
     width: 16px;
     height: 10px;
   }
+.snackbar{
+    margin-top: 17% !important;
+  }
 .currency-flag-lg {
     width: 36px;
     height: 24px;
   }
 .Nextbtn {
     margin:12px 0px 12px 0px;
-    width:100px;
+    width:87px;
     font-size: 8px !important;
     line-height: 31px !important;
     color:white;
@@ -1127,7 +1139,7 @@ body {
   padding: 0;
   font-weight: 400;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.6;
   font-family: Archivo, "Helvetica Neue", sans-serif;
 }
 [tabindex="-1"]:focus {
@@ -1261,6 +1273,9 @@ code {
 .mat-indigo {
   background-color: #456EFE !important;
   color: #fff !important;
+}
+.mat-blueGradient {
+  background-image: linear-gradient(90deg, #051A2D, #004C97) !important;
 }
 .mat-brown {
   background-color: #785548 !important;
@@ -2379,7 +2394,6 @@ b {
 }
 .app-admin-wrap {
   height: 100vh;
-  overflow: hidden;
 }
 .app-admin-container {
   max-width: 100%;
@@ -2390,7 +2404,6 @@ b {
   flex-direction: column;
   flex-grow: 1;
   padding: 0.333333rem;
-  overflow-x: hidden;
   position: relative;
   min-height: 450px;
 }

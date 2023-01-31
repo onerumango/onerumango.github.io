@@ -1,6 +1,6 @@
 .app-admin-wrap {
   height: 100vh;
-  overflow: hidden;
+  // overflow: auto;
 }
 .app-admin-container {
   max-width: 100%;
@@ -11,7 +11,7 @@
     flex-direction: column;
     flex-grow: 1;
     padding: 0.333333rem;
-    overflow-x: hidden;
+    // overflow-x: auto;
     position: relative;
     min-height: 450px;
   }
@@ -178,6 +178,7 @@
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 48px;
+    // background-color: #FFFFFF;
   }
   .sidebar-panel {
     overflow: hidden;
