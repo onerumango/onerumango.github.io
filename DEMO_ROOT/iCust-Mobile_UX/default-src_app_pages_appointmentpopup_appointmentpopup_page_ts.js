@@ -102,7 +102,6 @@ let AppointmentpopupPage = class AppointmentpopupPage {
         }
         else {
             this.modalCtrl.dismiss();
-            this.router.navigate(['dashboard']);
         }
     }
     generateQRCode() {

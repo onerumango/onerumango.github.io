@@ -661,21 +661,6 @@ let ForexCashV2Page = class ForexCashV2Page {
         var _a, _b;
         let dataOne = JSON.parse(localStorage.getItem('viewRef')) || null;
         let dataTwo = JSON.parse(localStorage.getItem('dynamicViewRef')) || null;
-        // if (view == 'viewRef') {
-        //   this.viewRef.clear();
-        //   if (data != null && data.total != 0) {
-        //     this.amountOfDenomination = data.total;
-        //     this.denomAmountValidation(data.total);
-        //     console.log(this.form.value);
-        //   }
-        // } else {
-        //   this.dynamicViewRef.clear();
-        //   if (data != null && data.total != 0) {
-        //     this.amountOfTotalDenomination = data.total;
-        //     this.denomAmountPayAndRecValidation(data.total);
-        //     console.log(this.form.value);
-        //   }
-        // }
         if (dataOne != null && dataOne.total != 0) {
             if (Number((_a = this.form.get('forexAmount')) === null || _a === void 0 ? void 0 : _a.value) != Number(dataOne.total)) {
                 this.isShowDenomError = true;
