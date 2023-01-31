@@ -976,6 +976,12 @@
             var appType = this.ls.getParameterByName('appType');
             var theme = this.ls.getParameterByName('theme');
             this.CID_360 = this.ls.getParameterByName('CID_360');
+
+            if (this.ls.getParameterByName('searchTerm') != null || this.ls.getParameterByName('searchTerm') != undefined) {
+              this.searchTerm = this.ls.getParameterByName('searchTerm');
+            }
+
+            console.log(this.searchTerm);
             var userContext = this.jwtService.decodeData(encodedUser);
             var accessToken = this.parseAccessTokenFromUserObject(userContext);
 
@@ -1042,19 +1048,19 @@
 
               case "TASKS":
                 {
-                  this.router.navigateByUrl('/tasks/task-summary');
+                  this.router.navigateByUrl("/tasks/task-summary".concat(this.searchTerm ? "?searchTerm=".concat(this.searchTerm) : ''));
                   break;
                 }
 
               case "KYCTASKS":
                 {
-                  this.router.navigateByUrl('/tasks/kyc-task-summary');
+                  this.router.navigateByUrl("/tasks/kyc-task-summary".concat(this.searchTerm ? "?searchTerm=".concat(this.searchTerm) : ''));
                   break;
                 }
 
               case "CUSTOMERTASKS":
                 {
-                  this.router.navigateByUrl('/tasks/cust-on-boarding-task-summary');
+                  this.router.navigateByUrl("/tasks/cust-on-boarding-task-summary".concat(this.searchTerm ? "?searchTerm=".concat(this.searchTerm) : ''));
                   break;
                 }
 
@@ -1090,13 +1096,13 @@
 
               case "LOANACCTASKS":
                 {
-                  this.router.navigateByUrl('/tasks/loan-account-task-summary');
+                  this.router.navigateByUrl("/tasks/loan-account-task-summary".concat(this.searchTerm ? "?searchTerm=".concat(this.searchTerm) : ''));
                   break;
                 }
 
               case "CARDACCTASKS":
                 {
-                  this.router.navigateByUrl('/tasks/card-account-task-summary');
+                  this.router.navigateByUrl("/tasks/card-account-task-summary".concat(this.searchTerm ? "?searchTerm=".concat(this.searchTerm) : ''));
                   break;
                 }
             }

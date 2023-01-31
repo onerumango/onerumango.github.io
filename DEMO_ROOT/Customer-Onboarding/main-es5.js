@@ -9548,11 +9548,6 @@
           key: "countryFlaglists",
           value: function countryFlaglists(data) {
             return this.http.get("".concat(API_URL, "/currency/fetchInfo?countryName=").concat(data)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
-          }
-        }, {
-          key: "countryCurrencyFlaglists",
-          value: function countryCurrencyFlaglists(data) {
-            return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMainByCountryCode?country=").concat(data)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           } // getCustInfo(custId: string) {
           //   return this.http.get<any>(`${API_URL}/customerdata/${custId}`).pipe(catchError(this.errorHandler));
           // }
@@ -10632,6 +10627,46 @@
           key: "setTask",
           value: function setTask(taskData) {
             this.taskData.next(taskData);
+          }
+        }, {
+          key: "getAuthCustomerCategory",
+          value: function getAuthCustomerCategory() {
+            return this.http.get("".concat(API_URL, "/maintenance/fetchAuthCustomerCategory")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "getAuthCustomerChargeCategory",
+          value: function getAuthCustomerChargeCategory() {
+            return this.http.get("".concat(API_URL, "/maintenance/fetchAuthChargeCategory")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "getAuthorizedBranchInfo",
+          value: function getAuthorizedBranchInfo() {
+            return this.http.get("".concat(API_URL, "/branch/fetchAuthBranchInfo")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "fetchStateCityByZipcode",
+          value: function fetchStateCityByZipcode(countryName, pincode) {
+            return this.http.get("".concat(API_URL, "/iccity/fetchCityByCountryAndPincode?countryName=").concat(countryName, "&pinCode=").concat(pincode)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "getAuthorizedCityInfo",
+          value: function getAuthorizedCityInfo() {
+            return this.http.get("".concat(API_URL, "/iccity/fetchAllAuthCities")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "deleteCorporateDirector",
+          value: function deleteCorporateDirector(corporateId, customerId) {
+            return this.http["delete"]("".concat(API_URL, "/corporateCustomer/deleteCorporateDirectorInfo?corporateId=").concat(corporateId, "&customerId=").concat(customerId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "fetchCurrencyInfo",
+          value: function fetchCurrencyInfo(country) {
+            return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMainByCountryCode?country=").concat(country)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "countryCurrencyFlaglists",
+          value: function countryCurrencyFlaglists(data) {
+            return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMainByCountryCode?country=").concat(data)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           }
         }]);
 

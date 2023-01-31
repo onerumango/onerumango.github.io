@@ -125,23 +125,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function EsignPopComponent_button_2_Template(rf, ctx) { if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_button_2_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r3.close1(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_button_2_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.close1(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function EsignPopComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+function EsignPopComponent_button_3_Template(rf, ctx) { if (rf & 1) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_button_3_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.close(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "close");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function EsignPopComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function EsignPopComponent_div_6_Template(rf, ctx) { if (rf & 1) {
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+function EsignPopComponent_div_7_Template(rf, ctx) { if (rf & 1) {
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h5", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Please e-sign the application!");
@@ -149,23 +158,23 @@ function EsignPopComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-card-content");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "signature-pad", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onBeginEvent", function EsignPopComponent_div_6_Template_signature_pad_onBeginEvent_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.drawStart(); })("onEndEvent", function EsignPopComponent_div_6_Template_signature_pad_onEndEvent_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r7.drawComplete(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onBeginEvent", function EsignPopComponent_div_7_Template_signature_pad_onBeginEvent_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.drawStart(); })("onEndEvent", function EsignPopComponent_div_7_Template_signature_pad_onEndEvent_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r10.drawComplete(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_div_6_Template_button_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.onSubmit(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_div_7_Template_button_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r11.onSubmit(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " SUBMIT ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx_r2.signaturePadOptions);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx_r3.signaturePadOptions);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r2.disableDone);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r3.disableDone);
 } }
 class EsignPopComponent {
     constructor(data, dialogRef, ls, accountService, apiService, router, appEntryService, cdr) {
@@ -229,7 +238,7 @@ class EsignPopComponent {
             this.dialogRef.close(this.res);
         }
         else {
-            this.dialogRef.close({ image: this.ls.getItem('signedImage') ? this.ls.getItem('signedImage') : '' });
+            this.dialogRef.close(this.ls.getItem('signedImage') ? { image: this.ls.getItem('signedImage') } : null);
             this.ls.setItem('enable', false);
         }
     }
@@ -292,9 +301,9 @@ class EsignPopComponent {
             this.close();
         }
         console.log(this.isDone);
-        //   this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-        //     this.router.navigate(['/home/application/digital-sign/options/',
-        //     this.accountId]);
+        //   // this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        //   //   this.router.navigate(['/home/application/digital-sign/options/',
+        //   //   this.accountId]);
         // });
         this.ls.setItem('eSignStage', true);
     }
@@ -320,21 +329,24 @@ EsignPopComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.signaturePad = _t.first);
-    } }, decls: 7, vars: 3, consts: [["fxLayout", "row wrap"], ["fxFlex", "100", "fxLayoutAlign", "end center"], ["mat-icon-button", "", 3, "click", 4, "ngIf"], ["fxFlex", "100", 4, "ngIf"], ["fxFlex", "100"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "50", "fxFlexOffset", "20px", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], [1, "propic", "text-center"], ["src", "assets/images/esign.png", "alt", ""], ["fxFlex", "50", "fxFlexOffset", "20px"], [1, "text-center", "mt-16"], [1, "mt-16"], [3, "options", "onBeginEvent", "onEndEvent"], [1, "text-center"], ["mat-raised-button", "", "color", "primary", 1, "sbmt", 3, "disabled", "click"]], template: function EsignPopComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 8, vars: 4, consts: [["fxLayout", "row wrap"], ["fxFlex", "100", "fxLayoutAlign", "end center"], ["mat-icon-button", "", 3, "click", 4, "ngIf"], ["fxFlex", "100", 4, "ngIf"], ["fxFlex", "100"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "50", "fxFlexOffset", "20px", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], [1, "propic", "text-center"], ["src", "assets/images/esign.png", "alt", ""], ["fxFlex", "50", "fxFlexOffset", "20px"], [1, "text-center", "mt-16"], [1, "mt-16"], [3, "options", "onBeginEvent", "onEndEvent"], [1, "text-center"], ["mat-raised-button", "", "color", "primary", 1, "sbmt", 3, "disabled", "click"]], template: function EsignPopComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, EsignPopComponent_button_2_Template, 3, 0, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, EsignPopComponent_button_3_Template, 3, 0, "button", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, EsignPopComponent_div_3_Template, 3, 0, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, EsignPopComponent_div_6_Template, 9, 2, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, EsignPopComponent_div_4_Template, 3, 0, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, EsignPopComponent_div_7_Template, 9, 2, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isDone);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isDone);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isDone);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
@@ -1112,6 +1124,8 @@ class UploadSignEsignComponent {
         this.disableDone = true;
     }
     ngOnInit() {
+        this.accountId = this.ls.getItem('accountId');
+        this.customerId = this.ls.getItem('CIF_NUM_PRIMARY');
         this.image = this.ls.getItem('signedImage');
         if (this.image) {
             this.imageURL1 = this.image;
@@ -1120,11 +1134,19 @@ class UploadSignEsignComponent {
             this.imageURL1 = "not_available";
         }
         this.accountId = this.ls.getItem('accountId');
+        this.getSignatureDetails();
         // this.urlService.previousUrl$
         //   .subscribe((previousUrl: string) =>{
         //     console.log('resp-----',previousUrl);
         //     this.previousUrl = previousUrl
         //   });
+    }
+    getSignatureDetails() {
+        this.apiService.getDigitalsignById(this.accountId).subscribe((resp) => {
+            if (resp && resp[0].accountSignatureId) {
+                this.id = resp[0].accountSignatureId;
+            }
+        });
     }
     close1() {
         if (this.data.screen === "NewCustomerOnboarding") {
@@ -1134,9 +1156,9 @@ class UploadSignEsignComponent {
             this.dialogRef.close(true);
             this.ls.setItem('enable', this.ls.getItem('signedImage') ? true : false);
         }
-        //   this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-        //     this.router.navigate(['/home/application/digital-sign/options/',
-        //     this.accountId]);
+        // this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        //   this.router.navigate(['/home/application/digital-sign/options/',
+        //   this.accountId]);
         // });
     }
     openPopUp(data) {
@@ -1182,17 +1204,21 @@ class UploadSignEsignComponent {
         const url = this.selectedFile;
         const uploadData = new FormData();
         const data = {
+            accountId: this.accountId,
             customerId: this.customerId,
-            documentName: "Signature",
+            documentName: this.customerId + "Signature",
             documentType: "10",
-            fileType: event.type,
-            fileName: event.name,
-            verificationType: "Digital Signing"
+            fileType: "image/jpeg",
+            fileName: "signature",
         };
         uploadData.append("data", JSON.stringify(data));
         uploadData.append("file", url);
+        uploadData.append('accType', "savings");
         this.apiService.upload(uploadData).subscribe((res) => {
             if (res) {
+                this.ls.setItem('signedImage', this.imageURL1);
+                this.ls.setItem('eSignStage', true);
+                this.ls.setItem('enable', true);
             }
         });
     }
@@ -1204,13 +1230,13 @@ class UploadSignEsignComponent {
     deleteImg() {
         this.dialogService.doConfirmDialog('').subscribe((response) => {
             if (response == "Yes") {
-                this.imageURL1 = "not_available";
-                this.ls.removeItem('signedImage');
-                this.profileFile.nativeElement.value = '';
-                this.apiService.deleteCustomerDoc(this.customerId, this.profileId).subscribe((data) => {
+                // this.profileFile.nativeElement.value = '';
+                this.apiService.deleteCustomerDoc(this.customerId, this.id).subscribe((data) => {
+                    this.imageURL1 = "not_available";
+                    this.ls.removeItem('signedImage');
+                    this.disableDone = true;
+                    this.ls.setItem('enable', false);
                 });
-                this.disableDone = true;
-                this.ls.setItem('enable', false);
             }
         });
     }

@@ -5197,9 +5197,6 @@ class ApiService {
     countryFlaglists(data) {
         return this.http.get(`${API_URL}/currency/fetchInfo?countryName=${data}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
-    countryCurrencyFlaglists(data) {
-        return this.http.get(`${API_URL}/currencyMaint-api/fetchCurrencyMainByCountryCode?country=${data}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
-    }
     // getCustInfo(custId: string) {
     //   return this.http.get<any>(`${API_URL}/customerdata/${custId}`).pipe(catchError(this.errorHandler));
     // }
@@ -5927,6 +5924,42 @@ class ApiService {
     }
     setTask(taskData) {
         this.taskData.next(taskData);
+    }
+    getAuthCustomerCategory() {
+        return this.http
+            .get(`${API_URL}/maintenance/fetchAuthCustomerCategory`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    getAuthCustomerChargeCategory() {
+        return this.http
+            .get(`${API_URL}/maintenance/fetchAuthChargeCategory`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    getAuthorizedBranchInfo() {
+        return this.http
+            .get(`${API_URL}/branch/fetchAuthBranchInfo`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    fetchStateCityByZipcode(countryName, pincode) {
+        return this.http
+            .get(`${API_URL}/iccity/fetchCityByCountryAndPincode?countryName=${countryName}&pinCode=${pincode}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    getAuthorizedCityInfo() {
+        return this.http
+            .get(`${API_URL}/iccity/fetchAllAuthCities`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    deleteCorporateDirector(corporateId, customerId) {
+        return this.http.delete(`${API_URL}/corporateCustomer/deleteCorporateDirectorInfo?corporateId=${corporateId}&customerId=${customerId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    fetchCurrencyInfo(country) {
+        return this.http
+            .get(`${API_URL}/currencyMaint-api/fetchCurrencyMainByCountryCode?country=${country}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    countryCurrencyFlaglists(data) {
+        return this.http.get(`${API_URL}/currencyMaint-api/fetchCurrencyMainByCountryCode?country=${data}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
 }
 ApiService.ɵfac = function ApiService_Factory(t) { return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_local_store_service__WEBPACK_IMPORTED_MODULE_6__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_showMessage_show_message_service__WEBPACK_IMPORTED_MODULE_7__["ShowMessageService"])); };

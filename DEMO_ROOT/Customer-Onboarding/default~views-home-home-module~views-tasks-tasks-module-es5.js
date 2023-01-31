@@ -266,16 +266,16 @@
 
       function EsignPopComponent_button_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_button_2_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
 
-            var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r3.close1();
+            return ctx_r4.close1();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
@@ -288,7 +288,31 @@
         }
       }
 
-      function EsignPopComponent_div_3_Template(rf, ctx) {
+      function EsignPopComponent_button_3_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_button_3_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
+
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r6.close();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "close");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function EsignPopComponent_div_4_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
 
@@ -302,9 +326,9 @@
         }
       }
 
-      function EsignPopComponent_div_6_Template(rf, ctx) {
+      function EsignPopComponent_div_7_Template(rf, ctx) {
         if (rf & 1) {
-          var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 10);
 
@@ -320,18 +344,18 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "signature-pad", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onBeginEvent", function EsignPopComponent_div_6_Template_signature_pad_onBeginEvent_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onBeginEvent", function EsignPopComponent_div_7_Template_signature_pad_onBeginEvent_5_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
 
-            var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r5.drawStart();
-          })("onEndEvent", function EsignPopComponent_div_6_Template_signature_pad_onEndEvent_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+            return ctx_r8.drawStart();
+          })("onEndEvent", function EsignPopComponent_div_7_Template_signature_pad_onEndEvent_5_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
 
-            var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r7.drawComplete();
+            return ctx_r10.drawComplete();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -344,12 +368,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_div_6_Template_button_click_7_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EsignPopComponent_div_7_Template_button_click_7_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
 
-            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r8.onSubmit();
+            return ctx_r11.onSubmit();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " SUBMIT ");
@@ -362,15 +386,15 @@
         }
 
         if (rf & 2) {
-          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx_r2.signaturePadOptions);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx_r3.signaturePadOptions);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r2.disableDone);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r3.disableDone);
         }
       }
 
@@ -454,9 +478,9 @@
             if (this.data.screen === "NewCustomerOnboarding") {
               this.dialogRef.close(this.res);
             } else {
-              this.dialogRef.close({
-                image: this.ls.getItem('signedImage') ? this.ls.getItem('signedImage') : ''
-              });
+              this.dialogRef.close(this.ls.getItem('signedImage') ? {
+                image: this.ls.getItem('signedImage')
+              } : null);
               this.ls.setItem('enable', false);
             }
           }
@@ -537,9 +561,9 @@
               this.close();
             }
 
-            console.log(this.isDone); //   this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-            //     this.router.navigate(['/home/application/digital-sign/options/',
-            //     this.accountId]);
+            console.log(this.isDone); //   // this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            //   //   this.router.navigate(['/home/application/digital-sign/options/',
+            //   //   this.accountId]);
             // });
 
             this.ls.setItem('eSignStage', true);
@@ -587,8 +611,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.signaturePad = _t.first);
           }
         },
-        decls: 7,
-        vars: 3,
+        decls: 8,
+        vars: 4,
         consts: [["fxLayout", "row wrap"], ["fxFlex", "100", "fxLayoutAlign", "end center"], ["mat-icon-button", "", 3, "click", 4, "ngIf"], ["fxFlex", "100", 4, "ngIf"], ["fxFlex", "100"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "50", "fxFlexOffset", "20px", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], [1, "propic", "text-center"], ["src", "assets/images/esign.png", "alt", ""], ["fxFlex", "50", "fxFlexOffset", "20px"], [1, "text-center", "mt-16"], [1, "mt-16"], [3, "options", "onBeginEvent", "onEndEvent"], [1, "text-center"], ["mat-raised-button", "", "color", "primary", 1, "sbmt", 3, "disabled", "click"]],
         template: function EsignPopComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -598,15 +622,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, EsignPopComponent_button_2_Template, 3, 0, "button", 2);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, EsignPopComponent_button_3_Template, 3, 0, "button", 2);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, EsignPopComponent_div_3_Template, 3, 0, "div", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, EsignPopComponent_div_4_Template, 3, 0, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, EsignPopComponent_div_6_Template, 9, 2, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, EsignPopComponent_div_7_Template, 9, 2, "div", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -619,6 +645,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isDone);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isDone);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -1989,6 +2019,8 @@
         _createClass(UploadSignEsignComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            this.accountId = this.ls.getItem('accountId');
+            this.customerId = this.ls.getItem('CIF_NUM_PRIMARY');
             this.image = this.ls.getItem('signedImage');
 
             if (this.image) {
@@ -1997,11 +2029,23 @@
               this.imageURL1 = "not_available";
             }
 
-            this.accountId = this.ls.getItem('accountId'); // this.urlService.previousUrl$
+            this.accountId = this.ls.getItem('accountId');
+            this.getSignatureDetails(); // this.urlService.previousUrl$
             //   .subscribe((previousUrl: string) =>{
             //     console.log('resp-----',previousUrl);
             //     this.previousUrl = previousUrl
             //   });
+          }
+        }, {
+          key: "getSignatureDetails",
+          value: function getSignatureDetails() {
+            var _this6 = this;
+
+            this.apiService.getDigitalsignById(this.accountId).subscribe(function (resp) {
+              if (resp && resp[0].accountSignatureId) {
+                _this6.id = resp[0].accountSignatureId;
+              }
+            });
           }
         }, {
           key: "close1",
@@ -2011,16 +2055,16 @@
             } else {
               this.dialogRef.close(true);
               this.ls.setItem('enable', this.ls.getItem('signedImage') ? true : false);
-            } //   this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-            //     this.router.navigate(['/home/application/digital-sign/options/',
-            //     this.accountId]);
+            } // this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            //   this.router.navigate(['/home/application/digital-sign/options/',
+            //   this.accountId]);
             // });
 
           }
         }, {
           key: "openPopUp",
           value: function openPopUp(data) {
-            var _this6 = this;
+            var _this7 = this;
 
             var response;
 
@@ -2041,12 +2085,12 @@
                 console.log("dismiss res", res);
 
                 if (res) {
-                  _this6.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
-                  _this6.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true; // this.esignUrl = res?.fileUrl;
+                  _this7.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                  _this7.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true; // this.esignUrl = res?.fileUrl;
 
-                  _this6.ls.setItem('enable', true);
+                  _this7.ls.setItem('enable', true);
 
-                  console.log(_this6.show); // this.isDone=true;
+                  console.log(_this7.show); // this.isDone=true;
                 }
               });
             }
@@ -2057,7 +2101,7 @@
         }, {
           key: "onFileSelect",
           value: function onFileSelect(event) {
-            var _this7 = this;
+            var _this8 = this;
 
             console.log("event -- ", event.target.files);
             this.selectedFile = event.target.files[0];
@@ -2066,24 +2110,31 @@
             reader.readAsDataURL(event.target.files[0]);
 
             reader.onload = function (event2) {
-              _this7.imageURL1 = reader.result;
+              _this8.imageURL1 = reader.result;
             };
 
             var cId = this.customerId;
             var url = this.selectedFile;
             var uploadData = new FormData();
             var data = {
+              accountId: this.accountId,
               customerId: this.customerId,
-              documentName: "Signature",
+              documentName: this.customerId + "Signature",
               documentType: "10",
-              fileType: event.type,
-              fileName: event.name,
-              verificationType: "Digital Signing"
+              fileType: "image/jpeg",
+              fileName: "signature"
             };
             uploadData.append("data", JSON.stringify(data));
             uploadData.append("file", url);
+            uploadData.append('accType', "savings");
             this.apiService.upload(uploadData).subscribe(function (res) {
-              if (res) {}
+              if (res) {
+                _this8.ls.setItem('signedImage', _this8.imageURL1);
+
+                _this8.ls.setItem('eSignStage', true);
+
+                _this8.ls.setItem('enable', true);
+              }
             });
           }
         }, {
@@ -2096,21 +2147,20 @@
         }, {
           key: "deleteImg",
           value: function deleteImg() {
-            var _this8 = this;
+            var _this9 = this;
 
             this.dialogService.doConfirmDialog('').subscribe(function (response) {
               if (response == "Yes") {
-                _this8.imageURL1 = "not_available";
+                // this.profileFile.nativeElement.value = '';
+                _this9.apiService.deleteCustomerDoc(_this9.customerId, _this9.id).subscribe(function (data) {
+                  _this9.imageURL1 = "not_available";
 
-                _this8.ls.removeItem('signedImage');
+                  _this9.ls.removeItem('signedImage');
 
-                _this8.profileFile.nativeElement.value = '';
+                  _this9.disableDone = true;
 
-                _this8.apiService.deleteCustomerDoc(_this8.customerId, _this8.profileId).subscribe(function (data) {});
-
-                _this8.disableDone = true;
-
-                _this8.ls.setItem('enable', false);
+                  _this9.ls.setItem('enable', false);
+                });
               }
             });
           }

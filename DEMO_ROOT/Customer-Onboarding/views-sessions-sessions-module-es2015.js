@@ -492,6 +492,10 @@ class AuthCallbackComponent {
         let appType = this.ls.getParameterByName('appType');
         let theme = this.ls.getParameterByName('theme');
         this.CID_360 = this.ls.getParameterByName('CID_360');
+        if (this.ls.getParameterByName('searchTerm') != null || this.ls.getParameterByName('searchTerm') != undefined) {
+            this.searchTerm = this.ls.getParameterByName('searchTerm');
+        }
+        console.log(this.searchTerm);
         let userContext = this.jwtService.decodeData(encodedUser);
         let accessToken = this.parseAccessTokenFromUserObject(userContext);
         if (theme) {
@@ -541,15 +545,15 @@ class AuthCallbackComponent {
                 break;
             }
             case "TASKS": {
-                this.router.navigateByUrl('/tasks/task-summary');
+                this.router.navigateByUrl(`/tasks/task-summary${this.searchTerm ? `?searchTerm=${this.searchTerm}` : ''}`);
                 break;
             }
             case "KYCTASKS": {
-                this.router.navigateByUrl('/tasks/kyc-task-summary');
+                this.router.navigateByUrl(`/tasks/kyc-task-summary${this.searchTerm ? `?searchTerm=${this.searchTerm}` : ''}`);
                 break;
             }
             case "CUSTOMERTASKS": {
-                this.router.navigateByUrl('/tasks/cust-on-boarding-task-summary');
+                this.router.navigateByUrl(`/tasks/cust-on-boarding-task-summary${this.searchTerm ? `?searchTerm=${this.searchTerm}` : ''}`);
                 break;
             }
             case "CORPORATETASKS": {
@@ -573,11 +577,11 @@ class AuthCallbackComponent {
                 break;
             }
             case "LOANACCTASKS": {
-                this.router.navigateByUrl('/tasks/loan-account-task-summary');
+                this.router.navigateByUrl(`/tasks/loan-account-task-summary${this.searchTerm ? `?searchTerm=${this.searchTerm}` : ''}`);
                 break;
             }
             case "CARDACCTASKS": {
-                this.router.navigateByUrl('/tasks/card-account-task-summary');
+                this.router.navigateByUrl(`/tasks/card-account-task-summary${this.searchTerm ? `?searchTerm=${this.searchTerm}` : ''}`);
                 break;
             }
         }
