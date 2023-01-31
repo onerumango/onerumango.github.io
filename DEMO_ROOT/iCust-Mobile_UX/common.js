@@ -1349,6 +1349,320 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
 
 
 
+/***/ }),
+
+/***/ 73803:
+/*!***************************************************************************************!*\
+  !*** ./node_modules/mat-currency-format/__ivy_ngcc__/fesm2015/mat-currency-format.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MatCurrencyFormatDirective": () => (/* binding */ MatCurrencyFormatDirective),
+/* harmony export */   "MatCurrencyFormatModule": () => (/* binding */ MatCurrencyFormatModule),
+/* harmony export */   "reverseFormatNumber": () => (/* binding */ reverseFormatNumber)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 36362);
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * The function to reverse the number format
+ * @param {?} val
+ * @param {?} locale
+ * @return {?}
+ */
+
+
+
+
+function reverseFormatNumber(val, locale) {
+  /** @type {?} */
+  const group = new Intl.NumberFormat(locale).format(1111).replace(/1/g, '');
+  /** @type {?} */
+
+  const decimal = new Intl.NumberFormat(locale).format(1.1).replace(/1/g, '');
+  /** @type {?} */
+
+  let reversedCurrencyVal = val.replace(new RegExp('\\' + group, 'g'), '');
+  reversedCurrencyVal = reversedCurrencyVal.replace(new RegExp('\\' + decimal, 'g'), '.');
+  /** @type {?} */
+
+  const reversedVal = reversedCurrencyVal.replace(/[^\d.-]/g, '');
+  return Number.isNaN(reversedVal) ? 0 : reversedVal;
+}
+
+class MatCurrencyFormatDirective {
+  /**
+   * @param {?} el
+   * @param {?} currencyPipe
+   * @param {?} renderer
+   * @param {?} locale
+   */
+  constructor(el, currencyPipe, renderer, locale) {
+    this.el = el;
+    this.currencyPipe = currencyPipe;
+    this.renderer = renderer;
+    this.locale = locale;
+    this.currencyCode = 'USD';
+    this.allowNegative = false;
+    this.regex = {
+      positiveDecimal: new RegExp(/^\d*[\.|,]?\d*$/g),
+      allDecimal: new RegExp(/^-?\d*[\.|,]?\d*$/g)
+    };
+    this.specialKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Del'];
+  }
+  /**
+   * @return {?}
+   */
+
+
+  ngAfterViewInit() {
+    this.el.nativeElement.value = this.currencyPipe.transform(this.el.nativeElement.value, this.currencyCode);
+  }
+  /**
+   * @return {?}
+   */
+
+
+  onFocus() {
+    this.el.nativeElement.value = this.el.nativeElement.value.replace(/[^\d.,-]/g, '');
+    this.el.nativeElement.select();
+  }
+  /**
+   * @return {?}
+   */
+
+
+  onFocusout() {
+    /** @type {?} */
+    let val = this.el.nativeElement.value;
+
+    if (val.length === 0 || val.length === 1 && [',', '.', ''].indexOf(val[0]) > -1) {
+      val = '0';
+    }
+
+    this.el.nativeElement.value = this.currencyPipe.transform(val, this.currencyCode);
+  }
+  /**
+   * @param {?} event
+   * @return {?}
+   */
+
+
+  onKeyDown(event) {
+    if (this.specialKeys.indexOf(event.key) !== -1) {
+      return;
+    }
+    /** @type {?} */
+
+
+    const matches = this.allowNegative ? event.key.match(this.regex.allDecimal) : event.key.match(this.regex.positiveDecimal);
+
+    if (!matches) {
+      event.preventDefault();
+    }
+  }
+  /**
+   * @param {?} $event
+   * @return {?}
+   */
+
+
+  onBlur($event) {
+    /** @type {?} */
+    const amount = reverseFormatNumber(this.el.nativeElement.value, this.locale).replace(/^[^0-9]{2}..*/g, '');
+    this.el.nativeElement.value = amount;
+  }
+
+}
+
+MatCurrencyFormatDirective.ɵfac = function MatCurrencyFormatDirective_Factory(t) {
+  return new (t || MatCurrencyFormatDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.LOCALE_ID));
+};
+
+MatCurrencyFormatDirective.ɵdir = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCurrencyFormatDirective,
+  selectors: [["", "mvndrMatCurrencyFormat", ""]],
+  hostBindings: function MatCurrencyFormatDirective_HostBindings(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function MatCurrencyFormatDirective_focus_HostBindingHandler() {
+        return ctx.onFocus();
+      })("focusout", function MatCurrencyFormatDirective_focusout_HostBindingHandler() {
+        return ctx.onFocusout();
+      })("keydown", function MatCurrencyFormatDirective_keydown_HostBindingHandler($event) {
+        return ctx.onKeyDown($event);
+      })("blur", function MatCurrencyFormatDirective_blur_HostBindingHandler() {
+        return ctx.onBlur();
+      });
+    }
+  },
+  inputs: {
+    currencyCode: "currencyCode",
+    allowNegative: "allowNegative"
+  },
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_angular_common__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe])]
+});
+/** @nocollapse */
+
+MatCurrencyFormatDirective.ctorParameters = () => [{
+  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
+}, {
+  type: _angular_common__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe
+}, {
+  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2
+}, {
+  type: String,
+  decorators: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
+    args: [_angular_core__WEBPACK_IMPORTED_MODULE_0__.LOCALE_ID]
+  }]
+}];
+
+MatCurrencyFormatDirective.propDecorators = {
+  currencyCode: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+  }],
+  allowNegative: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+  }],
+  onFocus: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+    args: ['focus']
+  }],
+  onFocusout: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+    args: ['focusout']
+  }],
+  onKeyDown: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+    args: ['keydown', ['$event']]
+  }],
+  onBlur: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+    args: ['blur']
+  }]
+};
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCurrencyFormatDirective, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mvndrMatCurrencyFormat]',
+      providers: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe]
+    }]
+  }], function () {
+    return [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
+    }, {
+      type: _angular_common__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe
+    }, {
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2
+    }, {
+      type: String,
+      decorators: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
+        args: [_angular_core__WEBPACK_IMPORTED_MODULE_0__.LOCALE_ID]
+      }]
+    }];
+  }, {
+    currencyCode: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    allowNegative: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+
+    /**
+     * @return {?}
+     */
+    onFocus: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+      args: ['focus']
+    }],
+
+    /**
+     * @return {?}
+     */
+    onFocusout: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+      args: ['focusout']
+    }],
+
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    onKeyDown: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+      args: ['keydown', ['$event']]
+    }],
+
+    /**
+     * @param {?} $event
+     * @return {?}
+     */
+    onBlur: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener,
+      args: ['blur']
+    }]
+  });
+})();
+
+if (false) {}
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+
+class MatCurrencyFormatModule {}
+
+MatCurrencyFormatModule.ɵfac = function MatCurrencyFormatModule_Factory(t) {
+  return new (t || MatCurrencyFormatModule)();
+};
+
+MatCurrencyFormatModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+  type: MatCurrencyFormatModule
+});
+MatCurrencyFormatModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCurrencyFormatModule, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
+    args: [{
+      declarations: [MatCurrencyFormatDirective],
+      imports: [],
+      exports: [MatCurrencyFormatDirective]
+    }]
+  }], null, null);
+})();
+
+(function () {
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](MatCurrencyFormatModule, {
+    declarations: [MatCurrencyFormatDirective],
+    exports: [MatCurrencyFormatDirective]
+  });
+})();
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+
+
+
 /***/ })
 
 }]);
