@@ -14314,7 +14314,7 @@ LoanDetailsSummaryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.accountDetails == null ? null : ctx.accountDetails.accountBranch, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.accountDetails == null ? null : ctx.accountDetails.applicationDate, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.accountDetails == null ? null : ctx.accountDetails.applicationDate.slice(0, 12), " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.accountDetails == null ? null : ctx.accountDetails.accountType);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
@@ -15548,9 +15548,9 @@ function CardCustomerInfoSummaryComponent_div_27_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.primaryEmailAdress);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.userAddress[0] == null ? null : details_r6.userAddress[0].mobileNumber);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6.phoneNumber);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.phoneNumber);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.landlineNumber);
 } }
 function CardCustomerInfoSummaryComponent_p_29_Template(rf, ctx) { if (rf & 1) {
     const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -15588,8 +15588,11 @@ class CardCustomerInfoSummaryComponent {
             if (cardCustomerInfo.isAppEntryView) {
                 this.appEntrySummaryView = true;
                 this.customerInfoDetails = cardCustomerInfo.data;
+                console.log(this.customerInfoDetails);
                 this.ownership = this.customerInfoDetails[0].ownership;
                 this.noOfApplicants = this.customerInfoDetails[0].numOfApplicants;
+                this.ownership = this.ls.getItem("cardownership_value");
+                this.noOfApplicants = this.ls.getItem("CardNoOfApplicants");
             }
         }
     }
@@ -15601,6 +15604,8 @@ class CardCustomerInfoSummaryComponent {
                 this.customerInfoDetails = customerInfoDetails.data;
                 this.ownership = this.customerInfoDetails[0].ownership;
                 this.noOfApplicants = this.customerInfoDetails[0].numOfApplicants;
+                this.ownership = this.ls.getItem("cardownership_value");
+                this.noOfApplicants = this.ls.getItem("CardNoOfApplicants");
             }
         }, (err) => {
             this.loader.close();

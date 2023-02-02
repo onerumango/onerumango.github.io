@@ -7602,6 +7602,15 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .egret-blue .fill-color-success {
   color: #00bfa5;
 }
+.egret-blue .mat-input-element {
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+.egret-blue .onboarding-dark-background {
+  background-color: #F1F1F4;
+}
+.egret-blue .onboarding-dark-toggle-btn {
+  background-color: #C0C0C0;
+}
 @media (max-width: 959px) {
   .egret-blue .default-bg-mobile {
     background: #ffffff;
@@ -9236,6 +9245,10 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .egret-dark-purple .mat-input-element {
   background: #1b1b29;
   color: #cdcdde;
+  box-shadow: 0 0 0 1000px #1b1b29 inset !important;
+}
+.egret-dark-purple .mat-input-element:-webkit-autofill {
+  -webkit-text-fill-color: #cdcdde !important;
 }
 .egret-dark-purple .button {
   background: #000000;
@@ -9589,6 +9602,12 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .egret-dark-purple .mat-expansion-panel {
   background-color: #1b1b29;
   color: #cdcdde;
+}
+.egret-dark-purple .onboarding-dark-background {
+  background-color: #1b1b29;
+}
+.egret-dark-purple .onboarding-dark-toggle-btn {
+  background-color: #838383;
 }
 .egret-dark-pink {
   /* Hopscotch Tour */
@@ -17886,6 +17905,13 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .signup-form {
   padding: 20px 20px 70px 20px;
 }
+.signup-form
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 /*---- Session (Sign in, sign up, forgot, lockscreen) -----*/
 .page-wrap {
   display: flex;
@@ -20822,7 +20848,7 @@ a .menu-caret {
     box-sizing: border-box;
   }
 input {
-    box-shadow: 0 0 0 1000px white inset !important;
+    /* box-shadow: 0 0 0 1000px white inset !important; */
     width: 100% !important;
   }
 @font-face {
@@ -21123,7 +21149,7 @@ opacity: 1;
   opacity: 1;
 }
 .charge{
-  transform: translateY(6px);
+  transform: translateY(5px);
 }
 .idSize{
   font-size: 11px;

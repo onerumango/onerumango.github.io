@@ -32251,7 +32251,7 @@
 
       function LoanAccountApproverComponent_span_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 68);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -32259,19 +32259,19 @@
         }
 
         if (rf & 2) {
-          var creater_r27 = ctx.$implicit;
+          var creater_r28 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](creater_r27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](creater_r28);
         }
       }
 
       function LoanAccountApproverComponent_div_36_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 69);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 70);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
@@ -32301,21 +32301,21 @@
 
       function LoanAccountApproverComponent_div_37_img_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 72);
         }
 
         if (rf & 2) {
-          var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r28.imageUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r29.imageUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         }
       }
 
       function LoanAccountApproverComponent_div_37_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 69);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LoanAccountApproverComponent_div_37_img_1_Template, 1, 1, "img", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LoanAccountApproverComponent_div_37_img_1_Template, 1, 1, "img", 71);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -32329,83 +32329,47 @@
         }
       }
 
-      function LoanAccountApproverComponent_div_57_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_62_Template(rf, ctx) {
         if (rf & 1) {
-          var _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_62_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Loan Account Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_57_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r30);
-
-            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r29.onEdit("loanAccount_array");
+            return ctx_r30.onEdit("loanAccount_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_128_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_138_Template(rf, ctx) {
         if (rf & 1) {
-          var _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_138_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Asset Information");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_128_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r32);
-
-            var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r31.onEdit("loanAccount_array");
+            return ctx_r32.onEdit("loanAccount_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_233_div_26_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_244_div_26_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 85);
 
@@ -32419,26 +32383,26 @@
         }
 
         if (rf & 2) {
-          var details_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var details_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r33 == null ? null : details_r33.cifNumber, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r34 == null ? null : details_r34.cifNumber, "");
         }
       }
 
-      function LoanAccountApproverComponent_div_233_div_27_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_244_div_27_Template(rf, ctx) {
         if (rf & 1) {
-          var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 87);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_233_div_27_Template_div_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_244_div_27_Template_div_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r40);
 
-            var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r38.goTo360Dashboard();
+            return ctx_r39.goTo360Dashboard();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "small", 86);
@@ -32451,23 +32415,23 @@
         }
 
         if (rf & 2) {
-          var details_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var details_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r33 == null ? null : details_r33.cifNumber, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r34 == null ? null : details_r34.cifNumber, "");
         }
       }
 
-      function LoanAccountApproverComponent_div_233_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_244_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 64);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 74);
 
@@ -32481,7 +32445,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 78);
 
@@ -32521,7 +32485,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 78);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "small", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "small", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
 
@@ -32535,11 +32499,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 64);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, LoanAccountApproverComponent_div_233_div_26_Template, 3, 1, "div", 81);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, LoanAccountApproverComponent_div_244_div_26_Template, 3, 1, "div", 81);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, LoanAccountApproverComponent_div_233_div_27_Template, 3, 1, "div", 82);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, LoanAccountApproverComponent_div_244_div_27_Template, 3, 1, "div", 82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -32549,7 +32513,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 84);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "small", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "small", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Date of Birth");
 
@@ -32557,7 +32521,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "p", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "p", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
 
@@ -32567,7 +32531,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 84);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "small", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "small", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Email ID");
 
@@ -32575,7 +32539,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](39, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "p", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "p", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
 
@@ -32585,7 +32549,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 84);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "small", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "small", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "Mobile Number");
 
@@ -32593,7 +32557,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](45, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "p", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "p", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
 
@@ -32603,7 +32567,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 84);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "small", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "small", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Landline Number");
 
@@ -32611,7 +32575,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](51, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "p", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "p", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53);
 
@@ -32633,25 +32597,25 @@
         }
 
         if (rf & 2) {
-          var details_r33 = ctx.$implicit;
+          var details_r34 = ctx.$implicit;
 
           var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.firstName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.firstName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.middleName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.middleName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.lastName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.lastName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Last Updated On ", (details_r33 == null ? null : details_r33.modifiedTime) ? details_r33.modifiedTime : details_r33.createdTime, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Last Updated On ", (details_r34 == null ? null : details_r34.modifiedTime) ? details_r34.modifiedTime : details_r34.createdTime, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -32663,63 +32627,45 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.dateOfBirth);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.dateOfBirth);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.primaryEmailAdress);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.primaryEmailAdress);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.phoneNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.phoneNumber);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r33 == null ? null : details_r33.landlineNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r34 == null ? null : details_r34.landlineNumber);
         }
       }
 
-      function LoanAccountApproverComponent_div_235_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_251_Template(rf, ctx) {
         if (rf & 1) {
-          var _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_251_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Mandate Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_235_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r42);
-
-            var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r41.editMandate();
+            return ctx_r42.editMandate();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_258_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_273_Template(rf, ctx) {
         if (rf & 1) {
-          var _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 88);
 
@@ -32727,18 +32673,18 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-expansion-panel", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("opened", function LoanAccountApproverComponent_div_258_Template_mat_expansion_panel_opened_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("opened", function LoanAccountApproverComponent_div_273_Template_mat_expansion_panel_opened_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r47);
 
-            var ctx_r45 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r45.panelOpenState = true;
-          })("closed", function LoanAccountApproverComponent_div_258_Template_mat_expansion_panel_closed_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r46);
+            return ctx_r46.panelOpenState = true;
+          })("closed", function LoanAccountApproverComponent_div_273_Template_mat_expansion_panel_closed_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r47);
 
-            var ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r47.panelOpenState = false;
+            return ctx_r48.panelOpenState = false;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-expansion-panel-header");
@@ -32753,13 +32699,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 54);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-hint", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-hint", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Applicant Name");
 
@@ -32767,7 +32713,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-hint", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-hint", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14);
 
@@ -32775,9 +32721,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-hint", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-hint", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Collateral Share Percentage");
 
@@ -32785,7 +32731,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-hint", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-hint", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20);
 
@@ -32793,9 +32739,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-hint", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-hint", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Repayment Share Percentage");
 
@@ -32803,7 +32749,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "mat-hint", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "mat-hint", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
 
@@ -32825,72 +32771,54 @@
         }
 
         if (rf & 2) {
-          var details_r43 = ctx.$implicit;
-          var i_r44 = ctx.index;
+          var details_r44 = ctx.$implicit;
+          var i_r45 = ctx.index;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Mandate ", i_r44 + 1, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Mandate ", i_r45 + 1, " ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r43.applicantName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r44.applicantName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r43.collateralShare);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r44.collateralShare);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r43.repaymentShare);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r44.repaymentShare);
         }
       }
 
-      function LoanAccountApproverComponent_div_260_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_280_Template(rf, ctx) {
         if (rf & 1) {
-          var _r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r50 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_280_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r50);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Collateral Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_260_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r49);
-
-            var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r48.editCollateral();
+            return ctx_r49.editCollateral();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_333_div_1_div_33_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_352_div_1_div_33_Template(rf, ctx) {
         if (rf & 1) {
-          var _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r56 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Secondary Charge Allowed ?");
 
@@ -32902,12 +32830,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-slide-toggle", 93);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LoanAccountApproverComponent_div_333_div_1_div_33_Template_mat_slide_toggle_change_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LoanAccountApproverComponent_div_352_div_1_div_33_Template_mat_slide_toggle_change_5_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r56);
 
-            var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r54.stayTrue1();
+            return ctx_r55.stayTrue1();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -32918,17 +32846,17 @@
         }
 
         if (rf & 2) {
-          var details_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var details_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", details_r51.secondaryChargeAllowed);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", details_r52.secondaryChargeAllowed);
         }
       }
 
-      function LoanAccountApproverComponent_div_333_div_1_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_352_div_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r58 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r59 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 88);
 
@@ -32936,18 +32864,18 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-expansion-panel", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("opened", function LoanAccountApproverComponent_div_333_div_1_Template_mat_expansion_panel_opened_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("opened", function LoanAccountApproverComponent_div_352_div_1_Template_mat_expansion_panel_opened_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r59);
 
-            var ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r57.panelOpenState = true;
-          })("closed", function LoanAccountApproverComponent_div_333_div_1_Template_mat_expansion_panel_closed_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r58);
+            return ctx_r58.panelOpenState = true;
+          })("closed", function LoanAccountApproverComponent_div_352_div_1_Template_mat_expansion_panel_closed_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r59);
 
-            var ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r59.panelOpenState = false;
+            return ctx_r60.panelOpenState = false;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-expansion-panel-header");
@@ -32962,13 +32890,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 54);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Number Of Collateral");
 
@@ -32976,7 +32904,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14);
 
@@ -32984,9 +32912,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Total Collateral Value");
 
@@ -32994,7 +32922,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20);
 
@@ -33002,9 +32930,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Utilized Previously");
 
@@ -33012,7 +32940,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
 
@@ -33020,9 +32948,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Cover Available");
 
@@ -33030,7 +32958,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32);
 
@@ -33038,7 +32966,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, LoanAccountApproverComponent_div_333_div_1_div_33_Template, 6, 1, "div", 91);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, LoanAccountApproverComponent_div_352_div_1_div_33_Template, 6, 1, "div", 91);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 
@@ -33054,40 +32982,40 @@
         }
 
         if (rf & 2) {
-          var details_r51 = ctx.$implicit;
-          var i_r52 = ctx.index;
+          var details_r52 = ctx.$implicit;
+          var i_r53 = ctx.index;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Collateral ", i_r52 + 1, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Collateral ", i_r53 + 1, " ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r51.noOfCollateral);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r52.noOfCollateral);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r51.totalCollateralValue);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r52.totalCollateralValue);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r51.utilizedPreviously);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r52.utilizedPreviously);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r51.coverAvailable);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r52.coverAvailable);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", details_r51 != null);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", details_r52 != null);
         }
       }
 
-      function LoanAccountApproverComponent_div_333_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_352_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 56);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LoanAccountApproverComponent_div_333_div_1_Template, 34, 6, "div", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LoanAccountApproverComponent_div_352_div_1_Template, 34, 6, "div", 57);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -33101,83 +33029,47 @@
         }
       }
 
-      function LoanAccountApproverComponent_div_335_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_359_Template(rf, ctx) {
         if (rf & 1) {
-          var _r61 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_359_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r62);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Guarantor Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_335_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r61);
-
-            var ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r60.editGuarantor();
+            return ctx_r61.editGuarantor();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_439_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_467_Template(rf, ctx) {
         if (rf & 1) {
-          var _r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r64 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_467_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r64);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Interest Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_439_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r63);
-
-            var ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r62.onEdit();
+            return ctx_r63.onEdit();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_mat_card_440_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_card_468_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
 
@@ -33189,13 +33081,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Interest Type");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
 
@@ -33213,13 +33105,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Effective Rate");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
 
@@ -33237,13 +33129,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Applicable Interest Rate");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22);
 
@@ -33261,13 +33153,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Margin In %");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
@@ -33285,141 +33177,87 @@
         }
 
         if (rf & 2) {
-          var interestData_r64 = ctx.$implicit;
+          var interestData_r65 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r64 == null ? null : interestData_r64.intrestType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r65 == null ? null : interestData_r65.intrestType);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r64 == null ? null : interestData_r64.effectiveRate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r65 == null ? null : interestData_r65.effectiveRate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r64 == null ? null : interestData_r64.intrestRateApplicable);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r65 == null ? null : interestData_r65.intrestRateApplicable);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r64 == null ? null : interestData_r64.marginIn);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r65 == null ? null : interestData_r65.marginIn);
         }
       }
 
-      function LoanAccountApproverComponent_div_445_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_478_Template(rf, ctx) {
         if (rf & 1) {
-          var _r67 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r68 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_478_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r68);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r67 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Loan Disbursement Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_445_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r67);
-
-            var ctx_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r66.editDisbursement("loanDisbusment_array");
+            return ctx_r67.editDisbursement("loanDisbusment_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_497_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_535_Template(rf, ctx) {
         if (rf & 1) {
-          var _r69 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r70 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_535_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r70);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Loan Repayment Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_497_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r69);
-
-            var ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r68.editRepaymentInfo("loanRepayment_array");
+            return ctx_r69.editRepaymentInfo("loanRepayment_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_560_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_603_Template(rf, ctx) {
         if (rf & 1) {
-          var _r71 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r72 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_603_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r72);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Loan Charge Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_560_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r71);
-
-            var ctx_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r70.onEdit();
+            return ctx_r71.onEdit();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_mat_card_561_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_card_604_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
 
@@ -33431,13 +33269,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Amount");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
 
@@ -33455,13 +33293,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Charge Details ID");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
 
@@ -33479,13 +33317,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Interest Type");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22);
 
@@ -33503,13 +33341,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Waiver");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
@@ -33527,81 +33365,63 @@
         }
 
         if (rf & 2) {
-          var chargeData_r72 = ctx.$implicit;
+          var chargeData_r73 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r72 == null ? null : chargeData_r72.amout);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r73 == null ? null : chargeData_r73.amout);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r72 == null ? null : chargeData_r72.chargeDetailsId);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r73 == null ? null : chargeData_r73.chargeDetailsId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r72 == null ? null : chargeData_r72.intrestType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r73 == null ? null : chargeData_r73.intrestType);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r72 == null ? null : chargeData_r72.waiver);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r73 == null ? null : chargeData_r73.waiver);
         }
       }
 
-      function LoanAccountApproverComponent_div_597_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_648_Template(rf, ctx) {
         if (rf & 1) {
-          var _r75 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r76 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_648_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r76);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r75 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Loan Credit Score Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_597_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r75);
-
-            var ctx_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r74.editCreditInfo("loanCreditScore_array");
+            return ctx_r75.editCreditInfo("loanCreditScore_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_mat_card_598_div_2_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_card_649_div_2_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Customer Name");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
 
@@ -33609,15 +33429,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Agency Name");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
 
@@ -33625,15 +33445,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Remarks");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17);
 
@@ -33641,15 +33461,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Ratings");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22);
 
@@ -33663,35 +33483,35 @@
         }
 
         if (rf & 2) {
-          var credit_r77 = ctx.$implicit;
+          var credit_r78 = ctx.$implicit;
 
-          var ctx_r76 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r77 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r76.loanCreditScore_array == null ? null : ctx_r76.loanCreditScore_array.customerName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r77.loanCreditScore_array == null ? null : ctx_r77.loanCreditScore_array.customerName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](credit_r77.agencyName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](credit_r78.agencyName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](credit_r77.remarks);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](credit_r78.remarks);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](credit_r77.ratings);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](credit_r78.ratings);
         }
       }
 
-      function LoanAccountApproverComponent_mat_card_598_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_card_649_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-content");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, LoanAccountApproverComponent_mat_card_598_div_2_Template, 23, 4, "div", 59);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, LoanAccountApproverComponent_mat_card_649_div_2_Template, 23, 4, "div", 61);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -33707,83 +33527,47 @@
         }
       }
 
-      function LoanAccountApproverComponent_div_601_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_657_Template(rf, ctx) {
         if (rf & 1) {
-          var _r79 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r80 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_657_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r80);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r79 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Valuation of Asset Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_601_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r79);
-
-            var ctx_r78 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r78.editValuationOfAsset("valueofassest_array");
+            return ctx_r79.editValuationOfAsset("valueofassest_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_664_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_725_Template(rf, ctx) {
         if (rf & 1) {
-          var _r81 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r82 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_725_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r82);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r81 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Legal Opinion Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_664_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r81);
-
-            var ctx_r80 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r80.editLegalOpinion("legaopninio_array");
+            return ctx_r81.editLegalOpinion("legaopninio_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_746_div_4_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_810_div_4_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 99);
 
@@ -33823,24 +33607,24 @@
         }
 
         if (rf & 2) {
-          var item_r85 = ctx.$implicit;
-          var i_r86 = ctx.index;
+          var item_r86 = ctx.$implicit;
+          var i_r87 = ctx.index;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("", i_r86 + 1, ".", item_r85.scorecardQuestion, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("", i_r87 + 1, ".", item_r86.scorecardQuestion, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r85.scorecardAnswer);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r86.scorecardAnswer);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r85.scoreData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r86.scoreData);
         }
       }
 
-      function LoanAccountApproverComponent_div_746_Template(rf, ctx) {
+      function LoanAccountApproverComponent_div_810_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
@@ -33852,7 +33636,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 97);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanAccountApproverComponent_div_746_div_4_Template, 11, 4, "div", 98);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanAccountApproverComponent_div_810_div_4_Template, 11, 4, "div", 98);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -33860,116 +33644,100 @@
         }
 
         if (rf & 2) {
-          var item_r82 = ctx.$implicit;
-          var k_r83 = ctx.index;
+          var item_r83 = ctx.$implicit;
+          var k_r84 = ctx.index;
 
           var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Applicant ", item_r82.applicantId, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Applicant ", item_r83.applicantId, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r21.qualitativeScoreboardSummary == null ? null : ctx_r21.qualitativeScoreboardSummary.scoreCardMapping[k_r83].scoreCardDetails);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r21.qualitativeScoreboardSummary == null ? null : ctx_r21.qualitativeScoreboardSummary.scoreCardMapping[k_r84].scoreCardDetails);
         }
       }
 
-      function LoanAccountApproverComponent_div_748_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_817_Template(rf, ctx) {
         if (rf & 1) {
-          var _r88 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_817_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r89);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Assessment Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_748_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r88);
-
-            var ctx_r87 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r87.editAssessmentInfo("loanassement_array");
+            return ctx_r88.editAssessmentInfo("loanassement_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_div_807_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_881_Template(rf, ctx) {
         if (rf & 1) {
-          var _r90 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r91 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "fieldset");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_881_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r91);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "legend", 72);
+            var ctx_r90 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Offer Issue Details");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 73);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_div_807_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r90);
-
-            var ctx_r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r89.editOfferIssueInfo("offerissue_array");
+            return ctx_r90.editOfferIssueInfo("offerissue_array");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function LoanAccountApproverComponent_mat_card_891_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_icon_968_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 31);
+          var _r93 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 73);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_mat_icon_968_Template_mat_icon_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r93);
+
+            var ctx_r92 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r92.editOfferIssueInfo("offerissue_array");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function LoanAccountApproverComponent_mat_card_969_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-content");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Applicant Name");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
 
@@ -33977,15 +33745,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Approved Loan Amount");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13);
 
@@ -33993,15 +33761,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Loan Tenure");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
 
@@ -34011,19 +33779,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Installment Type");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
 
@@ -34031,15 +33799,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Installment Frequency");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30);
 
@@ -34047,15 +33815,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Rate Of Interest(in %)");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
 
@@ -34065,19 +33833,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "Offer Issue Date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42);
 
@@ -34085,15 +33853,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "Generate Offer");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
 
@@ -34101,15 +33869,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Offer Expiry Date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52);
 
@@ -34119,277 +33887,21 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Date Of Offer Accept/Reject");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.applicantName);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails == null ? null : ctx_r24.offerDetails.approvedLoanAmount);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails == null ? null : ctx_r24.offerDetails.loanTenure);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.installmentType);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.installmentFrequency);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.rateOfInterest);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.offerIssueDate);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.generateOffer);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.offerExpiryDate);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r24.offerDetails.dateOfOfferAcceptOrReject);
-        }
-      }
-
-      function LoanAccountApproverComponent_mat_card_909_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 31);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-content");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Applicant Name");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Offer Issue Date");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Offer Exipiry Date");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Offer Amend Date");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Approved Loan Amount");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Loan Amount Recommended");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "Loan Tenure");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "Installment Type");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Rate Of Interest(%)");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Margin(%))");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "Effective Rate(%)");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -34407,69 +33919,65 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.applicantName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.applicantName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.offerIssueDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails == null ? null : ctx_r25.offerDetails.approvedLoanAmount);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.offerExpiryDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails == null ? null : ctx_r25.offerDetails.loanTenure);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.offerAmendDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.installmentType);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.approvedLoanAmount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.installmentFrequency);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.loanAmmountRecommended);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.rateOfInterest);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.loanTenure);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.offerIssueDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.installmentType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.generateOffer);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.rateOfInterest);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.offerExpiryDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.margin);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.postOfferDetails.effectiveRate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.offerDetails.dateOfOfferAcceptOrReject);
         }
       }
 
-      function LoanAccountApproverComponent_mat_card_927_Template(rf, ctx) {
+      function LoanAccountApproverComponent_mat_card_990_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-content");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Applicant Name");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
 
@@ -34477,15 +33985,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Approved Loan Amount");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Offer Issue Date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13);
 
@@ -34493,15 +34001,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Offer Issue Date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Offer Exipiry Date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
 
@@ -34511,19 +34019,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Offer Accepted Date");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Offer Amend Date");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
 
@@ -34531,15 +34039,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Loan Tenure");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Approved Loan Amount");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30);
 
@@ -34547,15 +34055,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Installment Type");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Loan Amount Recommended");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
 
@@ -34565,19 +34073,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "Installment Frequency");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "Loan Tenure");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42);
 
@@ -34585,15 +34093,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "Rate of Interest");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "Installment Type");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
 
@@ -34601,15 +34109,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Principal");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Rate Of Interest(%)");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52);
 
@@ -34619,19 +34127,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Interest");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Margin(%))");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59);
 
@@ -34639,71 +34147,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "Installment Amount");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "Effective Rate(%)");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Charges");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](71, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Disbursement Amount");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Repayment Amount");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -34721,59 +34175,373 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.applicantName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.applicantName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.approvedLoanAmount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.offerIssueDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.offerIssueDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.offerExpiryDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.offerAcceptedDate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.offerAmendDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.loanTenure);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.approvedLoanAmount);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.installmentType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.loanAmmountRecommended);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.installmentFrequency);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.loanTenure);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.rateOfInterest);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.installmentType);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.principal);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.rateOfInterest);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.interest);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.margin);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.installmentAmount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.postOfferDetails.effectiveRate);
+        }
+      }
+
+      function LoanAccountApproverComponent_mat_card_1011_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-content");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Applicant Name");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Approved Loan Amount");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Offer Issue Date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Offer Accepted Date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Loan Tenure");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Installment Type");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "Installment Frequency");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "Rate of Interest");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "Principal");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Interest");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "Installment Amount");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Charges");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](71, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Disbursement Amount");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Repayment Amount");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.applicantName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.charges);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.approvedLoanAmount);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.offerIssueDate.slice(0, 12));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.disbursementAmount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.offerAcceptedDate.slice(0, 12));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.accountCreateValue.repaymentAmount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.loanTenure);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.installmentType);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.installmentFrequency);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.rateOfInterest);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.principal);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.interest);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.installmentAmount);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.charges);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.disbursementAmount);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.accountCreateValue.repaymentAmount);
         }
       }
 
@@ -35483,9 +35251,9 @@
       LoanAccountApproverComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: LoanAccountApproverComponent,
         selectors: [["app-loan-account-approver"]],
-        decls: 941,
-        vars: 158,
-        consts: [["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [2, "color", "darkgray", "cursor", "pointer", "margin-right", "5px", 3, "click"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "Application Entry Stage", 2, "border-radius", "0px", "width", "900px"], ["fxFlex", "85"], [2, "width", "800px"], ["fxLayout", "row", "fxLayoutAlign", "space-between end", 4, "ngIf"], [1, "mtcd"], ["fxLayout", "row", 1, "rowbord"], ["fxFlex", "4"], ["fxFlex", "32"], [1, "label"], [1, "labelval"], ["fxLayout", "row", 1, "rowbord", "nobord"], [1, "full-width"], [1, "fullcard"], ["fxLayout", "row"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "100%"], ["fxLayout", "column", "fxLayoutGap", "2%", "fxLayoutAlign", "space-between none", 1, "colAlign"], [1, "pt-16"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-around center"], ["fxFlex.xs", "100%"], [1, "headingText"], [1, "valueText"], ["fxLayout", "row wrap", "class", "full-width", 4, "ngFor", "ngForOf"], [1, "paraFont"], [1, "chequecard"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-between center", 1, "flex-container", "stretch"], ["fxFlex", "33%", "fxFlex.xs", "50%"], ["fxLayout", "row wrap"], ["class", "full-width pt-16", 4, "ngFor", "ngForOf"], ["fxLayout", "row wrap", 4, "ngIf"], ["label", "Limit Entry Stage", 2, "border-radius", "0px", "width", "900px"], ["label", "Application Enrichment Stage", 2, "border-radius", "0px", "width", "900px"], [4, "ngFor", "ngForOf"], ["class", "mtcd", 4, "ngIf"], [1, "full-width", 2, "padding", "0rem 2rem"], ["fxLayout", "row wrap", 1, "full-width"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["type", "button", 1, "rejectbtn", 3, "hidden", "ngClass", "click"], ["type", "button", 1, "approvebtn", 3, "hidden", "ngClass", "click"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], ["visible", "true"], [1, "edit_icon", 3, "click"], ["fxFlex", "7%", "fxFlex.xs", "50%", "fxFlex.md", "10%", "fxFlex.sm", "15%", 1, "pb-16"], ["height", "50px", "width", "50px", "src", "assets/images/backgrounds/defaultProfileBackground.png", 1, "rounded-circle"], ["fxFlex", "93%", "fxFlex.xs", "100%", "fxFlex.md", "90%", "fxFlex.sm", "85%", 1, "bg-light", "p-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-16"], [1, "valueTextName"], [1, "pl-16", "text-secondary"], ["class", "pl-16 pr-16", 4, "ngIf"], ["class", "pl-16 pr-16", 3, "click", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-between center"], ["fxFlex.xs", "100%", 1, "pl-16", "pr-16"], [1, "pl-16", "pr-16"], [1, "headingText1"], [1, "pl-16", "pr-16", 3, "click"], [1, "full-width", "pt-16"], [1, "full-width", "mat-elevation-z0"], [1, "mat-elevation-z0", "border", "border-primary", 3, "opened", "closed"], ["fxFlex", "33%", "fxFlex.xs", "50%", 4, "ngIf"], [1, "toggle"], [3, "checked", "change"], ["fxLayout", "row", "fxLayouutAlign", "space-between center"], [1, "interstcard"], [1, "applicanthd", 2, "font-weight", "bold", "font-family", "sans-serif"], [1, "row", "wrap"], ["fxLayout", "row wrap", "class", "qtncard row", "style", "max-width:100%", "fxLayoutGap", "30px", "fxFlex", "50%", "fxFlex.gt-sm", "100", "fxFlex.sm", "50", "class", "full-width", 4, "ngFor", "ngForOf"], ["fxLayout", "row wrap", "fxLayoutGap", "30px", "fxFlex", "50%", "fxFlex.gt-sm", "100", "fxFlex.sm", "50", 1, "full-width", 2, "max-width", "100%"], [1, "qtncard", "row", 2, "justify-content", "space-evenly"], [1, "qtnval", 2, "opacity", "80%"]],
+        decls: 1025,
+        vars: 159,
+        consts: [["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [2, "color", "darkgray", "cursor", "pointer", "margin-right", "5px", 3, "click"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "Application Entry Stage", 2, "border-radius", "0px", "width", "900px"], ["fxFlex", "85"], [2, "width", "800px"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], ["visible", "true"], ["class", "edit_icon", 3, "click", 4, "ngIf"], [1, "mtcd"], ["fxLayout", "row", 1, "rowbord"], ["fxFlex", "4"], ["fxFlex", "32"], [1, "label"], [1, "labelval"], ["fxLayout", "row", 1, "rowbord", "nobord"], [1, "full-width"], [1, "fullcard"], ["fxLayout", "row"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "100%"], ["fxLayout", "column", "fxLayoutGap", "2%", "fxLayoutAlign", "space-between none", 1, "colAlign"], [1, "pt-16"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-around center"], ["fxFlex.xs", "100%"], [1, "headingText"], [1, "valueText"], ["fxLayout", "row wrap", "class", "full-width", 4, "ngFor", "ngForOf"], [1, "paraFont"], [1, "chequecard"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-between center", 1, "flex-container", "stretch"], ["fxFlex", "33%", "fxFlex.xs", "50%"], ["fxLayout", "row wrap"], ["class", "full-width pt-16", 4, "ngFor", "ngForOf"], ["fxLayout", "row wrap", 4, "ngIf"], ["label", "Limit Entry Stage", 2, "border-radius", "0px", "width", "900px"], ["label", "Application Enrichment Stage", 2, "border-radius", "0px", "width", "900px"], [4, "ngFor", "ngForOf"], ["class", "mtcd", 4, "ngIf"], [1, "full-width", 2, "padding", "0rem 2rem"], ["fxLayout", "row wrap", 1, "full-width"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["type", "button", 1, "rejectbtn", 3, "hidden", "ngClass", "click"], ["type", "button", 1, "approvebtn", 3, "hidden", "ngClass", "click"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], [1, "edit_icon", 3, "click"], ["fxFlex", "7%", "fxFlex.xs", "50%", "fxFlex.md", "10%", "fxFlex.sm", "15%", 1, "pb-16"], ["height", "50px", "width", "50px", "src", "assets/images/backgrounds/defaultProfileBackground.png", 1, "rounded-circle"], ["fxFlex", "93%", "fxFlex.xs", "100%", "fxFlex.md", "90%", "fxFlex.sm", "85%", 1, "bg-light", "p-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-16"], [1, "valueTextName"], [1, "pl-16", "text-secondary"], ["class", "pl-16 pr-16", 4, "ngIf"], ["class", "pl-16 pr-16", 3, "click", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-between center"], ["fxFlex.xs", "100%", 1, "pl-16", "pr-16"], [1, "pl-16", "pr-16"], [1, "headingText1"], [1, "pl-16", "pr-16", 3, "click"], [1, "full-width", "pt-16"], [1, "full-width", "mat-elevation-z0"], [1, "mat-elevation-z0", "border", "border-primary", 3, "opened", "closed"], ["fxFlex", "33%", "fxFlex.xs", "50%", 4, "ngIf"], [1, "toggle"], [3, "checked", "change"], ["fxLayout", "row", "fxLayouutAlign", "space-between center"], [1, "interstcard"], [1, "applicanthd", 2, "font-weight", "bold", "font-family", "sans-serif"], [1, "row", "wrap"], ["fxLayout", "row wrap", "class", "qtncard row", "style", "max-width:100%", "fxLayoutGap", "30px", "fxFlex", "50%", "fxFlex.gt-sm", "100", "fxFlex.sm", "50", "class", "full-width", 4, "ngFor", "ngForOf"], ["fxLayout", "row wrap", "fxLayoutGap", "30px", "fxFlex", "50%", "fxFlex.gt-sm", "100", "fxFlex.sm", "50", 1, "full-width", 2, "max-width", "100%"], [1, "qtncard", "row", 2, "justify-content", "space-evenly"], [1, "qtnval", 2, "opacity", "80%"]],
         template: function LoanAccountApproverComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -35654,41 +35422,43 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](57, LoanAccountApproverComponent_div_57_Template, 7, 0, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "mat-card", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "mat-card-content");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "legend", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](61, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "Account Currency");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "Loan Account Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "Account Branch");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](62, LoanAccountApproverComponent_mat_icon_62_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "mat-card", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](66, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "Account Currency");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71);
 
@@ -35696,15 +35466,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Loan Account ID");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Account Branch");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76);
 
@@ -35712,37 +35482,37 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](78, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "Application Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Loan Account ID");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, "Customer Contribution");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](83, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, "Application Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88);
 
@@ -35750,15 +35520,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, "Estimated Cost");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, "Customer Contribution");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](93);
 
@@ -35766,37 +35536,37 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](95, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](98, "Loan Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](96, "Estimated Cost");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](98);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "Loan Tenure");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](100, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "Loan Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105);
 
@@ -35804,15 +35574,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](108, "Purpose of Loan");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](108, "Loan Tenure");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110);
 
@@ -35820,37 +35590,37 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](112, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](115, "Status");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, "Purpose of Loan");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](115);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](120, "Business Product Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](117, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](120, "Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](122);
 
@@ -35858,15 +35628,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](125, "Modification Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](125, "Business Product Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](127);
 
@@ -35874,67 +35644,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](130, "Modification Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](128, LoanAccountApproverComponent_div_128_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](129, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](132, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](133, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, "Asset Status");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](138);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](141, "Building");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](143);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](145, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](146, "Mortgaged Branch");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](147, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](148);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](132);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -35942,107 +35662,81 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](150, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](153, "City");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](155);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, "Asset Information");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](158, "Country");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](159, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](160);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](138, LoanAccountApproverComponent_mat_icon_138_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](162, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](163, "Dimensions");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](141, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](142, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](164, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](165);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](145, "Asset Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](167, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](169, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](170, "Home Type");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](172);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](147);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](173, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](174, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](175, "Locality");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](177);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](150, "Building");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](178, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](179, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](180, "Market Value");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](152);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](181, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](182);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](153, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](155, "Mortgaged Branch");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](157);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36050,147 +35744,161 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](158, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](184, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](159, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](187, "State");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](188, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](189);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](162, "City");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](163, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](190, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](191, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](192, "City");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](193, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](194);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](164);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](195, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](165, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](196, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](197, "Zip code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](198, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](199);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](167, "Country");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](169);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](170, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](172, "Dimensions");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](173, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](174);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](176, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](177, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](178, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](179, "Home Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](180, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](181);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](184, "Locality");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](186);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](187, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](188, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](189, "Market Value");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](190, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](191);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](192, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](193, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](194, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](195, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](196, "State");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](197, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](198);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](199, "div", 36);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](201, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](201, "City");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](202, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](203);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](204, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](202, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](205, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](203, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](204, "Customer Information Details");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](206, "Zip code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](205, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](206, "mat-card", 31);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](208, "div", 39);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](209, "div", 40);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](210, "div", 41);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](211, "div", 42);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](212, "div", 38);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](213, "div", 43);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](214, "div", 44);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](215, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](216, "mat-card");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](217, "div", 45);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](218, "div", 46);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](219, "small", 47);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](220, "Holding Pattern");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "h3", 48);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](222);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](223, "div", 46);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](224, "small", 47);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](225, "Ownership");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](226, "h3", 48);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](227);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "div", 46);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](229, "small", 47);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](230, "Number of Applicant");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](231, "h3", 48);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](232);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](208);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36198,15 +35906,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](209, "div", 39);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](233, LoanAccountApproverComponent_div_233_Template, 54, 10, "div", 49);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](210, "div", 35);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36214,6 +35916,92 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](211, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](212, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](213, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](214, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](215, "Customer Information Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](216, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](217, "mat-card", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](218, "div", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](219, "div", 41);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](220, "div", 42);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "div", 43);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](222, "div", 44);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](223, "div", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](224, "div", 45);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](225, "div", 46);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](226, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](227, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "div", 47);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](229, "div", 48);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](230, "small", 49);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](231, "Holding Pattern");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](232, "h3", 50);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](233);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](234, "div", 48);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](235, "small", 49);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](236, "Ownership");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](237, "h3", 50);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](238);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](239, "div", 48);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "small", 49);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](241, "Number of Applicant");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](242, "h3", 50);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](243);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -36222,57 +36010,95 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](234, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](235, LoanAccountApproverComponent_div_235_Template, 7, 0, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](236, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](237, "mat-card");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](238, "div", 38);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](239, "div", 39);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "div", 40);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](241, "h4", 50);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](242, "Mandate Details");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](244, LoanAccountApproverComponent_div_244_Template, 54, 10, "div", 51);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](243, "div", 41);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](244, "div", 42);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](245, "mat-card", 51);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](246, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](247, "div", 38);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](248, "div", 43);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](249, "div", 52);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](250);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](251, "div", 53);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](252, "mat-hint", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](253, "Number of Applicants");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](254, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "mat-hint", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](256);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](245, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](246, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](247, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](248, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](249, "Mandate Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](250, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](251, LoanAccountApproverComponent_mat_icon_251_Template, 2, 0, "mat-icon", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](252, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](253, "div", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](254, "div", 41);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "div", 42);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](256, "h4", 52);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](257, "Mandate Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](258, "div", 43);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](259, "div", 44);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](260, "mat-card", 53);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](261, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](262, "div", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](263, "div", 45);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](264, "div", 54);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](265);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](266, "div", 55);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](267, "mat-hint", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](268, "Number of Applicants");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](269, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](270, "mat-hint", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](271);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36282,11 +36108,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](257, "div", 54);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "div", 56);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](258, LoanAccountApproverComponent_div_258_Template, 27, 4, "div", 55);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](273, LoanAccountApproverComponent_div_273_Template, 27, 4, "div", 57);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36308,267 +36132,225 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](259, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](260, LoanAccountApproverComponent_div_260_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](261, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](262, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](263, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](264, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](265, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](266, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](267, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](268, "Attributes");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](269, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](274, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](270);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](275, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](276, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](277, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](278, "Collateral Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](271, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](279, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](273, "Building");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](274, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](275);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](280, LoanAccountApproverComponent_mat_icon_280_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](276, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](277, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](278, "City");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](279, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](280);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](282, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](282, "mat-card-content");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](283, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](284, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](285, "Collateral Currency");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](285, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](286, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](286, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](287);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](287, "Attributes");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](288, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](288, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](289, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](290, "Collateral Type");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](291, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](292);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](289);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](290, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](294, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](291, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](295, "Collateral Value");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](296, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](297);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](292, "Building");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](294);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](295, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](296, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](297, "City");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](299);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](299, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](300, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](301, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](301, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](302, "Country");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](302, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](303, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](303, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](304);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](304, "Collateral Currency");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](305, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](305, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](306, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](307, "Dimensions");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](308, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](309);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](306);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](310, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](307, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](311, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](308, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](312, "Locality");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](313, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](314);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](309, "Collateral Type");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](310, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](311);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](312, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](313, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](314, "Collateral Value");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](316);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](316, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](317, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](318, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](318, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](319, "State");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](319, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](320, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](320, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](321);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](321, "Country");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](322, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](322, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](323, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](324, "Third Party Collateral");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](325, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](326);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](323);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](327, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](324, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](328, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](325, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](329, "Street");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](326, "Dimensions");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](327, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](328);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](329, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "mat-card", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](333, LoanAccountApproverComponent_div_333_Template, 2, 1, "div", 56);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331, "Locality");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](334, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](335, LoanAccountApproverComponent_div_335_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](336, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](337, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](338, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](339, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](340, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](341, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](342, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](343, "Prefix");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](333);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](344, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](334, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](335, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](336, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](337, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](338, "State");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](339, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](340);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](341, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](342, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](343, "Third Party Collateral");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](344, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](345);
 
@@ -36576,15 +36358,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](346, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](346, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](347, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](347, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](348, "First Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](348, "Street");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](349, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](349, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](350);
 
@@ -36592,71 +36374,93 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](351, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](352, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](351, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](353, "Last Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](352, LoanAccountApproverComponent_div_352_Template, 2, 1, "div", 58);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](354, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](353, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](355);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](354, "div", 30);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](355, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](356, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](357, "Guarantor Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](358, "span");
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](359, LoanAccountApproverComponent_mat_icon_359_Template, 2, 0, "mat-icon", 32);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](360, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](356, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](361, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](357, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](362, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](358, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](363, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](359, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](364, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](360, "CIF Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](365, "div", 37);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](366, "Prefix");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](361, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](367, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](362);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](368);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](363, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](369, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](364, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](370, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](365, "Relationship with Customer");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](371, "First Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](366, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](372, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](367);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](373);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](368, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](374, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](369, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](375, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](370, "Country");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](376, "Last Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](371, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](377, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](372);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](378);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36664,53 +36468,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](373, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](379, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](374, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](380, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](375, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](381, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](376, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](382, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](377, "Date Of Birth");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](383, "CIF Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](378, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](384, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](379);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](385);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](380, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](386, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](381, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](387, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](382, "Email address");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](388, "Relationship with Customer");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](383, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](389, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](384);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](390);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](385, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](391, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](386, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](392, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](387, "Mobile Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](393, "Country");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](388, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](394, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](389);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](395);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36718,53 +36522,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](390, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](396, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](391, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](397, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](392, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](398, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](393, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](399, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](394, "Address 1");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](400, "Date Of Birth");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](395, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](401, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](396);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](402);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](397, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](403, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](398, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](404, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](399, "Address 2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](405, "Email address");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](400, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](406, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](401);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](407);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](402, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](408, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](403, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](409, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](404, "City");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](410, "Mobile Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](405, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](411, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](406);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](412);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36772,55 +36576,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](407, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](413, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](408, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](414, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](409, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](415, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](410, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](416, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](411, "State");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](417, "Address 1");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](412, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](418, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](413);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](419);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](414, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](420, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](415, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](421, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](416, "Phone Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](422, "Address 2");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](417, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](423, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](418);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](424);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](419, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](425, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](420, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](426, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](421, "Zip Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](427, "City");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](422, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](428, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](423);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](429);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36828,291 +36630,273 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](430, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](431, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](432, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](433, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](434, "State");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](424, "div", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](425, "div", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](435, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](426, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](436);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](427, "2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](428, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](437, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](429, "\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](438, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](439, "Phone Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](430, "mat-card", 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](440, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](431, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](441);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](432, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](433, "Loan Application Enrichment");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](434, "hr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](435, "mat-card", 58);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](442, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](436, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](443, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](437, "hr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](444, "Zip Code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](438, "mat-card");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](439, LoanAccountApproverComponent_div_439_Template, 7, 0, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](445, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](440, LoanAccountApproverComponent_mat_card_440_Template, 30, 4, "mat-card", 59);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](446);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](441, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](442, "hr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](443, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](444, "mat-card", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](445, LoanAccountApproverComponent_div_445_Template, 7, 0, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](446, "mat-card", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](447, "mat-card-content");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](448, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](449, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](447, "div", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](450, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](448, "div", 24);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](451, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](449, "div", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](452, "Branch Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](450, "2");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](453, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](451, "div", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](454);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](452, "\xA0");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](455, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](456, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](453, "mat-card", 59);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](457, "Customer Account");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](454, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](458, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](455, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](459);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](456, "Loan Application Enrichment");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](457, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](460, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](458, "mat-card", 60);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](461, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](459, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](462, "Disbursement Mode");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](460, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](461, "mat-card");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](463, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](462, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](464);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](463, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](464, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](465, "Interest Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](465, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](466, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](466, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](467, LoanAccountApproverComponent_mat_icon_467_Template, 2, 0, "mat-icon", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](467, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](468, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](469, "First Disbursement Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](468, LoanAccountApproverComponent_mat_card_468_Template, 30, 4, "mat-card", 61);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](470, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](469, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](471);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](470, "hr");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](472, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](471, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](473, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](472, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](474, "Loan Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](473, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](474, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](475, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](475, "legend", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](476);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](476, "Loan Disbursement Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](477, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](477, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](478, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](478, LoanAccountApproverComponent_mat_icon_478_Template, 2, 0, "mat-icon", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](479, "Multiple Disbursement Required");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](480, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](481);
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](479, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](480, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](482, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](481, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](483, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](482, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](484, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](483, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](485, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](484, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](486, "Number Of Disbursement");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](485, "Branch Code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](487, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](486, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](488);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](487);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](489, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](488, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](490, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](489, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](491, "Total Disbursement");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](490, "Customer Account");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](492, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](491, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](493);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](492);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](494, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](493, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](494, "div", 37);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](495, "Disbursement Mode");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](496, "div", 38);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](497);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](495, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](496, "mat-card", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](498, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](497, LoanAccountApproverComponent_div_497_Template, 7, 0, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](499, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](498, "mat-card", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](500, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](499, "mat-card-content");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](501, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](500, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](502, "First Disbursement Date");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](501, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](502, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](503, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](503, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](504);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](504, "Bank Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](505, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](506);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](506, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](507, "Loan Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](508, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](509);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](507, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](508, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](509, "Branch Code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](510, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](511);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](511, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](512, "Multiple Disbursement Required");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](513, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](512, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](513, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](514, "Customer Account");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](515, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](516);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](514);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -37120,129 +36904,43 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](517, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](515, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](518, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](516, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](519, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](517, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](520, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](518, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](521, "First Repayment Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](519, "Number Of Disbursement");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](520, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](521);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](522, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](523);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](523, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](524, "Total Disbursement");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](525, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](526);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](524, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](525, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](526, "Loan Tenure");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](527, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](528);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](529, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](530, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](531, "Maturity Date");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](532, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](533);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](534, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](535, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](536, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](537, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](538, "Moraturioum Period");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](539, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](540);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](541, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](542, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](543, "Type Of Repayment");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](544, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](545);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](546, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](547, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](548, "Repayment Frequency");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](549, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](550);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](551, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](552, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](553, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](554, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](555, "Repayment Mode");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](556, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](557);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](527, "div", 36);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -37252,61 +36950,155 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](528, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](529, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](558, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](530, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](559, "mat-card");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](531, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](560, LoanAccountApproverComponent_div_560_Template, 7, 0, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](532, "legend", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](561, LoanAccountApproverComponent_mat_card_561_Template, 30, 4, "mat-card", 59);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](562, "mat-card");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](563, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](564, "Account Service Details");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](565, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](566, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](567, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](568, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](569, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](570, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](571, "Statement Cycle");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](572, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](573);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](533, "Loan Repayment Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](574, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](534, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](575, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](576, "Statement Type");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](535, LoanAccountApproverComponent_mat_icon_535_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](577, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](536, "mat-card", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](537, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](538, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](539, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](540, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](541, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](542, "Bank Name");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](543, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](544);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](545, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](546, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](547, "Branch Code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](548, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](549);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](550, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](551, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](552, "Customer Account");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](553, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](554);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](555, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](556, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](557, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](558, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](559, "First Repayment Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](560, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](561);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](562, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](563, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](564, "Loan Tenure");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](565, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](566);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](567, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](568, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](569, "Maturity Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](570, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](571);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](572, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](573, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](574, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](575, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](576, "Moraturioum Period");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](577, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](578);
 
@@ -37314,15 +37106,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](579, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](579, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](580, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](580, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](581, "start Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](581, "Type Of Repayment");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](582, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](582, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](583);
 
@@ -37330,6 +37122,150 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](584, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](585, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](586, "Repayment Frequency");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](587, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](588);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](589, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](590, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](591, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](592, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](593, "Repayment Mode");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](594, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](595);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](596, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](597, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](598, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](599, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](600, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](601, "Loan Charge Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](602, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](603, LoanAccountApproverComponent_mat_icon_603_Template, 2, 0, "mat-icon", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](604, LoanAccountApproverComponent_mat_card_604_Template, 30, 4, "mat-card", 61);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](605, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](606, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](607, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](608, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](609, "Account Service Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](610, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](611, "mat-card", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](612, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](613, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](614, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](615, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](616, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](617, "Statement Cycle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](618, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](619);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](620, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](621, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](622, "Statement Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](623, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](624);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](625, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](626, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](627, "start Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](628, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](629);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -37344,301 +37280,163 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](584, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](585, "div", 23);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](586, "div", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](587, "div", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](588, "3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](589, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](590, "\xA0");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](591, "mat-card", 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](630, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](592, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](631, "div", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](593, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](632, "div", 24);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](594, "Loan Underwriting Stage");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](633, "div", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](595, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](596, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](597, LoanAccountApproverComponent_div_597_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](598, LoanAccountApproverComponent_mat_card_598_Template, 3, 1, "mat-card", 60);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](634, "3");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](599, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](635, "div", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](600, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](601, LoanAccountApproverComponent_div_601_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](602, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](603, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](604, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](605, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](606, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](607, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](608, "Bank Valuation");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](609, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](610);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](636, "\xA0");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](611, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](637, "mat-card", 59);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](612, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](638, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](613, "Asset Type");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](639, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](614, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](615);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](640, "Loan Underwriting Stage");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](641, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](616, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](642, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](617, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](643, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](618, "Property Area Size");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](644, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](645, "legend", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](619, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](620);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](646, "Loan Credit Score Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](647, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](621, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](622, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](623, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](624, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](625, "Actual Property Area Size");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](626, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](627);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](648, LoanAccountApproverComponent_mat_icon_648_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](628, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](629, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](630, "Borrower's Market Value");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](649, LoanAccountApproverComponent_mat_card_649_Template, 3, 1, "mat-card", 62);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](631, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](650, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](632);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](651, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](652, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](653, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](633, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](654, "legend", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](634, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](635, "Face Value Of Asset");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](636, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](637);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](655, "Valuation of Asset Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](656, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](638, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](639, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](640, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](641, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](642, "Market Value Of Asset");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](643, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](644);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](657, LoanAccountApproverComponent_mat_icon_657_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](645, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](658, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](646, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](659, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](647, "Asset Valuer");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](660, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](661, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](648, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](662, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](649);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](663, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](650, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](651, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](652, "Forced Sale Value");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](664, "Bank Valuation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](653, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](665, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](654);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](666);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](667, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](655, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](668, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](656, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](657, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](658, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](659, "Valuation Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](669, "Asset Type");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](660, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](670, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](661);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](671);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](662, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](663, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](664, LoanAccountApproverComponent_div_664_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](665, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](666, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](667, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](668, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](669, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](670, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](671, "Opinion");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](672, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](673);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](673, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](674, "Property Area Size");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](675, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](676);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](674, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](675, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](677, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](676, "Asset Area Size");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](678, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](679, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](680, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](681, "Actual Property Area Size");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](677, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](678);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](679, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](680, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](681, "Description");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](682, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](682, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](683);
 
@@ -37646,53 +37444,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](684, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](685, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](686, "Borrower's Market Value");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](684, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](687, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](685, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](688);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](686, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](687, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](688, "Lawyer Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](689, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](690);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](690, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](691, "Face Value Of Asset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](692, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](693);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](691, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](692, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](694, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](693, "Market Value Of Asset");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](695, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](696, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](697, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](698, "Market Value Of Asset");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](694, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](695);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](696, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](697, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](698, "Opinion Date");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](699, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](699, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](700);
 
@@ -37700,39 +37498,33 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](701, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](702, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](703, "Asset Valuer");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](701, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](704, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](702, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](705);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](703, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](704, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](705, "Is Decision Favorable?");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](706, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](707);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](707, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](708, "Forced Sale Value");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](709, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](708, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](709, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](710, "Valuation Date");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](711, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](712);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](710);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -37740,6 +37532,22 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](711, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](712, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](713, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](714, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](715, "Valuation Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](716, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](717);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -37752,81 +37560,81 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](713, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](718, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](714, "div", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](719, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](715, "div", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](720, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](716, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](721, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](717, "4");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](722, "legend", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](718, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](719, "\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](723, "Legal Opinion Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](720, "mat-card", 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](724, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](721, "div", 28);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](722, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](723, "Loan Assessment Details");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](725, LoanAccountApproverComponent_mat_icon_725_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](724, "hr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](725, "mat-card", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](726, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](726, "h3");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](727, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](727, "Qualitative Scoreboard");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](728, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](729, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](730, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](731, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](732, "Opinion");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](728, "mat-card", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](733, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](729, "mat-card-content");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](734);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](730, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](731, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](732, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](733, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](734, "ScoreCard Id");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](735, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](736);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](736, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](737, "Asset Area Size");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](738, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](739);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](737, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](738, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](739, "Number Of Applicants");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](740, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](741);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](741, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](742, "Description");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](743, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](744);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -37834,85 +37642,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](745, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](746, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](747, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](748, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](749, "Lawyer Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](742, "mat-card", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](750, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](743, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](744, "div", 61);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](745, "div", 62);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](746, LoanAccountApproverComponent_div_746_Template, 5, 2, "div", 59);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](747, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](748, LoanAccountApproverComponent_div_748_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](749, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](750, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](751, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](752, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](753, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](754, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](755, "Approved Loan Amount");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](756, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](757);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](751);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](758, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](752, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](759, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](753, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](760, "Loan Tenure");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](761, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](762);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](754, "Market Value Of Asset");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](755, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](763, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](764, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](765, "Rate Of Interest");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](756);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](766, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](767);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](757, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](758, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](759, "Opinion Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](760, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](761);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -37920,75 +37696,37 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](768, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](762, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](769, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](763, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](770, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](764, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](771, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](765, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](772, "Loan Amount Recommended");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](773, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](774);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](766, "Is Decision Favorable?");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](767, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](775, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](776, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](777, "System Recommendation");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](778, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](779);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](768);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](780, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](769, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](781, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](770, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](782, "User Recommendation");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](783, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](784);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](771, "Valuation Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](772, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](785, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](786, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](787, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](788, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](789, "Requested Loan Amount");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](790, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](791);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](773);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38002,7 +37740,97 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](792, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](774, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](775, "div", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](776, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](777, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](778, "4");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](779, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](780, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](781, "mat-card", 59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](782, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](783, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](784, "Loan Assessment Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](785, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](786, "mat-card", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](787, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](788, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](789, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](790, "Qualitative Scoreboard");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](791, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](792, "mat-card", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](793, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](794, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](795, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](796, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](797, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](798, "ScoreCard Id");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](799, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](800);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](801, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](802, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](803, "Number Of Applicants");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](804, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](805);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38010,93 +37838,69 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](793, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](794, "div", 23);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](795, "div", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](796, "div", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](797, "5");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](798, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](799, "\xA0");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](800, "mat-card", 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](806, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](801, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](807, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](802, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](808, "div", 63);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](803, "Loan Offer Issue");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](809, "div", 64);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](804, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](805, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](806, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](807, LoanAccountApproverComponent_div_807_Template, 7, 0, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](808, "mat-card", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](809, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](810, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](811, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](812, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](813, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](814, "Applicant Name");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](815, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](816);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](810, LoanAccountApproverComponent_div_810_Template, 5, 2, "div", 61);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](817, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](818, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](819, "Approved Loan Amount");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](820, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](821);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](822, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](811, "mat-card", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](823, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](812, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](824, "Charges");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](813, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](814, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](815, "Assessment Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](825, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](816, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](817, LoanAccountApproverComponent_mat_icon_817_Template, 2, 0, "mat-icon", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](818, "mat-card", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](819, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](820, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](821, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](822, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](823, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](824, "Approved Loan Amount");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](825, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](826);
 
@@ -38104,53 +37908,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](827, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](828, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](829, "Loan Tenure");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](827, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](830, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](828, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](831);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](829, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](830, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](831, "Generate Offer");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](832, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](833);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](833, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](834, "Rate Of Interest");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](835, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](836);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](834, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](835, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](837, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](836, "Installment Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](838, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](839, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](840, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](841, "Loan Amount Recommended");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](837, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](838);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](839, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](840, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](841, "Installment Type");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](842, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](842, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](843);
 
@@ -38158,53 +37962,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](844, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](845, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](846, "System Recommendation");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](844, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](847, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](845, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](848);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](846, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](847, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](848, "Interest");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](849, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](850);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](850, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](851, "User Recommendation");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](852, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](853);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](851, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](852, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](854, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](853, "Loan Tenure");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](855, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](856, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](857, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](858, "Requested Loan Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](854, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](855);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](856, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](857, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](858, "Offer Issue Date");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](859, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](859, "div", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](860);
 
@@ -38214,43 +38018,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](861, "div", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](862, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](863, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](864, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](865, "Principal");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](866, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](867);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](868, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](869, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](870, "Rate Of Interest");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](871, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](872);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](873, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](861, "br");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38258,117 +38032,113 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](862, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](863, "div", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](864, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](865, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](866, "5");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](867, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](868, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](869, "mat-card", 59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](870, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](871, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](872, "Loan Offer Issue");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](873, "hr");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](874, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](875, "mat-card", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](876, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](877, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](878, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](879, "Offer Issue Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](875, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](880, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](876, "div", 23);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](877, "div", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](878, "div", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](879, "6");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](880, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](881, "\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](881, LoanAccountApproverComponent_mat_icon_881_Template, 2, 0, "mat-icon", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](882, "mat-card", 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](882, "mat-card", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](883, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](883, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](884, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](884, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](885, "Offer Accept/Reject Stage");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](885, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](886, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](886, "hr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](887, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](887, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](888, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](889, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](890, "Offer Accept Details");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](888, "Applicant Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](891, LoanAccountApproverComponent_mat_card_891_Template, 60, 10, "mat-card", 60);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](889, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](892, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](890);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](891, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](893, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](892, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](894, "div", 23);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](895, "div", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](896, "div", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](897, "7");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](893, "Approved Loan Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](898, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](894, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](899, "\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](895);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](900, "mat-card", 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](896, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](901, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](897, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](902, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](903, "Post Offer Amend Stage");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](898, "Charges");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](904, "hr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](899, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](905, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](906, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](907, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](908, "Post Offer Amend Stage");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](909, LoanAccountApproverComponent_mat_card_909_Template, 65, 11, "mat-card", 60);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](910, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](900);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38376,93 +38146,397 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](911, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](901, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](912, "div", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](902, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](913, "div", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](903, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](914, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](904, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](915, "8");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](916, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](917, "\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](905, "Generate Offer");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](906, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](918, "mat-card", 57);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](919, "div", 28);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](920, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](921, "Account Credit Details Stage");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](922, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](923, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](924, "mat-card", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](925, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](926, "Account Credit Details Stage");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](927, LoanAccountApproverComponent_mat_card_927_Template, 82, 14, "mat-card", 60);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](928, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](907);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](908, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](909, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](910, "Installment Amount");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](929, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](911, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](930, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](912);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](931, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](932, "div", 63);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](933, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](913, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](934, "button", 64);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](914, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_Template_button_click_934_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](915, "Installment Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](916, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](917);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](918, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](919, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](920, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](921, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](922, "Interest");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](923, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](924);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](925, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](926, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](927, "Loan Tenure");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](928, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](929);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](930, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](931, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](932, "Offer Issue Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](933, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](934);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](935, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](936, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](937, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](938, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](939, "Principal");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](940, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](941);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](942, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](943, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](944, "Rate Of Interest");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](945, "div", 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](946);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](947, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](948, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](949, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](950, "div", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](951, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](952, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](953, "6");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](954, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](955, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](956, "mat-card", 59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](957, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](958, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](959, "Offer Accept/Reject Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](960, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](961, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](962, "mat-card", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](963, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](964, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](965, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](966, "Offer Accept Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](967, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](968, LoanAccountApproverComponent_mat_icon_968_Template, 2, 0, "mat-icon", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](969, LoanAccountApproverComponent_mat_card_969_Template, 60, 10, "mat-card", 62);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](970, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](971, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](972, "div", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](973, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](974, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](975, "7");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](976, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](977, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](978, "mat-card", 59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](979, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](980, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](981, "Post Offer Amend Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](982, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](983, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](984, "mat-card", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](985, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](986, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](987, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](988, "Post Offer Amend Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](989, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](990, LoanAccountApproverComponent_mat_card_990_Template, 65, 11, "mat-card", 62);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](991, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](992, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](993, "div", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](994, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](995, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](996, "8");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](997, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](998, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](999, "mat-card", 59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1000, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1001, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1002, "Account Credit Details Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1003, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1004, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1005, "mat-card", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1006, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1007, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1008, "legend", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1009, "Account Create Details Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1010, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1011, LoanAccountApproverComponent_mat_card_1011_Template, 82, 14, "mat-card", 62);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1012, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1013, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1014, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1015, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1016, "div", 65);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1017, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1018, "button", 66);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_Template_button_click_1018_listener() {
               return ctx.updateApplicationStatus(ctx.loanAccount_array, "REJECTED");
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](935, " Reject ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1019, " Reject ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](936, " \xA0\xA0 ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1020, " \xA0\xA0 ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](937, "button", 65);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1021, "button", 67);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_Template_button_click_937_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanAccountApproverComponent_Template_button_click_1021_listener() {
               return ctx.updateApplicationStatus(ctx.loanAccount_array, "APPROVED");
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](938, "Approve");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1022, "Approve");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](939, " \xA0\xA0 ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1023, " \xA0\xA0 ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38470,7 +38544,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](940, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1024, "br");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38516,7 +38590,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"]("", ctx.loanInfo.prefix, "\xA0", ctx.loanInfo.firstName, "\xA0", ctx.loanInfo.lastName, "");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38534,7 +38608,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.loanAccount_array == null ? null : ctx.loanAccount_array.applicationDate);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.loanAccount_array == null ? null : ctx.loanAccount_array.applicationDate.slice(0, 12));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -38568,11 +38642,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.loanAccount_array == null ? null : ctx.loanAccount_array.modificationNo);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.assest_array == null ? null : ctx.assest_array.assetStatus);
 
@@ -38620,7 +38694,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.assest_array == null ? null : ctx.assest_array.zipCode);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.ownership);
 
@@ -38636,11 +38710,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.customerInfoDetails);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.mandateDetails == null ? null : ctx.mandateDetails.noOfApplicants);
 
@@ -38648,11 +38722,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.mandateDetailsArray);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.colateral_array == null ? null : ctx.colateral_array.attributes);
 
@@ -38704,11 +38778,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.colateral_array);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.guranator_array == null ? null : ctx.guranator_array.prefix);
 
@@ -38768,7 +38842,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.guranator_array == null ? null : ctx.guranator_array.zipCode);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38776,7 +38850,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.loanInterest_array);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38812,7 +38886,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.loanDisbusment_array == null ? null : ctx.loanDisbusment_array.totalDisbursement);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38856,7 +38930,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.loanRepayment_array == null ? null : ctx.loanRepayment_array.repaymentMode);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38864,7 +38938,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.loanCharge_array);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.accountService_array == null ? null : ctx.accountService_array.statementCycle);
 
@@ -38876,7 +38950,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.accountService_array == null ? null : ctx.accountService_array.startDate);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38884,7 +38958,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loanCreditScore_array);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38926,9 +39000,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.valueofassest_array == null ? null : ctx.valueofassest_array.valuationDate);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.valueofassest_array == null ? null : ctx.valueofassest_array.valuationDate.slice(0, 12));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -38964,7 +39038,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.legaopninio_array == null ? null : ctx.legaopninio_array.valuationDate);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](27);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.qualitativeScoreboardSummary == null ? null : ctx.qualitativeScoreboardSummary.scoreCardId);
 
@@ -38976,7 +39050,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.qualitativeScoreboardSummary == null ? null : ctx.qualitativeScoreboardSummary.scoreCardMapping);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -39008,7 +39082,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.loanassement_array == null ? null : ctx.loanassement_array.requestedLoanAmount);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
 
@@ -39056,30 +39130,34 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.offerissue_array == null ? null : ctx.offerissue_array.rateOfInterest);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.offerDetails);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.postOfferDetails);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.accountCreateValue);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](152, _c0, ctx.rejectedStatus, !ctx.rejectedStatus));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](153, _c0, ctx.rejectedStatus, !ctx.rejectedStatus));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](155, _c1, ctx.approvedStatus, !ctx.approvedStatus));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](156, _c1, ctx.approvedStatus, !ctx.approvedStatus));
           }
         },
         directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_24__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_24__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_25__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_26__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_27__["MatCardAvatar"], _angular_common__WEBPACK_IMPORTED_MODULE_26__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_24__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_27__["MatCard"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_28__["MatDivider"], _angular_material_card__WEBPACK_IMPORTED_MODULE_27__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_24__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_29__["MatHint"], _angular_common__WEBPACK_IMPORTED_MODULE_26__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_30__["DefaultClassDirective"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_31__["MatAccordion"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_31__["MatExpansionPanel"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_31__["MatExpansionPanelHeader"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_31__["MatExpansionPanelTitle"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_32__["MatSlideToggle"]],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_26__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_26__["UpperCasePipe"]],
-        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n  margin: 10px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.num[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  background-color: white;\n}\n\n.num1[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 15%;\n  height: 70px;\n  padding-top: 25px;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  border: 0.5px groove;\n  margin-right: 2%;\n  margin-bottom: 40px;\n  padding: 10px;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 5%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  width: 40%;\n  border: 1px solid;\n}\n\n.appersoninfocard1[_ngcontent-%COMP%] {\n  width: 90%;\n  border: 1px solid;\n}\n\n.interstcard[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 100px;\n  height: 80px;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n  position: relative;\n  padding-right: 12px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 3rem 3.3rem;\n  color: white;\n}\n\n.right-text[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 150px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0e7cc5;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0e57c5;\n  height: 30px;\n  width: 150px;\n}\n\n.editScreen[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0e7cc5;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0e57c5;\n  height: 30px;\n  width: 100px;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  background-color: #F7F7F7;\n  margin-left: 12%;\n  margin-bottom: 40px;\n  padding: 10px;\n  width: 100%;\n  box-shadow: #F7F7F7;\n  block-size: 70px;\n  height: 80px;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n  width: 100%;\n  color: dimgrey;\n}\n\n.qtncard1[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 80px;\n  block-size: 80px;\n  background-color: #F7F7F7;\n  margin-left: 12%;\n}\n\n.qtncard[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n.qtnhd[_ngcontent-%COMP%] {\n  margin: 20px;\n}\n\n.applicanthd[_ngcontent-%COMP%] {\n  text-align: left;\n  padding: 42px;\n  font-size: medium;\n  font-family: sans-serif;\n  color: #000000bd;\n}\n\n.edit_icon[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n  margin-right: 20px;\n  float: right;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9hbi1hY2NvdW50LWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBRUcsWUFBVztFQUNYLGFBQVk7QUFEZjs7QUFHQTtFQUNJLFVBQVU7RUFDVix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixtQ0FBbUM7RUFDbkMsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQUFoQjs7QUFHQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixtQ0FBbUM7RUFDbkMsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7RUFDWCxZQUFXO0FBQWY7O0FBR0E7RUFFSSxrQkFBaUI7RUFDakIsY0FBYztFQUNkLHlCQUF3QjtVQUF4Qix3QkFBd0I7QUFENUI7O0FBR0E7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7QUFEM0I7O0FBR0E7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtBQURyQjs7QUFJQTtFQUlJLG9CQUFvQjtFQUNwQixnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQixhQUFZO0FBSmhCOztBQU1BO0VBRUksZ0JBQWU7QUFKbkI7O0FBTUE7RUFFSSxZQUFXO0FBSmY7O0FBTUE7RUFFSSxrQkFBa0I7QUFKdEI7O0FBTUE7RUFFSSxXQUFVO0VBQ1YsZUFBZTtBQUpuQjs7QUFNQTtFQUVFLGNBQWE7RUFDYixpQkFBaUI7QUFKbkI7O0FBVUE7RUFFUSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFSaEM7O0FBVUE7RUFFSSxZQUFXO0FBUmY7O0FBVUE7RUFFSSx1QkFBc0I7QUFSMUI7O0FBVUE7RUFFSSxZQUFXO0VBQ1gsY0FBYztFQUNkLGtCQUFrQjtBQVJ0Qjs7QUFVQTtFQUdHLFVBQVM7RUFDVCxpQkFBaUI7QUFUcEI7O0FBV0E7RUFHRyxVQUFTO0VBQ1QsaUJBQW1CO0FBVnRCOztBQVlBO0VBQ0kseUJBQXdCO0VBQ3hCLFlBQVk7RUFDWixZQUFZO0FBVGhCOztBQVdBO0VBRUksY0FBYTtBQVRqQjs7QUFXQTtFQUVJLFlBQVk7RUFDWiw4QkFBOEI7RUFDOUIsZ0JBQWdCO0FBVHBCOztBQVdBO0VBQ0kseUJBQXdCO0VBQ3hCLFlBQVk7RUFDWixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFSZjs7QUFXQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBUmY7O0FBV0E7RUFDSSxjQUFlO0VBQ2YseUJBQW9DO0VBQ3BDLGVBQWU7RUFDZix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLHFCQUFvQjtFQUNwQixVQUFVO0VBQ1YsWUFBVztFQUNYLFlBQVk7QUFSaEI7O0FBV0E7RUFDSSxXQUFXO0VBQ1gseUJBQW9DO0VBQ3BDLGVBQWU7RUFDZix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBVztFQUNYLFlBQVk7QUFSaEI7O0FBV0E7RUFDSSxVQUFVO0VBQ1YsdUJBQXVCO0VBQ3ZCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixtQkFBa0I7QUFSdEI7O0FBV0E7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLHFCQUErQjtFQUMvQiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQVJmOztBQVlBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFUZjs7QUFZQTtFQUNJLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBVGY7O0FBWUE7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQVR0Qjs7QUFhQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBVm5COztBQWNBO0VBQ0ksV0FBVTtFQUNWLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIseUJBQWtDO0VBQ2xDLFlBQVk7RUFDWixrQkFBa0I7QUFYdEI7O0FBY0E7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFlBQVk7RUFDWixRQUFRO0VBQ1IsMkJBQTJCO0VBQzNCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtBQVhuQjs7QUFhQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBRWxCLGtCQUFrQjtBQVh0Qjs7QUFlRTtFQUNFLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsWUFBWTtBQVpoQjs7QUFlRTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFadEI7O0FBY0U7RUFDRSxjQUFhO0VBQ2IsMEJBQTBCO0FBWDlCOztBQWFBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixxQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFWZjs7QUFZQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBVGY7O0FBWUE7RUFFSSx5QkFBd0I7RUFDeEIsZ0JBQWU7RUFDZixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLFdBQVU7RUFDVixtQkFBbUI7RUFDbkIsZ0JBQWU7RUFDZixZQUFZO0FBVmhCOztBQVlBO0VBRUksZ0JBQWU7RUFDZixXQUFVO0VBQ1YsY0FBYTtBQVZqQjs7QUFZQTtFQUNJLFdBQVU7RUFDVixZQUFZO0VBQ1osZ0JBQWU7RUFDZix5QkFBd0I7RUFDeEIsZ0JBQWU7QUFUbkI7O0FBV0E7RUFDSSxXQUNKO0FBVEE7O0FBVUE7RUFFSSxZQUFXO0FBUmY7O0FBVUE7RUFFSSxnQkFBZ0I7RUFDaEIsYUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7RUFDdkIsZ0JBQWdCO0FBUnBCOztBQVdBO0VBQ0ksY0FBdUI7RUFFdkIsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixZQUFZO0FBVGhCIiwiZmlsZSI6ImxvYW4tYWNjb3VudC1hcHByb3Zlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4uYXBwaW1nXHJcbntcclxuICAgd2lkdGg6MTAwcHg7XHJcbiAgIGhlaWdodDoxMDBweDtcclxufVxyXG4ucmVqZWN0YnRue1xyXG4gICAgY29sb3I6cmVkIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogcmVkO1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uYXBwcm92ZWJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDoxNTBweDtcclxuICAgIG1hcmdpbjoxMHB4O1xyXG59XHJcblxyXG4uaW1nZGl2XHJcbntcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogNSU7XHJcbiAgICBtYXJnaW4taW5saW5lLXN0YXJ0OiAxOCU7XHJcbn1cclxuLm51bVxyXG57XHJcbiAgICBib3JkZXI6MXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbi5udW0xXHJcbntcclxuICAgIGJvcmRlcjoxcHggc29saWQgIzRBNTZFMjtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDE1JTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIHBhZGRpbmctdG9wOiAyNXB4O1xyXG4gICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG4ucXRuY3JkXHJcbntcclxuICAvLyAgYmFja2dyb3VuZC1jb2xvcjojRjdGN0Y3O1xyXG4gICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICBib3JkZXI6IDAuNXB4IGdyb292ZTtcclxuICAgIG1hcmdpbi1yaWdodDoyJTtcclxuICAgIG1hcmdpbi1ib3R0b206NDBweDtcclxuICAgIHBhZGRpbmc6MTBweDtcclxufVxyXG4ucXRudmFsXHJcbntcclxuICAgIHBhZGRpbmctdG9wOjhweDtcclxufVxyXG4uaW1nZGl2IGRpdlxyXG57XHJcbiAgICBtYXJnaW46YXV0bztcclxufVxyXG4uYXBwcmRpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLmFwcHJkaXYgaDJcclxue1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiA1JTtcclxufVxyXG4ubGFiZWxcclxue1xyXG4gIGNvbG9yOiM5QUExQjA7XHJcbiAgZm9udC1zaXplOiAwLjdyZW07XHJcbn1cclxuLy8gLmxhYmVsdmFsXHJcbi8vIHtcclxuLy8gICAgY29sb3I6IzJGMkYyRjtcclxuLy8gfVxyXG4ucm93Ym9yZFxyXG57XHJcbiAgICAgICAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gICAgICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICAgICAgcGFkZGluZzoxMHB4IDAgMTBweCAxMHB4O1xyXG59XHJcbi5tdGNkXHJcbntcclxuICAgIHBhZGRpbmc6MHB4O1xyXG59XHJcbi5ub2JvcmRcclxue1xyXG4gICAgYm9yZGVyOm5vbmUgIWltcG9ydGFudDtcclxufVxyXG4ubWFpblxyXG57XHJcbiAgICBoZWlnaHQ6ODV2aDtcclxuICAgIG92ZXJmbG93OiBhdXRvO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG59XHJcbi5hcHBlcnNvbmluZm9jYXJkXHJcbntcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgIHdpZHRoOjQwJTtcclxuICAgYm9yZGVyOiAxcHggc29saWQ7XHJcbn1cclxuLmFwcGVyc29uaW5mb2NhcmQxXHJcbntcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgIHdpZHRoOjkwJTtcclxuICAgYm9yZGVyIDogMXB4IHNvbGlkIDtcclxufVxyXG4uaW50ZXJzdGNhcmR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbn1cclxuLmNsclxyXG57XHJcbiAgICBjb2xvcjojQjJCMkIyOyAgXHJcbn1cclxuLmJvcmRudW1cclxue1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDI0JTtcclxufVxyXG4uUk5idG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiM0QTU2RTI7XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDo1MHB4O1xyXG4gICAgd2lkdGg6MjAwcHg7XHJcbn1cclxuXHJcbi5idG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6NTBweDtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG59XHJcblxyXG4uY2FuY2VsYnRue1xyXG4gICAgY29sb3I6IzI5ODBCOSAgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MywgMjM2LCAyMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiMyOTgwQjk7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5kaXNhYmxlZGJ0bntcclxuICAgIGNvbG9yOmdyZXkgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MywgMjM2LCAyMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiBncmV5O1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4ucmVqZWN0YnRue1xyXG4gICAgY29sb3I6cmVkIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHBhZGRpbmctcmlnaHQ6MTJweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5zcWZ0YnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmFjYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmNpcmNsZXtcclxuICAgIHdpZHRoOjc1cHg7XHJcbiAgICBoZWlnaHQ6NzVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIFxyXG59XHJcblxyXG4uY29udGVudDF7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIFxyXG59XHJcblxyXG4uY2lyY2xlMXtcclxuICAgIHdpZHRoOjI1cHg7XHJcbiAgICBoZWlnaHQ6MjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmNvbnRlbnQye1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiAxMjBweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTljMjhmO1xyXG4gIH1cclxuICBcclxuICAuaW1hZ2VUZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogM3JlbSAzLjNyZW07XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgfVxyXG5cclxuICAucmlnaHQtdGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNTBweDtcclxuICB9XHJcbiAgLmxpbmtDb2xvcntcclxuICAgIGNvbG9yOiM0QTU2RTI7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgXHJcbn1cclxuLmVkaXRidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbn1cclxuLmVkaXRTY3JlZW57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTAwcHg7XHJcbn1cclxuXHJcbi5xdG5jcmRcclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRjdGN0Y3O1xyXG4gICAgbWFyZ2luLWxlZnQ6MTIlO1xyXG4gICAgbWFyZ2luLWJvdHRvbTo0MHB4O1xyXG4gICAgcGFkZGluZzoxMHB4O1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIGJveC1zaGFkb3c6ICNGN0Y3Rjc7XHJcbiAgICBibG9jay1zaXplOjcwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbn1cclxuLnF0bnZhbFxyXG57XHJcbiAgICBwYWRkaW5nLXRvcDo4cHg7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgY29sb3I6ZGltZ3JleTtcclxufVxyXG4ucXRuY2FyZDF7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgaGVpZ2h0OiA4MHB4O1xyXG4gICAgYmxvY2stc2l6ZTo4MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRjdGN0Y3O1xyXG4gICAgbWFyZ2luLWxlZnQ6MTIlOyAgIFxyXG59XHJcbi5xdG5jYXJke1xyXG4gICAgd2lkdGg6MTAwJVxyXG59XHJcbi5xdG5oZFxyXG57XHJcbiAgICBtYXJnaW46MjBweDtcclxufVxyXG4uYXBwbGljYW50aGR7XHJcbiAgICAvL2ZsZXg6IDUwJTtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBwYWRkaW5nOjQycHg7XHJcbiAgICBmb250LXNpemU6IG1lZGl1bTtcclxuICAgIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gICAgY29sb3I6ICMwMDAwMDBiZDtcclxuXHJcbn1cclxuLmVkaXRfaWNvbntcclxuICAgIGNvbG9yOnJnYigxNCwgMTI0LCAxOTcpIDtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxMjQsIDE5Nyk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbn1cclxuICAiXX0= */"]
+        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n  margin: 10px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.num[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  background-color: white;\n}\n\n.num1[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 15%;\n  height: 70px;\n  padding-top: 25px;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  border: 0.5px groove;\n  margin-right: 2%;\n  margin-bottom: 40px;\n  padding: 10px;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 5%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  width: 40%;\n  border: 1px solid;\n}\n\n.appersoninfocard1[_ngcontent-%COMP%] {\n  width: 90%;\n  border: 1px solid;\n}\n\n.interstcard[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 100px;\n  height: 80px;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n  position: relative;\n  padding-right: 12px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 3rem 2.7rem;\n  color: white;\n}\n\n.right-text[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 150px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0e7cc5;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0e57c5;\n  height: 30px;\n  width: 150px;\n}\n\n.editScreen[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0e7cc5;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0e57c5;\n  height: 30px;\n  width: 100px;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  background-color: #F7F7F7;\n  margin-left: 12%;\n  margin-bottom: 40px;\n  padding: 10px;\n  width: 100%;\n  box-shadow: #F7F7F7;\n  block-size: 70px;\n  height: 80px;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n  width: 100%;\n  color: dimgrey;\n}\n\n.qtncard1[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 80px;\n  block-size: 80px;\n  background-color: #F7F7F7;\n  margin-left: 12%;\n}\n\n.qtncard[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n.qtnhd[_ngcontent-%COMP%] {\n  margin: 20px;\n}\n\n.applicanthd[_ngcontent-%COMP%] {\n  text-align: left;\n  padding: 42px;\n  font-size: medium;\n  font-family: sans-serif;\n  color: #000000bd;\n}\n\n.edit_icon[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n  margin-right: 20px;\n  float: right;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9hbi1hY2NvdW50LWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBRUcsWUFBVztFQUNYLGFBQVk7QUFEZjs7QUFHQTtFQUNJLFVBQVU7RUFDVix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixtQ0FBbUM7RUFDbkMsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQUFoQjs7QUFHQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixtQ0FBbUM7RUFDbkMsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7RUFDWCxZQUFXO0FBQWY7O0FBR0E7RUFFSSxrQkFBaUI7RUFDakIsY0FBYztFQUNkLHlCQUF3QjtVQUF4Qix3QkFBd0I7QUFENUI7O0FBR0E7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7QUFEM0I7O0FBR0E7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtBQURyQjs7QUFJQTtFQUlJLG9CQUFvQjtFQUNwQixnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQixhQUFZO0FBSmhCOztBQU1BO0VBRUksZ0JBQWU7QUFKbkI7O0FBTUE7RUFFSSxZQUFXO0FBSmY7O0FBTUE7RUFFSSxrQkFBa0I7QUFKdEI7O0FBTUE7RUFFSSxXQUFVO0VBQ1YsZUFBZTtBQUpuQjs7QUFNQTtFQUVFLGNBQWE7RUFDYixpQkFBaUI7QUFKbkI7O0FBVUE7RUFFUSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFSaEM7O0FBVUE7RUFFSSxZQUFXO0FBUmY7O0FBVUE7RUFFSSx1QkFBc0I7QUFSMUI7O0FBVUE7RUFFSSxZQUFXO0VBQ1gsY0FBYztFQUNkLGtCQUFrQjtBQVJ0Qjs7QUFVQTtFQUdHLFVBQVM7RUFDVCxpQkFBaUI7QUFUcEI7O0FBV0E7RUFHRyxVQUFTO0VBQ1QsaUJBQW1CO0FBVnRCOztBQVlBO0VBQ0kseUJBQXdCO0VBQ3hCLFlBQVk7RUFDWixZQUFZO0FBVGhCOztBQVdBO0VBRUksY0FBYTtBQVRqQjs7QUFXQTtFQUVJLFlBQVk7RUFDWiw4QkFBOEI7RUFDOUIsZ0JBQWdCO0FBVHBCOztBQVdBO0VBQ0kseUJBQXdCO0VBQ3hCLFlBQVk7RUFDWixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFSZjs7QUFXQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBUmY7O0FBV0E7RUFDSSxjQUFlO0VBQ2YseUJBQW9DO0VBQ3BDLGVBQWU7RUFDZix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLHFCQUFvQjtFQUNwQixVQUFVO0VBQ1YsWUFBVztFQUNYLFlBQVk7QUFSaEI7O0FBV0E7RUFDSSxXQUFXO0VBQ1gseUJBQW9DO0VBQ3BDLGVBQWU7RUFDZix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBVztFQUNYLFlBQVk7QUFSaEI7O0FBV0E7RUFDSSxVQUFVO0VBQ1YsdUJBQXVCO0VBQ3ZCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixtQkFBa0I7QUFSdEI7O0FBV0E7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLHFCQUErQjtFQUMvQiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQVJmOztBQVlBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFUZjs7QUFZQTtFQUNJLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBVGY7O0FBWUE7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQVR0Qjs7QUFhQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBVm5COztBQWNBO0VBQ0ksV0FBVTtFQUNWLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIseUJBQWtDO0VBQ2xDLFlBQVk7RUFDWixrQkFBa0I7QUFYdEI7O0FBY0E7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFlBQVk7RUFDWixRQUFRO0VBQ1IsMkJBQTJCO0VBQzNCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtBQVhuQjs7QUFhQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBRWxCLGtCQUFrQjtBQVh0Qjs7QUFlRTtFQUNFLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsWUFBWTtBQVpoQjs7QUFlRTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFadEI7O0FBY0U7RUFDRSxjQUFhO0VBQ2IsMEJBQTBCO0FBWDlCOztBQWFBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixxQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFWZjs7QUFZQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBVGY7O0FBWUE7RUFFSSx5QkFBd0I7RUFDeEIsZ0JBQWU7RUFDZixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLFdBQVU7RUFDVixtQkFBbUI7RUFDbkIsZ0JBQWU7RUFDZixZQUFZO0FBVmhCOztBQVlBO0VBRUksZ0JBQWU7RUFDZixXQUFVO0VBQ1YsY0FBYTtBQVZqQjs7QUFZQTtFQUNJLFdBQVU7RUFDVixZQUFZO0VBQ1osZ0JBQWU7RUFDZix5QkFBd0I7RUFDeEIsZ0JBQWU7QUFUbkI7O0FBV0E7RUFDSSxXQUNKO0FBVEE7O0FBVUE7RUFFSSxZQUFXO0FBUmY7O0FBVUE7RUFFSSxnQkFBZ0I7RUFDaEIsYUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7RUFDdkIsZ0JBQWdCO0FBUnBCOztBQVdBO0VBQ0ksY0FBdUI7RUFFdkIsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixZQUFZO0FBVGhCIiwiZmlsZSI6ImxvYW4tYWNjb3VudC1hcHByb3Zlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4uYXBwaW1nXHJcbntcclxuICAgd2lkdGg6MTAwcHg7XHJcbiAgIGhlaWdodDoxMDBweDtcclxufVxyXG4ucmVqZWN0YnRue1xyXG4gICAgY29sb3I6cmVkIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogcmVkO1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uYXBwcm92ZWJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDoxNTBweDtcclxuICAgIG1hcmdpbjoxMHB4O1xyXG59XHJcblxyXG4uaW1nZGl2XHJcbntcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogNSU7XHJcbiAgICBtYXJnaW4taW5saW5lLXN0YXJ0OiAxOCU7XHJcbn1cclxuLm51bVxyXG57XHJcbiAgICBib3JkZXI6MXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbi5udW0xXHJcbntcclxuICAgIGJvcmRlcjoxcHggc29saWQgIzRBNTZFMjtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDE1JTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIHBhZGRpbmctdG9wOiAyNXB4O1xyXG4gICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG4ucXRuY3JkXHJcbntcclxuICAvLyAgYmFja2dyb3VuZC1jb2xvcjojRjdGN0Y3O1xyXG4gICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICBib3JkZXI6IDAuNXB4IGdyb292ZTtcclxuICAgIG1hcmdpbi1yaWdodDoyJTtcclxuICAgIG1hcmdpbi1ib3R0b206NDBweDtcclxuICAgIHBhZGRpbmc6MTBweDtcclxufVxyXG4ucXRudmFsXHJcbntcclxuICAgIHBhZGRpbmctdG9wOjhweDtcclxufVxyXG4uaW1nZGl2IGRpdlxyXG57XHJcbiAgICBtYXJnaW46YXV0bztcclxufVxyXG4uYXBwcmRpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLmFwcHJkaXYgaDJcclxue1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiA1JTtcclxufVxyXG4ubGFiZWxcclxue1xyXG4gIGNvbG9yOiM5QUExQjA7XHJcbiAgZm9udC1zaXplOiAwLjdyZW07XHJcbn1cclxuLy8gLmxhYmVsdmFsXHJcbi8vIHtcclxuLy8gICAgY29sb3I6IzJGMkYyRjtcclxuLy8gfVxyXG4ucm93Ym9yZFxyXG57XHJcbiAgICAgICAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gICAgICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICAgICAgcGFkZGluZzoxMHB4IDAgMTBweCAxMHB4O1xyXG59XHJcbi5tdGNkXHJcbntcclxuICAgIHBhZGRpbmc6MHB4O1xyXG59XHJcbi5ub2JvcmRcclxue1xyXG4gICAgYm9yZGVyOm5vbmUgIWltcG9ydGFudDtcclxufVxyXG4ubWFpblxyXG57XHJcbiAgICBoZWlnaHQ6ODV2aDtcclxuICAgIG92ZXJmbG93OiBhdXRvO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG59XHJcbi5hcHBlcnNvbmluZm9jYXJkXHJcbntcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgIHdpZHRoOjQwJTtcclxuICAgYm9yZGVyOiAxcHggc29saWQ7XHJcbn1cclxuLmFwcGVyc29uaW5mb2NhcmQxXHJcbntcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgIHdpZHRoOjkwJTtcclxuICAgYm9yZGVyIDogMXB4IHNvbGlkIDtcclxufVxyXG4uaW50ZXJzdGNhcmR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbn1cclxuLmNsclxyXG57XHJcbiAgICBjb2xvcjojQjJCMkIyOyAgXHJcbn1cclxuLmJvcmRudW1cclxue1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDI0JTtcclxufVxyXG4uUk5idG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiM0QTU2RTI7XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDo1MHB4O1xyXG4gICAgd2lkdGg6MjAwcHg7XHJcbn1cclxuXHJcbi5idG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6NTBweDtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG59XHJcblxyXG4uY2FuY2VsYnRue1xyXG4gICAgY29sb3I6IzI5ODBCOSAgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MywgMjM2LCAyMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiMyOTgwQjk7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5kaXNhYmxlZGJ0bntcclxuICAgIGNvbG9yOmdyZXkgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MywgMjM2LCAyMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiBncmV5O1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4ucmVqZWN0YnRue1xyXG4gICAgY29sb3I6cmVkIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHBhZGRpbmctcmlnaHQ6MTJweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5zcWZ0YnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmFjYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmNpcmNsZXtcclxuICAgIHdpZHRoOjc1cHg7XHJcbiAgICBoZWlnaHQ6NzVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIFxyXG59XHJcblxyXG4uY29udGVudDF7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIFxyXG59XHJcblxyXG4uY2lyY2xlMXtcclxuICAgIHdpZHRoOjI1cHg7XHJcbiAgICBoZWlnaHQ6MjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmNvbnRlbnQye1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiAxMjBweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTljMjhmO1xyXG4gIH1cclxuICBcclxuICAuaW1hZ2VUZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogM3JlbSAyLjdyZW07XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgfVxyXG5cclxuICAucmlnaHQtdGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNTBweDtcclxuICB9XHJcbiAgLmxpbmtDb2xvcntcclxuICAgIGNvbG9yOiM0QTU2RTI7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgXHJcbn1cclxuLmVkaXRidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbn1cclxuLmVkaXRTY3JlZW57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTAwcHg7XHJcbn1cclxuXHJcbi5xdG5jcmRcclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRjdGN0Y3O1xyXG4gICAgbWFyZ2luLWxlZnQ6MTIlO1xyXG4gICAgbWFyZ2luLWJvdHRvbTo0MHB4O1xyXG4gICAgcGFkZGluZzoxMHB4O1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIGJveC1zaGFkb3c6ICNGN0Y3Rjc7XHJcbiAgICBibG9jay1zaXplOjcwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbn1cclxuLnF0bnZhbFxyXG57XHJcbiAgICBwYWRkaW5nLXRvcDo4cHg7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgY29sb3I6ZGltZ3JleTtcclxufVxyXG4ucXRuY2FyZDF7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgaGVpZ2h0OiA4MHB4O1xyXG4gICAgYmxvY2stc2l6ZTo4MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRjdGN0Y3O1xyXG4gICAgbWFyZ2luLWxlZnQ6MTIlOyAgIFxyXG59XHJcbi5xdG5jYXJke1xyXG4gICAgd2lkdGg6MTAwJVxyXG59XHJcbi5xdG5oZFxyXG57XHJcbiAgICBtYXJnaW46MjBweDtcclxufVxyXG4uYXBwbGljYW50aGR7XHJcbiAgICAvL2ZsZXg6IDUwJTtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBwYWRkaW5nOjQycHg7XHJcbiAgICBmb250LXNpemU6IG1lZGl1bTtcclxuICAgIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gICAgY29sb3I6ICMwMDAwMDBiZDtcclxuXHJcbn1cclxuLmVkaXRfaWNvbntcclxuICAgIGNvbG9yOnJnYigxNCwgMTI0LCAxOTcpIDtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxMjQsIDE5Nyk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbn1cclxuICAiXX0= */"]
       });
       /*@__PURE__*/
 

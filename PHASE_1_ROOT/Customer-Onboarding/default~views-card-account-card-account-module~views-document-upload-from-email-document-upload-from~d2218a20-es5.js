@@ -26727,7 +26727,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.accountDetails == null ? null : ctx.accountDetails.applicationDate, " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.accountDetails == null ? null : ctx.accountDetails.applicationDate.slice(0, 12), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
 
@@ -29235,11 +29235,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.userAddress[0] == null ? null : details_r6.userAddress[0].mobileNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6.phoneNumber);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.phoneNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r6 == null ? null : details_r6.landlineNumber);
         }
       }
 
@@ -29300,8 +29300,11 @@
               if (cardCustomerInfo.isAppEntryView) {
                 this.appEntrySummaryView = true;
                 this.customerInfoDetails = cardCustomerInfo.data;
+                console.log(this.customerInfoDetails);
                 this.ownership = this.customerInfoDetails[0].ownership;
                 this.noOfApplicants = this.customerInfoDetails[0].numOfApplicants;
+                this.ownership = this.ls.getItem("cardownership_value");
+                this.noOfApplicants = this.ls.getItem("CardNoOfApplicants");
               }
             }
           }
@@ -29317,6 +29320,8 @@
                 _this89.customerInfoDetails = customerInfoDetails.data;
                 _this89.ownership = _this89.customerInfoDetails[0].ownership;
                 _this89.noOfApplicants = _this89.customerInfoDetails[0].numOfApplicants;
+                _this89.ownership = _this89.ls.getItem("cardownership_value");
+                _this89.noOfApplicants = _this89.ls.getItem("CardNoOfApplicants");
               }
             }, function (err) {
               _this89.loader.close();
