@@ -12535,6 +12535,53 @@ class DownloadService {
             });
             doc.save('baseDenominationMaintenance.pdf');
         }
+        if (data == "stateMaintenance") {
+            console.log("country page is working ");
+            console.log(users);
+            let doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+            const head = [['State Code', 'State Name', 'State Code 2', ' State Numric Code', 'Record Status']];
+            const body = [];
+            users.forEach(u => {
+                var row = [];
+                row.push(u.stateCode);
+                row.push(u.stateName);
+                row.push(u.stateCode2);
+                row.push(u.stateNumCode);
+                row.push(u.recordStatus);
+                body.push(row);
+            });
+            console.log(body);
+            jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(doc, {
+                head: head,
+                body: body,
+                didDrawCell: (prepare) => { },
+            });
+            doc.save('stateMaintenance.pdf');
+        }
+        //Branch Holiday maintenance
+        if (data == "branchHolidayMaintenance") {
+            console.log(users);
+            let doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+            const head = [['Entity Code', 'Bank Code', 'Branch Code', ' Year', 'Auth Status', 'Record Status']];
+            const body = [];
+            users.forEach(u => {
+                var row = [];
+                row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.branchCode);
+                row.push(u.year);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
+                body.push(row);
+            });
+            console.log(body);
+            jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(doc, {
+                head: head,
+                body: body,
+                didDrawCell: (prepare) => { },
+            });
+            doc.save('branchHolidayMaintenance.pdf');
+        }
         else if (data == 'transactionSlip') {
             let doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
             const head = [];
