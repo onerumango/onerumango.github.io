@@ -21528,11 +21528,11 @@ class CashWithdrawalComponent {
                 this.custmerID = res.customerId;
                 this.accountNumber = res.accountId;
                 this.accountCurrency = res.accountCurrency;
-                this.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
+                // this.curr = getCurrencySymbol(res.currency, "narrow");
                 this.cashwithdrawForm.controls.accountType.setValue(res.accountType);
                 this.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
                 this.cashwithdrawForm.controls.holderName.setValue(this.userName);
-                this.getCountrynameValues();
+                // this.getCountrynameValues();
                 // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
                 this.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
                 this.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);

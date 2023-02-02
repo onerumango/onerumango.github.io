@@ -38096,16 +38096,14 @@
                 _this134.accountBal = res.accBalance;
                 _this134.custmerID = res.customerId;
                 _this134.accountNumber = res.accountId;
-                _this134.accountCurrency = res.accountCurrency;
-                _this134.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
+                _this134.accountCurrency = res.accountCurrency; // this.curr = getCurrencySymbol(res.currency, "narrow");
 
                 _this134.cashwithdrawForm.controls.accountType.setValue(res.accountType);
 
                 _this134.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
 
-                _this134.cashwithdrawForm.controls.holderName.setValue(_this134.userName);
-
-                _this134.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this134.cashwithdrawForm.controls.holderName.setValue(_this134.userName); // this.getCountrynameValues();
+                // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
 
 
                 _this134.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
