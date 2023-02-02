@@ -83148,24 +83148,26 @@
               });
 
               _doc19.save('baseDenominationMaintenance.pdf');
-            } else if (data == 'transactionSlip') {
+            }
+
+            if (data == "stateMaintenance") {
+              console.log("country page is working ");
+              console.log(users);
+
               var _doc20 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head20 = [];
+              var _head20 = [['State Code', 'State Name', 'State Code 2', ' State Numric Code', 'Record Status']];
               var _body20 = [];
-
-              for (var _i8 = 0, _Object$entries = Object.entries(users); _i8 < _Object$entries.length; _i8++) {
-                var _Object$entries$_i = _slicedToArray(_Object$entries[_i8], 2),
-                    key = _Object$entries$_i[0],
-                    value = _Object$entries$_i[1];
-
+              users.forEach(function (u) {
                 var row = [];
-                row.push(key);
-                row.push(value);
+                row.push(u.stateCode);
+                row.push(u.stateName);
+                row.push(u.stateCode2);
+                row.push(u.stateNumCode);
+                row.push(u.recordStatus);
 
                 _body20.push(row);
-              }
-
+              });
               console.log(_body20);
               jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc20, {
                 head: _head20,
@@ -83173,25 +83175,25 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc20.save('Transaction Receipt.pdf');
-            } else if (data == "recentTransactionDownload") {
-              console.log("Account Type Maintenance page is working ");
+              _doc20.save('stateMaintenance.pdf');
+            } //Branch Holiday maintenance
+
+
+            if (data == "branchHolidayMaintenance") {
               console.log(users);
 
               var _doc21 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head21 = [['Customer Name', 'Transaction Id', 'Trans Id', 'Operation', 'Trn Amount', 'Transaction Currency', 'Revert Transaction']];
-              console.log(_head21);
+              var _head21 = [['Entity Code', 'Bank Code', 'Branch Code', ' Year', 'Auth Status', 'Record Status']];
               var _body21 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.customerName);
-                row.push(u.transactionId);
-                row.push(u.transId);
-                row.push(u.operation);
-                row.push(u.trnAmount);
-                row.push(u.transactionCurrency);
-                row.push(u.revertTransaction);
+                row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.branchCode);
+                row.push(u.year);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
 
                 _body21.push(row);
               });
@@ -83202,16 +83204,71 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc21.save('transaction.pdf');
+              _doc21.save('branchHolidayMaintenance.pdf');
+            } else if (data == 'transactionSlip') {
+              var _doc22 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+
+              var _head22 = [];
+              var _body22 = [];
+
+              for (var _i8 = 0, _Object$entries = Object.entries(users); _i8 < _Object$entries.length; _i8++) {
+                var _Object$entries$_i = _slicedToArray(_Object$entries[_i8], 2),
+                    key = _Object$entries$_i[0],
+                    value = _Object$entries$_i[1];
+
+                var row = [];
+                row.push(key);
+                row.push(value);
+
+                _body22.push(row);
+              }
+
+              console.log(_body22);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc22, {
+                head: _head22,
+                body: _body22,
+                didDrawCell: function didDrawCell(prepare) {}
+              });
+
+              _doc22.save('Transaction Receipt.pdf');
+            } else if (data == "recentTransactionDownload") {
+              console.log("Account Type Maintenance page is working ");
+              console.log(users);
+
+              var _doc23 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+
+              var _head23 = [['Customer Name', 'Transaction Id', 'Trans Id', 'Operation', 'Trn Amount', 'Transaction Currency', 'Revert Transaction']];
+              console.log(_head23);
+              var _body23 = [];
+              users.forEach(function (u) {
+                var row = [];
+                row.push(u.customerName);
+                row.push(u.transactionId);
+                row.push(u.transId);
+                row.push(u.operation);
+                row.push(u.trnAmount);
+                row.push(u.transactionCurrency);
+                row.push(u.revertTransaction);
+
+                _body23.push(row);
+              });
+              console.log(_body23);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc23, {
+                head: _head23,
+                body: _body23,
+                didDrawCell: function didDrawCell(prepare) {}
+              });
+
+              _doc23.save('transaction.pdf');
             } else if (data == "cashInHand") {
               console.log("Base Maintenance page is working ");
               console.log(users);
 
-              var _doc22 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+              var _doc24 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head22 = [['Currency', 'Closing Balance', 'Credit Count', 'Debit Count', 'Opening Balance', 'Debit Count', 'Total Credit', 'Total Debit', 'Total Value']];
-              console.log(_head22);
-              var _body22 = [];
+              var _head24 = [['Currency', 'Closing Balance', 'Credit Count', 'Debit Count', 'Opening Balance', 'Debit Count', 'Total Credit', 'Total Debit', 'Total Value']];
+              console.log(_head24);
+              var _body24 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.currency);
@@ -83224,17 +83281,17 @@
                 row.push(u.currencyTransactionInfo.totalDebit);
                 row.push(u.totalValue);
 
-                _body22.push(row);
+                _body24.push(row);
               });
-              console.log(_body22);
-              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc22, {
-                head: _head22,
-                body: _body22,
+              console.log(_body24);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc24, {
+                head: _head24,
+                body: _body24,
                 horizontalPageBreak: true,
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc22.save('cashInHand.pdf');
+              _doc24.save('cashInHand.pdf');
             }
           }
         }, {

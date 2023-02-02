@@ -7765,6 +7765,14 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   border-radius: 12px;
   padding: 0px;
 }
+.cdk-overlay-container .cdk-overlay-pane .testClass {
+  margin-top: 30px;
+  margin-left: -30px;
+  min-width: calc(100% + 55px) !important;
+}
+.image_1_traced_ {
+  fill: red;
+}
 .avatar-xs {
   width: 24px;
   height: 24px;
@@ -14381,6 +14389,21 @@ h1.title {
 }
 .add-text {
   padding-top: 10px;
+}
+.alignright {
+  display: flex !important;
+  justify-content: center;
+}
+.save_btn {
+  color: white;
+  padding: 0.2rem 4rem;
+  border-radius: 15px;
+}
+.pl-35 {
+  padding-left: 35%;
+}
+.pr-35 {
+  padding-right: 35%;
 }
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */

@@ -634,3 +634,11 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   border-radius: 12px;
   padding:0px;
 }
+.cdk-overlay-container .cdk-overlay-pane .testClass{
+  margin-top: 30px;
+  margin-left: -30px;
+    min-width: calc(100% + 55px) !important;
+  }
+  .image_1_traced_ {
+    fill:red;
+  }
