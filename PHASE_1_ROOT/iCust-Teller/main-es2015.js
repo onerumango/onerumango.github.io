@@ -7331,7 +7331,7 @@ class ApiService {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     transferToken(payload) {
-        return this.http.post(`${API_URL}/transferToken`, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+        return this.http.post(`${API_URL}/tellerToken/transferToken?loggedInTellerId=${payload.tellerId}`, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     getReport(tellerId, fromDate, endDate) {
         //console.log(data)

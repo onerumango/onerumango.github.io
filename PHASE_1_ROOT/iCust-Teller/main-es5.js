@@ -12381,7 +12381,7 @@
         }, {
           key: "transferToken",
           value: function transferToken(payload) {
-            return this.http.post("".concat(API_URL, "/transferToken"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+            return this.http.post("".concat(API_URL, "/tellerToken/transferToken?loggedInTellerId=").concat(payload.tellerId), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "getReport",
