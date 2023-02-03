@@ -7330,8 +7330,8 @@ class ApiService {
             .get(`${API_URL}/currency-api/fetchExchangeRateForCurrency?currency1=${currency1}&currency2=${currency2}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
-    transferToken(payload) {
-        return this.http.post(`${API_URL}/tellerToken/transferToken?loggedInTellerId=${payload.tellerId}`, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    transferToken(payload, loggedInTellerId) {
+        return this.http.post(`${API_URL}/tellerToken/transferToken?loggedInTellerId=${loggedInTellerId}`, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     getReport(tellerId, fromDate, endDate) {
         //console.log(data)
