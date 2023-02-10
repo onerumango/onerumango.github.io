@@ -59,7 +59,7 @@ let WalletListComponent = class WalletListComponent {
             console.log("Data check", data);
             if (data != null) {
                 const modal = yield this.modalController.create({
-                    component: (data === null || data === void 0 ? void 0 : data.trnType) == "Forex Transaction" ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
+                    component: ((data === null || data === void 0 ? void 0 : data.trnType) == "Forex Transaction" || (data === null || data === void 0 ? void 0 : data.trnType) == "Cash Deposit") ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_4__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_3__.AppointmentpopupPage,
                     componentProps: {
                         screen: 'wallet',
                         value: data ? data : {}

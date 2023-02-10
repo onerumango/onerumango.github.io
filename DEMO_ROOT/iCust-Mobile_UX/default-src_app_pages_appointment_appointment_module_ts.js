@@ -99,7 +99,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _appointment_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./appointment.page.scss?ngResource */ 87918);
 /* harmony import */ var _services_trxn_pdf_doc_download_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/trxn-pdf-doc-download.service */ 72734);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ 36362);
@@ -108,9 +107,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 86712);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 86527);
 /* harmony import */ var _daterange_daterange_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../daterange/daterange.page */ 36675);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../appointmentpopup/appointmentpopup.page */ 14808);
 /* harmony import */ var _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../token-v2/token-v2.page */ 68106);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 52816);
 
 
 
@@ -377,6 +377,14 @@ let AppointmentPage = class AppointmentPage {
             });
             modal.onDidDismiss().then((modelData) => {
                 this.enableDate = true;
+                const Value = {
+                    accountNumber: null,
+                    customerId: null,
+                    filterOption: '',
+                    fromDate: modelData.data.fromDate,
+                    toDate: modelData.data.toDate
+                };
+                this.getAppointmentByCustomerId(Value, this.loggedInCust, null);
                 return this.appointmentForm.patchValue({
                     fromDate: [(new Date(modelData.data)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
                     toDate: [(new Date(modelData.role)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
@@ -415,9 +423,10 @@ let AppointmentPage = class AppointmentPage {
         }
     }
     getAppointmentByCustomerId(Value, custId, accId) {
-        console.log(Value);
         if (Value.filterOption) {
             Value.filterOption = Value.filterOption.data;
+            Value.fromDate = null;
+            Value.toDate = null;
         }
         if (Value.fromDate) {
             Value.fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(Value.fromDate), 'yyyy-MM-dd');
@@ -693,10 +702,9 @@ let AppointmentPage = class AppointmentPage {
     }
     onClick(event) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
-            console.log(event);
             localStorage.setItem('AppointmentDetails', JSON.stringify(event));
             let modal = yield this.modalCtrl.create({
-                component: event.trnType == "Forex Transaction" ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
+                component: (event.trnType == "Forex Transaction" || event.trnType == "Cash Deposit") ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
                 componentProps: {
                     value: event,
                 },

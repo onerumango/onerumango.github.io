@@ -11,14 +11,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DaterangePage": () => (/* binding */ DaterangePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _daterange_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./daterange.page.html?ngResource */ 94252);
 /* harmony import */ var _daterange_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./daterange.page.scss?ngResource */ 68274);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 86712);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 86527);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 86712);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 86527);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ 56908);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -34,40 +37,39 @@ let DaterangePage = class DaterangePage {
     }
     ngOnInit() {
         this.appointmentForm = this.fb.group({
-            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]],
-            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]]
+            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required]],
+            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required]]
         });
     }
     next() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             yield this.modalCtrl.dismiss();
         });
     }
     getfromDate(event) {
         console.log("event", event);
-        let fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(event), 'yyyy-MM-dd');
+        let fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(event), 'yyyy-MM-dd');
         this.appointmentForm.get('fromDate').patchValue(fromDate);
     }
     getToDate(event) {
         console.log("to event", event);
-        let toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(event), 'yyyy-MM-dd');
+        let toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(event), 'yyyy-MM-dd');
         this.appointmentForm.get('toDate').patchValue(toDate);
     }
     onClickConfirm() {
-        var _a, _b;
         let data = {
-            fromDate: (_a = this.appointmentForm.get('fromDate')) === null || _a === void 0 ? void 0 : _a.value,
-            toDate: (_b = this.appointmentForm.get('toDate')) === null || _b === void 0 ? void 0 : _b.value
+            fromDate: this.appointmentForm.get('fromDate').value ? this.appointmentForm.get('fromDate').value : moment__WEBPACK_IMPORTED_MODULE_2__(new Date()).format("YYYY-MM-DD"),
+            toDate: this.appointmentForm.get('toDate').value ? this.appointmentForm.get('toDate').value : moment__WEBPACK_IMPORTED_MODULE_2__(new Date()).format("YYYY-MM-DD")
         };
         this.modalCtrl.dismiss(data);
     }
 };
 DaterangePage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormBuilder }
 ];
-DaterangePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+DaterangePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-daterange',
         template: _daterange_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_daterange_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

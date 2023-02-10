@@ -47,7 +47,7 @@ let BranchComponent = class BranchComponent {
             .subscribe((data) => {
             this.branchData = data;
             console.log(this.branchData);
-            for (let i = 0; i <= this.branchData.length - 1; i++) {
+            for (let i = 0; i <= this.branchData.length; i++) {
                 this.apiService.getNumberOfCrowd(this.branchData[i].branchName)
                     .subscribe((data) => {
                     console.log(this.branchData[i].branchName);
@@ -205,38 +205,36 @@ let MapComponent = class MapComponent {
         });
     }
     getMarkers() {
-        for (let _i = 0; _i < this.branchData.length; _i++) {
-            if (_i > 0) {
-                // Commented google map settings
-                // this.setupMarker();
-                var cont = `<div><p style=\"font-size: 25px;text-transform: capitalize;color: #121111;font-weight: 800;\">${this.branchData[_i].branchName}</p>` +
-                    `<p style=\"\"><span style=\"font-size: 13px;text-transform: capitalize;color: #ccc;\">Branch Code</span> <span style=\"color: #a9a9a9;font-size: 16px;font-weight: 800;text-transform: uppercase;\">${this.branchData[_i].branchCode}</span></p>` +
-                    `<p style=\"font-family: inherit;font-style: inherit;text-align: left;text-transform: capitalize;\">${this.branchData[_i].address}</p>` +
-                    `<button style=\"border: 2px solid #456EFE; border-radius: 50px;width: 100px !important;height: 24px !important;\">SELECT</button></div>`;
-                let mrker_arr = [
-                    [
-                        this.branchData[_i].lattitude,
-                        this.branchData[_i].longitude,
-                        {
-                            popup: cont,
-                            event: [
-                                'click',
-                                (e) => {
-                                    this.selectedLocation = this.branchData[_i].branchName;
-                                },
-                            ],
-                        },
-                    ],
-                ];
-                this.map.marker(mrker_arr, {
-                    iconUrl: 'assets/icon/map.png',
-                    iconSize: [36, 51],
-                    popupAnchor: [0, -16],
-                    draggable: false,
-                    fitbounds: true,
-                    cluster: true,
-                });
-            }
+        for (let _i = 0; _i <= this.branchData.length; _i++) {
+            // Commented google map settings
+            // this.setupMarker();
+            var cont = `<div><p style=\"font-size: 25px;text-transform: capitalize;color: #121111;font-weight: 800;\">${this.branchData[_i].branchName}</p>` +
+                `<p style=\"\"><span style=\"font-size: 13px;text-transform: capitalize;color: #ccc;\">Branch Code</span> <span style=\"color: #a9a9a9;font-size: 16px;font-weight: 800;text-transform: uppercase;\">${this.branchData[_i].branchCode}</span></p>` +
+                `<p style=\"font-family: inherit;font-style: inherit;text-align: left;text-transform: capitalize;\">${this.branchData[_i].address}</p>` +
+                `<button style=\"border: 2px solid #456EFE; border-radius: 50px;width: 100px !important;height: 24px !important;\">SELECT</button></div>`;
+            let mrker_arr = [
+                [
+                    this.branchData[_i].lattitude,
+                    this.branchData[_i].longitude,
+                    {
+                        popup: cont,
+                        event: [
+                            'click',
+                            (e) => {
+                                this.selectedLocation = this.branchData[_i].branchName;
+                            },
+                        ],
+                    },
+                ],
+            ];
+            this.map.marker(mrker_arr, {
+                iconUrl: 'assets/icon/map.png',
+                iconSize: [36, 51],
+                popupAnchor: [0, -16],
+                draggable: false,
+                fitbounds: true,
+                cluster: true,
+            });
         }
     }
     focusMarker(type, index) {
@@ -538,73 +536,718 @@ let TimeSlotsComponent = class TimeSlotsComponent {
     callingTimeslots() {
         this.TimeSolts = [
             {
-                "time": "9:00",
+                "time": "00:00",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:05",
+                "time": "00:05",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:10",
+                "time": "00:10",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:15",
+                "time": "00:15",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:20",
+                "time": "00:20",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:25",
+                "time": "00:25",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:30",
+                "time": "00:30",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:35",
+                "time": "00:35",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:40",
+                "time": "00:40",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:45",
+                "time": "00:45",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:50",
+                "time": "00:50",
                 "available": true,
                 "selected": false,
                 "booked": false
             },
             {
-                "time": "9:55",
+                "time": "00:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "01:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "02:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "03:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "04:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "04:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "05:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "06:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "07:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "07:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "08:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "08:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "09:55",
                 "available": true,
                 "selected": false,
                 "booked": false
@@ -1117,7 +1760,443 @@ let TimeSlotsComponent = class TimeSlotsComponent {
                 "available": true,
                 "selected": false,
                 "booked": false
-            }
+            },
+            {
+                "time": "17:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "17:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "17:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "17:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "18:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "18:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "18:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "18:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "19:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "19:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "19:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "19:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "20:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "20:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "20:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "20:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "21:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "21:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "21:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "21:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "22:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "22:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "22:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "22:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:00",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "23:05",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:10",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:15",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:20",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:25",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "23:30",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:35",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:40",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
+            {
+                "time": "23:45",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:50",
+                "available": true,
+                "selected": false,
+                "booked": false
+            }, {
+                "time": "23:55",
+                "available": true,
+                "selected": false,
+                "booked": false
+            },
         ];
     }
 };
@@ -1302,7 +2381,7 @@ module.exports = "#map {\n  width: 100%;\n  height: 100vh;\n}\n\n.leaflet-popup-
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".bookedSlot {\n  background-color: rgb(212, 212, 212) !important;\n  pointer-events: none;\n}\n\n.availableSlot {\n  background-color: #F8F9F9 !important;\n  cursor: pointer;\n  color: black !important;\n  font-weight: 900;\n}\n\n.selectedClass {\n  color: #f7f7f7 !important;\n  background-image: linear-gradient(to right, #FE6700, #FE8430, #FEA96E) !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpbWUtc2xvdHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFRSwrQ0FBQTtFQUNBLG9CQUFBO0FBQUY7O0FBSUE7RUFDRSxvQ0FBQTtFQUNBLGVBQUE7RUFDQSx1QkFBQTtFQUNBLGdCQUFBO0FBREY7O0FBSUE7RUFDRSx5QkFBQTtFQUNBLGlGQUFBO0FBREYiLCJmaWxlIjoidGltZS1zbG90cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib29rZWRTbG90IHtcclxuICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICM5YzljOWMgLCNjNGM0YzQsI2Y1ZjVmNSkhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTIsIDIxMiwgMjEyKSAhaW1wb3J0YW50O1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gIC8vIG9wYWNpdHk6IC41ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5hdmFpbGFibGVTbG90IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjhGOUY5ICFpbXBvcnRhbnQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xyXG4gIGZvbnQtd2VpZ2h0OiA5MDA7XHJcbn1cclxuXHJcbi5zZWxlY3RlZENsYXNzIHtcclxuICBjb2xvcjogI2Y3ZjdmNyAhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgI0ZFNjcwMCwgI0ZFODQzMCwgI0ZFQTk2RSkgIWltcG9ydGFudDtcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxufVxyXG4iXX0= */";
+module.exports = ".bookedSlot {\n  background-color: rgb(212, 212, 212) !important;\n  pointer-events: none;\n}\n\n.availableSlot {\n  background-color: #F8F9F9 !important;\n  cursor: pointer;\n  color: black !important;\n  font-weight: 900;\n}\n\n.selectedClass {\n  color: #f7f7f7 !important;\n  background-image: linear-gradient(to right, #FE6700, #FE8430, #FEA96E) !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpbWUtc2xvdHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFRSwrQ0FBQTtFQUNBLG9CQUFBO0FBQUY7O0FBSUE7RUFDRSxvQ0FBQTtFQUNBLGVBQUE7RUFDQSx1QkFBQTtFQUNBLGdCQUFBO0FBREY7O0FBSUE7RUFDRSx5QkFBQTtFQUNBLGlGQUFBO0FBREYiLCJmaWxlIjoidGltZS1zbG90cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib29rZWRTbG90IHtcclxuICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICM5YzljOWMgLCNjNGM0YzQsI2Y1ZjVmNSkhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTIsIDIxMiwgMjEyKSAhaW1wb3J0YW50O1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gIC8vIG9wYWNpdHk6IC41ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5hdmFpbGFibGVTbG90IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjhGOUY5ICFpbXBvcnRhbnQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xyXG4gIGZvbnQtd2VpZ2h0OiA5MDA7XHJcbn1cclxuXHJcbi5zZWxlY3RlZENsYXNzIHtcclxuICBjb2xvcjogI2Y3ZjdmNyAhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgI0ZFNjcwMCwgI0ZFODQzMCwgI0ZFQTk2RSkgIWltcG9ydGFudDtcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxufSJdfQ== */";
 
 /***/ }),
 
@@ -1312,7 +2391,7 @@ module.exports = ".bookedSlot {\n  background-color: rgb(212, 212, 212) !importa
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Nearest Branch</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"presentMap()\">\r\n        <ion-icon slot=\"start\" name=\"map-outline\"></ion-icon> MAP\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ng-container *ngIf=\"branchData.length > 0; else showNoBranch\">\r\n    <ion-list>\r\n    <ion-item *ngFor=\"let branch of branchData; let i=index\">\r\n      <ion-avatar slot=\"start\">\r\n        <app-avatar-photo [name]=\"branch?.branchName\"></app-avatar-photo> \r\n      </ion-avatar>\r\n      <ion-label class=\"ion-text-wrap\">\r\n        <ion-text color=\"primary\">\r\n          <h3>{{ branch?.branchName }}</h3>\r\n        </ion-text>\r\n        <p><small>{{ branch?.address }}</small></p>\r\n        <p><small>Number of Crowds : {{ branch?.tokenCount }}</small></p>\r\n      </ion-label>\r\n      <ion-button fill=\"outline\" slot=\"end\" (click)=\"dismiss(branch)\">SELECT</ion-button>\r\n    </ion-item>\r\n  </ion-list>\r\n  </ng-container>\r\n  <ng-template #showNoBranch>\r\n    <p>No Branch Available!</p>\r\n  </ng-template>\r\n\r\n</ion-content>";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Nearest Branch</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"presentMap()\">\r\n        <ion-icon slot=\"start\" name=\"map-outline\"></ion-icon> MAP\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ng-container *ngIf=\"branchData.length != 0; else showNoBranch\">\r\n    <ion-list>\r\n    <ion-item *ngFor=\"let branch of branchData; let i=index\">\r\n      <ion-avatar slot=\"start\">\r\n        <app-avatar-photo [name]=\"branch?.branchName\"></app-avatar-photo> \r\n      </ion-avatar>\r\n      <ion-label class=\"ion-text-wrap\">\r\n        <ion-text color=\"primary\">\r\n          <h3>{{ branch?.branchName }}</h3>\r\n        </ion-text>\r\n        <p><small>{{ branch?.address }}</small></p>\r\n        <p><small>Number of Crowds : {{ branch?.tokenCount }}</small></p>\r\n      </ion-label>\r\n      <ion-button fill=\"outline\" slot=\"end\" (click)=\"dismiss(branch)\">SELECT</ion-button>\r\n    </ion-item>\r\n  </ion-list>\r\n  </ng-container>\r\n  <ng-template #showNoBranch>\r\n    <p>No Branch Available!</p>\r\n  </ng-template>\r\n\r\n</ion-content>";
 
 /***/ }),
 
@@ -1332,7 +2411,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title class=\"text
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"secondary\">\r\n      <ion-button fill=\"clear\" (click)=\"close()\">\r\n        <ion-icon slot=\"start\" name=\"close\"></ion-icon>\r\n        Close\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"text-center\" size=\"small\">Available Slots</ion-title>\r\n    <ion-buttons slot=\"end\"> \r\n      <ion-button fill=\"clear\" size=\"small\" *ngIf=\"selected != null\" (click)=\"done()\"> \r\n        DONE\r\n        <ion-icon slot=\"end\" name=\"checkmark-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <!-- <ion-button (click)=\"close()\">close</ion-button> -->\r\n\r\n  <!-- <ion-label style=\"padding-left: 5%;\">Time Slot*</ion-label> -->\r\n\r\n  <!-- [outline]=\"selected===slot ? 'true':'false'\" -->\r\n   <!-- <ion-grid>\r\n    <ion-row class=\"ion-justify-content-evenly\">\r\n      <ion-col size=\"4\"*ngFor=\"let slot of TimeSolts;let i=index;\" >\r\n          <ion-chip [id]=\"i+1\" [color]=\"slot.booked==slot.booked ? 'primary':'' ||slot.available==slot.available ? 'primary':''\" >\r\n              <ion-label (click)=\"onSelectiongTimeSlots($event,slot.time)\">{{format24HrsTo12Hrs(slot.time)}}</ion-label>\r\n              <ion-icon name=\"checkmark-outline\" *ngIf=\"selected==slot.time\"></ion-icon>\r\n              \r\n            \r\n            </ion-chip>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>   -->\r\n  <!-- <ion-grid>\r\n      <ion-row class=\"ion-justify-content-evenly\">\r\n        <ion-col size=\"4\"*ngFor=\"let slot of TimeSolts;let i=index;\" >\r\n            <ion-chip [id]=\"i+1\" [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\">\r\n                <ion-label (click)=\"onSelectiongTimeSlots($event,slot.time)\" [color]=\"selected==slot.time ? 'primary':''\">{{format24HrsTo12Hrs(slot.time)}}</ion-label>\r\n                <ion-icon name=\"checkmark-outline\" *ngIf=\"selected==slot.time\"></ion-icon>\r\n                \r\n              \r\n              </ion-chip>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid> -->\r\n\r\n\r\n  <!-- new  -->\r\n  <ion-progress-bar type=\"indeterminate\" *ngIf=\"isLoading\"></ion-progress-bar>\r\n  <ion-grid>\r\n  \r\n    <ion-row class=\"ion-justify-content-evenly\">\r\n      <ion-col size=\"3\" *ngFor=\"let slot of TimeSolts;let i=index\">\r\n        <ion-chip outline [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\">\r\n          <ion-label (click)=\"onSelectTime1(slot.time,i,$event)\"><small>{{format24HrsTo12Hrs(slot.time)}}</small></ion-label>\r\n          <ion-icon name=\"checkmark-outline\" *ngIf=\"selected===slot\"></ion-icon>\r\n        </ion-chip>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <!-- <input type=\"text\" hidden > -->\r\n\r\n</ion-content>\r\n\r\n<ion-footer *ngIf=\"selected != null\">\r\n  <ion-toolbar>\r\n    <ion-title>Selected Slot: {{ selected }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"secondary\">\r\n      <ion-button fill=\"clear\" (click)=\"close()\">\r\n        <ion-icon slot=\"start\" name=\"close\"></ion-icon>\r\n        Close\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"text-center\" size=\"small\">Available Slots</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button fill=\"clear\" size=\"small\" *ngIf=\"selected != null\" (click)=\"done()\">\r\n        DONE\r\n        <ion-icon slot=\"end\" name=\"checkmark-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <!-- <ion-button (click)=\"close()\">close</ion-button> -->\r\n\r\n  <!-- <ion-label style=\"padding-left: 5%;\">Time Slot*</ion-label> -->\r\n\r\n  <!-- [outline]=\"selected===slot ? 'true':'false'\" -->\r\n  <!-- <ion-grid>\r\n    <ion-row class=\"ion-justify-content-evenly\">\r\n      <ion-col size=\"4\"*ngFor=\"let slot of TimeSolts;let i=index;\" >\r\n          <ion-chip [id]=\"i+1\" [color]=\"slot.booked==slot.booked ? 'primary':'' ||slot.available==slot.available ? 'primary':''\" >\r\n              <ion-label (click)=\"onSelectiongTimeSlots($event,slot.time)\">{{format24HrsTo12Hrs(slot.time)}}</ion-label>\r\n              <ion-icon name=\"checkmark-outline\" *ngIf=\"selected==slot.time\"></ion-icon>\r\n              \r\n            \r\n            </ion-chip>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>   -->\r\n  <!-- <ion-grid>\r\n      <ion-row class=\"ion-justify-content-evenly\">\r\n        <ion-col size=\"4\"*ngFor=\"let slot of TimeSolts;let i=index;\" >\r\n            <ion-chip [id]=\"i+1\" [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\">\r\n                <ion-label (click)=\"onSelectiongTimeSlots($event,slot.time)\" [color]=\"selected==slot.time ? 'primary':''\">{{format24HrsTo12Hrs(slot.time)}}</ion-label>\r\n                <ion-icon name=\"checkmark-outline\" *ngIf=\"selected==slot.time\"></ion-icon>\r\n                \r\n              \r\n              </ion-chip>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid> -->\r\n\r\n\r\n  <!-- new  -->\r\n  <ion-progress-bar type=\"indeterminate\" *ngIf=\"isLoading\"></ion-progress-bar>\r\n\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-3\" *ngFor=\"let slot of TimeSolts;let i=index\">\r\n      <ion-chip outline\r\n        [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\"\r\n        (click)=\"onSelectTime1(slot.time,i,$event)\">\r\n        <ion-label style=\"font-size: 8px;\">\r\n          {{format24HrsTo12Hrs(slot.time)}}\r\n        </ion-label>\r\n        <ion-icon name=\"checkmark-outline\" *ngIf=\"selected===slot\"></ion-icon>\r\n      </ion-chip>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- <input type=\"text\" hidden > -->\r\n\r\n</ion-content>\r\n\r\n<ion-footer *ngIf=\"selected != null\">\r\n  <ion-toolbar>\r\n    <ion-title>Selected Slot: {{ selected }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n";
 
 /***/ })
 
