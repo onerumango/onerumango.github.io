@@ -12084,6 +12084,31 @@ class DownloadService {
             });
             doc.save('City Maintenance.pdf');
         }
+        //Kiosk Branch Login Maintenance
+        else if (data == "kioskLoginMaintenance") {
+            let doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+            const head = [['Branch Code', 'Kiosk System Code', 'Email Id', 'Mobile Number', 'Auth Status', 'Record Status']];
+            const body = [];
+            users.forEach(u => {
+                var row = [];
+                row.push(u.branchCode);
+                row.push(u.kioskSystemCode);
+                row.push(u.emailId);
+                row.push(u.mobileNumber);
+                row.push(u.authStatus);
+                row.push(u.record);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
+                body.push(row);
+            });
+            console.log(body);
+            jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(doc, {
+                head: head,
+                body: body,
+                didDrawCell: (prepare) => { },
+            });
+            doc.save('Kiosk Branch Login Maintenance.pdf');
+        }
         //base denomination page 
         else if (data == "baseDenomination") {
             console.log("base denomination page is working ");
@@ -12238,6 +12263,55 @@ class DownloadService {
             });
             doc.save('branchMaintenance.pdf');
         }
+        else if (data == "userScreen") {
+            console.log("Branch  page is working ");
+            console.log(users);
+            let doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+            const head = [['User Id', 'User Name', 'Role Id', 'Auth Status', 'Record Status']];
+            console.log(head);
+            const body = [];
+            users.forEach(u => {
+                var row = [];
+                row.push(u.userId);
+                row.push(u.userName);
+                row.push(u.roleId);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
+                body.push(row);
+            });
+            console.log(body);
+            jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(doc, {
+                head: head,
+                body: body,
+                didDrawCell: (prepare) => { },
+            });
+            doc.save('users.pdf');
+        }
+        else if (data == "roleScreen") {
+            console.log("Branch  page is working ");
+            console.log(users);
+            let doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+            const head = [['Role Name', 'Role Description', 'One Time Auth',
+                    'Auth Status', 'Record Status']];
+            console.log(head);
+            const body = [];
+            users.forEach(u => {
+                var row = [];
+                row.push(u.roleName);
+                row.push(u.roleDesc);
+                row.push(u.oneTimeAuth);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
+                body.push(row);
+            });
+            console.log(body);
+            jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(doc, {
+                head: head,
+                body: body,
+                didDrawCell: (prepare) => { },
+            });
+            doc.save('roles.pdf');
+        }
         // currency maintenance 
         else if (data == "courrencyMaintenance") {
             console.log("Currency page is working ");
@@ -12386,7 +12460,7 @@ class DownloadService {
                 body: body,
                 didDrawCell: (prepare) => { },
             });
-            doc.save('tillVaultConfiguration.pdf');
+            doc.save('denominationMaster.pdf');
         }
         //Till vault currency balance maintenance page 
         else if (data == "tillVaultCurrrencyBalance") {

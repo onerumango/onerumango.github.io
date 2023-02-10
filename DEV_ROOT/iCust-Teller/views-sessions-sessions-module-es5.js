@@ -468,7 +468,7 @@
                       localStorage.setItem("browserId", _this2.browserKey);
                       console.log(_this2.finalDiff);
 
-                      if (_this2.finalDiff > 0 && _this2.finalDiff <= _this2.notifyPswdExpry) {
+                      if (_this2.finalDiff > 0 && _this2.finalDiff <= _this2.notifyPswdExpry && _this2.security.authStatus == "A") {
                         _this2.toastr.error("Your password will expire in " + "".concat(_this2.finalDiff) + " day(s)", "");
                       }
 

@@ -82652,20 +82652,20 @@
               });
 
               _doc.save('City Maintenance.pdf');
-            } //base denomination page 
-            else if (data == "baseDenomination") {
-              console.log("base denomination page is working ");
-              console.log(users);
-
+            } //Kiosk Branch Login Maintenance
+            else if (data == "kioskLoginMaintenance") {
               var _doc2 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head2 = [['Base Denomination Id Code', ' Denomination', 'Currency', 'Auth Status', 'Record Status']];
+              var _head2 = [['Branch Code', 'Kiosk System Code', 'Email Id', 'Mobile Number', 'Auth Status', 'Record Status']];
               var _body2 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.baseDenominationId);
-                row.push(u.denomination);
-                row.push(u.currency);
+                row.push(u.branchCode);
+                row.push(u.kioskSystemCode);
+                row.push(u.emailId);
+                row.push(u.mobileNumber);
+                row.push(u.authStatus);
+                row.push(u.record);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82678,21 +82678,21 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc2.save('baseDenomination.pdf');
-            } //entity maintenance page 
-            else if (data == "entityMaintenance") {
-              console.log(" page is working ");
+              _doc2.save('Kiosk Branch Login Maintenance.pdf');
+            } //base denomination page 
+            else if (data == "baseDenomination") {
+              console.log("base denomination page is working ");
               console.log(users);
 
               var _doc3 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head3 = [['Entity Code', ' Entity Name', 'Denomination Required', 'Auth Status', 'Record Status']];
+              var _head3 = [['Base Denomination Id Code', ' Denomination', 'Currency', 'Auth Status', 'Record Status']];
               var _body3 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.entityCode);
-                row.push(u.entityName);
-                row.push(u.denomRequired);
+                row.push(u.baseDenominationId);
+                row.push(u.denomination);
+                row.push(u.currency);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82705,20 +82705,21 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc3.save('entityMaintenance.pdf');
-            } else if (data == "cutomerCategoryMaintenance") {
+              _doc3.save('baseDenomination.pdf');
+            } //entity maintenance page 
+            else if (data == "entityMaintenance") {
               console.log(" page is working ");
               console.log(users);
 
               var _doc4 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head4 = [["Category Code", "Category Name", "Category Description", "Auth Status", "Record Status"]];
+              var _head4 = [['Entity Code', ' Entity Name', 'Denomination Required', 'Auth Status', 'Record Status']];
               var _body4 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.categoryCode);
-                row.push(u.categoryName);
-                row.push(u.categoryDescription);
+                row.push(u.entityCode);
+                row.push(u.entityName);
+                row.push(u.denomRequired);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82731,18 +82732,19 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc4.save('customerCategory.pdf');
-            } else if (data == "cutomerChargeCategoryMaintenance") {
+              _doc4.save('entityMaintenance.pdf');
+            } else if (data == "cutomerCategoryMaintenance") {
               console.log(" page is working ");
               console.log(users);
 
               var _doc5 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head5 = [["Charge Category", "Category Description", "Auth Status", "Record Status"]];
+              var _head5 = [["Category Code", "Category Name", "Category Description", "Auth Status", "Record Status"]];
               var _body5 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.chargeCategory);
+                row.push(u.categoryCode);
+                row.push(u.categoryName);
                 row.push(u.categoryDescription);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
@@ -82756,24 +82758,19 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc5.save('customerChargeCategory.pdf');
-            } // bank maintenance page 
-            else if (data == "bankMaintance") {
-              console.log("Banking  page is working ");
+              _doc5.save('customerCategory.pdf');
+            } else if (data == "cutomerChargeCategoryMaintenance") {
+              console.log(" page is working ");
               console.log(users);
 
               var _doc6 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head6 = [['Entity Code', 'Bank Code', 'Bank Name', 'Head Office Branch', 'Country', 'Auth Status', 'Record Status']];
-              console.log(_head6);
+              var _head6 = [["Charge Category", "Category Description", "Auth Status", "Record Status"]];
               var _body6 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.entityCode);
-                row.push(u.bankCode);
-                row.push(u.bankName);
-                row.push(u.headOfficeBrn);
-                row.push(u.country);
+                row.push(u.chargeCategory);
+                row.push(u.categoryDescription);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82786,22 +82783,24 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc6.save('bankMaintance.pdf');
-            } //branchMaintenance page 
-            else if (data == "branchMaintenance") {
-              console.log("Branch  page is working ");
+              _doc6.save('customerChargeCategory.pdf');
+            } // bank maintenance page 
+            else if (data == "bankMaintance") {
+              console.log("Banking  page is working ");
               console.log(users);
 
               var _doc7 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head7 = [['Branch Name', 'Branch Code', ' City', 'Auth Status', 'Record Status']];
+              var _head7 = [['Entity Code', 'Bank Code', 'Bank Name', 'Head Office Branch', 'Country', 'Auth Status', 'Record Status']];
               console.log(_head7);
               var _body7 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.branchName);
-                row.push(u.branchCode);
-                row.push(u.city);
+                row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.bankName);
+                row.push(u.headOfficeBrn);
+                row.push(u.country);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82814,22 +82813,22 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc7.save('branchMaintenance.pdf');
-            } // currency maintenance 
-            else if (data == "courrencyMaintenance") {
-              console.log("Currency page is working ");
+              _doc7.save('bankMaintance.pdf');
+            } //branchMaintenance page 
+            else if (data == "branchMaintenance") {
+              console.log("Branch  page is working ");
               console.log(users);
 
               var _doc8 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head8 = [[' Currency Code', 'Currency Name', 'Country', 'Auth Status', 'Record Status']];
+              var _head8 = [['Branch Name', 'Branch Code', ' City', 'Auth Status', 'Record Status']];
               console.log(_head8);
               var _body8 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.currencyCode);
-                row.push(u.currencyName);
-                row.push(u.country);
+                row.push(u.branchName);
+                row.push(u.branchCode);
+                row.push(u.city);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82842,23 +82841,21 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc8.save('courrencyMaintenance.pdf');
-            } //biller info page 
-            else if (data == "billerInfo") {
-              console.log("Currency page is working ");
+              _doc8.save('branchMaintenance.pdf');
+            } else if (data == "userScreen") {
+              console.log("Branch  page is working ");
               console.log(users);
 
               var _doc9 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head9 = [['Entity Code', 'Biller Code', 'Biller Name', 'Biller Account Brn', 'Auth Status', 'Record Status']];
+              var _head9 = [['User Id', 'User Name', 'Role Id', 'Auth Status', 'Record Status']];
               console.log(_head9);
               var _body9 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.entityCode);
-                row.push(u.billerCode);
-                row.push(u.billerName);
-                row.push(u.billerAccBrn);
+                row.push(u.userId);
+                row.push(u.userName);
+                row.push(u.roleId);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82871,23 +82868,20 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc9.save('billerInfo.pdf');
-            } // till Vault Maintenance
-            else if (data == "tillVaultMaintenance") {
-              console.log("Till Vault maintenance page is working ");
+              _doc9.save('users.pdf');
+            } else if (data == "roleScreen") {
+              console.log("Branch  page is working ");
               console.log(users);
 
               var _doc10 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head10 = [['Entity Code', 'Bank Code', 'Till Vault Code', 'Status', 'One Time Auth', 'Auth Status', 'Record Status']];
+              var _head10 = [['Role Name', 'Role Description', 'One Time Auth', 'Auth Status', 'Record Status']];
               console.log(_head10);
               var _body10 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.entityCode);
-                row.push(u.bankCode);
-                row.push(u.tillVaultCode);
-                row.push(u.Status);
+                row.push(u.roleName);
+                row.push(u.roleDesc);
                 row.push(u.oneTimeAuth);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
@@ -82901,21 +82895,22 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc10.save('tillVaultMaintenance.pdf');
-            } //Till Vault Branch Maping 
-            else if (data == "tillVaultBranchMaping") {
-              console.log("Till Vault Branch Maping page is working ");
+              _doc10.save('roles.pdf');
+            } // currency maintenance 
+            else if (data == "courrencyMaintenance") {
+              console.log("Currency page is working ");
               console.log(users);
 
               var _doc11 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head11 = [['Entity Code', 'Parent Vault Id', 'Auth Status', 'Record Status']];
+              var _head11 = [[' Currency Code', 'Currency Name', 'Country', 'Auth Status', 'Record Status']];
               console.log(_head11);
               var _body11 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.entityCode);
-                row.push(u.parentVaultId);
+                row.push(u.currencyCode);
+                row.push(u.currencyName);
+                row.push(u.country);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82928,20 +82923,23 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc11.save('tillVaultBranchMaping.pdf');
-            } //Till Vault Configuration
-            else if (data == "tillVaultConfiguration") {
-              console.log("Till Vault Configuration Maping page is working ");
+              _doc11.save('courrencyMaintenance.pdf');
+            } //biller info page 
+            else if (data == "billerInfo") {
+              console.log("Currency page is working ");
               console.log(users);
 
               var _doc12 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head12 = [['Entity Code', 'Auth Status', 'Record Status']];
+              var _head12 = [['Entity Code', 'Biller Code', 'Biller Name', 'Biller Account Brn', 'Auth Status', 'Record Status']];
               console.log(_head12);
               var _body12 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.entityCode);
+                row.push(u.billerCode);
+                row.push(u.billerName);
+                row.push(u.billerAccBrn);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82954,22 +82952,24 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc12.save('tillVaultConfiguration.pdf');
-            } //denomination master page 
-            else if (data == "denominationMaster") {
-              console.log("Denomination Master  Maping page is working ");
+              _doc12.save('billerInfo.pdf');
+            } // till Vault Maintenance
+            else if (data == "tillVaultMaintenance") {
+              console.log("Till Vault maintenance page is working ");
               console.log(users);
 
               var _doc13 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head13 = [['Entity Code', 'Bank Code', 'Currency', 'Auth Status', 'Record Status']];
+              var _head13 = [['Entity Code', 'Bank Code', 'Till Vault Code', 'Status', 'One Time Auth', 'Auth Status', 'Record Status']];
               console.log(_head13);
               var _body13 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.entityCode);
                 row.push(u.bankCode);
-                row.push(u.currency);
+                row.push(u.tillVaultCode);
+                row.push(u.Status);
+                row.push(u.oneTimeAuth);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -82982,20 +82982,21 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc13.save('tillVaultConfiguration.pdf');
-            } //Till vault currency balance maintenance page 
-            else if (data == "tillVaultCurrrencyBalance") {
-              console.log("Till vault Currency balance  page is working ");
+              _doc13.save('tillVaultMaintenance.pdf');
+            } //Till Vault Branch Maping 
+            else if (data == "tillVaultBranchMaping") {
+              console.log("Till Vault Branch Maping page is working ");
               console.log(users);
 
               var _doc14 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head14 = [['Entity Code', 'Auth Status', 'Record Status']];
+              var _head14 = [['Entity Code', 'Parent Vault Id', 'Auth Status', 'Record Status']];
               console.log(_head14);
               var _body14 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.entityCode);
+                row.push(u.parentVaultId);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83008,23 +83009,20 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc14.save('tillVaultCurrrencyBalance.pdf');
-            } // till vault ststus summery 
-            else if (data == "tillVaultStatusSummery") {
-              console.log("Till vault status Summery page is working ");
+              _doc14.save('tillVaultBranchMaping.pdf');
+            } //Till Vault Configuration
+            else if (data == "tillVaultConfiguration") {
+              console.log("Till Vault Configuration Maping page is working ");
               console.log(users);
 
               var _doc15 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head15 = [['Entity Code', 'Bank Code', 'Branch Code', 'Till Id', 'Auth Status', 'Record Status']];
+              var _head15 = [['Entity Code', 'Auth Status', 'Record Status']];
               console.log(_head15);
               var _body15 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.entityCode);
-                row.push(u.bankCode);
-                row.push(u.branchCode);
-                row.push(u.tillId);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83037,21 +83035,22 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc15.save('tillVaultCurrrencyBalance.pdf');
-            } // till Vault Denomination 
-            else if (data == "tillVaultDenomination") {
-              console.log("Till vault denomination page is working ");
+              _doc15.save('tillVaultConfiguration.pdf');
+            } //denomination master page 
+            else if (data == "denominationMaster") {
+              console.log("Denomination Master  Maping page is working ");
               console.log(users);
 
               var _doc16 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head16 = [['Bank Code', 'Entity Code', 'Auth Status', 'Record Status']];
+              var _head16 = [['Entity Code', 'Bank Code', 'Currency', 'Auth Status', 'Record Status']];
               console.log(_head16);
               var _body16 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.bankCode);
                 row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.currency);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83064,22 +83063,20 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc16.save('tillVaultDenomination.pdf');
-            } //Transation cash master page
-            else if (data == "txnCashMaster") {
-              console.log("Txn Cash Master page is working ");
+              _doc16.save('denominationMaster.pdf');
+            } //Till vault currency balance maintenance page 
+            else if (data == "tillVaultCurrrencyBalance") {
+              console.log("Till vault Currency balance  page is working ");
               console.log(users);
 
               var _doc17 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head17 = [['Entity Code', 'Bank Code', 'Branch Code', 'Auth Status', 'Record Status']];
+              var _head17 = [['Entity Code', 'Auth Status', 'Record Status']];
               console.log(_head17);
               var _body17 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.entityCode);
-                row.push(u.bankCode);
-                row.push(u.branchCode);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83092,21 +83089,23 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc17.save('txnCashMaster.pdf');
-            } //Account Type Maintenance
-            else if (data == "accountTypeMaintenance") {
-              console.log("Account Type Maintenance page is working ");
+              _doc17.save('tillVaultCurrrencyBalance.pdf');
+            } // till vault ststus summery 
+            else if (data == "tillVaultStatusSummery") {
+              console.log("Till vault status Summery page is working ");
               console.log(users);
 
               var _doc18 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head18 = [['Name', 'Description', 'Auth Status', 'Record Status']];
+              var _head18 = [['Entity Code', 'Bank Code', 'Branch Code', 'Till Id', 'Auth Status', 'Record Status']];
               console.log(_head18);
               var _body18 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.accountTypeName);
-                row.push(u.accountTypeDescription);
+                row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.branchCode);
+                row.push(u.tillId);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83119,22 +83118,21 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc18.save('accountTypeMaintenance.pdf');
-            } //Base Denomination Maintaince
-            else if (data == "baseDenominationMaintenance") {
-              console.log("Base Maintenance page is working ");
+              _doc18.save('tillVaultCurrrencyBalance.pdf');
+            } // till Vault Denomination 
+            else if (data == "tillVaultDenomination") {
+              console.log("Till vault denomination page is working ");
               console.log(users);
 
               var _doc19 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head19 = [['Base Denomination Id Code', ' Denomination', 'Currency', 'Auth Status', 'Record Status']];
+              var _head19 = [['Bank Code', 'Entity Code', 'Auth Status', 'Record Status']];
               console.log(_head19);
               var _body19 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.baseDenominationId);
-                row.push(u.denomination);
-                row.push(u.currency);
+                row.push(u.bankCode);
+                row.push(u.entityCode);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83147,23 +83145,23 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc19.save('baseDenominationMaintenance.pdf');
-            }
-
-            if (data == "stateMaintenance") {
-              console.log("country page is working ");
+              _doc19.save('tillVaultDenomination.pdf');
+            } //Transation cash master page
+            else if (data == "txnCashMaster") {
+              console.log("Txn Cash Master page is working ");
               console.log(users);
 
               var _doc20 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head20 = [['State Code', 'State Name', 'State Code 2', ' State Numric Code', 'Record Status']];
+              var _head20 = [['Entity Code', 'Bank Code', 'Branch Code', 'Auth Status', 'Record Status']];
+              console.log(_head20);
               var _body20 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.stateCode);
-                row.push(u.stateName);
-                row.push(u.stateCode2);
-                row.push(u.stateNumCode);
+                row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.branchCode);
+                row.push(u.authStatus);
                 row.push(u.recordStatus);
 
                 _body20.push(row);
@@ -83175,23 +83173,21 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc20.save('stateMaintenance.pdf');
-            } //Branch Holiday maintenance
-
-
-            if (data == "branchHolidayMaintenance") {
+              _doc20.save('txnCashMaster.pdf');
+            } //Account Type Maintenance
+            else if (data == "accountTypeMaintenance") {
+              console.log("Account Type Maintenance page is working ");
               console.log(users);
 
               var _doc21 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head21 = [['Entity Code', 'Bank Code', 'Branch Code', ' Year', 'Auth Status', 'Record Status']];
+              var _head21 = [['Name', 'Description', 'Auth Status', 'Record Status']];
+              console.log(_head21);
               var _body21 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.entityCode);
-                row.push(u.bankCode);
-                row.push(u.branchCode);
-                row.push(u.year);
+                row.push(u.accountTypeName);
+                row.push(u.accountTypeDescription);
                 row.push(u.authStatus);
                 row.push(u.recordStatus);
 
@@ -83204,25 +83200,27 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc21.save('branchHolidayMaintenance.pdf');
-            } else if (data == 'transactionSlip') {
+              _doc21.save('accountTypeMaintenance.pdf');
+            } //Base Denomination Maintaince
+            else if (data == "baseDenominationMaintenance") {
+              console.log("Base Maintenance page is working ");
+              console.log(users);
+
               var _doc22 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head22 = [];
+              var _head22 = [['Base Denomination Id Code', ' Denomination', 'Currency', 'Auth Status', 'Record Status']];
+              console.log(_head22);
               var _body22 = [];
-
-              for (var _i8 = 0, _Object$entries = Object.entries(users); _i8 < _Object$entries.length; _i8++) {
-                var _Object$entries$_i = _slicedToArray(_Object$entries[_i8], 2),
-                    key = _Object$entries$_i[0],
-                    value = _Object$entries$_i[1];
-
+              users.forEach(function (u) {
                 var row = [];
-                row.push(key);
-                row.push(value);
+                row.push(u.baseDenominationId);
+                row.push(u.denomination);
+                row.push(u.currency);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
 
                 _body22.push(row);
-              }
-
+              });
               console.log(_body22);
               jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc22, {
                 head: _head22,
@@ -83230,25 +83228,24 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc22.save('Transaction Receipt.pdf');
-            } else if (data == "recentTransactionDownload") {
-              console.log("Account Type Maintenance page is working ");
+              _doc22.save('baseDenominationMaintenance.pdf');
+            }
+
+            if (data == "stateMaintenance") {
+              console.log("country page is working ");
               console.log(users);
 
               var _doc23 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head23 = [['Customer Name', 'Transaction Id', 'Trans Id', 'Operation', 'Trn Amount', 'Transaction Currency', 'Revert Transaction']];
-              console.log(_head23);
+              var _head23 = [['State Code', 'State Name', 'State Code 2', ' State Numric Code', 'Record Status']];
               var _body23 = [];
               users.forEach(function (u) {
                 var row = [];
-                row.push(u.customerName);
-                row.push(u.transactionId);
-                row.push(u.transId);
-                row.push(u.operation);
-                row.push(u.trnAmount);
-                row.push(u.transactionCurrency);
-                row.push(u.revertTransaction);
+                row.push(u.stateCode);
+                row.push(u.stateName);
+                row.push(u.stateCode2);
+                row.push(u.stateNumCode);
+                row.push(u.recordStatus);
 
                 _body23.push(row);
               });
@@ -83259,16 +83256,100 @@
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc23.save('transaction.pdf');
-            } else if (data == "cashInHand") {
-              console.log("Base Maintenance page is working ");
+              _doc23.save('stateMaintenance.pdf');
+            } //Branch Holiday maintenance
+
+
+            if (data == "branchHolidayMaintenance") {
               console.log(users);
 
               var _doc24 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
-              var _head24 = [['Currency', 'Closing Balance', 'Credit Count', 'Debit Count', 'Opening Balance', 'Debit Count', 'Total Credit', 'Total Debit', 'Total Value']];
-              console.log(_head24);
+              var _head24 = [['Entity Code', 'Bank Code', 'Branch Code', ' Year', 'Auth Status', 'Record Status']];
               var _body24 = [];
+              users.forEach(function (u) {
+                var row = [];
+                row.push(u.entityCode);
+                row.push(u.bankCode);
+                row.push(u.branchCode);
+                row.push(u.year);
+                row.push(u.authStatus);
+                row.push(u.recordStatus);
+
+                _body24.push(row);
+              });
+              console.log(_body24);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc24, {
+                head: _head24,
+                body: _body24,
+                didDrawCell: function didDrawCell(prepare) {}
+              });
+
+              _doc24.save('branchHolidayMaintenance.pdf');
+            } else if (data == 'transactionSlip') {
+              var _doc25 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+
+              var _head25 = [];
+              var _body25 = [];
+
+              for (var _i8 = 0, _Object$entries = Object.entries(users); _i8 < _Object$entries.length; _i8++) {
+                var _Object$entries$_i = _slicedToArray(_Object$entries[_i8], 2),
+                    key = _Object$entries$_i[0],
+                    value = _Object$entries$_i[1];
+
+                var row = [];
+                row.push(key);
+                row.push(value);
+
+                _body25.push(row);
+              }
+
+              console.log(_body25);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc25, {
+                head: _head25,
+                body: _body25,
+                didDrawCell: function didDrawCell(prepare) {}
+              });
+
+              _doc25.save('Transaction Receipt.pdf');
+            } else if (data == "recentTransactionDownload") {
+              console.log("Account Type Maintenance page is working ");
+              console.log(users);
+
+              var _doc26 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+
+              var _head26 = [['Customer Name', 'Transaction Id', 'Trans Id', 'Operation', 'Trn Amount', 'Transaction Currency', 'Revert Transaction']];
+              console.log(_head26);
+              var _body26 = [];
+              users.forEach(function (u) {
+                var row = [];
+                row.push(u.customerName);
+                row.push(u.transactionId);
+                row.push(u.transId);
+                row.push(u.operation);
+                row.push(u.trnAmount);
+                row.push(u.transactionCurrency);
+                row.push(u.revertTransaction);
+
+                _body26.push(row);
+              });
+              console.log(_body26);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc26, {
+                head: _head26,
+                body: _body26,
+                didDrawCell: function didDrawCell(prepare) {}
+              });
+
+              _doc26.save('transaction.pdf');
+            } else if (data == "cashInHand") {
+              console.log("Base Maintenance page is working ");
+              console.log(users);
+
+              var _doc27 = new jspdf__WEBPACK_IMPORTED_MODULE_2__["default"]();
+
+              var _head27 = [['Currency', 'Closing Balance', 'Credit Count', 'Debit Count', 'Opening Balance', 'Debit Count', 'Total Credit', 'Total Debit', 'Total Value']];
+              console.log(_head27);
+              var _body27 = [];
               users.forEach(function (u) {
                 var row = [];
                 row.push(u.currency);
@@ -83281,17 +83362,17 @@
                 row.push(u.currencyTransactionInfo.totalDebit);
                 row.push(u.totalValue);
 
-                _body24.push(row);
+                _body27.push(row);
               });
-              console.log(_body24);
-              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc24, {
-                head: _head24,
-                body: _body24,
+              console.log(_body27);
+              jspdf_autotable__WEBPACK_IMPORTED_MODULE_3___default()(_doc27, {
+                head: _head27,
+                body: _body27,
                 horizontalPageBreak: true,
                 didDrawCell: function didDrawCell(prepare) {}
               });
 
-              _doc24.save('cashInHand.pdf');
+              _doc27.save('cashInHand.pdf');
             }
           }
         }, {

@@ -79,8 +79,12 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
         color: #24CCA7;
     } 
     .mat-input-element {
-        background: none;
-        color: white;
+        background: #1b1b29;
+        color: #cdcdde; 
+        box-shadow: 0 0 0 1000px #1b1b29 inset !important; 
+    }
+    .mat-input-element:-webkit-autofill{
+        -webkit-text-fill-color: #cdcdde !important;
     }
      .button{
         background: #000000 ;
@@ -501,6 +505,12 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .mat-expansion-panel {
         background-color:#1b1b29;
         color: #cdcdde; 
+    }
+    .onboarding-dark-background{
+        background-color: #1b1b29;
+    }
+    .onboarding-dark-toggle-btn{
+       background-color: rgb(131, 131, 131)
     }
 
 

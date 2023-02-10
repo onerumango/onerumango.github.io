@@ -2019,6 +2019,8 @@
         _createClass(UploadSignEsignComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            this.accountId = this.ls.getItem('accountId');
+            this.customerId = this.ls.getItem('CIF_NUM_PRIMARY');
             this.image = this.ls.getItem('signedImage');
 
             if (this.image) {
@@ -2027,11 +2029,23 @@
               this.imageURL1 = "not_available";
             }
 
-            this.accountId = this.ls.getItem('accountId'); // this.urlService.previousUrl$
+            this.accountId = this.ls.getItem('accountId');
+            this.getSignatureDetails(); // this.urlService.previousUrl$
             //   .subscribe((previousUrl: string) =>{
             //     console.log('resp-----',previousUrl);
             //     this.previousUrl = previousUrl
             //   });
+          }
+        }, {
+          key: "getSignatureDetails",
+          value: function getSignatureDetails() {
+            var _this6 = this;
+
+            this.apiService.getDigitalsignById(this.accountId).subscribe(function (resp) {
+              if (resp && resp[0].accountSignatureId) {
+                _this6.id = resp[0].accountSignatureId;
+              }
+            });
           }
         }, {
           key: "close1",
@@ -2050,7 +2064,7 @@
         }, {
           key: "openPopUp",
           value: function openPopUp(data) {
-            var _this6 = this;
+            var _this7 = this;
 
             var response;
 
@@ -2071,12 +2085,12 @@
                 console.log("dismiss res", res);
 
                 if (res) {
-                  _this6.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
-                  _this6.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true; // this.esignUrl = res?.fileUrl;
+                  _this7.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                  _this7.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true; // this.esignUrl = res?.fileUrl;
 
-                  _this6.ls.setItem('enable', true);
+                  _this7.ls.setItem('enable', true);
 
-                  console.log(_this6.show); // this.isDone=true;
+                  console.log(_this7.show); // this.isDone=true;
                 }
               });
             }
@@ -2087,7 +2101,7 @@
         }, {
           key: "onFileSelect",
           value: function onFileSelect(event) {
-            var _this7 = this;
+            var _this8 = this;
 
             console.log("event -- ", event.target.files);
             this.selectedFile = event.target.files[0];
@@ -2096,24 +2110,31 @@
             reader.readAsDataURL(event.target.files[0]);
 
             reader.onload = function (event2) {
-              _this7.imageURL1 = reader.result;
+              _this8.imageURL1 = reader.result;
             };
 
             var cId = this.customerId;
             var url = this.selectedFile;
             var uploadData = new FormData();
             var data = {
+              accountId: this.accountId,
               customerId: this.customerId,
-              documentName: "Signature",
+              documentName: this.customerId + "Signature",
               documentType: "10",
-              fileType: event.type,
-              fileName: event.name,
-              verificationType: "Digital Signing"
+              fileType: "image/jpeg",
+              fileName: "signature"
             };
             uploadData.append("data", JSON.stringify(data));
             uploadData.append("file", url);
+            uploadData.append('accType', "savings");
             this.apiService.upload(uploadData).subscribe(function (res) {
-              if (res) {}
+              if (res) {
+                _this8.ls.setItem('signedImage', _this8.imageURL1);
+
+                _this8.ls.setItem('eSignStage', true);
+
+                _this8.ls.setItem('enable', true);
+              }
             });
           }
         }, {
@@ -2126,21 +2147,20 @@
         }, {
           key: "deleteImg",
           value: function deleteImg() {
-            var _this8 = this;
+            var _this9 = this;
 
             this.dialogService.doConfirmDialog('').subscribe(function (response) {
               if (response == "Yes") {
-                _this8.imageURL1 = "not_available";
+                // this.profileFile.nativeElement.value = '';
+                _this9.apiService.deleteCustomerDoc(_this9.customerId, _this9.id).subscribe(function (data) {
+                  _this9.imageURL1 = "not_available";
 
-                _this8.ls.removeItem('signedImage');
+                  _this9.ls.removeItem('signedImage');
 
-                _this8.profileFile.nativeElement.value = '';
+                  _this9.disableDone = true;
 
-                _this8.apiService.deleteCustomerDoc(_this8.customerId, _this8.profileId).subscribe(function (data) {});
-
-                _this8.disableDone = true;
-
-                _this8.ls.setItem('enable', false);
+                  _this9.ls.setItem('enable', false);
+                });
               }
             });
           }
