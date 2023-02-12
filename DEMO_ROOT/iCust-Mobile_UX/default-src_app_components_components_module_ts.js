@@ -254,6 +254,9 @@ let DenominationSlideComponent = class DenominationSlideComponent {
         else if (this.unique_key == 'cashViewRef') {
             this.cashDepositRef.remove(this.unique_key);
         }
+        else if (this.unique_key == 'chwViewRef') {
+            this.chwViewRef.remove(this.unique_key);
+        }
     }
     saveDenom() {
         let denomPayload = {

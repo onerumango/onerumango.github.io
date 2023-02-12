@@ -68,9 +68,6 @@ let TokenV2Page = class TokenV2Page {
             console.log(resp.index);
             this.assignProductCode(resp.index);
         });
-        localStorage.getItem('AccountNumber');
-        localStorage.getItem('TransactionDate');
-        localStorage.getItem('TransactionTime');
         console.log(this.value);
         this.appointmentDetails = JSON.parse(localStorage.getItem('AppointmentDetails'));
         console.log("NEW", this.appointmentDetails);
