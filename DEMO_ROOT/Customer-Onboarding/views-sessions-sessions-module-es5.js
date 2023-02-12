@@ -863,6 +863,12 @@
       var _auth_callback_auth_callback_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./auth-callback/auth-callback.component */
       "hIfn");
+      /* harmony import */
+
+
+      var _others_sign_later_sign_later_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../others/sign-later/sign-later.component */
+      "cGjq");
 
       var SessionsRoutes = [{
         path: "",
@@ -890,6 +896,12 @@
         }, {
           path: "fingerPrint",
           component: _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_0__["FingerprintComponent"],
+          data: {
+            title: "Error"
+          }
+        }, {
+          path: "signLater",
+          component: _others_sign_later_sign_later_component__WEBPACK_IMPORTED_MODULE_5__["SignLaterComponent"],
           data: {
             title: "Error"
           }

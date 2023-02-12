@@ -409,6 +409,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _error_error_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./error/error.component */ "NjAb");
 /* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./signin/signin.component */ "Ekgz");
 /* harmony import */ var _auth_callback_auth_callback_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth-callback/auth-callback.component */ "hIfn");
+/* harmony import */ var _others_sign_later_sign_later_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../others/sign-later/sign-later.component */ "cGjq");
+
 
 
 
@@ -438,6 +440,11 @@ const SessionsRoutes = [
             {
                 path: "fingerPrint",
                 component: _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_0__["FingerprintComponent"],
+                data: { title: "Error" }
+            },
+            {
+                path: "signLater",
+                component: _others_sign_later_sign_later_component__WEBPACK_IMPORTED_MODULE_5__["SignLaterComponent"],
                 data: { title: "Error" }
             }
         ]

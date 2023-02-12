@@ -3886,6 +3886,7 @@
             this.userName = localStorage.getItem('userName');
             this.productaccountID = this.ls.getItem('accountId');
             this.accountInfo = this.ls.getItem('EDIT-CREATEACCCIF');
+            this.loggedInUser = this.ls.getItem('ICUST_USER').userName;
             console.log(this.accountInfo);
             var isAccountScreen = JSON.parse(this.ls.getItem('ACC_DONE'));
             this.getAccountType("account_type");
@@ -4106,7 +4107,7 @@
           value: function getAccountBranchDetails() {
             var _this16 = this;
 
-            //debugger
+            //
             this.api.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
               _this16.arrayAccountBranch = data;
@@ -4171,7 +4172,8 @@
               "createdBy": this.userName,
               "swiftCode": this.accountForm.value.swiftCode,
               "swiftCodeEnable": this.accountForm.value.swiftCodeEnable,
-              "customerName": this.ls.getItem('NAME')
+              "customerName": this.ls.getItem('NAME'),
+              "loggedInUser": this.loggedInUser
             };
 
             if (this.isCifValid == false) {
@@ -14791,17 +14793,17 @@
         }
 
         if (rf & 2) {
-          var accountType_r5 = ctx.$implicit;
+          var accountType_r4 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountType_r5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountType_r4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountType_r5, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountType_r4, " ");
         }
       }
 
-      function ApprovalDetailsComponent_div_14_mat_option_21_Template(rf, ctx) {
+      function ApprovalDetailsComponent_div_14_mat_option_26_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 29);
 
@@ -14811,33 +14813,13 @@
         }
 
         if (rf & 2) {
-          var accountCurrency_r6 = ctx.$implicit;
+          var userRecommendation_r5 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountCurrency_r6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountCurrency_r6, " ");
-        }
-      }
-
-      function ApprovalDetailsComponent_div_14_mat_option_27_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 29);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var userRecommendation_r7 = ctx.$implicit;
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", userRecommendation_r7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", userRecommendation_r5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", userRecommendation_r7, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", userRecommendation_r5, " ");
         }
       }
 
@@ -14911,29 +14893,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-select", 23);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](21, ApprovalDetailsComponent_div_14_mat_option_21_Template, 2, 2, "mat-option", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "input", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-form-field", 25);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-form-field", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "User Recomendation");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "User Recomendation");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-select", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "mat-select", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, ApprovalDetailsComponent_div_14_mat_option_27_Template, 2, 2, "mat-option", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ApprovalDetailsComponent_div_14_mat_option_26_Template, 2, 2, "mat-option", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -14943,19 +14921,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-form-field", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "mat-form-field", 19);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Account Branch");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Account Branch");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "input", 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "input", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -15007,9 +14985,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](22, _c1, ctx_r0.isEdit));
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.arrayAccountCurrency);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
@@ -15035,13 +15013,13 @@
         }
 
         if (rf & 2) {
-          var accountType_r11 = ctx.$implicit;
+          var accountType_r9 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountType_r11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountType_r9);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountType_r11, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountType_r9, " ");
         }
       }
 
@@ -15055,13 +15033,13 @@
         }
 
         if (rf & 2) {
-          var accountCurrency_r12 = ctx.$implicit;
+          var accountCurrency_r10 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountCurrency_r12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", accountCurrency_r10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountCurrency_r12, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", accountCurrency_r10, " ");
         }
       }
 
@@ -15075,13 +15053,13 @@
         }
 
         if (rf & 2) {
-          var userRecommendation_r13 = ctx.$implicit;
+          var userRecommendation_r11 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", userRecommendation_r13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", userRecommendation_r11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", userRecommendation_r13, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", userRecommendation_r11, " ");
         }
       }
 
@@ -15476,7 +15454,7 @@
         selectors: [["app-approval-details"]],
         decls: 22,
         vars: 2,
-        consts: [["fxLayout", "row wrap", 1, "matcard-size"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "mt-24"], [1, "p-0"], ["visible", "true"], [1, "mt-24"], [4, "ngIf"], ["fxFlex", "100", 1, "mt-16"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1", 3, "ngClass"], ["appearance", "outline", 1, "full-width", 3, "ngClass"], ["name", "account", "formControlName", "accountType"], [3, "value", 4, "ngFor", "ngForOf"], ["matInput", "", "name", "account_branch", "placeholder", "Product Image", "formControlName", "productCode", "readonly", ""], ["name", "owner", "formControlName", "accountCurrency", "disabled", ""], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["name", "owner", "placeholder", "Recommended for Approval", "formControlName", "userRecommendation"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["matInput", "", "name", "business", "readonly", "", "placeholder", "Business Product Name", "formControlName", "accountBranch"], [3, "value"], ["name", "account"], ["matInput", "", "name", "account_branch", "placeholder", "Product Image", "value", "", "readonly", ""], ["name", "owner", "disabled", ""], ["name", "owner", "placeholder", "Recommended for Approval"], ["matInput", "", "name", "business", "readonly", "", "placeholder", "Business Product Name"], ["matInput", "", "name", "business", "readonly", "", "placeholder", "Business Product Name", 3, "ngClass"]],
+        consts: [["fxLayout", "row wrap", 1, "matcard-size"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "mt-24"], [1, "p-0"], ["visible", "true"], [1, "mt-24"], [4, "ngIf"], ["fxFlex", "100", 1, "mt-16"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1", 3, "ngClass"], ["appearance", "outline", 1, "full-width", 3, "ngClass"], ["name", "account", "formControlName", "accountType"], [3, "value", 4, "ngFor", "ngForOf"], ["matInput", "", "name", "account_branch", "placeholder", "Product Image", "formControlName", "productCode", "readonly", ""], ["matInput", "", "name", "currency", "placeholder", "Account Currency", "formControlName", "accountCurrency", 3, "readonly"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["name", "owner", "placeholder", "Recommended for Approval", "formControlName", "userRecommendation"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["matInput", "", "name", "business", "readonly", "", "placeholder", "Business Product Name", "formControlName", "accountBranch"], [3, "value"], ["name", "account"], ["matInput", "", "name", "account_branch", "placeholder", "Product Image", "value", "", "readonly", ""], ["name", "owner", "disabled", ""], ["name", "owner", "placeholder", "Recommended for Approval"], ["matInput", "", "name", "business", "readonly", "", "placeholder", "Business Product Name"], ["matInput", "", "name", "business", "readonly", "", "placeholder", "Business Product Name", 3, "ngClass"]],
         template: function ApprovalDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -15521,7 +15499,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "div", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ApprovalDetailsComponent_div_14_Template, 34, 28, "div", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ApprovalDetailsComponent_div_14_Template, 33, 28, "div", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, ApprovalDetailsComponent_mat_card_15_Template, 39, 33, "mat-card", 10);
 

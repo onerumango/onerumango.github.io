@@ -1848,6 +1848,9 @@ body .mat-select-trigger {
     font-size: 100px;
   }
 }
+.show-class {
+  overflow: hidden !important;
+}
 h1,
 h2,
 h3,
