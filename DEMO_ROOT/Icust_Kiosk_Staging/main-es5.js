@@ -3010,7 +3010,7 @@
         },
         decls: 11,
         vars: 2,
-        consts: [[1, "topbar", "mat-blueGradient"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click", 4, "ngIf"], [1, "topbar-branding"], ["routerLink", "/others/dashboard", 2, "padding-bottom", "20%", "font-size", "larger", "color", "white", "font-family", "Phosphate", "margin-left", "120px"], ["fxFlex", ""], [1, "icon"], ["title", "logout"], ["fxLayout", "row"], [2, "margin-right", "170px", "font-size", "17px", "color", "#FFFFFF"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click"]],
+        consts: [[1, "topbar", "mat-blueGradient"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click", 4, "ngIf"], [1, "topbar-branding"], ["routerLink", "/others/kioskHome", 2, "padding-bottom", "20%", "font-size", "larger", "color", "white", "font-family", "Phosphate", "margin-left", "120px"], ["fxFlex", ""], [1, "icon"], ["title", "logout"], ["fxLayout", "row"], [2, "margin-right", "170px", "font-size", "17px", "color", "#FFFFFF"], ["mat-icon-button", "", "id", "sidenavToggle", "matTooltip", "Toggle Hide/Open", 3, "click"]],
         template: function HeaderSideComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
