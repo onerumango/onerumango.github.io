@@ -170,7 +170,7 @@ let MapComponent = class MapComponent {
     ngOnInit() { }
     ionViewWillEnter() {
         this.setupMap();
-        this.getLocation();
+        // this.getLocation();
     }
     getBankBranches() {
         this.apiService.getBranchByCity('Bangalore').subscribe((data) => {
@@ -178,27 +178,24 @@ let MapComponent = class MapComponent {
             this.getMarkers();
         });
     }
-    getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.showPosition);
-        }
-    }
-    showPosition(position) {
-        console.log("postion", position.coords.latitude, position.coords.longitude);
-        this.center = [position.coords.latitude, position.coords.longitude];
-        console.log(this.center);
-    }
+    // getLocation() {
+    //   if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(this.showPosition);
+    //   }
+    // }
+    // showPosition(position) {
+    //   console.log("postion", position.coords.latitude, position.coords.longitude);
+    //   this.center = [position.coords.latitude, position.coords.longitude];
+    //   console.log(this.center);
+    // }
     setupMap() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
-            this.getLocation();
-            console.log("center test 1", this.center);
-            console.log("center test 2", [10.6500315, 78.9919185]);
             this.map.loadMaps(this.gmap.nativeElement, {
                 key: '1d833ae339c7284f8104fc7482107c66',
-                zoom: 5,
                 zoomControl: true,
                 hybrid: true,
-                center: [10.6500315, 78.9919185],
+                center: [28.549948, 77.268241],
+                zoom: 10,
                 location: { control: true, initial: true, bounds: true },
             });
             this.getBankBranches();
@@ -230,7 +227,7 @@ let MapComponent = class MapComponent {
             this.map.marker(mrker_arr, {
                 iconUrl: 'assets/icon/map.png',
                 iconSize: [36, 51],
-                popupAnchor: [0, -16],
+                popupAnchor: [3, 290],
                 draggable: false,
                 fitbounds: true,
                 cluster: true,
@@ -421,49 +418,7 @@ let TimeSlotsComponent = class TimeSlotsComponent {
                 }
             });
         });
-        // this.api.gettingAvailableSlots(date).subscribe(availableSlotsResp => {
-        //   if (availableSlotsResp) {
-        //   this.isLoading=false;  
-        //   availableSlotsResp.bookedSlots.forEach(element => {
-        //     const index = this.TimeSolts.map(x => x.time).indexOf(element);
-        //     if (index > -1) {
-        //         this.TimeSolts[index].available = false;
-        //         this.TimeSolts[index].booked = true;
-        //       }
-        //   });
-        //     // availableSlotsResp.bookedSlots.forEach(element => {
-        //     //   const index = this.TimeSolts.map(x => x.time).indexOf(element);
-        //     //   if (index > -1) {
-        //     //     this.TimeSolts[index].available = false;
-        //     //     this.TimeSolts[index].booked = true;
-        //     //   }
-        //     //   console.log("this.TimeSolts::",this.TimeSolts)
-        //     // });
-        //   }
-        // }, (err) => {
-        //   this.isLoading = false;
-        // })
     }
-    // onSelectTime1(time, i) {
-    //   console.log(i);
-    //   this.count++;
-    //   if (this.count > 1) {
-    //     this.dateCollection = [];
-    //     console.log(!this.TimeSolts[i].selected);
-    //   }
-    //   console.log("Time", time, i);
-    //   this.TimeSolts[i].selected = !this.TimeSolts[i].selected;
-    //   this.TimeSolts[i].available = !this.TimeSolts[i].available;
-    //   console.log(this.TimeSolts[i].selected);
-    //   const index = this.dateCollection.indexOf(time);
-    //   if (index > -1 && !this.TimeSolts[i].selected) {
-    //     this.dateCollection.splice(index, 1);
-    //   }
-    //   else if (index == -1 && this.TimeSolts[i].selected) {
-    //     this.dateCollection.push(time);
-    //     console.log(this.dateCollection);
-    //   }
-    // }
     onSelectiongTimeSlots(event, time) {
         console.log(time);
         this.selected = time;
@@ -483,20 +438,7 @@ let TimeSlotsComponent = class TimeSlotsComponent {
         const index = this.dateCollection.indexOf(time);
         console.log("index", this.dateCollection);
         this.TimeSolts.forEach((element, i) => {
-            // const index = this.dateCollection.indexOf(element.time);
             console.log(this.TimeSolts, i, element.time);
-            // if(!element.booked && element.time == time)
-            // {
-            //    this.TimeSolts[i].available = false;
-            // }
-            // else if(!element.booked && element.time != time)
-            // {
-            //    this.TimeSolts[i].available = true;
-            // }
-            // if (index > -1) {
-            //   //this.TimeSolts[index].available = false;
-            //   this.TimeSolts[index].booked = false;
-            // }
         });
         if (index > -1 && !this.TimeSolts[i].selected) {
             console.log("in if");
@@ -505,18 +447,12 @@ let TimeSlotsComponent = class TimeSlotsComponent {
         else if (index == -1 && this.TimeSolts[i].selected) {
             console.log("in else");
             this.TimeSolts.forEach((element, i) => {
-                // const index = this.dateCollection.indexOf(element.time);
-                // console.log(this.TimeSolts, i, element.time);
                 if (!element.booked && element.time == time) {
                     this.TimeSolts[i].available = false;
                 }
                 else if (!element.booked && element.time != time) {
                     this.TimeSolts[i].available = true;
                 }
-                // if (index > -1) {
-                //   //this.TimeSolts[index].available = false;
-                //   this.TimeSolts[index].booked = false;
-                // }
             });
             this.dateCollection = [];
             this.dateCollection.push(time);
@@ -2361,7 +2297,7 @@ Loader.CALLBACK_NAME = '_dk_google_maps_loader_cb';
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-item::part(native) {\n  height: auto !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJyYW5jaC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHVCQUFBO0FBQ0oiLCJmaWxlIjoiYnJhbmNoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW06OnBhcnQobmF0aXZlKSB7XHJcbiAgICBoZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcclxufSJdfQ== */";
+module.exports = "ion-toolbar {\n  --background: #051A2D;\n  color: #ffffff;\n}\n\n.toolbar-content {\n  background: #051A2D;\n  height: 330px;\n  border-bottom-left-radius: 50px;\n  border-bottom-right-radius: 50px;\n}\n\nion-item.search {\n  --background: #000000 !important;\n  --color: #fffff;\n}\n\nion-item::part(native) {\n  border-radius: 6px;\n  height: auto;\n}\n\nion-card {\n  height: auto;\n  min-height: 1000px;\n  margin-top: -156px;\n  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px !important;\n  border-radius: 12px;\n}\n\nion-input.custom {\n  --background: #000000;\n  --color: #fff;\n  --placeholder-color: #ffffff;\n  --padding-bottom: 10px;\n  --padding-end: 10px;\n  --padding-start: 10px;\n  --placeholder-opacity: 1;\n  --padding-top: 10px;\n  text-transform: capitalize;\n}\n\nion-button.next {\n  --background: linear-gradient(90deg, #051A2D, #004C97);\n  --color: #FFFFFF;\n  float: right;\n  width: 90px;\n  height: 30px;\n  font-size: 12px !important;\n  font-weight: 100 !important;\n  text-transform: capitalize !important;\n}\n\n.title-branch {\n  color: #004C97 !important;\n}\n\n.chip-custom {\n  background: #FFF7E3;\n  padding: 16px;\n  margin-left: 36px !important;\n  margin-top: -5px;\n}\n\nion-chip.chip-outline {\n  border-radius: 5px;\n  border-style: unset;\n}\n\n.content-branch {\n  white-space: normal !important;\n  color: #707070;\n  opacity: 100%;\n  font-size: 12px;\n}\n\nion-item::part(native) {\n  padding-inline-start: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJyYW5jaC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtFQUNJLHFCQUFBO0VBQ0EsY0FBQTtBQUhKOztBQU1BO0VBQ0ksbUJBQUE7RUFDQSxhQUFBO0VBQ0EsK0JBQUE7RUFDQSxnQ0FBQTtBQUhKOztBQU1BO0VBQ0ksZ0NBQUE7RUFDQSxlQUFBO0FBSEo7O0FBTUE7RUFDSSxrQkFBQTtFQUNBLFlBQUE7QUFISjs7QUFNQTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0dBQUE7RUFDQSxtQkFBQTtBQUhKOztBQU1BO0VBQ0kscUJBQUE7RUFDQSxhQUFBO0VBQ0EsNEJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLG1CQUFBO0VBQ0EsMEJBQUE7QUFISjs7QUFNQTtFQUNJLHNEQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDSCwwQkFBQTtFQUNHLDJCQUFBO0VBQ0EscUNBQUE7QUFISjs7QUFNQTtFQUNJLHlCQUFBO0FBSEo7O0FBTUE7RUFDSSxtQkFBQTtFQUNBLGFBQUE7RUFDQSw0QkFBQTtFQUNBLGdCQUFBO0FBSEo7O0FBTUE7RUFDSSxrQkFBQTtFQUNBLG1CQUFBO0FBSEo7O0FBTUE7RUFDSSw4QkFBQTtFQUNBLGNBQUE7RUFFQSxhQUFBO0VBQ0EsZUFBQTtBQUpKOztBQU9BO0VBQ0kseUJBQUE7QUFKSiIsImZpbGUiOiJicmFuY2guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkYmFja2dyb3VuZC1jb2xvcjogI2Y4ZjlmYTtcclxuJHdpZHRoOiA0MDA7XHJcbiRjaXJjbGUtc2l6ZTogNTA7XHJcblxyXG5pb24tdG9vbGJhciB7XHJcbiAgICAtLWJhY2tncm91bmQ6ICMwNTFBMkQ7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxufVxyXG5cclxuLnRvb2xiYXItY29udGVudCB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjMDUxQTJEO1xyXG4gICAgaGVpZ2h0OiAzMzBweDtcclxuICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDUwcHg7XHJcbiAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogNTBweDtcclxufVxyXG5cclxuaW9uLWl0ZW0uc2VhcmNoIHtcclxuICAgIC0tYmFja2dyb3VuZDogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG4gICAgLS1jb2xvcjogI2ZmZmZmO1xyXG59XHJcblxyXG5pb24taXRlbTo6cGFydChuYXRpdmUpIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIGhlaWdodDogYXV0bztcclxufVxyXG5cclxuaW9uLWNhcmQge1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgbWluLWhlaWdodDogMTAwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogLTE1NnB4O1xyXG4gICAgYm94LXNoYWRvdzogcmdiYSgwLCAwLCAwLCAwLjA1KSAwcHggNnB4IDI0cHggMHB4LCByZ2JhKDAsIDAsIDAsIDAuMDgpIDBweCAwcHggMHB4IDFweCAhaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxufVxyXG5cclxuaW9uLWlucHV0LmN1c3RvbSB7XHJcbiAgICAtLWJhY2tncm91bmQ6ICMwMDAwMDA7XHJcbiAgICAtLWNvbG9yOiAjZmZmO1xyXG4gICAgLS1wbGFjZWhvbGRlci1jb2xvcjogI2ZmZmZmZjtcclxuICAgIC0tcGFkZGluZy1ib3R0b206IDEwcHg7XHJcbiAgICAtLXBhZGRpbmctZW5kOiAxMHB4O1xyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxMHB4O1xyXG4gICAgLS1wbGFjZWhvbGRlci1vcGFjaXR5OiAxO1xyXG4gICAgLS1wYWRkaW5nLXRvcDogMTBweDtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG59XHJcblxyXG5pb24tYnV0dG9uLm5leHQge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFBMkQsICMwMDRDOTcpO1xyXG4gICAgLS1jb2xvcjogI0ZGRkZGRjtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICAgIHdpZHRoOiA5MHB4O1xyXG4gICAgaGVpZ2h0OiAzMHB4O1xyXG5cdGZvbnQtc2l6ZTogMTJweCAhaW1wb3J0YW50O1xyXG4gICAgZm9udC13ZWlnaHQ6IDEwMCAhaW1wb3J0YW50O1xyXG4gICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnRpdGxlLWJyYW5jaHtcclxuICAgIGNvbG9yOiAjMDA0Qzk3ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5jaGlwLWN1c3RvbSB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjRkZGN0UzO1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAzNnB4ICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tdG9wOiAtNXB4O1xyXG59XHJcblxyXG5pb24tY2hpcC5jaGlwLW91dGxpbmUge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiB1bnNldDtcclxufVxyXG5cclxuLmNvbnRlbnQtYnJhbmNoIHtcclxuICAgIHdoaXRlLXNwYWNlOiBub3JtYWwgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgLy8gbWFyZ2luLWxlZnQ6IDI2cHggIWltcG9ydGFudDtcclxuICAgIG9wYWNpdHk6IDEwMCU7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbmlvbi1pdGVtOjpwYXJ0KG5hdGl2ZSkge1xyXG4gICAgcGFkZGluZy1pbmxpbmUtc3RhcnQ6MHB4O1xyXG59XHJcblxyXG4iXX0= */";
 
 /***/ }),
 
@@ -2371,7 +2307,7 @@ module.exports = "ion-item::part(native) {\n  height: auto !important;\n}\n/*# s
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "#map {\n  width: 100%;\n  height: 100vh;\n}\n\n.leaflet-popup-content p {\n  margin: 11px 0 !important;\n}\n\n.map_marker {\n  position: relative;\n  width: 34px;\n  height: 48px;\n}\n\n/*marker text span css*/\n\n.info_window_container {\n  padding: 1rem;\n  overflow: scroll;\n}\n\n.info_window_container p {\n  font-size: 1.4rem;\n}\n\n.info_window_container h4 {\n  text-transform: capitalize;\n  font-size: 1.8rem;\n  margin: 1rem 0rem;\n}\n\n.info_window_container h5,\n.info_window_container span {\n  font-size: 1rem;\n  font-weight: 700;\n  line-height: 1.3;\n  letter-spacing: 1.5px;\n  text-transform: uppercase;\n  margin: 0.2rem 0 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSx5QkFBQTtBQUNGOztBQUVBO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQUNGOztBQUVBLHVCQUFBOztBQUVBO0VBQ0UsYUFBQTtFQUNBLGdCQUFBO0FBQUY7O0FBRUU7RUFDRSxpQkFBQTtBQUFKOztBQUdFO0VBQ0UsMEJBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0FBREo7O0FBSUU7O0VBRUUsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLHlCQUFBO0VBQ0EsMkJBQUE7QUFGSiIsImZpbGUiOiJtYXAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFwIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMHZoO1xyXG59XHJcblxyXG4ubGVhZmxldC1wb3B1cC1jb250ZW50IHAge1xyXG4gIG1hcmdpbjogMTFweCAwICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5tYXBfbWFya2VyIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgd2lkdGg6IDM0cHg7XHJcbiAgaGVpZ2h0OiA0OHB4O1xyXG59XHJcblxyXG4vKm1hcmtlciB0ZXh0IHNwYW4gY3NzKi9cclxuXHJcbi5pbmZvX3dpbmRvd19jb250YWluZXIge1xyXG4gIHBhZGRpbmc6IDFyZW07XHJcbiAgb3ZlcmZsb3c6IHNjcm9sbDtcclxuXHJcbiAgcCB7XHJcbiAgICBmb250LXNpemU6IDEuNHJlbTtcclxuICB9XHJcblxyXG4gIGg0IHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgZm9udC1zaXplOiAxLjhyZW07XHJcbiAgICBtYXJnaW46IDFyZW0gMHJlbTtcclxuICB9XHJcblxyXG4gIGg1LFxyXG4gIHNwYW4ge1xyXG4gICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjM7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMS41cHg7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgbWFyZ2luOiAwLjJyZW0gMCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG4iXX0= */";
+module.exports = "#map {\n  width: 100%;\n  height: 100vh;\n}\n\nion-content {\n  --background: rgb(0 0 0 / 9%);\n}\n\n.leaflet-popup-content p {\n  margin: 11px 0 !important;\n}\n\n.map_marker {\n  position: relative;\n  width: 34px;\n  height: 48px;\n}\n\n.head-map {\n  z-index: -1;\n  position: inherit;\n  margin-top: 0px;\n}\n\nion-fab-button.back {\n  --background: #FFFEFE;\n  --color: #004C97;\n}\n\nion-fab-button.search {\n  --background: #FFFEFE;\n  --color: #000000;\n}\n\n/*marker text span css*/\n\n.info_window_container {\n  padding: 1rem;\n  overflow: scroll;\n}\n\n.info_window_container p {\n  font-size: 1.4rem;\n}\n\n.info_window_container h4 {\n  text-transform: capitalize;\n  font-size: 1.8rem;\n  margin: 1rem 0rem;\n}\n\n.info_window_container h5,\n.info_window_container span {\n  font-size: 1rem;\n  font-weight: 700;\n  line-height: 1.3;\n  letter-spacing: 1.5px;\n  text-transform: uppercase;\n  margin: 0.2rem 0 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSw2QkFBQTtBQUNGOztBQUVBO0VBQ0UseUJBQUE7QUFDRjs7QUFFQTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUFDRjs7QUFFQTtFQUNFLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUFDRjs7QUFFQTtFQUNFLHFCQUFBO0VBQ0EsZ0JBQUE7QUFDRjs7QUFFQTtFQUNFLHFCQUFBO0VBQ0EsZ0JBQUE7QUFDRjs7QUFFQSx1QkFBQTs7QUFFQTtFQUNFLGFBQUE7RUFDQSxnQkFBQTtBQUFGOztBQUVFO0VBQ0UsaUJBQUE7QUFBSjs7QUFHRTtFQUNFLDBCQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtBQURKOztBQUlFOztFQUVFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSx5QkFBQTtFQUNBLDJCQUFBO0FBRkoiLCJmaWxlIjoibWFwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21hcCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDB2aDtcclxufVxyXG5cclxuaW9uLWNvbnRlbnQge1xyXG4gIC0tYmFja2dyb3VuZDogcmdiKDAgMCAwIC8gOSUpO1xyXG59XHJcblxyXG4ubGVhZmxldC1wb3B1cC1jb250ZW50IHAge1xyXG4gIG1hcmdpbjogMTFweCAwICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5tYXBfbWFya2VyIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgd2lkdGg6IDM0cHg7XHJcbiAgaGVpZ2h0OiA0OHB4O1xyXG59XHJcblxyXG4uaGVhZC1tYXAge1xyXG4gIHotaW5kZXg6IC0xO1xyXG4gIHBvc2l0aW9uOiBpbmhlcml0O1xyXG4gIG1hcmdpbi10b3A6IDBweDtcclxufVxyXG5cclxuaW9uLWZhYi1idXR0b24uYmFja3tcclxuICAtLWJhY2tncm91bmQ6ICNGRkZFRkU7XHJcbiAgLS1jb2xvcjogIzAwNEM5NztcclxufVxyXG5cclxuaW9uLWZhYi1idXR0b24uc2VhcmNoe1xyXG4gIC0tYmFja2dyb3VuZDogI0ZGRkVGRTtcclxuICAtLWNvbG9yOiAjMDAwMDAwO1xyXG59XHJcblxyXG4vKm1hcmtlciB0ZXh0IHNwYW4gY3NzKi9cclxuXHJcbi5pbmZvX3dpbmRvd19jb250YWluZXIge1xyXG4gIHBhZGRpbmc6IDFyZW07XHJcbiAgb3ZlcmZsb3c6IHNjcm9sbDtcclxuXHJcbiAgcCB7XHJcbiAgICBmb250LXNpemU6IDEuNHJlbTtcclxuICB9XHJcblxyXG4gIGg0IHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgZm9udC1zaXplOiAxLjhyZW07XHJcbiAgICBtYXJnaW46IDFyZW0gMHJlbTtcclxuICB9XHJcblxyXG4gIGg1LFxyXG4gIHNwYW4ge1xyXG4gICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjM7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMS41cHg7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgbWFyZ2luOiAwLjJyZW0gMCAhaW1wb3J0YW50O1xyXG4gIH1cclxufSJdfQ== */";
 
 /***/ }),
 
@@ -2381,7 +2317,7 @@ module.exports = "#map {\n  width: 100%;\n  height: 100vh;\n}\n\n.leaflet-popup-
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".bookedSlot {\n  background-color: rgb(212, 212, 212) !important;\n  pointer-events: none;\n}\n\n.availableSlot {\n  background-color: #F8F9F9 !important;\n  cursor: pointer;\n  color: black !important;\n  font-weight: 900;\n}\n\n.selectedClass {\n  color: #f7f7f7 !important;\n  background-image: linear-gradient(to right, #FE6700, #FE8430, #FEA96E) !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpbWUtc2xvdHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFRSwrQ0FBQTtFQUNBLG9CQUFBO0FBQUY7O0FBSUE7RUFDRSxvQ0FBQTtFQUNBLGVBQUE7RUFDQSx1QkFBQTtFQUNBLGdCQUFBO0FBREY7O0FBSUE7RUFDRSx5QkFBQTtFQUNBLGlGQUFBO0FBREYiLCJmaWxlIjoidGltZS1zbG90cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib29rZWRTbG90IHtcclxuICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsICM5YzljOWMgLCNjNGM0YzQsI2Y1ZjVmNSkhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyMTIsIDIxMiwgMjEyKSAhaW1wb3J0YW50O1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gIC8vIG9wYWNpdHk6IC41ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5hdmFpbGFibGVTbG90IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjhGOUY5ICFpbXBvcnRhbnQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xyXG4gIGZvbnQtd2VpZ2h0OiA5MDA7XHJcbn1cclxuXHJcbi5zZWxlY3RlZENsYXNzIHtcclxuICBjb2xvcjogI2Y3ZjdmNyAhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgI0ZFNjcwMCwgI0ZFODQzMCwgI0ZFQTk2RSkgIWltcG9ydGFudDtcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxufSJdfQ== */";
+module.exports = ".time_slot_title {\n  padding-left: 0;\n}\n\n.header_title {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.selectedTime {\n  background-color: #F3F3F3;\n  padding: 10px;\n  font-size: 16px;\n  border: 2px solid #fff;\n  box-shadow: 0 3pt 15pt rgba(0, 0, 0, 0.031372549);\n  border-radius: 7px;\n}\n\n.bookedSlot {\n  pointer-events: none;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  display: flex;\n  justify-content: center;\n  background-color: #F3F3F3;\n  color: #B20000;\n  height: 40px;\n  margin: 7px 0;\n}\n\n.availableSlot {\n  background-color: #fff !important;\n  cursor: pointer;\n  color: black !important;\n  font-weight: 900;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  display: flex;\n  justify-content: center;\n  box-shadow: 0pt 3pt 10pt rgba(0, 0, 0, 0.0509803922);\n  height: 40px;\n  margin: 7px 0;\n}\n\n.selectedClass {\n  pointer-events: none;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  display: flex;\n  justify-content: center;\n  height: 40px;\n  margin: 7px 0;\n  color: #f7f7f7 !important;\n  background-image: linear-gradient(91deg, #051A2D, #004C97) !important;\n  color: #fff;\n}\n\n.note_sec {\n  display: flex;\n  flex-direction: column;\n  margin: 16px 0;\n}\n\n.note_sec ion-text {\n  font-size: 12px;\n}\n\n.btn_content {\n  display: flex;\n  justify-content: center;\n}\n\nion-footer .footer_btn {\n  width: 100%;\n  height: 40px;\n  text-align: center;\n  --background: linear-gradient(91deg, #051A2D, #004C97);\n  text-transform: capitalize;\n}\n\nion-footer .footer_btn.cancel {\n  --background: #fff;\n  color: #111;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpbWUtc2xvdHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtBQUVGOztBQUNBO0VBQ0UseUJBQUE7RUFDQSxhQUFBO0VBQ0EsZUFBQTtFQUNBLHNCQUFBO0VBQ0EsaURBQUE7RUFDQSxrQkFBQTtBQUVGOztBQUNBO0VBQ0Usb0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7QUFFRjs7QUFDQTtFQUNFLGlDQUFBO0VBQ0EsZUFBQTtFQUNBLHVCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0Esb0RBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtBQUVGOztBQUNBO0VBQ0Usb0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7RUFDQSx5QkFBQTtFQUNBLHFFQUFBO0VBQ0EsV0FBQTtBQUVGOztBQUNBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtBQUVGOztBQURFO0VBQ0UsZUFBQTtBQUdKOztBQUNBO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0FBRUY7O0FBRUU7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0Esc0RBQUE7RUFDQSwwQkFBQTtBQUNKOztBQUFJO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0FBRU4iLCJmaWxlIjoidGltZS1zbG90cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50aW1lX3Nsb3RfdGl0bGUge1xyXG4gIHBhZGRpbmctbGVmdDogMDtcclxufVxyXG4uaGVhZGVyX3RpdGxlIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG4uc2VsZWN0ZWRUaW1lIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjNGM0YzO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkICNmZmY7XHJcbiAgYm94LXNoYWRvdzogMCAzcHQgMTVwdCAjMDAwMDAwMDg7XHJcbiAgYm9yZGVyLXJhZGl1czogN3B4O1xyXG59XHJcblxyXG4uYm9va2VkU2xvdCB7XHJcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNGM0YzRjM7XHJcbiAgY29sb3I6ICNCMjAwMDA7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIG1hcmdpbjogN3B4IDA7XHJcbn1cclxuXHJcbi5hdmFpbGFibGVTbG90IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmICFpbXBvcnRhbnQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xyXG4gIGZvbnQtd2VpZ2h0OiA5MDA7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGJveC1zaGFkb3c6IDBwdCAzcHQgMTBwdCAjMDAwMDAwMEQ7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIG1hcmdpbjogN3B4IDA7XHJcbn1cclxuXHJcbi5zZWxlY3RlZENsYXNzIHtcclxuICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICB3aWR0aDogMTAwJTtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIG1hcmdpbjogN3B4IDA7XHJcbiAgY29sb3I6ICNmN2Y3ZjcgIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTFkZWcsICMwNTFBMkQsICMwMDRDOTcpICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICNmZmY7XHJcbn1cclxuXHJcbi5ub3RlX3NlYyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIG1hcmdpbjogMTZweCAwO1xyXG4gIGlvbi10ZXh0IHtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICB9XHJcbn1cclxuXHJcbi5idG5fY29udGVudCB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuaW9uLWZvb3RlciB7XHJcbiAgLmZvb3Rlcl9idG4ge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MWRlZywgIzA1MUEyRCwgIzAwNEM5Nyk7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICAgICYuY2FuY2VsIHtcclxuICAgICAgLS1iYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgICBjb2xvcjogIzExMTtcclxuICAgIH1cclxuICB9XHJcblxyXG59XHJcbiJdfQ== */";
 
 /***/ }),
 
@@ -2391,7 +2327,7 @@ module.exports = ".bookedSlot {\n  background-color: rgb(212, 212, 212) !importa
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Nearest Branch</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"presentMap()\">\r\n        <ion-icon slot=\"start\" name=\"map-outline\"></ion-icon> MAP\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ng-container *ngIf=\"branchData.length != 0; else showNoBranch\">\r\n    <ion-list>\r\n    <ion-item *ngFor=\"let branch of branchData; let i=index\">\r\n      <ion-avatar slot=\"start\">\r\n        <app-avatar-photo [name]=\"branch?.branchName\"></app-avatar-photo> \r\n      </ion-avatar>\r\n      <ion-label class=\"ion-text-wrap\">\r\n        <ion-text color=\"primary\">\r\n          <h3>{{ branch?.branchName }}</h3>\r\n        </ion-text>\r\n        <p><small>{{ branch?.address }}</small></p>\r\n        <p><small>Number of Crowds : {{ branch?.tokenCount }}</small></p>\r\n      </ion-label>\r\n      <ion-button fill=\"outline\" slot=\"end\" (click)=\"dismiss(branch)\">SELECT</ion-button>\r\n    </ion-item>\r\n  </ion-list>\r\n  </ng-container>\r\n  <ng-template #showNoBranch>\r\n    <p>No Branch Available!</p>\r\n  </ng-template>\r\n\r\n</ion-content>";
+module.exports = "<ion-content>\r\n  <div class=\"toolbar-content\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button (click)=\"close()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n      <ion-title>Nearest Branch</ion-title>\r\n      <ion-buttons slot=\"end\">\r\n        <ion-button fill=\"clear\" style=\" text-transform: capitalize !important;\" (click)=\"presentMap()\">\r\n          <ion-icon name=\"map\"></ion-icon> &nbsp; Map\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"ion-padding my-3\">\r\n      <ion-item fill=\"outline\" class=\"search\">\r\n        <ion-input type=\"search\" placeholder=\"search\" class=\"custom\" [(ngModel)]=\"term\"></ion-input>\r\n        <ion-icon name=\"search\" slot=\"end\" style=\"color:#ffffff\"></ion-icon>\r\n      </ion-item>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <ion-card>\r\n    <div class=\"my-2\">\r\n      <ng-container *ngIf=\"branchData.length != 0; else showNoBranch\">\r\n      <ion-item *ngFor=\"let branch of branchData | filter:term; let i=index\">\r\n        <ion-label class=\"mx-3\">\r\n          <div class=\"row justify-content-between\">\r\n            <div class=\"col-8\">\r\n              <h2> \r\n                <ion-icon slot=\"icon-only\" src=\"assets/icon/dot.svg\"></ion-icon> \r\n                <span class=\"mx-2 title-branch\">{{ branch?.branchName }}</span>\r\n              </h2>\r\n            </div>\r\n            <div class=\"col-4 align-self-end\">\r\n              <ion-button shape=\"round\" size=\"small\" class=\"next\"  (click)=\"dismiss(branch)\">Select</ion-button>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <ion-chip class=\"chip-custom\" [outline]=\"true\">\r\n              <span style=\"color:#D68C00;opacity: 51%;\">Current Crowds : </span>\r\n              <span class=\"mx-2\" style=\"color:#D68C00\">{{ branch?.tokenCount }}</span></ion-chip>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-10\">\r\n              <p class=\"content-branch mx-4\">{{ branch?.address }}</p>\r\n            </div>\r\n          </div>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ng-container>\r\n    <ng-template #showNoBranch>\r\n      <p>No Branch Available!</p>\r\n    </ng-template>\r\n    </div>\r\n  </ion-card>\r\n\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2401,7 +2337,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"sta
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title class=\"text-center\">Map</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div #mapContainer id=\"map\"></div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <div class=\"row justify-content-between head-map\">\r\n    <div class=\"col-3\">\r\n      <ion-fab style=\"left:30px;top:30px;\">\r\n        <ion-fab-button (click)=\"close()\" class=\"back\">\r\n          <ion-icon name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-fab-button>\r\n      </ion-fab>\r\n    </div>\r\n\r\n    <div class=\"col-3\">\r\n      <ion-fab style=\"top:30px;right:30px;\">\r\n        <ion-fab-button class=\"search\">\r\n          <ion-icon name=\"search\"></ion-icon>\r\n        </ion-fab-button>\r\n      </ion-fab>\r\n    </div>\r\n  </div>\r\n\r\n  <div #mapContainer id=\"map\"></div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2411,7 +2347,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title class=\"text
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"secondary\">\r\n      <ion-button fill=\"clear\" (click)=\"close()\">\r\n        <ion-icon slot=\"start\" name=\"close\"></ion-icon>\r\n        Close\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"text-center\" size=\"small\">Available Slots</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button fill=\"clear\" size=\"small\" *ngIf=\"selected != null\" (click)=\"done()\">\r\n        DONE\r\n        <ion-icon slot=\"end\" name=\"checkmark-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <!-- <ion-button (click)=\"close()\">close</ion-button> -->\r\n\r\n  <!-- <ion-label style=\"padding-left: 5%;\">Time Slot*</ion-label> -->\r\n\r\n  <!-- [outline]=\"selected===slot ? 'true':'false'\" -->\r\n  <!-- <ion-grid>\r\n    <ion-row class=\"ion-justify-content-evenly\">\r\n      <ion-col size=\"4\"*ngFor=\"let slot of TimeSolts;let i=index;\" >\r\n          <ion-chip [id]=\"i+1\" [color]=\"slot.booked==slot.booked ? 'primary':'' ||slot.available==slot.available ? 'primary':''\" >\r\n              <ion-label (click)=\"onSelectiongTimeSlots($event,slot.time)\">{{format24HrsTo12Hrs(slot.time)}}</ion-label>\r\n              <ion-icon name=\"checkmark-outline\" *ngIf=\"selected==slot.time\"></ion-icon>\r\n              \r\n            \r\n            </ion-chip>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>   -->\r\n  <!-- <ion-grid>\r\n      <ion-row class=\"ion-justify-content-evenly\">\r\n        <ion-col size=\"4\"*ngFor=\"let slot of TimeSolts;let i=index;\" >\r\n            <ion-chip [id]=\"i+1\" [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\">\r\n                <ion-label (click)=\"onSelectiongTimeSlots($event,slot.time)\" [color]=\"selected==slot.time ? 'primary':''\">{{format24HrsTo12Hrs(slot.time)}}</ion-label>\r\n                <ion-icon name=\"checkmark-outline\" *ngIf=\"selected==slot.time\"></ion-icon>\r\n                \r\n              \r\n              </ion-chip>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid> -->\r\n\r\n\r\n  <!-- new  -->\r\n  <ion-progress-bar type=\"indeterminate\" *ngIf=\"isLoading\"></ion-progress-bar>\r\n\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-3\" *ngFor=\"let slot of TimeSolts;let i=index\">\r\n      <ion-chip outline\r\n        [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\"\r\n        (click)=\"onSelectTime1(slot.time,i,$event)\">\r\n        <ion-label style=\"font-size: 8px;\">\r\n          {{format24HrsTo12Hrs(slot.time)}}\r\n        </ion-label>\r\n        <ion-icon name=\"checkmark-outline\" *ngIf=\"selected===slot\"></ion-icon>\r\n      </ion-chip>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- <input type=\"text\" hidden > -->\r\n\r\n</ion-content>\r\n\r\n<ion-footer *ngIf=\"selected != null\">\r\n  <ion-toolbar>\r\n    <ion-title>Selected Slot: {{ selected }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" style=\"color:#004C97\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"time_slot_title\">\r\n      <ion-text class=\"header_title\">\r\n        <div>Select Time</div>\r\n        <button class=\"selectedTime\" *ngIf=\"selected != null\">{{ selected }}</button>\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <ion-progress-bar type=\"indeterminate\" *ngIf=\"isLoading\"></ion-progress-bar>\r\n  <div class=\"row\">\r\n    <div class=\"col-4 px-2\" *ngFor=\"let slot of TimeSolts;let i=index\">\r\n      <ion-chip\r\n        [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\"\r\n        (click)=\"onSelectTime1(slot.time,i,$event)\">\r\n        <ion-label style=\"font-size: 16px; white-space: nowrap;\"> \r\n          {{format24HrsTo12Hrs(slot.time)}}\r\n        </ion-label>\r\n      </ion-chip>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"note_sec\">\r\n    <div class=\"text-primary\">Note:</div>\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <ion-text>Available</ion-text>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <ion-text>Selected</ion-text>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <ion-text>Already Booked</ion-text>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-footer>\r\n  <div class=\"row p-3\">\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" [disabled]=\"!selected\" class=\"footer_btn\" (click)=\"done()\">Submit</ion-button>\r\n    </div>\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" class=\"footer_btn cancel\" (click)=\"close()\">Back</ion-button>\r\n    </div>\r\n  </div>\r\n</ion-footer>\r\n";
 
 /***/ })
 

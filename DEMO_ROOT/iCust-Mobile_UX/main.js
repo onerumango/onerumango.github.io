@@ -201,20 +201,6 @@ const routes = [
         path: 'cashdeposit',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_branch_branch_component_ts-src_app_components_time-slots_time-slot-3e7d20"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-src_app_pages_currencyconverter_currencyconverter_page_ts"), __webpack_require__.e("default-src_app_pages_v2_forex-cash-v2_forex-cash-v2_page_ts"), __webpack_require__.e("src_app_pages_v2_cash-deposit-v2_cash-deposit-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/cash-deposit-v2/cash-deposit-v2.module */ 72251)).then(m => m.CashDepositV2PageModule)
     }
-    // {
-    //   path: 'cashdeposit',
-    //   loadChildren: () =>
-    //     import('./pages/cashdeposit/cashdeposit.module').then(
-    //       (m) => m.CashdepositPageModule
-    //     ),
-    // },
-    // {
-    //   path: 'cashwithdrawal',
-    //   loadChildren: () =>
-    //     import('./pages/cashwithdrawal/cashwithdrawal.module').then(
-    //       (m) => m.CashwithdrawalPageModule
-    //     ),
-    // },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -423,6 +409,10 @@ let AppComponent = class AppComponent {
         }, (error) => {
             console.log(error);
         });
+    }
+    goToBranch() {
+        this.menu.close();
+        this.router.navigate(['branch-list']);
     }
     goToExchangerate() {
         this.menu.close();
@@ -694,6 +684,60 @@ AutoFocusDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
+/***/ 88544:
+/*!*************************************************!*\
+  !*** ./src/app/directives/decimal.directive.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TwoDigitDecimaNumberDirective": () => (/* binding */ TwoDigitDecimaNumberDirective)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let TwoDigitDecimaNumberDirective = class TwoDigitDecimaNumberDirective {
+    constructor(el) {
+        this.el = el;
+        // Allow decimal numbers and negative values
+        this.regex = new RegExp(/^\d*\.?\d{0,2}$/g);
+        // Allow key codes for special events. Reflect :
+        // Backspace, tab, end, home
+        this.specialKeys = ['Backspace', 'Tab', 'End', 'Home', 'ArrowLeft', 'ArrowRight', 'Del', 'Delete'];
+    }
+    onKeyDown(event) {
+        console.log(this.el.nativeElement.value);
+        // Allow Backspace, tab, end, and home keys
+        if (this.specialKeys.indexOf(event.key) !== -1) {
+            return;
+        }
+        let current = this.el.nativeElement.value;
+        const position = this.el.nativeElement.selectionStart;
+        const next = [current.slice(0, position), event.key == 'Decimal' ? '.' : event.key, current.slice(position)].join('');
+        if (next && !String(next).match(this.regex)) {
+            event.preventDefault();
+        }
+    }
+};
+TwoDigitDecimaNumberDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef }
+];
+TwoDigitDecimaNumberDirective.propDecorators = {
+    onKeyDown: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['keydown', ['$event'],] }]
+};
+TwoDigitDecimaNumberDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive)({
+        selector: '[appTwoDigitDecimaNumber]'
+    })
+], TwoDigitDecimaNumberDirective);
+
+
+
+/***/ }),
+
 /***/ 27589:
 /*!************************************************!*\
   !*** ./src/app/directives/directive.module.ts ***!
@@ -705,28 +749,105 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DirectiveModule": () => (/* binding */ DirectiveModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _auto_focus_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auto-focus.directive */ 95701);
+/* harmony import */ var _separator_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./separator.directive */ 80536);
+/* harmony import */ var _decimal_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./decimal.directive */ 88544);
+
+
 
 
 
 
 const directives = [
-    _auto_focus_directive__WEBPACK_IMPORTED_MODULE_0__.AutoFocusDirective
+    _auto_focus_directive__WEBPACK_IMPORTED_MODULE_0__.AutoFocusDirective,
+    _separator_directive__WEBPACK_IMPORTED_MODULE_1__.SeparatorDirective,
+    _decimal_directive__WEBPACK_IMPORTED_MODULE_2__.TwoDigitDecimaNumberDirective
 ];
 let DirectiveModule = class DirectiveModule {
 };
-DirectiveModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgModule)({
+DirectiveModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
         declarations: [directives],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule
+            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule
         ],
-        exports: directives
+        exports: directives,
+        providers: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CurrencyPipe,
+            _angular_common__WEBPACK_IMPORTED_MODULE_5__.DecimalPipe,
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_4__.DEFAULT_CURRENCY_CODE, useValue: 'INR' }
+        ]
     })
 ], DirectiveModule);
+
+
+
+/***/ }),
+
+/***/ 80536:
+/*!***************************************************!*\
+  !*** ./src/app/directives/separator.directive.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SeparatorDirective": () => (/* binding */ SeparatorDirective)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let SeparatorDirective = class SeparatorDirective {
+    constructor(_inputEl) {
+        this._inputEl = _inputEl;
+    }
+    onInput(event) {
+        if (this._inputEl.nativeElement.value === '-')
+            return;
+        console.log("commasRemoved before", this._inputEl.nativeElement.value);
+        let commasRemoved = this._inputEl.nativeElement.value.replace(/,/g, '');
+        console.log("commasRemoved after", commasRemoved);
+        let toInt;
+        let toLocale;
+        console.log("check one?", commasRemoved.split('.'));
+        if (commasRemoved.split('.').length > 1) {
+            let decimal = isNaN(parseInt(commasRemoved.split('.')[1])) ? '' : parseInt(commasRemoved.split('.')[1]);
+            toInt = parseInt(commasRemoved);
+            console.log("decimal", decimal);
+            console.log("toInt", toInt);
+            toLocale = toInt.toLocaleString('en-IN') + '.' + decimal;
+            console.log("toLocale", toLocale);
+        }
+        else {
+            toInt = parseInt(commasRemoved);
+            toLocale = toInt.toLocaleString('en-IN');
+            console.log("toInt else", toInt);
+            console.log("toLocale else", toLocale);
+        }
+        if (toLocale === 'NaN') {
+            this._inputEl.nativeElement.value = '';
+        }
+        else {
+            this._inputEl.nativeElement.value = toLocale;
+        }
+    }
+};
+SeparatorDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef }
+];
+SeparatorDirective.propDecorators = {
+    onInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['input', ['$event'],] }]
+};
+SeparatorDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive)({
+        selector: 'input[separator]',
+    })
+], SeparatorDirective);
 
 
 
@@ -1192,7 +1313,7 @@ let DataService = class DataService {
         return '#456EFE';
     }
     formatCurrency(amount, currency) {
-        if (amount != null && currency != null) {
+        if (amount != null && currency != null && currency.length > 2) {
             console.log("to check?", amount, currency);
             return new Intl.NumberFormat('en-IN', {
                 style: 'currency',
@@ -1205,6 +1326,199 @@ let DataService = class DataService {
             style: 'currency',
             currency,
         });
+    }
+    getCurrencySymbol(code) {
+        let data = {
+            AED: 'د.إ',
+            AFN: '؋',
+            ALL: 'L',
+            AMD: '֏',
+            ANG: 'ƒ',
+            AOA: 'Kz',
+            ARS: '$',
+            AUD: '$',
+            AWG: 'ƒ',
+            AZN: '₼',
+            BAM: 'KM',
+            BBD: '$',
+            BDT: '৳',
+            BGN: 'лв',
+            BHD: '.د.ب',
+            BIF: 'FBu',
+            BMD: '$',
+            BND: '$',
+            BOB: '$b',
+            BOV: 'BOV',
+            BRL: 'R$',
+            BSD: '$',
+            BTC: '₿',
+            BTN: 'Nu.',
+            BWP: 'P',
+            BYN: 'Br',
+            BYR: 'Br',
+            BZD: 'BZ$',
+            CAD: '$',
+            CDF: 'FC',
+            CHE: 'CHE',
+            CHF: 'CHF',
+            CHW: 'CHW',
+            CLF: 'CLF',
+            CLP: '$',
+            CNH: '¥',
+            CNY: '¥',
+            COP: '$',
+            COU: 'COU',
+            CRC: '₡',
+            CUC: '$',
+            CUP: '₱',
+            CVE: '$',
+            CZK: 'Kč',
+            DJF: 'Fdj',
+            DKK: 'kr',
+            DOP: 'RD$',
+            DZD: 'دج',
+            EEK: 'kr',
+            EGP: '£',
+            ERN: 'Nfk',
+            ETB: 'Br',
+            ETH: 'Ξ',
+            EUR: '€',
+            FJD: '$',
+            FKP: '£',
+            GBP: '£',
+            GEL: '₾',
+            GGP: '£',
+            GHC: '₵',
+            GHS: 'GH₵',
+            GIP: '£',
+            GMD: 'D',
+            GNF: 'FG',
+            GTQ: 'Q',
+            GYD: '$',
+            HKD: '$',
+            HNL: 'L',
+            HRK: 'kn',
+            HTG: 'G',
+            HUF: 'Ft',
+            IDR: 'Rp',
+            ILS: '₪',
+            IMP: '£',
+            INR: '₹',
+            IQD: 'ع.د',
+            IRR: '﷼',
+            ISK: 'kr',
+            JEP: '£',
+            JMD: 'J$',
+            JOD: 'JD',
+            JPY: '¥',
+            KES: 'KSh',
+            KGS: 'лв',
+            KHR: '៛',
+            KMF: 'CF',
+            KPW: '₩',
+            KRW: '₩',
+            KWD: 'KD',
+            KYD: '$',
+            KZT: '₸',
+            LAK: '₭',
+            LBP: '£',
+            LKR: '₨',
+            LRD: '$',
+            LSL: 'M',
+            LTC: 'Ł',
+            LTL: 'Lt',
+            LVL: 'Ls',
+            LYD: 'LD',
+            MAD: 'MAD',
+            MDL: 'lei',
+            MGA: 'Ar',
+            MKD: 'ден',
+            MMK: 'K',
+            MNT: '₮',
+            MOP: 'MOP$',
+            MRO: 'UM',
+            MRU: 'UM',
+            MUR: '₨',
+            MVR: 'Rf',
+            MWK: 'MK',
+            MXN: '$',
+            MXV: 'MXV',
+            MYR: 'RM',
+            MZN: 'MT',
+            NAD: '$',
+            NGN: '₦',
+            NIO: 'C$',
+            NOK: 'kr',
+            NPR: '₨',
+            NZD: '$',
+            OMR: '﷼',
+            PAB: 'B/.',
+            PEN: 'S/.',
+            PGK: 'K',
+            PHP: '₱',
+            PKR: '₨',
+            PLN: 'zł',
+            PYG: 'Gs',
+            QAR: '﷼',
+            RMB: '￥',
+            RON: 'lei',
+            RSD: 'Дин.',
+            RUB: '₽',
+            RWF: 'R₣',
+            SAR: '﷼',
+            SBD: '$',
+            SCR: '₨',
+            SDG: 'ج.س.',
+            SEK: 'kr',
+            SGD: 'S$',
+            SHP: '£',
+            SLL: 'Le',
+            SOS: 'S',
+            SRD: '$',
+            SSP: '£',
+            STD: 'Db',
+            STN: 'Db',
+            SVC: '$',
+            SYP: '£',
+            SZL: 'E',
+            THB: '฿',
+            TJS: 'SM',
+            TMT: 'T',
+            TND: 'د.ت',
+            TOP: 'T$',
+            TRL: '₤',
+            TRY: '₺',
+            TTD: 'TT$',
+            TVD: '$',
+            TWD: 'NT$',
+            TZS: 'TSh',
+            UAH: '₴',
+            UGX: 'USh',
+            USD: '$',
+            UYI: 'UYI',
+            UYU: '$U',
+            UYW: 'UYW',
+            UZS: 'лв',
+            VEF: 'Bs',
+            VES: 'Bs.S',
+            VND: '₫',
+            VUV: 'VT',
+            WST: 'WS$',
+            XAF: 'FCFA',
+            XBT: 'Ƀ',
+            XCD: '$',
+            XOF: 'CFA',
+            XPF: '₣',
+            XSU: 'Sucre',
+            XUA: 'XUA',
+            YER: '﷼',
+            ZAR: 'R',
+            ZMW: 'ZK',
+            ZWD: 'Z$',
+            ZWL: '$'
+        };
+        console.log(data[code]);
+        return data[code];
     }
 };
 DataService.ctorParameters = () => [];
@@ -1399,7 +1713,6 @@ const environment = {
     // BASE_URL: 'http://192.168.0.14:8081/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:8071/Icust-Digital-Banking',
-    // BASE_URL: 'http://192.168.0.14:add-prod/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:8071/Icust-Digital-Banking',
     BASE_URL: 'http://192.168.0.14:8091/Icust-Digital-Banking',
     // BASE_URL: 'http://192.168.0.14:9003/Icust-Digital-Banking',
@@ -1710,7 +2023,7 @@ module.exports = ".box {\n  width: 60px;\n  height: 60px;\n  background: #FFEDED
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.21</h6>\r\n          <p class=\"app-font version-color\">Build 21</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.22</h6>\r\n          <p class=\"app-font version-color\">Build 22</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 

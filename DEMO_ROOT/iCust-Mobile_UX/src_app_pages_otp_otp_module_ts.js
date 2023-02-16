@@ -252,7 +252,7 @@ let OtpPage = class OtpPage {
                 }
             }
             else {
-                this.router.navigateByUrl('/login');
+                // this.router.navigateByUrl('/login');
                 this.openToast(otpResp === null || otpResp === void 0 ? void 0 : otpResp.message);
             }
             this.isLoading = false;

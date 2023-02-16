@@ -178,7 +178,7 @@ let NewPasswordchangePage = class NewPasswordchangePage {
                 this.confirmPassword.patchValue('');
             }
             else {
-                this.router.navigate(['/login'], { replaceUrl: true });
+                // this.router.navigate(['/login'], { replaceUrl: true });
                 this.openToast(resp === null || resp === void 0 ? void 0 : resp.message);
             }
         }, (err) => {
@@ -214,11 +214,11 @@ let NewPasswordchangePage = class NewPasswordchangePage {
                 this.confirmPassword.patchValue('');
             }
             else {
-                this.router.navigate(['/login'], { replaceUrl: true });
+                // this.router.navigate(['/login'], { replaceUrl: true });
                 this.openToast(res === null || res === void 0 ? void 0 : res.message);
             }
-        }, (error) => {
-            this.openToast('Unable to set password');
+        }, (err) => {
+            this.openToast(err === null || err === void 0 ? void 0 : err.error);
         });
     }
 };

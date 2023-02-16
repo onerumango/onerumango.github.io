@@ -174,44 +174,26 @@ let MpinPage = class MpinPage {
                 this.openToast('Enter a valid mPin');
                 return;
             }
-            console.log(this.mpin.value);
             this.mpinobj.mpin = this.mpin.value;
             this.mpinobj.deviceId = this.deviceUUID;
             this.api.authenticateMpin(this.mpinobj).subscribe((resp) => {
-                console.log('validate password-- ', resp);
-                resp = resp.body;
-                if (resp != null) {
-                    if (resp.custStatus === 'APPROVED') {
-                        resp.custAccount = resp.custAccount.filter((card) => card.status === 'APPROVED');
-                        const cards = JSON.stringify(resp.custAccount);
-                        localStorage.setItem('cardData', cards);
-                        localStorage.setItem('customerPhonenum', resp.phoneNumber);
-                        sessionStorage.setItem('customer_id', resp.cifNumber);
-                        localStorage.setItem('firstName', resp === null || resp === void 0 ? void 0 : resp.firstName);
-                        localStorage.setItem('lastName', resp === null || resp === void 0 ? void 0 : resp.lastName);
-                        localStorage.setItem('customer_details', JSON.stringify(resp));
-                        this.openToast('Login Successful');
-                        this.router.navigate(['dashboard'], { replaceUrl: true });
-                        this.isLoading = false;
-                    }
-                    else {
-                        this.openToast('Customer Id or Account Status is not approved');
-                        this.isLoading = false;
-                    }
+                if (resp.status == 200) {
+                    const cards = JSON.stringify(resp.custAccount);
+                    localStorage.setItem('cardData', cards);
+                    localStorage.setItem('customerPhonenum', resp.phoneNumber);
+                    sessionStorage.setItem('customer_id', resp.cifNumber);
+                    localStorage.setItem('firstName', resp === null || resp === void 0 ? void 0 : resp.firstName);
+                    localStorage.setItem('lastName', resp === null || resp === void 0 ? void 0 : resp.lastName);
+                    localStorage.setItem('customer_details', JSON.stringify(resp));
+                    this.openToast('Login Successful');
+                    this.router.navigate(['dashboard'], { replaceUrl: true });
+                    this.isLoading = false;
                 }
-                // if (data.mpin) {
-                //   console.log("data")
-                //   const navigationExtras: NavigationExtras = {
-                //     queryParams: {
-                //       'screenDetails': 'mPIN Password Changed!',
-                //       'screenDescription':'Your mPIN password has been changed successfully'
-                //     },
-                //   };
-                // this.api.sendNavParam(navigationExtras);
-                this.router.navigate(['dashboard']);
-                // }
-            }, (error) => {
-                console.log('Error :: ', error);
+                else {
+                    this.openToast(resp === null || resp === void 0 ? void 0 : resp.message);
+                    this.isLoading = false;
+                }
+            }, (err) => {
                 this.openToast('User doesn\'t exist with current mPin');
             });
         });

@@ -73,11 +73,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ComponentsModule": () => (/* binding */ ComponentsModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./footer/footer.component */ 64662);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pipes/pipes.module */ 35503);
 /* harmony import */ var _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./avatar-photo/avatar-photo.component */ 77964);
 /* harmony import */ var _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./branch/branch.component */ 6156);
@@ -88,7 +88,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../shared/shared-material.module */ 84390);
 /* harmony import */ var _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./alert-internet/alert-internet.component */ 82014);
 /* harmony import */ var _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./denomination-slide/denomination-slide.component */ 9340);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var ng2_search_filter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ng2-search-filter */ 9991);
+/* harmony import */ var _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./transaction-date/transaction-date.component */ 19693);
+
+
 
 
 
@@ -107,8 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let ComponentsModule = class ComponentsModule {
 };
-ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.NgModule)({
+ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_14__.NgModule)({
         declarations: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__.BranchComponent,
             _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_2__.AvatarPhotoComponent,
@@ -118,7 +122,8 @@ ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,
             _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent,
             _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent,
-            _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__.DenominationSlideComponent
+            _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__.DenominationSlideComponent,
+            _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_12__.TransactionDateComponent
         ],
         exports: [
             _branch_branch_component__WEBPACK_IMPORTED_MODULE_3__.BranchComponent,
@@ -129,15 +134,17 @@ ComponentsModule = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,
             _download_download_component__WEBPACK_IMPORTED_MODULE_7__.DownloadComponent,
             _alert_internet_alert_internet_component__WEBPACK_IMPORTED_MODULE_9__.AlertInternetComponent,
-            _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__.DenominationSlideComponent
+            _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_10__.DenominationSlideComponent,
+            _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_12__.TransactionDateComponent
         ],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_13__.CommonModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.IonicModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormsModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_15__.CommonModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_16__.IonicModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_17__.FormsModule,
             _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_1__.PipesModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_15__.ReactiveFormsModule,
-            _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__.SharedMaterialModule
+            _angular_forms__WEBPACK_IMPORTED_MODULE_17__.ReactiveFormsModule,
+            _shared_shared_material_module__WEBPACK_IMPORTED_MODULE_8__.SharedMaterialModule,
+            ng2_search_filter__WEBPACK_IMPORTED_MODULE_11__.Ng2SearchPipeModule
         ],
     })
 ], ComponentsModule);
@@ -492,6 +499,96 @@ SearchComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
+/***/ 19693:
+/*!***************************************************************************!*\
+  !*** ./src/app/components/transaction-date/transaction-date.component.ts ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TransactionDateComponent": () => (/* binding */ TransactionDateComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _transaction_date_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./transaction-date.component.html?ngResource */ 69798);
+/* harmony import */ var _transaction_date_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./transaction-date.component.scss?ngResource */ 27320);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/core */ 88133);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
+
+
+
+
+
+let TransactionDateComponent = class TransactionDateComponent {
+    constructor(modalCtr, datepipe) {
+        this.modalCtr = modalCtr;
+        this.datepipe = datepipe;
+        this.minDate = new Date();
+        this.maxDate = new Date(2050, 11, 31);
+        this.disableWeekendsFilter = (d) => {
+            let day = new Date(d);
+            return (day.getDay() !== 0 && day.getDay() !== 6);
+        };
+    }
+    ngOnInit() {
+        console.log(this.date);
+        this.selected = this.date ? this.date : new Date();
+        console.log(this.selected);
+    }
+    disableFuture() {
+        return (date) => {
+            let day = new Date(date);
+            console.log(day);
+            return (day.getDay() !== 0 && day.getDay() !== 6 ? '' : 'special-date');
+        };
+    }
+    close() {
+        this.modalCtr.dismiss();
+    }
+    done() {
+        const convertedDate = this.datepipe.transform(this.selected, 'yyyy-MM-dd');
+        this.modalCtr.dismiss(convertedDate);
+    }
+};
+TransactionDateComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.ModalController },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_3__.DatePipe }
+];
+TransactionDateComponent.propDecorators = {
+    date: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Input }]
+};
+TransactionDateComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+        selector: 'app-transaction-date',
+        template: _transaction_date_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        providers: [
+            {
+                provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_6__.MAT_DATE_FORMATS,
+                useValue: {
+                    parse: {
+                        dateInput: ['l', 'LL'],
+                    },
+                    display: {
+                        dateInput: 'L',
+                        monthYearLabel: 'MMMM YYYY',
+                        dateA11yLabel: 'LL',
+                        monthYearA11yLabel: 'MMMM YYYY',
+                    },
+                },
+            },
+        ],
+        styles: [_transaction_date_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], TransactionDateComponent);
+
+
+
+/***/ }),
+
 /***/ 18077:
 /*!****************************************!*\
   !*** ./src/app/pipes/currency.pipe.ts ***!
@@ -547,7 +644,10 @@ let PipesModule = class PipesModule {
 };
 PipesModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        declarations: [_currency_pipe__WEBPACK_IMPORTED_MODULE_0__.CurrencyPipe, _search_filter_pipe__WEBPACK_IMPORTED_MODULE_1__.SearchFilterPipe],
+        declarations: [
+            _currency_pipe__WEBPACK_IMPORTED_MODULE_0__.CurrencyPipe,
+            _search_filter_pipe__WEBPACK_IMPORTED_MODULE_1__.SearchFilterPipe
+        ],
         exports: [
             _currency_pipe__WEBPACK_IMPORTED_MODULE_0__.CurrencyPipe,
             _search_filter_pipe__WEBPACK_IMPORTED_MODULE_1__.SearchFilterPipe
@@ -593,6 +693,151 @@ SearchFilterPipe = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
         name: 'searchFilter'
     })
 ], SearchFilterPipe);
+
+
+
+/***/ }),
+
+/***/ 9991:
+/*!**************************************************************************!*\
+  !*** ./node_modules/ng2-search-filter/__ivy_ngcc__/ng2-search-filter.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Ng2SearchPipe": () => (/* binding */ Ng2SearchPipe),
+/* harmony export */   "Ng2SearchPipeModule": () => (/* binding */ Ng2SearchPipeModule)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+class Ng2SearchPipe {
+  /**
+   * @param {?} items object from array
+   * @param {?} term term's search
+   * @return {?}
+   */
+  transform(items, term) {
+    if (!term || !items) return items;
+    return Ng2SearchPipe.filter(items, term);
+  }
+  /**
+   *
+   * @param {?} items List of items to filter
+   * @param {?} term  a string term to compare with every property of the list
+   *
+   * @return {?}
+   */
+
+
+  static filter(items, term) {
+    const
+    /** @type {?} */
+    toCompare = term.toLowerCase();
+    /**
+     * @param {?} item
+     * @param {?} term
+     * @return {?}
+     */
+
+    function checkInside(item, term) {
+      for (let
+      /** @type {?} */
+      property in item) {
+        if (item[property] === null || item[property] == undefined) {
+          continue;
+        }
+
+        if (typeof item[property] === 'object') {
+          if (checkInside(item[property], term)) {
+            return true;
+          }
+        }
+
+        if (item[property].toString().toLowerCase().includes(toCompare)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    return items.filter(function (item) {
+      return checkInside(item, term);
+    });
+  }
+
+}
+
+Ng2SearchPipe.ɵfac = function Ng2SearchPipe_Factory(t) {
+  return new (t || Ng2SearchPipe)();
+};
+
+Ng2SearchPipe.ɵpipe = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
+  name: "filter",
+  type: Ng2SearchPipe,
+  pure: false
+});
+Ng2SearchPipe.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+  token: Ng2SearchPipe,
+  factory: Ng2SearchPipe.ɵfac
+});
+/**
+ * @nocollapse
+ */
+
+Ng2SearchPipe.ctorParameters = () => [];
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](Ng2SearchPipe, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Pipe,
+    args: [{
+      name: 'filter',
+      pure: false
+    }]
+  }, {
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable
+  }], null, null);
+})();
+
+class Ng2SearchPipeModule {}
+
+Ng2SearchPipeModule.ɵfac = function Ng2SearchPipeModule_Factory(t) {
+  return new (t || Ng2SearchPipeModule)();
+};
+
+Ng2SearchPipeModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+  type: Ng2SearchPipeModule
+});
+Ng2SearchPipeModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
+/**
+ * @nocollapse
+ */
+
+Ng2SearchPipeModule.ctorParameters = () => [];
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](Ng2SearchPipeModule, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
+    args: [{
+      declarations: [Ng2SearchPipe],
+      exports: [Ng2SearchPipe]
+    }]
+  }], null, null);
+})();
+
+(function () {
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](Ng2SearchPipeModule, {
+    declarations: [Ng2SearchPipe],
+    exports: [Ng2SearchPipe]
+  });
+})();
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 
 
@@ -648,6 +893,16 @@ module.exports = "div[scrollx=true] {\n  display: flex;\n  flex-wrap: nowrap;\n 
 
 /***/ }),
 
+/***/ 27320:
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/transaction-date/transaction-date.component.scss?ngResource ***!
+  \****************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "ion-toolbar {\n  --background: #051A2D;\n  --color:#ffffff;\n}\n\n:host > * .calendar-days-of-week {\n  --background: #051A2D !important;\n  --border-bottom-left-radius: 10px !important;\n  --border-bottom-right-radius: 10px !important;\n}\n\n:host > * .calendar-action-buttons {\n  --background: #051A2D !important;\n}\n\n:host > * .calendar-action-buttons {\n  --color: #ffffff !important;\n}\n\nion-footer .footer_btn {\n  width: 100%;\n  height: 40px;\n  text-align: center;\n  --background: linear-gradient(91deg, #051A2D, #004C97);\n  text-transform: capitalize;\n}\n\nion-footer .footer_btn.cancel {\n  --background: #fff;\n  color: #111;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRyYW5zYWN0aW9uLWRhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLGVBQUE7QUFDSjs7QUFFQTtFQUNJLGdDQUFBO0VBQ0gsNENBQUE7RUFDRyw2Q0FBQTtBQUNKOztBQUVBO0VBQ0ksZ0NBQUE7QUFDSjs7QUFFQTtFQUNJLDJCQUFBO0FBQ0o7O0FBR0k7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0Esc0RBQUE7RUFDQSwwQkFBQTtBQUFSOztBQUVRO0VBQ0ksa0JBQUE7RUFDQSxXQUFBO0FBQVoiLCJmaWxlIjoidHJhbnNhY3Rpb24tZGF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10b29sYmFyIHtcclxuICAgIC0tYmFja2dyb3VuZDogIzA1MUEyRDtcclxuICAgIC0tY29sb3I6I2ZmZmZmZjtcclxufVxyXG5cclxuOmhvc3QgPiAqIC5jYWxlbmRhci1kYXlzLW9mLXdlZWsge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjMDUxQTJEICFpbXBvcnRhbnQ7XHJcblx0LS1ib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAxMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAtLWJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAxMHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjpob3N0ID4gKiAuY2FsZW5kYXItYWN0aW9uLWJ1dHRvbnMge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjMDUxQTJEICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjpob3N0ID4gKiAuY2FsZW5kYXItYWN0aW9uLWJ1dHRvbnMge1xyXG4gICAgLS1jb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5pb24tZm9vdGVyIHtcclxuICAgIC5mb290ZXJfYnRuIHtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIC0tYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkxZGVnLCAjMDUxQTJELCAjMDA0Qzk3KTtcclxuICAgICAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuXHJcbiAgICAgICAgJi5jYW5jZWwge1xyXG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjMTExO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbn0iXX0= */";
+
+/***/ }),
+
 /***/ 2178:
 /*!********************************************************************************!*\
   !*** ./src/app/components/avatar-photo/avatar-photo.component.html?ngResource ***!
@@ -695,6 +950,16 @@ module.exports = "<div class=\"footer pb-0\">\r\n  <ul>\r\n    <li (click)=\"das
 /***/ ((module) => {
 
 module.exports = "<ion-header>\r\n  <ion-toolbar style=\"padding: 4% 0 1%\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"closeModel()\">\r\n        <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-searchbar\r\n      placeholder=\"Search...\"\r\n      [(ngModel)]=\"filterTerm\"\r\n      animated=\"false\"\r\n    ></ion-searchbar>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <!-- <ion-list-header>\r\n    <ion-label>Popular Service</ion-label>\r\n  </ion-list-header>\r\n  <div class=\"container\">\r\n    <div class=\"scroll\" scrollX=\"true\">\r\n      <ion-row>\r\n        <ion-item lines=\"none\">\r\n          <ion-chip *ngFor=\"let item of items | searchFilter:filterTerm\" color=\"secondary\" (click)=\"openToast(item.title)\">\r\n            <ion-icon color=\"primary\" name=\"trending-up-outline\"></ion-icon>\r\n            <ion-label>{{ item.title }}</ion-label>\r\n          </ion-chip>\r\n        </ion-item>\r\n      </ion-row>\r\n    </div>\r\n</div> -->\r\n  <ion-list>\r\n    <ion-list-header lines=\"inset\">\r\n      <ion-label>Quick Services</ion-label>\r\n    </ion-list-header>\r\n    <ion-item\r\n      *ngFor=\"let item of trendingRecords | searchFilter: filterTerm\"\r\n      (click)=\"openPage(item)\"\r\n    >\r\n      <ion-label color=\"primary\">\r\n        <h1>{{ item.name }}</h1>\r\n      </ion-label>\r\n      <ion-icon name=\"trending-up-outline\"></ion-icon>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
+
+/***/ }),
+
+/***/ 69798:
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/transaction-date/transaction-date.component.html?ngResource ***!
+  \****************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<ion-header class=\"ion-no-border\" [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\" color=\"light\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Select Date</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  [fullscreen]=\"true\">\r\n  <mat-calendar \r\n  startView=\"month\"\r\n  [(selected)]=\"selected\" [dateFilter]=\"disableWeekendsFilter\" [minDate]=\"minDate\" [maxDate]=\"maxDate\"\r\n  [dateClass]=\"disableFuture()\">\r\n  </mat-calendar>\r\n</ion-content>\r\n<ion-footer>\r\n  <div class=\"row p-3\">\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" [disabled]=\"!selected\" class=\"footer_btn\" (click)=\"done()\">Submit</ion-button>\r\n    </div>\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" class=\"footer_btn cancel\" (click)=\"close()\">Back</ion-button>\r\n    </div>\r\n  </div>\r\n</ion-footer>\r\n";
 
 /***/ })
 
