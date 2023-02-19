@@ -248,6 +248,7 @@ class UploadSignatureOrEsignComponent {
         };
         uploadData.append("data", JSON.stringify(data));
         uploadData.append("file", url);
+        debugger;
         this.apiService.uploadDocument(uploadData).subscribe((res) => {
             // console.log(res);
             // this.disableDone = false;

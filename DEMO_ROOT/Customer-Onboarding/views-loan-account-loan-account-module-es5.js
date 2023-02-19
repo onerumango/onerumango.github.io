@@ -10228,7 +10228,7 @@
           value: function getAccountBranchDetails() {
             var _this37 = this;
 
-            //
+            //debugger
             this.api.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
               _this37.screenArray = data;
@@ -19519,7 +19519,7 @@
         selectors: [["app-offer-accept-reject"]],
         decls: 118,
         vars: 24,
-        consts: [["fxLayout", "column"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "column", 3, "formGroup"], [1, "alignChange"], ["visible", "true"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], [1, "hint"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "applicantName", "placeholder", "Applicant Name", "readonly", "", 1, "alignment"], [4, "ngIf"], ["matInput", "", "type", "text", "name", "approvedLoanAmount", "placeholder", "Approved Loan Account", "formControlName", "approvedLoanAmount", "maxlength", "16", "maxlength", "16", "readonly", "", 1, "alignment", 3, "keypress", "keyup"], ["fxLayout", "row wrap"], [1, "size"], ["appearance", "outline", "fxFlex", "23", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "disableOptionCentering", "", "formControlName", "year"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "22", 1, "full-width", "tenure1"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], ["formControlName", "installmentType", "placeholder", "Select", "disableOptionCentering", "", "required", "", 1, "alignment"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "installmentFrequency", "maxlength", "2", "placeholder", "Installment Frequency", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "name", "loanAmmount", "maxlength", "2", "formControlName", "rateOfInterest", "placeholder", "Rate Of Interest", 1, "alignment", 3, "keypress"], ["matInput", "", "id", "dob", "name", "offerIssueDate", "readonly", "", "formControlName", "offerIssueDate", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "id", "generateOffer", "name", "generateOffer", "readonly", "", "formControlName", "generateOffer", "value", "generateOffer", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "max"], ["picker3", ""], ["name", "customerResponse", "formControlName", "customerResponse", "disableOptionCenteringplaceholder", "Select"], ["value", " "], ["matInput", "", "id", "dob", "name", "dateOfOfferAcceptOrReject", "readonly", "", "formControlName", "dateOfOfferAcceptOrReject", "value", "dateOfOfferAcceptOrReject", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker1", ""], ["matInput", "", "id", "dobss", "name", "offerExpiryDate", "readonly", "", "formControlName", "offerExpiryDate", "value", "Date", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker2", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
+        consts: [["fxLayout", "column"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "column", 3, "formGroup"], [1, "alignChange"], ["visible", "true"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], [1, "hint"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "applicantName", "placeholder", "Applicant Name", "readonly", "", 1, "alignment"], [4, "ngIf"], ["matInput", "", "type", "text", "name", "approvedLoanAmount", "placeholder", "Approved Loan Account", "formControlName", "approvedLoanAmount", "maxlength", "16", "maxlength", "16", "readonly", "", 1, "alignment", 3, "keypress", "keyup"], ["fxLayout", "row wrap"], [1, "size"], ["appearance", "outline", "fxFlex", "23", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "disableOptionCentering", "", "formControlName", "year"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "22", 1, "full-width", "tenure1"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], ["formControlName", "installmentType", "placeholder", "Select", "disableOptionCentering", "", "required", "", 1, "alignment"], ["matInput", "", "type", "text", "name", "installmentFrequency", "formControlName", "installmentFrequency", "placeholder", "Installment Frequency", 1, "alignment"], ["matInput", "", "type", "text", "name", "loanAmmount", "maxlength", "2", "formControlName", "rateOfInterest", "placeholder", "Rate Of Interest", 1, "alignment", 3, "keypress"], ["matInput", "", "id", "dob", "name", "offerIssueDate", "readonly", "", "formControlName", "offerIssueDate", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "id", "generateOffer", "name", "generateOffer", "readonly", "", "formControlName", "generateOffer", "value", "generateOffer", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "max"], ["picker3", ""], ["name", "customerResponse", "formControlName", "customerResponse", "disableOptionCenteringplaceholder", "Select"], ["value", " "], ["matInput", "", "id", "dob", "name", "dateOfOfferAcceptOrReject", "readonly", "", "formControlName", "dateOfOfferAcceptOrReject", "value", "dateOfOfferAcceptOrReject", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker1", ""], ["matInput", "", "id", "dobss", "name", "offerExpiryDate", "readonly", "", "formControlName", "offerExpiryDate", "value", "Date", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker2", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
         template: function AcceptOfferAcceptRejectComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -19718,13 +19718,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "input", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function AcceptOfferAcceptRejectComponent_Template_input_keypress_60_listener($event) {
-              return ctx._keyPress1($event);
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](60, "input", 26);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -22783,7 +22777,7 @@
           value: function getAccountBranchDetails() {
             var _this83 = this;
 
-            //
+            //debugger
             this.apiService.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
               _this83.arrayAccountBranch = data;

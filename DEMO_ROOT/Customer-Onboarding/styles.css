@@ -7607,6 +7607,7 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 }
 .egret-blue .mat-input-element {
   box-shadow: 0 0 0 1000px white inset !important;
+  margin-bottom: 5px !important;
 }
 .egret-blue .onboarding-dark-background {
   background-color: #F1F1F4;

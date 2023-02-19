@@ -8753,6 +8753,8 @@
 
       function SupervisorApprovalStageComponent_div_10_Template(rf, ctx) {
         if (rf & 1) {
+          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card");
@@ -8782,6 +8784,14 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "span", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 22);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SupervisorApprovalStageComponent_div_10_Template_button_click_10_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+
+            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r4.openViewApprovalSummary();
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " View Summary ");
 
@@ -8825,16 +8835,16 @@
 
       function SupervisorApprovalStageComponent_button_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SupervisorApprovalStageComponent_button_28_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
 
-            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r4.addDetails();
+            return ctx_r6.addDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Add Details ");
@@ -8851,16 +8861,16 @@
 
       function SupervisorApprovalStageComponent_button_30_Template(rf, ctx) {
         if (rf & 1) {
-          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SupervisorApprovalStageComponent_button_30_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
 
-            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r6.openApprovalSummary();
+            return ctx_r8.openApprovalSummary();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " View Details ");
@@ -8904,6 +8914,11 @@
           value: function openApprovalSummary() {
             this.dialogService.CardApprovalSummary();
           }
+        }, {
+          key: "openViewApprovalSummary",
+          value: function openViewApprovalSummary() {
+            this.dialogService.CardApprovalViewSummary();
+          }
         }]);
 
         return SupervisorApprovalStageComponent;
@@ -8918,7 +8933,7 @@
         selectors: [["app-supervisor-approval-stage"]],
         decls: 31,
         vars: 5,
-        consts: [["fxLayout", "row wrap", 1, "matcard-size1"], ["fxFlex", "100"], [1, "profile-pic", "text-center"], ["src", "assets/images/svg/Group 605/Group 605.png", 1, "main-profile-img"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "text-muted1"], ["fxFlex", "100", "class", "mt-8", 4, "ngIf"], ["fxLayout", "row wrap", 1, "mt-12"], ["fxFlex", "50", "fxFlex.gt-sm", "50", "fxFlex.sm", "50"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "space-between start"], ["fxFlex", "50%", 1, "txtclr"], ["fxFlex", "50%"], [1, "card-img", 3, "src"], ["class", "mb-1", 4, "ngIf"], ["mat-button", "", "color", "primary", 3, "click", 4, "ngIf"], ["fxFlex", "100", 1, "mt-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxFlex", "10"], [1, "text-green"], ["fxFlex", "30"], ["fxFlex", ""], ["mat-button", "", "color", "primary"], [1, "mb-1"], ["mode", "determinate", 1, "rounded", 2, "height", "6px", 3, "color", "value"], [1, "m-0", "text-right"], ["mat-button", "", "color", "primary", 3, "click"]],
+        consts: [["fxLayout", "row wrap", 1, "matcard-size1"], ["fxFlex", "100"], [1, "profile-pic", "text-center"], ["src", "assets/images/svg/Group 605/Group 605.png", 1, "main-profile-img"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "text-muted1"], ["fxFlex", "100", "class", "mt-8", 4, "ngIf"], ["fxLayout", "row wrap", 1, "mt-12"], ["fxFlex", "50", "fxFlex.gt-sm", "50", "fxFlex.sm", "50"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "space-between start"], ["fxFlex", "50%", 1, "txtclr"], ["fxFlex", "50%"], [1, "card-img", 3, "src"], ["class", "mb-1", 4, "ngIf"], ["mat-button", "", "color", "primary", 3, "click", 4, "ngIf"], ["fxFlex", "100", 1, "mt-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxFlex", "10"], [1, "text-green"], ["fxFlex", "30"], ["fxFlex", ""], ["mat-button", "", "color", "primary", 3, "click"], [1, "mb-1"], ["mode", "determinate", 1, "rounded", 2, "height", "6px", 3, "color", "value"], [1, "m-0", "text-right"]],
         template: function SupervisorApprovalStageComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -13199,6 +13214,8 @@
 
       function AssessmentStageComponent_div_11_Template(rf, ctx) {
         if (rf & 1) {
+          var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card");
@@ -13228,6 +13245,14 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "span", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AssessmentStageComponent_div_11_Template_button_click_10_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+
+            var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r5.goToCardAppAssessmentSummary();
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " View Summary ");
 
@@ -13271,18 +13296,18 @@
 
       function AssessmentStageComponent_ng_container_28_Template(rf, ctx) {
         if (rf & 1) {
-          var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AssessmentStageComponent_ng_container_28_Template_button_click_1_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8);
 
-            var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r5.goToCardAssessmentSummary();
+            return ctx_r7.goToCardAssessmentSummary();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " View Details ");
@@ -13307,7 +13332,7 @@
 
       function AssessmentStageComponent_ng_template_29_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Add Details ");
 
@@ -13350,10 +13375,12 @@
           key: "goToCardAssessmentSummary",
           value: function goToCardAssessmentSummary() {
             this.dialogService.cardAccountAssessmentSummaryDialog();
-          } // goToCardAppAssessmentSummary(){
-          //   this.dialogService.cardAccAssessmentSummaryDialog();
-          // }
-
+          }
+        }, {
+          key: "goToCardAppAssessmentSummary",
+          value: function goToCardAppAssessmentSummary() {
+            this.dialogService.cardAccAssessmentSummaryDialog();
+          }
         }, {
           key: "openLoanQualitativeDialog",
           value: function openLoanQualitativeDialog() {
@@ -13373,7 +13400,7 @@
         selectors: [["app-assessment-stage"]],
         decls: 31,
         vars: 5,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "profile-pic", "text-center"], ["src", "assets/images/svg/Group 605/Group 605.png", 1, "main-profile-img"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "text-muted1"], ["fxFlex", "100", "class", "mt-8", 4, "ngIf"], ["fxLayout", "row wrap", 1, "mt-12"], ["fxFlex", "50", "fxFlex.gt-sm", "50", "fxFlex.sm", "50"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "space-between start"], ["fxFlex", "50%", 1, "font1"], ["fxFlex", "50%"], [1, "card-img", 3, "src"], ["class", "mb-1", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["showAssessment", ""], ["fxFlex", "100", 1, "mt-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxFlex", "10"], [1, "text-green"], ["fxFlex", "30"], ["fxFlex", ""], ["mat-button", "", "color", "primary"], [1, "mb-1"], ["mode", "determinate", 1, "rounded", 2, "height", "6px", 3, "color", "value"], [1, "m-0", "text-right"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-button", "", "color", "primary", 3, "routerLink"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "profile-pic", "text-center"], ["src", "assets/images/svg/Group 605/Group 605.png", 1, "main-profile-img"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "text-muted1"], ["fxFlex", "100", "class", "mt-8", 4, "ngIf"], ["fxLayout", "row wrap", 1, "mt-12"], ["fxFlex", "50", "fxFlex.gt-sm", "50", "fxFlex.sm", "50"], ["fxLayout", "row", "fxLayoutGap", "10px", "fxLayoutAlign", "space-between start"], ["fxFlex", "50%", 1, "font1"], ["fxFlex", "50%"], [1, "card-img", 3, "src"], ["class", "mb-1", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["showAssessment", ""], ["fxFlex", "100", 1, "mt-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxFlex", "10"], [1, "text-green"], ["fxFlex", "30"], ["fxFlex", ""], ["mat-button", "", "color", "primary", 3, "click"], [1, "mb-1"], ["mode", "determinate", 1, "rounded", 2, "height", "6px", 3, "color", "value"], [1, "m-0", "text-right"], ["mat-button", "", "color", "primary", 3, "routerLink"]],
         template: function AssessmentStageComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -14211,6 +14238,203 @@
     },
 
     /***/
+    "QM7n":
+    /*!***********************************************************************************************************!*\
+      !*** ./src/app/views/card-account/digital-signing/digital-view-summary/digital-view-summary.component.ts ***!
+      \***********************************************************************************************************/
+
+    /*! exports provided: DigitalViewSummaryComponent */
+
+    /***/
+    function QM7n(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DigitalViewSummaryComponent", function () {
+        return DigitalViewSummaryComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "8Y7J");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/router */
+      "iInd");
+      /* harmony import */
+
+
+      var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! app/shared/services/api.service */
+      "nm5K");
+      /* harmony import */
+
+
+      var app_shared_services_app_loader_app_loader_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! app/shared/services/app-loader/app-loader.service */
+      "3sEA");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "VDRc");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "iELJ");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "Tj54");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/card */
+      "PDjf");
+
+      var DigitalViewSummaryComponent = /*#__PURE__*/function () {
+        function DigitalViewSummaryComponent(router, ls, api, loader) {
+          _classCallCheck(this, DigitalViewSummaryComponent);
+
+          this.router = router;
+          this.ls = ls;
+          this.api = api;
+          this.loader = loader;
+        }
+
+        _createClass(DigitalViewSummaryComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            console.log(this.cardId);
+            this.cardId = this.ls.getItem('cardId');
+            console.log(this.cardId);
+            this.getDigitalsignByCardId(this.cardId);
+          }
+        }, {
+          key: "getDigitalsignByCardId",
+          value: function getDigitalsignByCardId(cardId) {
+            var _this45 = this;
+
+            this.api.getDigitalsignByCardId(cardId).subscribe(function (resp) {
+              console.log(resp);
+              console.log(resp[0].fileUrl);
+              _this45.imageUrl = resp[resp.length - 1].fileUrl;
+
+              _this45.loader.close();
+            }, function (err) {// this.loader.close();
+            });
+          }
+        }]);
+
+        return DigitalViewSummaryComponent;
+      }();
+
+      DigitalViewSummaryComponent.ɵfac = function DigitalViewSummaryComponent_Factory(t) {
+        return new (t || DigitalViewSummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_app_loader_app_loader_service__WEBPACK_IMPORTED_MODULE_3__["AppLoaderService"]));
+      };
+
+      DigitalViewSummaryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: DigitalViewSummaryComponent,
+        selectors: [["app-digital-view-summary"]],
+        decls: 11,
+        vars: 1,
+        consts: [["fxLayoutAlign", "end stretch", "mat-dialog-close", "", 1, "close"], [1, "approval-details"], ["visible", "true", "clas", "paraFont"], [1, "card"], ["alt", "No Image", 3, "src"]],
+        template: function DigitalViewSummaryComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "close");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "fieldset");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "legend", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Digital Signing");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-card", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "img", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.imageUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          }
+        },
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_5__["DefaultLayoutAlignDirective"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogClose"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"]],
+        styles: [".editButton[_ngcontent-%COMP%] {\n  color: #456EFE;\n  font-family: 'Montserrat';\n  font-size: 12px;\n  text-decoration: underline;\n  padding-left: 18px;\n  cursor: pointer;\n}\n\n.card[_ngcontent-%COMP%] {\n  width: 50%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGRpZ2l0YWwtdmlldy1zdW1tYXJ5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBYztFQUNkLHlCQUF3QjtFQUN4QixlQUFlO0VBQ2YsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQixlQUFlO0FBQ25COztBQUNBO0VBQ0csVUFBVTtBQUViIiwiZmlsZSI6ImRpZ2l0YWwtdmlldy1zdW1tYXJ5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXRCdXR0b24ge1xyXG4gICAgY29sb3I6ICM0NTZFRkU7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDEycHg7IFxyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE4cHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmNhcmQge1xyXG4gICB3aWR0aDogNTAlOyBcclxufSJdfQ== */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DigitalViewSummaryComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-digital-view-summary',
+            templateUrl: './digital-view-summary.component.html',
+            styleUrls: ['./digital-view-summary.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+          }, {
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]
+          }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+          }, {
+            type: app_shared_services_app_loader_app_loader_service__WEBPACK_IMPORTED_MODULE_3__["AppLoaderService"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "R8Ah":
     /*!*********************************************************************************************************!*\
       !*** ./src/app/views/card-account/digital-signing/digitalsign-summary/digitalsign-summary.component.ts ***!
@@ -14311,14 +14535,14 @@
         }, {
           key: "getDigitalsignByCardId",
           value: function getDigitalsignByCardId(cardId) {
-            var _this45 = this;
+            var _this46 = this;
 
             this.api.getDigitalsignByCardId(cardId).subscribe(function (resp) {
               console.log(resp);
               console.log(resp[0].fileUrl);
-              _this45.imageUrl = resp[resp.length - 1].fileUrl;
+              _this46.imageUrl = resp[resp.length - 1].fileUrl;
 
-              _this45.loader.close();
+              _this46.loader.close();
             }, function (err) {// this.loader.close();
             });
           }
@@ -14707,7 +14931,7 @@
         }, {
           key: "buildAssessmentForm",
           value: function buildAssessmentForm(item, isResponse) {
-            var _this46 = this;
+            var _this47 = this;
 
             this.assessmentForm = this.fb.group({
               // cardId:[data?data.cardId:'952'],
@@ -14748,7 +14972,7 @@
               // }
               for (var i = 0; i < this.currencySymbols.length; i++) {
                 this.currencyArr = this.currencySymbols.filter(function (fltered) {
-                  return _this46.curr === fltered.currency;
+                  return _this47.curr === fltered.currency;
                 });
                 console.log("this.currencyArr", this.currencyArr);
               }
@@ -14814,13 +15038,13 @@
         }, {
           key: "getCardAssessmentDetails",
           value: function getCardAssessmentDetails() {
-            var _this47 = this;
+            var _this48 = this;
 
             this.apiService.fetchcardAssessmentDetailsById(this.cardId) //this.apiService.fetchcardAssessmentDetails()
             .subscribe(function (resp) {
               console.log(resp);
 
-              _this47.buildAssessmentForm(resp, true);
+              _this48.buildAssessmentForm(resp, true);
             });
           }
         }, {
@@ -14836,7 +15060,7 @@
         }, {
           key: "goNext",
           value: function goNext(val) {
-            var _this48 = this;
+            var _this49 = this;
 
             console.log('val', val.approvedCardLimit);
             console.log('val.approvedCardLimit', val.approvedCardLimit.length);
@@ -14854,13 +15078,13 @@
               console.log('data', data);
 
               if (data != null) {
-                _this48.snack.open('Assessment details saved successfully!', 'OK', {
+                _this49.snack.open('Assessment details saved successfully!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this48.cdr.markForCheck();
+                _this49.cdr.markForCheck();
               }
             });
             this.next();
@@ -15499,7 +15723,7 @@
         _createClass(IntrestDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this49 = this;
+            var _this50 = this;
 
             this.cardId = this.ls.getItem('cardId');
             var isCardInterestDetails = this.ls.getItem('CARD_INTEREST_DETAILS_DONE');
@@ -15513,9 +15737,9 @@
               this.showEditOption = false;
               this.api.getFlexcubeDetails("intrestDetails", this.accountType).subscribe(function (response) {
                 if (response) {
-                  _this49.onChangeInterest(response.length);
+                  _this50.onChangeInterest(response.length);
 
-                  _this49["in"].patchValue(response);
+                  _this50["in"].patchValue(response);
                 }
               });
             }
@@ -15527,23 +15751,23 @@
         }, {
           key: "getInterestDetails",
           value: function getInterestDetails() {
-            var _this50 = this;
+            var _this51 = this;
 
             // this.loader.open();
             // this.cardId=this.ls.getItem('cardId');
             // console.log(this.cardId)
             this.cardId = this.cardId;
             this.api.cardInterestFetchById(this.cardId).subscribe(function (resp) {
-              _this50.loader.close();
+              _this51.loader.close();
 
               console.log("resp from backend ", resp);
 
               if (resp) {
-                _this50.resp = resp;
+                _this51.resp = resp;
 
-                _this50.onChangeInterest(_this50.resp.length);
+                _this51.onChangeInterest(_this51.resp.length);
 
-                _this50["in"].patchValue(_this50.resp);
+                _this51["in"].patchValue(_this51.resp);
               }
             }, function (err) {// this.loader.close();
             });
@@ -15599,21 +15823,21 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this51 = this;
+            var _this52 = this;
 
             console.log(this.interestForm.value);
             this.api.cardintrestDetailsSave(this.interestForm.value).subscribe(function (resp) {
-              _this51.snack.open("Interest Details Saved!", "OK", {
+              _this52.snack.open("Interest Details Saved!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this51.next();
+              _this52.next();
 
               console.log("backend response from intrest saving", resp);
             }, function (err) {
-              _this51.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
+              _this52.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -15829,55 +16053,61 @@
       /* harmony import */
 
 
-      var _account_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./digital-view-summary/digital-view-summary.component */
+      "QM7n");
+      /* harmony import */
+
+
+      var _account_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../account.service */
       "6JYK");
       /* harmony import */
 
 
-      var _digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./digitalsign-summary/digitalsign-summary.component */
       "R8Ah");
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
       "SVse");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/material/card */
       "PDjf");
       /* harmony import */
 
 
-      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/divider */
       "BSbQ");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/material/icon */
       "Tj54");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/material/button */
       "Dxy4");
       /* harmony import */
 
 
-      var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/progress-bar */
       "BTe0");
 
@@ -15934,7 +16164,7 @@
 
             var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r4.goToDigitalSign();
+            return ctx_r4.goToDigitalSignViewSummary();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " View Summary ");
@@ -16057,15 +16287,15 @@
         _createClass(DigitalSigningComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this52 = this;
+            var _this53 = this;
 
             this.accountId = this.ls.getItem('accountId');
             this.isEsignScreen = this.ls.getItem('eSignStage');
             this.accountService.refresh.subscribe(function (res) {
-              _this52.accountId = _this52.ls.getItem('accountId');
-              _this52.isEsignScreen = _this52.ls.getItem('eSignStage');
+              _this53.accountId = _this53.ls.getItem('accountId');
+              _this53.isEsignScreen = _this53.ls.getItem('eSignStage');
 
-              _this52.cdr.markForCheck();
+              _this53.cdr.markForCheck();
             });
           }
         }, {
@@ -16077,7 +16307,17 @@
         }, {
           key: "goToDigitalSign",
           value: function goToDigitalSign() {
-            var dialogRef = this.dialog.open(_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_5__["DigitalsignSummaryComponent"], {
+            var dialogRef = this.dialog.open(_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_6__["DigitalsignSummaryComponent"], {
+              height: '55%',
+              width: '40%',
+              disableClose: true
+            });
+            dialogRef.afterClosed().subscribe(function (submit) {});
+          }
+        }, {
+          key: "goToDigitalSignViewSummary",
+          value: function goToDigitalSignViewSummary() {
+            var dialogRef = this.dialog.open(_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_4__["DigitalViewSummaryComponent"], {
               height: '55%',
               width: '40%',
               disableClose: true
@@ -16097,7 +16337,7 @@
       }();
 
       DigitalSigningComponent.ɵfac = function DigitalSigningComponent_Factory(t) {
-        return new (t || DigitalSigningComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_account_service__WEBPACK_IMPORTED_MODULE_4__["AccountService"]));
+        return new (t || DigitalSigningComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_account_service__WEBPACK_IMPORTED_MODULE_5__["AccountService"]));
       };
 
       DigitalSigningComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -16225,7 +16465,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isEsignScreen);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultFlexDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutGapDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__["MatDivider"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardActions"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__["MatIcon"], _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButton"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_12__["MatProgressBar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatAnchor"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultFlexDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutGapDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutAlignDirective"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__["MatDivider"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardActions"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIcon"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButton"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatAnchor"]],
         styles: [".mat-card[_ngcontent-%COMP%] {\n  border: 1px solid #2196f3;\n  border-style: dashed;\n  border-style: dashed;\n}\n\n.not-active[_ngcontent-%COMP%] {\n  background: #9e9e9e0a !important;\n  box-shadow: none !important;\n  border: 1px solid #ababab;\n  border-style: dashed;\n}\n\n.card-img[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n  margin-left: 60px;\n  margin-top: -6px;\n}\n\n.profile-pic[_ngcontent-%COMP%] {\n  width: 110px;\n  height: 110px;\n  border-radius: 50%;\n  border-style: solid;\n  border-color: #FFFFFF;\n  box-shadow: 0 0 0px 0px #b8b8b8;\n  position: relative;\n  margin: 0 auto;\n}\n\n.main-profile-img[_ngcontent-%COMP%] {\n  height: 100%;\n  width: 100%;\n  border-radius: 50%;\n}\n\n.upload-icon[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 20px;\n  right: -7px;\n  \n  border-radius: 50%;\n  \n  height: 30px;\n  width: 30px;\n  display: flex !important;\n  align-items: center;\n  justify-content: center;\n  background-color: white;\n  color: cornflowerblue;\n  box-shadow: 0 0 8px 3px #B8B8B8;\n}\n\n.active[_ngcontent-%COMP%] {\n  color: #03a9f4 !important;\n}\n\n.notActive[_ngcontent-%COMP%] {\n  pointer-events: none;\n  cursor: default;\n  color: #cacaca !important;\n}\n\n.txtclr[_ngcontent-%COMP%] {\n  color: #cacaca;\n  padding-left: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcZGlnaXRhbC1zaWduaW5nLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseUJBQXlCO0VBQ3pCLG9CQUFvQjtFQUNwQixvQkFBb0I7QUFDeEI7O0FBR0U7RUFDRSxnQ0FBZ0M7RUFDaEMsMkJBQTJCO0VBQzNCLHlCQUF5QjtFQUN6QixvQkFBb0I7QUFBeEI7O0FBRUU7RUFDRSxZQUFZO0VBQ1osYUFBYTtFQUNiLGlCQUFpQjtFQUNqQixnQkFBZ0I7QUFDcEI7O0FBRUU7RUFDRSxZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIscUJBQXFCO0VBQ3JCLCtCQUErQjtFQUMvQixrQkFBa0I7RUFDbEIsY0FBYztBQUNsQjs7QUFFRTtFQUNFLFlBQVk7RUFDWixXQUFXO0VBQ1gsa0JBQWtCO0FBQ3RCOztBQUVFO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxXQUFXO0VBQ1gsdUJBQUE7RUFDQSxrQkFBa0I7RUFDbEIsbUJBQUE7RUFDQSxZQUFZO0VBQ1osV0FBVztFQUNYLHdCQUF3QjtFQUN4QixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLHVCQUF1QjtFQUN2QixxQkFBcUI7RUFDckIsK0JBQStCO0FBQ25DOztBQUVFO0VBQ0UseUJBQXlCO0FBQzdCOztBQUVFO0VBQ0Usb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZix5QkFBeUI7QUFDN0I7O0FBQ0U7RUFDRSxjQUFjO0VBQ2Qsa0JBQWtCO0FBRXRCIiwiZmlsZSI6ImRpZ2l0YWwtc2lnbmluZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtY2FyZHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMyMTk2ZjM7XHJcbiAgICBib3JkZXItc3R5bGU6IGRhc2hlZDs7XHJcbiAgICBib3JkZXItc3R5bGU6IGRhc2hlZDtcclxuICAgIC8vIG1heC1oZWlnaHQ6MjUwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5ub3QtYWN0aXZle1xyXG4gICAgYmFja2dyb3VuZDogIzllOWU5ZTBhICFpbXBvcnRhbnQ7XHJcbiAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYWJhYmFiO1xyXG4gICAgYm9yZGVyLXN0eWxlOiBkYXNoZWQ7XHJcbiAgfVxyXG4gIC5jYXJkLWltZ3tcclxuICAgIHdpZHRoOiAxMDBweDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNjBweDtcclxuICAgIG1hcmdpbi10b3A6IC02cHg7XHJcbiAgXHJcbiAgfVxyXG4gIC5wcm9maWxlLXBpYyB7XHJcbiAgICB3aWR0aDogMTEwcHg7XHJcbiAgICBoZWlnaHQ6IDExMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogI0ZGRkZGRjtcclxuICAgIGJveC1zaGFkb3c6IDAgMCAwcHggMHB4ICNiOGI4Yjg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICB9XHJcbiAgXHJcbiAgLm1haW4tcHJvZmlsZS1pbWcge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgfVxyXG4gIFxyXG4gIC51cGxvYWQtaWNvbiB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDIwcHg7XHJcbiAgICByaWdodDogLTdweDtcclxuICAgIC8qIGJvcmRlcjogMXB4IHNvbGlkOyAqL1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgLyogcGFkZGluZzogMTFweDsgKi9cclxuICAgIGhlaWdodDogMzBweDtcclxuICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgZGlzcGxheTogZmxleCAhaW1wb3J0YW50O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBjb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbiAgICBib3gtc2hhZG93OiAwIDAgOHB4IDNweCAjQjhCOEI4O1xyXG4gIH1cclxuICBcclxuICAuYWN0aXZlIHtcclxuICAgIGNvbG9yOiAjMDNhOWY0ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5ub3RBY3RpdmUge1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICBjdXJzb3I6IGRlZmF1bHQ7XHJcbiAgICBjb2xvcjogI2NhY2FjYSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAudHh0Y2xye1xyXG4gICAgY29sb3I6ICNjYWNhY2E7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgfSJdfQ== */"]
       });
       /*@__PURE__*/
@@ -16248,7 +16488,7 @@
           }, {
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
           }, {
-            type: _account_service__WEBPACK_IMPORTED_MODULE_4__["AccountService"]
+            type: _account_service__WEBPACK_IMPORTED_MODULE_5__["AccountService"]
           }];
         }, null);
       })();
@@ -16503,7 +16743,7 @@
 
       var DocumentDetailsComponent = /*#__PURE__*/function () {
         function DocumentDetailsComponent(http, tokenService, dialog, router, fb, snack, ls, shareDataService, cdr, api, dialogService, loader, accountService, appApiService, doOcrService) {
-          var _this53 = this;
+          var _this54 = this;
 
           _classCallCheck(this, DocumentDetailsComponent);
 
@@ -16641,7 +16881,7 @@
           };
 
           this.isDocumentOptionDisabled2 = function (value) {
-            return _this53.selectedOptions2.includes(value);
+            return _this54.selectedOptions2.includes(value);
           };
 
           this.panCardParser = function (str) {
@@ -16667,7 +16907,7 @@
               console.log(error);
               console.error("Unable to parse pan card");
 
-              _this53.snack.open('Please Upload Valid Document', 'OK', {
+              _this54.snack.open('Please Upload Valid Document', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -16721,12 +16961,12 @@
         _createClass(DocumentDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this54 = this;
+            var _this55 = this;
 
             this.cardId = this.ls.getItem('cardId');
             this.appApiService.fetchCardCustomersByCardId(this.cardId, 'cardOrigin').subscribe(function (resp) {
               for (var i = 0; i <= resp.data.length; i++) {
-                _this54.screen = {
+                _this55.screen = {
                   screenName: "Cad Document Upload",
                   name: resp.data[i].firstName,
                   data: "",
@@ -16734,7 +16974,7 @@
                   cifNumber: resp.data[i].cifNumber
                 };
 
-                _this54.screenInfo.push(_this54.screen);
+                _this55.screenInfo.push(_this55.screen);
               }
 
               ;
@@ -16757,20 +16997,20 @@
             this.doc_name = ["Aadhar card", "Pan card", "Passport"];
             this.docValArray = ['frontSide', 'backSide', 'others'];
             this.tokenService.getDropDownValues(this.docName).subscribe(function (resp) {
-              _this54.document_name = resp;
+              _this55.document_name = resp;
             });
             this.tokenService.getDropDownValues('document_type').subscribe(function (resp) {
-              _this54.documentTypeArr = resp;
+              _this55.documentTypeArr = resp;
             });
             this.api.getName().subscribe(function (resp) {
-              _this54.assignName(resp.name);
+              _this55.assignName(resp.name);
             });
             this.api.getOCR().subscribe(function (resp) {});
             this.shareDataService.getCustomerId.subscribe(function (cId) {
-              _this54.api.getOCR().subscribe(function (resp) {
+              _this55.api.getOCR().subscribe(function (resp) {
                 console.log("ocr resp from backend ", resp);
 
-                _this54.assignOCRValues(resp);
+                _this55.assignOCRValues(resp);
               });
 
               console.log("cId=", cId); // if (47953 !== null) {
@@ -16781,31 +17021,31 @@
             });
             this.doOcrService.getenableNext().subscribe(function (data) {
               console.log("data disableNextAtIndex1 :: ", data);
-              _this54.disableNextAtIndex1 = data;
+              _this55.disableNextAtIndex1 = data;
             }); //this.customerId = this.ls.getItem('customer_id');
 
             this.documentForm.valueChanges.subscribe(function (data) {
               if (data.doc_list.length > 0) {
                 console.log("data.doc_list.length", data.doc_list.length);
-                _this54.selectedOptions2 = [];
+                _this55.selectedOptions2 = [];
                 data.doc_list.forEach(function (element, index) {
-                  _this54.selectedOptions2.push(element.documentType);
+                  _this55.selectedOptions2.push(element.documentType);
                 });
               }
             });
             this.api.getKycDataFetchedInfo().subscribe(function (data) {
-              _this54.documentForm = _this54.fb.group({
-                documentsList: _this54.fb.array([_this54.createItem()]),
-                doc_list: data === 'DATA FETCH' ? _this54.fb.array([]) : _this54.fb.array([_this54.createDocItem()]),
+              _this55.documentForm = _this55.fb.group({
+                documentsList: _this55.fb.array([_this55.createItem()]),
+                doc_list: data === 'DATA FETCH' ? _this55.fb.array([]) : _this55.fb.array([_this55.createDocItem()]),
                 id: [""],
                 upload: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
               });
 
               if (data === 'DATA FETCH') {
-                _this54.dataFetched = true;
-                _this54.dataFetchedValue = data;
+                _this55.dataFetched = true;
+                _this55.dataFetchedValue = data;
               } else {
-                _this54.dataFetched = false;
+                _this55.dataFetched = false;
               }
             });
             this.disableNext = true; //console.log(item.value);
@@ -16934,20 +17174,20 @@
         }, {
           key: "getCustomerInformationDetails",
           value: function getCustomerInformationDetails() {
-            var _this55 = this;
+            var _this56 = this;
 
             this.appApiService.fetchCardCustomersByCardId(this.cardId, 'cardOrigin').subscribe(function (resp) {
               console.log(resp.data);
               console.log(resp.data.customerId);
-              _this55.docholder = resp.data;
+              _this56.docholder = resp.data;
 
               for (var i = 0; i <= resp.data.length - 1; i++) {
-                _this55.getCustomerDocuments(resp.data[i].customerId);
+                _this56.getCustomerDocuments(resp.data[i].customerId);
               }
 
-              console.log(_this55.docholder);
+              console.log(_this56.docholder);
 
-              _this55.addDocumentlist(resp); //this.buildCustomerForm(resp);
+              _this56.addDocumentlist(resp); //this.buildCustomerForm(resp);
 
             }, function (err) {});
           }
@@ -17032,7 +17272,7 @@
         }, {
           key: "doOCR",
           value: function doOCR(img, docVal, selectedFile, docSideEnum, i) {
-            var _this56 = this;
+            var _this57 = this;
 
             var worker = Object(tesseract_js__WEBPACK_IMPORTED_MODULE_11__["createWorker"])({
               logger: function logger(m) {
@@ -17041,8 +17281,8 @@
             });
 
             (function () {
-              return __awaiter(_this56, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-                var _this57 = this;
+              return __awaiter(_this57, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var _this58 = this;
 
                 var _yield$worker$recogni, text, panCardDetails, passbookDetails, aadharDetails, result, _aadharDetails, address, index, _panCardDetails2, _passbookDetails2, _aadharDetails3;
 
@@ -17192,45 +17432,45 @@
                             console.log(response);
 
                             if (response == "No") {
-                              _this57.changeValue2_Ocr(docVal, i);
+                              _this58.changeValue2_Ocr(docVal, i);
                             }
 
                             if (response == "Yes") {
-                              if (_this57.documentForm.value.documentsList[i].documentName == 'Pan card') {
-                                var _panCardDetails = _this57.panCardParser(text);
+                              if (_this58.documentForm.value.documentsList[i].documentName == 'Pan card') {
+                                var _panCardDetails = _this58.panCardParser(text);
 
-                                _this57.nameOnCard[i] = _panCardDetails.name.toLowerCase();
-                                _this57.dobArray[i] = _panCardDetails.dateOfBirth;
-                                _this57.idNumberArray[i] = _panCardDetails.panNumber;
-                                _this57.pancard = true;
+                                _this58.nameOnCard[i] = _panCardDetails.name.toLowerCase();
+                                _this58.dobArray[i] = _panCardDetails.dateOfBirth;
+                                _this58.idNumberArray[i] = _panCardDetails.panNumber;
+                                _this58.pancard = true;
 
-                                _this57.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
+                                _this58.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
                               }
 
-                              if (_this57.documentForm.value.documentsList[i].documentName == 'Passport') {
-                                var _passbookDetails = _this57.passportParser(text);
+                              if (_this58.documentForm.value.documentsList[i].documentName == 'Passport') {
+                                var _passbookDetails = _this58.passportParser(text);
 
-                                _this57.nameOnCard[i] = _passbookDetails.name.toLowerCase();
-                                _this57.dobArray[i] = _passbookDetails.dob;
-                                _this57.idNumberArray[i] = _passbookDetails.issueNoString;
-                                _this57.dateOfIssue = _passbookDetails.dateOfIssue;
-                                _this57.dateOfExpiry = _passbookDetails.dateOfExpiry;
-                                _this57.pancard = true;
+                                _this58.nameOnCard[i] = _passbookDetails.name.toLowerCase();
+                                _this58.dobArray[i] = _passbookDetails.dob;
+                                _this58.idNumberArray[i] = _passbookDetails.issueNoString;
+                                _this58.dateOfIssue = _passbookDetails.dateOfIssue;
+                                _this58.dateOfExpiry = _passbookDetails.dateOfExpiry;
+                                _this58.pancard = true;
 
-                                _this57.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
+                                _this58.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
                               }
 
-                              if (_this57.documentForm.value.documentsList[i].documentName == 'Aadhar card') {
-                                var _aadharDetails2 = _this57.aadharParser(text);
+                              if (_this58.documentForm.value.documentsList[i].documentName == 'Aadhar card') {
+                                var _aadharDetails2 = _this58.aadharParser(text);
 
-                                _this57.nameOnCard[i] = _aadharDetails2.fullName.toLowerCase();
-                                _this57.dobArray[i] = _aadharDetails2.dob;
-                                _this57.idNumberArray[i] = _aadharDetails2.adharNumber;
-                                _this57.pancard = true;
+                                _this58.nameOnCard[i] = _aadharDetails2.fullName.toLowerCase();
+                                _this58.dobArray[i] = _aadharDetails2.dob;
+                                _this58.idNumberArray[i] = _aadharDetails2.adharNumber;
+                                _this58.pancard = true;
 
-                                _this57.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
+                                _this58.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
                               } else {
-                                _this57.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
+                                _this58.uploadDoc(img, selectedFile, docVal, docSideEnum, i);
                               }
                             }
                           });
@@ -17294,13 +17534,13 @@
         }, {
           key: "changeValue2",
           value: function changeValue2(value, i) {
-            var _this58 = this;
+            var _this59 = this;
 
             this.disableNext = true;
 
             if (this.selectedDocumentTypes2[i]) {
               this.selectedOptions2 = this.selectedOptions2.filter(function (val) {
-                return val !== _this58.selectedDocumentTypes2[i];
+                return val !== _this59.selectedDocumentTypes2[i];
               });
             }
 
@@ -17359,7 +17599,7 @@
         }, {
           key: "function2",
           value: function function2(webcamImage, i) {
-            var _this59 = this;
+            var _this60 = this;
 
             console.log(i);
             var cId = this.customerId;
@@ -17382,24 +17622,24 @@
             uploadData2.append("data", JSON.stringify(data));
             uploadData2.append("file", file);
             this.tokenService.upload(uploadData2).subscribe(function (res) {
-              _this59.progressValOthersArray[i] = 100;
+              _this60.progressValOthersArray[i] = 100;
 
               if (res.type === 4) {
                 if (res.body) {
                   console.log("res.body.id", res.body.id);
 
-                  _this59.assignIdValues("others", res.body.id);
+                  _this60.assignIdValues("others", res.body.id);
                 }
               }
 
-              _this59.documentForm.get("backSide").patchValue(true);
+              _this60.documentForm.get("backSide").patchValue(true);
             }, function (error) {
               if (error.status == 201) {
-                _this59.ff = true;
+                _this60.ff = true;
 
-                _this59.documentForm.get("backSide").patchValue(true);
+                _this60.documentForm.get("backSide").patchValue(true);
 
-                _this59.shotToast("Document Uploaded!");
+                _this60.shotToast("Document Uploaded!");
               }
             });
           }
@@ -17443,79 +17683,79 @@
         }, {
           key: "getCustomerDocuments",
           value: function getCustomerDocuments(cId) {
-            var _this60 = this;
+            var _this61 = this;
 
             var _loop2 = function _loop2(key) {
-              if (Object.prototype.hasOwnProperty.call(_this60.document_type, key)) {
-                var element = _this60.document_type[key];
+              if (Object.prototype.hasOwnProperty.call(_this61.document_type, key)) {
+                var element = _this61.document_type[key];
                 console.log(element, key, cId);
 
-                _this60.tokenService.getCustomerDocuments(cId, element).subscribe(function (data) {
-                  console.log(key, data, _this60.documentForm);
-                  _this60.customerDocs = data;
-                  _this60.docuNameArray = ["Aadhar card", "Pan card", "Passport"];
-                  console.log(_this60.documentForm.controls.documentsList['controls']);
+                _this61.tokenService.getCustomerDocuments(cId, element).subscribe(function (data) {
+                  console.log(key, data, _this61.documentForm);
+                  _this61.customerDocs = data;
+                  _this61.docuNameArray = ["Aadhar card", "Pan card", "Passport"];
+                  console.log(_this61.documentForm.controls.documentsList['controls']);
 
-                  _this60.documentForm.controls.documentsList['controls'][0].controls.documentName.setValue(_this60.docuNameArray[0]); //this.documentForm.get('documentName').patchValue(this.frontImage.documentName);
+                  _this61.documentForm.controls.documentsList['controls'][0].controls.documentName.setValue(_this61.docuNameArray[0]); //this.documentForm.get('documentName').patchValue(this.frontImage.documentName);
 
 
-                  _this60.doc_name = ["Aadhar card", "Pan card", "Passport"];
+                  _this61.doc_name = ["Aadhar card", "Pan card", "Passport"];
 
-                  for (var j = 0; j < _this60.customerDocs.length; j++) {
-                    if (_this60.customerDocs[j]) {
-                      console.log(_this60.customerDocs[j].documentName);
+                  for (var j = 0; j < _this61.customerDocs.length; j++) {
+                    if (_this61.customerDocs[j]) {
+                      console.log(_this61.customerDocs[j].documentName);
 
                       for (var i = 0; i < 3; i++) {
-                        if (_this60.customerDocs[j].documentName == _this60.doc_name[i] && _this60.customerDocs[j].documentSide == 1) {
-                          _this60.frontImageArray[i] = _this60.customerDocs[j].fileUrl;
-                          _this60.progressValFrontArray[i] = 100;
+                        if (_this61.customerDocs[j].documentName == _this61.doc_name[i] && _this61.customerDocs[j].documentSide == 1) {
+                          _this61.frontImageArray[i] = _this61.customerDocs[j].fileUrl;
+                          _this61.progressValFrontArray[i] = 100;
                           console.log("index", i);
                         }
                       }
 
                       for (var _i9 = 0; _i9 < 3; _i9++) {
-                        if (_this60.customerDocs[j].documentName == _this60.doc_name[_i9] && _this60.customerDocs[j].documentSide == 2) {
-                          _this60.backImageArray[_i9] = _this60.customerDocs[j].fileUrl;
-                          _this60.progressValBackArray[_i9] = 100;
-                          _this60.secondBoxArray[_i9] = true;
+                        if (_this61.customerDocs[j].documentName == _this61.doc_name[_i9] && _this61.customerDocs[j].documentSide == 2) {
+                          _this61.backImageArray[_i9] = _this61.customerDocs[j].fileUrl;
+                          _this61.progressValBackArray[_i9] = 100;
+                          _this61.secondBoxArray[_i9] = true;
                         }
                       }
 
                       for (var _i10 = 0; _i10 < 3; _i10++) {
-                        if (_this60.customerDocs[j].documentName == _this60.doc_name[_i10] && _this60.customerDocs[j].documentSide == 3) {
-                          _this60.otherImageArray[_i10] = _this60.customerDocs[j].fileUrl;
-                          _this60.progressValOthersArray[_i10] = 100;
-                          _this60.thirdBoxArray[_i10] = true;
+                        if (_this61.customerDocs[j].documentName == _this61.doc_name[_i10] && _this61.customerDocs[j].documentSide == 3) {
+                          _this61.otherImageArray[_i10] = _this61.customerDocs[j].fileUrl;
+                          _this61.progressValOthersArray[_i10] = 100;
+                          _this61.thirdBoxArray[_i10] = true;
                         }
                       }
 
                       for (var _i11 = 0; _i11 < 3; _i11++) {
-                        if (_this60.customerDocs[j].documentName == _this60.doc_name[_i11] && _this60.customerDocs[j].documentSide > 3) {
-                          _this60.fetchChildIndex = _this60.customerDocs[j].documentSide - 4;
-                          _this60.newOtherPage = true;
+                        if (_this61.customerDocs[j].documentName == _this61.doc_name[_i11] && _this61.customerDocs[j].documentSide > 3) {
+                          _this61.fetchChildIndex = _this61.customerDocs[j].documentSide - 4;
+                          _this61.newOtherPage = true;
 
-                          if (_this60.docarray1[_i11]) {
-                            _this60.docarray1[_i11].push(_this60.inititemrows(''));
+                          if (_this61.docarray1[_i11]) {
+                            _this61.docarray1[_i11].push(_this61.inititemrows(''));
                           } else {
-                            var otherArray = [_this60.inititemrows('')];
-                            _this60.docarray1[_i11] = otherArray;
-                            _this60.otherDocumentArray[_i11] = [];
+                            var otherArray = [_this61.inititemrows('')];
+                            _this61.docarray1[_i11] = otherArray;
+                            _this61.otherDocumentArray[_i11] = [];
                           }
 
-                          _this60.otherDocumentArray[_i11][_this60.fetchChildIndex] = _this60.customerDocs[j].fileUrl;
-                          console.log("this.otherDocumentArray", _this60.otherDocumentArray);
+                          _this61.otherDocumentArray[_i11][_this61.fetchChildIndex] = _this61.customerDocs[j].fileUrl;
+                          console.log("this.otherDocumentArray", _this61.otherDocumentArray);
                         }
                       }
                     }
 
-                    _this60.disableNext = false;
+                    _this61.disableNext = false;
                   }
 
-                  if (_this60.customerDocs.length > 0) {
-                    _this60.page_id = _this60.ls.getItem('page_id');
-                    console.log(_this60.page_id);
+                  if (_this61.customerDocs.length > 0) {
+                    _this61.page_id = _this61.ls.getItem('page_id');
+                    console.log(_this61.page_id);
 
-                    if (_this60.customerDocs[0].documentName == "Pan card" && _this60.page_id !== 2) {
+                    if (_this61.customerDocs[0].documentName == "Pan card" && _this61.page_id !== 2) {
                       var element2 = document.getElementById('auto_trigger');
 
                       if (element2) {
@@ -17523,12 +17763,12 @@
                         element2.click();
                       }
 
-                      _this60.disableNext = false;
+                      _this61.disableNext = false;
                     }
 
-                    _this60.documentForm.controls.documentsList['controls'][1].controls.documentName.setValue(_this60.docuNameArray[1]);
+                    _this61.documentForm.controls.documentsList['controls'][1].controls.documentName.setValue(_this61.docuNameArray[1]);
 
-                    if (_this60.customerDocs[0].documentName == "Passport" && _this60.page_id !== 2) {
+                    if (_this61.customerDocs[0].documentName == "Passport" && _this61.page_id !== 2) {
                       var element3 = document.getElementById('auto_trigger');
 
                       if (element3) {
@@ -17536,51 +17776,51 @@
                         element3.click();
                       }
 
-                      _this60.disableNext = false;
+                      _this61.disableNext = false;
                     }
 
-                    _this60.documentForm.controls.documentsList['controls'][2].controls.documentName.setValue(_this60.docuNameArray[2]);
+                    _this61.documentForm.controls.documentsList['controls'][2].controls.documentName.setValue(_this61.docuNameArray[2]);
 
-                    if (_this60.frontImage.documentName == 'Pan card') {
-                      _this60.panNumber = _this60.customerDocs.find(function (item) {
+                    if (_this61.frontImage.documentName == 'Pan card') {
+                      _this61.panNumber = _this61.customerDocs.find(function (item) {
                         return item.documentSide == 2;
                       }).idNumber;
                     }
 
-                    if (_this60.frontImage.documentName == 'Aadhar card') {
-                      _this60.panNumber = _this60.customerDocs.find(function (item) {
+                    if (_this61.frontImage.documentName == 'Aadhar card') {
+                      _this61.panNumber = _this61.customerDocs.find(function (item) {
                         return item.documentSide == 1;
                       }).idNumber;
                     }
 
-                    if (_this60.panNumber) {
-                      _this60.pancard = true;
+                    if (_this61.panNumber) {
+                      _this61.pancard = true;
                     }
 
-                    if (_this60.frontImage != null) {
-                      _this60.progressValFrontArray[0] = 100;
+                    if (_this61.frontImage != null) {
+                      _this61.progressValFrontArray[0] = 100;
                     }
 
-                    if (_this60.backImage != null) {
-                      _this60.progressValBackArray[0] = 100;
+                    if (_this61.backImage != null) {
+                      _this61.progressValBackArray[0] = 100;
                     }
 
-                    if (_this60.otherImage != null) {
-                      _this60.progressValOthersArray[0] = 100;
+                    if (_this61.otherImage != null) {
+                      _this61.progressValOthersArray[0] = 100;
                     }
 
                     var payload = {
-                      documentName: _this60.customerDocs[0].documentName,
-                      frontSide: _this60.customerDocs[0].documentName,
-                      backSide: _this60.customerDocs[0].documentName
+                      documentName: _this61.customerDocs[0].documentName,
+                      frontSide: _this61.customerDocs[0].documentName,
+                      backSide: _this61.customerDocs[0].documentName
                     };
 
-                    _this60.documentForm.patchValue(payload);
+                    _this61.documentForm.patchValue(payload);
 
-                    console.log(_this60.customerDocs[0].documentName);
+                    console.log(_this61.customerDocs[0].documentName);
                   }
 
-                  _this60.cdr.markForCheck();
+                  _this61.cdr.markForCheck();
 
                   console.log("end of api");
                 });
@@ -17658,7 +17898,7 @@
         }, {
           key: "fun",
           value: function fun(webcamImage, i) {
-            var _this61 = this;
+            var _this62 = this;
 
             var cId = this.customerId;
             var uploadData = new FormData();
@@ -17679,23 +17919,23 @@
             uploadData.append("data", JSON.stringify(data));
             uploadData.append("file", file);
             this.tokenService.upload(uploadData).subscribe(function (res) {
-              _this61.progressValFrontArray[i] = 100;
+              _this62.progressValFrontArray[i] = 100;
 
-              _this61.documentForm.get("frontSide").patchValue(true);
+              _this62.documentForm.get("frontSide").patchValue(true);
             }, function (error) {
               if (error.status == 201) {
-                _this61.bf = true;
+                _this62.bf = true;
 
-                _this61.documentForm.get("frontSide").patchValue(true);
+                _this62.documentForm.get("frontSide").patchValue(true);
 
-                _this61.shotToast("Document Uploaded!");
+                _this62.shotToast("Document Uploaded!");
               }
             });
           }
         }, {
           key: "fun1",
           value: function fun1(webcamImage, i) {
-            var _this62 = this;
+            var _this63 = this;
 
             console.log("inside fun1");
             var cId = this.customerId;
@@ -17717,24 +17957,24 @@
             uploadData1.append("data", JSON.stringify(data));
             uploadData1.append("file", file);
             this.tokenService.upload(uploadData1).subscribe(function (res) {
-              _this62.progressValBackArray[i] = 100;
+              _this63.progressValBackArray[i] = 100;
 
               if (res.type === 4) {
                 if (res.body) {
                   console.log("res.body.id", res.body.id);
 
-                  _this62.assignIdValues("backSide", res.body.id);
+                  _this63.assignIdValues("backSide", res.body.id);
                 }
               }
 
-              _this62.documentForm.get("backSide").patchValue(true);
+              _this63.documentForm.get("backSide").patchValue(true);
             }, function (error) {
               if (error.status == 201) {
-                _this62.ff = true;
+                _this63.ff = true;
 
-                _this62.documentForm.get("backSide").patchValue(true);
+                _this63.documentForm.get("backSide").patchValue(true);
 
-                _this62.shotToast("Document Uploaded!");
+                _this63.shotToast("Document Uploaded!");
               }
             });
           }
@@ -17763,7 +18003,7 @@
         }, {
           key: "onUpload",
           value: function onUpload(event, docVal, docSideEnum, i, customerId) {
-            var _this63 = this;
+            var _this64 = this;
 
             console.log(customerId);
             this.newDocumentSide = docSideEnum;
@@ -17791,46 +18031,46 @@
               reader.readAsDataURL(event.target.files[0]);
 
               reader.onload = function (event) {
-                _this63.image = event.target.result;
+                _this64.image = event.target.result;
 
                 if (docVal === 'backSide') {
-                  _this63.backSelected = _this63.selectedFiles.name; //this.backImageArray[i] = this.image;
+                  _this64.backSelected = _this64.selectedFiles.name; //this.backImageArray[i] = this.image;
 
-                  _this63.doOCR(_this63.image, docVal, _this63.selectedFiles, docSideEnum, i);
+                  _this64.doOCR(_this64.image, docVal, _this64.selectedFiles, docSideEnum, i);
 
-                  _this63.displayVal1 = true;
+                  _this64.displayVal1 = true;
                 }
 
                 if (docVal === 'frontSide') {
-                  _this63.frontSelected = _this63.selectedFiles.name; //this.frontImageArray[i] = this.image;
+                  _this64.frontSelected = _this64.selectedFiles.name; //this.frontImageArray[i] = this.image;
                   // this.doOCR(this.frontImageArray[i], docVal, this.selectedFiles, docSideEnum, i);
 
-                  _this63.doOCR(_this63.image, docVal, _this63.selectedFiles, docSideEnum, i);
+                  _this64.doOCR(_this64.image, docVal, _this64.selectedFiles, docSideEnum, i);
 
-                  _this63.displayVal = true;
+                  _this64.displayVal = true;
                 }
 
                 if (docVal === 'others') {
-                  _this63.othersSelected = _this63.selectedFiles.name;
+                  _this64.othersSelected = _this64.selectedFiles.name;
 
-                  _this63.doOCR(_this63.image, docVal, _this63.selectedFiles, docSideEnum, i);
+                  _this64.doOCR(_this64.image, docVal, _this64.selectedFiles, docSideEnum, i);
 
-                  _this63.displayVal2 = true; // this.documentSide = 1;
+                  _this64.displayVal2 = true; // this.documentSide = 1;
                 }
 
                 if (docVal === 'otherDocument') {
-                  _this63.otherDocumentSelected = _this63.selectedFiles.name;
+                  _this64.otherDocumentSelected = _this64.selectedFiles.name;
 
-                  if (_this63.otherDocumentArray[i][_this63.childindex]) {
-                    _this63.otherDocumentArray[i][_this63.childindex] = _this63.image;
+                  if (_this64.otherDocumentArray[i][_this64.childindex]) {
+                    _this64.otherDocumentArray[i][_this64.childindex] = _this64.image;
                   } else {
-                    var otherArray = [_this63.image];
-                    _this63.otherDocumentArray[i][_this63.childindex] = _this63.image;
+                    var otherArray = [_this64.image];
+                    _this64.otherDocumentArray[i][_this64.childindex] = _this64.image;
                   }
 
-                  console.log("final document", _this63.docarray1);
+                  console.log("final document", _this64.docarray1);
 
-                  _this63.doOCR(_this63.otherDocumentArray[i][_this63.childindex], docVal, _this63.selectedFiles, docSideEnum, i); //this.displayVal2 = true;
+                  _this64.doOCR(_this64.otherDocumentArray[i][_this64.childindex], docVal, _this64.selectedFiles, docSideEnum, i); //this.displayVal2 = true;
 
                 }
               };
@@ -17851,7 +18091,7 @@
         }, {
           key: "uploadDoc",
           value: function uploadDoc(img, url, docVal, documnetSideValue, i) {
-            var _this64 = this;
+            var _this65 = this;
 
             this.childindex = documnetSideValue - 4;
             console.log("URL ---- ", url);
@@ -17893,8 +18133,8 @@
               if (docVal === 'backSide') {
                 if (res.type) {
                   if (res.type == _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpEventType"].UploadProgress) {
-                    _this64.progressValBackArray[i] = Math.round(100 * (res.loaded / res.total));
-                    _this64.backImageArray[i] = img;
+                    _this65.progressValBackArray[i] = Math.round(100 * (res.loaded / res.total));
+                    _this65.backImageArray[i] = img;
                   } // else if (res.type == HttpEventType.Response) {
                   //   this.progressValBack = 0;
                   // }
@@ -17903,8 +18143,8 @@
               } else if (docVal === 'frontSide') {
                 if (res.type) {
                   if (res.type == _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpEventType"].UploadProgress) {
-                    _this64.progressValFrontArray[i] = Math.round(100 * (res.loaded / res.total));
-                    _this64.frontImageArray[i] = img;
+                    _this65.progressValFrontArray[i] = Math.round(100 * (res.loaded / res.total));
+                    _this65.frontImageArray[i] = img;
                   } // else if (res.type == HttpEventType.Response) {
                   //   this.progressValFront = 0;
                   // }
@@ -17913,9 +18153,9 @@
               } else if (docVal === 'others') {
                 if (res.type) {
                   if (res.type == _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpEventType"].UploadProgress) {
-                    _this64.progressValOthersArray[i] = Math.round(100 * (res.loaded / res.total));
-                    console.log("uploadProgress others", _this64.progressValOthersArray[i]);
-                    _this64.otherImageArray[i] = img;
+                    _this65.progressValOthersArray[i] = Math.round(100 * (res.loaded / res.total));
+                    console.log("uploadProgress others", _this65.progressValOthersArray[i]);
+                    _this65.otherImageArray[i] = img;
                   }
                 }
               } else {}
@@ -17923,30 +18163,30 @@
               if (res.body) {
                 console.log("res.body.id", res.body.id);
 
-                _this64.assignIdValues(docVal, res.body.id);
+                _this65.assignIdValues(docVal, res.body.id);
 
-                _this64.documentForm.get(docVal).patchValue(true);
+                _this65.documentForm.get(docVal).patchValue(true);
 
-                _this64.shotToast("Document Uploaded!");
+                _this65.shotToast("Document Uploaded!");
               }
             }, function (error) {
               if (error.status == 201) {
-                _this64.documentForm.get(docVal).patchValue(true);
+                _this65.documentForm.get(docVal).patchValue(true);
 
-                _this64.shotToast("Document Uploaded!");
+                _this65.shotToast("Document Uploaded!");
               } else {
                 if (docVal === 'backSide') {
-                  _this64.progressValBackArray[i] = 0;
-                  _this64.backImageArray[i] = null;
-                  _this64.backSelected = null;
+                  _this65.progressValBackArray[i] = 0;
+                  _this65.backImageArray[i] = null;
+                  _this65.backSelected = null;
 
-                  _this64.shotToast(error.message);
+                  _this65.shotToast(error.message);
                 } else {
-                  _this64.progressValFrontArray[i] = 0;
-                  _this64.frontImageArray[i] = null;
-                  _this64.frontSelected = null;
+                  _this65.progressValFrontArray[i] = 0;
+                  _this65.frontImageArray[i] = null;
+                  _this65.frontSelected = null;
 
-                  _this64.shotToast(error.message);
+                  _this65.shotToast(error.message);
                 }
               }
             });
@@ -18018,7 +18258,7 @@
         }, {
           key: "uploadLink",
           value: function uploadLink() {
-            var _this65 = this;
+            var _this66 = this;
 
             this.api.uploadDocLink(app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["LINK_URL"], this.custId).subscribe(function (res) {
               console.log("uploadDocLink", res);
@@ -18026,7 +18266,7 @@
               if (res != "" || res == undefined || res != null) {
                 console.log("uploadDocLink", res);
 
-                var dialogRef = _this65.dialog.open(_sucess_message_sucess_message_component__WEBPACK_IMPORTED_MODULE_17__["SucessMessageComponent"], {
+                var dialogRef = _this66.dialog.open(_sucess_message_sucess_message_component__WEBPACK_IMPORTED_MODULE_17__["SucessMessageComponent"], {
                   width: "35%",
                   backdropClass: "dialog-bg-trans",
                   height: "50%",
@@ -20091,7 +20331,7 @@
         _createClass(FinancialDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this66 = this;
+            var _this67 = this;
 
             console.log(history.state.amount);
             this.cardId = this.ls.getItem('cardId');
@@ -20125,7 +20365,7 @@
             } else {
               this.showEditOption = false;
               setTimeout(function () {
-                _this66.buildFinacialFormGroup();
+                _this67.buildFinacialFormGroup();
               }, 200);
             } // this.createFinancialDetail();
 
@@ -20133,32 +20373,32 @@
         }, {
           key: "getCardFinancialDetailsSummary",
           value: function getCardFinancialDetailsSummary() {
-            var _this67 = this;
+            var _this68 = this;
 
             this.api.getCardFinancialDetails(this.cardId).subscribe(function (result) {
               console.log(result);
               var index = result.length - 1;
               console.log(result[index]);
 
-              _this67.buildFinacialFormGroup(result[index]);
+              _this68.buildFinacialFormGroup(result[index]);
             });
           }
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this68 = this;
+            var _this69 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this68.arrayEmploymentType = data;
+              _this69.arrayEmploymentType = data;
             });
           }
         }, {
           key: "getEmploymentCategory",
           value: function getEmploymentCategory(key) {
-            var _this69 = this;
+            var _this70 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this69.arrayEmploymentCategory = data;
+              _this70.arrayEmploymentCategory = data;
             });
           }
         }, {
@@ -20175,7 +20415,7 @@
         }, {
           key: "buildFinacialFormGroup",
           value: function buildFinacialFormGroup(data) {
-            var _this70 = this;
+            var _this71 = this;
 
             console.log(data);
             this.cardFinancialDetailsForm = this.formBuilder.group({
@@ -20233,7 +20473,7 @@
               assetTotal: [data ? data.assetTotal : 0]
             }, {
               validator: function validator(formGroup) {
-                return _this70.validateInputGroups(formGroup);
+                return _this71.validateInputGroups(formGroup);
               }
             });
           }
@@ -20275,7 +20515,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this71 = this;
+            var _this72 = this;
 
             var startDate = this.converDate(this.cardFinancialDetailsForm.controls.employmentStartDate.value);
 
@@ -20321,7 +20561,7 @@
             this.api.upsertCardFinancialDetails(payload).subscribe(function (fincialResp) {
               console.log(fincialResp);
 
-              _this71.snack.open('Financial Details Saved!', 'OK', {
+              _this72.snack.open('Financial Details Saved!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -20330,11 +20570,11 @@
               //  this.accountService.refresh.next();
 
 
-              _this71.next(); // limit-entry-stage/view-summary
+              _this72.next(); // limit-entry-stage/view-summary
               //this.router.navigate([`/home/application/enrichment/list`, this.accountId]);
 
             }, function (err) {
-              _this71.snack.open('Error Unable to Save!', 'OK', {
+              _this72.snack.open('Error Unable to Save!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -20918,7 +21158,7 @@
         _createClass(CardAccountServicesComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this72 = this;
+            var _this73 = this;
 
             this.cardId = this.ls.getItem('cardId');
             var isAccountServiceDone = JSON.parse(this.ls.getItem('CARD_ACC_SERVICE_DONE'));
@@ -20937,38 +21177,38 @@
 
             console.log("showEditOption", this.showEditOption);
             this.urlService.previousUrl$.subscribe(function (previousUrl) {
-              _this72.previousUrl = previousUrl;
+              _this73.previousUrl = previousUrl;
             });
           }
         }, {
           key: "gettingAccountService",
           value: function gettingAccountService() {
-            var _this73 = this;
+            var _this74 = this;
 
             this.apiService.gettingCardAccountServiceDetails(this.cardId).subscribe(function (resp) {
               console.log("All Account Service", resp);
 
-              _this73.buildServiceForm(resp);
+              _this74.buildServiceForm(resp);
 
-              _this73.statementList = resp.statementPref;
-              _this73.communicationList = resp.commChannelPref; // console.log("showEditOption", this.showEditOption);
+              _this74.statementList = resp.statementPref;
+              _this74.communicationList = resp.commChannelPref; // console.log("showEditOption", this.showEditOption);
 
-              _this73.cdr.markForCheck();
+              _this74.cdr.markForCheck();
 
-              for (var i = 0; i < _this73.communicationList.length; i++) {
-                if (_this73.communicationList[i].checked) {
-                  _this73.commChannelPreferencesArray.push(_this73.communicationList[i].name);
+              for (var i = 0; i < _this74.communicationList.length; i++) {
+                if (_this74.communicationList[i].checked) {
+                  _this74.commChannelPreferencesArray.push(_this74.communicationList[i].name);
                 }
               }
 
-              for (var i = 0; i < _this73.statementList.length; i++) {
-                if (_this73.statementList[i].checked) {
-                  _this73.AccStatementPreferenceArray.push(_this73.statementList[i].name);
+              for (var i = 0; i < _this74.statementList.length; i++) {
+                if (_this74.statementList[i].checked) {
+                  _this74.AccStatementPreferenceArray.push(_this74.statementList[i].name);
                 }
               }
 
               localStorage.setItem('statementFrequency', resp.statementFrequency);
-              _this73.enableFinish = true;
+              _this74.enableFinish = true;
             });
           }
         }, {
@@ -20994,7 +21234,7 @@
         }, {
           key: "onChecklistChange",
           value: function onChecklistChange(checked, checkbox) {
-            var _this74 = this;
+            var _this75 = this;
 
             checkbox.checked = checked;
             this.enableFinish = true;
@@ -21006,7 +21246,7 @@
             } else {
               this.AccStatementPreferenceArray.forEach(function (item, index) {
                 if (item === checkbox.name) {
-                  _this74.AccStatementPreferenceArray.splice(index, 1);
+                  _this75.AccStatementPreferenceArray.splice(index, 1);
                 }
               });
             }
@@ -21014,7 +21254,7 @@
         }, {
           key: "onCheckComChange",
           value: function onCheckComChange(checked, checkbox) {
-            var _this75 = this;
+            var _this76 = this;
 
             console.log(checked);
             console.log(checkbox);
@@ -21029,10 +21269,10 @@
             } else {
               this.commChannelPreferencesArray.forEach(function (item, index) {
                 if (item === checkbox.name) {
-                  _this75.commChannelPreferencesArray.splice(index, 1);
+                  _this76.commChannelPreferencesArray.splice(index, 1);
 
                   console.log("checked", checkbox.name);
-                  _this75.enableFinish = true;
+                  _this76.enableFinish = true;
                 }
               });
             }
@@ -21065,7 +21305,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this76 = this;
+            var _this77 = this;
 
             var accountPayload = {
               // "productAccountId": this.accountId,
@@ -21086,7 +21326,7 @@
                 console.log(data); //this.accountService.refresh.next();
                 //this.router.navigate([`/home/application/nominee/add/${this.accountId}`]);
 
-                _this76.snack.open('Account Service Updated!', 'OK', {
+                _this77.snack.open('Account Service Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -21101,7 +21341,7 @@
                 //  this.accountService.refresh.next();
                 // this.router.navigate([`/home/application/nominee/add/${this.accountId}`]);
 
-                _this76.snack.open('Account Service Saved!', 'OK', {
+                _this77.snack.open('Account Service Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -21431,17 +21671,17 @@
         _createClass(DigitalSignNowOrLaterComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this77 = this;
+            var _this78 = this;
 
             this.cardId = this.ls.getItem("cardId");
             this.urlService.previousUrl$.subscribe(function (previousUrl) {
-              _this77.previousUrl = previousUrl;
+              _this78.previousUrl = previousUrl;
             });
           }
         }, {
           key: "openPopUp",
           value: function openPopUp(data) {
-            var _this78 = this;
+            var _this79 = this;
 
             var response;
 
@@ -21460,9 +21700,9 @@
               });
               dialogRef.afterClosed().subscribe(function (res) {
                 console.log(res);
-                _this78.show = true;
+                _this79.show = true;
 
-                _this78.ls.setItem("enable", true); // this.getByAccountId(this.accountId);
+                _this79.ls.setItem("enable", true); // this.getByAccountId(this.accountId);
 
               });
             }
@@ -21470,12 +21710,12 @@
         }, {
           key: "getByAccountId",
           value: function getByAccountId(accountId) {
-            var _this79 = this;
+            var _this80 = this;
 
             this.api.getCardInitiationDetails(this.cardId).subscribe(function (resp) {
-              _this79.accountdetailsForStatusUpdate = resp;
+              _this80.accountdetailsForStatusUpdate = resp;
 
-              _this79.updateCardAccountStatus();
+              _this80.updateCardAccountStatus();
             });
           }
         }, {
@@ -21543,7 +21783,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this80 = this;
+            var _this81 = this;
 
             var payload = {
               accountId: this.cardId,
@@ -21553,9 +21793,9 @@
             this.api.signInLater(payload).subscribe(function (data) {
               console.log("data::", data);
 
-              _this80.getByAccountId(_this80.cardId);
+              _this81.getByAccountId(_this81.cardId);
 
-              _this80.ls.setItem("eSignStage", true); // this.accountService.refresh.next();
+              _this81.ls.setItem("eSignStage", true); // this.accountService.refresh.next();
 
 
               var response = {
@@ -21566,7 +21806,7 @@
                 screen: "Create Account"
               };
 
-              _this80.openPopUp(response);
+              _this81.openPopUp(response);
             }, function (err) {});
           }
         }]);
@@ -22766,7 +23006,7 @@
         _createClass(CardInitiationComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this81 = this;
+            var _this82 = this;
 
             // this.ls.getItem("kycnumber");
             console.log(this.ls.getItem("cardCustomer"));
@@ -22798,9 +23038,9 @@
                 var kycNum = this.kycRefrence.slice(4);
                 console.log(kycNum);
                 this.apiService.getPrimaryInfo(kycNum).subscribe(function (result) {
-                  _this81.kycStatus = result.customerInfoList[0].customerAdditionalInfo.kycStatus;
+                  _this82.kycStatus = result.customerInfoList[0].customerAdditionalInfo.kycStatus;
 
-                  _this81.ls.setItem('KycStatus', _this81.kycStatus);
+                  _this82.ls.setItem('KycStatus', _this82.kycStatus);
                 });
               }
 
@@ -22815,7 +23055,7 @@
         }, {
           key: "onKeyPress",
           value: function onKeyPress(event) {
-            var _this82 = this;
+            var _this83 = this;
 
             if (event.keyCode === 8) {
               this.onbackSpace = true;
@@ -22843,11 +23083,11 @@
               this.listOfCustByCif = [];
             } else {
               this.timer = setTimeout(function () {
-                _this82.appApiService.fetchByCif(event.target.value).subscribe(function (res) {
+                _this83.appApiService.fetchByCif(event.target.value).subscribe(function (res) {
                   console.log(res);
 
                   if (res) {
-                    _this82.listOfCustByCif = res.customerInfoList;
+                    _this83.listOfCustByCif = res.customerInfoList;
                   }
                 });
               }, 1000);
@@ -22893,33 +23133,33 @@
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this83 = this;
+            var _this84 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this83.arrayofEmployment = data;
-              console.log(_this83.arrayofEmployment);
+              _this84.arrayofEmployment = data;
+              console.log(_this84.arrayofEmployment);
             });
           }
         }, {
           key: "getAccountData",
           value: function getAccountData(cifNumber) {
-            var _this84 = this;
+            var _this85 = this;
 
             this.apiService.getProfileDetails(cifNumber).subscribe(function (data) {
               var _a, _b, _c, _d;
 
               console.log(data);
               console.log((_b = (_a = data === null || data === void 0 ? void 0 : data.signatures) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.accountId);
-              _this84.accountID = (_d = (_c = data === null || data === void 0 ? void 0 : data.signatures) === null || _c === void 0 ? void 0 : _c[0]) === null || _d === void 0 ? void 0 : _d.accountId;
+              _this85.accountID = (_d = (_c = data === null || data === void 0 ? void 0 : data.signatures) === null || _c === void 0 ? void 0 : _c[0]) === null || _d === void 0 ? void 0 : _d.accountId;
 
-              _this84.cardInitiationForm.controls.currency.setValue(data === null || data === void 0 ? void 0 : data.accountCurrency);
+              _this85.cardInitiationForm.controls.currency.setValue(data === null || data === void 0 ? void 0 : data.accountCurrency);
             }, function (error) {// console.log(error);
             });
           }
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this85 = this;
+            var _this86 = this;
 
             console.log("data", this.cardInitiationForm.value);
             localStorage.setItem('Currency Type', this.cardInitiationForm.value.currency);
@@ -22939,18 +23179,18 @@
               cardId: this.showEditOption ? this.cardId : null
             };
             this.apiService.uploadCardInitiation(payload).subscribe(function (data) {
-              _this85.ls.setItem('cardId', data.cardId);
+              _this86.ls.setItem('cardId', data.cardId);
 
               var statusModel = {
                 cardId: data.cardId,
                 status: "ONGOING"
               };
 
-              _this85.apiService.updateCardStatus(statusModel).subscribe(function (data) {});
+              _this86.apiService.updateCardStatus(statusModel).subscribe(function (data) {});
 
               console.log("data", data);
 
-              _this85.next();
+              _this86.next();
             });
           }
         }, {
@@ -22964,28 +23204,28 @@
         }, {
           key: "getCardInitiation",
           value: function getCardInitiation() {
-            var _this86 = this;
+            var _this87 = this;
 
             this.apiService.getCardInitiationDetails(this.cardId).subscribe(function (resp) {
-              _this86.kycStatus = resp.kycStatus;
-              _this86.kycRefrence = resp.kycReference;
+              _this87.kycStatus = resp.kycStatus;
+              _this87.kycRefrence = resp.kycReference;
 
-              _this86.buildInitiationForm(resp);
+              _this87.buildInitiationForm(resp);
 
-              _this86.apiService.fetchAccountIdByCustId(_this86.cifNumberPrimary).subscribe(function (accountNo) {
+              _this87.apiService.fetchAccountIdByCustId(_this87.cifNumberPrimary).subscribe(function (accountNo) {
                 var _a;
 
-                _this86.accountNoArr = accountNo;
+                _this87.accountNoArr = accountNo;
 
-                _this86.cardInitiationForm.controls.customerAccount.setValue((_a = _this86.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
+                _this87.cardInitiationForm.controls.customerAccount.setValue((_a = _this87.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
               });
 
               console.log("data", resp);
 
               if (resp.existingCustomer == true) {
-                _this86.isExistingCustomer = true;
+                _this87.isExistingCustomer = true;
               } else {
-                _this86.isExistingCustomer = false;
+                _this87.isExistingCustomer = false;
               }
             });
           }
@@ -23011,18 +23251,18 @@
         }, {
           key: "formControlValueChanged",
           value: function formControlValueChanged() {
-            var _this87 = this;
+            var _this88 = this;
 
             var cifNumberControl = this.cardInitiationForm.get('cifNumber');
             this.cardInitiationForm.get('existingCustomer').valueChanges.subscribe(function (val) {
               console.log(val);
 
               if (val == false) {
-                _this87.cardInitiationForm.get('customerAccount').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].nullValidator]);
+                _this88.cardInitiationForm.get('customerAccount').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].nullValidator]);
 
                 cifNumberControl.setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].nullValidator]);
               } else {
-                _this87.cardInitiationForm.get('customerAccount').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]);
+                _this88.cardInitiationForm.get('customerAccount').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]);
 
                 cifNumberControl.setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]);
               }
@@ -23068,27 +23308,27 @@
         }, {
           key: "fetchByCif",
           value: function fetchByCif(cifNumber) {
-            var _this88 = this;
+            var _this89 = this;
 
             if (!!cifNumber) {
               this.showSpinn = true;
               this.appApiService.fetchByCif(cifNumber).subscribe(function (res) {
-                _this88.kycStatus = res.customerInfoList[0].customerAdditionalInfo.kycStatus;
-                _this88.kycRefrence = res.customerInfoList[0].customerAdditionalInfo.kycReference;
+                _this89.kycStatus = res.customerInfoList[0].customerAdditionalInfo.kycStatus;
+                _this89.kycRefrence = res.customerInfoList[0].customerAdditionalInfo.kycReference;
 
-                _this88.cardInitiationForm.controls.cifNumber.setValue(cifNumber);
+                _this89.cardInitiationForm.controls.cifNumber.setValue(cifNumber);
 
-                _this88.cardInitiationForm.controls.applicantName.setValue(res.customerInfoList[0].firstName + " " + res.customerInfoList[0].lastName); // this.ls.setItem('Card_Applicant_name', res.customerInfoList[0].firstName + " " + res.customerInfoList[0].lastName);
+                _this89.cardInitiationForm.controls.applicantName.setValue(res.customerInfoList[0].firstName + " " + res.customerInfoList[0].lastName); // this.ls.setItem('Card_Applicant_name', res.customerInfoList[0].firstName + " " + res.customerInfoList[0].lastName);
 
 
-                _this88.cardInitiationForm.controls.customerAccount.setValue(_this88.accountID);
+                _this89.cardInitiationForm.controls.customerAccount.setValue(_this89.accountID);
 
-                _this88.showSpinn = false;
+                _this89.showSpinn = false;
 
                 if (!res) {
-                  _this88.isCifValid = false;
+                  _this89.isCifValid = false;
 
-                  _this88.snack.open('Invalid CIF Number', 'OK', {
+                  _this89.snack.open('Invalid CIF Number', 'OK', {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -23098,11 +23338,11 @@
                   return;
                 } else {
                   if (res.customerInfoList[0].custStatus != "APPROVED") {
-                    _this88.isCifValid = false;
+                    _this89.isCifValid = false;
                   }
 
                   if (res.customerInfoList[0].custStatus == "APPROVED") {
-                    _this88.isCifValid = true;
+                    _this89.isCifValid = true;
                   } //console.log(this.isCifValid,"else2 condition");
 
 
@@ -23123,7 +23363,7 @@
                     middleName: res.customerInfoList[0].middleName,
                     lastName: res.customerInfoList[0].lastName,
                     gender: res.customerInfoList[0].gender,
-                    dateOfBirth: _this88.convertDate(res.customerInfoList[0].dateOfBirth),
+                    dateOfBirth: _this89.convertDate(res.customerInfoList[0].dateOfBirth),
                     placeOfBirth: res.customerInfoList[0].placeOfBirth,
                     residenceStatus: res.customerInfoList[0].residenceStatus,
                     nationality: res.customerInfoList[0].nationality,
@@ -23132,7 +23372,7 @@
                     custIdProofs: res.customerInfoList[0].custIdProofs,
                     idType: res.customerInfoList[0].custIdProofs.length > 0 ? res.customerInfoList[0].custIdProofs[0].idType : '',
                     idNumber: res.customerInfoList[0].custIdProofs.length > 0 ? res.customerInfoList[0].custIdProofs[0].idNumber : '',
-                    expiryDate: res.customerInfoList[0].custIdProofs.length > 0 ? _this88.convertDate(res.customerInfoList[0].custIdProofs[0].expiryDate) : '',
+                    expiryDate: res.customerInfoList[0].custIdProofs.length > 0 ? _this89.convertDate(res.customerInfoList[0].custIdProofs[0].expiryDate) : '',
                     addressType: address.addressType,
                     address1: address.address1,
                     address2: address.address2,
@@ -23145,29 +23385,29 @@
                     primaryEmailAdress: res.customerInfoList[0].primaryEmailAdress
                   };
 
-                  if (_this88.cardInitiationForm.value.swiftCode == null || _this88.cardInitiationForm.value.swiftCodeEnable == null) {
-                    console.log(_this88.cardInitiationForm.value.swiftCode);
-                    _this88.flag = false;
+                  if (_this89.cardInitiationForm.value.swiftCode == null || _this89.cardInitiationForm.value.swiftCodeEnable == null) {
+                    console.log(_this89.cardInitiationForm.value.swiftCode);
+                    _this89.flag = false;
                   }
 
-                  _this88.cifNumberPrimary = cifNumber;
+                  _this89.cifNumberPrimary = cifNumber;
 
-                  _this88.ls.setItem("Card_CIF_NUM_PRIMARY", _this88.cifNumberPrimary);
+                  _this89.ls.setItem("Card_CIF_NUM_PRIMARY", _this89.cifNumberPrimary);
 
-                  _this88.apiService.sendCIF(queryParams);
+                  _this89.apiService.sendCIF(queryParams);
 
-                  _this88.apiService.fetchAccountIdByCustId(cifNumber).subscribe(function (accountNo) {
+                  _this89.apiService.fetchAccountIdByCustId(cifNumber).subscribe(function (accountNo) {
                     var _a;
 
-                    _this88.accountNoArr = accountNo;
+                    _this89.accountNoArr = accountNo;
 
-                    _this88.cardInitiationForm.controls.customerAccount.setValue((_a = _this88.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
+                    _this89.cardInitiationForm.controls.customerAccount.setValue((_a = _this89.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
 
                     console.log(accountNo);
                   });
                 }
 
-                _this88.cdr.markForCheck();
+                _this89.cdr.markForCheck();
               });
               this.getAccountData(cifNumber);
             }
@@ -23930,10 +24170,10 @@
         }, {
           key: "getApprovalDetails",
           value: function getApprovalDetails() {
-            var _this89 = this;
+            var _this90 = this;
 
             this.apiService.getApprovalDetails(this.cardId).subscribe(function (resp) {
-              _this89.buildformGroup(resp);
+              _this90.buildformGroup(resp);
 
               console.log("data", resp);
             });
@@ -23952,51 +24192,51 @@
         }, {
           key: "getAccountCurrency",
           value: function getAccountCurrency(key) {
-            var _this90 = this;
+            var _this91 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this90.arrayAccountCurrency = data;
+              _this91.arrayAccountCurrency = data;
             });
           }
         }, {
           key: "getAccountType",
           value: function getAccountType(key) {
-            var _this91 = this;
+            var _this92 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this91.arrayAccountType = data;
+              _this92.arrayAccountType = data;
             });
           }
         }, {
           key: "getUserRecomendation",
           value: function getUserRecomendation(key) {
-            var _this92 = this;
+            var _this93 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this92.arrayUserRecomendation = data;
+              _this93.arrayUserRecomendation = data;
             });
           }
         }, {
           key: "getAccountBranchDetails",
           value: function getAccountBranchDetails() {
-            var _this93 = this;
+            var _this94 = this;
 
-            //
+            //debugger
             this.api.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
-              _this93.arrayAccountBranch = data;
+              _this94.arrayAccountBranch = data;
             });
           }
         }, {
           key: "getCardInitiationDetails",
           value: function getCardInitiationDetails() {
-            var _this94 = this;
+            var _this95 = this;
 
             this.apiService.getCardInitiationDetails(this.cardId).subscribe(function (resp) {
               console.log("data", resp);
-              _this94.currency = resp.currency;
+              _this95.currency = resp.currency;
 
-              _this94.approvalForm.controls.accountCurrency.setValue(_this94.currency);
+              _this95.approvalForm.controls.accountCurrency.setValue(_this95.currency);
             });
           }
         }, {
@@ -24609,7 +24849,7 @@
         _createClass(IntrestDetailsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this95 = this;
+            var _this96 = this;
 
             this.cardId = this.ls.getItem('cardId');
             this.interestForm = this.formBuilder.group({
@@ -24622,12 +24862,12 @@
               loan: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormArray"]([])
             });
             this.api.cardInterestFetchById(this.cardId).subscribe(function (resp) {
-              console.log("resp from backend ", _this95.resp);
-              _this95.resp = resp;
+              console.log("resp from backend ", _this96.resp);
+              _this96.resp = resp;
 
-              _this95.onChangeInterest(_this95.resp.length);
+              _this96.onChangeInterest(_this96.resp.length);
 
-              _this95["in"].patchValue(_this95.resp);
+              _this96["in"].patchValue(_this96.resp);
             });
           }
         }, {
@@ -26310,7 +26550,25 @@
 
       var _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(
       /*! ./digital-signing/digitalsign-summary/digitalsign-summary.component */
-      "R8Ah"); // import { ChargeDetailsSummaryComponent } from '../home/charge-details-summary/charge-details-summary.component';
+      "R8Ah");
+      /* harmony import */
+
+
+      var _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(
+      /*! ./cardaccount-application-assessment/card-account-app-assessment-viewsummary/card-account-app-assessment-viewsummary.component */
+      "Z85s");
+      /* harmony import */
+
+
+      var _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(
+      /*! ./supervisor-approval-stage/approval-details/card-approval-view-summary/card-approval-view-summary.component */
+      "97QS");
+      /* harmony import */
+
+
+      var _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(
+      /*! ./digital-signing/digital-view-summary/digital-view-summary.component */
+      "QM7n"); // import { ChargeDetailsSummaryComponent } from '../home/charge-details-summary/charge-details-summary.component';
       // import { UploadLinkToEmailComponent } from './document-upload/upload-link-to-email/upload-link-to-email.component';
 
 
@@ -26333,7 +26591,7 @@
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CardAccountModule, {
           declarations: [_card_account_component__WEBPACK_IMPORTED_MODULE_6__["CardAccountComponent"], _application_entry_stage_application_entry_stage_component__WEBPACK_IMPORTED_MODULE_16__["ApplicationEntryStageComponent"], _document_upload_document_upload_component__WEBPACK_IMPORTED_MODULE_17__["DocumentUploadComponent"], _application_enrichment_application_enrichment_component__WEBPACK_IMPORTED_MODULE_18__["ApplicationEnrichmentComponent"], _underwriting_stage_underwriting_stage_component__WEBPACK_IMPORTED_MODULE_19__["UnderwritingStageComponent"], _assessment_stage_assessment_stage_component__WEBPACK_IMPORTED_MODULE_20__["AssessmentStageComponent"], _supervisor_approval_stage_supervisor_approval_stage_component__WEBPACK_IMPORTED_MODULE_21__["SupervisorApprovalStageComponent"], _digital_signing_digital_signing_component__WEBPACK_IMPORTED_MODULE_22__["DigitalSigningComponent"], _document_upload_document_details_document_details_component__WEBPACK_IMPORTED_MODULE_23__["DocumentDetailsComponent"], _application_enrichment_intrest_details_intrest_details_component__WEBPACK_IMPORTED_MODULE_24__["IntrestDetailsComponent"], _application_enrichment_charge_details_charge_details_component__WEBPACK_IMPORTED_MODULE_25__["ChargeDetailsComponent"], _application_enrichment_intrest_details_intrest_details_summary_intrest_details_summary_component__WEBPACK_IMPORTED_MODULE_26__["IntrestDetailsSummaryComponent"], _application_enrichment_enrichment_summary_enrichment_summary_component__WEBPACK_IMPORTED_MODULE_27__["EnrichmentSummaryComponent"], // ChargeDetailsSummaryComponent,
           _underwriting_stage_underwriting_credit_rating_underwriting_credit_rating_component__WEBPACK_IMPORTED_MODULE_29__["UnderwritingCreditRatingComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_scoreboard_component__WEBPACK_IMPORTED_MODULE_30__["CardaccountQualitativeScoreboardComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_component__WEBPACK_IMPORTED_MODULE_31__["CardaccountApplicationAssessmentComponent"], _underwriting_stage_underwriting_credit_rating_underwriting_credit_summary_underwriting_credit_summary_component__WEBPACK_IMPORTED_MODULE_32__["UnderwritingCreditSummaryComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_summary_cardaccount_application_assessment_summary_component__WEBPACK_IMPORTED_MODULE_33__["CardaccountApplicationAssessmentSummaryComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_summary_cardaccount_qualitative_summary_component__WEBPACK_IMPORTED_MODULE_34__["CardaccountQualitativeSummaryComponent"], _supervisor_approval_stage_approval_details_approval_details_component__WEBPACK_IMPORTED_MODULE_35__["ApprovalDetailsComponent"], _application_entry_stage_financial_details_financial_details_component__WEBPACK_IMPORTED_MODULE_36__["FinancialDetailsComponent"], _application_entry_stage_card_customer_information_card_customer_information_component__WEBPACK_IMPORTED_MODULE_37__["CardCustomerInformationComponent"], _application_entry_stage_card_account_services_card_account_services_component__WEBPACK_IMPORTED_MODULE_38__["CardAccountServicesComponent"], _application_entry_stage_card_prefrences_card_prefrences_component__WEBPACK_IMPORTED_MODULE_39__["CardPrefrencesComponent"], _application_entry_stage_card_account_services_card_account_summary_card_account_summary_component__WEBPACK_IMPORTED_MODULE_40__["CardAccountSummaryComponent"], _application_entry_stage_card_initiation_card_initiation_component__WEBPACK_IMPORTED_MODULE_41__["CardInitiationComponent"], _application_entry_stage_card_initiation_card_initiation_summary_card_initiation_summary_component__WEBPACK_IMPORTED_MODULE_42__["CardInitiationSummaryComponent"], _digital_signing_digital_sign_now_or_later_digital_sign_now_or_later_component__WEBPACK_IMPORTED_MODULE_43__["DigitalSignNowOrLaterComponent"], _digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_44__["UploadSignatureOrEsignComponent"], _digital_signing_esignature_pop_esignature_pop_component__WEBPACK_IMPORTED_MODULE_45__["EsignaturePopComponent"], _supervisor_approval_stage_approval_details_approval_details_summary_approval_details_summary_component__WEBPACK_IMPORTED_MODULE_46__["ApprovalDetailsSummaryComponent"], _application_entry_stage_financial_details_card_financial_details_summary_card_financial_details_summary_component__WEBPACK_IMPORTED_MODULE_47__["CardFinancialDetailsSummaryComponent"], _application_entry_stage_card_customer_information_card_customer_info_summary_card_customer_info_summary_component__WEBPACK_IMPORTED_MODULE_48__["CardCustomerInfoSummaryComponent"], _application_enrichment_charge_details_card_acc_charge_det_sum_card_acc_charge_det_sum_component__WEBPACK_IMPORTED_MODULE_49__["CardAccChargeDetSumComponent"], _application_entry_stage_card_prefrences_card_prefrence_summary_card_prefrence_summary_component__WEBPACK_IMPORTED_MODULE_50__["CardPrefrenceSummaryComponent"], _application_entry_stage_cardaccount_app_entry_stage_view_summary_cardaccount_app_entry_stage_view_summary_component__WEBPACK_IMPORTED_MODULE_51__["CardaccountAppEntryStageViewSummaryComponent"], _document_upload_sucess_message_sucess_message_component__WEBPACK_IMPORTED_MODULE_52__["SucessMessageComponent"], // UploadLinkToEmailComponent
-          _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"]],
+          _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"], _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__["CardAccountAppAssessmentViewsummaryComponent"], _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalViewSummaryComponent"], _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__["DigitalViewSummaryComponent"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_10__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_11__["NgxDatatableModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_12__["PerfectScrollbarModule"], app_shared_pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_13__["SharedPipesModule"], app_shared_directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_14__["SharedDirectivesModule"], app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_15__["SharedMaterialModule"], angular2_signaturepad__WEBPACK_IMPORTED_MODULE_4__["SignaturePadModule"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"], _others_others_module__WEBPACK_IMPORTED_MODULE_54__["OthersModule"]]
         });
       })();
@@ -26346,7 +26604,7 @@
           args: [{
             declarations: [_card_account_component__WEBPACK_IMPORTED_MODULE_6__["CardAccountComponent"], _application_entry_stage_application_entry_stage_component__WEBPACK_IMPORTED_MODULE_16__["ApplicationEntryStageComponent"], _document_upload_document_upload_component__WEBPACK_IMPORTED_MODULE_17__["DocumentUploadComponent"], _application_enrichment_application_enrichment_component__WEBPACK_IMPORTED_MODULE_18__["ApplicationEnrichmentComponent"], _underwriting_stage_underwriting_stage_component__WEBPACK_IMPORTED_MODULE_19__["UnderwritingStageComponent"], _assessment_stage_assessment_stage_component__WEBPACK_IMPORTED_MODULE_20__["AssessmentStageComponent"], _supervisor_approval_stage_supervisor_approval_stage_component__WEBPACK_IMPORTED_MODULE_21__["SupervisorApprovalStageComponent"], _digital_signing_digital_signing_component__WEBPACK_IMPORTED_MODULE_22__["DigitalSigningComponent"], _document_upload_document_details_document_details_component__WEBPACK_IMPORTED_MODULE_23__["DocumentDetailsComponent"], _application_enrichment_intrest_details_intrest_details_component__WEBPACK_IMPORTED_MODULE_24__["IntrestDetailsComponent"], _application_enrichment_charge_details_charge_details_component__WEBPACK_IMPORTED_MODULE_25__["ChargeDetailsComponent"], _application_enrichment_intrest_details_intrest_details_summary_intrest_details_summary_component__WEBPACK_IMPORTED_MODULE_26__["IntrestDetailsSummaryComponent"], _application_enrichment_enrichment_summary_enrichment_summary_component__WEBPACK_IMPORTED_MODULE_27__["EnrichmentSummaryComponent"], // ChargeDetailsSummaryComponent,
             _underwriting_stage_underwriting_credit_rating_underwriting_credit_rating_component__WEBPACK_IMPORTED_MODULE_29__["UnderwritingCreditRatingComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_scoreboard_component__WEBPACK_IMPORTED_MODULE_30__["CardaccountQualitativeScoreboardComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_component__WEBPACK_IMPORTED_MODULE_31__["CardaccountApplicationAssessmentComponent"], _underwriting_stage_underwriting_credit_rating_underwriting_credit_summary_underwriting_credit_summary_component__WEBPACK_IMPORTED_MODULE_32__["UnderwritingCreditSummaryComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_summary_cardaccount_application_assessment_summary_component__WEBPACK_IMPORTED_MODULE_33__["CardaccountApplicationAssessmentSummaryComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_summary_cardaccount_qualitative_summary_component__WEBPACK_IMPORTED_MODULE_34__["CardaccountQualitativeSummaryComponent"], _supervisor_approval_stage_approval_details_approval_details_component__WEBPACK_IMPORTED_MODULE_35__["ApprovalDetailsComponent"], _application_entry_stage_financial_details_financial_details_component__WEBPACK_IMPORTED_MODULE_36__["FinancialDetailsComponent"], _application_entry_stage_card_customer_information_card_customer_information_component__WEBPACK_IMPORTED_MODULE_37__["CardCustomerInformationComponent"], _application_entry_stage_card_account_services_card_account_services_component__WEBPACK_IMPORTED_MODULE_38__["CardAccountServicesComponent"], _application_entry_stage_card_prefrences_card_prefrences_component__WEBPACK_IMPORTED_MODULE_39__["CardPrefrencesComponent"], _application_entry_stage_card_account_services_card_account_summary_card_account_summary_component__WEBPACK_IMPORTED_MODULE_40__["CardAccountSummaryComponent"], _application_entry_stage_card_initiation_card_initiation_component__WEBPACK_IMPORTED_MODULE_41__["CardInitiationComponent"], _application_entry_stage_card_initiation_card_initiation_summary_card_initiation_summary_component__WEBPACK_IMPORTED_MODULE_42__["CardInitiationSummaryComponent"], _digital_signing_digital_sign_now_or_later_digital_sign_now_or_later_component__WEBPACK_IMPORTED_MODULE_43__["DigitalSignNowOrLaterComponent"], _digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_44__["UploadSignatureOrEsignComponent"], _digital_signing_esignature_pop_esignature_pop_component__WEBPACK_IMPORTED_MODULE_45__["EsignaturePopComponent"], _supervisor_approval_stage_approval_details_approval_details_summary_approval_details_summary_component__WEBPACK_IMPORTED_MODULE_46__["ApprovalDetailsSummaryComponent"], _application_entry_stage_financial_details_card_financial_details_summary_card_financial_details_summary_component__WEBPACK_IMPORTED_MODULE_47__["CardFinancialDetailsSummaryComponent"], _application_entry_stage_card_customer_information_card_customer_info_summary_card_customer_info_summary_component__WEBPACK_IMPORTED_MODULE_48__["CardCustomerInfoSummaryComponent"], _application_enrichment_charge_details_card_acc_charge_det_sum_card_acc_charge_det_sum_component__WEBPACK_IMPORTED_MODULE_49__["CardAccChargeDetSumComponent"], _application_entry_stage_card_prefrences_card_prefrence_summary_card_prefrence_summary_component__WEBPACK_IMPORTED_MODULE_50__["CardPrefrenceSummaryComponent"], _application_entry_stage_cardaccount_app_entry_stage_view_summary_cardaccount_app_entry_stage_view_summary_component__WEBPACK_IMPORTED_MODULE_51__["CardaccountAppEntryStageViewSummaryComponent"], _document_upload_sucess_message_sucess_message_component__WEBPACK_IMPORTED_MODULE_52__["SucessMessageComponent"], // UploadLinkToEmailComponent
-            _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"]],
+            _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"], _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__["CardAccountAppAssessmentViewsummaryComponent"], _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalViewSummaryComponent"], _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__["DigitalViewSummaryComponent"]],
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_10__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_11__["NgxDatatableModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_12__["PerfectScrollbarModule"], app_shared_pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_13__["SharedPipesModule"], app_shared_directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_14__["SharedDirectivesModule"], app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_15__["SharedMaterialModule"], angular2_signaturepad__WEBPACK_IMPORTED_MODULE_4__["SignaturePadModule"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forChild(_card_account_routing__WEBPACK_IMPORTED_MODULE_5__["CardAccountRoutes"]), _others_others_module__WEBPACK_IMPORTED_MODULE_54__["OthersModule"]],
             providers: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CurrencyPipe"]],
             schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]]
@@ -26875,27 +27133,27 @@
         }, {
           key: "loadData",
           value: function loadData() {
-            var _this96 = this;
+            var _this97 = this;
 
             this.api.getScorecardQuestions(this.accountType).subscribe(function (response) {
               console.log(response);
-              console.log(_this96.noOfapplicants);
+              console.log(_this97.noOfapplicants);
 
-              if (!_this96.noOfapplicants && response) {
-                _this96.noOfapplicants = response.length;
+              if (!_this97.noOfapplicants && response) {
+                _this97.noOfapplicants = response.length;
               }
 
               response[1].attributeType = "drop-down";
 
-              for (var n = 0; n < _this96.noOfapplicants; n++) {
-                _this96.scoreboardQuestionsArray.push({
+              for (var n = 0; n < _this97.noOfapplicants; n++) {
+                _this97.scoreboardQuestionsArray.push({
                   scorecardQuestion: response,
                   applicantId: n + 1,
                   scoreCardDetails: response
                 });
 
                 var mapDataAns = [];
-                console.log("data", _this96.scoreCardDetails);
+                console.log("data", _this97.scoreCardDetails);
 
                 for (var p = 0; p < response.length; p++) {
                   mapDataAns.push({
@@ -26905,96 +27163,96 @@
                   });
                 }
 
-                _this96.scoreCardMappingArray.push({
+                _this97.scoreCardMappingArray.push({
                   applicantId: n + 1,
                   scoreCardDetails: mapDataAns
                 });
               }
 
-              console.log("data", _this96.scoreCardDetails);
-              console.log("ques:", _this96.scoreboardQuestionsArray);
+              console.log("data", _this97.scoreCardDetails);
+              console.log("ques:", _this97.scoreboardQuestionsArray);
 
-              _this96.cdr.markForCheck();
+              _this97.cdr.markForCheck();
             });
           }
         }, {
           key: "getAllQualitative",
           value: function getAllQualitative() {
-            var _this97 = this;
+            var _this98 = this;
 
             console.log(this.isQualitativeScreen);
             this.api.getCardQualitativeScorecardDetails(this.cardId).subscribe(function (response) {
               console.log(response);
-              console.log(_this97.isQualitativeScreen);
-              _this97.qualitativeScoreboardSummary = response;
-              console.log(_this97.qualitativeScoreboardSummary.scoreCardId + " : " + _this97.qualitativeScoreboardSummary.numberOfApplicant);
+              console.log(_this98.isQualitativeScreen);
+              _this98.qualitativeScoreboardSummary = response;
+              console.log(_this98.qualitativeScoreboardSummary.scoreCardId + " : " + _this98.qualitativeScoreboardSummary.numberOfApplicant);
 
-              _this97.scoreCardId.setValue(_this97.qualitativeScoreboardSummary.scoreCardId);
+              _this98.scoreCardId.setValue(_this98.qualitativeScoreboardSummary.scoreCardId);
 
-              _this97.numberOfApplicant.setValue(_this97.qualitativeScoreboardSummary.numberOfApplicant);
+              _this98.numberOfApplicant.setValue(_this98.qualitativeScoreboardSummary.numberOfApplicant);
 
-              console.log("scorecard id: ", _this97.scoreCardId);
-              console.log("numberOfApplicant : ", _this97.numberOfApplicant);
-              _this97.scoreboardQuestionsArray = [];
+              console.log("scorecard id: ", _this98.scoreCardId);
+              console.log("numberOfApplicant : ", _this98.numberOfApplicant);
+              _this98.scoreboardQuestionsArray = [];
 
               var _loop3 = function _loop3(i) {
-                console.log("inside for", _this97.qualitativeScoreboardSummary.scoreCardMapping);
+                console.log("inside for", _this98.qualitativeScoreboardSummary.scoreCardMapping);
 
-                _this97.api.getScorecardQuestions(_this97.accountType).subscribe(function (response) {
+                _this98.api.getScorecardQuestions(_this98.accountType).subscribe(function (response) {
                   console.log(response);
-                  console.log(_this97.noOfapplicants);
+                  console.log(_this98.noOfapplicants);
 
-                  if (!_this97.noOfapplicants && response) {
-                    _this97.noOfapplicants = response.length;
+                  if (!_this98.noOfapplicants && response) {
+                    _this98.noOfapplicants = response.length;
                   }
 
-                  for (var n = 0; n < _this97.noOfapplicants; n++) {
-                    _this97.scoreboardQuestionsArray.push({
+                  for (var n = 0; n < _this98.noOfapplicants; n++) {
+                    _this98.scoreboardQuestionsArray.push({
                       scorecardQuestion: response,
                       applicantId: n + 1,
                       scoreCardDetails: response
                     });
 
-                    console.log(_this97.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length);
+                    console.log(_this98.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length);
 
-                    for (var j = 0; j < _this97.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length; j++) {
-                      console.log(_this97.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails);
-                      var scAns = _this97.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails;
+                    for (var j = 0; j < _this98.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length; j++) {
+                      console.log(_this98.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails);
+                      var scAns = _this98.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails;
                       console.log(scAns);
 
-                      _this97.sbMultiSelectAnswer.push(scAns[j].scorecardAnswer);
+                      _this98.sbMultiSelectAnswer.push(scAns[j].scorecardAnswer);
 
-                      for (var k = 0; k < _this97.sbMultiSelectAnswer.length; k++) {
-                        if (_this97.sbMultiSelectAnswer[2]) {
-                          _this97.sbSelectAnswer = _this97.sbMultiSelectAnswer[2];
-                          console.log(_this97.sbSwlwctAnswer);
-                        } else if (_this97.sbMultiSelectAnswer[0]) {
-                          _this97.sbSelectAnswer1 = _this97.sbMultiSelectAnswer[0];
-                          console.log(_this97.sbSelectAnswer1);
+                      for (var k = 0; k < _this98.sbMultiSelectAnswer.length; k++) {
+                        if (_this98.sbMultiSelectAnswer[2]) {
+                          _this98.sbSelectAnswer = _this98.sbMultiSelectAnswer[2];
+                          console.log(_this98.sbSwlwctAnswer);
+                        } else if (_this98.sbMultiSelectAnswer[0]) {
+                          _this98.sbSelectAnswer1 = _this98.sbMultiSelectAnswer[0];
+                          console.log(_this98.sbSelectAnswer1);
                         }
                       }
 
-                      console.log(_this97.sbMultiSelectAnswer);
+                      console.log(_this98.sbMultiSelectAnswer);
                     }
                   }
 
-                  console.log("data", _this97.scoreCardDetails);
-                  console.log("ques:", _this97.scoreboardQuestionsArray);
+                  console.log("data", _this98.scoreCardDetails);
+                  console.log("ques:", _this98.scoreboardQuestionsArray);
 
-                  _this97.cdr.markForCheck();
+                  _this98.cdr.markForCheck();
                 });
 
-                _this97.scoreCardMappingArray = _this97.scoreboardQuestionsArray;
+                _this98.scoreCardMappingArray = _this98.scoreboardQuestionsArray;
               };
 
-              for (var i = 0; i < _this97.qualitativeScoreboardSummary.scoreCardMapping.length; i++) {
+              for (var i = 0; i < _this98.qualitativeScoreboardSummary.scoreCardMapping.length; i++) {
                 _loop3(i);
               }
 
-              console.log(_this97.scoreboardQuestionsArray, "scoreBoardQuestionArray");
-              _this97.disableDoneBtn = false;
+              console.log(_this98.scoreboardQuestionsArray, "scoreBoardQuestionArray");
+              _this98.disableDoneBtn = false;
 
-              _this97.cdr.markForCheck();
+              _this98.cdr.markForCheck();
             });
           }
         }, {
@@ -27140,7 +27398,7 @@
         }, {
           key: "saveQualitativeScore",
           value: function saveQualitativeScore() {
-            var _this98 = this;
+            var _this99 = this;
 
             var submitData = {}; // console.log(this.no_of_applicants);
             // let numberOfApplicant = this.no_of_applicants;
@@ -27159,20 +27417,20 @@
             this.api.saveQualitativeScorecard(submitData).subscribe(function (resp) {
               console.log("data", submitData.cardId);
 
-              _this98.snack.open('Card Origination Qualitative Scoreboard Saved!', 'OK', {
+              _this99.snack.open('Card Origination Qualitative Scoreboard Saved!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               }); // console.log(resp);
 
 
-              _this98.isDataSaved = true; // this.ls.setItem('CARD_QUALITATIVE_SCOREBOARD_DONE', true);
+              _this99.isDataSaved = true; // this.ls.setItem('CARD_QUALITATIVE_SCOREBOARD_DONE', true);
               // this.ls.setItem('CARD_UNDERWRITING_DONE',true);
               // this.disableDoneBtn=false
 
-              _this98.accountService.refresh.next();
+              _this99.accountService.refresh.next();
             }, function (err) {
-              _this98.snack.open('Server Error!', 'OK', {
+              _this99.snack.open('Server Error!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'

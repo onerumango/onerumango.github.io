@@ -1540,7 +1540,6 @@ class SearchComponent {
     // }
     getCustomerData(key, value) {
         this.loading = true;
-        debugger;
         if (this.tokenService.getCustomerByCustomerID != null) {
             this.tokenService.getCustomerByCustomerID(key, value)
                 .subscribe((items) => {
@@ -7350,12 +7349,13 @@ class ApiService {
     transferToken(payload, loggedInTellerId) {
         return this.http.post(`${API_URL}/tellerToken/transferToken?loggedInTellerId=${loggedInTellerId}`, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
-    getReport(tellerId, fromDate, endDate) {
+    getReport(report, customerId, fromDate, endDate, branch) {
         // console.log("reportid,date",reportid,date)
         //console.log(data)
         // let reportid = 'HRRATTD';
         // let date = '2022-08-23';
-        var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
+        // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
+        var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}&branch=${branch}`;
         console.log("in service", bip);
         window.open(bip);
         /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));
@@ -7471,6 +7471,11 @@ class ApiService {
     getRecentTransactionFilterBasedOnDate(tellerId, fromDate, toDate) {
         return this.http
             .get(`${API_URL}/cash-deposit/api/fetchTellerRecentTrans?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${toDate}`)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    searchRecentTrans(tellerId, search) {
+        return this.http
+            .get(`${API_URL}/cash-deposit/api/searchRecentTransactionInfo?search=${search}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
 }

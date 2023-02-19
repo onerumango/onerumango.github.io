@@ -7384,6 +7384,449 @@
     },
 
     /***/
+    "97QS":
+    /*!**************************************************************************************************************************************************!*\
+      !*** ./src/app/views/card-account/supervisor-approval-stage/approval-details/card-approval-view-summary/card-approval-view-summary.component.ts ***!
+      \**************************************************************************************************************************************************/
+
+    /*! exports provided: CardApprovalViewSummaryComponent */
+
+    /***/
+    function QS(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CardApprovalViewSummaryComponent", function () {
+        return CardApprovalViewSummaryComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "8Y7J");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "iELJ");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "iInd");
+      /* harmony import */
+
+
+      var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! app/shared/services/api.service */
+      "nm5K");
+      /* harmony import */
+
+
+      var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! app/shared/services/data.service */
+      "iiaH");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "VDRc");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "Tj54");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/card */
+      "PDjf");
+      /* harmony import */
+
+
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/form-field */
+      "Q2Ze");
+
+      var CardApprovalViewSummaryComponent = /*#__PURE__*/function () {
+        function CardApprovalViewSummaryComponent(dialogRef, ls, apiService, dataService, router) {
+          _classCallCheck(this, CardApprovalViewSummaryComponent);
+
+          this.dialogRef = dialogRef;
+          this.ls = ls;
+          this.apiService = apiService;
+          this.dataService = dataService;
+          this.router = router;
+        }
+
+        _createClass(CardApprovalViewSummaryComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.cardId = this.ls.getItem('cardId');
+            this.getApprovalDetails();
+          }
+        }, {
+          key: "goToClose",
+          value: function goToClose() {
+            this.dialogRef.close();
+          }
+        }, {
+          key: "getApprovalDetails",
+          value: function getApprovalDetails() {
+            var _this16 = this;
+
+            this.apiService.getApprovalDetails(this.cardId).subscribe(function (resp) {
+              console.log("data", resp);
+              _this16.approvalDetails = resp;
+            });
+          }
+        }, {
+          key: "goToEdit",
+          value: function goToEdit() {
+            this.dialogRef.close(); // this.dataService.sendNavParam(this.assetValued);
+
+            this.dataService.sendNavParam(this.approvalDetails);
+            this.router.navigate(["/cardaccount/SupervisorApprovalStage/list/approvalDetails"]);
+          }
+        }]);
+
+        return CardApprovalViewSummaryComponent;
+      }();
+
+      CardApprovalViewSummaryComponent.ɵfac = function CardApprovalViewSummaryComponent_Factory(t) {
+        return new (t || CardApprovalViewSummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]));
+      };
+
+      CardApprovalViewSummaryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: CardApprovalViewSummaryComponent,
+        selectors: [["app-card-approval-view-summary"]],
+        decls: 78,
+        vars: 8,
+        consts: [[1, "matcard-size1"], [1, "full-width"], ["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "fullcard"], ["fxLayout", "row"], [1, "paraFont"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "100%"], [1, "chequecard"], ["fxLayout", "column", "fxLayoutGap", "2%", "fxLayoutAlign", "space-between none", 1, "colAlign"], ["fxLayout", "row wrap", 1, "flex-container", "stretch"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "headingText"], [1, "valueText"], ["layout", "row"], ["flex", "", 1, "line"]],
+        template: function CardApprovalViewSummaryComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardApprovalViewSummaryComponent_Template_mat_icon_click_3_listener() {
+              return ctx.goToClose();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "close");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "h4", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Approval Details ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Account Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Account Branch");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Product Code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](34, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "span", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "hr", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](39);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "Product Name");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](43, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](45, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Account Currency");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](49, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](51, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "Existing Value ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](55, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](57, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "span", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](60, "hr", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "User Recommendation");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](67, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "Remark");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](71, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "mat-hint", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](74, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "span", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](77, "hr", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.accountType, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.accountBranch, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.productCode, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.productName, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.accountCurrency, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.existingValues, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.userRecommendation, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.approvalDetails == null ? null : ctx.approvalDetails.remarks, " ");
+          }
+        },
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatHint"]],
+        styles: [".entryImg[_ngcontent-%COMP%] {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 2%;\n}\n\n.para[_ngcontent-%COMP%] {\n  color: #0F0F0F;\n  text-align: center;\n  font-family: 'Montserrat';\n  font-size: 20px;\n  padding-top: 12px;\n}\n\n.contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.boxCard[_ngcontent-%COMP%] {\n  margin: auto;\n  width: 700px;\n  height: 250px;\n  border: 1px solid #e4e4e4;\n  padding: 10px;\n}\n\n.paraFont[_ngcontent-%COMP%] {\n  padding-left: 20px;\n  font-family: 'Montserrat';\n  font-size: 16px;\n}\n\n.headingText[_ngcontent-%COMP%] {\n  color: #aaaaaa;\n  padding-left: 10px;\n  font-family: 'Manrope';\n  font-size: 11px;\n}\n\n.valueText[_ngcontent-%COMP%] {\n  padding-left: 10px;\n  font-family: 'Montserrat';\n  font-size: 12px;\n}\n\n.textSpanCIF[_ngcontent-%COMP%] {\n  color: #949494;\n  font-family: 'Manrope';\n  font-size: 11px;\n  padding-left: 10px;\n}\n\n.line[_ngcontent-%COMP%] {\n  width: 100%;\n  align-self: center;\n  border-top-width: 1px;\n  border-top-style: solid;\n  border-top-color: #f5f5f5;\n}\n\n.valueTextName[_ngcontent-%COMP%] {\n  color: #0F0F0F;\n  padding-left: 10px;\n  font-family: 'Montserrat';\n  font-size: 16px;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.editButton[_ngcontent-%COMP%] {\n  color: #456EFE;\n  font-family: 'Montserrat';\n  font-size: 12px;\n  text-decoration: underline;\n  padding-left: 18px;\n  cursor: pointer;\n}\n\n.fullcard[_ngcontent-%COMP%] {\n  width: 95%;\n  height: 50%;\n  margin: auto;\n}\n\n.chequecard[_ngcontent-%COMP%] {\n  height: auto;\n  border-radius: 5px;\n}\n\n.toggle[_ngcontent-%COMP%] {\n  padding-left: 16px;\n  pointer-events: none;\n  opacity: .4 !important;\n}\n\n.textIconCust[_ngcontent-%COMP%] {\n  height: 16px !important;\n  width: 16px !important;\n  font-size: 16px !important;\n  color: #B2B2B2;\n}\n\n.textSpanCust[_ngcontent-%COMP%] {\n  position: absolute;\n  padding-top: 1px;\n  color: #949494;\n  font-family: 'Manrope';\n  font-size: 11px;\n}\n\n.textIcon[_ngcontent-%COMP%] {\n  height: 16px !important;\n  width: 16px !important;\n  font-size: 20px !important;\n  color: #24CCA7;\n}\n\n.textSpan[_ngcontent-%COMP%] {\n  position: absolute;\n  padding-top: 1px;\n  color: #464545;\n  font-family: 'Montserrat';\n  font-size: 13px;\n}\n\n.nomineeIcon[_ngcontent-%COMP%] {\n  height: 16px !important;\n  width: 16px !important;\n  font-size: 20px !important;\n  color: #24CCA7;\n}\n\n.nomineeSpan[_ngcontent-%COMP%] {\n  position: absolute;\n  padding-top: 1px;\n  color: #464545;\n  font-family: 'Montserrat';\n  font-size: 13px;\n}\n\n.textIconnom[_ngcontent-%COMP%] {\n  height: 16px !important;\n  width: 16px !important;\n  font-size: 16px !important;\n  color: #B2B2B2;\n}\n\n.textSpannom[_ngcontent-%COMP%] {\n  position: absolute;\n  padding-top: 1px;\n  color: #949494;\n  font-family: 'Manrope';\n  font-size: 11px;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  background-color: #f9fafb;\n  box-sizing: border-box;\n  height: 200px;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8,\r 0 1px 0 #f8f8f8,\r 0 5px 8px 0 #e9e9e9;\n}\n\n.textSpanCIF[_ngcontent-%COMP%] {\n  color: #949494;\n  font-family: 'Manrope';\n  font-size: 11px;\n  padding-left: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxjYXJkLWFwcHJvdmFsLXZpZXctc3VtbWFyeS5jb21wb25lbnQuc2NzcyIsImNhcmQtYXBwcm92YWwtdmlldy1zdW1tYXJ5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBYztFQUNoQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGNBQWM7QUFDaEI7O0FBR0E7RUFDSSxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLHlCQUF3QjtFQUN4QixlQUFlO0VBQ2YsaUJBQWlCO0FBQXJCOztBQUVBO0VBQ0kseUJBQTBCO0FBQzlCOztBQUNBO0VBQ1EsWUFBWTtFQUNaLFlBQVk7RUFDWixhQUFhO0VBQ2IseUJBQXlCO0VBQ3pCLGFBQWE7QUFFckI7O0FBQ0E7RUFFSSxrQkFBa0I7RUFDbEIseUJBQXdCO0VBQ3hCLGVBQWU7QUFDbkI7O0FBQ0E7RUFDSSxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLHNCQUFxQjtFQUNyQixlQUFlO0FBRW5COztBQUFBO0VBRUUsa0JBQWtCO0VBQ2xCLHlCQUF3QjtFQUN4QixlQUFlO0FBRWpCOztBQUFBO0VBQ0ksY0FBYztFQUNkLHNCQUFxQjtFQUNyQixlQUFlO0VBQ2Ysa0JBQWtCO0FBR3RCOztBQURBO0VBQ0ksV0FBVztFQUNYLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsdUJBQXVCO0VBQ3ZCLHlCQUF5QjtBQUk3Qjs7QUFGQztFQUNHLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIseUJBQXdCO0VBQ3hCLGVBQWU7QUFLbkI7O0FBSEE7RUFDSSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZixjQUFjO0FBTWxCOztBQUpBO0VBQ0ksY0FBYztFQUNkLHlCQUF3QjtFQUN4QixlQUFlO0VBQ2YsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQixlQUFlO0FBT25COztBQUpBO0VBRUksVUFBVTtFQUNWLFdBQVc7RUFDWCxZQUFZO0FBTWhCOztBQUhBO0VBRUksWUFBWTtFQUNaLGtCQUFrQjtBQUt0Qjs7QUFIQTtFQUNJLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsc0JBQXNCO0FBTTFCOztBQUpBO0VBQ0ksdUJBQXNCO0VBQ3RCLHNCQUFxQjtFQUNyQiwwQkFBeUI7RUFDekIsY0FBYztBQU9sQjs7QUFMQTtFQUNJLGtCQUFpQjtFQUNqQixnQkFBZTtFQUNmLGNBQWM7RUFDZCxzQkFBcUI7RUFDckIsZUFBZTtBQVFuQjs7QUFOQTtFQUNJLHVCQUFzQjtFQUN0QixzQkFBcUI7RUFDckIsMEJBQXlCO0VBQ3pCLGNBQWM7QUFTbEI7O0FBUEE7RUFDSSxrQkFBaUI7RUFDakIsZ0JBQWU7RUFDZixjQUFjO0VBQ2QseUJBQXdCO0VBQ3hCLGVBQWU7QUFVbkI7O0FBUkE7RUFDSSx1QkFBc0I7RUFDdEIsc0JBQXFCO0VBQ3JCLDBCQUF5QjtFQUN6QixjQUFjO0FBV2xCOztBQVRBO0VBQ0ksa0JBQWlCO0VBQ2pCLGdCQUFlO0VBQ2YsY0FBYztFQUNkLHlCQUF3QjtFQUN4QixlQUFlO0FBWW5COztBQVZBO0VBQ0ksdUJBQXNCO0VBQ3RCLHNCQUFxQjtFQUNyQiwwQkFBeUI7RUFDekIsY0FBYztBQWFsQjs7QUFYQTtFQUNJLGtCQUFpQjtFQUNqQixnQkFBZTtFQUNmLGNBQWM7RUFDZCxzQkFBcUI7RUFDckIsZUFBZTtBQWNuQjs7QUFaQTtFQUNJLHlCQUF5QjtFQUN6QixzQkFBc0I7RUFDdEIsYUFBYTtBQWVqQjs7QUFiQTtFQUNJLDBFQ2lCZ0I7QURHcEI7O0FDQUE7RURYQyxjQUFBO0VBZUMsc0JBQWtCO0VBQ3BCLGVBQUE7RUNERSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoiY2FyZC1hcHByb3ZhbC12aWV3LXN1bW1hcnkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZW50cnlJbWd7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxuICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbiAgbWFyZ2luLXRvcDogMiU7XHJcbn1cclxuXHJcblxyXG4ucGFyYXtcclxuICAgIGNvbG9yOiAjMEYwRjBGO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1mYW1pbHk6J01vbnRzZXJyYXQnO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDEycHg7XHJcbn1cclxuLmNvbnRhaW57XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6ICBmbGV4LWVuZDtcclxufVxyXG4uYm94Q2FyZCB7XHJcbiAgICAgICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgICAgIHdpZHRoOiA3MDBweDtcclxuICAgICAgICBoZWlnaHQ6IDI1MHB4O1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNlNGU0ZTQ7XHJcbiAgICAgICAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuLnBhcmFGb250e1xyXG4gICAgLy8gY29sb3I6ICMyYjJiMmI7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbn1cclxuLmhlYWRpbmdUZXh0e1xyXG4gICAgY29sb3I6ICNhYWFhYWE7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgICBmb250LWZhbWlseTonTWFucm9wZSc7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbn1cclxuLnZhbHVlVGV4dHtcclxuICAvLyBjb2xvcjogIzBGMEYwRjtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgZm9udC1mYW1pbHk6J01vbnRzZXJyYXQnO1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxufVxyXG4udGV4dFNwYW5DSUZ7XHJcbiAgICBjb2xvcjogIzk0OTQ5NDtcclxuICAgIGZvbnQtZmFtaWx5OidNYW5yb3BlJztcclxuICAgIGZvbnQtc2l6ZTogMTFweDtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxufVxyXG4ubGluZXtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYWxpZ24tc2VsZjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXRvcC13aWR0aDogMXB4O1xyXG4gICAgYm9yZGVyLXRvcC1zdHlsZTogc29saWQ7XHJcbiAgICBib3JkZXItdG9wLWNvbG9yOiAjZjVmNWY1O1xyXG4gICAgLy8gbWFyZ2luLWxlZnQ6IC00JTtcclxufS52YWx1ZVRleHROYW1le1xyXG4gICAgY29sb3I6ICMwRjBGMEY7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgfVxyXG4uYmFja0ljb257XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBwYWRkaW5nOiAwJSAwJSAwJSAwJTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGNvbG9yOiAjNmU2ZTZlO1xyXG59XHJcbi5lZGl0QnV0dG9ue1xyXG4gICAgY29sb3I6ICM0NTZFRkU7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDEycHg7IFxyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE4cHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5mdWxsY2FyZHtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTtcclxuICAgIHdpZHRoOiA5NSU7XHJcbiAgICBoZWlnaHQ6IDUwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuLmNoZXF1ZWNhcmR7XHJcbiAgICAvLyBtYXJnaW4tdG9wOiAyJTtcclxuICAgIGhlaWdodDogYXV0bzsgXHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuLnRvZ2dsZXtcclxuICAgIHBhZGRpbmctbGVmdDogMTZweDtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gICAgb3BhY2l0eTogLjQgIWltcG9ydGFudDtcclxufVxyXG4udGV4dEljb25DdXN0e1xyXG4gICAgaGVpZ2h0OjE2cHggIWltcG9ydGFudDtcclxuICAgIHdpZHRoOjE2cHggIWltcG9ydGFudDtcclxuICAgIGZvbnQtc2l6ZToxNnB4ICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogI0IyQjJCMjtcclxufVxyXG4udGV4dFNwYW5DdXN0e1xyXG4gICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICBwYWRkaW5nLXRvcDoxcHg7XHJcbiAgICBjb2xvcjogIzk0OTQ5NDtcclxuICAgIGZvbnQtZmFtaWx5OidNYW5yb3BlJztcclxuICAgIGZvbnQtc2l6ZTogMTFweDtcclxufVxyXG4udGV4dEljb257XHJcbiAgICBoZWlnaHQ6MTZweCAhaW1wb3J0YW50O1xyXG4gICAgd2lkdGg6MTZweCAhaW1wb3J0YW50O1xyXG4gICAgZm9udC1zaXplOjIwcHggIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjMjRDQ0E3O1xyXG59XHJcbi50ZXh0U3BhbntcclxuICAgIHBvc2l0aW9uOmFic29sdXRlO1xyXG4gICAgcGFkZGluZy10b3A6MXB4O1xyXG4gICAgY29sb3I6ICM0NjQ1NDU7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDEzcHg7XHJcbn1cclxuLm5vbWluZWVJY29ue1xyXG4gICAgaGVpZ2h0OjE2cHggIWltcG9ydGFudDtcclxuICAgIHdpZHRoOjE2cHggIWltcG9ydGFudDtcclxuICAgIGZvbnQtc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogIzI0Q0NBNztcclxufVxyXG4ubm9taW5lZVNwYW57XHJcbiAgICBwb3NpdGlvbjphYnNvbHV0ZTtcclxuICAgIHBhZGRpbmctdG9wOjFweDtcclxuICAgIGNvbG9yOiAjNDY0NTQ1O1xyXG4gICAgZm9udC1mYW1pbHk6J01vbnRzZXJyYXQnO1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG59XHJcbi50ZXh0SWNvbm5vbXtcclxuICAgIGhlaWdodDoxNnB4ICFpbXBvcnRhbnQ7XHJcbiAgICB3aWR0aDoxNnB4ICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6MTZweCAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6ICNCMkIyQjI7XHJcbn1cclxuLnRleHRTcGFubm9te1xyXG4gICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICBwYWRkaW5nLXRvcDoxcHg7XHJcbiAgICBjb2xvcjogIzk0OTQ5NDtcclxuICAgIGZvbnQtZmFtaWx5OidNYW5yb3BlJztcclxuICAgIGZvbnQtc2l6ZTogMTFweDtcclxufVxyXG4uaW5wdXRDYXJke1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICBoZWlnaHQ6IDIwMHB4O1xyXG59XHJcbi5pbnB1dENhcmQ6bm90KFtjbGFzcyo9bWF0LWVsZXZhdGlvbi16XSkge1xyXG4gICAgYm94LXNoYWRvdzogMCAycHggMXB4IC0xcHggI2Y4ZjhmOCxcclxuICAgICAgICAgICAgICAgIDAgMXB4IDAgI2Y4ZjhmOCxcclxuICAgICAgICAgICAgICAgIDAgNXB4IDhweCAwICNlOWU5ZTk7XHJcbn1cclxuLnRleHRTcGFuQ0lGe1xyXG4gICAgY29sb3I6ICM5NDk0OTQ7XHJcbiAgICBmb250LWZhbWlseTonTWFucm9wZSc7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbn0iLCIuZW50cnlJbWcge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbiAgbWFyZ2luLXRvcDogMiU7XG59XG5cbi5wYXJhIHtcbiAgY29sb3I6ICMwRjBGMEY7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JztcbiAgZm9udC1zaXplOiAyMHB4O1xuICBwYWRkaW5nLXRvcDogMTJweDtcbn1cblxuLmNvbnRhaW4ge1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xufVxuXG4uYm94Q2FyZCB7XG4gIG1hcmdpbjogYXV0bztcbiAgd2lkdGg6IDcwMHB4O1xuICBoZWlnaHQ6IDI1MHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTRlNGU0O1xuICBwYWRkaW5nOiAxMHB4O1xufVxuXG4ucGFyYUZvbnQge1xuICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCc7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cblxuLmhlYWRpbmdUZXh0IHtcbiAgY29sb3I6ICNhYWFhYWE7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbiAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJztcbiAgZm9udC1zaXplOiAxMXB4O1xufVxuXG4udmFsdWVUZXh0IHtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xuICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnO1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi50ZXh0U3BhbkNJRiB7XG4gIGNvbG9yOiAjOTQ5NDk0O1xuICBmb250LWZhbWlseTogJ01hbnJvcGUnO1xuICBmb250LXNpemU6IDExcHg7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbn1cblxuLmxpbmUge1xuICB3aWR0aDogMTAwJTtcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xuICBib3JkZXItdG9wLXdpZHRoOiAxcHg7XG4gIGJvcmRlci10b3Atc3R5bGU6IHNvbGlkO1xuICBib3JkZXItdG9wLWNvbG9yOiAjZjVmNWY1O1xufVxuXG4udmFsdWVUZXh0TmFtZSB7XG4gIGNvbG9yOiAjMEYwRjBGO1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG4gIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCc7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cblxuLmJhY2tJY29uIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwJSAwJSAwJSAwJTtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogIzZlNmU2ZTtcbn1cblxuLmVkaXRCdXR0b24ge1xuICBjb2xvcjogIzQ1NkVGRTtcbiAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JztcbiAgZm9udC1zaXplOiAxMnB4O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgcGFkZGluZy1sZWZ0OiAxOHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5mdWxsY2FyZCB7XG4gIHdpZHRoOiA5NSU7XG4gIGhlaWdodDogNTAlO1xuICBtYXJnaW46IGF1dG87XG59XG5cbi5jaGVxdWVjYXJkIHtcbiAgaGVpZ2h0OiBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG5cbi50b2dnbGUge1xuICBwYWRkaW5nLWxlZnQ6IDE2cHg7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICBvcGFjaXR5OiAuNCAhaW1wb3J0YW50O1xufVxuXG4udGV4dEljb25DdXN0IHtcbiAgaGVpZ2h0OiAxNnB4ICFpbXBvcnRhbnQ7XG4gIHdpZHRoOiAxNnB4ICFpbXBvcnRhbnQ7XG4gIGZvbnQtc2l6ZTogMTZweCAhaW1wb3J0YW50O1xuICBjb2xvcjogI0IyQjJCMjtcbn1cblxuLnRleHRTcGFuQ3VzdCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcGFkZGluZy10b3A6IDFweDtcbiAgY29sb3I6ICM5NDk0OTQ7XG4gIGZvbnQtZmFtaWx5OiAnTWFucm9wZSc7XG4gIGZvbnQtc2l6ZTogMTFweDtcbn1cblxuLnRleHRJY29uIHtcbiAgaGVpZ2h0OiAxNnB4ICFpbXBvcnRhbnQ7XG4gIHdpZHRoOiAxNnB4ICFpbXBvcnRhbnQ7XG4gIGZvbnQtc2l6ZTogMjBweCAhaW1wb3J0YW50O1xuICBjb2xvcjogIzI0Q0NBNztcbn1cblxuLnRleHRTcGFuIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBwYWRkaW5nLXRvcDogMXB4O1xuICBjb2xvcjogIzQ2NDU0NTtcbiAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JztcbiAgZm9udC1zaXplOiAxM3B4O1xufVxuXG4ubm9taW5lZUljb24ge1xuICBoZWlnaHQ6IDE2cHggIWltcG9ydGFudDtcbiAgd2lkdGg6IDE2cHggIWltcG9ydGFudDtcbiAgZm9udC1zaXplOiAyMHB4ICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjMjRDQ0E3O1xufVxuXG4ubm9taW5lZVNwYW4ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHBhZGRpbmctdG9wOiAxcHg7XG4gIGNvbG9yOiAjNDY0NTQ1O1xuICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnO1xuICBmb250LXNpemU6IDEzcHg7XG59XG5cbi50ZXh0SWNvbm5vbSB7XG4gIGhlaWdodDogMTZweCAhaW1wb3J0YW50O1xuICB3aWR0aDogMTZweCAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDE2cHggIWltcG9ydGFudDtcbiAgY29sb3I6ICNCMkIyQjI7XG59XG5cbi50ZXh0U3Bhbm5vbSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcGFkZGluZy10b3A6IDFweDtcbiAgY29sb3I6ICM5NDk0OTQ7XG4gIGZvbnQtZmFtaWx5OiAnTWFucm9wZSc7XG4gIGZvbnQtc2l6ZTogMTFweDtcbn1cblxuLmlucHV0Q2FyZCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGhlaWdodDogMjAwcHg7XG59XG5cbi5pbnB1dENhcmQ6bm90KFtjbGFzcyo9bWF0LWVsZXZhdGlvbi16XSkge1xuICBib3gtc2hhZG93OiAwIDJweCAxcHggLTFweCAjZjhmOGY4LFxyIDAgMXB4IDAgI2Y4ZjhmOCxcciAwIDVweCA4cHggMCAjZTllOWU5O1xufVxuXG4udGV4dFNwYW5DSUYge1xuICBjb2xvcjogIzk0OTQ5NDtcbiAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJztcbiAgZm9udC1zaXplOiAxMXB4O1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG59XG4iXX0= */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CardApprovalViewSummaryComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-card-approval-view-summary',
+            templateUrl: './card-approval-view-summary.component.html',
+            styleUrls: ['./card-approval-view-summary.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]
+          }, {
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]
+          }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+          }, {
+            type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "9IFT":
     /*!********************************************************************************************************************************!*\
       !*** ./src/app/views/loan-account/loan-assesment-stage/loan-assessment-view-summary/loan-assessment-view-summary.component.ts ***!
@@ -7622,7 +8065,7 @@
         _createClass(LoanAssessmentViewSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this16 = this;
+            var _this17 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             console.log("LOAN ACCOUNT ID:: ", this.loanaccountID);
@@ -7634,31 +8077,31 @@
             }
 
             setTimeout(function () {
-              _this16.getAllData();
+              _this17.getAllData();
 
-              _this16.getAccountDetails();
+              _this17.getAccountDetails();
             }, 10);
           }
         }, {
           key: "getAllData",
           value: function getAllData() {
-            var _this17 = this;
+            var _this18 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getLoanQualitativeScorecardDetails(this.loanaccountID).subscribe(function (response) {
-              _this17.qualitativeScoreboardSummary = response;
-              console.log(_this17.qualitativeScoreboardSummary);
-              console.log(_this17.qualitativeScoreboardSummary.scoreCardMapping);
+              _this18.qualitativeScoreboardSummary = response;
+              console.log(_this18.qualitativeScoreboardSummary);
+              console.log(_this18.qualitativeScoreboardSummary.scoreCardMapping);
             });
           }
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this18 = this;
+            var _this19 = this;
 
             this.apiService.fetchLoanAssessment(this.loanaccountID).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this18.accountDetails = accountDetails;
+              _this19.accountDetails = accountDetails;
             });
           }
         }, {
@@ -8234,7 +8677,7 @@
         _createClass(ValuationAssetsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this19 = this;
+            var _this20 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             console.log("loanAccountId::", this.loanaccountID);
@@ -8246,7 +8689,7 @@
             }
 
             setTimeout(function () {
-              _this19.gettingValuationDetail();
+              _this20.gettingValuationDetail();
             }, 10);
           }
         }, {
@@ -8263,11 +8706,11 @@
         }, {
           key: "gettingValuationDetail",
           value: function gettingValuationDetail() {
-            var _this20 = this;
+            var _this21 = this;
 
             this.api.gettingValuationDetails(this.loanaccountID).subscribe(function (ValuationDetails) {
               console.log(ValuationDetails);
-              _this20.ValuationDetailsValues = ValuationDetails; //  this.buildCollateralForm(resp,true);
+              _this21.ValuationDetailsValues = ValuationDetails; //  this.buildCollateralForm(resp,true);
             });
           }
         }]);
@@ -9459,7 +9902,7 @@
         _createClass(LegalOpinionSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this21 = this;
+            var _this22 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
 
@@ -9468,7 +9911,7 @@
             }
 
             setTimeout(function () {
-              _this21.getLegalOpinionDetails();
+              _this22.getLegalOpinionDetails();
             }, 10);
           }
         }, {
@@ -9486,12 +9929,12 @@
         }, {
           key: "getLegalOpinionDetails",
           value: function getLegalOpinionDetails() {
-            var _this22 = this;
+            var _this23 = this;
 
             //this.apiService.getCreditRating(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getLegalOpinion(112).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this22.legalDetails = accountDetails;
+              _this23.legalDetails = accountDetails;
             });
           }
         }]);
@@ -9926,13 +10369,13 @@
         }, {
           key: "fetchingEmailData",
           value: function fetchingEmailData() {
-            var _this23 = this;
+            var _this24 = this;
 
             this.cifNumber = this.ls.getItem('CIF_NUM_PRIMARY');
             this.appApiService.fetchByCif(this.cifNumber).subscribe(function (res) {
               console.log(res);
               console.log(res.customerInfoList[0].primaryEmailAdress);
-              _this23.email = res.customerInfoList[0].primaryEmailAdress;
+              _this24.email = res.customerInfoList[0].primaryEmailAdress;
             }, function (err) {
               console.error(err);
             });
@@ -10325,12 +10768,12 @@
         }, {
           key: "getCreditRatingDetail",
           value: function getCreditRatingDetail() {
-            var _this24 = this;
+            var _this25 = this;
 
             this.api.getCardCreditRatingDetails(this.cardId).subscribe(function (creditDetails) {
               console.log(creditDetails.customerName);
-              _this24.customerName = creditDetails.customerName;
-              _this24.creditRatingValues = creditDetails;
+              _this25.customerName = creditDetails.customerName;
+              _this25.creditRatingValues = creditDetails;
             });
           }
         }, {
@@ -10619,22 +11062,22 @@
         _createClass(AppointmentComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this25 = this;
+            var _this26 = this;
 
             console.log(this.data);
             this.reference = sessionStorage.getItem('kyc_reference');
             console.log(this.reference);
             this.customer_Id = sessionStorage.getItem('customer_id');
             this.api.getId().subscribe(function (info) {
-              console.log("info from other component", _this25.customerId);
+              console.log("info from other component", _this26.customerId);
 
-              _this25.assign(info.id);
+              _this26.assign(info.id);
             });
             setTimeout(function () {
               document.getElementById('kychide').click();
             }, 500);
             setTimeout(function () {
-              _this25.updateKycStatus();
+              _this26.updateKycStatus();
             }, 3000);
             this.url = this.data.link.generatedLink;
 
@@ -10691,13 +11134,13 @@
         }, {
           key: "updateKycStatus",
           value: function updateKycStatus() {
-            var _this26 = this;
+            var _this27 = this;
 
             console.log('customerId :: ', this.customer_Id);
             this.api.updateKycStatusByCustId(this.customer_Id, 'INITIATED', "").subscribe(function (resp) {
               var kycValue = resp['kycReference']; //   this.kyc_reference = resp.kycReference;
 
-              _this26.kyc_reference = resp['kycReference'];
+              _this27.kyc_reference = resp['kycReference'];
               console.log('update response :: ', resp);
             });
           }
@@ -11012,16 +11455,16 @@
         }, {
           key: "getCardAssessmentDetails",
           value: function getCardAssessmentDetails() {
-            var _this27 = this;
+            var _this28 = this;
 
             this.apiService.fetchcardAssessmentDetailsById(this.cardId) //this.apiService.fetchcardAssessmentDetails()
             .subscribe(function (resp) {
               console.log(resp);
-              _this27.approvedCardLimit = resp.approvedCardLimit;
-              _this27.recommendedCardLimit = resp.recommendedCardLimit;
-              _this27.requestedCardLimit = resp.requestedCardLimit;
-              _this27.systemRecommendation = resp.systemRecommendation;
-              _this27.userRecommendation = resp.userRecommendation;
+              _this28.approvedCardLimit = resp.approvedCardLimit;
+              _this28.recommendedCardLimit = resp.recommendedCardLimit;
+              _this28.requestedCardLimit = resp.requestedCardLimit;
+              _this28.systemRecommendation = resp.systemRecommendation;
+              _this28.userRecommendation = resp.userRecommendation;
             });
           }
         }]);
@@ -11655,12 +12098,12 @@
         }, {
           key: "loadData",
           value: function loadData(mandateInfo) {
-            var _this28 = this;
+            var _this29 = this;
 
             if (mandateInfo == null) {
               this.appEntrySummaryView = false;
               setTimeout(function () {
-                _this28.getMandateDetails();
+                _this29.getMandateDetails();
               }, 10);
             } else {
               if (mandateInfo.isAppEntryView) {
@@ -11673,12 +12116,12 @@
         }, {
           key: "getMandateDetails",
           value: function getMandateDetails() {
-            var _this29 = this;
+            var _this30 = this;
 
             this.apiService.getMandateDetailsByLoanAccId(this.loanaccountID).subscribe(function (mandateDetails) {
-              _this29.mandateDetails = mandateDetails;
+              _this30.mandateDetails = mandateDetails;
               console.log("mandateDetails :: ", mandateDetails);
-              _this29.mandateDetailsArray = mandateDetails.mandateDetails;
+              _this30.mandateDetailsArray = mandateDetails.mandateDetails;
             }, function (err) {});
           }
         }, {
@@ -12158,7 +12601,7 @@
         _createClass(AssessmentDetailsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this30 = this;
+            var _this31 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
             console.log(this.loanInfo);
@@ -12168,7 +12611,7 @@
             }
 
             setTimeout(function () {
-              _this30.getAccountDetails();
+              _this31.getAccountDetails();
             }, 10);
           }
         }, {
@@ -12186,11 +12629,11 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this31 = this;
+            var _this32 = this;
 
             this.apiService.getAssessment(this.loanaccountID ? this.loanaccountID : 566).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this31.accountDetails = accountDetails;
+              _this32.accountDetails = accountDetails;
             });
           }
         }]);
@@ -12833,7 +13276,7 @@
         _createClass(CutomerFingerPrintComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this32 = this;
+            var _this33 = this;
 
             this.customerId = sessionStorage.getItem('customer_id');
             this.refreshedCustId = this.data.customerId;
@@ -12844,16 +13287,16 @@
               this.scan = "Done";
               this.fingerName = 'done';
               this.data.bioData.forEach(function (element, key) {
-                _this32.capturedThumb = true;
-                _this32.capturedIndex = true;
-                _this32.progressbarValue = 100;
+                _this33.capturedThumb = true;
+                _this33.capturedIndex = true;
+                _this33.progressbarValue = 100;
 
                 if (element.fingerName != undefined && element.fingerName === 'Thumb') {
-                  _this32.thumbData = element.image;
+                  _this33.thumbData = element.image;
                 }
 
                 if (element.fingerName != undefined && element.fingerName === 'index') {
-                  _this32.indexData = element.image;
+                  _this33.indexData = element.image;
                 }
               });
             }
@@ -12889,7 +13332,7 @@
         }, {
           key: "captureFingerPrint",
           value: function captureFingerPrint(fingerName, progressVal, nextFigPrintVal) {
-            var _this33 = this;
+            var _this34 = this;
 
             this.fingerPrintService.CallingSGIFPCapture().subscribe(function (capFingerPrint) {
               console.log("capFingerPrint 29 ::: ", capFingerPrint);
@@ -12897,40 +13340,40 @@
               console.log('nextFigPrintVal :: ', nextFigPrintVal);
 
               if (capFingerPrint.ErrorCode == 0) {
-                _this33.cdr.detectChanges();
+                _this34.cdr.detectChanges();
 
                 if (fingerName === 'Thumb') {
-                  _this33.capturedThumb = true;
-                  _this33.thumbData = capFingerPrint.BMPBase64;
+                  _this34.capturedThumb = true;
+                  _this34.thumbData = capFingerPrint.BMPBase64;
                   var obj = {
                     fingerName: fingerName,
                     image: capFingerPrint.BMPBase64
                   };
 
-                  _this33.fingerPrintArr.push(obj);
+                  _this34.fingerPrintArr.push(obj);
                 }
 
                 if (fingerName === 'index') {
-                  _this33.capturedThumb = true;
-                  _this33.capturedIndex = true;
-                  _this33.indexData = capFingerPrint.BMPBase64;
+                  _this34.capturedThumb = true;
+                  _this34.capturedIndex = true;
+                  _this34.indexData = capFingerPrint.BMPBase64;
                   var _obj = {
                     fingerName: fingerName,
                     image: capFingerPrint.BMPBase64
                   };
 
-                  _this33.fingerPrintArr.push(_obj);
+                  _this34.fingerPrintArr.push(_obj);
                 }
 
-                _this33.capFingerPrint = capFingerPrint;
-                _this33.fingerName = nextFigPrintVal;
-                _this33.progressbarValue = progressVal;
-                var cId = _this33.customerId;
-                console.log('this.customerId :: ', _this33.customerId);
+                _this34.capFingerPrint = capFingerPrint;
+                _this34.fingerName = nextFigPrintVal;
+                _this34.progressbarValue = progressVal;
+                var cId = _this34.customerId;
+                console.log('this.customerId :: ', _this34.customerId);
 
-                _this33.saveBiometric(capFingerPrint, fingerName, cId);
+                _this34.saveBiometric(capFingerPrint, fingerName, cId);
               } else {
-                _this33.getError(capFingerPrint.ErrorCode);
+                _this34.getError(capFingerPrint.ErrorCode);
               }
             });
           }
@@ -12943,20 +13386,20 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
-            var _this34 = this;
+            var _this35 = this;
 
             console.log('save biometric', capFingerPrint, fingerName, cId);
             var screen = 'kyc-verification';
             this.fingerPrintService.saveBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (data) {
-              _this34.progressbarValue = 100;
-              _this34.isScanned = true;
+              _this35.progressbarValue = 100;
+              _this35.isScanned = true;
               console.log("after save ", data);
 
-              _this34.ls.setItem('imageURLBio', data.fileUrl);
+              _this35.ls.setItem('imageURLBio', data.fileUrl);
 
-              _this34.cdr.markForCheck();
+              _this35.cdr.markForCheck();
 
-              _this34.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
+              _this35.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -13510,7 +13953,7 @@
         }, {
           key: "onSelect",
           value: function onSelect(event) {
-            var _this35 = this;
+            var _this36 = this;
 
             console.log(event);
 
@@ -13527,16 +13970,16 @@
             this.apiService.gettingAvailableSlotsTeller(this.selectedDate, this.tellerId).subscribe(function (availableSlotsResp) {
               if (availableSlotsResp) {
                 console.log(availableSlotsResp);
-                _this35.showSpinn = false;
-                _this35.kycTimeOption = true;
+                _this36.showSpinn = false;
+                _this36.kycTimeOption = true;
                 availableSlotsResp.bookedSlots.forEach(function (element) {
-                  var index = _this35.TimeSlots.map(function (x) {
+                  var index = _this36.TimeSlots.map(function (x) {
                     return x.time;
                   }).indexOf(element);
 
                   if (index > -1) {
-                    _this35.TimeSlots[index].available = false;
-                    _this35.TimeSlots[index].booked = true;
+                    _this36.TimeSlots[index].available = false;
+                    _this36.TimeSlots[index].booked = true;
                   }
                 });
               }
@@ -13591,7 +14034,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this36 = this;
+            var _this37 = this;
 
             this.icustCustVideoVerifyDto = this.data;
             this.icustCustVideoVerifyDto.scheduledDate = this.selectedDate;
@@ -13599,14 +14042,14 @@
             this.icustCustVideoVerifyDto.tellerId = this.tellerId;
             this.icustCustVideoVerifyDto.loggedInUser = this.loggedInUser;
             this.videoService.saveCustBasicInfoData(this.icustCustVideoVerifyDto).subscribe(function (data) {
-              _this36.link = data;
+              _this37.link = data;
 
-              var dialogRef = _this36.dialog.open(app_views_others_video_verification_appointment_appointment_component__WEBPACK_IMPORTED_MODULE_5__["AppointmentComponent"], {
+              var dialogRef = _this37.dialog.open(app_views_others_video_verification_appointment_appointment_component__WEBPACK_IMPORTED_MODULE_5__["AppointmentComponent"], {
                 data: {
-                  time: _this36.datewitmAmPm,
-                  date: _this36.selectedDate,
-                  link: _this36.link,
-                  kycRef: _this36.data.kycReference
+                  time: _this37.datewitmAmPm,
+                  date: _this37.selectedDate,
+                  link: _this37.link,
+                  kycRef: _this37.data.kycReference
                 }
               });
 
@@ -14645,14 +15088,14 @@
         }, {
           key: "getAllCountry",
           value: function getAllCountry(country) {
-            var _this37 = this;
+            var _this38 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
                   console.log(data[i]);
 
-                  _this37.countrys.push(data[i].countryName);
+                  _this38.countrys.push(data[i].countryName);
                 }
               }
             });
@@ -14660,15 +15103,15 @@
         }, {
           key: "getStateName",
           value: function getStateName(country, address) {
-            var _this38 = this;
+            var _this39 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName === country) {
-                  _this38.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                  _this39.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
                     for (var _i = 0; _i < resp.length; _i++) {
                       if (resp[_i].authStatus === 'A') {
-                        _this38.arrayState.push(resp[_i].stateName);
+                        _this39.arrayState.push(resp[_i].stateName);
                       }
                     }
                   });
@@ -14681,15 +15124,15 @@
         }, {
           key: "getPerStateName",
           value: function getPerStateName(country) {
-            var _this39 = this;
+            var _this40 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName === country) {
-                  _this39.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                  _this40.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
                     for (var _i2 = 0; _i2 < resp.length; _i2++) {
                       if (resp[_i2].authStatus === 'A') {
-                        _this39.arrayState1.push(resp[_i2].stateName);
+                        _this40.arrayState1.push(resp[_i2].stateName);
                       }
                     }
                   });
@@ -14702,28 +15145,28 @@
         }, {
           key: "getCityName",
           value: function getCityName(state) {
-            var _this40 = this;
+            var _this41 = this;
 
             this.apiService.getDropDownForStateCity('city', state).subscribe(function (data) {
-              _this40.arrayCity = data;
+              _this41.arrayCity = data;
             });
           }
         }, {
           key: "getPerCityName",
           value: function getPerCityName(state) {
-            var _this41 = this;
+            var _this42 = this;
 
             this.apiService.getDropDownForStateCity('city', state).subscribe(function (data) {
-              _this41.arrayCity1 = data;
+              _this42.arrayCity1 = data;
             });
           }
         }, {
           key: "getResidenceType",
           value: function getResidenceType() {
-            var _this42 = this;
+            var _this43 = this;
 
             this.apiService.getDropDownValues('residence').subscribe(function (responses) {
-              _this42.Residences = responses;
+              _this43.Residences = responses;
             });
           }
         }, {
@@ -14786,7 +15229,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this43 = this;
+            var _this44 = this;
 
             if (this.addressUpdateForm.invalid) {
               return;
@@ -14805,13 +15248,13 @@
               verificationType: 'KYC'
             };
             this.apiService.kycScreenBasicinfo(payload).subscribe(function (resp) {
-              _this43.snack.open("Communication Address Updated!", "OK", {
+              _this44.snack.open("Communication Address Updated!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this43.dialogRef.close({
+              _this44.dialogRef.close({
                 status: 'INITIATED',
                 resp: userAddress
               });
@@ -15485,11 +15928,11 @@
         }, {
           key: "gettingallmandateDetail",
           value: function gettingallmandateDetail(accountId) {
-            var _this44 = this;
+            var _this45 = this;
 
             this.apiService.gettingMandateDetails(this.accountIdMandate).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this44.allMandate = allTransactionResp;
+              _this45.allMandate = allTransactionResp;
             });
           }
         }, {
@@ -15809,13 +16252,13 @@
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this45 = this;
+            var _this46 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getCardQualitativeScorecardDetails(this.cardId).subscribe(function (response) {
-              _this45.qualitativeScoreboardSummary = response;
-              console.log(_this45.qualitativeScoreboardSummary);
-              console.log(_this45.qualitativeScoreboardSummary.scoreCardMapping);
+              _this46.qualitativeScoreboardSummary = response;
+              console.log(_this46.qualitativeScoreboardSummary);
+              console.log(_this46.qualitativeScoreboardSummary.scoreCardMapping);
             });
           }
         }, {
@@ -16126,7 +16569,7 @@
         _createClass(DocumentOcrService, [{
           key: "doOCR",
           value: function doOCR(img, docVal, selectedFile, docSideEnum, i, documentValFromUI, nameFromForm) {
-            var _this46 = this;
+            var _this47 = this;
 
             var subject = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"]();
             this.loader.open();
@@ -16134,13 +16577,13 @@
 
             if (documentValFromUI === 'Pan card') {
               this.fileService.uploadPan(selectedFile).subscribe(function (res) {
-                _this46.loader.close();
+                _this47.loader.close();
 
                 if (typeof res === 'object') {
                   console.log('api res -- ', res.data);
 
                   if (!res.data['name'].value || !res.data['pan'].value) {
-                    _this46.snack.open('The document is not a valid Pan card', 'Cancel', {
+                    _this47.snack.open('The document is not a valid Pan card', 'Cancel', {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'center'
@@ -16150,7 +16593,7 @@
                   } // this.nameDoc = res.data['name'].value;
 
 
-                  _this46.dialogService.confirmationDialog(res.data['name'].value, nameFromForm).subscribe(function (response) {
+                  _this47.dialogService.confirmationDialog(res.data['name'].value, nameFromForm).subscribe(function (response) {
                     console.log(response);
 
                     if (response == 'No') {
@@ -16169,12 +16612,12 @@
                           nameOnCard: res.data['name'].value,
                           dobArray: res.data['dob'].value,
                           idNumberArray: res.data['pan'].value,
-                          dateOfIssue: _this46.dateOfIssue.length > 0 ? _this46.dateOfIssue[i] : [],
-                          dateOfExpiry: _this46.dateOfExpiry.length > 0 ? _this46.dateOfExpiry[i] : [],
-                          address: _this46.addressArray.length > 0 ? _this46.addressArray[i] : [],
-                          pincode: _this46.pincode.length > 0 ? _this46.pincode[i] : [],
-                          gender: _this46.gender.length > 0 ? _this46.gender[i] : [],
-                          state: _this46.state.length > 0 ? _this46.state[i] : []
+                          dateOfIssue: _this47.dateOfIssue.length > 0 ? _this47.dateOfIssue[i] : [],
+                          dateOfExpiry: _this47.dateOfExpiry.length > 0 ? _this47.dateOfExpiry[i] : [],
+                          address: _this47.addressArray.length > 0 ? _this47.addressArray[i] : [],
+                          pincode: _this47.pincode.length > 0 ? _this47.pincode[i] : [],
+                          gender: _this47.gender.length > 0 ? _this47.gender[i] : [],
+                          state: _this47.state.length > 0 ? _this47.state[i] : []
                         },
                         documentName: documentValFromUI
                       };
@@ -16186,9 +16629,9 @@
               }, function (err) {
                 console.log('Something went wrong! Err:: ', err);
 
-                _this46.loader.close();
+                _this47.loader.close();
 
-                _this46.snack.open('The document is not a valid Pan card', 'Cancel', {
+                _this47.snack.open('The document is not a valid Pan card', 'Cancel', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'center'
@@ -16203,13 +16646,13 @@
               this.fileService.uploadPassport(selectedFile).subscribe(function (res) {
                 var _a, _b, _c, _d;
 
-                _this46.loader.close();
+                _this47.loader.close();
 
                 if (typeof res === 'object') {
                   console.log('api res -- ', res.data);
 
                   if (!res.data['passport_no'].value) {
-                    _this46.snack.open('The document is not a valid Passport', 'Cancel', {
+                    _this47.snack.open('The document is not a valid Passport', 'Cancel', {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'center'
@@ -16218,9 +16661,9 @@
                     return subject;
                   }
 
-                  _this46.nameDoc = !!((_b = (_a = res.data) === null || _a === void 0 ? void 0 : _a['surname']) === null || _b === void 0 ? void 0 : _b.value) ? "".concat(res.data['given_name'].value, " ").concat((_d = (_c = res.data) === null || _c === void 0 ? void 0 : _c['surname']) === null || _d === void 0 ? void 0 : _d.value) : res.data['given_name'].value;
+                  _this47.nameDoc = !!((_b = (_a = res.data) === null || _a === void 0 ? void 0 : _a['surname']) === null || _b === void 0 ? void 0 : _b.value) ? "".concat(res.data['given_name'].value, " ").concat((_d = (_c = res.data) === null || _c === void 0 ? void 0 : _c['surname']) === null || _d === void 0 ? void 0 : _d.value) : res.data['given_name'].value;
 
-                  _this46.dialogService.confirmationDialog(_this46.nameDoc, nameFromForm).subscribe(function (response) {
+                  _this47.dialogService.confirmationDialog(_this47.nameDoc, nameFromForm).subscribe(function (response) {
                     var _a, _b, _c, _d;
 
                     console.log(response);
@@ -16243,10 +16686,10 @@
                           idNumberArray: res.data['passport_no'].value,
                           dateOfIssue: res.data['issue_date'].value,
                           dateOfExpiry: res.data['expiry_date'].value,
-                          address: _this46.addressArray.length > 0 ? _this46.addressArray[i] : [],
-                          pincode: _this46.pincode.length > 0 ? _this46.pincode[i] : [],
-                          gender: _this46.gender.length > 0 ? _this46.gender[i] : [],
-                          state: _this46.state.length > 0 ? _this46.state[i] : []
+                          address: _this47.addressArray.length > 0 ? _this47.addressArray[i] : [],
+                          pincode: _this47.pincode.length > 0 ? _this47.pincode[i] : [],
+                          gender: _this47.gender.length > 0 ? _this47.gender[i] : [],
+                          state: _this47.state.length > 0 ? _this47.state[i] : []
                         },
                         documentName: documentValFromUI
                       };
@@ -16258,9 +16701,9 @@
               }, function (err) {
                 console.log('Something went wrong! Err:: ', err);
 
-                _this46.loader.close();
+                _this47.loader.close();
 
-                _this46.snack.open('The document is not a valid Passport', 'Cancel', {
+                _this47.snack.open('The document is not a valid Passport', 'Cancel', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'center'
@@ -16274,13 +16717,13 @@
             if (documentValFromUI == 'Aadhar card' && docSideEnum == '1') {
               console.log("in side 1");
               this.fileService.uploadAadhaarFront(selectedFile).subscribe(function (res) {
-                _this46.loader.close();
+                _this47.loader.close();
 
                 if (typeof res === 'object') {
                   console.log('api res -- ', res.data);
 
                   if (!res.data['no'].value) {
-                    _this46.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
+                    _this47.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'center'
@@ -16289,10 +16732,10 @@
                     return subject;
                   }
 
-                  _this46.nameDoc = res.data['name'].value;
-                  console.log(_this46.nameDoc, nameFromForm);
+                  _this47.nameDoc = res.data['name'].value;
+                  console.log(_this47.nameDoc, nameFromForm);
 
-                  _this46.dialogService.confirmationDialog(_this46.nameDoc, nameFromForm).subscribe(function (response) {
+                  _this47.dialogService.confirmationDialog(_this47.nameDoc, nameFromForm).subscribe(function (response) {
                     console.log(response);
 
                     if (response == 'No') {
@@ -16311,10 +16754,10 @@
                           nameOnCard: res.data['name'].value,
                           dobArray: res.data['dob'].value,
                           idNumberArray: res.data['no'].value,
-                          address: _this46.addressArray.length > 0 ? _this46.addressArray[i] : [],
-                          pincode: _this46.pincode.length > 0 ? _this46.pincode[i] : [],
-                          gender: _this46.gender.length > 0 ? _this46.gender[i] : [],
-                          state: _this46.state.length > 0 ? _this46.state[i] : []
+                          address: _this47.addressArray.length > 0 ? _this47.addressArray[i] : [],
+                          pincode: _this47.pincode.length > 0 ? _this47.pincode[i] : [],
+                          gender: _this47.gender.length > 0 ? _this47.gender[i] : [],
+                          state: _this47.state.length > 0 ? _this47.state[i] : []
                         },
                         documentName: documentValFromUI
                       };
@@ -16327,9 +16770,9 @@
               }, function (err) {
                 console.log('Something went wrong! Err:: ', err);
 
-                _this46.loader.close();
+                _this47.loader.close();
 
-                _this46.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
+                _this47.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'center'
@@ -16342,13 +16785,13 @@
 
             if (documentValFromUI == 'Aadhar card' && docSideEnum == '2') {
               this.fileService.uploadAadhaarBack(selectedFile).subscribe(function (res) {
-                _this46.loader.close();
+                _this47.loader.close();
 
                 if (typeof res === 'object') {
                   console.log('api res -- ', res.data['address'].value);
 
                   if (!res.data['address'].value == null) {
-                    _this46.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
+                    _this47.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'center'
@@ -16357,7 +16800,7 @@
                     return subject;
                   }
 
-                  _this46.dialogService.confirmationDialog(_this46.nameDoc, nameFromForm).subscribe(function (response) {
+                  _this47.dialogService.confirmationDialog(_this47.nameDoc, nameFromForm).subscribe(function (response) {
                     console.log(response);
 
                     if (response == 'No') {
@@ -16391,9 +16834,9 @@
               }, function (err) {
                 console.log('Something went wrong! Err:: ', err);
 
-                _this46.loader.close();
+                _this47.loader.close();
 
-                _this46.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
+                _this47.snack.open('The document is not a valid Aadhaar card', 'Cancel', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'center'
@@ -16749,11 +17192,11 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this47 = this;
+            var _this48 = this;
 
             this.api.getAppViewSummary().subscribe(function (resp) {
               console.log("message", resp);
-              _this47.isApprovedSreen = resp;
+              _this48.isApprovedSreen = resp;
             });
             this.cardId = this.ls.getItem('cardId');
             console.log("this.cardId", this.cardId);
@@ -16764,15 +17207,15 @@
         }, {
           key: "getCardEntryStageInfo",
           value: function getCardEntryStageInfo(cardId) {
-            var _this48 = this;
+            var _this49 = this;
 
             this.api.getCardApplicationEntrySummary(cardId).subscribe(function (cardResp) {
-              _this48.data = cardResp;
+              _this49.data = cardResp;
 
-              if (_this48.data != null) {
-                console.log('data :: ', _this48.data);
+              if (_this49.data != null) {
+                console.log('data :: ', _this49.data);
 
-                _this48.setData(cardResp); //this.getCustomerInfoDetails(cardId);
+                _this49.setData(cardResp); //this.getCustomerInfoDetails(cardId);
 
               }
             });
@@ -16780,16 +17223,16 @@
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails(cardId) {
-            var _this49 = this;
+            var _this50 = this;
 
             this.appApiService.fetchCardCustomersByCardId(this.cardId, 'cardOrigin').subscribe(function (custResp) {
               console.log('custResp :: ', custResp);
-              _this49.customerInfoResp = custResp;
+              _this50.customerInfoResp = custResp;
 
-              if (_this49.customerInfoResp != null) {
-                _this49.cardCustomerInfo = {
+              if (_this50.customerInfoResp != null) {
+                _this50.cardCustomerInfo = {
                   'isAppEntryView': true,
-                  'data': _this49.customerInfoResp.data
+                  'data': _this50.customerInfoResp.data
                 };
               } //cardInitiationInfo
               // if (this.customerInfoResp != null) {
@@ -16807,16 +17250,16 @@
         }, {
           key: "gettingallAccountService",
           value: function gettingallAccountService() {
-            var _this50 = this;
+            var _this51 = this;
 
             this.api.gettingCardAccountServiceDetails(this.cardId).subscribe(function (allAccountServiceResp) {
               console.log("All Account Service", allAccountServiceResp);
-              _this50.accountServiceResp = allAccountServiceResp;
+              _this51.accountServiceResp = allAccountServiceResp;
 
-              if (_this50.accountServiceResp != null) {
-                _this50.accountServiceInfo = {
+              if (_this51.accountServiceResp != null) {
+                _this51.accountServiceInfo = {
                   'isAppEntryView': true,
-                  'data': _this50.accountServiceResp.data
+                  'data': _this51.accountServiceResp.data
                 };
               } // this.accountServiceInfo = {
               //   'isAppEntryView': true,
@@ -16824,28 +17267,28 @@
               // }
 
 
-              _this50.accountStatement = allAccountServiceResp.statementFrequency;
-              _this50.statementPreferenceFetched = allAccountServiceResp.statementPref;
+              _this51.accountStatement = allAccountServiceResp.statementFrequency;
+              _this51.statementPreferenceFetched = allAccountServiceResp.statementPref;
 
-              for (var index = 0; index < _this50.statementPreferenceFetched.length; index++) {
-                var element = _this50.statementPreferenceFetched[index];
+              for (var index = 0; index < _this51.statementPreferenceFetched.length; index++) {
+                var element = _this51.statementPreferenceFetched[index];
 
                 if (element.checked) {
-                  _this50.statementPreference.push(element.name);
+                  _this51.statementPreference.push(element.name);
                 }
               }
 
-              _this50.commChannelFetched = allAccountServiceResp.commChannelPref;
+              _this51.commChannelFetched = allAccountServiceResp.commChannelPref;
 
-              for (var _index = 0; _index < _this50.commChannelFetched.length; _index++) {
-                var _element = _this50.commChannelFetched[_index];
+              for (var _index = 0; _index < _this51.commChannelFetched.length; _index++) {
+                var _element = _this51.commChannelFetched[_index];
 
                 if (_element.checked) {
-                  _this50.commChannel.push(_element.name);
+                  _this51.commChannel.push(_element.name);
                 }
               }
 
-              _this50.summaryResponse = allAccountServiceResp;
+              _this51.summaryResponse = allAccountServiceResp;
             });
           }
         }, {
@@ -17644,12 +18087,12 @@
         }, {
           key: "loadData",
           value: function loadData(vehicleInfo) {
-            var _this51 = this;
+            var _this52 = this;
 
             if (vehicleInfo == null) {
               this.appEntrySummaryView = false;
               setTimeout(function () {
-                _this51.getVehicleDetails();
+                _this52.getVehicleDetails();
               }, 10);
             } else {
               if (vehicleInfo.isAppEntryView) {
@@ -17673,13 +18116,13 @@
         }, {
           key: "getVehicleDetails",
           value: function getVehicleDetails() {
-            var _this52 = this;
+            var _this53 = this;
 
             //this.apiService.getAssetValuation(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getVehicleDetails(this.loanaccountID).subscribe(function (vehicleDetails) {
               console.log("All Account Service", vehicleDetails);
-              _this52.vehicleDetails = vehicleDetails;
-              console.log("this.vehicleDetails", _this52.vehicleDetails);
+              _this53.vehicleDetails = vehicleDetails;
+              console.log("this.vehicleDetails", _this53.vehicleDetails);
             });
           }
         }]);
@@ -18468,7 +18911,7 @@
         _createClass(AssetValuationSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this53 = this;
+            var _this54 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
             console.log(this.loanInfo);
@@ -18478,7 +18921,7 @@
             }
 
             setTimeout(function () {
-              _this53.getAccountDetails();
+              _this54.getAccountDetails();
             }, 10);
           }
         }, {
@@ -18496,13 +18939,13 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this54 = this;
+            var _this55 = this;
 
             //this.apiService.getAssetValuation(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getAssetValuation(112).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this54.accountDetails = accountDetails;
-              console.log("this.accountDetails", _this54.accountDetails);
+              _this55.accountDetails = accountDetails;
+              console.log("this.accountDetails", _this55.accountDetails);
             });
           }
         }]);
@@ -19076,16 +19519,16 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
-            var _this55 = this;
+            var _this56 = this;
 
             cId = this.customerId;
             console.log('save biometric');
             var screen = 'kyc-verification';
             this.fingerPrintService.saveBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (data) {
               console.log("after save ", data);
-              _this55.isScanned = true; // this.cdr.markForCheck();
+              _this56.isScanned = true; // this.cdr.markForCheck();
 
-              _this55.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
+              _this56.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -19283,7 +19726,7 @@
         _createClass(KycDocumentUpdateComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this56 = this;
+            var _this57 = this;
 
             this.customerId = this.ls.getItem('customerId');
             this.ls.setItem('customer_id', this.customerId);
@@ -19294,7 +19737,7 @@
             };
             this.doOcrService.getenableNext().subscribe(function (data) {
               console.log("data disableNextAtIndex1 :: ", data);
-              _this56.disableNextAtIndex1 = data;
+              _this57.disableNextAtIndex1 = data;
             });
           }
         }, {
@@ -19807,7 +20250,7 @@
         _createClass(UnderWritingCreditRatingSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this57 = this;
+            var _this58 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -19817,7 +20260,7 @@
             }
 
             setTimeout(function () {
-              _this57.gettingCreditRatingDetail();
+              _this58.gettingCreditRatingDetail();
             }, 10);
           }
         }, {
@@ -19835,11 +20278,11 @@
         }, {
           key: "gettingCreditRatingDetail",
           value: function gettingCreditRatingDetail() {
-            var _this58 = this;
+            var _this59 = this;
 
             this.api.gettingCreditRatingDetails(this.loanaccountID).subscribe(function (creditDetails) {
               console.log(creditDetails);
-              _this58.creditRatingValues = creditDetails; //  this.buildCollateralForm(resp,true);
+              _this59.creditRatingValues = creditDetails; //  this.buildCollateralForm(resp,true);
             });
           }
         }]);
@@ -20389,7 +20832,7 @@
         _createClass(UnderWritingLegalOpinionSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this59 = this;
+            var _this60 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -20400,7 +20843,7 @@
             }
 
             setTimeout(function () {
-              _this59.gettingLegalOpinionDetail();
+              _this60.gettingLegalOpinionDetail();
             }, 10);
           }
         }, {
@@ -20418,11 +20861,11 @@
         }, {
           key: "gettingLegalOpinionDetail",
           value: function gettingLegalOpinionDetail() {
-            var _this60 = this;
+            var _this61 = this;
 
             this.api.gettingLegalOpinionDetails(this.loanaccountID).subscribe(function (opinionDetails) {
               console.log(opinionDetails);
-              _this60.opinionDetailsValue = opinionDetails; //  this.buildCollateralForm(resp,true);
+              _this61.opinionDetailsValue = opinionDetails; //  this.buildCollateralForm(resp,true);
             });
           }
         }]);
@@ -21281,7 +21724,7 @@
 
       var KycBiometricUpdateComponent = /*#__PURE__*/function () {
         function KycBiometricUpdateComponent(dialogRef, data, formBuilder, apiService, ls, dialog) {
-          var _this61 = this;
+          var _this62 = this;
 
           _classCallCheck(this, KycBiometricUpdateComponent);
 
@@ -21295,21 +21738,21 @@
           this.biometricData = [];
 
           this.isDocumentOptionDisabled2 = function (value) {
-            return _this61.selectedOptions2.includes(value);
+            return _this62.selectedOptions2.includes(value);
           };
         }
 
         _createClass(KycBiometricUpdateComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this62 = this;
+            var _this63 = this;
 
             console.log(this.data);
             console.log(this.biometrics_Type);
             this.customerId = this.ls.getItem('customerId');
             this.apiService.getDropDownValues("biometrics_Type").subscribe(function (responseData) {
-              _this62.biometrics_Type = responseData;
-              console.log(_this62.biometrics_Type);
+              _this63.biometrics_Type = responseData;
+              console.log(_this63.biometrics_Type);
               console.log(responseData);
             });
             this.buildBiometricForm();
@@ -21323,7 +21766,7 @@
         }, {
           key: "buildBiometricForm",
           value: function buildBiometricForm() {
-            var _this63 = this;
+            var _this64 = this;
 
             this.biometricUpdateForm = this.formBuilder.group({
               biometricList: this.formBuilder.array([]),
@@ -21331,17 +21774,17 @@
             });
             this.biometricUpdateForm.valueChanges.subscribe(function (data) {
               if (data.biometricList.length > 0) {
-                _this63.disableFinish = true;
-                _this63.selectedOptions2 = [];
+                _this64.disableFinish = true;
+                _this64.selectedOptions2 = [];
                 data.biometricList.forEach(function (element, index) {
-                  _this63.selectedOptions2.push(element.bioDocumentType);
+                  _this64.selectedOptions2.push(element.bioDocumentType);
                 });
               }
 
               if (data.biometricList.length == 3) {
-                _this63.disableAddAndDelete = true;
+                _this64.disableAddAndDelete = true;
               } else {
-                _this63.disableAddAndDelete = false;
+                _this64.disableAddAndDelete = false;
               }
             });
           }
@@ -21389,16 +21832,16 @@
         }, {
           key: "getBiometricType",
           value: function getBiometricType() {
-            var _this64 = this;
+            var _this65 = this;
 
             this.apiService.getDropDownValues("biometrics_Type").subscribe(function (responseData) {
-              _this64.biometrics_Type = responseData;
+              _this65.biometrics_Type = responseData;
             });
           }
         }, {
           key: "openDialogForType",
           value: function openDialogForType(data) {
-            var _this65 = this;
+            var _this66 = this;
 
             if (data.bioDocumentType == "Fingerprint Scan") {
               var dialogRef = this.dialog.open(app_views_others_cutomer_finger_print_cutomer_finger_print_component__WEBPACK_IMPORTED_MODULE_5__["CutomerFingerPrintComponent"], {
@@ -21409,20 +21852,20 @@
                 disableClose: true
               });
               dialogRef.afterClosed().subscribe(function (submit) {
-                _this65.biometricData = submit.data;
+                _this66.biometricData = submit.data;
 
-                if (_this65.biometricData.length > 0) {
-                  _this65.diaplayBioCard = true;
-                  _this65.biometricScan = false;
+                if (_this66.biometricData.length > 0) {
+                  _this66.diaplayBioCard = true;
+                  _this66.biometricScan = false;
                 } else {
                   if (submit.isScanned) {
-                    _this65.biometricScan = true;
-                    _this65.imageURLBioScan = _this65.ls.getItem('imageURLBio');
-                    _this65.diaplayBioCard = false;
+                    _this66.biometricScan = true;
+                    _this66.imageURLBioScan = _this66.ls.getItem('imageURLBio');
+                    _this66.diaplayBioCard = false;
                   }
                 }
 
-                _this65.disableFinish = false;
+                _this66.disableFinish = false;
               });
             }
 
@@ -21439,14 +21882,14 @@
 
               _dialogRef.afterClosed().subscribe(function (submit) {
                 if (submit.isScanned) {
-                  _this65.irisScan = true;
-                  _this65.imageURLIrish = "".concat(app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["API_URL"], "/rest/upload/downloadDocs/?fileName=iris_biometric.jpg");
+                  _this66.irisScan = true;
+                  _this66.imageURLIrish = "".concat(app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["API_URL"], "/rest/upload/downloadDocs/?fileName=iris_biometric.jpg");
                 } else {
-                  _this65.irisScan = false;
-                  _this65.imageURLIrish = '';
+                  _this66.irisScan = false;
+                  _this66.imageURLIrish = '';
                 }
 
-                _this65.disableFinish = false;
+                _this66.disableFinish = false;
               });
             }
 
@@ -21464,14 +21907,14 @@
                 console.log('submit :: ', submit);
 
                 if (submit.isScanned) {
-                  _this65.faceScan = true;
-                  _this65.imageURLFace = "".concat(app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["API_URL"], "/rest/upload/downloadDocs/?fileName=face_biometric.jpg");
+                  _this66.faceScan = true;
+                  _this66.imageURLFace = "".concat(app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["API_URL"], "/rest/upload/downloadDocs/?fileName=face_biometric.jpg");
                 } else {
-                  _this65.imageURLFace = '';
-                  _this65.faceScan = false;
+                  _this66.imageURLFace = '';
+                  _this66.faceScan = false;
                 }
 
-                _this65.disableFinish = false;
+                _this66.disableFinish = false;
               });
             }
 
@@ -21488,9 +21931,9 @@
                 console.log('submit :: ', submit);
 
                 if (submit.action == 'closed') {
-                  _this65.eScan = true;
+                  _this66.eScan = true;
                 } else {
-                  _this65.eScan = false;
+                  _this66.eScan = false;
                 }
               });
             }
@@ -21975,6 +22418,432 @@
     },
 
     /***/
+    "Z85s":
+    /*!********************************************************************************************************************************************************************!*\
+      !*** ./src/app/views/card-account/cardaccount-application-assessment/card-account-app-assessment-viewsummary/card-account-app-assessment-viewsummary.component.ts ***!
+      \********************************************************************************************************************************************************************/
+
+    /*! exports provided: CardAccountAppAssessmentViewsummaryComponent */
+
+    /***/
+    function Z85s(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CardAccountAppAssessmentViewsummaryComponent", function () {
+        return CardAccountAppAssessmentViewsummaryComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "8Y7J");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "iELJ");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "iInd");
+      /* harmony import */
+
+
+      var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! app/shared/services/api.service */
+      "nm5K");
+      /* harmony import */
+
+
+      var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! app/shared/services/data.service */
+      "iiaH");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "VDRc");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "Tj54");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/card */
+      "PDjf");
+      /* harmony import */
+
+
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/form-field */
+      "Q2Ze");
+
+      var CardAccountAppAssessmentViewsummaryComponent = /*#__PURE__*/function () {
+        function CardAccountAppAssessmentViewsummaryComponent(dialogRef, router, localstore, dataService, apiService) {
+          _classCallCheck(this, CardAccountAppAssessmentViewsummaryComponent);
+
+          this.dialogRef = dialogRef;
+          this.router = router;
+          this.localstore = localstore;
+          this.dataService = dataService;
+          this.apiService = apiService;
+        }
+
+        _createClass(CardAccountAppAssessmentViewsummaryComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.cardId = this.localstore.getItem('cardId');
+            this.getCardAssessmentDetails();
+          }
+        }, {
+          key: "goToClose",
+          value: function goToClose() {
+            this.dialogRef.close();
+          }
+        }, {
+          key: "goToEdit",
+          value: function goToEdit() {
+            this.dataService.sendNavParam(this.items);
+            this.dialogRef.close();
+            this.router.navigate(["/cardaccount/assessmentStage/application-assessment/list"]);
+            this.getCardAssessmentDetails();
+          }
+        }, {
+          key: "getCardAssessmentDetails",
+          value: function getCardAssessmentDetails() {
+            var _this67 = this;
+
+            this.apiService.fetchcardAssessmentDetailsById(this.cardId) //this.apiService.fetchcardAssessmentDetails()
+            .subscribe(function (resp) {
+              console.log(resp);
+              _this67.approvedCardLimit = resp.approvedCardLimit;
+              _this67.recommendedCardLimit = resp.recommendedCardLimit;
+              _this67.requestedCardLimit = resp.requestedCardLimit;
+              _this67.systemRecommendation = resp.systemRecommendation;
+              _this67.userRecommendation = resp.userRecommendation;
+            });
+          }
+        }]);
+
+        return CardAccountAppAssessmentViewsummaryComponent;
+      }();
+
+      CardAccountAppAssessmentViewsummaryComponent.ɵfac = function CardAccountAppAssessmentViewsummaryComponent_Factory(t) {
+        return new (t || CardAccountAppAssessmentViewsummaryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]));
+      };
+
+      CardAccountAppAssessmentViewsummaryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: CardAccountAppAssessmentViewsummaryComponent,
+        selectors: [["app-card-account-app-assessment-viewsummary"]],
+        decls: 68,
+        vars: 5,
+        consts: [[1, "full-width"], ["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "fullcard"], ["fxLayout", "row"], [1, "paraFont"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "100%"], [1, "chequecard"], ["fxLayout", "column", "fxLayoutGap", "2%", "fxLayoutAlign", "space-between none", 1, "colAlign"], ["fxLayout", "row wrap", 1, "flex-container", "stretch"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "headingText"], [1, "valueText"], ["layout", "row"], ["flex", "", 1, "line"]],
+        template: function CardAccountAppAssessmentViewsummaryComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountAppAssessmentViewsummaryComponent_Template_mat_icon_click_2_listener() {
+              return ctx.goToClose();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "close");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h4", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Assessment Details ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-hint", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Requested Card Limit");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-hint", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "System Recommendation");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "span", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "hr", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "mat-hint", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, "User Recommendation");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "mat-hint", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Recommended Card Limit");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "span", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](47, "hr", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](49);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "mat-hint", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "Approved Card Limit");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](53, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "mat-hint", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "span", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](58, "hr", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](60);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "mat-hint", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Remarks");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](64, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "span", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](67, "hr", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.requestedCardLimit);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.systemRecommendation);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userRecommendation);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recommendedCardLimit);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.approvedCardLimit);
+          }
+        },
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatHint"]],
+        styles: [".editalgn[_ngcontent-%COMP%] {\n  color: blue;\n  padding-left: 1%;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: #6E8192;\n}\n\n.algn[_ngcontent-%COMP%] {\n  padding-left: 11px;\n  padding-top: 5px;\n  padding-bottom: 10px;\n}\n\n.homeicon[_ngcontent-%COMP%] {\n  padding-left: 2px;\n  color: blue;\n  font-size: 20px;\n}\n\n.matcard-algn[_ngcontent-%COMP%] {\n  padding-top: 29px;\n  padding-bottom: 29px;\n}\n\n.button-algn[_ngcontent-%COMP%] {\n  border-radius: 51px;\n  width: 5pc;\n  background-color: darkgray;\n  color: white;\n}\n\n.closeicon[_ngcontent-%COMP%] {\n  color: darkgray;\n  padding-left: 46pc;\n}\n\n.halgn[_ngcontent-%COMP%] {\n  font-family: auto;\n  color: darkgray;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.editButton[_ngcontent-%COMP%] {\n  color: #456EFE;\n  font-family: 'Montserrat';\n  font-size: 12px;\n  text-decoration: underline;\n  padding-left: 18px;\n}\n\n.fullcard[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 90%;\n}\n\n.chequecard[_ngcontent-%COMP%] {\n  height: auto;\n  border-radius: 5px;\n}\n\n.contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.boxCard[_ngcontent-%COMP%] {\n  margin: auto;\n  width: 700px;\n  height: 250px;\n  border: 1px solid #e4e4e4;\n  padding: 10px;\n}\n\n.para[_ngcontent-%COMP%] {\n  color: #2b2b2b;\n  padding-left: 10px;\n  font-family: 'Montserrat';\n  font-size: 16px;\n}\n\n.paraFont[_ngcontent-%COMP%] {\n  font-family: 'Montserrat';\n  font-size: 20px;\n}\n\n.headingText[_ngcontent-%COMP%] {\n  color: #aaaaaa;\n  padding-left: 10px;\n  font-family: 'Manrope';\n  font-size: 11px;\n}\n\n.valueText[_ngcontent-%COMP%] {\n  padding-left: 10px;\n  font-family: 'Montserrat';\n  font-size: 12px;\n}\n\n.valueTextName[_ngcontent-%COMP%] {\n  color: #0F0F0F;\n  padding-left: 10px;\n  font-family: 'Montserrat';\n  font-size: 16px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGNhcmQtYWNjb3VudC1hcHAtYXNzZXNzbWVudC12aWV3c3VtbWFyeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQVc7RUFBRSxnQkFBZ0I7QUFFakM7O0FBQUE7RUFDSSxjQUFlO0FBR25COztBQURBO0VBQ0ksa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixvQkFBb0I7QUFJeEI7O0FBRkE7RUFDSSxpQkFBaUI7RUFDakIsV0FBVztFQUNYLGVBQWU7QUFLbkI7O0FBSEE7RUFDSSxpQkFBaUI7RUFDakIsb0JBQW9CO0FBTXhCOztBQUpBO0VBQ0ksbUJBQW1CO0VBQ25CLFVBQVU7RUFDViwwQkFBMEI7RUFDMUIsWUFBWTtBQU9oQjs7QUFMQTtFQUNJLGVBQWU7RUFDZixrQkFBa0I7QUFRdEI7O0FBTkE7RUFDSSxpQkFBaUI7RUFDakIsZUFBZTtBQVNuQjs7QUFQQTtFQUNJLGVBQWU7RUFDZixvQkFBb0I7RUFDcEIsZUFBZTtFQUNmLGNBQWM7QUFVbEI7O0FBUkE7RUFDSSxjQUFjO0VBQ2QseUJBQXdCO0VBQ3hCLGVBQWU7RUFDZiwwQkFBMEI7RUFDMUIsa0JBQWtCO0FBV3RCOztBQVJBO0VBRUksV0FBVztFQUNYLFdBQVc7QUFVZjs7QUFSQTtFQUVJLFlBQVk7RUFDWixrQkFBa0I7QUFVdEI7O0FBUkE7RUFDSSx5QkFBMEI7QUFXOUI7O0FBVEE7RUFDUSxZQUFZO0VBQ1osWUFBWTtFQUNaLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsYUFBYTtBQVlyQjs7QUFUQTtFQUNJLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIseUJBQXdCO0VBQ3hCLGVBQWU7QUFZbkI7O0FBVkE7RUFFSSx5QkFBd0I7RUFDeEIsZUFBZTtBQVluQjs7QUFWQTtFQUNJLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsc0JBQXFCO0VBQ3JCLGVBQWU7QUFhbkI7O0FBVkE7RUFFRSxrQkFBa0I7RUFDbEIseUJBQXdCO0VBQ3hCLGVBQWU7QUFZakI7O0FBVkE7RUFDSSxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLHlCQUF3QjtFQUN4QixlQUFlO0FBYW5CIiwiZmlsZSI6ImNhcmQtYWNjb3VudC1hcHAtYXNzZXNzbWVudC12aWV3c3VtbWFyeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lZGl0YWxnbntcclxuICAgIGNvbG9yOiBibHVlOyBwYWRkaW5nLWxlZnQ6IDElO1xyXG59XHJcbi50ZXh0Y29sb3J7XHJcbiAgICBjb2xvcjogICM2RTgxOTI7XHJcbn1cclxuLmFsZ257XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDExcHg7IFxyXG4gICAgcGFkZGluZy10b3A6IDVweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59XHJcbi5ob21laWNvbntcclxuICAgIHBhZGRpbmctbGVmdDogMnB4O1xyXG4gICAgY29sb3I6IGJsdWU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLm1hdGNhcmQtYWxnbntcclxuICAgIHBhZGRpbmctdG9wOiAyOXB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDI5cHg7XHJcbn1cclxuLmJ1dHRvbi1hbGdue1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTFweDsgXHJcbiAgICB3aWR0aDogNXBjO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZGFya2dyYXk7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuLmNsb3NlaWNvbntcclxuICAgIGNvbG9yOiBkYXJrZ3JheTtcclxuICAgIHBhZGRpbmctbGVmdDogNDZwYztcclxufVxyXG4uaGFsZ257XHJcbiAgICBmb250LWZhbWlseTogYXV0bztcclxuICAgIGNvbG9yOiBkYXJrZ3JheTtcclxufVxyXG4uYmFja0ljb257XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBwYWRkaW5nOiAwJSAwJSAwJSAwJTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGNvbG9yOiAjNmU2ZTZlO1xyXG59XHJcbi5lZGl0QnV0dG9ue1xyXG4gICAgY29sb3I6ICM0NTZFRkU7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDEycHg7IFxyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE4cHg7XHJcbn1cclxuXHJcbi5mdWxsY2FyZHtcclxuICAgLy8gYmFja2dyb3VuZC1jb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDkwJTtcclxufVxyXG4uY2hlcXVlY2FyZHtcclxuICAgIC8vIG1hcmdpbi10b3A6IDIlO1xyXG4gICAgaGVpZ2h0OiBhdXRvOyBcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxufVxyXG4uY29udGFpbntcclxuICAgIGp1c3RpZnktY29udGVudDogIGZsZXgtZW5kO1xyXG59XHJcbi5ib3hDYXJkIHtcclxuICAgICAgICBtYXJnaW46IGF1dG87XHJcbiAgICAgICAgd2lkdGg6IDcwMHB4O1xyXG4gICAgICAgIGhlaWdodDogMjUwcHg7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2U0ZTRlNDtcclxuICAgICAgICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcblxyXG4ucGFyYXtcclxuICAgIGNvbG9yOiAjMmIyYjJiO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gICAgZm9udC1mYW1pbHk6J01vbnRzZXJyYXQnO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcbi5wYXJhRm9udHtcclxuICAgLy8gY29sb3I6ICMyYjJiMmI7XHJcbiAgICBmb250LWZhbWlseTonTW9udHNlcnJhdCc7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLmhlYWRpbmdUZXh0e1xyXG4gICAgY29sb3I6ICNhYWFhYWE7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgICBmb250LWZhbWlseTonTWFucm9wZSc7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbn1cclxuXHJcbi52YWx1ZVRleHR7XHJcbiAgIC8vY29sb3I6ICMwRjBGMEY7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIGZvbnQtZmFtaWx5OidNb250c2VycmF0JztcclxuICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuLnZhbHVlVGV4dE5hbWV7XHJcbiAgICBjb2xvcjogIzBGMEYwRjtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxuICAgIGZvbnQtZmFtaWx5OidNb250c2VycmF0JztcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICB9Il19 */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CardAccountAppAssessmentViewsummaryComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-card-account-app-assessment-viewsummary',
+            templateUrl: './card-account-app-assessment-viewsummary.component.html',
+            styleUrls: ['./card-account-app-assessment-viewsummary.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+          }, {
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]
+          }, {
+            type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]
+          }, {
+            type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "ZfxJ":
     /*!*********************************************************************************************************************************************!*\
       !*** ./src/app/views/loan-account/account-creation-stage/account-create-details/account-create-summary/account-create-summary.component.ts ***!
@@ -22061,7 +22930,7 @@
         _createClass(AccountCreateSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this66 = this;
+            var _this68 = this;
 
             this.loanaccountID = localStorage.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -22072,7 +22941,7 @@
             }
 
             setTimeout(function () {
-              _this66.getAccountCreateDetails();
+              _this68.getAccountCreateDetails();
             }, 10);
           }
         }, {
@@ -22089,11 +22958,11 @@
         }, {
           key: "getAccountCreateDetails",
           value: function getAccountCreateDetails() {
-            var _this67 = this;
+            var _this69 = this;
 
             this.api.getAccountCreateDetails(this.loanaccountID).subscribe(function (accountCreateDetails) {
               console.log(accountCreateDetails);
-              _this67.accountCreateValue = accountCreateDetails;
+              _this69.accountCreateValue = accountCreateDetails;
             });
           }
         }]);
@@ -22696,7 +23565,7 @@
         _createClass(AcceptOfferAcceptRejectSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this68 = this;
+            var _this70 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -22707,17 +23576,17 @@
             }
 
             setTimeout(function () {
-              _this68.fetchOfferAcceptRejectDetails(_this68.loanaccountID);
+              _this70.fetchOfferAcceptRejectDetails(_this70.loanaccountID);
             }, 10);
           }
         }, {
           key: "fetchOfferAcceptRejectDetails",
           value: function fetchOfferAcceptRejectDetails(loanaccountID) {
-            var _this69 = this;
+            var _this71 = this;
 
             this.apiService.getofferDetails(loanaccountID).subscribe(function (data) {
-              _this69.offerDetails = data;
-              console.log(_this69.offerDetails);
+              _this71.offerDetails = data;
+              console.log(_this71.offerDetails);
             });
           }
         }, {
@@ -23545,11 +24414,11 @@
         _createClass(CustomerInfoViewComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this70 = this;
+            var _this72 = this;
 
             this.api.getApprovedStatus().subscribe(function (resp) {
               console.log("message", resp);
-              _this70.isApprovedSreen = resp;
+              _this72.isApprovedSreen = resp;
             });
             console.log('customerInfo :: ', this.customerInfo);
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -23565,12 +24434,12 @@
         }, {
           key: "loadData",
           value: function loadData(customerInfo) {
-            var _this71 = this;
+            var _this73 = this;
 
             if (customerInfo == null) {
               this.appEntrySummaryView = false;
               setTimeout(function () {
-                _this71.getCustomerInfoDetails();
+                _this73.getCustomerInfoDetails();
               }, 10);
             } else {
               if (customerInfo.isAppEntryView) {
@@ -23584,19 +24453,19 @@
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails() {
-            var _this72 = this;
+            var _this74 = this;
 
             this.loader.open();
             this.appApiService.fetchCustomersByLoanAccId(this.loanaccountID, 'loan').subscribe(function (customerInfoDetails) {
               if (customerInfoDetails.data) {
-                _this72.loader.close();
+                _this74.loader.close();
 
-                _this72.customerInfoDetails = customerInfoDetails.data;
-                _this72.ownership = _this72.customerInfoDetails[0].ownership;
-                _this72.noOfApplicants = _this72.customerInfoDetails[0].numOfApplicants;
+                _this74.customerInfoDetails = customerInfoDetails.data;
+                _this74.ownership = _this74.customerInfoDetails[0].ownership;
+                _this74.noOfApplicants = _this74.customerInfoDetails[0].numOfApplicants;
               }
             }, function (err) {
-              _this72.loader.close();
+              _this74.loader.close();
             });
           }
         }, {
@@ -25283,12 +26152,12 @@
         }, {
           key: "loadData",
           value: function loadData(collateralInfo) {
-            var _this73 = this;
+            var _this75 = this;
 
             if (collateralInfo == null) {
               this.appEntrySummaryView = false;
               setTimeout(function () {
-                _this73.getCollateralDetails();
+                _this75.getCollateralDetails();
               }, 10);
             } else {
               if (collateralInfo.isAppEntryView) {
@@ -25306,21 +26175,21 @@
         }, {
           key: "getCollateralDetails",
           value: function getCollateralDetails() {
-            var _this74 = this;
+            var _this76 = this;
 
             // this.loader.open();
             this.apiService.getCollateralByLoanAccId(this.loanaccountID).subscribe(function (collateralDetails) {
-              _this74.loader.close();
+              _this76.loader.close();
 
-              _this74.collateralDetails = collateralDetails;
+              _this76.collateralDetails = collateralDetails;
               console.log("collateralDetails::", collateralDetails);
-              _this74.collateralInfo = collateralDetails;
-              console.log("collateralDetails:", _this74.collateralInfo);
-              console.log(_this74.collateralDetails.collateralDetails.length);
+              _this76.collateralInfo = collateralDetails;
+              console.log("collateralDetails:", _this76.collateralInfo);
+              console.log(_this76.collateralDetails.collateralDetails.length);
               console.log("saved response", collateralDetails);
-              _this74.collateralDetailsArray = collateralDetails.collateralDetails;
+              _this76.collateralDetailsArray = collateralDetails.collateralDetails;
 
-              _this74.loader.close();
+              _this76.loader.close();
             });
           }
         }, {
@@ -25635,13 +26504,13 @@
         }, {
           key: "getCardPrefrenceDetails",
           value: function getCardPrefrenceDetails() {
-            var _this75 = this;
+            var _this77 = this;
 
             this.apiService.getCardPrefrence(this.cardId).subscribe(function (cardDetails) {
               console.log(cardDetails);
 
               if (cardDetails) {
-                _this75.cardPrefrenceDetails = cardDetails;
+                _this77.cardPrefrenceDetails = cardDetails;
               }
             }, function (err) {});
           }
@@ -25887,7 +26756,7 @@
         _createClass(ScoreboardDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this76 = this;
+            var _this78 = this;
 
             this.accountId = this.ls.getItem('accountId');
             this.accountInfo = this.ls.getItem('EDIT-CREATEACCCIF');
@@ -25898,18 +26767,18 @@
 
             console.log(this.accountId, "AccountId");
             setTimeout(function () {
-              _this76.getAllData(_this76.accountId);
+              _this78.getAllData(_this78.accountId);
             }, 1);
           }
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this77 = this;
+            var _this79 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getAssessmentReportDetails(id).subscribe(function (response) {
-              _this77.assessmentReportSummary = response;
-              console.log(_this77.assessmentReportSummary);
+              _this79.assessmentReportSummary = response;
+              console.log(_this79.assessmentReportSummary);
             });
           }
         }, {
@@ -26378,7 +27247,7 @@
         _createClass(LoanDetailsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this78 = this;
+            var _this80 = this;
 
             console.log("loanDetailsInfo :: ", this.loanDetailsInfo);
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -26391,7 +27260,7 @@
 
             console.log("this.loanaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this78.loadData(_this78.loanDetailsInfo);
+              _this80.loadData(_this80.loanDetailsInfo);
             }, 1);
           }
         }, {
@@ -26422,13 +27291,13 @@
         }, {
           key: "getLoanDetails",
           value: function getLoanDetails() {
-            var _this79 = this;
+            var _this81 = this;
 
             //this.apiService.getAssetValuation(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this79.accountDetails = accountDetails;
-              console.log("this.accountDetails", _this79.accountDetails);
+              _this81.accountDetails = accountDetails;
+              console.log("this.accountDetails", _this81.accountDetails);
             });
           }
         }]);
@@ -27179,11 +28048,11 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this80 = this;
+            var _this82 = this;
 
             this.api.getApprovedStatus().subscribe(function (resp) {
               console.log("message", resp);
-              _this80.isApprovedSreen = resp;
+              _this82.isApprovedSreen = resp;
             });
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -27195,40 +28064,40 @@
 
             console.log("this.loanaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this80.getLoanEntryStageInfo(_this80.loanaccountID);
+              _this82.getLoanEntryStageInfo(_this82.loanaccountID);
             }, 10);
           }
         }, {
           key: "getLoanEntryStageInfo",
           value: function getLoanEntryStageInfo(loanaccountID) {
-            var _this81 = this;
+            var _this83 = this;
 
             this.appEntryService.getLoanEntryStageInfo(loanaccountID).subscribe(function (loanResp) {
-              _this81.loantype = loanResp.loanInfo.accountType;
-              _this81.data = loanResp;
+              _this83.loantype = loanResp.loanInfo.accountType;
+              _this83.data = loanResp;
 
-              if (_this81.data != null) {
-                console.log('data :: ', _this81.data);
+              if (_this83.data != null) {
+                console.log('data :: ', _this83.data);
 
-                _this81.setData(loanResp);
+                _this83.setData(loanResp);
 
-                _this81.fetchCustomersByLoanAccIdForViewSummary(loanaccountID);
+                _this83.fetchCustomersByLoanAccIdForViewSummary(loanaccountID);
               }
             });
           }
         }, {
           key: "fetchCustomersByLoanAccIdForViewSummary",
           value: function fetchCustomersByLoanAccIdForViewSummary(loanaccountID) {
-            var _this82 = this;
+            var _this84 = this;
 
             this.appApiService.fetchCustomersByLoanAccId(this.loanaccountID, 'loan').subscribe(function (custResp) {
               console.log('custResp :: ', custResp);
-              _this82.customerInfoResp = custResp;
+              _this84.customerInfoResp = custResp;
 
-              if (_this82.customerInfoResp != null) {
-                _this82.customerInfo = {
+              if (_this84.customerInfoResp != null) {
+                _this84.customerInfo = {
                   'isAppEntryView': true,
-                  'data': _this82.customerInfoResp.data
+                  'data': _this84.customerInfoResp.data
                 };
               } // this.cdk.markForCheck();
               // this.cdk.detectChanges();
@@ -27447,7 +28316,7 @@
         _createClass(OfferAssessmentSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this83 = this;
+            var _this85 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
 
@@ -27456,7 +28325,7 @@
             }
 
             setTimeout(function () {
-              _this83.getAccountDetails();
+              _this85.getAccountDetails();
             }, 10);
           }
         }, {
@@ -27475,12 +28344,12 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this84 = this;
+            var _this86 = this;
 
             this.apiService.getAssesmentDetails("520").subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this84.accountDetails = accountDetails;
-              console.log("this.offerissuedetail", _this84.accountDetails);
+              _this86.accountDetails = accountDetails;
+              console.log("this.offerissuedetail", _this86.accountDetails);
             });
           }
         }]);
@@ -28004,16 +28873,16 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
-            var _this85 = this;
+            var _this87 = this;
 
             cId = this.customerId;
             console.log('save biometric');
             var screen = 'kyc-verification';
             this.fingerPrintService.saveBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (data) {
               console.log("after save ", data);
-              _this85.isScanned = true; // this.cdr.markForCheck();
+              _this87.isScanned = true; // this.cdr.markForCheck();
 
-              _this85.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
+              _this87.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -28295,7 +29164,7 @@
         _createClass(AdmissionDetailsViewComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this86 = this;
+            var _this88 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -28306,18 +29175,18 @@
             }
 
             setTimeout(function () {
-              _this86.loadData(_this86.admissionInfo);
+              _this88.loadData(_this88.admissionInfo);
             }, 10);
           }
         }, {
           key: "loadData",
           value: function loadData(admissionInfo) {
-            var _this87 = this;
+            var _this89 = this;
 
             if (admissionInfo == null) {
               this.appEntrySummaryView = false;
               this.apiService.getAdmissionDetailsByLoanAccId(this.loanaccountID).subscribe(function (addmissionDetails) {
-                _this87.addmissionDetailsResp = addmissionDetails;
+                _this89.addmissionDetailsResp = addmissionDetails;
               });
             } else {
               if (admissionInfo.isAppEntryView) {
@@ -29283,11 +30152,11 @@
         _createClass(CardCustomerInfoSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this88 = this;
+            var _this90 = this;
 
             this.api.getAppViewSummary().subscribe(function (resp) {
               console.log("message", resp);
-              _this88.isApprovedSreen = resp;
+              _this90.isApprovedSreen = resp;
             });
             this.cardId = this.ls.getItem('cardId');
             console.log(" this.cardId", this.cardId);
@@ -29315,20 +30184,20 @@
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails() {
-            var _this89 = this;
+            var _this91 = this;
 
             // this.loader.open();
             this.appApiService.fetchCardCustomersByCardId(this.cardId, 'cardOrigin').subscribe(function (customerInfoDetails) {
               if (customerInfoDetails.data) {
                 //   this.loader.close();
-                _this89.customerInfoDetails = customerInfoDetails.data;
-                _this89.ownership = _this89.customerInfoDetails[0].ownership;
-                _this89.noOfApplicants = _this89.customerInfoDetails[0].numOfApplicants;
-                _this89.ownership = _this89.ls.getItem("cardownership_value");
-                _this89.noOfApplicants = _this89.ls.getItem("CardNoOfApplicants");
+                _this91.customerInfoDetails = customerInfoDetails.data;
+                _this91.ownership = _this91.customerInfoDetails[0].ownership;
+                _this91.noOfApplicants = _this91.customerInfoDetails[0].numOfApplicants;
+                _this91.ownership = _this91.ls.getItem("cardownership_value");
+                _this91.noOfApplicants = _this91.ls.getItem("CardNoOfApplicants");
               }
             }, function (err) {
-              _this89.loader.close();
+              _this91.loader.close();
             });
           }
         }, {
@@ -30201,6 +31070,18 @@
       var app_views_loan_account_digital_signing_sign_later_loan_sign_later_loan_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(
       /*! app/views/loan-account/digital-signing/sign-later-loan/sign-later-loan.component */
       "lw6N");
+      /* harmony import */
+
+
+      var app_views_card_account_cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(
+      /*! app/views/card-account/cardaccount-application-assessment/card-account-app-assessment-viewsummary/card-account-app-assessment-viewsummary.component */
+      "Z85s");
+      /* harmony import */
+
+
+      var app_views_card_account_supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(
+      /*! app/views/card-account/supervisor-approval-stage/approval-details/card-approval-view-summary/card-approval-view-summary.component */
+      "97QS");
 
       var DialogService = /*#__PURE__*/function () {
         function DialogService(dialog, apiService, _document) {
@@ -30338,6 +31219,19 @@
           key: "cardAccountAssessmentSummaryDialog",
           value: function cardAccountAssessmentSummaryDialog() {
             var dialogRef = this.dialog.open(app_views_card_account_cardaccount_application_assessment_cardaccount_application_assessment_summary_cardaccount_application_assessment_summary_component__WEBPACK_IMPORTED_MODULE_38__["CardaccountApplicationAssessmentSummaryComponent"], {
+              width: '55%',
+              maxHeight: '90%',
+              backdropClass: 'dialog-bg-trans',
+              disableClose: true
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+              console.log('The dialog was closed');
+            });
+          }
+        }, {
+          key: "cardAccAssessmentSummaryDialog",
+          value: function cardAccAssessmentSummaryDialog() {
+            var dialogRef = this.dialog.open(app_views_card_account_cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_55__["CardAccountAppAssessmentViewsummaryComponent"], {
               width: '55%',
               maxHeight: '90%',
               backdropClass: 'dialog-bg-trans',
@@ -30823,6 +31717,19 @@
           key: "CardApprovalSummary",
           value: function CardApprovalSummary() {
             var dialogRef = this.dialog.open(app_views_card_account_supervisor_approval_stage_approval_details_approval_details_summary_approval_details_summary_component__WEBPACK_IMPORTED_MODULE_41__["ApprovalDetailsSummaryComponent"], {
+              width: '75%',
+              backdropClass: 'dialog-bg-trans',
+              height: '90%',
+              disableClose: true
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+              console.log('The dialog was closed');
+            });
+          }
+        }, {
+          key: "CardApprovalViewSummary",
+          value: function CardApprovalViewSummary() {
+            var dialogRef = this.dialog.open(app_views_card_account_supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_56__["CardApprovalViewSummaryComponent"], {
               width: '75%',
               backdropClass: 'dialog-bg-trans',
               height: '90%',
@@ -31322,11 +32229,11 @@
         }, {
           key: "gettingallnomineeDetail",
           value: function gettingallnomineeDetail(accountId) {
-            var _this90 = this;
+            var _this92 = this;
 
             this.apiService.gettingNomineeDetails(this.productAccountId).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp, allTransactionResp.nominees[0].isNomineeMinor);
-              _this90.allNominee = allTransactionResp.nominees;
+              _this92.allNominee = allTransactionResp.nominees;
             });
           }
         }, {
@@ -31539,13 +32446,13 @@
         }, {
           key: "fetchingEmailData",
           value: function fetchingEmailData() {
-            var _this91 = this;
+            var _this93 = this;
 
             this.cifNumber = this.ls.getItem('cId');
             this.appApiService.fetchByCif(this.cifNumber).subscribe(function (res) {
               console.log(res);
               console.log(res.customerInfoList[0].primaryEmailAdress);
-              _this91.email = res.customerInfoList[0].primaryEmailAdress;
+              _this93.email = res.customerInfoList[0].primaryEmailAdress;
             }, function (err) {
               console.error(err);
             });
@@ -32110,7 +33017,7 @@
         }, {
           key: "getCustomerInformationDetails",
           value: function getCustomerInformationDetails() {
-            var _this92 = this;
+            var _this94 = this;
 
             var accountType = 'savings';
             this.loader.open();
@@ -32120,16 +33027,16 @@
             }
 
             this.apiService.fetchAccountDependentInfo(this.productAccountIdCust, this.productAccountType).subscribe(function (allCustomernResp) {
-              _this92.loader.close();
+              _this94.loader.close();
 
-              _this92.customerSummary = allCustomernResp.data;
-              _this92.customerId = allCustomernResp.data[0].customerId;
-              _this92.Custownership = allCustomernResp.data[0].ownership;
-              _this92.CustnumOfApplicants = allCustomernResp.data[0].numOfApplicants;
-              _this92.customerDetails = allCustomernResp.data;
+              _this94.customerSummary = allCustomernResp.data;
+              _this94.customerId = allCustomernResp.data[0].customerId;
+              _this94.Custownership = allCustomernResp.data[0].ownership;
+              _this94.CustnumOfApplicants = allCustomernResp.data[0].numOfApplicants;
+              _this94.customerDetails = allCustomernResp.data;
 
-              for (var i = 0; i < _this92.customerDetails.length; i++) {
-                var userAddress = _this92.customerDetails[i].userAddress;
+              for (var i = 0; i < _this94.customerDetails.length; i++) {
+                var userAddress = _this94.customerDetails[i].userAddress;
                 var pickOneAddress = void 0;
                 var Address = "";
 
@@ -32142,10 +33049,10 @@
                 }
 
                 Address = pickOneAddress.city + "," + pickOneAddress.state + "," + pickOneAddress.zipCode + "," + pickOneAddress.country;
-                _this92.customerDetails[i].userAddress = Address;
+                _this94.customerDetails[i].userAddress = Address;
               }
             }, function (err) {
-              _this92.loader.close();
+              _this94.loader.close();
             });
           }
         }, {
@@ -32588,13 +33495,13 @@
         _createClass(CardAccountSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this93 = this;
+            var _this95 = this;
 
             this.cardId = this.localstore.getItem('cardId');
             console.log("Account ID from Local Storage", this.productAccountId);
             this.apiService.getAppViewSummary().subscribe(function (resp) {
               console.log("message", resp);
-              _this93.isApprovedSreen = resp;
+              _this95.isApprovedSreen = resp;
             });
             this.gettingallAccountService();
             this.loadData(this.accountServiceInfo);
@@ -32650,33 +33557,33 @@
         }, {
           key: "gettingallAccountService",
           value: function gettingallAccountService() {
-            var _this94 = this;
+            var _this96 = this;
 
             this.apiService.gettingCardAccountServiceDetails(this.cardId).subscribe(function (allAccountServiceResp) {
               console.log("All Account Service", allAccountServiceResp);
-              _this94.accountServiceInfo = allAccountServiceResp.data;
-              _this94.accountStatement = allAccountServiceResp.statementFrequency;
-              _this94.statementPreferenceFetched = allAccountServiceResp.statementPref;
+              _this96.accountServiceInfo = allAccountServiceResp.data;
+              _this96.accountStatement = allAccountServiceResp.statementFrequency;
+              _this96.statementPreferenceFetched = allAccountServiceResp.statementPref;
 
-              for (var index = 0; index < _this94.statementPreferenceFetched.length; index++) {
-                var element = _this94.statementPreferenceFetched[index];
+              for (var index = 0; index < _this96.statementPreferenceFetched.length; index++) {
+                var element = _this96.statementPreferenceFetched[index];
 
                 if (element.checked) {
-                  !_this94.statementPreference.includes(element.name) && _this94.statementPreference.push(element.name);
+                  !_this96.statementPreference.includes(element.name) && _this96.statementPreference.push(element.name);
                 }
               }
 
-              _this94.commChannelFetched = allAccountServiceResp.commChannelPref;
+              _this96.commChannelFetched = allAccountServiceResp.commChannelPref;
 
-              for (var _index2 = 0; _index2 < _this94.commChannelFetched.length; _index2++) {
-                var _element2 = _this94.commChannelFetched[_index2];
+              for (var _index2 = 0; _index2 < _this96.commChannelFetched.length; _index2++) {
+                var _element2 = _this96.commChannelFetched[_index2];
 
                 if (_element2.checked) {
-                  !_this94.commChannel.includes(_element2.name) && _this94.commChannel.push(_element2.name);
+                  !_this96.commChannel.includes(_element2.name) && _this96.commChannel.push(_element2.name);
                 }
               }
 
-              _this94.summaryResponse = allAccountServiceResp;
+              _this96.summaryResponse = allAccountServiceResp;
             });
           }
         }, {
@@ -33409,46 +34316,46 @@
         }, {
           key: "gettingallAccountService",
           value: function gettingallAccountService(productAccountId) {
-            var _this95 = this;
+            var _this97 = this;
 
             this.apiService.gettingAccountServiceDetails(this.productAccountId).subscribe(function (allAccountServiceResp) {
               console.log("All Account Service", allAccountServiceResp);
-              _this95.accountStatement = allAccountServiceResp.statementFrequency;
-              _this95.checkBook = allAccountServiceResp.chequebookNeeded;
-              _this95.bankChannel = allAccountServiceResp.bankChannelPref;
-              _this95.debitCardType = allAccountServiceResp.debitCardType;
+              _this97.accountStatement = allAccountServiceResp.statementFrequency;
+              _this97.checkBook = allAccountServiceResp.chequebookNeeded;
+              _this97.bankChannel = allAccountServiceResp.bankChannelPref;
+              _this97.debitCardType = allAccountServiceResp.debitCardType;
 
-              for (var index = 0; index < _this95.bankChannel.length; index++) {
-                var element = _this95.bankChannel[index];
+              for (var index = 0; index < _this97.bankChannel.length; index++) {
+                var element = _this97.bankChannel[index];
 
                 if (element.checked) {
-                  _this95.bankPreference.push(element.name);
+                  _this97.bankPreference.push(element.name);
                 }
               }
 
-              _this95.passBook = allAccountServiceResp.passbookNeeded;
-              _this95.debitCardRequired = allAccountServiceResp.debitCardRequired;
-              _this95.statementPreferenceFetched = allAccountServiceResp.statementPref;
+              _this97.passBook = allAccountServiceResp.passbookNeeded;
+              _this97.debitCardRequired = allAccountServiceResp.debitCardRequired;
+              _this97.statementPreferenceFetched = allAccountServiceResp.statementPref;
 
-              for (var _index3 = 0; _index3 < _this95.statementPreferenceFetched.length; _index3++) {
-                var _element3 = _this95.statementPreferenceFetched[_index3];
+              for (var _index3 = 0; _index3 < _this97.statementPreferenceFetched.length; _index3++) {
+                var _element3 = _this97.statementPreferenceFetched[_index3];
 
                 if (_element3.checked) {
-                  _this95.statementPreference.push(_element3.name);
+                  _this97.statementPreference.push(_element3.name);
                 }
               }
 
-              _this95.commChannelFetched = allAccountServiceResp.commChannelPref;
+              _this97.commChannelFetched = allAccountServiceResp.commChannelPref;
 
-              for (var _index4 = 0; _index4 < _this95.commChannelFetched.length; _index4++) {
-                var _element4 = _this95.commChannelFetched[_index4];
+              for (var _index4 = 0; _index4 < _this97.commChannelFetched.length; _index4++) {
+                var _element4 = _this97.commChannelFetched[_index4];
 
                 if (_element4.checked) {
-                  _this95.commChannel.push(_element4.name);
+                  _this97.commChannel.push(_element4.name);
                 }
               }
 
-              _this95.summaryResponse = allAccountServiceResp;
+              _this97.summaryResponse = allAccountServiceResp;
             });
           }
         }, {
@@ -33882,7 +34789,7 @@
         _createClass(OfferIssueSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this96 = this;
+            var _this98 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -33892,7 +34799,7 @@
             }
 
             setTimeout(function () {
-              _this96.getAccountDetails();
+              _this98.getAccountDetails();
             }, 10);
           }
         }, {
@@ -33911,12 +34818,12 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this97 = this;
+            var _this99 = this;
 
             this.apiService.getOfferIssueDetails(this.loanaccountID).subscribe(function (offerissuedetail) {
               console.log("All Account Service", offerissuedetail);
-              _this97.offerissuedetail = offerissuedetail;
-              console.log("this.offerissuedetail", _this97.offerissuedetail);
+              _this99.offerissuedetail = offerissuedetail;
+              console.log("this.offerissuedetail", _this99.offerissuedetail);
             });
           }
         }]);
@@ -34861,7 +35768,7 @@
 
       var ApplicationEntryStageService = /*#__PURE__*/function () {
         function ApplicationEntryStageService(http, showMessageService) {
-          var _this98 = this;
+          var _this100 = this;
 
           _classCallCheck(this, ApplicationEntryStageService);
 
@@ -34872,7 +35779,7 @@
             console.error('Error : ' + errorResp.message);
             console.error('status : ' + errorResp.status);
 
-            _this98.showMessageService.errorMessage(errorResp.status, errorResp);
+            _this100.showMessageService.errorMessage(errorResp.status, errorResp);
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(errorResp);
           };
@@ -35882,7 +36789,7 @@
         _createClass(ReportDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this99 = this;
+            var _this101 = this;
 
             this.accountId = this.ls.getItem('accountId');
             this.accountInfo = this.ls.getItem('EDIT-CREATEACCCIF');
@@ -35893,19 +36800,19 @@
 
             console.log(this.accountId, "AccountId");
             setTimeout(function () {
-              _this99.getAllData(_this99.accountId);
+              _this101.getAllData(_this101.accountId);
             }, 1);
           }
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this100 = this;
+            var _this102 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getQualitativeScorecardDetails(id).subscribe(function (response) {
-              _this100.qualitativeScoreboardSummary = response;
-              console.log(_this100.qualitativeScoreboardSummary);
-              console.log(_this100.qualitativeScoreboardSummary.scoreCardMapping);
+              _this102.qualitativeScoreboardSummary = response;
+              console.log(_this102.qualitativeScoreboardSummary);
+              console.log(_this102.qualitativeScoreboardSummary.scoreCardMapping);
             });
           }
         }, {
@@ -36237,7 +37144,7 @@
         _createClass(LoanQualitativeScoreboardDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this101 = this;
+            var _this103 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -36249,19 +37156,19 @@
 
             console.log("LOAN ACCOUNT ID:: ", this.loanaccountID);
             setTimeout(function () {
-              _this101.getAllData(_this101.loanaccountID);
+              _this103.getAllData(_this103.loanaccountID);
             }, 10);
           }
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this102 = this;
+            var _this104 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getLoanQualitativeScorecardDetails(this.loanaccountID).subscribe(function (response) {
-              _this102.qualitativeScoreboardSummary = response;
-              console.log(_this102.qualitativeScoreboardSummary);
-              console.log(_this102.qualitativeScoreboardSummary.scoreCardMapping);
+              _this104.qualitativeScoreboardSummary = response;
+              console.log(_this104.qualitativeScoreboardSummary);
+              console.log(_this104.qualitativeScoreboardSummary.scoreCardMapping);
             });
           }
         }, {
@@ -36903,37 +37810,37 @@
         }, {
           key: "getPrefix",
           value: function getPrefix() {
-            var _this103 = this;
+            var _this105 = this;
 
             this.apiService.getDropDownValues('prefix').subscribe(function (resp) {
-              _this103.prefixes = resp;
+              _this105.prefixes = resp;
             });
           }
         }, {
           key: "getGender",
           value: function getGender() {
-            var _this104 = this;
+            var _this106 = this;
 
             this.apiService.getDropDownValues('gender').subscribe(function (resp) {
-              _this104.genders = resp;
+              _this106.genders = resp;
             });
           }
         }, {
           key: "getNationality",
           value: function getNationality() {
-            var _this105 = this;
+            var _this107 = this;
 
             this.apiService.getDropDownValues('nationality').subscribe(function (resp) {
-              _this105.nationality = resp;
+              _this107.nationality = resp;
             });
           }
         }, {
           key: "getMaritalStatus",
           value: function getMaritalStatus() {
-            var _this106 = this;
+            var _this108 = this;
 
             this.apiService.getDropDownValues('maritial_Status').subscribe(function (resp) {
-              _this106.MaritalStatus = resp;
+              _this108.MaritalStatus = resp;
             });
           }
         }, {
@@ -36971,7 +37878,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this107 = this;
+            var _this109 = this;
 
             if (this.basicInfoUpdateForm.invalid) {
               return;
@@ -36979,15 +37886,15 @@
 
             this.basicInfoUpdateForm.value.dateOfBirth = new _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"]('en-US').transform(this.basicInfoUpdateForm.value.dateOfBirth, 'yyyy-MMM-dd');
             this.apiService.kycScreenBasicinfo(this.basicInfoUpdateForm.value).subscribe(function (resp) {
-              _this107.snack.open("Basic Information Details Updated!", "OK", {
+              _this109.snack.open("Basic Information Details Updated!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this107.dialogRef.close({
+              _this109.dialogRef.close({
                 status: "INITIATED",
-                resp: _this107.basicInfoUpdateForm.value
+                resp: _this109.basicInfoUpdateForm.value
               });
             }), function (err) {
               console.log("error", err);
@@ -37550,7 +38457,7 @@
         _createClass(OfferAcceptRejectSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this108 = this;
+            var _this110 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -37561,7 +38468,7 @@
             }
 
             setTimeout(function () {
-              _this108.getOfferAcceptReject();
+              _this110.getOfferAcceptReject();
             }, 10);
           }
         }, {
@@ -37578,11 +38485,11 @@
         }, {
           key: "getOfferAcceptReject",
           value: function getOfferAcceptReject() {
-            var _this109 = this;
+            var _this111 = this;
 
             this.api.getOfferAcceptReject('200').subscribe(function (offerAcceptReject) {
               console.log(offerAcceptReject);
-              _this109.offerAcceptRejectvalue = offerAcceptReject;
+              _this111.offerAcceptRejectvalue = offerAcceptReject;
             });
           }
         }]);
@@ -38513,11 +39420,11 @@
         }, {
           key: "getApprovalDetails",
           value: function getApprovalDetails() {
-            var _this110 = this;
+            var _this112 = this;
 
             this.apiService.getApprovalDetails(this.cardId).subscribe(function (resp) {
               console.log("data", resp);
-              _this110.approvalDetails = resp;
+              _this112.approvalDetails = resp;
             });
           }
         }, {
@@ -38955,7 +39862,7 @@
         _createClass(AcceptOfferIssueSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this111 = this;
+            var _this113 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
             console.log(this.loanInfo);
@@ -38965,7 +39872,7 @@
             }
 
             setTimeout(function () {
-              _this111.getAccountDetails();
+              _this113.getAccountDetails();
             }, 10);
           }
         }, {
@@ -38984,12 +39891,12 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this112 = this;
+            var _this114 = this;
 
             this.apiService.getOfferIssueDetails(this.loanaccountID ? this.loanaccountID : 44444).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this112.accountDetails = accountDetails;
-              console.log("this.offerissuedetail", _this112.offerissuedetail);
+              _this114.accountDetails = accountDetails;
+              console.log("this.offerissuedetail", _this114.offerissuedetail);
             });
           }
         }]);
@@ -39542,7 +40449,7 @@
         _createClass(AssetDetailsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this113 = this;
+            var _this115 = this;
 
             console.log('assetInfo :: ', this.assetInfo);
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -39555,7 +40462,7 @@
 
             console.log("this.productaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this113.loadData(_this113.assetInfo);
+              _this115.loadData(_this115.assetInfo);
             }, 10);
           }
         }, {
@@ -39574,13 +40481,13 @@
         }, {
           key: "getAssetDetails",
           value: function getAssetDetails() {
-            var _this114 = this;
+            var _this116 = this;
 
             //this.apiService.getAssetValuation(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getAssetails(this.loanaccountID).subscribe(function (assetDetails) {
               console.log("All Account Service", assetDetails);
-              _this114.assetDetails = assetDetails;
-              console.log("this.assetDetails", _this114.assetDetails);
+              _this116.assetDetails = assetDetails;
+              console.log("this.assetDetails", _this116.assetDetails);
             });
           }
         }, {
@@ -42373,12 +43280,12 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this115 = this;
+            var _this117 = this;
 
             this.customerId = localStorage.getItem('customerId');
             this.kycStatus = localStorage.getItem('kycStatus');
             setTimeout(function () {
-              _this115.goToKycSummary();
+              _this117.goToKycSummary();
             }, 500); // let kyc = new KycTaskSummaryComponent();
           } // getKycTaskSummary(customerId){
           //   this.apiService.getKycTaskSummary(this.customerId).subscribe((response) => {
@@ -42393,7 +43300,7 @@
         }, {
           key: "goToKycSummary",
           value: function goToKycSummary() {
-            var _this116 = this;
+            var _this118 = this;
 
             this.loading = true;
             this.customerColorCode = localStorage.getItem('CustomerColorCode');
@@ -42401,59 +43308,59 @@
             this.apiService.getKycTaskSummary(this.customerId).subscribe(function (response) {
               console.log(response);
 
-              _this116.cdr.markForCheck();
+              _this118.cdr.markForCheck();
 
-              _this116.cdr.detectChanges();
+              _this118.cdr.detectChanges();
 
-              _this116.loading = false;
-              _this116.customerDetails = response;
-              _this116.customerCif = _this116.customerDetails[0].cifNumber;
-              _this116.custMobile = _this116.customerDetails[0].phoneNumber;
-              _this116.emailAddress = _this116.customerDetails[0].primaryEmailAdress;
-              console.log("Summry", _this116.customerDetails);
-              _this116.firstName = _this116.customerDetails[0].firstName;
-              _this116.phoneNum = _this116.customerDetails[0].phoneNumber;
-              _this116.email = _this116.customerDetails[0].primaryEmailAdress;
-              console.log("Summry", _this116.phoneNum);
-              console.log("Summry", _this116.email); // console.log(this.customerDetails,"customerDetails")
+              _this118.loading = false;
+              _this118.customerDetails = response;
+              _this118.customerCif = _this118.customerDetails[0].cifNumber;
+              _this118.custMobile = _this118.customerDetails[0].phoneNumber;
+              _this118.emailAddress = _this118.customerDetails[0].primaryEmailAdress;
+              console.log("Summry", _this118.customerDetails);
+              _this118.firstName = _this118.customerDetails[0].firstName;
+              _this118.phoneNum = _this118.customerDetails[0].phoneNumber;
+              _this118.email = _this118.customerDetails[0].primaryEmailAdress;
+              console.log("Summry", _this118.phoneNum);
+              console.log("Summry", _this118.email); // console.log(this.customerDetails,"customerDetails")
               // console.log(this.customerDetails[0].customerAdditionalInfo.kycStatus);
 
-              _this116.kycStatusVal = _this116.customerDetails[0].customerAdditionalInfo.kycStatus;
+              _this118.kycStatusVal = _this118.customerDetails[0].customerAdditionalInfo.kycStatus;
 
-              if (_this116.customerDetails[0].customerAdditionalInfo.kycStatus === 'REJECTED') {
-                _this116.rejectedStatus = true;
-                _this116.approvedStatus = true;
-                _this116.editScreen = false;
-              } else if (_this116.customerDetails[0].customerAdditionalInfo.kycStatus === 'INITIATED') {
-                _this116.rejectedStatus = false;
-                _this116.approvedStatus = false;
-                _this116.editScreen = false;
-              } else if (_this116.customerDetails[0].customerAdditionalInfo.kycStatus === 'APPROVED') {
-                _this116.rejectedStatus = true;
-                _this116.approvedStatus = true;
-                _this116.editScreen = true;
-              } else if (_this116.customerDetails[0].customerAdditionalInfo.kycStatus === 'UNDER_PROCESS') {
-                _this116.rejectedStatus = false;
-                _this116.approvedStatus = true;
-                _this116.editScreen = false;
+              if (_this118.customerDetails[0].customerAdditionalInfo.kycStatus === 'REJECTED') {
+                _this118.rejectedStatus = true;
+                _this118.approvedStatus = true;
+                _this118.editScreen = false;
+              } else if (_this118.customerDetails[0].customerAdditionalInfo.kycStatus === 'INITIATED') {
+                _this118.rejectedStatus = false;
+                _this118.approvedStatus = false;
+                _this118.editScreen = false;
+              } else if (_this118.customerDetails[0].customerAdditionalInfo.kycStatus === 'APPROVED') {
+                _this118.rejectedStatus = true;
+                _this118.approvedStatus = true;
+                _this118.editScreen = true;
+              } else if (_this118.customerDetails[0].customerAdditionalInfo.kycStatus === 'UNDER_PROCESS') {
+                _this118.rejectedStatus = false;
+                _this118.approvedStatus = true;
+                _this118.editScreen = false;
               }
 
-              localStorage.setItem('kycStatus', _this116.customerDetails[0].customerAdditionalInfo.kycStatus);
+              localStorage.setItem('kycStatus', _this118.customerDetails[0].customerAdditionalInfo.kycStatus);
 
-              _this116.getProfileImage(_this116.customerId);
+              _this118.getProfileImage(_this118.customerId);
 
-              _this116.getAdditionalDocumentsDetails(_this116.customerId);
+              _this118.getAdditionalDocumentsDetails(_this118.customerId);
 
-              _this116.getCustomerDocumentsDetails(_this116.customerId);
+              _this118.getCustomerDocumentsDetails(_this118.customerId);
 
-              _this116.getBiometricDetails(_this116.customerId); // this.phoneNum= 9876789876;
+              _this118.getBiometricDetails(_this118.customerId); // this.phoneNum= 9876789876;
               // this.email="test@gmail.com";
 
 
-              _this116.email = _this116.customerDetails[0].primaryEmailAdress;
-              console.log(_this116.customerDetails[0].phoneNumber);
+              _this118.email = _this118.customerDetails[0].primaryEmailAdress;
+              console.log(_this118.customerDetails[0].phoneNumber);
 
-              _this116.getVideoVerification(_this116.phoneNum, _this116.email);
+              _this118.getVideoVerification(_this118.phoneNum, _this118.email);
             }); // console.log(this.customerDetails,"customerDetails")
           }
         }, {
@@ -42483,24 +43390,24 @@
         }, {
           key: "getVideoVerification",
           value: function getVideoVerification(phoneNum, email) {
-            var _this117 = this;
+            var _this119 = this;
 
             console.log(this.email + this.phoneNum);
             this.apiService.getVideoTaskSummary(phoneNum, email).subscribe(function (response) {
               console.log("Vdio summry", response); // this.disableVideo = false;
 
               if (response && response.length > 0) {
-                _this117.videoVerificationDetails = response;
+                _this119.videoVerificationDetails = response;
               }
 
-              _this117.cdr.detectChanges(); // console.log(this.videoVerificationDetails,"customerDetails")
+              _this119.cdr.detectChanges(); // console.log(this.videoVerificationDetails,"customerDetails")
 
             });
           }
         }, {
           key: "approveDetails",
           value: function approveDetails(stat) {
-            var _this118 = this;
+            var _this120 = this;
 
             // updateApplicationStatus(formData, stat){
             this.kycStatus = localStorage.getItem('kycStatus'); // this.customerId = localStorage.getItem('CustomerId');
@@ -42529,13 +43436,13 @@
               console.log(response);
 
               if (response) {
-                _this118.close();
+                _this120.close();
 
-                _this118.cdr.markForCheck();
+                _this120.cdr.markForCheck();
 
-                _this118.cdr.detectChanges();
+                _this120.cdr.detectChanges();
 
-                _this118.snack.open("Successfully ".concat(kycStat, "!"), 'OK', {
+                _this120.snack.open("Successfully ".concat(kycStat, "!"), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -42543,9 +43450,9 @@
               }
             }, function (error) {
               console.log('error resp :: ', error);
-              _this118.errorStatus = kycStat;
+              _this120.errorStatus = kycStat;
 
-              _this118.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this120.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -42563,21 +43470,21 @@
         }, {
           key: "getAdditionalDocumentsDetails",
           value: function getAdditionalDocumentsDetails(customerId) {
-            var _this119 = this;
+            var _this121 = this;
 
             this.document_type = "2";
             this.apiService.getCustomerDocuments(customerId, this.document_type).subscribe(function (result) {
               console.log("result additional::", result);
 
               if (result != null) {
-                _this119.custOtherDoc_array = result;
+                _this121.custOtherDoc_array = result;
               }
             });
           }
         }, {
           key: "getBiometricDetails",
           value: function getBiometricDetails(customerId) {
-            var _this120 = this;
+            var _this122 = this;
 
             var arr = ["4", "5", "11", "12"];
 
@@ -42611,9 +43518,9 @@
 
                     };
 
-                    _this120.custBiometric.push(obj);
+                    _this122.custBiometric.push(obj);
 
-                    console.log('bio info :: ', _this120.custBiometric);
+                    console.log('bio info :: ', _this122.custBiometric);
                   }
                 });
               }
@@ -42622,7 +43529,7 @@
         }, {
           key: "getCustomerDocumentsDetails",
           value: function getCustomerDocumentsDetails(customerId) {
-            var _this121 = this;
+            var _this123 = this;
 
             // this.document_type = "3";
             var arr = ["2", "3", "6", "7", "8"];
@@ -42632,9 +43539,9 @@
                 var element = arr[key];
                 this.apiService.getCustomerDocuments(customerId, element).subscribe(function (result) {
                   if (result) {
-                    _this121.custOtherDoc_array.push(result);
+                    _this123.custOtherDoc_array.push(result);
 
-                    console.log("uploaded doc::", _this121.custOtherDoc_array);
+                    console.log("uploaded doc::", _this123.custOtherDoc_array);
                   } //if endng
 
                 });
@@ -42650,13 +43557,13 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(customerId) {
-            var _this122 = this;
+            var _this124 = this;
 
             this.apiService.getProfileDetails(customerId).subscribe(function (data) {
               if (data.profileImage != null) {
-                _this122.imageUrl = data.profileImage;
+                _this124.imageUrl = data.profileImage;
                 var objectURL = data.profileImage.fileUrl;
-                _this122.image = _this122.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this124.image = _this124.sanitizer.bypassSecurityTrustUrl(objectURL);
               }
             }, function (error) {
               console.log(error);
@@ -42672,7 +43579,7 @@
         }, {
           key: "updateStatusOnEdit",
           value: function updateStatusOnEdit(status) {
-            var _this123 = this;
+            var _this125 = this;
 
             var jsonObject = {
               customerId: this.customerId,
@@ -42681,16 +43588,16 @@
             };
             this.apiService.updateKycStatus(jsonObject).subscribe(function (response) {
               if (response) {
-                _this123.snack.open("Successfully ".concat(status, "!"), 'OK', {
+                _this125.snack.open("Successfully ".concat(status, "!"), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
               }
             }, function (error) {
-              _this123.errorStatus = status;
+              _this125.errorStatus = status;
 
-              _this123.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this125.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -42700,7 +43607,7 @@
         }, {
           key: "openEditScreen",
           value: function openEditScreen(screen, data) {
-            var _this124 = this;
+            var _this126 = this;
 
             this.kycStatus = "UNDER_PROCESS";
             this.updateStatusOnEdit("UNDER_PROCESS");
@@ -42712,29 +43619,29 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               console.log(submit);
-              _this124.kycStatus = submit.status;
+              _this126.kycStatus = submit.status;
 
               if (submit.status == 'INITIATED') {
-                _this124.updateStatusOnEdit('INITIATED');
+                _this126.updateStatusOnEdit('INITIATED');
 
                 if (!submit.screen) {
                   Object.assign(data, submit.resp);
                 }
 
                 if (submit.screen == 'appointmentSchedule') {
-                  _this124.getVideoVerification(_this124.phoneNum, _this124.email);
+                  _this126.getVideoVerification(_this126.phoneNum, _this126.email);
                 }
 
                 if (submit.screen == 'documentUpload') {
-                  _this124.getCustomerDocumentsDetails(_this124.customerId);
+                  _this126.getCustomerDocumentsDetails(_this126.customerId);
                 }
 
                 if (submit.screen == 'biometric') {
-                  _this124.getBiometricDetails(_this124.customerId);
+                  _this126.getBiometricDetails(_this126.customerId);
                 }
               }
 
-              _this124.cdr.detectChanges();
+              _this126.cdr.detectChanges();
             });
           }
         }, {

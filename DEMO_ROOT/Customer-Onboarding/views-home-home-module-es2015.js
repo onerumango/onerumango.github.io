@@ -2170,7 +2170,7 @@ class AccountComponent {
         });
     }
     getAccountBranchDetails() {
-        //
+        //debugger
         this.api.getAccountBranch().subscribe((data) => {
             console.log("data:: AccountBranch ", data);
             this.arrayAccountBranch = data;

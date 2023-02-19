@@ -2902,7 +2902,6 @@
             var _this5 = this;
 
             this.loading = true;
-            debugger;
 
             if (this.tokenService.getCustomerByCustomerID != null) {
               this.tokenService.getCustomerByCustomerID(key, value).subscribe(function (items) {
@@ -12400,12 +12399,13 @@
           }
         }, {
           key: "getReport",
-          value: function getReport(tellerId, fromDate, endDate) {
+          value: function getReport(report, customerId, fromDate, endDate, branch) {
             // console.log("reportid,date",reportid,date)
             //console.log(data)
             // let reportid = 'HRRATTD';
             // let date = '2022-08-23';
-            var bip = "http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=".concat(tellerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate);
+            // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
+            var bip = "http://192.168.0.14:8071/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate, "&branch=").concat(branch);
             console.log("in service", bip);
             window.open(bip);
             /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));
@@ -12536,6 +12536,11 @@
           key: "getRecentTransactionFilterBasedOnDate",
           value: function getRecentTransactionFilterBasedOnDate(tellerId, fromDate, toDate) {
             return this.http.get("".concat(API_URL, "/cash-deposit/api/fetchTellerRecentTrans?tellerId=").concat(tellerId, "&fromDate=").concat(fromDate, "&toDate=").concat(toDate)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "searchRecentTrans",
+          value: function searchRecentTrans(tellerId, search) {
+            return this.http.get("".concat(API_URL, "/cash-deposit/api/searchRecentTransactionInfo?search=").concat(search)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }]);
 
