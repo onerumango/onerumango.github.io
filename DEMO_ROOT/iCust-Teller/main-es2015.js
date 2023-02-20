@@ -344,7 +344,7 @@ EgretSideNavToggleDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -7355,7 +7355,7 @@ class ApiService {
         // let reportid = 'HRRATTD';
         // let date = '2022-08-23';
         // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
-        var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}&branch=${branch}`;
+        var bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}&branch=${branch}`;
         console.log("in service", bip);
         window.open(bip);
         /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));

@@ -723,7 +723,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */
+      /*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */
       "zUnb");
       /***/
     },
@@ -12405,7 +12405,7 @@
             // let reportid = 'HRRATTD';
             // let date = '2022-08-23';
             // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
-            var bip = "http://192.168.0.14:8071/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate, "&branch=").concat(branch);
+            var bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate, "&branch=").concat(branch);
             console.log("in service", bip);
             window.open(bip);
             /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));
