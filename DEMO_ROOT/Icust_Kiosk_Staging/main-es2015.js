@@ -534,6 +534,7 @@ class LogoutPopupComponent {
         localStorage.removeItem("userId");
         localStorage.removeItem("scannerData");
         localStorage.removeItem("custholderName");
+        localStorage.removeItem("DenominationRequired");
         this.dialogRef.close();
         // localStorage.removeItem("phonenumFromLogin");
         this.router.navigateByUrl('/sessions/login');
@@ -4568,11 +4569,15 @@ class DataService {
         this.accountFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.transactionFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.denominationFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+        this.loanFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.forexTransTypeData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+        this.paymentInfoFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.getforexTransTypeData = this.forexTransTypeData.asObservable();
         this.getaccountFormdata = this.accountFormData.asObservable();
         this.gettransactionFormdata = this.transactionFormData.asObservable();
         this.getdenominationFormdata = this.denominationFormData.asObservable();
+        this.getloanFormdata = this.loanFormData.asObservable();
+        this.getpaymentInfoFormdata = this.paymentInfoFormData.asObservable();
     }
     sendNavParam(params) {
         this.paramSource.next(params);
@@ -4592,6 +4597,12 @@ class DataService {
     sendtransactionFormData(params) {
         this.transactionFormData.next(params);
     }
+    sendloanFormData(params) {
+        this.loanFormData.next(params);
+    }
+    sendPaymentInfoFormData(params) {
+        this.paymentInfoFormData.next(params);
+    }
     sendDenominationFormData(params) {
         this.denominationFormData.next(params);
     }
@@ -4601,8 +4612,14 @@ class DataService {
     removedenominationFormData(params) {
         this.denominationFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
     }
+    removeloanFormData(params) {
+        this.denominationFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
+    }
     removeaccountFormData(params) {
         this.accountFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
+    }
+    removePaymentInfoFormData(params) {
+        this.paymentInfoFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
     }
     removeNavParam(params) {
         this.paramSource.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);

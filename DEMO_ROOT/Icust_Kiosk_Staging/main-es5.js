@@ -1066,6 +1066,7 @@
             localStorage.removeItem("userId");
             localStorage.removeItem("scannerData");
             localStorage.removeItem("custholderName");
+            localStorage.removeItem("DenominationRequired");
             this.dialogRef.close(); // localStorage.removeItem("phonenumFromLogin");
 
             this.router.navigateByUrl('/sessions/login');
@@ -8486,11 +8487,15 @@
           this.accountFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
           this.transactionFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
           this.denominationFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+          this.loanFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
           this.forexTransTypeData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+          this.paymentInfoFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
           this.getforexTransTypeData = this.forexTransTypeData.asObservable();
           this.getaccountFormdata = this.accountFormData.asObservable();
           this.gettransactionFormdata = this.transactionFormData.asObservable();
           this.getdenominationFormdata = this.denominationFormData.asObservable();
+          this.getloanFormdata = this.loanFormData.asObservable();
+          this.getpaymentInfoFormdata = this.paymentInfoFormData.asObservable();
         }
 
         _createClass(DataService, [{
@@ -8524,6 +8529,16 @@
             this.transactionFormData.next(params);
           }
         }, {
+          key: "sendloanFormData",
+          value: function sendloanFormData(params) {
+            this.loanFormData.next(params);
+          }
+        }, {
+          key: "sendPaymentInfoFormData",
+          value: function sendPaymentInfoFormData(params) {
+            this.paymentInfoFormData.next(params);
+          }
+        }, {
           key: "sendDenominationFormData",
           value: function sendDenominationFormData(params) {
             this.denominationFormData.next(params);
@@ -8539,9 +8554,19 @@
             this.denominationFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
           }
         }, {
+          key: "removeloanFormData",
+          value: function removeloanFormData(params) {
+            this.denominationFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
+          }
+        }, {
           key: "removeaccountFormData",
           value: function removeaccountFormData(params) {
             this.accountFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
+          }
+        }, {
+          key: "removePaymentInfoFormData",
+          value: function removePaymentInfoFormData(params) {
+            this.paymentInfoFormData.next(rxjs__WEBPACK_IMPORTED_MODULE_1__["EMPTY"]);
           }
         }, {
           key: "removeNavParam",
