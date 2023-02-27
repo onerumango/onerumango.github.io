@@ -4570,6 +4570,7 @@ class DataService {
         this.transactionFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.denominationFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.loanFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
+        this.loanRepaymentData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.forexTransTypeData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.paymentInfoFormData = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({});
         this.getforexTransTypeData = this.forexTransTypeData.asObservable();
@@ -4578,6 +4579,7 @@ class DataService {
         this.getdenominationFormdata = this.denominationFormData.asObservable();
         this.getloanFormdata = this.loanFormData.asObservable();
         this.getpaymentInfoFormdata = this.paymentInfoFormData.asObservable();
+        this.getloanRepaymentData = this.loanRepaymentData.asObservable();
     }
     sendNavParam(params) {
         this.paramSource.next(params);
@@ -4599,6 +4601,9 @@ class DataService {
     }
     sendloanFormData(params) {
         this.loanFormData.next(params);
+    }
+    sendloanRepaymentData(params) {
+        this.loanRepaymentData.next(params);
     }
     sendPaymentInfoFormData(params) {
         this.paymentInfoFormData.next(params);
@@ -5135,6 +5140,11 @@ class ApiService {
     gettingTransactionDetails(phoneNumber) {
         return this.http
             .get(`${API_URL}/customerdata/getPhoneNo/${phoneNumber}`, phoneNumber)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+    }
+    gettingLoanAccDetails(phoneNumber) {
+        return this.http
+            .get(`${API_URL}/customerdata/fetchLoanRepaymentInfo?phoneNumber=${phoneNumber}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     generateToken(data) {
