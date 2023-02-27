@@ -12328,7 +12328,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -12344,7 +12344,7 @@
 
       function CustOnBoardingTaskSummaryComponent_div_33_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 40);
         }
 
         if (rf & 2) {
@@ -12421,67 +12421,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20, "Kyc Reference ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Customer Status");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Kyc Reference ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "span", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "Mobile Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "Customer Status");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "span", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Email");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "span", 39);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -12489,7 +12455,45 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](29, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "Mobile Number");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "span", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Email");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "span", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](40);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](41, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -12517,11 +12521,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("#", items_r8.customerId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r8.kycReference);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r8.custStatus);
 
@@ -12539,7 +12543,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -12555,7 +12559,7 @@
 
       function CustOnBoardingTaskSummaryComponent_div_44_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 40);
         }
 
         if (rf & 2) {
@@ -12584,7 +12588,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "bookmark");
 
@@ -12632,67 +12636,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20, "Kyc Reference ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Customer Status");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Kyc Reference ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "Mobile Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "Customer Status");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "span", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Email");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "span", 39);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -12700,7 +12670,45 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](29, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "Mobile Number");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "span", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Email");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "span", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](40);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](41, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -12728,11 +12736,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("#", items_r17.customerId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r17.kycReference);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r17.custStatus);
 
@@ -12750,7 +12758,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -12766,7 +12774,7 @@
 
       function CustOnBoardingTaskSummaryComponent_div_54_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 40);
         }
 
         if (rf & 2) {
@@ -12795,7 +12803,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 42);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "bookmark");
 
@@ -12843,67 +12851,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20, "Kyc Reference ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Customer Status");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Kyc Reference ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "Mobile Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "Customer Status");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "span", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Email");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "span", 39);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -12911,7 +12885,45 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](29, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "Mobile Number");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "span", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Email");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "span", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](40);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](41, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -12939,11 +12951,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("#", items_r26.customerId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r26.kycReference);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r26.custStatus);
 
@@ -12961,7 +12973,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-photo", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -12977,7 +12989,7 @@
 
       function CustOnBoardingTaskSummaryComponent_div_65_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 40);
         }
 
         if (rf & 2) {
@@ -13006,7 +13018,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 43);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "bookmark");
 
@@ -13054,67 +13066,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20, "Kyc Reference ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Customer Status");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Kyc Reference ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "div", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "div", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "Mobile Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "Customer Status");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "span", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "div", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span", 37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Email");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "span", 39);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -13122,7 +13100,45 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](29, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "div", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "Mobile Number");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "span", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "div", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Email");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "span", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](40);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](41, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -13150,11 +13166,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("#", items_r35.customerId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r35.kycReference);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](items_r35.custStatus);
 
@@ -13846,7 +13862,7 @@
         },
         decls: 66,
         vars: 18,
-        consts: [["infiniteScroll", "", 1, "search-results1", 3, "infiniteScrollDistance", "infiniteScrollThrottle", "scrollWindow", "scrolled"], [1, "m-333", "mt-32"], [1, "slideTogglepadding", 3, "change"], ["fxLayout", "row", "fxLayoutAlign", "space-between start", "fxLayoutGap", "10px"], ["fxFlex", "60", 1, "summaryName"], [1, "task", "ml-24"], ["fxFlex", "30", "fxLayoutAlign", "end center", 1, "searchbox"], ["appearance", "outline", 1, "full-width"], ["fxLayoutAlign", "center"], ["matInput", "", "name", "search", "autocomplete", "off", "placeholder", "Search Customer_id or Name", 3, "ngModel", "ngModelChange", "keyup"], [3, "diameter", 4, "ngIf"], ["matPrefix", "", 1, "my-icon"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], [1, "content"], ["fxLayout", "20%", 1, "screen"], [1, "mat-elevation-z4"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-6"], [1, "statusFont"], [1, "more_vert_icon"], ["class", "cardBox", 3, "click", 4, "ngFor", "ngForOf"], [3, "diameter"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click"], [1, "cardBox", 3, "click"], [1, "m-333"], [1, "fill-color-blue", "bookMark"], [1, "head"], ["mat-card-avatar", "", 1, "circle"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], [1, "naming"], [1, "head1"], ["fxLayout", "row", "fxLayoutGap", "40px", 1, "col1"], ["fxLayout", "row", "fxLayoutGap", "58px", 1, "col2"], [1, "fieldName"], ["fxLayout", "row", "fxLayoutGap", "36px"], ["fxLayout", "column"], [1, "col3"], [1, "col4"], [1, "breakWord", "col4"], [3, "name"], ["alt", "", 1, "profilepic", 3, "src"], [1, "fill-color-blue", "bookMark", "bookMark1"], [1, "fill-color-blue", "bookMark", "bookMark2"], [1, "fill-color-red", "bookMark", "bookMark3"]],
+        consts: [["infiniteScroll", "", 1, "search-results1", 3, "infiniteScrollDistance", "infiniteScrollThrottle", "scrollWindow", "scrolled"], [1, "m-333", "mt-32"], [1, "slideTogglepadding", 3, "change"], ["fxLayout", "row", "fxLayoutAlign", "space-between start", "fxLayoutGap", "10px"], ["fxFlex", "60", 1, "summaryName"], [1, "task", "ml-24"], ["fxFlex", "30", "fxLayoutAlign", "end center", 1, "searchbox"], ["appearance", "outline", 1, "full-width"], ["fxLayoutAlign", "center"], ["matInput", "", "name", "search", "autocomplete", "off", "placeholder", "Search Customer_id or Name", 3, "ngModel", "ngModelChange", "keyup"], [3, "diameter", 4, "ngIf"], ["matPrefix", "", 1, "my-icon"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], [1, "content"], ["fxLayout", "20%", 1, "screen"], [1, "mat-elevation-z4"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-6"], [1, "statusFont"], [1, "more_vert_icon"], ["class", "cardBox", 3, "click", 4, "ngFor", "ngForOf"], [3, "diameter"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click"], [1, "cardBox", 3, "click"], [1, "m-333"], [1, "fill-color-blue", "bookMark"], [1, "head"], ["mat-card-avatar", "", 1, "circle"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], [1, "naming"], [1, "head1"], ["fxLayout", "row", "fxLayoutGap", "10", 1, "col1"], ["fxLayout", "column", "fxFlex", "45"], [1, "fieldName"], ["fxLayout", "row", "fxLayoutGap", "10"], [1, "col3"], [1, "col4"], [1, "breakWord", "col4"], [3, "name"], ["alt", "", 1, "profilepic", 3, "src"], [1, "fill-color-blue", "bookMark", "bookMark1"], [1, "fill-color-blue", "bookMark", "bookMark2"], [1, "fill-color-red", "bookMark", "bookMark3"]],
         template: function CustOnBoardingTaskSummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "br");
@@ -13963,7 +13979,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](33, CustOnBoardingTaskSummaryComponent_div_33_Template, 41, 14, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](33, CustOnBoardingTaskSummaryComponent_div_33_Template, 42, 14, "div", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -13999,7 +14015,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](43, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](44, CustOnBoardingTaskSummaryComponent_div_44_Template, 41, 14, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](44, CustOnBoardingTaskSummaryComponent_div_44_Template, 42, 14, "div", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -14033,7 +14049,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](54, CustOnBoardingTaskSummaryComponent_div_54_Template, 41, 14, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](54, CustOnBoardingTaskSummaryComponent_div_54_Template, 42, 14, "div", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -14069,7 +14085,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](65, CustOnBoardingTaskSummaryComponent_div_65_Template, 41, 14, "div", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](65, CustOnBoardingTaskSummaryComponent_div_65_Template, 42, 14, "div", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -14175,6 +14191,266 @@
             args: ['scroll', ['$event']]
           }]
         });
+      })();
+      /***/
+
+    },
+
+    /***/
+    "9byR":
+    /*!****************************************************************************************************!*\
+      !*** ./src/app/views/tasks/card-account-approver/update-doc-upload/update-doc-upload.component.ts ***!
+      \****************************************************************************************************/
+
+    /*! exports provided: UpdateDocUploadComponent */
+
+    /***/
+    function byR(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UpdateDocUploadComponent", function () {
+        return UpdateDocUploadComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "8Y7J");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/forms */
+      "s7LF");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "iELJ");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var app_views_others_genric_document_upload_document_ocr_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! app/views/others/genric-document-upload/document-ocr.service */
+      "KYk2");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "VDRc");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "Tj54");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/card */
+      "PDjf");
+      /* harmony import */
+
+
+      var _others_genric_document_upload_genric_document_upload_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../../../others/genric-document-upload/genric-document-upload.component */
+      "uKq3");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/button */
+      "Dxy4"); // import { Component, OnInit } from '@angular/core';
+
+
+      var UpdateDocUploadComponent = /*#__PURE__*/function () {
+        function UpdateDocUploadComponent(ls, data, formBuilder, dialogRef, doOcrService) {
+          _classCallCheck(this, UpdateDocUploadComponent);
+
+          this.ls = ls;
+          this.data = data;
+          this.formBuilder = formBuilder;
+          this.dialogRef = dialogRef;
+          this.doOcrService = doOcrService;
+          this.screenInfo = {
+            screenName: "Cad Document Upload",
+            data: "",
+            customerId: "",
+            isEdit: true
+          };
+          this.disableNextAtIndex1 = false;
+        }
+
+        _createClass(UpdateDocUploadComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            var _this67 = this;
+
+            this.customerId = this.ls.getItem('customerId');
+            this.ls.setItem('customer_id', this.customerId);
+            this.screenInfo = {
+              screenName: "Cad Document Upload",
+              data: "",
+              customerId: "",
+              isEdit: true
+            };
+            this.doOcrService.getenableNext().subscribe(function (data) {
+              console.log("data disableNextAtIndex1 :: ", data);
+              _this67.disableNextAtIndex1 = data;
+            });
+          }
+        }, {
+          key: "createDocItemOthers",
+          value: function createDocItemOthers(item) {
+            return this.formBuilder.group({
+              id: item ? item.id : [''],
+              documentType: item ? item.documentName : [''],
+              documentName: item ? item.fileName : [''],
+              fileData: item ? item.fileData : [''],
+              fileUrl: item ? item.fileUrl : [''],
+              fileUrl2: item ? item.fileUrl2 : [''],
+              documentSide: item ? item.documentSide : ['']
+            });
+          }
+        }, {
+          key: "onSubmit",
+          value: function onSubmit() {
+            this.dialogRef.close({
+              status: 'INITIATED',
+              screen: 'documentUpload'
+            });
+          }
+        }, {
+          key: "close",
+          value: function close() {
+            this.dialogRef.close({
+              status: 'ONGOING'
+            });
+          }
+        }]);
+
+        return UpdateDocUploadComponent;
+      }();
+
+      UpdateDocUploadComponent.ɵfac = function UpdateDocUploadComponent_Factory(t) {
+        return new (t || UpdateDocUploadComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_views_others_genric_document_upload_document_ocr_service__WEBPACK_IMPORTED_MODULE_4__["DocumentOcrService"]));
+      };
+
+      UpdateDocUploadComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: UpdateDocUploadComponent,
+        selectors: [["app-update-doc-upload"]],
+        decls: 13,
+        vars: 2,
+        consts: [["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], [2, "font-size", "18px"], [3, "screenInfo"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["type", "button", "mat-raised-button", "", 1, "editbtn", 3, "disabled", "click"], ["type", "button", 1, "cancelbtn", 3, "click"]],
+        template: function UpdateDocUploadComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UpdateDocUploadComponent_Template_mat_icon_click_1_listener() {
+              return ctx.close();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "close");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h3", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Proof Of Identity");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-genric-document-upload", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UpdateDocUploadComponent_Template_button_click_8_listener() {
+              return ctx.onSubmit();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Save");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, " \xA0\xA0\xA0 ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UpdateDocUploadComponent_Template_button_click_11_listener() {
+              return ctx.close();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " Cancel ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("screenInfo", ctx.screenInfo);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disableNextAtIndex1);
+          }
+        },
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_5__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_5__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCard"], _others_genric_document_upload_genric_document_upload_component__WEBPACK_IMPORTED_MODULE_8__["GenricDocumentUploadComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_5__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButton"]],
+        styles: [".closeIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #127f38;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: red;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  height: 30px;\n  width: 150px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHVwZGF0ZS1kb2MtdXBsb2FkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBZTtBQUNuQjs7QUFBQztFQUNHLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBR2Y7O0FBREE7RUFDSSxZQUFZO0VBQ1oscUJBQW9CO0VBQ3BCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLGlCQUFpQjtFQUNqQixZQUFXO0VBQ1gsWUFBVztBQUlmIiwiZmlsZSI6InVwZGF0ZS1kb2MtdXBsb2FkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNsb3NlSWNvbntcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufS5lZGl0YnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6ICMxMjdmMzg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG59XHJcbi5jYW5jZWxidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJlZDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbn1cclxuXHJcbiJdfQ== */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UpdateDocUploadComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-update-doc-upload',
+            templateUrl: './update-doc-upload.component.html',
+            styleUrls: ['./update-doc-upload.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+              args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]]
+            }]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+          }, {
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]
+          }, {
+            type: app_views_others_genric_document_upload_document_ocr_service__WEBPACK_IMPORTED_MODULE_4__["DocumentOcrService"]
+          }];
+        }, null);
       })();
       /***/
 
@@ -14464,7 +14740,7 @@
         _createClass(ChargeDetailsUpdateComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this67 = this;
+            var _this68 = this;
 
             console.log(this.data);
             this.accountId = this.ls.getItem('accountId');
@@ -14479,9 +14755,9 @@
             }
 
             this.api.getFlexcubeDetails("chargeDetails", this.accountType).subscribe(function (response) {
-              _this67.buildChargeForm(response.length);
+              _this68.buildChargeForm(response.length);
 
-              _this67.c.patchValue(response);
+              _this68.c.patchValue(response);
             });
           }
         }, {
@@ -14522,26 +14798,26 @@
         }, {
           key: "onSubmit",
           value: function onSubmit(form) {
-            var _this68 = this;
+            var _this69 = this;
 
             form.charges = form.charges.map(function (charges) {
               return Object.assign(Object.assign({}, charges), {
-                accountId: _this68.accountId
+                accountId: _this69.accountId
               });
             });
             form.accountId = this.accountId;
             this.api.chargeDetailsSave(form.charges).subscribe(function (resp) {
-              _this68.snack.open('Account Saved!', 'OK', {
+              _this69.snack.open('Account Saved!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
-              _this68.dialogRef.close({
+              _this69.dialogRef.close({
                 status: 'BACKLOG'
               });
             }, function (err) {
-              _this68.snack.open('Server Error!', 'OK', {
+              _this69.snack.open('Server Error!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -16389,7 +16665,7 @@
         }, {
           key: "buildFinacialFormGroup",
           value: function buildFinacialFormGroup(data) {
-            var _this69 = this;
+            var _this70 = this;
 
             this.financialDetailsUpdate = this.formBuilder.group({
               // Financial Details
@@ -16446,7 +16722,7 @@
               accountId: this.ls.getItem('accountId')
             }, {
               validator: function validator(formGroup) {
-                return _this69.validateInputGroups(formGroup);
+                return _this70.validateInputGroups(formGroup);
               }
             });
           }
@@ -16488,7 +16764,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this70 = this;
+            var _this71 = this;
 
             var startDate = this.converDate(this.financialDetailsUpdate.controls.employmentStartDate.value);
 
@@ -16528,17 +16804,17 @@
             this.api.upsertfinancialDetails(this.financialDetailsUpdate.value).subscribe(function (fincialResp) {
               console.log(fincialResp);
 
-              _this70.snack.open('Financial Details Updated!', 'OK', {
+              _this71.snack.open('Financial Details Updated!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
-              _this70.dialogRef.close({
+              _this71.dialogRef.close({
                 status: 'BACKLOG'
               });
             }, function (err) {
-              _this70.snack.open('Error Unable to Save!', 'OK', {
+              _this71.snack.open('Error Unable to Save!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -16548,19 +16824,19 @@
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this71 = this;
+            var _this72 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this71.arrayEmploymentType = data;
+              _this72.arrayEmploymentType = data;
             });
           }
         }, {
           key: "getEmploymentCategory",
           value: function getEmploymentCategory(key) {
-            var _this72 = this;
+            var _this73 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this72.arrayEmploymentCategory = data;
+              _this73.arrayEmploymentCategory = data;
             });
           } // date conversion
 
@@ -16993,12 +17269,12 @@
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this73 = this;
+            var _this74 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
-                  _this73.countryArr.push(data[i].countryName);
+                  _this74.countryArr.push(data[i].countryName);
                 }
               }
             });
@@ -17006,22 +17282,22 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this74 = this;
+            var _this75 = this;
 
             this.corporateService.saveOrUpdateCorporateAccountInfo(this.corporateInfoUpdateForm.value).subscribe(function (data) {
               if (data != null) {
-                _this74.snack.open('Basic Information Updated' + ' !', 'OK', {
+                _this75.snack.open('Basic Information Updated' + ' !', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this74.dialogRef.close({
+                _this75.dialogRef.close({
                   status: "INITIATED",
                   resp: data
                 });
               } else {
-                _this74.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this75.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -17031,7 +17307,7 @@
               (function (error) {
                 console.log('error resp :: ', error);
 
-                _this74.snack.open("".concat(error.error.message, " "), 'OK', {
+                _this75.snack.open("".concat(error.error.message, " "), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -17488,7 +17764,7 @@
         _createClass(UpdateProofOfIdentityComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this75 = this;
+            var _this76 = this;
 
             this.customerId = this.ls.getItem('customerId');
             this.ls.setItem('customer_id', this.customerId);
@@ -17500,7 +17776,7 @@
             };
             this.doOcrService.getenableNext().subscribe(function (data) {
               console.log("data disableNextAtIndex1 :: ", data);
-              _this75.disableNextAtIndex1 = data;
+              _this76.disableNextAtIndex1 = data;
             });
           }
         }, {
@@ -17917,7 +18193,7 @@
         }, {
           key: "buildFinacialFormGroup",
           value: function buildFinacialFormGroup(data) {
-            var _this76 = this;
+            var _this77 = this;
 
             console.log(data);
             this.cardFinancialDetailsUpdateForm = this.formBuilder.group({
@@ -17975,7 +18251,7 @@
               assetTotal: [data ? data.assetTotal : 0]
             }, {
               validator: function validator(formGroup) {
-                return _this76.validateInputGroups(formGroup);
+                return _this77.validateInputGroups(formGroup);
               }
             });
           }
@@ -18024,7 +18300,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this77 = this;
+            var _this78 = this;
 
             var startDate = this.converDate(this.cardFinancialDetailsUpdateForm.controls.employmentStartDate.value);
 
@@ -18070,24 +18346,24 @@
             this.apiService.upsertCardFinancialDetails(payload).subscribe(function (fincialResp) {
               console.log(fincialResp);
 
-              _this77.snack.open('Financial Details Updated!', 'OK', {
+              _this78.snack.open('Financial Details Updated!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
               var statusModel = {
-                cardId: _this77.data.initiationInfo.cardId,
+                cardId: _this78.data.initiationInfo.cardId,
                 status: "BACKLOG"
               };
 
-              _this77.apiService.updateCardStatus(statusModel).subscribe(function (data) {
-                _this77.dialogRef.close({
+              _this78.apiService.updateCardStatus(statusModel).subscribe(function (data) {
+                _this78.dialogRef.close({
                   status: data.status
                 });
               });
             }, function (err) {
-              _this77.snack.open('Error Unable to Save!', 'OK', {
+              _this78.snack.open('Error Unable to Save!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -18175,19 +18451,19 @@
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this78 = this;
+            var _this79 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this78.arrayEmploymentType = data;
+              _this79.arrayEmploymentType = data;
             });
           }
         }, {
           key: "getEmploymentCategory",
           value: function getEmploymentCategory(key) {
-            var _this79 = this;
+            var _this80 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this79.arrayEmploymentCategory = data;
+              _this80.arrayEmploymentCategory = data;
             });
           }
         }]);
@@ -19838,39 +20114,39 @@
         }, {
           key: "getPrefixValue",
           value: function getPrefixValue(key) {
-            var _this80 = this;
+            var _this81 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this80.arrayPrefix = data;
+              _this81.arrayPrefix = data;
             });
           }
         }, {
           key: "getGenderValue",
           value: function getGenderValue(key) {
-            var _this81 = this;
+            var _this82 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this81.arrayGender = data;
+              _this82.arrayGender = data;
             });
           }
         }, {
           key: "getMaritalStatus",
           value: function getMaritalStatus(key) {
-            var _this82 = this;
+            var _this83 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this82.arrayMaritalStatus = data;
+              _this83.arrayMaritalStatus = data;
             });
           }
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this83 = this;
+            var _this84 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
-                  _this83.arrayCountry.push(data[i].countryName);
+                  _this84.arrayCountry.push(data[i].countryName);
                 }
               }
             });
@@ -19878,15 +20154,15 @@
         }, {
           key: "getStateName",
           value: function getStateName(country) {
-            var _this84 = this;
+            var _this85 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName === country) {
-                  _this84.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                  _this85.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
                     for (var _i5 = 0; _i5 < resp.length; _i5++) {
                       if (resp[_i5].authStatus === 'A') {
-                        _this84.arrayState.push(resp[_i5].stateName);
+                        _this85.arrayState.push(resp[_i5].stateName);
                       }
                     }
                   });
@@ -19899,19 +20175,19 @@
         }, {
           key: "getNationality",
           value: function getNationality(key) {
-            var _this85 = this;
+            var _this86 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (datas) {
-              _this85.nationalityArray = datas;
+              _this86.nationalityArray = datas;
             });
           }
         }, {
           key: "getResidenceDetails",
           value: function getResidenceDetails(key) {
-            var _this86 = this;
+            var _this87 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this86.arrayResidence = data;
+              _this87.arrayResidence = data;
             });
           }
         }, {
@@ -19953,7 +20229,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this87 = this;
+            var _this88 = this;
 
             var dateOfbirth = new _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"]('en-US').transform(this.primaryInfoForm.value.dateOfBirth, 'yyyy-MMM-dd');
             this.primaryInfoForm.value.dateOfBirth = dateOfbirth;
@@ -19961,9 +20237,9 @@
             this.apiService.insertNewUserOnboarding(this.primaryInfoForm.value).subscribe(function (resp) {
               console.log(resp);
 
-              _this87.dialogRef.close({
+              _this88.dialogRef.close({
                 status: 'INITIATED',
-                resp: _this87.primaryInfoForm.value
+                resp: _this88.primaryInfoForm.value
               });
             });
           }
@@ -20635,7 +20911,7 @@
         _createClass(CardChargeDetailsUpdateComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this88 = this;
+            var _this89 = this;
 
             this.data.currencytype = localStorage.getItem('Currency Type');
 
@@ -20660,9 +20936,9 @@
               this["in"].patchValue(_toConsumableArray(this.data.chargeInfo));
             } else {
               this.apiService.getFlexcubeDetails("chargeDetails", this.accountType).subscribe(function (response) {
-                _this88.onChangeInterest(response.length);
+                _this89.onChangeInterest(response.length);
 
-                _this88["in"].patchValue([Object.assign(Object.assign({}, response[0]), {
+                _this89["in"].patchValue([Object.assign(Object.assign({}, response[0]), {
                   amount: history.state.amount ? history.state.amount : ''
                 })]);
               });
@@ -20718,11 +20994,11 @@
         }, {
           key: "onSubmit",
           value: function onSubmit(form) {
-            var _this89 = this;
+            var _this90 = this;
 
             console.log("form", form);
             this.api.cardChargeDetailsSave(form).subscribe(function (resp) {
-              _this89.snack.open("Charge Details Updated!", "OK", {
+              _this90.snack.open("Charge Details Updated!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -20730,17 +21006,17 @@
 
               console.log("backend response from intrest saving", resp);
               var statusModel = {
-                cardId: _this89.data.cardId,
+                cardId: _this90.data.cardId,
                 status: "BACKLOG"
               };
 
-              _this89.apiService.updateCardStatus(statusModel).subscribe(function (data) {
-                _this89.dialogRef.close({
+              _this90.apiService.updateCardStatus(statusModel).subscribe(function (data) {
+                _this90.dialogRef.close({
                   status: data.status
                 });
               });
             }, function (err) {
-              _this89.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
+              _this90.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -21538,7 +21814,7 @@
 
               for (var i = 0; i < this.contactInfo.length; i++) {
                 this.getStateName(this.contactInfo[i].country, this.contactInfo[i].addressType);
-                this.getCityName(this.contactInfo[i].state, this.contactInfo[i].addressType);
+                this.getCityName();
                 this.userAddress_array.push(this.createUserAddress(this.contactInfo[i]));
               }
             } else {
@@ -21570,23 +21846,23 @@
         }, {
           key: "getResidenceDetails",
           value: function getResidenceDetails(key) {
-            var _this90 = this;
+            var _this91 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this90.arrayResidence = data;
+              _this91.arrayResidence = data;
             });
           }
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this91 = this;
+            var _this92 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
-                  _this91.arrayCountry.push(data[i].countryName);
+                  _this92.arrayCountry.push(data[i].countryName);
 
-                  _this91.arrayCountryPerm.push(data[i].countryName);
+                  _this92.arrayCountryPerm.push(data[i].countryName);
                 }
               }
             });
@@ -21594,16 +21870,16 @@
         }, {
           key: "getStateName",
           value: function getStateName(country, addressType) {
-            var _this92 = this;
+            var _this93 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName == country) {
-                  _this92.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                  _this93.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
                     if (addressType === 'Communication') {
-                      _this92.arrayState = resp;
+                      _this93.arrayState = resp;
                     } else if (addressType === 'Permanent') {
-                      _this92.arrayStatePerm = resp;
+                      _this93.arrayStatePerm = resp;
                     }
                   });
 
@@ -21614,24 +21890,29 @@
           }
         }, {
           key: "getCityName",
-          value: function getCityName(state, addressType) {
-            var _this93 = this;
+          value: function getCityName() {
+            var _this94 = this;
 
-            this.entityName = "city";
-            console.log(state);
-            this.apiService.getDropDownForStateCity(this.entityName, state).subscribe(function (data) {
-              if (addressType === 'Communication') {
-                _this93.arrayCity = data;
-                console.log("-->", _this93.arrayCity);
-              } else if (addressType === 'Permanent') {
-                _this93.arrayCityPerm = data;
-              }
+            // this.entityName = "city";
+            // console.log(state)
+            // this.apiService.getDropDownForStateCity(this.entityName, state).subscribe((data) => {
+            //   if (addressType === 'Communication') {
+            //     this.arrayCity = data;
+            //     console.log("-->", this.arrayCity)
+            //   } else if (addressType === 'Permanent') {
+            //     this.arrayCityPerm = data;
+            //   }
+            // });
+            this.apiService.getAuthorizedCityInfo().subscribe(function (res) {
+              return res.map(function (r) {
+                _this94.arrayCity.push(r.cityName);
+              });
             });
           }
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this94 = this;
+            var _this95 = this;
 
             var obj = {};
             obj.customerId = this.customerId;
@@ -21642,12 +21923,12 @@
             }
 
             this.apiService.insertNewUserOnboarding(obj).subscribe(function (result) {
-              _this94.dialogRef.close({
+              _this95.dialogRef.close({
                 status: 'INITIATED',
                 resp: obj.userAddress
               });
             }, function (err) {
-              _this94.snack.open("Server Error!", "OK", {
+              _this95.snack.open("Server Error!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -22290,24 +22571,24 @@
         }, {
           key: "getAssetDetails",
           value: function getAssetDetails() {
-            var _this95 = this;
+            var _this96 = this;
 
             this.loader.open(); //this.apiService.getAssetValuation(this.loacnAccountId).subscribe((accountDetails) => {
 
             this.apiService.getAssetails(this.loanaccountID).subscribe(function (assetDetails) {
-              _this95.loader.close();
+              _this96.loader.close();
 
-              _this95.assetDetails = assetDetails;
+              _this96.assetDetails = assetDetails;
 
-              _this95.getStateName(_this95.assetDetails.country);
+              _this96.getStateName(_this96.assetDetails.country);
 
-              _this95.getCityName(_this95.assetDetails.state);
+              _this96.getCityName(_this96.assetDetails.state);
 
-              console.log(_this95.assetDetails);
+              console.log(_this96.assetDetails);
 
-              _this95.buildAssetForm(_this95.assetDetails);
+              _this96.buildAssetForm(_this96.assetDetails);
             }, function (err) {
-              _this95.loader.close();
+              _this96.loader.close();
             });
           }
         }, {
@@ -22343,28 +22624,28 @@
         }, {
           key: "save",
           value: function save() {
-            var _this96 = this;
+            var _this97 = this;
 
             console.log('save check');
             var payload = {};
             payload = this.loanUpdateForm.value; // payload.loggedInUser = this.loggedInUser.userName;
 
             this.apiService.saveLoanDetails(this.loanUpdateForm.value).subscribe(function (res) {
-              _this96.snack.open('Data Saved Successfully!', 'OK', {
+              _this97.snack.open('Data Saved Successfully!', 'OK', {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this96.dialogRef.close(true);
+              _this97.dialogRef.close(true);
             }, function (err) {
-              _this96.snack.open('Unable to Save!', 'Error', {
+              _this97.snack.open('Unable to Save!', 'Error', {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this96.dialogRef.close(false);
+              _this97.dialogRef.close(false);
             });
           }
         }, {
@@ -22375,49 +22656,49 @@
         }, {
           key: "getAccountType",
           value: function getAccountType(businessProductName) {
-            var _this97 = this;
+            var _this98 = this;
 
             //this.entityName = "state";
             console.log("State -- ", businessProductName);
             this.apiService.getAccount(businessProductName).subscribe(function (data) {
               console.log("data.accountType", data);
-              _this97.accountType = data.accountTypeName;
-              console.log("this.accountType", _this97.accountType);
+              _this98.accountType = data.accountTypeName;
+              console.log("this.accountType", _this98.accountType);
 
-              _this97.loanUpdateForm.get('accountType').setValue(data.accountTypeName); //  this.loanUpdateForm.value.accountType = data.accountTypeName;
+              _this98.loanUpdateForm.get('accountType').setValue(data.accountTypeName); //  this.loanUpdateForm.value.accountType = data.accountTypeName;
 
             });
           }
         }, {
           key: "getBusinessProductDetails",
           value: function getBusinessProductDetails(key) {
-            var _this98 = this;
+            var _this99 = this;
 
             this.apiService.getBusinessProductName(key).subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
-              _this98.arrayAccountBranch = data;
+              _this99.arrayAccountBranch = data;
             });
           }
         }, {
           key: "getAccountBranchDetails",
           value: function getAccountBranchDetails() {
-            var _this99 = this;
+            var _this100 = this;
 
             //debugger
             this.apiService.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
-              _this99.screenArray = data;
-              _this99.screenArrayData = data;
+              _this100.screenArray = data;
+              _this100.screenArrayData = data;
 
-              if (_this99.screenArray.length == 0) {
-                _this99.screenArray.push(_this99.branchName);
+              if (_this100.screenArray.length == 0) {
+                _this100.screenArray.push(_this100.branchName);
               }
 
-              console.log("this.branchName::", _this99.branchName, _this99.screenArray);
-              _this99.currencyData = _this99.screenArray.find(function (x) {
-                return x.branchName == _this99.branchName;
+              console.log("this.branchName::", _this100.branchName, _this100.screenArray);
+              _this100.currencyData = _this100.screenArray.find(function (x) {
+                return x.branchName == _this100.branchName;
               });
-              console.log("Currency", _this99.currencyData); // if (this.currencyData != null || this.currencyData != undefined) {
+              console.log("Currency", _this100.currencyData); // if (this.currencyData != null || this.currencyData != undefined) {
               //   this.loanUpdateForm.get('accountCurrency').setValue(this.currencyData.branchCcy);
               // }
             });
@@ -22437,26 +22718,26 @@
         }, {
           key: "getLoanDetails",
           value: function getLoanDetails() {
-            var _this100 = this;
+            var _this101 = this;
 
             console.log('get loan details');
             this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (loanAccountDetails) {
               console.log("All Account Service", loanAccountDetails);
-              _this100.loanAccountDetails = loanAccountDetails; //this.buildformGroup(this.loanAccountDetails);
+              _this101.loanAccountDetails = loanAccountDetails; //this.buildformGroup(this.loanAccountDetails);
 
-              console.log("this.accountDetails", _this100.loanAccountDetails);
-              console.log('form', _this100.loanUpdateForm.value); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+              console.log("this.accountDetails", _this101.loanAccountDetails);
+              console.log('form', _this101.loanUpdateForm.value); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
 
-              _this100.loanUpdateForm.controls.businessProductName.setValue(_this100.loanAccountDetails.businessProductName);
+              _this101.loanUpdateForm.controls.businessProductName.setValue(_this101.loanAccountDetails.businessProductName);
 
-              _this100.loanUpdateForm.value.accountType = _this100.loanAccountDetails.accountType; // this.ls.setItem('accountType', data.accountType);
+              _this101.loanUpdateForm.value.accountType = _this101.loanAccountDetails.accountType; // this.ls.setItem('accountType', data.accountType);
 
-              console.log('accountType', _this100.ls.setItem('accountType', _this100.loanUpdateForm.value.accountType));
+              console.log('accountType', _this101.ls.setItem('accountType', _this101.loanUpdateForm.value.accountType));
 
-              _this100.ls.setItem('accountType', _this100.loanUpdateForm.value.accountType);
+              _this101.ls.setItem('accountType', _this101.loanUpdateForm.value.accountType);
 
-              _this100.loanUpdateForm.value.accountBranch = _this100.loanAccountDetails.accountBranch;
-              _this100.loanUpdateForm.value.loanAmount = _this100.loanAccountDetails.loanAmount; //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+              _this101.loanUpdateForm.value.accountBranch = _this101.loanAccountDetails.accountBranch;
+              _this101.loanUpdateForm.value.loanAmount = _this101.loanAccountDetails.loanAmount; //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
             });
           }
         }, {
@@ -22488,35 +22769,35 @@
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this101 = this;
+            var _this102 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this101.arrayCountry = data;
-              console.log("-->", _this101.arrayCountry);
+              _this102.arrayCountry = data;
+              console.log("-->", _this102.arrayCountry);
             });
           }
         }, {
           key: "getStateName",
           value: function getStateName(country) {
-            var _this102 = this;
+            var _this103 = this;
 
             this.entityName = "state";
             console.log("State -- ", country);
             this.apiService.getDropDownValues1(this.entityName, country).subscribe(function (data) {
-              _this102.arrayState = data;
-              console.log("-->", _this102.arrayState);
+              _this103.arrayState = data;
+              console.log("-->", _this103.arrayState);
             });
           }
         }, {
           key: "getCityName",
           value: function getCityName(state) {
-            var _this103 = this;
+            var _this104 = this;
 
             this.entityName = "city";
             console.log(state);
             this.apiService.getDropDownValues1(this.entityName, state).subscribe(function (data) {
-              _this103.arrayCity = data;
-              console.log("-->", _this103.arrayCity);
+              _this104.arrayCity = data;
+              console.log("-->", _this104.arrayCity);
             });
           }
         }, {
@@ -22592,12 +22873,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this104 = this;
+            var _this105 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this104.updateStatusResponse(status, custResp);
+              _this105.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -22617,7 +22898,7 @@
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this105 = this;
+            var _this106 = this;
 
             //details.push(this.legalOpinion.value);
             var now = new Date();
@@ -22655,46 +22936,46 @@
               console.log("data", data.loanAccountId); // this.loanAccountId=data.loanAccountId;
               // console.log("loanAccountid",this.loanAccountId);
 
-              _this105.loanaccountID = _this105.data.loanAccountId;
-              console.log('loanaccountID', _this105.loanaccountID); // this.assign(data.loanAccountId)
+              _this106.loanaccountID = _this106.data.loanAccountId;
+              console.log('loanaccountID', _this106.loanaccountID); // this.assign(data.loanAccountId)
 
-              _this105.assign(_this105.data.loanAccountId);
+              _this106.assign(_this106.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this105.data.loanAccountId,
+                  loanAccountId: _this106.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this105.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this106.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this105.data.loanAccountId
+                  loanAccountid: _this106.data.loanAccountId
                 };
 
-                _this105.ls.setItem('fundByStatus', fundStatus);
+                _this106.ls.setItem('fundByStatus', fundStatus);
 
-                _this105.ls.setItem('accountType', data.accountType); // this.ls.setItem('loanAccountId',this.data.loanAccountId);
-
-
-                _this105.ls.setItem('productName', data.businessProductName); //    this.loanaccountID = this.ls.getItem('loanAccountid');
+                _this106.ls.setItem('accountType', data.accountType); // this.ls.setItem('loanAccountId',this.data.loanAccountId);
 
 
-                _this105.loanaccountID = _this105.data.loanAccountId;
-                console.log("this.productaccountID", _this105.loanaccountID);
+                _this106.ls.setItem('productName', data.businessProductName); //    this.loanaccountID = this.ls.getItem('loanAccountid');
 
-                _this105.snack.open('Data Updated!', 'OK', {
+
+                _this106.loanaccountID = _this106.data.loanAccountId;
+                console.log("this.productaccountID", _this106.loanaccountID);
+
+                _this106.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this105.getDataOnLoad();
+                _this106.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this105.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this106.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -22703,43 +22984,43 @@
                 console.log("500 error");
               }
 
-              _this105.goToClose();
+              _this106.goToClose();
             });
           }
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this106 = this;
+            var _this107 = this;
 
             this.dialogRef.close();
             this.loader.open(); // this.getLoanDetails();
 
             this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (loanAccountDetails) {
               console.log("All Account Service", loanAccountDetails);
-              _this106.loanAccountDetails = loanAccountDetails; //this.buildformGroup(this.loanAccountDetails);
+              _this107.loanAccountDetails = loanAccountDetails; //this.buildformGroup(this.loanAccountDetails);
 
-              console.log("this.accountDetails", _this106.loanAccountDetails);
-              console.log('form', _this106.loanUpdateForm.value); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+              console.log("this.accountDetails", _this107.loanAccountDetails);
+              console.log('form', _this107.loanUpdateForm.value); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
 
-              _this106.loanUpdateForm.controls.businessProductName.setValue(_this106.loanAccountDetails.businessProductName);
+              _this107.loanUpdateForm.controls.businessProductName.setValue(_this107.loanAccountDetails.businessProductName);
 
-              _this106.loanUpdateForm.value.accountType = _this106.loanAccountDetails.accountType; // this.ls.setItem('accountType', data.accountType);
+              _this107.loanUpdateForm.value.accountType = _this107.loanAccountDetails.accountType; // this.ls.setItem('accountType', data.accountType);
 
-              console.log('accountType', _this106.ls.setItem('accountType', _this106.loanUpdateForm.value.accountType));
+              console.log('accountType', _this107.ls.setItem('accountType', _this107.loanUpdateForm.value.accountType));
 
-              _this106.ls.setItem('accountType', _this106.loanUpdateForm.value.accountType);
+              _this107.ls.setItem('accountType', _this107.loanUpdateForm.value.accountType);
 
-              _this106.loanUpdateForm.value.accountBranch = _this106.loanAccountDetails.accountBranch;
-              _this106.loanUpdateForm.value.loanAmount = _this106.loanAccountDetails.loanAmount;
+              _this107.loanUpdateForm.value.accountBranch = _this107.loanAccountDetails.accountBranch;
+              _this107.loanUpdateForm.value.loanAmount = _this107.loanAccountDetails.loanAmount;
 
-              _this106.loader.close(); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+              _this107.loader.close(); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
 
             });
           }
         }, {
           key: "submitForm",
           value: function submitForm() {
-            var _this107 = this;
+            var _this108 = this;
 
             //details.push(this.legalOpinion.value);
             var now = new Date();
@@ -22774,10 +23055,10 @@
             console.log("payload", payload);
             this.apiService.saveLoanDetails(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this107.loanAccountId = data.loanAccountId;
-              console.log("loanAccountid", _this107.loanAccountId);
+              _this108.loanAccountId = data.loanAccountId;
+              console.log("loanAccountid", _this108.loanAccountId);
 
-              _this107.assign(data.loanAccountId);
+              _this108.assign(data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
@@ -22785,25 +23066,25 @@
                   status: "ONGOING"
                 };
 
-                _this107.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {});
+                _this108.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {});
 
                 sessionStorage.setItem('loanAccountId', data.loanAccountid);
                 var fundStatus = {
                   loanAccountid: data.loanAccountid
                 };
 
-                _this107.ls.setItem('fundByStatus', fundStatus);
+                _this108.ls.setItem('fundByStatus', fundStatus);
 
-                _this107.ls.setItem('accountType', data.accountType);
+                _this108.ls.setItem('accountType', data.accountType);
 
-                _this107.ls.setItem('loanAccountId', data.loanAccountId);
+                _this108.ls.setItem('loanAccountId', data.loanAccountId);
 
-                _this107.ls.setItem('productName', data.businessProductName);
+                _this108.ls.setItem('productName', data.businessProductName);
 
-                _this107.loanaccountID = _this107.ls.getItem('loanAccountid');
-                console.log("this.productaccountID", _this107.loanaccountID);
+                _this108.loanaccountID = _this108.ls.getItem('loanAccountid');
+                console.log("this.productaccountID", _this108.loanaccountID);
 
-                _this107.snack.open('Data Saved!', 'OK', {
+                _this108.snack.open('Data Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -22811,7 +23092,7 @@
               }
 
               if (data === 500) {
-                _this107.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this108.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -22820,7 +23101,7 @@
                 console.log("500 error");
               }
 
-              _this107.next();
+              _this108.next();
             }); //this.next();
           }
         }]);
@@ -23504,7 +23785,7 @@
         }, {
           key: "getCustomerInformationDetails",
           value: function getCustomerInformationDetails() {
-            var _this108 = this;
+            var _this109 = this;
 
             this.customerNames = [];
             this.appApiService.fetchCustomersByCardAccId(this.data.cardId, 'cardOrigin').subscribe(function (resp) {
@@ -23512,18 +23793,18 @@
 
               for (var index = 0; index < resp.data.length; index++) {
                 if (resp.data[index].middleName == null) {
-                  _this108.customerNames.push(resp.data[index].firstName + ' ' + resp.data[index].lastName);
+                  _this109.customerNames.push(resp.data[index].firstName + ' ' + resp.data[index].lastName);
                 } else {
-                  _this108.customerNames.push(resp.data[index].firstName + ' ' + resp.data[index].middleName + ' ' + resp.data[index].lastName);
+                  _this109.customerNames.push(resp.data[index].firstName + ' ' + resp.data[index].middleName + ' ' + resp.data[index].lastName);
                 }
               }
 
-              console.log('customer name ', _this108.customerNames);
+              console.log('customer name ', _this109.customerNames);
 
-              if (_this108.customerNames) {
+              if (_this109.customerNames) {
                 console.log('If condtion');
 
-                _this108.cardCreditScoreUpdateForm.get('customerName').setValue(_this108.customerNames[0]);
+                _this109.cardCreditScoreUpdateForm.get('customerName').setValue(_this109.customerNames[0]);
               }
             }, function (err) {});
           }
@@ -23572,7 +23853,7 @@
         }, {
           key: "submit",
           value: function submit(val) {
-            var _this109 = this;
+            var _this110 = this;
 
             console.log('val', val);
             val.accountType = 'cardOrigin';
@@ -23580,7 +23861,7 @@
               console.log(data);
 
               if (data === 200 || data !== null) {
-                _this109.snack.open(' Credit Details Updated!', 'OK', {
+                _this110.snack.open(' Credit Details Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -23591,13 +23872,13 @@
                   status: "BACKLOG"
                 };
 
-                _this109.api.updateCardStatus(statusModel).subscribe(function (data) {
-                  _this109.dialogRef.close({
+                _this110.api.updateCardStatus(statusModel).subscribe(function (data) {
+                  _this110.dialogRef.close({
                     status: data.status
                   });
                 });
               } else if (data === 500) {
-                _this109.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this110.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -24424,12 +24705,12 @@
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this110 = this;
+            var _this111 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
-                  _this110.arrayCountry.push(data[i].countryName);
+                  _this111.arrayCountry.push(data[i].countryName);
                 }
               }
             });
@@ -24437,15 +24718,15 @@
         }, {
           key: "getStateName",
           value: function getStateName(country) {
-            var _this111 = this;
+            var _this112 = this;
 
             this.arrayState = [];
             this.arrayCity = [];
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName == country) {
-                  _this111.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
-                    _this111.arrayState = resp;
+                  _this112.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                    _this112.arrayState = resp;
                   });
 
                   break;
@@ -24456,16 +24737,16 @@
         }, {
           key: "getCityName",
           value: function getCityName(state) {
-            var _this112 = this;
+            var _this113 = this;
 
             this.apiService.getDropDownValues1("city", state).subscribe(function (data) {
-              _this112.arrayCity = data;
+              _this113.arrayCity = data;
             });
           }
         }, {
           key: "onSubmit",
           value: function onSubmit(updateContactInfoForm) {
-            var _this113 = this;
+            var _this114 = this;
 
             if (updateContactInfoForm.isMailingAddressSame == 'NO') {
               updateContactInfoForm.corporateAddress[0].addressType = 'Company';
@@ -24478,17 +24759,17 @@
 
             this.corporateService.saveOrUpdateCorporateAccountInfo(updateContactInfoForm).subscribe(function (data) {
               if (data != null) {
-                _this113.corporateService.sendCorporateAccountId(data.corporateId);
+                _this114.corporateService.sendCorporateAccountId(data.corporateId);
 
-                _this113.snack.open('Contact Information Updated' + ' !', 'OK', {
+                _this114.snack.open('Contact Information Updated' + ' !', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this113.dialogRef.close({
+                _this114.dialogRef.close({
                   status: "INITIATED",
-                  resp: _this113.updateContactInfoForm.value
+                  resp: _this114.updateContactInfoForm.value
                 });
               }
             });
@@ -24975,47 +25256,47 @@
         }, {
           key: "getLoanOfferIssue",
           value: function getLoanOfferIssue() {
-            var _this114 = this;
+            var _this115 = this;
 
             this.apiService.getOfferIssueDetails(this.loanaccountID).subscribe(function (offerIssueDetails) {
-              _this114.offerIssueDetails = offerIssueDetails;
-              console.log("this.offerIssueDetails::", _this114.offerIssueDetails);
+              _this115.offerIssueDetails = offerIssueDetails;
+              console.log("this.offerIssueDetails::", _this115.offerIssueDetails);
 
-              _this114.buildLoanOfferIssueForm(_this114.offerIssueDetails);
+              _this115.buildLoanOfferIssueForm(_this115.offerIssueDetails);
 
-              _this114.loanOfferIssueForm.value.applicantName = _this114.offerIssueDetails.applicantName;
-              _this114.loanOfferIssueForm.value.rateOfInterest = _this114.offerIssueDetails.rateOfInterest;
-              _this114.loanOfferIssueForm.value.installmentType = _this114.offerIssueDetails.installmentType;
-              _this114.loanOfferIssueForm.value.installmentFrequency = _this114.offerIssueDetails.installmentFrequency;
-              _this114.loanOfferIssueForm.value.generateOffer = _this114.offerIssueDetails.generateOffer;
-              _this114.loanOfferIssueForm.value.charges = _this114.offerIssueDetails.charges;
-              _this114.loanOfferIssueForm.value.loanTenure = _this114.offerIssueDetails.loanTenure;
-              _this114.loanOfferIssueForm.value.principal = _this114.offerIssueDetails.principal;
-              _this114.loanOfferIssueForm.value.interest = _this114.offerIssueDetails.interest;
-              _this114.loanOfferIssueForm.value.offerIssueDate = _this114.offerIssueDetails.offerIssueDate;
-              _this114.loanOfferIssueForm.value.approvedLoanAmount = _this114.offerIssueDetails.approvedLoanAmount;
+              _this115.loanOfferIssueForm.value.applicantName = _this115.offerIssueDetails.applicantName;
+              _this115.loanOfferIssueForm.value.rateOfInterest = _this115.offerIssueDetails.rateOfInterest;
+              _this115.loanOfferIssueForm.value.installmentType = _this115.offerIssueDetails.installmentType;
+              _this115.loanOfferIssueForm.value.installmentFrequency = _this115.offerIssueDetails.installmentFrequency;
+              _this115.loanOfferIssueForm.value.generateOffer = _this115.offerIssueDetails.generateOffer;
+              _this115.loanOfferIssueForm.value.charges = _this115.offerIssueDetails.charges;
+              _this115.loanOfferIssueForm.value.loanTenure = _this115.offerIssueDetails.loanTenure;
+              _this115.loanOfferIssueForm.value.principal = _this115.offerIssueDetails.principal;
+              _this115.loanOfferIssueForm.value.interest = _this115.offerIssueDetails.interest;
+              _this115.loanOfferIssueForm.value.offerIssueDate = _this115.offerIssueDetails.offerIssueDate;
+              _this115.loanOfferIssueForm.value.approvedLoanAmount = _this115.offerIssueDetails.approvedLoanAmount;
             }, function (err) {
-              _this114.loader.close();
+              _this115.loader.close();
             });
           }
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this115 = this;
+            var _this116 = this;
 
             this.dialogRef.close();
             this.apiService.getOfferIssueDetails(this.loanaccountID).subscribe(function (offerIssueDetails) {
               console.log("All Account Service", offerIssueDetails);
-              _this115.offerIssueDetails = offerIssueDetails; //this.buildformGroup(this.loanAccountDetails);
+              _this116.offerIssueDetails = offerIssueDetails; //this.buildformGroup(this.loanAccountDetails);
 
-              console.log("this.accountDetails", _this115.offerIssueDetails);
-              console.log('form', _this115.loanOfferIssueForm.value);
+              console.log("this.accountDetails", _this116.offerIssueDetails);
+              console.log('form', _this116.loanOfferIssueForm.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this116 = this;
+            var _this117 = this;
 
             var payload = {
               // loanAccountId: this.showEditOption ? this.loanaccountID : null,
@@ -25035,44 +25316,44 @@
             console.log("payload", payload);
             this.apiService.upsertOfferIssue(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this116.loanaccountID = _this116.data.loanAccountId;
-              console.log('loanaccountID', _this116.loanaccountID);
+              _this117.loanaccountID = _this117.data.loanAccountId;
+              console.log('loanaccountID', _this117.loanaccountID);
 
-              _this116.assign(_this116.data.loanAccountId);
+              _this117.assign(_this117.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this116.data.loanAccountId,
+                  loanAccountId: _this117.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this116.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this117.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this116.data.loanAccountId
+                  loanAccountid: _this117.data.loanAccountId
                 };
 
-                _this116.ls.setItem('fundByStatus', fundStatus);
+                _this117.ls.setItem('fundByStatus', fundStatus);
 
-                _this116.ls.setItem('accountType', data.accountType);
+                _this117.ls.setItem('accountType', data.accountType);
 
-                _this116.ls.setItem('productName', data.businessProductName);
+                _this117.ls.setItem('productName', data.businessProductName);
 
-                _this116.loanaccountID = _this116.data.loanAccountId;
-                console.log("this.productaccountID", _this116.loanaccountID);
+                _this117.loanaccountID = _this117.data.loanAccountId;
+                console.log("this.productaccountID", _this117.loanaccountID);
 
-                _this116.snack.open('Data Updated!', 'OK', {
+                _this117.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this116.getDataOnLoad();
+                _this117.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this116.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this117.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -25081,7 +25362,7 @@
                 console.log("500 error");
               }
 
-              _this116.goToClose();
+              _this117.goToClose();
             });
           }
         }, {
@@ -25117,12 +25398,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this117 = this;
+            var _this118 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this117.updateStatusResponse(status, custResp);
+              _this118.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -25917,7 +26198,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this118 = this;
+            var _this119 = this;
 
             var data;
             var payload = [];
@@ -25946,25 +26227,25 @@
               console.log("data", data);
 
               if (data != null) {
-                _this118.snack.open('Card Preferences Details Saved!', 'OK', {
+                _this119.snack.open('Card Preferences Details Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
                 var statusModel = {
-                  cardId: _this118.data.cardId,
+                  cardId: _this119.data.cardId,
                   status: "BACKLOG"
                 };
 
-                _this118.apiService.updateCardStatus(statusModel).subscribe(function (data) {
-                  _this118.dialogRef.close({
+                _this119.apiService.updateCardStatus(statusModel).subscribe(function (data) {
+                  _this119.dialogRef.close({
                     status: data.status
                   });
                 });
               }
             }, function (err) {
-              _this118.snack.open('Error Unable to Update Data!', 'OK', {
+              _this119.snack.open('Error Unable to Update Data!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -25974,7 +26255,7 @@
         }, {
           key: "onclick1",
           value: function onclick1(k) {
-            var _this119 = this;
+            var _this120 = this;
 
             this.islimitType = true;
             this.isLimitTransaction = true;
@@ -25991,7 +26272,7 @@
               var id = this.cardPrefrenceOnLoad[k].preferenceId;
               this.apiService.deleteCardPrefrence(id).subscribe(function (data) {}, function (err) {
                 if (err.status == 200) {
-                  _this119.snack.open('Record Deleted Successfully', 'OK', {
+                  _this120.snack.open('Record Deleted Successfully', 'OK', {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -26024,13 +26305,13 @@
         }, {
           key: "changeValue2",
           value: function changeValue2(event, i) {
-            var _this120 = this;
+            var _this121 = this;
 
             this.islimitType = true;
 
             if (this.selectedDocumentTypes2[i]) {
               this.selectedOptions2 = this.selectedOptions2.filter(function (val) {
-                return val !== _this120.selectedDocumentTypes2[i];
+                return val !== _this121.selectedDocumentTypes2[i];
               });
             }
 
@@ -26515,14 +26796,14 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this121 = this;
+            var _this122 = this;
 
             console.log(this.cardAssessmentUpdateForm);
             this.apiService.cardAssessmentDetails(this.cardAssessmentUpdateForm.value).subscribe(function (data) {
               console.log('data', data);
 
               if (data != null) {
-                _this121.snack.open('Assessment details Updated successfully!', 'OK', {
+                _this122.snack.open('Assessment details Updated successfully!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -26533,15 +26814,15 @@
                   status: "BACKLOG"
                 };
 
-                _this121.apiService.updateCardStatus(statusModel).subscribe(function (data) {
-                  _this121.dialogRef.close({
+                _this122.apiService.updateCardStatus(statusModel).subscribe(function (data) {
+                  _this122.dialogRef.close({
                     status: data.status
                   });
                 });
               }
 
               (function (err) {
-                _this121.snack.open('Error Unable to Update Data!', 'OK', {
+                _this122.snack.open('Error Unable to Update Data!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -27174,12 +27455,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this122 = this;
+            var _this123 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this122.updateStatusResponse(status, custResp);
+              _this123.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -27225,47 +27506,47 @@
         }, {
           key: "getAccountType",
           value: function getAccountType(productName) {
-            var _this123 = this;
+            var _this124 = this;
 
             console.log("State -- ", productName);
             this.apiService.getAccount(productName).subscribe(function (data) {
               console.log("data.accountType", data);
-              _this123.accountType = data.accountTypeName;
-              console.log("this.accountType", _this123.accountType);
+              _this124.accountType = data.accountTypeName;
+              console.log("this.accountType", _this124.accountType);
 
-              _this123.loanApprovalForm.get('accountType').setValue(data.accountTypeName);
+              _this124.loanApprovalForm.get('accountType').setValue(data.accountTypeName);
             });
           }
         }, {
           key: "getBusinessProductDetails",
           value: function getBusinessProductDetails(key) {
-            var _this124 = this;
+            var _this125 = this;
 
             this.apiService.getBusinessProductName(key).subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
-              _this124.arrayAccountBranch = data;
+              _this125.arrayAccountBranch = data;
             });
           }
         }, {
           key: "getAccountBranchDetails",
           value: function getAccountBranchDetails() {
-            var _this125 = this;
+            var _this126 = this;
 
             //debugger
             this.apiService.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
-              _this125.screenArray = data;
-              _this125.screenArrayData = data;
+              _this126.screenArray = data;
+              _this126.screenArrayData = data;
 
-              if (_this125.screenArray.length == 0) {
-                _this125.screenArray.push(_this125.branchName);
+              if (_this126.screenArray.length == 0) {
+                _this126.screenArray.push(_this126.branchName);
               }
 
-              console.log("this.branchName::", _this125.branchName, _this125.screenArray);
-              _this125.currencyData = _this125.screenArray.find(function (x) {
-                return x.branchName == _this125.branchName;
+              console.log("this.branchName::", _this126.branchName, _this126.screenArray);
+              _this126.currencyData = _this126.screenArray.find(function (x) {
+                return x.branchName == _this126.branchName;
               });
-              console.log("Currency", _this125.currencyData);
+              console.log("Currency", _this126.currencyData);
             });
           }
         }, {
@@ -27283,7 +27564,7 @@
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this126 = this;
+            var _this127 = this;
 
             var renewData = this.loanApprovalForm.value.year + "-" + this.loanApprovalForm.value.month + "-" + this.loanApprovalForm.value.day;
             this.loanApprovalForm.get("loanTenure").setValue(renewData);
@@ -27308,44 +27589,44 @@
             console.log("payload", payload);
             this.apiService.saveLoanDetails(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this126.loanaccountID = _this126.data.loanAccountId;
-              console.log('loanaccountID', _this126.loanaccountID);
+              _this127.loanaccountID = _this127.data.loanAccountId;
+              console.log('loanaccountID', _this127.loanaccountID);
 
-              _this126.assign(_this126.data.loanAccountId);
+              _this127.assign(_this127.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this126.data.loanAccountId,
+                  loanAccountId: _this127.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this126.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this127.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this126.data.loanAccountId
+                  loanAccountid: _this127.data.loanAccountId
                 };
 
-                _this126.ls.setItem('fundByStatus', fundStatus);
+                _this127.ls.setItem('fundByStatus', fundStatus);
 
-                _this126.ls.setItem('accountType', data.accountType);
+                _this127.ls.setItem('accountType', data.accountType);
 
-                _this126.ls.setItem('productName', data.productName);
+                _this127.ls.setItem('productName', data.productName);
 
-                _this126.loanaccountID = _this126.data.loanAccountId;
-                console.log("this.productaccountID", _this126.loanaccountID);
+                _this127.loanaccountID = _this127.data.loanAccountId;
+                console.log("this.productaccountID", _this127.loanaccountID);
 
-                _this126.snack.open('Data Updated!', 'OK', {
+                _this127.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this126.getDataOnLoad();
+                _this127.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this126.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this127.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -27354,63 +27635,27 @@
                 console.log("500 error");
               }
 
-              _this126.goToClose();
+              _this127.goToClose();
             });
           }
         }, {
           key: "getLoanDetails",
           value: function getLoanDetails() {
-            var _this127 = this;
+            var _this128 = this;
 
             console.log('get loan details');
             this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (loanAccountDetails) {
               console.log("All Account Service", loanAccountDetails);
 
-              _this127.buildLoanApprovalForm(_this127.loanAccountDetails);
-
-              _this127.loanAccountDetails = loanAccountDetails;
-              console.log("this.accountDetails", _this127.loanAccountDetails);
-              console.log('form', _this127.loanApprovalForm.value);
-
-              _this127.loanApprovalForm.controls.productName.setValue(_this127.loanAccountDetails.productName);
-
-              _this127.loanApprovalForm.value.accountType = _this127.loanAccountDetails.accountType;
-              console.log('accountType', _this127.ls.setItem('accountType', _this127.loanApprovalForm.value.accountType));
-
-              _this127.ls.setItem('accountType', _this127.loanApprovalForm.value.accountType);
-
-              _this127.loanApprovalForm.value.accountBranch = _this127.loanAccountDetails.accountBranch;
-              _this127.loanApprovalForm.value.userRecommendation = _this127.loanAccountDetails.userRecommendation;
-              _this127.loanApprovalForm.value.loanTenure = _this127.loanAccountDetails.loanTenure;
-              _this127.loanApprovalForm.value.applicantName = _this127.loanAccountDetails.applicantName;
-              _this127.loanApprovalForm.value.margin = _this127.loanAccountDetails.margin;
-              _this127.loanApprovalForm.value.approvedLoanAccount = _this127.loanAccountDetails.approvedLoanAccount;
-              _this127.loanApprovalForm.value.effectiveRate = _this127.loanAccountDetails.effectiveRate;
-              _this127.loanApprovalForm.value.accountType = _this127.loanAccountDetails.accountType;
-              _this127.loanApprovalForm.value.productName = _this127.loanAccountDetails.productName;
-              _this127.loanApprovalForm.value.rateOfInterest = _this127.loanAccountDetails.rateOfInterest;
-            });
-          }
-        }, {
-          key: "goToClose",
-          value: function goToClose() {
-            var _this128 = this;
-
-            this.dialogRef.close();
-            this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (loanAccountDetails) {
-              console.log("All Account Service", loanAccountDetails);
-
               _this128.buildLoanApprovalForm(_this128.loanAccountDetails);
 
-              _this128.loanAccountDetails = loanAccountDetails; //this.buildformGroup(this.loanAccountDetails);
-
+              _this128.loanAccountDetails = loanAccountDetails;
               console.log("this.accountDetails", _this128.loanAccountDetails);
-              console.log('form', _this128.loanApprovalForm.value); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+              console.log('form', _this128.loanApprovalForm.value);
 
               _this128.loanApprovalForm.controls.productName.setValue(_this128.loanAccountDetails.productName);
 
-              _this128.loanApprovalForm.value.accountType = _this128.loanAccountDetails.accountType; // this.ls.setItem('accountType', data.accountType);
-
+              _this128.loanApprovalForm.value.accountType = _this128.loanAccountDetails.accountType;
               console.log('accountType', _this128.ls.setItem('accountType', _this128.loanApprovalForm.value.accountType));
 
               _this128.ls.setItem('accountType', _this128.loanApprovalForm.value.accountType);
@@ -27425,6 +27670,42 @@
               _this128.loanApprovalForm.value.accountType = _this128.loanAccountDetails.accountType;
               _this128.loanApprovalForm.value.productName = _this128.loanAccountDetails.productName;
               _this128.loanApprovalForm.value.rateOfInterest = _this128.loanAccountDetails.rateOfInterest;
+            });
+          }
+        }, {
+          key: "goToClose",
+          value: function goToClose() {
+            var _this129 = this;
+
+            this.dialogRef.close();
+            this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (loanAccountDetails) {
+              console.log("All Account Service", loanAccountDetails);
+
+              _this129.buildLoanApprovalForm(_this129.loanAccountDetails);
+
+              _this129.loanAccountDetails = loanAccountDetails; //this.buildformGroup(this.loanAccountDetails);
+
+              console.log("this.accountDetails", _this129.loanAccountDetails);
+              console.log('form', _this129.loanApprovalForm.value); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+
+              _this129.loanApprovalForm.controls.productName.setValue(_this129.loanAccountDetails.productName);
+
+              _this129.loanApprovalForm.value.accountType = _this129.loanAccountDetails.accountType; // this.ls.setItem('accountType', data.accountType);
+
+              console.log('accountType', _this129.ls.setItem('accountType', _this129.loanApprovalForm.value.accountType));
+
+              _this129.ls.setItem('accountType', _this129.loanApprovalForm.value.accountType);
+
+              _this129.loanApprovalForm.value.accountBranch = _this129.loanAccountDetails.accountBranch;
+              _this129.loanApprovalForm.value.userRecommendation = _this129.loanAccountDetails.userRecommendation;
+              _this129.loanApprovalForm.value.loanTenure = _this129.loanAccountDetails.loanTenure;
+              _this129.loanApprovalForm.value.applicantName = _this129.loanAccountDetails.applicantName;
+              _this129.loanApprovalForm.value.margin = _this129.loanAccountDetails.margin;
+              _this129.loanApprovalForm.value.approvedLoanAccount = _this129.loanAccountDetails.approvedLoanAccount;
+              _this129.loanApprovalForm.value.effectiveRate = _this129.loanAccountDetails.effectiveRate;
+              _this129.loanApprovalForm.value.accountType = _this129.loanAccountDetails.accountType;
+              _this129.loanApprovalForm.value.productName = _this129.loanAccountDetails.productName;
+              _this129.loanApprovalForm.value.rateOfInterest = _this129.loanAccountDetails.rateOfInterest;
             });
           }
         }]);
@@ -28110,7 +28391,7 @@
         _createClass(QualitativeDetailsUpdateComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this129 = this;
+            var _this130 = this;
 
             var _a, _b;
 
@@ -28123,12 +28404,12 @@
             this.apiService.getScorecardQuestions(this.accountType).subscribe(function (response) {
               var _a;
 
-              _this129.qualitative = _this129.qualitativeUpdateForm.get('scorecardMapping');
+              _this130.qualitative = _this130.qualitativeUpdateForm.get('scorecardMapping');
 
-              _this129.qualitative.push(_this129.addScorecardMappiing());
+              _this130.qualitative.push(_this130.addScorecardMappiing());
 
               for (var i = 0; i < response.length; i++) {
-                _this129.addScorecardDetails(response[i], (_a = _this129.qualitativeDetails) === null || _a === void 0 ? void 0 : _a.scoreCardMapping[0].scoreCardDetails[i].scorecardAnswer, i);
+                _this130.addScorecardDetails(response[i], (_a = _this130.qualitativeDetails) === null || _a === void 0 ? void 0 : _a.scoreCardMapping[0].scoreCardDetails[i].scorecardAnswer, i);
               }
             });
           }
@@ -28172,20 +28453,20 @@
         }, {
           key: "saveReports",
           value: function saveReports(formData) {
-            var _this130 = this;
+            var _this131 = this;
 
             this.apiService.saveQualitativeScorecard(formData).subscribe(function (resp) {
-              _this130.snack.open('Qualitative Scoreboard Saved!', 'OK', {
+              _this131.snack.open('Qualitative Scoreboard Saved!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
-              _this130.dialogRef.close({
+              _this131.dialogRef.close({
                 status: "BACKLOG"
               });
             }, function (err) {
-              _this130.snack.open('Server Error!', 'OK', {
+              _this131.snack.open('Server Error!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -28699,25 +28980,25 @@
         }, {
           key: "getRateValue",
           value: function getRateValue(key) {
-            var _this131 = this;
+            var _this132 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this131.arrayRateValue = data;
+              _this132.arrayRateValue = data;
             });
           }
         }, {
           key: "getCollateralDetails",
           value: function getCollateralDetails() {
-            var _this132 = this;
+            var _this133 = this;
 
             // this.loader.open();
             this.apiService.getCollateralByLoanAccId(this.loanaccountID).subscribe(function (collateralDetails) {
               //   this.loader.close();
-              _this132.collateralDetails = collateralDetails;
-              console.log(_this132.collateralDetails.collateralDetails.length);
-              console.log(_this132.collateralDetails);
+              _this133.collateralDetails = collateralDetails;
+              console.log(_this133.collateralDetails.collateralDetails.length);
+              console.log(_this133.collateralDetails);
 
-              _this132.buildCollateralForm(_this132.collateralDetails); //  this.populateCollateral(this.collateralDetails);
+              _this133.buildCollateralForm(_this133.collateralDetails); //  this.populateCollateral(this.collateralDetails);
 
             }, function (err) {//  this.loader.close();
             });
@@ -28725,10 +29006,10 @@
         }, {
           key: "getCollateralType",
           value: function getCollateralType(key) {
-            var _this133 = this;
+            var _this134 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this133.arrayCollateralType = data;
+              _this134.arrayCollateralType = data;
             });
           }
         }, {
@@ -28749,7 +29030,7 @@
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this134 = this;
+            var _this135 = this;
 
             var payload = {
               // loanAccountId: this.showEditOption ? this.loanaccountID : null,
@@ -28772,44 +29053,44 @@
               console.log("data", data.loanAccountId); // this.loanAccountId=data.loanAccountId;
               // console.log("loanAccountid",this.loanAccountId);
 
-              _this134.loanaccountID = _this134.data.loanAccountId;
-              console.log('loanaccountID', _this134.loanaccountID); // this.assign(data.loanAccountId)
+              _this135.loanaccountID = _this135.data.loanAccountId;
+              console.log('loanaccountID', _this135.loanaccountID); // this.assign(data.loanAccountId)
 
-              _this134.assign(_this134.data.loanAccountId);
+              _this135.assign(_this135.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this134.data.loanAccountId,
+                  loanAccountId: _this135.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this134.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this135.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this134.data.loanAccountId
+                  loanAccountid: _this135.data.loanAccountId
                 };
 
-                _this134.ls.setItem('fundByStatus', fundStatus);
+                _this135.ls.setItem('fundByStatus', fundStatus);
 
-                _this134.ls.setItem('accountType', data.accountType);
+                _this135.ls.setItem('accountType', data.accountType);
 
-                _this134.ls.setItem('productName', data.businessProductName);
+                _this135.ls.setItem('productName', data.businessProductName);
 
-                _this134.loanaccountID = _this134.data.loanAccountId;
-                console.log("this.productaccountID", _this134.loanaccountID);
+                _this135.loanaccountID = _this135.data.loanAccountId;
+                console.log("this.productaccountID", _this135.loanaccountID);
 
-                _this134.snack.open('Data Updated!', 'OK', {
+                _this135.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this134.getDataOnLoad();
+                _this135.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this134.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this135.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -28818,7 +29099,7 @@
                 console.log("500 error");
               }
 
-              _this134.goToClose();
+              _this135.goToClose();
             });
           }
         }, {
@@ -28846,12 +29127,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this135 = this;
+            var _this136 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this135.updateStatusResponse(status, custResp);
+              _this136.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -28871,35 +29152,35 @@
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this136 = this;
+            var _this137 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this136.arrayCountry = data;
-              console.log("-->", _this136.arrayCountry);
+              _this137.arrayCountry = data;
+              console.log("-->", _this137.arrayCountry);
             });
           }
         }, {
           key: "getStateName",
           value: function getStateName(country) {
-            var _this137 = this;
+            var _this138 = this;
 
             this.entityName = "state";
             console.log("State -- ", country);
             this.apiService.getDropDownValues1(this.entityName, country).subscribe(function (data) {
-              _this137.arrayState = data;
-              console.log("-->", _this137.arrayState);
+              _this138.arrayState = data;
+              console.log("-->", _this138.arrayState);
             });
           }
         }, {
           key: "getCityName",
           value: function getCityName(state) {
-            var _this138 = this;
+            var _this139 = this;
 
             this.entityName = "city";
             console.log(state);
             this.apiService.getDropDownValues1(this.entityName, state).subscribe(function (data) {
-              _this138.arrayCity = data;
-              console.log("-->", _this138.arrayCity);
+              _this139.arrayCity = data;
+              console.log("-->", _this139.arrayCity);
             });
           }
         }, {
@@ -28913,22 +29194,22 @@
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this139 = this;
+            var _this140 = this;
 
             this.dialogRef.close(); // this.getLoanDetails();
 
             this.apiService.getCollateralByLoanAccId(this.loanaccountID).subscribe(function (loanCollateralDetails) {
               console.log("All Account Service", loanCollateralDetails);
-              _this139.loanCollateralDetails = loanCollateralDetails; //this.buildformGroup(this.loanAccountDetails);
+              _this140.loanCollateralDetails = loanCollateralDetails; //this.buildformGroup(this.loanAccountDetails);
 
-              console.log("this.loanCollateralDetails", _this139.loanCollateralDetails);
-              console.log('form', _this139.loanCollateralForm.value);
-              _this139.loanCollateralForm.value.building = _this139.loanCollateralDetails.building;
-              _this139.loanCollateralForm.value.dimensions = _this139.loanCollateralDetails.dimensions;
-              _this139.loanCollateralForm.value.attributes = _this139.loanCollateralDetails.attributes;
-              _this139.loanCollateralForm.value.collateralCurrency = _this139.loanCollateralDetails.collateralCurrency;
+              console.log("this.loanCollateralDetails", _this140.loanCollateralDetails);
+              console.log('form', _this140.loanCollateralForm.value);
+              _this140.loanCollateralForm.value.building = _this140.loanCollateralDetails.building;
+              _this140.loanCollateralForm.value.dimensions = _this140.loanCollateralDetails.dimensions;
+              _this140.loanCollateralForm.value.attributes = _this140.loanCollateralDetails.attributes;
+              _this140.loanCollateralForm.value.collateralCurrency = _this140.loanCollateralDetails.collateralCurrency;
 
-              _this139.loader.close(); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
+              _this140.loader.close(); //  this.loanUpdateForm.value.businessProductName = this.loanAccountDetails.businessProductName;
 
             });
           }
@@ -29585,10 +29866,10 @@
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this140 = this;
+            var _this141 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this140.employmentTypeArray = data;
+              _this141.employmentTypeArray = data;
             });
           }
         }, {
@@ -29614,7 +29895,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this141 = this;
+            var _this142 = this;
 
             var payload = {
               existingCustomer: this.cardInitiationUpdateForm.value.existingCustomer,
@@ -29632,7 +29913,7 @@
               cardId: this.data.cardId
             };
             this.apiService.uploadCardInitiation(payload).subscribe(function (data) {
-              _this141.snack.open('Data Updated!', 'OK', {
+              _this142.snack.open('Data Updated!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -29643,13 +29924,13 @@
                 status: "BACKLOG"
               };
 
-              _this141.apiService.updateCardStatus(statusModel).subscribe(function (data) {
-                _this141.dialogRef.close({
+              _this142.apiService.updateCardStatus(statusModel).subscribe(function (data) {
+                _this142.dialogRef.close({
                   status: data.status
                 });
               });
             }, function (err) {
-              _this141.snack.open('Error Unable to Update Data!', 'OK', {
+              _this142.snack.open('Error Unable to Update Data!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -30171,43 +30452,43 @@
         }, {
           key: "getDisbursementDetails",
           value: function getDisbursementDetails() {
-            var _this142 = this;
+            var _this143 = this;
 
             this.apiService.loanDisbursementFetchById(this.loanaccountID).subscribe(function (disbursementDetails) {
-              _this142.disbursementDetails = disbursementDetails;
-              console.log("this.disbursementDetails::", _this142.disbursementDetails);
+              _this143.disbursementDetails = disbursementDetails;
+              console.log("this.disbursementDetails::", _this143.disbursementDetails);
 
-              _this142.buildDisbursementForm(_this142.disbursementDetails);
+              _this143.buildDisbursementForm(_this143.disbursementDetails);
 
-              _this142.loanDisbursementForm.value.numberOfDisbursement = _this142.disbursementDetails.numberOfDisbursement;
-              _this142.loanDisbursementForm.value.totalDisbursement = _this142.disbursementDetails.totalDisbursement;
-              _this142.loanDisbursementForm.value.loanAmount = _this142.disbursementDetails.loanAmount;
-              _this142.loanDisbursementForm.value.branchCode = _this142.disbursementDetails.branchCode;
-              _this142.loanDisbursementForm.value.customerAccount = _this142.disbursementDetails.customerAccount;
-              _this142.loanDisbursementForm.value.marginIn = _this142.disbursementDetails.marginIn;
-              _this142.loanDisbursementForm.value.multipleDisbursementRequired = _this142.disbursementDetails.multipleDisbursementRequired; // this.disbursementDetails.address2 = this.loanDisbursementForm.value.street;
+              _this143.loanDisbursementForm.value.numberOfDisbursement = _this143.disbursementDetails.numberOfDisbursement;
+              _this143.loanDisbursementForm.value.totalDisbursement = _this143.disbursementDetails.totalDisbursement;
+              _this143.loanDisbursementForm.value.loanAmount = _this143.disbursementDetails.loanAmount;
+              _this143.loanDisbursementForm.value.branchCode = _this143.disbursementDetails.branchCode;
+              _this143.loanDisbursementForm.value.customerAccount = _this143.disbursementDetails.customerAccount;
+              _this143.loanDisbursementForm.value.marginIn = _this143.disbursementDetails.marginIn;
+              _this143.loanDisbursementForm.value.multipleDisbursementRequired = _this143.disbursementDetails.multipleDisbursementRequired; // this.disbursementDetails.address2 = this.loanDisbursementForm.value.street;
             }, function (err) {
-              _this142.loader.close();
+              _this143.loader.close();
             });
           }
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this143 = this;
+            var _this144 = this;
 
             this.dialogRef.close();
             this.apiService.loanDisbursementFetchById(this.loanaccountID).subscribe(function (disbursementDetails) {
               console.log("All Account Service", disbursementDetails);
-              _this143.disbursementDetails = disbursementDetails; //this.buildformGroup(this.loanAccountDetails);
+              _this144.disbursementDetails = disbursementDetails; //this.buildformGroup(this.loanAccountDetails);
 
-              console.log("this.accountDetails", _this143.disbursementDetails);
-              console.log('form', _this143.loanDisbursementForm.value);
+              console.log("this.accountDetails", _this144.disbursementDetails);
+              console.log('form', _this144.loanDisbursementForm.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this144 = this;
+            var _this145 = this;
 
             var payload = {
               // loanAccountId: this.showEditOption ? this.loanaccountID : null,
@@ -30224,44 +30505,44 @@
             console.log("payload", payload);
             this.apiService.loanDisbursementSave(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this144.loanaccountID = _this144.data.loanAccountId;
-              console.log('loanaccountID', _this144.loanaccountID);
+              _this145.loanaccountID = _this145.data.loanAccountId;
+              console.log('loanaccountID', _this145.loanaccountID);
 
-              _this144.assign(_this144.data.loanAccountId);
+              _this145.assign(_this145.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this144.data.loanAccountId,
+                  loanAccountId: _this145.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this144.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this145.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this144.data.loanAccountId
+                  loanAccountid: _this145.data.loanAccountId
                 };
 
-                _this144.ls.setItem('fundByStatus', fundStatus);
+                _this145.ls.setItem('fundByStatus', fundStatus);
 
-                _this144.ls.setItem('accountType', data.accountType);
+                _this145.ls.setItem('accountType', data.accountType);
 
-                _this144.ls.setItem('productName', data.businessProductName);
+                _this145.ls.setItem('productName', data.businessProductName);
 
-                _this144.loanaccountID = _this144.data.loanAccountId;
-                console.log("this.productaccountID", _this144.loanaccountID);
+                _this145.loanaccountID = _this145.data.loanAccountId;
+                console.log("this.productaccountID", _this145.loanaccountID);
 
-                _this144.snack.open('Data Updated!', 'OK', {
+                _this145.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this144.getDataOnLoad();
+                _this145.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this144.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this145.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -30270,7 +30551,7 @@
                 console.log("500 error");
               }
 
-              _this144.goToClose();
+              _this145.goToClose();
             });
           }
         }, {
@@ -30306,12 +30587,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this145 = this;
+            var _this146 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this145.updateStatusResponse(status, custResp);
+              _this146.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -31001,7 +31282,7 @@
 
       var UpdateCorporateAddititonalInfoComponent = /*#__PURE__*/function () {
         function UpdateCorporateAddititonalInfoComponent(dialogRef, formBuilder, data, ls, apiService, corporateService, snack) {
-          var _this146 = this;
+          var _this147 = this;
 
           _classCallCheck(this, UpdateCorporateAddititonalInfoComponent);
 
@@ -31021,19 +31302,19 @@
           this.corporateDocs = [];
 
           this.isDocumentOptionDisabled = function (value) {
-            return _this146.selectedOptions.includes(value);
+            return _this147.selectedOptions.includes(value);
           };
         }
 
         _createClass(UpdateCorporateAddititonalInfoComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this147 = this;
+            var _this148 = this;
 
             console.log(this.data);
             this.corporateId = this.ls.getItem('corporateId');
             this.apiService.getDropDownValues("document_type").subscribe(function (data) {
-              _this147.documentTypeList = data;
+              _this148.documentTypeList = data;
             });
 
             if (this.data) {
@@ -31084,13 +31365,13 @@
         }, {
           key: "changeValue",
           value: function changeValue(value, index) {
-            var _this148 = this;
+            var _this149 = this;
 
             console.log(index);
 
             if (this.selectedDocumentTypes[index]) {
               this.selectedOptions = this.selectedOptions.filter(function (val) {
-                return val !== _this148.selectedDocumentTypes[index];
+                return val !== _this149.selectedDocumentTypes[index];
               });
             }
 
@@ -31101,7 +31382,7 @@
         }, {
           key: "onOtherDocSelect",
           value: function onOtherDocSelect(files, idx, fileName) {
-            var _this149 = this;
+            var _this150 = this;
 
             this.otherDocumentArray.push(files.item(0));
             this.otherInfoUpdateForm.get('corporateDocs')['controls'][idx].controls.documentName.setValue(fileName);
@@ -31109,13 +31390,13 @@
             reader.readAsDataURL(files.item(0));
 
             reader.onload = function (event2) {
-              _this149.otherInfoUpdateForm.get('corporateDocs')['controls'][idx].controls.fileData.setValue(reader.result);
+              _this150.otherInfoUpdateForm.get('corporateDocs')['controls'][idx].controls.fileData.setValue(reader.result);
             };
           }
         }, {
           key: "onSubmit",
           value: function onSubmit(otherInfoUpdateForm) {
-            var _this150 = this;
+            var _this151 = this;
 
             var obj = {};
             Object.keys(otherInfoUpdateForm).map(function (key, index) {
@@ -31125,46 +31406,46 @@
             });
             this.corporateService.saveOrUpdateCorporateAccountInfo(obj).subscribe(function (data) {
               if (data != null) {
-                for (var i = 0; i < _this150.otherInfoUpdateForm.get('corporateDocs').value.length; i++) {
-                  if (_this150.otherDocumentArray.length > 0) {
+                for (var i = 0; i < _this151.otherInfoUpdateForm.get('corporateDocs').value.length; i++) {
+                  if (_this151.otherDocumentArray.length > 0) {
                     var documentToBeUploaded = {};
-                    documentToBeUploaded.documentName = _this150.otherInfoUpdateForm.get('corporateDocs').value[i].documentType;
+                    documentToBeUploaded.documentName = _this151.otherInfoUpdateForm.get('corporateDocs').value[i].documentType;
                     documentToBeUploaded.documentType = 2;
-                    documentToBeUploaded.fileType = _this150.otherDocumentArray[i].type;
-                    documentToBeUploaded.fileName = _this150.otherDocumentArray[i].name;
+                    documentToBeUploaded.fileType = _this151.otherDocumentArray[i].type;
+                    documentToBeUploaded.fileName = _this151.otherDocumentArray[i].name;
                     documentToBeUploaded.corporateId = data.corporateId;
-                    documentToBeUploaded.id = _this150.otherDocumentArray[i].id;
+                    documentToBeUploaded.id = _this151.otherDocumentArray[i].id;
                     var uploadData = new FormData();
                     uploadData.append('data', JSON.stringify(documentToBeUploaded));
-                    uploadData.append('file', _this150.otherDocumentArray[i]);
+                    uploadData.append('file', _this151.otherDocumentArray[i]);
 
-                    _this150.apiService.uploadCorporateDocument(uploadData).subscribe(function (resp) {
+                    _this151.apiService.uploadCorporateDocument(uploadData).subscribe(function (resp) {
                       console.log(resp);
 
-                      _this150.corporateDocs.push(resp);
+                      _this151.corporateDocs.push(resp);
                     });
                   }
                 }
               } else {
-                _this150.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this151.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
               }
 
-              _this150.dialogRef.close({
+              _this151.dialogRef.close({
                 status: 'INITIATED',
                 resp: {
                   typeOfOwnership: data.typeOfOwnership,
                   organizationType: data.organizationType,
-                  corporateDocs: _this150.corporateDocs
+                  corporateDocs: _this151.corporateDocs
                 }
               });
             }, function (error) {
               console.log('error resp :: ', error);
 
-              _this150.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this151.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -31993,19 +32274,25 @@
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(
+      var _card_account_approver_update_doc_upload_update_doc_upload_component__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(
+      /*! ./card-account-approver/update-doc-upload/update-doc-upload.component */
+      "9byR");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _others_genric_document_upload_genric_document_upload_component__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(
+      var _others_genric_document_upload_genric_document_upload_component__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(
       /*! ../others/genric-document-upload/genric-document-upload.component */
       "uKq3");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(
       /*! @angular/material/button */
       "Dxy4"); // search module
 
@@ -32034,7 +32321,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](TasksModule, {
-          declarations: [_task_summary_task_summary_component__WEBPACK_IMPORTED_MODULE_5__["TaskSummaryComponent"], _approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"], _kyc_branch_verify_summary_kyc_branch_verify_summary_component__WEBPACK_IMPORTED_MODULE_14__["KycBranchVerifySummaryComponent"], _kyc_task_summary_kyc_task_summary_component__WEBPACK_IMPORTED_MODULE_15__["KycTaskSummaryComponent"], _cust_on_boarding_task_summary_cust_on_boarding_task_summary_component__WEBPACK_IMPORTED_MODULE_16__["CustOnBoardingTaskSummaryComponent"], _cust_on_boarding_approver_cust_on_boarding_approver_component__WEBPACK_IMPORTED_MODULE_17__["CustOnBoardingApproverComponent"], app_shared_pipes_custom_search_filter_pipe__WEBPACK_IMPORTED_MODULE_26__["CustomSearchFilterPipe"], app_shared_pipes_custom_task_summary_sorting_pipe__WEBPACK_IMPORTED_MODULE_27__["CustomTaskSummarySortingPipe"], _avatar_avatar_component__WEBPACK_IMPORTED_MODULE_31__["AvatarComponent"], _corporate_task_summary_corporate_task_summary_component__WEBPACK_IMPORTED_MODULE_33__["CorporateTaskSummaryComponent"], _corporate_approver_corporate_approver_component__WEBPACK_IMPORTED_MODULE_34__["CorporateApproverComponent"], _card_origination_task_summary_card_origination_task_summary_component__WEBPACK_IMPORTED_MODULE_35__["CardOriginationTaskSummaryComponent"], _card_account_approver_card_account_approver_component__WEBPACK_IMPORTED_MODULE_36__["CardAccountApproverComponent"], _loan_account_task_summary_loan_account_task_summary_component__WEBPACK_IMPORTED_MODULE_37__["LoanAccountTaskSummaryComponent"], _loan_account_approver_loan_account_approver_component__WEBPACK_IMPORTED_MODULE_38__["LoanAccountApproverComponent"], _loan_account_approver_loan_account_details_edit_loan_account_details_edit_component__WEBPACK_IMPORTED_MODULE_39__["LoanAccountDetailsEditComponent"], _loan_account_approver_loan_account_details_update_loan_account_details_update_component__WEBPACK_IMPORTED_MODULE_40__["LoanAccountDetailsUpdateComponent"], _loan_account_approver_loan_mandate_details_update_loan_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_41__["LoanMandateDetailsUpdateComponent"], _loan_account_approver_loan_collateral_details_update_loan_collateral_details_update_component__WEBPACK_IMPORTED_MODULE_42__["LoanCollateralDetailsUpdateComponent"], _loan_account_approver_loan_guarantor_details_update_loan_guarantor_details_update_component__WEBPACK_IMPORTED_MODULE_43__["LoanGuarantorDetailsUpdateComponent"], _loan_account_approver_loan_disbursement_details_update_loan_disbursement_details_update_component__WEBPACK_IMPORTED_MODULE_44__["LoanDisbursementDetailsUpdateComponent"], _loan_account_approver_loan_repayment_details_update_loan_repayment_details_update_component__WEBPACK_IMPORTED_MODULE_45__["LoanRepaymentDetailsUpdateComponent"], _loan_account_approver_loan_credit_details_update_loan_credit_details_update_component__WEBPACK_IMPORTED_MODULE_46__["LoanCreditDetailsUpdateComponent"], _loan_account_approver_loan_valuation_of_asset_update_loan_valuation_of_asset_update_component__WEBPACK_IMPORTED_MODULE_47__["LoanValuationOfAssetUpdateComponent"], _loan_account_approver_loan_legal_opinion_updates_loan_legal_opinion_updates_component__WEBPACK_IMPORTED_MODULE_48__["LoanLegalOpinionUpdatesComponent"], _loan_account_approver_loan_assessment_details_update_loan_assessment_details_update_component__WEBPACK_IMPORTED_MODULE_49__["LoanAssessmentDetailsUpdateComponent"], _loan_account_approver_loan_offer_issue_details_update_loan_offer_issue_details_update_component__WEBPACK_IMPORTED_MODULE_50__["LoanOfferIssueDetailsUpdateComponent"], _loan_account_approver_loan_approval_details_update_loan_approval_details_update_component__WEBPACK_IMPORTED_MODULE_51__["LoanApprovalDetailsUpdateComponent"], _card_account_approver_card_initiation_details_update_card_initiation_details_update_component__WEBPACK_IMPORTED_MODULE_52__["CardInitiationDetailsUpdateComponent"], _card_account_approver_card_financial_details_update_card_financial_details_update_component__WEBPACK_IMPORTED_MODULE_53__["CardFinancialDetailsUpdateComponent"], _card_account_approver_card_interest_details_update_card_interest_details_update_component__WEBPACK_IMPORTED_MODULE_54__["CardInterestDetailsUpdateComponent"], _card_account_approver_card_charge_details_update_card_charge_details_update_component__WEBPACK_IMPORTED_MODULE_55__["CardChargeDetailsUpdateComponent"], _card_account_approver_card_credit_score_update_card_credit_score_update_component__WEBPACK_IMPORTED_MODULE_56__["CardCreditScoreUpdateComponent"], _card_account_approver_card_assessment_report_update_card_assessment_report_update_component__WEBPACK_IMPORTED_MODULE_57__["CardAssessmentReportUpdateComponent"], _card_account_approver_card_approval_details_update_card_approval_details_update_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalDetailsUpdateComponent"], _card_account_approver_card_preference_details_update_card_preference_details_update_component__WEBPACK_IMPORTED_MODULE_59__["CardPreferenceDetailsUpdateComponent"], _cust_on_boarding_approver_update_primary_info_update_primary_info_component__WEBPACK_IMPORTED_MODULE_60__["UpdatePrimaryInfoComponent"], _cust_on_boarding_approver_update_contact_info_update_contact_info_component__WEBPACK_IMPORTED_MODULE_61__["UpdateContactInfoComponent"], _cust_on_boarding_approver_update_proof_of_identity_update_proof_of_identity_component__WEBPACK_IMPORTED_MODULE_62__["UpdateProofOfIdentityComponent"], _cust_on_boarding_approver_update_additional_info_update_additional_info_component__WEBPACK_IMPORTED_MODULE_63__["UpdateAdditionalInfoComponent"], _cust_on_boarding_approver_update_mandate_info_update_mandate_info_component__WEBPACK_IMPORTED_MODULE_64__["UpdateMandateInfoComponent"], _corporate_approver_update_corporate_basic_info_update_corporate_basic_info_component__WEBPACK_IMPORTED_MODULE_65__["UpdateCorporateBasicInfoComponent"], _corporate_approver_update_director_details_update_director_details_component__WEBPACK_IMPORTED_MODULE_66__["UpdateDirectorDetailsComponent"], _corporate_approver_update_corporate_contact_info_update_corporate_contact_info_component__WEBPACK_IMPORTED_MODULE_67__["UpdateCorporateContactInfoComponent"], _corporate_approver_update_corporate_identity_update_corporate_identity_component__WEBPACK_IMPORTED_MODULE_68__["UpdateCorporateIdentityComponent"], _corporate_approver_update_corporate_addititonal_info_update_corporate_addititonal_info_component__WEBPACK_IMPORTED_MODULE_69__["UpdateCorporateAddititonalInfoComponent"], _kyc_branch_verify_summary_kyc_basic_info_update_kyc_basic_info_update_component__WEBPACK_IMPORTED_MODULE_72__["KycBasicInfoUpdateComponent"], _kyc_branch_verify_summary_kyc_communication_address_update_kyc_communication_address_update_component__WEBPACK_IMPORTED_MODULE_73__["KycCommunicationAddressUpdateComponent"], _kyc_branch_verify_summary_kyc_appointment_schedule_update_kyc_appointment_schedule_update_component__WEBPACK_IMPORTED_MODULE_74__["KycAppointmentScheduleUpdateComponent"], _kyc_branch_verify_summary_kyc_document_update_kyc_document_update_component__WEBPACK_IMPORTED_MODULE_75__["KycDocumentUpdateComponent"], _kyc_branch_verify_summary_kyc_biometric_update_kyc_biometric_update_component__WEBPACK_IMPORTED_MODULE_76__["KycBiometricUpdateComponent"], _approver_account_details_update_account_details_update_component__WEBPACK_IMPORTED_MODULE_77__["AccountDetailsUpdateComponent"], _approver_customer_info_update_customer_info_update_component__WEBPACK_IMPORTED_MODULE_78__["CustomerInfoUpdateComponent"], _approver_mandate_details_update_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_79__["MandateDetailsUpdateComponent"], _approver_service_details_update_service_details_update_component__WEBPACK_IMPORTED_MODULE_80__["ServiceDetailsUpdateComponent"], _approver_nominee_details_update_nominee_details_update_component__WEBPACK_IMPORTED_MODULE_81__["NomineeDetailsUpdateComponent"], _approver_secured_overdraft_details_update_secured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_82__["SecuredOverdraftDetailsUpdateComponent"], _approver_unsecured_overdraft_details_update_unsecured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_83__["UnsecuredOverdraftDetailsUpdateComponent"], _approver_financial_details_update_financial_details_update_component__WEBPACK_IMPORTED_MODULE_84__["FinancialDetailsUpdateComponent"], _approver_interest_details_update_interest_details_update_component__WEBPACK_IMPORTED_MODULE_85__["InterestDetailsUpdateComponent"], _approver_charge_details_update_charge_details_update_component__WEBPACK_IMPORTED_MODULE_86__["ChargeDetailsUpdateComponent"], _approver_qualitative_details_update_qualitative_details_update_component__WEBPACK_IMPORTED_MODULE_89__["QualitativeDetailsUpdateComponent"], _approver_funding_details_update_funding_details_update_component__WEBPACK_IMPORTED_MODULE_87__["FundingDetailsUpdateComponent"], _approver_approval_details_update_approval_details_update_component__WEBPACK_IMPORTED_MODULE_88__["ApprovalDetailsUpdateComponent"]],
+          declarations: [_task_summary_task_summary_component__WEBPACK_IMPORTED_MODULE_5__["TaskSummaryComponent"], _approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"], _kyc_branch_verify_summary_kyc_branch_verify_summary_component__WEBPACK_IMPORTED_MODULE_14__["KycBranchVerifySummaryComponent"], _kyc_task_summary_kyc_task_summary_component__WEBPACK_IMPORTED_MODULE_15__["KycTaskSummaryComponent"], _cust_on_boarding_task_summary_cust_on_boarding_task_summary_component__WEBPACK_IMPORTED_MODULE_16__["CustOnBoardingTaskSummaryComponent"], _cust_on_boarding_approver_cust_on_boarding_approver_component__WEBPACK_IMPORTED_MODULE_17__["CustOnBoardingApproverComponent"], app_shared_pipes_custom_search_filter_pipe__WEBPACK_IMPORTED_MODULE_26__["CustomSearchFilterPipe"], app_shared_pipes_custom_task_summary_sorting_pipe__WEBPACK_IMPORTED_MODULE_27__["CustomTaskSummarySortingPipe"], _avatar_avatar_component__WEBPACK_IMPORTED_MODULE_31__["AvatarComponent"], _corporate_task_summary_corporate_task_summary_component__WEBPACK_IMPORTED_MODULE_33__["CorporateTaskSummaryComponent"], _corporate_approver_corporate_approver_component__WEBPACK_IMPORTED_MODULE_34__["CorporateApproverComponent"], _card_origination_task_summary_card_origination_task_summary_component__WEBPACK_IMPORTED_MODULE_35__["CardOriginationTaskSummaryComponent"], _card_account_approver_card_account_approver_component__WEBPACK_IMPORTED_MODULE_36__["CardAccountApproverComponent"], _loan_account_task_summary_loan_account_task_summary_component__WEBPACK_IMPORTED_MODULE_37__["LoanAccountTaskSummaryComponent"], _loan_account_approver_loan_account_approver_component__WEBPACK_IMPORTED_MODULE_38__["LoanAccountApproverComponent"], _loan_account_approver_loan_account_details_edit_loan_account_details_edit_component__WEBPACK_IMPORTED_MODULE_39__["LoanAccountDetailsEditComponent"], _loan_account_approver_loan_account_details_update_loan_account_details_update_component__WEBPACK_IMPORTED_MODULE_40__["LoanAccountDetailsUpdateComponent"], _loan_account_approver_loan_mandate_details_update_loan_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_41__["LoanMandateDetailsUpdateComponent"], _loan_account_approver_loan_collateral_details_update_loan_collateral_details_update_component__WEBPACK_IMPORTED_MODULE_42__["LoanCollateralDetailsUpdateComponent"], _loan_account_approver_loan_guarantor_details_update_loan_guarantor_details_update_component__WEBPACK_IMPORTED_MODULE_43__["LoanGuarantorDetailsUpdateComponent"], _loan_account_approver_loan_disbursement_details_update_loan_disbursement_details_update_component__WEBPACK_IMPORTED_MODULE_44__["LoanDisbursementDetailsUpdateComponent"], _loan_account_approver_loan_repayment_details_update_loan_repayment_details_update_component__WEBPACK_IMPORTED_MODULE_45__["LoanRepaymentDetailsUpdateComponent"], _loan_account_approver_loan_credit_details_update_loan_credit_details_update_component__WEBPACK_IMPORTED_MODULE_46__["LoanCreditDetailsUpdateComponent"], _loan_account_approver_loan_valuation_of_asset_update_loan_valuation_of_asset_update_component__WEBPACK_IMPORTED_MODULE_47__["LoanValuationOfAssetUpdateComponent"], _loan_account_approver_loan_legal_opinion_updates_loan_legal_opinion_updates_component__WEBPACK_IMPORTED_MODULE_48__["LoanLegalOpinionUpdatesComponent"], _loan_account_approver_loan_assessment_details_update_loan_assessment_details_update_component__WEBPACK_IMPORTED_MODULE_49__["LoanAssessmentDetailsUpdateComponent"], _loan_account_approver_loan_offer_issue_details_update_loan_offer_issue_details_update_component__WEBPACK_IMPORTED_MODULE_50__["LoanOfferIssueDetailsUpdateComponent"], _loan_account_approver_loan_approval_details_update_loan_approval_details_update_component__WEBPACK_IMPORTED_MODULE_51__["LoanApprovalDetailsUpdateComponent"], _card_account_approver_card_initiation_details_update_card_initiation_details_update_component__WEBPACK_IMPORTED_MODULE_52__["CardInitiationDetailsUpdateComponent"], _card_account_approver_card_financial_details_update_card_financial_details_update_component__WEBPACK_IMPORTED_MODULE_53__["CardFinancialDetailsUpdateComponent"], _card_account_approver_card_interest_details_update_card_interest_details_update_component__WEBPACK_IMPORTED_MODULE_54__["CardInterestDetailsUpdateComponent"], _card_account_approver_card_charge_details_update_card_charge_details_update_component__WEBPACK_IMPORTED_MODULE_55__["CardChargeDetailsUpdateComponent"], _card_account_approver_card_credit_score_update_card_credit_score_update_component__WEBPACK_IMPORTED_MODULE_56__["CardCreditScoreUpdateComponent"], _card_account_approver_card_assessment_report_update_card_assessment_report_update_component__WEBPACK_IMPORTED_MODULE_57__["CardAssessmentReportUpdateComponent"], _card_account_approver_card_approval_details_update_card_approval_details_update_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalDetailsUpdateComponent"], _card_account_approver_card_preference_details_update_card_preference_details_update_component__WEBPACK_IMPORTED_MODULE_59__["CardPreferenceDetailsUpdateComponent"], _cust_on_boarding_approver_update_primary_info_update_primary_info_component__WEBPACK_IMPORTED_MODULE_60__["UpdatePrimaryInfoComponent"], _cust_on_boarding_approver_update_contact_info_update_contact_info_component__WEBPACK_IMPORTED_MODULE_61__["UpdateContactInfoComponent"], _cust_on_boarding_approver_update_proof_of_identity_update_proof_of_identity_component__WEBPACK_IMPORTED_MODULE_62__["UpdateProofOfIdentityComponent"], _cust_on_boarding_approver_update_additional_info_update_additional_info_component__WEBPACK_IMPORTED_MODULE_63__["UpdateAdditionalInfoComponent"], _cust_on_boarding_approver_update_mandate_info_update_mandate_info_component__WEBPACK_IMPORTED_MODULE_64__["UpdateMandateInfoComponent"], _corporate_approver_update_corporate_basic_info_update_corporate_basic_info_component__WEBPACK_IMPORTED_MODULE_65__["UpdateCorporateBasicInfoComponent"], _corporate_approver_update_director_details_update_director_details_component__WEBPACK_IMPORTED_MODULE_66__["UpdateDirectorDetailsComponent"], _corporate_approver_update_corporate_contact_info_update_corporate_contact_info_component__WEBPACK_IMPORTED_MODULE_67__["UpdateCorporateContactInfoComponent"], _corporate_approver_update_corporate_identity_update_corporate_identity_component__WEBPACK_IMPORTED_MODULE_68__["UpdateCorporateIdentityComponent"], _corporate_approver_update_corporate_addititonal_info_update_corporate_addititonal_info_component__WEBPACK_IMPORTED_MODULE_69__["UpdateCorporateAddititonalInfoComponent"], _kyc_branch_verify_summary_kyc_basic_info_update_kyc_basic_info_update_component__WEBPACK_IMPORTED_MODULE_72__["KycBasicInfoUpdateComponent"], _kyc_branch_verify_summary_kyc_communication_address_update_kyc_communication_address_update_component__WEBPACK_IMPORTED_MODULE_73__["KycCommunicationAddressUpdateComponent"], _kyc_branch_verify_summary_kyc_appointment_schedule_update_kyc_appointment_schedule_update_component__WEBPACK_IMPORTED_MODULE_74__["KycAppointmentScheduleUpdateComponent"], _kyc_branch_verify_summary_kyc_document_update_kyc_document_update_component__WEBPACK_IMPORTED_MODULE_75__["KycDocumentUpdateComponent"], _kyc_branch_verify_summary_kyc_biometric_update_kyc_biometric_update_component__WEBPACK_IMPORTED_MODULE_76__["KycBiometricUpdateComponent"], _approver_account_details_update_account_details_update_component__WEBPACK_IMPORTED_MODULE_77__["AccountDetailsUpdateComponent"], _approver_customer_info_update_customer_info_update_component__WEBPACK_IMPORTED_MODULE_78__["CustomerInfoUpdateComponent"], _approver_mandate_details_update_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_79__["MandateDetailsUpdateComponent"], _approver_service_details_update_service_details_update_component__WEBPACK_IMPORTED_MODULE_80__["ServiceDetailsUpdateComponent"], _approver_nominee_details_update_nominee_details_update_component__WEBPACK_IMPORTED_MODULE_81__["NomineeDetailsUpdateComponent"], _approver_secured_overdraft_details_update_secured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_82__["SecuredOverdraftDetailsUpdateComponent"], _approver_unsecured_overdraft_details_update_unsecured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_83__["UnsecuredOverdraftDetailsUpdateComponent"], _approver_financial_details_update_financial_details_update_component__WEBPACK_IMPORTED_MODULE_84__["FinancialDetailsUpdateComponent"], _approver_interest_details_update_interest_details_update_component__WEBPACK_IMPORTED_MODULE_85__["InterestDetailsUpdateComponent"], _approver_charge_details_update_charge_details_update_component__WEBPACK_IMPORTED_MODULE_86__["ChargeDetailsUpdateComponent"], _approver_qualitative_details_update_qualitative_details_update_component__WEBPACK_IMPORTED_MODULE_89__["QualitativeDetailsUpdateComponent"], _approver_funding_details_update_funding_details_update_component__WEBPACK_IMPORTED_MODULE_87__["FundingDetailsUpdateComponent"], _approver_approval_details_update_approval_details_update_component__WEBPACK_IMPORTED_MODULE_88__["ApprovalDetailsUpdateComponent"], _card_account_approver_update_doc_upload_update_doc_upload_component__WEBPACK_IMPORTED_MODULE_90__["UpdateDocUploadComponent"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__["MatMenuModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"], ng2_search_filter__WEBPACK_IMPORTED_MODULE_25__["Ng2SearchPipeModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_18__["MatStepperModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_19__["MatDividerModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__["MatFormFieldModule"], app_shared_directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_30__["SharedDirectivesModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_21__["MatDatepickerModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_22__["MatRadioModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_28__["MatProgressSpinnerModule"], ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_23__["InfiniteScrollModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_24__["MatPaginatorModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_13__["MatSlideToggleModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_12__["NgApexchartsModule"], app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_29__["SharedMaterialModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"], _others_onboarding_corporate_onboarding_corporate_module__WEBPACK_IMPORTED_MODULE_70__["OnboardingCorporateModule"], _others_others_module__WEBPACK_IMPORTED_MODULE_71__["OthersModule"]],
           exports: [_loan_account_approver_loan_account_details_update_loan_account_details_update_component__WEBPACK_IMPORTED_MODULE_40__["LoanAccountDetailsUpdateComponent"]]
         });
@@ -32046,7 +32333,7 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TasksModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
-            declarations: [_task_summary_task_summary_component__WEBPACK_IMPORTED_MODULE_5__["TaskSummaryComponent"], _approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"], _kyc_branch_verify_summary_kyc_branch_verify_summary_component__WEBPACK_IMPORTED_MODULE_14__["KycBranchVerifySummaryComponent"], _kyc_task_summary_kyc_task_summary_component__WEBPACK_IMPORTED_MODULE_15__["KycTaskSummaryComponent"], _cust_on_boarding_task_summary_cust_on_boarding_task_summary_component__WEBPACK_IMPORTED_MODULE_16__["CustOnBoardingTaskSummaryComponent"], _cust_on_boarding_approver_cust_on_boarding_approver_component__WEBPACK_IMPORTED_MODULE_17__["CustOnBoardingApproverComponent"], app_shared_pipes_custom_search_filter_pipe__WEBPACK_IMPORTED_MODULE_26__["CustomSearchFilterPipe"], app_shared_pipes_custom_task_summary_sorting_pipe__WEBPACK_IMPORTED_MODULE_27__["CustomTaskSummarySortingPipe"], _avatar_avatar_component__WEBPACK_IMPORTED_MODULE_31__["AvatarComponent"], _corporate_task_summary_corporate_task_summary_component__WEBPACK_IMPORTED_MODULE_33__["CorporateTaskSummaryComponent"], _corporate_approver_corporate_approver_component__WEBPACK_IMPORTED_MODULE_34__["CorporateApproverComponent"], _card_origination_task_summary_card_origination_task_summary_component__WEBPACK_IMPORTED_MODULE_35__["CardOriginationTaskSummaryComponent"], _card_account_approver_card_account_approver_component__WEBPACK_IMPORTED_MODULE_36__["CardAccountApproverComponent"], _loan_account_task_summary_loan_account_task_summary_component__WEBPACK_IMPORTED_MODULE_37__["LoanAccountTaskSummaryComponent"], _loan_account_approver_loan_account_approver_component__WEBPACK_IMPORTED_MODULE_38__["LoanAccountApproverComponent"], _loan_account_approver_loan_account_details_edit_loan_account_details_edit_component__WEBPACK_IMPORTED_MODULE_39__["LoanAccountDetailsEditComponent"], _loan_account_approver_loan_account_details_update_loan_account_details_update_component__WEBPACK_IMPORTED_MODULE_40__["LoanAccountDetailsUpdateComponent"], _loan_account_approver_loan_mandate_details_update_loan_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_41__["LoanMandateDetailsUpdateComponent"], _loan_account_approver_loan_collateral_details_update_loan_collateral_details_update_component__WEBPACK_IMPORTED_MODULE_42__["LoanCollateralDetailsUpdateComponent"], _loan_account_approver_loan_guarantor_details_update_loan_guarantor_details_update_component__WEBPACK_IMPORTED_MODULE_43__["LoanGuarantorDetailsUpdateComponent"], _loan_account_approver_loan_disbursement_details_update_loan_disbursement_details_update_component__WEBPACK_IMPORTED_MODULE_44__["LoanDisbursementDetailsUpdateComponent"], _loan_account_approver_loan_repayment_details_update_loan_repayment_details_update_component__WEBPACK_IMPORTED_MODULE_45__["LoanRepaymentDetailsUpdateComponent"], _loan_account_approver_loan_credit_details_update_loan_credit_details_update_component__WEBPACK_IMPORTED_MODULE_46__["LoanCreditDetailsUpdateComponent"], _loan_account_approver_loan_valuation_of_asset_update_loan_valuation_of_asset_update_component__WEBPACK_IMPORTED_MODULE_47__["LoanValuationOfAssetUpdateComponent"], _loan_account_approver_loan_legal_opinion_updates_loan_legal_opinion_updates_component__WEBPACK_IMPORTED_MODULE_48__["LoanLegalOpinionUpdatesComponent"], _loan_account_approver_loan_assessment_details_update_loan_assessment_details_update_component__WEBPACK_IMPORTED_MODULE_49__["LoanAssessmentDetailsUpdateComponent"], _loan_account_approver_loan_offer_issue_details_update_loan_offer_issue_details_update_component__WEBPACK_IMPORTED_MODULE_50__["LoanOfferIssueDetailsUpdateComponent"], _loan_account_approver_loan_approval_details_update_loan_approval_details_update_component__WEBPACK_IMPORTED_MODULE_51__["LoanApprovalDetailsUpdateComponent"], _card_account_approver_card_initiation_details_update_card_initiation_details_update_component__WEBPACK_IMPORTED_MODULE_52__["CardInitiationDetailsUpdateComponent"], _card_account_approver_card_financial_details_update_card_financial_details_update_component__WEBPACK_IMPORTED_MODULE_53__["CardFinancialDetailsUpdateComponent"], _card_account_approver_card_interest_details_update_card_interest_details_update_component__WEBPACK_IMPORTED_MODULE_54__["CardInterestDetailsUpdateComponent"], _card_account_approver_card_charge_details_update_card_charge_details_update_component__WEBPACK_IMPORTED_MODULE_55__["CardChargeDetailsUpdateComponent"], _card_account_approver_card_credit_score_update_card_credit_score_update_component__WEBPACK_IMPORTED_MODULE_56__["CardCreditScoreUpdateComponent"], _card_account_approver_card_assessment_report_update_card_assessment_report_update_component__WEBPACK_IMPORTED_MODULE_57__["CardAssessmentReportUpdateComponent"], _card_account_approver_card_approval_details_update_card_approval_details_update_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalDetailsUpdateComponent"], _card_account_approver_card_preference_details_update_card_preference_details_update_component__WEBPACK_IMPORTED_MODULE_59__["CardPreferenceDetailsUpdateComponent"], _cust_on_boarding_approver_update_primary_info_update_primary_info_component__WEBPACK_IMPORTED_MODULE_60__["UpdatePrimaryInfoComponent"], _cust_on_boarding_approver_update_contact_info_update_contact_info_component__WEBPACK_IMPORTED_MODULE_61__["UpdateContactInfoComponent"], _cust_on_boarding_approver_update_proof_of_identity_update_proof_of_identity_component__WEBPACK_IMPORTED_MODULE_62__["UpdateProofOfIdentityComponent"], _cust_on_boarding_approver_update_additional_info_update_additional_info_component__WEBPACK_IMPORTED_MODULE_63__["UpdateAdditionalInfoComponent"], _cust_on_boarding_approver_update_mandate_info_update_mandate_info_component__WEBPACK_IMPORTED_MODULE_64__["UpdateMandateInfoComponent"], _corporate_approver_update_corporate_basic_info_update_corporate_basic_info_component__WEBPACK_IMPORTED_MODULE_65__["UpdateCorporateBasicInfoComponent"], _corporate_approver_update_director_details_update_director_details_component__WEBPACK_IMPORTED_MODULE_66__["UpdateDirectorDetailsComponent"], _corporate_approver_update_corporate_contact_info_update_corporate_contact_info_component__WEBPACK_IMPORTED_MODULE_67__["UpdateCorporateContactInfoComponent"], _corporate_approver_update_corporate_identity_update_corporate_identity_component__WEBPACK_IMPORTED_MODULE_68__["UpdateCorporateIdentityComponent"], _corporate_approver_update_corporate_addititonal_info_update_corporate_addititonal_info_component__WEBPACK_IMPORTED_MODULE_69__["UpdateCorporateAddititonalInfoComponent"], _kyc_branch_verify_summary_kyc_basic_info_update_kyc_basic_info_update_component__WEBPACK_IMPORTED_MODULE_72__["KycBasicInfoUpdateComponent"], _kyc_branch_verify_summary_kyc_communication_address_update_kyc_communication_address_update_component__WEBPACK_IMPORTED_MODULE_73__["KycCommunicationAddressUpdateComponent"], _kyc_branch_verify_summary_kyc_appointment_schedule_update_kyc_appointment_schedule_update_component__WEBPACK_IMPORTED_MODULE_74__["KycAppointmentScheduleUpdateComponent"], _kyc_branch_verify_summary_kyc_document_update_kyc_document_update_component__WEBPACK_IMPORTED_MODULE_75__["KycDocumentUpdateComponent"], _kyc_branch_verify_summary_kyc_biometric_update_kyc_biometric_update_component__WEBPACK_IMPORTED_MODULE_76__["KycBiometricUpdateComponent"], _approver_account_details_update_account_details_update_component__WEBPACK_IMPORTED_MODULE_77__["AccountDetailsUpdateComponent"], _approver_customer_info_update_customer_info_update_component__WEBPACK_IMPORTED_MODULE_78__["CustomerInfoUpdateComponent"], _approver_mandate_details_update_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_79__["MandateDetailsUpdateComponent"], _approver_service_details_update_service_details_update_component__WEBPACK_IMPORTED_MODULE_80__["ServiceDetailsUpdateComponent"], _approver_nominee_details_update_nominee_details_update_component__WEBPACK_IMPORTED_MODULE_81__["NomineeDetailsUpdateComponent"], _approver_secured_overdraft_details_update_secured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_82__["SecuredOverdraftDetailsUpdateComponent"], _approver_unsecured_overdraft_details_update_unsecured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_83__["UnsecuredOverdraftDetailsUpdateComponent"], _approver_financial_details_update_financial_details_update_component__WEBPACK_IMPORTED_MODULE_84__["FinancialDetailsUpdateComponent"], _approver_interest_details_update_interest_details_update_component__WEBPACK_IMPORTED_MODULE_85__["InterestDetailsUpdateComponent"], _approver_charge_details_update_charge_details_update_component__WEBPACK_IMPORTED_MODULE_86__["ChargeDetailsUpdateComponent"], _approver_qualitative_details_update_qualitative_details_update_component__WEBPACK_IMPORTED_MODULE_89__["QualitativeDetailsUpdateComponent"], _approver_funding_details_update_funding_details_update_component__WEBPACK_IMPORTED_MODULE_87__["FundingDetailsUpdateComponent"], _approver_approval_details_update_approval_details_update_component__WEBPACK_IMPORTED_MODULE_88__["ApprovalDetailsUpdateComponent"]],
+            declarations: [_task_summary_task_summary_component__WEBPACK_IMPORTED_MODULE_5__["TaskSummaryComponent"], _approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"], _kyc_branch_verify_summary_kyc_branch_verify_summary_component__WEBPACK_IMPORTED_MODULE_14__["KycBranchVerifySummaryComponent"], _kyc_task_summary_kyc_task_summary_component__WEBPACK_IMPORTED_MODULE_15__["KycTaskSummaryComponent"], _cust_on_boarding_task_summary_cust_on_boarding_task_summary_component__WEBPACK_IMPORTED_MODULE_16__["CustOnBoardingTaskSummaryComponent"], _cust_on_boarding_approver_cust_on_boarding_approver_component__WEBPACK_IMPORTED_MODULE_17__["CustOnBoardingApproverComponent"], app_shared_pipes_custom_search_filter_pipe__WEBPACK_IMPORTED_MODULE_26__["CustomSearchFilterPipe"], app_shared_pipes_custom_task_summary_sorting_pipe__WEBPACK_IMPORTED_MODULE_27__["CustomTaskSummarySortingPipe"], _avatar_avatar_component__WEBPACK_IMPORTED_MODULE_31__["AvatarComponent"], _corporate_task_summary_corporate_task_summary_component__WEBPACK_IMPORTED_MODULE_33__["CorporateTaskSummaryComponent"], _corporate_approver_corporate_approver_component__WEBPACK_IMPORTED_MODULE_34__["CorporateApproverComponent"], _card_origination_task_summary_card_origination_task_summary_component__WEBPACK_IMPORTED_MODULE_35__["CardOriginationTaskSummaryComponent"], _card_account_approver_card_account_approver_component__WEBPACK_IMPORTED_MODULE_36__["CardAccountApproverComponent"], _loan_account_task_summary_loan_account_task_summary_component__WEBPACK_IMPORTED_MODULE_37__["LoanAccountTaskSummaryComponent"], _loan_account_approver_loan_account_approver_component__WEBPACK_IMPORTED_MODULE_38__["LoanAccountApproverComponent"], _loan_account_approver_loan_account_details_edit_loan_account_details_edit_component__WEBPACK_IMPORTED_MODULE_39__["LoanAccountDetailsEditComponent"], _loan_account_approver_loan_account_details_update_loan_account_details_update_component__WEBPACK_IMPORTED_MODULE_40__["LoanAccountDetailsUpdateComponent"], _loan_account_approver_loan_mandate_details_update_loan_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_41__["LoanMandateDetailsUpdateComponent"], _loan_account_approver_loan_collateral_details_update_loan_collateral_details_update_component__WEBPACK_IMPORTED_MODULE_42__["LoanCollateralDetailsUpdateComponent"], _loan_account_approver_loan_guarantor_details_update_loan_guarantor_details_update_component__WEBPACK_IMPORTED_MODULE_43__["LoanGuarantorDetailsUpdateComponent"], _loan_account_approver_loan_disbursement_details_update_loan_disbursement_details_update_component__WEBPACK_IMPORTED_MODULE_44__["LoanDisbursementDetailsUpdateComponent"], _loan_account_approver_loan_repayment_details_update_loan_repayment_details_update_component__WEBPACK_IMPORTED_MODULE_45__["LoanRepaymentDetailsUpdateComponent"], _loan_account_approver_loan_credit_details_update_loan_credit_details_update_component__WEBPACK_IMPORTED_MODULE_46__["LoanCreditDetailsUpdateComponent"], _loan_account_approver_loan_valuation_of_asset_update_loan_valuation_of_asset_update_component__WEBPACK_IMPORTED_MODULE_47__["LoanValuationOfAssetUpdateComponent"], _loan_account_approver_loan_legal_opinion_updates_loan_legal_opinion_updates_component__WEBPACK_IMPORTED_MODULE_48__["LoanLegalOpinionUpdatesComponent"], _loan_account_approver_loan_assessment_details_update_loan_assessment_details_update_component__WEBPACK_IMPORTED_MODULE_49__["LoanAssessmentDetailsUpdateComponent"], _loan_account_approver_loan_offer_issue_details_update_loan_offer_issue_details_update_component__WEBPACK_IMPORTED_MODULE_50__["LoanOfferIssueDetailsUpdateComponent"], _loan_account_approver_loan_approval_details_update_loan_approval_details_update_component__WEBPACK_IMPORTED_MODULE_51__["LoanApprovalDetailsUpdateComponent"], _card_account_approver_card_initiation_details_update_card_initiation_details_update_component__WEBPACK_IMPORTED_MODULE_52__["CardInitiationDetailsUpdateComponent"], _card_account_approver_card_financial_details_update_card_financial_details_update_component__WEBPACK_IMPORTED_MODULE_53__["CardFinancialDetailsUpdateComponent"], _card_account_approver_card_interest_details_update_card_interest_details_update_component__WEBPACK_IMPORTED_MODULE_54__["CardInterestDetailsUpdateComponent"], _card_account_approver_card_charge_details_update_card_charge_details_update_component__WEBPACK_IMPORTED_MODULE_55__["CardChargeDetailsUpdateComponent"], _card_account_approver_card_credit_score_update_card_credit_score_update_component__WEBPACK_IMPORTED_MODULE_56__["CardCreditScoreUpdateComponent"], _card_account_approver_card_assessment_report_update_card_assessment_report_update_component__WEBPACK_IMPORTED_MODULE_57__["CardAssessmentReportUpdateComponent"], _card_account_approver_card_approval_details_update_card_approval_details_update_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalDetailsUpdateComponent"], _card_account_approver_card_preference_details_update_card_preference_details_update_component__WEBPACK_IMPORTED_MODULE_59__["CardPreferenceDetailsUpdateComponent"], _cust_on_boarding_approver_update_primary_info_update_primary_info_component__WEBPACK_IMPORTED_MODULE_60__["UpdatePrimaryInfoComponent"], _cust_on_boarding_approver_update_contact_info_update_contact_info_component__WEBPACK_IMPORTED_MODULE_61__["UpdateContactInfoComponent"], _cust_on_boarding_approver_update_proof_of_identity_update_proof_of_identity_component__WEBPACK_IMPORTED_MODULE_62__["UpdateProofOfIdentityComponent"], _cust_on_boarding_approver_update_additional_info_update_additional_info_component__WEBPACK_IMPORTED_MODULE_63__["UpdateAdditionalInfoComponent"], _cust_on_boarding_approver_update_mandate_info_update_mandate_info_component__WEBPACK_IMPORTED_MODULE_64__["UpdateMandateInfoComponent"], _corporate_approver_update_corporate_basic_info_update_corporate_basic_info_component__WEBPACK_IMPORTED_MODULE_65__["UpdateCorporateBasicInfoComponent"], _corporate_approver_update_director_details_update_director_details_component__WEBPACK_IMPORTED_MODULE_66__["UpdateDirectorDetailsComponent"], _corporate_approver_update_corporate_contact_info_update_corporate_contact_info_component__WEBPACK_IMPORTED_MODULE_67__["UpdateCorporateContactInfoComponent"], _corporate_approver_update_corporate_identity_update_corporate_identity_component__WEBPACK_IMPORTED_MODULE_68__["UpdateCorporateIdentityComponent"], _corporate_approver_update_corporate_addititonal_info_update_corporate_addititonal_info_component__WEBPACK_IMPORTED_MODULE_69__["UpdateCorporateAddititonalInfoComponent"], _kyc_branch_verify_summary_kyc_basic_info_update_kyc_basic_info_update_component__WEBPACK_IMPORTED_MODULE_72__["KycBasicInfoUpdateComponent"], _kyc_branch_verify_summary_kyc_communication_address_update_kyc_communication_address_update_component__WEBPACK_IMPORTED_MODULE_73__["KycCommunicationAddressUpdateComponent"], _kyc_branch_verify_summary_kyc_appointment_schedule_update_kyc_appointment_schedule_update_component__WEBPACK_IMPORTED_MODULE_74__["KycAppointmentScheduleUpdateComponent"], _kyc_branch_verify_summary_kyc_document_update_kyc_document_update_component__WEBPACK_IMPORTED_MODULE_75__["KycDocumentUpdateComponent"], _kyc_branch_verify_summary_kyc_biometric_update_kyc_biometric_update_component__WEBPACK_IMPORTED_MODULE_76__["KycBiometricUpdateComponent"], _approver_account_details_update_account_details_update_component__WEBPACK_IMPORTED_MODULE_77__["AccountDetailsUpdateComponent"], _approver_customer_info_update_customer_info_update_component__WEBPACK_IMPORTED_MODULE_78__["CustomerInfoUpdateComponent"], _approver_mandate_details_update_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_79__["MandateDetailsUpdateComponent"], _approver_service_details_update_service_details_update_component__WEBPACK_IMPORTED_MODULE_80__["ServiceDetailsUpdateComponent"], _approver_nominee_details_update_nominee_details_update_component__WEBPACK_IMPORTED_MODULE_81__["NomineeDetailsUpdateComponent"], _approver_secured_overdraft_details_update_secured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_82__["SecuredOverdraftDetailsUpdateComponent"], _approver_unsecured_overdraft_details_update_unsecured_overdraft_details_update_component__WEBPACK_IMPORTED_MODULE_83__["UnsecuredOverdraftDetailsUpdateComponent"], _approver_financial_details_update_financial_details_update_component__WEBPACK_IMPORTED_MODULE_84__["FinancialDetailsUpdateComponent"], _approver_interest_details_update_interest_details_update_component__WEBPACK_IMPORTED_MODULE_85__["InterestDetailsUpdateComponent"], _approver_charge_details_update_charge_details_update_component__WEBPACK_IMPORTED_MODULE_86__["ChargeDetailsUpdateComponent"], _approver_qualitative_details_update_qualitative_details_update_component__WEBPACK_IMPORTED_MODULE_89__["QualitativeDetailsUpdateComponent"], _approver_funding_details_update_funding_details_update_component__WEBPACK_IMPORTED_MODULE_87__["FundingDetailsUpdateComponent"], _approver_approval_details_update_approval_details_update_component__WEBPACK_IMPORTED_MODULE_88__["ApprovalDetailsUpdateComponent"], _card_account_approver_update_doc_upload_update_doc_upload_component__WEBPACK_IMPORTED_MODULE_90__["UpdateDocUploadComponent"]],
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__["MatMenuModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"], ng2_search_filter__WEBPACK_IMPORTED_MODULE_25__["Ng2SearchPipeModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_18__["MatStepperModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_19__["MatDividerModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__["MatFormFieldModule"], app_shared_directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_30__["SharedDirectivesModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_21__["MatDatepickerModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_22__["MatRadioModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_28__["MatProgressSpinnerModule"], ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_23__["InfiniteScrollModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_24__["MatPaginatorModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_13__["MatSlideToggleModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_12__["NgApexchartsModule"], app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_29__["SharedMaterialModule"], //TasksRoutingModule,
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(_tasks_routing__WEBPACK_IMPORTED_MODULE_3__["TaskRoutes"]), _others_onboarding_corporate_onboarding_corporate_module__WEBPACK_IMPORTED_MODULE_70__["OnboardingCorporateModule"], _others_others_module__WEBPACK_IMPORTED_MODULE_71__["OthersModule"]],
             providers: [{
@@ -32061,7 +32348,7 @@
         }], null, null);
       })();
 
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetComponentScope"](_kyc_branch_verify_summary_kyc_document_update_kyc_document_update_component__WEBPACK_IMPORTED_MODULE_75__["KycDocumentUpdateComponent"], [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_90__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_90__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCard"], _others_genric_document_upload_genric_document_upload_component__WEBPACK_IMPORTED_MODULE_91__["GenricDocumentUploadComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_90__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_92__["MatButton"]], []);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetComponentScope"](_kyc_branch_verify_summary_kyc_document_update_kyc_document_update_component__WEBPACK_IMPORTED_MODULE_75__["KycDocumentUpdateComponent"], [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_91__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_91__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCard"], _others_genric_document_upload_genric_document_upload_component__WEBPACK_IMPORTED_MODULE_92__["GenricDocumentUploadComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_91__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_93__["MatButton"]], []);
       /***/
 
     },
@@ -34666,64 +34953,64 @@
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this151 = this;
+            var _this152 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.api.getLoanQualitativeScorecardDetails(this.loanAccountId).subscribe(function (response) {
-              _this151.qualitativeScoreboardSummary = response;
+              _this152.qualitativeScoreboardSummary = response;
             });
           }
         }, {
           key: "getLoanAccountInfo",
           value: function getLoanAccountInfo(loanAccountId) {
-            var _this152 = this;
+            var _this153 = this;
 
             this.taskSumService.getLoanAccountDetails(loanAccountId).subscribe(function (data) {
               console.log("data", data);
-              _this152.loanAccount_array = data;
-              _this152.createDataInfo = Object.values(data)[20]; // this.loanDetails_array= this.dataResponse.dataResp.loanDetailsInfo
+              _this153.loanAccount_array = data;
+              _this153.createDataInfo = Object.values(data)[20]; // this.loanDetails_array= this.dataResponse.dataResp.loanDetailsInfo
               // console.log(this.loanAccount_array[0].offerAcceptRejectInfo);
 
               console.log(Object.values(data));
               console.log(Object.values(data)[0]);
-              _this152.loanAccount_array = Object.values(data)[0];
-              _this152.assest_array = Object.values(data)[1];
-              _this152.mandate_array = Object.values(data)[4];
-              console.log('mandate_array', _this152.mandate_array.mandateId);
-              _this152.colateral_array = Object.values(data)[6];
-              console.log('collateral', _this152.colateral_array);
+              _this153.loanAccount_array = Object.values(data)[0];
+              _this153.assest_array = Object.values(data)[1];
+              _this153.mandate_array = Object.values(data)[4];
+              console.log('mandate_array', _this153.mandate_array.mandateId);
+              _this153.colateral_array = Object.values(data)[6];
+              console.log('collateral', _this153.colateral_array);
               console.log('collateral obj', Object.values(data)[6]);
               console.log(Object.values(data));
-              _this152.guranator_array = Object.values(data)[7];
-              _this152.loanInterest_array = Object.values(data)[8];
-              _this152.loanDisbusment_array = Object.values(data)[9];
-              _this152.loanRepayment_array = Object.values(data)[10];
-              _this152.loanCharge_array = Object.values(data)[11];
-              _this152.accountService_array = Object.values(data)[12];
-              _this152.loanCreditScore_array = Object.values(data)[13];
-              _this152.valueofassest_array = Object.values(data)[14];
-              _this152.legaopninio_array = Object.values(data)[15];
-              _this152.loanassement_array = Object.values(data)[16];
-              _this152.loanapproval_array = Object.values(data)[17];
-              _this152.offerissue_array = Object.values(data)[18];
+              _this153.guranator_array = Object.values(data)[7];
+              _this153.loanInterest_array = Object.values(data)[8];
+              _this153.loanDisbusment_array = Object.values(data)[9];
+              _this153.loanRepayment_array = Object.values(data)[10];
+              _this153.loanCharge_array = Object.values(data)[11];
+              _this153.accountService_array = Object.values(data)[12];
+              _this153.loanCreditScore_array = Object.values(data)[13];
+              _this153.valueofassest_array = Object.values(data)[14];
+              _this153.legaopninio_array = Object.values(data)[15];
+              _this153.loanassement_array = Object.values(data)[16];
+              _this153.loanapproval_array = Object.values(data)[17];
+              _this153.offerissue_array = Object.values(data)[18];
 
               if (Object.values(data)[0].status === 'REJECTED') {
-                _this152.approvedStatus = true;
-                _this152.rejectedStatus = true;
-                _this152.editScreen = false;
+                _this153.approvedStatus = true;
+                _this153.rejectedStatus = true;
+                _this153.editScreen = false;
               } else if (Object.values(data)[0].status === 'APPROVED') {
-                _this152.approvedStatus = true;
-                _this152.rejectedStatus = true;
-                _this152.editScreen = true;
+                _this153.approvedStatus = true;
+                _this153.rejectedStatus = true;
+                _this153.editScreen = true;
               } else if (Object.values(data)[0].status === 'ONGOING') {
-                _this152.approvedStatus = true;
-                _this152.rejectedStatus = false; // this.isOnGoing = status;
+                _this153.approvedStatus = true;
+                _this153.rejectedStatus = false; // this.isOnGoing = status;
 
-                _this152.editScreen = false;
+                _this153.editScreen = false;
               } else if (Object.values(data)[0].status === 'BACKLOG') {
-                _this152.approvedStatus = false;
-                _this152.rejectedStatus = false;
-                _this152.editScreen = false;
+                _this153.approvedStatus = false;
+                _this153.rejectedStatus = false;
+                _this153.editScreen = false;
               }
             });
           }
@@ -34758,7 +35045,7 @@
         }, {
           key: "openGuarantor",
           value: function openGuarantor(editType) {
-            var _this153 = this;
+            var _this154 = this;
 
             var dialogRef = this.dialog.open(_loan_guarantor_details_update_loan_guarantor_details_update_component__WEBPACK_IMPORTED_MODULE_13__["LoanGuarantorDetailsUpdateComponent"], {
               width: '1000px',
@@ -34772,9 +35059,9 @@
             dialogRef.afterClosed().subscribe(function (res) {
               console.log('dialog closed-- ', res); // this.loader.open();
 
-              _this153.getLoanAccountInfo(_this153.loanAccountId);
+              _this154.getLoanAccountInfo(_this154.loanAccountId);
 
-              _this153.getAllData(_this153.loanAccountId); // this.loader.close();
+              _this154.getAllData(_this154.loanAccountId); // this.loader.close();
 
 
               if (!res) {
@@ -34791,7 +35078,7 @@
         }, {
           key: "openDisbursement",
           value: function openDisbursement(editType) {
-            var _this154 = this;
+            var _this155 = this;
 
             var dialogRef = this.dialog.open(_loan_disbursement_details_update_loan_disbursement_details_update_component__WEBPACK_IMPORTED_MODULE_14__["LoanDisbursementDetailsUpdateComponent"], {
               width: '1000px',
@@ -34799,38 +35086,6 @@
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
                 disbursementInfo: this.loanDisbusment_array,
-                editType: editType
-              }
-            });
-            dialogRef.afterClosed().subscribe(function (res) {
-              console.log('dialog closed-- ', res);
-
-              _this154.getLoanAccountInfo(_this154.loanAccountId);
-
-              _this154.getAllData(_this154.loanAccountId);
-
-              if (!res) {
-                return;
-              }
-            });
-          }
-        }, {
-          key: "editRepaymentInfo",
-          value: function editRepaymentInfo() {
-            var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-            this.openRepaymentInfo(editType);
-          }
-        }, {
-          key: "openRepaymentInfo",
-          value: function openRepaymentInfo(editType) {
-            var _this155 = this;
-
-            var dialogRef = this.dialog.open(_loan_repayment_details_update_loan_repayment_details_update_component__WEBPACK_IMPORTED_MODULE_15__["LoanRepaymentDetailsUpdateComponent"], {
-              width: '1000px',
-              disableClose: true,
-              data: {
-                loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                loanRepaymentInfo: this.loanRepayment_array,
                 editType: editType
               }
             });
@@ -34847,22 +35102,22 @@
             });
           }
         }, {
-          key: "editValuationOfAsset",
-          value: function editValuationOfAsset() {
+          key: "editRepaymentInfo",
+          value: function editRepaymentInfo() {
             var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-            this.openValuationOfAssetInfo(editType);
+            this.openRepaymentInfo(editType);
           }
         }, {
-          key: "openValuationOfAssetInfo",
-          value: function openValuationOfAssetInfo(editType) {
+          key: "openRepaymentInfo",
+          value: function openRepaymentInfo(editType) {
             var _this156 = this;
 
-            var dialogRef = this.dialog.open(_loan_valuation_of_asset_update_loan_valuation_of_asset_update_component__WEBPACK_IMPORTED_MODULE_17__["LoanValuationOfAssetUpdateComponent"], {
+            var dialogRef = this.dialog.open(_loan_repayment_details_update_loan_repayment_details_update_component__WEBPACK_IMPORTED_MODULE_15__["LoanRepaymentDetailsUpdateComponent"], {
               width: '1000px',
               disableClose: true,
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                loanValuationOfAssetInfo: this.valueofassest_array,
+                loanRepaymentInfo: this.loanRepayment_array,
                 editType: editType
               }
             });
@@ -34879,22 +35134,22 @@
             });
           }
         }, {
-          key: "editLegalOpinion",
-          value: function editLegalOpinion() {
+          key: "editValuationOfAsset",
+          value: function editValuationOfAsset() {
             var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-            this.openLegalOpnionInfo(editType);
+            this.openValuationOfAssetInfo(editType);
           }
         }, {
-          key: "openLegalOpnionInfo",
-          value: function openLegalOpnionInfo(editType) {
+          key: "openValuationOfAssetInfo",
+          value: function openValuationOfAssetInfo(editType) {
             var _this157 = this;
 
-            var dialogRef = this.dialog.open(_loan_legal_opinion_updates_loan_legal_opinion_updates_component__WEBPACK_IMPORTED_MODULE_18__["LoanLegalOpinionUpdatesComponent"], {
+            var dialogRef = this.dialog.open(_loan_valuation_of_asset_update_loan_valuation_of_asset_update_component__WEBPACK_IMPORTED_MODULE_17__["LoanValuationOfAssetUpdateComponent"], {
               width: '1000px',
               disableClose: true,
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                loanLegalInfo: this.legaopninio_array,
+                loanValuationOfAssetInfo: this.valueofassest_array,
                 editType: editType
               }
             });
@@ -34911,22 +35166,22 @@
             });
           }
         }, {
-          key: "editAssessmentInfo",
-          value: function editAssessmentInfo() {
+          key: "editLegalOpinion",
+          value: function editLegalOpinion() {
             var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-            this.openAssessmentInfo(editType);
+            this.openLegalOpnionInfo(editType);
           }
         }, {
-          key: "openAssessmentInfo",
-          value: function openAssessmentInfo(editType) {
+          key: "openLegalOpnionInfo",
+          value: function openLegalOpnionInfo(editType) {
             var _this158 = this;
 
-            var dialogRef = this.dialog.open(_loan_assessment_details_update_loan_assessment_details_update_component__WEBPACK_IMPORTED_MODULE_19__["LoanAssessmentDetailsUpdateComponent"], {
+            var dialogRef = this.dialog.open(_loan_legal_opinion_updates_loan_legal_opinion_updates_component__WEBPACK_IMPORTED_MODULE_18__["LoanLegalOpinionUpdatesComponent"], {
               width: '1000px',
               disableClose: true,
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                loanAssessmentInfo: this.loanassement_array,
+                loanLegalInfo: this.legaopninio_array,
                 editType: editType
               }
             });
@@ -34943,22 +35198,22 @@
             });
           }
         }, {
-          key: "editOfferIssueInfo",
-          value: function editOfferIssueInfo() {
+          key: "editAssessmentInfo",
+          value: function editAssessmentInfo() {
             var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-            this.openOfferIssueInfo(editType);
+            this.openAssessmentInfo(editType);
           }
         }, {
-          key: "openOfferIssueInfo",
-          value: function openOfferIssueInfo(editType) {
+          key: "openAssessmentInfo",
+          value: function openAssessmentInfo(editType) {
             var _this159 = this;
 
-            var dialogRef = this.dialog.open(_loan_offer_issue_details_update_loan_offer_issue_details_update_component__WEBPACK_IMPORTED_MODULE_20__["LoanOfferIssueDetailsUpdateComponent"], {
+            var dialogRef = this.dialog.open(_loan_assessment_details_update_loan_assessment_details_update_component__WEBPACK_IMPORTED_MODULE_19__["LoanAssessmentDetailsUpdateComponent"], {
               width: '1000px',
               disableClose: true,
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                loanOfferIssueInfo: this.offerissue_array,
+                loanAssessmentInfo: this.loanassement_array,
                 editType: editType
               }
             });
@@ -34975,22 +35230,22 @@
             });
           }
         }, {
-          key: "editApprovalInfo",
-          value: function editApprovalInfo() {
+          key: "editOfferIssueInfo",
+          value: function editOfferIssueInfo() {
             var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-            this.openApprovalInfo(editType);
+            this.openOfferIssueInfo(editType);
           }
         }, {
-          key: "openApprovalInfo",
-          value: function openApprovalInfo(editType) {
+          key: "openOfferIssueInfo",
+          value: function openOfferIssueInfo(editType) {
             var _this160 = this;
 
-            var dialogRef = this.dialog.open(_loan_approval_details_update_loan_approval_details_update_component__WEBPACK_IMPORTED_MODULE_21__["LoanApprovalDetailsUpdateComponent"], {
+            var dialogRef = this.dialog.open(_loan_offer_issue_details_update_loan_offer_issue_details_update_component__WEBPACK_IMPORTED_MODULE_20__["LoanOfferIssueDetailsUpdateComponent"], {
               width: '1000px',
               disableClose: true,
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                loanApprovalInfo: this.loanapproval_array,
+                loanOfferIssueInfo: this.offerissue_array,
                 editType: editType
               }
             });
@@ -35007,6 +35262,38 @@
             });
           }
         }, {
+          key: "editApprovalInfo",
+          value: function editApprovalInfo() {
+            var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+            this.openApprovalInfo(editType);
+          }
+        }, {
+          key: "openApprovalInfo",
+          value: function openApprovalInfo(editType) {
+            var _this161 = this;
+
+            var dialogRef = this.dialog.open(_loan_approval_details_update_loan_approval_details_update_component__WEBPACK_IMPORTED_MODULE_21__["LoanApprovalDetailsUpdateComponent"], {
+              width: '1000px',
+              disableClose: true,
+              data: {
+                loanAccountId: this.dataResponse.dataResp.loanAccountId,
+                loanApprovalInfo: this.loanapproval_array,
+                editType: editType
+              }
+            });
+            dialogRef.afterClosed().subscribe(function (res) {
+              console.log('dialog closed-- ', res);
+
+              _this161.getLoanAccountInfo(_this161.loanAccountId);
+
+              _this161.getAllData(_this161.loanAccountId);
+
+              if (!res) {
+                return;
+              }
+            });
+          }
+        }, {
           key: "editCreditInfo",
           value: function editCreditInfo() {
             var editType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
@@ -35015,7 +35302,7 @@
         }, {
           key: "openCreditInfo",
           value: function openCreditInfo(editType) {
-            var _this161 = this;
+            var _this162 = this;
 
             var dialogRef = this.dialog.open(_loan_credit_details_update_loan_credit_details_update_component__WEBPACK_IMPORTED_MODULE_16__["LoanCreditDetailsUpdateComponent"], {
               width: '1000px',
@@ -35029,9 +35316,9 @@
             dialogRef.afterClosed().subscribe(function (res) {
               console.log('dialog closed-- ', res);
 
-              _this161.getLoanAccountInfo(_this161.loanAccountId);
+              _this162.getLoanAccountInfo(_this162.loanAccountId);
 
-              _this161.getAllData(_this161.loanAccountId);
+              _this162.getAllData(_this162.loanAccountId);
 
               if (!res) {
                 return;
@@ -35051,7 +35338,7 @@
         }, {
           key: "openPopUp",
           value: function openPopUp(editType) {
-            var _this162 = this;
+            var _this163 = this;
 
             var dialogRef = this.dialog.open(_loan_account_details_update_loan_account_details_update_component__WEBPACK_IMPORTED_MODULE_9__["LoanAccountDetailsUpdateComponent"], {
               width: '1000px',
@@ -35059,32 +35346,6 @@
               data: {
                 loanAccountId: this.dataResponse.dataResp.loanAccountId,
                 info: this.loanAccount_array,
-                editType: editType
-              }
-            });
-            dialogRef.afterClosed().subscribe(function (res) {
-              console.log('dialog closed-- ', res);
-
-              _this162.getLoanAccountInfo(_this162.loanAccountId);
-
-              _this162.getAllData(_this162.loanAccountId);
-
-              if (!res) {
-                return;
-              }
-            });
-          }
-        }, {
-          key: "openPopUp1",
-          value: function openPopUp1(editType) {
-            var _this163 = this;
-
-            var dialogRef = this.dialog.open(_loan_account_details_edit_loan_account_details_edit_component__WEBPACK_IMPORTED_MODULE_10__["LoanAccountDetailsEditComponent"], {
-              width: '1000px',
-              disableClose: true,
-              data: {
-                loanAccountId: this.dataResponse.dataResp.loanAccountId,
-                assetInfo: this.assest_array,
                 editType: editType
               }
             });
@@ -35101,9 +35362,35 @@
             });
           }
         }, {
+          key: "openPopUp1",
+          value: function openPopUp1(editType) {
+            var _this164 = this;
+
+            var dialogRef = this.dialog.open(_loan_account_details_edit_loan_account_details_edit_component__WEBPACK_IMPORTED_MODULE_10__["LoanAccountDetailsEditComponent"], {
+              width: '1000px',
+              disableClose: true,
+              data: {
+                loanAccountId: this.dataResponse.dataResp.loanAccountId,
+                assetInfo: this.assest_array,
+                editType: editType
+              }
+            });
+            dialogRef.afterClosed().subscribe(function (res) {
+              console.log('dialog closed-- ', res);
+
+              _this164.getLoanAccountInfo(_this164.loanAccountId);
+
+              _this164.getAllData(_this164.loanAccountId);
+
+              if (!res) {
+                return;
+              }
+            });
+          }
+        }, {
           key: "openCollateralPopup",
           value: function openCollateralPopup(editType) {
-            var _this164 = this;
+            var _this165 = this;
 
             var dialogRef = this.dialog.open(_loan_collateral_details_update_loan_collateral_details_update_component__WEBPACK_IMPORTED_MODULE_12__["LoanCollateralDetailsUpdateComponent"], {
               width: '1000px',
@@ -35117,9 +35404,9 @@
             dialogRef.afterClosed().subscribe(function (res) {
               console.log('dialog closed-- ', res);
 
-              _this164.getLoanAccountInfo(_this164.loanAccountId);
+              _this165.getLoanAccountInfo(_this165.loanAccountId);
 
-              _this164.getAllData(_this164.loanAccountId);
+              _this165.getAllData(_this165.loanAccountId);
 
               if (!res) {
                 return;
@@ -35143,7 +35430,7 @@
         }, {
           key: "openMandate",
           value: function openMandate(editType) {
-            var _this165 = this;
+            var _this166 = this;
 
             var dialogRef = this.dialog.open(_loan_mandate_details_update_loan_mandate_details_update_component__WEBPACK_IMPORTED_MODULE_11__["LoanMandateDetailsUpdateComponent"], {
               width: '1000px',
@@ -35157,9 +35444,9 @@
             dialogRef.afterClosed().subscribe(function (res) {
               console.log('dialog closed-- ', res);
 
-              _this165.getLoanAccountInfo(_this165.loanAccountId);
+              _this166.getLoanAccountInfo(_this166.loanAccountId);
 
-              _this165.getAllData(_this165.loanAccountId);
+              _this166.getAllData(_this166.loanAccountId);
 
               if (!res) {
                 return;
@@ -35177,35 +35464,35 @@
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails() {
-            var _this166 = this;
+            var _this167 = this;
 
             this.appApiService.fetchCustomersByLoanAccId(this.loanAccountId, 'loan').subscribe(function (customerInfoDetails) {
               if (customerInfoDetails.data) {
-                _this166.customerInfoDetails = customerInfoDetails.data;
-                _this166.ownership = _this166.customerInfoDetails[0].ownership;
-                _this166.noOfApplicants = _this166.customerInfoDetails[0].numOfApplicants;
+                _this167.customerInfoDetails = customerInfoDetails.data;
+                _this167.ownership = _this167.customerInfoDetails[0].ownership;
+                _this167.noOfApplicants = _this167.customerInfoDetails[0].numOfApplicants;
               }
             }, function (err) {
-              _this166.loader.close();
+              _this167.loader.close();
             });
           }
         }, {
           key: "getProfileImage",
           value: function getProfileImage(customerId) {
-            var _this167 = this;
+            var _this168 = this;
 
             this.image = null;
             this.loanInfo.customerId == null ? null : this.api.getProfileDetails(customerId).subscribe(function (data) {
               if (data.profileImage != null) {
-                _this167.imageUrl = data.profileImage;
+                _this168.imageUrl = data.profileImage;
                 var objectURL = data.profileImage.fileUrl;
-                _this167.image = _this167.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this168.image = _this168.sanitizer.bypassSecurityTrustUrl(objectURL);
               }
 
               if (data.signatures) {
-                _this167.signatureData = data.signatures[0];
+                _this168.signatureData = data.signatures[0];
 
-                _this167.ls.setItem('signedImage', _this167.signatureData.fileUrl);
+                _this168.ls.setItem('signedImage', _this168.signatureData.fileUrl);
               }
             }, function (error) {
               console.log(error);
@@ -35214,11 +35501,11 @@
         }, {
           key: "getMandateDetails",
           value: function getMandateDetails() {
-            var _this168 = this;
+            var _this169 = this;
 
             this.apiService.getMandateDetailsByLoanAccId(this.loanAccountId).subscribe(function (mandateDetails) {
-              _this168.mandateDetails = mandateDetails;
-              _this168.mandateDetailsArray = mandateDetails.mandateDetails;
+              _this169.mandateDetails = mandateDetails;
+              _this169.mandateDetailsArray = mandateDetails.mandateDetails;
             }, function (err) {});
           }
         }, {
@@ -35229,35 +35516,35 @@
         }, {
           key: "fetchOfferAcceptRejectDetails",
           value: function fetchOfferAcceptRejectDetails(loanaccountID) {
-            var _this169 = this;
+            var _this170 = this;
 
             this.apiService.getofferDetails(loanaccountID).subscribe(function (data) {
-              _this169.offerDetails = data;
+              _this170.offerDetails = data;
             });
           }
         }, {
           key: "fetchPostOfferAmendmentDetails",
           value: function fetchPostOfferAmendmentDetails() {
-            var _this170 = this;
+            var _this171 = this;
 
             this.apiService.getOfferAmendmentDetails(this.loanAccountId).subscribe(function (data) {
-              _this170.postOfferDetails = data;
-              console.log("details", _this170.postOfferDetails);
+              _this171.postOfferDetails = data;
+              console.log("details", _this171.postOfferDetails);
             });
           }
         }, {
           key: "getAccountCreateDetails",
           value: function getAccountCreateDetails() {
-            var _this171 = this;
+            var _this172 = this;
 
             this.api.getAccountCreateDetails(this.loanAccountId).subscribe(function (accountCreateDetails) {
-              _this171.accountCreateValue = accountCreateDetails;
+              _this172.accountCreateValue = accountCreateDetails;
             });
           }
         }, {
           key: "updateApplicationStatus",
           value: function updateApplicationStatus(formData, status) {
-            var _this172 = this;
+            var _this173 = this;
 
             console.log('data : ', formData);
             formData.status = status;
@@ -35269,26 +35556,26 @@
             };
             this.tasksummaryService.updateLoanAccStatus(formDt).subscribe(function (respData) {
               if (respData.loanAccountId != null || respData.loanAccountId != '' || respData.loanAccountId != "") {
-                _this172.close(data);
+                _this173.close(data);
 
-                _this172.cdr.markForCheck();
+                _this173.cdr.markForCheck();
 
-                _this172.cdr.detectChanges();
+                _this173.cdr.detectChanges();
 
-                _this172.dialogRef.close({
+                _this173.dialogRef.close({
                   message: 'Confirm',
                   data: data
                 });
 
-                _this172.snack.open(status + ' !', 'OK', {
+                _this173.snack.open(status + ' !', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this172.cdr.markForCheck();
+                _this173.cdr.markForCheck();
               } else {
-                _this172.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this173.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -35296,9 +35583,9 @@
               }
             }, function (error) {
               console.log('error resp :: ', error);
-              _this172.errorStatus = status;
+              _this173.errorStatus = status;
 
-              _this172.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this173.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -38794,7 +39081,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -38846,7 +39133,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -38914,7 +39201,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](20);
 
@@ -38926,7 +39213,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -38982,7 +39269,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39046,7 +39333,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -39054,7 +39341,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39090,7 +39377,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39134,7 +39421,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -39154,7 +39441,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -39162,7 +39449,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39206,7 +39493,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39254,7 +39541,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39286,7 +39573,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -39334,7 +39621,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](22);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status == "BACKLOG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.dataResponse.dataResp.status != "APPROVED");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -40264,7 +40551,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this173 = this;
+            var _this174 = this;
 
             if (this.unsecuredUpdateForm.value.overdraftLimitRenewed) {
               if (this.unsecuredUpdateForm.controls.day.value == null || this.unsecuredUpdateForm.controls.year.value == null || this.unsecuredUpdateForm.controls.month.value == null) {
@@ -40315,17 +40602,17 @@
 
             if (this.unsecuredUpdateForm.value.limitId != '') {
               this.api.unsecuredDraft(finalPayload).subscribe(function (resp) {
-                _this173.snack.open('UnSecured Overdraft Details Updated!', 'OK', {
+                _this174.snack.open('UnSecured Overdraft Details Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this173.dialogRef.close({
+                _this174.dialogRef.close({
                   status: 'BACKLOG'
                 });
               }, function (err) {
-                _this173.snack.open(err['message'], 'OK', {
+                _this174.snack.open(err['message'], 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -40336,10 +40623,10 @@
         }, {
           key: "getCurrencyDetails",
           value: function getCurrencyDetails() {
-            var _this174 = this;
+            var _this175 = this;
 
             this.api.fetchCurrencyMaintAuthRecs().subscribe(function (resp) {
-              _this174.currency = resp;
+              _this175.currency = resp;
             });
           }
         }, {
@@ -40652,7 +40939,7 @@
         _createClass(CardInterestDetailsUpdateComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this175 = this;
+            var _this176 = this;
 
             this.cardInterestUpdateForm = this.formBuilder.group({
               interestInfo: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormArray"]([])
@@ -40664,9 +40951,9 @@
               this["in"].patchValue(this.data.interestInfo);
             } else {
               this.api.getFlexcubeDetails("intrestDetails", this.accountType).subscribe(function (response) {
-                _this175.onChangeInterest(response.length);
+                _this176.onChangeInterest(response.length);
 
-                _this175["in"].patchValue(response);
+                _this176["in"].patchValue(response);
               });
             }
 
@@ -40697,11 +40984,11 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this176 = this;
+            var _this177 = this;
 
             console.log(this.cardInterestUpdateForm.value);
             this.api.cardintrestDetailsSave(this.cardInterestUpdateForm.value).subscribe(function (resp) {
-              _this176.snack.open("Interest Details Saved!", "OK", {
+              _this177.snack.open("Interest Details Saved!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -40709,7 +40996,7 @@
 
               console.log("backend response from intrest saving", resp);
             }, function (err) {
-              _this176.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
+              _this177.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -41159,7 +41446,7 @@
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this177 = this;
+            var _this178 = this;
 
             var payload = {
               loanAccountId: this.data.loanAccountId,
@@ -41170,44 +41457,44 @@
             console.log("payload", payload);
             this.apiService.upsertMandateDetails(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this177.loanaccountID = _this177.data.loanAccountId;
-              console.log('loanaccountID', _this177.loanaccountID);
+              _this178.loanaccountID = _this178.data.loanAccountId;
+              console.log('loanaccountID', _this178.loanaccountID);
 
-              _this177.assign(_this177.data.loanAccountId);
+              _this178.assign(_this178.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this177.data.loanAccountId,
+                  loanAccountId: _this178.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this177.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this178.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this177.data.loanAccountId
+                  loanAccountid: _this178.data.loanAccountId
                 };
 
-                _this177.ls.setItem('fundByStatus', fundStatus);
+                _this178.ls.setItem('fundByStatus', fundStatus);
 
-                _this177.ls.setItem('accountType', data.accountType);
+                _this178.ls.setItem('accountType', data.accountType);
 
-                _this177.ls.setItem('productName', data.businessProductName);
+                _this178.ls.setItem('productName', data.businessProductName);
 
-                _this177.loanaccountID = _this177.data.loanAccountId;
-                console.log("this.productaccountID", _this177.loanaccountID);
+                _this178.loanaccountID = _this178.data.loanAccountId;
+                console.log("this.productaccountID", _this178.loanaccountID);
 
-                _this177.snack.open('Data Updated!', 'OK', {
+                _this178.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this177.getDataOnLoad();
+                _this178.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this177.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this178.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -41216,19 +41503,19 @@
                 console.log("500 error");
               }
 
-              _this177.goToClose();
+              _this178.goToClose();
             });
           }
         }, {
           key: "getMandateDetails",
           value: function getMandateDetails() {
-            var _this178 = this;
+            var _this179 = this;
 
             this.apiService.getMandateDetailsByLoanAccId(this.loanaccountID).subscribe(function (mandateDetails) {
-              _this178.mandateDetails = mandateDetails;
-              console.log(_this178.mandateDetails);
+              _this179.mandateDetails = mandateDetails;
+              console.log(_this179.mandateDetails);
 
-              _this178.buildMandateForm(_this178.mandateDetails); // if(mandateDetails){
+              _this179.buildMandateForm(_this179.mandateDetails); // if(mandateDetails){
               //   for (let index = 0; index < mandateDetails.mandateDetails.length; index++) {
               //     this.addMandate(mandateDetails.mandateDetails[index]);
               //   }
@@ -41280,12 +41567,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this179 = this;
+            var _this180 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this179.updateStatusResponse(status, custResp);
+              _this180.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -42773,7 +43060,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this180 = this;
+            var _this181 = this;
 
             var task = true;
             this.apiService.setTask(task);
@@ -42786,7 +43073,7 @@
 
             this.listOfOptions.filter(function (item) {
               if (item.checked) {
-                _this180.radioButtonSelected = item.value;
+                _this181.radioButtonSelected = item.value;
               }
             });
             this.criteria = {
@@ -42808,24 +43095,24 @@
         }, {
           key: "_setSearchSubscription",
           value: function _setSearchSubscription() {
-            var _this181 = this;
+            var _this182 = this;
 
             this._searchSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["debounceTime"])(1000)).subscribe(function (searchValue) {
-              _this181.setValue.emit(searchValue);
+              _this182.setValue.emit(searchValue);
 
               console.log("search value :: ", searchValue);
-              console.log("search text :: ", _this181.searchText);
+              console.log("search text :: ", _this182.searchText);
 
               if (searchValue == null || searchValue == "" || searchValue == "") {
-                _this181.noDataFound = false;
-                _this181.searchable = false;
+                _this182.noDataFound = false;
+                _this182.searchable = false;
 
-                _this181.getDataOnLoad();
+                _this182.getDataOnLoad();
 
                 return;
               }
 
-              _this181.searchcorporateID(searchValue);
+              _this182.searchcorporateID(searchValue);
             });
           }
         }, {
@@ -42862,12 +43149,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status, page, size) {
-            var _this182 = this;
+            var _this183 = this;
 
             this.tasSumService.getallCorporateData(this.screenType, status, page).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this182.updateStatusResponse(status, custResp);
+              _this183.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -42918,7 +43205,7 @@
         }, {
           key: "getDataOnScroll",
           value: function getDataOnScroll(status, page, totalPage) {
-            var _this183 = this;
+            var _this184 = this;
 
             if (this.isScroll == false) {
               return;
@@ -42934,24 +43221,24 @@
             this.tasSumService.getallCorporateData(this.screenType, status, page).subscribe(function (data) {
               console.log("count data :: ", data);
 
-              _this183.cdr.markForCheck();
+              _this184.cdr.markForCheck();
 
-              _this183.updateDataOnScroll(status, data.corporateList);
+              _this184.updateDataOnScroll(status, data.corporateList);
             });
           }
         }, {
           key: "GoToCustomerOnboarding",
           value: function GoToCustomerOnboarding() {
-            var _this184 = this;
+            var _this185 = this;
 
             setTimeout(function () {
-              _this184.router.navigateByUrl("/tasks/cust-on-boarding-task-summary");
+              _this185.router.navigateByUrl("/tasks/cust-on-boarding-task-summary");
             }, 300);
           }
         }, {
           key: "goToCorporateOnBoardingSummary",
           value: function goToCorporateOnBoardingSummary(data, status, colCode) {
-            var _this185 = this;
+            var _this186 = this;
 
             localStorage.setItem("CustomerColorCode", colCode);
             var dialogRef = this.dialog.open(_corporate_approver_corporate_approver_component__WEBPACK_IMPORTED_MODULE_10__["CorporateApproverComponent"], {
@@ -42967,7 +43254,7 @@
               console.log("dialog closed:: ", submit);
 
               if (submit.recordStatus === "REJECTED" || submit.recordStatus === "APPROVED" || submit.data.kycStatus === "REJECTED" || submit.data.kycStatus === "APPROVED" || submit.recordStatus === "INITIATED" || submit.recordStatus === "UNDER_PROCESS") {
-                _this185.getDataOnLoad();
+                _this186.getDataOnLoad();
               }
             });
           }
@@ -43016,15 +43303,15 @@
         }, {
           key: "getCustomerData",
           value: function getCustomerData(params) {
-            var _this186 = this;
+            var _this187 = this;
 
             this.loading = true;
             console.log("params::", params);
             this.apiService.getcorporateSearchDetails(params).subscribe(function (data) {
-              _this186.loading = false;
+              _this187.loading = false;
               console.log("resp data :: ", data);
 
-              _this186.resetSearchData();
+              _this187.resetSearchData();
 
               for (var index = 0; index < data.corporateList.length; index++) {
                 var element = data.corporateList[index]; // element.profileImage= data.corporateList[index].corporateDocs[0].fileUrl;
@@ -43037,7 +43324,7 @@
                   }
                 }
 
-                _this186.searchResponseUpdate(data.corporateList[index].corporateStatus, element);
+                _this187.searchResponseUpdate(data.corporateList[index].corporateStatus, element);
               }
             });
           } // getCustomerData(params) {
@@ -43137,18 +43424,18 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(corporateID) {
-            var _this187 = this;
+            var _this188 = this;
 
             this.apiService.getProfileDetails(corporateID).subscribe(function (data) {
               console.log(data);
               console.log(data.profileImage);
-              _this187.searchable = false;
+              _this188.searchable = false;
 
               if (data.profileImage != null) {
                 var objectURL = "data:image/jpeg;base64," + data.profileImage.fileData;
-                _this187.searchable = true;
-                _this187.image = _this187.sanitizer.bypassSecurityTrustUrl(objectURL);
-                console.log(_this187.searchable, "Searchable");
+                _this188.searchable = true;
+                _this188.image = _this188.sanitizer.bypassSecurityTrustUrl(objectURL);
+                console.log(_this188.searchable, "Searchable");
               }
             }, function (error) {
               console.log(error);
@@ -43157,7 +43444,7 @@
         }, {
           key: "getcorporateIDData",
           value: function getcorporateIDData(valueToFilter) {
-            var _this188 = this;
+            var _this189 = this;
 
             console.log("get kyc");
 
@@ -43165,19 +43452,19 @@
               this.apiService.getKycTaskSummaryAll(valueToFilter, this.searchText).subscribe(function (data) {
                 console.log("resp data :: ", data);
 
-                _this188.cdr.markForCheck();
+                _this189.cdr.markForCheck();
 
-                _this188.cdr.detectChanges();
+                _this189.cdr.detectChanges();
 
                 if (data != null) {
                   var value = data[0].customerAdditionalInfo.kycStatus + "Arr";
 
-                  _this188[value].splice(0, 0, data[0]);
+                  _this189[value].splice(0, 0, data[0]);
 
-                  _this188[value] = _this188[value].slice();
-                  console.log("resp value :: ", _this188[value]);
+                  _this189[value] = _this189[value].slice();
+                  console.log("resp value :: ", _this189[value]);
                 } else {
-                  _this188.noDataFound = true;
+                  _this189.noDataFound = true;
                 }
               });
             }
@@ -43828,39 +44115,39 @@
         }, {
           key: "getLoanCreditDetails",
           value: function getLoanCreditDetails() {
-            var _this189 = this;
+            var _this190 = this;
 
             this.apiService.gettingCreditRatingDetails(this.loanaccountID).subscribe(function (creditDetails) {
-              _this189.creditDetails = creditDetails;
-              console.log("this.creditDetails::", _this189.creditDetails);
+              _this190.creditDetails = creditDetails;
+              console.log("this.creditDetails::", _this190.creditDetails);
 
-              _this189.buildLoanCreditForm(_this189.creditDetails);
+              _this190.buildLoanCreditForm(_this190.creditDetails);
 
-              _this189.loanCreditForm.value.customerName = _this189.creditDetails.customerName;
-              _this189.loanCreditForm.value.agencyName = _this189.creditDetails.agencyRating.agencyName;
-              _this189.loanCreditForm.value.ratings = _this189.creditDetails.agencyRating.ratings;
-              _this189.loanCreditForm.value.remarks = _this189.creditDetails.agencyRating.remarks;
+              _this190.loanCreditForm.value.customerName = _this190.creditDetails.customerName;
+              _this190.loanCreditForm.value.agencyName = _this190.creditDetails.agencyRating.agencyName;
+              _this190.loanCreditForm.value.ratings = _this190.creditDetails.agencyRating.ratings;
+              _this190.loanCreditForm.value.remarks = _this190.creditDetails.agencyRating.remarks;
             }, function (err) {
-              _this189.loader.close();
+              _this190.loader.close();
             });
           }
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this190 = this;
+            var _this191 = this;
 
             this.dialogRef.close();
             this.apiService.gettingCreditRatingDetails(this.loanaccountID).subscribe(function (creditDetails) {
               console.log("All Account Service", creditDetails);
-              _this190.creditDetails = creditDetails;
-              console.log("this.accountDetails", _this190.creditDetails);
-              console.log('form', _this190.loanCreditForm.value);
+              _this191.creditDetails = creditDetails;
+              console.log("this.accountDetails", _this191.creditDetails);
+              console.log('form', _this191.loanCreditForm.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this191 = this;
+            var _this192 = this;
 
             // console.log("val",val);
             var payload = {
@@ -43875,46 +44162,46 @@
             console.log("payload", payload);
             this.apiService.saveCreditDetails(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this191.loanaccountID = _this191.data.loanAccountId;
-              console.log('loanaccountID', _this191.loanaccountID);
+              _this192.loanaccountID = _this192.data.loanAccountId;
+              console.log('loanaccountID', _this192.loanaccountID);
 
-              _this191.assign(_this191.data.loanAccountId);
+              _this192.assign(_this192.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this191.data.loanAccountId,
+                  loanAccountId: _this192.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this191.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this192.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this191.data.loanAccountId
+                  loanAccountid: _this192.data.loanAccountId
                 };
 
-                _this191.ls.setItem('fundByStatus', fundStatus);
+                _this192.ls.setItem('fundByStatus', fundStatus);
 
-                _this191.ls.setItem('accountType', data.accountType); // this.ls.setItem('loanAccountId',this.data.loanAccountId);
-
-
-                _this191.ls.setItem('productName', data.businessProductName); //    this.loanaccountID = this.ls.getItem('loanAccountid');
+                _this192.ls.setItem('accountType', data.accountType); // this.ls.setItem('loanAccountId',this.data.loanAccountId);
 
 
-                _this191.loanaccountID = _this191.data.loanAccountId;
-                console.log("this.productaccountID", _this191.loanaccountID);
+                _this192.ls.setItem('productName', data.businessProductName); //    this.loanaccountID = this.ls.getItem('loanAccountid');
 
-                _this191.snack.open('Data Updated!', 'OK', {
+
+                _this192.loanaccountID = _this192.data.loanAccountId;
+                console.log("this.productaccountID", _this192.loanaccountID);
+
+                _this192.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this191.getDataOnLoad();
+                _this192.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this191.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this192.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -43923,7 +44210,7 @@
                 console.log("500 error");
               }
 
-              _this191.goToClose();
+              _this192.goToClose();
             });
           }
         }, {
@@ -43951,12 +44238,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this192 = this;
+            var _this193 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this192.updateStatusResponse(status, custResp);
+              _this193.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -44529,71 +44816,79 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Account Branch ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Account Type ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Account Branch ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Business Product Name");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Account Type ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Status");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 31);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Business Product Name");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -44621,19 +44916,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("#", items_r8.loanAccountId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r8.accountBranch);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r8.accountType);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r8.businessProductName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r8.status);
         }
@@ -44740,71 +45035,79 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Account Branch ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Account Type ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Account Branch ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Business Product Name");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Account Type ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Status");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 31);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Business Product Name");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -44832,19 +45135,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("#", items_r17.loanAccountId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r17.accountBranch);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r17.accountType);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r17.businessProductName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r17.status);
         }
@@ -44951,71 +45254,79 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Account Branch ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Account Type ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Account Branch ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Business Product Name");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Account Type ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Status");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 31);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Business Product Name");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -45043,19 +45354,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("#", items_r26.loanAccountId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r26.accountBranch);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r26.accountType);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r26.businessProductName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r26.status);
         }
@@ -45162,71 +45473,79 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Account Branch ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Account Type ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Account Branch ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 32);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "span", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Business Product Name");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Account Type ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "span", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Status");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 31);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Business Product Name");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "span", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Status");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -45254,19 +45573,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("#", items_r35.loanAccountId, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r35.accountBranch);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r35.accountType);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r35.businessProductName);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](items_r35.status);
         }
@@ -45346,29 +45665,29 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this193 = this;
+            var _this194 = this;
 
             var task = true;
             this.apiService.setTask(task);
             this.accountId = this.ls.getItem('accountId');
             this.route.queryParamMap.subscribe(function (params) {
               if (params.get('searchTerm')) {
-                _this193.redirectedFromTellerSearch = true;
-                _this193.searchText = params.get('searchTerm');
+                _this194.redirectedFromTellerSearch = true;
+                _this194.searchText = params.get('searchTerm');
 
-                _this193.updateSearch(_this193.searchText);
+                _this194.updateSearch(_this194.searchText);
 
                 setTimeout(function () {
-                  _this193.openSearchedApprover();
+                  _this194.openSearchedApprover();
                 }, 3000);
               } else {
                 /* @called :: on screen load */
-                _this193.getDataOnLoad();
+                _this194.getDataOnLoad();
               }
             });
             this.listOfOptions.filter(function (item) {
               if (item.checked) {
-                _this193.radioButtonSelected = item.value;
+                _this194.radioButtonSelected = item.value;
               }
             });
             this.criteria = {
@@ -45392,24 +45711,24 @@
         }, {
           key: "_setSearchSubscription",
           value: function _setSearchSubscription() {
-            var _this194 = this;
+            var _this195 = this;
 
             this._searchSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["debounceTime"])(1000)).subscribe(function (searchValue) {
-              _this194.setValue.emit(searchValue);
+              _this195.setValue.emit(searchValue);
 
               console.log('search value :: ', searchValue);
-              console.log('search text :: ', _this194.searchText);
+              console.log('search text :: ', _this195.searchText);
 
               if (searchValue == null || searchValue == '' || searchValue == "") {
-                _this194.noDataFound = false;
-                _this194.searchable = false;
+                _this195.noDataFound = false;
+                _this195.searchable = false;
 
-                _this194.getDataOnLoad();
+                _this195.getDataOnLoad();
 
                 return;
               }
 
-              _this194.searchcorporateID(searchValue);
+              _this195.searchcorporateID(searchValue);
             });
           }
         }, {
@@ -45446,12 +45765,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this195 = this;
+            var _this196 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this195.updateStatusResponse(status, custResp);
+              _this196.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -45505,7 +45824,7 @@
         }, {
           key: "getDataOnScroll",
           value: function getDataOnScroll(status, page, totalPage) {
-            var _this196 = this;
+            var _this197 = this;
 
             console.log('---------scrolled----------');
 
@@ -45517,15 +45836,15 @@
             this.taskSumService.getAllLoanDetailOnScroll(status, page).subscribe(function (data) {
               console.log('count data :: ', data);
 
-              _this196.cdr.markForCheck();
+              _this197.cdr.markForCheck();
 
-              _this196.updateDataOnScroll(status, data.loanList);
+              _this197.updateDataOnScroll(status, data.loanList);
             });
           }
         }, {
           key: "goToLoanAccountSummary",
           value: function goToLoanAccountSummary(data, status, colCode) {
-            var _this197 = this;
+            var _this198 = this;
 
             localStorage.setItem('CustomerColorCode', colCode);
             var dialogRef = this.dialog.open(_loan_account_approver_loan_account_approver_component__WEBPACK_IMPORTED_MODULE_10__["LoanAccountApproverComponent"], {
@@ -45543,17 +45862,17 @@
               //   this.getDataOnLoad()
               // }
 
-              if (_this197.redirectedFromTellerSearch == true) {
-                _this197.updateSearch(_this197.searchText);
+              if (_this198.redirectedFromTellerSearch == true) {
+                _this198.updateSearch(_this198.searchText);
               } else {
-                _this197.getDataOnLoad();
+                _this198.getDataOnLoad();
               }
             });
           }
         }, {
           key: "searchcorporateID",
           value: function searchcorporateID(searchTerm) {
-            var _this198 = this;
+            var _this199 = this;
 
             var text;
             var params;
@@ -45601,14 +45920,14 @@
             }
 
             setTimeout(function () {
-              _this198.getCustomerData(params);
+              _this199.getCustomerData(params);
             }, 100);
             this.isScroll = false;
           }
         }, {
           key: "getCustomerData",
           value: function getCustomerData(params) {
-            var _this199 = this;
+            var _this200 = this;
 
             console.log(params);
             this.loading = true;
@@ -45618,54 +45937,54 @@
 
               if (statusItem == 'BACKLOG') {
                 this.taskSumService.getallLoanAccountData1(params, statusItem).subscribe(function (data) {
-                  _this199.BACKLOGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this199.loading = false;
+                  _this200.BACKLOGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this200.loading = false;
                   console.log('resp data :: ', data);
-                  _this199.BACKLOGArr = [];
+                  _this200.BACKLOGArr = [];
 
                   for (var _index9 = 0; _index9 < (data === null || data === void 0 ? void 0 : data.loanList.length); _index9++) {
                     var element = data === null || data === void 0 ? void 0 : data.loanList[_index9];
 
-                    _this199.BACKLOGArr.push(element);
+                    _this200.BACKLOGArr.push(element);
                   }
                 });
               } else if (statusItem == 'ONGOING') {
                 this.taskSumService.getallLoanAccountData1(params, statusItem).subscribe(function (data) {
-                  _this199.ONGOINGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this199.loading = false;
+                  _this200.ONGOINGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this200.loading = false;
                   console.log('resp data :: ', data);
-                  _this199.ONGOINGArr = [];
+                  _this200.ONGOINGArr = [];
 
                   for (var _index10 = 0; _index10 < (data === null || data === void 0 ? void 0 : data.loanList.length); _index10++) {
                     var element = data.loanList[_index10];
 
-                    _this199.ONGOINGArr.push(element);
+                    _this200.ONGOINGArr.push(element);
                   }
                 });
               } else if (statusItem == 'APPROVED') {
                 this.taskSumService.getallLoanAccountData1(params, statusItem).subscribe(function (data) {
-                  _this199.APPROVEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this199.loading = false;
+                  _this200.APPROVEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this200.loading = false;
                   console.log('resp data :: ', data);
-                  _this199.APPROVEDArr = [];
+                  _this200.APPROVEDArr = [];
 
                   for (var _index11 = 0; _index11 < (data === null || data === void 0 ? void 0 : data.loanList.length); _index11++) {
                     var element = data.loanList[_index11];
 
-                    _this199.APPROVEDArr.push(element);
+                    _this200.APPROVEDArr.push(element);
                   }
                 });
               } else if (statusItem == 'REJECTED') {
                 this.taskSumService.getallLoanAccountData1(params, statusItem).subscribe(function (data) {
-                  _this199.REJECTEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this199.loading = false;
+                  _this200.REJECTEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this200.loading = false;
                   console.log('resp data :: ', data);
-                  _this199.REJECTEDArr = [];
+                  _this200.REJECTEDArr = [];
 
                   for (var _index12 = 0; _index12 < (data === null || data === void 0 ? void 0 : data.loanList.length); _index12++) {
                     var element = data === null || data === void 0 ? void 0 : data.loanList[_index12];
 
-                    _this199.REJECTEDArr.push(element);
+                    _this200.REJECTEDArr.push(element);
                   }
                 });
               }
@@ -45716,18 +46035,18 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(corporateID) {
-            var _this200 = this;
+            var _this201 = this;
 
             this.apiService.getProfileDetails(corporateID).subscribe(function (data) {
               console.log(data);
               console.log(data.profileImage);
-              _this200.searchable = false;
+              _this201.searchable = false;
 
               if (data.profileImage != null) {
                 var objectURL = 'data:image/jpeg;base64,' + data.profileImage.fileData;
-                _this200.searchable = true;
-                _this200.image = _this200.sanitizer.bypassSecurityTrustUrl(objectURL);
-                console.log(_this200.searchable, "Searchable");
+                _this201.searchable = true;
+                _this201.image = _this201.sanitizer.bypassSecurityTrustUrl(objectURL);
+                console.log(_this201.searchable, "Searchable");
               }
             }, function (error) {
               console.log(error);
@@ -45736,7 +46055,7 @@
         }, {
           key: "getcorporateIDData",
           value: function getcorporateIDData(valueToFilter) {
-            var _this201 = this;
+            var _this202 = this;
 
             console.log('get kyc');
 
@@ -45744,19 +46063,19 @@
               this.apiService.getKycTaskSummaryAll(valueToFilter, this.searchText).subscribe(function (data) {
                 console.log('resp data :: ', data);
 
-                _this201.cdr.markForCheck();
+                _this202.cdr.markForCheck();
 
-                _this201.cdr.detectChanges();
+                _this202.cdr.detectChanges();
 
                 if (data != null) {
                   var value = data[0].customerAdditionalInfo.kycStatus + 'Arr';
 
-                  _this201[value].splice(0, 0, data[0]);
+                  _this202[value].splice(0, 0, data[0]);
 
-                  _this201[value] = _this201[value].slice();
-                  console.log('resp value :: ', _this201[value]);
+                  _this202[value] = _this202[value].slice();
+                  console.log('resp value :: ', _this202[value]);
                 } else {
-                  _this201.noDataFound = true;
+                  _this202.noDataFound = true;
                 }
               });
             }
@@ -45883,7 +46202,7 @@
         },
         decls: 63,
         vars: 17,
-        consts: [["infiniteScroll", "", 1, "search-results1", 3, "infiniteScrollDistance", "infiniteScrollThrottle", "scrollWindow", "scrolled"], [1, "m-333", "mt-32"], ["fxLayout", "row", "fxLayoutAlign", "space-between start", "fxLayoutGap", "10px"], ["fxFlex", "60", 1, "heading"], [1, "task", "ml-24"], ["fxFlex", "30", "fxLayoutAlign", "end center", 1, "topSection"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "name", "search", "autocomplete", "off", "placeholder", "Search Loan Account Id", 3, "ngModel", "ngModelChange", "keyup"], ["matPrefix", "", 1, "my-icon"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], [1, "content"], ["fxLayout", "20%", 1, "screen"], [1, "mat-elevation-z4"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-6"], [1, "statusFont"], [1, "tolltipicon"], ["class", "colorChange", 3, "click", 4, "ngFor", "ngForOf"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click"], ["fxLayoutAlign", "center"], [3, "diameter", 4, "ngIf"], [3, "diameter"], [1, "colorChange", 3, "click"], [1, "fill-color-blue", "bookMark"], [1, "head"], ["mat-card-avatar", "", 1, "circle"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], [1, "naming"], [1, "loanIdText"], [1, "head1"], ["fxLayout", "row", "fxLayoutGap", "40px", 1, "col1"], ["fxLayout", "row", "fxLayoutGap", "58px", 1, "col2"], ["fxLayout", "row", "fxLayoutGap", "40px", 1, "col3"], ["fxLayout", "row", "fxLayoutGap", "44px", 1, "col4"], [3, "name"], ["alt", "profile", "onerror", "this.onerror=null;this.src='assets/images/profile-Picture.png';", 1, "profilepic", 3, "src"], [1, "fill-color-blue", "bookMark", "book2"], [1, "fill-color-blue", "bookMark", "book3"], [1, "fill-color-blue", "bookMark", "book4"]],
+        consts: [["infiniteScroll", "", 1, "search-results1", 3, "infiniteScrollDistance", "infiniteScrollThrottle", "scrollWindow", "scrolled"], [1, "m-333", "mt-32"], ["fxLayout", "row", "fxLayoutAlign", "space-between start", "fxLayoutGap", "10px"], ["fxFlex", "60", 1, "heading"], [1, "task", "ml-24"], ["fxFlex", "30", "fxLayoutAlign", "end center", 1, "topSection"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "name", "search", "autocomplete", "off", "placeholder", "Search Loan Account Id", 3, "ngModel", "ngModelChange", "keyup"], ["matPrefix", "", 1, "my-icon"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], [1, "content"], ["fxLayout", "20%", 1, "screen"], [1, "mat-elevation-z4"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-6"], [1, "statusFont"], [1, "tolltipicon"], ["class", "colorChange", 3, "click", 4, "ngFor", "ngForOf"], ["mat-button", "", "matSuffix", "", "mat-icon-button", "", 3, "click"], ["fxLayoutAlign", "center"], [3, "diameter", 4, "ngIf"], [3, "diameter"], [1, "colorChange", 3, "click"], [1, "fill-color-blue", "bookMark"], [1, "head"], ["mat-card-avatar", "", 1, "circle"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], [1, "naming"], [1, "loanIdText"], [1, "head1"], ["fxLayout", "row", "fxLayoutGap", "10", 1, "col1"], ["fxLayout", "column", "fxFlex", "45", 1, "pr2"], [1, "col3"], [1, "labelValue", "col4"], [3, "name"], ["alt", "profile", "onerror", "this.onerror=null;this.src='assets/images/profile-Picture.png';", 1, "profilepic", 3, "src"], [1, "fill-color-blue", "bookMark", "book2"], [1, "fill-color-blue", "bookMark", "book3"], [1, "fill-color-blue", "bookMark", "book4"]],
         template: function LoanAccountTaskSummaryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "br");
@@ -45984,7 +46303,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, LoanAccountTaskSummaryComponent_div_29_Template, 41, 14, "div", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, LoanAccountTaskSummaryComponent_div_29_Template, 43, 14, "div", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -46020,7 +46339,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](40, LoanAccountTaskSummaryComponent_div_40_Template, 41, 14, "div", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](40, LoanAccountTaskSummaryComponent_div_40_Template, 43, 14, "div", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -46054,7 +46373,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](50, LoanAccountTaskSummaryComponent_div_50_Template, 41, 14, "div", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](50, LoanAccountTaskSummaryComponent_div_50_Template, 43, 14, "div", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -46090,7 +46409,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](61, LoanAccountTaskSummaryComponent_div_61_Template, 41, 14, "div", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](61, LoanAccountTaskSummaryComponent_div_61_Template, 43, 14, "div", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -46153,7 +46472,7 @@
         },
         directives: [ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_12__["InfiniteScrollDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutGapDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["NgModel"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatPrefix"], _angular_common__WEBPACK_IMPORTED_MODULE_18__["NgIf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatHint"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCard"], _angular_common__WEBPACK_IMPORTED_MODULE_18__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_20__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatSuffix"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_21__["MatSpinner"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCardAvatar"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCardSubtitle"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["NgForm"], _avatar_avatar_component__WEBPACK_IMPORTED_MODULE_22__["AvatarComponent"]],
         pipes: [_shared_directives_date_ago_pipe__WEBPACK_IMPORTED_MODULE_23__["DateAgoPipe"]],
-        styles: [".icon[_ngcontent-%COMP%] {\n  padding: 25px;\n  min-width: 40px;\n  cursor: pointer;\n}\n\n.col1[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: grey;\n}\n\n.col2[_ngcontent-%COMP%] {\n  font-size: 11px;\n}\n\n.col3[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: grey;\n}\n\n.col4[_ngcontent-%COMP%] {\n  font-size: 11px;\n}\n\n.container[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.topnav[_ngcontent-%COMP%]   input[type=text][_ngcontent-%COMP%] {\n  padding: 6px;\n  border: none;\n  margin-top: 8px;\n  margin-right: 16px;\n  font-size: 17px;\n}\n\n.content[_ngcontent-%COMP%] {\n  padding: 10px;\n}\n\n.colheader[_ngcontent-%COMP%] {\n  font-size: 9px;\n  color: grey;\n}\n\n.coldata[_ngcontent-%COMP%] {\n  font-size: 9px;\n}\n\n.cardDetails[_ngcontent-%COMP%] {\n  background-color: #f1efef;\n  min-width: 250px;\n  max-width: 310px;\n  word-break: break-all;\n}\n\n.innerMatCard[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 220px;\n  box-sizing: border-box;\n  margin: 0px 0px 10px 0px;\n  padding: 0px;\n  border-radius: 6px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: white;\n}\n\n.search-results[_ngcontent-%COMP%] {\n  height: 35rem;\n  overflow: scroll;\n}\n\n.screen[_ngcontent-%COMP%] {\n  width: 100%;\n  padding-left: 55px;\n  padding-right: 55px;\n}\n\n.head[_ngcontent-%COMP%] {\n  padding-left: 20px;\n  padding-top: 20px;\n}\n\n.head1[_ngcontent-%COMP%] {\n  padding-left: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 0.7rem 0rem;\n  color: white;\n}\n\n.bookMark[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.topSection[_ngcontent-%COMP%] {\n  padding-right: 5.35%;\n  margin-top: 2%;\n}\n\n.heading[_ngcontent-%COMP%] {\n  padding-left: 3.7%;\n  margin-top: 3%;\n}\n\n.headingss[_ngcontent-%COMP%] {\n  font-size: 17px;\n}\n\n.colorChange[_ngcontent-%COMP%] {\n  background-color: #F5F5F5;\n  margin: 1% 1% 1% 1%;\n  margin-right: 2%;\n  margin-bottom: 4%;\n  min-height: 35vh;\n}\n\n.book2[_ngcontent-%COMP%] {\n  color: darkorange;\n}\n\n.book3[_ngcontent-%COMP%] {\n  color: #1FBFA9;\n}\n\n.book4[_ngcontent-%COMP%] {\n  color: red;\n}\n\n.naming[_ngcontent-%COMP%] {\n  font-size: 12px;\n  overflow-wrap: anywhere;\n}\n\n.loanIdText[_ngcontent-%COMP%] {\n  text-transform: uppercase;\n  color: #1FBFA9;\n  font-size: 12px;\n}\n\n.imgData[_ngcontent-%COMP%] {\n  width: 150px;\n  height: 50px;\n  border-radius: 50%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9hbi1hY2NvdW50LXRhc2stc3VtbWFyeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtBQURuQjs7QUFLQTtFQUNJLGVBQWU7RUFDZixXQUFXO0FBRmY7O0FBS0E7RUFDSSxlQUFlO0FBRm5COztBQUtBO0VBQ0ksZUFBZTtFQUNmLFdBQVc7QUFGZjs7QUFLQTtFQUNJLGVBQWU7QUFGbkI7O0FBTUE7RUFDSSxZQUFZO0FBSGhCOztBQU1BO0VBRUksWUFBWTtFQUNaLFlBQVk7RUFDWixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGVBQWU7QUFKbkI7O0FBT0E7RUFDSSxhQUFhO0FBSmpCOztBQU9BO0VBQ0ksY0FBYztFQUNkLFdBQVc7QUFKZjs7QUFPQTtFQUNJLGNBQWM7QUFKbEI7O0FBUUE7RUFDSSx5QkFBb0M7RUFDcEMsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixxQkFDSjtBQU5BOztBQWdCQTtFQUVJLFdBQVc7RUFDWCxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsbUJBQW1CO0FBZHZCOztBQWlCQTtFQUNJLGFBQWE7RUFDYixnQkFBZ0I7QUFkcEI7O0FBaUJBO0VBQ0ksV0FBVztFQUNYLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFkdkI7O0FBaUJBO0VBQ0ksa0JBQWtCO0VBQ2xCLGlCQUFpQjtBQWRyQjs7QUFpQkE7RUFDSSxrQkFBa0I7QUFkdEI7O0FBZ0JBO0VBQ0ksV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7QUFidEI7O0FBaUJFO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBZGhCOztBQWdCRTtFQUNJLFlBQVk7QUFibEI7O0FBZUU7RUFDQyxvQkFBb0I7RUFDcEIsY0FBYztBQVpqQjs7QUFjRTtFQUNBLGtCQUFrQjtFQUNsQixjQUFjO0FBWGhCOztBQWFFO0VBQ0UsZUFBZTtBQVZuQjs7QUFZRTtFQUNFLHlCQUF5QjtFQUN6QixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixnQkFBZ0I7QUFUcEI7O0FBV0U7RUFDRSxpQkFBaUI7QUFSckI7O0FBVUU7RUFDRSxjQUFhO0FBUGpCOztBQVNFO0VBQ0UsVUFBVTtBQU5kOztBQVFFO0VBQ0UsZUFBZTtFQUNmLHVCQUF1QjtBQUwzQjs7QUFPRTtFQUNFLHlCQUF5QjtFQUM3QixjQUFjO0VBQ2QsZUFBZTtBQUpmOztBQU1FO0VBQ0UsWUFBWTtFQUFFLFlBQVk7RUFBRSxrQkFBa0I7QUFEbEQiLCJmaWxlIjoibG9hbi1hY2NvdW50LXRhc2stc3VtbWFyeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLmljb24ge1xyXG4gICAgcGFkZGluZzogMjVweDtcclxuICAgIG1pbi13aWR0aDogNDBweDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuXHJcbi5jb2wxIHtcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgIGNvbG9yOiBncmV5O1xyXG59XHJcblxyXG4uY29sMiB7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbn1cclxuXHJcbi5jb2wzIHtcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgIGNvbG9yOiBncmV5O1xyXG59XHJcblxyXG4uY29sNCB7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiBcclxufVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbn1cclxuXHJcbi50b3BuYXYgaW5wdXRbdHlwZT10ZXh0XSB7XHJcblxyXG4gICAgcGFkZGluZzogNnB4O1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgbWFyZ2luLXRvcDogOHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxNnB4O1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG59XHJcblxyXG4uY29udGVudCB7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcblxyXG4uY29saGVhZGVyIHtcclxuICAgIGZvbnQtc2l6ZTogOXB4O1xyXG4gICAgY29sb3I6IGdyZXk7XHJcbn1cclxuXHJcbi5jb2xkYXRhIHtcclxuICAgIGZvbnQtc2l6ZTogOXB4O1xyXG4gIFxyXG59XHJcblxyXG4uY2FyZERldGFpbHMge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MSwgMjM5LCAyMzkpO1xyXG4gICAgbWluLXdpZHRoOiAyNTBweDtcclxuICAgIG1heC13aWR0aDogMzEwcHg7XHJcbiAgICB3b3JkLWJyZWFrOiBicmVhay1hbGxcclxufVxyXG5cclxuLy8gLm1hdC1lbGV2YXRpb24tejQge1xyXG4vLyAgICAgd2lkdGg6IDI1MHB4O1xyXG4vLyAgICAgbWFyZ2luOiAxJSAxLjMlIDElIDEuMyU7XHJcbi8vICAgICBwYWRkaW5nOiAxMHB4IDEwcHggMTBweCAxMHB4O1xyXG4vLyAgICAgd2lkdGg6IDI1JTtcclxuLy8gICAgIGhlaWdodDogMTAwJTtcclxuLy8gfVxyXG5cclxuLmlubmVyTWF0Q2FyZCB7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQxLCAyMzksIDIzOSk7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMjIwcHg7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgbWFyZ2luOiAwcHggMHB4IDEwcHggMHB4O1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci13aWR0aDogMXB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLnNlYXJjaC1yZXN1bHRzIHtcclxuICAgIGhlaWdodDogMzVyZW07XHJcbiAgICBvdmVyZmxvdzogc2Nyb2xsO1xyXG59XHJcblxyXG4uc2NyZWVue1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDU1cHg7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiA1NXB4O1xyXG59XHJcblxyXG4uaGVhZHtcclxuICAgIHBhZGRpbmctbGVmdDogMjBweDtcclxuICAgIHBhZGRpbmctdG9wOiAyMHB4O1xyXG59XHJcblxyXG4uaGVhZDF7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogI2Q4NjMxNTtcclxuICB9XHJcbiAgXHJcbiAgLmltYWdlVGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBhZGRpbmc6IDAuN3JlbSAwcmVtO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gIH1cclxuICAuYm9va01hcmt7XHJcbiAgICAgIGZsb2F0OiByaWdodDtcclxuICB9XHJcbiAgLnRvcFNlY3Rpb257XHJcbiAgIHBhZGRpbmctcmlnaHQ6IDUuMzUlO1xyXG4gICBtYXJnaW4tdG9wOiAyJTtcclxuICB9XHJcbiAgLmhlYWRpbmd7XHJcbiAgcGFkZGluZy1sZWZ0OiAzLjclO1xyXG4gIG1hcmdpbi10b3A6IDMlO1xyXG4gIH1cclxuICAuaGVhZGluZ3Nze1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG4gIH1cclxuICAuY29sb3JDaGFuZ2V7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjVGNUY1OyBcclxuICAgIG1hcmdpbjogMSUgMSUgMSUgMSU7IFxyXG4gICAgbWFyZ2luLXJpZ2h0OiAyJTtcclxuICAgIG1hcmdpbi1ib3R0b206IDQlOyAgXHJcbiAgICBtaW4taGVpZ2h0OiAzNXZoO1xyXG4gIH1cclxuICAuYm9vazJ7XHJcbiAgICBjb2xvcjogZGFya29yYW5nZTtcclxuICB9XHJcbiAgLmJvb2sze1xyXG4gICAgY29sb3I6IzFGQkZBOTtcclxuICB9XHJcbiAgLmJvb2s0e1xyXG4gICAgY29sb3I6IHJlZDtcclxuICB9XHJcbiAgLm5hbWluZ3tcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgIG92ZXJmbG93LXdyYXA6IGFueXdoZXJlO1xyXG4gIH1cclxuICAubG9hbklkVGV4dHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbmNvbG9yOiAjMUZCRkE5O1xyXG5mb250LXNpemU6IDEycHg7XHJcbiAgfVxyXG4gIC5pbWdEYXRhe1xyXG4gICAgd2lkdGg6IDE1MHB4OyBoZWlnaHQ6IDUwcHg7IGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICB9XHJcblxyXG4iXX0= */"]
+        styles: [".icon[_ngcontent-%COMP%] {\n  padding: 25px;\n  min-width: 40px;\n  cursor: pointer;\n}\n\n.col1[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: grey;\n}\n\n.col2[_ngcontent-%COMP%] {\n  font-size: 11px;\n}\n\n.col3[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: grey;\n}\n\n.col4[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #0F0F0F;\n}\n\n.container[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.topnav[_ngcontent-%COMP%]   input[type=text][_ngcontent-%COMP%] {\n  padding: 6px;\n  border: none;\n  margin-top: 8px;\n  margin-right: 16px;\n  font-size: 17px;\n}\n\n.content[_ngcontent-%COMP%] {\n  padding: 10px;\n}\n\n.colheader[_ngcontent-%COMP%] {\n  font-size: 9px;\n  color: grey;\n}\n\n.coldata[_ngcontent-%COMP%] {\n  font-size: 9px;\n}\n\n.cardDetails[_ngcontent-%COMP%] {\n  background-color: #f1efef;\n  min-width: 250px;\n  max-width: 310px;\n  word-break: break-all;\n}\n\n.innerMatCard[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 220px;\n  box-sizing: border-box;\n  margin: 0px 0px 10px 0px;\n  padding: 0px;\n  border-radius: 6px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: white;\n}\n\n.search-results[_ngcontent-%COMP%] {\n  height: 35rem;\n  overflow: scroll;\n}\n\n.screen[_ngcontent-%COMP%] {\n  width: 100%;\n  padding-left: 55px;\n  padding-right: 55px;\n}\n\n.head[_ngcontent-%COMP%] {\n  padding-left: 20px;\n  padding-top: 20px;\n}\n\n.head1[_ngcontent-%COMP%] {\n  padding-left: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 0.7rem 0rem;\n  color: white;\n}\n\n.bookMark[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.topSection[_ngcontent-%COMP%] {\n  padding-right: 5.35%;\n  margin-top: 2%;\n}\n\n.heading[_ngcontent-%COMP%] {\n  padding-left: 3.7%;\n  margin-top: 3%;\n}\n\n.headingss[_ngcontent-%COMP%] {\n  font-size: 17px;\n}\n\n.colorChange[_ngcontent-%COMP%] {\n  background-color: #F5F5F5;\n  margin: 1% 1% 1% 1%;\n  margin-right: 2%;\n  margin-bottom: 4%;\n  min-height: 38vh;\n}\n\n.book2[_ngcontent-%COMP%] {\n  color: darkorange;\n}\n\n.book3[_ngcontent-%COMP%] {\n  color: #1FBFA9;\n}\n\n.book4[_ngcontent-%COMP%] {\n  color: red;\n}\n\n.naming[_ngcontent-%COMP%] {\n  font-size: 12px;\n  overflow-wrap: anywhere;\n}\n\n.loanIdText[_ngcontent-%COMP%] {\n  text-transform: uppercase;\n  color: #1FBFA9;\n  font-size: 12px;\n}\n\n.imgData[_ngcontent-%COMP%] {\n  width: 150px;\n  height: 50px;\n  border-radius: 50%;\n}\n\n.labelValue[_ngcontent-%COMP%] {\n  overflow-wrap: anywhere;\n}\n\n.pr2[_ngcontent-%COMP%] {\n  padding-right: 2%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9hbi1hY2NvdW50LXRhc2stc3VtbWFyeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtBQURuQjs7QUFLQTtFQUNJLGVBQWU7RUFDZixXQUFXO0FBRmY7O0FBS0E7RUFDSSxlQUFlO0FBRm5COztBQUtBO0VBQ0ksZUFBZTtFQUNmLFdBQVc7QUFGZjs7QUFLQTtFQUNJLGVBQWU7RUFDZixjQUFjO0FBRmxCOztBQUtBO0VBQ0ksWUFBWTtBQUZoQjs7QUFLQTtFQUVJLFlBQVk7RUFDWixZQUFZO0VBQ1osZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixlQUFlO0FBSG5COztBQU1BO0VBQ0ksYUFBYTtBQUhqQjs7QUFNQTtFQUNJLGNBQWM7RUFDZCxXQUFXO0FBSGY7O0FBTUE7RUFDSSxjQUFjO0FBSGxCOztBQU9BO0VBQ0kseUJBQW9DO0VBQ3BDLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIscUJBQ0o7QUFMQTs7QUFlQTtFQUVJLFdBQVc7RUFDWCxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsbUJBQW1CO0FBYnZCOztBQWdCQTtFQUNJLGFBQWE7RUFDYixnQkFBZ0I7QUFicEI7O0FBZ0JBO0VBQ0ksV0FBVztFQUNYLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFidkI7O0FBZ0JBO0VBQ0ksa0JBQWtCO0VBQ2xCLGlCQUFpQjtBQWJyQjs7QUFnQkE7RUFDSSxrQkFBa0I7QUFidEI7O0FBZUE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtBQVp0Qjs7QUFnQkU7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFlBQVk7QUFiaEI7O0FBZUU7RUFDSSxZQUFZO0FBWmxCOztBQWNFO0VBQ0Msb0JBQW9CO0VBQ3BCLGNBQWM7QUFYakI7O0FBYUU7RUFDQSxrQkFBa0I7RUFDbEIsY0FBYztBQVZoQjs7QUFZRTtFQUNFLGVBQWU7QUFUbkI7O0FBV0U7RUFDRSx5QkFBeUI7RUFDekIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBUnBCOztBQVVFO0VBQ0UsaUJBQWlCO0FBUHJCOztBQVNFO0VBQ0UsY0FBYTtBQU5qQjs7QUFRRTtFQUNFLFVBQVU7QUFMZDs7QUFPRTtFQUNFLGVBQWU7RUFDZix1QkFBdUI7QUFKM0I7O0FBTUU7RUFDRSx5QkFBeUI7RUFDN0IsY0FBYztFQUNkLGVBQWU7QUFIZjs7QUFLRTtFQUNFLFlBQVk7RUFBRSxZQUFZO0VBQUUsa0JBQWtCO0FBQWxEOztBQUVBO0VBQ0ksdUJBQXVCO0FBQzNCOztBQUNBO0VBQ0UsaUJBQWlCO0FBRW5CIiwiZmlsZSI6ImxvYW4tYWNjb3VudC10YXNrLXN1bW1hcnkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuXHJcbi5pY29uIHtcclxuICAgIHBhZGRpbmc6IDI1cHg7XHJcbiAgICBtaW4td2lkdGg6IDQwcHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcblxyXG4uY29sMSB7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBjb2xvcjogZ3JleTtcclxufVxyXG5cclxuLmNvbDIge1xyXG4gICAgZm9udC1zaXplOiAxMXB4O1xyXG59XHJcblxyXG4uY29sMyB7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBjb2xvcjogZ3JleTtcclxufVxyXG5cclxuLmNvbDQge1xyXG4gICAgZm9udC1zaXplOiAxMXB4O1xyXG4gICAgY29sb3I6ICMwRjBGMEY7XHJcbn1cclxuXHJcbi5jb250YWluZXIge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcblxyXG4udG9wbmF2IGlucHV0W3R5cGU9dGV4dF0ge1xyXG5cclxuICAgIHBhZGRpbmc6IDZweDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIG1hcmdpbi10b3A6IDhweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTZweDtcclxuICAgIGZvbnQtc2l6ZTogMTdweDtcclxufVxyXG5cclxuLmNvbnRlbnQge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuLmNvbGhlYWRlciB7XHJcbiAgICBmb250LXNpemU6IDlweDtcclxuICAgIGNvbG9yOiBncmV5O1xyXG59XHJcblxyXG4uY29sZGF0YSB7XHJcbiAgICBmb250LXNpemU6IDlweDtcclxuICBcclxufVxyXG5cclxuLmNhcmREZXRhaWxzIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDEsIDIzOSwgMjM5KTtcclxuICAgIG1pbi13aWR0aDogMjUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDMxMHB4O1xyXG4gICAgd29yZC1icmVhazogYnJlYWstYWxsXHJcbn1cclxuXHJcbi8vIC5tYXQtZWxldmF0aW9uLXo0IHtcclxuLy8gICAgIHdpZHRoOiAyNTBweDtcclxuLy8gICAgIG1hcmdpbjogMSUgMS4zJSAxJSAxLjMlO1xyXG4vLyAgICAgcGFkZGluZzogMTBweCAxMHB4IDEwcHggMTBweDtcclxuLy8gICAgIHdpZHRoOiAyNSU7XHJcbi8vICAgICBoZWlnaHQ6IDEwMCU7XHJcbi8vIH1cclxuXHJcbi5pbm5lck1hdENhcmQge1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MSwgMjM5LCAyMzkpO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDIyMHB4O1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIG1hcmdpbjogMHB4IDBweCAxMHB4IDBweDtcclxuICAgIHBhZGRpbmc6IDBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgICBib3JkZXItd2lkdGg6IDFweDtcclxuICAgIGJvcmRlci1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi5zZWFyY2gtcmVzdWx0cyB7XHJcbiAgICBoZWlnaHQ6IDM1cmVtO1xyXG4gICAgb3ZlcmZsb3c6IHNjcm9sbDtcclxufVxyXG5cclxuLnNjcmVlbntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiA1NXB4O1xyXG4gICAgcGFkZGluZy1yaWdodDogNTVweDtcclxufVxyXG5cclxuLmhlYWR7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjBweDtcclxufVxyXG5cclxuLmhlYWQxe1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG59XHJcbi5kZWZhdWx0SW1hZ2V7XHJcbiAgICB3aWR0aDogNTBweDtcclxuICAgIGhlaWdodDogNTBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6ICNkODYzMTU7XHJcbiAgfVxyXG4gIFxyXG4gIC5pbWFnZVRleHR7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAwLjdyZW0gMHJlbTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgLmJvb2tNYXJre1xyXG4gICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgfVxyXG4gIC50b3BTZWN0aW9ue1xyXG4gICBwYWRkaW5nLXJpZ2h0OiA1LjM1JTtcclxuICAgbWFyZ2luLXRvcDogMiU7XHJcbiAgfVxyXG4gIC5oZWFkaW5ne1xyXG4gIHBhZGRpbmctbGVmdDogMy43JTtcclxuICBtYXJnaW4tdG9wOiAzJTtcclxuICB9XHJcbiAgLmhlYWRpbmdzc3tcclxuICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICB9XHJcbiAgLmNvbG9yQ2hhbmdle1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0Y1RjVGNTsgXHJcbiAgICBtYXJnaW46IDElIDElIDElIDElOyBcclxuICAgIG1hcmdpbi1yaWdodDogMiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA0JTsgIFxyXG4gICAgbWluLWhlaWdodDogMzh2aDtcclxuICB9XHJcbiAgLmJvb2sye1xyXG4gICAgY29sb3I6IGRhcmtvcmFuZ2U7XHJcbiAgfVxyXG4gIC5ib29rM3tcclxuICAgIGNvbG9yOiMxRkJGQTk7XHJcbiAgfVxyXG4gIC5ib29rNHtcclxuICAgIGNvbG9yOiByZWQ7XHJcbiAgfVxyXG4gIC5uYW1pbmd7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBvdmVyZmxvdy13cmFwOiBhbnl3aGVyZTtcclxuICB9XHJcbiAgLmxvYW5JZFRleHR7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG5jb2xvcjogIzFGQkZBOTtcclxuZm9udC1zaXplOiAxMnB4O1xyXG4gIH1cclxuICAuaW1nRGF0YXtcclxuICAgIHdpZHRoOiAxNTBweDsgaGVpZ2h0OiA1MHB4OyBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgfVxyXG4ubGFiZWxWYWx1ZXtcclxuICAgIG92ZXJmbG93LXdyYXA6IGFueXdoZXJlO1xyXG59XHJcbi5wcjJ7XHJcbiAgcGFkZGluZy1yaWdodDogMiU7XHJcbn1cclxuXHJcbiJdfQ== */"]
       });
       /*@__PURE__*/
 
@@ -46536,7 +46855,7 @@
         }, {
           key: "gettingLegalOpinionDetail",
           value: function gettingLegalOpinionDetail() {
-            var _this202 = this;
+            var _this203 = this;
 
             this.loader.open();
             this.apiService.gettingLegalOpinionDetails(this.loanaccountID).subscribe(function (resp) {
@@ -46546,15 +46865,15 @@
               // else{
               //   this.isChecked=false;
               // }
-              _this202.loader.close();
+              _this203.loader.close();
 
               console.log(resp);
 
-              _this202.buildLegalOpinionForm(resp);
+              _this203.buildLegalOpinionForm(resp);
 
               ;
             }, function (err) {
-              _this202.loader.close();
+              _this203.loader.close();
             });
           }
         }, {
@@ -46578,24 +46897,24 @@
         }, {
           key: "getDisbursementDetails",
           value: function getDisbursementDetails() {
-            var _this203 = this;
+            var _this204 = this;
 
             this.apiService.loanDisbursementFetchById(this.loanaccountID).subscribe(function (legalDetails) {
-              _this203.legalDetails = legalDetails;
-              console.log("this.legalDetails::", _this203.legalDetails);
+              _this204.legalDetails = legalDetails;
+              console.log("this.legalDetails::", _this204.legalDetails);
 
-              _this203.buildLegalOpinionForm(_this203.legalDetails);
+              _this204.buildLegalOpinionForm(_this204.legalDetails);
 
-              _this203.loanLegalForm.value.opinion = _this203.legalDetails.opinion;
-              _this203.loanLegalForm.value.opinionDate = _this203.legalDetails.opinionDate;
-              _this203.loanLegalForm.value.validationDate = _this203.legalDetails.validationDate;
-              _this203.loanLegalForm.value.mktValOfAsset = _this203.legalDetails.mktValOfAsset;
-              _this203.loanLegalForm.value.lawyerName = _this203.legalDetails.lawyerName;
-              _this203.loanLegalForm.value.description = _this203.legalDetails.description;
-              _this203.loanLegalForm.value.isDecisionFavorable = _this203.legalDetails.isDecisionFavorable;
-              _this203.loanLegalForm.value.assetAreaSize = _this203.legalDetails.assetAreaSize;
+              _this204.loanLegalForm.value.opinion = _this204.legalDetails.opinion;
+              _this204.loanLegalForm.value.opinionDate = _this204.legalDetails.opinionDate;
+              _this204.loanLegalForm.value.validationDate = _this204.legalDetails.validationDate;
+              _this204.loanLegalForm.value.mktValOfAsset = _this204.legalDetails.mktValOfAsset;
+              _this204.loanLegalForm.value.lawyerName = _this204.legalDetails.lawyerName;
+              _this204.loanLegalForm.value.description = _this204.legalDetails.description;
+              _this204.loanLegalForm.value.isDecisionFavorable = _this204.legalDetails.isDecisionFavorable;
+              _this204.loanLegalForm.value.assetAreaSize = _this204.legalDetails.assetAreaSize;
             }, function (err) {
-              _this203.loader.close();
+              _this204.loader.close();
             });
           }
         }, {
@@ -46623,12 +46942,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this204 = this;
+            var _this205 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this204.updateStatusResponse(status, custResp);
+              _this205.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -46648,23 +46967,23 @@
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this205 = this;
+            var _this206 = this;
 
             this.dialogRef.close(); //  this.loader.open();
             // this.getLoanDetails();
 
             this.apiService.gettingLegalOpinionDetails(this.loanaccountID).subscribe(function (legalDetails) {
               console.log("All Account Service", legalDetails);
-              _this205.legalDetails = legalDetails; //this.buildformGroup(this.loanAccountDetails);
+              _this206.legalDetails = legalDetails; //this.buildformGroup(this.loanAccountDetails);
 
-              console.log("this.accountDetails", _this205.legalDetails);
-              console.log('form', _this205.loanLegalForm.value);
+              console.log("this.accountDetails", _this206.legalDetails);
+              console.log('form', _this206.loanLegalForm.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this206 = this;
+            var _this207 = this;
 
             var payload = {
               // loanAccountId: this.showEditOption ? this.loanaccountID : null,
@@ -46681,44 +47000,44 @@
             console.log("payload", payload);
             this.apiService.saveLegalOpinion(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this206.loanaccountID = _this206.data.loanAccountId;
-              console.log('loanaccountID', _this206.loanaccountID);
+              _this207.loanaccountID = _this207.data.loanAccountId;
+              console.log('loanaccountID', _this207.loanaccountID);
 
-              _this206.assign(_this206.data.loanAccountId);
+              _this207.assign(_this207.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this206.data.loanAccountId,
+                  loanAccountId: _this207.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this206.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this207.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this206.data.loanAccountId
+                  loanAccountid: _this207.data.loanAccountId
                 };
 
-                _this206.ls.setItem('fundByStatus', fundStatus);
+                _this207.ls.setItem('fundByStatus', fundStatus);
 
-                _this206.ls.setItem('accountType', data.accountType);
+                _this207.ls.setItem('accountType', data.accountType);
 
-                _this206.ls.setItem('productName', data.businessProductName);
+                _this207.ls.setItem('productName', data.businessProductName);
 
-                _this206.loanaccountID = _this206.data.loanAccountId;
-                console.log("this.productaccountID", _this206.loanaccountID);
+                _this207.loanaccountID = _this207.data.loanAccountId;
+                console.log("this.productaccountID", _this207.loanaccountID);
 
-                _this206.snack.open('Data Updated!', 'OK', {
+                _this207.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this206.getDataOnLoad();
+                _this207.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this206.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this207.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -46727,7 +47046,7 @@
                 console.log("500 error");
               }
 
-              _this206.goToClose();
+              _this207.goToClose();
             });
           }
         }, {
@@ -47141,49 +47460,61 @@
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! app/environments/environment.prod */
+      "vSAV");
+      /* harmony import */
+
+
+      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! app/shared/services/auth/jwt-auth.service */
+      "nZzT");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! @angular/common */
       "SVse");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! @angular/material/icon */
       "Tj54");
       /* harmony import */
 
 
-      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! @angular/material/progress-spinner */
       "pu8Q");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! @angular/material/card */
       "PDjf");
       /* harmony import */
 
 
-      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! @angular/material/divider */
       "BSbQ");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! @angular/material/form-field */
       "Q2Ze");
       /* harmony import */
 
 
-      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! @angular/flex-layout/extended */
       "ura0");
 
@@ -49216,11 +49547,18 @@
       var _c1 = function _c1(a0, a1) {
         return {
           "disabledbtn": a0,
-          "rejectButton": a1
+          "continueBtn": a1
         };
       };
 
       var _c2 = function _c2(a0, a1) {
+        return {
+          "disabledbtn": a0,
+          "rejectButton": a1
+        };
+      };
+
+      var _c3 = function _c3(a0, a1) {
         return {
           "disabledbtn": a0,
           "approveButton": a1
@@ -49240,48 +49578,68 @@
 
             var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r34.updateApplicationStatus(ctx_r34.dataResponse, "REJECTED");
+            return ctx_r34["continue"]();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "label", 68);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " highlight_off ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "\xA0\xA0\xA0 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "label", 69);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Reject");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Cotinue");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " \xA0\xA0 ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " \xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 69);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CorporateApproverComponent_div_9_div_18_Template_div_click_8_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CorporateApproverComponent_div_9_div_18_Template_div_click_5_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r35);
 
             var ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r36.updateApplicationStatus(ctx_r36.dataResponse, "APPROVED");
+            return ctx_r36.updateApplicationStatus(ctx_r36.dataResponse, "REJECTED");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-icon", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-icon", 70);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "check_circle");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " highlight_off ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\xA0\xA0\xA0 ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "\xA0\xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "label", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "label", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Approve");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Reject");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " \xA0\xA0 ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 72);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CorporateApproverComponent_div_9_div_18_Template_div_click_12_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r35);
+
+            var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r37.updateApplicationStatus(ctx_r37.dataResponse, "APPROVED");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-icon", 73);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "check_circle");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "\xA0\xA0\xA0 ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "label", 74);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Approve");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -49295,11 +49653,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](4, _c1, ctx_r9.rejectedStatus, !ctx_r9.rejectedStatus));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.continueStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](6, _c1, ctx_r9.continueStatus, !ctx_r9.continueStatus));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](9, _c2, ctx_r9.rejectedStatus, !ctx_r9.rejectedStatus));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](7, _c2, ctx_r9.approvedStatus, !ctx_r9.approvedStatus));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](12, _c3, ctx_r9.approvedStatus, !ctx_r9.approvedStatus));
         }
       }
 
@@ -49349,7 +49711,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, CorporateApproverComponent_div_9_div_17_Template, 41, 4, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, CorporateApproverComponent_div_9_div_18_Template, 14, 10, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, CorporateApproverComponent_div_9_div_18_Template, 18, 15, "div", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "br");
 
@@ -49398,7 +49760,7 @@
       }
 
       var CorporateApproverComponent = /*#__PURE__*/function () {
-        function CorporateApproverComponent(tasSumService, cdr, router, ls, apiService, dialogRef, dataResponse, sanitizer, snack, dialog) {
+        function CorporateApproverComponent(tasSumService, cdr, router, ls, apiService, dialogRef, dataResponse, sanitizer, snack, dialog, jwtService) {
           _classCallCheck(this, CorporateApproverComponent);
 
           this.tasSumService = tasSumService;
@@ -49410,7 +49772,8 @@
           this.dataResponse = dataResponse;
           this.sanitizer = sanitizer;
           this.snack = snack;
-          this.dialog = dialog; // custOnBoardingApprovet:CustOnBoardingApprover;
+          this.dialog = dialog;
+          this.jwtService = jwtService; // custOnBoardingApprovet:CustOnBoardingApprover;
 
           this.selectedIndex = 0;
           this.addNewProof = false;
@@ -49431,60 +49794,60 @@
         _createClass(CorporateApproverComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this207 = this;
+            var _this208 = this;
 
             setTimeout(function () {
               var _a, _b, _c;
 
-              _this207.loading = true;
-              _this207.corporateId = _this207.dataResponse.dataResp.corporateId;
+              _this208.loading = true;
+              _this208.corporateId = _this208.dataResponse.dataResp.corporateId;
 
-              _this207.ls.setItem('corporateId', _this207.corporateId);
+              _this208.ls.setItem('corporateId', _this208.corporateId);
 
-              _this207.custDoc_array = _this207.dataResponse.dataResp.corporateDocs; // this.getCustomerDocumentsDetails(this.corporateId);
+              _this208.custDoc_array = _this208.dataResponse.dataResp.corporateDocs; // this.getCustomerDocumentsDetails(this.corporateId);
 
-              _this207.getCustomerDocumentsDetails1(_this207.corporateId); // this.phoneNum = this.dataResponse.dataResp.phoneNumber;
+              _this208.getCustomerDocumentsDetails1(_this208.corporateId); // this.phoneNum = this.dataResponse.dataResp.phoneNumber;
               // this.emailID = this.dataResponse.dataResp.primaryEmailAdress;
 
 
-              _this207.phoneNum = _this207.dataResponse.dataResp.category;
-              _this207.emailID = _this207.dataResponse.dataResp.companyName;
-              _this207.customerColorCode = localStorage.getItem('CustomerColorCode');
+              _this208.phoneNum = _this208.dataResponse.dataResp.category;
+              _this208.emailID = _this208.dataResponse.dataResp.companyName;
+              _this208.customerColorCode = localStorage.getItem('CustomerColorCode');
 
-              _this207.apiService.getCoropratedetails(_this207.corporateId).subscribe(function (data) {
-                _this207.imageUrl = data.profileImage;
+              _this208.apiService.getCoropratedetails(_this208.corporateId).subscribe(function (data) {
+                _this208.imageUrl = data.profileImage;
               });
 
-              _this207.status = _this207.dataResponse.dataResp.corporateStatus;
-              _this207.errorStatus = _this207.dataResponse.dataResp.custStatus; // this.userAddress_array = this.dataResponse.dataResp.corporateAddress;
+              _this208.status = _this208.dataResponse.dataResp.corporateStatus;
+              _this208.errorStatus = _this208.dataResponse.dataResp.custStatus; // this.userAddress_array = this.dataResponse.dataResp.corporateAddress;
 
-              _this207.userAddress_array = (_c = (_b = (_a = _this207.dataResponse) === null || _a === void 0 ? void 0 : _a.dataResp) === null || _b === void 0 ? void 0 : _b.customerInfo[0]) === null || _c === void 0 ? void 0 : _c.userAddress;
-              _this207.custIdProofs_array = _this207.dataResponse.dataResp.custIdProofs;
-              _this207.directorsInfo_array = _this207.dataResponse.dataResp.customerInfo;
-              console.log("status::", _this207.status);
+              _this208.userAddress_array = (_c = (_b = (_a = _this208.dataResponse) === null || _a === void 0 ? void 0 : _a.dataResp) === null || _b === void 0 ? void 0 : _b.customerInfo[0]) === null || _c === void 0 ? void 0 : _c.userAddress;
+              _this208.custIdProofs_array = _this208.dataResponse.dataResp.custIdProofs;
+              _this208.directorsInfo_array = _this208.dataResponse.dataResp.customerInfo;
+              console.log("status::", _this208.status);
 
-              if (_this207.status === 'REJECTED') {
-                _this207.approvedStatus = true;
-                _this207.rejectedStatus = true;
-                _this207.editScreen = false;
-              } else if (_this207.status === 'APPROVED') {
-                _this207.approvedStatus = true;
-                _this207.rejectedStatus = true;
-                _this207.editScreen = true;
-              } else if (_this207.status === 'UNDER_PROCESS') {
-                _this207.approvedStatus = true;
-                _this207.rejectedStatus = false;
-                _this207.isOnGoing = _this207.status;
-                _this207.editScreen = false;
-              } else if (_this207.status === 'INITIATED') {
-                _this207.approvedStatus = false;
-                _this207.rejectedStatus = false;
-                _this207.editScreen = false;
+              if (_this208.status === 'REJECTED') {
+                _this208.approvedStatus = true;
+                _this208.rejectedStatus = true;
+                _this208.editScreen = false;
+              } else if (_this208.status === 'APPROVED') {
+                _this208.approvedStatus = true;
+                _this208.rejectedStatus = true;
+                _this208.editScreen = true;
+              } else if (_this208.status === 'UNDER_PROCESS') {
+                _this208.approvedStatus = true;
+                _this208.rejectedStatus = false;
+                _this208.isOnGoing = _this208.status;
+                _this208.editScreen = false;
+              } else if (_this208.status === 'INITIATED') {
+                _this208.approvedStatus = false;
+                _this208.rejectedStatus = false;
+                _this208.editScreen = false;
               } // localStorage.setItem('kycStatus',this.customerDetails[0].customerAdditionalInfo.kycStatus);
               // console.log(this.dataResponse.dataResp.corporateId);
 
 
-              _this207.getProfileImage(_this207.dataResponse.dataResp.corporateId); // this.fetchSignatureDetails(this.dataResponse.dataResp.corporateId);
+              _this208.getProfileImage(_this208.dataResponse.dataResp.corporateId); // this.fetchSignatureDetails(this.dataResponse.dataResp.corporateId);
 
             }, 5000);
           }
@@ -49510,24 +49873,9 @@
         }, {
           key: "getCustomerDocumentsDetails",
           value: function getCustomerDocumentsDetails(corporateId) {
-            var _this208 = this;
-
-            this.document_type = "3";
-            this.apiService.getCustomerDocuments(corporateId, this.document_type).subscribe(function (result) {
-              _this208.loading = false;
-              _this208.custOtherDoc_array = result;
-
-              if (result != null) {
-                _this208.documentName = _this208.custOtherDoc_array[0].fileName; // console.log("custOtherDoc_array::",this.custOtherDoc_array)
-              }
-            });
-          }
-        }, {
-          key: "getCustomerDocumentsDetails1",
-          value: function getCustomerDocumentsDetails1(corporateId) {
             var _this209 = this;
 
-            this.document_type = "2";
+            this.document_type = "3";
             this.apiService.getCustomerDocuments(corporateId, this.document_type).subscribe(function (result) {
               _this209.loading = false;
               _this209.custOtherDoc_array = result;
@@ -49538,27 +49886,42 @@
             });
           }
         }, {
+          key: "getCustomerDocumentsDetails1",
+          value: function getCustomerDocumentsDetails1(corporateId) {
+            var _this210 = this;
+
+            this.document_type = "2";
+            this.apiService.getCustomerDocuments(corporateId, this.document_type).subscribe(function (result) {
+              _this210.loading = false;
+              _this210.custOtherDoc_array = result;
+
+              if (result != null) {
+                _this210.documentName = _this210.custOtherDoc_array[0].fileName; // console.log("custOtherDoc_array::",this.custOtherDoc_array)
+              }
+            });
+          }
+        }, {
           key: "updateApplicationStatus",
           value: function updateApplicationStatus(formData, status, isEdit) {
-            var _this210 = this;
+            var _this211 = this;
 
             formData.dataResp.corporateStatus = status;
             this.statusUpdate = status;
             this.apiService.updateCorporateSatatus(formData.dataResp.corporateId, status).subscribe(function (data) {
               if (data != null) {
-                _this210.cdr.markForCheck();
+                _this211.cdr.markForCheck();
 
-                _this210.cdr.detectChanges();
+                _this211.cdr.detectChanges();
 
                 if (isEdit != true) {
-                  _this210.dialogRef.close({
+                  _this211.dialogRef.close({
                     message: 'Confirm',
                     recordStatus: status,
                     data: data
                   });
                 }
 
-                _this210.snack.open("".concat(status, " "), 'OK', {
+                _this211.snack.open("".concat(status, " "), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -49566,9 +49929,9 @@
               }
             }, function (error) {
               console.log('error resp :: ', error);
-              _this210.errorStatus = status;
+              _this211.errorStatus = status;
 
-              _this210.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this211.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -49589,7 +49952,7 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(corporateId) {
-            var _this211 = this;
+            var _this212 = this;
 
             this.apiService.getCoropratedetails(corporateId).subscribe(function (data) {
               console.log(data);
@@ -49597,7 +49960,7 @@
               if (data.profileImage != null) {
                 //let objectURL = 'data:image/jpeg;base64,' + data.profileImage.fileData;
                 var objectURL = data.profileImage.fileUrl;
-                _this211.image = _this211.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this212.image = _this212.sanitizer.bypassSecurityTrustUrl(objectURL);
               } // console.log(this.image,"Profile Data");
               // console.log(this.profileData.customerName,"Profile Data");
               // const blob = base64StringToBlob(this.profileData.fileData, contentType);
@@ -49620,7 +49983,7 @@
         }, {
           key: "openEditScreen",
           value: function openEditScreen(screen, data) {
-            var _this212 = this;
+            var _this213 = this;
 
             this.status = 'UNDER_PROCESS';
             this.updateApplicationStatus(this.dataResponse, "UNDER_PROCESS", true);
@@ -49632,12 +49995,12 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               console.log(submit);
-              _this212.status = submit.status;
+              _this213.status = submit.status;
 
               if (submit.status == 'INITIATED') {
-                _this212.status = 'INITIATED';
+                _this213.status = 'INITIATED';
 
-                _this212.updateApplicationStatus(_this212.dataResponse, "INITIATED", true);
+                _this213.updateApplicationStatus(_this213.dataResponse, "INITIATED", true);
 
                 Object.assign(data, submit.resp);
               }
@@ -49668,13 +50031,22 @@
           value: function editOtherInfo() {
             this.openEditScreen(_update_corporate_addititonal_info_update_corporate_addititonal_info_component__WEBPACK_IMPORTED_MODULE_12__["UpdateCorporateAddititonalInfoComponent"], this.dataResponse.dataResp);
           }
+        }, {
+          key: "continue",
+          value: function _continue() {
+            this.ls.setItem('corporateId', this.dataResponse.dataResp.corporateId);
+            var theme = null;
+            var type = "CORPORATE";
+            window.open("".concat(app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_14__["environment"].redirectUrl, "?code=").concat(this.jwtService.getEncryptedToken(), "&appType=").concat(type, "&theme=").concat(theme), '_blank');
+            this.dialogRef.close();
+          }
         }]);
 
         return CorporateApproverComponent;
       }();
 
       CorporateApproverComponent.ɵfac = function CorporateApproverComponent_Factory(t) {
-        return new (t || CorporateApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_7__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]));
+        return new (t || CorporateApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_7__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_15__["JwtAuthService"]));
       };
 
       CorporateApproverComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -49696,7 +50068,7 @@
         },
         decls: 10,
         vars: 2,
-        consts: [["fxLayoutAlign", "center"], [4, "ngIf"], ["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], ["class", "main", 4, "ngIf"], [1, "main"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], ["class", "btngrp", "fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "Basic Information", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "column", "fxLayoutAlign", "space-around start", 1, "full-width"], [1, "full-width", 2, "padding", "1rem 1rem"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [2, "font-size", "18px"], [1, "editbtn", 3, "hidden", "click"], [1, "divider1"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem 0"], ["fxFlex", "100%", "fxFlex.xs", "100%"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px", "width", "750px"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "full-width", 2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "hint1"], [1, "mat1"], ["label", "Director Details", 2, "border-radius", "0px", "width", "800px"], [1, "full-width", 2, "padding", "1rem"], [2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", "style", "padding: 0.5rem 0;", "class", "full-width", 4, "ngFor", "ngForOf"], ["fxFlex", "40%", "fxFlex.xs", "100%", 4, "ngIf"], ["fxFlex", "40%", "fxFlex.xs", "50%", 2, "padding", "0.5rem 0.5rem"], [2, "font-size", "16px"], [1, "margintop"], ["fxFlex", "50%", "fxFlex.xs", "100%"], ["fxFlex", "25%", "fxFlex.xs", "100%"], ["fxFlex", "40%", "fxFlex.xs", "50%"], ["fxFlex", "40%", "fxFlex.xs", "100%"], ["label", "Contact Information", 2, "border-radius", "0px", "width", "800px"], [4, "ngFor", "ngForOf"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["label", "Proof Of Identity", 2, "border-radius", "0px", "width", "800px"], [2, "padding", "1rem 0"], ["style", "color: grey;", 4, "ngIf"], [2, "color", "grey"], ["label", "Other Information", 2, "border-radius", "0px", "width", "800px"], ["class", "full-width", 4, "ngFor", "ngForOf"], [1, "hint1", 2, "text-align", "center"], [2, "text-align", "center"], ["required", "", "alt", "", 1, "formImg2", 3, "src"], [2, "margin-top", "35px"], ["download", "", 2, "color", "#4A56E2", "text-decoration", "underline", 3, "href"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 1, "btngrp"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
+        consts: [["fxLayoutAlign", "center"], [4, "ngIf"], ["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], ["class", "main", 4, "ngIf"], [1, "main"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], ["class", "btngrp", "fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "Basic Information", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "column", "fxLayoutAlign", "space-around start", 1, "full-width"], [1, "full-width", 2, "padding", "1rem 1rem"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [2, "font-size", "18px"], [1, "editbtn", 3, "hidden", "click"], [1, "divider1"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem 0"], ["fxFlex", "100%", "fxFlex.xs", "100%"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px", "width", "750px"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "full-width", 2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "hint1"], [1, "mat1"], ["label", "Director Details", 2, "border-radius", "0px", "width", "800px"], [1, "full-width", 2, "padding", "1rem"], [2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", "style", "padding: 0.5rem 0;", "class", "full-width", 4, "ngFor", "ngForOf"], ["fxFlex", "40%", "fxFlex.xs", "100%", 4, "ngIf"], ["fxFlex", "40%", "fxFlex.xs", "50%", 2, "padding", "0.5rem 0.5rem"], [2, "font-size", "16px"], [1, "margintop"], ["fxFlex", "50%", "fxFlex.xs", "100%"], ["fxFlex", "25%", "fxFlex.xs", "100%"], ["fxFlex", "40%", "fxFlex.xs", "50%"], ["fxFlex", "40%", "fxFlex.xs", "100%"], ["label", "Contact Information", 2, "border-radius", "0px", "width", "800px"], [4, "ngFor", "ngForOf"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["label", "Proof Of Identity", 2, "border-radius", "0px", "width", "800px"], [2, "padding", "1rem 0"], ["style", "color: grey;", 4, "ngIf"], [2, "color", "grey"], ["label", "Other Information", 2, "border-radius", "0px", "width", "800px"], ["class", "full-width", 4, "ngFor", "ngForOf"], [1, "hint1", 2, "text-align", "center"], [2, "text-align", "center"], ["required", "", "alt", "", 1, "formImg2", 3, "src"], [2, "margin-top", "35px"], ["download", "", 2, "color", "#4A56E2", "text-decoration", "underline", 3, "href"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 1, "btngrp"], ["fxLayout", "row", 1, "continueBtn", 3, "hidden", "ngClass", "click"], [1, "continuelabel"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
         template: function CorporateApproverComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form");
@@ -49748,9 +50120,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.loading);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_17__["MatSpinner"], _angular_material_card__WEBPACK_IMPORTED_MODULE_18__["MatCardAvatar"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_18__["MatCard"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_19__["MatDivider"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__["MatHint"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_21__["DefaultClassDirective"]],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_15__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["UpperCasePipe"]],
-        styles: [".appimg {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv {\n  text-align: center;\n}\n\n.closeIcon {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 30px;\n}\n\n.cancelIcon {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 18%;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.editbtn {\n  color: #0e7cc5;\n  cursor: pointer;\n}\n\n.num {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  background-color: white;\n}\n\n.imgdiv div {\n  margin: auto;\n}\n\n.apprdiv {\n  text-align: center;\n}\n\n.apprdiv h2 {\n  width: 100%;\n  margin-left: 8%;\n}\n\n.label {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.labelval {\n  color: #2F2F2F;\n}\n\n.rowbord {\n  /*border-bottom:2px solid #707070; */\n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd {\n  padding: 0px;\n}\n\n.nobord {\n  border: none !important;\n}\n\n.main {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard {\n  background-color: #E5E5E5;\n}\n\n.clr {\n  color: #B2B2B2;\n}\n\n.bordnum {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 300px;\n}\n\n.btn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1 {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.closeIcon {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 30px;\n}\n\n.content2 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.label {\n  text-align: center;\n  color: black;\n}\n\n.defaultImage {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  margin-left: -10px;\n}\n\n.imageText {\n  text-align: center;\n  padding: 3rem 3.4rem;\n  color: white;\n}\n\n.mat1 {\n  height: 3.3rem;\n}\n\n.mat11 {\n  font-size: 90%;\n  padding-top: 3px;\n}\n\n.imgCard {\n  margin-left: 70px;\n  margin-top: 40px;\n  width: 30%;\n  height: 120px;\n}\n\n.formImg2 {\n  height: 65px !important;\n  width: 65px !important;\n  background-color: whitesmoke;\n}\n\n.margintop {\n  margin-top: 0;\n  width: 732px;\n}\n\n.btngrp {\n  float: right;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY29ycG9yYXRlLWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUcsWUFBVztFQUNYLGFBQVk7QUFBZjs7QUFFQTtFQUVJLGtCQUFpQjtBQUFyQjs7QUFFQTtFQUNJLGVBQWU7RUFDZixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3RCOztBQUVBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUNaLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFDZjs7QUFDQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsWUFBWTtFQUNaLFlBQVk7RUFDWix5QkFBeUI7RUFDekIsVUFBVTtFQUNWLG1CQUFtQjtFQUNmLHVCQUF1QjtFQUN2QixlQUFlO0FBRW5COztBQUFFO0VBQ0UsV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFFZjs7QUFBQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsWUFBWTtFQUNaLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsK0NBQStDO0VBQy9DLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQUduQjs7QUFBQTtFQUNJLFdBQVc7RUFDZixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBR2Y7O0FBQUE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDcEIsZUFBZTtBQUVmOztBQUNBO0VBQ0ksY0FBdUI7RUFFdkIsZUFBZTtBQUNuQjs7QUFVQTtFQUVJLHlCQUF3QjtFQUN4QixrQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLHVCQUF1QjtBQVIzQjs7QUFVQTtFQUVJLFlBQVc7QUFSZjs7QUFVQTtFQUVJLGtCQUFrQjtBQVJ0Qjs7QUFVQTtFQUVJLFdBQVU7RUFDVixlQUFlO0FBUm5COztBQVVBO0VBRUUsY0FBYTtFQUNiLGlCQUFpQjtBQVJuQjs7QUFVQTtFQUVHLGNBQWE7QUFSaEI7O0FBVUE7RUFFSSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFSNUI7O0FBVUE7RUFFSSxZQUFXO0FBUmY7O0FBVUE7RUFFSSx1QkFBc0I7QUFSMUI7O0FBVUE7RUFFSSxZQUFXO0VBQ1gsY0FBYztFQUNkLGtCQUFrQjtBQVJ0Qjs7QUFVQTtFQUVHLHlCQUF3QjtBQVIzQjs7QUFVQTtFQUVJLGNBQWE7QUFSakI7O0FBVUE7RUFFSSxZQUFZO0VBQ1osOEJBQThCO0VBQzlCLGdCQUFnQjtBQVJwQjs7QUFhQTtFQUNJLHlCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBVmY7O0FBYUE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQVZmOztBQWFBO0VBQ0ksY0FBZTtFQUNmLHlCQUFvQztFQUNwQyxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixxQkFBb0I7RUFDcEIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBVmhCOztBQWFBO0VBQ0ksV0FBVztFQUNYLHlCQUFvQztFQUNwQyxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBVmhCOztBQWFBO0VBQ0ksVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixVQUFVO0VBQ1YsWUFBVztFQUNYLFlBQVk7QUFWaEI7O0FBYUE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLHFCQUErQjtFQUMvQiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQVZmOztBQWNBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFYZjs7QUFjQTtFQUNJLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBWGY7O0FBY0E7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQVh0Qjs7QUFlQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBWm5COztBQWdCQTtFQUNJLFdBQVU7RUFDVixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLHlCQUFrQztFQUNsQyxZQUFZO0VBQ1osa0JBQWtCO0FBYnRCOztBQWdCQTtFQUNJLGVBQWU7RUFDZixlQUFlO0VBQ2Ysa0JBQWtCO0FBYnRCOztBQWVBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWE7RUFDYixZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFabkI7O0FBZUE7RUFDSSxrQkFBa0I7RUFDbEIsWUFBWTtBQVpoQjs7QUFjQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQVh0Qjs7QUFnQkU7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFlBQVk7QUFiaEI7O0FBZUE7RUFDSSxjQUFjO0FBWmxCOztBQWVBO0VBQ0ksY0FBYztFQUNkLGdCQUFnQjtBQVpwQjs7QUFlQTtFQUNJLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLGFBQWE7QUFaakI7O0FBY0E7RUFDSSx1QkFBdUI7RUFDdkIsc0JBQXNCO0VBQ3ZCLDRCQUE0QjtBQVgvQjs7QUFhQTtFQUNJLGFBQWE7RUFDYixZQUFZO0FBVmhCOztBQVlBO0VBQ0ksWUFBWTtBQVRoQiIsImZpbGUiOiJjb3Jwb3JhdGUtYXBwcm92ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYXBwaW1nXHJcbntcclxuICAgd2lkdGg6MTAwcHg7XHJcbiAgIGhlaWdodDoxMDBweDtcclxufVxyXG4uaW1nZGl2XHJcbntcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG59XHJcbi5jbG9zZUljb257XHJcbiAgICBjb2xvcjogZGFya2dyYXk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDMwcHg7XHJcbn1cclxuXHJcbi5jYW5jZWxJY29ue1xyXG4gICAgdG9wOiA2NzIwcHg7XHJcbmxlZnQ6IDgxMnB4O1xyXG53aWR0aDogMjBweDtcclxuaGVpZ2h0OiAyMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5yZWplY3RCdXR0b257XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogNzYycHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5ib3JkZXI6IDJweCBzb2xpZCAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4gIC5yZWplY3RsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5hcHByb3ZlQnV0dG9ue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDk2OXB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxubWFyZ2luLXJpZ2h0OiAxOCU7XHJcbmJhY2tncm91bmQ6ICMyNENDQTcgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlSWNvbntcclxuICAgIHRvcDogNjcxNnB4O1xyXG5sZWZ0OiAxMDA5cHg7XHJcbndpZHRoOiAyNHB4O1xyXG5oZWlnaHQ6IDI0cHg7XHJcbmNvbG9yOiB3aGl0ZTtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG5cclxufVxyXG4uYXBwcm92ZWxhYmVse1xyXG4gICAgdG9wOiA2NzE3cHg7XHJcbiAgICBsZWZ0OiAxMDQ5cHg7XHJcbiAgICB3aWR0aDogNjJweDtcclxuICAgIGhlaWdodDogMjJweDtcclxuICAgIFxyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmVkaXRidG57XHJcbiAgICBjb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KSA7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgLy8gb3V0bGluZTogbm9uZTtcclxuICAgIC8vIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICAvLyB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIC8vIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIC8vIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIC8vIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIC8vIGhlaWdodDozMHB4O1xyXG4gICAgLy8gd2lkdGg6MTUwcHg7XHJcbn1cclxuLm51bVxyXG57XHJcbiAgICBib3JkZXI6MXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbi5pbWdkaXYgZGl2XHJcbntcclxuICAgIG1hcmdpbjphdXRvO1xyXG59XHJcbi5hcHByZGl2XHJcbntcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uYXBwcmRpdiBoMlxyXG57XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDglO1xyXG59XHJcbi5sYWJlbFxyXG57XHJcbiAgY29sb3I6IzlBQTFCMDtcclxuICBmb250LXNpemU6IDAuN3JlbTtcclxufVxyXG4ubGFiZWx2YWxcclxue1xyXG4gICBjb2xvcjojMkYyRjJGO1xyXG59XHJcbi5yb3dib3JkXHJcbntcclxuICAgIC8qYm9yZGVyLWJvdHRvbToycHggc29saWQgIzcwNzA3MDsgKi9cclxuICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICBwYWRkaW5nOjEwcHggMCAxMHB4IDEwcHg7XHJcbn1cclxuLm10Y2Rcclxue1xyXG4gICAgcGFkZGluZzowcHg7XHJcbn1cclxuLm5vYm9yZFxyXG57XHJcbiAgICBib3JkZXI6bm9uZSAhaW1wb3J0YW50O1xyXG59XHJcbi5tYWluXHJcbntcclxuICAgIGhlaWdodDo4NXZoO1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbn1cclxuLmFwcGVyc29uaW5mb2NhcmRcclxue1xyXG4gICBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbn1cclxuLmNsclxyXG57XHJcbiAgICBjb2xvcjojQjJCMkIyOyAgXHJcbn1cclxuLmJvcmRudW1cclxue1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDI0JTtcclxufVxyXG5cclxuXHJcblxyXG4uUk5idG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiM0QTU2RTI7XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MzAwcHg7XHJcbn1cclxuXHJcbi5idG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG59XHJcblxyXG4uY2FuY2VsYnRue1xyXG4gICAgY29sb3I6IzI5ODBCOSAgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MywgMjM2LCAyMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiMyOTgwQjk7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5kaXNhYmxlZGJ0bntcclxuICAgIGNvbG9yOmdyZXkgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MywgMjM2LCAyMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiBncmV5O1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4ucmVqZWN0YnRue1xyXG4gICAgY29sb3I6cmVkIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5zcWZ0YnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmFjYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmNpcmNsZXtcclxuICAgIHdpZHRoOjc1cHg7XHJcbiAgICBoZWlnaHQ6NzVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIFxyXG59XHJcblxyXG4uY29udGVudDF7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIFxyXG59XHJcblxyXG4uY2lyY2xlMXtcclxuICAgIHdpZHRoOjI1cHg7XHJcbiAgICBoZWlnaHQ6MjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmNsb3NlSWNvbntcclxuICAgIGNvbG9yOiBkYXJrZ3JheTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG1hcmdpbi1yaWdodDogMzBweDtcclxufVxyXG4uY29udGVudDJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG5cclxuLmxhYmVse1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG59XHJcbi5kZWZhdWx0SW1hZ2V7XHJcbiAgICB3aWR0aDogMTIwcHg7XHJcbiAgICBoZWlnaHQ6IDEyMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xMHB4O1xyXG4gICAgLy8gdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogIzE5YzI4ZjtcclxuICB9XHJcbiAgXHJcbiAgLmltYWdlVGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBhZGRpbmc6IDNyZW0gMy40cmVtO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gIH1cclxuLm1hdDF7XHJcbiAgICBoZWlnaHQ6IDMuM3JlbTtcclxufVxyXG5cclxuLm1hdDExe1xyXG4gICAgZm9udC1zaXplOiA5MCU7XHJcbiAgICBwYWRkaW5nLXRvcDogM3B4O1xyXG59XHJcblxyXG4uaW1nQ2FyZHtcclxuICAgIG1hcmdpbi1sZWZ0OiA3MHB4O1xyXG4gICAgbWFyZ2luLXRvcDogNDBweDtcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBoZWlnaHQ6IDEyMHB4O1xyXG59ICBcclxuLmZvcm1JbWcyIHtcclxuICAgIGhlaWdodDogNjVweCAhaW1wb3J0YW50O1xyXG4gICAgd2lkdGg6IDY1cHggIWltcG9ydGFudDsgXHJcbiAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlc21va2U7XHJcbn1cclxuLm1hcmdpbnRvcHtcclxuICAgIG1hcmdpbi10b3A6IDA7XHJcbiAgICB3aWR0aDogNzMycHg7XHJcbn1cclxuLmJ0bmdycHtcclxuICAgIGZsb2F0OiByaWdodDtcclxufSJdfQ== */"],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__["MatIcon"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_19__["MatSpinner"], _angular_material_card__WEBPACK_IMPORTED_MODULE_20__["MatCardAvatar"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_20__["MatCard"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_21__["MatDivider"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_22__["MatHint"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_23__["DefaultClassDirective"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_17__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["UpperCasePipe"]],
+        styles: [".appimg {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv {\n  text-align: center;\n}\n\n.closeIcon {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 30px;\n}\n\n.cancelIcon {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 18%;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.editbtn {\n  color: #0e7cc5;\n  cursor: pointer;\n}\n\n.num {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  background-color: white;\n}\n\n.imgdiv div {\n  margin: auto;\n}\n\n.apprdiv {\n  text-align: center;\n}\n\n.apprdiv h2 {\n  width: 100%;\n  margin-left: 8%;\n}\n\n.label {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.labelval {\n  color: #2F2F2F;\n}\n\n.rowbord {\n  /*border-bottom:2px solid #707070; */\n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd {\n  padding: 0px;\n}\n\n.nobord {\n  border: none !important;\n}\n\n.main {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard {\n  background-color: #E5E5E5;\n}\n\n.clr {\n  color: #B2B2B2;\n}\n\n.bordnum {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 300px;\n}\n\n.btn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1 {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.closeIcon {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 30px;\n}\n\n.content2 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.label {\n  text-align: center;\n  color: black;\n}\n\n.defaultImage {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  margin-left: -10px;\n}\n\n.imageText {\n  text-align: center;\n  padding: 3rem 3.4rem;\n  color: white;\n}\n\n.mat1 {\n  height: 3.3rem;\n}\n\n.mat11 {\n  font-size: 90%;\n  padding-top: 3px;\n}\n\n.imgCard {\n  margin-left: 70px;\n  margin-top: 40px;\n  width: 30%;\n  height: 120px;\n}\n\n.formImg2 {\n  height: 65px !important;\n  width: 65px !important;\n  background-color: whitesmoke;\n}\n\n.margintop {\n  margin-top: 0;\n  width: 732px;\n}\n\n.btngrp {\n  float: right;\n}\n\n.continueBtn {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid blue;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.continuelabel {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: blue;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY29ycG9yYXRlLWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUcsWUFBVztFQUNYLGFBQVk7QUFBZjs7QUFFQTtFQUVJLGtCQUFpQjtBQUFyQjs7QUFFQTtFQUNJLGVBQWU7RUFDZixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3RCOztBQUVBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUNaLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFDZjs7QUFDQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsWUFBWTtFQUNaLFlBQVk7RUFDWix5QkFBeUI7RUFDekIsVUFBVTtFQUNWLG1CQUFtQjtFQUNmLHVCQUF1QjtFQUN2QixlQUFlO0FBRW5COztBQUFFO0VBQ0UsV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFFZjs7QUFBQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsWUFBWTtFQUNaLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsK0NBQStDO0VBQy9DLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQUduQjs7QUFBQTtFQUNJLFdBQVc7RUFDZixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBR2Y7O0FBQUE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDcEIsZUFBZTtBQUVmOztBQUNBO0VBQ0ksY0FBdUI7RUFFdkIsZUFBZTtBQUNuQjs7QUFVQTtFQUVJLHlCQUF3QjtFQUN4QixrQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLHVCQUF1QjtBQVIzQjs7QUFVQTtFQUVJLFlBQVc7QUFSZjs7QUFVQTtFQUVJLGtCQUFrQjtBQVJ0Qjs7QUFVQTtFQUVJLFdBQVU7RUFDVixlQUFlO0FBUm5COztBQVVBO0VBRUUsY0FBYTtFQUNiLGlCQUFpQjtBQVJuQjs7QUFVQTtFQUVHLGNBQWE7QUFSaEI7O0FBVUE7RUFFSSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFSNUI7O0FBVUE7RUFFSSxZQUFXO0FBUmY7O0FBVUE7RUFFSSx1QkFBc0I7QUFSMUI7O0FBVUE7RUFFSSxZQUFXO0VBQ1gsY0FBYztFQUNkLGtCQUFrQjtBQVJ0Qjs7QUFVQTtFQUVHLHlCQUF3QjtBQVIzQjs7QUFVQTtFQUVJLGNBQWE7QUFSakI7O0FBVUE7RUFFSSxZQUFZO0VBQ1osOEJBQThCO0VBQzlCLGdCQUFnQjtBQVJwQjs7QUFhQTtFQUNJLHlCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBVmY7O0FBYUE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQVZmOztBQWFBO0VBQ0ksY0FBZTtFQUNmLHlCQUFvQztFQUNwQyxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixxQkFBb0I7RUFDcEIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBVmhCOztBQWFBO0VBQ0ksV0FBVztFQUNYLHlCQUFvQztFQUNwQyxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBVmhCOztBQWFBO0VBQ0ksVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixVQUFVO0VBQ1YsWUFBVztFQUNYLFlBQVk7QUFWaEI7O0FBYUE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLHFCQUErQjtFQUMvQiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQVZmOztBQWNBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFYZjs7QUFjQTtFQUNJLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBWGY7O0FBY0E7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQVh0Qjs7QUFlQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBWm5COztBQWdCQTtFQUNJLFdBQVU7RUFDVixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLHlCQUFrQztFQUNsQyxZQUFZO0VBQ1osa0JBQWtCO0FBYnRCOztBQWdCQTtFQUNJLGVBQWU7RUFDZixlQUFlO0VBQ2Ysa0JBQWtCO0FBYnRCOztBQWVBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWE7RUFDYixZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFabkI7O0FBZUE7RUFDSSxrQkFBa0I7RUFDbEIsWUFBWTtBQVpoQjs7QUFjQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQVh0Qjs7QUFnQkU7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFlBQVk7QUFiaEI7O0FBZUE7RUFDSSxjQUFjO0FBWmxCOztBQWVBO0VBQ0ksY0FBYztFQUNkLGdCQUFnQjtBQVpwQjs7QUFlQTtFQUNJLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLGFBQWE7QUFaakI7O0FBY0E7RUFDSSx1QkFBdUI7RUFDdkIsc0JBQXNCO0VBQ3ZCLDRCQUE0QjtBQVgvQjs7QUFhQTtFQUNJLGFBQWE7RUFDYixZQUFZO0FBVmhCOztBQVlBO0VBQ0ksWUFBWTtBQVRoQjs7QUFXQTtFQUNJLFdBQVc7RUFDYixXQUFXO0VBQ1gsWUFBWTtFQUNaLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsVUFBVTtFQUNWLG1CQUFtQjtFQUNqQix1QkFBdUI7RUFDdkIsZUFBZTtBQVJuQjs7QUFXRTtFQUNFLFdBQVc7RUFDYixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFFWixnQkFBZ0I7RUFDaEIsNENBQTRDO0VBQzVDLG1CQUFtQjtFQUNuQixXQUFXO0VBQ1gsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBVGpCIiwiZmlsZSI6ImNvcnBvcmF0ZS1hcHByb3Zlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hcHBpbWdcclxue1xyXG4gICB3aWR0aDoxMDBweDtcclxuICAgaGVpZ2h0OjEwMHB4O1xyXG59XHJcbi5pbWdkaXZcclxue1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbn1cclxuLmNsb3NlSWNvbntcclxuICAgIGNvbG9yOiBkYXJrZ3JheTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG1hcmdpbi1yaWdodDogMzBweDtcclxufVxyXG5cclxuLmNhbmNlbEljb257XHJcbiAgICB0b3A6IDY3MjBweDtcclxubGVmdDogODEycHg7XHJcbndpZHRoOiAyMHB4O1xyXG5oZWlnaHQ6IDIwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLnJlamVjdEJ1dHRvbntcclxuICAgIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA3NjJweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbmJvcmRlcjogMnB4IHNvbGlkICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgLnJlamVjdGxhYmVse1xyXG4gICAgdG9wOiA2NzE4cHg7XHJcbmxlZnQ6IDg0MnB4O1xyXG53aWR0aDogNDVweDtcclxuaGVpZ2h0OiAyMnB4O1xyXG5cclxudGV4dC1hbGlnbjogbGVmdDtcclxuZm9udDogbm9ybWFsIG5vcm1hbCBub3JtYWwgMThweC8yMnB4IENhbGlicmk7XHJcbmxldHRlci1zcGFjaW5nOiAwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmFwcHJvdmVCdXR0b257XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogOTY5cHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5tYXJnaW4tcmlnaHQ6IDE4JTtcclxuYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVJY29ue1xyXG4gICAgdG9wOiA2NzE2cHg7XHJcbmxlZnQ6IDEwMDlweDtcclxud2lkdGg6IDI0cHg7XHJcbmhlaWdodDogMjRweDtcclxuY29sb3I6IHdoaXRlO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlbGFiZWx7XHJcbiAgICB0b3A6IDY3MTdweDtcclxuICAgIGxlZnQ6IDEwNDlweDtcclxuICAgIHdpZHRoOiA2MnB4O1xyXG4gICAgaGVpZ2h0OiAyMnB4O1xyXG4gICAgXHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgZm9udDogbm9ybWFsIG5vcm1hbCBub3JtYWwgMThweC8yMnB4IENhbGlicmk7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gICAgcGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uZWRpdGJ0bntcclxuICAgIGNvbG9yOnJnYigxNCwgMTI0LCAxOTcpIDtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxMjQsIDE5Nyk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAvLyBvdXRsaW5lOiBub25lO1xyXG4gICAgLy8gb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIC8vIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgLy8gYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgLy8gdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgLy8gYm9yZGVyLWNvbG9yOiAjMGU1N2M1O1xyXG4gICAgLy8gaGVpZ2h0OjMwcHg7XHJcbiAgICAvLyB3aWR0aDoxNTBweDtcclxufVxyXG4ubnVtXHJcbntcclxuICAgIGJvcmRlcjoxcHggc29saWQgIzRBNTZFMjtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIHBhZGRpbmctdG9wOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuLmltZ2RpdiBkaXZcclxue1xyXG4gICAgbWFyZ2luOmF1dG87XHJcbn1cclxuLmFwcHJkaXZcclxue1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5hcHByZGl2IGgyXHJcbntcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogOCU7XHJcbn1cclxuLmxhYmVsXHJcbntcclxuICBjb2xvcjojOUFBMUIwO1xyXG4gIGZvbnQtc2l6ZTogMC43cmVtO1xyXG59XHJcbi5sYWJlbHZhbFxyXG57XHJcbiAgIGNvbG9yOiMyRjJGMkY7XHJcbn1cclxuLnJvd2JvcmRcclxue1xyXG4gICAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gICAgYm9yZGVyLWJvdHRvbToycHggc29saWQgI2Y1ZjVmNTtcclxuICAgIHBhZGRpbmc6MTBweCAwIDEwcHggMTBweDtcclxufVxyXG4ubXRjZFxyXG57XHJcbiAgICBwYWRkaW5nOjBweDtcclxufVxyXG4ubm9ib3JkXHJcbntcclxuICAgIGJvcmRlcjpub25lICFpbXBvcnRhbnQ7XHJcbn1cclxuLm1haW5cclxue1xyXG4gICAgaGVpZ2h0Ojg1dmg7XHJcbiAgICBvdmVyZmxvdzogYXV0bztcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxufVxyXG4uYXBwZXJzb25pbmZvY2FyZFxyXG57XHJcbiAgIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxufVxyXG4uY2xyXHJcbntcclxuICAgIGNvbG9yOiNCMkIyQjI7ICBcclxufVxyXG4uYm9yZG51bVxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBtYXJnaW4tbGVmdDogMjQlO1xyXG59XHJcblxyXG5cclxuXHJcbi5STmJ0bntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzRBNTZFMjtcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDozMDBweDtcclxufVxyXG5cclxuLmJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbn1cclxuXHJcbi5jYW5jZWxidG57XHJcbiAgICBjb2xvcjojMjk4MEI5ICA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQzLCAyMzYsIDIzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IzI5ODBCOTtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmRpc2FibGVkYnRue1xyXG4gICAgY29sb3I6Z3JleSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQzLCAyMzYsIDIzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IGdyZXk7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5yZWplY3RidG57XHJcbiAgICBjb2xvcjpyZWQgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogcmVkO1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uYXBwcm92ZWJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBcclxufVxyXG5cclxuLnNxZnRidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uYWNidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uY2lyY2xle1xyXG4gICAgd2lkdGg6NzVweDtcclxuICAgIGhlaWdodDo3NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgXHJcbn1cclxuXHJcbi5jb250ZW50MXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOmluaGVyaXQ7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5jaXJjbGUxe1xyXG4gICAgd2lkdGg6MjVweDtcclxuICAgIGhlaWdodDoyNXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uY2xvc2VJY29ue1xyXG4gICAgY29sb3I6IGRhcmtncmF5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzMHB4O1xyXG59XHJcbi5jb250ZW50MntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOmluaGVyaXQ7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcblxyXG4ubGFiZWx7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiAxMjBweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgICAvLyB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTljMjhmO1xyXG4gIH1cclxuICBcclxuICAuaW1hZ2VUZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogM3JlbSAzLjRyZW07XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgfVxyXG4ubWF0MXtcclxuICAgIGhlaWdodDogMy4zcmVtO1xyXG59XHJcblxyXG4ubWF0MTF7XHJcbiAgICBmb250LXNpemU6IDkwJTtcclxuICAgIHBhZGRpbmctdG9wOiAzcHg7XHJcbn1cclxuXHJcbi5pbWdDYXJke1xyXG4gICAgbWFyZ2luLWxlZnQ6IDcwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbn0gIFxyXG4uZm9ybUltZzIge1xyXG4gICAgaGVpZ2h0OiA2NXB4ICFpbXBvcnRhbnQ7XHJcbiAgICB3aWR0aDogNjVweCAhaW1wb3J0YW50OyBcclxuICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTtcclxufVxyXG4ubWFyZ2ludG9we1xyXG4gICAgbWFyZ2luLXRvcDogMDtcclxuICAgIHdpZHRoOiA3MzJweDtcclxufVxyXG4uYnRuZ3Jwe1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcbi5jb250aW51ZUJ0bntcclxuICAgIHRvcDogNjcwNXB4O1xyXG4gIGxlZnQ6IDc2MnB4O1xyXG4gIHdpZHRoOiAxODNweDtcclxuICBoZWlnaHQ6IDQxcHg7XHJcbiAgYm9yZGVyOiAycHggc29saWQgYmx1ZTtcclxuICBvcGFjaXR5OiAxO1xyXG4gIGJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgXHJcbiAgLmNvbnRpbnVlbGFiZWx7XHJcbiAgICB0b3A6IDY3MThweDtcclxuICBsZWZ0OiA4NDJweDtcclxuICB3aWR0aDogNDVweDtcclxuICBoZWlnaHQ6IDIycHg7XHJcbiAgXHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBmb250OiBub3JtYWwgbm9ybWFsIG5vcm1hbCAxOHB4LzIycHggQ2FsaWJyaTtcclxuICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gIGNvbG9yOiBibHVlO1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgcGFkZGluZy10b3A6IDdweDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG5cclxuXHJcbiJdfQ== */"],
         encapsulation: 2
       });
       /*@__PURE__*/
@@ -49789,6 +50161,8 @@
             type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]
+          }, {
+            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_15__["JwtAuthService"]
           }];
         }, {
           initiatedArr: [{
@@ -50904,23 +51278,23 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this213 = this;
+            var _this214 = this;
 
             var task = true;
             this.apiService.setTask(task);
             this.route.queryParamMap.subscribe(function (params) {
               if (params.get('searchTerm')) {
-                _this213.redirectedFromTellerSearch = true;
-                _this213.searchText = params.get('searchTerm');
+                _this214.redirectedFromTellerSearch = true;
+                _this214.searchText = params.get('searchTerm');
 
-                _this213.updateSearch(_this213.searchText);
+                _this214.updateSearch(_this214.searchText);
 
                 setTimeout(function () {
-                  _this213.openSearchedApprover();
+                  _this214.openSearchedApprover();
                 }, 3000);
               } else {
                 /* @called :: on screen load */
-                _this213.getDataOnLoad();
+                _this214.getDataOnLoad();
               }
             });
             /* @called :: to refresh data for every 1min interval */
@@ -50940,10 +51314,10 @@
         }, {
           key: "_setSearchSubscription",
           value: function _setSearchSubscription() {
-            var _this214 = this;
+            var _this215 = this;
 
             this._searchSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["debounceTime"])(1000)).subscribe(function (searchValue) {
-              _this214.searchKycid(searchValue);
+              _this215.searchKycid(searchValue);
             });
           }
           /* @method :: to load all data on screen load */
@@ -50959,12 +51333,12 @@
         }, {
           key: "getAllAccDetails",
           value: function getAllAccDetails(status, page, size) {
-            var _this215 = this;
+            var _this216 = this;
 
             this.tasksummaryService.getAllAccDetails(status).subscribe(function (data) {
               console.log("Response", data);
 
-              _this215.updateStatusResponse(status, data);
+              _this216.updateStatusResponse(status, data);
             });
           }
         }, {
@@ -51015,7 +51389,7 @@
         }, {
           key: "getDataOnScroll",
           value: function getDataOnScroll(status, page, totalPage) {
-            var _this216 = this;
+            var _this217 = this;
 
             console.log('---------scrolled----------');
 
@@ -51025,15 +51399,15 @@
             }
 
             this.tasksummaryService.getAllAccDetailOnScroll(status, page).subscribe(function (data) {
-              _this216.updateDataOnScroll(status, data.accountList);
+              _this217.updateDataOnScroll(status, data.accountList);
 
-              _this216.cdr.markForCheck();
+              _this217.cdr.markForCheck();
             });
           }
         }, {
           key: "gotoapproverpage",
           value: function gotoapproverpage(data, status, colCode) {
-            var _this217 = this;
+            var _this218 = this;
 
             // console.log('data:: ', data);
             this.tasksummaryService.accountStatusData(status);
@@ -51047,10 +51421,10 @@
             dialogRef.afterClosed().subscribe(function (submit) {
               // console.log('submit :: ', submit);
               if (submit.data === 'REJECTED' || submit.data === 'APPROVED' || submit.data == 'ONGOING' || submit.data === 'BACKLOG') {
-                if (_this217.redirectedFromTellerSearch == true) {
-                  _this217.updateSearch(_this217.searchText);
+                if (_this218.redirectedFromTellerSearch == true) {
+                  _this218.updateSearch(_this218.searchText);
                 } else {
-                  _this217.getDataOnLoad();
+                  _this218.getDataOnLoad();
                 }
               }
             });
@@ -51084,21 +51458,21 @@
         }, {
           key: "getAccountData",
           value: function getAccountData(params) {
-            var _this218 = this;
+            var _this219 = this;
 
             this.loading = true;
             console.log("params :: ", params);
             this.tasksummaryService.getSearchData(params).subscribe(function (data) {
-              _this218.loading = false;
+              _this219.loading = false;
               console.log('resp data :: ', data);
 
-              _this218.resetSearchData();
+              _this219.resetSearchData();
 
               for (var index = 0; index < data.accountList.length; index++) {
                 var element = data.accountList[index];
                 console.log('element ::', element);
 
-                _this218.searchResponseUpdate(element.status, data.accountList[index]);
+                _this219.searchResponseUpdate(element.status, data.accountList[index]);
               }
             });
           }
@@ -51860,28 +52234,28 @@
         }, {
           key: "getRepaymenttDetails",
           value: function getRepaymenttDetails() {
-            var _this219 = this;
+            var _this220 = this;
 
             this.loader.open();
             this.apiService.loanRepaymentFetchById(this.loanaccountID).subscribe(function (repaymentDetails) {
-              _this219.loader.close();
+              _this220.loader.close();
 
-              _this219.repaymentDetails = repaymentDetails;
+              _this220.repaymentDetails = repaymentDetails;
 
-              _this219.buildRepaymentForm(_this219.repaymentDetails);
+              _this220.buildRepaymentForm(_this220.repaymentDetails);
 
-              _this219.loanRepaymentForm.value.loanTenure = _this219.repaymentDetails.loanTenure;
-              _this219.loanRepaymentForm.value.maturityeDate = _this219.repaymentDetails.maturityeDate;
-              _this219.loanRepaymentForm.value.firstRepaymentDate = _this219.repaymentDetails.firstRepaymentDate;
-              _this219.loanRepaymentForm.value.moratariumPeriod = _this219.repaymentDetails.moratariumPeriod;
-              _this219.loanRepaymentForm.value.branchCode = _this219.repaymentDetails.branchCode;
-              _this219.loanRepaymentForm.value.customerAccount = _this219.repaymentDetails.customerAccount;
-              _this219.loanRepaymentForm.value.bankName = _this219.repaymentDetails.bankName;
-              _this219.loanRepaymentForm.value.typeOfRepayment = _this219.repaymentDetails.typeOfRepayment;
-              _this219.loanRepaymentForm.value.repaymentMode = _this219.repaymentDetails.repaymentMode;
-              _this219.loanRepaymentForm.value.repaymentFrequency = _this219.repaymentDetails.repaymentFrequency;
+              _this220.loanRepaymentForm.value.loanTenure = _this220.repaymentDetails.loanTenure;
+              _this220.loanRepaymentForm.value.maturityeDate = _this220.repaymentDetails.maturityeDate;
+              _this220.loanRepaymentForm.value.firstRepaymentDate = _this220.repaymentDetails.firstRepaymentDate;
+              _this220.loanRepaymentForm.value.moratariumPeriod = _this220.repaymentDetails.moratariumPeriod;
+              _this220.loanRepaymentForm.value.branchCode = _this220.repaymentDetails.branchCode;
+              _this220.loanRepaymentForm.value.customerAccount = _this220.repaymentDetails.customerAccount;
+              _this220.loanRepaymentForm.value.bankName = _this220.repaymentDetails.bankName;
+              _this220.loanRepaymentForm.value.typeOfRepayment = _this220.repaymentDetails.typeOfRepayment;
+              _this220.loanRepaymentForm.value.repaymentMode = _this220.repaymentDetails.repaymentMode;
+              _this220.loanRepaymentForm.value.repaymentFrequency = _this220.repaymentDetails.repaymentFrequency;
             }, function (err) {
-              _this219.loader.close();
+              _this220.loader.close();
             });
           }
         }, {
@@ -51926,20 +52300,20 @@
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this220 = this;
+            var _this221 = this;
 
             this.dialogRef.close();
             this.apiService.loanRepaymentFetchById(this.loanaccountID).subscribe(function (repaymentDetails) {
               console.log("All Account Service", repaymentDetails);
-              _this220.repaymentDetails = repaymentDetails;
-              console.log("this.accountDetails", _this220.repaymentDetails);
-              console.log('form', _this220.loanRepaymentForm.value);
+              _this221.repaymentDetails = repaymentDetails;
+              console.log("this.accountDetails", _this221.repaymentDetails);
+              console.log('form', _this221.loanRepaymentForm.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this221 = this;
+            var _this222 = this;
 
             var now = new Date();
             now = this.loanRepaymentForm.value.firstDisbursementDate;
@@ -51967,44 +52341,44 @@
             };
             console.log("payload", payload);
             this.apiService.loanRepaymentSave(payload).subscribe(function (data) {
-              _this221.loanaccountID = _this221.data.loanAccountId;
-              console.log('loanaccountID', _this221.loanaccountID);
+              _this222.loanaccountID = _this222.data.loanAccountId;
+              console.log('loanaccountID', _this222.loanaccountID);
 
-              _this221.assign(_this221.data.loanAccountId);
+              _this222.assign(_this222.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this221.data.loanAccountId,
+                  loanAccountId: _this222.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this221.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this222.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this221.data.loanAccountId
+                  loanAccountid: _this222.data.loanAccountId
                 };
 
-                _this221.ls.setItem('fundByStatus', fundStatus);
+                _this222.ls.setItem('fundByStatus', fundStatus);
 
-                _this221.ls.setItem('accountType', data.accountType);
+                _this222.ls.setItem('accountType', data.accountType);
 
-                _this221.ls.setItem('productName', data.businessProductName);
+                _this222.ls.setItem('productName', data.businessProductName);
 
-                _this221.loanaccountID = _this221.data.loanAccountId;
-                console.log("this.productaccountID", _this221.loanaccountID);
+                _this222.loanaccountID = _this222.data.loanAccountId;
+                console.log("this.productaccountID", _this222.loanaccountID);
 
-                _this221.snack.open('Data Updated!', 'OK', {
+                _this222.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this221.getDataOnLoad();
+                _this222.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this221.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this222.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -52013,7 +52387,7 @@
                 console.log("500 error");
               }
 
-              _this221.goToClose();
+              _this222.goToClose();
             });
           }
         }, {
@@ -52049,12 +52423,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this222 = this;
+            var _this223 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this222.updateStatusResponse(status, custResp);
+              _this223.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -52718,20 +53092,20 @@
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this223 = this;
+            var _this224 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this223.arrayEmploymentType = data;
-              console.log(_this223.arrayEmploymentType);
+              _this224.arrayEmploymentType = data;
+              console.log(_this224.arrayEmploymentType);
             });
           }
         }, {
           key: "getEmployerName",
           value: function getEmployerName(key) {
-            var _this224 = this;
+            var _this225 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this224.arrayEmployerName = data;
+              _this225.arrayEmployerName = data;
             });
           }
         }, {
@@ -52770,7 +53144,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this225 = this;
+            var _this226 = this;
 
             var obj = {};
             obj.customerId = this.customerId;
@@ -52779,9 +53153,9 @@
             this.apiService.insertNewUserOnboarding(obj).subscribe(function (result) {
               console.log(result);
 
-              _this225.dialogRef.close({
+              _this226.dialogRef.close({
                 status: 'INITIATED',
-                resp: _this225.additionalInfoUpdateForm.value
+                resp: _this226.additionalInfoUpdateForm.value
               });
             });
           }
@@ -53923,23 +54297,23 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this226 = this;
+            var _this227 = this;
 
             var task = true;
             this.apiService.setTask(task);
             this.route.queryParamMap.subscribe(function (params) {
               if (params.get('searchTerm')) {
-                _this226.redirectedFromTellerSearch = true;
-                _this226.searchText = params.get('searchTerm');
+                _this227.redirectedFromTellerSearch = true;
+                _this227.searchText = params.get('searchTerm');
 
-                _this226.updateSearch(_this226.searchText);
+                _this227.updateSearch(_this227.searchText);
 
                 setTimeout(function () {
-                  _this226.openSearchedApprover();
+                  _this227.openSearchedApprover();
                 }, 3000);
               } else {
                 /* @called :: on screen load */
-                _this226.getDataOnLoad();
+                _this227.getDataOnLoad();
               }
             });
             /* @called :: to refresh data for every 1min interval */
@@ -53957,10 +54331,10 @@
         }, {
           key: "_setSearchSubscription",
           value: function _setSearchSubscription() {
-            var _this227 = this;
+            var _this228 = this;
 
             this._searchSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["debounceTime"])(1000)).subscribe(function (searchValue) {
-              _this227.searchKycid(searchValue);
+              _this228.searchKycid(searchValue);
             });
           }
           /* @method :: to load all data on screen load */
@@ -53976,12 +54350,12 @@
         }, {
           key: "getAllAccDetails",
           value: function getAllAccDetails(status, page, size) {
-            var _this228 = this;
+            var _this229 = this;
 
             this.tasksummaryService.getCardAccDetails(status).subscribe(function (data) {
               console.log("Response", data);
 
-              _this228.updateStatusResponse(status, data);
+              _this229.updateStatusResponse(status, data);
             });
           }
         }, {
@@ -54032,7 +54406,7 @@
         }, {
           key: "getDataOnScroll",
           value: function getDataOnScroll(status, page, totalPage) {
-            var _this229 = this;
+            var _this230 = this;
 
             console.log('---------scrolled----------');
 
@@ -54042,15 +54416,15 @@
             }
 
             this.tasksummaryService.getAllCardAccDetailOnScroll(status, page).subscribe(function (data) {
-              _this229.updateDataOnScroll(status, data.cardList);
+              _this230.updateDataOnScroll(status, data.cardList);
 
-              _this229.cdr.markForCheck();
+              _this230.cdr.markForCheck();
             });
           }
         }, {
           key: "gotoapproverpage",
           value: function gotoapproverpage(data, status, colCode) {
-            var _this230 = this;
+            var _this231 = this;
 
             // console.log('data:: ', data);
             this.tasksummaryService.cardStatusData(status);
@@ -54064,10 +54438,10 @@
             dialogRef.afterClosed().subscribe(function (submit) {
               // console.log('submit :: ', submit);
               if (submit.data === 'REJECTED' || submit.data === 'APPROVED' || submit.data === 'BACKLOG' || submit.data === 'ONGOING') {
-                if (_this230.redirectedFromTellerSearch == true) {
-                  _this230.updateSearch(_this230.searchText);
+                if (_this231.redirectedFromTellerSearch == true) {
+                  _this231.updateSearch(_this231.searchText);
                 } else {
-                  _this230.getDataOnLoad();
+                  _this231.getDataOnLoad();
                 }
               }
             });
@@ -54077,7 +54451,7 @@
         }, {
           key: "searchKycid",
           value: function searchKycid(searchTerm) {
-            var _this231 = this;
+            var _this232 = this;
 
             var text;
             var params;
@@ -54123,7 +54497,7 @@
             }
 
             setTimeout(function () {
-              _this231.getAccountData(params);
+              _this232.getAccountData(params);
             }, 100);
             this.isScroll = false;
           } // getAccountData(params) {
@@ -54145,7 +54519,7 @@
         }, {
           key: "getAccountData",
           value: function getAccountData(params) {
-            var _this232 = this;
+            var _this233 = this;
 
             this.loading = true;
 
@@ -54154,54 +54528,54 @@
 
               if (statusItem == 'BACKLOG') {
                 this.tasksummaryService.getCardSeracData(params, statusItem).subscribe(function (data) {
-                  _this232.BACKLOGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this232.loading = false;
+                  _this233.BACKLOGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this233.loading = false;
                   console.log('resp data :: ', data);
-                  _this232.BACKLOGArr = [];
+                  _this233.BACKLOGArr = [];
 
                   for (var _index13 = 0; _index13 < (data === null || data === void 0 ? void 0 : data.cardList.length); _index13++) {
                     var element = data === null || data === void 0 ? void 0 : data.cardList[_index13];
 
-                    _this232.BACKLOGArr.push(element);
+                    _this233.BACKLOGArr.push(element);
                   }
                 });
               } else if (statusItem == 'ONGOING') {
                 this.tasksummaryService.getCardSeracData(params, statusItem).subscribe(function (data) {
-                  _this232.ONGOINGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this232.loading = false;
+                  _this233.ONGOINGTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this233.loading = false;
                   console.log('resp data :: ', data);
-                  _this232.ONGOINGArr = [];
+                  _this233.ONGOINGArr = [];
 
                   for (var _index14 = 0; _index14 < (data === null || data === void 0 ? void 0 : data.cardList.length); _index14++) {
                     var element = data.cardList[_index14];
 
-                    _this232.ONGOINGArr.push(element);
+                    _this233.ONGOINGArr.push(element);
                   }
                 });
               } else if (statusItem == 'APPROVED') {
                 this.tasksummaryService.getCardSeracData(params, statusItem).subscribe(function (data) {
-                  _this232.APPROVEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this232.loading = false;
+                  _this233.APPROVEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this233.loading = false;
                   console.log('resp data :: ', data);
-                  _this232.APPROVEDArr = [];
+                  _this233.APPROVEDArr = [];
 
                   for (var _index15 = 0; _index15 < (data === null || data === void 0 ? void 0 : data.cardList.length); _index15++) {
                     var element = data.cardList[_index15];
 
-                    _this232.APPROVEDArr.push(element);
+                    _this233.APPROVEDArr.push(element);
                   }
                 });
               } else if (statusItem == 'REJECTED') {
                 this.tasksummaryService.getCardSeracData(params, statusItem).subscribe(function (data) {
-                  _this232.REJECTEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
-                  _this232.loading = false;
+                  _this233.REJECTEDTotalPages = data === null || data === void 0 ? void 0 : data.totalPages;
+                  _this233.loading = false;
                   console.log('resp data :: ', data);
-                  _this232.REJECTEDArr = [];
+                  _this233.REJECTEDArr = [];
 
                   for (var _index16 = 0; _index16 < (data === null || data === void 0 ? void 0 : data.cardList.length); _index16++) {
                     var element = data.cardList[_index16];
 
-                    _this232.REJECTEDArr.push(element);
+                    _this233.REJECTEDArr.push(element);
                   }
                 });
               }
@@ -56352,30 +56726,30 @@
         }, {
           key: "getApplicantAddress",
           value: function getApplicantAddress() {
-            var _this233 = this;
+            var _this234 = this;
 
             this.appApiService.fetchByCif(this.cifNumber).subscribe(function (data) {
-              _this233.address = data.customerInfoList[0].userAddress[0];
-              var nomineeAddress = _this233.nomineeUpdateForm.controls['nominees'];
+              _this234.address = data.customerInfoList[0].userAddress[0];
+              var nomineeAddress = _this234.nomineeUpdateForm.controls['nominees'];
               var nomineeAddress1 = nomineeAddress.controls[nomineeAddress.length - 1];
 
-              _this233.getStateName(_this233.address.country);
+              _this234.getStateName(_this234.address.country);
 
-              _this233.getCityName(_this233.address.state);
+              _this234.getCityName(_this234.address.state);
 
-              nomineeAddress1.get('zipCode').setValue(_this233.address.zipCode);
-              nomineeAddress1.get('street').setValue(_this233.address.address1);
-              nomineeAddress1.get('locality').setValue(_this233.address.address2);
-              nomineeAddress1.get('building').setValue(_this233.address.address1);
-              nomineeAddress1.get('country').setValue(_this233.address.country);
-              nomineeAddress1.get('state').setValue(_this233.address.state);
-              nomineeAddress1.get('city').setValue(_this233.address.city);
+              nomineeAddress1.get('zipCode').setValue(_this234.address.zipCode);
+              nomineeAddress1.get('street').setValue(_this234.address.address1);
+              nomineeAddress1.get('locality').setValue(_this234.address.address2);
+              nomineeAddress1.get('building').setValue(_this234.address.address1);
+              nomineeAddress1.get('country').setValue(_this234.address.country);
+              nomineeAddress1.get('state').setValue(_this234.address.state);
+              nomineeAddress1.get('city').setValue(_this234.address.city);
             });
           }
         }, {
           key: "removeNominee",
           value: function removeNominee(i) {
-            var _this234 = this;
+            var _this235 = this;
 
             console.log("i", i);
             var nomineeId = this.n.at(i).get('nomineeId').value;
@@ -56389,14 +56763,14 @@
               console.log("res:: removed ", res);
 
               if (res) {
-                _this234.apiService.deleteNomineeById(nomineeId, 'ADMIN').subscribe(function (data) {
+                _this235.apiService.deleteNomineeById(nomineeId, 'ADMIN').subscribe(function (data) {
                   console.log("data", data);
                 }, function (err) {
-                  var control = _this234.nomineeUpdateForm.controls['nominees'];
+                  var control = _this235.nomineeUpdateForm.controls['nominees'];
                   control.removeAt(i);
 
                   if (err.status === 200) {
-                    _this234.snack.open('Record Deleted Successfully', 'OK', {
+                    _this235.snack.open('Record Deleted Successfully', 'OK', {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'right'
@@ -56409,7 +56783,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this235 = this;
+            var _this236 = this;
 
             for (var i = 0; i < this.nomineeUpdateForm.value.nominees.length; i++) {
               this.nomineeUpdateForm.value.nominees[i].dateOfBirth = this.convertDate(this.nomineeUpdateForm.value.nominees[i].dateOfBirth);
@@ -56439,7 +56813,7 @@
               this.apiService.createNominee(this.accountId, payload).subscribe(function (data) {
                 console.log(data);
 
-                _this235.snack.open('Nominee Details Updated!', 'OK', {
+                _this236.snack.open('Nominee Details Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -56473,30 +56847,30 @@
         }, {
           key: "getRelationShipType",
           value: function getRelationShipType(key) {
-            var _this236 = this;
+            var _this237 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this236.arrayRelationshipType = data;
+              _this237.arrayRelationshipType = data;
             });
           }
         }, {
           key: "getPrefixValue",
           value: function getPrefixValue(key) {
-            var _this237 = this;
+            var _this238 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this237.arrayPrefix = data;
+              _this238.arrayPrefix = data;
             });
           }
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this238 = this;
+            var _this239 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
-                  _this238.arrayCountry.push(data[i].countryName);
+                  _this239.arrayCountry.push(data[i].countryName);
                 }
               }
             });
@@ -56504,15 +56878,15 @@
         }, {
           key: "getStateName",
           value: function getStateName(country) {
-            var _this239 = this;
+            var _this240 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName === country) {
-                  _this239.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                  _this240.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
                     for (var _i8 = 0; _i8 < resp.length; _i8++) {
                       if (resp[_i8].authStatus === 'A') {
-                        _this239.arrayState.push(resp[_i8].stateName);
+                        _this240.arrayState.push(resp[_i8].stateName);
                       }
                     }
                   });
@@ -56525,12 +56899,12 @@
         }, {
           key: "getCityName",
           value: function getCityName(state) {
-            var _this240 = this;
+            var _this241 = this;
 
             this.entityName = "city";
             console.log(state);
             this.apiService.getDropDownValues1(this.entityName, state).subscribe(function (data) {
-              _this240.arrayCity = data;
+              _this241.arrayCity = data;
             });
           }
         }, {
@@ -57318,7 +57692,7 @@
         }, {
           key: "removeMandate",
           value: function removeMandate(i) {
-            var _this241 = this;
+            var _this242 = this;
 
             var mandateId = this.m.at(i).get('mandateId').value;
             this.confirmService.confirm({
@@ -57330,14 +57704,14 @@
               console.log('res:: removed ', res);
 
               if (res) {
-                _this241.apiService.deleteMandateById(mandateId, 'ADMIN').subscribe(function (data) {
+                _this242.apiService.deleteMandateById(mandateId, 'ADMIN').subscribe(function (data) {
                   console.log('data', data);
                 }, function (err) {
-                  var control = _this241.mandatesUpdateForm.controls['mandates'];
+                  var control = _this242.mandatesUpdateForm.controls['mandates'];
                   control.removeAt(i);
 
                   if (err.status === 200) {
-                    _this241.snack.open('Record Deleted Successfully', 'OK', {
+                    _this242.snack.open('Record Deleted Successfully', 'OK', {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'right'
@@ -57360,32 +57734,32 @@
         }, {
           key: "getModeOfOperation",
           value: function getModeOfOperation(key) {
-            var _this242 = this;
+            var _this243 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this242.arrayModeOfOperation = data;
+              _this243.arrayModeOfOperation = data;
             });
           }
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this243 = this;
+            var _this244 = this;
 
             this.apiService.saveMandateDetails(this.mandatesUpdateForm.value).subscribe(function (data) {
               console.log(data);
 
               if (data === 200 || data !== null) {
-                _this243.snack.open(' Mandate Details Updated!', 'OK', {
+                _this244.snack.open(' Mandate Details Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this243.dialogRef.close({
+                _this244.dialogRef.close({
                   status: 'BACKLOG'
                 });
               } else if (data === 500) {
-                _this243.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this244.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -58848,7 +59222,7 @@
         }, {
           key: "onChecklistChange",
           value: function onChecklistChange(checked, checkbox) {
-            var _this244 = this;
+            var _this245 = this;
 
             checkbox.checked = checked;
             var checklist = this.serviceUpdateForm.get('statementPref');
@@ -58859,7 +59233,7 @@
             } else {
               this.AccStatementPreferenceArray.forEach(function (item, index) {
                 if (item === checkbox.name) {
-                  _this244.AccStatementPreferenceArray.splice(index, 1);
+                  _this245.AccStatementPreferenceArray.splice(index, 1);
                 }
               });
             }
@@ -58867,7 +59241,7 @@
         }, {
           key: "onCheckComChange",
           value: function onCheckComChange(checked, checkbox) {
-            var _this245 = this;
+            var _this246 = this;
 
             console.log(checked);
             console.log(checkbox);
@@ -58881,7 +59255,7 @@
             } else {
               this.commChannelPreferencesArray.forEach(function (item, index) {
                 if (item === checkbox.name) {
-                  _this245.commChannelPreferencesArray.splice(index, 1);
+                  _this246.commChannelPreferencesArray.splice(index, 1);
 
                   console.log("checked", checkbox.name);
                 }
@@ -58891,7 +59265,7 @@
         }, {
           key: "onCheckbankChange",
           value: function onCheckbankChange(checked, checkbox) {
-            var _this246 = this;
+            var _this247 = this;
 
             console.log(checked);
             console.log(checkbox);
@@ -58905,7 +59279,7 @@
             } else {
               this.bankChannelPreferencesArray.forEach(function (item, index) {
                 if (item === checkbox.name) {
-                  _this246.bankChannelPreferencesArray.splice(index, 1);
+                  _this247.bankChannelPreferencesArray.splice(index, 1);
 
                   console.log("checked", checkbox.name);
                 }
@@ -58915,7 +59289,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this247 = this;
+            var _this248 = this;
 
             var accountPayload = {
               "productAccountId": this.accountId,
@@ -58939,13 +59313,13 @@
             this.apiService.createAccountService(this.accountId, accountPayload).subscribe(function (data) {
               console.log(data);
 
-              _this247.snack.open('Account Service Updated!', 'OK', {
+              _this248.snack.open('Account Service Updated!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
-              _this247.dialogRef.close({
+              _this248.dialogRef.close({
                 status: "BACKLOG"
               });
             }, function (err) {
@@ -59449,43 +59823,43 @@
         }, {
           key: "getDisbursementDetails",
           value: function getDisbursementDetails() {
-            var _this248 = this;
+            var _this249 = this;
 
             this.apiService.fetchLoanAssessment(this.loanaccountID).subscribe(function (assessmentDetails) {
-              _this248.assessmentDetails = assessmentDetails;
-              console.log("this.assessmentDetails::", _this248.assessmentDetails);
+              _this249.assessmentDetails = assessmentDetails;
+              console.log("this.assessmentDetails::", _this249.assessmentDetails);
 
-              _this248.buildDisbursementForm(_this248.disbursementDetails);
+              _this249.buildDisbursementForm(_this249.disbursementDetails);
 
-              _this248.loanAssessmentUpdate.value.requestedLoanAmount = _this248.assessmentDetails.requestedLoanAmount;
-              _this248.loanAssessmentUpdate.value.rateOfInterest = _this248.assessmentDetails.rateOfInterest;
-              _this248.loanAssessmentUpdate.value.userRecommendation = _this248.assessmentDetails.userRecommendation;
-              _this248.loanAssessmentUpdate.value.systemRecommendation = _this248.assessmentDetails.systemRecommendation;
-              _this248.loanAssessmentUpdate.value.loanTenure = _this248.assessmentDetails.loanTenure;
-              _this248.loanAssessmentUpdate.value.approvedLoanAmount = _this248.assessmentDetails.approvedLoanAmount;
-              _this248.loanAssessmentUpdate.value.loanAmountRecommendation = _this248.assessmentDetails.loanAmountRecommendation;
+              _this249.loanAssessmentUpdate.value.requestedLoanAmount = _this249.assessmentDetails.requestedLoanAmount;
+              _this249.loanAssessmentUpdate.value.rateOfInterest = _this249.assessmentDetails.rateOfInterest;
+              _this249.loanAssessmentUpdate.value.userRecommendation = _this249.assessmentDetails.userRecommendation;
+              _this249.loanAssessmentUpdate.value.systemRecommendation = _this249.assessmentDetails.systemRecommendation;
+              _this249.loanAssessmentUpdate.value.loanTenure = _this249.assessmentDetails.loanTenure;
+              _this249.loanAssessmentUpdate.value.approvedLoanAmount = _this249.assessmentDetails.approvedLoanAmount;
+              _this249.loanAssessmentUpdate.value.loanAmountRecommendation = _this249.assessmentDetails.loanAmountRecommendation;
               ;
             }, function (err) {
-              _this248.loader.close();
+              _this249.loader.close();
             });
           }
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this249 = this;
+            var _this250 = this;
 
             this.dialogRef.close();
             this.apiService.fetchLoanAssessment(this.loanaccountID).subscribe(function (assessmentDetails) {
               console.log("All Account Service", assessmentDetails);
-              _this249.assessmentDetails = assessmentDetails;
-              console.log("this.assessmentDetails", _this249.assessmentDetails);
-              console.log('form', _this249.loanAssessmentUpdate.value);
+              _this250.assessmentDetails = assessmentDetails;
+              console.log("this.assessmentDetails", _this250.assessmentDetails);
+              console.log('form', _this250.loanAssessmentUpdate.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this250 = this;
+            var _this251 = this;
 
             var renewData = this.loanAssessmentUpdate.value.year + "-" + this.loanAssessmentUpdate.value.month + "-" + this.loanAssessmentUpdate.value.day;
             this.loanAssessmentUpdate.get("loanTenure").setValue(renewData);
@@ -59506,44 +59880,44 @@
             console.log("payload", payload);
             this.apiService.updateAssessmentDetails(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this250.loanaccountID = _this250.data.loanAccountId;
-              console.log('loanaccountID', _this250.loanaccountID);
+              _this251.loanaccountID = _this251.data.loanAccountId;
+              console.log('loanaccountID', _this251.loanaccountID);
 
-              _this250.assign(_this250.data.loanAccountId);
+              _this251.assign(_this251.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this250.data.loanAccountId,
+                  loanAccountId: _this251.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this250.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this251.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this250.data.loanAccountId
+                  loanAccountid: _this251.data.loanAccountId
                 };
 
-                _this250.ls.setItem('fundByStatus', fundStatus);
+                _this251.ls.setItem('fundByStatus', fundStatus);
 
-                _this250.ls.setItem('accountType', data.accountType);
+                _this251.ls.setItem('accountType', data.accountType);
 
-                _this250.ls.setItem('productName', data.businessProductName);
+                _this251.ls.setItem('productName', data.businessProductName);
 
-                _this250.loanaccountID = _this250.data.loanAccountId;
-                console.log("this.productaccountID", _this250.loanaccountID);
+                _this251.loanaccountID = _this251.data.loanAccountId;
+                console.log("this.productaccountID", _this251.loanaccountID);
 
-                _this250.snack.open('Data Updated!', 'OK', {
+                _this251.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this250.getDataOnLoad();
+                _this251.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this250.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this251.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -59552,7 +59926,7 @@
                 console.log("500 error");
               }
 
-              _this250.goToClose();
+              _this251.goToClose();
             });
           }
         }, {
@@ -59588,12 +59962,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this251 = this;
+            var _this252 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this251.updateStatusResponse(status, custResp);
+              _this252.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -60480,7 +60854,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this252 = this;
+            var _this253 = this;
 
             var payload = {
               "accountId": this.accountId,
@@ -60513,17 +60887,17 @@
 
             this.apiService.saveProductAccountInfo(payload).subscribe(function (response) {
               if (response === 200 || response !== null) {
-                _this252.snack.open('Account Details Saved!', 'OK', {
+                _this253.snack.open('Account Details Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this252.dialogRef.close({
+                _this253.dialogRef.close({
                   status: 'BACKLOG'
                 });
               } else if (response === 500) {
-                _this252.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this253.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -60536,42 +60910,42 @@
         }, {
           key: "fetchByCif",
           value: function fetchByCif(cifNumber) {
-            var _this253 = this;
+            var _this254 = this;
 
             this.showSpinn = true;
             this.apiService.fetchByCif(cifNumber).subscribe(function (res) {
               if (res.customerInfoList[0].custStatus != "APPROVED") {
-                _this253.isCifValid = false;
+                _this254.isCifValid = false;
 
-                _this253.snack.open("CIF Number is not Approved :" + cifNumber, "", {
+                _this254.snack.open("CIF Number is not Approved :" + cifNumber, "", {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
               }
 
-              _this253.accountUpdateForm.controls.cifNumber.setValue(cifNumber);
+              _this254.accountUpdateForm.controls.cifNumber.setValue(cifNumber);
 
-              _this253.currencyData = _this253.arrayAccountBranch.find(function (x) {
-                return x.branchName == _this253.branchName;
+              _this254.currencyData = _this254.arrayAccountBranch.find(function (x) {
+                return x.branchName == _this254.branchName;
               });
 
-              _this253.accountUpdateForm.get('accountBranch').setValue(_this253.branchName);
+              _this254.accountUpdateForm.get('accountBranch').setValue(_this254.branchName);
 
-              if (_this253.currencyData != null || _this253.currencyData != undefined) {
-                _this253.accountUpdateForm.get('accountCurrency').setValue(_this253.currencyData.branchCcy);
+              if (_this254.currencyData != null || _this254.currencyData != undefined) {
+                _this254.accountUpdateForm.get('accountCurrency').setValue(_this254.currencyData.branchCcy);
               }
 
-              _this253.accountUpdateForm.get('amount').setValue(0);
+              _this254.accountUpdateForm.get('amount').setValue(0);
 
-              _this253.accountUpdateForm.get('swiftCode').setValue(null);
+              _this254.accountUpdateForm.get('swiftCode').setValue(null);
 
-              _this253.showSpinn = false;
+              _this254.showSpinn = false;
 
               if (!res) {
-                _this253.isCifValid = false;
+                _this254.isCifValid = false;
 
-                _this253.snack.open('Invalid CIF Number', 'OK', {
+                _this254.snack.open('Invalid CIF Number', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -60580,25 +60954,25 @@
                 return;
               } else {
                 if (res.customerInfoList[0].custStatus == "APPROVED") {
-                  _this253.isCifValid = true;
+                  _this254.isCifValid = true;
                 }
 
-                if (_this253.accountUpdateForm.value.swiftCode == null || _this253.accountUpdateForm.value.swiftCodeEnable == null) {
-                  console.log(_this253.accountUpdateForm.value.swiftCode);
-                  _this253.flag = false;
+                if (_this254.accountUpdateForm.value.swiftCode == null || _this254.accountUpdateForm.value.swiftCodeEnable == null) {
+                  console.log(_this254.accountUpdateForm.value.swiftCode);
+                  _this254.flag = false;
                 }
 
                 if (res.customerInfoList[0].custStatus == "APPROVED") {
                   if (res.customerInfoList[0].middleName) {
-                    _this253.accountUpdateForm.get('customerName').setValue(res.customerInfoList[0].firstName + ' ' + res.customerInfoList[0].middleName + ' ' + res.customerInfoList[0].lastName);
+                    _this254.accountUpdateForm.get('customerName').setValue(res.customerInfoList[0].firstName + ' ' + res.customerInfoList[0].middleName + ' ' + res.customerInfoList[0].lastName);
                   } else {
-                    _this253.accountUpdateForm.get('customerName').setValue(res.customerInfoList[0].firstName + ' ' + res.customerInfoList[0].lastName);
+                    _this254.accountUpdateForm.get('customerName').setValue(res.customerInfoList[0].firstName + ' ' + res.customerInfoList[0].lastName);
                   }
 
-                  _this253.cifNumberPrimary = cifNumber;
+                  _this254.cifNumberPrimary = cifNumber;
                 }
 
-                _this253.cdr.markForCheck();
+                _this254.cdr.markForCheck();
               }
             });
           }
@@ -60617,7 +60991,7 @@
         }, {
           key: "onKeyPress",
           value: function onKeyPress(event) {
-            var _this254 = this;
+            var _this255 = this;
 
             var pattern = /[0-9]/;
             var inputChar = String.fromCharCode(event.charCode);
@@ -60633,11 +61007,11 @@
               this.listOfCustByCif = [];
             } else {
               this.timer = setTimeout(function () {
-                _this254.appApiService.fetchByCif(event.target.value).subscribe(function (res) {
+                _this255.appApiService.fetchByCif(event.target.value).subscribe(function (res) {
                   console.log(res);
 
                   if (res) {
-                    _this254.listOfCustByCif = res.customerInfoList;
+                    _this255.listOfCustByCif = res.customerInfoList;
                   }
                 });
               }, 1000);
@@ -60679,26 +61053,26 @@
         }, {
           key: "getAccountType",
           value: function getAccountType(key) {
-            var _this255 = this;
+            var _this256 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this255.arrayAccountType = data;
+              _this256.arrayAccountType = data;
             });
           }
         }, {
           key: "getAccountBranchDetails",
           value: function getAccountBranchDetails() {
-            var _this256 = this;
+            var _this257 = this;
 
             this.api.getAccountBranch().subscribe(function (data) {
-              _this256.arrayAccountBranch = data;
-              _this256.currencyData = _this256.arrayAccountBranch.find(function (x) {
-                return x.branchName == _this256.branchName;
+              _this257.arrayAccountBranch = data;
+              _this257.currencyData = _this257.arrayAccountBranch.find(function (x) {
+                return x.branchName == _this257.branchName;
               });
-              console.log("Currency", _this256.currencyData);
+              console.log("Currency", _this257.currencyData);
 
-              if (_this256.currencyData != null || _this256.currencyData != undefined) {
-                _this256.accountUpdateForm.get('accountCurrency').setValue(_this256.currencyData.branchCcy);
+              if (_this257.currencyData != null || _this257.currencyData != undefined) {
+                _this257.accountUpdateForm.get('accountCurrency').setValue(_this257.currencyData.branchCcy);
               }
             });
           }
@@ -61368,43 +61742,55 @@
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      var app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      /*! app/environments/environment.prod */
+      "vSAV");
+      /* harmony import */
+
+
+      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+      /*! app/shared/services/auth/jwt-auth.service */
+      "nZzT");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
       /*! @angular/material/icon */
       "Tj54");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
       /*! @angular/common */
       "SVse");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
       /*! @angular/material/card */
       "PDjf");
       /* harmony import */
 
 
-      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
       /*! @angular/material/slide-toggle */
       "jMqV");
       /* harmony import */
 
 
-      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
       /*! @angular/material/progress-spinner */
       "pu8Q");
       /* harmony import */
 
 
-      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
+      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
       /*! @angular/flex-layout/extended */
       "ura0"); //import { AppLoaderService } from "app/shared/services/app-loader/app-loader.service";
 
@@ -64185,11 +64571,18 @@
       var _c1 = function _c1(a0, a1) {
         return {
           "disabledbtn": a0,
-          "rejectButton": a1
+          "continueBtn": a1
         };
       };
 
       var _c2 = function _c2(a0, a1) {
+        return {
+          "disabledbtn": a0,
+          "rejectButton": a1
+        };
+      };
+
+      var _c3 = function _c3(a0, a1) {
         return {
           "disabledbtn": a0,
           "approveButton": a1
@@ -64209,48 +64602,68 @@
 
             var ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r84.updateApplicationStatus(ctx_r84.accountInfo, "REJECTED");
+            return ctx_r84["continue"]();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-icon", 133);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "label", 133);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, " highlight_off ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "\xA0\xA0\xA0 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "label", 134);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Reject");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Cotinue");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, " \xA0\xA0 ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, " \xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 135);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 134);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ApproverComponent_div_314_Template_div_click_8_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ApproverComponent_div_314_Template_div_click_5_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
 
             var ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r86.updateApplicationStatus(ctx_r86.accountInfo, "APPROVED");
+            return ctx_r86.updateApplicationStatus(ctx_r86.accountInfo, "REJECTED");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "mat-icon", 136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-icon", 135);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "check_circle");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, " highlight_off ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "\xA0\xA0\xA0 ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\xA0\xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "label", 137);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "label", 136);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, "Approve");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "Reject");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, " \xA0\xA0 ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "div", 137);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ApproverComponent_div_314_Template_div_click_12_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
+
+            var ctx_r87 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+            return ctx_r87.updateApplicationStatus(ctx_r87.accountInfo, "APPROVED");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-icon", 138);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14, "check_circle");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "\xA0\xA0\xA0 ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "label", 139);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Approve");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -64264,16 +64677,20 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hidden", ctx_r17.rejectedStatus)("hidden", ctx_r17.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](5, _c1, ctx_r17.rejectedStatus, !ctx_r17.rejectedStatus));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hidden", ctx_r17.continueStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](6, _c1, ctx_r17.continueStatus, !ctx_r17.continueStatus));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hidden", ctx_r17.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](9, _c2, ctx_r17.rejectedStatus, !ctx_r17.rejectedStatus));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hidden", ctx_r17.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](8, _c2, ctx_r17.approvedStatus, !ctx_r17.approvedStatus));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hidden", ctx_r17.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](12, _c3, ctx_r17.approvedStatus, !ctx_r17.approvedStatus));
         }
       }
 
       var ApproverComponent = /*#__PURE__*/function () {
-        function ApproverComponent(dialogRef, data, apiService, api, ls, router, tasksummaryService, cdr, snack, sanitizer, dialog) {
+        function ApproverComponent(dialogRef, data, apiService, api, ls, router, tasksummaryService, cdr, snack, sanitizer, dialog, jwtService) {
           _classCallCheck(this, ApproverComponent);
 
           this.dialogRef = dialogRef;
@@ -64287,6 +64704,7 @@
           this.snack = snack;
           this.sanitizer = sanitizer;
           this.dialog = dialog;
+          this.jwtService = jwtService;
           this.chart = new ng_apexcharts__WEBPACK_IMPORTED_MODULE_4__["ChartComponent"]();
           this.submitClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
           this.accountInfo = []; //chargeDetails: any;
@@ -64297,12 +64715,13 @@
           this.loading = true;
           this.loadingApplEnrich = false;
           this.nameCreater = ['Y', 'B', '', 'D', 'E', 'T', 'A', 'E', 'R', 'C'];
+          this.continueStatus = true;
         }
 
         _createClass(ApproverComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this257 = this;
+            var _this258 = this;
 
             this.loading = true;
             this.loadingApplEnrich = false; //this.accountId = this.ls.getItem('accountId');
@@ -64320,25 +64739,29 @@
             this.ls.setItem('CIF_NUM_PRIMARY', this.accInfo.customerId);
             this.ls.setItem("NAME", this.accInfo.firstName + " " + this.accInfo.lastName);
             this.tasksummaryService.accountStatus.subscribe(function (status) {
-              _this257.loading = false;
+              _this258.loading = false;
 
               if (status === 'REJECTED') {
-                _this257.approvedStatus = true;
-                _this257.rejectedStatus = true;
-                _this257.editScreen = false;
+                _this258.approvedStatus = true;
+                _this258.rejectedStatus = true;
+                _this258.editScreen = false;
+                _this258.continueStatus = true;
               } else if (status === 'APPROVED') {
-                _this257.approvedStatus = true;
-                _this257.rejectedStatus = true;
-                _this257.editScreen = true;
+                _this258.approvedStatus = true;
+                _this258.rejectedStatus = true;
+                _this258.editScreen = true;
+                _this258.continueStatus = true;
               } else if (status === 'ONGOING') {
-                _this257.approvedStatus = true;
-                _this257.rejectedStatus = false;
-                _this257.isOnGoing = status;
-                _this257.editScreen = false;
+                _this258.approvedStatus = true;
+                _this258.rejectedStatus = false;
+                _this258.isOnGoing = status;
+                _this258.editScreen = false;
+                _this258.continueStatus = false;
               } else if (status === 'BACKLOG') {
-                _this257.approvedStatus = false;
-                _this257.rejectedStatus = false;
-                _this257.editScreen = false;
+                _this258.approvedStatus = false;
+                _this258.rejectedStatus = false;
+                _this258.editScreen = false;
+                _this258.continueStatus = true;
               }
             });
             this.getAccountInfoByAccountId(this.accInfo.accountId);
@@ -64352,46 +64775,46 @@
         }, {
           key: "getAccountInfoByAccountId",
           value: function getAccountInfoByAccountId(accountId) {
-            var _this258 = this;
+            var _this259 = this;
 
             //this.loader.open();
             this.tasksummaryService.getAccountInfoByAccId(accountId).subscribe(function (accInfo) {
               //this.loader.close();
-              _this258.accountInfo = accInfo;
-              _this258.intrestDetails = _this258.accountInfo.intrestDetails;
-              _this258.chargeDetails = _this258.accountInfo.chargeDetails;
-              _this258.loadingApplEnrich = true;
+              _this259.accountInfo = accInfo;
+              _this259.intrestDetails = _this259.accountInfo.intrestDetails;
+              _this259.chargeDetails = _this259.accountInfo.chargeDetails;
+              _this259.loadingApplEnrich = true;
 
-              _this258.assignValues(_this258.accountInfo.businessProductAccServices, _this258.accountInfo.businessProductNominee, _this258.accountInfo.securedOverdraft, _this258.accountInfo.unsecuredOverdraft, _this258.accountInfo.financialDetails, _this258.accountInfo.intrestDetails, _this258.accountInfo.chargeDetails, _this258.accountInfo.qualitativeScorecard, _this258.accountInfo.assessmentReport, _this258.accountInfo.createAccFundingStage);
+              _this259.assignValues(_this259.accountInfo.businessProductAccServices, _this259.accountInfo.businessProductNominee, _this259.accountInfo.securedOverdraft, _this259.accountInfo.unsecuredOverdraft, _this259.accountInfo.financialDetails, _this259.accountInfo.intrestDetails, _this259.accountInfo.chargeDetails, _this259.accountInfo.qualitativeScorecard, _this259.accountInfo.assessmentReport, _this259.accountInfo.createAccFundingStage);
 
-              for (var key in _this258.accountInfo) {
-                if (Object.prototype.hasOwnProperty.call(_this258.accountInfo, key)) {
-                  var element = _this258.accountInfo[key];
+              for (var key in _this259.accountInfo) {
+                if (Object.prototype.hasOwnProperty.call(_this259.accountInfo, key)) {
+                  var element = _this259.accountInfo[key];
 
                   if (key === 'chargeDetails') {
-                    _this258.chargeDetails = element;
+                    _this259.chargeDetails = element;
 
-                    if (_this258.accountDetails.applicationDate) {
-                      _this258.accountDetails.applicationDate = moment__WEBPACK_IMPORTED_MODULE_24__(_this258.accountDetails.applicationDate).format('YYYY-MM-DD');
+                    if (_this259.accountDetails.applicationDate) {
+                      _this259.accountDetails.applicationDate = moment__WEBPACK_IMPORTED_MODULE_24__(_this259.accountDetails.applicationDate).format('YYYY-MM-DD');
                       ;
                     }
                   }
 
                   if (key === 'businessProductAccount') {
-                    console.log(_this258.accountDetails);
-                    _this258.accountDetails = element;
+                    console.log(_this259.accountDetails);
+                    _this259.accountDetails = element;
 
-                    if (_this258.accountDetails.applicationDate) {
-                      _this258.accountDetails.applicationDate = moment__WEBPACK_IMPORTED_MODULE_24__(_this258.accountDetails.applicationDate).format('YYYY-MM-DD');
+                    if (_this259.accountDetails.applicationDate) {
+                      _this259.accountDetails.applicationDate = moment__WEBPACK_IMPORTED_MODULE_24__(_this259.accountDetails.applicationDate).format('YYYY-MM-DD');
                     }
                   }
 
                   if (key === 'businessProductCustomer') {
-                    _this258.customerInformation = element;
+                    _this259.customerInformation = element;
 
-                    for (var custKey in _this258.customerInformation) {
-                      if (Object.prototype.hasOwnProperty.call(_this258.customerInformation, custKey)) {
-                        var custEle = _this258.customerInformation[custKey];
+                    for (var custKey in _this259.customerInformation) {
+                      if (Object.prototype.hasOwnProperty.call(_this259.customerInformation, custKey)) {
+                        var custEle = _this259.customerInformation[custKey];
 
                         if (custKey === 'data') {
                           for (var applicantKey in custEle) {
@@ -64400,10 +64823,10 @@
 
                               if (custEle.length > 1) {
                                 if (applicantEle.primaryCustomer) {
-                                  _this258.approverName = applicantEle.firstName;
+                                  _this259.approverName = applicantEle.firstName;
                                 }
                               } else {
-                                _this258.approverName = applicantEle.firstName;
+                                _this259.approverName = applicantEle.firstName;
                               }
                             }
                           }
@@ -64413,7 +64836,7 @@
                   }
 
                   if (key === 'businessProductMandate') {
-                    _this258.mandate = element;
+                    _this259.mandate = element;
                   } // if (key === 'businessProductNominee') {
                   //   this.nomineeDetails = element;
                   // }
@@ -64453,7 +64876,7 @@
         }, {
           key: "goToCreateAccount",
           value: function goToCreateAccount(accountId, cifNumber) {
-            var _this259 = this;
+            var _this260 = this;
 
             console.log("Navigating to edit screen::", accountId);
             this.ls.setItem('EDIT-CREATEACCCIF', this.accountInfo);
@@ -64465,7 +64888,7 @@
             };
             this.tasksummaryService.updateCreateAccStatus(statusModel).subscribe(function (data) {});
             setTimeout(function () {
-              _this259.router.navigateByUrl('/home/application/list');
+              _this260.router.navigateByUrl('/home/application/list');
             }, 1000);
             console.log(this.ls.getItem('EDIT-CREATEACCCIF'));
             this.dialogRef.close({
@@ -64551,7 +64974,7 @@
         }, {
           key: "updateApplicationStatus",
           value: function updateApplicationStatus(formData, status) {
-            var _this260 = this;
+            var _this261 = this;
 
             console.log('data : ', formData.businessProductAccount.accountId);
             formData.businessProductAccount.status = status; //to send status on dialog close 
@@ -64570,26 +64993,26 @@
             this.tasksummaryService.updateCreateAccStatus(formDt).subscribe(function (respData) {
               // console.log('respData:: ', respData);
               if (respData.accountId != null || respData.accountId != '' || respData.accountId != "") {
-                _this260.close(data);
+                _this261.close(data);
 
-                _this260.cdr.markForCheck();
+                _this261.cdr.markForCheck();
 
-                _this260.cdr.detectChanges();
+                _this261.cdr.detectChanges();
 
-                _this260.dialogRef.close({
+                _this261.dialogRef.close({
                   message: 'Confirm',
                   data: data
                 });
 
-                _this260.snack.open(status + ' !', 'OK', {
+                _this261.snack.open(status + ' !', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this260.cdr.markForCheck();
+                _this261.cdr.markForCheck();
               } else {
-                _this260.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this261.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -64599,9 +65022,9 @@
             }, function (error) {
               // console.log("error :: ", error);
               console.log('error resp :: ', error);
-              _this260.errorStatus = status;
+              _this261.errorStatus = status;
 
-              _this260.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this261.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -64623,7 +65046,7 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(customerId) {
-            var _this261 = this;
+            var _this262 = this;
 
             console.log(customerId);
             this.image = null;
@@ -64632,17 +65055,17 @@
               // console.log(data.profileImage); 
 
               if (data.profileImage != null) {
-                _this261.imageUrl = data.profileImage;
-                console.log("imageurl", _this261.imageUrl);
+                _this262.imageUrl = data.profileImage;
+                console.log("imageurl", _this262.imageUrl);
                 var objectURL = data.profileImage.fileUrl;
-                _this261.image = _this261.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this262.image = _this262.sanitizer.bypassSecurityTrustUrl(objectURL);
               }
 
               if (data.signatures) {
-                _this261.signatureData = data.signatures[0];
-                if (_this261.signatureData.documentName == 'undefinedSignature') _this261.signatureData.documentName = 'Signature';
+                _this262.signatureData = data.signatures[0];
+                if (_this262.signatureData.documentName == 'undefinedSignature') _this262.signatureData.documentName = 'Signature';
 
-                _this261.ls.setItem('signedImage', _this261.signatureData.fileUrl);
+                _this262.ls.setItem('signedImage', _this262.signatureData.fileUrl);
               } // console.log(this.image,"Profile Data");
               // console.log(this.profileData.customerName,"Profile Data");
               // const blob = base64StringToBlob(this.profileData.fileData, contentType);
@@ -64655,12 +65078,12 @@
         }, {
           key: "getByAccountId",
           value: function getByAccountId(accountId) {
-            var _this262 = this;
+            var _this263 = this;
 
             this.apiService.getByAccountId(accountId).subscribe(function (resp) {
-              _this262.accountdetailsForStatusUpdate = resp;
+              _this263.accountdetailsForStatusUpdate = resp;
 
-              _this262.updateAccountStatus(resp);
+              _this263.updateAccountStatus(resp);
             });
           }
         }, {
@@ -64682,12 +65105,12 @@
         }, {
           key: "debitCardData",
           value: function debitCardData(cardType) {
-            var _this263 = this;
+            var _this264 = this;
 
             console.log('dardType-- ', cardType);
             this.api.getCardType(this.cardType.cardType).subscribe(function (resp) {
               console.log('resp-- ', resp);
-              _this263.debitCardDataValue = resp;
+              _this264.debitCardDataValue = resp;
               console.log(resp);
             }, function (err) {
               return console.log('ERROR: ', err);
@@ -64696,7 +65119,7 @@
         }, {
           key: "openEditScreen",
           value: function openEditScreen(screen, data) {
-            var _this264 = this;
+            var _this265 = this;
 
             var statusModel = {
               status: "ONGOING",
@@ -64706,8 +65129,8 @@
               console.log(data);
 
               if (data != null) {
-                _this264.approvedStatus = true;
-                _this264.rejectedStatus = false;
+                _this265.approvedStatus = true;
+                _this265.rejectedStatus = false;
               }
             });
             var dialogRef = this.dialog.open(screen, {
@@ -64718,37 +65141,39 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               console.log('submit');
-              _this264.accInfo.status = submit.status;
+              _this265.accInfo.status = submit.status;
 
-              if (_this264.accInfo.status == 'BACKLOG') {
-                _this264.getAccountInfoByAccountId(_this264.accountId);
+              if (_this265.accInfo.status == 'BACKLOG') {
+                _this265.getAccountInfoByAccountId(_this265.accountId);
 
                 var _statusModel = {
                   status: "BACKLOG",
-                  accountId: _this264.accountId
+                  accountId: _this265.accountId
                 };
 
-                _this264.tasksummaryService.updateCreateAccStatus(_statusModel).subscribe(function (data) {
+                _this265.tasksummaryService.updateCreateAccStatus(_statusModel).subscribe(function (data) {
                   console.log(data);
 
                   if (data != null) {
-                    _this264.approvedStatus = false;
-                    _this264.rejectedStatus = false;
+                    _this265.approvedStatus = false;
+                    _this265.rejectedStatus = false;
                   }
                 });
               }
 
               if (submit == true) {
-                _this264.getProfileImage(_this264.accInfo.customerId);
+                _this265.getProfileImage(_this265.accInfo.customerId);
               }
 
-              _this264.cdr.markForCheck();
+              _this265.cdr.markForCheck();
             });
           }
         }, {
           key: "editAccountDetails",
           value: function editAccountDetails() {
-            this.accountDetails.customerName = this.accInfo.firstName + ' ' + this.accInfo.lastName;
+            var _a, _b;
+
+            if (this.accountDetails) this.accountDetails.customerName = ((_a = this.accInfo) === null || _a === void 0 ? void 0 : _a.firstName) + ' ' + ((_b = this.accInfo) === null || _b === void 0 ? void 0 : _b.lastName);
             this.openEditScreen(_account_details_update_account_details_update_component__WEBPACK_IMPORTED_MODULE_10__["AccountDetailsUpdateComponent"], this.accountDetails);
           }
         }, {
@@ -64816,13 +65241,51 @@
           value: function editDigitalSign() {
             this.openEditScreen(app_views_home_digital_signing_upload_sign_esign_upload_sign_esign_component__WEBPACK_IMPORTED_MODULE_22__["UploadSignEsignComponent"], this.signatureData);
           }
+        }, {
+          key: "continue",
+          value: function _continue() {
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+
+            console.log("customer Id----->", (_a = this.accountInfo) === null || _a === void 0 ? void 0 : _a.businessProductNominee);
+            this.ls.setItem('accountId', (_b = this.accountInfo.businessProductAccount) === null || _b === void 0 ? void 0 : _b.accountId);
+            this.ls.setItem('appEntryStage', this.accountInfo.businessProductAccount && this.accountInfo.businessProductAccServices && ((_c = this.accountInfo.businessProductCustomer.data) === null || _c === void 0 ? void 0 : _c.length) != 0 && ((_d = this.accountInfo.businessProductMandate) === null || _d === void 0 ? void 0 : _d.length) != 0 && ((_e = this.accountInfo.businessProductNominee) === null || _e === void 0 ? void 0 : _e.length) != 0 ? true : false);
+            this.ls.setItem('ACC_DONE', this.accountInfo.businessProductAccount ? true : false);
+            this.ls.setItem('ACC_SERVICE_DONE', this.accountInfo.businessProductAccServices ? true : false);
+            this.ls.setItem('ACC_OPEN_DONE', ((_h = (_g = (_f = this.accountInfo) === null || _f === void 0 ? void 0 : _f.businessProductCustomer) === null || _g === void 0 ? void 0 : _g.data) === null || _h === void 0 ? void 0 : _h.length) != 0 ? true : false);
+            this.ls.setItem('ACC_MANDATE_DONE', ((_j = this.accountInfo.businessProductMandate) === null || _j === void 0 ? void 0 : _j.length) != 0 ? true : false);
+            this.ls.setItem('ACC_NOMINEE_DONE', ((_k = this.accountInfo.businessProductNominee) === null || _k === void 0 ? void 0 : _k.length) != 0 ? true : false); //limit entry stage -->
+
+            this.ls.setItem('limitEntryStage', this.accountInfo.financialDetails && (((_l = this.accountInfo.securedOverdraft) === null || _l === void 0 ? void 0 : _l.length) != 0 || this.accountInfo.unsecuredOverdraft) ? true : false);
+            this.ls.setItem('LIMIT_FIN_DONE', this.accountInfo.financialDetails ? true : false);
+            this.ls.setItem('LIMIT_SECURED_DONE', ((_m = this.accountInfo.securedOverdraft) === null || _m === void 0 ? void 0 : _m.length) != 0 && this.accountInfo.securedOverdraft ? true : false);
+            this.ls.setItem('LIMIT_UNSECURED_DONE', this.accountInfo.unsecuredOverdraft ? true : false); //Application Enrichment -->
+
+            this.ls.setItem('enrichmentStage', this.accountInfo.chargeDetails && ((_o = this.accountInfo.intrestDetails) === null || _o === void 0 ? void 0 : _o.length) != 0 ? true : false);
+            this.ls.setItem('ENRICHMENT_CHARGES_DONE', this.accountInfo.chargeDetails ? true : false);
+            this.ls.setItem('ENRICHMENT_INTEREST_DONE', ((_p = this.accountInfo.intrestDetails) === null || _p === void 0 ? void 0 : _p.length) != 0 ? true : false); //Application Assessment -->
+
+            this.ls.setItem('ASSESSMENT_QA_DONE', ((_s = (_r = (_q = this.accountInfo) === null || _q === void 0 ? void 0 : _q.qualitativeScorecard) === null || _r === void 0 ? void 0 : _r.scoreCardMapping) === null || _s === void 0 ? void 0 : _s.length) != 0 && ((_t = this.accountInfo) === null || _t === void 0 ? void 0 : _t.qualitativeScorecard) ? true : false);
+            this.ls.setItem('ASSESSMENT_REPORT_DONE', this.accountInfo.assessmentReport ? true : false); //Funding Stage-->
+
+            this.ls.setItem('FUNDING_INI_DONE', this.accountInfo.createAccFundingStage ? true : false); //Approval Details-->
+
+            this.ls.setItem('approvalStage', this.accountDetails ? true : false);
+            this.ls.setItem('APPROVAL_DETAILS_DONE', this.accountDetails ? true : false); //  const url=`${environment.redirectUrl}home/application/create-customer-account?cid=${this.accountInfo.businessProductAccount?.accountId}`
+            //  const url=`http://localhost:4200/#/home/application/create-customer-account?cid=${this.accountInfo.businessProductAccount?.accountId}`
+            //   window.open(url, '_blank');
+
+            var theme = null;
+            var type = "CUSTACC";
+            window.open("".concat(app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_25__["environment"].redirectUrl, "?code=").concat(this.jwtService.getEncryptedToken(), "&appType=").concat(type, "&theme=").concat(theme), '_blank');
+            this.dialogRef.close();
+          }
         }]);
 
         return ApproverComponent;
       }();
 
       ApproverComponent.ɵfac = function ApproverComponent_Factory(t) {
-        return new (t || ApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationEntryStageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_9__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_0__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_6__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]));
+        return new (t || ApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationEntryStageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_9__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_0__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_6__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_26__["JwtAuthService"]));
       };
 
       ApproverComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
@@ -64844,7 +65307,7 @@
         },
         decls: 316,
         vars: 57,
-        consts: [["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [2, "color", "darkgray", "cursor", "pointer", "margin-right", "5px", 3, "click"], ["fxLayoutAlign", "center"], [4, "ngIf"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "10"], [1, "num"], [1, "bordnum"], ["fxFlex", "85", 1, "margin1"], ["fxLayout", "row", "fxLayoutAlign", "space between center"], ["visible", "true"], [1, "editbtn", 3, "hidden", "click"], [1, "mtcd"], ["fxLayout", "row", 1, "rowbord"], ["fxFlex", "4"], ["fxFlex", "32"], [1, "label"], [1, "labelval"], ["fxLayout", "row", 1, "rowbord", "nobord"], [3, "checked", "disabled"], [4, "ngFor", "ngForOf"], ["fxLayout", "row", 1, "flex-container", 2, "flex-direction", "row", "box-sizing", "border-box", "display", "flex"], ["fxFlex", "10", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "15%"], ["fxFlex", "85", 1, "margin1", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "85%"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["class", "mtcd", 4, "ngIf"], ["fxLayout", "row", "class", "flex-container", "style", "flex-direction: row; box-sizing: border-box; display: flex;", 4, "ngIf"], [1, "appersoninfocard", 2, "width", "250px"], ["fxLayout", "row", "fxLayoutAlign", " start"], [1, "circle1"], [1, "content2"], [2, "padding-bottom", "30px"], ["class", "labelval", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row"], [1, "circle"], [1, "content1"], [1, "appersoninfocard"], ["fxFlex", "200px", 1, "size1"], [1, "namecard", 2, "font-size", "20px"], [1, "cifnum", "label"], [1, "phoneno", "label"], [1, "maticon"], [1, "textsize"], [1, "email", "label"], [1, "address", "label"], ["fxFlex", "300px", 2, "font-size", "12px"], [2, "font-size", "20px"], ["fxLayout", "row", "fxLayoutGap", "40px", 2, "font-size", "12px"], ["fxLayout", "row", "fxLayoutGap", "20px", 2, "font-size", "12px"], [1, "btnleft"], [1, "circle3"], [1, "done1"], ["fxFlex", "5"], ["fxFlex", "30"], ["class", "labelval", 4, "ngFor", "ngForOf"], ["disabled", "", 3, "checked"], ["fxFlex", "30", 4, "ngIf"], ["fxLayout", "row", "class", "rowbord", 4, "ngIf"], [1, "table", "table-bordered", "dataStyle"], [2, "color", "#03a9f4"], ["fxFlex", "200px", 2, "font-size", "10px"], ["fxFlex", "100px", 2, "font-size", "12px"], ["fxLayout", "column", "fxLayoutGap", "10px", 2, "font-size", "12px"], ["class", "appersoninfocard", 4, "ngFor", "ngForOf"], ["fxFlex", "130px", 2, "font-size", "12px"], ["visible", "true", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxLayout", "row", "fxLayoutGap", "40px"], ["type", "button", 1, "sqftbtn"], ["type", "button", 1, "acbtn"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "col", 2, "font-size", "24px"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "col", 2, "font-size", "20px", 3, "hidden"], [1, "box"], [3, "series", "chart", "plotOptions", "labels"], [1, "box2"], [3, "series", "chart", "yaxis", "xaxis", "labels", "stroke", "markers", "fill", "tooltip"], ["fxLayout", "row", "fxLayoutGap", "70px"], ["fxLayout", "row", "FxLayoutAlign", "start"], [2, "font-size", "16px", "padding-top", "30px"], [2, "color", "grey", "font-size", "10px"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "col", 2, "font-size", "16px", "padding-top", "30px"], ["fxLayout", "row", "fxLayouutAlign", "space-between center"], [1, "interstcard"], [1, "interstcard2"], [1, "interstcard3"], [1, "interstcard4"], [1, "nom"], [1, "appersoninfocard", 2, "width", "100px"], ["fxFlex", "47", "class", "qtncrd", "fxFlex.xs", "100", 4, "ngFor", "ngForOf"], ["fxFlex", "47", "fxFlex.xs", "100", 1, "qtncrd"], ["fxFlex", "85", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "85%"], [1, "marginn"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "mt-12"], ["fxFlex", "100"], [1, "mat-heading-label", "ml-48"], [1, "mat-body-1"], [1, "mat-heading-label", "right-text"], ["type", "button", 1, "refnum"], ["type", "button", 1, "suces"], [1, "ml-48", "btttn", 2, "font-family", "Manrope,SemiBold"], [1, "mat-body-1", "btttn"], [1, "right-text", "btttn"], ["download", "", 1, "linkColor", 3, "href"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
+        consts: [["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [2, "color", "darkgray", "cursor", "pointer", "margin-right", "5px", 3, "click"], ["fxLayoutAlign", "center"], [4, "ngIf"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "10"], [1, "num"], [1, "bordnum"], ["fxFlex", "85", 1, "margin1"], ["fxLayout", "row", "fxLayoutAlign", "space between center"], ["visible", "true"], [1, "editbtn", 3, "hidden", "click"], [1, "mtcd"], ["fxLayout", "row", 1, "rowbord"], ["fxFlex", "4"], ["fxFlex", "32"], [1, "label"], [1, "labelval"], ["fxLayout", "row", 1, "rowbord", "nobord"], [3, "checked", "disabled"], [4, "ngFor", "ngForOf"], ["fxLayout", "row", 1, "flex-container", 2, "flex-direction", "row", "box-sizing", "border-box", "display", "flex"], ["fxFlex", "10", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "15%"], ["fxFlex", "85", 1, "margin1", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "85%"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["class", "mtcd", 4, "ngIf"], ["fxLayout", "row", "class", "flex-container", "style", "flex-direction: row; box-sizing: border-box; display: flex;", 4, "ngIf"], [1, "appersoninfocard", 2, "width", "250px"], ["fxLayout", "row", "fxLayoutAlign", " start"], [1, "circle1"], [1, "content2"], [2, "padding-bottom", "30px"], ["class", "labelval", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row"], [1, "circle"], [1, "content1"], [1, "appersoninfocard"], ["fxFlex", "200px", 1, "size1"], [1, "namecard", 2, "font-size", "20px"], [1, "cifnum", "label"], [1, "phoneno", "label"], [1, "maticon"], [1, "textsize"], [1, "email", "label"], [1, "address", "label"], ["fxFlex", "300px", 2, "font-size", "12px"], [2, "font-size", "20px"], ["fxLayout", "row", "fxLayoutGap", "40px", 2, "font-size", "12px"], ["fxLayout", "row", "fxLayoutGap", "20px", 2, "font-size", "12px"], [1, "btnleft"], [1, "circle3"], [1, "done1"], ["fxFlex", "5"], ["fxFlex", "30"], ["class", "labelval", 4, "ngFor", "ngForOf"], ["disabled", "", 3, "checked"], ["fxFlex", "30", 4, "ngIf"], ["fxLayout", "row", "class", "rowbord", 4, "ngIf"], [1, "table", "table-bordered", "dataStyle"], [2, "color", "#03a9f4"], ["fxFlex", "200px", 2, "font-size", "10px"], ["fxFlex", "100px", 2, "font-size", "12px"], ["fxLayout", "column", "fxLayoutGap", "10px", 2, "font-size", "12px"], ["class", "appersoninfocard", 4, "ngFor", "ngForOf"], ["fxFlex", "130px", 2, "font-size", "12px"], ["visible", "true", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxLayout", "row", "fxLayoutGap", "40px"], ["type", "button", 1, "sqftbtn"], ["type", "button", 1, "acbtn"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "col", 2, "font-size", "24px"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "col", 2, "font-size", "20px", 3, "hidden"], [1, "box"], [3, "series", "chart", "plotOptions", "labels"], [1, "box2"], [3, "series", "chart", "yaxis", "xaxis", "labels", "stroke", "markers", "fill", "tooltip"], ["fxLayout", "row", "fxLayoutGap", "70px"], ["fxLayout", "row", "FxLayoutAlign", "start"], [2, "font-size", "16px", "padding-top", "30px"], [2, "color", "grey", "font-size", "10px"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "col", 2, "font-size", "16px", "padding-top", "30px"], ["fxLayout", "row", "fxLayouutAlign", "space-between center"], [1, "interstcard"], [1, "interstcard2"], [1, "interstcard3"], [1, "interstcard4"], [1, "nom"], [1, "appersoninfocard", 2, "width", "100px"], ["fxFlex", "47", "class", "qtncrd", "fxFlex.xs", "100", 4, "ngFor", "ngForOf"], ["fxFlex", "47", "fxFlex.xs", "100", 1, "qtncrd"], ["fxFlex", "85", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "85%"], [1, "marginn"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "mt-12"], ["fxFlex", "100"], [1, "mat-heading-label", "ml-48"], [1, "mat-body-1"], [1, "mat-heading-label", "right-text"], ["type", "button", 1, "refnum"], ["type", "button", 1, "suces"], [1, "ml-48", "btttn", 2, "font-family", "Manrope,SemiBold"], [1, "mat-body-1", "btttn"], [1, "right-text", "btttn"], ["download", "", 1, "linkColor", 3, "href"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["fxLayout", "row", 1, "continueBtn", 3, "hidden", "ngClass", "click"], [1, "continuelabel"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
         template: function ApproverComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
@@ -65865,7 +66328,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](313, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](314, ApproverComponent_div_314_Template, 14, 11, "div", 55);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](314, ApproverComponent_div_314_Template, 18, 15, "div", 55);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -66088,9 +66551,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx.loading);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_25__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_25__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_27__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_27__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardAvatar"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_25__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardContent"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_29__["MatSlideToggle"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_30__["MatSpinner"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_25__["DefaultLayoutGapDirective"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_4__["ChartComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardSubtitle"], _angular_common__WEBPACK_IMPORTED_MODULE_27__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_31__["DefaultClassDirective"]],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_27__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_27__["UpperCasePipe"]],
-        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n  margin: 10px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.num[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 52%;\n  height: 52px;\n  padding-top: 16px;\n  background: white;\n  margin-left: 15px;\n}\n\n.num1[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 15%;\n  height: 70px;\n  padding-top: 25px;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  background-color: #f6f8fc;\n  border: 0.5px;\n  margin-right: 2%;\n  margin-bottom: 40px;\n  padding: 10px;\n  margin-top: 40px;\n  margin-left: 50px;\n  border-color: #B2B2B2;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 38px;\n  margin-right: 7%;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 5%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n  display: flex;\n  align-items: center;\n  font-family: 'Manrope', Medium;\n}\n\n.textsize[_ngcontent-%COMP%] {\n  padding: 0 10px;\n  margin-top: 10px;\n}\n\n.labelval[_ngcontent-%COMP%] {\n  font-family: 'Montserrat', Medium;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.dataStyle[_ngcontent-%COMP%] {\n  width: 99%;\n  font-family: 'Montserrat', Medium;\n  margin-left: 4%;\n  margin-right: 13%;\n}\n\n.btttn[_ngcontent-%COMP%] {\n  font-family: 'Montserrat', Medium;\n  font-weight: bold;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  width: 40%;\n  margin-bottom: 20px !important;\n  background: #f4f6f8;\n  margin-left: 32px;\n}\n\n.appersoninfocard1[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n.interstcard[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 97%;\n  height: 86%;\n}\n\n.interstcard2[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 75%;\n  height: 86%;\n}\n\n.interstcard3[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 97%;\n  height: 86%;\n  right: 29%;\n}\n\n.interstcard4[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 100%;\n  height: 86%;\n  right: 35%;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 38%;\n  max-width: 9%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n  position: relative;\n  padding-right: 12px;\n}\n\n.cancelIcon[_ngcontent-%COMP%] {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 63px;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon[_ngcontent-%COMP%] {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel[_ngcontent-%COMP%] {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin-right: 15px;\n  margin-top: 21%;\n  position: relative;\n  margin-bottom: 14px;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n  margin-left: 0;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n  margin-right: 40px;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 10px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  color: white;\n  margin-top: 44px;\n  margin-left: 44px;\n}\n\n.right-text[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 150px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n  margin-top: 10px;\n}\n\n.refnum[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0e7cc5;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0e57c5;\n  height: 30px;\n  width: 250px;\n  margin-right: 60px;\n}\n\n.suces[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #24cca7;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0dab4e;\n  height: 25px;\n  width: 150px;\n  margin-right: 60px;\n  margin-left: 204px;\n}\n\n.btttn[_ngcontent-%COMP%] {\n  font-family: 'Manrope', Medium !important;\n  color: #9AA1B0;\n}\n\n.margin1[_ngcontent-%COMP%] {\n  margin-top: 18px;\n  font-size: 20px;\n}\n\nh2[_ngcontent-%COMP%] {\n  margin-left: 13px;\n  font-size: 20px;\n  font-family: 'montserrat' , bold;\n}\n\n.height1[_ngcontent-%COMP%] {\n  margin-left: 32px;\n}\n\nlegend[_ngcontent-%COMP%] {\n  width: auto;\n  margin-right: 25px;\n  color: #5f5c5c;\n  font-size: 18px;\n  font-family: 'Montserrat', Medium;\n}\n\nfieldset[_ngcontent-%COMP%] {\n  border-top: 1px solid lightgray;\n  border-bottom: 0px solid lightgray;\n  border-right: 0px solid lightgray;\n  border-left: 0px solid lightgray;\n  margin-left: 13px;\n  margin-right: 20px;\n  margin-top: 20px;\n  flex-grow: 1;\n}\n\n.size1[_ngcontent-%COMP%] {\n  font-size: 10px;\n  height: 165px;\n}\n\n.maticon[_ngcontent-%COMP%] {\n  margin-top: 10px;\n}\n\n.box[_ngcontent-%COMP%] {\n  height: 295px;\n  width: 29%;\n}\n\n.box2[_ngcontent-%COMP%] {\n  width: 62%;\n}\n\n.nom[_ngcontent-%COMP%] {\n  margin-left: 30px;\n}\n\n.marginn[_ngcontent-%COMP%] {\n  margin-top: 22px;\n}\n\n.done1[_ngcontent-%COMP%] {\n  top: 50%;\n  text-align: center;\n  color: #fff;\n  margin-top: 5px;\n  width: inherit;\n  height: auto;\n  font-size: 19px;\n}\n\n.circle3[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 3rem;\n  background-color: #0ec588;\n  border-radius: 50%;\n  margin-right: 10px;\n  margin-left: 5px;\n}\n\n.btnleft[_ngcontent-%COMP%] {\n  margin-left: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcYXBwcm92ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFRyxZQUFXO0VBQ1gsYUFBWTtBQUFmOztBQUVBO0VBQ0ksVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG1DQUFtQztFQUNuQyw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBQ2hCOztBQUVBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG1DQUFtQztFQUNuQyw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztFQUNYLFlBQVc7QUFDZjs7QUFFQTtFQUVJLGtCQUFpQjtFQUNqQixjQUFjO0VBQ2QseUJBQXdCO1VBQXhCLHdCQUF3QjtBQUE1Qjs7QUFFQTtFQUVJLHlCQUF3QjtFQUN4QixrQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osaUJBQWlCO0VBQ2xCLGlCQUFpQjtFQUNqQixpQkFBaUI7QUFBcEI7O0FBRUE7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtBQUFyQjs7QUFHQTtFQUdHLHlCQUF3QjtFQUN2QixhQUFjO0VBQ2QsZ0JBQWU7RUFDZixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIscUJBQXFCO0FBRnpCOztBQUlBO0VBRUksZ0JBQWU7QUFGbkI7O0FBSUE7RUFFSSxZQUFXO0FBRmY7O0FBSUE7RUFFSSxrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLGdCQUFnQjtBQUZwQjs7QUFJQTtFQUVJLFdBQVU7RUFDVixlQUFlO0FBRm5COztBQUlBO0VBRUUsY0FBYTtFQUNiLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLDhCQUErQjtBQUZqQzs7QUFLQTtFQUNJLGVBQWU7RUFDZixnQkFBZ0I7QUFGcEI7O0FBSUE7RUFFQSxpQ0FBaUM7QUFGakM7O0FBSUE7RUFFUSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFGaEM7O0FBSUE7RUFDSSxVQUFVO0VBQ1YsaUNBQWlDO0VBQ2pDLGVBQWU7RUFDZixpQkFBaUI7QUFEckI7O0FBR0E7RUFDSSxpQ0FBaUM7RUFDakMsaUJBQWlCO0FBQXJCOztBQUVBO0VBRUksWUFBVztBQUFmOztBQUVBO0VBRUksdUJBQXNCO0FBQTFCOztBQUVBO0VBRUksWUFBVztFQUNYLGNBQWM7RUFDZCxrQkFBa0I7QUFBdEI7O0FBRUE7RUFHRyxVQUFTO0VBRVQsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNwQixpQkFBaUI7QUFGbkI7O0FBT0E7RUFHRyxXQUFVO0FBTmI7O0FBU0E7RUFDSSx5QkFBd0I7RUFDeEIsVUFBVTtFQUNWLFdBQVc7QUFOZjs7QUFRQTtFQUNJLHlCQUF3QjtFQUN4QixVQUFVO0VBQ1YsV0FBVztBQUxmOztBQU9BO0VBQ0kseUJBQXdCO0VBQ3hCLFVBQVU7RUFDVixXQUFXO0VBQ1gsVUFBVTtBQUpkOztBQU1BO0VBQ0kseUJBQXdCO0VBQ3hCLFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtBQUhkOztBQUtBO0VBRUksY0FBYTtBQUhqQjs7QUFLQTtFQUVJLFlBQVk7RUFDWiw4QkFBOEI7RUFDOUIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFIakI7O0FBS0E7RUFDSSx5QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQUZmOztBQUtBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFGZjs7QUFLQTtFQUNJLGNBQWU7RUFDZix5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIscUJBQW9CO0VBQ3BCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQUZoQjs7QUFLQTtFQUNJLFdBQVc7RUFDWCx5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQUZoQjs7QUFLQTtFQUNJLFVBQVU7RUFDVix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG1CQUFrQjtBQUZ0Qjs7QUFJQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFDWixjQUFjO0VBQ2QsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBRGY7O0FBR0E7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQUFuQjs7QUFFRTtFQUNFLFdBQVc7RUFDZixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFFWixnQkFBZ0I7RUFDaEIsNENBQTRDO0VBQzVDLG1CQUFtQjtFQUNuQixjQUFjO0VBQ2QsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBQWY7O0FBRUE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLCtDQUErQztFQUMvQyxVQUFVO0VBQ1YsbUJBQW1CO0VBQ2YsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFDbkI7O0FBRUE7RUFDSSxXQUFXO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQUNmOztBQUVBO0VBQ0ksV0FBVztFQUNYLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ3BCLGVBQWU7QUFBZjs7QUFHQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIscUJBQStCO0VBQy9CLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBQWY7O0FBSUE7RUFDSSxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQURmOztBQUlBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFEZjs7QUFJQTtFQUNJLFdBQVU7RUFDVixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLHlCQUFrQztFQUVsQyxrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFGdkI7O0FBTUE7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFlBQVk7RUFDWixRQUFRO0VBQ1IsMkJBQTJCO0VBQzNCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtFQUNmLGNBQWM7QUFIbEI7O0FBT0E7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFKdEI7O0FBT0E7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFlBQVk7RUFDWixRQUFRO0VBQ1IsMkJBQTJCO0VBQzNCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtBQUpuQjs7QUFNQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBRWxCLGtCQUFrQjtBQUp0Qjs7QUFRRTtFQUNFLGtCQUFrQjtFQUVsQixZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQU5yQjs7QUFTRTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFOdEI7O0FBUUU7RUFDRSxjQUFhO0VBQ2IsMEJBQTBCO0FBTDlCOztBQU9BO0VBQ0ksY0FBdUI7RUFFdkIsZUFBZTtFQVdmLGdCQUFnQjtBQWZwQjs7QUFpQkE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztFQUNYLGtCQUFrQjtBQWR0Qjs7QUFnQkE7RUFDSSxZQUFZO0VBQ1oseUJBQXdCO0VBQ3hCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztFQUNYLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFidEI7O0FBZUE7RUFDSSx5Q0FBeUM7RUFDekMsY0FBYztBQVpsQjs7QUFlQTtFQUNJLGdCQUFnQjtFQUdoQixlQUFlO0FBZG5COztBQWdCQTtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsZ0NBQWdDO0FBYnBDOztBQWVBO0VBQ0ksaUJBQWlCO0FBWnJCOztBQWNBO0VBQ0ksV0FBVztFQUNYLGtCQUFrQjtFQUdsQixjQUFzQjtFQUN0QixlQUFlO0VBQ2YsaUNBQWlDO0FBYnJDOztBQWVDO0VBQ0ksK0JBQStCO0VBQy9CLGtDQUFrQztFQUNsQyxpQ0FBaUM7RUFDakMsZ0NBQWdDO0VBQ2hDLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFaakI7O0FBZUM7RUFDRyxlQUFlO0VBQ2YsYUFBYTtBQVpqQjs7QUFjQztFQUNHLGdCQUFnQjtBQVhwQjs7QUFhQztFQUNHLGFBQVk7RUFDWixVQUFVO0FBVmQ7O0FBWUM7RUFDRyxVQUFVO0FBVGQ7O0FBV0M7RUFDRyxpQkFBaUI7QUFSckI7O0FBVUM7RUFDRyxnQkFBZ0I7QUFQcEI7O0FBU0M7RUFFRyxRQUFRO0VBRVIsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0VBQ2YsY0FBYztFQUNkLFlBQVk7RUFDWixlQUFlO0FBUm5COztBQVVDO0VBQ0csV0FBVztFQUNYLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7QUFQcEI7O0FBVUE7RUFDSSxjQUFjO0FBUGxCIiwiZmlsZSI6ImFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGltZ1xyXG57XHJcbiAgIHdpZHRoOjEwMHB4O1xyXG4gICBoZWlnaHQ6MTAwcHg7XHJcbn1cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBtYXJnaW46MTBweDtcclxufVxyXG5cclxuLmltZ2RpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUlO1xyXG4gICAgbWFyZ2luLWlubGluZS1zdGFydDogMTglO1xyXG59XHJcbi5udW1cclxue1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogNTIlO1xyXG4gICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgcGFkZGluZy10b3A6IDE2cHg7XHJcbiAgIGJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICBtYXJnaW4tbGVmdDogMTVweDtcclxufVxyXG4ubnVtMVxyXG57XHJcbiAgICBib3JkZXI6MXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiAxNSU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjVweDtcclxuICAgLy8gYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuLnF0bmNyZFxyXG57XHJcbiAgLy8gIGJhY2tncm91bmQtY29sb3I6I0Y3RjdGNztcclxuICAgYmFja2dyb3VuZC1jb2xvcjojZjZmOGZjO1xyXG4gICAgYm9yZGVyOiAwLjVweCA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOjQwcHg7XHJcbiAgICBwYWRkaW5nOjEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDUwcHg7XHJcbiAgICBib3JkZXItY29sb3I6ICNCMkIyQjI7XHJcbn1cclxuLnF0bnZhbFxyXG57XHJcbiAgICBwYWRkaW5nLXRvcDo4cHg7XHJcbn1cclxuLmltZ2RpdiBkaXZcclxue1xyXG4gICAgbWFyZ2luOmF1dG87XHJcbn1cclxuLmFwcHJkaXZcclxue1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM4cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDclO1xyXG59XHJcbi5hcHByZGl2IGgyXHJcbntcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogNSU7XHJcbn1cclxuLmxhYmVsXHJcbntcclxuICBjb2xvcjojOUFBMUIwO1xyXG4gIGZvbnQtc2l6ZTogMC43cmVtO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmb250LWZhbWlseTogJ01hbnJvcGUnLCBNZWRpdW0gO1xyXG5cclxufVxyXG4udGV4dHNpemV7XHJcbiAgICBwYWRkaW5nOiAwIDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59XHJcbi5sYWJlbHZhbFxyXG57XHJcbmZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIE1lZGl1bTtcclxufVxyXG4ucm93Ym9yZFxyXG57XHJcbiAgICAgICAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gICAgICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICAgICAgcGFkZGluZzoxMHB4IDAgMTBweCAxMHB4O1xyXG59XHJcbi5kYXRhU3R5bGV7XHJcbiAgICB3aWR0aDogOTklO1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JywgTWVkaXVtO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQlO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMyU7XHJcbn1cclxuLmJ0dHRue1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JywgTWVkaXVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLm10Y2Rcclxue1xyXG4gICAgcGFkZGluZzowcHg7XHJcbn1cclxuLm5vYm9yZFxyXG57XHJcbiAgICBib3JkZXI6bm9uZSAhaW1wb3J0YW50O1xyXG59XHJcbi5tYWluXHJcbntcclxuICAgIGhlaWdodDo4NXZoO1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbn1cclxuLmFwcGVyc29uaW5mb2NhcmRcclxue1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgd2lkdGg6NDAlO1xyXG4gIC8vIGhlaWdodDogMjAlO1xyXG4gICBtYXJnaW4tYm90dG9tOiAyMHB4ICFpbXBvcnRhbnQ7XHJcbiAgIGJhY2tncm91bmQ6ICNmNGY2Zjg7XHJcbiAgbWFyZ2luLWxlZnQ6IDMycHg7XHJcbi8vICAgd2lkdGg6IDI1MHB4ICFpbXBvcnRhbnQ7XHJcblxyXG59XHJcblxyXG4uYXBwZXJzb25pbmZvY2FyZDFcclxue1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgd2lkdGg6MTAwJTtcclxuLy8gICAgYm9yZGVyIDogMXB4IHNvbGlkIDtcclxufVxyXG4uaW50ZXJzdGNhcmR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICB3aWR0aDogOTclO1xyXG4gICAgaGVpZ2h0OiA4NiU7XHJcbn1cclxuLmludGVyc3RjYXJkMntcclxuICAgIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgIHdpZHRoOiA3NSU7XHJcbiAgICBoZWlnaHQ6IDg2JTtcclxufVxyXG4uaW50ZXJzdGNhcmQze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG4gICAgd2lkdGg6IDk3JTtcclxuICAgIGhlaWdodDogODYlO1xyXG4gICAgcmlnaHQ6IDI5JTtcclxufVxyXG4uaW50ZXJzdGNhcmQ0e1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDg2JTtcclxuICAgIHJpZ2h0OiAzNSU7XHJcbn1cclxuLmNsclxyXG57XHJcbiAgICBjb2xvcjojQjJCMkIyOyAgXHJcbn1cclxuLmJvcmRudW1cclxue1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM4JTtcclxuICAgIG1heC13aWR0aDogOSU7XHJcbn1cclxuLlJOYnRue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojNEE1NkUyO1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6NTBweDtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG59XHJcblxyXG4uYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbiAgICB3aWR0aDoyMDBweDtcclxufVxyXG5cclxuLmNhbmNlbGJ0bntcclxuICAgIGNvbG9yOiMyOTgwQjkgIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjojMjk4MEI5O1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uZGlzYWJsZWRidG57XHJcbiAgICBjb2xvcjpncmV5IDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogZ3JleTtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZWQ7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OjEycHg7XHJcbn1cclxuLmNhbmNlbEljb257XHJcbiAgICB0b3A6IDY3MjBweDtcclxubGVmdDogODEycHg7XHJcbndpZHRoOiAyMHB4O1xyXG5oZWlnaHQ6IDIwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLnJlamVjdEJ1dHRvbntcclxuICAgIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA3NjJweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbmJvcmRlcjogMnB4IHNvbGlkICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgLnJlamVjdGxhYmVse1xyXG4gICAgdG9wOiA2NzE4cHg7XHJcbmxlZnQ6IDg0MnB4O1xyXG53aWR0aDogNDVweDtcclxuaGVpZ2h0OiAyMnB4O1xyXG5cclxudGV4dC1hbGlnbjogbGVmdDtcclxuZm9udDogbm9ybWFsIG5vcm1hbCBub3JtYWwgMThweC8yMnB4IENhbGlicmk7XHJcbmxldHRlci1zcGFjaW5nOiAwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmFwcHJvdmVCdXR0b257XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogOTY5cHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5tYXJnaW4tcmlnaHQ6IDYzcHg7XHJcbmJhY2tncm91bmQ6ICMyNENDQTcgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlSWNvbntcclxuICAgIHRvcDogNjcxNnB4O1xyXG5sZWZ0OiAxMDA5cHg7XHJcbndpZHRoOiAyNHB4O1xyXG5oZWlnaHQ6IDI0cHg7XHJcbmNvbG9yOiB3aGl0ZTtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG5cclxufVxyXG4uYXBwcm92ZWxhYmVse1xyXG4gICAgdG9wOiA2NzE3cHg7XHJcbiAgICBsZWZ0OiAxMDQ5cHg7XHJcbiAgICB3aWR0aDogNjJweDtcclxuICAgIGhlaWdodDogMjJweDtcclxuICAgIFxyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5zcWZ0YnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmFjYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmNpcmNsZXtcclxuICAgIHdpZHRoOjc1cHg7XHJcbiAgICBoZWlnaHQ6NzVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIC8vIG1hcmdpbjogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogMTVweDtcclxuICAgIG1hcmdpbi10b3A6IDIxJTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIG1hcmdpbi1ib3R0b206IDE0cHg7XHJcbiAgICBcclxufVxyXG5cclxuLmNvbnRlbnQxe1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMDtcclxuICAgIFxyXG59XHJcblxyXG4uY2lyY2xlMXtcclxuICAgIHdpZHRoOjI1cHg7XHJcbiAgICBoZWlnaHQ6MjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIG1hcmdpbi1yaWdodDogNDBweDtcclxufVxyXG5cclxuLmNvbnRlbnQye1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiAxMjBweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTljMjhmO1xyXG4gIH1cclxuICBcclxuICAuaW1hZ2VUZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy8gcGFkZGluZzogM3JlbSAzLjNyZW07XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBtYXJnaW4tdG9wOiA0NHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQ0cHg7XHJcbiAgfVxyXG5cclxuICAucmlnaHQtdGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNTBweDtcclxuICB9XHJcbiAgLmxpbmtDb2xvcntcclxuICAgIGNvbG9yOiM0QTU2RTI7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgXHJcbn1cclxuLmVkaXRidG57XHJcbiAgICBjb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KSA7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgLy8gb3V0bGluZTogbm9uZTtcclxuICAgIC8vIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICAvLyB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIC8vIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIC8vIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIC8vIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIC8vIGhlaWdodDozMHB4O1xyXG4gICAgLy8gd2lkdGg6MTUwcHg7XHJcbiAgICAvLyBtYXJnaW4tcmlnaHQ6IDYwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59XHJcbi5yZWZudW17XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MjUwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDYwcHg7XHJcbn1cclxuLnN1Y2Vze1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojMjRjY2E3O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBkYWI0ZTtcclxuICAgIGhlaWdodDoyNXB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDYwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMjA0cHg7XHJcbn1cclxuLmJ0dHRue1xyXG4gICAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJywgTWVkaXVtICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogIzlBQTFCMDtcclxufVxyXG5cclxuLm1hcmdpbjF7XHJcbiAgICBtYXJnaW4tdG9wOiAxOHB4O1xyXG4gICAgLy8gbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiAgICAvLyBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuaDJ7XHJcbiAgICBtYXJnaW4tbGVmdDogMTNweDtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGZvbnQtZmFtaWx5OiAnbW9udHNlcnJhdCcgLCBib2xkO1xyXG59XHJcbi5oZWlnaHQxe1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMycHg7XHJcbn1cclxubGVnZW5kIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyNXB4O1xyXG4gICAgLy8gY29sb3I6ICMwRjBGMEY7XHJcbiAgICAvLyBvcGFjaXR5OiA3MCUgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiByZ2IoOTUsIDkyLCA5Mik7XHJcbiAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBNZWRpdW07XHJcbn1cclxuIGZpZWxkc2V0IHtcclxuICAgICBib3JkZXItdG9wOiAxcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICAgYm9yZGVyLXJpZ2h0OiAwcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgIGJvcmRlci1sZWZ0OiAwcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgIG1hcmdpbi1sZWZ0OiAxM3B4O1xyXG4gICAgIG1hcmdpbi1yaWdodDogMjBweDtcclxuICAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgIGZsZXgtZ3JvdzogMTtcclxuIH1cclxuXHJcbiAuc2l6ZTF7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDE2NXB4O1xyXG4gfVxyXG4gLm1hdGljb257XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gfVxyXG4gLmJveHtcclxuICAgIGhlaWdodDoyOTVweDtcclxuICAgIHdpZHRoOiAyOSU7XHJcbiB9XHJcbiAuYm94MntcclxuICAgIHdpZHRoOiA2MiU7XHJcbiB9XHJcbiAubm9te1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiB9XHJcbiAubWFyZ2lubntcclxuICAgIG1hcmdpbi10b3A6IDIycHg7XHJcbiB9XHJcbiAuZG9uZTF7XHJcbiAgICBcclxuICAgIHRvcDogNTAlO1xyXG4gICAgLy8gdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICB3aWR0aDogaW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIGZvbnQtc2l6ZTogMTlweDtcclxuIH1cclxuIC5jaXJjbGUze1xyXG4gICAgd2lkdGg6IDI1cHg7XHJcbiAgICBoZWlnaHQ6IDNyZW07XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbiB9XHJcblxyXG4uYnRubGVmdHtcclxuICAgIG1hcmdpbi1sZWZ0OiAwO1xyXG59XHJcblxyXG4gIl19 */"]
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_27__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_27__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_28__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_29__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_29__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardAvatar"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_27__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardContent"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_31__["MatSlideToggle"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_32__["MatSpinner"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_27__["DefaultLayoutGapDirective"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_4__["ChartComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardSubtitle"], _angular_common__WEBPACK_IMPORTED_MODULE_29__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_33__["DefaultClassDirective"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_29__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_29__["UpperCasePipe"]],
+        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n  margin: 10px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.num[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 52%;\n  height: 52px;\n  padding-top: 16px;\n  background: white;\n  margin-left: 15px;\n}\n\n.num1[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 15%;\n  height: 70px;\n  padding-top: 25px;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  background-color: #f6f8fc;\n  border: 0.5px;\n  margin-right: 2%;\n  margin-bottom: 40px;\n  padding: 10px;\n  margin-top: 40px;\n  margin-left: 50px;\n  border-color: #B2B2B2;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 38px;\n  margin-right: 7%;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 5%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n  display: flex;\n  align-items: center;\n  font-family: 'Manrope', Medium;\n}\n\n.textsize[_ngcontent-%COMP%] {\n  padding: 0 10px;\n  margin-top: 10px;\n}\n\n.labelval[_ngcontent-%COMP%] {\n  font-family: 'Montserrat', Medium;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.dataStyle[_ngcontent-%COMP%] {\n  width: 99%;\n  font-family: 'Montserrat', Medium;\n  margin-left: 4%;\n  margin-right: 13%;\n}\n\n.btttn[_ngcontent-%COMP%] {\n  font-family: 'Montserrat', Medium;\n  font-weight: bold;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  width: 40%;\n  margin-bottom: 20px !important;\n  background: #f4f6f8;\n  margin-left: 32px;\n}\n\n.appersoninfocard1[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n.interstcard[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 97%;\n  height: 86%;\n}\n\n.interstcard2[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 75%;\n  height: 86%;\n}\n\n.interstcard3[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 97%;\n  height: 86%;\n  right: 29%;\n}\n\n.interstcard4[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n  width: 100%;\n  height: 86%;\n  right: 35%;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 38%;\n  max-width: 9%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n  position: relative;\n  padding-right: 12px;\n}\n\n.cancelIcon[_ngcontent-%COMP%] {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 63px;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon[_ngcontent-%COMP%] {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel[_ngcontent-%COMP%] {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin-right: 15px;\n  margin-top: 21%;\n  position: relative;\n  margin-bottom: 14px;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n  margin-left: 0;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n  margin-right: 40px;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 10px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  color: white;\n  margin-top: 44px;\n  margin-left: 44px;\n}\n\n.right-text[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 150px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n  margin-top: 10px;\n}\n\n.refnum[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0e7cc5;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0e57c5;\n  height: 30px;\n  width: 250px;\n  margin-right: 60px;\n}\n\n.suces[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #24cca7;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: #0dab4e;\n  height: 25px;\n  width: 150px;\n  margin-right: 60px;\n  margin-left: 204px;\n}\n\n.btttn[_ngcontent-%COMP%] {\n  font-family: 'Manrope', Medium !important;\n  color: #9AA1B0;\n}\n\n.margin1[_ngcontent-%COMP%] {\n  margin-top: 18px;\n  font-size: 20px;\n}\n\nh2[_ngcontent-%COMP%] {\n  margin-left: 13px;\n  font-size: 20px;\n  font-family: 'montserrat' , bold;\n}\n\n.height1[_ngcontent-%COMP%] {\n  margin-left: 32px;\n}\n\nlegend[_ngcontent-%COMP%] {\n  width: auto;\n  margin-right: 25px;\n  color: #5f5c5c;\n  font-size: 18px;\n  font-family: 'Montserrat', Medium;\n}\n\nfieldset[_ngcontent-%COMP%] {\n  border-top: 1px solid lightgray;\n  border-bottom: 0px solid lightgray;\n  border-right: 0px solid lightgray;\n  border-left: 0px solid lightgray;\n  margin-left: 13px;\n  margin-right: 20px;\n  margin-top: 20px;\n  flex-grow: 1;\n}\n\n.size1[_ngcontent-%COMP%] {\n  font-size: 10px;\n  height: 165px;\n}\n\n.maticon[_ngcontent-%COMP%] {\n  margin-top: 10px;\n}\n\n.box[_ngcontent-%COMP%] {\n  height: 295px;\n  width: 29%;\n}\n\n.box2[_ngcontent-%COMP%] {\n  width: 62%;\n}\n\n.nom[_ngcontent-%COMP%] {\n  margin-left: 30px;\n}\n\n.marginn[_ngcontent-%COMP%] {\n  margin-top: 22px;\n}\n\n.done1[_ngcontent-%COMP%] {\n  top: 50%;\n  text-align: center;\n  color: #fff;\n  margin-top: 5px;\n  width: inherit;\n  height: auto;\n  font-size: 19px;\n}\n\n.circle3[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 3rem;\n  background-color: #0ec588;\n  border-radius: 50%;\n  margin-right: 10px;\n  margin-left: 5px;\n}\n\n.btnleft[_ngcontent-%COMP%] {\n  margin-left: 0;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid blue;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.continuelabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: blue;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcYXBwcm92ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFRyxZQUFXO0VBQ1gsYUFBWTtBQUFmOztBQUVBO0VBQ0ksVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG1DQUFtQztFQUNuQyw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBQ2hCOztBQUVBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG1DQUFtQztFQUNuQyw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztFQUNYLFlBQVc7QUFDZjs7QUFFQTtFQUVJLGtCQUFpQjtFQUNqQixjQUFjO0VBQ2QseUJBQXdCO1VBQXhCLHdCQUF3QjtBQUE1Qjs7QUFFQTtFQUVJLHlCQUF3QjtFQUN4QixrQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osaUJBQWlCO0VBQ2xCLGlCQUFpQjtFQUNqQixpQkFBaUI7QUFBcEI7O0FBRUE7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtBQUFyQjs7QUFHQTtFQUdHLHlCQUF3QjtFQUN2QixhQUFjO0VBQ2QsZ0JBQWU7RUFDZixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIscUJBQXFCO0FBRnpCOztBQUlBO0VBRUksZ0JBQWU7QUFGbkI7O0FBSUE7RUFFSSxZQUFXO0FBRmY7O0FBSUE7RUFFSSxrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLGdCQUFnQjtBQUZwQjs7QUFJQTtFQUVJLFdBQVU7RUFDVixlQUFlO0FBRm5COztBQUlBO0VBRUUsY0FBYTtFQUNiLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLDhCQUErQjtBQUZqQzs7QUFLQTtFQUNJLGVBQWU7RUFDZixnQkFBZ0I7QUFGcEI7O0FBSUE7RUFFQSxpQ0FBaUM7QUFGakM7O0FBSUE7RUFFUSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFGaEM7O0FBSUE7RUFDSSxVQUFVO0VBQ1YsaUNBQWlDO0VBQ2pDLGVBQWU7RUFDZixpQkFBaUI7QUFEckI7O0FBR0E7RUFDSSxpQ0FBaUM7RUFDakMsaUJBQWlCO0FBQXJCOztBQUVBO0VBRUksWUFBVztBQUFmOztBQUVBO0VBRUksdUJBQXNCO0FBQTFCOztBQUVBO0VBRUksWUFBVztFQUNYLGNBQWM7RUFDZCxrQkFBa0I7QUFBdEI7O0FBRUE7RUFHRyxVQUFTO0VBRVQsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNwQixpQkFBaUI7QUFGbkI7O0FBT0E7RUFHRyxXQUFVO0FBTmI7O0FBU0E7RUFDSSx5QkFBd0I7RUFDeEIsVUFBVTtFQUNWLFdBQVc7QUFOZjs7QUFRQTtFQUNJLHlCQUF3QjtFQUN4QixVQUFVO0VBQ1YsV0FBVztBQUxmOztBQU9BO0VBQ0kseUJBQXdCO0VBQ3hCLFVBQVU7RUFDVixXQUFXO0VBQ1gsVUFBVTtBQUpkOztBQU1BO0VBQ0kseUJBQXdCO0VBQ3hCLFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtBQUhkOztBQUtBO0VBRUksY0FBYTtBQUhqQjs7QUFLQTtFQUVJLFlBQVk7RUFDWiw4QkFBOEI7RUFDOUIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFIakI7O0FBS0E7RUFDSSx5QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQUZmOztBQUtBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFGZjs7QUFLQTtFQUNJLGNBQWU7RUFDZix5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIscUJBQW9CO0VBQ3BCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQUZoQjs7QUFLQTtFQUNJLFdBQVc7RUFDWCx5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQUZoQjs7QUFLQTtFQUNJLFVBQVU7RUFDVix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG1CQUFrQjtBQUZ0Qjs7QUFJQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFDWixjQUFjO0VBQ2QsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBRGY7O0FBR0E7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQUFuQjs7QUFFRTtFQUNFLFdBQVc7RUFDZixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFFWixnQkFBZ0I7RUFDaEIsNENBQTRDO0VBQzVDLG1CQUFtQjtFQUNuQixjQUFjO0VBQ2QsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBQWY7O0FBRUE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLCtDQUErQztFQUMvQyxVQUFVO0VBQ1YsbUJBQW1CO0VBQ2YsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFDbkI7O0FBRUE7RUFDSSxXQUFXO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQUNmOztBQUVBO0VBQ0ksV0FBVztFQUNYLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ3BCLGVBQWU7QUFBZjs7QUFHQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIscUJBQStCO0VBQy9CLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBQWY7O0FBSUE7RUFDSSxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQURmOztBQUlBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFEZjs7QUFJQTtFQUNJLFdBQVU7RUFDVixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLHlCQUFrQztFQUVsQyxrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFGdkI7O0FBTUE7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFlBQVk7RUFDWixRQUFRO0VBQ1IsMkJBQTJCO0VBQzNCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtFQUNmLGNBQWM7QUFIbEI7O0FBT0E7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFKdEI7O0FBT0E7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFlBQVk7RUFDWixRQUFRO0VBQ1IsMkJBQTJCO0VBQzNCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtBQUpuQjs7QUFNQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBRWxCLGtCQUFrQjtBQUp0Qjs7QUFRRTtFQUNFLGtCQUFrQjtFQUVsQixZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQU5yQjs7QUFTRTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFOdEI7O0FBUUU7RUFDRSxjQUFhO0VBQ2IsMEJBQTBCO0FBTDlCOztBQU9BO0VBQ0ksY0FBdUI7RUFFdkIsZUFBZTtFQVdmLGdCQUFnQjtBQWZwQjs7QUFpQkE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztFQUNYLGtCQUFrQjtBQWR0Qjs7QUFnQkE7RUFDSSxZQUFZO0VBQ1oseUJBQXdCO0VBQ3hCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztFQUNYLGtCQUFrQjtFQUNsQixrQkFBa0I7QUFidEI7O0FBZUE7RUFDSSx5Q0FBeUM7RUFDekMsY0FBYztBQVpsQjs7QUFlQTtFQUNJLGdCQUFnQjtFQUdoQixlQUFlO0FBZG5COztBQWdCQTtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsZ0NBQWdDO0FBYnBDOztBQWVBO0VBQ0ksaUJBQWlCO0FBWnJCOztBQWNBO0VBQ0ksV0FBVztFQUNYLGtCQUFrQjtFQUdsQixjQUFzQjtFQUN0QixlQUFlO0VBQ2YsaUNBQWlDO0FBYnJDOztBQWVDO0VBQ0ksK0JBQStCO0VBQy9CLGtDQUFrQztFQUNsQyxpQ0FBaUM7RUFDakMsZ0NBQWdDO0VBQ2hDLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFaakI7O0FBZUM7RUFDRyxlQUFlO0VBQ2YsYUFBYTtBQVpqQjs7QUFjQztFQUNHLGdCQUFnQjtBQVhwQjs7QUFhQztFQUNHLGFBQVk7RUFDWixVQUFVO0FBVmQ7O0FBWUM7RUFDRyxVQUFVO0FBVGQ7O0FBV0M7RUFDRyxpQkFBaUI7QUFSckI7O0FBVUM7RUFDRyxnQkFBZ0I7QUFQcEI7O0FBU0M7RUFFRyxRQUFRO0VBRVIsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0VBQ2YsY0FBYztFQUNkLFlBQVk7RUFDWixlQUFlO0FBUm5COztBQVVDO0VBQ0csV0FBVztFQUNYLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7QUFQcEI7O0FBVUE7RUFDSSxjQUFjO0FBUGxCOztBQVNBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixVQUFVO0VBQ1YsbUJBQW1CO0VBQ2YsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFObkI7O0FBU0E7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsV0FBVztFQUNYLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQVBmIiwiZmlsZSI6ImFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGltZ1xyXG57XHJcbiAgIHdpZHRoOjEwMHB4O1xyXG4gICBoZWlnaHQ6MTAwcHg7XHJcbn1cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBtYXJnaW46MTBweDtcclxufVxyXG5cclxuLmltZ2RpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUlO1xyXG4gICAgbWFyZ2luLWlubGluZS1zdGFydDogMTglO1xyXG59XHJcbi5udW1cclxue1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogNTIlO1xyXG4gICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgcGFkZGluZy10b3A6IDE2cHg7XHJcbiAgIGJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICBtYXJnaW4tbGVmdDogMTVweDtcclxufVxyXG4ubnVtMVxyXG57XHJcbiAgICBib3JkZXI6MXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiAxNSU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjVweDtcclxuICAgLy8gYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuLnF0bmNyZFxyXG57XHJcbiAgLy8gIGJhY2tncm91bmQtY29sb3I6I0Y3RjdGNztcclxuICAgYmFja2dyb3VuZC1jb2xvcjojZjZmOGZjO1xyXG4gICAgYm9yZGVyOiAwLjVweCA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOjQwcHg7XHJcbiAgICBwYWRkaW5nOjEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDUwcHg7XHJcbiAgICBib3JkZXItY29sb3I6ICNCMkIyQjI7XHJcbn1cclxuLnF0bnZhbFxyXG57XHJcbiAgICBwYWRkaW5nLXRvcDo4cHg7XHJcbn1cclxuLmltZ2RpdiBkaXZcclxue1xyXG4gICAgbWFyZ2luOmF1dG87XHJcbn1cclxuLmFwcHJkaXZcclxue1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM4cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDclO1xyXG59XHJcbi5hcHByZGl2IGgyXHJcbntcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogNSU7XHJcbn1cclxuLmxhYmVsXHJcbntcclxuICBjb2xvcjojOUFBMUIwO1xyXG4gIGZvbnQtc2l6ZTogMC43cmVtO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmb250LWZhbWlseTogJ01hbnJvcGUnLCBNZWRpdW0gO1xyXG5cclxufVxyXG4udGV4dHNpemV7XHJcbiAgICBwYWRkaW5nOiAwIDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59XHJcbi5sYWJlbHZhbFxyXG57XHJcbmZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIE1lZGl1bTtcclxufVxyXG4ucm93Ym9yZFxyXG57XHJcbiAgICAgICAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gICAgICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICAgICAgcGFkZGluZzoxMHB4IDAgMTBweCAxMHB4O1xyXG59XHJcbi5kYXRhU3R5bGV7XHJcbiAgICB3aWR0aDogOTklO1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JywgTWVkaXVtO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQlO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMyU7XHJcbn1cclxuLmJ0dHRue1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JywgTWVkaXVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLm10Y2Rcclxue1xyXG4gICAgcGFkZGluZzowcHg7XHJcbn1cclxuLm5vYm9yZFxyXG57XHJcbiAgICBib3JkZXI6bm9uZSAhaW1wb3J0YW50O1xyXG59XHJcbi5tYWluXHJcbntcclxuICAgIGhlaWdodDo4NXZoO1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbn1cclxuLmFwcGVyc29uaW5mb2NhcmRcclxue1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgd2lkdGg6NDAlO1xyXG4gIC8vIGhlaWdodDogMjAlO1xyXG4gICBtYXJnaW4tYm90dG9tOiAyMHB4ICFpbXBvcnRhbnQ7XHJcbiAgIGJhY2tncm91bmQ6ICNmNGY2Zjg7XHJcbiAgbWFyZ2luLWxlZnQ6IDMycHg7XHJcbi8vICAgd2lkdGg6IDI1MHB4ICFpbXBvcnRhbnQ7XHJcblxyXG59XHJcblxyXG4uYXBwZXJzb25pbmZvY2FyZDFcclxue1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgd2lkdGg6MTAwJTtcclxuLy8gICAgYm9yZGVyIDogMXB4IHNvbGlkIDtcclxufVxyXG4uaW50ZXJzdGNhcmR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICB3aWR0aDogOTclO1xyXG4gICAgaGVpZ2h0OiA4NiU7XHJcbn1cclxuLmludGVyc3RjYXJkMntcclxuICAgIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgIHdpZHRoOiA3NSU7XHJcbiAgICBoZWlnaHQ6IDg2JTtcclxufVxyXG4uaW50ZXJzdGNhcmQze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG4gICAgd2lkdGg6IDk3JTtcclxuICAgIGhlaWdodDogODYlO1xyXG4gICAgcmlnaHQ6IDI5JTtcclxufVxyXG4uaW50ZXJzdGNhcmQ0e1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDg2JTtcclxuICAgIHJpZ2h0OiAzNSU7XHJcbn1cclxuLmNsclxyXG57XHJcbiAgICBjb2xvcjojQjJCMkIyOyAgXHJcbn1cclxuLmJvcmRudW1cclxue1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM4JTtcclxuICAgIG1heC13aWR0aDogOSU7XHJcbn1cclxuLlJOYnRue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojNEE1NkUyO1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6NTBweDtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG59XHJcblxyXG4uYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbiAgICB3aWR0aDoyMDBweDtcclxufVxyXG5cclxuLmNhbmNlbGJ0bntcclxuICAgIGNvbG9yOiMyOTgwQjkgIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjojMjk4MEI5O1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uZGlzYWJsZWRidG57XHJcbiAgICBjb2xvcjpncmV5IDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogZ3JleTtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZWQ7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OjEycHg7XHJcbn1cclxuLmNhbmNlbEljb257XHJcbiAgICB0b3A6IDY3MjBweDtcclxubGVmdDogODEycHg7XHJcbndpZHRoOiAyMHB4O1xyXG5oZWlnaHQ6IDIwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLnJlamVjdEJ1dHRvbntcclxuICAgIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA3NjJweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbmJvcmRlcjogMnB4IHNvbGlkICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgLnJlamVjdGxhYmVse1xyXG4gICAgdG9wOiA2NzE4cHg7XHJcbmxlZnQ6IDg0MnB4O1xyXG53aWR0aDogNDVweDtcclxuaGVpZ2h0OiAyMnB4O1xyXG5cclxudGV4dC1hbGlnbjogbGVmdDtcclxuZm9udDogbm9ybWFsIG5vcm1hbCBub3JtYWwgMThweC8yMnB4IENhbGlicmk7XHJcbmxldHRlci1zcGFjaW5nOiAwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmFwcHJvdmVCdXR0b257XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogOTY5cHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5tYXJnaW4tcmlnaHQ6IDYzcHg7XHJcbmJhY2tncm91bmQ6ICMyNENDQTcgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlSWNvbntcclxuICAgIHRvcDogNjcxNnB4O1xyXG5sZWZ0OiAxMDA5cHg7XHJcbndpZHRoOiAyNHB4O1xyXG5oZWlnaHQ6IDI0cHg7XHJcbmNvbG9yOiB3aGl0ZTtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG5cclxufVxyXG4uYXBwcm92ZWxhYmVse1xyXG4gICAgdG9wOiA2NzE3cHg7XHJcbiAgICBsZWZ0OiAxMDQ5cHg7XHJcbiAgICB3aWR0aDogNjJweDtcclxuICAgIGhlaWdodDogMjJweDtcclxuICAgIFxyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5zcWZ0YnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmFjYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjIwcHg7XHJcbiAgICB3aWR0aDoxMDBweDtcclxufVxyXG5cclxuLmNpcmNsZXtcclxuICAgIHdpZHRoOjc1cHg7XHJcbiAgICBoZWlnaHQ6NzVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIC8vIG1hcmdpbjogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogMTVweDtcclxuICAgIG1hcmdpbi10b3A6IDIxJTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIG1hcmdpbi1ib3R0b206IDE0cHg7XHJcbiAgICBcclxufVxyXG5cclxuLmNvbnRlbnQxe1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMDtcclxuICAgIFxyXG59XHJcblxyXG4uY2lyY2xlMXtcclxuICAgIHdpZHRoOjI1cHg7XHJcbiAgICBoZWlnaHQ6MjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIG1hcmdpbi1yaWdodDogNDBweDtcclxufVxyXG5cclxuLmNvbnRlbnQye1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiAxMjBweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTljMjhmO1xyXG4gIH1cclxuICBcclxuICAuaW1hZ2VUZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy8gcGFkZGluZzogM3JlbSAzLjNyZW07XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBtYXJnaW4tdG9wOiA0NHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQ0cHg7XHJcbiAgfVxyXG5cclxuICAucmlnaHQtdGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNTBweDtcclxuICB9XHJcbiAgLmxpbmtDb2xvcntcclxuICAgIGNvbG9yOiM0QTU2RTI7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgXHJcbn1cclxuLmVkaXRidG57XHJcbiAgICBjb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KSA7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgLy8gb3V0bGluZTogbm9uZTtcclxuICAgIC8vIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICAvLyB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIC8vIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIC8vIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIC8vIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIC8vIGhlaWdodDozMHB4O1xyXG4gICAgLy8gd2lkdGg6MTUwcHg7XHJcbiAgICAvLyBtYXJnaW4tcmlnaHQ6IDYwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59XHJcbi5yZWZudW17XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MjUwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDYwcHg7XHJcbn1cclxuLnN1Y2Vze1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojMjRjY2E3O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogIzBkYWI0ZTtcclxuICAgIGhlaWdodDoyNXB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDYwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMjA0cHg7XHJcbn1cclxuLmJ0dHRue1xyXG4gICAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJywgTWVkaXVtICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogIzlBQTFCMDtcclxufVxyXG5cclxuLm1hcmdpbjF7XHJcbiAgICBtYXJnaW4tdG9wOiAxOHB4O1xyXG4gICAgLy8gbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiAgICAvLyBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuaDJ7XHJcbiAgICBtYXJnaW4tbGVmdDogMTNweDtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGZvbnQtZmFtaWx5OiAnbW9udHNlcnJhdCcgLCBib2xkO1xyXG59XHJcbi5oZWlnaHQxe1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMycHg7XHJcbn1cclxubGVnZW5kIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyNXB4O1xyXG4gICAgLy8gY29sb3I6ICMwRjBGMEY7XHJcbiAgICAvLyBvcGFjaXR5OiA3MCUgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiByZ2IoOTUsIDkyLCA5Mik7XHJcbiAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBNZWRpdW07XHJcbn1cclxuIGZpZWxkc2V0IHtcclxuICAgICBib3JkZXItdG9wOiAxcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICAgYm9yZGVyLXJpZ2h0OiAwcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgIGJvcmRlci1sZWZ0OiAwcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgIG1hcmdpbi1sZWZ0OiAxM3B4O1xyXG4gICAgIG1hcmdpbi1yaWdodDogMjBweDtcclxuICAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgIGZsZXgtZ3JvdzogMTtcclxuIH1cclxuXHJcbiAuc2l6ZTF7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDE2NXB4O1xyXG4gfVxyXG4gLm1hdGljb257XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gfVxyXG4gLmJveHtcclxuICAgIGhlaWdodDoyOTVweDtcclxuICAgIHdpZHRoOiAyOSU7XHJcbiB9XHJcbiAuYm94MntcclxuICAgIHdpZHRoOiA2MiU7XHJcbiB9XHJcbiAubm9te1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiB9XHJcbiAubWFyZ2lubntcclxuICAgIG1hcmdpbi10b3A6IDIycHg7XHJcbiB9XHJcbiAuZG9uZTF7XHJcbiAgICBcclxuICAgIHRvcDogNTAlO1xyXG4gICAgLy8gdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICB3aWR0aDogaW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIGZvbnQtc2l6ZTogMTlweDtcclxuIH1cclxuIC5jaXJjbGUze1xyXG4gICAgd2lkdGg6IDI1cHg7XHJcbiAgICBoZWlnaHQ6IDNyZW07XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbiB9XHJcblxyXG4uYnRubGVmdHtcclxuICAgIG1hcmdpbi1sZWZ0OiAwO1xyXG59XHJcbi5jb250aW51ZUJ0bntcclxuICAgIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA3NjJweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbmJvcmRlcjogMnB4IHNvbGlkIGJsdWU7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcblxyXG4uY29udGludWVsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogYmx1ZTtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4gIl19 */"]
       });
       /*@__PURE__*/
 
@@ -66129,6 +66592,8 @@
             type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["DomSanitizer"]
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
+          }, {
+            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_26__["JwtAuthService"]
           }];
         }, {
           chart: [{
@@ -66359,44 +66824,44 @@
         }, {
           key: "getLoanCreditDetails",
           value: function getLoanCreditDetails() {
-            var _this265 = this;
+            var _this266 = this;
 
             this.apiService.gettingValuationDetails(this.loanaccountID).subscribe(function (valuationOfAssetDetails) {
-              _this265.valuationOfAssetDetails = valuationOfAssetDetails;
-              console.log("this.creditDetails::", _this265.valuationOfAssetDetails);
+              _this266.valuationOfAssetDetails = valuationOfAssetDetails;
+              console.log("this.creditDetails::", _this266.valuationOfAssetDetails);
 
-              _this265.buildLoanValuationForm(_this265.valuationOfAssetDetails);
+              _this266.buildLoanValuationForm(_this266.valuationOfAssetDetails);
 
-              _this265.loanValuationForm.value.faceValOfAsset = _this265.valuationOfAssetDetails.faceValOfAsset;
-              _this265.loanValuationForm.value.forcedSaleValue = _this265.valuationOfAssetDetails.forcedSaleValue;
-              _this265.loanValuationForm.value.bankValuation = _this265.valuationOfAssetDetails.bankValuation;
-              _this265.loanValuationForm.value.mktValOfAsset = _this265.valuationOfAssetDetails.mktValOfAsset;
-              _this265.loanValuationForm.value.borrowersMktValOfAsset = _this265.valuationOfAssetDetails.borrowersMktValOfAsset;
-              _this265.loanValuationForm.value.propertyAreaSize = _this265.valuationOfAssetDetails.propertyAreaSize;
-              _this265.loanValuationForm.value.propertyAreaInUnits = _this265.valuationOfAssetDetails.propertyAreaInUnits;
-              _this265.loanValuationForm.value.assetType = _this265.valuationOfAssetDetails.assetType;
-              _this265.loanValuationForm.value.actualPropertyAreaSize = _this265.valuationOfAssetDetails.actualPropertyAreaSize;
+              _this266.loanValuationForm.value.faceValOfAsset = _this266.valuationOfAssetDetails.faceValOfAsset;
+              _this266.loanValuationForm.value.forcedSaleValue = _this266.valuationOfAssetDetails.forcedSaleValue;
+              _this266.loanValuationForm.value.bankValuation = _this266.valuationOfAssetDetails.bankValuation;
+              _this266.loanValuationForm.value.mktValOfAsset = _this266.valuationOfAssetDetails.mktValOfAsset;
+              _this266.loanValuationForm.value.borrowersMktValOfAsset = _this266.valuationOfAssetDetails.borrowersMktValOfAsset;
+              _this266.loanValuationForm.value.propertyAreaSize = _this266.valuationOfAssetDetails.propertyAreaSize;
+              _this266.loanValuationForm.value.propertyAreaInUnits = _this266.valuationOfAssetDetails.propertyAreaInUnits;
+              _this266.loanValuationForm.value.assetType = _this266.valuationOfAssetDetails.assetType;
+              _this266.loanValuationForm.value.actualPropertyAreaSize = _this266.valuationOfAssetDetails.actualPropertyAreaSize;
             }, function (err) {
-              _this265.loader.close();
+              _this266.loader.close();
             });
           }
         }, {
           key: "goToClose",
           value: function goToClose() {
-            var _this266 = this;
+            var _this267 = this;
 
             this.dialogRef.close();
             this.apiService.gettingValuationDetails(this.loanaccountID).subscribe(function (valuationOfAssetDetails) {
               console.log("All Account Service", valuationOfAssetDetails);
-              _this266.valuationOfAssetDetails = valuationOfAssetDetails;
-              console.log("this.accountDetails", _this266.valuationOfAssetDetails);
-              console.log('form', _this266.loanValuationForm.value);
+              _this267.valuationOfAssetDetails = valuationOfAssetDetails;
+              console.log("this.accountDetails", _this267.valuationOfAssetDetails);
+              console.log('form', _this267.loanValuationForm.value);
             });
           }
         }, {
           key: "submitForm1",
           value: function submitForm1() {
-            var _this267 = this;
+            var _this268 = this;
 
             var payload = {
               loanAccountId: this.data.loanAccountId,
@@ -66416,44 +66881,44 @@
             console.log("payload", payload);
             this.apiService.saveValuationDetails(payload).subscribe(function (data) {
               console.log("data", data.loanAccountId);
-              _this267.loanaccountID = _this267.data.loanAccountId;
-              console.log('loanaccountID', _this267.loanaccountID);
+              _this268.loanaccountID = _this268.data.loanAccountId;
+              console.log('loanaccountID', _this268.loanaccountID);
 
-              _this267.assign(_this267.data.loanAccountId);
+              _this268.assign(_this268.data.loanAccountId);
 
               if (data === 200 || data !== null) {
                 var statusModel = {
-                  loanAccountId: _this267.data.loanAccountId,
+                  loanAccountId: _this268.data.loanAccountId,
                   status: "ONGOING"
                 };
 
-                _this267.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
+                _this268.apiService.updateLoanDetailsStatus(statusModel).subscribe(function (data) {}); //  sessionStorage.setItem('loanAccountId', data.loanAccountid);
 
 
                 var fundStatus = {
-                  loanAccountid: _this267.data.loanAccountId
+                  loanAccountid: _this268.data.loanAccountId
                 };
 
-                _this267.ls.setItem('fundByStatus', fundStatus);
+                _this268.ls.setItem('fundByStatus', fundStatus);
 
-                _this267.ls.setItem('accountType', data.accountType);
+                _this268.ls.setItem('accountType', data.accountType);
 
-                _this267.ls.setItem('productName', data.businessProductName);
+                _this268.ls.setItem('productName', data.businessProductName);
 
-                _this267.loanaccountID = _this267.data.loanAccountId;
-                console.log("this.productaccountID", _this267.loanaccountID);
+                _this268.loanaccountID = _this268.data.loanAccountId;
+                console.log("this.productaccountID", _this268.loanaccountID);
 
-                _this267.snack.open('Data Updated!', 'OK', {
+                _this268.snack.open('Data Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this267.getDataOnLoad();
+                _this268.getDataOnLoad();
               }
 
               if (data === 500) {
-                _this267.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this268.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -66462,7 +66927,7 @@
                 console.log("500 error");
               }
 
-              _this267.goToClose();
+              _this268.goToClose();
             });
           }
         }, {
@@ -66498,12 +66963,12 @@
         }, {
           key: "fetchCustomerInfo",
           value: function fetchCustomerInfo(status) {
-            var _this268 = this;
+            var _this269 = this;
 
             this.taskSumService.getallLoanAccountData(status).subscribe(function (custResp) {
               console.log("Response", custResp);
 
-              _this268.updateStatusResponse(status, custResp);
+              _this269.updateStatusResponse(status, custResp);
             });
           }
         }, {
@@ -66971,49 +67436,61 @@
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! app/environments/environment.prod */
+      "vSAV");
+      /* harmony import */
+
+
+      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! app/shared/services/auth/jwt-auth.service */
+      "nZzT");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! @angular/common */
       "SVse");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! @angular/material/icon */
       "Tj54");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! @angular/material/card */
       "PDjf");
       /* harmony import */
 
 
-      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! @angular/material/progress-spinner */
       "pu8Q");
       /* harmony import */
 
 
-      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! @angular/material/divider */
       "BSbQ");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! @angular/material/form-field */
       "Q2Ze");
       /* harmony import */
 
 
-      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! @angular/flex-layout/extended */
       "ura0");
 
@@ -68618,11 +69095,18 @@
       var _c1 = function _c1(a0, a1) {
         return {
           "disabledbtn": a0,
-          "rejectButton": a1
+          "continueBtn": a1
         };
       };
 
       var _c2 = function _c2(a0, a1) {
+        return {
+          "disabledbtn": a0,
+          "rejectButton": a1
+        };
+      };
+
+      var _c3 = function _c3(a0, a1) {
         return {
           "disabledbtn": a0,
           "approveButton": a1
@@ -68642,48 +69126,66 @@
 
             var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r38.updateApplicationStatus(ctx_r38.dataResponse, "REJECTED");
+            return ctx_r38["continue"]();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon", 90);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "label", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " highlight_off ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "\xA0\xA0\xA0 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "label", 91);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Reject");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Cotinue");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " \xA0\xA0 ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 91);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 92);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CustOnBoardingApproverComponent_div_53_Template_div_click_8_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CustOnBoardingApproverComponent_div_53_Template_div_click_4_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39);
 
             var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r40.updateApplicationStatus(ctx_r40.dataResponse, "APPROVED");
+            return ctx_r40.updateApplicationStatus(ctx_r40.dataResponse, "REJECTED");
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-icon", 93);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 92);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "check_circle");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " highlight_off ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\xA0\xA0\xA0 ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "\xA0\xA0\xA0 ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "label", 94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "label", 93);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Approve");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Reject");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, " \xA0\xA0 ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 94);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CustOnBoardingApproverComponent_div_53_Template_div_click_11_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39);
+
+            var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r41.updateApplicationStatus(ctx_r41.dataResponse, "APPROVED");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-icon", 95);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "check_circle");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\xA0\xA0\xA0 ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "label", 96);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Approve");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -68697,16 +69199,20 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.rejectedStatus)("hidden", ctx_r9.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](5, _c1, ctx_r9.rejectedStatus, !ctx_r9.rejectedStatus));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.continueStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](7, _c1, ctx_r9.continueStatus, !ctx_r9.continueStatus));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.rejectedStatus)("hidden", ctx_r9.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](10, _c2, ctx_r9.rejectedStatus, !ctx_r9.rejectedStatus));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](8, _c2, ctx_r9.approvedStatus, !ctx_r9.approvedStatus));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r9.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](13, _c3, ctx_r9.approvedStatus, !ctx_r9.approvedStatus));
         }
       }
 
       var CustOnBoardingApproverComponent = /*#__PURE__*/function () {
-        function CustOnBoardingApproverComponent(tasSumService, cdr, router, apiService, ls, dialogRef, dataResponse, sanitizer, snack, dialog) {
+        function CustOnBoardingApproverComponent(tasSumService, cdr, router, apiService, ls, dialogRef, dataResponse, sanitizer, snack, dialog, jwtService) {
           _classCallCheck(this, CustOnBoardingApproverComponent);
 
           this.tasSumService = tasSumService;
@@ -68718,7 +69224,8 @@
           this.dataResponse = dataResponse;
           this.sanitizer = sanitizer;
           this.snack = snack;
-          this.dialog = dialog; // custOnBoardingApprovet:CustOnBoardingApprover;
+          this.dialog = dialog;
+          this.jwtService = jwtService; // custOnBoardingApprovet:CustOnBoardingApprover;
 
           this.selectedIndex = 0;
           this.addNewProof = false;
@@ -68734,61 +69241,66 @@
           this.proofDocumentArray = [];
           this.loading = true;
           this.nameCreater = ['Y', 'B', '', 'D', 'E', 'T', 'A', 'E', 'R', 'C'];
+          this.continueStatus = true;
         }
 
         _createClass(CustOnBoardingApproverComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this269 = this;
+            var _this270 = this;
 
             setTimeout(function () {
-              _this269.loading = true;
-              console.log("dataResponse.dataResp.customerId", _this269.dataResponse.dataResp.customerId);
-              console.log("dataResponse.dataResp.accountId", _this269.dataResponse.dataResp.accountId);
-              _this269.customerId = _this269.dataResponse.dataResp.customerId;
+              _this270.loading = true;
+              console.log("dataResponse.dataResp.customerId", _this270.dataResponse.dataResp.customerId);
+              console.log("dataResponse.dataResp.accountId", _this270.dataResponse.dataResp.accountId);
+              _this270.customerId = _this270.dataResponse.dataResp.customerId;
 
-              _this269.ls.setItem('customerId', _this269.customerId); //not required as we are uploading only documentType=2 in new customer onboarding
+              _this270.ls.setItem('customerId', _this270.customerId); //not required as we are uploading only documentType=2 in new customer onboarding
 
 
-              _this269.getCustomerDocumentsDetails(_this269.customerId);
+              _this270.getCustomerDocumentsDetails(_this270.customerId);
 
-              console.log(_this269.customerId);
-              _this269.phoneNum = _this269.dataResponse.dataResp.phoneNumber;
-              _this269.emailID = _this269.dataResponse.dataResp.primaryEmailAdress;
-              console.log("Dataas", _this269.dataResponse, _this269.phoneNum, _this269.emailID);
-              _this269.customerColorCode = localStorage.getItem('CustomerColorCode'); // console.log('dataResponse :: ', this.dataResponse.dataResp);
+              console.log(_this270.customerId);
+              _this270.phoneNum = _this270.dataResponse.dataResp.phoneNumber;
+              _this270.emailID = _this270.dataResponse.dataResp.primaryEmailAdress;
+              console.log("Dataas", _this270.dataResponse, _this270.phoneNum, _this270.emailID);
+              _this270.customerColorCode = localStorage.getItem('CustomerColorCode'); // console.log('dataResponse :: ', this.dataResponse.dataResp);
               // console.log('recordStatus :: ', this.dataResponse.recordStatus);
 
-              _this269.imageUrl = _this269.dataResponse.dataResp.profileImage;
-              _this269.status = _this269.dataResponse.dataResp.custStatus;
-              _this269.errorStatus = _this269.dataResponse.dataResp.custStatus;
-              _this269.userAddress_array = _this269.dataResponse.dataResp.userAddress;
-              _this269.custIdProofs_array = _this269.dataResponse.dataResp.custIdProofs;
-              console.log("result::", _this269.custIdProofs_array);
+              _this270.imageUrl = _this270.dataResponse.dataResp.profileImage;
+              _this270.status = _this270.dataResponse.dataResp.custStatus;
+              _this270.errorStatus = _this270.dataResponse.dataResp.custStatus;
+              _this270.userAddress_array = _this270.dataResponse.dataResp.userAddress;
+              _this270.custIdProofs_array = _this270.dataResponse.dataResp.custIdProofs;
+              console.log("result::", _this270.custIdProofs_array);
 
-              if (_this269.status === 'REJECTED') {
-                _this269.rejectedStatus = true;
-                _this269.approvedStatus = true;
-                _this269.editScreen = false;
-              } else if (_this269.status === 'INITIATED') {
-                _this269.rejectedStatus = false;
-                _this269.approvedStatus = false;
-                _this269.editScreen = false;
-              } else if (_this269.status === 'APPROVED') {
-                _this269.rejectedStatus = true;
-                _this269.approvedStatus = true;
-                _this269.editScreen = true;
-              } else if (_this269.status === 'UNDER_PROCESS') {
-                _this269.rejectedStatus = false;
-                _this269.approvedStatus = true;
-                _this269.editScreen = false;
+              if (_this270.status === 'REJECTED') {
+                _this270.rejectedStatus = true;
+                _this270.approvedStatus = true;
+                _this270.editScreen = false;
+                _this270.continueStatus = true;
+              } else if (_this270.status === 'INITIATED') {
+                _this270.rejectedStatus = false;
+                _this270.approvedStatus = false;
+                _this270.editScreen = false;
+                _this270.continueStatus = true;
+              } else if (_this270.status === 'APPROVED') {
+                _this270.rejectedStatus = true;
+                _this270.approvedStatus = true;
+                _this270.editScreen = true;
+                _this270.continueStatus = true;
+              } else if (_this270.status === 'UNDER_PROCESS') {
+                _this270.rejectedStatus = false;
+                _this270.approvedStatus = true;
+                _this270.editScreen = false;
+                _this270.continueStatus = false;
               } // localStorage.setItem('kycStatus',this.customerDetails[0].customerAdditionalInfo.kycStatus);
               // console.log(this.dataResponse.dataResp.customerId);
 
 
-              _this269.getProfileImage(_this269.dataResponse.dataResp.customerId);
+              _this270.getProfileImage(_this270.dataResponse.dataResp.customerId);
 
-              _this269.fetchSignatureDetails(_this269.dataResponse.dataResp.customerId);
+              _this270.fetchSignatureDetails(_this270.dataResponse.dataResp.customerId);
             }, 5000);
 
             if (this.dataResponse.dataResp.customerAdditionalInfo.kycStatus !== "NULL") {
@@ -68820,24 +69332,24 @@
         }, {
           key: "getCustomerDocumentsDetails",
           value: function getCustomerDocumentsDetails(customerId) {
-            var _this270 = this;
+            var _this271 = this;
 
             var document_type = [6, 7, 8]; // this.document_type= "6";
 
             this.apiService.getCustomerAllDocuments(customerId, document_type).subscribe(function (result) {
-              _this270.loading = false;
-              _this270.custOtherDoc_array = result;
+              _this271.loading = false;
+              _this271.custOtherDoc_array = result;
 
               if (result != null) {
-                _this270.documentName = _this270.custOtherDoc_array[0].fileName;
-                console.log("custOtherDoc_array::", _this270.custOtherDoc_array);
+                _this271.documentName = _this271.custOtherDoc_array[0].fileName;
+                console.log("custOtherDoc_array::", _this271.custOtherDoc_array);
               }
             });
           }
         }, {
           key: "updateApplicationStatus",
           value: function updateApplicationStatus(formData, status, isEdit) {
-            var _this271 = this;
+            var _this272 = this;
 
             // console.log('formData :: ', formData.dataResp);
             // console.log('status :: ', status);
@@ -68850,19 +69362,19 @@
             this.apiService.updateKycStatusByCustId(formData.dataResp.customerId, '', status).subscribe(function (data) {
               // console.log('update response :: ', data)
               if (data != null) {
-                _this271.cdr.markForCheck();
+                _this272.cdr.markForCheck();
 
-                _this271.cdr.detectChanges();
+                _this272.cdr.detectChanges();
 
                 if (isEdit != true) {
-                  _this271.dialogRef.close({
+                  _this272.dialogRef.close({
                     message: 'Confirm',
                     recordStatus: status,
                     data: data
                   });
                 }
 
-                _this271.snack.open("".concat(status), 'OK', {
+                _this272.snack.open("".concat(status), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -68870,9 +69382,9 @@
               }
             }, function (error) {
               console.log('error resp :: ', error);
-              _this271.errorStatus = status;
+              _this272.errorStatus = status;
 
-              _this271.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this272.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -68893,7 +69405,7 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(customerId) {
-            var _this272 = this;
+            var _this273 = this;
 
             this.apiService.getProfileDetails(customerId).subscribe(function (data) {
               // console.log(data);
@@ -68902,7 +69414,7 @@
               if (data.profileImage != null) {
                 //let objectURL = 'data:image/jpeg;base64,' + data.profileImage.fileData;
                 var objectURL = data.profileImage.fileUrl;
-                _this272.image = _this272.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this273.image = _this273.sanitizer.bypassSecurityTrustUrl(objectURL);
               } // console.log(this.image,"Profile Data");
               // console.log(this.profileData.customerName,"Profile Data");
               // const blob = base64StringToBlob(this.profileData.fileData, contentType);
@@ -68914,7 +69426,7 @@
         }, {
           key: "fetchSignatureDetails",
           value: function fetchSignatureDetails(customerId) {
-            var _this273 = this;
+            var _this274 = this;
 
             console.log("inside fetchSignatureDetails method"); // this.apiService.fetchSignatureInfo(customerId)
             // .subscribe((data:any) => {
@@ -68927,8 +69439,8 @@
               console.log(data);
               console.log(data.length); // this.noOFSigns = data[0].noOfSignatures;
 
-              _this273.noOFSigns = data.length;
-              _this273.signatureDetails_array = data;
+              _this274.noOFSigns = data.length;
+              _this274.signatureDetails_array = data;
             }, function (error) {
               console.log(error);
             });
@@ -68936,7 +69448,7 @@
         }, {
           key: "openEditScreen",
           value: function openEditScreen(screen, data) {
-            var _this274 = this;
+            var _this275 = this;
 
             this.status = "UNDER_PROCESS";
             this.updateApplicationStatus(this.dataResponse, "UNDER_PROCESS", true);
@@ -68948,27 +69460,27 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               console.log(submit);
-              _this274.status = submit.status;
+              _this275.status = submit.status;
 
               if (submit.status == 'INITIATED') {
-                _this274.updateApplicationStatus(_this274.dataResponse, "INITIATED", true);
+                _this275.updateApplicationStatus(_this275.dataResponse, "INITIATED", true);
 
                 if (!submit.screen) {
                   Object.assign(data, submit.resp);
                 }
 
                 if (submit.screen == 'documentUpload') {
-                  _this274.getCustomerDocumentsDetails(_this274.customerId);
+                  _this275.getCustomerDocumentsDetails(_this275.customerId);
                 }
 
                 if (submit.screen == "signatureUpload") {
-                  _this274.fetchSignatureDetails(_this274.customerId);
+                  _this275.fetchSignatureDetails(_this275.customerId);
                 }
               }
 
-              _this274.cdr.markForCheck();
+              _this275.cdr.markForCheck();
 
-              _this274.cdr.detectChanges();
+              _this275.cdr.detectChanges();
             });
           }
         }, {
@@ -68996,13 +69508,23 @@
           value: function editMandateInfo() {
             this.openEditScreen(_update_mandate_info_update_mandate_info_component__WEBPACK_IMPORTED_MODULE_13__["UpdateMandateInfoComponent"], this.signatureDetails_array);
           }
+        }, {
+          key: "continue",
+          value: function _continue() {
+            this.ls.setItem('customerId', this.dataResponse.dataResp.customerId);
+            this.ls.setItem("currentKycTabIndex", 0);
+            var theme = null;
+            var type = "INDIVIDUALONBOARDING";
+            window.open("".concat(app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_14__["environment"].redirectUrl, "?code=").concat(this.jwtService.getEncryptedToken(), "&appType=").concat(type, "&theme=").concat(theme), '_blank');
+            this.dialogRef.close();
+          }
         }]);
 
         return CustOnBoardingApproverComponent;
       }();
 
       CustOnBoardingApproverComponent.ɵfac = function CustOnBoardingApproverComponent_Factory(t) {
-        return new (t || CustOnBoardingApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_7__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]));
+        return new (t || CustOnBoardingApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_7__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_3__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_15__["JwtAuthService"]));
       };
 
       CustOnBoardingApproverComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -69024,7 +69546,7 @@
         },
         decls: 55,
         vars: 18,
-        consts: [["fxLayoutAlign", "center"], [4, "ngIf"], ["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "Primary Information", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "column", "fxLayoutAlign", "space-around start", 1, "full-width"], [1, "full-width", 2, "padding", "1rem 1rem"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [2, "font-size", "18px"], [1, "editbtn", 3, "hidden", "click"], [1, "divider1"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem 0"], ["fxFlex", "100%", "fxFlex.xs", "100%"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px", "width", "750px"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "full-width", 2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "hint1"], [1, "mat1"], ["fxFlex", "33%", "fxFlex.xs", "100%", 4, "ngIf"], ["label", "Contact Information", 2, "border-radius", "0px", "width", "800px"], [1, "full-width", 2, "padding", "1rem"], [2, "padding-bottom", "1rem"], [4, "ngFor", "ngForOf"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["fxFlex", "40%", "fxFlex.xs", "50%", 2, "padding", "0.5rem 0.5rem"], [2, "font-size", "16px"], ["fxFlex", "50%", "fxFlex.xs", "100%"], ["fxFlex", "25%", "fxFlex.xs", "100%"], ["label", "Proof Of Identity", 2, "border-radius", "0px", "width", "800px"], [2, "padding", "1rem 0"], ["style", "color: grey;", 4, "ngIf"], [2, "color", "grey"], ["class", "full-width", 4, "ngFor", "ngForOf"], [2, "text-align", "center"], ["required", "", "alt", "", 1, "formImg2", 3, "src"], [2, "margin-top", "35px"], ["download", "", 2, "color", "#4A56E2", "text-decoration", "underline", 3, "href"], ["label", "Other Information", 2, "border-radius", "0px", "width", "800px"], ["fxFlex", "59%", "fxFlex.xs", "100%", 1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["fxFlex", "40%", "fxFlex.xs", "100%", 4, "ngIf"], ["fxFlex", "39%", "fxFlex.xs", "100%", 1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], [1, "mat1", 2, "width", "98%"], [1, "mat11"], ["fxFlex", "40%", "fxFlex.xs", "100%"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 2, "padding", "1rem 0"], ["fxFlex", "15%", "fxFlex.xs", "50%"], ["fxLayout", "row wrap", "style", "padding: 0.5rem 0;", "class", "full-width", 4, "ngFor", "ngForOf"], [1, "imgCard"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], ["alt", "No Image", 1, "formImg", 3, "src"], ["required", "", "alt", "", 1, "formImg", 3, "src"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
+        consts: [["fxLayoutAlign", "center"], [4, "ngIf"], ["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon", 3, "click"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px", 4, "ngIf"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["label", "Primary Information", 2, "border-radius", "0px", "width", "800px"], ["fxLayout", "column", "fxLayoutAlign", "space-around start", 1, "full-width"], [1, "full-width", 2, "padding", "1rem 1rem"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [2, "font-size", "18px"], [1, "editbtn", 3, "hidden", "click"], [1, "divider1"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem 0"], ["fxFlex", "100%", "fxFlex.xs", "100%"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px", "width", "750px"], [1, "full-width"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "full-width", 2, "padding-bottom", "1rem"], ["fxLayout", "row wrap", 1, "full-width", 2, "padding", "0.5rem"], ["fxFlex", "33%", "fxFlex.xs", "100%"], [1, "hint1"], [1, "mat1"], ["fxFlex", "33%", "fxFlex.xs", "100%", 4, "ngIf"], ["label", "Contact Information", 2, "border-radius", "0px", "width", "800px"], [1, "full-width", 2, "padding", "1rem"], [2, "padding-bottom", "1rem"], [4, "ngFor", "ngForOf"], [1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["fxFlex", "40%", "fxFlex.xs", "50%", 2, "padding", "0.5rem 0.5rem"], [2, "font-size", "16px"], ["fxFlex", "50%", "fxFlex.xs", "100%"], ["fxFlex", "25%", "fxFlex.xs", "100%"], ["label", "Proof Of Identity", 2, "border-radius", "0px", "width", "800px"], [2, "padding", "1rem 0"], ["style", "color: grey;", 4, "ngIf"], [2, "color", "grey"], ["class", "full-width", 4, "ngFor", "ngForOf"], [2, "text-align", "center"], ["required", "", "alt", "", 1, "formImg2", 3, "src"], [2, "margin-top", "35px"], ["download", "", 2, "color", "#4A56E2", "text-decoration", "underline", 3, "href"], ["label", "Other Information", 2, "border-radius", "0px", "width", "800px"], ["fxFlex", "59%", "fxFlex.xs", "100%", 1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["fxFlex", "40%", "fxFlex.xs", "100%", 4, "ngIf"], ["fxFlex", "39%", "fxFlex.xs", "100%", 1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], [1, "mat1", 2, "width", "98%"], [1, "mat11"], ["fxFlex", "40%", "fxFlex.xs", "100%"], ["fxFlex", "100%", "fxFlex.xs", "100%", 1, "mat-elevation-z0", 2, "border", "1px solid #f5f5f5", "padding", "16px"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 2, "padding", "1rem 0"], ["fxFlex", "15%", "fxFlex.xs", "50%"], ["fxLayout", "row wrap", "style", "padding: 0.5rem 0;", "class", "full-width", 4, "ngFor", "ngForOf"], [1, "imgCard"], [4, "ngIf", "ngIfElse"], ["showAvatar", ""], ["alt", "No Image", 1, "formImg", 3, "src"], ["required", "", "alt", "", 1, "formImg", 3, "src"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["fxLayout", "row", 1, "continueBtn", 3, "hidden", "ngClass", "click"], [1, "continuelabel"], ["fxLayout", "row", 1, "rejectButton", 3, "hidden", "ngClass", "click"], [1, "cancelIcon"], [1, "rejectlabel"], ["fxLayout", "row", 1, "approveButton", 3, "hidden", "ngClass", "click"], [1, "approveIcon"], [1, "approvelabel"]],
         template: function CustOnBoardingApproverComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form");
@@ -69179,7 +69701,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](52, CustOnBoardingApproverComponent_div_52_Template, 38, 4, "div", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](53, CustOnBoardingApproverComponent_div_53_Template, 14, 11, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](53, CustOnBoardingApproverComponent_div_53_Template, 17, 16, "div", 26);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "br");
 
@@ -69256,9 +69778,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.loading);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_17__["MatCardAvatar"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_18__["MatSpinner"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_17__["MatCard"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_19__["MatDivider"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__["MatHint"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_21__["DefaultClassDirective"]],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_15__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_15__["UpperCasePipe"]],
-        styles: [".appimg {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.editbtn {\n  color: #0e7cc5;\n  cursor: pointer;\n}\n\n.num {\n  background-color: #fff;\n  border: 1px solid #4a56e2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  margin-top: 15px;\n}\n\n.cancelIcon {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 15%;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.imgdiv div {\n  margin: auto;\n}\n\n.apprdiv {\n  text-align: center;\n}\n\n.apprdiv h2 {\n  width: 100%;\n  margin-left: 2%;\n}\n\n.label {\n  color: #9aa1b0;\n  font-size: 0.7rem;\n}\n\n.labelval {\n  color: #2f2f2f;\n}\n\n.rowbord {\n  /*border-bottom:2px solid #707070; */\n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd {\n  padding: 0px;\n}\n\n.nobord {\n  border: none !important;\n}\n\n.main {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard {\n  background-color: #e5e5e5;\n}\n\n.clr {\n  color: #b2b2b2;\n}\n\n.bordnum {\n  height: 100%;\n  border-left: 1px solid #4a56e2;\n  margin-left: 24%;\n}\n\n.RNbtn {\n  background-color: #4a56e2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 300px;\n}\n\n.btn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn {\n  color: #2980b9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980b9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1 {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.closeIcon {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 1px;\n}\n\n.content2 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.label {\n  text-align: center;\n  color: black;\n}\n\n.defaultImage {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  margin-left: -10px;\n}\n\n.imageText {\n  text-align: center;\n  padding: 3rem 2.7rem;\n  color: white;\n}\n\n.mat1 {\n  height: 3.3rem;\n}\n\n.mat11 {\n  font-size: 90%;\n  padding-top: 3px;\n}\n\n.imgCard {\n  margin-left: 70px;\n  margin-top: 40px;\n  width: 30%;\n  height: 120px;\n}\n\n.formImg2 {\n  height: 65px !important;\n  width: 65px !important;\n  background-color: whitesmoke;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY3VzdC1vbi1ib2FyZGluZy1hcHByb3Zlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsY0FBYztFQUNkLHlCQUF3QjtVQUF4Qix3QkFBd0I7QUFFMUI7O0FBQUE7RUFDRSxjQUF1QjtFQUV2QixlQUFlO0FBRWpCOztBQVVBO0VBQ0Usc0JBQXNCO0VBQ3RCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGdCQUFnQjtBQVBsQjs7QUFXQTtFQUNFLFdBQVc7RUFDYixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFDWixjQUFjO0VBQ2QsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBUmY7O0FBVUE7RUFDRSxXQUFXO0VBQ2IsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDakIsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFQakI7O0FBU0E7RUFDRSxXQUFXO0VBQ2IsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQVBmOztBQVNBO0VBQ0UsV0FBVztFQUNiLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGlCQUFpQjtFQUNqQiwrQ0FBK0M7RUFDL0MsVUFBVTtFQUNWLG1CQUFtQjtFQUNqQix1QkFBdUI7RUFDdkIsZUFBZTtBQU5qQjs7QUFTQTtFQUNFLFdBQVc7RUFDYixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBTmY7O0FBU0E7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDbEIsZUFBZTtBQVBmOztBQVVBO0VBQ0UsWUFBWTtBQVBkOztBQVNBO0VBQ0Usa0JBQWtCO0FBTnBCOztBQVFBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFMakI7O0FBT0E7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0FBSm5COztBQU1BO0VBQ0UsY0FBYztBQUhoQjs7QUFLQTtFQUNFLG9DQUFBO0VBQ0EsZ0NBQWdDO0VBQ2hDLHlCQUF5QjtBQUYzQjs7QUFJQTtFQUNFLFlBQVk7QUFEZDs7QUFHQTtFQUNFLHVCQUF1QjtBQUF6Qjs7QUFFQTtFQUNFLFlBQVk7RUFDWixjQUFjO0VBQ2Qsa0JBQWtCO0FBQ3BCOztBQUNBO0VBQ0UseUJBQXlCO0FBRTNCOztBQUFBO0VBQ0UsY0FBYztBQUdoQjs7QUFEQTtFQUNFLFlBQVk7RUFDWiw4QkFBOEI7RUFDOUIsZ0JBQWdCO0FBSWxCOztBQURBO0VBQ0UseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXNCO0tBQXRCLDJCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFzQjtLQUF0QiwyQkFBc0I7VUFBdEIsc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixZQUFZO0FBSWQ7O0FBREE7RUFDRSxjQUFjO0VBQ2QseUJBQW9DO0VBQ3BDLGVBQWU7RUFDZix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixVQUFVO0VBQ1YsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFdBQVc7RUFDWCx5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osWUFBWTtBQUlkOztBQURBO0VBQ0UsVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixVQUFVO0VBQ1YsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIscUJBQStCO0VBQy9CLDhCQUFzQjtLQUF0QiwyQkFBc0I7VUFBdEIsc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixZQUFZO0FBSWQ7O0FBREE7RUFDRSxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBc0I7S0FBdEIsMkJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QixZQUFZO0VBQ1osWUFBWTtBQUlkOztBQURBO0VBQ0UsWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXNCO0tBQXRCLDJCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLHlCQUFtQztFQUNuQyxZQUFZO0VBQ1osa0JBQWtCO0FBSXBCOztBQURBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFJakI7O0FBREE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQix5QkFBbUM7RUFDbkMsWUFBWTtFQUNaLGtCQUFrQjtBQUlwQjs7QUFEQTtFQUNFLGVBQWU7RUFDZixlQUFlO0VBQ2YsaUJBQWlCO0FBSW5COztBQUZBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFLakI7O0FBRkE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtBQUtkOztBQUhBO0VBQ0UsWUFBWTtFQUNaLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsa0JBQWtCO0FBTXBCOztBQURBO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBSWQ7O0FBRkE7RUFDRSxjQUFjO0FBS2hCOztBQUZBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUtsQjs7QUFGQTtFQUNFLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLGFBQWE7QUFLZjs7QUFIQTtFQUNFLHVCQUF1QjtFQUN2QixzQkFBc0I7RUFDdEIsNEJBQTRCO0FBTTlCIiwiZmlsZSI6ImN1c3Qtb24tYm9hcmRpbmctYXBwcm92ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYXBwaW1nIHtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxufVxyXG4uaW1nZGl2IHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgbWFyZ2luLXRvcDogNSU7XHJcbiAgbWFyZ2luLWlubGluZS1zdGFydDogMTglO1xyXG59XHJcbi5lZGl0YnRue1xyXG4gIGNvbG9yOnJnYigxNCwgMTI0LCAxOTcpIDtcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICAvLyBvdXRsaW5lOiBub25lO1xyXG4gIC8vIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgLy8gdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgLy8gYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAvLyBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAvLyB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgLy8gYm9yZGVyLWNvbG9yOiAjMGU1N2M1O1xyXG4gIC8vIGhlaWdodDozMHB4O1xyXG4gIC8vIHdpZHRoOjE1MHB4O1xyXG4gIC8vIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG4ubnVtIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICM0YTU2ZTI7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNzBweDtcclxuICBwYWRkaW5nLXRvcDogMjVweDtcclxuICBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gIC8vICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTU5LCA4MiwgMjMxKTtcclxufVxyXG5cclxuLmNhbmNlbEljb257XHJcbiAgdG9wOiA2NzIwcHg7XHJcbmxlZnQ6IDgxMnB4O1xyXG53aWR0aDogMjBweDtcclxuaGVpZ2h0OiAyMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5yZWplY3RCdXR0b257XHJcbiAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDc2MnB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxuYm9yZGVyOiAycHggc29saWQgI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxuYm9yZGVyLXJhZGl1czogMjRweDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLnJlamVjdGxhYmVse1xyXG4gIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5hcHByb3ZlQnV0dG9ue1xyXG4gIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA5NjlweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbm1hcmdpbi1yaWdodDogMTUlO1xyXG5iYWNrZ3JvdW5kOiAjMjRDQ0E3IDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxub3BhY2l0eTogMTtcclxuYm9yZGVyLXJhZGl1czogMjRweDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlSWNvbntcclxuICB0b3A6IDY3MTZweDtcclxubGVmdDogMTAwOXB4O1xyXG53aWR0aDogMjRweDtcclxuaGVpZ2h0OiAyNHB4O1xyXG5jb2xvcjogd2hpdGU7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVsYWJlbHtcclxuICB0b3A6IDY3MTdweDtcclxuICBsZWZ0OiAxMDQ5cHg7XHJcbiAgd2lkdGg6IDYycHg7XHJcbiAgaGVpZ2h0OiAyMnB4O1xyXG4gIFxyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgZm9udDogbm9ybWFsIG5vcm1hbCBub3JtYWwgMThweC8yMnB4IENhbGlicmk7XHJcbiAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICBjb2xvcjogI0ZGRkZGRjtcclxuICBvcGFjaXR5OiAxO1xyXG4gIHBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmltZ2RpdiBkaXYge1xyXG4gIG1hcmdpbjogYXV0bztcclxufVxyXG4uYXBwcmRpdiB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5hcHByZGl2IGgyIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuLmxhYmVsIHtcclxuICBjb2xvcjogIzlhYTFiMDtcclxuICBmb250LXNpemU6IDAuN3JlbTtcclxufVxyXG4ubGFiZWx2YWwge1xyXG4gIGNvbG9yOiAjMmYyZjJmO1xyXG59XHJcbi5yb3dib3JkIHtcclxuICAvKmJvcmRlci1ib3R0b206MnB4IHNvbGlkICM3MDcwNzA7ICovXHJcbiAgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgcGFkZGluZzogMTBweCAwIDEwcHggMTBweDtcclxufVxyXG4ubXRjZCB7XHJcbiAgcGFkZGluZzogMHB4O1xyXG59XHJcbi5ub2JvcmQge1xyXG4gIGJvcmRlcjogbm9uZSAhaW1wb3J0YW50O1xyXG59XHJcbi5tYWluIHtcclxuICBoZWlnaHQ6IDg1dmg7XHJcbiAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG59XHJcbi5hcHBlcnNvbmluZm9jYXJkIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTVlNWU1O1xyXG59XHJcbi5jbHIge1xyXG4gIGNvbG9yOiAjYjJiMmIyO1xyXG59XHJcbi5ib3JkbnVtIHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNGE1NmUyO1xyXG4gIG1hcmdpbi1sZWZ0OiAyNCU7XHJcbn1cclxuXHJcbi5STmJ0biB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzRhNTZlMjtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gIHRleHQtc2l6ZS1hZGp1c3Q6IDIwcHg7XHJcbiAgaGVpZ2h0OiAzMHB4O1xyXG4gIHdpZHRoOiAzMDBweDtcclxufVxyXG5cclxuLmJ0biB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigxNCwgMTk3LCAxMzYpO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICB0ZXh0LXNpemUtYWRqdXN0OiAyMHB4O1xyXG4gIGhlaWdodDogMzBweDtcclxuICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5jYW5jZWxidG4ge1xyXG4gIGNvbG9yOiAjMjk4MGI5O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItY29sb3I6ICMyOTgwYjk7XHJcbiAgc2l6ZTogMjBweDtcclxuICBoZWlnaHQ6IDMwcHg7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uZGlzYWJsZWRidG4ge1xyXG4gIGNvbG9yOiBncmV5O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItY29sb3I6IGdyZXk7XHJcbiAgc2l6ZTogMjBweDtcclxuICBoZWlnaHQ6IDMwcHg7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4ucmVqZWN0YnRuIHtcclxuICBjb2xvcjogcmVkO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBvdXRsaW5lOiBub25lO1xyXG4gIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItY29sb3I6IHJlZDtcclxuICBzaXplOiAyMHB4O1xyXG4gIGhlaWdodDogMzBweDtcclxuICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5hcHByb3ZlYnRuIHtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICBib3JkZXItY29sb3I6IHJnYigxNCwgMTk3LCAxMzYpO1xyXG4gIHRleHQtc2l6ZS1hZGp1c3Q6IDIwcHg7XHJcbiAgaGVpZ2h0OiAzMHB4O1xyXG4gIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLnNxZnRidG4ge1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICB0ZXh0LXNpemUtYWRqdXN0OiAyMHB4O1xyXG4gIGhlaWdodDogMjBweDtcclxuICB3aWR0aDogMTAwcHg7XHJcbn1cclxuXHJcbi5hY2J0biB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gIHRleHQtc2l6ZS1hZGp1c3Q6IDIwcHg7XHJcbiAgaGVpZ2h0OiAyMHB4O1xyXG4gIHdpZHRoOiAxMDBweDtcclxufVxyXG5cclxuLmNpcmNsZSB7XHJcbiAgd2lkdGg6IDc1cHg7XHJcbiAgaGVpZ2h0OiA3NXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uY29udGVudDEge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB3aWR0aDogaW5oZXJpdDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgdG9wOiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjogI2ZmZjtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuXHJcbi5jaXJjbGUxIHtcclxuICB3aWR0aDogMjVweDtcclxuICBoZWlnaHQ6IDI1cHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigxNCwgMTk3LCAxMzYpO1xyXG4gIG1hcmdpbjogYXV0bztcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcbi5jbG9zZUljb24ge1xyXG4gIGNvbG9yOiBkYXJrZ3JheTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxcHg7XHJcbn1cclxuLmNvbnRlbnQyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgd2lkdGg6IGluaGVyaXQ7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6ICNmZmY7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcblxyXG4ubGFiZWwge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjogYmxhY2s7XHJcbn1cclxuLmRlZmF1bHRJbWFnZSB7XHJcbiAgd2lkdGg6IDEyMHB4O1xyXG4gIGhlaWdodDogMTIwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIG1hcmdpbi1sZWZ0OiAtMTBweDtcclxuICAvLyB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgLy8gYmFja2dyb3VuZC1jb2xvcjogIzE5YzI4ZjtcclxufVxyXG5cclxuLmltYWdlVGV4dCB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHBhZGRpbmc6IDNyZW0gMi43cmVtO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG4ubWF0MSB7XHJcbiAgaGVpZ2h0OiAzLjNyZW07XHJcbn1cclxuXHJcbi5tYXQxMSB7XHJcbiAgZm9udC1zaXplOiA5MCU7XHJcbiAgcGFkZGluZy10b3A6IDNweDtcclxufVxyXG5cclxuLmltZ0NhcmQge1xyXG4gIG1hcmdpbi1sZWZ0OiA3MHB4O1xyXG4gIG1hcmdpbi10b3A6IDQwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxuICBoZWlnaHQ6IDEyMHB4O1xyXG59XHJcbi5mb3JtSW1nMiB7XHJcbiAgaGVpZ2h0OiA2NXB4ICFpbXBvcnRhbnQ7XHJcbiAgd2lkdGg6IDY1cHggIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlO1xyXG59XHJcbiJdfQ== */"],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_18__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCardAvatar"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_20__["MatSpinner"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_19__["MatCard"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_21__["MatDivider"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_22__["MatHint"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_16__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_23__["DefaultClassDirective"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_17__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_17__["UpperCasePipe"]],
+        styles: [".appimg {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.editbtn {\n  color: #0e7cc5;\n  cursor: pointer;\n}\n\n.num {\n  background-color: #fff;\n  border: 1px solid #4a56e2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  margin-top: 15px;\n}\n\n.cancelIcon {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 15%;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.imgdiv div {\n  margin: auto;\n}\n\n.apprdiv {\n  text-align: center;\n}\n\n.apprdiv h2 {\n  width: 100%;\n  margin-left: 2%;\n}\n\n.label {\n  color: #9aa1b0;\n  font-size: 0.7rem;\n}\n\n.labelval {\n  color: #2f2f2f;\n}\n\n.rowbord {\n  /*border-bottom:2px solid #707070; */\n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd {\n  padding: 0px;\n}\n\n.nobord {\n  border: none !important;\n}\n\n.main {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard {\n  background-color: #e5e5e5;\n}\n\n.clr {\n  color: #b2b2b2;\n}\n\n.bordnum {\n  height: 100%;\n  border-left: 1px solid #4a56e2;\n  margin-left: 24%;\n}\n\n.RNbtn {\n  background-color: #4a56e2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 300px;\n}\n\n.btn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn {\n  color: #2980b9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980b9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1 {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.closeIcon {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 1px;\n}\n\n.content2 {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.label {\n  text-align: center;\n  color: black;\n}\n\n.defaultImage {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  margin-left: -10px;\n}\n\n.imageText {\n  text-align: center;\n  padding: 3rem 2.7rem;\n  color: white;\n}\n\n.mat1 {\n  height: 3.3rem;\n}\n\n.mat11 {\n  font-size: 90%;\n  padding-top: 3px;\n}\n\n.imgCard {\n  margin-left: 70px;\n  margin-top: 40px;\n  width: 30%;\n  height: 120px;\n}\n\n.formImg2 {\n  height: 65px !important;\n  width: 65px !important;\n  background-color: whitesmoke;\n}\n\n.continueBtn {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid blue;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.continuelabel {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: blue;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY3VzdC1vbi1ib2FyZGluZy1hcHByb3Zlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsY0FBYztFQUNkLHlCQUF3QjtVQUF4Qix3QkFBd0I7QUFFMUI7O0FBQUE7RUFDRSxjQUF1QjtFQUV2QixlQUFlO0FBRWpCOztBQVVBO0VBQ0Usc0JBQXNCO0VBQ3RCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGdCQUFnQjtBQVBsQjs7QUFXQTtFQUNFLFdBQVc7RUFDYixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFDWixjQUFjO0VBQ2QsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBUmY7O0FBVUE7RUFDRSxXQUFXO0VBQ2IsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDakIsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFQakI7O0FBU0E7RUFDRSxXQUFXO0VBQ2IsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQVBmOztBQVNBO0VBQ0UsV0FBVztFQUNiLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGlCQUFpQjtFQUNqQiwrQ0FBK0M7RUFDL0MsVUFBVTtFQUNWLG1CQUFtQjtFQUNqQix1QkFBdUI7RUFDdkIsZUFBZTtBQU5qQjs7QUFTQTtFQUNFLFdBQVc7RUFDYixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBTmY7O0FBU0E7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDbEIsZUFBZTtBQVBmOztBQVVBO0VBQ0UsWUFBWTtBQVBkOztBQVNBO0VBQ0Usa0JBQWtCO0FBTnBCOztBQVFBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFMakI7O0FBT0E7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0FBSm5COztBQU1BO0VBQ0UsY0FBYztBQUhoQjs7QUFLQTtFQUNFLG9DQUFBO0VBQ0EsZ0NBQWdDO0VBQ2hDLHlCQUF5QjtBQUYzQjs7QUFJQTtFQUNFLFlBQVk7QUFEZDs7QUFHQTtFQUNFLHVCQUF1QjtBQUF6Qjs7QUFFQTtFQUNFLFlBQVk7RUFDWixjQUFjO0VBQ2Qsa0JBQWtCO0FBQ3BCOztBQUNBO0VBQ0UseUJBQXlCO0FBRTNCOztBQUFBO0VBQ0UsY0FBYztBQUdoQjs7QUFEQTtFQUNFLFlBQVk7RUFDWiw4QkFBOEI7RUFDOUIsZ0JBQWdCO0FBSWxCOztBQURBO0VBQ0UseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXNCO0tBQXRCLDJCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFzQjtLQUF0QiwyQkFBc0I7VUFBdEIsc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixZQUFZO0FBSWQ7O0FBREE7RUFDRSxjQUFjO0VBQ2QseUJBQW9DO0VBQ3BDLGVBQWU7RUFDZix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixVQUFVO0VBQ1YsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFdBQVc7RUFDWCx5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osWUFBWTtBQUlkOztBQURBO0VBQ0UsVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixVQUFVO0VBQ1YsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFlBQVk7RUFDWix5QkFBbUM7RUFDbkMsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIscUJBQStCO0VBQy9CLDhCQUFzQjtLQUF0QiwyQkFBc0I7VUFBdEIsc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixZQUFZO0FBSWQ7O0FBREE7RUFDRSxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBc0I7S0FBdEIsMkJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QixZQUFZO0VBQ1osWUFBWTtBQUlkOztBQURBO0VBQ0UsWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXNCO0tBQXRCLDJCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLFlBQVk7QUFJZDs7QUFEQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLHlCQUFtQztFQUNuQyxZQUFZO0VBQ1osa0JBQWtCO0FBSXBCOztBQURBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFJakI7O0FBREE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQix5QkFBbUM7RUFDbkMsWUFBWTtFQUNaLGtCQUFrQjtBQUlwQjs7QUFEQTtFQUNFLGVBQWU7RUFDZixlQUFlO0VBQ2YsaUJBQWlCO0FBSW5COztBQUZBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFLakI7O0FBRkE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtBQUtkOztBQUhBO0VBQ0UsWUFBWTtFQUNaLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsa0JBQWtCO0FBTXBCOztBQURBO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBSWQ7O0FBRkE7RUFDRSxjQUFjO0FBS2hCOztBQUZBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUtsQjs7QUFGQTtFQUNFLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLGFBQWE7QUFLZjs7QUFIQTtFQUNFLHVCQUF1QjtFQUN2QixzQkFBc0I7RUFDdEIsNEJBQTRCO0FBTTlCOztBQUpBO0VBQ0UsV0FBVztFQUNiLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixVQUFVO0VBQ1YsbUJBQW1CO0VBQ2pCLHVCQUF1QjtFQUN2QixlQUFlO0FBT2pCOztBQUpBO0VBQ0UsV0FBVztFQUNiLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLFdBQVc7RUFDWCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFNZiIsImZpbGUiOiJjdXN0LW9uLWJvYXJkaW5nLWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGltZyB7XHJcbiAgd2lkdGg6IDEwMHB4O1xyXG4gIGhlaWdodDogMTAwcHg7XHJcbn1cclxuLmltZ2RpdiB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIG1hcmdpbi10b3A6IDUlO1xyXG4gIG1hcmdpbi1pbmxpbmUtc3RhcnQ6IDE4JTtcclxufVxyXG4uZWRpdGJ0bntcclxuICBjb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KSA7XHJcbiAgLy8gYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgLy8gb3V0bGluZTogbm9uZTtcclxuICAvLyBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gIC8vIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gIC8vIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgLy8gYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgLy8gdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gIC8vIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAvLyBoZWlnaHQ6MzBweDtcclxuICAvLyB3aWR0aDoxNTBweDtcclxuICAvLyBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbn1cclxuLm51bSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjNGE1NmUyO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDUwJTtcclxuICBoZWlnaHQ6IDcwcHg7XHJcbiAgcGFkZGluZy10b3A6IDI1cHg7XHJcbiAgbWFyZ2luLXRvcDogMTVweDtcclxuICAvLyAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE1OSwgODIsIDIzMSk7XHJcbn1cclxuXHJcbi5jYW5jZWxJY29ue1xyXG4gIHRvcDogNjcyMHB4O1xyXG5sZWZ0OiA4MTJweDtcclxud2lkdGg6IDIwcHg7XHJcbmhlaWdodDogMjBweDtcclxuY29sb3I6ICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4ucmVqZWN0QnV0dG9ue1xyXG4gIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA3NjJweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbmJvcmRlcjogMnB4IHNvbGlkICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5yZWplY3RsYWJlbHtcclxuICB0b3A6IDY3MThweDtcclxubGVmdDogODQycHg7XHJcbndpZHRoOiA0NXB4O1xyXG5oZWlnaHQ6IDIycHg7XHJcblxyXG50ZXh0LWFsaWduOiBsZWZ0O1xyXG5mb250OiBub3JtYWwgbm9ybWFsIG5vcm1hbCAxOHB4LzIycHggQ2FsaWJyaTtcclxubGV0dGVyLXNwYWNpbmc6IDBweDtcclxuY29sb3I6ICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4uYXBwcm92ZUJ1dHRvbntcclxuICB0b3A6IDY3MDVweDtcclxubGVmdDogOTY5cHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5tYXJnaW4tcmlnaHQ6IDE1JTtcclxuYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG5cclxufVxyXG4uYXBwcm92ZUljb257XHJcbiAgdG9wOiA2NzE2cHg7XHJcbmxlZnQ6IDEwMDlweDtcclxud2lkdGg6IDI0cHg7XHJcbmhlaWdodDogMjRweDtcclxuY29sb3I6IHdoaXRlO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlbGFiZWx7XHJcbiAgdG9wOiA2NzE3cHg7XHJcbiAgbGVmdDogMTA0OXB4O1xyXG4gIHdpZHRoOiA2MnB4O1xyXG4gIGhlaWdodDogMjJweDtcclxuICBcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgY29sb3I6ICNGRkZGRkY7XHJcbiAgb3BhY2l0eTogMTtcclxuICBwYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5pbWdkaXYgZGl2IHtcclxuICBtYXJnaW46IGF1dG87XHJcbn1cclxuLmFwcHJkaXYge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uYXBwcmRpdiBoMiB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgbWFyZ2luLWxlZnQ6IDIlO1xyXG59XHJcbi5sYWJlbCB7XHJcbiAgY29sb3I6ICM5YWExYjA7XHJcbiAgZm9udC1zaXplOiAwLjdyZW07XHJcbn1cclxuLmxhYmVsdmFsIHtcclxuICBjb2xvcjogIzJmMmYyZjtcclxufVxyXG4ucm93Ym9yZCB7XHJcbiAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjZjVmNWY1O1xyXG4gIHBhZGRpbmc6IDEwcHggMCAxMHB4IDEwcHg7XHJcbn1cclxuLm10Y2Qge1xyXG4gIHBhZGRpbmc6IDBweDtcclxufVxyXG4ubm9ib3JkIHtcclxuICBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcclxufVxyXG4ubWFpbiB7XHJcbiAgaGVpZ2h0OiA4NXZoO1xyXG4gIG92ZXJmbG93OiBhdXRvO1xyXG4gIG92ZXJmbG93LXg6IGhpZGRlbjtcclxufVxyXG4uYXBwZXJzb25pbmZvY2FyZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U1ZTVlNTtcclxufVxyXG4uY2xyIHtcclxuICBjb2xvcjogI2IyYjJiMjtcclxufVxyXG4uYm9yZG51bSB7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzRhNTZlMjtcclxuICBtYXJnaW4tbGVmdDogMjQlO1xyXG59XHJcblxyXG4uUk5idG4ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICM0YTU2ZTI7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICB0ZXh0LXNpemUtYWRqdXN0OiAyMHB4O1xyXG4gIGhlaWdodDogMzBweDtcclxuICB3aWR0aDogMzAwcHg7XHJcbn1cclxuXHJcbi5idG4ge1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgdGV4dC1zaXplLWFkanVzdDogMjBweDtcclxuICBoZWlnaHQ6IDMwcHg7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uY2FuY2VsYnRuIHtcclxuICBjb2xvcjogIzI5ODBiOTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQzLCAyMzYsIDIzNik7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLWNvbG9yOiAjMjk4MGI5O1xyXG4gIHNpemU6IDIwcHg7XHJcbiAgaGVpZ2h0OiAzMHB4O1xyXG4gIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmRpc2FibGVkYnRuIHtcclxuICBjb2xvcjogZ3JleTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQzLCAyMzYsIDIzNik7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLWNvbG9yOiBncmV5O1xyXG4gIHNpemU6IDIwcHg7XHJcbiAgaGVpZ2h0OiAzMHB4O1xyXG4gIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLnJlamVjdGJ0biB7XHJcbiAgY29sb3I6IHJlZDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgb3V0bGluZTogbm9uZTtcclxuICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLWNvbG9yOiByZWQ7XHJcbiAgc2l6ZTogMjBweDtcclxuICBoZWlnaHQ6IDMwcHg7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uYXBwcm92ZWJ0biB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigxNCwgMTk3LCAxMzYpO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBvdXRsaW5lOiBub25lO1xyXG4gIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgYm9yZGVyLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICB0ZXh0LXNpemUtYWRqdXN0OiAyMHB4O1xyXG4gIGhlaWdodDogMzBweDtcclxuICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5zcWZ0YnRuIHtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgdGV4dC1zaXplLWFkanVzdDogMjBweDtcclxuICBoZWlnaHQ6IDIwcHg7XHJcbiAgd2lkdGg6IDEwMHB4O1xyXG59XHJcblxyXG4uYWNidG4ge1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICB0ZXh0LXNpemUtYWRqdXN0OiAyMHB4O1xyXG4gIGhlaWdodDogMjBweDtcclxuICB3aWR0aDogMTAwcHg7XHJcbn1cclxuXHJcbi5jaXJjbGUge1xyXG4gIHdpZHRoOiA3NXB4O1xyXG4gIGhlaWdodDogNzVweDtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmNvbnRlbnQxIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgd2lkdGg6IGluaGVyaXQ7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6ICNmZmY7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcblxyXG4uY2lyY2xlMSB7XHJcbiAgd2lkdGg6IDI1cHg7XHJcbiAgaGVpZ2h0OiAyNXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uY2xvc2VJY29uIHtcclxuICBjb2xvcjogZGFya2dyYXk7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIG1hcmdpbi1yaWdodDogMXB4O1xyXG59XHJcbi5jb250ZW50MiB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHdpZHRoOiBpbmhlcml0O1xyXG4gIGhlaWdodDogYXV0bztcclxuICB0b3A6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG5cclxuLmxhYmVsIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcbi5kZWZhdWx0SW1hZ2Uge1xyXG4gIHdpZHRoOiAxMjBweDtcclxuICBoZWlnaHQ6IDEyMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgLy8gdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6ICMxOWMyOGY7XHJcbn1cclxuXHJcbi5pbWFnZVRleHQge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBwYWRkaW5nOiAzcmVtIDIuN3JlbTtcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuLm1hdDEge1xyXG4gIGhlaWdodDogMy4zcmVtO1xyXG59XHJcblxyXG4ubWF0MTEge1xyXG4gIGZvbnQtc2l6ZTogOTAlO1xyXG4gIHBhZGRpbmctdG9wOiAzcHg7XHJcbn1cclxuXHJcbi5pbWdDYXJkIHtcclxuICBtYXJnaW4tbGVmdDogNzBweDtcclxuICBtYXJnaW4tdG9wOiA0MHB4O1xyXG4gIHdpZHRoOiAzMCU7XHJcbiAgaGVpZ2h0OiAxMjBweDtcclxufVxyXG4uZm9ybUltZzIge1xyXG4gIGhlaWdodDogNjVweCAhaW1wb3J0YW50O1xyXG4gIHdpZHRoOiA2NXB4ICFpbXBvcnRhbnQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTtcclxufVxyXG4uY29udGludWVCdG57XHJcbiAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDc2MnB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxuYm9yZGVyOiAycHggc29saWQgYmx1ZTtcclxub3BhY2l0eTogMTtcclxuYm9yZGVyLXJhZGl1czogMjRweDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5jb250aW51ZWxhYmVse1xyXG4gIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogYmx1ZTtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiJdfQ== */"],
         encapsulation: 2
       });
       /*@__PURE__*/
@@ -69297,6 +69819,8 @@
             type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]
+          }, {
+            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_15__["JwtAuthService"]
           }];
         }, {
           initiatedArr: [{
@@ -70020,32 +70544,32 @@
         }, {
           key: "fetchAccountBalance",
           value: function fetchAccountBalance(accountId, isForce) {
-            var _this275 = this;
+            var _this276 = this;
 
             this.loader.open();
             this.apiService.fetchAccountBalanceByAccountId(accountId).subscribe(function (res) {
               console.log("RES", res);
-              _this275.accountInfo = res;
+              _this276.accountInfo = res;
 
               if (!isForce) {
-                if (_this275.fundStageUpdateForm.get('fundBy').value == "Fund Transfer") {
-                  _this275.fundStageUpdateForm.get('fundByAccount').patchValue(res.accountId);
+                if (_this276.fundStageUpdateForm.get('fundBy').value == "Fund Transfer") {
+                  _this276.fundStageUpdateForm.get('fundByAccount').patchValue(res.accountId);
 
-                  _this275.fundStageUpdateForm.get('branchCode').patchValue(res.branchCode);
+                  _this276.fundStageUpdateForm.get('branchCode').patchValue(res.branchCode);
                 }
               }
 
-              _this275.loader.close();
+              _this276.loader.close();
 
-              _this275.snack.open('Fetched!', 'OK', {
+              _this276.snack.open('Fetched!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
             }, function (err) {
-              _this275.loader.close();
+              _this276.loader.close();
 
-              _this275.snack.open('Invalid AccountId!', 'OK', {
+              _this276.snack.open('Invalid AccountId!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -70106,26 +70630,26 @@
         }, {
           key: "onSubmit",
           value: function onSubmit(fundStageUpdateForm) {
-            var _this276 = this;
+            var _this277 = this;
 
             fundStageUpdateForm.accountId = this.accountId;
             this.fundingStageService.saveOrUpdateFundStageDetails(fundStageUpdateForm).subscribe(function (fundResp) {
               if (fundResp.accountId != null || fundResp.accountId != '' || fundResp.accountId != "") {
-                _this276.fundingStageService.isSubmittedResp(true);
+                _this277.fundingStageService.isSubmittedResp(true);
 
-                _this276.snack.open('Funding Details Updated!', 'OK', {
+                _this277.snack.open('Funding Details Updated!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this276.dialogRef.close({
+                _this277.dialogRef.close({
                   status: 'BACKLOG'
                 });
 
-                _this276.cdr.markForCheck();
+                _this277.cdr.markForCheck();
               } else {
-                _this276.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this277.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -70136,7 +70660,7 @@
             }, function (error) {
               console.log("error :: ", error);
 
-              _this276.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+              _this277.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -71679,25 +72203,25 @@
         }, {
           key: "getCollateralType",
           value: function getCollateralType(key) {
-            var _this277 = this;
+            var _this278 = this;
 
             this.api.getDropDownValues(key).subscribe(function (data) {
-              _this277.arrayCollateralType = data;
+              _this278.arrayCollateralType = data;
             });
           }
         }, {
           key: "getCurrencyDetails",
           value: function getCurrencyDetails() {
-            var _this278 = this;
+            var _this279 = this;
 
             this.api.fetchCurrencyMaintAuthRecs().subscribe(function (resp) {
-              _this278.currency = resp;
+              _this279.currency = resp;
             });
           }
         }, {
           key: "overDraftCondition",
           value: function overDraftCondition(event, i) {
-            var _this279 = this;
+            var _this280 = this;
 
             var overDRaftValue = event.target.value;
             console.log(overDRaftValue, this.linkangePercent);
@@ -71713,9 +72237,9 @@
                 console.log("Response", res);
 
                 if (res === true) {
-                  _this279.cdr.markForCheck();
+                  _this280.cdr.markForCheck();
                 } else {
-                  _this279.c.at(i).get('overdraftLimitAmount').setValue('');
+                  _this280.c.at(i).get('overdraftLimitAmount').setValue('');
                 }
 
                 ;
@@ -71725,47 +72249,47 @@
         }, {
           key: "fetchBySecurityNum",
           value: function fetchBySecurityNum(securityReferenceNum, i) {
-            var _this280 = this;
+            var _this281 = this;
 
             if (!!securityReferenceNum) {
               this.showSpinner = true;
               console.log("Caling", securityReferenceNum);
               this.api.fetchBySecurityNumber(securityReferenceNum).subscribe(function (res) {
                 console.log(res);
-                _this280.showSpinner = false;
+                _this281.showSpinner = false;
 
                 if (res == null) {
-                  _this280.issecurityValid = false;
+                  _this281.issecurityValid = false;
 
-                  _this280.snack.open('Invalid Security Reference Number', 'OK', {
+                  _this281.snack.open('Invalid Security Reference Number', 'OK', {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
                   });
 
-                  _this280.c.at(i).get('securityReferenceNumber').setValue('');
+                  _this281.c.at(i).get('securityReferenceNumber').setValue('');
 
                   return;
                 } else {
-                  _this280.issecurityValid = true;
-                  _this280.branchData = res.securedOverDrafts;
-                  console.log(_this280.branchData);
+                  _this281.issecurityValid = true;
+                  _this281.branchData = res.securedOverDrafts;
+                  console.log(_this281.branchData);
 
-                  _this280.branchData.forEach(function (element, index) {
-                    _this280.branch = _this280.branchData[index].branchCode;
+                  _this281.branchData.forEach(function (element, index) {
+                    _this281.branch = _this281.branchData[index].branchCode;
                   });
 
-                  _this280.c.at(i).get('branchCode').setValue(_this280.branch);
+                  _this281.c.at(i).get('branchCode').setValue(_this281.branch);
                 }
 
-                _this280.cdr.markForCheck();
+                _this281.cdr.markForCheck();
               });
             }
           }
         }, {
           key: "uploadCollateralType",
           value: function uploadCollateralType(event, i) {
-            var _this281 = this;
+            var _this282 = this;
 
             this.showSpinn = true;
             var file = event.target.files[0];
@@ -71781,17 +72305,17 @@
               console.log("Document Resp", res, res.url);
 
               if (res && res.url) {
-                _this281.showSpinn = false;
+                _this282.showSpinn = false;
 
-                _this281.snack.open('Document Saved Successfully!', 'OK', {
+                _this282.snack.open('Document Saved Successfully!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this281.c.at(i).get('documentUrl').setValue(res.url);
+                _this282.c.at(i).get('documentUrl').setValue(res.url);
 
-                _this281.c.at(i).get('fileName').setValue(res.fileName);
+                _this282.c.at(i).get('fileName').setValue(res.fileName);
               }
             });
           }
@@ -71807,11 +72331,11 @@
         }, {
           key: "onSubmit",
           value: function onSubmit(i) {
-            var _this282 = this;
+            var _this283 = this;
 
             this.c.value.forEach(function (data) {
-              if ((data.linkagePercentage == "" || data.securityReferenceNumber == "" || data.collateralValue == "" || data.branchCode == "") && _this282.securedOverdraftUpdateForm.touched == true) {
-                _this282.snack.open('mandatory details are not filled so need to be filled!', 'OK', {
+              if ((data.linkagePercentage == "" || data.securityReferenceNumber == "" || data.collateralValue == "" || data.branchCode == "") && _this283.securedOverdraftUpdateForm.touched == true) {
+                _this283.snack.open('mandatory details are not filled so need to be filled!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -71819,11 +72343,11 @@
               }
 
               if (data.limitStartDate != null && data.limitStartDate._d != undefined && data.limitStartDate._d != null) {
-                data.limitStartDate = _this282.convertDate(data.limitStartDate._d);
+                data.limitStartDate = _this283.convertDate(data.limitStartDate._d);
               }
 
               if (data.limitEndDate != null && data.limitEndDate._d != undefined && data.limitEndDate._d != null) {
-                data.limitEndDate = _this282.convertDate(data.limitEndDate._d);
+                data.limitEndDate = _this283.convertDate(data.limitEndDate._d);
               }
             });
             var payload = {
@@ -71837,17 +72361,17 @@
             }
 
             this.api.securedDraft(payload).subscribe(function (resp) {
-              _this282.snack.open('Secured Overdraft Details is already filled, click on Next button to continue!', 'OK', {
+              _this283.snack.open('Secured Overdraft Details is already filled, click on Next button to continue!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
-              _this282.dialogRef.close({
+              _this283.dialogRef.close({
                 status: 'BACKLOG'
               });
             }, function (err) {
-              _this282.snack.open('Error Unable to Save!', 'OK', {
+              _this283.snack.open('Error Unable to Save!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -72447,7 +72971,7 @@
         }, {
           key: "changeValue",
           value: function changeValue(noOfSign) {
-            var _this283 = this;
+            var _this284 = this;
 
             var message = '';
             var arrlength;
@@ -72482,13 +73006,13 @@
               message = 'Are you sure, value is less than no. of signs?';
               this.dialogService.doConfirmDialog(message).subscribe(function (res) {
                 if (res === 'Yes') {
-                  arrlength = _this283.getSignArray.length;
+                  arrlength = _this284.getSignArray.length;
 
                   for (var i = arrlength; i >= noOfSign.value; i--) {
-                    _this283.removeSign(i);
+                    _this284.removeSign(i);
 
                     if (i > noOfSign.value) {
-                      _this283.deleteSignature(_this283.signatureUpdateForm.get('sign_array').at(i - 1).value, i, 'noOfSignChange', noOfSign.value);
+                      _this284.deleteSignature(_this284.signatureUpdateForm.get('sign_array').at(i - 1).value, i, 'noOfSignChange', noOfSign.value);
                     }
                   }
                 }
@@ -72512,14 +73036,14 @@
         }, {
           key: "deleteSignature",
           value: function deleteSignature(report, index, action, noOfSign) {
-            var _this284 = this;
+            var _this285 = this;
 
             if (action === 'delete') {
               this.dialogService.doConfirmDialog('').subscribe(function (resp) {
                 if (resp === 'Yes') {
                   console.log('yes => ', resp);
 
-                  _this284.confirmDelete(report, index, action, _this284.signatureUpdateForm.controls.noOfSignatures.value - 1);
+                  _this285.confirmDelete(report, index, action, _this285.signatureUpdateForm.controls.noOfSignatures.value - 1);
                 } else {
                   console.log('no => ', resp);
                 }
@@ -72531,69 +73055,69 @@
         }, {
           key: "confirmDelete",
           value: function confirmDelete(report, index, action, noOfSign) {
-            var _this285 = this;
+            var _this286 = this;
 
             this.apiService.fetchSignatureInfo(localStorage.getItem('customerId')).subscribe(function (resp) {
               console.log(resp);
-              _this285.listOfSignatures = resp ? resp : [];
-              _this285.deleteRecord = resp;
+              _this286.listOfSignatures = resp ? resp : [];
+              _this286.deleteRecord = resp;
 
-              _this285.apiService.getSignData().subscribe(function (data) {
-                _this285.signatureUpdateForm.get('sign_array')['controls'][index].accountSignatureId = data.uploadModel.accountSignatureId;
+              _this286.apiService.getSignData().subscribe(function (data) {
+                _this286.signatureUpdateForm.get('sign_array')['controls'][index].accountSignatureId = data.uploadModel.accountSignatureId;
               });
 
               var v = report.imageURL1;
 
               if (v.toString().includes('no-image.jpg')) {
-                _this285.signatureUpdateForm.get('sign_array')['controls'].splice(index, 1);
+                _this286.signatureUpdateForm.get('sign_array')['controls'].splice(index, 1);
 
-                _this285.signatureUpdateForm.controls.noOfSignatures.setValue(_this285.signatureUpdateForm.controls.noOfSignatures.value - 1);
+                _this286.signatureUpdateForm.controls.noOfSignatures.setValue(_this286.signatureUpdateForm.controls.noOfSignatures.value - 1);
 
-                _this285.noOfSignSelect = _this285.signatureUpdateForm.controls.noOfSignatures.value;
+                _this286.noOfSignSelect = _this286.signatureUpdateForm.controls.noOfSignatures.value;
 
-                if (_this285.sign_array.length == _this285.signatureUpdateForm.controls.noOfSignatures.value) {
-                  _this285.enableButton = true;
+                if (_this286.sign_array.length == _this286.signatureUpdateForm.controls.noOfSignatures.value) {
+                  _this286.enableButton = true;
                 } else {
-                  _this285.enableButton = false;
+                  _this286.enableButton = false;
                 }
 
                 return;
               }
 
-              if (_this285.deleteRecord[index].accountSignatureId != 0 && _this285.deleteRecord[index].accountSignatureId != null && _this285.deleteRecord[index].accountSignatureId != undefined && _this285.deleteRecord[index].accountSignatureId != '') {
-                _this285.apiService.deleteCustomerSign(_this285.deleteRecord[index].accountSignatureId).subscribe(function (data) {}, function (error) {
-                  _this285.apiService.fetchSignatureInfo(localStorage.getItem('customerId')).subscribe(function (resp) {
-                    _this285.listOfSignatures = resp ? resp : [];
-                    _this285.sign_array = resp;
+              if (_this286.deleteRecord[index].accountSignatureId != 0 && _this286.deleteRecord[index].accountSignatureId != null && _this286.deleteRecord[index].accountSignatureId != undefined && _this286.deleteRecord[index].accountSignatureId != '') {
+                _this286.apiService.deleteCustomerSign(_this286.deleteRecord[index].accountSignatureId).subscribe(function (data) {}, function (error) {
+                  _this286.apiService.fetchSignatureInfo(localStorage.getItem('customerId')).subscribe(function (resp) {
+                    _this286.listOfSignatures = resp ? resp : [];
+                    _this286.sign_array = resp;
 
                     if (action === 'delete') {}
 
-                    if (_this285.sign_array.length == _this285.signatureUpdateForm.controls.noOfSignatures.value) {
-                      if (_this285.listOfSignatures.length === 0 && _this285.signatureUpdateForm.controls['noOfSignatures'].value === 0) {
-                        _this285.enableButton = false;
+                    if (_this286.sign_array.length == _this286.signatureUpdateForm.controls.noOfSignatures.value) {
+                      if (_this286.listOfSignatures.length === 0 && _this286.signatureUpdateForm.controls['noOfSignatures'].value === 0) {
+                        _this286.enableButton = false;
                       } else {
-                        _this285.enableButton = true;
+                        _this286.enableButton = true;
                       }
-                    } else if (_this285.sign_array.length == 0) {
-                      _this285.enableButton = false;
+                    } else if (_this286.sign_array.length == 0) {
+                      _this286.enableButton = false;
                     } else {
-                      _this285.enableButton = false;
+                      _this286.enableButton = false;
                     }
                   });
                 });
 
-                _this285.signatureUpdateForm.get('sign_array')['controls'].splice(index, 1);
+                _this286.signatureUpdateForm.get('sign_array')['controls'].splice(index, 1);
 
-                _this285.signatureUpdateForm.controls.noOfSignatures.setValue(_this285.signatureUpdateForm.controls.noOfSignatures.value - 1);
+                _this286.signatureUpdateForm.controls.noOfSignatures.setValue(_this286.signatureUpdateForm.controls.noOfSignatures.value - 1);
 
-                _this285.noOfSignSelect = _this285.signatureUpdateForm.controls.noOfSignatures.value;
+                _this286.noOfSignSelect = _this286.signatureUpdateForm.controls.noOfSignatures.value;
               }
             });
           }
         }, {
           key: "openPopUp",
           value: function openPopUp(report, index, data) {
-            var _this286 = this;
+            var _this287 = this;
 
             var _a;
 
@@ -72630,15 +73154,15 @@
               });
               dialogRef.afterClosed().subscribe(function (res) {
                 if (res.image !== null && res.image !== undefined) {
-                  _this286.enableButton = true;
+                  _this287.enableButton = true;
 
-                  _this286.signatureUpdateForm.get('sign_array').at(index).get('imageURL1').patchValue(res.image);
+                  _this287.signatureUpdateForm.get('sign_array').at(index).get('imageURL1').patchValue(res.image);
 
-                  _this286.show = !res.enable;
+                  _this287.show = !res.enable;
 
-                  _this286.getListOfSignatures(_this286.customerId, "Yes");
+                  _this287.getListOfSignatures(_this287.customerId, "Yes");
                 } else {
-                  _this286.enableButton = false;
+                  _this287.enableButton = false;
                 }
               });
             }
@@ -72646,30 +73170,30 @@
         }, {
           key: "getListOfSignatures",
           value: function getListOfSignatures(customerId, popupSign) {
-            var _this287 = this;
+            var _this288 = this;
 
             this.apiService.fetchSignatureInfo(customerId).subscribe(function (resp) {
               if (popupSign === "Yes") {
-                _this287.signatureUpdateForm.get('sign_array')['controls'][_this287.signIndex].accountSignatureId = resp[resp.length - 1].accountSignatureId;
+                _this288.signatureUpdateForm.get('sign_array')['controls'][_this288.signIndex].accountSignatureId = resp[resp.length - 1].accountSignatureId;
               }
 
-              _this287.listOfSignatures = resp ? resp : [];
+              _this288.listOfSignatures = resp ? resp : [];
 
-              _this287.cdr.detectChanges();
+              _this288.cdr.detectChanges();
 
-              _this287.signatureUpdateForm.get('noOfSignatures').setValue(_this287.noOfSignSelect);
+              _this288.signatureUpdateForm.get('noOfSignatures').setValue(_this288.noOfSignSelect);
 
-              if (_this287.listOfSignatures.length == _this287.noOfSignSelect) {
-                _this287.enableButton = true;
+              if (_this288.listOfSignatures.length == _this288.noOfSignSelect) {
+                _this288.enableButton = true;
               } else {
-                _this287.enableButton = false;
+                _this288.enableButton = false;
               }
             });
           }
         }, {
           key: "onFileSelect",
           value: function onFileSelect(report, event, index) {
-            var _this288 = this;
+            var _this289 = this;
 
             this.apiService.fetchSignatureInfo(this.customerId).subscribe(function (resp) {});
             this.selectedFiles = event.target.files[0];
@@ -72679,8 +73203,8 @@
               reader.readAsDataURL(event.target.files[0]);
 
               reader.onload = function (event) {
-                _this288.signatureimg = event.target.result;
-                console.log(_this288.signatureimg, "Upload image");
+                _this289.signatureimg = event.target.result;
+                console.log(_this289.signatureimg, "Upload image");
               };
 
               console.log(this.signatureimg);
@@ -72691,83 +73215,83 @@
         }, {
           key: "uploadDoc",
           value: function uploadDoc(report, event, url, index, img) {
-            var _this289 = this;
+            var _this290 = this;
 
             if (img.target.files) {
               var reader = new FileReader();
               reader.readAsDataURL(img.target.files[0]);
 
               reader.onload = function (img) {
-                _this289.signatureimg = img.target.result;
-                _this289.customerId = localStorage.getItem('customerId');
-                _this289.signCount = _this289.signatureUpdateForm.get('noOfSignatures').value;
+                _this290.signatureimg = img.target.result;
+                _this290.customerId = localStorage.getItem('customerId');
+                _this290.signCount = _this290.signatureUpdateForm.get('noOfSignatures').value;
                 var uploadData = new FormData();
                 var data = new FormData();
 
-                if (_this289.listOfSignatures.length == 1 && index == 0) {
+                if (_this290.listOfSignatures.length == 1 && index == 0) {
                   console.log("if");
-                  _this289.accountSignatureId = _this289.listOfSignatures[index].accountSignatureId;
-                } else if (index >= 0 && _this289.listOfSignatures.length != 1) {
+                  _this290.accountSignatureId = _this290.listOfSignatures[index].accountSignatureId;
+                } else if (index >= 0 && _this290.listOfSignatures.length != 1) {
                   console.log(" else if");
-                  _this289.accountSignatureId = _this289.listOfSignatures[index].accountSignatureId;
+                  _this290.accountSignatureId = _this290.listOfSignatures[index].accountSignatureId;
                 } else {
                   console.log("else");
-                  _this289.accountSignatureId = 0;
+                  _this290.accountSignatureId = 0;
                 }
 
                 var upload_model = {
-                  noOfSignatures: _this289.signCount,
-                  accountSignatureId: _this289.accountSignatureId,
+                  noOfSignatures: _this290.signCount,
+                  accountSignatureId: _this290.accountSignatureId,
                   documentName: "Signature",
-                  customerId: _this289.customerId,
+                  customerId: _this290.customerId,
                   documentType: "10",
                   fileType: event.type,
                   fileName: event.name,
                   verificationType: "New Customer Signature",
                   signatureType: "Uploaded Sign"
                 };
-                uploadData.append("noOfSignatures", _this289.signCount);
+                uploadData.append("noOfSignatures", _this290.signCount);
                 uploadData.append("uploadModel", JSON.stringify(upload_model));
                 uploadData.append("file", url);
-                var txtCont = '{"noOfSignatures":' + _this289.signCount + ', "uploadModel":' + JSON.stringify(upload_model) + ' } ';
+                var txtCont = '{"noOfSignatures":' + _this290.signCount + ', "uploadModel":' + JSON.stringify(upload_model) + ' } ';
                 data.append("data", txtCont);
                 data.append("file", url);
 
-                _this289.signatureUpdateForm.get('sign_array').at(index).get('imageURL1').patchValue(_this289.signatureimg);
+                _this290.signatureUpdateForm.get('sign_array').at(index).get('imageURL1').patchValue(_this290.signatureimg);
 
-                _this289.uploadSub = _this289.apiService.uploadSignature(data).subscribe(function (res) {
+                _this290.uploadSub = _this290.apiService.uploadSignature(data).subscribe(function (res) {
                   if (res !== null) {
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('accountSignatureId').patchValue(res.accountSignatureId);
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('accountSignatureId').patchValue(res.accountSignatureId);
 
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('documentName').patchValue(res.documentName);
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('documentName').patchValue(res.documentName);
 
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('documentType').patchValue(res.documentType);
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('documentType').patchValue(res.documentType);
 
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('fileType').patchValue(res.fileType);
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('fileType').patchValue(res.fileType);
 
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('fileName').patchValue(res.fileName);
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('fileName').patchValue(res.fileName);
 
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('verificationType').patchValue(res.verificationType);
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('verificationType').patchValue(res.verificationType);
 
-                    _this289.signatureUpdateForm.get('noOfSignatures').patchValue(res.noOfSignatures);
+                    _this290.signatureUpdateForm.get('noOfSignatures').patchValue(res.noOfSignatures);
 
-                    console.log(_this289.signatureUpdateForm);
+                    console.log(_this290.signatureUpdateForm);
                   }
 
-                  _this289.getListOfSignatures(_this289.customerId, "No");
+                  _this290.getListOfSignatures(_this290.customerId, "No");
 
                   if (res.type == _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpEventType"].UploadProgress) {
-                    _this289.progressValOthers = Math.round(100 * (res.loaded / res.total));
+                    _this290.progressValOthers = Math.round(100 * (res.loaded / res.total));
                   } else if (res.type == _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpEventType"].Response) {
-                    _this289.progressValOthers = 0;
+                    _this290.progressValOthers = 0;
                   }
                 }, function (error) {
                   if (error.status == 201) {
-                    _this289.shotToast("Document Uploaded!");
+                    _this290.shotToast("Document Uploaded!");
                   } else {
-                    _this289.signatureUpdateForm.get('sign_array').at(index).get('imageURL1').patchValue('');
+                    _this290.signatureUpdateForm.get('sign_array').at(index).get('imageURL1').patchValue('');
 
-                    _this289.shotToast(error.message);
+                    _this290.shotToast(error.message);
                   }
                 });
               };
@@ -73110,43 +73634,61 @@
       /* harmony import */
 
 
-      var app_views_card_account_digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! app/shared/services/auth/jwt-auth.service */
+      "nZzT");
+      /* harmony import */
+
+
+      var app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      /*! app/environments/environment.prod */
+      "vSAV");
+      /* harmony import */
+
+
+      var app_views_card_account_digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! app/views/card-account/digital-signing/upload-signature-or-esign/upload-signature-or-esign.component */
       "I5/J");
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _update_doc_upload_update_doc_upload_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      /*! ./update-doc-upload/update-doc-upload.component */
+      "9byR");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! @angular/material/icon */
       "Tj54");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! @angular/common */
       "SVse");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
       /*! @angular/material/card */
       "PDjf");
       /* harmony import */
 
 
-      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! @angular/flex-layout/extended */
       "ura0");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! @angular/material/form-field */
       "Q2Ze");
 
@@ -73154,7 +73696,7 @@
 
       function CardAccountApproverComponent_span_12_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 66);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -73162,19 +73704,19 @@
         }
 
         if (rf & 2) {
-          var creater_r9 = ctx.$implicit;
+          var creater_r10 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](creater_r9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](creater_r10);
         }
       }
 
       function CardAccountApproverComponent_div_37_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 67);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 68);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
@@ -73204,21 +73746,21 @@
 
       function CardAccountApproverComponent_div_38_img_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 70);
         }
 
         if (rf & 2) {
-          var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r10.imageUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r11.imageUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         }
       }
 
       function CardAccountApproverComponent_div_38_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 67);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CardAccountApproverComponent_div_38_img_1_Template, 1, 1, "img", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CardAccountApproverComponent_div_38_img_1_Template, 1, 1, "img", 69);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -73234,9 +73776,9 @@
 
       function CardAccountApproverComponent_div_144_div_26_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 84);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 83);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "small", 85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "small", 84);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
@@ -73246,29 +73788,29 @@
         }
 
         if (rf & 2) {
-          var details_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var details_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r11 == null ? null : details_r11.cifNumber, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r12 == null ? null : details_r12.cifNumber, "");
         }
       }
 
       function CardAccountApproverComponent_div_144_div_27_Template(rf, ctx) {
         if (rf & 1) {
-          var _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 86);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 85);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_144_div_27_Template_div_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r18);
 
-            var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r16.goTo360Dashboard();
+            return ctx_r17.goTo360Dashboard();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "small", 85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "small", 84);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
@@ -73278,41 +73820,41 @@
         }
 
         if (rf & 2) {
-          var details_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var details_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r11 == null ? null : details_r11.cifNumber, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("CIF #", details_r12 == null ? null : details_r12.cifNumber, "");
         }
       }
 
       function CardAccountApproverComponent_div_144_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 73);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 72);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "img", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "img", 73);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 74);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 75);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 77);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 76);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h2", 78);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h2", 77);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "span");
 
@@ -73340,13 +73882,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 79);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 78);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "|");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 77);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 76);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "small", 49);
 
@@ -73362,19 +73904,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, CardAccountApproverComponent_div_144_div_26_Template, 3, 1, "div", 80);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, CardAccountApproverComponent_div_144_div_26_Template, 3, 1, "div", 79);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, CardAccountApproverComponent_div_144_div_27_Template, 3, 1, "div", 81);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, CardAccountApproverComponent_div_144_div_27_Template, 3, 1, "div", 80);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 82);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 81);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "small", 48);
 
@@ -73392,7 +73934,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "small", 48);
 
@@ -73410,7 +73952,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "small", 48);
 
@@ -73428,7 +73970,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 82);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "small", 48);
 
@@ -73460,25 +74002,25 @@
         }
 
         if (rf & 2) {
-          var details_r11 = ctx.$implicit;
+          var details_r12 = ctx.$implicit;
 
           var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.firstName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.firstName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.middleName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.middleName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.lastName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.lastName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Last Updated On ", (details_r11 == null ? null : details_r11.modifiedTime) ? details_r11.modifiedTime : details_r11.createdTime, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Last Updated On ", (details_r12 == null ? null : details_r12.modifiedTime) ? details_r12.modifiedTime : details_r12.createdTime, "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -73490,49 +74032,49 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.dateOfBirth);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.dateOfBirth);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.primaryEmailAdress);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.primaryEmailAdress);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.userAddress[0] == null ? null : details_r11.userAddress[0].mobileNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.userAddress[0] == null ? null : details_r12.userAddress[0].mobileNumber);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r11 == null ? null : details_r11.phoneNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](details_r12 == null ? null : details_r12.phoneNumber);
         }
       }
 
       function CardAccountApproverComponent_div_146_apx_chart_13_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "apx-chart", 96);
-        }
-
-        if (rf & 2) {
-          var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("series", ctx_r19.chartOptions.series)("chart", ctx_r19.chartOptions.chart)("plotOptions", ctx_r19.chartOptions.plotOptions)("labels", ctx_r19.chartOptions.labels);
-        }
-      }
-
-      function CardAccountApproverComponent_div_146_apx_chart_17_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "apx-chart", 97);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "apx-chart", 95);
         }
 
         if (rf & 2) {
           var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("series", ctx_r20.chartOptions1.series1)("chart", ctx_r20.chartOptions1.chart1)("yaxis", ctx_r20.chartOptions1.yaxis1)("xaxis", ctx_r20.chartOptions1.xaxis1)("labels", ctx_r20.chartOptions1.labels1)("stroke", ctx_r20.chartOptions1.stroke1)("markers", ctx_r20.chartOptions1.markers1)("fill", ctx_r20.chartOptions1.fill1)("tooltip", ctx_r20.chartOptions1.tooltip1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("series", ctx_r20.chartOptions.series)("chart", ctx_r20.chartOptions.chart)("plotOptions", ctx_r20.chartOptions.plotOptions)("labels", ctx_r20.chartOptions.labels);
+        }
+      }
+
+      function CardAccountApproverComponent_div_146_apx_chart_17_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "apx-chart", 96);
+        }
+
+        if (rf & 2) {
+          var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("series", ctx_r21.chartOptions1.series1)("chart", ctx_r21.chartOptions1.chart1)("yaxis", ctx_r21.chartOptions1.yaxis1)("xaxis", ctx_r21.chartOptions1.xaxis1)("labels", ctx_r21.chartOptions1.labels1)("stroke", ctx_r21.chartOptions1.stroke1)("markers", ctx_r21.chartOptions1.markers1)("fill", ctx_r21.chartOptions1.fill1)("tooltip", ctx_r21.chartOptions1.tooltip1);
         }
       }
 
       function CardAccountApproverComponent_div_146_Template(rf, ctx) {
         if (rf & 1) {
-          var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
@@ -73549,11 +74091,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 31);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_146_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
 
-            var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r21.editFinancialDetails();
+            return ctx_r22.editFinancialDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
@@ -73568,7 +74110,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-card");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 75);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card");
 
@@ -73578,7 +74120,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, CardAccountApproverComponent_div_146_apx_chart_13_Template, 1, 4, "apx-chart", 87);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, CardAccountApproverComponent_div_146_apx_chart_13_Template, 1, 4, "apx-chart", 86);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -73590,7 +74132,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, CardAccountApproverComponent_div_146_apx_chart_17_Template, 1, 9, "apx-chart", 88);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, CardAccountApproverComponent_div_146_apx_chart_17_Template, 1, 9, "apx-chart", 87);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -73598,13 +74140,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-card");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-card-header", 89);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-card-header", 88);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 90);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 89);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 91);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 90);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 92);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 91);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-icon");
 
@@ -73618,13 +74160,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-card-title", 93);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-card-title", 92);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "mat-card-subtitle", 94);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "mat-card-subtitle", 93);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
 
@@ -73634,7 +74176,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 95);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 94);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div");
 
@@ -73772,25 +74314,25 @@
         }
 
         if (rf & 2) {
-          var pref_r24 = ctx.$implicit;
+          var pref_r25 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](pref_r24.limitType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](pref_r25.limitType);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](pref_r24.dailyLimit);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](pref_r25.dailyLimit);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](pref_r24.limitPerTransaction);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](pref_r25.limitPerTransaction);
         }
       }
 
       function CardAccountApproverComponent_div_147_Template(rf, ctx) {
         if (rf & 1) {
-          var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
@@ -73807,11 +74349,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 31);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_147_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
 
-            var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r26.editCardPreferenceDetails();
+            return ctx_r27.editCardPreferenceDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
@@ -73828,7 +74370,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-card-content");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, CardAccountApproverComponent_div_147_div_10_Template, 17, 3, "div", 98);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, CardAccountApproverComponent_div_147_div_10_Template, 17, 3, "div", 97);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -73850,7 +74392,31 @@
         }
       }
 
-      function CardAccountApproverComponent_div_148_mat_card_10_mat_card_7_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_176_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 98);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "link");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "link");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", ctx_r6.documentUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        }
+      }
+
+      function CardAccountApproverComponent_div_178_mat_card_10_mat_card_7_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
 
@@ -73968,29 +74534,29 @@
         }
 
         if (rf & 2) {
-          var interestData_r31 = ctx.$implicit;
+          var interestData_r32 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r31.intrestType);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r32.intrestType);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r31.intrestRateApplicable);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r32.intrestRateApplicable);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r31.effectiveRate);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r32.effectiveRate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r31.marginIn);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](interestData_r32.marginIn);
         }
       }
 
-      function CardAccountApproverComponent_div_148_mat_card_10_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_178_mat_card_10_Template(rf, ctx) {
         if (rf & 1) {
-          var _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
 
@@ -74006,12 +74572,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_148_mat_card_10_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_178_mat_card_10_Template_mat_icon_click_5_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r35);
 
-            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r33.editInterestDetails();
+            return ctx_r34.editInterestDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
@@ -74022,25 +74588,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, CardAccountApproverComponent_div_148_mat_card_10_mat_card_7_Template, 33, 4, "mat-card", 99);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, CardAccountApproverComponent_div_178_mat_card_10_mat_card_7_Template, 33, 4, "mat-card", 99);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r28.editScreen);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r29.editScreen);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r28.intrestDetails);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r29.intrestDetails);
         }
       }
 
-      function CardAccountApproverComponent_div_148_mat_card_13_mat_card_7_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_178_mat_card_13_mat_card_7_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
 
@@ -74048,7 +74614,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "IT Charge");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Handling Charge");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -74086,17 +74652,17 @@
         }
 
         if (rf & 2) {
-          var chargeData_r36 = ctx.$implicit;
+          var chargeData_r37 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r36.amount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](chargeData_r37.amount);
         }
       }
 
-      function CardAccountApproverComponent_div_148_mat_card_13_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_178_mat_card_13_Template(rf, ctx) {
         if (rf & 1) {
-          var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
 
@@ -74112,12 +74678,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_148_mat_card_13_Template_mat_icon_click_5_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_178_mat_card_13_Template_mat_icon_click_5_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r40);
 
-            var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r38.editChargeDetails();
+            return ctx_r39.editChargeDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "edit");
@@ -74128,25 +74694,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, CardAccountApproverComponent_div_148_mat_card_13_mat_card_7_Template, 12, 1, "mat-card", 99);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, CardAccountApproverComponent_div_178_mat_card_13_mat_card_7_Template, 12, 1, "mat-card", 99);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r29.editScreen);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r30.editScreen);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r29.chargeDetails);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r30.chargeDetails);
         }
       }
 
-      function CardAccountApproverComponent_div_148_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_178_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 25);
 
@@ -74154,7 +74720,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "2");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "3");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -74176,13 +74742,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, CardAccountApproverComponent_div_148_mat_card_10_Template, 8, 2, "mat-card", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, CardAccountApproverComponent_div_178_mat_card_10_Template, 8, 2, "mat-card", 51);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "br");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, CardAccountApproverComponent_div_148_mat_card_13_Template, 8, 2, "mat-card", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, CardAccountApproverComponent_div_178_mat_card_13_Template, 8, 2, "mat-card", 51);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -74190,21 +74756,21 @@
         }
 
         if (rf & 2) {
-          var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r6.intrestDetails == null ? null : ctx_r6.intrestDetails.length) > 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r7.intrestDetails == null ? null : ctx_r7.intrestDetails.length) > 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r6.chargeDetails == null ? null : ctx_r6.chargeDetails.length) > 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r7.chargeDetails == null ? null : ctx_r7.chargeDetails.length) > 0);
         }
       }
 
-      function CardAccountApproverComponent_div_149_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_179_Template(rf, ctx) {
         if (rf & 1) {
-          var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 25);
 
@@ -74212,7 +74778,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "4");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -74250,12 +74816,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-icon", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_149_Template_mat_icon_click_16_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_div_179_Template_mat_icon_click_16_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r42);
 
-            var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r40.editCreditScoreDetails();
+            return ctx_r41.editCreditScoreDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "edit");
@@ -74464,35 +75030,35 @@
         }
 
         if (rf & 2) {
-          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r7.editScreen);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx_r8.editScreen);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.customerName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r8.customerName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.agencyName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r8.agencyName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.ratings);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r8.ratings);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r7.remarks, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r8.remarks, " ");
         }
       }
 
-      function CardAccountApproverComponent_div_305_Template(rf, ctx) {
+      function CardAccountApproverComponent_div_337_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 112);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 98);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "link");
 
@@ -74504,22 +75070,29 @@
         }
 
         if (rf & 2) {
-          var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", ctx_r8.signatureDataForCard.fileUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", ctx_r9.signatureDataForCard.fileUrl, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         }
       }
 
       var _c1 = function _c1(a0, a1) {
         return {
           "disabledbtn": a0,
-          "rejectbtn": a1
+          "continueBtn": a1
         };
       };
 
       var _c2 = function _c2(a0, a1) {
+        return {
+          "disabledbtn": a0,
+          "rejectbtn": a1
+        };
+      };
+
+      var _c3 = function _c3(a0, a1) {
         return {
           "disabledbtn": a0,
           "approvebtn": a1
@@ -74527,7 +75100,7 @@
       };
 
       var CardAccountApproverComponent = /*#__PURE__*/function () {
-        function CardAccountApproverComponent(router, tasksummaryService, ls, dialogRef, appApiService, api, sanitizer, data, cdr, snack, dialog) {
+        function CardAccountApproverComponent(router, tasksummaryService, ls, dialogRef, appApiService, api, sanitizer, data, cdr, snack, dialog, jwtService) {
           _classCallCheck(this, CardAccountApproverComponent);
 
           this.router = router;
@@ -74541,9 +75114,14 @@
           this.cdr = cdr;
           this.snack = snack;
           this.dialog = dialog;
+          this.jwtService = jwtService;
           this.chart = new ng_apexcharts__WEBPACK_IMPORTED_MODULE_6__["ChartComponent"]();
           this.isOnGoing = "";
+          this.loading = true;
           this.nameCreater = ['Y', 'B', '', 'D', 'E', 'T', 'A', 'E', 'R', 'C'];
+          this.continueStatus = true;
+          this.document_type = ['6', '7', '8'];
+          this.cardDocumentArray = [];
         }
 
         _createClass(CardAccountApproverComponent, [{
@@ -74562,23 +75140,62 @@
               this.approvedStatus = true;
               this.rejectedStatus = true;
               this.editScreen = false;
+              this.continueStatus = true;
             } else if (this.cardInfo.status == 'APPROVED') {
               this.approvedStatus = true;
               this.rejectedStatus = true;
               this.editScreen = true;
+              this.continueStatus = false;
             } else if (this.cardInfo.status == 'ONGOING') {
               this.approvedStatus = true;
               this.rejectedStatus = false; // this.isOnGoing = status;
 
               this.editScreen = false;
+              this.continueStatus = false;
             } else if (this.cardInfo.status == 'BACKLOG') {
               this.approvedStatus = false;
               this.rejectedStatus = false;
               this.editScreen = false;
+              this.continueStatus = true;
             }
 
             this.getAccountInfoByAccountId(this.cardInfo.cardId);
             this.getCustomerInfoDetails(this.cardInfo.cardId);
+            this.getCustomerDocumentsDetails(this.cardInfo.customerId);
+            this.getCardAccountServiceDetails(this.cardInfo.cardId);
+            this.getQalitativeDetails(this.cardInfo.cardId);
+          }
+        }, {
+          key: "getQalitativeDetails",
+          value: function getQalitativeDetails(cardId) {
+            var _this291 = this;
+
+            this.api.getCardQualitativeScorecardDetails(cardId).subscribe(function (response) {
+              _this291.cardQualitativeDetails = response;
+            });
+          }
+        }, {
+          key: "getCardDocument",
+          value: function getCardDocument(id) {
+            var _this292 = this;
+
+            for (var key in this.document_type) {
+              var element = this.document_type[key];
+              this.api.getCustomerDocuments(id, element).subscribe(function (resp) {
+                _this292.cardDocumentArray.push(resp);
+
+                console.log(_this292.cardDocumentArray);
+              });
+            }
+          }
+        }, {
+          key: "getCardAccountServiceDetails",
+          value: function getCardAccountServiceDetails(cardId) {
+            var _this293 = this;
+
+            this.api.gettingCardAccountServiceDetails(cardId).subscribe(function (res) {
+              _this293.cardAccountService = res;
+            });
           }
         }, {
           key: "close",
@@ -74591,14 +75208,14 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(customerId) {
-            var _this290 = this;
+            var _this294 = this;
 
             this.image = null;
             this.cardInfo.customerId == null ? null : this.api.getProfileDetails(customerId).subscribe(function (data) {
               if (data.profileImage != null) {
-                _this290.imageUrl = data.profileImage;
+                _this294.imageUrl = data.profileImage;
                 var objectURL = data.profileImage.fileUrl;
-                _this290.image = _this290.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this294.image = _this294.sanitizer.bypassSecurityTrustUrl(objectURL);
               }
             }, function (error) {
               console.log(error);
@@ -74607,14 +75224,14 @@
         }, {
           key: "getSign",
           value: function getSign(customerId) {
-            var _this291 = this;
+            var _this295 = this;
 
             this.api.getDigitalsignByCardId(customerId).subscribe(function (resp) {
               console.log(resp);
 
               if (resp != null) {
                 console.log(resp[resp.length - 1]);
-                _this291.signatureDataForCard = resp[resp.length - 1];
+                _this295.signatureDataForCard = resp[resp.length - 1];
               }
             }, function (err) {// this.loader.close();
             });
@@ -74622,7 +75239,7 @@
         }, {
           key: "goToCardAccount",
           value: function goToCardAccount() {
-            var _this292 = this;
+            var _this296 = this;
 
             console.log("Navigating to edit screen");
             this.ls.setItem('EDIT-CARDINFO', this.cardAccountInfo);
@@ -74633,7 +75250,7 @@
             this.api.updateCardStatus(statusModel).subscribe(function (data) {});
             console.log('acc data :: ', this.cardInfo);
             setTimeout(function () {
-              _this292.router.navigateByUrl('/cardaccount/applicationEntryStage/list');
+              _this296.router.navigateByUrl('/cardaccount/applicationEntryStage/list');
             }, 1000);
             this.dialogRef.close({
               message: 'Confirm'
@@ -74642,61 +75259,64 @@
         }, {
           key: "getAccountInfoByAccountId",
           value: function getAccountInfoByAccountId(cardId) {
-            var _this293 = this;
+            var _this297 = this;
 
             this.tasksummaryService.getCardAccountInfoById(cardId).subscribe(function (cardInfo) {
               if (cardInfo) {
-                _this293.cardAccountInfo = cardInfo;
-                console.log("backend data", _this293.cardAccountInfo); // this.loading = false;
+                _this297.cardAccountInfo = cardInfo;
 
-                _this293.initiationDetails = _this293.cardAccountInfo.initiationInfo;
-                console.log(_this293.initiationDetails);
+                _this297.getCardDocument(_this297.cardAccountInfo.initiationInfo.customerId);
 
-                if (_this293.cardAccountInfo.financialInfo) {
-                  _this293.financialDetails = _this293.cardAccountInfo.financialInfo[0];
-                  _this293.income = _this293.cardAccountInfo.financialInfo[0].applicantTotalIncome;
-                  _this293.expense = _this293.cardAccountInfo.financialInfo[0].applicantTotalExpense;
-                  _this293.designation = _this293.cardAccountInfo.financialInfo[0].designation;
-                  _this293.office = _this293.cardAccountInfo.financialInfo[0].office;
-                  _this293.employeeNumber = _this293.cardAccountInfo.financialInfo[0].employeeNumber;
-                  _this293.employmentType = _this293.cardAccountInfo.financialInfo[0].employmentType;
-                  _this293.employmentCategory = _this293.cardAccountInfo.financialInfo[0].employmentCategory;
+                console.log("backend data", _this297.cardAccountInfo); // this.loading = false;
+
+                _this297.initiationDetails = _this297.cardAccountInfo.initiationInfo;
+                console.log(_this297.initiationDetails);
+
+                if (_this297.cardAccountInfo.financialInfo) {
+                  _this297.financialDetails = _this297.cardAccountInfo.financialInfo[0];
+                  _this297.income = _this297.cardAccountInfo.financialInfo[0].applicantTotalIncome;
+                  _this297.expense = _this297.cardAccountInfo.financialInfo[0].applicantTotalExpense;
+                  _this297.designation = _this297.cardAccountInfo.financialInfo[0].designation;
+                  _this297.office = _this297.cardAccountInfo.financialInfo[0].office;
+                  _this297.employeeNumber = _this297.cardAccountInfo.financialInfo[0].employeeNumber;
+                  _this297.employmentType = _this297.cardAccountInfo.financialInfo[0].employmentType;
+                  _this297.employmentCategory = _this297.cardAccountInfo.financialInfo[0].employmentCategory;
                 }
 
-                if (_this293.cardAccountInfo.creditRatingInfo) {
-                  _this293.creditRatingDetails = _this293.cardAccountInfo.creditRatingInfo;
-                  _this293.customerName = _this293.cardAccountInfo.creditRatingInfo.customerName;
+                if (_this297.cardAccountInfo.creditRatingInfo) {
+                  _this297.creditRatingDetails = _this297.cardAccountInfo.creditRatingInfo;
+                  _this297.customerName = _this297.cardAccountInfo.creditRatingInfo.customerName;
 
-                  if (_this293.cardAccountInfo.creditRatingInfo.agencyRating) {
-                    if (_this293.cardAccountInfo.creditRatingInfo.agencyRating[0].agencyName) {
-                      _this293.agencyName = _this293.cardAccountInfo.creditRatingInfo.agencyRating[0].agencyName;
+                  if (_this297.cardAccountInfo.creditRatingInfo.agencyRating) {
+                    if (_this297.cardAccountInfo.creditRatingInfo.agencyRating[0].agencyName) {
+                      _this297.agencyName = _this297.cardAccountInfo.creditRatingInfo.agencyRating[0].agencyName;
                     }
 
-                    if (_this293.cardAccountInfo.creditRatingInfo.agencyRating[0].ratings) {
-                      _this293.ratings = _this293.cardAccountInfo.creditRatingInfo.agencyRating[0].ratings;
+                    if (_this297.cardAccountInfo.creditRatingInfo.agencyRating[0].ratings) {
+                      _this297.ratings = _this297.cardAccountInfo.creditRatingInfo.agencyRating[0].ratings;
                     }
 
-                    if (_this293.cardAccountInfo.creditRatingInfo.agencyRating[0].remarks) {
-                      _this293.remarks = _this293.cardAccountInfo.creditRatingInfo.agencyRating[0].remarks;
+                    if (_this297.cardAccountInfo.creditRatingInfo.agencyRating[0].remarks) {
+                      _this297.remarks = _this297.cardAccountInfo.creditRatingInfo.agencyRating[0].remarks;
                     }
                   }
                 }
 
-                _this293.intrestDetails = _this293.cardAccountInfo.interestInfo;
-                _this293.chargeDetails = _this293.cardAccountInfo.chargeInfo;
-                _this293.signatureData = _this293.cardAccountInfo.documentInfo;
-                _this293.assessmentDetails = _this293.cardAccountInfo.assessmentInfo;
-                _this293.approvalDetails = _this293.cardAccountInfo.approvalInfo;
-                _this293.preferenceDetails = _this293.cardAccountInfo.preferenceInfo; //  if(this.cardAccountInfo.documentInfo){
+                _this297.intrestDetails = _this297.cardAccountInfo.interestInfo;
+                _this297.chargeDetails = _this297.cardAccountInfo.chargeInfo;
+                _this297.signatureData = _this297.cardAccountInfo.documentInfo;
+                _this297.assessmentDetails = _this297.cardAccountInfo.assessmentInfo;
+                _this297.approvalDetails = _this297.cardAccountInfo.approvalInfo;
+                _this297.preferenceDetails = _this297.cardAccountInfo.preferenceInfo; //  if(this.cardAccountInfo.documentInfo){
                 //   this.signatureData = this.documentInfo.signatures[0];
                 //this.cardAccountInfo.financialInfo[0] -> inside assignValues1
                 //   }
 
-                _this293.assignValues(_this293.cardAccountInfo.initiationInfo, _this293.cardAccountInfo.financialInfo[0], _this293.cardAccountInfo.creditRatingInfo, _this293.cardAccountInfo.interestInfo, _this293.cardAccountInfo.chargeInfo, _this293.cardAccountInfo.documentInfo, _this293.cardAccountInfo.assessmentInfo, _this293.cardAccountInfo.approvalInfo, _this293.cardAccountInfo.preferenceInfo);
+                _this297.assignValues(_this297.cardAccountInfo.initiationInfo, _this297.cardAccountInfo.financialInfo[0], _this297.cardAccountInfo.creditRatingInfo, _this297.cardAccountInfo.interestInfo, _this297.cardAccountInfo.chargeInfo, _this297.cardAccountInfo.documentInfo, _this297.cardAccountInfo.assessmentInfo, _this297.cardAccountInfo.approvalInfo, _this297.cardAccountInfo.preferenceInfo);
 
-                for (var key in _this293.cardAccountInfo) {
-                  if (Object.prototype.hasOwnProperty.call(_this293.cardAccountInfo, key)) {
-                    var element = _this293.cardAccountInfo[key];
+                for (var key in _this297.cardAccountInfo) {
+                  if (Object.prototype.hasOwnProperty.call(_this297.cardAccountInfo, key)) {
+                    var element = _this297.cardAccountInfo[key];
                   }
                 }
               } //this.accountDetails= this.accountInfo.businessProductAccount;
@@ -74777,9 +75397,26 @@
           //  }
 
         }, {
+          key: "getCustomerDocumentsDetails",
+          value: function getCustomerDocumentsDetails(customerId) {
+            var _this298 = this;
+
+            var document_type = [6, 7, 8]; // this.document_type= "6";
+
+            this.api.getCustomerAllDocuments(customerId, document_type).subscribe(function (result) {
+              _this298.loading = false;
+              _this298.custOtherDoc_array = result;
+
+              if (result != null) {
+                _this298.documentName = _this298.custOtherDoc_array[0].fileName;
+                _this298.documentUrl = _this298.custOtherDoc_array[0].fileUrl; // console.log("custOtherDoc_array::", this.custOtherDoc_array)
+              }
+            });
+          }
+        }, {
           key: "updateApplicationStatus",
           value: function updateApplicationStatus(formData, status) {
-            var _this294 = this;
+            var _this299 = this;
 
             console.log("formData::", formData); // console.log('data : ',formData.businessProductAccount.accountId);
             // formData.businessProductAccount.status = status;
@@ -74794,26 +75431,26 @@
             };
             this.tasksummaryService.updateCardAccountStatus(formDt).subscribe(function (respData) {
               if (respData.cardId != null || respData.cardId != '' || respData.cardId != "") {
-                _this294.close(data);
+                _this299.close(data);
 
-                _this294.cdr.markForCheck();
+                _this299.cdr.markForCheck();
 
-                _this294.cdr.detectChanges();
+                _this299.cdr.detectChanges();
 
-                _this294.dialogRef.close({
+                _this299.dialogRef.close({
                   message: 'Confirm',
                   data: data
                 });
 
-                _this294.snack.open(status + ' !', 'OK', {
+                _this299.snack.open(status + ' !', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this294.cdr.markForCheck();
+                _this299.cdr.markForCheck();
               } else {
-                _this294.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this299.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -74821,9 +75458,9 @@
               }
             }, function (error) {
               console.log('error resp :: ', error);
-              _this294.errorStatus = status;
+              _this299.errorStatus = status;
 
-              _this294.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this299.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -74833,7 +75470,7 @@
         }, {
           key: "openEditScreen",
           value: function openEditScreen(screen, data) {
-            var _this295 = this;
+            var _this300 = this;
 
             var statusModel = {
               cardId: this.cardInfo.cardId,
@@ -74850,19 +75487,24 @@
               disableClose: true
             });
             dialogRef.afterClosed().subscribe(function (submit) {
-              _this295.cardInfo.status = submit.status;
+              _this300.cardInfo.status = submit.status;
 
-              if (_this295.cardInfo.status == 'BACKLOG') {
-                _this295.approvedStatus = false;
-                _this295.rejectedStatus = false;
+              if (_this300.cardInfo.status == 'BACKLOG') {
+                _this300.approvedStatus = false;
+                _this300.rejectedStatus = false;
               }
 
-              _this295.getAccountInfoByAccountId(_this295.cardInfo.cardId);
+              _this300.getAccountInfoByAccountId(_this300.cardInfo.cardId);
 
-              _this295.getSign(_this295.cardInfo.cardId);
+              _this300.getSign(_this300.cardInfo.cardId);
 
-              _this295.cdr.markForCheck();
+              _this300.cdr.markForCheck();
             });
+          }
+        }, {
+          key: "editProofOfIdentity",
+          value: function editProofOfIdentity() {
+            this.openEditScreen(_update_doc_upload_update_doc_upload_component__WEBPACK_IMPORTED_MODULE_21__["UpdateDocUploadComponent"], this.custOtherDoc_array);
           }
         }, {
           key: "editInitiationDetails",
@@ -74931,23 +75573,54 @@
             // console.log(this.signatureDataForCard.fileUrl);
             this.ls.setItem('cardSignedImage', this.signatureDataForCard != null ? this.signatureDataForCard.fileUrl : "not_available");
             this.ls.setItem('cId', this.cardInfo.customerId);
-            this.openEditScreen(app_views_card_account_digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_18__["UploadSignatureOrEsignComponent"], this.cardInfo);
+            this.openEditScreen(app_views_card_account_digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_20__["UploadSignatureOrEsignComponent"], this.cardInfo);
           }
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails(cardId) {
-            var _this296 = this;
+            var _this301 = this;
 
             // this.loader.open();
             this.appApiService.fetchCardCustomersByCardId(cardId, 'cardOrigin').subscribe(function (customerInfoDetails) {
               if (customerInfoDetails.data) {
                 //   this.loader.close();
-                _this296.customerInfoDetails = customerInfoDetails.data;
-                _this296.ownership = _this296.customerInfoDetails[0].ownership;
-                _this296.noOfApplicants = _this296.customerInfoDetails[0].numOfApplicants;
+                _this301.customerInfoDetails = customerInfoDetails.data;
+                _this301.ownership = _this301.customerInfoDetails[0].ownership;
+                _this301.noOfApplicants = _this301.customerInfoDetails[0].numOfApplicants;
               }
             }, function (err) {//this.loader.close();
             });
+          }
+        }, {
+          key: "continue",
+          value: function _continue() {
+            // console.log("customer Id----->", this.accountInfo?.businessProductNominee);
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+
+            this.ls.setItem('cardId', (_a = this.initiationDetails) === null || _a === void 0 ? void 0 : _a.cardId);
+            this.ls.setItem('CARD_INITIATION_DONE', this.initiationDetails ? true : false);
+            this.ls.setItem('Card_Customer_Done', ((_c = (_b = this.customerInfoDetails) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.length) != 0 ? true : false);
+            this.ls.setItem('CARD_FINANCIAL_DONE', ((_d = this.cardAccountInfo.financialInfo) === null || _d === void 0 ? void 0 : _d.lenght) != 0 ? true : false);
+            this.ls.setItem('card_prefrence_done', ((_e = this.cardAccountInfo.preferenceInfo) === null || _e === void 0 ? void 0 : _e.length) != 0 ? true : false);
+            this.ls.setItem('CARD_ACC_SERVICE_DONE', this.cardAccountService ? true : false);
+            this.ls.setItem('CARD_APPLICATION_ENTRY_DONE', (this.initiationDetails && ((_g = (_f = this.customerInfoDetails) === null || _f === void 0 ? void 0 : _f.data) === null || _g === void 0 ? void 0 : _g.length) != 0 && ((_h = this.cardAccountInfo.financialInfo) === null || _h === void 0 ? void 0 : _h.lenght) != 0 && ((_j = this.cardAccountInfo.preferenceInfo) === null || _j === void 0 ? void 0 : _j.length) && this.cardAccountService) != 0 ? true : false);
+            this.ls.setItem('CARD_DOCUMENT_STAGE_DONE', this.initiationDetails && ((_l = (_k = this.customerInfoDetails) === null || _k === void 0 ? void 0 : _k.data) === null || _l === void 0 ? void 0 : _l.length) != 0 && ((_m = this.cardAccountInfo.financialInfo) === null || _m === void 0 ? void 0 : _m.lenght) != 0 && ((_o = this.cardAccountInfo.preferenceInfo) === null || _o === void 0 ? void 0 : _o.length) != 0 && this.cardAccountService ? true : false);
+            this.ls.setItem('CARD_DOCUMENT_DONE', this.cardDocumentArray[0] || this.cardDocumentArray[1] || this.cardDocumentArray[2] ? true : false);
+            this.ls.setItem('CARD_ENRICHMENT_DONE', this.cardDocumentArray[0] || this.cardDocumentArray[1] || this.cardDocumentArray[2] ? true : false);
+            this.ls.setItem('CARD_INTEREST_DETAILS_DONE', ((_p = this.cardAccountInfo.interestInfo) === null || _p === void 0 ? void 0 : _p.length) != 0 && this.cardAccountInfo.interestInfo ? true : false);
+            this.ls.setItem('CARD_CHARGE_DETAILS_DONE', ((_q = this.cardAccountInfo.chargeInfo) === null || _q === void 0 ? void 0 : _q.length) != 0 && this.cardAccountInfo.chargeInfo ? true : false);
+            this.ls.setItem('CARD_UNDERWRITING_DONE', ((_r = this.cardAccountInfo.interestInfo) === null || _r === void 0 ? void 0 : _r.length) != 0 && this.cardAccountInfo.interestInfo && ((_s = this.cardAccountInfo.chargeInfo) === null || _s === void 0 ? void 0 : _s.length) != 0 && this.cardAccountInfo.chargeInfo ? true : false);
+            this.ls.setItem('CARD_ASSESSMENT_STAGE_DONE', ((_t = this.cardAccountInfo.creditRatingInfo.agencyRating) === null || _t === void 0 ? void 0 : _t.length) != 0 && this.cardAccountInfo.creditRatingInfo.agencyRating && this.cardQualitativeDetails ? true : false);
+            this.ls.setItem('CARD_CREDIT_RATING_DONE', ((_u = this.cardAccountInfo.creditRatingInfo.agencyRating) === null || _u === void 0 ? void 0 : _u.length) != 0 && this.cardAccountInfo.creditRatingInfo.agencyRating ? true : false);
+            this.ls.setItem('CARD_QUALITATIVE_SCOREBOARD_DONE', this.cardQualitativeDetails ? true : false);
+            this.ls.setItem('CARD_ASSESSMENT_DONE', this.cardAccountInfo.assessmentInfo ? true : false);
+            this.ls.setItem('CARD_SUPERVISOR_DONE', this.cardAccountInfo.assessmentInfo ? true : false);
+            this.ls.setItem('CARD_APPROVAL_DONE', this.cardAccountInfo.approvalInfo ? true : false);
+            this.ls.setItem('CARD_DIGITAL_STAGE_DONE', this.cardAccountInfo.approvalInfo ? true : false);
+            var theme = null;
+            var type = "CARDACC";
+            window.open("".concat(app_environments_environment_prod__WEBPACK_IMPORTED_MODULE_19__["environment"].redirectUrl, "?code=").concat(this.jwtService.getEncryptedToken(), "&appType=").concat(type, "&theme=").concat(theme), '_blank');
+            this.dialogRef.close();
           }
         }]);
 
@@ -74955,7 +75628,7 @@
       }();
 
       CardAccountApproverComponent.ɵfac = function CardAccountApproverComponent_Factory(t) {
-        return new (t || CardAccountApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_3__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_7__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_5__["ApplicationEntryStageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]));
+        return new (t || CardAccountApproverComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_tasksummary_service__WEBPACK_IMPORTED_MODULE_3__["TasksummaryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_7__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_5__["ApplicationEntryStageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_18__["JwtAuthService"]));
       };
 
       CardAccountApproverComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -74972,9 +75645,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.chart = _t.first);
           }
         },
-        decls: 314,
-        vars: 57,
-        consts: [["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon"], [2, "color", "darkgray", "cursor", "pointer", "margin-right", "5px", 3, "click"], ["fxLayoutAlign", "center"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["fxFlex", "85"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [1, "editbtn", 3, "hidden", "click"], [1, "mtcd"], ["fxLayout", "row", 1, "rowbord"], ["fxFlex", "4"], ["fxFlex", "32"], [1, "label"], [1, "labelval"], [1, "full-width"], [1, "fullcard"], ["fxLayout", "row"], [1, "paraFont"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "100%"], ["fxLayout", "column", "fxLayoutGap", "2%", "fxLayoutAlign", "space-between none", 1, "colAlign"], [1, "pt-16"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-around center"], ["fxFlex.xs", "100%"], [1, "headingText"], [1, "valueText"], ["fxLayout", "row wrap", "class", "full-width", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], [1, "appersoninfocard", 2, "width", "250px"], ["fxLayout", "row", 1, "rowbord", "nobord"], ["fxLayout", "row", "fxLayoutAlign", " start"], [1, "circle1"], [1, "content2"], [2, "padding-bottom", "20px"], ["fxLayout", "row", 1, "flex-container", 2, "flex-direction", "row", "box-sizing", "border-box", "display", "flex"], ["fxFlex", "10", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "15%"], ["fxFlex", "85", 1, "margin1", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "85%"], ["fxLayout", "row", "fxLayoutAlign", "space between center"], ["class", "labelval", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["type", "button", 1, "rejectbtn", 3, "hidden", "ngClass", "click"], ["type", "button", 1, "approvebtn", 3, "hidden", "ngClass", "click"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "7%", "fxFlex.xs", "50%", "fxFlex.md", "10%", "fxFlex.sm", "15%", 1, "pb-16"], ["height", "50px", "width", "50px", "src", "assets/images/backgrounds/defaultProfileBackground.png", 1, "rounded-circle"], ["fxFlex", "93%", "fxFlex.xs", "100%", "fxFlex.md", "90%", "fxFlex.sm", "85%", 1, "bg-light", "p-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-16"], [1, "valueTextName"], [1, "pl-16", "text-secondary"], ["class", "pl-16 pr-16", 4, "ngIf"], ["class", "pl-16 pr-16", 3, "click", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-between center"], ["fxFlex.xs", "100%", 1, "pl-16", "pr-16"], [1, "pl-16", "pr-16"], [1, "headingText1"], [1, "pl-16", "pr-16", 3, "click"], [3, "series", "chart", "plotOptions", "labels", 4, "ngIf"], [3, "series", "chart", "yaxis", "xaxis", "labels", "stroke", "markers", "fill", "tooltip", 4, "ngIf"], ["fxLayout", "row", "fxLayoutGap", "70px"], ["fxLayout", "row", "FxLayoutAlign", "start"], [1, "circle"], [1, "content1"], [1, "matCardTitle"], [2, "color", "grey", "font-size", "10px"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "matCardTitle", "col"], [3, "series", "chart", "plotOptions", "labels"], [3, "series", "chart", "yaxis", "xaxis", "labels", "stroke", "markers", "fill", "tooltip"], ["fxLayout", "row", "class", "rowbord", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayouutAlign", "space-between center"], [1, "interstcard"], [1, "appersoninfocard", 2, "width", "100px"], [1, "chequecard"], ["fxLayout", "column", "fxLayoutGap", "6%", "fxLayoutAlign", "space-between none"], ["fxLayout", "row wrap", 1, "flex-container", "stretch"], ["fxFlex", "33%", "fxFlex.xs", "100%"], ["fxFlex", "5%", "fxFlex.xs", "100%", "fxLayoutAlign", "end start", 1, "inputCardclass"], ["fxFlex", "", "fxFlex.xs", "100%", 1, "inputCardclass"], [1, "inputCard"], ["fxLayout", "column", "fxLayoutGap", "10%", "fxLayoutAlign", "space-between none"], ["fxFlex", "20%", "fxFlex.xs", "50%"], ["download", "", 1, "linkColor", 3, "href"]],
+        decls: 350,
+        vars: 65,
+        consts: [["fxLayout", "column wrap"], [1, "content"], ["fxLayout", "row", "fxLayoutAlign", "end"], [1, "closeIcon"], [2, "color", "darkgray", "cursor", "pointer", "margin-right", "5px", 3, "click"], ["fxLayoutAlign", "center"], [1, "boxing"], [1, "main"], ["fxLayout", "row end", 1, "createdBy"], ["fxLayout", "column", 1, "creater"], ["class", "word1", 4, "ngFor", "ngForOf"], ["fxLayout", "column", 1, "totalMarin"], ["fxLayout", "row", 1, "parentCreater"], ["src", "assets/images/face-7.jpg", "alt", "", 1, "img1"], [1, "headName"], [1, "idSize"], ["fxLayout", "row", 1, "setSize"], [1, "iconColor"], [1, "mobileNo"], [1, "email"], ["fxLayout", "row", 1, "imgdiv"], ["mat-card-avatar", ""], ["fxLayout", "row", "class", "defaultImage", 3, "background", 4, "ngIf"], ["fxLayout", "row", "class", "defaultImage", 4, "ngIf"], ["fxLayout", "row", 1, "apprdiv"], ["fxLayout", "row", 1, "flex-container"], ["fxFlex", "15"], [1, "num"], [1, "bordnum"], ["fxFlex", "85"], ["fxLayout", "row", "fxLayoutAlign", "space-between end"], [1, "editbtn", 3, "hidden", "click"], [1, "mtcd"], ["fxLayout", "row", 1, "rowbord"], ["fxFlex", "4"], ["fxFlex", "32"], [1, "label"], [1, "labelval"], [1, "full-width"], [1, "fullcard"], ["fxLayout", "row"], [1, "paraFont"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "100%"], ["fxLayout", "column", "fxLayoutGap", "2%", "fxLayoutAlign", "space-between none", 1, "colAlign"], [1, "pt-16"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-around center"], ["fxFlex.xs", "100%"], [1, "headingText"], [1, "valueText"], ["fxLayout", "row wrap", "class", "full-width", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["class", "labelval", 4, "ngIf"], ["fxLayout", "row", "class", "flex-container", 4, "ngIf"], [1, "appersoninfocard", 2, "width", "250px"], ["fxLayout", "row", 1, "rowbord", "nobord"], ["fxLayout", "row", "fxLayoutAlign", " start"], [1, "circle1"], [1, "content2"], [2, "padding-bottom", "20px"], ["fxLayout", "row", 1, "flex-container", 2, "flex-direction", "row", "box-sizing", "border-box", "display", "flex"], ["fxFlex", "15", 2, "flex", "1 1 100%", "box-sizing", "border-box", "max-width", "15%"], ["fxLayout", "row", "fxLayoutAlign", "end", "fxLayoutGap", "20px"], ["type", "button", 1, "continueBtn", 3, "hidden", "ngClass", "click"], ["type", "button", 1, "rejectbtn", 3, "hidden", "ngClass", "click"], ["type", "button", 1, "approvebtn", 3, "hidden", "ngClass", "click"], [1, "word1"], ["fxLayout", "row", 1, "defaultImage"], [1, "imageText"], ["style", "width: 120px; height: 120px; border-radius: 50%;", "alt", "", 3, "src", 4, "ngIf"], ["alt", "", 2, "width", "120px", "height", "120px", "border-radius", "50%", 3, "src"], ["fxLayout", "row wrap", 1, "full-width"], ["fxFlex", "7%", "fxFlex.xs", "50%", "fxFlex.md", "10%", "fxFlex.sm", "15%", 1, "pb-16"], ["height", "50px", "width", "50px", "src", "assets/images/backgrounds/defaultProfileBackground.png", 1, "rounded-circle"], ["fxFlex", "93%", "fxFlex.xs", "100%", "fxFlex.md", "90%", "fxFlex.sm", "85%", 1, "bg-light", "p-8"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "pl-16"], [1, "valueTextName"], [1, "pl-16", "text-secondary"], ["class", "pl-16 pr-16", 4, "ngIf"], ["class", "pl-16 pr-16", 3, "click", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutAlign", "space-between center"], ["fxFlex.xs", "100%", 1, "pl-16", "pr-16"], [1, "pl-16", "pr-16"], [1, "headingText1"], [1, "pl-16", "pr-16", 3, "click"], [3, "series", "chart", "plotOptions", "labels", 4, "ngIf"], [3, "series", "chart", "yaxis", "xaxis", "labels", "stroke", "markers", "fill", "tooltip", 4, "ngIf"], ["fxLayout", "row", "fxLayoutGap", "70px"], ["fxLayout", "row", "FxLayoutAlign", "start"], [1, "circle"], [1, "content1"], [1, "matCardTitle"], [2, "color", "grey", "font-size", "10px"], ["fxLayout", "row", "fxLayoutGap", "80px", 1, "matCardTitle", "col"], [3, "series", "chart", "plotOptions", "labels"], [3, "series", "chart", "yaxis", "xaxis", "labels", "stroke", "markers", "fill", "tooltip"], ["fxLayout", "row", "class", "rowbord", 4, "ngFor", "ngForOf"], ["download", "", 1, "linkColor", 3, "href"], [4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayouutAlign", "space-between center"], [1, "interstcard"], [1, "appersoninfocard", 2, "width", "100px"], [1, "chequecard"], ["fxLayout", "column", "fxLayoutGap", "6%", "fxLayoutAlign", "space-between none"], ["fxLayout", "row wrap", 1, "flex-container", "stretch"], ["fxFlex", "33%", "fxFlex.xs", "100%"], ["fxFlex", "5%", "fxFlex.xs", "100%", "fxLayoutAlign", "end start", 1, "inputCardclass"], ["fxFlex", "", "fxFlex.xs", "100%", 1, "inputCardclass"], [1, "inputCard"], ["fxLayout", "column", "fxLayoutGap", "10%", "fxLayoutAlign", "space-between none"], ["fxFlex", "20%", "fxFlex.xs", "50%"]],
         template: function CardAccountApproverComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -75449,55 +76122,155 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](148, CardAccountApproverComponent_div_148_Template, 14, 2, "div", 52);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "div", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](149, CardAccountApproverComponent_div_149_Template, 74, 5, "div", 52);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "div", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](150, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](150, "div", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "div", 27);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](153, "4");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](151, "2");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](155, "\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](153, "\xA0");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "div", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "div", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](155, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](158, "Assessment Stage");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](159, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](162, "Assessment Report");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](156, "Document Type");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](163, "span");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](157, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](164, "mat-icon", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](158, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_164_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](159, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](160, "Document Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](162, "mat-icon", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_162_listener() {
+              return ctx.editProofOfIdentity();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](163, "edit");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](164, "mat-card", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](165, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "div", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](167, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](169, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](170, "Document Name");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](172);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](173, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](174, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](175, "Download");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](176, CardAccountApproverComponent_div_176_Template, 4, 1, "div", 52);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](177, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](178, CardAccountApproverComponent_div_178_Template, 14, 2, "div", 53);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](179, CardAccountApproverComponent_div_179_Template, 74, 5, "div", 53);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](180, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](181, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "div", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](183, "5");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](184, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](185, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "div", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](187, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](188, "Assessment Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](189, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](190, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](191, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](192, "Assessment Report");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](193, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](194, "mat-icon", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_194_listener() {
               return ctx.editAssessmentReport();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](165, "edit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](195, "edit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -75505,165 +76278,63 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "mat-card", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](196, "mat-card", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](167, "mat-card-content");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](197, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](198, "div", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](169, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](199, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](170, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](201, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](172, "Requested Card Limit");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](173, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](174);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](202, "Requested Card Limit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](203, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](177, "System Recommendation");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](178, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](179);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](204);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](180, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](205, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](181, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](206, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](182, "User Recommendation");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](184);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](207, "System Recommendation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](208, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](186, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](187, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](188, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](189, "Recommended Card Limit");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](190, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](191);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](209);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](192, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](210, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](193, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](211, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](194, "Approved Card Limit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](212, "User Recommendation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](195, "div", 37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](213, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](196);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](214);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](197, "div", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](198, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](199, "div", 27);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](200, "5");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](201, "div", 28);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](202, "\xA0");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](203, "div", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](204, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](205, "Approval Stage");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](206, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](208, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](209, "Approval Details");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](210, "span");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](211, "mat-icon", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_211_listener() {
-              return ctx.editApprovalDetails();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](212, "edit");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](213, "mat-card", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](214, "mat-card-content");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](215, "div", 33);
 
@@ -75673,7 +76344,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](218, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](219, "Account Type");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](219, "Recommended Card Limit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -75689,7 +76360,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](223, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](224, "Account Branch");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](224, "Approved Card Limit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -75701,116 +76372,6 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](227, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](229, "Product Code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](230, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](231);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](232, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](233, "div", 34);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](234, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](235, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](236, "Product Name");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](237, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](238);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](239, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](241, "Account Currency");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](242, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](243);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](244, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](245, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](246, "Existing Value");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](247, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](248);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](249, "div", 33);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](250, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](251, "mat-card", 53);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](252, "div", 54);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](253, "div", 55);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](254, "div", 56);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "div", 57);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](256, "mat-icon");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](257, "done");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](258, "div", 58);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](259, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](260, "User Recommendation");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](261, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](262);
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75820,6 +76381,118 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](227, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "div", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](229, "div", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](230, "6");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](231, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](232, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](233, "div", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](234, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](235, "Approval Stage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](236, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](237, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](238, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](239, "Approval Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](241, "mat-icon", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_241_listener() {
+              return ctx.editApprovalDetails();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](242, "edit");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](243, "mat-card", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](244, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](245, "div", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](246, "div", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](247, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](248, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](249, "Account Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](250, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](251);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](252, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](253, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](254, "Account Branch");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](256);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](257, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](258, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](259, "Product Code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](260, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](261);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](262, "div", 33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](263, "div", 34);
 
@@ -75827,7 +76500,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](265, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](266, "Remarks");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](266, "Product Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -75839,6 +76512,78 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](269, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](270, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](271, "Account Currency");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](273);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](274, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](275, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](276, "Existing Value");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](277, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](278);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](279, "div", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](280, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "mat-card", 54);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](282, "div", 55);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](283, "div", 56);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "div", 57);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](285, "div", 58);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](286, "mat-icon");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](287, "done");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](288, "div", 59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](289, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](290, "User Recommendation");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](291, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](292);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75849,47 +76594,79 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](269, "div", 59);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](293, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](270, "div", 60);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](294, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](271, "div", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](295, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](272, "7");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](296, "Remarks");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](297, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](298);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](273, "div", 61);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](274, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](275, "Digital Sign");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](276, "div", 62);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](277, "fieldset");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](278, "legend");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](279, "Digital Sign");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](280, "span");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "mat-icon", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](299, "div", 60);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_281_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](300, "div", 61);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](301, "div", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](302, "7");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](303, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](304, "\xA0");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](305, "div", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](306, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](307, "Digital Sign");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](308, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](309, "div", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](310, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](311, "Digital Sign");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](312, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](313, "mat-icon", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_mat_icon_click_313_listener() {
               return ctx.editDigitalSign();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](282, "edit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](314, "edit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -75897,75 +76674,71 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](283, "mat-card", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "mat-card", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "mat-card-content");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](316, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](285, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](317, "div", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](286, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](318, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](287, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](319, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](288, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](320, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](289, "Document Name");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](290, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](291);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](321, "Document Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](322, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](292, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](294, "File Type");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](295, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](296);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](323);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](297, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](324, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](325, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](299, "File Name");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](300, "div", 37);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](301, "Signature");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](326, "File Type");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](327, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](302, "div", 35);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](303, "div", 36);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](304, "Download");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](305, CardAccountApproverComponent_div_305_Template, 4, 1, "div", 63);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](328);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](329, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331, "File Name");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "div", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](333, "Signature");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](334, "div", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](335, "div", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](336, "Download");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](337, CardAccountApproverComponent_div_337_Template, 4, 1, "div", 52);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -75975,33 +76748,51 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](306, "div", 64);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](338, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](307, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](308, "button", 65);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_button_click_308_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](339, "div", 62);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](340, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](341, "button", 63);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_button_click_341_listener() {
+              return ctx["continue"]();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](342, " Cotinue ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](343, "\xA0\xA0 ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](344, "button", 64);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_button_click_344_listener() {
               return ctx.updateApplicationStatus(ctx.initiationDetails, "REJECTED");
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](309, " Reject ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](345, " Reject ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](310, " \xA0\xA0 ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](346, " \xA0\xA0 ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](311, "button", 66);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](347, "button", 65);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_button_click_311_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardAccountApproverComponent_Template_button_click_347_listener() {
               return ctx.updateApplicationStatus(ctx.initiationDetails, "APPROVED");
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](312, "Approve");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](348, "Approve");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](313, " \xA0\xA0 ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](349, " \xA0\xA0 ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -76115,7 +76906,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.preferenceDetails != null);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.editScreen);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.documentName);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.documentUrl);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.intrestDetails == null ? null : ctx.intrestDetails.length) > 0 || (ctx.chargeDetails == null ? null : ctx.chargeDetails.length) > 0);
 
@@ -76183,7 +76986,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.approvalDetails == null ? null : ctx.approvalDetails.remarks);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.editScreen);
 
@@ -76199,18 +77002,22 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.signatureDataForCard == null ? null : ctx.signatureDataForCard.fileUrl);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.continueStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](56, _c1, ctx.continueStatus, !ctx.continueStatus));
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](51, _c1, ctx.rejectedStatus, !ctx.rejectedStatus));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.rejectedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](59, _c2, ctx.rejectedStatus, !ctx.rejectedStatus));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](54, _c2, ctx.approvedStatus, !ctx.approvedStatus));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ctx.approvedStatus)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](62, _c3, ctx.approvedStatus, !ctx.approvedStatus));
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_19__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_19__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_20__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_21__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_22__["MatCardAvatar"], _angular_common__WEBPACK_IMPORTED_MODULE_21__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_19__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_22__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_22__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_19__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_21__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_23__["DefaultClassDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_22__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_22__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_22__["MatCardSubtitle"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_6__["ChartComponent"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__["MatHint"]],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_21__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_21__["UpperCasePipe"]],
-        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n  margin-left: 22%;\n}\n\n.closeIcon[_ngcontent-%COMP%] {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 30px;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n  margin-right: 20px;\n}\n\n.num[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  background-color: white;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  margin-right: 2%;\n  margin-bottom: 40px;\n  padding: 10px;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 5%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  width: 40%;\n}\n\n.appersoninfocard1[_ngcontent-%COMP%] {\n  width: 90%;\n}\n\n.interstcard[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 80px;\n  border: 1px solid;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.cancelIcon[_ngcontent-%COMP%] {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 10px;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon[_ngcontent-%COMP%] {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel[_ngcontent-%COMP%] {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 3rem 2.6rem;\n  color: white;\n}\n\n.right-text[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 150px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.matCardTitle[_ngcontent-%COMP%] {\n  font-size: 16px;\n  padding-top: 1%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2FyZC1hY2NvdW50LWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUcsWUFBVztFQUNYLGFBQVk7QUFBZjs7QUFFQTtFQUVJLGtCQUFpQjtFQUNqQixjQUFjO0VBQ2QseUJBQXdCO1VBQXhCLHdCQUF3QjtFQUN4QixnQkFBZ0I7QUFBcEI7O0FBRUE7RUFDSSxlQUFlO0VBQ2YsZUFBZTtFQUNkLGtCQUFrQjtBQUN2Qjs7QUFDQTtFQUNJLGNBQXVCO0VBRXZCLGVBQWU7RUFDZixrQkFBa0I7QUFDdEI7O0FBWUE7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7QUFWM0I7O0FBWUE7RUFJSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQixhQUFZO0FBWmhCOztBQWNBO0VBRUksZ0JBQWU7QUFabkI7O0FBY0E7RUFFSSxZQUFXO0FBWmY7O0FBY0E7RUFFSSxrQkFBa0I7QUFadEI7O0FBY0E7RUFFSSxXQUFVO0VBQ1YsZUFBZTtBQVpuQjs7QUFjQTtFQUVFLGNBQWE7RUFDYixpQkFBaUI7QUFabkI7O0FBa0JBO0VBRVEsb0NBQUE7RUFDQSxnQ0FBK0I7RUFDL0IseUJBQXdCO0FBaEJoQzs7QUFrQkE7RUFFSSxZQUFXO0FBaEJmOztBQWtCQTtFQUVJLHVCQUFzQjtBQWhCMUI7O0FBa0JBO0VBRUksWUFBVztFQUNYLGNBQWM7RUFDZCxrQkFBa0I7QUFoQnRCOztBQWtCQTtFQUdHLFVBQ0g7QUFsQkE7O0FBbUJBO0VBR0csVUFDSDtBQW5CQTs7QUFvQkE7RUFFSSxZQUFZO0VBQ1osWUFBWTtFQUNaLGlCQUFpQjtBQWxCckI7O0FBb0JBO0VBRUksY0FBYTtBQWxCakI7O0FBb0JBO0VBRUksWUFBWTtFQUNaLDhCQUE4QjtFQUM5QixnQkFBZ0I7QUFsQnBCOztBQW9CQTtFQUNJLHlCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBakJmOztBQW9CQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBakJmOztBQW9CQTtFQUNJLGNBQWU7RUFDZix5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIscUJBQW9CO0VBQ3BCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQWpCaEI7O0FBb0JBO0VBQ0ksV0FBVztFQUNYLHlCQUFvQztFQUNwQyxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBakJoQjs7QUFvQkE7RUFDSSxVQUFVO0VBQ1YsdUJBQXVCO0VBQ3ZCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQWpCaEI7O0FBb0JBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixxQkFBK0I7RUFDL0IsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFqQmY7O0FBcUJBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFsQmY7O0FBcUJBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFsQmY7O0FBcUJBO0VBQ0ksV0FBVTtFQUNWLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIseUJBQWtDO0VBQ2xDLFlBQVk7RUFDWixrQkFBa0I7QUFsQnRCOztBQXNCQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBbkJuQjs7QUF1QkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBQ1osY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQXBCZjs7QUFzQkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQW5CbkI7O0FBcUJFO0VBQ0UsV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFuQmY7O0FBcUJBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGtCQUFrQjtFQUNsQiwrQ0FBK0M7RUFDL0MsVUFBVTtFQUNWLG1CQUFtQjtFQUNmLHVCQUF1QjtFQUN2QixlQUFlO0FBbEJuQjs7QUFxQkE7RUFDSSxXQUFXO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQWxCZjs7QUFxQkE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDcEIsZUFBZTtBQW5CZjs7QUF1QkE7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQXBCdEI7O0FBdUJBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWE7RUFDYixZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFwQm5COztBQXNCQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBRWxCLGtCQUFrQjtBQXBCdEI7O0FBd0JFO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBckJoQjs7QUF3QkU7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCO0FBckJ0Qjs7QUF1QkU7RUFDRSxjQUFhO0VBQ2IsMEJBQTBCO0FBcEI5Qjs7QUFzQkE7RUFDSSxlQUFlO0VBQ2YsZUFBYztBQW5CbEIiLCJmaWxlIjoiY2FyZC1hY2NvdW50LWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGltZ1xyXG57XHJcbiAgIHdpZHRoOjEwMHB4O1xyXG4gICBoZWlnaHQ6MTAwcHg7XHJcbn1cclxuLmltZ2RpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUlO1xyXG4gICAgbWFyZ2luLWlubGluZS1zdGFydDogMTglO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDIyJTtcclxufVxyXG4uY2xvc2VJY29ue1xyXG4gICAgY29sb3I6IGRhcmtncmF5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgIG1hcmdpbi1yaWdodDogMzBweDsgXHJcbn1cclxuLmVkaXRidG57XHJcbiAgICBjb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KSA7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTI0LCAxOTcpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgLy8gb3V0bGluZTogbm9uZTtcclxuICAgIC8vIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICAvLyB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIC8vIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIC8vIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIC8vIGJvcmRlci1jb2xvcjogIzBlNTdjNTtcclxuICAgIC8vIGhlaWdodDozMHB4O1xyXG4gICAgLy8gd2lkdGg6MTUwcHg7XHJcbiAgICAvLyBwb3NpdGlvbjpyZWxhdGl2ZTtcclxuICAgIC8vIGxlZnQ6IDgwJTtcclxufVxyXG4ubnVtXHJcbntcclxuICAgIGJvcmRlcjoxcHggc29saWQgIzRBNTZFMjtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIHBhZGRpbmctdG9wOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuLnF0bmNyZFxyXG57XHJcbiAgLy8gIGJhY2tncm91bmQtY29sb3I6I0Y3RjdGNztcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgIG1hcmdpbi1yaWdodDoyJTtcclxuICAgIG1hcmdpbi1ib3R0b206NDBweDtcclxuICAgIHBhZGRpbmc6MTBweDtcclxufVxyXG4ucXRudmFsXHJcbntcclxuICAgIHBhZGRpbmctdG9wOjhweDtcclxufVxyXG4uaW1nZGl2IGRpdlxyXG57XHJcbiAgICBtYXJnaW46YXV0bztcclxufVxyXG4uYXBwcmRpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLmFwcHJkaXYgaDJcclxue1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiA1JTtcclxufVxyXG4ubGFiZWxcclxue1xyXG4gIGNvbG9yOiM5QUExQjA7XHJcbiAgZm9udC1zaXplOiAwLjdyZW07XHJcbn1cclxuLy8gLmxhYmVsdmFsXHJcbi8vIHtcclxuLy8gICAgY29sb3I6IzJGMkYyRjtcclxuLy8gfVxyXG4ucm93Ym9yZFxyXG57XHJcbiAgICAgICAgLypib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNzA3MDcwOyAqL1xyXG4gICAgICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICAgICAgcGFkZGluZzoxMHB4IDAgMTBweCAxMHB4O1xyXG59XHJcbi5tdGNkXHJcbntcclxuICAgIHBhZGRpbmc6MHB4O1xyXG59XHJcbi5ub2JvcmRcclxue1xyXG4gICAgYm9yZGVyOm5vbmUgIWltcG9ydGFudDtcclxufVxyXG4ubWFpblxyXG57XHJcbiAgICBoZWlnaHQ6ODV2aDtcclxuICAgIG92ZXJmbG93OiBhdXRvO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG59XHJcbi5hcHBlcnNvbmluZm9jYXJkXHJcbntcclxuLy8gICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG4gICB3aWR0aDo0MCVcclxufVxyXG4uYXBwZXJzb25pbmZvY2FyZDFcclxue1xyXG4vLyAgICBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgIHdpZHRoOjkwJVxyXG59XHJcbi5pbnRlcnN0Y2FyZHtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgIHdpZHRoOiAxMDBweDtcclxuICAgIGhlaWdodDogODBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkO1xyXG59XHJcbi5jbHJcclxue1xyXG4gICAgY29sb3I6I0IyQjJCMjsgIFxyXG59XHJcbi5ib3JkbnVtXHJcbntcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzRBNTZFMjtcclxuICAgIG1hcmdpbi1sZWZ0OiAyNCU7XHJcbn1cclxuLlJOYnRue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjojNEE1NkUyO1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6NTBweDtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG59XHJcblxyXG4uYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbiAgICB3aWR0aDoyMDBweDtcclxufVxyXG5cclxuLmNhbmNlbGJ0bntcclxuICAgIGNvbG9yOiMyOTgwQjkgIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjojMjk4MEI5O1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uZGlzYWJsZWRidG57XHJcbiAgICBjb2xvcjpncmV5IDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogZ3JleTtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZWQ7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5hcHByb3ZlYnRue1xyXG4gICAgY29sb3I6d2hpdGUgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICBib3JkZXItY29sb3I6IHJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDoxNTBweDtcclxuICAgIFxyXG59XHJcblxyXG4uc3FmdGJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDoyMHB4O1xyXG4gICAgd2lkdGg6MTAwcHg7XHJcbn1cclxuXHJcbi5hY2J0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDoyMHB4O1xyXG4gICAgd2lkdGg6MTAwcHg7XHJcbn1cclxuXHJcbi5jaXJjbGV7XHJcbiAgICB3aWR0aDo3NXB4O1xyXG4gICAgaGVpZ2h0Ojc1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBcclxufVxyXG5cclxuLmNvbnRlbnQxe1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBcclxufVxyXG5cclxuLmNhbmNlbEljb257XHJcbiAgICB0b3A6IDY3MjBweDtcclxubGVmdDogODEycHg7XHJcbndpZHRoOiAyMHB4O1xyXG5oZWlnaHQ6IDIwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLnJlamVjdEJ1dHRvbntcclxuICAgIHRvcDogNjcwNXB4O1xyXG5sZWZ0OiA3NjJweDtcclxud2lkdGg6IDE4M3B4O1xyXG5oZWlnaHQ6IDQxcHg7XHJcbmJvcmRlcjogMnB4IHNvbGlkICNGRjAwMDA7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgLnJlamVjdGxhYmVse1xyXG4gICAgdG9wOiA2NzE4cHg7XHJcbmxlZnQ6IDg0MnB4O1xyXG53aWR0aDogNDVweDtcclxuaGVpZ2h0OiAyMnB4O1xyXG5cclxudGV4dC1hbGlnbjogbGVmdDtcclxuZm9udDogbm9ybWFsIG5vcm1hbCBub3JtYWwgMThweC8yMnB4IENhbGlicmk7XHJcbmxldHRlci1zcGFjaW5nOiAwcHg7XHJcbmNvbG9yOiAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5wYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmFwcHJvdmVCdXR0b257XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogOTY5cHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5tYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbmJhY2tncm91bmQ6ICMyNENDQTcgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG59XHJcbi5hcHByb3ZlSWNvbntcclxuICAgIHRvcDogNjcxNnB4O1xyXG5sZWZ0OiAxMDA5cHg7XHJcbndpZHRoOiAyNHB4O1xyXG5oZWlnaHQ6IDI0cHg7XHJcbmNvbG9yOiB3aGl0ZTtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG5cclxufVxyXG4uYXBwcm92ZWxhYmVse1xyXG4gICAgdG9wOiA2NzE3cHg7XHJcbiAgICBsZWZ0OiAxMDQ5cHg7XHJcbiAgICB3aWR0aDogNjJweDtcclxuICAgIGhlaWdodDogMjJweDtcclxuICAgIFxyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuXHJcbi5jaXJjbGUxe1xyXG4gICAgd2lkdGg6MjVweDtcclxuICAgIGhlaWdodDoyNXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uY29udGVudDJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG4uZGVmYXVsdEltYWdle1xyXG4gICAgd2lkdGg6IDEyMHB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIC8vIG1hcmdpbi1sZWZ0OiAtMTBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6ICMxOWMyOGY7XHJcbiAgfVxyXG4gIFxyXG4gIC5pbWFnZVRleHR7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAzcmVtIDIuNnJlbTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcblxyXG4gIC5yaWdodC10ZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE1MHB4O1xyXG4gIH1cclxuICAubGlua0NvbG9ye1xyXG4gICAgY29sb3I6IzRBNTZFMjtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBcclxufVxyXG4ubWF0Q2FyZFRpdGxle1xyXG4gICAgZm9udC1zaXplOiAxNnB4OyBcclxuICAgIHBhZGRpbmctdG9wOjElO1xyXG59XHJcbiAgIl19 */"]
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_22__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_22__["DefaultLayoutAlignDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_23__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_24__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_25__["MatCardAvatar"], _angular_common__WEBPACK_IMPORTED_MODULE_24__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_22__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_25__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_25__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_22__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_24__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_26__["DefaultClassDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_25__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_25__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_25__["MatCardSubtitle"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_6__["ChartComponent"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_27__["MatHint"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_24__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_24__["UpperCasePipe"]],
+        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n  margin-left: 22%;\n}\n\n.closeIcon[_ngcontent-%COMP%] {\n  color: darkgray;\n  cursor: pointer;\n  margin-right: 30px;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n  margin-right: 20px;\n}\n\n.num[_ngcontent-%COMP%] {\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  background-color: white;\n}\n\n.qtncrd[_ngcontent-%COMP%] {\n  margin-right: 2%;\n  margin-bottom: 40px;\n  padding: 10px;\n}\n\n.qtnval[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 5%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  width: 40%;\n}\n\n.appersoninfocard1[_ngcontent-%COMP%] {\n  width: 90%;\n}\n\n.interstcard[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 80px;\n  border: 1px solid;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 50px;\n  width: 200px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: #2980B9;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: #2980B9;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.disabledbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: grey;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  border-style: 1px solid;\n  border-radius: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  border-color: #0ec588;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.cancelIcon[_ngcontent-%COMP%] {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.rejectlabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 10px;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon[_ngcontent-%COMP%] {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel[_ngcontent-%COMP%] {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 3rem 2.6rem;\n  color: white;\n}\n\n.right-text[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-left: 150px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.matCardTitle[_ngcontent-%COMP%] {\n  font-size: 16px;\n  padding-top: 1%;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 150px;\n  height: 30px;\n  border: 2px solid blue;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.continuelabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: blue;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2FyZC1hY2NvdW50LWFwcHJvdmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUcsWUFBVztFQUNYLGFBQVk7QUFBZjs7QUFFQTtFQUVJLGtCQUFpQjtFQUNqQixjQUFjO0VBQ2QseUJBQXdCO1VBQXhCLHdCQUF3QjtFQUN4QixnQkFBZ0I7QUFBcEI7O0FBRUE7RUFDSSxlQUFlO0VBQ2YsZUFBZTtFQUNkLGtCQUFrQjtBQUN2Qjs7QUFDQTtFQUNJLGNBQXVCO0VBRXZCLGVBQWU7RUFDZixrQkFBa0I7QUFDdEI7O0FBWUE7RUFFSSx5QkFBd0I7RUFDeEIsa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7QUFWM0I7O0FBWUE7RUFJSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQixhQUFZO0FBWmhCOztBQWNBO0VBRUksZ0JBQWU7QUFabkI7O0FBY0E7RUFFSSxZQUFXO0FBWmY7O0FBY0E7RUFFSSxrQkFBa0I7QUFadEI7O0FBY0E7RUFFSSxXQUFVO0VBQ1YsZUFBZTtBQVpuQjs7QUFjQTtFQUVFLGNBQWE7RUFDYixpQkFBaUI7QUFabkI7O0FBa0JBO0VBRVEsb0NBQUE7RUFDQSxnQ0FBK0I7RUFDL0IseUJBQXdCO0FBaEJoQzs7QUFrQkE7RUFFSSxZQUFXO0FBaEJmOztBQWtCQTtFQUVJLHVCQUFzQjtBQWhCMUI7O0FBa0JBO0VBRUksWUFBVztFQUNYLGNBQWM7RUFDZCxrQkFBa0I7QUFoQnRCOztBQWtCQTtFQUdHLFVBQ0g7QUFsQkE7O0FBbUJBO0VBR0csVUFDSDtBQW5CQTs7QUFvQkE7RUFFSSxZQUFZO0VBQ1osWUFBWTtFQUNaLGlCQUFpQjtBQWxCckI7O0FBb0JBO0VBRUksY0FBYTtBQWxCakI7O0FBb0JBO0VBRUksWUFBWTtFQUNaLDhCQUE4QjtFQUM5QixnQkFBZ0I7QUFsQnBCOztBQW9CQTtFQUNJLHlCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBakJmOztBQW9CQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBakJmOztBQW9CQTtFQUNJLGNBQWU7RUFDZix5QkFBb0M7RUFDcEMsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIscUJBQW9CO0VBQ3BCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQWpCaEI7O0FBb0JBO0VBQ0ksV0FBVztFQUNYLHlCQUFvQztFQUNwQyxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVc7RUFDWCxZQUFZO0FBakJoQjs7QUFvQkE7RUFDSSxVQUFVO0VBQ1YsdUJBQXVCO0VBQ3ZCLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQWpCaEI7O0FBb0JBO0VBQ0ksWUFBWTtFQUNaLHlCQUFrQztFQUNsQyxlQUFlO0VBQ2YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixxQkFBK0I7RUFDL0IsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFqQmY7O0FBcUJBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFsQmY7O0FBcUJBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFsQmY7O0FBcUJBO0VBQ0ksV0FBVTtFQUNWLFlBQVc7RUFDWCxrQkFBaUI7RUFDakIseUJBQWtDO0VBQ2xDLFlBQVk7RUFDWixrQkFBa0I7QUFsQnRCOztBQXNCQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBbkJuQjs7QUF1QkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBQ1osY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQXBCZjs7QUFzQkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQW5CbkI7O0FBcUJFO0VBQ0UsV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFuQmY7O0FBcUJBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGtCQUFrQjtFQUNsQiwrQ0FBK0M7RUFDL0MsVUFBVTtFQUNWLG1CQUFtQjtFQUNmLHVCQUF1QjtFQUN2QixlQUFlO0FBbEJuQjs7QUFxQkE7RUFDSSxXQUFXO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQWxCZjs7QUFxQkE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDcEIsZUFBZTtBQW5CZjs7QUF1QkE7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQXBCdEI7O0FBdUJBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWE7RUFDYixZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFwQm5COztBQXNCQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBRWxCLGtCQUFrQjtBQXBCdEI7O0FBd0JFO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBckJoQjs7QUF3QkU7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCO0FBckJ0Qjs7QUF1QkU7RUFDRSxjQUFhO0VBQ2IsMEJBQTBCO0FBcEI5Qjs7QUFzQkE7RUFDSSxlQUFlO0VBQ2YsZUFBYztBQW5CbEI7O0FBcUJBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixVQUFVO0VBQ1YsbUJBQW1CO0VBQ2YsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFsQm5COztBQXFCQTtFQUNJLFdBQVc7RUFDZixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFFWixnQkFBZ0I7RUFDaEIsNENBQTRDO0VBQzVDLG1CQUFtQjtFQUNuQixXQUFXO0VBQ1gsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBbkJmIiwiZmlsZSI6ImNhcmQtYWNjb3VudC1hcHByb3Zlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hcHBpbWdcclxue1xyXG4gICB3aWR0aDoxMDBweDtcclxuICAgaGVpZ2h0OjEwMHB4O1xyXG59XHJcbi5pbWdkaXZcclxue1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiA1JTtcclxuICAgIG1hcmdpbi1pbmxpbmUtc3RhcnQ6IDE4JTtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMiU7XHJcbn1cclxuLmNsb3NlSWNvbntcclxuICAgIGNvbG9yOiBkYXJrZ3JheTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICBtYXJnaW4tcmlnaHQ6IDMwcHg7IFxyXG59XHJcbi5lZGl0YnRue1xyXG4gICAgY29sb3I6cmdiKDE0LCAxMjQsIDE5NykgO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG1hcmdpbi1yaWdodDogMjBweDtcclxuICAgIC8vIG91dGxpbmU6IG5vbmU7XHJcbiAgICAvLyBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgLy8gdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICAvLyBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICAvLyB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICAvLyBib3JkZXItY29sb3I6ICMwZTU3YzU7XHJcbiAgICAvLyBoZWlnaHQ6MzBweDtcclxuICAgIC8vIHdpZHRoOjE1MHB4O1xyXG4gICAgLy8gcG9zaXRpb246cmVsYXRpdmU7XHJcbiAgICAvLyBsZWZ0OiA4MCU7XHJcbn1cclxuLm51bVxyXG57XHJcbiAgICBib3JkZXI6MXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbi5xdG5jcmRcclxue1xyXG4gIC8vICBiYWNrZ3JvdW5kLWNvbG9yOiNGN0Y3Rjc7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOjQwcHg7XHJcbiAgICBwYWRkaW5nOjEwcHg7XHJcbn1cclxuLnF0bnZhbFxyXG57XHJcbiAgICBwYWRkaW5nLXRvcDo4cHg7XHJcbn1cclxuLmltZ2RpdiBkaXZcclxue1xyXG4gICAgbWFyZ2luOmF1dG87XHJcbn1cclxuLmFwcHJkaXZcclxue1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5hcHByZGl2IGgyXHJcbntcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogNSU7XHJcbn1cclxuLmxhYmVsXHJcbntcclxuICBjb2xvcjojOUFBMUIwO1xyXG4gIGZvbnQtc2l6ZTogMC43cmVtO1xyXG59XHJcbi8vIC5sYWJlbHZhbFxyXG4vLyB7XHJcbi8vICAgIGNvbG9yOiMyRjJGMkY7XHJcbi8vIH1cclxuLnJvd2JvcmRcclxue1xyXG4gICAgICAgIC8qYm9yZGVyLWJvdHRvbToycHggc29saWQgIzcwNzA3MDsgKi9cclxuICAgICAgICBib3JkZXItYm90dG9tOjJweCBzb2xpZCAjZjVmNWY1O1xyXG4gICAgICAgIHBhZGRpbmc6MTBweCAwIDEwcHggMTBweDtcclxufVxyXG4ubXRjZFxyXG57XHJcbiAgICBwYWRkaW5nOjBweDtcclxufVxyXG4ubm9ib3JkXHJcbntcclxuICAgIGJvcmRlcjpub25lICFpbXBvcnRhbnQ7XHJcbn1cclxuLm1haW5cclxue1xyXG4gICAgaGVpZ2h0Ojg1dmg7XHJcbiAgICBvdmVyZmxvdzogYXV0bztcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxufVxyXG4uYXBwZXJzb25pbmZvY2FyZFxyXG57XHJcbi8vICAgIGJhY2tncm91bmQtY29sb3I6I0U1RTVFNTtcclxuICAgd2lkdGg6NDAlXHJcbn1cclxuLmFwcGVyc29uaW5mb2NhcmQxXHJcbntcclxuLy8gICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG4gICB3aWR0aDo5MCVcclxufVxyXG4uaW50ZXJzdGNhcmR7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiNFNUU1RTU7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZDtcclxufVxyXG4uY2xyXHJcbntcclxuICAgIGNvbG9yOiNCMkIyQjI7ICBcclxufVxyXG4uYm9yZG51bVxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBtYXJnaW4tbGVmdDogMjQlO1xyXG59XHJcbi5STmJ0bntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzRBNTZFMjtcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbiAgICB3aWR0aDoyMDBweDtcclxufVxyXG5cclxuLmJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDo1MHB4O1xyXG4gICAgd2lkdGg6MjAwcHg7XHJcbn1cclxuXHJcbi5jYW5jZWxidG57XHJcbiAgICBjb2xvcjojMjk4MEI5ICA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQzLCAyMzYsIDIzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IzI5ODBCOTtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmRpc2FibGVkYnRue1xyXG4gICAgY29sb3I6Z3JleSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQzLCAyMzYsIDIzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IGdyZXk7XHJcbiAgICBzaXplOiAyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuXHJcbi5yZWplY3RidG57XHJcbiAgICBjb2xvcjpyZWQgO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1jb2xvcjogcmVkO1xyXG4gICAgc2l6ZTogMjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG59XHJcblxyXG4uYXBwcm92ZWJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgb3V0bGluZS1zdHlsZTogbm9uZTtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBcclxufVxyXG5cclxuLnNxZnRidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uYWNidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uY2lyY2xle1xyXG4gICAgd2lkdGg6NzVweDtcclxuICAgIGhlaWdodDo3NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgXHJcbn1cclxuXHJcbi5jb250ZW50MXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOmluaGVyaXQ7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5jYW5jZWxJY29ue1xyXG4gICAgdG9wOiA2NzIwcHg7XHJcbmxlZnQ6IDgxMnB4O1xyXG53aWR0aDogMjBweDtcclxuaGVpZ2h0OiAyMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5yZWplY3RCdXR0b257XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogNzYycHg7XHJcbndpZHRoOiAxODNweDtcclxuaGVpZ2h0OiA0MXB4O1xyXG5ib3JkZXI6IDJweCBzb2xpZCAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4gIC5yZWplY3RsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5hcHByb3ZlQnV0dG9ue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDk2OXB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxubWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG5iYWNrZ3JvdW5kOiAjMjRDQ0E3IDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxub3BhY2l0eTogMTtcclxuYm9yZGVyLXJhZGl1czogMjRweDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG5cclxufVxyXG4uYXBwcm92ZUljb257XHJcbiAgICB0b3A6IDY3MTZweDtcclxubGVmdDogMTAwOXB4O1xyXG53aWR0aDogMjRweDtcclxuaGVpZ2h0OiAyNHB4O1xyXG5jb2xvcjogd2hpdGU7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVsYWJlbHtcclxuICAgIHRvcDogNjcxN3B4O1xyXG4gICAgbGVmdDogMTA0OXB4O1xyXG4gICAgd2lkdGg6IDYycHg7XHJcbiAgICBoZWlnaHQ6IDIycHg7XHJcbiAgICBcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBmb250OiBub3JtYWwgbm9ybWFsIG5vcm1hbCAxOHB4LzIycHggQ2FsaWJyaTtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICBwYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcblxyXG4uY2lyY2xlMXtcclxuICAgIHdpZHRoOjI1cHg7XHJcbiAgICBoZWlnaHQ6MjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6NTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDE5NywgMTM2KTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmNvbnRlbnQye1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6aW5oZXJpdDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIHRvcDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLmRlZmF1bHRJbWFnZXtcclxuICAgIHdpZHRoOiAxMjBweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDogLTEwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTljMjhmO1xyXG4gIH1cclxuICBcclxuICAuaW1hZ2VUZXh0e1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogM3JlbSAyLjZyZW07XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgfVxyXG5cclxuICAucmlnaHQtdGV4dHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNTBweDtcclxuICB9XHJcbiAgLmxpbmtDb2xvcntcclxuICAgIGNvbG9yOiM0QTU2RTI7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgXHJcbn1cclxuLm1hdENhcmRUaXRsZXtcclxuICAgIGZvbnQtc2l6ZTogMTZweDsgXHJcbiAgICBwYWRkaW5nLXRvcDoxJTtcclxufVxyXG4uY29udGludWVCdG57XHJcbiAgICB0b3A6IDY3MDVweDtcclxubGVmdDogNzYycHg7XHJcbndpZHRoOiAxNTBweDtcclxuaGVpZ2h0OiAzMHB4O1xyXG5ib3JkZXI6IDJweCBzb2xpZCBibHVlO1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG5cclxuLmNvbnRpbnVlbGFiZWx7XHJcbiAgICB0b3A6IDY3MThweDtcclxubGVmdDogODQycHg7XHJcbndpZHRoOiA0NXB4O1xyXG5oZWlnaHQ6IDIycHg7XHJcblxyXG50ZXh0LWFsaWduOiBsZWZ0O1xyXG5mb250OiBub3JtYWwgbm9ybWFsIG5vcm1hbCAxOHB4LzIycHggQ2FsaWJyaTtcclxubGV0dGVyLXNwYWNpbmc6IDBweDtcclxuY29sb3I6IGJsdWU7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuICBcclxuIl19 */"]
       });
       /*@__PURE__*/
 
@@ -76249,6 +77056,8 @@
             type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__["MatSnackBar"]
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]
+          }, {
+            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_18__["JwtAuthService"]
           }];
         }, {
           chart: [{

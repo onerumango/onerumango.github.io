@@ -2392,9 +2392,7 @@
               _this15.tabIndex = resp.index;
 
               if (sessionStorage.getItem('ClosingCheck') == null) {
-                _this15.tabIndex = 0;
-
-                _this15.ls.removeItem('corporateId');
+                _this15.tabIndex = 0; // this.ls.removeItem('corporateId')
 
                 _this15.assignValuesForTab2(_this15.tabIndex);
               } else {

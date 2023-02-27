@@ -1325,7 +1325,7 @@
           value: function getProfile() {
             var _this2 = this;
 
-            this.apiService.fetchTellerProfileInfo(this.currentUser.userId).subscribe(function (result) {
+            this.apiService.fetchTellerProfileInfo(this.currentUser.id).subscribe(function (result) {
               _this2.profileInfo = result;
             });
           }
@@ -2272,7 +2272,7 @@
           value: function language() {
             var _this8 = this;
 
-            this.apiService.fetchTellerProfileInfo(1).subscribe(function (result) {
+            this.apiService.fetchTellerProfileInfo(this.currentUser.userId).subscribe(function (result) {
               _this8.router.navigateByUrl('/settings/change-password');
             });
           }

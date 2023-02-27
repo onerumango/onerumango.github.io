@@ -1248,7 +1248,7 @@ class OnboardingCorporateMainComponent {
             this.tabIndex = resp.index;
             if (sessionStorage.getItem('ClosingCheck') == null) {
                 this.tabIndex = 0;
-                this.ls.removeItem('corporateId');
+                // this.ls.removeItem('corporateId')
                 this.assignValuesForTab2(this.tabIndex);
             }
             else {

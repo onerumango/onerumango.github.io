@@ -655,7 +655,7 @@ class ChangeEmailComponent {
         });
     }
     getProfile() {
-        this.apiService.fetchTellerProfileInfo(this.currentUser.userId).subscribe((result) => {
+        this.apiService.fetchTellerProfileInfo(this.currentUser.id).subscribe((result) => {
             this.profileInfo = result;
         });
     }
@@ -1174,7 +1174,7 @@ class SettingsComponent {
         });
     }
     language() {
-        this.apiService.fetchTellerProfileInfo(1).subscribe((result) => {
+        this.apiService.fetchTellerProfileInfo(this.currentUser.userId).subscribe((result) => {
             this.router.navigateByUrl('/settings/change-password');
         });
     }

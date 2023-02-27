@@ -197,67 +197,79 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "zHaW");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
       "iInd");
       /* harmony import */
 
 
-      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! app/shared/services/auth/jwt-auth.service */
       "nZzT");
       /* harmony import */
 
 
-      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! app/shared/services/local-store.service */
       "tZUg");
       /* harmony import */
 
 
-      var app_views_home_account_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var app_views_home_account_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! app/views/home/account.service */
       "kA6c");
       /* harmony import */
 
 
-      var _fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ../fingerprint/fingerprint.component */
-      "hxFr");
+      var app_views_others_cutomer_finger_print_cutomer_finger_print_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! app/views/others/cutomer-finger-print/cutomer-finger-print.component */
+      "DyWe");
       /* harmony import */
 
 
-      var ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var ngx_toastr__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ngx-toastr */
+      "EApP");
+      /* harmony import */
+
+
+      var ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ngx-perfect-scrollbar */
       "aLe/");
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "VDRc");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/material/form-field */
       "Q2Ze");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/input */
       "e6WT");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! @angular/material/button */
       "Dxy4");
       /* harmony import */
 
 
-      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @angular/material/divider */
       "BSbQ");
 
@@ -266,10 +278,12 @@
       };
 
       var SigninComponent = /*#__PURE__*/function () {
-        function SigninComponent(fb, accountService, ls, router, jwtService, dialog) {
+        function SigninComponent(fb, toastr, snack, accountService, ls, router, jwtService, dialog) {
           _classCallCheck(this, SigninComponent);
 
           this.fb = fb;
+          this.toastr = toastr;
+          this.snack = snack;
           this.accountService = accountService;
           this.ls = ls;
           this.router = router;
@@ -366,8 +380,79 @@
         }, {
           key: "openDialog",
           value: function openDialog() {
-            var dialogRef = this.dialog.open(_fingerprint_fingerprint_component__WEBPACK_IMPORTED_MODULE_7__["FingerprintComponent"]);
+            var _this2 = this;
+
+            var dialogRef = this.dialog.open(app_views_others_cutomer_finger_print_cutomer_finger_print_component__WEBPACK_IMPORTED_MODULE_8__["CutomerFingerPrintComponent"], {
+              width: '40%',
+              panelClass: 'paddingClass',
+              data: {
+                verificationType: 'signin'
+              }
+            });
             dialogRef.afterClosed().subscribe(function (result) {
+              if (result == 'success') {
+                _this2.jwtService.signin().subscribe(function (res) {
+                  console.log('res: ', res);
+                  localStorage.setItem('userName', res.user.userName);
+
+                  _this2.router.navigateByUrl('/others/Service');
+
+                  _this2.ls.removeItem('appEntryStage');
+
+                  _this2.ls.removeItem('ACC_DONE');
+
+                  _this2.ls.removeItem('ACC_OPEN_DONE');
+
+                  _this2.ls.removeItem('ACC_SERVICE_DONE');
+
+                  _this2.ls.removeItem('ACC_MANDATE_DONE');
+
+                  _this2.ls.removeItem('ACC_NOMINEE_DONE');
+
+                  _this2.ls.removeItem('limitEntryStage');
+
+                  _this2.ls.removeItem('LIMIT_SECURED_DONE');
+
+                  _this2.ls.removeItem('LIMIT_UNSECURED_DONE');
+
+                  _this2.ls.removeItem('LIMIT_FIN_DONE');
+
+                  _this2.ls.removeItem('enrichmentStage');
+
+                  _this2.ls.removeItem('ENRICHMENT_CHARGES_DONE');
+
+                  _this2.ls.removeItem('ENRICHMENT_INTEREST_DONE');
+
+                  _this2.ls.removeItem('assessmentStage');
+
+                  _this2.ls.removeItem('ASSESSMENT_QA_DONE');
+
+                  _this2.ls.removeItem('ASSESSMENT_REPORT_DONE');
+
+                  _this2.ls.removeItem('fundingStage');
+
+                  _this2.ls.removeItem('FUNDING_INI_DONE');
+
+                  _this2.ls.removeItem('approvalStage');
+
+                  _this2.ls.removeItem('APPROVAL_DETAILS_DONE');
+
+                  _this2.ls.removeItem('accountId');
+
+                  _this2.ls.removeItem('eSignStage');
+
+                  _this2.ls.removeItem('PRODUCT_CUSTOMER_ID');
+
+                  _this2.ls.removeItem('cId');
+
+                  _this2.accountService.refresh.next();
+                }, function (err) {
+                  return console.error("Err", err);
+                });
+              } else {
+                return;
+              }
+
               console.log("Dialog result: ".concat(result));
             });
           }
@@ -377,7 +462,7 @@
       }();
 
       SigninComponent.ɵfac = function SigninComponent_Factory(t) {
-        return new (t || SigninComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_views_home_account_service__WEBPACK_IMPORTED_MODULE_6__["AccountService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__["JwtAuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]));
+        return new (t || SigninComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_views_home_account_service__WEBPACK_IMPORTED_MODULE_7__["AccountService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_6__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_5__["JwtAuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]));
       };
 
       SigninComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -489,7 +574,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.signinForm);
           }
         },
-        directives: [ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_8__["PerfectScrollbarDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutAlignDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButton"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__["MatDivider"]],
+        directives: [ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_11__["DefaultLayoutDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_11__["DefaultLayoutAlignDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_13__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_button__WEBPACK_IMPORTED_MODULE_14__["MatButton"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__["MatDivider"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaWduaW4uY29tcG9uZW50LnNjc3MifQ== */"]
       });
       /*@__PURE__*/
@@ -506,13 +591,17 @@
           return [{
             type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
           }, {
-            type: app_views_home_account_service__WEBPACK_IMPORTED_MODULE_6__["AccountService"]
+            type: ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrService"]
           }, {
-            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]
           }, {
-            type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+            type: app_views_home_account_service__WEBPACK_IMPORTED_MODULE_7__["AccountService"]
           }, {
-            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_4__["JwtAuthService"]
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_6__["LocalStoreService"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+          }, {
+            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_5__["JwtAuthService"]
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
           }];
@@ -1117,6 +1206,18 @@
                   this.router.navigateByUrl("/tasks/card-account-task-summary".concat(this.searchTerm ? "?searchTerm=".concat(this.searchTerm) : ''));
                   break;
                 }
+
+              case "INDIVIDUALONBOARDING":
+                {
+                  this.router.navigateByUrl('/others/newCustomerOnboarding');
+                  break;
+                }
+
+              case "BRANCHKYC":
+                {
+                  this.router.navigateByUrl('/others/kyc');
+                  break;
+                }
             }
           }
         }]);
@@ -1320,25 +1421,25 @@
         }, {
           key: "captureFingerPrintHttps",
           value: function captureFingerPrintHttps() {
-            var _this2 = this;
+            var _this3 = this;
 
             console.log("in component");
             this.fpCaptureService.CallingSGIFPCapture().subscribe(function (capturedData) {
               console.log('capturedData:: ', capturedData);
 
               if (capturedData.ErrorCode == 0) {
-                _this2.snack.open("Finding ,is registed customer", 'OK', {
+                _this3.snack.open("Finding ,is registed customer", 'OK', {
                   duration: 1000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this2.getFpDataForMatchOnPageLoad(capturedData.TemplateBase64);
+                _this3.getFpDataForMatchOnPageLoad(capturedData.TemplateBase64);
               } else {
-                _this2.getError(capturedData.ErrorCode);
+                _this3.getError(capturedData.ErrorCode);
               }
             }, function (error) {
-              _this2.snack.open("".concat(error), 'OK', {
+              _this3.snack.open("".concat(error), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -1348,62 +1449,76 @@
         }, {
           key: "getFpDataForMatchOnPageLoad",
           value: function getFpDataForMatchOnPageLoad(templateBase64) {
-            var _this3 = this;
+            var _this4 = this;
 
+            var machingScore;
             console.log('TemplateBase64 :: ', templateBase64);
             this.fpCaptureService.getCustInfoByFp(0, 100, 4).subscribe(function (resp) {
-              console.log('resp:: ', resp); // this.totalItems=resp.totalItems;
-              // this.totalPages=resp.totalPages;
+              console.log('resp:: ', resp);
 
-              if (resp.totalPages - 1 == 0) {
-                Object.keys(resp.data).forEach(function (key) {
-                  _this3.matchFpFromUi(templateBase64, resp.data[key]);
-                });
-              } else {
-                for (var i = 0; i < resp.totalPages; i++) {
-                  if (i == 0) {
-                    Object.keys(resp.data).forEach(function (key) {
-                      _this3.matchFpFromUi(templateBase64, resp.data[key]);
-                    });
-                  } else {// to-da: need to implement logic when more data is present
-                  }
-                }
-              }
+              _this4.matchFpFromUi(templateBase64, resp.data[0]); // this.totalItems=resp.totalItems;
+              // this.totalPages=resp.totalPages;
+              // if ((resp.totalPages - 1) == 0) {
+              //   Object.keys(resp.data).forEach(key => {
+              //     this.matchFpFromUi(templateBase64, resp.data[key])
+              //   });
+              // } else {
+              //   for (let i = 0; i < resp.totalPages; i++) {
+              //     if (i == 0) {
+              //       Object.keys(resp.data).forEach(key => {
+              //         this.matchFpFromUi(templateBase64, resp.data[key])
+              //       });
+              //     } else {
+              //       // to-da: need to implement logic when more data is present
+              //     }
+              //   }
+              // }
+
             });
           }
         }, {
           key: "matchFpFromUi",
           value: function matchFpFromUi(template1, data) {
-            var _this4 = this;
+            var _this5 = this;
 
             this.fpCaptureService.CallingSGIFPMatch(template1, data.fpTemplateBase64).subscribe(function (fpResp) {
               console.log('fpResp : ', fpResp);
 
-              if (fpResp.MatchingScore >= 100) {
-                var custId = data.customerId;
-
-                _this4.router.navigateByUrl('/others/Service');
-
-                _this4.ls.setItem('customer_id', custId);
-
-                _this4.cdr.markForCheck();
-
-                _this4.cdr.detectChanges();
-
-                _this4.dialogRef.close({
-                  message: 'Confirm',
-                  custId: custId
-                });
-
-                _this4.snack.open("User found : ".concat(data.customerId), 'OK', {
+              if (fpResp.MatchingScore >= 0 && fpResp.ErrorCode === 0) {
+                _this5.snack.open("Finger Print Authentication Completed Successfully", 'OK', {
                   duration: 1000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
+                var custId = data.customerId;
+
+                _this5.router.navigateByUrl('/others/Service');
+
+                _this5.ls.setItem('customer_id', custId);
+
+                _this5.cdr.markForCheck();
+
+                _this5.cdr.detectChanges();
+
+                _this5.dialogRef.close({
+                  message: 'Confirm',
+                  custId: custId
+                });
+
+                return;
+              } else {
+                _this5.snack.open("Finger Print Authentication Failed", 'error', {
+                  duration: 1000,
+                  verticalPosition: 'top',
+                  horizontalPosition: 'right'
+                });
+
+                _this5.getError(fpResp.ErrorCode);
+
                 return;
               }
-            });
+            }, function (err) {});
           }
           /* @method : to get error code of finger print device */
 
@@ -1418,7 +1533,7 @@
         }, {
           key: "matchFingerPrint",
           value: function matchFingerPrint(capturedData) {
-            var _this5 = this;
+            var _this6 = this;
 
             this.fpCaptureService.matchCapturedFp(4, capturedData).subscribe(function (matchFp) {
               console.log('matchFp:: ', matchFp);
@@ -1426,15 +1541,15 @@
               if (matchFp.customerId) {
                 var data = matchFp.customerId;
 
-                _this5.router.navigateByUrl('/others/Service');
+                _this6.router.navigateByUrl('/others/Service');
 
-                _this5.ls.setItem('customer_id', matchFp.customerId);
+                _this6.ls.setItem('customer_id', matchFp.customerId);
 
-                _this5.cdr.markForCheck();
+                _this6.cdr.markForCheck();
 
-                _this5.cdr.detectChanges();
+                _this6.cdr.detectChanges();
 
-                _this5.dialogRef.close({
+                _this6.dialogRef.close({
                   message: 'Confirm',
                   data: data
                 });
@@ -1446,15 +1561,15 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
-            var _this6 = this;
+            var _this7 = this;
 
             var screen = 'Kisok Authenticate';
             this.fpCaptureService.saveBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (data) {
               console.log("after save ", data);
 
-              _this6.cdr.markForCheck();
+              _this7.cdr.markForCheck();
 
-              _this6.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
+              _this7.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'

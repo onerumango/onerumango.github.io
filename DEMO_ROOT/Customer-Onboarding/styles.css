@@ -3458,7 +3458,7 @@ b {
 }
 .header-topnav {
   position: fixed;
-  background: #4A56E2;
+  background: transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;
   margin: 0;
   width: 100%;
   top: 0;
@@ -7607,7 +7607,6 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 }
 .egret-blue .mat-input-element {
   box-shadow: 0 0 0 1000px white inset !important;
-  margin-bottom: 5px !important;
 }
 .egret-blue .onboarding-dark-background {
   background-color: #F1F1F4;
@@ -17916,6 +17915,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+.paddingClass {
+  padding: 20px;
+}
 /*---- Session (Sign in, sign up, forgot, lockscreen) -----*/
 .page-wrap {
   display: flex;
@@ -20907,6 +20909,7 @@ body{
 .Backbtn {
       margin:12px 0px 12px 0px;
       width:150px;
+      background-color: rgb(66,106,245) !important;
       color:white;
       border-radius: 55px !important;
       left:10px;
