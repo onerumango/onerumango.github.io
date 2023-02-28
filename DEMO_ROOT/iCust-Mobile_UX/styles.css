@@ -569,13 +569,6 @@ strong {
 }
 img {
   max-width: 100%;
-  border: 0;
-}
-svg:not(:root) {
-  overflow: hidden;
-}
-figure {
-  margin: 1em 40px;
 }
 hr {
   height: 1px;
@@ -671,11 +664,6 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0;
-}
-input[type=checkbox],
-input[type=radio] {
-  padding: 0;
-  box-sizing: border-box;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -1954,15 +1942,15 @@ sub {
   align-items: baseline !important;
 }
 /**
- * Swiper 8.4.5
+ * Swiper 8.4.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
- * Copyright 2014-2022 Vladimir Kharlampidi
+ * Copyright 2014-2023 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: November 21, 2022
+ * Released on: January 30, 2023
  */
 @font-face {
   font-family: "swiper-icons";
@@ -2110,6 +2098,7 @@ sub {
 }
 .swiper-centered > .swiper-wrapper > .swiper-slide {
   scroll-snap-align: center center;
+  scroll-snap-stop: always;
 }
 :root {
   /*
@@ -2295,6 +2284,41 @@ button.swiper-pagination-bullet {
   --ion-color-contrast-rgb: var(--ion-color-bank-contrast-rgb);
   --ion-color-shade: var(--ion-color-bank-shade);
   --ion-color-tint: var(--ion-color-bank-tint);
+}
+.mat-select-panel .mat-option.loan-text {
+  line-height: 1.5em !important;
+  height: 60px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #102245 !important;
+}
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: #E9ECF5 !important;
+}
+.mat-select-panel .mat-option.mat-active {
+  color: #004C97 !important;
+}
+.mat-option-text > span.sub-text {
+  color: #B1B1B1 !important;
+  opacity: 100% !important;
+}
+.mat-select-panel-wrap {
+  margin-left: 9px;
+  margin-right: 9px;
+  z-index: -1;
+}
+.mat-form-field-label {
+  font-size: 12px;
+  color: #102245;
+  opacity: 100%;
+}
+.mat-select-panel {
+  z-index: -1;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  margin-top: -12px;
+  position: relative;
 }
 .app-font {
   font-family: "Montserrat" !important;
