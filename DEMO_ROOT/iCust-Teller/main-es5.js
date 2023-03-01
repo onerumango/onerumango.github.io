@@ -2867,7 +2867,8 @@
 
               if (value.length == 10) {
                 this.getCustomerData(this.searchKey, value);
-              }
+              } // 
+
             } else {
               console.log('else');
 
@@ -2924,6 +2925,30 @@
                     });
                   } else if (_this5.searchKey == 'accountId') {
                     _this5.snack.open("The Account Id is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'phoneNumber') {
+                    _this5.snack.open("Mobile Number is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'customerId') {
+                    _this5.snack.open("Customer Id is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'primaryEmailAdress') {
+                    _this5.snack.open("Email Id is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'customerName') {
+                    _this5.snack.open("Name is not found :", _this5.searchTerm, {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'right'
@@ -12455,13 +12480,13 @@
         }, {
           key: "getReport",
           value: function getReport(report, customerId, fromDate, endDate, branch) {
-            // console.log("reportid,date",reportid,date)
+            var bip;
+            if (report == 'Uc_206') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&txnDate=", '2020-01-01');else if (report == 'Uc_307') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&branch=").concat(branch, "&refNo=", 61757);else if (report == 'Uc_170') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&AccountNo=", 2345);else if (report == 'Uc_185') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate);else if (report == 'TransactionDetails1') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate); // console.log("reportid,date",reportid,date)
             //console.log(data)
             // let reportid = 'HRRATTD';
             // let date = '2022-08-23';
             // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
-            var bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate, "&branch=").concat(branch);
-            console.log("in service", bip);
+
             window.open(bip);
             /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));
              http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${HRRATTD}/${2022-08-23}

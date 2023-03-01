@@ -1510,6 +1510,7 @@ class SearchComponent {
             if (value.length == 10) {
                 this.getCustomerData(this.searchKey, value);
             }
+            // 
         }
         else {
             console.log('else');
@@ -1560,6 +1561,34 @@ class SearchComponent {
                     }
                     else if (this.searchKey == 'accountId') {
                         this.snack.open("The Account Id is not found :", this.searchTerm, {
+                            duration: 4000,
+                            verticalPosition: 'top',
+                            horizontalPosition: 'right'
+                        });
+                    }
+                    else if (this.searchKey == 'phoneNumber') {
+                        this.snack.open("Mobile Number is not found :", this.searchTerm, {
+                            duration: 4000,
+                            verticalPosition: 'top',
+                            horizontalPosition: 'right'
+                        });
+                    }
+                    else if (this.searchKey == 'customerId') {
+                        this.snack.open("Customer Id is not found :", this.searchTerm, {
+                            duration: 4000,
+                            verticalPosition: 'top',
+                            horizontalPosition: 'right'
+                        });
+                    }
+                    else if (this.searchKey == 'primaryEmailAdress') {
+                        this.snack.open("Email Id is not found :", this.searchTerm, {
+                            duration: 4000,
+                            verticalPosition: 'top',
+                            horizontalPosition: 'right'
+                        });
+                    }
+                    else if (this.searchKey == 'customerName') {
+                        this.snack.open("Name is not found :", this.searchTerm, {
                             duration: 4000,
                             verticalPosition: 'top',
                             horizontalPosition: 'right'
@@ -7396,13 +7425,22 @@ class ApiService {
         return this.http.post(`${API_URL}/tellerToken/transferToken?loggedInTellerId=${loggedInTellerId}`, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     getReport(report, customerId, fromDate, endDate, branch) {
+        var bip;
+        if (report == 'Uc_206')
+            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&tellerId=${7}&txnDate=${'2020-01-01'}`;
+        else if (report == 'Uc_307')
+            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&branch=${branch}&refNo=${61757}`;
+        else if (report == 'Uc_170')
+            bip = `http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=${report}&AccountNo=${2345}`;
+        else if (report == 'Uc_185')
+            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}`;
+        else if (report == 'TransactionDetails1')
+            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&tellerId=${7}&fromDate=${fromDate}&toDate=${endDate}`;
         // console.log("reportid,date",reportid,date)
         //console.log(data)
         // let reportid = 'HRRATTD';
         // let date = '2022-08-23';
         // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
-        var bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}&branch=${branch}`;
-        console.log("in service", bip);
         window.open(bip);
         /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));
          http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${HRRATTD}/${2022-08-23}
