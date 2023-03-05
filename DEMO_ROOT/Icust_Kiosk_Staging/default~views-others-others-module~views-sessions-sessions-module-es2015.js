@@ -49918,6 +49918,12 @@ class AppointmentIdComponent {
                     else if (resp.data.trnType == "Forex Transaction") {
                         this.router.navigateByUrl("/others/forex-service");
                     }
+                    else if (resp.data.trnType == "Loan Disbursement") {
+                        this.router.navigateByUrl("/others/loan-disburshment");
+                    }
+                    else if (resp.data.trnType == "Loan Repayment") {
+                        this.router.navigateByUrl("/others/loan-repayment");
+                    }
                 }
             }
         }, (err) => {

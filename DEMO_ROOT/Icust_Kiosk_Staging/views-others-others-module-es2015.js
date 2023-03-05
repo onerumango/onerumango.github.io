@@ -139,6 +139,59 @@ CoreFormModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInj
 
 /***/ }),
 
+/***/ "/EC3":
+/*!*************************************************!*\
+  !*** ./src/app/directives/decimal.directive.ts ***!
+  \*************************************************/
+/*! exports provided: TwoDigitDecimaNumberDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwoDigitDecimaNumberDirective", function() { return TwoDigitDecimaNumberDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class TwoDigitDecimaNumberDirective {
+    constructor(el) {
+        this.el = el;
+        // Allow decimal numbers and negative values
+        this.regex = new RegExp(/^\d*\.?\d{0,2}$/g);
+        // Allow key codes for special events. Reflect :
+        // Backspace, tab, end, home
+        this.specialKeys = ['Backspace', 'Tab', 'End', 'Home', 'ArrowLeft', 'ArrowRight', 'Del', 'Delete'];
+    }
+    onKeyDown(event) {
+        console.log(this.el.nativeElement.value);
+        // Allow Backspace, tab, end, and home keys
+        if (this.specialKeys.indexOf(event.key) !== -1) {
+            return;
+        }
+        let current = this.el.nativeElement.value;
+        const position = this.el.nativeElement.selectionStart;
+        const next = [current.slice(0, position), event.key == 'Decimal' ? '.' : event.key, current.slice(position)].join('');
+        if (next && !String(next).match(this.regex)) {
+            event.preventDefault();
+        }
+    }
+}
+TwoDigitDecimaNumberDirective.ɵfac = function TwoDigitDecimaNumberDirective_Factory(t) { return new (t || TwoDigitDecimaNumberDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+TwoDigitDecimaNumberDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: TwoDigitDecimaNumberDirective, selectors: [["", "appTwoDigitDecimaNumber", ""]], hostBindings: function TwoDigitDecimaNumberDirective_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function TwoDigitDecimaNumberDirective_keydown_HostBindingHandler($event) { return ctx.onKeyDown($event); });
+    } } });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TwoDigitDecimaNumberDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                selector: '[appTwoDigitDecimaNumber]'
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { onKeyDown: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['keydown', ['$event']]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "/MuK":
 /*!*****************************************************************************!*\
   !*** ./src/app/views/others/newchequedeposit/newchequedeposit.component.ts ***!
@@ -5255,7 +5308,7 @@ class CheqDComponent {
     }
 }
 CheqDComponent.ɵfac = function CheqDComponent_Factory(t) { return new (t || CheqDComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
-CheqDComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CheqDComponent, selectors: [["app-cheq-d"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "0.9%", "height", "535px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["formControlName", "account"], ["formControlName", "transaction"], [2, "margin-top", "-1%", "margin-left", "-0.3%"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"]], template: function CheqDComponent_Template(rf, ctx) { if (rf & 1) {
+CheqDComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CheqDComponent, selectors: [["app-cheq-d"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%"], [3, "title", "back"], ["fxLayout", "row"], ["fxFlex", "79.5%", 2, "margin-top", "0.9%", "height", "535px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1", "margin-left", "7.5%"], ["formControlName", "account"], ["formControlName", "transaction"], [2, "margin-top", "-1%", "margin-left", "-0.3%"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"]], template: function CheqDComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CheqDComponent_form_0_Template, 9, 4, "form", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.cheqDepositForm);
@@ -5334,15 +5387,15 @@ function PaymentInformationComponent_mat_radio_button_10_Template(rf, ctx) { if 
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const mode_r18 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", mode_r18.mode);
+    const mode_r19 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", mode_r19.mode);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", mode_r18.mode, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", mode_r19.mode, " ");
 } }
 function PaymentInformationComponent_mat_form_field_14_mat_option_6_Template(rf, ctx) { if (rf & 1) {
-    const _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_14_mat_option_6_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r23); const country_r20 = ctx.$implicit; const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r22.onCountryChange(country_r20); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_14_mat_option_6_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r24); const country_r21 = ctx.$implicit; const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r23.onCountryChange(country_r21); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3);
@@ -5351,13 +5404,13 @@ function PaymentInformationComponent_mat_form_field_14_mat_option_6_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const country_r20 = ctx.$implicit;
-    const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r20.currencyCode);
+    const country_r21 = ctx.$implicit;
+    const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r21.currencyCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r20.currencyCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r21.currencyCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r19.addCurrencyImage(country_r20.currencyCode), " alignImage");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r20.addCurrencyImage(country_r21.currencyCode), " alignImage");
 } }
 function PaymentInformationComponent_mat_form_field_14_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 24);
@@ -5379,9 +5432,9 @@ function PaymentInformationComponent_mat_form_field_14_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r1.countryValues);
 } }
 function PaymentInformationComponent_mat_form_field_15_mat_option_6_Template(rf, ctx) { if (rf & 1) {
-    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    const _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_15_mat_option_6_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r28); const country_r25 = ctx.$implicit; const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r27.onCountryChange(country_r25); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_15_mat_option_6_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29); const country_r26 = ctx.$implicit; const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r28.onCountryChange(country_r26); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3);
@@ -5390,13 +5443,13 @@ function PaymentInformationComponent_mat_form_field_15_mat_option_6_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const country_r25 = ctx.$implicit;
-    const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r25.currencyCode);
+    const country_r26 = ctx.$implicit;
+    const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r26.currencyCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r25.currencyCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r26.currencyCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r24.addCurrencyImage(country_r25.currencyCode), " alignImage");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r25.addCurrencyImage(country_r26.currencyCode), " alignImage");
 } }
 function PaymentInformationComponent_mat_form_field_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 31);
@@ -5417,30 +5470,53 @@ function PaymentInformationComponent_mat_form_field_15_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r2.countryValues);
 } }
+function PaymentInformationComponent_mat_form_field_16_mat_option_6_Template(rf, ctx) { if (rf & 1) {
+    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_16_mat_option_6_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r34); const country_r31 = ctx.$implicit; const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r33.onCountryChange(country_r31); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const country_r31 = ctx.$implicit;
+    const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r31.currencyCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r31.currencyCode);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r30.addCurrencyImage(country_r31.currencyCode), " alignImage");
+} }
 function PaymentInformationComponent_mat_form_field_16_Template(rf, ctx) { if (rf & 1) {
-    const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Transaction currency*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "mat-select", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, PaymentInformationComponent_mat_form_field_16_mat_option_6_Template, 5, 5, "mat-option", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag ", ctx_r3.currencyImage, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r3.countryValues);
+} }
+function PaymentInformationComponent_mat_form_field_17_Template(rf, ctx) { if (rf & 1) {
+    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Repayment amount*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_16_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30); const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r29.OnInput($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r3.transAmt, "2."));
-} }
-function PaymentInformationComponent_mat_form_field_17_Template(rf, ctx) { if (rf & 1) {
-    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Disburshment amount*");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_17_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r32); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r31.OnInput($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_17_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r36); const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r35.OnInput($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -5450,6 +5526,22 @@ function PaymentInformationComponent_mat_form_field_17_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r4.transAmt, "2."));
 } }
 function PaymentInformationComponent_mat_form_field_18_Template(rf, ctx) { if (rf & 1) {
+    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Disbursement amount*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_18_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r38); const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r37.OnInput($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r5.transAmt, "2."));
+} }
+function PaymentInformationComponent_mat_form_field_19_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Cheque number*");
@@ -5457,7 +5549,7 @@ function PaymentInformationComponent_mat_form_field_18_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function PaymentInformationComponent_mat_form_field_19_mat_option_7_Template(rf, ctx) { if (rf & 1) {
+function PaymentInformationComponent_mat_form_field_20_mat_option_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-icon", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, " trip_origin ");
@@ -5465,34 +5557,34 @@ function PaymentInformationComponent_mat_form_field_19_mat_option_7_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const id_r34 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r34.value);
+    const id_r40 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r40.value);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r34.value, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r40.value, " ");
 } }
-function PaymentInformationComponent_mat_form_field_19_Template(rf, ctx) { if (rf & 1) {
-    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+function PaymentInformationComponent_mat_form_field_20_Template(rf, ctx) { if (rf & 1) {
+    const _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Cheque Type");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-select", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function PaymentInformationComponent_mat_form_field_19_Template_mat_select_valueChange_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r36); const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r35.Bearer = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function PaymentInformationComponent_mat_form_field_20_Template_mat_select_valueChange_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r42); const ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r41.Bearer = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "mat-select-trigger");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "mat-icon", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Bearer");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, PaymentInformationComponent_mat_form_field_19_mat_option_7_Template, 4, 2, "mat-option", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, PaymentInformationComponent_mat_form_field_20_mat_option_7_Template, 4, 2, "mat-option", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r6.Bearer);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r7.Bearer);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r6.ChequeType);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r7.ChequeType);
 } }
-function PaymentInformationComponent_mat_form_field_20_Template(rf, ctx) { if (rf & 1) {
+function PaymentInformationComponent_mat_form_field_21_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Name Of The Cheque");
@@ -5500,30 +5592,14 @@ function PaymentInformationComponent_mat_form_field_20_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function PaymentInformationComponent_mat_form_field_21_Template(rf, ctx) { if (rf & 1) {
-    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+function PaymentInformationComponent_mat_form_field_22_Template(rf, ctx) { if (rf & 1) {
+    const _r44 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Repayment amount*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_21_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r38); const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r37.OnInput($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r8.transAmt, "2."));
-} }
-function PaymentInformationComponent_mat_form_field_22_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Disburshment amount*");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_22_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r40); const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r39.OnInput($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_22_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r44); const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r43.OnInput($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -5532,7 +5608,23 @@ function PaymentInformationComponent_mat_form_field_22_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r9.transAmt, "2."));
 } }
-function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_mat_option_10_Template(rf, ctx) { if (rf & 1) {
+function PaymentInformationComponent_mat_form_field_23_Template(rf, ctx) { if (rf & 1) {
+    const _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Disbursement amount*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_23_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r46); const ctx_r45 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r45.OnInput($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r10.transAmt, "2."));
+} }
+function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_mat_option_10_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-icon", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, " trip_origin ");
@@ -5540,20 +5632,20 @@ function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_mat_opti
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const id_r46 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r46.accountId);
+    const id_r52 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r52.accountId);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r46.accountId, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r52.accountId, "");
 } }
-function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_button_11_Template(rf, ctx) { if (rf & 1) {
-    const _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_button_11_Template(rf, ctx) { if (rf & 1) {
+    const _r54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "button", 56);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_button_11_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r48); const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4); return ctx_r47.addAccount(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_button_11_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r54); const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4); return ctx_r53.addAccount(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Add Account ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
-    const _r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
+    const _r56 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 51);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Number*");
@@ -5563,30 +5655,30 @@ function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_Template
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-select", 54);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_Template_mat_select_selectionChange_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r50); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3); return ctx_r49.fetchByAccountNum($event.value); })("valueChange", function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_Template_mat_select_valueChange_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r50); const ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3); return ctx_r51.selected2 = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template_mat_select_selectionChange_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r56); const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3); return ctx_r55.fetchByAccountNum($event.value); })("valueChange", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template_mat_select_valueChange_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r56); const ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3); return ctx_r57.selected2 = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "mat-select-trigger");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](8, "mat-icon", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_mat_option_10_Template, 4, 2, "mat-option", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_mat_option_10_Template, 4, 2, "mat-option", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_button_11_Template, 2, 0, "button", 55);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_button_11_Template, 2, 0, "button", 55);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+    const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r42.paymentForm.get("accountCurrency").value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r48.paymentForm.get("accountCurrency").value);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r42.selected2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r48.selected2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r42.selected2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r48.selected2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r42.accountList);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r48.accountList);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r42.loanType == "loanDisburshment");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r48.loanType == "loanDisburshment");
 } }
-function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_2_Template(rf, ctx) { if (rf & 1) {
+function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 51);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Number*");
@@ -5599,25 +5691,25 @@ function PaymentInformationComponent_mat_card_23_div_1_mat_form_field_2_Template
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+    const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r43.paymentForm.get("accountCurrency").value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r49.paymentForm.get("accountCurrency").value);
 } }
-function PaymentInformationComponent_mat_card_23_div_1_Template(rf, ctx) { if (rf & 1) {
+function PaymentInformationComponent_mat_card_24_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 49);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, PaymentInformationComponent_mat_card_23_div_1_mat_form_field_1_Template, 12, 5, "mat-form-field", 50);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, PaymentInformationComponent_mat_card_23_div_1_mat_form_field_2_Template, 7, 1, "mat-form-field", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template, 12, 5, "mat-form-field", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, PaymentInformationComponent_mat_card_24_div_1_mat_form_field_2_Template, 7, 1, "mat-form-field", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r41.flag1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r47.flag1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r41.flag1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r47.flag1);
 } }
-function PaymentInformationComponent_mat_card_23_Template(rf, ctx) { if (rf & 1) {
+function PaymentInformationComponent_mat_card_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-card", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, PaymentInformationComponent_mat_card_23_div_1_Template, 3, 2, "div", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, PaymentInformationComponent_mat_card_24_div_1_Template, 3, 2, "div", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 45);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 46);
@@ -5654,104 +5746,122 @@ function PaymentInformationComponent_mat_card_23_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r10.showAccountNum);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r11.showAccountNum);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"](" ", ctx_r10.curr, "", ctx_r10.paymentForm.get("accountBalance").value, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"](" ", ctx_r11.curr, "", ctx_r11.paymentForm.get("accountBalance").value, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r10.paymentForm.get("holderName").value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r11.paymentForm.get("holderName").value);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", ctx_r10.paymentForm.get("accountBranch").value, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", ctx_r11.paymentForm.get("accountBranch").value, " ");
 } }
-function PaymentInformationComponent_div_24_mat_form_field_9_Template(rf, ctx) { if (rf & 1) {
-    const _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 59);
+function PaymentInformationComponent_div_25_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 60);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function PaymentInformationComponent_div_25_mat_form_field_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 61);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Bank/Branch");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 62);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function PaymentInformationComponent_div_25_mat_form_field_3_Template(rf, ctx) { if (rf & 1) {
+    const _r64 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 61);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Repayment amount");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 62);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_div_24_mat_form_field_9_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r55); const ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r54.OnInput($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r52.transAmt, "2."));
-} }
-function PaymentInformationComponent_div_24_mat_form_field_10_Template(rf, ctx) { if (rf & 1) {
-    const _r57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Disburshment amount");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_div_24_mat_form_field_10_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r57); const ctx_r56 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r56.OnInput($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_div_25_mat_form_field_3_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r64); const ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r63.OnInput($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    const ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r53.transAmt, "2."));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r60.transAmt, "2."));
 } }
-function PaymentInformationComponent_div_24_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Account number");
+function PaymentInformationComponent_div_25_mat_form_field_4_Template(rf, ctx) { if (rf & 1) {
+    const _r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 64);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Loan Disbursement amount");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 65);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_div_25_mat_form_field_4_Template_input_keyup_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r66); const ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r65.OnInput($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "mat-form-field", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Account Bank/Branch");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](8, "input", 60);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](9, PaymentInformationComponent_div_24_mat_form_field_9_Template, 5, 4, "mat-form-field", 61);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, PaymentInformationComponent_div_24_mat_form_field_10_Template, 5, 4, "mat-form-field", 61);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r11.paymentForm.get("rePaymentMode").value == "cheque" && ctx_r11.titleVal == "Loan Repayment");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r11.paymentForm.get("rePaymentMode").value == "cheque" && ctx_r11.titleVal == "Loan Disburshment");
+    const ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r61.transAmt, "2."));
 } }
-function PaymentInformationComponent_p_26_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 65);
+function PaymentInformationComponent_div_25_p_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 67);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Negotiated Rate");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 68);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 67);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 69);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Exchange Rate :");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function PaymentInformationComponent_div_25_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, PaymentInformationComponent_div_25_mat_form_field_1_Template, 4, 0, "mat-form-field", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, PaymentInformationComponent_div_25_mat_form_field_2_Template, 4, 0, "mat-form-field", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, PaymentInformationComponent_div_25_mat_form_field_3_Template, 5, 4, "mat-form-field", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, PaymentInformationComponent_div_25_mat_form_field_4_Template, 5, 4, "mat-form-field", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, PaymentInformationComponent_div_25_p_5_Template, 7, 0, "p", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r12.titleVal == "Repayment");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r12.titleVal == "Repayment");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r12.paymentForm.get("rePaymentMode").value == "cheque" && ctx_r12.titleVal == "Repayment");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r12.paymentForm.get("rePaymentMode").value == "cheque" && ctx_r12.titleVal == "Disbursement");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", (ctx_r12.paymentForm.get("rePaymentMode").value == "cash" || ctx_r12.paymentForm.get("rePaymentMode").value == "cheque") && ctx_r12.titleVal == "Disbursement" && ctx_r12.accountCurrency != ctx_r12.paymentForm.get("transactionCurrency").value);
 } }
 function PaymentInformationComponent_p_27_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 68);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 67);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Negotiated Rate");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 68);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 67);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 69);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Exchange Rate :");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function PaymentInformationComponent_mat_form_field_28_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 70);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Charge amount");
+function PaymentInformationComponent_p_28_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 70);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Negotiated Rate");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 68);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Exchange Rate :");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
 function PaymentInformationComponent_mat_form_field_29_Template(rf, ctx) { if (rf & 1) {
@@ -5759,13 +5869,13 @@ function PaymentInformationComponent_mat_form_field_29_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Charge amount");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 73);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
 function PaymentInformationComponent_mat_form_field_30_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 70);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 74);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Transaction amount");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Charge amount");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 73);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -5775,7 +5885,15 @@ function PaymentInformationComponent_mat_form_field_31_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Transaction amount");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 73);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function PaymentInformationComponent_mat_form_field_32_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 74);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Transaction amount");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 75);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["registerLocaleData"])(_angular_common_locales_en_IN__WEBPACK_IMPORTED_MODULE_6___default.a);
@@ -5796,6 +5914,7 @@ class PaymentInformationComponent {
         this.entityCode = 'ENTCD';
         this.bankCode = 'BNKC';
         this.tokenBranch = '1234';
+        this.custAccountData = [];
         this.accounttypeArray = [];
         this.idList = [];
         this.enableContinue = true;
@@ -5843,6 +5962,7 @@ class PaymentInformationComponent {
         this.phoneNumber = localStorage.getItem('phonenumFromLogin');
         this.appointmentId = localStorage.getItem('TransactionType');
         this.transBranch = localStorage.getItem('TRANSACTIONBRANCH');
+        this.module = this.titleVal;
         this.paymentForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             rePaymentMode: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
             transactionCurrency: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
@@ -5864,10 +5984,17 @@ class PaymentInformationComponent {
         console.log(this.paymentForm);
         this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
         this.dataService.getloanRepaymentData.subscribe(payment => {
-            console.log(Object.keys(payment).length === 0, payment.constructor === Object);
-            if (Object.keys(payment).length != 0 && payment.constructor === Object) {
+            // console.log(Object.keys(payment).length === 0,payment.constructor === Object)
+            // if(Object.keys(payment).length != 0  && payment.constructor === Object){
+            if (payment) {
                 this.loanRepaymentFullData = payment;
-                console.log(this.loanRepaymentFullData);
+            }
+            if (this.loanRepaymentFullData.appointmentId) {
+                this.setAppointmentIdData(this.loanRepaymentFullData);
+            }
+            console.log(this.loanRepaymentFullData);
+            if (this.custValidation == 'New Customer' || this.custNameFromLogin != null) {
+                this.setWalkinCustomerData(this.loanRepaymentFullData);
             }
         });
         this.dataService.getloanFormdata.subscribe(payment => {
@@ -5895,11 +6022,7 @@ class PaymentInformationComponent {
             this.hideAccNum = false;
             this.showAccountNum = false;
             this.showAccoutType = false;
-        }
-        if (this.appointmentId) {
-            if (this.appointmentId.data.appointmentId) {
-                // this.cashWithdrawlData();
-            }
+            this.paymentForm.controls.rePaymentMode.setValue('cash');
         }
         if (this.phoneNumber &&
             this.custNameFromLogin == null &&
@@ -5909,7 +6032,6 @@ class PaymentInformationComponent {
             this.showAccountNum = true;
             this.showAccoutType = true;
             this.showzero = false;
-            console.log('New Customer');
             setTimeout(() => {
                 this.gettingallTansactionDetails(this.loanData);
             }, 1000);
@@ -5922,6 +6044,8 @@ class PaymentInformationComponent {
             this.onChange(value);
             this.onTouched();
         }));
+        console.log(this.paymentForm);
+        // this.paymentForm.controls.rePaymentMode.setValue('cash');
     }
     getAccountBranch() {
         this.apiService.getBranchforKiosk().subscribe((data) => {
@@ -5933,11 +6057,63 @@ class PaymentInformationComponent {
             });
         });
     }
+    setAppointmentIdData(data) {
+        console.log(data);
+        this.custID = data.customerId;
+        this.ifQRvariable = true;
+        this.hideAccNum = false;
+        this.hideDetails = true;
+        this.userName = data.holderName;
+        this.accountCurrency = data.accountCurrency;
+        if (data.modeInfo[0].rePaymentMode == 'Cash') {
+            data.modeInfo[0].rePaymentMode = 'cash';
+        }
+        if (data.modeInfo[0].rePaymentMode == 'Account') {
+            data.modeInfo[0].rePaymentMode = 'account';
+        }
+        if (data.modeInfo[0].rePaymentMode == 'Cheque') {
+            data.modeInfo[0].rePaymentMode = 'cheque';
+        }
+        this.paymentForm.controls.rePaymentMode.setValue(data.modeInfo[0].rePaymentMode);
+        this.paymentForm.controls.transactionCurrency.setValue(data.accountCurrency ? data.accountCurrency : '');
+        // this.currencyImage =  'currency-flag-'+data.accountCurrency?data.accountCurrency.toLowerCase():''.toLowerCase();
+        this.currencyImage =  true ? "currency-flag-" + data.accountCurrency.toLowerCase() : undefined;
+        if (this.titleVal == 'Repayment') {
+            this.paymentForm.controls.loanRepaymentAmount.setValue(data.transactionAmount);
+        }
+        if (this.titleVal == 'Disbursement') {
+            this.paymentForm.controls.loanDisburshmentAmount.setValue(data.transactionAmount);
+        }
+        this.paymentForm.controls.accountNumber.setValue(data.modeInfo[0].accountNumber);
+        this.paymentForm.controls.accountBranch.setValue(data.modeInfo[0].accountBranch);
+        this.paymentForm.controls.chequeType.setValue(data.modeInfo[0].chequeType);
+        this.paymentForm.controls.chequeNumber.setValue(data.modeInfo[0].chequeNo);
+        if (data.modeInfo[0].rePaymentMode == 'account') {
+            this.paymentForm.controls.accountNumber.setValue(this.custAccountData[0].accountId);
+            this.paymentForm.controls.accountCurrency.setValue(this.custAccountData[0].accountCurrency);
+            this.paymentForm.controls.accountBalance.setValue(this.custAccountData[0].amount);
+            this.paymentForm.controls.accountType.setValue(this.custAccountData[0].accountType);
+            this.paymentForm.controls.accountBranch.setValue(this.custAccountData[0].accountBranch);
+            this.paymentForm.controls.holderName.setValue(this.custAccountData[0].businessProductName);
+        }
+        console.log(this.currencyImage);
+        this.getChargeDetails(data.accountNumber, "");
+    }
     onCountryChange(country) {
         let currency = country.currencyCode;
         console.log(this.paymentForm);
         this.currencyImage = "currency-flag-" + currency.toLowerCase();
         // this.fetchExchangeRateForCurrency(currency);
+    }
+    setWalkinCustomerData(walkinData) {
+        var _a, _b;
+        console.log(walkinData);
+        // this.paymentForm.controls.transactionCurrency.setValue(walkinData);
+        this.paymentForm.controls.loanRepaymentAmount.setValue(((_a = walkinData[0]) === null || _a === void 0 ? void 0 : _a.currentArrears) ? (_b = walkinData[0]) === null || _b === void 0 ? void 0 : _b.currentArrears : 0);
+        this.paymentForm.controls.transactionCurrency.setValue('INR');
+        this.paymentForm.controls.rePaymentMode.patchValue('cash');
+        this.currencyImage = 'currency-flag-' + 'INR'.toLowerCase();
+        this.getChargeDetails(walkinData[0].loanAccountId, '');
     }
     fetchByAccountNum(accNum) {
         this.flag1 = true;
@@ -6021,11 +6197,10 @@ class PaymentInformationComponent {
         });
     }
     OnInput(event) {
-        this.transAmt = event.target.value;
+        this.repaymentAmount = event.target.value;
         this.totalAmount = 0;
         // this.denomRequired='yes';
         // this.transactionForm.controls.transactionCurrency.setValue(custype.accountCurrency);
-        console.log('data :: ', this.idList[0]);
         //  this.accountBal = this.idList[0].amount;
         console.log(this.accountBal, this.showAccountNum);
         this.denomRequired = 'yes';
@@ -6043,45 +6218,87 @@ class PaymentInformationComponent {
         //   lastCharIsPoint = true;
         // }
         // const num = savedInput.replace(/[^0-9.]/g, "");
-        // this.transAmt = Number(num) || "";
-        this.transAmount = this.transAmt.toLocaleString("en-IN");
+        // this.repaymentAmount = Number(num) || "";
+        this.transAmount = this.repaymentAmount.toLocaleString("en-IN");
         if (lastCharIsPoint) {
             this.transAmount = this.transAmount.concat(".");
         }
         this.cdr.detectChanges();
         // if(localStorage.getItem('trnType') == "Loan Repayment" ){
-        console.log(this.balance, this.transAmt);
-        if (parseFloat(this.loanData.loanAccount[0].principalOutstanding) < parseFloat(this.transAmt)) {
-            console.log("Bigger");
-            this.snack.open(`Loan repayment amount should not exceed principal outstanding`, "OK", {
-                duration: 2000,
-                verticalPosition: "top",
-                horizontalPosition: "right",
-                panelClass: ['snackbar'],
-            });
-            // this.enableContinue = false;
+        console.log(this.balance, this.repaymentAmount);
+        console.log(this.titleVal);
+        if (this.titleVal === 'Repayment') {
+            this.loanData[0].principalOutstanding = 200;
+            console.log('data :: ', this.repaymentAmount, this.loanData[0].principalOutstanding);
+            if (parseFloat(this.loanData[0].principalOutstanding) < parseFloat(this.repaymentAmount)) {
+                console.log("Bigger");
+                this.snack.open(`Loan repayment amount should not exceed principal outstanding`, "OK", {
+                    duration: 2000,
+                    verticalPosition: "top",
+                    horizontalPosition: "right",
+                    panelClass: ['snackbar'],
+                });
+                // this.enableContinue = false;
+            }
+        }
+        if (this.titleVal === 'Disbursement') {
+            console.log("inside disbursement");
+            // this.loanData[0].disburshedAmount = 200;
+            console.log('data :: ', this.repaymentAmount, this.loanData[0].sanctionedAmount);
+            if (parseFloat(this.loanData[0].sanctionedAmount) < parseFloat(this.repaymentAmount)) {
+                console.log("Biggerrrr");
+                this.snack.open(`Loan Disbursement amount should not exceed Sanctioned outstanding`, "OK", {
+                    duration: 2000,
+                    verticalPosition: "top",
+                    horizontalPosition: "right",
+                    panelClass: ['snackbar'],
+                });
+                // this.enableContinue = false;
+            }
         }
         // }
         //  else {
         // this.enableContinue = true;
         // }
-        if (this.paymentForm.controls.transactionCurrency.value == this.accountCurrency) {
-            console.log(this.accountCurrency);
-            this.totalTransAmount =
-                Number(this.paymentForm.controls.loanRepaymentAmount.value ? this.paymentForm.controls.loanRepaymentAmount.value.replace(/\,/g, '') : 0) +
-                    Number(this.paymentForm.controls.totalChargeAmount.value);
-            this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+        if (this.titleVal === 'Repayment') {
+            if (this.paymentForm.controls.transactionCurrency.value == this.accountCurrency) {
+                console.log(this.accountCurrency);
+                this.totalTransAmount =
+                    Number(this.paymentForm.controls.loanRepaymentAmount.value ? this.paymentForm.controls.loanRepaymentAmount.value.replace(/\,/g, '') : 0) +
+                        Number(this.paymentForm.controls.totalChargeAmount.value);
+                this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+            }
+            if (this.paymentForm.controls.transactionCurrency.value != this.accountCurrency) {
+                console.log(this.accountCurrency);
+                console.log(this.chargeDetails[0].amount);
+                this.totalTransAmount =
+                    (Number(this.paymentForm.controls.transactionAmount.value ? this.paymentForm.controls.transactionAmount.value.replace(/\,/g, '') : 0) *
+                        Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value)) +
+                        Number(this.chargeDetails[0].amount);
+                console.log("line 786 on input()", this.totalTransAmount);
+                //this.totalTransAmount=this.totalTransAmount * Number(this.transactionForm.controls.negotiatedRate.value?this.transactionForm.controls.negotiatedRate.value:this.transactionForm.controls.exchangeRate.value);
+                this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+            }
         }
-        if (this.paymentForm.controls.transactionCurrency.value != this.accountCurrency) {
-            console.log(this.accountCurrency);
-            console.log(this.chargeDetails[0].amount);
-            this.totalTransAmount =
-                (Number(this.paymentForm.controls.transactionAmount.value ? this.paymentForm.controls.transactionAmount.value.replace(/\,/g, '') : 0) *
-                    Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value)) +
-                    Number(this.chargeDetails[0].amount);
-            console.log("line 786 on input()", this.totalTransAmount);
-            //this.totalTransAmount=this.totalTransAmount * Number(this.transactionForm.controls.negotiatedRate.value?this.transactionForm.controls.negotiatedRate.value:this.transactionForm.controls.exchangeRate.value);
-            this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+        if (this.titleVal === 'Disbursement') {
+            if (this.paymentForm.controls.transactionCurrency.value == this.accountCurrency) {
+                console.log(this.accountCurrency);
+                this.totalTransAmount =
+                    Number(this.paymentForm.controls.loanDisburshmentAmount.value) +
+                        Number(this.paymentForm.controls.totalChargeAmount.value);
+                this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+            }
+            if (this.paymentForm.controls.transactionCurrency.value != this.accountCurrency) {
+                console.log(this.accountCurrency);
+                console.log(this.chargeDetails[0].amount);
+                this.totalTransAmount =
+                    (Number(this.paymentForm.controls.transactionAmount.value ? this.paymentForm.controls.transactionAmount.value.replace(/\,/g, '') : 0) *
+                        Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value)) +
+                        Number(this.chargeDetails[0].amount);
+                console.log("line 786 on input()", this.totalTransAmount);
+                //this.totalTransAmount=this.totalTransAmount * Number(this.transactionForm.controls.negotiatedRate.value?this.transactionForm.controls.negotiatedRate.value:this.transactionForm.controls.exchangeRate.value);
+                this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+            }
         }
     }
     getCountrynameValues() {
@@ -6091,7 +6308,7 @@ class PaymentInformationComponent {
         });
     }
     getChargeDetails(accountId, amount) {
-        this.accountCurrency = 'INR';
+        // this.accountCurrency='INR';
         this.apiService.fetchChargeDetails(accountId).subscribe((resp) => {
             this.chargeDetails = resp;
             console.log(this.chargeDetails);
@@ -6136,8 +6353,7 @@ class PaymentInformationComponent {
     }
     changeTransType(event) {
         console.log(event);
-        this.paymentForm.controls.rePaymentMode.setValue(event);
-        this.dataService.sendPaymentInfoFormData(this.paymentForm.value);
+        this.paymentForm.controls.rePaymentMode.patchValue(event);
         this.rePaymentMode = event;
         console.log(this.loanData);
         if (this.rePaymentMode == 'account') {
@@ -6150,21 +6366,21 @@ class PaymentInformationComponent {
                 // if (this.custAccountData[i].status == 'APPROVED') {
                 if (this.custAccountData[i].status == 'APPROVED') {
                     console.log(this.custAccountData);
-                    if (this.custAccountData[i].primaryAcc == false) {
-                        console.log(this.custAccountData[i]);
-                        // this.paymentForm.controls.accountNumber.setValue(this.custAccountData[i].accountId);
-                        // this.paymentForm.controls.accountCurrency.setValue(this.custAccountData[i].accountCurrency);
-                        // this.paymentForm.controls.accountBalance.setValue(this.custAccountData[i].amount);
-                        // this.paymentForm.controls.accountBranch.setValue(this.custAccountData[i].accountBranch);
-                        // this.paymentForm.controls.holderName.setValue(this.custAccountData[i].businessProductName);
-                    }
-                    else {
-                        // this.paymentForm.controls.accountNumber.setValue(this.custAccountData[0].accountId);
-                        // this.paymentForm.controls.accountCurrency.setValue(this.custAccountData[0].accountCurrency);
-                        // this.paymentForm.controls.accountBalance.setValue(this.custAccountData[0].amount);
-                        // this.paymentForm.controls.accountBranch.setValue(this.custAccountData[0].accountBranch);
-                        // this.paymentForm.controls.holderName.setValue(this.custAccountData[0].businessProductName);
-                    }
+                    // if (this.custAccountData[i].primaryAcc==false) {
+                    console.log(this.custAccountData[i]);
+                    // this.paymentForm.controls.accountNumber.setValue(this.custAccountData[i].accountId);
+                    // this.paymentForm.controls.accountCurrency.setValue(this.custAccountData[i].accountCurrency);
+                    // this.paymentForm.controls.accountBalance.setValue(this.custAccountData[i].amount);
+                    // this.paymentForm.controls.accountBranch.setValue(this.custAccountData[i].accountBranch);
+                    // this.paymentForm.controls.holderName.setValue(this.custAccountData[i].businessProductName);
+                    // }
+                    // else{
+                    // this.paymentForm.controls.accountNumber.setValue(this.custAccountData[0].accountId);
+                    // this.paymentForm.controls.accountCurrency.setValue(this.custAccountData[0].accountCurrency);
+                    // this.paymentForm.controls.accountBalance.setValue(this.custAccountData[0].amount);
+                    // this.paymentForm.controls.accountBranch.setValue(this.custAccountData[0].accountBranch);
+                    // this.paymentForm.controls.holderName.setValue(this.custAccountData[0].businessProductName);
+                    // }
                     this.accountList.push(this.custAccountData[i]);
                 }
                 console.log(this.accountList);
@@ -6187,6 +6403,7 @@ class PaymentInformationComponent {
                 this.flag1 = true;
                 this.custAccountNumber(this.accountList[0]);
             }
+            this.dataService.sendPaymentInfoFormData(this.paymentForm.value);
         }
         // this.checked = !this.checked;
     }
@@ -6299,7 +6516,10 @@ class PaymentInformationComponent {
         this.currencyImage = 'INR' ? "currency-flag-" + 'INR'.toLowerCase() : undefined;
         this.paymentForm.controls.transactionCurrency.setValue('INR');
         this.paymentForm.controls.rePaymentMode.setValue('cash');
-        this.paymentForm.controls.loanRepaymentAmount.setValue(((_a = loanData[0]) === null || _a === void 0 ? void 0 : _a.currentArrears) ? (_b = loanData[0]) === null || _b === void 0 ? void 0 : _b.currentArrears : 0);
+        this.accountCurrency = loanData[0].accountCurrency;
+        if (this.titleVal == 'Repayment') {
+            this.paymentForm.controls.loanRepaymentAmount.setValue(((_a = loanData[0]) === null || _a === void 0 ? void 0 : _a.currentArrears) ? (_b = loanData[0]) === null || _b === void 0 ? void 0 : _b.currentArrears : 0);
+        }
         this.dataService.sendPaymentInfoFormData(this.paymentForm.value);
     }
     addAccount() {
@@ -6318,7 +6538,7 @@ PaymentInformationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["
                 useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => PaymentInformationComponent),
                 multi: true,
             },
-        ])], decls: 32, vars: 20, consts: [[1, "flex", "justify-center"], [2, "flex-direction", "column", 3, "formGroup"], [1, "flex-1", "flex-row"], [1, "accountHeader"], ["fxFlex", "100%", 1, "flex", "flex-row", 2, "margin-left", "-30px"], [2, "font-size", "12px"], ["color", "primary", "formControlName", "rePaymentMode", "aria-label", "Select an option", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [2, "display", "flex", "flex-direction", "column"], [2, "display", "flex", "flex-direction", "row"], ["fxFlex", "110", "fxLayoutGap", "4px", 3, "ngClass"], ["fxFlex", "110", "appearance", "outline", 4, "ngIf"], ["fxFlex", "33", "appearance", "outline", 4, "ngIf"], ["appearance", "outline", "fxFlex", "65", 4, "ngIf"], ["appearance", "outline", "fxFlex", "32.2", 4, "ngIf"], ["appearance", "outline", "fxFlex", "98", 4, "ngIf"], ["class", "accountInfoCard", "fxFlex", "100", 4, "ngIf"], ["style", "\n          display: flex;\n          flex-direction: row;\n          margin-left: 10px;\n          margin-top: 5px;\n        ", "fxLayoutGap", "4px", 4, "ngIf"], ["fxLayoutGap", "4px", 2, "display", "flex", "flex-direction", "row", "margin-left", "10px", "margin-top", "5px"], ["fxLayout", "column", "fxFlex", "33", 4, "ngIf"], ["fxLayout", "column", "fxFlex", "35", 4, "ngIf"], ["fxFlex", "32.2", "style", "font-size: 11px", "appearance", "outline", 4, "ngIf"], ["fxFlex", "31", "style", "font-size: 11px", "appearance", "outline", 4, "ngIf"], [3, "value"], ["fxFlex", "110", "appearance", "outline"], ["fxFlex", "10%"], ["placeholder", "Select Transaction Currency", "formControlName", "transactionCurrency"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "5%", "margin-left", "4%"], ["fxFlex", "33", "appearance", "outline"], ["formControlName", "transactionCurrency"], ["appearance", "outline", "fxFlex", "65"], ["matInput", "", "type", "text", "formControlName", "loanRepaymentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "loanDisburshmentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "chequeNumber", 1, "full-width"], ["appearance", "outline", "fxFlex", "32.2"], ["formControlName", "chequeType", "optionDisableCentering", "", 3, "value", "valueChange"], [1, "selection-icon"], [1, "actionIcon"], ["matInput", "", "type", "text", "formControlName", "nameOfTheCheque", 1, "full-width"], ["appearance", "outline", "fxFlex", "98"], ["fxFlex", "100", 1, "accountInfoCard"], ["style", "font-size: 10px", "fxFlex", "100%", 4, "ngIf"], ["fxLayout", "row", 2, "justify-content", "space-between", "display", "inline"], ["fxLayout", "column"], [1, "totalAmount"], [1, "hint"], ["fxFlex", "100%", 2, "font-size", "10px"], ["appearance", "outline", "style", "border-radius: 12px; line-height: 17px", "fxFlex", "100", 4, "ngIf"], ["appearance", "outline", "fxFlex", "100", 2, "border-radius", "12px", "line-height", "17px"], [2, "display", "flex"], [1, "currency_code"], ["formControlName", "accountNumber", "optionDisableCentering", "", 3, "value", "selectionChange", "valueChange"], ["class", "buttonStyle", "mat-button", "", "matSuffix", "", "mat-stroked-button", "", 3, "click", 4, "ngIf"], ["mat-button", "", "matSuffix", "", "mat-stroked-button", "", 1, "buttonStyle", 3, "click"], ["matInput", "", "type", "text", "formControlName", "accountNumber", 1, "full-width"], ["matInput", "", "placeholder", "Account number", "formControlName", "accountNumber"], ["fxFlex", "32.2", "appearance", "outline"], ["matInput", "", "placeholder", "Account Bank/Branch", "formControlName", "accountBank"], ["fxFlex", "32.2", "appearance", "outline", 4, "ngIf"], ["matInput", "", "placeholder", "Loan Repayment amount", "formControlName", "loanRepaymentAmount", 3, "value", "keyup"], ["matInput", "", "placeholder", "Loan Disburshment amount", "formControlName", "loanDisburshmentAmount", 3, "value", "keyup"], ["fxLayout", "column", "fxFlex", "33"], ["fxFlex", "33", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Negotiated Rate", "formControlName", "negotiatedRate"], [2, "margin-top", "5%", "font-size", "10px", "font-weight", "bold", "margin-left", "8px"], ["fxLayout", "column", "fxFlex", "35"], ["fxFlex", "40", "appearance", "outline", 2, "font-size", "11px"], ["fxFlex", "32.2", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Charge amount", "formControlName", "totalChargeAmount"], ["fxFlex", "31", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Transaction amount", "formControlName", "totalTransactionAmount"]], template: function PaymentInformationComponent_Template(rf, ctx) { if (rf & 1) {
+        ])], decls: 33, vars: 21, consts: [[1, "flex", "justify-center"], [2, "flex-direction", "column", 3, "formGroup"], [1, "flex-1", "flex-row"], [1, "accountHeader"], ["fxFlex", "100%", 1, "flex", "flex-row", 2, "margin-left", "-30px"], [2, "font-size", "12px"], ["color", "primary", "formControlName", "rePaymentMode", "aria-label", "Select an option", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [2, "display", "flex", "flex-direction", "column"], [2, "display", "flex", "flex-direction", "row"], ["fxFlex", "110", "fxLayoutGap", "4px", 3, "ngClass"], ["fxFlex", "110", "appearance", "outline", 4, "ngIf"], ["fxFlex", "33", "appearance", "outline", 4, "ngIf"], ["appearance", "outline", "fxFlex", "65", 4, "ngIf"], ["appearance", "outline", "fxFlex", "32.2", 4, "ngIf"], ["appearance", "outline", "fxFlex", "98", 4, "ngIf"], ["class", "accountInfoCard", "fxFlex", "100", 4, "ngIf"], ["style", "\n          display: flex;\n          flex-direction: row;\n          margin-left: 10px;\n          margin-top: 5px;\n        ", "fxLayoutGap", "4px", 4, "ngIf"], ["fxLayoutGap", "4px", 2, "display", "flex", "flex-direction", "row", "margin-left", "10px", "margin-top", "5px"], ["fxLayout", "column", "fxFlex", "33", 4, "ngIf"], ["fxLayout", "column", "fxFlex", "35", 4, "ngIf"], ["fxFlex", "32.2", "style", "font-size: 11px", "appearance", "outline", 4, "ngIf"], ["fxFlex", "31", "style", "font-size: 11px", "appearance", "outline", 4, "ngIf"], [3, "value"], ["fxFlex", "110", "appearance", "outline"], ["fxFlex", "10%"], ["placeholder", "Select Transaction Currency", "formControlName", "transactionCurrency"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "5%", "margin-left", "4%"], ["fxFlex", "33", "appearance", "outline"], ["formControlName", "transactionCurrency"], ["appearance", "outline", "fxFlex", "65"], ["matInput", "", "type", "text", "formControlName", "loanRepaymentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "loanDisburshmentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "chequeNumber", 1, "full-width"], ["appearance", "outline", "fxFlex", "32.2"], ["formControlName", "chequeType", "optionDisableCentering", "", 3, "value", "valueChange"], [1, "selection-icon"], [1, "actionIcon"], ["matInput", "", "type", "text", "formControlName", "nameOfTheCheque", 1, "full-width"], ["appearance", "outline", "fxFlex", "98"], ["fxFlex", "100", 1, "accountInfoCard"], ["style", "font-size: 10px", "fxFlex", "100%", 4, "ngIf"], ["fxLayout", "row", 2, "justify-content", "space-between", "display", "inline"], ["fxLayout", "column"], [1, "totalAmount"], [1, "hint"], ["fxFlex", "100%", 2, "font-size", "10px"], ["appearance", "outline", "style", "border-radius: 12px; line-height: 17px", "fxFlex", "100", 4, "ngIf"], ["appearance", "outline", "fxFlex", "100", 2, "border-radius", "12px", "line-height", "17px"], [2, "display", "flex"], [1, "currency_code"], ["formControlName", "accountNumber", "optionDisableCentering", "", 3, "value", "selectionChange", "valueChange"], ["class", "buttonStyle", "mat-button", "", "matSuffix", "", "mat-stroked-button", "", 3, "click", 4, "ngIf"], ["mat-button", "", "matSuffix", "", "mat-stroked-button", "", 1, "buttonStyle", 3, "click"], ["matInput", "", "type", "text", "formControlName", "accountNumber", 1, "full-width"], ["fxFlex", "32.2", "appearance", "outline", 4, "ngIf"], ["fxFlex", "65", "appearance", "outline", 4, "ngIf"], ["matInput", "", "placeholder", "Account number", "formControlName", "accountNumber"], ["fxFlex", "32.2", "appearance", "outline"], ["matInput", "", "placeholder", "Account Bank/Branch", "formControlName", "accountBranch"], ["matInput", "", "placeholder", "Loan Repayment amount", "formControlName", "loanRepaymentAmount", 3, "value", "keyup"], ["fxFlex", "65", "appearance", "outline"], ["matInput", "", "placeholder", "Loan Disbursement amount", "formControlName", "loanDisburshmentAmount", 3, "value", "keyup"], ["fxLayout", "column", "fxFlex", "33"], ["fxFlex", "33", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Negotiated Rate", "formControlName", "negotiatedRate"], [2, "margin-top", "5%", "font-size", "10px", "font-weight", "bold", "margin-left", "8px"], ["fxLayout", "column", "fxFlex", "35"], ["fxFlex", "40", "appearance", "outline", 2, "font-size", "11px"], ["fxFlex", "32.2", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Charge amount", "formControlName", "totalChargeAmount"], ["fxFlex", "31", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Transaction amount", "formControlName", "totalTransactionAmount"]], template: function PaymentInformationComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "form", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -6341,24 +6561,25 @@ PaymentInformationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, PaymentInformationComponent_mat_form_field_14_Template, 7, 4, "mat-form-field", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](15, PaymentInformationComponent_mat_form_field_15_Template, 7, 4, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, PaymentInformationComponent_mat_form_field_16_Template, 5, 4, "mat-form-field", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, PaymentInformationComponent_mat_form_field_16_Template, 7, 4, "mat-form-field", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](17, PaymentInformationComponent_mat_form_field_17_Template, 5, 4, "mat-form-field", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](18, PaymentInformationComponent_mat_form_field_18_Template, 4, 0, "mat-form-field", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](19, PaymentInformationComponent_mat_form_field_19_Template, 8, 2, "mat-form-field", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](20, PaymentInformationComponent_mat_form_field_20_Template, 4, 0, "mat-form-field", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](21, PaymentInformationComponent_mat_form_field_21_Template, 5, 4, "mat-form-field", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](18, PaymentInformationComponent_mat_form_field_18_Template, 5, 4, "mat-form-field", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](19, PaymentInformationComponent_mat_form_field_19_Template, 4, 0, "mat-form-field", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](20, PaymentInformationComponent_mat_form_field_20_Template, 8, 2, "mat-form-field", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](21, PaymentInformationComponent_mat_form_field_21_Template, 4, 0, "mat-form-field", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](22, PaymentInformationComponent_mat_form_field_22_Template, 5, 4, "mat-form-field", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](23, PaymentInformationComponent_mat_form_field_23_Template, 5, 4, "mat-form-field", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](23, PaymentInformationComponent_mat_card_23_Template, 22, 5, "mat-card", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](24, PaymentInformationComponent_mat_card_24_Template, 22, 5, "mat-card", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](24, PaymentInformationComponent_div_24_Template, 11, 2, "div", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "div", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](26, PaymentInformationComponent_p_26_Template, 7, 0, "p", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](27, PaymentInformationComponent_p_27_Template, 7, 0, "p", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](28, PaymentInformationComponent_mat_form_field_28_Template, 4, 0, "mat-form-field", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](29, PaymentInformationComponent_mat_form_field_29_Template, 4, 0, "mat-form-field", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](30, PaymentInformationComponent_mat_form_field_30_Template, 4, 0, "mat-form-field", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](31, PaymentInformationComponent_mat_form_field_31_Template, 4, 0, "mat-form-field", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](25, PaymentInformationComponent_div_25_Template, 6, 5, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "div", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](27, PaymentInformationComponent_p_27_Template, 7, 0, "p", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](28, PaymentInformationComponent_p_28_Template, 7, 0, "p", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](29, PaymentInformationComponent_mat_form_field_29_Template, 4, 0, "mat-form-field", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](30, PaymentInformationComponent_mat_form_field_30_Template, 4, 0, "mat-form-field", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](31, PaymentInformationComponent_mat_form_field_31_Template, 4, 0, "mat-form-field", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](32, PaymentInformationComponent_mat_form_field_32_Template, 4, 0, "mat-form-field", 22);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -6371,31 +6592,33 @@ PaymentInformationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque" ? "firstWrapper2" : "firstWrapper1");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account" && ctx.showAccountNum);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", (ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque") && ctx.showAccountNum);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" && ctx.titleVal == "Loan Repayment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", (ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque") && !ctx.showAccountNum);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" && ctx.titleVal == "Loan Disburshment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" && ctx.titleVal == "Repayment");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque" && ctx.titleVal == "Loan Repayment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" && ctx.titleVal == "Disbursement");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque" && ctx.titleVal == "Loan Disburshment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque" && ctx.titleVal == "Repayment");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque" && ctx.titleVal == "Loan Disburshment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque" && ctx.titleVal == "Disbursement");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account" && ctx.titleVal == "Loan Repayment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque" && ctx.titleVal == "Disbursement");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account" && ctx.titleVal == "Loan Disburshment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account" && ctx.titleVal == "Repayment");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account" && ctx.titleVal == "Disbursement");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cheque");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", (ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque") && ctx.titleVal == "Repayment" || ctx.paymentForm.get("rePaymentMode").value == "cash" && ctx.titleVal == "Disbursement" && ctx.accountCurrency != ctx.paymentForm.get("transactionCurrency").value);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "account" && ctx.accountCurrency != ctx.paymentForm.get("transactionCurrency").value);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "cash" || ctx.paymentForm.get("rePaymentMode").value == "cheque");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
@@ -6524,7 +6747,7 @@ class FooterComponent {
     }
 }
 FooterComponent.ɵfac = function FooterComponent_Factory(t) { return new (t || FooterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_1__["DialogService"])); };
-FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FooterComponent, selectors: [["app-footer"]], inputs: { title: "title", saveText: "saveText", cancelText: "cancelText", cancelDisabled: "cancelDisabled", saveDisabled: "saveDisabled", saving: "saving" }, outputs: { cancel: "cancel", save: "save", exit: "exit" }, decls: 6, vars: 4, consts: [["fxLayout", "row", "fxFlex", "100%", 1, "footer_btn_wrapper", 3, "ngClass"], ["class", "backBtn", "mat-button", "", "fxFlex", "16%", 3, "disabled", "click", 4, "ngIf"], ["mat-flat-button", "", "class", "continueBtn", "fxFlex", "48%", 3, "disabled", "click", 4, "ngIf"], ["mat-button", "", "fxFlex", "15%", 1, "exitBtn", 3, "click"], ["mat-button", "", "fxFlex", "16%", 1, "backBtn", 3, "disabled", "click"], ["mat-flat-button", "", "fxFlex", "48%", 1, "continueBtn", 3, "disabled", "click"]], template: function FooterComponent_Template(rf, ctx) { if (rf & 1) {
+FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FooterComponent, selectors: [["app-footer"]], inputs: { title: "title", saveText: "saveText", cancelText: "cancelText", cancelDisabled: "cancelDisabled", saveDisabled: "saveDisabled", saving: "saving" }, outputs: { cancel: "cancel", save: "save", exit: "exit" }, decls: 6, vars: 4, consts: [["fxLayout", "row", "fxFlex", "100%", 1, "footer_btn_wrapper", 3, "ngClass"], ["class", "backBtn", "mat-button", "", "fxFlex", "16%", 3, "disabled", "click", 4, "ngIf"], ["mat-flat-button", "", "class", "continueBtn", "fxFlex", "43.5%", 3, "disabled", "click", 4, "ngIf"], ["mat-button", "", "fxFlex", "15%", 1, "exitBtn", 3, "click"], ["mat-button", "", "fxFlex", "16%", 1, "backBtn", 3, "disabled", "click"], ["mat-flat-button", "", "fxFlex", "43.5%", 1, "continueBtn", 3, "disabled", "click"]], template: function FooterComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, FooterComponent_button_1_Template, 2, 1, "button", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, FooterComponent_button_2_Template, 2, 2, "button", 2);
@@ -6542,7 +6765,7 @@ FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showAccountNum);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.showAccountNum);
-    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__["DefaultFlexDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_4__["DefaultClassDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"]], styles: [".footer_btn_wrapper[_ngcontent-%COMP%] {\n  margin-top: 1rem;\n  margin-left: 15%;\n  -moz-column-gap: 12px;\n       column-gap: 12px;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  height: 40px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  height: 40px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  color: #e50000;\n  font-weight: bold;\n  height: 40px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.btnAlign[_ngcontent-%COMP%] {\n  align-items: center;\n}\n\n.btnAlign2[_ngcontent-%COMP%] {\n  margin-left: 20%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO09BQUEsZ0JBQUE7QUFDRjs7QUFFQTtFQUVFLFlBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxvR0FBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7QUFBRjs7QUFHQTtFQUNFLGlCQUFBO0VBRUEsWUFBQTtFQUNBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxtQkFBQTtBQURGOztBQUlBO0VBQ0UsY0FBQTtFQUVBLGlCQUFBO0VBRUEsWUFBQTtFQUNBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxtQkFBQTtBQUhGOztBQUtBO0VBQ0UsbUJBQUE7QUFGRjs7QUFJQTtFQUNFLGdCQUFBO0FBREYiLCJmaWxlIjoiZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3Rlcl9idG5fd3JhcHBlciB7XHJcbiAgbWFyZ2luLXRvcDogMXJlbTtcclxuICBtYXJnaW4tbGVmdDogMTUlO1xyXG4gIGNvbHVtbi1nYXA6IDEycHg7XHJcbn1cclxuXHJcbi5jb250aW51ZUJ0biB7XHJcbiAgLy93aWR0aDogNDczcHg7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQgMCUsICMwMDRjOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI4cHg7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbn1cclxuXHJcbi5iYWNrQnRuIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICAvL3dpZHRoOiAxNzBweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgYmFja2dyb3VuZDogI2ZmZmZmZiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm94LXNoYWRvdzogMHB4IDNweCAxNXB4ICMwMDAwMDAxNztcclxuICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG59XHJcblxyXG4uZXhpdEJ0biB7XHJcbiAgY29sb3I6ICNlNTAwMDA7XHJcblxyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIC8vd2lkdGg6IDE1MHB4O1xyXG4gIGhlaWdodDogNDBweDtcclxuICBiYWNrZ3JvdW5kOiAjZmZmZmZmIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbn1cclxuLmJ0bkFsaWdue1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuLmJ0bkFsaWduMntcclxuICBtYXJnaW4tbGVmdDogMjAlO1xyXG59XHJcbiJdfQ== */"] });
+    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__["DefaultFlexDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_4__["DefaultClassDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"]], styles: [".footer_btn_wrapper[_ngcontent-%COMP%] {\n  margin-top: 1rem;\n  margin-left: 15%;\n  -moz-column-gap: 12px;\n       column-gap: 12px;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  height: 40px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  height: 40px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n  margin-left: 5.3%;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  color: #e50000;\n  font-weight: bold;\n  height: 40px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.btnAlign[_ngcontent-%COMP%] {\n  align-items: center;\n  margin-left: 2.2%;\n  margin-right: -5%;\n}\n\n.btnAlign2[_ngcontent-%COMP%] {\n  margin-left: 20%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO09BQUEsZ0JBQUE7QUFDRjs7QUFFQTtFQUVFLFlBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxvR0FBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7QUFBRjs7QUFHQTtFQUNFLGlCQUFBO0VBRUEsWUFBQTtFQUNBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0FBREY7O0FBSUE7RUFDRSxjQUFBO0VBRUEsaUJBQUE7RUFFQSxZQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLG1CQUFBO0FBSEY7O0FBS0E7RUFDRSxtQkFBQTtFQUNBLGlCQUFBO0VBQ0EsaUJBQUE7QUFGRjs7QUFJQTtFQUNFLGdCQUFBO0FBREYiLCJmaWxlIjoiZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3Rlcl9idG5fd3JhcHBlciB7XHJcbiAgbWFyZ2luLXRvcDogMXJlbTtcclxuICBtYXJnaW4tbGVmdDogMTUlO1xyXG4gIGNvbHVtbi1nYXA6IDEycHg7XHJcbn1cclxuXHJcbi5jb250aW51ZUJ0biB7XHJcbiAgLy93aWR0aDogNDczcHg7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQgMCUsICMwMDRjOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI4cHg7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbn1cclxuXHJcbi5iYWNrQnRuIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICAvL3dpZHRoOiAxNzBweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgYmFja2dyb3VuZDogI2ZmZmZmZiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm94LXNoYWRvdzogMHB4IDNweCAxNXB4ICMwMDAwMDAxNztcclxuICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG4gIG1hcmdpbi1sZWZ0OiA1LjMlXHJcbn1cclxuXHJcbi5leGl0QnRuIHtcclxuICBjb2xvcjogI2U1MDAwMDtcclxuXHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgLy93aWR0aDogMTUwcHg7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIGJhY2tncm91bmQ6ICNmZmZmZmYgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgYm9yZGVyLXJhZGl1czogMjVweDtcclxufVxyXG4uYnRuQWxpZ257XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBtYXJnaW4tbGVmdDogMi4yJTtcclxuICBtYXJnaW4tcmlnaHQ6IC01JTtcclxufVxyXG4uYnRuQWxpZ24ye1xyXG4gIG1hcmdpbi1sZWZ0OiAyMCU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FooterComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -7338,6 +7561,44 @@ CurrencyConverterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
                 styleUrls: ['./currency-converter.component.scss']
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }, { type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"] }, { type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_5__["DataService"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "EgkN":
+/*!****************************************************!*\
+  !*** ./src/app/directives/auto-focus.directive.ts ***!
+  \****************************************************/
+/*! exports provided: AutoFocusDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutoFocusDirective", function() { return AutoFocusDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
+
+
+
+
+class AutoFocusDirective {
+    constructor(matInput) {
+        this.matInput = matInput;
+    }
+    ngOnInit() {
+        setTimeout(() => {
+            this.matInput.focus();
+        }, 100);
+    }
+}
+AutoFocusDirective.ɵfac = function AutoFocusDirective_Factory(t) { return new (t || AutoFocusDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_input__WEBPACK_IMPORTED_MODULE_1__["MatInput"])); };
+AutoFocusDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: AutoFocusDirective, selectors: [["", "appAutoFocus", ""]] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AutoFocusDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                selector: '[appAutoFocus]'
+            }]
+    }], function () { return [{ type: _angular_material_input__WEBPACK_IMPORTED_MODULE_1__["MatInput"] }]; }, null); })();
 
 
 /***/ }),
@@ -11274,6 +11535,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loan_repayment_service_loan_repayment_service_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./loan-repayment-service/loan-repayment-service.component */ "XZUR");
 /* harmony import */ var _loan_disburshment_loan_disburshment_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./loan-disburshment/loan-disburshment.component */ "YPBu");
 /* harmony import */ var _add_account_disburshment_add_account_disburshment_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./add-account-disburshment/add-account-disburshment.component */ "iF/b");
+/* harmony import */ var app_directives_directive_module__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! app/directives/directive.module */ "eg6t");
+
 
 
 
@@ -11372,7 +11635,8 @@ OthersModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
             _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"].forRoot('de'),
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_others_routing__WEBPACK_IMPORTED_MODULE_22__["OthersRoutes"]),
             _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"],
-            app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]
+            app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"],
+            app_directives_directive_module__WEBPACK_IMPORTED_MODULE_64__["DirectiveModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](OthersModule, { declarations: [_app_blank_app_blank_component__WEBPACK_IMPORTED_MODULE_21__["AppBlankComponent"],
         _cheque_withdrawal_cheque_withdrawal_component__WEBPACK_IMPORTED_MODULE_23__["ChequeWithdrawalComponent"],
@@ -11432,7 +11696,8 @@ OthersModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
         _angular_material_select__WEBPACK_IMPORTED_MODULE_33__["MatSelectModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
         _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_34__["MatDatepickerModule"], _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"],
-        app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]] }); })();
+        app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"],
+        app_directives_directive_module__WEBPACK_IMPORTED_MODULE_64__["DirectiveModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OthersModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -11464,7 +11729,8 @@ OthersModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
                     _angular_material_extensions_select_country__WEBPACK_IMPORTED_MODULE_36__["MatSelectCountryModule"].forRoot('de'),
                     _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_others_routing__WEBPACK_IMPORTED_MODULE_22__["OthersRoutes"]),
                     _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_39__["ZXingScannerModule"],
-                    app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"]
+                    app_shared_core_form_core_form_module__WEBPACK_IMPORTED_MODULE_48__["CoreFormModule"],
+                    app_directives_directive_module__WEBPACK_IMPORTED_MODULE_64__["DirectiveModule"]
                 ],
                 declarations: [
                     _app_blank_app_blank_component__WEBPACK_IMPORTED_MODULE_21__["AppBlankComponent"],
@@ -11604,7 +11870,9 @@ function CdServiceComponent_form_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "headerclass" : "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("title", ctx_r0.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "cdcard" : "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.displayDenom);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "footclass" : "");
@@ -12076,11 +12344,11 @@ class CdServiceComponent {
     }
 }
 CdServiceComponent.ɵfac = function CdServiceComponent_Factory(t) { return new (t || CdServiceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_9__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
-CdServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CdServiceComponent, selectors: [["app-cd-service"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["formControlName", "account"], ["formControlName", "transaction"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function CdServiceComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CdServiceComponent_form_0_Template, 10, 7, "form", 0);
+CdServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CdServiceComponent, selectors: [["app-cd-service"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 3, "ngClass"], ["fxFlex", "79.5%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1", "padding-left", "25px", "margin-left", "7.5%"], ["formControlName", "account"], ["formControlName", "transaction"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function CdServiceComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CdServiceComponent_form_0_Template, 10, 8, "form", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.cashDepositForm);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_11__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_14__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _shared_core_form_account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_15__["AccountInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_16__["TransactionInformationFormComponent"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_17__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_18__["DenominationInfoComponent"]], styles: [".footclass[_ngcontent-%COMP%] {\n  margin-left: -18.8%;\n  box-sizing: border-box;\n  max-width: 150% !important;\n  margin-right: -150px;\n}\n\n.headerclass[_ngcontent-%COMP%] {\n  margin-left: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2Qtc2VydmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBRUEsc0JBQUE7RUFHQSwwQkFBQTtFQUNBLG9CQUFBO0FBRko7O0FBSUE7RUFDSSxpQkFBQTtBQURKIiwiZmlsZSI6ImNkLXNlcnZpY2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGNsYXNze1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xOC44JTtcclxuICAgIC8vZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICAvL2Rpc3BsYXk6IGZsZXg7XHJcbiAgICAvL2ZsZXg6IDEgMSAxMDAlO1xyXG4gICAgbWF4LXdpZHRoOiAxNTAlICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IC0xNTBweDtcclxufVxyXG4uaGVhZGVyY2xhc3N7XHJcbiAgICBtYXJnaW4tbGVmdDoxMnB4O1xyXG59Il19 */"], changeDetection: 0 });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_11__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_14__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _shared_core_form_account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_15__["AccountInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_16__["TransactionInformationFormComponent"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_17__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_18__["DenominationInfoComponent"]], styles: [".footclass[_ngcontent-%COMP%] {\n  margin-left: -0.6%;\n  box-sizing: border-box;\n  max-width: 145% !important;\n  margin-right: -40px;\n}\n\n.headerclass[_ngcontent-%COMP%] {\n  margin-left: -7px;\n}\n\n.cdcard[_ngcontent-%COMP%] {\n  justify-content: center;\n  margin-left: 8px;\n  margin-right: 140px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2Qtc2VydmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBRUEsc0JBQUE7RUFHQSwwQkFBQTtFQUNBLG1CQUFBO0FBRko7O0FBSUE7RUFDSSxpQkFBQTtBQURKOztBQUdBO0VBQ0ksdUJBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FBQUoiLCJmaWxlIjoiY2Qtc2VydmljZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290Y2xhc3N7XHJcbiAgICBtYXJnaW4tbGVmdDogLTAuNiU7XHJcbiAgICAvL2ZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgLy9kaXNwbGF5OiBmbGV4O1xyXG4gICAgLy9mbGV4OiAxIDEgMTAwJTtcclxuICAgIG1heC13aWR0aDogMTQ1JSAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAtNDBweDtcclxufVxyXG4uaGVhZGVyY2xhc3N7XHJcbiAgICBtYXJnaW4tbGVmdDotN3B4O1xyXG59XHJcbi5jZGNhcmR7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgXHJcbiAgICBtYXJnaW4tbGVmdDogOHB4OyBcclxuICAgIG1hcmdpbi1yaWdodDogMTQwcHg7XHJcbn0iXX0= */"], changeDetection: 0 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CdServiceComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -12380,7 +12648,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.chqPage == "Cheque Deposit");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.chqPage == "Cash Forex Transaction");
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_7__["DefaultClassDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutGapDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIcon"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"]], styles: [".section1[_ngcontent-%COMP%] {\n  top: -5%;\n  left: 15%;\n  position: relative;\n}\n\n.section2[_ngcontent-%COMP%] {\n  top: -5%;\n  position: relative;\n}\n\n.scan1[_ngcontent-%COMP%] {\n  width: 170px;\n  border-radius: 25px;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  left: 64%;\n  height: 35px;\n  margin-top: 0%;\n}\n\n.scan2[_ngcontent-%COMP%] {\n  width: 170px;\n  border-radius: 25px;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  left: 35%;\n  height: 35px;\n  margin-top: 0%;\n}\n\n.currencyConverter[_ngcontent-%COMP%] {\n  width: 200px;\n  border-radius: 25px;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  left: 62%;\n  height: 35px;\n  margin-top: -1.5%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUUsUUFBQTtFQUNBLFNBQUE7RUFLQSxrQkFBQTtBQUpGOztBQU9BO0VBRUUsUUFBQTtFQUlBLGtCQUFBO0FBUkY7O0FBb0JBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0VBRUEsb0dBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QUFsQkY7O0FBb0JBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0VBRUEsb0dBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QUFsQkY7O0FBb0JBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0VBRUEsb0dBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FBbEJGIiwiZmlsZSI6ImhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWN0aW9uMSB7XHJcbiAgLy8gbWFyZ2luOiAwIGF1dG87XHJcbiAgdG9wOiAtNSU7XHJcbiAgbGVmdDogMTUlO1xyXG4gIC8vIG1hcmdpbi10b3A6IC00MHB4O1xyXG4gIC8vIHdpZHRoOiA5MDBweDtcclxuICAvLyBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIC8vIG1hcmdpbi10b3A6IDE1cHg7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uc2VjdGlvbjIge1xyXG4gIC8vIG1hcmdpbjogMCBhdXRvO1xyXG4gIHRvcDogLTUlO1xyXG4gIC8vIHdpZHRoOiA5MDBweDtcclxuICAvLyBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIC8vIG1hcmdpbi10b3A6IDE1cHg7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4vLyAuYnV0dG9uTmV4dHtcclxuLy8gICAgIHdpZHRoOiAxNiU7XHJcbi8vICAgICBoZWlnaHQ6IDM4cHg7XHJcbi8vICAgICBtYXJnaW4tbGVmdDogMzAlO1xyXG4vLyAgICAgY29sb3I6ICNGRkZGRkY7XHJcbi8vICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFBMkQgMCUsICMwMDRDOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4vLyAgICAgYm9yZGVyLXJhZGl1czogMjhweDtcclxuLy8gICAgIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4vLyB9XHJcbi5zY2FuMSB7XHJcbiAgd2lkdGg6IDE3MHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbiAgLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWJjZDlkO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgbGVmdDogNjQlO1xyXG4gIGhlaWdodDogMzVweDtcclxuICBtYXJnaW4tdG9wOiAtMCU7XHJcbn1cclxuLnNjYW4yIHtcclxuICB3aWR0aDogMTcwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMjVweDtcclxuICAvLyAgIGJhY2tncm91bmQtY29sb3I6ICMxYmNkOWQ7XHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxYTJkIDAlLCAjMDA0Yzk3IDEwMCUpIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBjb2xvcjogI2ZmZmZmZjtcclxuICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxuICBsZWZ0OiAzNSU7XHJcbiAgaGVpZ2h0OiAzNXB4O1xyXG4gIG1hcmdpbi10b3A6IC0wJTtcclxufVxyXG4uY3VycmVuY3lDb252ZXJ0ZXJ7XHJcbiAgd2lkdGg6IDIwMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbiAgLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWJjZDlkO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgbGVmdDogNjIlO1xyXG4gIGhlaWdodDogMzVweDtcclxuICBtYXJnaW4tdG9wOiAtMS41JTtcclxufSJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_7__["DefaultClassDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutGapDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIcon"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"]], styles: [".section1[_ngcontent-%COMP%] {\n  top: -5%;\n  left: 7.9%;\n  position: relative;\n}\n\n.section2[_ngcontent-%COMP%] {\n  top: -5%;\n  position: relative;\n}\n\n.scan1[_ngcontent-%COMP%] {\n  width: 170px;\n  border-radius: 25px;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  left: 44%;\n  height: 35px;\n  margin-top: 0%;\n}\n\n.scan2[_ngcontent-%COMP%] {\n  width: 170px;\n  border-radius: 25px;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  left: 44%;\n  height: 35px;\n  margin-top: 0%;\n}\n\n.currencyConverter[_ngcontent-%COMP%] {\n  width: 200px;\n  border-radius: 25px;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n  left: 62%;\n  height: 35px;\n  margin-top: -1.5%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUUsUUFBQTtFQUNBLFVBQUE7RUFLQSxrQkFBQTtBQUpGOztBQU9BO0VBRUUsUUFBQTtFQUlBLGtCQUFBO0FBUkY7O0FBb0JBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0VBRUEsb0dBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QUFsQkY7O0FBb0JBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0VBRUEsb0dBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QUFsQkY7O0FBb0JBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0VBRUEsb0dBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FBbEJGIiwiZmlsZSI6ImhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWN0aW9uMSB7XHJcbiAgLy8gbWFyZ2luOiAwIGF1dG87XHJcbiAgdG9wOiAtNSU7XHJcbiAgbGVmdDogNy45JTtcclxuICAvLyBtYXJnaW4tdG9wOiAtNDBweDtcclxuICAvLyB3aWR0aDogOTAwcHg7XHJcbiAgLy8gYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAvLyBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLnNlY3Rpb24yIHtcclxuICAvLyBtYXJnaW46IDAgYXV0bztcclxuICB0b3A6IC01JTtcclxuICAvLyB3aWR0aDogOTAwcHg7XHJcbiAgLy8gYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAvLyBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLy8gLmJ1dHRvbk5leHR7XHJcbi8vICAgICB3aWR0aDogMTYlO1xyXG4vLyAgICAgaGVpZ2h0OiAzOHB4O1xyXG4vLyAgICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuLy8gICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4vLyAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxQTJEIDAlLCAjMDA0Qzk3IDEwMCUpIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuLy8gICAgIGJvcmRlci1yYWRpdXM6IDI4cHg7XHJcbi8vICAgICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxuLy8gfVxyXG4uc2NhbjEge1xyXG4gIHdpZHRoOiAxNzBweDtcclxuICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG4gIC8vICAgYmFja2dyb3VuZC1jb2xvcjogIzFiY2Q5ZDtcclxuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQgMCUsICMwMDRjOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gIGxlZnQ6IDQ0JTtcclxuICBoZWlnaHQ6IDM1cHg7XHJcbiAgbWFyZ2luLXRvcDogLTAlO1xyXG59XHJcbi5zY2FuMiB7XHJcbiAgd2lkdGg6IDE3MHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbiAgLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWJjZDlkO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgbGVmdDogNDQlO1xyXG4gIGhlaWdodDogMzVweDtcclxuICBtYXJnaW4tdG9wOiAtMCU7XHJcbn1cclxuLmN1cnJlbmN5Q29udmVydGVye1xyXG4gIHdpZHRoOiAyMDBweDtcclxuICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG4gIC8vICAgYmFja2dyb3VuZC1jb2xvcjogIzFiY2Q5ZDtcclxuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQgMCUsICMwMDRjOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gIGxlZnQ6IDYyJTtcclxuICBoZWlnaHQ6IDM1cHg7XHJcbiAgbWFyZ2luLXRvcDogLTEuNSU7XHJcbn0iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HeaderComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -12392,6 +12660,58 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }], back: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "OXpz":
+/*!******************************************************!*\
+  !*** ./src/app/directives/numbers-only.directive.ts ***!
+  \******************************************************/
+/*! exports provided: NumberDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NumberDirective", function() { return NumberDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class NumberDirective {
+    constructor(_el) {
+        this._el = _el;
+    }
+    onInputChange(event) {
+        const initalValue = this._el.nativeElement.value;
+        this._el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+        if (initalValue !== this._el.nativeElement.value) {
+            event.stopPropagation();
+        }
+    }
+    onIonInputChange(event) {
+        const initalValue = this._el.nativeElement.value;
+        this._el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+        if (initalValue !== this._el.nativeElement.value) {
+            event.stopPropagation();
+        }
+    }
+}
+NumberDirective.ɵfac = function NumberDirective_Factory(t) { return new (t || NumberDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+NumberDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: NumberDirective, selectors: [["ion-input", "numbersOnly", ""], ["input", "numbersOnly", ""]], hostBindings: function NumberDirective_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ion-input", function NumberDirective_ion_input_HostBindingHandler($event) { return ctx.onInputChange($event); })("input", function NumberDirective_input_HostBindingHandler($event) { return ctx.onIonInputChange($event); });
+    } } });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NumberDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                selector: 'ion-input[numbersOnly], input[numbersOnly]'
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { onInputChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['ion-input', ['$event']]
+        }], onIonInputChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['input', ['$event']]
         }] }); })();
 
 
@@ -13081,7 +13401,9 @@ function CwServiceComponent_form_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "headerclass" : "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("title", ctx_r0.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "cdcard" : "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.displayDenom);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "footclass" : "");
@@ -13609,11 +13931,11 @@ class CwServiceComponent {
     }
 }
 CwServiceComponent.ɵfac = function CwServiceComponent_Factory(t) { return new (t || CwServiceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
-CwServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CwServiceComponent, selectors: [["app-cw-service"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["formControlName", "account"], ["formControlName", "transaction"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function CwServiceComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CwServiceComponent_form_0_Template, 10, 7, "form", 0);
+CwServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CwServiceComponent, selectors: [["app-cw-service"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 3, "ngClass"], ["fxFlex", "79.5%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1", "margin-left", "7.5%"], ["formControlName", "account"], ["formControlName", "transaction"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function CwServiceComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CwServiceComponent_form_0_Template, 10, 8, "form", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.cashWithdrawForm);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_12__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _shared_core_form_account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_16__["AccountInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_17__["TransactionInformationFormComponent"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_19__["DenominationInfoComponent"]], styles: [".footclass[_ngcontent-%COMP%] {\n  margin-left: -18.8%;\n  box-sizing: border-box;\n  max-width: 150% !important;\n  margin-right: -150px;\n}\n\n.headerclass[_ngcontent-%COMP%] {\n  margin-left: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY3ctc2VydmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBRUEsc0JBQUE7RUFHQSwwQkFBQTtFQUNBLG9CQUFBO0FBRko7O0FBSUE7RUFDSSxpQkFBQTtBQURKIiwiZmlsZSI6ImN3LXNlcnZpY2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGNsYXNze1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xOC44JTtcclxuICAgIC8vZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICAvL2Rpc3BsYXk6IGZsZXg7XHJcbiAgICAvL2ZsZXg6IDEgMSAxMDAlO1xyXG4gICAgbWF4LXdpZHRoOiAxNTAlICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IC0xNTBweDtcclxufVxyXG4uaGVhZGVyY2xhc3N7XHJcbiAgICBtYXJnaW4tbGVmdDoxMnB4O1xyXG59Il19 */"], changeDetection: 0 });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_12__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _shared_core_form_account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_16__["AccountInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_17__["TransactionInformationFormComponent"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_19__["DenominationInfoComponent"]], styles: [".footclass[_ngcontent-%COMP%] {\n  margin-left: -0.6%;\n  box-sizing: border-box;\n  max-width: 145% !important;\n  margin-right: -40px;\n}\n\n.headerclass[_ngcontent-%COMP%] {\n  margin-left: -7px;\n}\n\n.cdcard[_ngcontent-%COMP%] {\n  justify-content: center;\n  margin-left: 8px;\n  margin-right: 140px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY3ctc2VydmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBRUEsc0JBQUE7RUFHQSwwQkFBQTtFQUNBLG1CQUFBO0FBRko7O0FBSUE7RUFDSSxpQkFBQTtBQURKOztBQUdBO0VBQ0ksdUJBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FBQUoiLCJmaWxlIjoiY3ctc2VydmljZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290Y2xhc3N7XHJcbiAgICBtYXJnaW4tbGVmdDogLTAuNiU7XHJcbiAgICAvL2ZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgLy9kaXNwbGF5OiBmbGV4O1xyXG4gICAgLy9mbGV4OiAxIDEgMTAwJTtcclxuICAgIG1heC13aWR0aDogMTQ1JSAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAtNDBweDtcclxufVxyXG4uaGVhZGVyY2xhc3N7XHJcbiAgICBtYXJnaW4tbGVmdDotN3B4O1xyXG59XHJcbi5jZGNhcmR7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgXHJcbiAgICBtYXJnaW4tbGVmdDogOHB4OyBcclxuICAgIG1hcmdpbi1yaWdodDogMTQwcHg7XHJcbn0iXX0= */"], changeDetection: 0 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CwServiceComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -13625,6 +13947,63 @@ CwServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
     }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"] }, { type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"] }, { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialog"] }, { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__["MatSnackBar"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"] }, { type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }]; }, null); })();
 class TokenGenerationObj {
 }
+
+
+/***/ }),
+
+/***/ "VK9D":
+/*!***************************************************!*\
+  !*** ./src/app/directives/separator.directive.ts ***!
+  \***************************************************/
+/*! exports provided: SeparatorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeparatorDirective", function() { return SeparatorDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class SeparatorDirective {
+    constructor(_inputEl) {
+        this._inputEl = _inputEl;
+    }
+    onInput(event) {
+        if (this._inputEl.nativeElement.value === '-')
+            return;
+        let commasRemoved = this._inputEl.nativeElement.value.replace(/,/g, '');
+        let toInt;
+        let toLocale;
+        if (commasRemoved.split('.').length > 1) {
+            let decimal = isNaN(parseInt(commasRemoved.split('.')[1])) ? '' : parseInt(commasRemoved.split('.')[1]);
+            toInt = parseInt(commasRemoved);
+            toLocale = toInt.toLocaleString('en-IN') + '.' + decimal;
+        }
+        else {
+            toInt = parseInt(commasRemoved);
+            toLocale = toInt.toLocaleString('en-IN');
+        }
+        if (toLocale === 'NaN') {
+            this._inputEl.nativeElement.value = '';
+        }
+        else {
+            this._inputEl.nativeElement.value = toLocale;
+        }
+    }
+}
+SeparatorDirective.ɵfac = function SeparatorDirective_Factory(t) { return new (t || SeparatorDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+SeparatorDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: SeparatorDirective, selectors: [["input", "separator", ""]], hostBindings: function SeparatorDirective_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("input", function SeparatorDirective_input_HostBindingHandler($event) { return ctx.onInput($event); });
+    } } });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SeparatorDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                selector: 'input[separator]',
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { onInput: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['input', ['$event']]
+        }] }); })();
 
 
 /***/ }),
@@ -13895,6 +14274,61 @@ SelectServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
 
 /***/ }),
 
+/***/ "WPGO":
+/*!******************************************************!*\
+  !*** ./src/app/directives/special-text.directive.ts ***!
+  \******************************************************/
+/*! exports provided: SpecialTextDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialTextDirective", function() { return SpecialTextDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class SpecialTextDirective {
+    constructor(el) {
+        this.el = el;
+        this.regexStr = '^[a-zA-Z ]*$';
+    }
+    onKeyPress(event) {
+        return new RegExp(this.regexStr).test(event.key);
+    }
+    blockPaste(event) {
+        this.validateFields(event);
+    }
+    validateFields(event) {
+        setTimeout(() => {
+            this.el.nativeElement.value = this.el.nativeElement.value
+                .replace(/[^A-Za-z ]/g, '')
+                .replace(/\s/g, '');
+            event.preventDefault();
+        }, 100);
+    }
+}
+SpecialTextDirective.ɵfac = function SpecialTextDirective_Factory(t) { return new (t || SpecialTextDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+SpecialTextDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: SpecialTextDirective, selectors: [["", "specialText", ""]], hostBindings: function SpecialTextDirective_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function SpecialTextDirective_keypress_HostBindingHandler($event) { return ctx.onKeyPress($event); })("paste", function SpecialTextDirective_paste_HostBindingHandler($event) { return ctx.blockPaste($event); });
+    } }, inputs: { isAlphaNumeric: "isAlphaNumeric" } });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SpecialTextDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                selector: '[specialText]',
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { isAlphaNumeric: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }], onKeyPress: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['keypress', ['$event']]
+        }], blockPaste: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['paste', ['$event']]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "XZUR":
 /*!*****************************************************************************************!*\
   !*** ./src/app/views/others/loan-repayment-service/loan-repayment-service.component.ts ***!
@@ -14028,9 +14462,10 @@ class LoanRepaymentServiceComponent {
     }
     ngOnInit() {
         localStorage.setItem('chq_page', this.title);
+        this.custNameFromLogin = localStorage.getItem('FromLogin');
         this.custValidation = localStorage.getItem("customerValidation");
         this.transBranch = localStorage.getItem("TRANSACTIONBRANCH");
-        this.denominationRequired = localStorage.getItem("DenominationRequired");
+        this.denomRequired = localStorage.getItem("DenominationRequired");
         console.log(this.Token);
         this.loanRepaymentForm = this.formBuilder.group({
             loanInfo: [],
@@ -14071,8 +14506,8 @@ class LoanRepaymentServiceComponent {
                 }
             }
         });
-        this.dataService.getaccountFormdata.subscribe((data) => {
-            if (Object.keys(data).length != 0 && data.constructor === Object) {
+        this.dataService.getloanRepaymentData.subscribe((data) => {
+            if (data) {
                 this.appointmentDetails = data;
                 console.log("Account component?", this.appointmentDetails.appointmentId);
             }
@@ -14096,8 +14531,118 @@ class LoanRepaymentServiceComponent {
         }
         if (event == 'NotshowAccountNum') {
             console.log("Second Condition");
-            // this.getOTP(this.loanRepaymentForm.value,this.ifQRvariable,this.denominationdata);
+            this.getOTP(this.loanRepaymentForm.value, this.ifQRvariable, this.denominationdata);
         }
+    }
+    getOTP(formData, type, cdForm) {
+        console.log("Get Otp", formData, type);
+        this.phonenum = this.ls.getItem('phonenumFromLogin');
+        this.loanDataForm = formData;
+        // this.cashwithDrwType = type;
+        this.oTpModel.source = 'customer';
+        this.oTpModel.source_key = 'mobile';
+        this.oTpModel.source_value = this.phonenum;
+        this.oTpModel.isMobileLogin = false;
+        let amount = 50000;
+        let transamountwithoutcomma = this.loanDataForm.paymentInfo.loanRepaymentAmount.replace(/,/g, "");
+        console.log(transamountwithoutcomma);
+        if (transamountwithoutcomma >= amount) {
+            this.tokendisable = true;
+            this.apiService.getOtp(this.oTpModel).subscribe(otpResp => {
+                if (otpResp) {
+                    // this.openDialogOTP(this.phonenum);
+                    this.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                        duration: 4000,
+                        verticalPosition: 'top',
+                        horizontalPosition: 'right'
+                    });
+                }
+            });
+        }
+        else {
+            console.log("Else");
+            this.getOTPforSave(this.loanDataForm, '', '');
+        }
+    }
+    getOTPforSave(form, type, cdForm) {
+        console.log(form);
+        let denominationData = {};
+        let denominationDataArray = [];
+        if (this.denomRequired == 'yes') {
+            for (let i = 0; i < this.denomCodeArray.length; i++) {
+                if (cdForm.value[this.denomCodeArray[i].key]) {
+                    // denominationData.transactionId = this.cashdepositFor;
+                    denominationData.denominationKey = this.denomCodeArray[i].value;
+                    denominationData.denominationValue = +cdForm.value[this.denomCodeArray[i].key];
+                    denominationData.currency = this.loanRepaymentForm.value.transactionCurrency;
+                    // denominationData.amountAvailiable = 15200 - (cdForm.value[this.denomCodeArray[i].key] * this.denomCodeArray[i].value);
+                    denominationDataArray.push(denominationData);
+                    console.log(denominationDataArray);
+                    denominationData = {};
+                }
+            }
+        }
+        console.log(this.custValidation);
+        if (this.custValidation == "New Customer" || this.custNameFromLogin != null) {
+            let loanRepaymentModeInfo = [];
+            loanRepaymentModeInfo.push({
+                loanAccountNo: form.loanInfo.loanAccountId,
+                category: 'Repayment',
+                rePaymentMode: form.paymentInfo.rePaymentMode,
+                accountNumber: form.paymentInfo.accountNumber,
+                accountCurrency: form.paymentInfo.accountCurrency,
+                chequeNo: form.paymentInfo.chequeNumber,
+                accountBranch: form.paymentInfo.accountBranch
+            });
+            this.Token.modeInfo = loanRepaymentModeInfo;
+            this.Token.customerId = form.loanInfo.customerId ? form.loanInfo.customerId : 182203,
+                console.log("Not a qrvariable", this.Token);
+            this.Token.transactionCurrency = form.paymentInfo.transactionCurrency,
+                this.Token.negotiatedRate = form.paymentInfo.negotiatedRate,
+                this.Token.totalChargeAmount = form.paymentInfo.totalChargeAmount,
+                this.Token.totalTransactionAmount = form.paymentInfo.totalTransactionAmount,
+                this.Token.transactionBranch = this.transBranch,
+                this.Token.entityCode = this.entityCode,
+                this.Token.bankCode = this.bankCode,
+                this.Token.tokenBranch = this.tokenBranch,
+                this.Token.customerCategory = this.custPref,
+                this.Token.productCode = 'LNR',
+                this.Token.tokenOrigin = this.tokenOrigin,
+                this.Token.tokenNumber = "",
+                this.Token.estimatedWaitTime = "",
+                this.Token.accountAmount = "",
+                this.Token.narrative = "",
+                this.Token.totalAmount = "";
+            console.log(this.paymentData.rePaymentMode, this.denomRequired);
+            if (this.paymentData.rePaymentMode == 'cash' && this.denomRequired == 'yes') {
+                this.Token.denomination = denominationDataArray;
+            }
+        }
+        console.log("before api call :: ", this.Token);
+        this.tokendisable = true;
+        this.apiService.saveofCashwithdraw(this.Token).subscribe(cashwithdrawresp => {
+            console.log("Response Success, Data Saved", cashwithdrawresp);
+            this.loanRepaymentResp = cashwithdrawresp;
+            this.tokenNum = this.loanRepaymentResp.tokenNumber;
+            this.estimatedTime = this.loanRepaymentResp.estimatedWaitTime;
+            localStorage.setItem("tokenNumer", this.tokenNum);
+            localStorage.setItem("estimatedTiming", this.estimatedTime);
+            if (this.loanRepaymentResp) {
+                this.tokendisable = true;
+                this.dialogService.tokenGenerationDialog();
+            }
+        }, (error) => {
+            console.log(error);
+            this.tokendisable = false;
+        });
+        console.log("no resp");
+        setTimeout(() => {
+            if (this.loanRepaymentResp == undefined) {
+                console.log(this.loanRepaymentResp);
+                this.tokendisable = false;
+            }
+            console.log("out", this.tokendisable);
+        }, 30000);
     }
     onSaveofCashWithdraw(form, type, cdForm) {
         var _a;
@@ -14120,35 +14665,87 @@ class LoanRepaymentServiceComponent {
         }
         let denominationData = {};
         let denominationDataArray = [];
-        // if(this.denomRequired == 'yes'){
-        for (let i = 0; i < this.denomCodeArray.length; i++) {
-            if (cdForm.value[this.denomCodeArray[i].key]) {
-                // denominationData.transactionId = this.cashdepositFor;
-                denominationData.denominationKey = this.denomCodeArray[i].value;
-                denominationData.denominationValue = +cdForm.value[this.denomCodeArray[i].key];
-                denominationData.currency = this.loanRepaymentForm.value.transactionCurrency;
-                // denominationData.amountAvailiable = 15200 - (cdForm.value[this.denomCodeArray[i].key] * this.denomCodeArray[i].value);
-                denominationDataArray.push(denominationData);
-                console.log(denominationDataArray);
-                denominationData = {};
+        if (this.denomRequired == 'yes' && (Object.keys(this.denominationdata).length != 0)) {
+            for (let i = 0; i < this.denomCodeArray.length; i++) {
+                if (cdForm.value[this.denomCodeArray[i].key]) {
+                    // denominationData.transactionId = this.cashdepositFor;
+                    denominationData.denominationKey = this.denomCodeArray[i].value;
+                    denominationData.denominationValue = +cdForm.value[this.denomCodeArray[i].key];
+                    denominationData.currency = this.loanRepaymentForm.value.transactionCurrency;
+                    // denominationData.amountAvailiable = 15200 - (cdForm.value[this.denomCodeArray[i].key] * this.denomCodeArray[i].value);
+                    denominationDataArray.push(denominationData);
+                    console.log(denominationDataArray);
+                    denominationData = {};
+                }
             }
         }
-        // }
-        // form.tokenBranch = "KN";
+        console.log(this.appointmentDetails);
         if ((_a = this.appointmentDetails) === null || _a === void 0 ? void 0 : _a.appointmentId) {
             console.log(this.appointmentDetails);
-            this.Token.customerId = this.appointmentDetails.customerId,
-                this.Token.accountNumber = this.appointmentDetails.accountNumber,
-                this.Token.accountType = this.appointmentDetails.accountType,
+            let loanRepaymentModeInfo = [];
+            // loanRepaymentModeInfo.push({ 
+            //   loanAccountNo:this.appointmentDetails.modeInfo[0].loanAccountNo,
+            //   category:'Repayment',
+            //   rePaymentMode:this.appointmentDetails.modeInfo[0].rePaymentMode,
+            //   accountNumber:this.appointmentDetails.accountNumber,
+            //   accountCurrency:this.appointmentDetails.accountCurrency,
+            //   chequeNo:this.appointmentDetails.chequeNumber,
+            //   accountBranch:this.appointmentDetails.accountBranch,
+            //   chequeType:this.appointmentDetails.chequeType,
+            //   nameOfTheCheque:this.appointmentDetails.nameOfTheCheque,
+            //   accountBalance:this.appointmentDetails.accountBalance,
+            //   customerNumber:this.appointmentDetails.holderName,
+            //   accountType:this.appointmentDetails.accountType,
+            // });
+            if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'cheque') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                    category: 'Repayment',
+                    rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
+                    accountNumber: this.appointmentDetails.accountNumber,
+                    accountCurrency: this.appointmentDetails.accountCurrency,
+                    accountBranch: this.appointmentDetails.modeInfo[0].accountBranch,
+                    chequeType: this.appointmentDetails.chequeType,
+                    nameOfTheCheque: this.appointmentDetails.nameOfTheCheque,
+                });
+            }
+            else if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'account') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                    category: 'Repayment',
+                    rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
+                    accountNumber: this.appointmentDetails.accountNumber,
+                    accountCurrency: this.appointmentDetails.accountCurrency,
+                    accountBranch: this.appointmentDetails.modeInfo[0].accountBranch,
+                    accountBalance: this.appointmentDetails.accountBalance,
+                    customerNumber: this.appointmentDetails.holderName,
+                    accountType: this.appointmentDetails.accountType,
+                });
+            }
+            else {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                    category: 'Repayment',
+                    rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
+                });
+            }
+            this.Token.modeInfo = loanRepaymentModeInfo;
+            this.Token.holderName = this.appointmentDetails.holderName,
                 this.Token.accountCurrency = this.appointmentDetails.accountCurrency,
-                this.Token.accountBalance = this.appointmentDetails.accountBalance,
-                this.Token.accountBranch = this.appointmentDetails.accountBranch,
-                // this.Token.holderName=this.appointmentDetails.holderName,
+                this.Token.appointmentId = this.appointmentDetails.appointmentId ? this.appointmentDetails.appointmentId : 0,
+                this.Token.appointmentStatus = this.appointmentDetails.appointmentStatus,
+                this.Token.transactionAmount = this.appointmentDetails.transactionAmount,
+                this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0,
                 this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency,
-                this.Token.transactionAmount = this.appointmentDetails.transactionAmount;
-            this.Token.transactionId = this.appointmentDetails.transactionId,
+                this.Token.accountNumber = this.appointmentDetails.accountNumber,
+                this.Token.negotiatedRate = this.appointmentDetails.negotiatedRate,
                 this.Token.totalChargeAmount = this.appointmentDetails.totalChargeAmount,
                 this.Token.totalTransactionAmount = this.appointmentDetails.totalTransactionAmount,
+                this.Token.accountType = this.appointmentDetails.accountType,
+                this.Token.accountBranch = this.appointmentDetails.accountBranch,
+                this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0,
+                console.log("Not a qrvariable", this.Token);
+            this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency,
                 this.Token.transactionBranch = this.transBranch,
                 this.Token.entityCode = this.entityCode,
                 this.Token.bankCode = this.bankCode,
@@ -14158,50 +14755,74 @@ class LoanRepaymentServiceComponent {
                 this.Token.tokenOrigin = this.tokenOrigin,
                 this.Token.tokenNumber = "",
                 this.Token.estimatedWaitTime = "",
-                this.Token.exchangeRate = "",
                 this.Token.accountAmount = "",
-                this.Token.narrative = "",
-                //  this.Token.denomination=[],
+                this.Token.narrative = this.appointmentDetails.remarks,
                 this.Token.totalAmount = "";
-            if (this.denomRequired == 'yes') {
+            this.Token.denomination = [],
+                console.log(denominationDataArray);
+            if (this.appointmentDetails.modeInfo[0].rePaymentMode.rePaymentMode == 'cash' && this.denomRequired == 'yes') {
                 this.Token.denomination = denominationDataArray;
             }
-            // }
             console.log("Not a qrvariable", this.Token);
         }
-        //  console.log("Not a qrvariable",this.ifQRvariable ,this.appointmentDetails);
-        // if(!this.appointmentDetails)
         else {
             console.log(form);
-            // let payload = {
             let loanRepaymentModeInfo = [];
-            loanRepaymentModeInfo.push({
-                loanAccountId: form.loanInfo.loanAccountId,
-                loanBreakupDues: form.loanInfo.loanBreakupDues,
-                loanType: form.loanInfo.loanType,
-                currentDue: form.loanInfo.currentDue,
-                loanRepaymentAmount: form.paymentInfo.loanRepaymentAmount,
-                currentArrears: form.loanInfo.currentArrears,
-                principalOutstanding: form.loanInfo.principalOutstanding,
-                rePaymentMode: form.paymentInfo.rePaymentMode
-            });
-            this.Token.loanRepaymentModeInfo = loanRepaymentModeInfo;
-            this.Token.customerId = form.loanInfo.customerId,
-                console.log("Not a qrvariable", this.Token);
-            this.Token.transactionCurrency = form.paymentInfo.transactionCurrency,
+            // loanRepaymentModeInfo.push({ 
+            //   loanAccountNo:form.loanInfo.loanAccountId,
+            //   category:'Repayment',
+            //   rePaymentMode:form.paymentInfo.rePaymentMode,
+            //   accountNumber:form.paymentInfo.accountNumber,
+            //   accountCurrency:form.paymentInfo.accountCurrency,
+            //   chequeNo:form.paymentInfo.chequeNumber,
+            //   accountBranch:form.paymentInfo.accountBranch,
+            //   chequeType:form.paymentInfo.accountBranch,
+            //   nameOfTheCheque:form.paymentForm.nameOfTheCheque,
+            //   accountBalance:form.paymentForm.accountBalance,
+            //   customerNumber:form.paymentForm.holderName,
+            //   accountType:form.paymentForm.accountType,
+            // });
+            if (form.paymentInfo.rePaymentMode == 'cheque') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: form.loanInfo.loanAccountId,
+                    category: 'Repayment',
+                    rePaymentMode: form.paymentInfo.rePaymentMode,
+                    accountNumber: form.paymentInfo.accountNumber,
+                    accountCurrency: form.loanInfo.accountCurrency,
+                    accountBranch: form.paymentInfo.accountBranch,
+                    chequeNo: form.paymentInfo.chequeNumber,
+                    nameOfTheCheque: form.paymentInfo.nameOfTheCheque,
+                });
+            }
+            else if (form.paymentInfo.rePaymentMode == 'account') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: form.loanInfo.loanAccountId,
+                    category: 'Repayment',
+                    rePaymentMode: form.paymentInfo.rePaymentMode,
+                    accountNumber: form.paymentInfo.accountNumber,
+                    accountCurrency: form.loanInfo.accountCurrency,
+                    accountBranch: form.paymentInfo.accountBranch,
+                    accountBalance: form.paymentInfo.accountBalance,
+                    accountType: form.paymentInfo.accountType,
+                    customerName: form.paymentInfo.holderName,
+                });
+            }
+            else {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: form.loanInfo.loanAccountId,
+                    category: 'Repayment',
+                    rePaymentMode: form.paymentInfo.rePaymentMode,
+                });
+            }
+            this.Token.modeInfo = loanRepaymentModeInfo;
+            this.Token.customerId = form.loanInfo.customerId ? form.loanInfo.customerId : 0,
+                this.Token.transactionCurrency = form.paymentInfo.transactionCurrency,
                 this.Token.negotiatedRate = form.paymentInfo.negotiatedRate,
                 this.Token.totalChargeAmount = form.paymentInfo.totalChargeAmount,
                 this.Token.totalTransactionAmount = form.paymentInfo.totalTransactionAmount,
-                //  if(this.qrData){
-                //   this.Token.transactionAmount=form.transaction.transactionAmount;
-                //  }
-                //  else{
-                //   this.Token.transactionAmount=form.transaction.transactionAmount.replace(/,/g, "");
-                //  }
-                //  this.Token.transactionId=form.transaction.transactionId,
-                //  this.Token.totalChargeAmount=form.transaction.totalChargeAmount,
-                //  this.Token.totalTransactionAmount=form.transaction.totalTransactionAmount,
-                //  this.Token.exchangeRate = form.transaction.exchangeRate;
+                this.Token.accountType = form.loanInfo.loanType,
+                this.Token.accountCurrency = form.loanInfo.accountCurrency,
+                this.Token.holderName = form.loanInfo.holderName,
                 this.Token.transactionBranch = this.transBranch,
                 this.Token.entityCode = this.entityCode,
                 this.Token.bankCode = this.bankCode,
@@ -14216,7 +14837,7 @@ class LoanRepaymentServiceComponent {
                 //  this.Token.denomination=[],
                 this.Token.totalAmount = "";
             console.log(denominationDataArray);
-            if (this.paymentData.rePaymentMode == 'cash') {
+            if (this.paymentData.rePaymentMode == 'cash' && this.denomRequired == 'yes') {
                 this.Token.denomination = denominationDataArray;
             }
             // }
@@ -14241,7 +14862,7 @@ class LoanRepaymentServiceComponent {
     }
 }
 LoanRepaymentServiceComponent.ɵfac = function LoanRepaymentServiceComponent_Factory(t) { return new (t || LoanRepaymentServiceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_8__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_6__["DataService"])); };
-LoanRepaymentServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanRepaymentServiceComponent, selectors: [["app-loan-repayment-service"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["formControlName", "loanInfo"], ["titleVal", "Loan Repayment", "formControlName", "paymentInfo"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function LoanRepaymentServiceComponent_Template(rf, ctx) { if (rf & 1) {
+LoanRepaymentServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanRepaymentServiceComponent, selectors: [["app-loan-repayment-service"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["titleVal", "Repayment", "formControlName", "loanInfo"], ["titleVal", "Repayment", "formControlName", "paymentInfo", "loanType", "loanRepayment"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function LoanRepaymentServiceComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, LoanRepaymentServiceComponent_form_0_Template, 10, 5, "form", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loanRepaymentForm);
@@ -14273,16 +14894,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/shared/services/data.service */ "iiaH");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/flex-layout/extended */ "znSr");
-/* harmony import */ var _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../shared/core-form/header/header.component */ "NynZ");
-/* harmony import */ var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/flex-layout/flex */ "XiUz");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
-/* harmony import */ var _shared_core_form_loan_information_form_loan_information_form_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../shared/core-form/loan-information-form/loan-information-form.component */ "tT5d");
-/* harmony import */ var _shared_core_form_payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../shared/core-form/payment-information/payment-information.component */ "6a3I");
-/* harmony import */ var _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../shared/core-form/footer/footer.component */ "7hDA");
-/* harmony import */ var _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../shared/core-form/denomination-info/denomination-info.component */ "bCWT");
+/* harmony import */ var app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/shared/services/api.service */ "nm5K");
+/* harmony import */ var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/shared/services/data.service */ "iiaH");
+/* harmony import */ var app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/shared/services/Dialog/dialog.service */ "LP5l");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _loan_repayment_service_loan_repayment_service_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../loan-repayment-service/loan-repayment-service.component */ "XZUR");
+/* harmony import */ var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/flex-layout/extended */ "znSr");
+/* harmony import */ var _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../shared/core-form/header/header.component */ "NynZ");
+/* harmony import */ var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/flex-layout/flex */ "XiUz");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var _shared_core_form_loan_information_form_loan_information_form_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../shared/core-form/loan-information-form/loan-information-form.component */ "tT5d");
+/* harmony import */ var _shared_core_form_payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../shared/core-form/payment-information/payment-information.component */ "6a3I");
+/* harmony import */ var _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../shared/core-form/footer/footer.component */ "7hDA");
+/* harmony import */ var _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../shared/core-form/denomination-info/denomination-info.component */ "bCWT");
+
+
+
+
+
 
 
 
@@ -14307,10 +14936,12 @@ function LoanDisburshmentComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class LoanDisburshmentComponent {
-    constructor(formBuilder, _location, router, dataService) {
+    constructor(formBuilder, dialogService, _location, router, apiService, dataService) {
         this.formBuilder = formBuilder;
+        this.dialogService = dialogService;
         this._location = _location;
         this.router = router;
+        this.apiService = apiService;
         this.dataService = dataService;
         this.title = "Loan Disburshment";
         this.displayDenom = false;
@@ -14318,8 +14949,24 @@ class LoanDisburshmentComponent {
         this.entityCode = "ENTCD";
         this.bankCode = "BNKC";
         this.tokenBranch = "KN";
+        this.tokenOrigin = "Kiosk";
+        this.tokendisable = false;
+        this.denomCodeArray = [
+            { key: 'count2000', value: 2000 },
+            { key: 'count500', value: 500 },
+            { key: 'count200', value: 200 },
+            { key: 'count100', value: 100 },
+            { key: 'count50', value: 50 },
+            { key: 'count20', value: 20 },
+            { key: 'count10', value: 10 },
+            { key: 'count1', value: 1 }
+        ];
+        this.Token = new _loan_repayment_service_loan_repayment_service_component__WEBPACK_IMPORTED_MODULE_7__["LoanTokenGenerationObj"]();
     }
     ngOnInit() {
+        this.custValidation = localStorage.getItem("customerValidation");
+        this.transBranch = localStorage.getItem("TRANSACTIONBRANCH");
+        this.denomRequired = localStorage.getItem("DenominationRequired");
         this.loanDisburshmentForm = this.formBuilder.group({
             loanInfo: [],
             paymentInfo: [],
@@ -14329,7 +14976,7 @@ class LoanDisburshmentComponent {
             tokenBranch: [this.tokenBranch, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             customerCategory: [this.custPref, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             tokenNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            productCode: ['LNR',
+            productCode: ['LND',
                 _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required
             ],
             tokenOrigin: ['Kiosk',
@@ -14339,8 +14986,8 @@ class LoanDisburshmentComponent {
             narrative: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
         this.dataService.getpaymentInfoFormdata.subscribe(payment => {
-            console.log(Object.keys(payment).length === 0, payment.constructor === Object);
-            if (Object.keys(payment).length != 0 && payment.constructor === Object) {
+            // console.log(Object.keys(payment).length === 0,payment.constructor === Object)
+            if (payment) {
                 this.paymentData = payment;
                 console.log(this.paymentData, this.denominationRequired);
                 if (this.paymentData.rePaymentMode == 'cash') {
@@ -14349,6 +14996,19 @@ class LoanDisburshmentComponent {
                 else {
                     this.displayDenom = false;
                 }
+            }
+        });
+        this.dataService.getdenominationFormdata.subscribe(denomination => {
+            if (denomination) {
+                console.log("Account component?", denomination);
+                this.denominationdata = denomination;
+            }
+        });
+        this.dataService.getloanRepaymentData.subscribe(payment => {
+            // console.log(Object.keys(payment).length === 0,payment.constructor === Object)
+            // if(Object.keys(payment).length != 0  && payment.constructor === Object){
+            if (payment) {
+                this.appointmentDetails = payment;
             }
         });
     }
@@ -14362,9 +15022,214 @@ class LoanDisburshmentComponent {
     back() {
         this._location.back();
     }
+    onSubmit(event) {
+        console.log(this.loanDisburshmentForm);
+        if (event == 'showAccountNum') {
+            console.log("First Condition");
+            this.onSaveofCashWithdraw(this.loanDisburshmentForm.value, this.ifQRvariable, this.denominationdata);
+        }
+        if (event == 'NotshowAccountNum') {
+            console.log("Second Condition");
+            // this.getOTP(this.loanRepaymentForm.value,this.ifQRvariable,this.denominationdata);
+        }
+    }
+    onSaveofCashWithdraw(form, type, cdForm) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        console.log(form, type, cdForm);
+        // if(Number(this.appointmentDetails?.appointmentId ?this.loanRepaymentForm.value.transaction.transactionAmount:this.loanRepaymentForm.value.transaction.transactionAmount.replace(/,/g,"")) > this.loanRepaymentForm.value.account.accountBalance){
+        //   console.log("insufficient_true");
+        // }
+        // else if(this.loanRepaymentForm.value.transaction.transactionAmount === ""){
+        //   console.log("please enter transaction amount");
+        // }
+        // console.log("Inside");
+        // else{
+        console.log("insufficient_false");
+        if (this.qrData) {
+            if (this.qrData.transactionBranch) {
+                this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(response => {
+                    this.qrBranchCode = response;
+                });
+            }
+        }
+        let denominationData = {};
+        let denominationDataArray = [];
+        console.log(Object.keys(this.denominationdata).length != 0, this.denominationdata.constructor === Object);
+        if (this.denomRequired == 'yes' && (Object.keys(this.denominationdata).length != 0)) {
+            for (let i = 0; i < this.denomCodeArray.length; i++) {
+                if (cdForm.value[(_a = this.denomCodeArray[i]) === null || _a === void 0 ? void 0 : _a.key]) {
+                    // denominationData.transactionId = this.cashdepositFor;
+                    denominationData.denominationKey = (_b = this.denomCodeArray[i]) === null || _b === void 0 ? void 0 : _b.value;
+                    denominationData.denominationValue = +cdForm.value[(_c = this.denomCodeArray[i]) === null || _c === void 0 ? void 0 : _c.key];
+                    denominationData.currency = this.loanDisburshmentForm.value.transactionCurrency;
+                    // denominationData.amountAvailiable = 15200 - (cdForm.value[this.denomCodeArray[i].key] * this.denomCodeArray[i].value);
+                    denominationDataArray.push(denominationData);
+                    console.log(denominationDataArray);
+                    denominationData = {};
+                }
+            }
+        }
+        // form.tokenBranch = "KN";
+        if ((_d = this.appointmentDetails) === null || _d === void 0 ? void 0 : _d.appointmentId) {
+            console.log(this.appointmentDetails);
+            let loanRepaymentModeInfo = [];
+            // loanRepaymentModeInfo.push({ 
+            //   loanAccountNo:this.appointmentDetails.modeInfo[0].loanAccountNo,
+            //   category:'Disbursement',
+            //   rePaymentMode:this.appointmentDetails.modeInfo[0].rePaymentMode,
+            //   accountNumber:this.appointmentDetails.accountNumber,
+            //   accountCurrency:this.appointmentDetails.accountCurrency,
+            //   chequeNo:this.appointmentDetails.chequeNumber,
+            //   accountBranch:this.appointmentDetails.accountBranch,
+            //   chequeType:this.appointmentDetails.chequeType,
+            //   nameOfTheCheque:this.appointmentDetails.nameOfTheCheque,
+            //   accountBalance:this.appointmentDetails.accountBalance,
+            //   customerNumber:this.appointmentDetails.holderName,
+            // });
+            if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'cheque') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                    category: 'Disbursement',
+                    rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
+                    accountNumber: (_e = this.appointmentDetails) === null || _e === void 0 ? void 0 : _e.accountNumber,
+                    accountCurrency: (_f = this.appointmentDetails) === null || _f === void 0 ? void 0 : _f.accountCurrency,
+                    accountBranch: (_g = this.appointmentDetails) === null || _g === void 0 ? void 0 : _g.accountBranch,
+                    chequeType: (_h = this.appointmentDetails) === null || _h === void 0 ? void 0 : _h.chequeType,
+                    nameOfTheCheque: (_j = this.appointmentDetails) === null || _j === void 0 ? void 0 : _j.nameOfTheCheque,
+                    customerNumber: (_k = this.appointmentDetails) === null || _k === void 0 ? void 0 : _k.holderName,
+                    accountBalance: (_l = this.appointmentDetails) === null || _l === void 0 ? void 0 : _l.accountBranch,
+                });
+            }
+            else if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'account') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                    category: 'Disbursement',
+                    rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
+                    accountNumber: this.appointmentDetails.accountNumber,
+                    accountCurrency: this.appointmentDetails.accountCurrency,
+                    accountBranch: this.appointmentDetails.accountBranch,
+                    accountBalance: this.appointmentDetails.accountBranch,
+                });
+            }
+            else {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                    category: 'Disbursement',
+                    rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
+                });
+            }
+            this.Token.modeInfo = loanRepaymentModeInfo,
+                this.Token.holderName = this.appointmentDetails.holderName,
+                this.Token.accountCurrency = this.appointmentDetails.accountCurrency,
+                this.Token.appointmentId = this.appointmentDetails.appointmentId ? this.appointmentDetails.appointmentId : 0,
+                this.Token.appointmentStatus = this.appointmentDetails.appointmentStatus,
+                this.Token.transactionAmount = this.appointmentDetails.transactionAmount,
+                this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0,
+                this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency,
+                this.Token.accountType = this.appointmentDetails.accountType,
+                this.Token.negotiatedRate = this.appointmentDetails.negotiatedRate,
+                this.Token.totalChargeAmount = this.appointmentDetails.totalChargeAmount,
+                this.Token.totalTransactionAmount = this.appointmentDetails.totalTransactionAmount,
+                this.Token.transactionBranch = this.transBranch,
+                this.Token.entityCode = this.entityCode,
+                this.Token.bankCode = this.bankCode,
+                this.Token.tokenBranch = this.tokenBranch,
+                this.Token.customerCategory = this.custPref,
+                this.Token.productCode = 'LND',
+                this.Token.tokenOrigin = this.tokenOrigin,
+                this.Token.tokenNumber = "",
+                this.Token.estimatedWaitTime = "",
+                this.Token.accountAmount = "",
+                this.Token.narrative = this.appointmentDetails.remarks,
+                this.Token.totalAmount = "";
+            console.log(denominationDataArray);
+            if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'cash' && this.denomRequired == 'yes') {
+                this.Token.denomination = denominationDataArray;
+            }
+            console.log("Not a qrvariable", this.Token);
+        }
+        else {
+            console.log(form);
+            let loanRepaymentModeInfo = [];
+            if (form.paymentInfo.rePaymentMode == 'cheque') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: form.loanInfo.loanAccountId,
+                    category: 'Disbursement',
+                    rePaymentMode: form.paymentInfo.rePaymentMode,
+                    accountNumber: form.paymentInfo.accountNumber,
+                    accountCurrency: form.loanInfo.accountCurrency,
+                    accountBranch: form.paymentInfo.accountBranch,
+                    chequeType: form.paymentInfo.chequeType,
+                    nameOfTheCheque: form.paymentInfo.nameOfTheCheque,
+                });
+            }
+            else if (form.paymentInfo.rePaymentMode == 'account') {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: form.loanInfo.loanAccountId,
+                    category: 'Disbursement',
+                    rePaymentMode: form.paymentInfo.rePaymentMode,
+                    accountNumber: form.paymentInfo.accountNumber,
+                    accountCurrency: form.loanInfo.accountCurrency,
+                    accountBranch: form.paymentInfo.accountBranch,
+                    accountBalance: form.paymentInfo.accountBalance,
+                });
+            }
+            else {
+                loanRepaymentModeInfo.push({
+                    loanAccountNo: form.loanInfo.loanAccountId,
+                    category: 'Disbursement',
+                    rePaymentMode: form.paymentInfo.rePaymentMode,
+                });
+            }
+            this.Token.modeInfo = loanRepaymentModeInfo;
+            this.Token.customerId = form.loanInfo.customerId ? form.loanInfo.customerId : 0,
+                console.log("Not a qrvariable", this.Token);
+            this.Token.transactionCurrency = form.paymentInfo.transactionCurrency,
+                this.Token.negotiatedRate = form.paymentInfo.negotiatedRate,
+                this.Token.totalChargeAmount = form.paymentInfo.totalChargeAmount,
+                this.Token.totalTransactionAmount = form.paymentInfo.totalTransactionAmount,
+                this.Token.accountType = form.loanInfo.accountType,
+                this.Token.holderName = form.loanInfo.holderName,
+                this.Token.transactionBranch = this.transBranch,
+                this.Token.entityCode = this.entityCode,
+                this.Token.bankCode = this.bankCode,
+                this.Token.tokenBranch = this.tokenBranch,
+                this.Token.customerCategory = this.custPref,
+                this.Token.productCode = 'LND',
+                this.Token.tokenOrigin = this.tokenOrigin,
+                this.Token.transactionAmount = form.paymentInfo.loanDisburshmentAmount,
+                this.Token.tokenNumber = "",
+                this.Token.estimatedWaitTime = "",
+                this.Token.accountAmount = "",
+                this.Token.narrative = "",
+                //  this.Token.denomination=[],
+                this.Token.totalAmount = "";
+            console.log(this.denomRequired);
+            if (this.paymentData.rePaymentMode == 'cash' && this.denomRequired == 'yes') {
+                this.Token.denomination = denominationDataArray;
+            }
+            // }
+            console.log("Not a qrvariable", this.Token);
+        }
+        this.apiService.saveofCashDeposit(this.Token).subscribe(cashWithdrawResp => {
+            console.log("Response Success, Data Saved", cashWithdrawResp);
+            this.loanResponse = cashWithdrawResp;
+            this.tokenNum = this.loanResponse.tokenNumber;
+            this.estimatedTime = this.loanResponse.estimatedWaitTime;
+            localStorage.setItem("tokenNumer", this.tokenNum);
+            localStorage.setItem("estimatedTiming", this.estimatedTime);
+            if (this.loanResponse) {
+                this.dialogService.tokenGenerationDialog();
+            }
+        });
+        if (this.Token) {
+            this.tokendisable = true;
+        }
+        // }
+    }
 }
-LoanDisburshmentComponent.ɵfac = function LoanDisburshmentComponent_Factory(t) { return new (t || LoanDisburshmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"])); };
-LoanDisburshmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanDisburshmentComponent, selectors: [["app-loan-disburshment"]], decls: 10, vars: 6, consts: [[3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["formControlName", "loanInfo"], ["titleVal", "Loan Disburshment", "formControlName", "paymentInfo", "loanType", "loanDisburshment"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function LoanDisburshmentComponent_Template(rf, ctx) { if (rf & 1) {
+LoanDisburshmentComponent.ɵfac = function LoanDisburshmentComponent_Factory(t) { return new (t || LoanDisburshmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_5__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"])); };
+LoanDisburshmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanDisburshmentComponent, selectors: [["app-loan-disburshment"]], decls: 10, vars: 6, consts: [[3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["titleVal", "Disbursement", "formControlName", "loanInfo"], ["titleVal", "Disbursement", "formControlName", "paymentInfo", "loanType", "loanDisburshment"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]], template: function LoanDisburshmentComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "app-header", 2);
@@ -14380,7 +15245,7 @@ LoanDisburshmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "app-footer", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("cancel", function LoanDisburshmentComponent_Template_app_footer_cancel_9_listener() { return ctx.redirectToHome(); })("exit", function LoanDisburshmentComponent_Template_app_footer_exit_9_listener() { return ctx.back(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("save", function LoanDisburshmentComponent_Template_app_footer_save_9_listener($event) { return ctx.onSubmit($event); })("cancel", function LoanDisburshmentComponent_Template_app_footer_cancel_9_listener() { return ctx.redirectToHome(); })("exit", function LoanDisburshmentComponent_Template_app_footer_exit_9_listener() { return ctx.back(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -14396,7 +15261,7 @@ LoanDisburshmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.displayDenom ? "footclass" : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("cancelDisabled", false);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_5__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__["DefaultFlexDirective"], _shared_core_form_loan_information_form_loan_information_form_component__WEBPACK_IMPORTED_MODULE_9__["LoanInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_10__["PaymentInformationComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_12__["DenominationInfoComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsb2FuLWRpc2J1cnNobWVudC5jb21wb25lbnQuc2NzcyJ9 */"] });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_8__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_9__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_10__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_10__["DefaultFlexDirective"], _shared_core_form_loan_information_form_loan_information_form_component__WEBPACK_IMPORTED_MODULE_12__["LoanInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_13__["PaymentInformationComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_14__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_15__["DenominationInfoComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsb2FuLWRpc2J1cnNobWVudC5jb21wb25lbnQuc2NzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LoanDisburshmentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -14404,7 +15269,7 @@ LoanDisburshmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
                 templateUrl: './loan-disburshment.component.html',
                 styleUrls: ['./loan-disburshment.component.scss']
             }]
-    }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] }]; }, null); })();
+    }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_5__["DialogService"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_6__["Location"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"] }, { type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"] }]; }, null); })();
 
 
 /***/ }),
@@ -16177,6 +17042,50 @@ CashDepositComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 
 /***/ }),
 
+/***/ "Z7HD":
+/*!****************************************************!*\
+  !*** ./src/app/directives/trim-input.directive.ts ***!
+  \****************************************************/
+/*! exports provided: TrimInputDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrimInputDirective", function() { return TrimInputDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class TrimInputDirective {
+    constructor() {
+        this.ngModelChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    onInputChange($event) {
+        var _a;
+        const currentValue = (_a = $event.target) === null || _a === void 0 ? void 0 : _a.value;
+        const trimmedValue = currentValue === null || currentValue === void 0 ? void 0 : currentValue.trim();
+        this.ngModelChange.emit(trimmedValue);
+    }
+}
+TrimInputDirective.ɵfac = function TrimInputDirective_Factory(t) { return new (t || TrimInputDirective)(); };
+TrimInputDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: TrimInputDirective, selectors: [["input", "trim", ""]], hostBindings: function TrimInputDirective_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("input", function TrimInputDirective_input_HostBindingHandler($event) { return ctx.onInputChange($event); });
+    } }, outputs: { ngModelChange: "ngModelChange" } });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TrimInputDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                // tslint:disable-next-line: directive-selector
+                selector: 'input[trim]'
+            }]
+    }], null, { ngModelChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }], onInputChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['input', ['$event']]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "azsi":
 /*!***********************************************************************************!*\
   !*** ./src/app/views/others/utility-billpayment/utility-billpayment.component.ts ***!
@@ -16783,7 +17692,7 @@ function DenominationInfoComponent_mat_card_0_Template(rf, ctx) { if (rf & 1) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](11, _c1, ctx_r0.title && ctx_r0.title.toLowerCase().includes("cheque withdrawal") ? "96.3%" : "96.5%"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.transactiondata.transactionCurrency == "INR" || ctx_r0.chqPage == "Loan Payment");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.transactiondata.transactionCurrency == "INR" || ctx_r0.chqPage == "Loan Payment" || ctx_r0.chqPage == "Loan Disburshment");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.transactiondata.transactionCurrency == "INR" || ctx_r0.transactiondata.transactionCurrency == "USD" || ctx_r0.transactiondata.transactionCurrency == "AED" || ctx_r0.chqPage == "Loan Payment");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -17833,6 +18742,44 @@ ScanYourChequeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
 
 /***/ }),
 
+/***/ "d/ZK":
+/*!*******************************************************!*\
+  !*** ./src/app/directives/alphabet-only.directive.ts ***!
+  \*******************************************************/
+/*! exports provided: AlphabetOnlyDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlphabetOnlyDirective", function() { return AlphabetOnlyDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class AlphabetOnlyDirective {
+    onKeydown(event) {
+        this.key = event.keyCode;
+        if ((this.key >= 15 && this.key <= 64) || (this.key >= 123) || (this.key >= 96 && this.key <= 105)) {
+            event.preventDefault();
+        }
+    }
+}
+AlphabetOnlyDirective.ɵfac = function AlphabetOnlyDirective_Factory(t) { return new (t || AlphabetOnlyDirective)(); };
+AlphabetOnlyDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: AlphabetOnlyDirective, selectors: [["", "appAlphabetOnly", ""]], hostBindings: function AlphabetOnlyDirective_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function AlphabetOnlyDirective_keydown_HostBindingHandler($event) { return ctx.onKeydown($event); });
+    } } });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AlphabetOnlyDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+                selector: '[appAlphabetOnly]'
+            }]
+    }], null, { onKeydown: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"],
+            args: ['keydown', ['$event']]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "d44F":
 /*!*********************************************************************************!*\
   !*** ./src/app/views/others/cheque-withdrawal1/cheque-withdrawal1.component.ts ***!
@@ -18017,6 +18964,86 @@ ChequeWithdrawal1Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
                 styleUrls: ['./cheque-withdrawal1.component.scss']
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "eg6t":
+/*!************************************************!*\
+  !*** ./src/app/directives/directive.module.ts ***!
+  \************************************************/
+/*! exports provided: DirectiveModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectiveModule", function() { return DirectiveModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _auto_focus_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auto-focus.directive */ "EgkN");
+/* harmony import */ var _separator_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./separator.directive */ "VK9D");
+/* harmony import */ var _decimal_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./decimal.directive */ "/EC3");
+/* harmony import */ var _alphabet_only_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./alphabet-only.directive */ "d/ZK");
+/* harmony import */ var _numbers_only_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./numbers-only.directive */ "OXpz");
+/* harmony import */ var _trim_input_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./trim-input.directive */ "Z7HD");
+/* harmony import */ var _special_text_directive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./special-text.directive */ "WPGO");
+
+
+
+
+
+
+
+
+
+
+const directives = [
+    _auto_focus_directive__WEBPACK_IMPORTED_MODULE_2__["AutoFocusDirective"],
+    _separator_directive__WEBPACK_IMPORTED_MODULE_3__["SeparatorDirective"],
+    _decimal_directive__WEBPACK_IMPORTED_MODULE_4__["TwoDigitDecimaNumberDirective"],
+    _alphabet_only_directive__WEBPACK_IMPORTED_MODULE_5__["AlphabetOnlyDirective"],
+    _numbers_only_directive__WEBPACK_IMPORTED_MODULE_6__["NumberDirective"],
+    _trim_input_directive__WEBPACK_IMPORTED_MODULE_7__["TrimInputDirective"],
+    _special_text_directive__WEBPACK_IMPORTED_MODULE_8__["SpecialTextDirective"]
+];
+class DirectiveModule {
+}
+DirectiveModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: DirectiveModule });
+DirectiveModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function DirectiveModule_Factory(t) { return new (t || DirectiveModule)(); }, providers: [
+        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CurrencyPipe"],
+        _angular_common__WEBPACK_IMPORTED_MODULE_1__["DecimalPipe"],
+        { provide: _angular_core__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_CURRENCY_CODE"], useValue: 'INR' }
+    ], imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DirectiveModule, { declarations: [_auto_focus_directive__WEBPACK_IMPORTED_MODULE_2__["AutoFocusDirective"],
+        _separator_directive__WEBPACK_IMPORTED_MODULE_3__["SeparatorDirective"],
+        _decimal_directive__WEBPACK_IMPORTED_MODULE_4__["TwoDigitDecimaNumberDirective"],
+        _alphabet_only_directive__WEBPACK_IMPORTED_MODULE_5__["AlphabetOnlyDirective"],
+        _numbers_only_directive__WEBPACK_IMPORTED_MODULE_6__["NumberDirective"],
+        _trim_input_directive__WEBPACK_IMPORTED_MODULE_7__["TrimInputDirective"],
+        _special_text_directive__WEBPACK_IMPORTED_MODULE_8__["SpecialTextDirective"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]], exports: [_auto_focus_directive__WEBPACK_IMPORTED_MODULE_2__["AutoFocusDirective"],
+        _separator_directive__WEBPACK_IMPORTED_MODULE_3__["SeparatorDirective"],
+        _decimal_directive__WEBPACK_IMPORTED_MODULE_4__["TwoDigitDecimaNumberDirective"],
+        _alphabet_only_directive__WEBPACK_IMPORTED_MODULE_5__["AlphabetOnlyDirective"],
+        _numbers_only_directive__WEBPACK_IMPORTED_MODULE_6__["NumberDirective"],
+        _trim_input_directive__WEBPACK_IMPORTED_MODULE_7__["TrimInputDirective"],
+        _special_text_directive__WEBPACK_IMPORTED_MODULE_8__["SpecialTextDirective"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DirectiveModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                declarations: [directives],
+                imports: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+                ],
+                exports: directives,
+                providers: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_1__["CurrencyPipe"],
+                    _angular_common__WEBPACK_IMPORTED_MODULE_1__["DecimalPipe"],
+                    { provide: _angular_core__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_CURRENCY_CODE"], useValue: 'INR' }
+                ]
+            }]
+    }], null, null); })();
 
 
 /***/ }),
@@ -21794,16 +22821,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/shared/services/Dialog/dialog.service */ "LP5l");
 /* harmony import */ var app_shared_models_otp_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/shared/models/otp.model */ "V4gq");
 /* harmony import */ var app_shared_models_tokenObjects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! app/shared/models/tokenObjects */ "JLZh");
-/* harmony import */ var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! app/shared/services/data.service */ "iiaH");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! app/shared/services/data.service */ "iiaH");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
 /* harmony import */ var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/flex-layout/flex */ "XiUz");
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/tooltip */ "Qu3c");
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/form-field */ "kmnG");
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/select */ "d3UM");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/form-field */ "kmnG");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/select */ "d3UM");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/tooltip */ "Qu3c");
+
 
 
 
@@ -21834,132 +22862,140 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function LoanInformationFormComponent_div_6_mat_select_5_mat_option_4_Template(rf, ctx) { if (rf & 1) {
-    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanInformationFormComponent_div_6_mat_select_5_mat_option_4_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15); const type_r13 = ctx.$implicit; const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r14.onLoanTypeChange(type_r13.accountType); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 22);
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoanInformationFormComponent_div_6_mat_select_5_mat_option_4_Template_mat_option_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12); const type_r10 = ctx.$implicit; const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r11.onLoanTypeChange(type_r10.loanType); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " trip_origin ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const type_r13 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", type_r13.accountType);
+    const type_r10 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", type_r10.loanType);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", type_r13.accountType, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", type_r10.loanType, "");
 } }
 function LoanInformationFormComponent_div_6_mat_select_5_Template(rf, ctx) { if (rf & 1) {
-    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function LoanInformationFormComponent_div_6_mat_select_5_Template_mat_select_valueChange_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r17); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r16.selected1 = $event; });
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function LoanInformationFormComponent_div_6_mat_select_5_Template_mat_select_valueChange_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r13.selected1 = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-select-trigger");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "mat-icon", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "mat-icon", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_6_mat_select_5_mat_option_4_Template, 4, 2, "mat-option", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_6_mat_select_5_mat_option_4_Template, 4, 2, "mat-option", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r7.selected1);
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r4.selected1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.selected1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r4.selected1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r7.accounttypeArray);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r4.accounttypeArray);
 } }
 function LoanInformationFormComponent_div_6_input_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 19);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
 } }
 function LoanInformationFormComponent_div_6_input_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 19);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
 } }
 function LoanInformationFormComponent_div_6_mat_form_field_9_span_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "INR");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r15.loanForm.get("accountCurrency").value);
 } }
 function LoanInformationFormComponent_div_6_mat_form_field_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Loan Account*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_6_mat_form_field_9_span_4_Template, 2, 0, "span", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "input", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_6_mat_form_field_9_span_4_Template, 2, 1, "span", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "input", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r10.displayFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r7.displayFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
 } }
 function LoanInformationFormComponent_div_6_mat_form_field_10_span_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "INR");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r16.loanForm.get("accountCurrency").value);
 } }
 function LoanInformationFormComponent_div_6_mat_form_field_10_mat_option_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " trip_origin ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const id_r21 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", id_r21.loanAccountId);
+    const id_r18 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", id_r18.loanAccountId);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", id_r21.loanAccountId, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", id_r18.loanAccountId, " ");
 } }
 function LoanInformationFormComponent_div_6_mat_form_field_10_Template(rf, ctx) { if (rf & 1) {
-    const _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 29);
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Loan Account*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_6_mat_form_field_10_span_4_Template, 2, 0, "span", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-select", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function LoanInformationFormComponent_div_6_mat_form_field_10_Template_mat_select_valueChange_5_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r22.selected2 = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_6_mat_form_field_10_span_4_Template, 2, 1, "span", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-select", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function LoanInformationFormComponent_div_6_mat_form_field_10_Template_mat_select_valueChange_5_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r20); const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r19.selected2 = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-select-trigger");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "mat-icon", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "mat-icon", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_6_mat_form_field_10_mat_option_9_Template, 4, 2, "mat-option", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_6_mat_form_field_10_mat_option_9_Template, 4, 2, "mat-option", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r11.displayFlag);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r8.displayFlag);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r11.selected2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r8.selected2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r11.selected2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r8.selected2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r11.accountNoList);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r8.accountNoList);
 } }
 function LoanInformationFormComponent_div_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-form-field", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-form-field", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Loan Type*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, LoanInformationFormComponent_div_6_mat_select_5_Template, 5, 3, "mat-select", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, LoanInformationFormComponent_div_6_input_6_Template, 1, 1, "input", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, LoanInformationFormComponent_div_6_input_7_Template, 1, 1, "input", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, LoanInformationFormComponent_div_6_mat_select_5_Template, 5, 3, "mat-select", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, LoanInformationFormComponent_div_6_input_6_Template, 1, 1, "input", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, LoanInformationFormComponent_div_6_input_7_Template, 1, 1, "input", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_6_mat_form_field_9_Template, 6, 2, "mat-form-field", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, LoanInformationFormComponent_div_6_mat_form_field_10_Template, 10, 4, "mat-form-field", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_6_mat_form_field_9_Template, 6, 2, "mat-form-field", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, LoanInformationFormComponent_div_6_mat_form_field_10_Template, 10, 4, "mat-form-field", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -21976,110 +23012,209 @@ function LoanInformationFormComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r0.flag1);
 } }
 function LoanInformationFormComponent_div_7_span_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "INR");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r21.loanForm.get("accountCurrency").value);
+} }
+function LoanInformationFormComponent_div_7_mat_form_field_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Loan Type*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
 } }
 function LoanInformationFormComponent_div_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-form-field", 13);
+    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-form-field", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Loan Account*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, LoanInformationFormComponent_div_7_span_6_Template, 2, 0, "span", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "input", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, LoanInformationFormComponent_div_7_span_6_Template, 2, 1, "span", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LoanInformationFormComponent_div_7_Template_input_change_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r23.fetchByLoanAccountNum(ctx_r23.loanForm.get("loanAccountId").value, ctx_r23.titleVal); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-form-field", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Loan Type*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "input", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_7_mat_form_field_9_Template, 4, 1, "mat-form-field", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.displayFlag);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.flag1);
 } }
-function LoanInformationFormComponent_div_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 36);
+function LoanInformationFormComponent_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-hint", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-hint", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Account Branch ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2.loanForm.get("accountBranch").value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r25.loanForm.get("accountBranch").value);
 } }
-function LoanInformationFormComponent_div_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 37);
+function LoanInformationFormComponent_div_8_div_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Current arrears");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r26.loanForm.get("currentArrears").value);
+} }
+function LoanInformationFormComponent_div_8_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Principal Outstanding");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r27.loanForm.get("principalOutstanding").value);
+} }
+function LoanInformationFormComponent_div_8_div_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Loan Breakup Dues ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r28.loanForm.get("loanBreakupDues").value);
+} }
+function LoanInformationFormComponent_div_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LoanInformationFormComponent_div_8_div_1_Template, 6, 1, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, LoanInformationFormComponent_div_8_div_2_Template, 5, 1, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, LoanInformationFormComponent_div_8_div_3_Template, 5, 1, "div", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_8_div_4_Template, 5, 1, "div", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "img", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r2.hideAccNum && ctx_r2.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r2.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r2.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r2.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate5"]("matTooltip", "Principal:", ctx_r2.loanForm.get("accountBranch").value, "\n      Interest:", ctx_r2.loanForm.get("accountBranch").value, "\n      Principal Penalty:", ctx_r2.loanForm.get("accountBranch").value, "\n      Interest Penalty:", ctx_r2.loanForm.get("accountBranch").value, "\n      Fee:", ctx_r2.loanForm.get("accountBranch").value, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matTooltipPosition", "left");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", "assets/images/info.svg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+} }
+function LoanInformationFormComponent_div_9_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Sanctioned Amount ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r29.loanForm.get("sanctionedAmount").value);
+} }
+function LoanInformationFormComponent_div_9_div_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Disburshed Amount ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r30.loanForm.get("disbursedAmount").value);
+} }
+function LoanInformationFormComponent_div_9_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Customer Name ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r31.loanForm.get("customerName").value);
+} }
+function LoanInformationFormComponent_div_9_div_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Account Branch ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r32.loanForm.get("accountBranch").value);
+} }
+function LoanInformationFormComponent_div_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LoanInformationFormComponent_div_9_div_1_Template, 5, 1, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, LoanInformationFormComponent_div_9_div_2_Template, 5, 1, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, LoanInformationFormComponent_div_9_div_3_Template, 5, 1, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LoanInformationFormComponent_div_9_div_4_Template, 5, 1, "div", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r3.loanForm.get("currentArrears").value);
-} }
-function LoanInformationFormComponent_div_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Current due ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r4.loanForm.get("currentDue").value);
-} }
-function LoanInformationFormComponent_div_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Principal Outstanding");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r5.loanForm.get("principalOutstanding").value);
-} }
-function LoanInformationFormComponent_div_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-hint", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Loan Breakup Dues ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r6.loanForm.get("loanBreakupDues").value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.hideDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.hideDetails);
 } }
 class LoanInformationFormComponent {
     constructor(router, formBuilder, dialogService, apiService, fb, ls, snack, changeDef, elRef, renderer, dialog, cdr, dataService) {
@@ -22146,19 +23281,25 @@ class LoanInformationFormComponent {
         return this.loanForm.controls.email;
     }
     ngOnInit() {
+        console.log(this.titleVal);
+        this.module = this.titleVal;
         this.phoneNumber = localStorage.getItem('phonenumFromLogin');
         this.appointmentId = this.ls.getItem('TransactionType');
         this.transBranch = localStorage.getItem('TRANSACTIONBRANCH');
         this.showzero = true;
         this.loanForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
             customerId: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
-            accountType: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            loanType: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
             loanAccountId: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
             currentArrears: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             currentDue: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             principalOutstanding: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             loanBreakupDues: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
-            accountBranch: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('')
+            accountBranch: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            accountCurrency: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            customerName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            disbursedAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            sanctionedAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('')
         });
         this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
         setTimeout(() => {
@@ -22179,10 +23320,11 @@ class LoanInformationFormComponent {
             this.showAccountNum = false;
             this.showAccoutType = false;
             this.showzero = true;
+            this.flag1 = true;
         }
         if (this.appointmentId) {
             if (this.appointmentId.data.appointmentId) {
-                this.cashWithdrawlData();
+                this.setAppointmentIdData();
             }
         }
         if (this.phoneNumber &&
@@ -22193,8 +23335,7 @@ class LoanInformationFormComponent {
             this.showAccountNum = true;
             this.showAccoutType = true;
             this.showzero = false;
-            console.log('New Customer');
-            this.getLoanAccountData(this.phoneNumber);
+            this.getLoanAccountData(this.phoneNumber, this.module);
             this.gettingallTansactionDetails(this.phoneNumber);
         }
         this.getCountrynameValues();
@@ -22210,7 +23351,7 @@ class LoanInformationFormComponent {
     onLoanTypeChange(event) {
         console.log(event);
         for (let i = 0; i < this.loanAccountData.length; i++) {
-            if (this.loanAccountData[i].status == 'APPROVED' && this.loanAccountData[i].accountType == event) {
+            if (this.loanAccountData[i].status == 'APPROVED' && this.loanAccountData[i].loanType == event) {
                 console.log(this.loanAccountData[i]);
                 this.loanList.push(this.loanAccountData[i].loanAccountId);
             }
@@ -22254,6 +23395,7 @@ class LoanInformationFormComponent {
         this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe((resp) => {
             console.log(resp);
             this.denomRequired = resp.denomRequired;
+            localStorage.setItem("DenominationRequired", this.denomRequired);
             if (resp.denomRequired == 'yes') {
                 this.enableBtn = false;
                 this.enableBtn1 = false;
@@ -22283,12 +23425,178 @@ class LoanInformationFormComponent {
             console.log(this.countryValues);
         });
     }
+    fetchByLoanAccountNum(loanAcc, module) {
+        this.flag1 = true;
+        this.displayFlag = true;
+        this.ifQRvariable = true;
+        if (this.custValidation == 'New Customer' || this.custNameFromLogin != null) {
+            this.hideAccNum = true;
+            this.showzero = true;
+        }
+        else {
+            this.hideAccNum = true;
+            this.showzero = false;
+        }
+        this.hideDetails = true;
+        console.log(loanAcc);
+        this.apiService.fetchByLoanaccNum(loanAcc, module).subscribe((res) => {
+            var _a, _b, _c, _d;
+            this.loanAccountDetails = res.data;
+            console.log('statement', this.loanAccountDetails);
+            // this.loanForm.controls.accountCurrency.setValue(this.loanAccountDetails?.currency);
+            if (loanAcc != ((_a = this.loanAccountDetails[0]) === null || _a === void 0 ? void 0 : _a.loanAccountId) || this.loanAccountDetails[0].loanAccountId == null) {
+                this.snack.open("Account Number Doesn't Exist", "OK", {
+                    duration: 4000,
+                    verticalPosition: 'top',
+                    horizontalPosition: 'right',
+                    panelClass: ['snackbar'],
+                });
+                this.loanForm.reset();
+                this.userName = '';
+                this.accountBal = '';
+                this.curr = '';
+            }
+            else {
+                console.log('statement', this.loanAccountDetails);
+                // this.dataService.sendPaymentInfoFormData(this.loanAccountDetails);
+                this.dataService.sendloanRepaymentData(this.loanAccountDetails);
+                // this.userName = res.accHolderName;
+                this.loanForm.controls.loanType.setValue((_b = this.loanAccountDetails[0]) === null || _b === void 0 ? void 0 : _b.loanType);
+                this.loanForm.controls.currentArrears.setValue(this.loanAccountDetails[0].currentArrears ? this.loanAccountDetails[0].currentArrears : 0);
+                this.loanForm.controls.principalOutstanding.setValue(this.loanAccountDetails[0].principalOutstanding ? this.loanAccountDetails[0].principalOutstanding : 0);
+                this.loanForm.controls.loanBreakupDues.setValue(this.loanAccountDetails[0].loanBreakupDues ? this.loanAccountDetails[0].loanBreakupDues : 0);
+                this.loanForm.controls.currentDue.setValue(this.loanAccountDetails[0].currentDue ? this.loanAccountDetails[0].currentDue : 0);
+                this.loanForm.controls.accountCurrency.setValue((_c = this.loanAccountDetails[0]) === null || _c === void 0 ? void 0 : _c.accountCurrency);
+                this.loanForm.controls.accountBranch.setValue((_d = this.loanAccountDetails[0]) === null || _d === void 0 ? void 0 : _d.accountBranch);
+                // if(this.loanAccountDetails?.accBalance == 0){
+                //   console.log("for zero balance 1");
+                //   this.accountBal = "00000";
+                //   this.loanForm.value.accountBalance = "00000";
+                // }else{
+                //   this.accountBal = res.accBalance;
+                //   this.loanForm.value.accountBalance = res.accBalance;
+                // }
+                // this.custmerID = res.customerId;
+                // localStorage.setItem('AccountBal',res.accBalance);
+                // this.accountNumber = res.accountId;
+                // this.paymentForm.controls.customerId.setValue(res.customerId);
+                // this.curr = getCurrencySymbol(res.currency, 'narrow');
+                // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
+                // this.loanForm.controls.holderName.setValue(this.userName);
+                this.getCountrynameValues();
+                // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                // this.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                // this.accountCurrency1 = res.currency;
+                console.log(this.ifQRvariable);
+                // this.custAmountBal(loanAcc);
+            }
+            //   this.apiService
+            //     .fetchByaccDeatilsoncustId(res.customerId)
+            //     .subscribe((resp: any) => {
+            //       this.phonenum = resp[0].phoneNumber;
+            //       localStorage.setItem('otpPhoneNum', this.phonenum);
+            //     });
+            //     (error : HttpErrorResponse) => {
+            //       console.log(error);
+            //       this.errorStatus = error.status;
+            //       if (this.errorStatus == 204) {
+            //         this.snack.open("Account Number Doesn't Exist" , "OK", {
+            //           duration: 4000,
+            //           verticalPosition: 'top',
+            //           horizontalPosition: 'right',
+            //           panelClass: ['snackbar'],
+            //         });
+            //         // this.router.navigateByUrl('/sessions/otp');
+            //       }  
+            // }
+        });
+    }
+    fetchByAccountNum(accNum) {
+        console.log('Account Numebr', accNum);
+        this.flag1 = true;
+        this.displayFlag = true;
+        this.ifQRvariable = true;
+        if (this.custValidation == 'New Customer' || this.custNameFromLogin != null) {
+            this.hideAccNum = true;
+            this.showzero = true;
+        }
+        else {
+            this.hideAccNum = true;
+            this.showzero = false;
+        }
+        this.hideDetails = true;
+        this.apiService.fetchByaccNum(accNum).subscribe((res) => {
+            console.log('statement', res);
+            this.loanForm.controls.accountCurrency.setValue(res === null || res === void 0 ? void 0 : res.currency);
+            if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
+                this.snack.open("Account Number Doesn't Exist", "OK", {
+                    duration: 4000,
+                    verticalPosition: 'top',
+                    horizontalPosition: 'right',
+                    panelClass: ['snackbar'],
+                });
+                this.loanForm.reset();
+                this.userName = '';
+                this.accountBal = '';
+                this.curr = '';
+            }
+            else {
+                console.log('Account Number Rsp', res);
+                this.dataService.sendaccountFormData(res);
+                this.userName = res.accHolderName;
+                if (res.accBalance == 0) {
+                    console.log("for zero balance 1");
+                    this.accountBal = "00000";
+                    this.loanForm.value.accountBalance = "00000";
+                }
+                else {
+                    this.accountBal = res.accBalance;
+                    this.loanForm.value.accountBalance = res.accBalance;
+                }
+                this.custmerID = res.customerId;
+                localStorage.setItem('AccountBal', res.accBalance);
+                this.accountNumber = res.accountId;
+                this.loanForm.controls.accountBranch.setValue(res.accountBranch);
+                this.loanForm.controls.customerId.setValue(res.customerId);
+                this.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
+                this.loanForm.controls.accountType.setValue(res.accountType);
+                // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
+                this.loanForm.controls.holderName.setValue(this.userName);
+                this.getCountrynameValues();
+                // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                this.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                this.accountCurrency1 = res.currency;
+                console.log(this.ifQRvariable);
+                // this.custAmountBal(accNum);
+            }
+            this.apiService
+                .fetchByaccDeatilsoncustId(res.customerId)
+                .subscribe((resp) => {
+                this.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', this.phonenum);
+            });
+            (error) => {
+                console.log(error);
+                this.errorStatus = error.status;
+                if (this.errorStatus == 204) {
+                    this.snack.open("Account Number Doesn't Exist", "OK", {
+                        duration: 4000,
+                        verticalPosition: 'top',
+                        horizontalPosition: 'right',
+                        panelClass: ['snackbar'],
+                    });
+                    // this.router.navigateByUrl('/sessions/otp');
+                }
+            };
+        });
+    }
     gettingallTansactionDetails(phoneNumber) {
         this.phoneNumber = localStorage.getItem('phonenumFromLogin');
         this.apiService
             .gettingTransactionDetails(this.phoneNumber)
             .subscribe((allTransactionResp) => {
             this.dataService.sendloanRepaymentData(allTransactionResp);
+            this.loanForm.controls.customerId.setValue(allTransactionResp.custAccount[0].customerId);
             //   console.log('All Transaction Details', allTransactionResp);
             //   // allTransactionResp.loanAccount[0].currentArrears=1000;
             //   // allTransactionResp.loanAccount[0].principalOutstanding=2000
@@ -22375,15 +23683,15 @@ class LoanInformationFormComponent {
             //   }
         });
     }
-    getLoanAccountData(phonenum) {
+    getLoanAccountData(phonenum, module) {
         this.apiService
-            .gettingLoanAccDetails(phonenum)
+            .gettingLoanAccDetails(phonenum, module)
             .subscribe((loanAccData) => {
-            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
             console.log(loanAccData);
             this.loanAccountData = loanAccData.data;
             for (let i = 0; i < this.loanAccountData.length; i++) {
-                if (this.loanAccountData[i].status == 'APPROVED') {
+                if (this.loanAccountData[i].status == null) {
                     this.accountNoList.push(this.loanAccountData[i]);
                     // if (this.loanAccountData[i].primaryAcc) { 
                     //   this.loanForm.controls.accountNumber.setValue(this.loanAccountData[i].loanAccountId);
@@ -22396,9 +23704,9 @@ class LoanInformationFormComponent {
                 }
             }
             console.log(this.accountNoList);
-            this.accounttypeArray = [...this.accountNoList].filter(({ accountType }, index) => ![...this.accountNoList]
-                .map((obj) => obj.accountType)
-                .includes(accountType, index + 1));
+            this.accounttypeArray = [...this.accountNoList].filter(({ loanType }, index) => ![...this.accountNoList]
+                .map((obj) => obj.loanType)
+                .includes(loanType, index + 1));
             console.log(this.accounttypeArray);
             this.dataService.sendloanFormData(this.accounttypeArray);
             if (this.loanAccountData && this.accountNoList.length <= 1) {
@@ -22409,14 +23717,18 @@ class LoanInformationFormComponent {
                 this.showzero = false;
                 this.flag1 = true;
                 this.selected2 = (_a = this.accounttypeArray[0]) === null || _a === void 0 ? void 0 : _a.loanAccountId;
-                this.selected1 = (_b = this.accounttypeArray[0]) === null || _b === void 0 ? void 0 : _b.accountType;
-                this.loanForm.controls.accountType.setValue((_c = this.accounttypeArray[0]) === null || _c === void 0 ? void 0 : _c.accountType);
+                this.selected1 = (_b = this.accounttypeArray[0]) === null || _b === void 0 ? void 0 : _b.loanType;
+                this.loanForm.controls.loanType.setValue((_c = this.accounttypeArray[0]) === null || _c === void 0 ? void 0 : _c.loanType);
                 this.loanForm.controls.loanAccountId.setValue((_d = this.accounttypeArray[0]) === null || _d === void 0 ? void 0 : _d.loanAccountId);
                 this.loanForm.controls.accountBranch.setValue((_e = this.accounttypeArray[0]) === null || _e === void 0 ? void 0 : _e.accountBranch);
-                this.loanForm.controls.currentArrears.setValue(((_f = this.accounttypeArray[0]) === null || _f === void 0 ? void 0 : _f.currentArrears) ? (_g = this.accounttypeArray[0]) === null || _g === void 0 ? void 0 : _g.currentArrears : 0);
-                this.loanForm.controls.principalOutstanding.setValue(((_h = this.accounttypeArray[0]) === null || _h === void 0 ? void 0 : _h.principalOutstanding) ? (_j = this.accounttypeArray[0]) === null || _j === void 0 ? void 0 : _j.principalOutstanding : 0);
-                this.loanForm.controls.loanBreakupDues.setValue(((_k = this.accounttypeArray[0]) === null || _k === void 0 ? void 0 : _k.loanBreakupDues) ? (_l = this.accounttypeArray[0]) === null || _l === void 0 ? void 0 : _l.loanBreakupDues : 0);
-                this.loanForm.controls.currentDue.setValue(((_m = this.accounttypeArray[0]) === null || _m === void 0 ? void 0 : _m.currentDue) ? (_o = this.accounttypeArray[0]) === null || _o === void 0 ? void 0 : _o.currentDue : 0);
+                this.loanForm.controls.accountCurrency.setValue((_f = this.accounttypeArray[0]) === null || _f === void 0 ? void 0 : _f.accountCurrency);
+                this.loanForm.controls.currentArrears.setValue(((_g = this.accounttypeArray[0]) === null || _g === void 0 ? void 0 : _g.currentArrears) ? (_h = this.accounttypeArray[0]) === null || _h === void 0 ? void 0 : _h.currentArrears : 0);
+                this.loanForm.controls.principalOutstanding.setValue(((_j = this.accounttypeArray[0]) === null || _j === void 0 ? void 0 : _j.principalOutstanding) ? (_k = this.accounttypeArray[0]) === null || _k === void 0 ? void 0 : _k.principalOutstanding : 0);
+                this.loanForm.controls.loanBreakupDues.setValue(((_l = this.accounttypeArray[0]) === null || _l === void 0 ? void 0 : _l.loanBreakupDues) ? (_m = this.accounttypeArray[0]) === null || _m === void 0 ? void 0 : _m.loanBreakupDues : 0);
+                this.loanForm.controls.currentDue.setValue(((_o = this.accounttypeArray[0]) === null || _o === void 0 ? void 0 : _o.currentDue) ? (_p = this.accounttypeArray[0]) === null || _p === void 0 ? void 0 : _p.currentDue : 0);
+                this.loanForm.controls.customerName.setValue((_q = this.accounttypeArray[0]) === null || _q === void 0 ? void 0 : _q.customerName);
+                this.loanForm.controls.disbursedAmount.setValue((_r = this.accounttypeArray[0]) === null || _r === void 0 ? void 0 : _r.disbursedAmount);
+                this.loanForm.controls.sanctionedAmount.setValue((_s = this.accounttypeArray[0]) === null || _s === void 0 ? void 0 : _s.sanctionedAmount);
                 // this.custAccountNumber(this.accountNoList[0]);
             }
             else {
@@ -22429,10 +23741,10 @@ class LoanInformationFormComponent {
                 this.hideDetails = true;
                 this.hideAccNum = true;
                 this.showzero = false;
-                this.selected2 = (_p = this.accounttypeArray[0]) === null || _p === void 0 ? void 0 : _p.loanAccountId;
-                this.selected1 = (_q = this.accounttypeArray[0]) === null || _q === void 0 ? void 0 : _q.accountType;
-                this.loanForm.controls.accountType.setValue((_r = this.accounttypeArray[0]) === null || _r === void 0 ? void 0 : _r.accountType);
-                this.loanForm.controls.loanAccountId.setValue((_s = this.accounttypeArray[0]) === null || _s === void 0 ? void 0 : _s.loanAccountId);
+                this.selected2 = (_t = this.accounttypeArray[0]) === null || _t === void 0 ? void 0 : _t.loanAccountId;
+                this.selected1 = (_u = this.accounttypeArray[0]) === null || _u === void 0 ? void 0 : _u.loanType;
+                this.loanForm.controls.loanType.setValue((_v = this.accounttypeArray[0]) === null || _v === void 0 ? void 0 : _v.loanType);
+                this.loanForm.controls.loanAccountId.setValue((_w = this.accounttypeArray[0]) === null || _w === void 0 ? void 0 : _w.loanAccountId);
                 // const accTyp = allTransactionResp.custAccount[0].accountType;
                 // this.loanForm.controls.accountType.setValue(accTyp);
                 // this.custAccountNumber(allTransactionResp.custAccount[0]);
@@ -22463,12 +23775,54 @@ class LoanInformationFormComponent {
                 : amount.toString();
         }
     }
-    cashWithdrawlData() {
+    setAppointmentIdData() {
+        this.apiService
+            .getAppointmentId(this.appointmentId.data.appointmentId)
+            .subscribe((resp) => {
+            var _a, _b, _c, _d;
+            console.log(resp);
+            this.cashData = resp.data;
+            this.custID = resp.data.customerId;
+            this.ifQRvariable = true;
+            this.hideAccNum = true;
+            this.hideDetails = true;
+            this.showzero = false;
+            this.flag1 = true;
+            this.displayFlag = true;
+            this.accountDropdown = true;
+            // if(resp.data.accountBalance == 0){
+            //   this.accountBal = "00000";
+            //   this.loanForm.controls.accountBalance.setValue("00000");
+            // }else{
+            //   this.accountBal = resp.data.accountBalance;
+            //   this.loanForm.controls.accountBalance.setValue(
+            //     resp.data.accountBalance
+            //   );
+            // }
+            this.currencyCode = resp.data.accountCurrency;
+            this.loanForm.controls.loanType.setValue(resp.data.accountType);
+            this.loanForm.controls.loanAccountId.setValue(resp.data.modeInfo[0].loanAccountNo);
+            this.loanForm.controls.customerName.setValue((_a = resp.data) === null || _a === void 0 ? void 0 : _a.holderName);
+            this.loanForm.controls.accountBranch.setValue(resp.data.accountBranch);
+            this.loanForm.controls.accountCurrency.setValue((_b = resp.data) === null || _b === void 0 ? void 0 : _b.accountCurrency);
+            if (this.titleVal == 'Repayment') {
+                this.loanForm.controls.principalOutstanding.setValue((_c = resp.data.loanInfo[0]) === null || _c === void 0 ? void 0 : _c.principalOutstanding);
+                this.loanForm.controls.currentArrears.setValue((_d = resp.data.loanInfo[0]) === null || _d === void 0 ? void 0 : _d.currentArrears);
+            }
+            if (this.titleVal == 'Disbursement') {
+                this.loanForm.controls.sanctionedAmount.setValue(resp.data.loanInfo[0].sanctionedAmount);
+                this.loanForm.controls.disbursedAmount.setValue(resp.data.loanInfo[0].disbursedAmount);
+            }
+            // this.loanForm.controls.currentDue.setValue(resp.data.loanInfo[0]?.currentDue);
+            console.log(resp.data.accountCurrency);
+            this.dataService.sendloanRepaymentData(this.cashData);
+        });
+        console.log(this.cashData);
         // this.denomRequired='yes';
     }
 }
-LoanInformationFormComponent.ɵfac = function LoanInformationFormComponent_Factory(t) { return new (t || LoanInformationFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_10__["DataService"])); };
-LoanInformationFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanInformationFormComponent, selectors: [["app-loan-information-form"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
+LoanInformationFormComponent.ɵfac = function LoanInformationFormComponent_Factory(t) { return new (t || LoanInformationFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"])); };
+LoanInformationFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanInformationFormComponent, selectors: [["app-loan-information-form"]], inputs: { titleVal: "titleVal" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
             {
                 provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALUE_ACCESSOR"],
                 useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(() => LoanInformationFormComponent),
@@ -22479,7 +23833,7 @@ LoanInformationFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
                 useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(() => LoanInformationFormComponent),
                 multi: true,
             },
-        ])], decls: 16, vars: 15, consts: [[1, "section"], [1, "accountHeader"], [1, "accountInfoCard"], [3, "formGroup"], ["fxLayoutGap", "-24%", "fxLayout", "row", 4, "ngIf"], ["fxLayoutGap", "5px", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutGap", "2%", 2, "justify-content", "space-between", "margin-left", "2%", "height", "30px", "margin-top", "-3px"], ["fxLayout", "column", 4, "ngIf"], ["fxLayout", "column", "class", "acBranch", 4, "ngIf"], ["matTooltipClass", "tooltip", 1, "iicon", 3, "matTooltip", "matTooltipPosition"], ["fxflex", "5", "width", "60%", 3, "src"], ["fxLayoutGap", "-24%", "fxLayout", "row"], ["fxFlex", "100%", 2, "font-size", "10px"], ["appearance", "outline", "fxFlex", "60%", 2, "border-radius", "12px"], ["formControlName", "accountType", "optionDisableCentering", "", 3, "value", "valueChange", 4, "ngIf"], ["matInput", "", "type", "text", "class", "full-width", "formControlName", "accountType", 3, "readonly", 4, "ngIf"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "100%", 4, "ngIf"], ["class", "auto-width", "appearance", "outline", "style", "border-radius: 12px", "fxFlex", "100%", 4, "ngIf"], ["formControlName", "accountType", "optionDisableCentering", "", 3, "value", "valueChange"], [1, "selection-icon"], ["class", "filterDropDown", 3, "value", "click", 4, "ngFor", "ngForOf"], [1, "filterDropDown", 3, "value", "click"], [1, "actionIcon"], ["matInput", "", "type", "text", "formControlName", "accountType", 1, "full-width", 3, "readonly"], ["appearance", "outline", "fxFlex", "100%", 2, "border-radius", "12px"], [2, "display", "flex"], ["class", "currency_code", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "loanAccountId", 1, "full-width", 3, "readonly"], [1, "currency_code"], ["appearance", "outline", "fxFlex", "100%", 1, "auto-width", 2, "border-radius", "12px"], ["formControlName", "loanAccountId", "optionDisableCentering", "", 3, "value", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["fxLayoutGap", "5px"], ["type", "text", "formControlName", "loanAccountId", "placeholder", "Account Number", "matInput", ""], ["appearance", "outline", "fxFlex", "35%", 2, "border-radius", "12px"], ["fxLayout", "column"], [1, "totalAmount"], [1, "hint"], ["fxLayout", "column", 1, "acBranch"]], template: function LoanInformationFormComponent_Template(rf, ctx) { if (rf & 1) {
+        ])], decls: 10, vars: 5, consts: [[1, "section"], [1, "accountHeader"], [1, "accountInfoCard"], [3, "formGroup"], ["fxLayoutGap", "-24%", "fxLayout", "row", 4, "ngIf"], ["fxLayoutGap", "5px", 4, "ngIf"], ["fxLayout", "row wrap", "fxLayoutGap", "2%", "style", "justify-content: space-between; margin-left: 2%; height: 30px;margin-top: -3px;", 4, "ngIf"], ["fxLayoutGap", "-24%", "fxLayout", "row"], ["fxFlex", "100%", 2, "font-size", "10px"], ["appearance", "outline", "fxFlex", "60%", 2, "border-radius", "12px"], ["formControlName", "loanType", "optionDisableCentering", "", 3, "value", "valueChange", 4, "ngIf"], ["matInput", "", "type", "text", "class", "full-width", "formControlName", "loanType", 3, "readonly", 4, "ngIf"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "100%", 4, "ngIf"], ["class", "auto-width", "appearance", "outline", "style", "border-radius: 12px", "fxFlex", "100%", 4, "ngIf"], ["formControlName", "loanType", "optionDisableCentering", "", 3, "value", "valueChange"], [1, "selection-icon"], ["class", "filterDropDown", 3, "value", "click", 4, "ngFor", "ngForOf"], [1, "filterDropDown", 3, "value", "click"], [1, "actionIcon"], ["matInput", "", "type", "text", "formControlName", "loanType", 1, "full-width", 3, "readonly"], ["appearance", "outline", "fxFlex", "100%", 2, "border-radius", "12px"], [2, "display", "flex"], ["class", "currency_code", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "loanAccountId", 1, "full-width", 3, "readonly"], [1, "currency_code"], ["appearance", "outline", "fxFlex", "100%", 1, "auto-width", 2, "border-radius", "12px"], ["formControlName", "loanAccountId", "optionDisableCentering", "", 3, "value", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["fxLayoutGap", "5px"], ["appearance", "outline", "fxFlex", "70%", 2, "border-radius", "12px"], ["matInput", "", "type", "text", "formControlName", "loanAccountId", "placeholder", "Account Number", 3, "change"], ["appearance", "outline", "style", "border-radius: 12px", "fxFlex", "80%", 4, "ngIf"], ["appearance", "outline", "fxFlex", "80%", 2, "border-radius", "12px"], ["fxLayout", "row wrap", "fxLayoutGap", "2%", 2, "justify-content", "space-between", "margin-left", "2%", "height", "30px", "margin-top", "-3px"], ["fxLayout", "column", 4, "ngIf"], ["fxLayout", "column", "class", "acBranch", 4, "ngIf"], ["matTooltipClass", "tooltip", 1, "iicon", 3, "matTooltip", "matTooltipPosition"], ["fxflex", "5", "width", "60%", 3, "src"], ["fxLayout", "column"], [1, "totalAmount"], [1, "hint"], ["fxLayout", "column", 1, "acBranch"]], template: function LoanInformationFormComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-title", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Loan Information");
@@ -22488,17 +23842,9 @@ LoanInformationFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-card", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "form", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, LoanInformationFormComponent_div_6_Template, 11, 5, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, LoanInformationFormComponent_div_7_Template, 13, 2, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_9_Template, 6, 1, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, LoanInformationFormComponent_div_10_Template, 5, 1, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, LoanInformationFormComponent_div_11_Template, 5, 1, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, LoanInformationFormComponent_div_12_Template, 5, 1, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, LoanInformationFormComponent_div_13_Template, 5, 1, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "img", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, LoanInformationFormComponent_div_7_Template, 10, 2, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, LoanInformationFormComponent_div_8_Template, 7, 11, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, LoanInformationFormComponent_div_9_Template, 5, 4, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -22510,22 +23856,11 @@ LoanInformationFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showAccountNum);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.showAccountNum);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideAccNum && ctx.hideDetails);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideDetails);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.titleVal == "Repayment");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideDetails);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideDetails);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hideDetails);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate5"]("matTooltip", "Principal:", ctx.loanForm.get("accountBranch").value, "\n      Interest:", ctx.loanForm.get("accountBranch").value, "\n      Principal Penalty:", ctx.loanForm.get("accountBranch").value, "\n      Interest Penalty:", ctx.loanForm.get("accountBranch").value, "\n      Fee:", ctx.loanForm.get("accountBranch").value, "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matTooltipPosition", "left");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", "assets/images/info.svg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCard"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutGapDirective"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_14__["MatTooltip"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectTrigger"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgForOf"], _angular_material_core__WEBPACK_IMPORTED_MODULE_18__["MatOption"], _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatHint"]], styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n  box-shadow: unset !important;\n}\n\n.accountHeader[_ngcontent-%COMP%] {\n  font-size: 15px;\n  color: var(--unnamed-color-004c97);\n  text-align: left;\n  font-family: \"Poppins\", Medium;\n  letter-spacing: -0.38px;\n  color: #004C97;\n  opacity: 1;\n}\n\n.hint[_ngcontent-%COMP%] {\n  text-transform: capitalize;\n  font-weight: 600;\n  margin-left: 1%;\n  margin-bottom: 0;\n  font-size: 11px;\n}\n\n.acBranch[_ngcontent-%COMP%] {\n  margin-right: 55px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n  margin-left: 3% !important;\n}\n\n  .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 7px;\n  box-shadow: 0px 3px 15px #00000017;\n}\n\n .mat-select-value-text {\n  margin-left: 10px;\n}\n\ninput.mat-input-element[_ngcontent-%COMP%] {\n  margin-left: 10px;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #102245;\n  opacity: 70%;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  box-sizing: border-box;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: white;\n}\n\n#denominationDiv[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: auto auto;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  box-sizing: border-box;\n}\n\ninput[_ngcontent-%COMP%] {\n  border: 0;\n  outline: 0;\n  font-weight: bold;\n}\n\ninput[_ngcontent-%COMP%]:focus {\n  outline: none !important;\n}\n\n.pb1[_ngcontent-%COMP%] {\n  padding-bottom: 1%;\n}\n\n.operationTypeClass[_ngcontent-%COMP%] {\n  color: #a1a1a1;\n  margin: auto;\n}\n\n.quantityClass[_ngcontent-%COMP%] {\n  color: #000000;\n  margin: auto;\n  font-weight: 500;\n}\n\n.paddingclass[_ngcontent-%COMP%] {\n  padding: 2%;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8, 0 1px 0 #f8f8f8, 0 5px 8px 0 #e9e9e9;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field {\n  width: 100% !important;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper > div.mat-form-field-flex > div.mat-form-field-suffix > mat-icon > svg {\n  margin-bottom: -8px;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper {\n  padding-bottom: 0.8rem;\n}\n\ninput[_ngcontent-%COMP%]::-webkit-outer-spin-button, input[_ngcontent-%COMP%]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%]   .readonly-block[_ngcontent-%COMP%] {\n  pointer-events: none;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  width: 553px;\n  height: 50px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 30%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  font-weight: bold;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  width: 263px;\n  height: 50px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.currency_code[_ngcontent-%COMP%] {\n  background-color: #004C9724;\n  border: 2px solid #004c97;\n  border-radius: 4px;\n  padding: 1px 4px;\n  font-size: 9px;\n  color: #004c97;\n  font-weight: 600;\n  margin-left: 13px;\n}\n\n.tooltip[_ngcontent-%COMP%] {\n  position: absolute;\n  right: 12%;\n  transform: translateY(-50%);\n  display: inline-block;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: hidden;\n  min-width: 200px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  color: #fff;\n  text-align: start;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: visible;\n  right: 150%;\n  top: 0%;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptextNeg[_ngcontent-%COMP%] {\n  visibility: visible;\n  left: 80%;\n  top: -160%;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  border-radius: 2px;\n  top: 38%;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 10px;\n  border-style: solid;\n  border-color: transparent red transparent transparent;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  margin-left: 18px !important;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptextNeg[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  border-radius: 2px;\n  top: 40%;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 8px;\n  border-style: solid;\n  border-color: transparent #051A2D transparent transparent;\n}\n\n .tooltip {\n  background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box !important;\n  color: #fff !important;\n  white-space: pre-line;\n  padding: 18px !important;\n  font-size: 15px !important;\n  letter-spacing: 0.4px !important;\n  font-family: \"Acumin Variable Concept\" !important;\n  margin-top: 120px !important;\n  border-radius: 10px !important;\n}\n\n.mat-tooltip[_ngcontent-%COMP%] {\n  overflow: visible;\n  position: relative;\n}\n\n.mat-tooltip.right[_ngcontent-%COMP%] {\n  border-left: 6px solid #004C97;\n  margin-left: 5px;\n}\n\n.mat-tooltip.right[_ngcontent-%COMP%]::before {\n  position: absolute;\n  content: \"\";\n  display: inline-block;\n  background-color: #004C97;\n  -webkit-clip-path: polygon(50% 0, 0 50%, 50% 100%);\n          clip-path: polygon(50% 0, 0 50%, 50% 100%);\n  left: -12px;\n  width: 15px;\n  height: 15px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n.actionIcon[_ngcontent-%COMP%]:hover {\n  color: #004C97;\n}\n\n.filterDropDown[_ngcontent-%COMP%]:hover   .actionIcon[_ngcontent-%COMP%] {\n  color: #004C97 !important;\n}\n\n.recent_transName[_ngcontent-%COMP%]   .actionIcon[_ngcontent-%COMP%]:hover {\n  color: red;\n}\n\n.selection-icon[_ngcontent-%COMP%] {\n  position: relative;\n  top: 6px;\n  margin-right: 16px;\n  display: none;\n}\n\n .egret-navy .mat-option.mat-active {\n  background: rgba(44, 44, 44, 0.04);\n  color: #004C97;\n}\n\n .egret-navy .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {\n  color: #004C97;\n}\n\n.auto-width[_ngcontent-%COMP%]   .mat-form-field[_ngcontent-%COMP%] {\n  width: auto !important;\n}\n\n.auto-width[_ngcontent-%COMP%]   .mat-select-value[_ngcontent-%COMP%] {\n  max-width: 100%;\n  width: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9hbi1pbmZvcm1hdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0NBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0FBQ0o7O0FBQ0U7RUFDRSxlQUFBO0VBQ0Esa0NBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0VBQ0EsdUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtBQUVKOztBQUFFO0VBQ0UsMEJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUFHSjs7QUFERTtFQUNFLGtCQUFBO0FBSUo7O0FBRkU7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLCtCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUFLSjs7QUFIRTtFQUNFLHlDQUFBO0VBQ0EseUJBQUE7RUFDQSwwQkFBQTtBQU1KOztBQUpFO0VBQ0UsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtDQUFBO0FBT0o7O0FBSkU7RUFDRSxpQkFBQTtBQU9KOztBQUxFO0VBQ0UsaUJBQUE7QUFRSjs7QUFMRTtFQUNFLGVBQUE7RUFFQSxjQUFBO0VBQ0EsWUFBQTtBQU9KOztBQUpFO0VBRUUsc0JBQUE7QUFNSjs7QUFIRTtFQUNFLFlBQUE7QUFNSjs7QUFIRTtFQUNFLGFBQUE7RUFDQSxnQ0FBQTtBQU1KOztBQUhFO0VBRUUsc0JBQUE7QUFLSjs7QUFGRTtFQUNFLFNBQUE7RUFDQSxVQUFBO0VBRUEsaUJBQUE7QUFJSjs7QUFGRTtFQUNFLHdCQUFBO0FBS0o7O0FBRkU7RUFDRSxrQkFBQTtBQUtKOztBQUZFO0VBQ0UsY0FBQTtFQUNBLFlBQUE7QUFLSjs7QUFGRTtFQUNFLGNBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFLSjs7QUFGRTtFQUNFLFdBQUE7QUFLSjs7QUFGRTtFQUNFLHdFQUFBO0FBS0o7O0FBRkU7RUFDRSxzQkFBQTtBQUtKOztBQUZFO0VBU0UsbUJBQUE7QUFISjs7QUFNRTtFQUtFLHNCQUFBO0FBUEo7O0FBU0U7O0VBRUUsd0JBQUE7RUFDQSxTQUFBO0FBTko7O0FBU0U7RUFDRSxtQkFBQTtBQU5KOztBQVNFO0VBQ0Usb0JBQUE7QUFOSjs7QUFRRTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0Esb0dBQUE7RUFFQSxtQkFBQTtFQUNBLHVCQUFBO0FBTko7O0FBUUU7RUFDRSxtQkFBQTtFQUNBLFVBQUE7RUFDQSx5QkFBQTtFQUNBLGNBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0FBTEo7O0FBT0U7RUFDRSxpQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLG1CQUFBO0FBSko7O0FBT0U7RUFDRSwyQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFFQSxpQkFBQTtBQUxKOztBQU9FO0VBQ0Usa0JBQUE7RUFFQSxVQUFBO0VBQ0EsMkJBQUE7RUFDQSxxQkFBQTtBQUxKOztBQVNFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtFQUNBLDBCQUFBO0VBQUEsdUJBQUE7RUFBQSxrQkFBQTtFQUdBLG9HQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBUko7O0FBdUJFO0VBQ0UsbUJBQUE7RUFDQSxXQUFBO0VBQ0EsT0FBQTtBQXBCSjs7QUF1QkU7RUFDRSxtQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FBcEJKOztBQXVCRTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxxREFBQTtBQXBCSjs7QUFzQkU7RUFDRSx5Q0FBQTtFQUVBLDRCQUFBO0FBcEJKOztBQXNCRTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsbUJBQUE7RUFHQSx5REFBQTtBQXJCSjs7QUF1QkU7RUFDRSwrR0FBQTtFQUNBLHNCQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLDBCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxpREFBQTtFQUNBLDRCQUFBO0VBQ0EsOEJBQUE7QUFwQko7O0FBc0JFO0VBRUUsaUJBQUE7RUFDQSxrQkFBQTtBQXBCSjs7QUFxQkk7RUFDSSw4QkFBQTtFQUNBLGdCQUFBO0FBbkJSOztBQW9CUTtFQUNJLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLHFCQUFBO0VBQ0EseUJBQUE7RUFDQSxrREFBQTtVQUFBLDBDQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FBbEJaOztBQXNCRTtFQUNFLGNBQUE7QUFuQko7O0FBc0JFO0VBQ0UseUJBQUE7QUFuQko7O0FBcUJFO0VBQ0UsVUFBQTtBQWxCSjs7QUFvQkU7RUFDRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxrQkFBQTtFQUNBLGFBQUE7QUFqQko7O0FBbUJFO0VBQ0Usa0NBQUE7RUFDQSxjQUFBO0FBaEJKOztBQWtCQTtFQUNFLGNBQUE7QUFmRjs7QUFxQkU7RUFDSSxzQkFBQTtBQWxCTjs7QUFvQkU7RUFDSSxlQUFBO0VBQ0EsV0FBQTtBQWxCTiIsImZpbGUiOiJsb2FuLWluZm9ybWF0aW9uLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWNjb3VudEluZm9DYXJkIHtcclxuICAgIGJhY2tncm91bmQ6ICNmMmYyZjIgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICAgIGJveC1zaGFkb3c6IHVuc2V0ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5hY2NvdW50SGVhZGVyIHtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIGNvbG9yOiB2YXIoLS11bm5hbWVkLWNvbG9yLTAwNGM5Nyk7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgTWVkaXVtO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IC0wLjM4cHg7XHJcbiAgICBjb2xvcjogIzAwNEM5NztcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgfVxyXG4gIC5oaW50IHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIG1hcmdpbi1sZWZ0OiAxJTtcclxuICAgIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgfVxyXG4gIC5hY0JyYW5jaHtcclxuICAgIG1hcmdpbi1yaWdodDogNTVweDtcclxuICB9XHJcbiAgLmlucHV0TWF0TmFtZSB7XHJcbiAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICBib3gtc2hhZG93OiAwIDNwdCA2cHQgIzAwMDAwMDI5O1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxM3B4O1xyXG4gIH1cclxuICBtYXQtbGFiZWx7XHJcbiAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBNZWRpdW0gIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjNzA3MDcwICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tbGVmdDogMyUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1hcHBlYXJhbmNlLW91dGxpbmUgLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiA3cHg7XHJcbiAgICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gICAgLy8gaGVpZ2h0OiA0NXB4O1xyXG4gIH1cclxuICA6Om5nLWRlZXAubWF0LXNlbGVjdC12YWx1ZS10ZXh0e1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgfVxyXG4gIGlucHV0Lm1hdC1pbnB1dC1lbGVtZW50e1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC50b3RhbEFtb3VudCB7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICAvLyBjb2xvcjogIzMwNDE1NjtcclxuICAgIGNvbG9yOiAjMTAyMjQ1O1xyXG4gICAgb3BhY2l0eTogNzAlO1xyXG4gICAgLy8gcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIH1cclxuICAuaW5wdXRDYXJkIHtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIH1cclxuICBcclxuICAudGV4dGNvbG9yIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgXHJcbiAgI2Rlbm9taW5hdGlvbkRpdiB7XHJcbiAgICBkaXNwbGF5OiBncmlkO1xyXG4gICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBhdXRvIGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIC5pbnB1dENhcmQge1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0IHtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIG91dGxpbmU6IDA7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmYWZiO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgfVxyXG4gIGlucHV0OmZvY3VzIHtcclxuICAgIG91dGxpbmU6IG5vbmUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLnBiMSB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMSU7XHJcbiAgfVxyXG4gIFxyXG4gIC5vcGVyYXRpb25UeXBlQ2xhc3Mge1xyXG4gICAgY29sb3I6ICNhMWExYTE7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIC5xdWFudGl0eUNsYXNzIHtcclxuICAgIGNvbG9yOiAjMDAwMDAwO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICB9XHJcbiAgXHJcbiAgLnBhZGRpbmdjbGFzcyB7XHJcbiAgICBwYWRkaW5nOiAyJTtcclxuICB9XHJcbiAgXHJcbiAgLmlucHV0Q2FyZDpub3QoW2NsYXNzKj0nbWF0LWVsZXZhdGlvbi16J10pIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMnB4IDFweCAtMXB4ICNmOGY4ZjgsIDAgMXB4IDAgI2Y4ZjhmOCwgMCA1cHggOHB4IDAgI2U5ZTllOTtcclxuICB9XHJcbiAgXHJcbiAgOmhvc3QgOjpuZy1kZWVwIG1hdC1zZWxlY3QtY291bnRyeSA+IG1hdC1mb3JtLWZpZWxkIHtcclxuICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIDpob3N0XHJcbiAgICA6Om5nLWRlZXBcclxuICAgIG1hdC1zZWxlY3QtY291bnRyeVxyXG4gICAgPiBtYXQtZm9ybS1maWVsZFxyXG4gICAgPiBkaXYubWF0LWZvcm0tZmllbGQtd3JhcHBlclxyXG4gICAgPiBkaXYubWF0LWZvcm0tZmllbGQtZmxleFxyXG4gICAgPiBkaXYubWF0LWZvcm0tZmllbGQtc3VmZml4XHJcbiAgICA+IG1hdC1pY29uXHJcbiAgICA+IHN2ZyB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAtOHB4O1xyXG4gIH1cclxuICBcclxuICA6aG9zdFxyXG4gICAgOjpuZy1kZWVwXHJcbiAgICBtYXQtc2VsZWN0LWNvdW50cnlcclxuICAgID4gbWF0LWZvcm0tZmllbGRcclxuICAgID4gZGl2Lm1hdC1mb3JtLWZpZWxkLXdyYXBwZXIge1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAuOHJlbTtcclxuICB9XHJcbiAgaW5wdXQ6Oi13ZWJraXQtb3V0ZXItc3Bpbi1idXR0b24sXHJcbiAgaW5wdXQ6Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24ge1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gIH1cclxuICBcclxuICAucmVhZG9ubHktd3JhcHBlciB7XHJcbiAgICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xyXG4gIH1cclxuICBcclxuICAucmVhZG9ubHktd3JhcHBlciAucmVhZG9ubHktYmxvY2sge1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgfVxyXG4gIC5jb250aW51ZUJ0biB7XHJcbiAgICB3aWR0aDogNTUzcHg7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJVxyXG4gICAgICBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyOHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgfVxyXG4gIC5leGl0QnRuIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICB3aWR0aDogMzAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICAgIGNvbG9yOiAjZTUwMDAwO1xyXG4gICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICB9XHJcbiAgLmJhY2tCdG4ge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICB3aWR0aDogMjYzcHg7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmZmZmIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG4gIH1cclxuICBcclxuICAuY3VycmVuY3lfY29kZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Qzk3MjQ7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjMDA0Yzk3O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gICAgcGFkZGluZzogMXB4IDRweDtcclxuICAgIGZvbnQtc2l6ZTogOXB4O1xyXG4gICAgY29sb3I6ICMwMDRjOTc7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgLy8gbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMTNweDtcclxuICB9XHJcbiAgLnRvb2x0aXAge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgLy8gdG9wOiA4NSU7XHJcbiAgICByaWdodDogMTIlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIH1cclxuICBcclxuXHJcbiAgLnRvb2x0aXAgLnRvb2x0aXB0ZXh0IHtcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIG1pbi13aWR0aDogMjAwcHg7XHJcbiAgICB3aWR0aDogbWF4LWNvbnRlbnQ7XHJcbiAgICAvLyBtYXJnaW4tdG9wOiAtMTAlO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogI2ZlNjcwMDtcclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MWRlZywgIzA1MUEyRCAwJSwgIzAwNEM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIHRleHQtYWxpZ246IHN0YXJ0O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gICAgcGFkZGluZzogNXB4IDA7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gICAgLy8gdG9wOiAtNDlweDtcclxuICAgIC8vIGxlZnQ6IDEzMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC8vIC50b29sdGlwIC50b29sdGlwdGV4dDo6YWZ0ZXIge1xyXG4gIC8vICAgY29udGVudDogJyc7XHJcbiAgLy8gICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgLy8gICAvLyB0b3A6IDUwJTtcclxuICAvLyAgIHJpZ2h0OiAxMDAlO1xyXG4gIC8vICAgbWFyZ2luLXRvcDogLTVweDtcclxuICAvLyAgIGJvcmRlci13aWR0aDogNXB4O1xyXG4gIC8vICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAvLyAgIC8vIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgI2ZlNjcwMCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcclxuICAvLyB9XHJcbiAgLnRvb2x0aXA6aG92ZXIgLnRvb2x0aXB0ZXh0IHtcclxuICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgICByaWdodDogMTUwJTtcclxuICAgIHRvcDogLTAlO1xyXG4gIH1cclxuICBcclxuICAudG9vbHRpcDpob3ZlciAudG9vbHRpcHRleHROZWcge1xyXG4gICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxuICAgIGxlZnQ6IDgwJTtcclxuICAgIHRvcDogLTE2MCU7XHJcbiAgfVxyXG4gIFxyXG4gIC50b29sdGlwIC50b29sdGlwdGV4dDo6YWZ0ZXIge1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcclxuICAgIHRvcDogMzglO1xyXG4gICAgcmlnaHQ6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOiAtNXB4O1xyXG4gICAgYm9yZGVyLXdpZHRoOiAxMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgcmVkIHRyYW5zcGFyZW50IHRyYW5zcGFyZW50O1xyXG4gIH1cclxuICBtYXQtbGFiZWx7XHJcbiAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBNZWRpdW0gIWltcG9ydGFudDtcclxuICAgIC8vIGNvbG9yOiAjMDA0Qzk3ICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tbGVmdDogMThweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAudG9vbHRpcCAudG9vbHRpcHRleHROZWc6OmFmdGVyIHtcclxuICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAycHg7XHJcbiAgICB0b3A6IDQwJTtcclxuICAgIHJpZ2h0OiAxMDAlO1xyXG4gICAgbWFyZ2luLXRvcDogLTVweDtcclxuICAgIGJvcmRlci13aWR0aDogOHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIC8vIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MWRlZywgIzA1MUEyRCAwJSwgIzAwNEM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICAvLyBjb2xvcjogI2ZmZjtcclxuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgIzA1MUEyRCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcclxuICB9XHJcbiAgOjpuZy1kZWVwLnRvb2x0aXB7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTFkZWcsICMwNTFBMkQgMCUsICMwMDRDOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94ICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xyXG4gICAgd2hpdGUtc3BhY2U6IHByZS1saW5lO1xyXG4gICAgcGFkZGluZzoxOHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDE1cHggIWltcG9ydGFudDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwLjRweCAhaW1wb3J0YW50O1xyXG4gICAgZm9udC1mYW1pbHk6IFwiQWN1bWluIFZhcmlhYmxlIENvbmNlcHRcIiAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDoxMjBweCAhaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAubWF0LXRvb2x0aXAge1xyXG4gICAgLy8gdG8gbWFrZSBwb3NzaWJsZSBwbGFjZSBhcnJvdyBwc2V1ZG8gZWxlbWVudCBvdXRzaWRlIHRvb2x0aXAgd2l0aCBhYnNvbHV0ZSBwb3NpdGlvbmluZ1xyXG4gICAgb3ZlcmZsb3c6IHZpc2libGU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAmLnJpZ2h0IHtcclxuICAgICAgICBib3JkZXItbGVmdDogNnB4IHNvbGlkICMwMDRDOTcgO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbiAgICAgICAgJjo6YmVmb3JlIHtcclxuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICBjb250ZW50OiAnJztcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Qzk3IDtcclxuICAgICAgICAgICAgY2xpcC1wYXRoOiBwb2x5Z29uKDUwJSAwLCAwIDUwJSwgNTAlIDEwMCUpO1xyXG4gICAgICAgICAgICBsZWZ0OiAtMTJweDtcclxuICAgICAgICAgICAgd2lkdGg6IDE1cHg7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTVweDtcclxuICAgICAgICAgICAgdG9wOiA1MCU7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIC5hY3Rpb25JY29uOmhvdmVyIHtcclxuICAgIGNvbG9yOiAjMDA0Qzk3O1xyXG4gIH1cclxuICBcclxuICAuZmlsdGVyRHJvcERvd246aG92ZXIgLmFjdGlvbkljb24ge1xyXG4gICAgY29sb3I6ICMwMDRDOTcgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLnJlY2VudF90cmFuc05hbWUgLmFjdGlvbkljb246aG92ZXIge1xyXG4gICAgY29sb3I6IHJlZFxyXG4gIH1cclxuICAuc2VsZWN0aW9uLWljb24ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgdG9wOiA2cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE2cHg7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG4gIH1cclxuICA6Om5nLWRlZXAuZWdyZXQtbmF2eSAubWF0LW9wdGlvbi5tYXQtYWN0aXZlIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoNDQsIDQ0LCA0NCwgMC4wNCk7XHJcbiAgICBjb2xvcjogIzAwNEM5NztcclxufVxyXG46Om5nLWRlZXAuZWdyZXQtbmF2eSAubWF0LXByaW1hcnkgLm1hdC1vcHRpb24ubWF0LXNlbGVjdGVkOm5vdCgubWF0LW9wdGlvbi1kaXNhYmxlZCkge1xyXG4gIGNvbG9yOiAjMDA0Qzk3O1xyXG59XHJcbi8vIDo6bmctZGVlcC5lZ3JldC1uYXZ5IC5tYXQtb3B0aW9uIHtcclxuLy8gICBjb2xvcjogI0RDRTRFQlxyXG4vLyB9XHJcbi5hdXRvLXdpZHRoe1xyXG4gIC5tYXQtZm9ybS1maWVsZCB7XHJcbiAgICAgIHdpZHRoOiBhdXRvICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5tYXQtc2VsZWN0LXZhbHVlIHtcclxuICAgICAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gICAgICB3aWR0aDogYXV0bztcclxuICB9ICBcclxufSJdfQ== */"], changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.titleVal == "Disbursement");
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCard"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutGapDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_13__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_15__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_select__WEBPACK_IMPORTED_MODULE_15__["MatSelectTrigger"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_input__WEBPACK_IMPORTED_MODULE_18__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_19__["MatTooltip"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatHint"]], styles: [".accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n  box-shadow: unset !important;\n}\n\n.accountHeader[_ngcontent-%COMP%] {\n  font-size: 15px;\n  color: var(--unnamed-color-004c97);\n  text-align: left;\n  font-family: \"Poppins\", Medium;\n  letter-spacing: -0.38px;\n  color: #004C97;\n  opacity: 1;\n}\n\n.hint[_ngcontent-%COMP%] {\n  text-transform: capitalize;\n  font-weight: 600;\n  margin-bottom: 0;\n  font-size: 11px;\n}\n\n.acBranch[_ngcontent-%COMP%] {\n  margin-right: 55px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 5px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n  margin-left: 3% !important;\n}\n\n  .mat-form-field-appearance-outline .mat-form-field-outline {\n  background-color: white;\n  border-radius: 7px;\n  box-shadow: 0px 3px 15px #00000017;\n}\n\n .mat-select-value-text {\n  margin-left: 10px;\n}\n\ninput.mat-input-element[_ngcontent-%COMP%] {\n  margin-left: 10px;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #102245;\n  opacity: 70%;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  box-sizing: border-box;\n}\n\n.textcolor[_ngcontent-%COMP%] {\n  color: white;\n}\n\n#denominationDiv[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: auto auto;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  box-sizing: border-box;\n}\n\ninput[_ngcontent-%COMP%] {\n  border: 0;\n  outline: 0;\n  font-weight: bold;\n}\n\ninput[_ngcontent-%COMP%]:focus {\n  outline: none !important;\n}\n\n.pb1[_ngcontent-%COMP%] {\n  padding-bottom: 1%;\n}\n\n.operationTypeClass[_ngcontent-%COMP%] {\n  color: #a1a1a1;\n  margin: auto;\n}\n\n.quantityClass[_ngcontent-%COMP%] {\n  color: #000000;\n  margin: auto;\n  font-weight: 500;\n}\n\n.paddingclass[_ngcontent-%COMP%] {\n  padding: 2%;\n}\n\n.inputCard[_ngcontent-%COMP%]:not([class*=mat-elevation-z]) {\n  box-shadow: 0 2px 1px -1px #f8f8f8, 0 1px 0 #f8f8f8, 0 5px 8px 0 #e9e9e9;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field {\n  width: 100% !important;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper > div.mat-form-field-flex > div.mat-form-field-suffix > mat-icon > svg {\n  margin-bottom: -8px;\n}\n\n[_nghost-%COMP%]     mat-select-country > mat-form-field > div.mat-form-field-wrapper {\n  padding-bottom: 0.8rem;\n}\n\ninput[_ngcontent-%COMP%]::-webkit-outer-spin-button, input[_ngcontent-%COMP%]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n}\n\n.readonly-wrapper[_ngcontent-%COMP%]   .readonly-block[_ngcontent-%COMP%] {\n  pointer-events: none;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  width: 553px;\n  height: 50px;\n  color: #ffffff;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 28px;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 30%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  font-weight: bold;\n}\n\n.backBtn[_ngcontent-%COMP%] {\n  font-weight: bold;\n  width: 263px;\n  height: 50px;\n  background: #ffffff 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 25px;\n}\n\n.currency_code[_ngcontent-%COMP%] {\n  background-color: #004C9724;\n  border: 2px solid #004c97;\n  border-radius: 4px;\n  padding: 1px 4px;\n  font-size: 9px;\n  color: #004c97;\n  font-weight: 600;\n  margin-left: 13px;\n}\n\n.tooltip[_ngcontent-%COMP%] {\n  position: absolute;\n  right: 12%;\n  transform: translateY(-50%);\n  display: inline-block;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: hidden;\n  min-width: 200px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;\n  color: #fff;\n  text-align: start;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptext[_ngcontent-%COMP%] {\n  visibility: visible;\n  right: 150%;\n  top: 0%;\n}\n\n.tooltip[_ngcontent-%COMP%]:hover   .tooltiptextNeg[_ngcontent-%COMP%] {\n  visibility: visible;\n  left: 80%;\n  top: -160%;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptext[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  border-radius: 2px;\n  top: 38%;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 10px;\n  border-style: solid;\n  border-color: transparent red transparent transparent;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  margin-left: 18px !important;\n}\n\n.tooltip[_ngcontent-%COMP%]   .tooltiptextNeg[_ngcontent-%COMP%]::after {\n  content: \"\";\n  position: absolute;\n  border-radius: 2px;\n  top: 40%;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 8px;\n  border-style: solid;\n  border-color: transparent #051A2D transparent transparent;\n}\n\n .tooltip {\n  background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box !important;\n  color: #fff !important;\n  white-space: pre-line;\n  padding: 18px !important;\n  font-size: 15px !important;\n  letter-spacing: 0.4px !important;\n  font-family: \"Acumin Variable Concept\" !important;\n  margin-top: 120px !important;\n  border-radius: 10px !important;\n}\n\n.mat-tooltip[_ngcontent-%COMP%] {\n  overflow: visible;\n  position: relative;\n}\n\n.mat-tooltip.right[_ngcontent-%COMP%] {\n  border-left: 6px solid #004C97;\n  margin-left: 5px;\n}\n\n.mat-tooltip.right[_ngcontent-%COMP%]::before {\n  position: absolute;\n  content: \"\";\n  display: inline-block;\n  background-color: #004C97;\n  -webkit-clip-path: polygon(50% 0, 0 50%, 50% 100%);\n          clip-path: polygon(50% 0, 0 50%, 50% 100%);\n  left: -12px;\n  width: 15px;\n  height: 15px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n.actionIcon[_ngcontent-%COMP%]:hover {\n  color: #004C97;\n}\n\n.filterDropDown[_ngcontent-%COMP%]:hover   .actionIcon[_ngcontent-%COMP%] {\n  color: #004C97 !important;\n}\n\n.recent_transName[_ngcontent-%COMP%]   .actionIcon[_ngcontent-%COMP%]:hover {\n  color: red;\n}\n\n.selection-icon[_ngcontent-%COMP%] {\n  position: relative;\n  top: 6px;\n  margin-right: 16px;\n  display: none;\n}\n\n .egret-navy .mat-option.mat-active {\n  background: rgba(44, 44, 44, 0.04);\n  color: #004C97;\n}\n\n .egret-navy .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {\n  color: #004C97;\n}\n\n.auto-width[_ngcontent-%COMP%]   .mat-form-field[_ngcontent-%COMP%] {\n  width: auto !important;\n}\n\n.auto-width[_ngcontent-%COMP%]   .mat-select-value[_ngcontent-%COMP%] {\n  max-width: 100%;\n  width: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9hbi1pbmZvcm1hdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0NBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0FBQ0o7O0FBQ0U7RUFDRSxlQUFBO0VBQ0Esa0NBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0VBQ0EsdUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtBQUVKOztBQUFFO0VBQ0UsMEJBQUE7RUFDQSxnQkFBQTtFQUVBLGdCQUFBO0VBQ0EsZUFBQTtBQUVKOztBQUFFO0VBQ0Usa0JBQUE7QUFHSjs7QUFERTtFQUNFLFlBQUE7RUFDQSxlQUFBO0VBQ0EsK0JBQUE7RUFDQSxzQkFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQUlKOztBQUZFO0VBQ0UseUNBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBS0o7O0FBSEU7RUFDRSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0NBQUE7QUFNSjs7QUFIRTtFQUNFLGlCQUFBO0FBTUo7O0FBSkU7RUFDRSxpQkFBQTtBQU9KOztBQUpFO0VBQ0UsZUFBQTtFQUVBLGNBQUE7RUFDQSxZQUFBO0FBTUo7O0FBSEU7RUFFRSxzQkFBQTtBQUtKOztBQUZFO0VBQ0UsWUFBQTtBQUtKOztBQUZFO0VBQ0UsYUFBQTtFQUNBLGdDQUFBO0FBS0o7O0FBRkU7RUFFRSxzQkFBQTtBQUlKOztBQURFO0VBQ0UsU0FBQTtFQUNBLFVBQUE7RUFFQSxpQkFBQTtBQUdKOztBQURFO0VBQ0Usd0JBQUE7QUFJSjs7QUFERTtFQUNFLGtCQUFBO0FBSUo7O0FBREU7RUFDRSxjQUFBO0VBQ0EsWUFBQTtBQUlKOztBQURFO0VBQ0UsY0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQUlKOztBQURFO0VBQ0UsV0FBQTtBQUlKOztBQURFO0VBQ0Usd0VBQUE7QUFJSjs7QUFERTtFQUNFLHNCQUFBO0FBSUo7O0FBREU7RUFTRSxtQkFBQTtBQUpKOztBQU9FO0VBS0Usc0JBQUE7QUFSSjs7QUFVRTs7RUFFRSx3QkFBQTtFQUNBLFNBQUE7QUFQSjs7QUFVRTtFQUNFLG1CQUFBO0FBUEo7O0FBVUU7RUFDRSxvQkFBQTtBQVBKOztBQVNFO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxvR0FBQTtFQUVBLG1CQUFBO0VBQ0EsdUJBQUE7QUFQSjs7QUFTRTtFQUNFLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7QUFOSjs7QUFRRTtFQUNFLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSwrQ0FBQTtFQUNBLGtDQUFBO0VBQ0EsbUJBQUE7QUFMSjs7QUFRRTtFQUNFLDJCQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUVBLGlCQUFBO0FBTko7O0FBUUU7RUFDRSxrQkFBQTtFQUVBLFVBQUE7RUFDQSwyQkFBQTtFQUNBLHFCQUFBO0FBTko7O0FBVUU7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMEJBQUE7RUFBQSx1QkFBQTtFQUFBLGtCQUFBO0VBR0Esb0dBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUFUSjs7QUF3QkU7RUFDRSxtQkFBQTtFQUNBLFdBQUE7RUFDQSxPQUFBO0FBckJKOztBQXdCRTtFQUNFLG1CQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7QUFyQko7O0FBd0JFO0VBQ0UsV0FBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHFEQUFBO0FBckJKOztBQXVCRTtFQUNFLHlDQUFBO0VBRUEsNEJBQUE7QUFyQko7O0FBdUJFO0VBQ0UsV0FBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxtQkFBQTtFQUdBLHlEQUFBO0FBdEJKOztBQXdCRTtFQUNFLCtHQUFBO0VBQ0Esc0JBQUE7RUFDQSxxQkFBQTtFQUNBLHdCQUFBO0VBQ0EsMEJBQUE7RUFDQSxnQ0FBQTtFQUNBLGlEQUFBO0VBQ0EsNEJBQUE7RUFDQSw4QkFBQTtBQXJCSjs7QUF1QkU7RUFFRSxpQkFBQTtFQUNBLGtCQUFBO0FBckJKOztBQXNCSTtFQUNJLDhCQUFBO0VBQ0EsZ0JBQUE7QUFwQlI7O0FBcUJRO0VBQ0ksa0JBQUE7RUFDQSxXQUFBO0VBQ0EscUJBQUE7RUFDQSx5QkFBQTtFQUNBLGtEQUFBO1VBQUEsMENBQUE7RUFDQSxXQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUFuQlo7O0FBdUJFO0VBQ0UsY0FBQTtBQXBCSjs7QUF1QkU7RUFDRSx5QkFBQTtBQXBCSjs7QUFzQkU7RUFDRSxVQUFBO0FBbkJKOztBQXFCRTtFQUNFLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtBQWxCSjs7QUFvQkU7RUFDRSxrQ0FBQTtFQUNBLGNBQUE7QUFqQko7O0FBbUJBO0VBQ0UsY0FBQTtBQWhCRjs7QUFzQkU7RUFDSSxzQkFBQTtBQW5CTjs7QUFxQkU7RUFDSSxlQUFBO0VBQ0EsV0FBQTtBQW5CTiIsImZpbGUiOiJsb2FuLWluZm9ybWF0aW9uLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWNjb3VudEluZm9DYXJkIHtcclxuICAgIGJhY2tncm91bmQ6ICNmMmYyZjIgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICAgIGJveC1zaGFkb3c6IHVuc2V0ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5hY2NvdW50SGVhZGVyIHtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIGNvbG9yOiB2YXIoLS11bm5hbWVkLWNvbG9yLTAwNGM5Nyk7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgTWVkaXVtO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IC0wLjM4cHg7XHJcbiAgICBjb2xvcjogIzAwNEM5NztcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgfVxyXG4gIC5oaW50IHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIC8vIG1hcmdpbi1sZWZ0OiAxJTtcclxuICAgIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgfVxyXG4gIC5hY0JyYW5jaHtcclxuICAgIG1hcmdpbi1yaWdodDogNTVweDtcclxuICB9XHJcbiAgLmlucHV0TWF0TmFtZSB7XHJcbiAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICBib3gtc2hhZG93OiAwIDNwdCA2cHQgIzAwMDAwMDI5O1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxM3B4O1xyXG4gIH1cclxuICBtYXQtbGFiZWx7XHJcbiAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBNZWRpdW0gIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjNzA3MDcwICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tbGVmdDogMyUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1hcHBlYXJhbmNlLW91dGxpbmUgLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiA3cHg7XHJcbiAgICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gICAgLy8gaGVpZ2h0OiA0NXB4O1xyXG4gIH1cclxuICA6Om5nLWRlZXAubWF0LXNlbGVjdC12YWx1ZS10ZXh0e1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgfVxyXG4gIGlucHV0Lm1hdC1pbnB1dC1lbGVtZW50e1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC50b3RhbEFtb3VudCB7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICAvLyBjb2xvcjogIzMwNDE1NjtcclxuICAgIGNvbG9yOiAjMTAyMjQ1O1xyXG4gICAgb3BhY2l0eTogNzAlO1xyXG4gICAgLy8gcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIH1cclxuICAuaW5wdXRDYXJkIHtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6ICNmOWZhZmI7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIH1cclxuICBcclxuICAudGV4dGNvbG9yIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgXHJcbiAgI2Rlbm9taW5hdGlvbkRpdiB7XHJcbiAgICBkaXNwbGF5OiBncmlkO1xyXG4gICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBhdXRvIGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIC5pbnB1dENhcmQge1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogI2Y5ZmFmYjtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0IHtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIG91dGxpbmU6IDA7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmYWZiO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgfVxyXG4gIGlucHV0OmZvY3VzIHtcclxuICAgIG91dGxpbmU6IG5vbmUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLnBiMSB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMSU7XHJcbiAgfVxyXG4gIFxyXG4gIC5vcGVyYXRpb25UeXBlQ2xhc3Mge1xyXG4gICAgY29sb3I6ICNhMWExYTE7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIC5xdWFudGl0eUNsYXNzIHtcclxuICAgIGNvbG9yOiAjMDAwMDAwO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICB9XHJcbiAgXHJcbiAgLnBhZGRpbmdjbGFzcyB7XHJcbiAgICBwYWRkaW5nOiAyJTtcclxuICB9XHJcbiAgXHJcbiAgLmlucHV0Q2FyZDpub3QoW2NsYXNzKj0nbWF0LWVsZXZhdGlvbi16J10pIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMnB4IDFweCAtMXB4ICNmOGY4ZjgsIDAgMXB4IDAgI2Y4ZjhmOCwgMCA1cHggOHB4IDAgI2U5ZTllOTtcclxuICB9XHJcbiAgXHJcbiAgOmhvc3QgOjpuZy1kZWVwIG1hdC1zZWxlY3QtY291bnRyeSA+IG1hdC1mb3JtLWZpZWxkIHtcclxuICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIDpob3N0XHJcbiAgICA6Om5nLWRlZXBcclxuICAgIG1hdC1zZWxlY3QtY291bnRyeVxyXG4gICAgPiBtYXQtZm9ybS1maWVsZFxyXG4gICAgPiBkaXYubWF0LWZvcm0tZmllbGQtd3JhcHBlclxyXG4gICAgPiBkaXYubWF0LWZvcm0tZmllbGQtZmxleFxyXG4gICAgPiBkaXYubWF0LWZvcm0tZmllbGQtc3VmZml4XHJcbiAgICA+IG1hdC1pY29uXHJcbiAgICA+IHN2ZyB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAtOHB4O1xyXG4gIH1cclxuICBcclxuICA6aG9zdFxyXG4gICAgOjpuZy1kZWVwXHJcbiAgICBtYXQtc2VsZWN0LWNvdW50cnlcclxuICAgID4gbWF0LWZvcm0tZmllbGRcclxuICAgID4gZGl2Lm1hdC1mb3JtLWZpZWxkLXdyYXBwZXIge1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAuOHJlbTtcclxuICB9XHJcbiAgaW5wdXQ6Oi13ZWJraXQtb3V0ZXItc3Bpbi1idXR0b24sXHJcbiAgaW5wdXQ6Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24ge1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gIH1cclxuICBcclxuICAucmVhZG9ubHktd3JhcHBlciB7XHJcbiAgICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xyXG4gIH1cclxuICBcclxuICAucmVhZG9ubHktd3JhcHBlciAucmVhZG9ubHktYmxvY2sge1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgfVxyXG4gIC5jb250aW51ZUJ0biB7XHJcbiAgICB3aWR0aDogNTUzcHg7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJVxyXG4gICAgICBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyOHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgfVxyXG4gIC5leGl0QnRuIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICB3aWR0aDogMzAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICAgIGNvbG9yOiAjZTUwMDAwO1xyXG4gICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICB9XHJcbiAgLmJhY2tCdG4ge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICB3aWR0aDogMjYzcHg7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmZmZmIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyNXB4O1xyXG4gIH1cclxuICBcclxuICAuY3VycmVuY3lfY29kZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Qzk3MjQ7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjMDA0Yzk3O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gICAgcGFkZGluZzogMXB4IDRweDtcclxuICAgIGZvbnQtc2l6ZTogOXB4O1xyXG4gICAgY29sb3I6ICMwMDRjOTc7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgLy8gbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMTNweDtcclxuICB9XHJcbiAgLnRvb2x0aXAge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgLy8gdG9wOiA4NSU7XHJcbiAgICByaWdodDogMTIlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIH1cclxuICBcclxuXHJcbiAgLnRvb2x0aXAgLnRvb2x0aXB0ZXh0IHtcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIG1pbi13aWR0aDogMjAwcHg7XHJcbiAgICB3aWR0aDogbWF4LWNvbnRlbnQ7XHJcbiAgICAvLyBtYXJnaW4tdG9wOiAtMTAlO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjogI2ZlNjcwMDtcclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MWRlZywgIzA1MUEyRCAwJSwgIzAwNEM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIHRleHQtYWxpZ246IHN0YXJ0O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gICAgcGFkZGluZzogNXB4IDA7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gICAgLy8gdG9wOiAtNDlweDtcclxuICAgIC8vIGxlZnQ6IDEzMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC8vIC50b29sdGlwIC50b29sdGlwdGV4dDo6YWZ0ZXIge1xyXG4gIC8vICAgY29udGVudDogJyc7XHJcbiAgLy8gICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgLy8gICAvLyB0b3A6IDUwJTtcclxuICAvLyAgIHJpZ2h0OiAxMDAlO1xyXG4gIC8vICAgbWFyZ2luLXRvcDogLTVweDtcclxuICAvLyAgIGJvcmRlci13aWR0aDogNXB4O1xyXG4gIC8vICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAvLyAgIC8vIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgI2ZlNjcwMCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcclxuICAvLyB9XHJcbiAgLnRvb2x0aXA6aG92ZXIgLnRvb2x0aXB0ZXh0IHtcclxuICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgICByaWdodDogMTUwJTtcclxuICAgIHRvcDogLTAlO1xyXG4gIH1cclxuICBcclxuICAudG9vbHRpcDpob3ZlciAudG9vbHRpcHRleHROZWcge1xyXG4gICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxuICAgIGxlZnQ6IDgwJTtcclxuICAgIHRvcDogLTE2MCU7XHJcbiAgfVxyXG4gIFxyXG4gIC50b29sdGlwIC50b29sdGlwdGV4dDo6YWZ0ZXIge1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcclxuICAgIHRvcDogMzglO1xyXG4gICAgcmlnaHQ6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOiAtNXB4O1xyXG4gICAgYm9yZGVyLXdpZHRoOiAxMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgcmVkIHRyYW5zcGFyZW50IHRyYW5zcGFyZW50O1xyXG4gIH1cclxuICBtYXQtbGFiZWx7XHJcbiAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBNZWRpdW0gIWltcG9ydGFudDtcclxuICAgIC8vIGNvbG9yOiAjMDA0Qzk3ICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tbGVmdDogMThweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAudG9vbHRpcCAudG9vbHRpcHRleHROZWc6OmFmdGVyIHtcclxuICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAycHg7XHJcbiAgICB0b3A6IDQwJTtcclxuICAgIHJpZ2h0OiAxMDAlO1xyXG4gICAgbWFyZ2luLXRvcDogLTVweDtcclxuICAgIGJvcmRlci13aWR0aDogOHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIC8vIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MWRlZywgIzA1MUEyRCAwJSwgIzAwNEM5NyAxMDAlKSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICAvLyBjb2xvcjogI2ZmZjtcclxuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgIzA1MUEyRCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcclxuICB9XHJcbiAgOjpuZy1kZWVwLnRvb2x0aXB7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoOTFkZWcsICMwNTFBMkQgMCUsICMwMDRDOTcgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94ICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xyXG4gICAgd2hpdGUtc3BhY2U6IHByZS1saW5lO1xyXG4gICAgcGFkZGluZzoxOHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDE1cHggIWltcG9ydGFudDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwLjRweCAhaW1wb3J0YW50O1xyXG4gICAgZm9udC1mYW1pbHk6IFwiQWN1bWluIFZhcmlhYmxlIENvbmNlcHRcIiAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDoxMjBweCAhaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAubWF0LXRvb2x0aXAge1xyXG4gICAgLy8gdG8gbWFrZSBwb3NzaWJsZSBwbGFjZSBhcnJvdyBwc2V1ZG8gZWxlbWVudCBvdXRzaWRlIHRvb2x0aXAgd2l0aCBhYnNvbHV0ZSBwb3NpdGlvbmluZ1xyXG4gICAgb3ZlcmZsb3c6IHZpc2libGU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAmLnJpZ2h0IHtcclxuICAgICAgICBib3JkZXItbGVmdDogNnB4IHNvbGlkICMwMDRDOTcgO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbiAgICAgICAgJjo6YmVmb3JlIHtcclxuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICBjb250ZW50OiAnJztcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Qzk3IDtcclxuICAgICAgICAgICAgY2xpcC1wYXRoOiBwb2x5Z29uKDUwJSAwLCAwIDUwJSwgNTAlIDEwMCUpO1xyXG4gICAgICAgICAgICBsZWZ0OiAtMTJweDtcclxuICAgICAgICAgICAgd2lkdGg6IDE1cHg7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTVweDtcclxuICAgICAgICAgICAgdG9wOiA1MCU7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIC5hY3Rpb25JY29uOmhvdmVyIHtcclxuICAgIGNvbG9yOiAjMDA0Qzk3O1xyXG4gIH1cclxuICBcclxuICAuZmlsdGVyRHJvcERvd246aG92ZXIgLmFjdGlvbkljb24ge1xyXG4gICAgY29sb3I6ICMwMDRDOTcgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLnJlY2VudF90cmFuc05hbWUgLmFjdGlvbkljb246aG92ZXIge1xyXG4gICAgY29sb3I6IHJlZFxyXG4gIH1cclxuICAuc2VsZWN0aW9uLWljb24ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgdG9wOiA2cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE2cHg7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG4gIH1cclxuICA6Om5nLWRlZXAuZWdyZXQtbmF2eSAubWF0LW9wdGlvbi5tYXQtYWN0aXZlIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoNDQsIDQ0LCA0NCwgMC4wNCk7XHJcbiAgICBjb2xvcjogIzAwNEM5NztcclxufVxyXG46Om5nLWRlZXAuZWdyZXQtbmF2eSAubWF0LXByaW1hcnkgLm1hdC1vcHRpb24ubWF0LXNlbGVjdGVkOm5vdCgubWF0LW9wdGlvbi1kaXNhYmxlZCkge1xyXG4gIGNvbG9yOiAjMDA0Qzk3O1xyXG59XHJcbi8vIDo6bmctZGVlcC5lZ3JldC1uYXZ5IC5tYXQtb3B0aW9uIHtcclxuLy8gICBjb2xvcjogI0RDRTRFQlxyXG4vLyB9XHJcbi5hdXRvLXdpZHRoe1xyXG4gIC5tYXQtZm9ybS1maWVsZCB7XHJcbiAgICAgIHdpZHRoOiBhdXRvICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5tYXQtc2VsZWN0LXZhbHVlIHtcclxuICAgICAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gICAgICB3aWR0aDogYXV0bztcclxuICB9ICBcclxufSJdfQ== */"], changeDetection: 0 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LoanInformationFormComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -22546,7 +23881,9 @@ LoanInformationFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
                 ],
                 changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"] }, { type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"] }, { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"] }, { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }, { type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_10__["DataService"] }]; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_7__["DialogService"] }, { type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"] }, { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"] }, { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }, { type: app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"] }]; }, { titleVal: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
 
 
 /***/ }),
@@ -22671,6 +24008,7 @@ function KioskHomepageComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function KioskHomepageComponent_div_13_Template_div_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r8); const i_r2 = ctx.index; const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r7.goToOperations(i_r2); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-card", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("mouseover", function KioskHomepageComponent_div_13_Template_mat_card_mouseover_1_listener() { const folder_r1 = ctx.$implicit; return folder_r1.flag = true; })("mouseleave", function KioskHomepageComponent_div_13_Template_mat_card_mouseleave_1_listener() { const folder_r1 = ctx.$implicit; return folder_r1.flag = false; });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, KioskHomepageComponent_div_13_div_2_Template, 2, 2, "div", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, KioskHomepageComponent_div_13_div_3_Template, 2, 2, "div", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "mat-card-content", 18);
@@ -22785,7 +24123,8 @@ class KioskHomepageComponent {
         console.log(this.custNameFromLogin);
         if (this.custNameFromLogin != null) {
             console.log(this.folders);
-            this.folders = this.folders.filter(item => item.title !== 'Cash Withdrawal');
+            this.folders = this.folders.filter(item => (item.title !== 'Cash Withdrawal'));
+            this.folders = this.folders.filter(item => (item.title !== 'Loan Disburshment'));
             console.log(this.folders);
         }
     }
@@ -22835,7 +24174,7 @@ class KioskHomepageComponent {
     }
 }
 KioskHomepageComponent.ɵfac = function KioskHomepageComponent_Factory(t) { return new (t || KioskHomepageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_0__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_3__["DialogService"])); };
-KioskHomepageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: KioskHomepageComponent, selectors: [["app-kiosk-homepage"]], decls: 20, vars: 2, consts: [[1, "mainDiv"], ["fxLayoutAlign", "start center"], ["fxFlex", "68%", 1, "titleCard"], [1, "header_content"], [1, "headtitle"], [1, "headContent"], [1, "header_image"], ["src", "assets/images/home-header.png", "alt", ""], ["fxLayout", "column wrap"], ["fxLayout", "row wrap", "fxLayoutAlign", "center", 1, "contentDiv"], ["class", "card_box", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row"], ["fxLayoutGap", "20px", 1, "full-width", 2, "margin-left", "5%"], ["mat-flat-button", "", 1, "continue", 3, "ngClass"], ["mat-flat-button", "", 1, "exitBtn", 3, "click"], [1, "card_box", 3, "click"], [1, "contentCard1"], ["fxLayoutAlign", "center", 4, "ngIf"], ["fxLayoutAlign", "center", 3, "ngClass"], ["fxLayoutAlign", "center"], ["alt", "", 3, "ngClass", "src"]], template: function KioskHomepageComponent_Template(rf, ctx) { if (rf & 1) {
+KioskHomepageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: KioskHomepageComponent, selectors: [["app-kiosk-homepage"]], decls: 20, vars: 2, consts: [[1, "mainDiv"], ["fxLayoutAlign", "start center"], ["fxFlex", "80%", 1, "titleCard"], [1, "header_content"], [1, "headtitle"], [1, "headContent"], [1, "header_image"], ["src", "assets/images/home-header.png", "alt", ""], ["fxLayout", "column wrap", "fxLayoutAlign", "start end", "fxLayoutGap", "1%", 1, "servicecards"], ["fxLayout", "row wrap", "fxLayoutAlign", " start end", "fxLayoutGap", "0.9%", 1, "contentDiv"], ["class", "card_box", 3, "click", 4, "ngFor", "ngForOf"], ["fxLayout", "row"], ["fxLayoutGap", "20px", 1, "full-width", 2, "margin-left", "4.5%"], ["mat-flat-button", "", 1, "continue", 3, "ngClass"], ["mat-flat-button", "", 1, "exitBtn", 3, "click"], [1, "card_box", 3, "click"], [1, "contentCard1", 3, "mouseover", "mouseleave"], ["fxLayoutAlign", "center", 4, "ngIf"], ["fxLayoutAlign", "center", 3, "ngClass"], ["fxLayoutAlign", "center"], ["alt", "", 3, "ngClass", "src"]], template: function KioskHomepageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-card", 2);
@@ -22876,7 +24215,7 @@ KioskHomepageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.folders);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", ctx.contiueButton() ? "buttonActive" : "buttonPassive");
-    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutAlignDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultFlexDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_8__["DefaultClassDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardContent"]], styles: [".mainDiv[_ngcontent-%COMP%] {\n  margin-top: -5%;\n  height: 800px;\n}\n\n.titleCard[_ngcontent-%COMP%] {\n  margin: 0 auto;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 20px;\n  opacity: 1;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 26px;\n  padding: 1rem 2rem;\n  overflow: unset;\n}\n\n.titleCard[_ngcontent-%COMP%]   .header_content[_ngcontent-%COMP%] {\n  width: 75%;\n}\n\n.titleCard[_ngcontent-%COMP%]   .header_image[_ngcontent-%COMP%] {\n  width: 25%;\n  position: relative;\n}\n\n.titleCard[_ngcontent-%COMP%]   .header_image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 95%;\n  position: absolute;\n  right: 0;\n  top: 0;\n  transform: translateY(-60%);\n}\n\n.headtitle[_ngcontent-%COMP%] {\n  top: 175px;\n  left: 148px;\n  \n  text-align: left;\n  font-size: 32px;\n  font-family: \"SFPro\";\n  letter-spacing: 0px;\n  color: #ffffff;\n  opacity: 1;\n}\n\n.headContent[_ngcontent-%COMP%] {\n  min-height: 48px;\n  \n  text-align: left;\n  font-size: 15px;\n  font-family: \"SFPro\";\n  letter-spacing: 0px;\n  color: #ffffff;\n  opacity: 0.87;\n}\n\n.contentCard1[_ngcontent-%COMP%] {\n  top: 10px;\n  width: 130px;\n  height: 117px;\n  \n  background: #fffefe 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 18px;\n  opacity: 1;\n}\n\n.contentCard1[_ngcontent-%COMP%]:hover {\n  border-radius: 20px;\n  min-width: 13.5%;\n  cursor: pointer;\n  border-top: #fa6500 solid 12px;\n}\n\n.contentCard1[_ngcontent-%COMP%]:hover   .matIconColor[_ngcontent-%COMP%] {\n  color: #1d5286;\n}\n\n.contentDiv[_ngcontent-%COMP%] {\n  height: 10%;\n  width: 70%;\n  margin: 1rem auto 0;\n}\n\n.contentCard2[_ngcontent-%COMP%] {\n  top: 10px;\n  width: 130px;\n  height: 117px;\n  background: #fffefe 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 18px;\n  opacity: 1;\n}\n\n.image1[_ngcontent-%COMP%] {\n  margin-top: 10%;\n  margin-left: 10px;\n}\n\n.mat-card[_ngcontent-%COMP%]    > [_ngcontent-%COMP%]:first-child:not(.header_content), .mat-card-content[_ngcontent-%COMP%]    > [_ngcontent-%COMP%]:first-child:not(.header_content) {\n  width: 40px !important;\n  margin-left: 30% !important;\n}\n\n.matcontentcard1[_ngcontent-%COMP%] {\n  margin-top: 30%;\n  font-size: 10px;\n  font-weight: bold;\n}\n\n.matcontentcard2[_ngcontent-%COMP%] {\n  margin-top: 15%;\n  font-size: 10px;\n  font-weight: bold;\n}\n\n.buttonActive[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 60%;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n}\n\n.buttonPassive[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 60%;\n  background-color: #e3e3e3;\n  color: #ffffff;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 31%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  box-shadow: 0px 3px 15px #0000001a;\n}\n\n.matTitle[_ngcontent-%COMP%] {\n  background-color: #fa6500;\n}\n\n.card_box[_ngcontent-%COMP%] {\n  position: relative;\n}\n\n.contentCardBorder[_ngcontent-%COMP%] {\n  width: 130px;\n  height: 117px;\n  \n  background: #fffefe 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 18px;\n  opacity: 1;\n  display: flex;\n  position: absolute;\n  transform: translateY(-10px);\n}\n\n.continue[_ngcontent-%COMP%] {\n  width: 40% !important;\n  margin-left: 140px !important;\n  margin-top: 30px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxca2lvc2staG9tZXBhZ2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFBO0VBQ0EsYUFBQTtBQUNGOztBQUVBO0VBR0UsY0FBQTtFQUdBLGtCQUFBO0VBQ0Esb0dBQUE7RUFFQSxtQkFBQTtFQUNBLFVBQUE7RUFFQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FBTEY7O0FBTUU7RUFDRSxVQUFBO0FBSko7O0FBTUU7RUFDRSxVQUFBO0VBQ0Esa0JBQUE7QUFKSjs7QUFLSTtFQUNFLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsMkJBQUE7QUFITjs7QUFPQTtFQUNFLFVBQUE7RUFDQSxXQUFBO0VBR0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLFVBQUE7QUFORjs7QUFRQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7QUFMRjs7QUFPQTtFQUNFLFNBQUE7RUFHQSxZQUFBO0VBQ0EsYUFBQTtFQUdBLGtCQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtBQVJGOztBQVVBO0VBRUksbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSw4QkFBQTtBQVJKOztBQWFBO0VBQ0UsY0FBQTtBQVZGOztBQVlBO0VBQ0UsV0FBQTtFQUNBLFVBQUE7RUFFQSxtQkFBQTtBQVZGOztBQVlBO0VBQ0UsU0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBR0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtBQVhGOztBQWFBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0FBVkY7O0FBWUE7O0VBRUUsc0JBQUE7RUFDQSwyQkFBQTtBQVRGOztBQVdBO0VBQ0UsZUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQVJGOztBQVVBO0VBQ0UsZUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQVBGOztBQVNBO0VBQ0UsbUJBQUE7RUFDQSxVQUFBO0VBQ0Esb0dBQUE7RUFFQSxjQUFBO0VBQ0EsdUJBQUE7QUFQRjs7QUFTQTtFQUNFLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLHVCQUFBO0FBTkY7O0FBUUE7RUFDRSxtQkFBQTtFQUNBLFVBQUE7RUFDQSx5QkFBQTtFQUNBLGNBQUE7RUFDQSx1QkFBQTtFQUNBLGtDQUFBO0FBTEY7O0FBUUE7RUFDRSx5QkFBQTtBQUxGOztBQVFBO0VBQ0Usa0JBQUE7QUFMRjs7QUFRQTtFQUdFLFlBQUE7RUFDQSxhQUFBO0VBR0Esa0JBQUE7RUFDQSwrQ0FBQTtFQUNBLGtDQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0VBQ0EsYUFBQTtFQUVBLGtCQUFBO0VBQ0EsNEJBQUE7QUFWRjs7QUFZQTtFQUNFLHFCQUFBO0VBQ0EsNkJBQUE7RUFDQSxnQkFBQTtBQVRGIiwiZmlsZSI6Imtpb3NrLWhvbWVwYWdlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW5EaXYge1xyXG4gIG1hcmdpbi10b3A6IC01JTtcclxuICBoZWlnaHQ6IDgwMHB4O1xyXG4gIC8vIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTc7XHJcbn1cclxuLnRpdGxlQ2FyZCB7XHJcbiAgLy8gdG9wOiBweDtcclxuICAvLyBsZWZ0OiAxMDNweDtcclxuICBtYXJnaW46IDAgYXV0bztcclxuICAvLyB3aWR0aDogMTE4OHB4O1xyXG4gIC8vIGhlaWdodDogMTU3cHg7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJVxyXG4gICAgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgb3BhY2l0eTogMTtcclxuXHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBtYXJnaW4tdG9wOiAyNnB4O1xyXG4gIHBhZGRpbmc6IDFyZW0gMnJlbTtcclxuICBvdmVyZmxvdzogdW5zZXQ7XHJcbiAgLmhlYWRlcl9jb250ZW50IHtcclxuICAgIHdpZHRoOiA3NSU7XHJcbiAgfVxyXG4gIC5oZWFkZXJfaW1hZ2Uge1xyXG4gICAgd2lkdGg6IDI1JTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGltZyB7XHJcbiAgICAgIHdpZHRoOiA5NSU7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgIHRvcDogMDtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC02MCUpO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG4uaGVhZHRpdGxlIHtcclxuICB0b3A6IDE3NXB4O1xyXG4gIGxlZnQ6IDE0OHB4O1xyXG4gIC8vIHdpZHRoOiAxMjNweDtcclxuICAvLyBoZWlnaHQ6IDMycHg7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgZm9udC1zaXplOiAzMnB4O1xyXG4gIGZvbnQtZmFtaWx5OiBcIlNGUHJvXCI7XHJcbiAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICBjb2xvcjogI2ZmZmZmZjtcclxuICBvcGFjaXR5OiAxO1xyXG59XHJcbi5oZWFkQ29udGVudCB7XHJcbiAgbWluLWhlaWdodDogNDhweDtcclxuICAvKiBVSSBQcm9wZXJ0aWVzICovXHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbiAgZm9udC1mYW1pbHk6IFwiU0ZQcm9cIjtcclxuICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIG9wYWNpdHk6IDAuODc7XHJcbn1cclxuLmNvbnRlbnRDYXJkMSB7XHJcbiAgdG9wOiAxMHB4O1xyXG4gIC8vIGxlZnQ6IC03LjMlO1xyXG4gIC8vIGxlZnQ6IDE0N3B4O1xyXG4gIHdpZHRoOiAxMzBweDtcclxuICBoZWlnaHQ6IDExN3B4O1xyXG4gIC8vIHdpZHRoOiAxNTlweDtcclxuICAvLyBoZWlnaHQ6IDEzNnB4O1xyXG4gIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICBiYWNrZ3JvdW5kOiAjZmZmZWZlIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE4cHg7XHJcbiAgb3BhY2l0eTogMTtcclxufVxyXG4uY29udGVudENhcmQxOmhvdmVyIHtcclxuIFxyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIG1pbi13aWR0aDogMTMuNSU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItdG9wOiAjZmE2NTAwIHNvbGlkIDEycHg7XHJcblxyXG4gIFxyXG5cclxufVxyXG4uY29udGVudENhcmQxOmhvdmVyIC5tYXRJY29uQ29sb3Ige1xyXG4gIGNvbG9yOiBoc2woMjEwLCA2NCUsIDMyJSk7XHJcbn1cclxuLmNvbnRlbnREaXYge1xyXG4gIGhlaWdodDogMTAlO1xyXG4gIHdpZHRoOiA3MCU7XHJcbiAgLy8gbWFyZ2luLWxlZnQ6IDUwcHg7XHJcbiAgbWFyZ2luOiAxcmVtIGF1dG8gMDtcclxufVxyXG4uY29udGVudENhcmQyIHtcclxuICB0b3A6IDEwcHg7XHJcbiAgd2lkdGg6IDEzMHB4O1xyXG4gIGhlaWdodDogMTE3cHg7XHJcbiAgLy8gd2lkdGg6IDE1OXB4O1xyXG4gIC8vIGhlaWdodDogMTM2cHg7XHJcbiAgYmFja2dyb3VuZDogI2ZmZmVmZSAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm94LXNoYWRvdzogMHB4IDNweCAxNXB4ICMwMDAwMDAxNztcclxuICBib3JkZXItcmFkaXVzOiAxOHB4O1xyXG4gIG9wYWNpdHk6IDE7XHJcbn1cclxuLmltYWdlMSB7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG59XHJcbi5tYXQtY2FyZCA+IDpmaXJzdC1jaGlsZDpub3QoLmhlYWRlcl9jb250ZW50KSxcclxuLm1hdC1jYXJkLWNvbnRlbnQgPiA6Zmlyc3QtY2hpbGQ6bm90KC5oZWFkZXJfY29udGVudCkge1xyXG4gIHdpZHRoOiA0MHB4ICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luLWxlZnQ6IDMwJSAhaW1wb3J0YW50O1xyXG59XHJcbi5tYXRjb250ZW50Y2FyZDEge1xyXG4gIG1hcmdpbi10b3A6IDMwJTtcclxuICBmb250LXNpemU6IDEwcHg7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLm1hdGNvbnRlbnRjYXJkMiB7XHJcbiAgbWFyZ2luLXRvcDogMTUlO1xyXG4gIGZvbnQtc2l6ZTogMTBweDtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4uYnV0dG9uQWN0aXZlIHtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIHdpZHRoOiA2MCU7XHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxYTJkIDAlLCAjMDA0Yzk3IDEwMCUpIDAlIDAlXHJcbiAgICBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbn1cclxuLmJ1dHRvblBhc3NpdmUge1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgd2lkdGg6IDYwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTNlM2UzO1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG59XHJcbi5leGl0QnRuIHtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIHdpZHRoOiAzMSU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICBjb2xvcjogI2U1MDAwMDtcclxuICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDFhO1xyXG4gIC8vIGJveC1zaGFkb3c6IDBweCAwcHggNXB4IDVweCAjYWFhYWFhICFpbXBvcnRhbnQ7XHJcbn1cclxuLm1hdFRpdGxlIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmE2NTAwO1xyXG59XHJcblxyXG4uY2FyZF9ib3gge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmNvbnRlbnRDYXJkQm9yZGVyIHtcclxuICAvLyB0b3A6IDIwcHg7XHJcbiAgLy8gbGVmdDogMTAzcHg7XHJcbiAgd2lkdGg6IDEzMHB4O1xyXG4gIGhlaWdodDogMTE3cHg7XHJcbiAgLy8gd2lkdGg6IDE1OXB4O1xyXG4gIC8vIGhlaWdodDogMTM2cHg7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIGJhY2tncm91bmQ6ICNmZmZlZmUgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICBvcGFjaXR5OiAxO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTEwcHgpO1xyXG59XHJcbi5jb250aW51ZSB7XHJcbiAgd2lkdGg6IDQwJSAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi1sZWZ0OiAxNDBweCAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutAlignDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultFlexDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_8__["DefaultClassDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardContent"]], styles: [".mainDiv[_ngcontent-%COMP%] {\n  margin-top: -3%;\n  height: 800px;\n}\n\n.titleCard[_ngcontent-%COMP%] {\n  margin: 0 auto;\n  \n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  border-radius: 20px;\n  opacity: 1;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 38px;\n  padding: 1rem 2rem;\n  overflow: unset;\n  margin-left: 98px;\n}\n\n.titleCard[_ngcontent-%COMP%]   .header_content[_ngcontent-%COMP%] {\n  width: 75%;\n}\n\n.titleCard[_ngcontent-%COMP%]   .header_image[_ngcontent-%COMP%] {\n  width: 25%;\n  position: relative;\n}\n\n.titleCard[_ngcontent-%COMP%]   .header_image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 90%;\n  position: absolute;\n  right: 12px;\n  top: 0;\n  transform: translateY(-60%);\n}\n\n.headtitle[_ngcontent-%COMP%] {\n  top: 175px;\n  left: 148px;\n  \n  text-align: left;\n  font-size: 32px;\n  font-family: \"SFPro\";\n  letter-spacing: 0px;\n  color: #ffffff;\n  opacity: 1;\n}\n\n.headContent[_ngcontent-%COMP%] {\n  min-height: 48px;\n  \n  text-align: left;\n  font-size: 15px;\n  font-family: \"SFPro\";\n  letter-spacing: 0px;\n  color: #ffffff;\n  opacity: 0.87;\n  width: 64%;\n}\n\n.contentCard1[_ngcontent-%COMP%] {\n  top: 12px;\n  width: 180px;\n  height: 150px;\n  \n  background: #fffefe 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 18px;\n  opacity: 1;\n}\n\n.contentCard1[_ngcontent-%COMP%]:hover {\n  border-radius: 20px;\n  min-width: 13.5%;\n  cursor: pointer;\n  border-top: #fa6500 solid 12px;\n}\n\n.contentCard1[_ngcontent-%COMP%]:hover   .matIconColor[_ngcontent-%COMP%] {\n  color: #1d5286;\n}\n\n.contentDiv[_ngcontent-%COMP%] {\n  height: 10%;\n  width: 95.7%;\n}\n\n.contentCard2[_ngcontent-%COMP%] {\n  top: 10px;\n  width: 130px;\n  height: 130px;\n  background: #fffefe 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 18px;\n  opacity: 1;\n}\n\n.image1[_ngcontent-%COMP%] {\n  margin-top: 10%;\n  margin-left: 10px;\n  max-width: 60px !important;\n}\n\n.mat-card[_ngcontent-%COMP%]    > [_ngcontent-%COMP%]:first-child:not(.header_content), .mat-card-content[_ngcontent-%COMP%]    > [_ngcontent-%COMP%]:first-child:not(.header_content) {\n  width: 43px !important;\n  margin-left: 30% !important;\n}\n\n.matcontentcard1[_ngcontent-%COMP%] {\n  margin-top: 42%;\n  font-size: 10px;\n  font-weight: bold;\n}\n\n.matcontentcard2[_ngcontent-%COMP%] {\n  margin-top: 30%;\n  font-size: 10px;\n  font-weight: bold;\n}\n\n.buttonActive[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 60%;\n  background: transparent linear-gradient(90deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;\n  color: #ffffff;\n  font-family: sans-serif;\n}\n\n.buttonPassive[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 60%;\n  background-color: #e3e3e3;\n  color: #ffffff;\n  font-family: sans-serif;\n}\n\n.exitBtn[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  width: 37.5%;\n  background-color: #ffffff;\n  color: #e50000;\n  font-family: sans-serif;\n  box-shadow: 0px 3px 15px #0000001a;\n}\n\n.matTitle[_ngcontent-%COMP%] {\n  background-color: #fa6500;\n}\n\n.card_box[_ngcontent-%COMP%] {\n  position: relative;\n  width: 20.5%;\n  margin-left: -2%;\n}\n\n.contentCardBorder[_ngcontent-%COMP%] {\n  width: 150px;\n  height: 130px;\n  \n  background: #fffefe 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 15px #00000017;\n  border-radius: 18px;\n  opacity: 1;\n  position: absolute;\n  transform: translateY(-10px);\n}\n\n.continue[_ngcontent-%COMP%] {\n  width: 45.5% !important;\n  margin-left: 38px !important;\n  margin-top: 30px;\n}\n\n.servicecards[_ngcontent-%COMP%] {\n  margin-left: 4.7%;\n  margin-right: 6.5%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxca2lvc2staG9tZXBhZ2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFBO0VBQ0EsYUFBQTtBQUNGOztBQUVBO0VBR0UsY0FBQTtFQUdBLGtCQUFBO0VBQ0Esb0dBQUE7RUFFQSxtQkFBQTtFQUNBLFVBQUE7RUFFQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7QUFMRjs7QUFNRTtFQUNFLFVBQUE7QUFKSjs7QUFNRTtFQUNFLFVBQUE7RUFDQSxrQkFBQTtBQUpKOztBQUtJO0VBQ0UsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLE1BQUE7RUFDQSwyQkFBQTtBQUhOOztBQU9BO0VBQ0UsVUFBQTtFQUNBLFdBQUE7RUFHQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtBQU5GOztBQVFBO0VBQ0UsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLFVBQUE7QUFMRjs7QUFPQTtFQUNFLFNBQUE7RUFHQSxZQUFBO0VBQ0EsYUFBQTtFQUdBLGtCQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtBQVJGOztBQVVBO0VBRUUsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSw4QkFBQTtBQVJGOztBQVlBO0VBQ0UsY0FBQTtBQVRGOztBQVdBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUFSRjs7QUFZQTtFQUNFLFNBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUdBLCtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7QUFYRjs7QUFhQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0FBVkY7O0FBWUE7O0VBRUUsc0JBQUE7RUFDQSwyQkFBQTtBQVRGOztBQVdBO0VBQ0UsZUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQVJGOztBQVVBO0VBQ0UsZUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQVBGOztBQVNBO0VBQ0UsbUJBQUE7RUFDQSxVQUFBO0VBQ0Esb0dBQUE7RUFFQSxjQUFBO0VBQ0EsdUJBQUE7QUFQRjs7QUFTQTtFQUNFLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLHVCQUFBO0FBTkY7O0FBUUE7RUFDRSxtQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLGNBQUE7RUFDQSx1QkFBQTtFQUNBLGtDQUFBO0FBTEY7O0FBUUE7RUFDRSx5QkFBQTtBQUxGOztBQVFBO0VBQ0Usa0JBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFMRjs7QUFRQTtFQUdFLFlBQUE7RUFDQSxhQUFBO0VBR0Esa0JBQUE7RUFDQSwrQ0FBQTtFQUNBLGtDQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0VBR0Esa0JBQUE7RUFDQSw0QkFBQTtBQVhGOztBQWFBO0VBQ0UsdUJBQUE7RUFDQSw0QkFBQTtFQUNBLGdCQUFBO0FBVkY7O0FBWUE7RUFDRSxpQkFBQTtFQUNBLGtCQUFBO0FBVEYiLCJmaWxlIjoia2lvc2staG9tZXBhZ2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFpbkRpdiB7XHJcbiAgbWFyZ2luLXRvcDogLTMlO1xyXG4gIGhlaWdodDogODAwcHg7XHJcbiAgLy8gYmFja2dyb3VuZC1jb2xvcjogIzAwNGM5NztcclxufVxyXG4udGl0bGVDYXJkIHtcclxuICAvLyB0b3A6IHB4O1xyXG4gIC8vIGxlZnQ6IDEwM3B4O1xyXG4gIG1hcmdpbjogMCBhdXRvO1xyXG4gIC8vIHdpZHRoOiAxMTg4cHg7XHJcbiAgLy8gaGVpZ2h0OiAxNTdweDtcclxuICAvKiBVSSBQcm9wZXJ0aWVzICovXHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxYTJkIDAlLCAjMDA0Yzk3IDEwMCUpIDAlIDAlXHJcbiAgICBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICBvcGFjaXR5OiAxO1xyXG5cclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIG1hcmdpbi10b3A6IDM4cHg7XHJcbiAgcGFkZGluZzogMXJlbSAycmVtO1xyXG4gIG92ZXJmbG93OiB1bnNldDtcclxuICBtYXJnaW4tbGVmdDo5OHB4O1xyXG4gIC5oZWFkZXJfY29udGVudCB7XHJcbiAgICB3aWR0aDogNzUlO1xyXG4gIH1cclxuICAuaGVhZGVyX2ltYWdlIHtcclxuICAgIHdpZHRoOiAyNSU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBpbWcge1xyXG4gICAgICB3aWR0aDogOTAlO1xyXG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgIHJpZ2h0OiAxMnB4O1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNjAlKTtcclxuICAgIH1cclxuICB9XHJcbn1cclxuLmhlYWR0aXRsZSB7XHJcbiAgdG9wOiAxNzVweDtcclxuICBsZWZ0OiAxNDhweDtcclxuICAvLyB3aWR0aDogMTIzcHg7XHJcbiAgLy8gaGVpZ2h0OiAzMnB4O1xyXG4gIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQtc2l6ZTogMzJweDtcclxuICBmb250LWZhbWlseTogXCJTRlByb1wiO1xyXG4gIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgb3BhY2l0eTogMTtcclxufVxyXG4uaGVhZENvbnRlbnQge1xyXG4gIG1pbi1oZWlnaHQ6IDQ4cHg7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG4gIGZvbnQtZmFtaWx5OiBcIlNGUHJvXCI7XHJcbiAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICBjb2xvcjogI2ZmZmZmZjtcclxuICBvcGFjaXR5OiAwLjg3O1xyXG4gIHdpZHRoOiA2NCU7XHJcbn1cclxuLmNvbnRlbnRDYXJkMSB7XHJcbiAgdG9wOiAxMnB4O1xyXG4gIC8vIGxlZnQ6IC03LjMlO1xyXG4gIC8vIGxlZnQ6IDE0N3B4O1xyXG4gIHdpZHRoOiAxODBweDtcclxuICBoZWlnaHQ6IDE1MHB4O1xyXG4gIC8vIHdpZHRoOiAxNTlweDtcclxuICAvLyBoZWlnaHQ6IDEzNnB4O1xyXG4gIC8qIFVJIFByb3BlcnRpZXMgKi9cclxuICBiYWNrZ3JvdW5kOiAjZmZmZWZlIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE4cHg7XHJcbiAgb3BhY2l0eTogMTtcclxufVxyXG4uY29udGVudENhcmQxOmhvdmVyIHtcclxuIFxyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgbWluLXdpZHRoOiAxMy41JTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgYm9yZGVyLXRvcDogI2ZhNjUwMCBzb2xpZCAxMnB4O1xyXG4gIFxyXG5cclxufVxyXG4uY29udGVudENhcmQxOmhvdmVyIC5tYXRJY29uQ29sb3Ige1xyXG4gIGNvbG9yOiBoc2woMjEwLCA2NCUsIDMyJSk7XHJcbn1cclxuLmNvbnRlbnREaXYge1xyXG4gIGhlaWdodDogMTAlO1xyXG4gIHdpZHRoOiA5NS43JTtcclxuICAvLyBtYXJnaW4tbGVmdDogNTBweDtcclxuICAvL21hcmdpbjogMXJlbSBhdXRvIDA7XHJcbn1cclxuLmNvbnRlbnRDYXJkMiB7XHJcbiAgdG9wOiAxMHB4O1xyXG4gIHdpZHRoOiAxMzBweDtcclxuICBoZWlnaHQ6IDEzMHB4O1xyXG4gIC8vIHdpZHRoOiAxNTlweDtcclxuICAvLyBoZWlnaHQ6IDEzNnB4O1xyXG4gIGJhY2tncm91bmQ6ICNmZmZlZmUgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICBvcGFjaXR5OiAxO1xyXG59XHJcbi5pbWFnZTEge1xyXG4gIG1hcmdpbi10b3A6IDEwJTtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICBtYXgtd2lkdGg6IDYwcHggIWltcG9ydGFudDtcclxufVxyXG4ubWF0LWNhcmQgPiA6Zmlyc3QtY2hpbGQ6bm90KC5oZWFkZXJfY29udGVudCksXHJcbi5tYXQtY2FyZC1jb250ZW50ID4gOmZpcnN0LWNoaWxkOm5vdCguaGVhZGVyX2NvbnRlbnQpIHtcclxuICB3aWR0aDogNDNweCAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi1sZWZ0OiAzMCUgIWltcG9ydGFudDtcclxufVxyXG4ubWF0Y29udGVudGNhcmQxIHtcclxuICBtYXJnaW4tdG9wOiA0MiU7XHJcbiAgZm9udC1zaXplOiAxMHB4O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbi5tYXRjb250ZW50Y2FyZDIge1xyXG4gIG1hcmdpbi10b3A6IDMwJTtcclxuICBmb250LXNpemU6IDEwcHg7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLmJ1dHRvbkFjdGl2ZSB7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICB3aWR0aDogNjAlO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCAwJSwgIzAwNGM5NyAxMDAlKSAwJSAwJVxyXG4gICAgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG59XHJcbi5idXR0b25QYXNzaXZlIHtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIHdpZHRoOiA2MCU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2UzZTNlMztcclxuICBjb2xvcjogI2ZmZmZmZjtcclxuICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxufVxyXG4uZXhpdEJ0biB7XHJcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICB3aWR0aDogMzcuNSU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICBjb2xvcjogI2U1MDAwMDtcclxuICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDFhO1xyXG4gIC8vIGJveC1zaGFkb3c6IDBweCAwcHggNXB4IDVweCAjYWFhYWFhICFpbXBvcnRhbnQ7XHJcbn1cclxuLm1hdFRpdGxlIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmE2NTAwO1xyXG59XHJcblxyXG4uY2FyZF9ib3gge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB3aWR0aDogMjAuNSU7XHJcbiAgbWFyZ2luLWxlZnQ6IC0yJTtcclxufVxyXG5cclxuLmNvbnRlbnRDYXJkQm9yZGVyIHtcclxuICAvLyB0b3A6IDIwcHg7XHJcbiAgLy8gbGVmdDogMTAzcHg7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG4gIGhlaWdodDogMTMwcHg7XHJcbiAgLy8gd2lkdGg6IDE1OXB4O1xyXG4gIC8vIGhlaWdodDogMTM2cHg7XHJcbiAgLyogVUkgUHJvcGVydGllcyAqL1xyXG4gIGJhY2tncm91bmQ6ICNmZmZlZmUgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbiAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICBvcGFjaXR5OiAxO1xyXG4gIC8vZGlzcGxheTogZmxleDtcclxuXHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMTBweCk7XHJcbn1cclxuLmNvbnRpbnVlIHtcclxuICB3aWR0aDogNDUuNSUgIWltcG9ydGFudDtcclxuICBtYXJnaW4tbGVmdDogMzhweCAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbn1cclxuLnNlcnZpY2VjYXJkc3tcclxuICBtYXJnaW4tbGVmdDo0LjclO1xyXG4gIG1hcmdpbi1yaWdodDo2LjUlO1xyXG59XHJcbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](KioskHomepageComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
@@ -22987,7 +24326,9 @@ function CheqWComponent_form_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "headerclass" : "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("title", ctx_r0.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "cdcard" : "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.displayDenom);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.displayDenom ? "footclass" : "");
@@ -23496,11 +24837,11 @@ class CheqWComponent {
     }
 }
 CheqWComponent.ɵfac = function CheqWComponent_Factory(t) { return new (t || CheqWComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_Dialog_dialog_service__WEBPACK_IMPORTED_MODULE_6__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_9__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"])); };
-CheqWComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CheqWComponent, selectors: [["app-cheq-w"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "0.9%", "height", "530px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["formControlName", "account"], ["formControlName", "transaction"], ["style", "margin-top: -0.1%; margin-left: -16px; margin-bottom: 4px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "-0.1%", "margin-left", "-16px", "margin-bottom", "4px"], ["formControlName", "denomination", 3, "title"]], template: function CheqWComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CheqWComponent_form_0_Template, 10, 7, "form", 0);
+CheqWComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CheqWComponent, selectors: [["app-cheq-w"]], decls: 1, vars: 1, consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%", 3, "ngClass"], [3, "title", "back"], ["fxLayout", "row", 3, "ngClass"], ["fxFlex", "79.5%", 2, "margin-top", "0.9%", "height", "530px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1", "margin-left", "7.5%"], ["formControlName", "account"], ["formControlName", "transaction"], ["style", "margin-top: -0.1%; margin-left: -16px; margin-bottom: 4px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "-0.1%", "margin-left", "-16px", "margin-bottom", "4px"], ["formControlName", "denomination", 3, "title"]], template: function CheqWComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CheqWComponent_form_0_Template, 10, 8, "form", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.chequewithdrawalForm);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_12__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _shared_core_form_account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_16__["AccountInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_17__["TransactionInformationFormComponent"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_19__["DenominationInfoComponent"]], styles: [".footclass[_ngcontent-%COMP%] {\n  margin-left: -18.8%;\n  box-sizing: border-box;\n  max-width: 150% !important;\n  margin-right: -150px;\n}\n\n.headerclass[_ngcontent-%COMP%] {\n  margin-left: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2hlcS13LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQUE7RUFFQSxzQkFBQTtFQUdBLDBCQUFBO0VBQ0Esb0JBQUE7QUFGSjs7QUFJQTtFQUNJLGlCQUFBO0FBREoiLCJmaWxlIjoiY2hlcS13LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RjbGFzc3tcclxuICAgIG1hcmdpbi1sZWZ0OiAtMTguOCU7XHJcbiAgICAvL2ZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgLy9kaXNwbGF5OiBmbGV4O1xyXG4gICAgLy9mbGV4OiAxIDEgMTAwJTtcclxuICAgIG1heC13aWR0aDogMTUwJSAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAtMTUwcHg7XHJcbn1cclxuLmhlYWRlcmNsYXNze1xyXG4gICAgbWFyZ2luLWxlZnQ6MTJweDtcclxufSJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_12__["DefaultClassDirective"], _shared_core_form_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCard"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_14__["DefaultFlexDirective"], _shared_core_form_account_information_form_account_information_form_component__WEBPACK_IMPORTED_MODULE_16__["AccountInformationFormComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _shared_core_form_transaction_information_form_transaction_information_form_component__WEBPACK_IMPORTED_MODULE_17__["TransactionInformationFormComponent"], _shared_core_form_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__["FooterComponent"], _shared_core_form_denomination_info_denomination_info_component__WEBPACK_IMPORTED_MODULE_19__["DenominationInfoComponent"]], styles: [".footclass[_ngcontent-%COMP%] {\n  margin-left: -0.6%;\n  box-sizing: border-box;\n  max-width: 145% !important;\n  margin-right: -40px;\n}\n\n.headerclass[_ngcontent-%COMP%] {\n  margin-left: -7px;\n}\n\n.cdcard[_ngcontent-%COMP%] {\n  justify-content: center;\n  margin-left: 8px;\n  margin-right: 140px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY2hlcS13LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFFQSxzQkFBQTtFQUdBLDBCQUFBO0VBQ0EsbUJBQUE7QUFGSjs7QUFJQTtFQUNJLGlCQUFBO0FBREo7O0FBR0E7RUFDSSx1QkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUFBSiIsImZpbGUiOiJjaGVxLXcuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGNsYXNze1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0wLjYlO1xyXG4gICAgLy9mbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vZGlzcGxheTogZmxleDtcclxuICAgIC8vZmxleDogMSAxIDEwMCU7XHJcbiAgICBtYXgtd2lkdGg6IDE0NSUgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogLTQwcHg7XHJcbn1cclxuLmhlYWRlcmNsYXNze1xyXG4gICAgbWFyZ2luLWxlZnQ6LTdweDtcclxufVxyXG4uY2RjYXJke1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IFxyXG4gICAgbWFyZ2luLWxlZnQ6IDhweDsgXHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE0MHB4O1xyXG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CheqWComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
