@@ -723,7 +723,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */
+      /*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */
       "zUnb");
       /***/
     },
@@ -1519,6 +1519,12 @@
           }); // private baseUrl = 'http://192.168.0.14:8081/Icust-Digital-Banking';
 
           this.baseUrl = environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].DESKTOP_URL;
+          this.pauseTrans = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({
+            pauseTrans: false
+          });
+          this.holdTokenVariable = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({
+            holdTokenVariable: ''
+          });
         }
 
         _createClass(TokenService, [{
@@ -1823,6 +1829,26 @@
             return this.httpClient.put("".concat(this.baseUrl, "/tokendata/updateToken/tellerId?tokenNumber=").concat(tokenNumber, "&cancel=").concat(cancel, "&tellerId=").concat(tellerId), '').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(function (result) {
               console.log('result :: ', result);
             }));
+          }
+        }, {
+          key: "getPauseTrans",
+          value: function getPauseTrans() {
+            return this.pauseTrans.asObservable();
+          }
+        }, {
+          key: "setPauseTrans",
+          value: function setPauseTrans(pauseTrans) {
+            this.pauseTrans.next(pauseTrans);
+          }
+        }, {
+          key: "getHoldTokenVariable",
+          value: function getHoldTokenVariable() {
+            return this.holdTokenVariable.asObservable();
+          }
+        }, {
+          key: "setHoldTokenVariable",
+          value: function setHoldTokenVariable(holdTokenVariable) {
+            this.holdTokenVariable.next(holdTokenVariable);
           }
         }]);
 
@@ -12481,7 +12507,7 @@
           key: "getReport",
           value: function getReport(report, customerId, fromDate, endDate, branch) {
             var bip;
-            if (report == 'Uc_206') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&txnDate=", '2020-01-01');else if (report == 'Uc_307') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&branch=").concat(branch, "&refNo=", 61757);else if (report == 'Uc_170') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&AccountNo=", 2345);else if (report == 'Uc_185') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate);else if (report == 'TransactionDetails1') bip = "http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate); // console.log("reportid,date",reportid,date)
+            if (report == 'Uc_206') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&txnDate=", '2020-01-01');else if (report == 'Uc_307') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&branch=").concat(branch, "&refNo=", 61757);else if (report == 'Uc_170') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&AccountNo=", 2345);else if (report == 'Uc_185') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate);else if (report == 'TransactionDetails1') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate); // console.log("reportid,date",reportid,date)
             //console.log(data)
             // let reportid = 'HRRATTD';
             // let date = '2022-08-23';

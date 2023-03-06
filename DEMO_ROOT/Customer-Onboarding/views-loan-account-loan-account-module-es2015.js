@@ -2382,13 +2382,13 @@ class PostOfferAmendmentComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanAccountId = this.ls.getItem('loanAccountId');
         console.log(this.loanAccountId);
@@ -2549,11 +2549,11 @@ class PostOfferAmendmentComponent {
         //this.PostOfferAmendmentForm.value['offerExpiryDate'] = expiryDate;
         // let amendDate = this.convertDate(this.PostOfferAmendmentForm.controls.offerAmendDate.value);
         //this.PostOfferAmendmentForm.value['offerAmendDate'] = amendDate;
-        const renewData = this.PostOfferAmendmentForm.value.year +
+        const renewData = this.PostOfferAmendmentForm.value.year + "year" +
             "-" +
-            this.PostOfferAmendmentForm.value.month +
+            this.PostOfferAmendmentForm.value.month + "month" +
             "-" +
-            this.PostOfferAmendmentForm.value.day;
+            this.PostOfferAmendmentForm.value.day + "day";
         this.PostOfferAmendmentForm.get("loanTenure").setValue(renewData);
         this.PostOfferAmendmentForm.value.loanTenure = renewData;
         // delete this.PostOfferAmendmentForm.value.year;
@@ -2647,11 +2647,11 @@ class PostOfferAmendmentComponent {
             console.log(res.approvedLoanAmount);
             this.PostOfferAmendmentForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
             console.log(res.loanTenure);
-            this.year = res.loanTenure.split("-")[0];
+            this.year = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
             console.log(this.year);
-            this.month = res.loanTenure.split("-")[1];
+            this.month = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
             console.log(this.month);
-            this.day = res.loanTenure.split("-")[2];
+            this.day = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             console.log(this.day);
             this.PostOfferAmendmentForm.get('year').setValue(this.year);
             this.PostOfferAmendmentForm.get('month').setValue(this.month);
@@ -5223,13 +5223,13 @@ class LoanDetailsComponent {
         //   "Dec",
         // ];
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.getAccountBranchDetails();
         this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -5330,9 +5330,9 @@ class LoanDetailsComponent {
             accountCurrency: [data ? data.accountCurrency : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             // accountCurrency:[data ? data.accountCurrency:''],
             loanTenure: [data ? data.loanTenure : ''],
-            day: [data ? (data.loanTenure.split("-")[2]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            month: [data ? data.loanTenure.split("-")[1] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            year: [data ? (data.loanTenure.split("-")[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
     }
     goBack() {
@@ -5384,11 +5384,11 @@ class LoanDetailsComponent {
         pk = parseInt(pk);
         var prSize = this.loanForm.value.estimatedCost;
         prSize = parseInt(prSize);
-        const renewData = this.loanForm.value.year +
+        const renewData = this.loanForm.value.year + "year" +
             "-" +
-            this.loanForm.value.month +
+            this.loanForm.value.month + "month" +
             "-" +
-            this.loanForm.value.day;
+            this.loanForm.value.day + "day";
         this.loanForm.get("loanTenure").setValue(renewData);
         delete this.loanForm.value.year;
         delete this.loanForm.value.month;
@@ -5797,13 +5797,13 @@ class OfferissueComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanaccountID = this.ls.getItem('loanAccountId');
         this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -5917,9 +5917,9 @@ class OfferissueComponent {
             principal: [data ? data.principal : ''],
             interest: [data ? data.interest : ''],
             charges: [data ? data.charges : ''],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : ''],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             installmentType: [data ? data.installmentType : '']
         });
     }
@@ -5937,11 +5937,11 @@ class OfferissueComponent {
         aprloan = parseInt(aprloan);
         var rate = this.OfferIssueForm.value.rateOfInterest;
         rate = parseInt(rate);
-        const renewData = this.OfferIssueForm.value.year +
+        const renewData = this.OfferIssueForm.value.year + "year" +
             "-" +
-            this.OfferIssueForm.value.month +
+            this.OfferIssueForm.value.month + "month" +
             "-" +
-            this.OfferIssueForm.value.day;
+            this.OfferIssueForm.value.day + "day";
         this.OfferIssueForm.get("loanTenure").setValue(renewData);
         delete this.OfferIssueForm.value.year;
         delete this.OfferIssueForm.value.month;
@@ -6035,9 +6035,9 @@ class OfferissueComponent {
         console.log(this.loanaccountID);
         this.apiService.fetchByLoanAccountId(this.loanaccountID).subscribe((res) => {
             this.OfferIssueForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
-            let dataYear = res.loanTenure.split("-")[0];
-            let dataMonth = res.loanTenure.split("-")[1];
-            let dataDay = res.loanTenure.split("-")[2];
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             this.OfferIssueForm.get('year').setValue(dataYear);
             this.OfferIssueForm.get('month').setValue(dataMonth);
             this.OfferIssueForm.get('day').setValue(dataDay);
@@ -9399,13 +9399,13 @@ class AccountCreateDetailsComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanaccountID = this.ls.getItem('loanAccountId');
         this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -9456,9 +9456,9 @@ class AccountCreateDetailsComponent {
             interest: [data ? data.interest : ''],
             charges: [data ? data.charges : ''],
             repaymentAmount: [data ? data.repaymentAmount : ''],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : '']
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
         console.log("this.accountForm", this.accountForm);
     }
@@ -9491,11 +9491,11 @@ class AccountCreateDetailsComponent {
         aprloan = parseInt(aprloan);
         var rate = this.accountForm.value.rateOfInterest;
         rate = parseInt(rate);
-        const renewData = this.accountForm.value.year +
+        const renewData = this.accountForm.value.year + "year" +
             "-" +
-            this.accountForm.value.month +
+            this.accountForm.value.month + "month" +
             "-" +
-            this.accountForm.value.day;
+            this.accountForm.value.day + "day";
         this.accountForm.get("loanTenure").setValue(renewData);
         this.accountForm.value.loanTenure = renewData;
         let payload = {
@@ -9556,12 +9556,9 @@ class AccountCreateDetailsComponent {
             console.log(res);
             this.accountForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
             console.log(res.loanTenure);
-            let dataYear = res.loanTenure.split("-")[0];
-            console.log(dataYear);
-            let dataMonth = res.loanTenure.split("-")[1];
-            console.log(dataMonth);
-            let dataDay = res.loanTenure.split("-")[2];
-            console.log(dataDay);
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             this.accountForm.get('year').setValue(dataYear);
             this.accountForm.get('month').setValue(dataMonth);
             this.accountForm.get('day').setValue(dataDay);
@@ -10058,13 +10055,13 @@ class AcceptOfferAcceptRejectComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanaccountID = this.ls.getItem('loanAccountId');
         this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -10114,9 +10111,9 @@ class AcceptOfferAcceptRejectComponent {
             offerIssueDate: [data ? data.offerIssueDate : ''],
             generateOffer: [data ? data.generateOffer : ''],
             offerExpiryDate: [data ? data.offerExpiryDate : ''],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : ''],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             installmentType: [data ? data.installmentType : ''],
             dateOfOfferAcceptOrReject: [data ? data.dateOfOfferAcceptOrReject : ''],
             customerResponse: [data ? data.customerResponse : ''],
@@ -10148,11 +10145,11 @@ class AcceptOfferAcceptRejectComponent {
         aprloan = parseInt(aprloan);
         var rate = this.offeracceptForm.value.rateOfInterest;
         rate = parseInt(rate);
-        const renewData = this.offeracceptForm.value.year +
+        const renewData = this.offeracceptForm.value.year + "year" +
             "-" +
-            this.offeracceptForm.value.month +
+            this.offeracceptForm.value.month + "month" +
             "-" +
-            this.offeracceptForm.value.day;
+            this.offeracceptForm.value.day + "day";
         this.offeracceptForm.get("loanTenure").setValue(renewData);
         delete this.offeracceptForm.value.year;
         delete this.offeracceptForm.value.month;
@@ -10247,12 +10244,9 @@ class AcceptOfferAcceptRejectComponent {
             console.log(res);
             this.offeracceptForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
             console.log(res.loanTenure);
-            let dataYear = res.loanTenure.split("-")[0];
-            console.log(dataYear);
-            let dataMonth = res.loanTenure.split("-")[1];
-            console.log(dataMonth);
-            let dataDay = res.loanTenure.split("-")[2];
-            console.log(dataDay);
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             this.offeracceptForm.get('year').setValue(dataYear);
             this.offeracceptForm.get('month').setValue(dataMonth);
             this.offeracceptForm.get('day').setValue(dataDay);
@@ -11458,9 +11452,9 @@ LoanAccountComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](84, _c9))("ngClass", ctx.isGuarantorDetails ? "enable" : "disable");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isAccountApproveStageDone ? "active" : "notActive");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isLoanApplicationEntryDone ? "active" : "notActive");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isAccountApproveStageDone ? "active" : "notActive");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isLoanApplicationEntryDone ? "active" : "notActive");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](85, _c10));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
@@ -12339,7 +12333,7 @@ class UploadSignOrEsignComponent {
                 console.log("dismiss res", res);
                 if (res) {
                     this.ls.setItem('enable', true);
-                    this.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                    this.imageURL1 = (res === null || res === void 0 ? void 0 : res.image) ? res === null || res === void 0 ? void 0 : res.image : 'not_available';
                     this.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true;
                     console.log(this.show);
                     //this.isDone=true;
@@ -14872,13 +14866,13 @@ class LoanAssessmentDetailsComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.accountId = this.ls.getItem('accountId');
         let applicantId = this.route.snapshot.params['id'];
@@ -15032,11 +15026,11 @@ class LoanAssessmentDetailsComponent {
         this.apiService.fetchLoanAssessment(this.loanaccountID).subscribe((accountDetails) => {
             this.rateOfInterest = accountDetails.rateOfInterest;
             this.loanTenure = accountDetails.loanTenure;
-            var day = (this.loanTenure.split("-")[2]);
+            var day = Number(this.loanTenure.split("-")[2].match(/\d+/)[0]);
             console.log(day);
-            var month = (this.loanTenure.split("-")[1]);
+            var month = Number(this.loanTenure.split("-")[1].match(/\d+/)[0]);
             console.log(month);
-            var year = (this.loanTenure.split("-")[0]);
+            var year = Number(this.loanTenure.split("-")[0].match(/\d+/)[0]);
             console.log(year);
             // this.loanAmountRecommendation=accountDetails.loanAmountRecommendation;
             console.log("LoanAccountId:", accountDetails.loanAccountId);
@@ -15086,9 +15080,9 @@ class LoanAssessmentDetailsComponent {
             userRecommendation: [data ? data.userRecommendation : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             systemRecommendation: [data ? data.systemRecommendation : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             requestedLoanAmount: [data ? data.requestedLoanAmount : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : ''],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
     }
     // fetchByCif(cifNumber, isExistingCustomer) {
@@ -19194,16 +19188,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RepaymentScheduleComponent_div_16_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td", 7);
+function RepaymentScheduleComponent_tr_14_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](7, "currency");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -19213,7 +19208,7 @@ function RepaymentScheduleComponent_div_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r1.paymentDate);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r1.principalPaid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](7, 3, data_r1.principalPaid, " "));
 } }
 class RepaymentScheduleComponent {
     constructor(fb, ls, router, formBuilder, dialogRef, apiService) {
@@ -19247,7 +19242,7 @@ class RepaymentScheduleComponent {
     }
 }
 RepaymentScheduleComponent.ɵfac = function RepaymentScheduleComponent_Factory(t) { return new (t || RepaymentScheduleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"])); };
-RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RepaymentScheduleComponent, selectors: [["app-repayment-schedule"]], decls: 17, vars: 1, consts: [["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "cart-table", "default-bg", "mat-elevation-z0"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "heading"], [1, "label"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "headingText1"], [1, "headingText2"], [1, "headingText3"]], template: function RepaymentScheduleComponent_Template(rf, ctx) { if (rf & 1) {
+RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RepaymentScheduleComponent, selectors: [["app-repayment-schedule"]], decls: 15, vars: 1, consts: [["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "table", "table-bordered"], ["scope", "col"], [4, "ngFor", "ngForOf"], [1, "headingText1"], [1, "headingText2"], [1, "headingText3"]], template: function RepaymentScheduleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RepaymentScheduleComponent_Template_mat_icon_click_1_listener() { return ctx.close(); });
@@ -19256,32 +19251,28 @@ RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "form");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "table", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "thead");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "th", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Payment Number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "th", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Payment Number");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "th", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Payment Date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "th", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Payment Date");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "th", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Principal To Be Paid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "th", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "EMI To Be Paid");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, RepaymentScheduleComponent_div_16_Template, 7, 3, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, RepaymentScheduleComponent_tr_14_Template, 8, 6, "tr", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.scheduleStatus);
-    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]], styles: [".contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.headingText1[_ngcontent-%COMP%] {\n  padding-left: 10%;\n}\n\n.headingText2[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n\n.headingText3[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxyZXBheW1lbnQtc2NoZWR1bGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBMEI7QUFDOUI7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZixjQUFjO0FBRWxCOztBQUNBO0VBQ0UsaUJBQWlCO0FBRW5COztBQUFBO0VBQ0UsaUJBQWlCO0FBR25COztBQURBO0VBQ0UsaUJBQWlCO0FBSW5CIiwiZmlsZSI6InJlcGF5bWVudC1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWlue1xyXG4gICAganVzdGlmeS1jb250ZW50OiAgZmxleC1lbmQ7XHJcbn1cclxuLmJhY2tJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgcGFkZGluZzogMCUgMCUgMCUgMCU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBjb2xvcjogIzZlNmU2ZTtcclxufVxyXG5cclxuLmhlYWRpbmdUZXh0MXtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxufVxyXG4uaGVhZGluZ1RleHQye1xyXG4gIHBhZGRpbmctcmlnaHQ6IDAlO1xyXG59XHJcbi5oZWFkaW5nVGV4dDN7XHJcbiAgcGFkZGluZy1yaWdodDogMCU7XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["CurrencyPipe"]], styles: [".contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.headingText1[_ngcontent-%COMP%] {\n  padding-left: 10%;\n}\n\n.headingText2[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n\n.headingText3[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxyZXBheW1lbnQtc2NoZWR1bGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBMEI7QUFDOUI7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZixjQUFjO0FBRWxCOztBQUNBO0VBQ0UsaUJBQWlCO0FBRW5COztBQUFBO0VBQ0UsaUJBQWlCO0FBR25COztBQURBO0VBQ0UsaUJBQWlCO0FBSW5CIiwiZmlsZSI6InJlcGF5bWVudC1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWlue1xyXG4gICAganVzdGlmeS1jb250ZW50OiAgZmxleC1lbmQ7XHJcbn1cclxuLmJhY2tJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgcGFkZGluZzogMCUgMCUgMCUgMCU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBjb2xvcjogIzZlNmU2ZTtcclxufVxyXG5cclxuLmhlYWRpbmdUZXh0MXtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxufVxyXG4uaGVhZGluZ1RleHQye1xyXG4gIHBhZGRpbmctcmlnaHQ6IDAlO1xyXG59XHJcbi5oZWFkaW5nVGV4dDN7XHJcbiAgcGFkZGluZy1yaWdodDogMCU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RepaymentScheduleComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -21967,13 +21958,13 @@ class LoanRepaymentComponentComponent {
         }
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         // this.months = [
         //   "Jan",
@@ -22049,14 +22040,16 @@ class LoanRepaymentComponentComponent {
             ],
             repaymentMode: [item ? item.repaymentMode : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             typeOfRepayment: [item ? item.typeOfRepayment : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            day: [item ? item.loanTenure.split("-")[2] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            month: [item ? item.loanTenure.split("-")[1] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            year: [item ? item.loanTenure.split("-")[0] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            day: [item ? Number(item.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            month: [item ? Number(item.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            year: [item ? Number(item.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
         });
         console.log(this.loanRepaymentForm.value);
         this.scheduleLink = this.formBuilder.group({
             firstRepaymentDate: this.loanRepaymentForm.get("firstRepaymentDate"),
             loanAccountId: this.loanaccountId,
+            repaymentFrequency: this.loanRepaymentForm.get("repaymentFrequency"),
+            loanTenure: this.loanRepaymentForm.get("loanTenure")
         });
         this.internalAccount = this.formBuilder.group({
             branchCode: [item ? item.branchCode : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(".*[a-zA-Z0-9].*")]],
@@ -22065,11 +22058,16 @@ class LoanRepaymentComponentComponent {
         });
     }
     getDays(year1, month1, day1) {
-        var yr = moment__WEBPACK_IMPORTED_MODULE_11__(new Date()).add(parseInt(year1.split(" ")[0]), 'months').format('LLL');
-        var month = moment__WEBPACK_IMPORTED_MODULE_11__(yr).add(parseInt(month1.split(" ")[0]), 'year').format('LLL');
-        var finalDate = moment__WEBPACK_IMPORTED_MODULE_11__(month).add(parseInt(day1.split(" ")[0]), 'days').format('LLL');
+        var yr = moment__WEBPACK_IMPORTED_MODULE_11__(new Date()).add(parseInt(year1), 'months').format('LLL');
+        var month = moment__WEBPACK_IMPORTED_MODULE_11__(yr).add(parseInt(month1), 'year').format('LLL');
+        var finalDate = moment__WEBPACK_IMPORTED_MODULE_11__(month).add(parseInt(day1), 'days').format('LLL');
         console.log("finalDate--->", finalDate);
         this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate));
+        // var yr=moment(new Date()).add(parseInt(year1.split(" ")[0]), 'months').format('LLL');
+        // var month=moment(yr).add(parseInt(month1.split(" ")[0]), 'year').format('LLL');
+        // var finalDate=moment(month).add(parseInt(day1.split(" ")[0]), 'days').format('LLL');
+        // console.log("finalDate--->",finalDate);
+        // this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate));
     }
     openPopup() {
         console.log(this.loanRepaymentForm.value);
@@ -22080,6 +22078,12 @@ class LoanRepaymentComponentComponent {
         let payload = {
             firstRepaymentDate: latest_date,
             loanAccountId: this.loanaccountId,
+            loanTenure: this.loanRepaymentForm.value.year + "month" +
+                "-" +
+                this.loanRepaymentForm.value.month + "year" +
+                "-" +
+                this.loanRepaymentForm.value.day + "day",
+            repaymentFrequency: this.loanRepaymentForm.value.repaymentFrequency,
         };
         console.log("payload", payload);
         this.api.scheduleLink(payload).subscribe((resp) => {
@@ -22105,11 +22109,11 @@ class LoanRepaymentComponentComponent {
     submit() {
         let latest_date = this.datepipe.transform(this.loanRepaymentForm.value.firstRepaymentDate, 'yyyy-MMM-dd');
         let latest_dateMaturity = this.datepipe.transform(this.loanRepaymentForm.value.maturityDate, "yyyy-MMM-dd");
-        const renewData = this.loanRepaymentForm.value.year +
+        const renewData = this.loanRepaymentForm.value.year + "month" +
             "-" +
-            this.loanRepaymentForm.value.month +
+            this.loanRepaymentForm.value.month + "year" +
             "-" +
-            this.loanRepaymentForm.value.day;
+            this.loanRepaymentForm.value.day + "day";
         // this.loanRepaymentForm.get("loanTenure").setValue(renewData);
         this.loanRepaymentForm.value.loanTenure = renewData;
         this.loanRepaymentForm.value.firstRepaymentDate = latest_date;
@@ -22191,9 +22195,10 @@ class LoanRepaymentComponentComponent {
     }
     loanData() {
         this.apiService.fetchByLoanAccountId(this.loanaccountId).subscribe((res) => {
-            let dataYear = res.loanTenure.split("-")[0];
-            let dataMonth = res.loanTenure.split("-")[1];
-            let dataDay = res.loanTenure.split("-")[2];
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
+            console.log(dataYear);
             this.loanRepaymentForm.get("year").setValue(dataYear);
             this.loanRepaymentForm.get('month').setValue(dataMonth);
             this.loanRepaymentForm.get('day').setValue(dataDay);
@@ -29685,7 +29690,7 @@ function CollateralDetailsComponent_form_15_mat_error_71_Template(rf, ctx) { if 
 } }
 function CollateralDetailsComponent_form_15_mat_error_78_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u00A0\u00A0 Locality is Required! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u00A0\u00A0Please Enter Correct Locality ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function CollateralDetailsComponent_form_15_mat_option_85_Template(rf, ctx) { if (rf & 1) {
@@ -30000,7 +30005,7 @@ function CollateralDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "Locality");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "input", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CollateralDetailsComponent_form_15_Template_input_keypress_77_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r49.letterOnly($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CollateralDetailsComponent_form_15_Template_input_keypress_77_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r49.keyPressAlphanumeric($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](78, CollateralDetailsComponent_form_15_mat_error_78_Template, 2, 0, "mat-error", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -30101,7 +30106,7 @@ function CollateralDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.collateralDetailsForm.get("street") && ctx_r0.collateralDetailsForm.get("street").touched && !ctx_r0.collateralDetailsForm.get("street").valid || ctx_r0.collateralDetailsForm.get("street").touched && ctx_r0.collateralDetailsForm.get("street").hasError("pattern"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r0.collateralDetailsForm.get("locality").valid && ctx_r0.collateralDetailsForm.get("locality").touched);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.collateralDetailsForm.get("locality") && ctx_r0.collateralDetailsForm.get("locality").touched && !ctx_r0.collateralDetailsForm.get("locality").valid || ctx_r0.collateralDetailsForm.get("locality").touched && ctx_r0.collateralDetailsForm.get("locality").hasError("pattern"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.arrayCountry);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -30188,7 +30193,7 @@ class CollateralDetailsComponent {
             thirdPartyCollateral: [data ? data.thirdPartyCollateral : false, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             building: [data ? data.building : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
             street: [data ? data.street : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
-            locality: [data ? data.locality : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            locality: [data ? data.locality : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
             city: [data ? data.city : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             state: [data ? data.state : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             country: [data ? data.country : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],

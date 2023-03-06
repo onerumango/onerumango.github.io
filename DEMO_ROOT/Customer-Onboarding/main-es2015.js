@@ -1033,7 +1033,7 @@ class SearchComponent {
     }
     ngAfterViewInit() {
         Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["fromEvent"])(this.inputElement.nativeElement, 'keyup')
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(500), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["pluck"])('target', 'value'), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["filter"])((value) => value.length > 1))
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(500), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["pluck"])('target', 'value'), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["filter"])((value) => value.length > 4))
             .subscribe((value) => {
             this.handleSearch(value);
         });
@@ -1071,7 +1071,7 @@ class SearchComponent {
                 if (items == null) {
                     this.loading = false;
                     this.snack.open("Data is not found for Customer :", this.searchTerm, {
-                        duration: 4000,
+                        duration: 1000,
                         verticalPosition: 'top',
                         horizontalPosition: 'right'
                     });
@@ -5683,7 +5683,7 @@ class ApiService {
         return this.http.get(`${API_URL}/customerdata/getCustomerInfo?status=${status}&page=${page}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
     getKycDetails(params, status) {
-        return this.http.get(`${API_URL}/customerdata/getCustomerInfo?${params}&status=${status}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+        return this.http.get(`${API_URL}/customerdata/getCustomerInfo?${params}&custStatus=${status}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
     getKycDetails1(text) {
         return this.http.get(`${API_URL}/customerdata/getCustomerInfo?cifNumber=${text}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
@@ -6172,7 +6172,7 @@ class ApiService {
         return this.http.get(`${LOAN_URL}/application-entrystage-api/fetchLoanDetailsByLoanAccId?loanAccountId=${loanAccountId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
     fetchCustomerDetails(phoneNumber) {
-        return this.http.get(`${API_URL}/customerdata/fetchPhoneNoDetails?phoneNumber=${phoneNumber}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+        return this.http.post(`${API_URL}/customerdata/phoneNoEmailIdExists`, phoneNumber).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
     updateCardStatus(data) {
         return this.http.put(`${LOAN_URL}/cardInitiation-api/updateStatus`, data);
@@ -6261,6 +6261,9 @@ class ApiService {
     }
     fetchByBranchCode(accountNo) {
         return this.http.get(`${API_URL}/branch/account?accountNo=${accountNo}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+    }
+    updateKyc(kycDetails) {
+        return this.http.post(`${API_URL}/customerdata/saveRekycOrAcceptInfo`, kycDetails).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
     }
 }
 ApiService.ɵfac = function ApiService_Factory(t) { return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_local_store_service__WEBPACK_IMPORTED_MODULE_6__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_showMessage_show_message_service__WEBPACK_IMPORTED_MODULE_7__["ShowMessageService"])); };

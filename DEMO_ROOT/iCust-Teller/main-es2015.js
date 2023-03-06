@@ -344,7 +344,7 @@ EgretSideNavToggleDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -761,6 +761,12 @@ class TokenService {
         });
         // private baseUrl = 'http://192.168.0.14:8081/Icust-Digital-Banking';
         this.baseUrl = environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].DESKTOP_URL;
+        this.pauseTrans = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({
+            pauseTrans: false
+        });
+        this.holdTokenVariable = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({
+            holdTokenVariable: ''
+        });
     }
     getverify() {
         return this.verify.asObservable();
@@ -976,6 +982,18 @@ class TokenService {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(result => {
             console.log('result :: ', result);
         }));
+    }
+    getPauseTrans() {
+        return this.pauseTrans.asObservable();
+    }
+    setPauseTrans(pauseTrans) {
+        this.pauseTrans.next(pauseTrans);
+    }
+    getHoldTokenVariable() {
+        return this.holdTokenVariable.asObservable();
+    }
+    setHoldTokenVariable(holdTokenVariable) {
+        this.holdTokenVariable.next(holdTokenVariable);
     }
 }
 TokenService.ɵfac = function TokenService_Factory(t) { return new (t || TokenService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_showMessage_show_message_service__WEBPACK_IMPORTED_MODULE_4__["ShowMessageService"])); };
@@ -7427,15 +7445,15 @@ class ApiService {
     getReport(report, customerId, fromDate, endDate, branch) {
         var bip;
         if (report == 'Uc_206')
-            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&tellerId=${7}&txnDate=${'2020-01-01'}`;
+            bip = `http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=${report}&tellerId=${7}&txnDate=${'2020-01-01'}`;
         else if (report == 'Uc_307')
-            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&branch=${branch}&refNo=${61757}`;
+            bip = `http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=${report}&branch=${branch}&refNo=${61757}`;
         else if (report == 'Uc_170')
             bip = `http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=${report}&AccountNo=${2345}`;
         else if (report == 'Uc_185')
-            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}`;
+            bip = `http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=${report}&custId=${customerId}&fromDate=${fromDate}&toDate=${endDate}`;
         else if (report == 'TransactionDetails1')
-            bip = `http://192.168.0.14:8091/Icust-Digital-Banking/birt/ucreport?fileName=${report}&tellerId=${7}&fromDate=${fromDate}&toDate=${endDate}`;
+            bip = `http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=${report}&tellerId=${7}&fromDate=${fromDate}&toDate=${endDate}`;
         // console.log("reportid,date",reportid,date)
         //console.log(data)
         // let reportid = 'HRRATTD';

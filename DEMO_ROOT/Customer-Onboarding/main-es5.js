@@ -2010,7 +2010,7 @@
             var _this4 = this;
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["fromEvent"])(this.inputElement.nativeElement, 'keyup').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(500), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["pluck"])('target', 'value'), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["filter"])(function (value) {
-              return value.length > 1;
+              return value.length > 4;
             })).subscribe(function (value) {
               _this4.handleSearch(value);
             });
@@ -2057,7 +2057,7 @@
                   _this6.loading = false;
 
                   _this6.snack.open("Data is not found for Customer :", _this6.searchTerm, {
-                    duration: 4000,
+                    duration: 1000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
                   });
@@ -10355,7 +10355,7 @@
         }, {
           key: "getKycDetails",
           value: function getKycDetails(params, status) {
-            return this.http.get("".concat(API_URL, "/customerdata/getCustomerInfo?").concat(params, "&status=").concat(status)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+            return this.http.get("".concat(API_URL, "/customerdata/getCustomerInfo?").concat(params, "&custStatus=").concat(status)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           }
         }, {
           key: "getKycDetails1",
@@ -11063,7 +11063,7 @@
         }, {
           key: "fetchCustomerDetails",
           value: function fetchCustomerDetails(phoneNumber) {
-            return this.http.get("".concat(API_URL, "/customerdata/fetchPhoneNoDetails?phoneNumber=").concat(phoneNumber)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+            return this.http.post("".concat(API_URL, "/customerdata/phoneNoEmailIdExists"), phoneNumber).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           }
         }, {
           key: "updateCardStatus",
@@ -11174,6 +11174,11 @@
           key: "fetchByBranchCode",
           value: function fetchByBranchCode(accountNo) {
             return this.http.get("".concat(API_URL, "/branch/account?accountNo=").concat(accountNo)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "updateKyc",
+          value: function updateKyc(kycDetails) {
+            return this.http.post("".concat(API_URL, "/customerdata/saveRekycOrAcceptInfo"), kycDetails).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.errorHandler));
           }
         }]);
 

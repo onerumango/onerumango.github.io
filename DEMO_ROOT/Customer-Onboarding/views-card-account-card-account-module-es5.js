@@ -6198,7 +6198,7 @@
         },
         decls: 18,
         vars: 1,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_personal_information_re_vw8a.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "row wrap"], [1, "p-0"], ["visible", "true"], ["novalidate", "", 3, "formGroup", 4, "ngIf"], ["novalidate", "", 3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "ownership", "name", "owner", "required", "", 1, "graycolor", 3, "value", "valueChange", "selectionChange"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["formControlName", "numOfApplicants", "name", "account"], [3, "value"], [1, "mb-1"], ["fxFlex", "100", "fxLayoutGap", "16px", "fxLayoutAlign", "end end", 2, "padding-right", "15px"], [1, "m-0", "text-right"], ["mode", "determinate", 1, "rounded", 2, "height", "5px", 3, "color", "value"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "hint"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], [1, "mt-12"], ["multi", "true"], ["class", "mb-8", "expanded", "true", 4, "ngFor", "ngForOf"], ["class", "mt-16", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], [4, "ngIf", "ngIfElse"], ["hideBtn", ""], ["expanded", "true", 1, "mb-8"], [1, "check-circle"], [1, "ml-8"], [2, "margin-bottom", "-16px !important"], ["mat-card-avatar", ""], [3, "name"], [1, "m-0", "mr-16"], ["fxFlex", ""], ["mat-sm-chip", "", 3, "color", "selected", 4, "ngIf"], [1, "mat-caption"], ["fxLayout", "row", "fxFlex", "1 1 0%", "fxLayoutAlign", "end end"], [1, "group-btn-bg"], ["showEdit", ""], ["mat-icon-button", "", "color", "warn", 3, "click", 4, "ngIf"], ["detailApplicant", ""], ["mat-sm-chip", "", 3, "color", "selected"], ["type", "reset", "mat-icon-button", "", "color", "primary", 3, "click"], ["type", "submit", "mat-icon-button", "", "color", "primary", 3, "click"], ["mat-icon-button", "", "color", "warn", 3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "mt-32", 3, "formGroup"], ["formGroupName", "applicantDetails"], ["formControlName", "existingCustomer", 3, "change"], [1, "mb-16"], ["name", "prefix", "formControlName", "prefix", 3, "selectionChange"], ["matInput", "", "name", "mname", "formControlName", "middleName", "placeholder", "Middle Name", 3, "keypress"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "dateOfBirth", "placeholder", "Date of birth", 3, "matDatepicker", "max"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], [1, "p-1"], ["fxFlex", "20"], ["matPrefix", ""], [3, "class", 4, "ngIf"], ["name", "birthCountry", "formControlName", "birthCountry", "required", "", 3, "selectionChange"], ["name", "residenceType", "formControlName", "residenceStatus"], ["formControlName", "countryOfResidence", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["disabled", ""], ["name", "idtype", "formControlName", "idType", 3, "selectionChange"], ["class", "pb-1", 4, "ngIf"], ["formControlName", "primaryCustomer"], ["matInput", "", "name", "fname", "formControlName", "firstName", "placeholder", "First Name", 3, "keypress"], ["matInput", "", "name", "lname", "formControlName", "lastName", "placeholder", "Last Name", 3, "keypress"], ["name", "gender", "formControlName", "gender", 3, "selectionChange"], ["class", "err-msg", 4, "ngIf"], ["matInput", "", "name", "bplace", "formControlName", "placeOfBirth", "placeholder", "Birth Place"], [1, "pb-1", "info"], ["formControlName", "nationality", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["name", "maritalStatus", "formControlName", "maritalStatus", "required", ""], ["matInput", "", "name", "occupation", "formControlName", "occupationType", "placeholder", "Occupation Type", 3, "keypress"], [1, "pb-1", "info3"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID Number", "maxlength", "12", "pattern", "^[+]?([0-9]+(?:[\\.][0-9]*)?|\\.[0-9]+)$"], ["matInput", "", "formControlName", "address1", "placeholder", "Address 1"], ["name", "addressType", "formControlName", "addressType"], ["minlength", "5", "maxlength", "10", "matInput", "", "name", "a_zip", "formControlName", "zipCode", "onlyNumber", "", "placeholder", "Zip Code", 3, "keypress", "keyup", "change"], ["style", "color: #E74C3C;", 4, "ngIf"], ["name", "city", "formControlName", "city", 3, "selectionChange"], ["matInput", "", "formControlName", "address2", "placeholder", "Address 2"], ["name", "country", "formControlName", "country", 3, "selectionChange"], ["name", "state", "formControlName", "state", 3, "selectionChange"], ["maxlength", "10", "matInput", "", "formControlName", "phoneNumber", "name", "phone", "placeholder", "Mobile Number", 3, "keypress"], ["style", "margin-top:-20px", 4, "ngIf"], ["matInput", "", "name", "email", "formControlName", "primaryEmailAdress", "placeholder", "e-mail", 3, "keypress"], ["maxlength", "10", "matInput", "", "name", "mobile", "formControlName", "landlineNumber", "placeholder", "Landline Number", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "expiryDate", "placeholder", "ID Type Valid Till", 3, "required", "matDatepicker", "min"], ["appDatepicker1", ""], [1, "err-msg"], [2, "color", "#E74C3C"], [2, "margin-top", "-20px"], [1, "mt-16"], [1, "mb-8", "borderStyle", 3, "expanded"], [1, "marginData"], [1, "textDesign"], [1, "design"], ["fxLayout", "row", "fxLayoutGap", "2px", "fxLayoutAlign", "space-between"], ["fxFlex", "100", "fxFlexAlign", "center", 1, "boxsize"], ["matInput", "", "formControlName", "cifNumber", "name", "cif", "placeholder", "CIF Number", 3, "formControl", "matAutocomplete", "readonly", "keypress", "change", "keyup"], ["matSuffix", "", "color", "primary", 4, "ngIf"], ["class", "hintColor", 4, "ngIf"], [1, "card-cust-auto-cif"], ["auto", "matAutocomplete"], ["show", ""], [1, "pb-1", "info1"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID", "maxlength", "12", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", 4, "ngIf", "ngIfElse"], ["openSave", ""], ["matSuffix", "", "color", "primary"], [1, "hintColor"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [1, "cif-0", 2, "margin-top", "0px"], [1, "right-arrow1"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large", "color", "white"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "primaryCustomer", 3, "ngModel", "disabled", "ngModelChange"], ["mat-button", "", "color", "primary", 3, "disabled"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_personal_information_re_vw8a.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "row wrap"], [1, "p-0"], ["visible", "true"], ["novalidate", "", 3, "formGroup", 4, "ngIf"], ["novalidate", "", 3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "ownership", "name", "owner", "required", "", 1, "graycolor", 3, "value", "valueChange", "selectionChange"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["formControlName", "numOfApplicants", "name", "account"], [3, "value"], [1, "mb-1"], ["fxFlex", "100", "fxLayoutGap", "16px", "fxLayoutAlign", "end end", 2, "padding-right", "15px"], [1, "m-0", "text-right"], ["mode", "determinate", 1, "rounded", 2, "height", "5px", 3, "color", "value"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "hint"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], [1, "mt-12"], ["multi", "true"], ["class", "mb-8", "expanded", "true", 4, "ngFor", "ngForOf"], ["class", "mt-16", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], [4, "ngIf", "ngIfElse"], ["hideBtn", ""], ["expanded", "true", 1, "mb-8"], [1, "check-circle"], [1, "ml-8"], [2, "margin-bottom", "-16px !important"], ["mat-card-avatar", ""], [3, "name"], [1, "m-0", "mr-16"], ["fxFlex", ""], ["mat-sm-chip", "", 3, "color", "selected", 4, "ngIf"], [1, "mat-caption"], ["fxLayout", "row", "fxFlex", "1 1 0%", "fxLayoutAlign", "end end"], [1, "group-btn-bg"], ["showEdit", ""], ["mat-icon-button", "", "color", "warn", 3, "click", 4, "ngIf"], ["detailApplicant", ""], ["mat-sm-chip", "", 3, "color", "selected"], ["type", "reset", "mat-icon-button", "", "color", "primary", 3, "click"], ["type", "submit", "mat-icon-button", "", "color", "primary", 3, "click"], ["mat-icon-button", "", "color", "warn", 3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "mt-32", 3, "formGroup"], ["formGroupName", "applicantDetails"], ["formControlName", "existingCustomer", 3, "change"], [1, "mb-16"], ["name", "prefix", "formControlName", "prefix", 3, "selectionChange"], ["matInput", "", "name", "mname", "formControlName", "middleName", "placeholder", "Middle Name", 3, "keypress"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "dateOfBirth", "placeholder", "Date of birth", 3, "matDatepicker", "max"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], [1, "p-1"], ["fxFlex", "20"], ["matPrefix", ""], [3, "class", 4, "ngIf"], ["name", "birthCountry", "formControlName", "birthCountry", "required", "", 3, "selectionChange"], ["name", "residenceType", "formControlName", "residenceStatus"], ["formControlName", "countryOfResidence", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["disabled", ""], ["name", "idtype", "formControlName", "idType", 3, "selectionChange"], ["class", "pb-1", 4, "ngIf"], ["formControlName", "primaryCustomer"], ["matInput", "", "name", "fname", "formControlName", "firstName", "placeholder", "First Name", 3, "keypress"], ["matInput", "", "name", "lname", "formControlName", "lastName", "placeholder", "Last Name", 3, "keypress"], ["name", "gender", "formControlName", "gender", 3, "selectionChange"], ["class", "err-msg", 4, "ngIf"], ["matInput", "", "name", "bplace", "formControlName", "placeOfBirth", "placeholder", "Birth Place"], [1, "pb-1", "info"], ["formControlName", "nationality", "id", "forcitizenship", "required", "", 3, "selectionChange"], ["name", "maritalStatus", "formControlName", "maritalStatus", "required", ""], ["matInput", "", "name", "occupation", "formControlName", "occupationType", "placeholder", "Occupation Type", 3, "keypress"], [1, "pb-1", "info3"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID Number", "maxlength", "12", "pattern", "^[+]?([0-9]+(?:[\\.][0-9]*)?|\\.[0-9]+)$"], ["matInput", "", "formControlName", "address1", "placeholder", "Address 1"], ["name", "addressType", "formControlName", "addressType"], ["minlength", "5", "maxlength", "10", "matInput", "", "name", "a_zip", "formControlName", "zipCode", "onlyNumber", "", "placeholder", "Zip Code", 3, "keypress", "keyup", "change"], ["style", "color: #E74C3C;", 4, "ngIf"], ["name", "city", "formControlName", "city", 3, "selectionChange"], ["matInput", "", "formControlName", "address2", "placeholder", "Address 2"], ["name", "country", "formControlName", "country", 3, "selectionChange"], ["name", "state", "formControlName", "state", 3, "selectionChange"], ["maxlength", "10", "matInput", "", "formControlName", "phoneNumber", "name", "phone", "placeholder", "Mobile Number", 3, "keypress"], ["style", "margin-top:-20px", 4, "ngIf"], ["matInput", "", "name", "email", "formControlName", "primaryEmailAdress", "placeholder", "e-mail", 3, "keypress"], ["maxlength", "10", "matInput", "", "name", "mobile", "formControlName", "landlineNumber", "placeholder", "Landline Number", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], ["matInput", "", "name", "date", "readonly", "", "formControlName", "expiryDate", "placeholder", "ID Type Valid Till", 3, "required", "matDatepicker", "min"], ["appDatepicker1", ""], [1, "err-msg"], [2, "color", "#E74C3C"], [2, "margin-top", "-20px"], [1, "mt-16"], [1, "mb-8", "borderStyle", 3, "expanded"], [1, "marginData"], [1, "textDesign"], [1, "design"], ["fxLayout", "row", "fxLayoutGap", "2px", "fxLayoutAlign", "space-between"], ["fxFlex", "100", "fxFlexAlign", "center", 1, "boxsize"], ["matInput", "", "formControlName", "cifNumber", "name", "cif", "placeholder", "CIF Number", 3, "formControl", "matAutocomplete", "readonly", "keypress", "change", "keyup"], ["matSuffix", "", "color", "primary", 4, "ngIf"], ["class", "hintColor", 4, "ngIf"], [1, "card-cust-auto-cif"], ["auto", "matAutocomplete"], ["show", ""], [1, "pb-1", "info1"], ["matInput", "", "name", "uniqueidentity", "formControlName", "idNumber", "placeholder", "Unique ID", "maxlength", "12", 3, "keypress"], ["mat-button", "", "color", "primary", 3, "disabled", 4, "ngIf", "ngIfElse"], ["openSave", ""], ["matSuffix", "", "color", "primary"], [1, "hintColor"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [1, "cif-0", 2, "margin-top", "0px"], [1, "right-arrow1"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large", "color", "white"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "primaryCustomer", 3, "ngModel", "disabled", "ngModelChange"], ["mat-button", "", "color", "primary", 3, "disabled"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"]],
         template: function CardCustomerInformationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -9793,7 +9793,7 @@
         selectors: [["app-card-prefrences"]],
         decls: 39,
         vars: 5,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Mask_Group_1.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], [1, "height"], ["visible", "true"], [3, "formGroup"], [1, "table-container"], [1, "table"], [3, "formGroup", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutGap", "335px"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], [4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "type", "button", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [2, "width", "5cm"], ["formControlName", "limitType", "placeholder", "Select Type", "name", "limitType", 1, "inputMatcard1", 3, "valueChange"], [3, "value", "hidden", 4, "ngFor", "ngForOf"], ["type", "text", "maxlength", "18", "formControlName", "dailyLimit", 1, "alignment", 3, "readonly", "keyup", "keypress"], ["type", "text", "maxlength", "18", "formControlName", "limitPerTransaction", 1, "alignment", 3, "readonly", "keyup", "keypress"], [1, "deletebutton"], ["mat-icon-button", "", "mat-sm-button", "", "color", "warn", 3, "click"], [3, "value", "hidden"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Mask_Group_1.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], [1, "height"], ["visible", "true"], [3, "formGroup"], [1, "table-container"], [1, "table"], [3, "formGroup", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutGap", "335px"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], [4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "type", "button", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [2, "width", "5cm"], ["formControlName", "limitType", "placeholder", "Select Type", "name", "limitType", 1, "inputMatcard1", 3, "valueChange"], [3, "value", "hidden", 4, "ngFor", "ngForOf"], ["type", "text", "maxlength", "18", "formControlName", "dailyLimit", 1, "alignment", 3, "readonly", "keyup", "keypress"], ["type", "text", "maxlength", "18", "formControlName", "limitPerTransaction", 1, "alignment", 3, "readonly", "keyup", "keypress"], [1, "deletebutton"], ["mat-icon-button", "", "mat-sm-button", "", "color", "warn", 3, "click"], [3, "value", "hidden"]],
         template: function CardPrefrencesComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -10759,7 +10759,7 @@
         selectors: [["app-underwriting-credit-rating"]],
         decls: 18,
         vars: 1,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Mask_Group_9.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], [1, "flex-grow-2", 2, "padding-left", "10px"], ["appearance", "outline", 1, "full-width"], [4, "ngIf"], ["class", "mt-16", 4, "ngFor", "ngForOf"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], ["mat-button", "", 1, "dltbtn", 3, "click"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], ["name", "customerName", "formControlName", "customerName"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["matInput", "", "formControlName", "customerName", "type", "text", "readonly", "", 1, "alignment"], [1, "mt-16"], [1, "border1"], [1, "design"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "flex-grow-2"], ["name", "agencyName", "formControlName", "agencyName"], ["value", "Test Agency", 3, "disabled", "click"], ["value", "Ujjivan Agency", 3, "disabled", "click"], ["value", "Fast Track Agency", 3, "disabled", "click"], [1, "flex-grow-1"], ["matInput", "", "placeholder", "Remarks", "formControlName", "remarks", "type", "text", "name", "remarks", 1, "alignment"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["matInput", "", "formControlName", "ratings", "type", "text", "name", "ratings", 1, "alignment", 3, "keypress"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Mask_Group_9.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], [1, "flex-grow-2", 2, "padding-left", "10px"], ["appearance", "outline", 1, "full-width"], [4, "ngIf"], ["class", "mt-16", 4, "ngFor", "ngForOf"], ["mat-button", "", "color", "primary", 3, "disabled", "click"], ["mat-button", "", 1, "dltbtn", 3, "click"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], ["name", "customerName", "formControlName", "customerName"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["matInput", "", "formControlName", "customerName", "type", "text", "readonly", "", 1, "alignment"], [1, "mt-16"], [1, "border1"], [1, "design"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "flex-grow-2"], ["name", "agencyName", "formControlName", "agencyName"], ["value", "Test Agency", 3, "disabled", "click"], ["value", "Ujjivan Agency", 3, "disabled", "click"], ["value", "Fast Track Agency", 3, "disabled", "click"], [1, "flex-grow-1"], ["matInput", "", "placeholder", "Remarks", "formControlName", "remarks", "type", "text", "name", "remarks", 1, "alignment"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["matInput", "", "formControlName", "ratings", "type", "text", "name", "ratings", 1, "alignment", 3, "keypress"]],
         template: function UnderwritingCreditRatingComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -13041,7 +13041,7 @@
         selectors: [["app-charge-details"]],
         decls: 18,
         vars: 2,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/chargeDetails.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "m-333"], [1, "mt-24"], ["class", "chargeForm", 3, "formGroup", 4, "ngIf"], ["fxFlex", "100", 1, "mt-16"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "disabled", "click"], [1, "chargeForm", 3, "formGroup"], [1, "spanDiv1"], [1, "span"], [1, "divider"], [1, "cart-table", "default-bg", "mat-elevation-z0"], [1, "tr"], [1, "theadClass"], ["class", "tableRow", 4, "ngFor", "ngForOf"], [1, "tableRow"], [3, "formGroup"], ["matInput", "", "formControlName", "intrestType", "name", "account_branch", "readonly", "", 1, "input"], ["matPrefix", "", 1, "currencySymbol"], ["maxlength", "10", "formControlName", "amount", "oninput", "this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null", "matInput", "", "formControlName", "amount", "name", "account_branch", 1, "input", 3, "keypress"], [1, "waiver-pos"], ["formControlName", "waiver", "color", "primary", 3, "change"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/chargeDetails.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "m-333"], [1, "mt-24"], ["class", "chargeForm", 3, "formGroup", 4, "ngIf"], ["fxFlex", "100", 1, "mt-16"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "disabled", "click"], [1, "chargeForm", 3, "formGroup"], [1, "spanDiv1"], [1, "span"], [1, "divider"], [1, "cart-table", "default-bg", "mat-elevation-z0"], [1, "tr"], [1, "theadClass"], ["class", "tableRow", 4, "ngFor", "ngForOf"], [1, "tableRow"], [3, "formGroup"], ["matInput", "", "formControlName", "intrestType", "name", "account_branch", "readonly", "", 1, "input"], ["matPrefix", "", 1, "currencySymbol"], ["maxlength", "10", "formControlName", "amount", "oninput", "this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null", "matInput", "", "formControlName", "amount", "name", "account_branch", 1, "input", 3, "keypress"], [1, "waiver-pos"], ["formControlName", "waiver", "color", "primary", 3, "change"]],
         template: function ChargeDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -15946,7 +15946,7 @@
         selectors: [["app-intrest-details"]],
         decls: 18,
         vars: 2,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/loanInterest.svg", "alt", "", 1, "w-80"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "m-333"], [1, "mt-24"], ["class", "chargeForm", 3, "formGroup", 4, "ngIf"], ["fxFlex", "100", 1, "mt-16"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "disabled", "click"], [1, "chargeForm", 3, "formGroup"], [1, "spanDiv1"], [1, "span"], [1, "divider"], [1, "cart-table", "default-bg", "mat-elevation-z0"], [1, "tr"], [1, "theadClass"], ["class", "tableRow", 4, "ngFor", "ngForOf"], [1, "tableRow"], [3, "formGroup"], [1, "matCardBox-form"], ["matInput", "", "formControlName", "intrestType", "name", "intrestType", "placeholder", "Interest Type", "readonly", "", 1, "input"], [1, "matCardBox-form", "box1"], ["matInput", "", "formControlName", "intrestRateApplicable", "name", "intrestRateApplicable", "placeholder", "Interest Rate Applicable", "readonly", "", 1, "inputPercent"], ["matSuffix", ""], ["matInput", "", "formControlName", "marginIn", "name", "margin", "placeholder", "Margin", "readonly", "", 1, "inputPercent"], ["matInput", "", "formControlName", "effectiveRate", "name", "effectiveRate", "placeholder", "Effective Rate", "value", "", "readonly", "", 1, "inputPercent"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/loanInterest.svg", "alt", "", 1, "w-80"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "m-333"], [1, "mt-24"], ["class", "chargeForm", 3, "formGroup", 4, "ngIf"], ["fxFlex", "100", 1, "mt-16"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "disabled", "click"], [1, "chargeForm", 3, "formGroup"], [1, "spanDiv1"], [1, "span"], [1, "divider"], [1, "cart-table", "default-bg", "mat-elevation-z0"], [1, "tr"], [1, "theadClass"], ["class", "tableRow", 4, "ngFor", "ngForOf"], [1, "tableRow"], [3, "formGroup"], [1, "matCardBox-form"], ["matInput", "", "formControlName", "intrestType", "name", "intrestType", "placeholder", "Interest Type", "readonly", "", 1, "input"], [1, "matCardBox-form", "box1"], ["matInput", "", "formControlName", "intrestRateApplicable", "name", "intrestRateApplicable", "placeholder", "Interest Rate Applicable", "readonly", "", 1, "inputPercent"], ["matSuffix", ""], ["matInput", "", "formControlName", "marginIn", "name", "margin", "placeholder", "Margin", "readonly", "", 1, "inputPercent"], ["matInput", "", "formControlName", "effectiveRate", "name", "effectiveRate", "placeholder", "Effective Rate", "value", "", "readonly", "", 1, "inputPercent"]],
         template: function IntrestDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -20730,7 +20730,7 @@
         selectors: [["app-financial-details"]],
         decls: 10,
         vars: 1,
-        consts: [[1, "matcard-size"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/MaskGroup_2.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [3, "formGroup", 4, "ngIf"], [3, "formGroup"], [1, "p-0"], ["visible", "true"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "formControlName", "applicantName", "placeholder", "Applicant Name"], ["matPrefix", ""], ["matInput", "", "type", "number", "formControlName", "applicantTotalIncome", "placeholder", "Total Income"], ["matInput", "", "id", "dob", "readonly", "", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", "formControlName", "lastUpdatedon", 1, "alignment", 3, "matDatepicker", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "type", "text", "formControlName", "currentlyWorking", "placeholder", "Currently Working"], ["matPrefix", "", 1, "curr_icon"], ["matInput", "", "type", "number", "formControlName", "applicantTotalExpense", "placeholder", "Total  Expenses"], [1, ""], [1, "card-title-text"], ["formControlName", "employmentType"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "maxLength", "5", "formControlName", "employeeNumber", "placeholder", "Employee Number", 3, "required", "keypress"], ["matInput", "", "maxlength", "20", "name", "Designation", "formControlName", "designation", "placeholder", "Designation", 3, "required", "keypress"], ["matInput", "", "id", "dob", "readonly", "", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", "formControlName", "employmentStartDate", 1, "alignment", 3, "max", "matDatepicker"], ["start", ""], ["name", "employmentCategory", "formControlName", "employmentCategory"], ["matInput", "", "maxlength", "20", "name", "Office Name", "formControlName", "officeName", "placeholder", "Office Name", 3, "required", "keypress"], ["matInput", "", "id", "dob", "readonly", "", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", "formControlName", "employmentEndDate", 1, "alignment", 3, "matDatepicker", "min"], ["end", ""], [1, "ErrMsg"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "bonus", "name", "bonus", "placeholder", "Bonus", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "interestIncome", "name", "interestIncome", "placeholder", "Interest Income", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "salary", "name", "salary", "placeholder", "Salary", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "cashGifts", "name", "cashGifts", "placeholder", "Cash Gifts", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "monthlyIncomeTotal", "placeholder", "Total", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "business", "formControlName", "business", "placeholder", "Business", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "pension", "formControlName", "pension", "placeholder", "Pension", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "monthlyIncomeRentals", "formControlName", "monthlyIncomeRentals", "placeholder", "Rentals", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "monthlyIncomeOthers", "formControlName", "monthlyIncomeOthers", "placeholder", "Others", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "household", "name", "household", "placeholder", "Household", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "education", "name", "mod", "placeholder", "Education", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "vehicleMaintenance", "name", "mod", "placeholder", "Vehicle Maintenance", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "monthlyExpenseOthers", "placeholder", "Others", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "monthlyExpenseTotal", "name", "monthlyExpenseTotal", "placeholder", "Total", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "medical", "formControlName", "medical", "placeholder", "Medical", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "a_sig", "formControlName", "travel", "placeholder", "Travel", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "a_sig", "formControlName", "monthlyExpenseRentals", "placeholder", "Rentals", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "propertyLoan", "placeholder", "Property Loan", "formControlName", "propertyLoan", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "personalLoans", "formControlName", "personalLoans", "placeholder", "Personal Loans", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "name", "overdraft", "type", "text", "onlyNumber", "", "formControlName", "overdraft", "placeholder", "Overdrafts", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "liabilityTotal", "placeholder", "Total", "formControlName", "liabilityTotal", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "vehicleLoan", "name", "vehicleLoan", "placeholder", "Vehicle Loans", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "cardOutstandings", "formControlName", "cardOutstandings", "placeholder", "Cards Outstanding's", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "liabilityOthers", "formControlName", "liabilityOthers", "placeholder", "Others", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "savingDeposits", "placeholder", "Saving Deposits", "formControlName", "savingDeposits", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "properties", "formControlName", "properties", "placeholder", "Properties", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "fixedDeposits", "formControlName", "fixedDeposits", "placeholder", "Fixed Deposits", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "assetOthers", "placeholder", "Others", "formControlName", "assetOthers", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "assetTotal", "formControlName", "assetTotal", "placeholder", "Total", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "placeholder", "Stocks/Funds", "formControlName", "stocks", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "automobiles", "placeholder", "Automobiles", "formControlName", "automobiles", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "lands", "placeholder", "Lands", "formControlName", "lands", 3, "keypress", "input"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", "type", "submit", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
+        consts: [[1, "matcard-size"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/MaskGroup_2.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [3, "formGroup", 4, "ngIf"], [3, "formGroup"], [1, "p-0"], ["visible", "true"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "formControlName", "applicantName", "placeholder", "Applicant Name"], ["matPrefix", ""], ["matInput", "", "type", "number", "formControlName", "applicantTotalIncome", "placeholder", "Total Income"], ["matInput", "", "id", "dob", "readonly", "", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", "formControlName", "lastUpdatedon", 1, "alignment", 3, "matDatepicker", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "type", "text", "formControlName", "currentlyWorking", "placeholder", "Currently Working"], ["matPrefix", "", 1, "curr_icon"], ["matInput", "", "type", "number", "formControlName", "applicantTotalExpense", "placeholder", "Total  Expenses"], [1, ""], [1, "card-title-text"], ["formControlName", "employmentType"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "maxLength", "5", "formControlName", "employeeNumber", "placeholder", "Employee Number", 3, "required", "keypress"], ["matInput", "", "maxlength", "20", "name", "Designation", "formControlName", "designation", "placeholder", "Designation", 3, "required", "keypress"], ["matInput", "", "id", "dob", "readonly", "", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", "formControlName", "employmentStartDate", 1, "alignment", 3, "max", "matDatepicker"], ["start", ""], ["name", "employmentCategory", "formControlName", "employmentCategory"], ["matInput", "", "maxlength", "20", "name", "Office Name", "formControlName", "officeName", "placeholder", "Office Name", 3, "required", "keypress"], ["matInput", "", "id", "dob", "readonly", "", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", "formControlName", "employmentEndDate", 1, "alignment", 3, "matDatepicker", "min"], ["end", ""], [1, "ErrMsg"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "bonus", "name", "bonus", "placeholder", "Bonus", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "interestIncome", "name", "interestIncome", "placeholder", "Interest Income", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "salary", "name", "salary", "placeholder", "Salary", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "cashGifts", "name", "cashGifts", "placeholder", "Cash Gifts", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "monthlyIncomeTotal", "placeholder", "Total", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "business", "formControlName", "business", "placeholder", "Business", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "pension", "formControlName", "pension", "placeholder", "Pension", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "monthlyIncomeRentals", "formControlName", "monthlyIncomeRentals", "placeholder", "Rentals", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "monthlyIncomeOthers", "formControlName", "monthlyIncomeOthers", "placeholder", "Others", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "household", "name", "household", "placeholder", "Household", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "education", "name", "mod", "placeholder", "Education", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "vehicleMaintenance", "name", "mod", "placeholder", "Vehicle Maintenance", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "monthlyExpenseOthers", "placeholder", "Others", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "monthlyExpenseTotal", "name", "monthlyExpenseTotal", "placeholder", "Total", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "medical", "formControlName", "medical", "placeholder", "Medical", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "a_sig", "formControlName", "travel", "placeholder", "Travel", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "a_sig", "formControlName", "monthlyExpenseRentals", "placeholder", "Rentals", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "propertyLoan", "placeholder", "Property Loan", "formControlName", "propertyLoan", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "personalLoans", "formControlName", "personalLoans", "placeholder", "Personal Loans", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "name", "overdraft", "type", "text", "onlyNumber", "", "formControlName", "overdraft", "placeholder", "Overdrafts", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "liabilityTotal", "placeholder", "Total", "formControlName", "liabilityTotal", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "formControlName", "vehicleLoan", "name", "vehicleLoan", "placeholder", "Vehicle Loans", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "cardOutstandings", "formControlName", "cardOutstandings", "placeholder", "Cards Outstanding's", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "liabilityOthers", "formControlName", "liabilityOthers", "placeholder", "Others", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "savingDeposits", "placeholder", "Saving Deposits", "formControlName", "savingDeposits", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "properties", "formControlName", "properties", "placeholder", "Properties", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "fixedDeposits", "formControlName", "fixedDeposits", "placeholder", "Fixed Deposits", 3, "input", "keypress"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "assetOthers", "placeholder", "Others", "formControlName", "assetOthers", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "assetTotal", "formControlName", "assetTotal", "placeholder", "Total", "readonly", ""], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "placeholder", "Stocks/Funds", "formControlName", "stocks", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "automobiles", "placeholder", "Automobiles", "formControlName", "automobiles", 3, "keypress", "input"], ["matInput", "", "maxlength", "10", "type", "text", "onlyNumber", "", "name", "lands", "placeholder", "Lands", "formControlName", "lands", 3, "keypress", "input"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", "type", "submit", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
         template: function FinancialDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -21432,7 +21432,7 @@
         selectors: [["app-card-account-services"]],
         decls: 23,
         vars: 2,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_opinion_dxp8.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0", "bordercard"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-raised-button", "", "rounded", "", "color", "primary", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], [1, "m-16"], ["name", "statementFreq", "formControlName", "statementFrequency", "required", "", 1, "mt-12", 3, "change"], ["value", "MONTHLY", "color", "primary", 1, "ml-8"], ["value", "BIANNUAL", "color", "primary", 1, "ml-16"], ["value", "QUATERLY", "color", "primary", 1, "ml-8"], ["value", "ANNUAL", "color", "primary", 1, "ml-16"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["formArrayName", "statementPref", 4, "ngFor", "ngForOf"], [1, "m-32"], ["fxLayout", "row wrap"], [1, "m-12"], ["fxFlex", "25", "formArrayName", "commChannelPref", 4, "ngFor", "ngForOf"], ["formArrayName", "statementPref"], ["color", "primary", 1, "checkbox-margin", 3, "value", "checked", "change"], ["fxFlex", "25", "formArrayName", "commChannelPref"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_opinion_dxp8.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0", "bordercard"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], [1, "m-16"], ["name", "statementFreq", "formControlName", "statementFrequency", "required", "", 1, "mt-12", 3, "change"], ["value", "MONTHLY", "color", "primary", 1, "ml-8"], ["value", "BIANNUAL", "color", "primary", 1, "ml-16"], ["value", "QUATERLY", "color", "primary", 1, "ml-8"], ["value", "ANNUAL", "color", "primary", 1, "ml-16"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["formArrayName", "statementPref", 4, "ngFor", "ngForOf"], [1, "m-32"], ["fxLayout", "row wrap"], [1, "m-12"], ["fxFlex", "25", "formArrayName", "commChannelPref", 4, "ngFor", "ngForOf"], ["formArrayName", "statementPref"], ["color", "primary", 1, "checkbox-margin", 3, "value", "checked", "change"], ["fxFlex", "25", "formArrayName", "commChannelPref"]],
         template: function CardAccountServicesComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -21728,6 +21728,7 @@
             var _this77 = this;
 
             this.cardId = this.ls.getItem("cardId");
+            this.show1 = this.ls.getItem('eSignStage') && this.ls.getItem('signedImage') !== null;
             this.urlService.previousUrl$.subscribe(function (previousUrl) {
               _this77.previousUrl = previousUrl;
             });
@@ -21753,10 +21754,19 @@
                 data: data === undefined || data === null ? response : data
               });
               dialogRef.afterClosed().subscribe(function (res) {
+                _this78.accountId = _this78.accountID;
                 console.log(res);
-                _this78.show = true;
 
-                _this78.ls.setItem("enable", true); // this.getByAccountId(this.accountId);
+                if (res) {
+                  _this78.show = _this78.ls.getItem("enable"); // this.show = this.ls.getItem('eSignStage')
+
+                  _this78.show1 = _this78.ls.getItem("enable");
+                  console.log(_this78.show);
+
+                  _this78.getByAccountId(_this78.accountId);
+                } // this.show = true;       
+                //    this.ls.setItem("enable", true);
+                //   this.getByAccountId(this.accountId);
 
               });
             }
@@ -21858,7 +21868,14 @@
                 subject: data.subject,
                 isSignLater: true,
                 screen: "Card Account"
-              }; //this.openPopUp(response);
+              };
+              _this80.isDone = true;
+
+              _this80.dialogService.alertForcardSignLater().subscribe(function (response) {
+                console.log("response ::", response);
+              });
+
+              _this80.show = _this80.ls.setItem("enable", true); //this.openPopUp(response);
             }, function (err) {});
           }
         }]);
@@ -23227,7 +23244,7 @@
               employmentType: this.cardInitiationForm.value.employmentType,
               affinityProgram: this.cardInitiationForm.value.affinityProgram,
               nameOnCard: this.cardInitiationForm.value.nameOnCard,
-              status: null,
+              status: "ONGOING",
               kycStatus: this.kycStatus,
               kycReference: this.kycRefrence,
               customerId: this.cardInitiationForm.value.cifNumber,
@@ -23239,9 +23256,8 @@
               var statusModel = {
                 cardId: data.cardId,
                 status: "ONGOING"
-              };
-
-              _this85.apiService.updateCardStatus(statusModel).subscribe(function (data) {});
+              }; // this.apiService.updateCardStatus(statusModel).subscribe(data => {
+              // });
 
               console.log("data", data);
 
@@ -23515,7 +23531,7 @@
         selectors: [["app-card-initiation"]],
         decls: 75,
         vars: 18,
-        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_opinion_dxp8.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title"], [1, "p-0"], ["visible", "true"], ["fxLayout", "column", 3, "formGroup"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "pb-1"], [1, "hint"], ["name", "scholarshipOrBusinessEligible", "formControlName", "existingCustomer", 2, "margin-left", "1cm", 3, "change"], ["class", "flex-grow-1", "fxFlex", "100%", "fxLayout", "column", 4, "ngIf"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "cardType", "placeholder", "Select", 3, "selectionChange"], ["value", "Debit", 4, "ngIf"], ["value", "Credit"], ["value", "Forex", 4, "ngIf"], [4, "ngIf"], ["class", "pb-1", 4, "ngIf"], ["formControlName", "affinityProgram", "placeholder", "Select"], ["value", "Affinity Program1"], ["value", "Affinity Program2"], ["formControlName", "employmentType", "placeholder", "Select"], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["color", "primary", "mat-raised-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], ["fxFlex", "100%", "fxLayout", "column", 1, "flex-grow-1"], ["fxFlex", "100%"], [2, "color", "#03a9f4"], ["mat-button", "", 2, "text-decoration", "underline", 3, "disabled", "click"], ["value", "Debit"], ["value", "Forex"], ["matInput", "", "type", "text", "formControlName", "cifNumber", "placeholder", "CIF Number", 1, "alignment", 3, "formControl", "matAutocomplete", "keypress", "change", "keyup"], ["auto", "matAutocomplete"], [3, "value"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [2, "margin-top", "0px"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "currency", "placeholder", "Select", 3, "ngModel", "ngModelChange"], ["value", ""], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "currency", "placeholder", "currency", "name", "currency", "readonly", "", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", "name", "nameOnCard", 1, "alignment", 3, "keypress"], ["formControlName", "customerAccount"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "customerAccount", "placeholder", "Customer Account Number", "name", "customerAccount", 1, "alignment", 3, "keypress"], ["matInput", "", "class", "alignment", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["matInput", "", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "class", "alignment", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", 1, "alignment", 3, "keypress"]],
+        consts: [[1, "matcard-size1"], ["fxLayout", "row"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_opinion_dxp8.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title"], [1, "p-0"], ["visible", "true"], ["fxLayout", "column", 3, "formGroup"], ["fxFlex", "100%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], [1, "pb-1"], [1, "hint"], ["name", "scholarshipOrBusinessEligible", "formControlName", "existingCustomer", 2, "margin-left", "1cm", 3, "change"], ["class", "flex-grow-1", "fxFlex", "100%", "fxLayout", "column", 4, "ngIf"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], ["appearance", "outline", 1, "full-width"], ["formControlName", "cardType", "placeholder", "Select", 3, "selectionChange"], ["value", "Debit", 4, "ngIf"], ["value", "Credit"], ["value", "Forex", 4, "ngIf"], [4, "ngIf"], ["class", "pb-1", 4, "ngIf"], ["formControlName", "affinityProgram", "placeholder", "Select"], ["value", "Affinity Program1"], ["value", "Affinity Program2"], ["formControlName", "employmentType", "placeholder", "Select"], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "addOnCard", 2, "margin-left", "1cm", 3, "change"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], ["fxFlex", "100%", "fxLayout", "column", 1, "flex-grow-1"], ["fxFlex", "100%"], [2, "color", "#03a9f4"], ["mat-button", "", 2, "text-decoration", "underline", 3, "disabled", "click"], ["value", "Debit"], ["value", "Forex"], ["matInput", "", "type", "text", "formControlName", "cifNumber", "placeholder", "CIF Number", 1, "alignment", 3, "formControl", "matAutocomplete", "keypress", "change", "keyup"], ["auto", "matAutocomplete"], [3, "value"], ["fxLayout", "row wrap", 2, "margin-top", "20px"], ["fxFlex", " 100"], ["mat-card-avatar", "", "class", "example-header-image-dropdown", "fxFlex", "10", 4, "ngIf"], ["mat-card-avatar", "", "fxFlex", "10", 4, "ngIf"], ["fxFlex", "80"], [2, "margin-bottom", "0px"], [2, "margin-top", "0px"], ["mat-card-avatar", "", "fxFlex", "10", 1, "example-header-image-dropdown"], ["align", "center", 2, "margin-top", "5px", "font-size", "large"], ["mat-card-avatar", "", "fxFlex", "10"], ["matListAvatar", "", "align", "center", "alt", "...", 2, "border-radius", "50%", "height", "85%", "margin-right", "20px", "width", "100%", "margin-bottom", "50px", 3, "src"], ["formControlName", "currency", "placeholder", "Select", 3, "ngModel", "ngModelChange"], ["value", ""], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "currency", "placeholder", "currency", "name", "currency", "readonly", "", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", "name", "nameOnCard", 1, "alignment", 3, "keypress"], ["formControlName", "customerAccount"], ["matInput", "", "type", "text", "autocomplete", "off", "formControlName", "customerAccount", "placeholder", "Customer Account Number", "name", "customerAccount", 1, "alignment", 3, "keypress"], ["matInput", "", "class", "alignment", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["matInput", "", "type", "text", "readonly", "", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "class", "alignment", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 3, "keypress", 4, "ngIf"], ["matInput", "", "type", "text", "formControlName", "applicantName", "placeholder", "Applicant Name", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "formControlName", "nameOnCard", "placeholder", "Name On Card", 1, "alignment", 3, "keypress"]],
         template: function CardInitiationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -24003,7 +24019,7 @@
       /*! @angular/material/core */
       "UhP/");
 
-      function ApprovalDetailsComponent_mat_option_22_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_option_23_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 29);
 
@@ -24023,7 +24039,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_23_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_24_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24033,7 +24049,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_29_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_30_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24043,7 +24059,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_35_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_36_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24053,7 +24069,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_option_41_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_option_42_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 29);
 
@@ -24073,7 +24089,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_42_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_43_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24083,7 +24099,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_option_49_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_option_50_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 29);
 
@@ -24103,7 +24119,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_50_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_51_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24113,7 +24129,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_56_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_57_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24123,7 +24139,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_62_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_63_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24133,7 +24149,7 @@
         }
       }
 
-      function ApprovalDetailsComponent_mat_error_68_Template(rf, ctx) {
+      function ApprovalDetailsComponent_mat_error_69_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -24318,9 +24334,9 @@
       ApprovalDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ApprovalDetailsComponent,
         selectors: [["app-approval-details"]],
-        decls: 75,
+        decls: 76,
         vars: 13,
-        consts: [["fxLayout", "row wrap", 1, "matcard-size1"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/MaskGroup_16.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "mt-24"], [1, "ml-16"], [1, "mt-24"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["name", "accountType", "placeholder", "Account type", "formControlName", "accountType"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "name", "productCode", "placeholder", "Product Code", "formControlName", "productCode"], ["matInput", "", "name", "account_currency", "placeholder", "Account Currency", "formControlName", "accountCurrency", "readonly", "", 3, "keypress"], ["name", "owner", "placeholder", "Recommended for Approval", "formControlName", "userRecommendation"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["name", "accountBranch", "placeholder", "Account Branch", "formControlName", "accountBranch"], ["matInput", "", "name", "productName", "placeholder", "Product Name", "formControlName", "productName", 3, "keypress"], ["matInput", "", "onlyNumber", "", "name", "existingValues", "placeholder", "Existing Value", "formControlName", "existingValues", 3, "keypress"], ["matInput", "", "name", "remarks", "placeholder", "Remarks", "formControlName", "remarks"], ["fxFlex", "100", 1, "mt-16"], ["mat-stroked-button", "", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
+        consts: [["fxLayout", "row wrap", 1, "matcard-size1"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/MaskGroup_16.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxFlex", "100", 1, "mt-24"], [1, "p-0"], ["visible", "true"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "pb-1"], ["appearance", "outline", 1, "full-width"], ["name", "accountType", "placeholder", "Account type", "formControlName", "accountType"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "name", "productCode", "placeholder", "Product Code", "formControlName", "productCode"], ["matInput", "", "name", "account_currency", "placeholder", "Account Currency", "formControlName", "accountCurrency", "readonly", "", 3, "keypress"], ["name", "owner", "placeholder", "Recommended for Approval", "formControlName", "userRecommendation"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["name", "accountBranch", "placeholder", "Account Branch", "formControlName", "accountBranch"], ["matInput", "", "name", "productName", "placeholder", "Product Name", "formControlName", "productName", 3, "keypress"], ["matInput", "", "onlyNumber", "", "name", "existingValues", "placeholder", "Existing Value", "formControlName", "existingValues", 3, "keypress"], ["matInput", "", "name", "remarks", "placeholder", "Remarks", "formControlName", "remarks"], ["fxFlex", "100", 1, "mt-16"], ["mat-stroked-button", "", 1, "Backbtn", 3, "click"], ["fxFlex", ""], ["mat-raised-button", "", "color", "primary", "type", "button", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
         template: function ApprovalDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -24351,149 +24367,155 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "h2", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-card", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Approval Details");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card-title");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "fieldset");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "div", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "legend", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-card");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "form", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-card-content");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-form-field", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Account Type*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "mat-select", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, ApprovalDetailsComponent_mat_option_22_Template, 2, 2, "mat-option", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, ApprovalDetailsComponent_mat_error_23_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Approval Details");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "form", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Product Code*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Account Type*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "input", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-select", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, ApprovalDetailsComponent_mat_option_23_Template, 2, 2, "mat-option", 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, ApprovalDetailsComponent_mat_error_29_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, ApprovalDetailsComponent_mat_error_24_Template, 2, 0, "mat-error", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-form-field", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Account Currency*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Product Code*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "input", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "input", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function ApprovalDetailsComponent_Template_input_keypress_34_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, ApprovalDetailsComponent_mat_error_30_Template, 2, 0, "mat-error", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Account Currency*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "input", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function ApprovalDetailsComponent_Template_input_keypress_35_listener($event) {
               return ctx.keyPressAlphanumeric($event);
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, ApprovalDetailsComponent_mat_error_35_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](36, ApprovalDetailsComponent_mat_error_36_Template, 2, 0, "mat-error", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "mat-form-field", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "User Recomendation*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "mat-select", 19);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](41, ApprovalDetailsComponent_mat_option_41_Template, 2, 2, "mat-option", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "User Recomendation*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](42, ApprovalDetailsComponent_mat_error_42_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "mat-select", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](42, ApprovalDetailsComponent_mat_option_42_Template, 2, 2, "mat-option", 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 20);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "mat-form-field", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "Account Branch*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "mat-select", 21);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](49, ApprovalDetailsComponent_mat_option_49_Template, 2, 2, "mat-option", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](50, ApprovalDetailsComponent_mat_error_50_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](43, ApprovalDetailsComponent_mat_error_43_Template, 2, 0, "mat-error", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "Product Name*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Account Branch*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "input", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "mat-select", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function ApprovalDetailsComponent_Template_input_keypress_55_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](50, ApprovalDetailsComponent_mat_option_50_Template, 2, 2, "mat-option", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](51, ApprovalDetailsComponent_mat_error_51_Template, 2, 0, "mat-error", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Product Name*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "input", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function ApprovalDetailsComponent_Template_input_keypress_56_listener($event) {
               return ctx.keyPressAlphanumeric($event);
             });
 
@@ -24501,23 +24523,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](56, ApprovalDetailsComponent_mat_error_56_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](57, ApprovalDetailsComponent_mat_error_57_Template, 2, 0, "mat-error", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "mat-form-field", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "Existing Value*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "Existing Value*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "input", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "input", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function ApprovalDetailsComponent_Template_input_keypress_61_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function ApprovalDetailsComponent_Template_input_keypress_62_listener($event) {
               return ctx.onKeyPress($event);
             });
 
@@ -24525,27 +24547,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](62, ApprovalDetailsComponent_mat_error_62_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](63, ApprovalDetailsComponent_mat_error_63_Template, 2, 0, "mat-error", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "mat-form-field", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "mat-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "Remarks");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](67, "input", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](68, ApprovalDetailsComponent_mat_error_68_Template, 2, 0, "mat-error", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Remarks");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](68, "input", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](69, ApprovalDetailsComponent_mat_error_69_Template, 2, 0, "mat-error", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -24559,27 +24577,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "button", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ApprovalDetailsComponent_Template_button_click_70_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "button", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ApprovalDetailsComponent_Template_button_click_71_listener() {
               return ctx.goBack();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "BACK");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "BACK");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](72, "span", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "span", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "button", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "button", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ApprovalDetailsComponent_Template_button_click_73_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ApprovalDetailsComponent_Template_button_click_74_listener() {
               return ctx.onSubmit();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Next");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "Next");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -24589,7 +24611,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.approvalForm);
 
@@ -24642,7 +24664,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.approvalForm.invalid);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCard"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_9__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _shared_directives_only_number_directive__WEBPACK_IMPORTED_MODULE_12__["OnlyNumberDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButton"], _angular_material_core__WEBPACK_IMPORTED_MODULE_14__["MatOption"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatError"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardTitle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_9__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _shared_directives_only_number_directive__WEBPACK_IMPORTED_MODULE_12__["OnlyNumberDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButton"], _angular_material_core__WEBPACK_IMPORTED_MODULE_14__["MatOption"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatError"]],
         styles: [".Backbtn[_ngcontent-%COMP%] {\n  border: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGFwcHJvdmFsLWRldGFpbHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx1QkFBdUI7QUFDM0IiLCJmaWxlIjoiYXBwcm92YWwtZGV0YWlscy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5CYWNrYnRue1xyXG4gICAgYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"]
       });
       /*@__PURE__*/
@@ -26623,7 +26645,13 @@
 
       var _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(
       /*! ./digital-signing/digital-view-summary/digital-view-summary.component */
-      "QM7n"); // import { ChargeDetailsSummaryComponent } from '../home/charge-details-summary/charge-details-summary.component';
+      "QM7n");
+      /* harmony import */
+
+
+      var _digital_signing_card_signlater_popup_card_signlater_popup_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(
+      /*! ./digital-signing/card-signlater-popup/card-signlater-popup.component */
+      "Z5R8"); // import { ChargeDetailsSummaryComponent } from '../home/charge-details-summary/charge-details-summary.component';
       // import { UploadLinkToEmailComponent } from './document-upload/upload-link-to-email/upload-link-to-email.component';
 
 
@@ -26646,7 +26674,7 @@
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CardAccountModule, {
           declarations: [_card_account_component__WEBPACK_IMPORTED_MODULE_6__["CardAccountComponent"], _application_entry_stage_application_entry_stage_component__WEBPACK_IMPORTED_MODULE_16__["ApplicationEntryStageComponent"], _document_upload_document_upload_component__WEBPACK_IMPORTED_MODULE_17__["DocumentUploadComponent"], _application_enrichment_application_enrichment_component__WEBPACK_IMPORTED_MODULE_18__["ApplicationEnrichmentComponent"], _underwriting_stage_underwriting_stage_component__WEBPACK_IMPORTED_MODULE_19__["UnderwritingStageComponent"], _assessment_stage_assessment_stage_component__WEBPACK_IMPORTED_MODULE_20__["AssessmentStageComponent"], _supervisor_approval_stage_supervisor_approval_stage_component__WEBPACK_IMPORTED_MODULE_21__["SupervisorApprovalStageComponent"], _digital_signing_digital_signing_component__WEBPACK_IMPORTED_MODULE_22__["DigitalSigningComponent"], _document_upload_document_details_document_details_component__WEBPACK_IMPORTED_MODULE_23__["DocumentDetailsComponent"], _application_enrichment_intrest_details_intrest_details_component__WEBPACK_IMPORTED_MODULE_24__["IntrestDetailsComponent"], _application_enrichment_charge_details_charge_details_component__WEBPACK_IMPORTED_MODULE_25__["ChargeDetailsComponent"], _application_enrichment_intrest_details_intrest_details_summary_intrest_details_summary_component__WEBPACK_IMPORTED_MODULE_26__["IntrestDetailsSummaryComponent"], _application_enrichment_enrichment_summary_enrichment_summary_component__WEBPACK_IMPORTED_MODULE_27__["EnrichmentSummaryComponent"], // ChargeDetailsSummaryComponent,
           _underwriting_stage_underwriting_credit_rating_underwriting_credit_rating_component__WEBPACK_IMPORTED_MODULE_29__["UnderwritingCreditRatingComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_scoreboard_component__WEBPACK_IMPORTED_MODULE_30__["CardaccountQualitativeScoreboardComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_component__WEBPACK_IMPORTED_MODULE_31__["CardaccountApplicationAssessmentComponent"], _underwriting_stage_underwriting_credit_rating_underwriting_credit_summary_underwriting_credit_summary_component__WEBPACK_IMPORTED_MODULE_32__["UnderwritingCreditSummaryComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_summary_cardaccount_application_assessment_summary_component__WEBPACK_IMPORTED_MODULE_33__["CardaccountApplicationAssessmentSummaryComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_summary_cardaccount_qualitative_summary_component__WEBPACK_IMPORTED_MODULE_34__["CardaccountQualitativeSummaryComponent"], _supervisor_approval_stage_approval_details_approval_details_component__WEBPACK_IMPORTED_MODULE_35__["ApprovalDetailsComponent"], _application_entry_stage_financial_details_financial_details_component__WEBPACK_IMPORTED_MODULE_36__["FinancialDetailsComponent"], _application_entry_stage_card_customer_information_card_customer_information_component__WEBPACK_IMPORTED_MODULE_37__["CardCustomerInformationComponent"], _application_entry_stage_card_account_services_card_account_services_component__WEBPACK_IMPORTED_MODULE_38__["CardAccountServicesComponent"], _application_entry_stage_card_prefrences_card_prefrences_component__WEBPACK_IMPORTED_MODULE_39__["CardPrefrencesComponent"], _application_entry_stage_card_account_services_card_account_summary_card_account_summary_component__WEBPACK_IMPORTED_MODULE_40__["CardAccountSummaryComponent"], _application_entry_stage_card_initiation_card_initiation_component__WEBPACK_IMPORTED_MODULE_41__["CardInitiationComponent"], _application_entry_stage_card_initiation_card_initiation_summary_card_initiation_summary_component__WEBPACK_IMPORTED_MODULE_42__["CardInitiationSummaryComponent"], _digital_signing_digital_sign_now_or_later_digital_sign_now_or_later_component__WEBPACK_IMPORTED_MODULE_43__["DigitalSignNowOrLaterComponent"], _digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_44__["UploadSignatureOrEsignComponent"], _digital_signing_esignature_pop_esignature_pop_component__WEBPACK_IMPORTED_MODULE_45__["EsignaturePopComponent"], _supervisor_approval_stage_approval_details_approval_details_summary_approval_details_summary_component__WEBPACK_IMPORTED_MODULE_46__["ApprovalDetailsSummaryComponent"], _application_entry_stage_financial_details_card_financial_details_summary_card_financial_details_summary_component__WEBPACK_IMPORTED_MODULE_47__["CardFinancialDetailsSummaryComponent"], _application_entry_stage_card_customer_information_card_customer_info_summary_card_customer_info_summary_component__WEBPACK_IMPORTED_MODULE_48__["CardCustomerInfoSummaryComponent"], _application_enrichment_charge_details_card_acc_charge_det_sum_card_acc_charge_det_sum_component__WEBPACK_IMPORTED_MODULE_49__["CardAccChargeDetSumComponent"], _application_entry_stage_card_prefrences_card_prefrence_summary_card_prefrence_summary_component__WEBPACK_IMPORTED_MODULE_50__["CardPrefrenceSummaryComponent"], _application_entry_stage_cardaccount_app_entry_stage_view_summary_cardaccount_app_entry_stage_view_summary_component__WEBPACK_IMPORTED_MODULE_51__["CardaccountAppEntryStageViewSummaryComponent"], _document_upload_sucess_message_sucess_message_component__WEBPACK_IMPORTED_MODULE_52__["SucessMessageComponent"], // UploadLinkToEmailComponent
-          _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"], _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__["CardAccountAppAssessmentViewsummaryComponent"], _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalViewSummaryComponent"], _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__["DigitalViewSummaryComponent"]],
+          _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"], _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__["CardAccountAppAssessmentViewsummaryComponent"], _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalViewSummaryComponent"], _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__["DigitalViewSummaryComponent"], _digital_signing_card_signlater_popup_card_signlater_popup_component__WEBPACK_IMPORTED_MODULE_60__["CardSignlaterPopupComponent"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_10__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_11__["NgxDatatableModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_12__["PerfectScrollbarModule"], app_shared_pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_13__["SharedPipesModule"], app_shared_directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_14__["SharedDirectivesModule"], app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_15__["SharedMaterialModule"], angular2_signaturepad__WEBPACK_IMPORTED_MODULE_4__["SignaturePadModule"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"], _others_others_module__WEBPACK_IMPORTED_MODULE_54__["OthersModule"]]
         });
       })();
@@ -26659,7 +26687,7 @@
           args: [{
             declarations: [_card_account_component__WEBPACK_IMPORTED_MODULE_6__["CardAccountComponent"], _application_entry_stage_application_entry_stage_component__WEBPACK_IMPORTED_MODULE_16__["ApplicationEntryStageComponent"], _document_upload_document_upload_component__WEBPACK_IMPORTED_MODULE_17__["DocumentUploadComponent"], _application_enrichment_application_enrichment_component__WEBPACK_IMPORTED_MODULE_18__["ApplicationEnrichmentComponent"], _underwriting_stage_underwriting_stage_component__WEBPACK_IMPORTED_MODULE_19__["UnderwritingStageComponent"], _assessment_stage_assessment_stage_component__WEBPACK_IMPORTED_MODULE_20__["AssessmentStageComponent"], _supervisor_approval_stage_supervisor_approval_stage_component__WEBPACK_IMPORTED_MODULE_21__["SupervisorApprovalStageComponent"], _digital_signing_digital_signing_component__WEBPACK_IMPORTED_MODULE_22__["DigitalSigningComponent"], _document_upload_document_details_document_details_component__WEBPACK_IMPORTED_MODULE_23__["DocumentDetailsComponent"], _application_enrichment_intrest_details_intrest_details_component__WEBPACK_IMPORTED_MODULE_24__["IntrestDetailsComponent"], _application_enrichment_charge_details_charge_details_component__WEBPACK_IMPORTED_MODULE_25__["ChargeDetailsComponent"], _application_enrichment_intrest_details_intrest_details_summary_intrest_details_summary_component__WEBPACK_IMPORTED_MODULE_26__["IntrestDetailsSummaryComponent"], _application_enrichment_enrichment_summary_enrichment_summary_component__WEBPACK_IMPORTED_MODULE_27__["EnrichmentSummaryComponent"], // ChargeDetailsSummaryComponent,
             _underwriting_stage_underwriting_credit_rating_underwriting_credit_rating_component__WEBPACK_IMPORTED_MODULE_29__["UnderwritingCreditRatingComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_scoreboard_component__WEBPACK_IMPORTED_MODULE_30__["CardaccountQualitativeScoreboardComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_component__WEBPACK_IMPORTED_MODULE_31__["CardaccountApplicationAssessmentComponent"], _underwriting_stage_underwriting_credit_rating_underwriting_credit_summary_underwriting_credit_summary_component__WEBPACK_IMPORTED_MODULE_32__["UnderwritingCreditSummaryComponent"], _cardaccount_application_assessment_cardaccount_application_assessment_summary_cardaccount_application_assessment_summary_component__WEBPACK_IMPORTED_MODULE_33__["CardaccountApplicationAssessmentSummaryComponent"], _underwriting_stage_cardaccount_qualitative_scoreboard_cardaccount_qualitative_summary_cardaccount_qualitative_summary_component__WEBPACK_IMPORTED_MODULE_34__["CardaccountQualitativeSummaryComponent"], _supervisor_approval_stage_approval_details_approval_details_component__WEBPACK_IMPORTED_MODULE_35__["ApprovalDetailsComponent"], _application_entry_stage_financial_details_financial_details_component__WEBPACK_IMPORTED_MODULE_36__["FinancialDetailsComponent"], _application_entry_stage_card_customer_information_card_customer_information_component__WEBPACK_IMPORTED_MODULE_37__["CardCustomerInformationComponent"], _application_entry_stage_card_account_services_card_account_services_component__WEBPACK_IMPORTED_MODULE_38__["CardAccountServicesComponent"], _application_entry_stage_card_prefrences_card_prefrences_component__WEBPACK_IMPORTED_MODULE_39__["CardPrefrencesComponent"], _application_entry_stage_card_account_services_card_account_summary_card_account_summary_component__WEBPACK_IMPORTED_MODULE_40__["CardAccountSummaryComponent"], _application_entry_stage_card_initiation_card_initiation_component__WEBPACK_IMPORTED_MODULE_41__["CardInitiationComponent"], _application_entry_stage_card_initiation_card_initiation_summary_card_initiation_summary_component__WEBPACK_IMPORTED_MODULE_42__["CardInitiationSummaryComponent"], _digital_signing_digital_sign_now_or_later_digital_sign_now_or_later_component__WEBPACK_IMPORTED_MODULE_43__["DigitalSignNowOrLaterComponent"], _digital_signing_upload_signature_or_esign_upload_signature_or_esign_component__WEBPACK_IMPORTED_MODULE_44__["UploadSignatureOrEsignComponent"], _digital_signing_esignature_pop_esignature_pop_component__WEBPACK_IMPORTED_MODULE_45__["EsignaturePopComponent"], _supervisor_approval_stage_approval_details_approval_details_summary_approval_details_summary_component__WEBPACK_IMPORTED_MODULE_46__["ApprovalDetailsSummaryComponent"], _application_entry_stage_financial_details_card_financial_details_summary_card_financial_details_summary_component__WEBPACK_IMPORTED_MODULE_47__["CardFinancialDetailsSummaryComponent"], _application_entry_stage_card_customer_information_card_customer_info_summary_card_customer_info_summary_component__WEBPACK_IMPORTED_MODULE_48__["CardCustomerInfoSummaryComponent"], _application_enrichment_charge_details_card_acc_charge_det_sum_card_acc_charge_det_sum_component__WEBPACK_IMPORTED_MODULE_49__["CardAccChargeDetSumComponent"], _application_entry_stage_card_prefrences_card_prefrence_summary_card_prefrence_summary_component__WEBPACK_IMPORTED_MODULE_50__["CardPrefrenceSummaryComponent"], _application_entry_stage_cardaccount_app_entry_stage_view_summary_cardaccount_app_entry_stage_view_summary_component__WEBPACK_IMPORTED_MODULE_51__["CardaccountAppEntryStageViewSummaryComponent"], _document_upload_sucess_message_sucess_message_component__WEBPACK_IMPORTED_MODULE_52__["SucessMessageComponent"], // UploadLinkToEmailComponent
-            _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"], _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__["CardAccountAppAssessmentViewsummaryComponent"], _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalViewSummaryComponent"], _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__["DigitalViewSummaryComponent"]],
+            _underwriting_stage_underwriting_stage_summary_underwriting_stage_summary_component__WEBPACK_IMPORTED_MODULE_53__["UnderwritingStageSummaryComponent"], _digital_signing_success_alert_card_success_alert_card_component__WEBPACK_IMPORTED_MODULE_55__["SuccessAlertCardComponent"], _digital_signing_digitalsign_summary_digitalsign_summary_component__WEBPACK_IMPORTED_MODULE_56__["DigitalsignSummaryComponent"], _cardaccount_application_assessment_card_account_app_assessment_viewsummary_card_account_app_assessment_viewsummary_component__WEBPACK_IMPORTED_MODULE_57__["CardAccountAppAssessmentViewsummaryComponent"], _supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_58__["CardApprovalViewSummaryComponent"], _digital_signing_digital_view_summary_digital_view_summary_component__WEBPACK_IMPORTED_MODULE_59__["DigitalViewSummaryComponent"], _digital_signing_card_signlater_popup_card_signlater_popup_component__WEBPACK_IMPORTED_MODULE_60__["CardSignlaterPopupComponent"]],
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_10__["FlexLayoutModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_11__["NgxDatatableModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_28__["MatCardModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_12__["PerfectScrollbarModule"], app_shared_pipes_shared_pipes_module__WEBPACK_IMPORTED_MODULE_13__["SharedPipesModule"], app_shared_directives_shared_directives_module__WEBPACK_IMPORTED_MODULE_14__["SharedDirectivesModule"], app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_15__["SharedMaterialModule"], angular2_signaturepad__WEBPACK_IMPORTED_MODULE_4__["SignaturePadModule"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forChild(_card_account_routing__WEBPACK_IMPORTED_MODULE_5__["CardAccountRoutes"]), _others_others_module__WEBPACK_IMPORTED_MODULE_54__["OthersModule"]],
             providers: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CurrencyPipe"]],
             schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]]

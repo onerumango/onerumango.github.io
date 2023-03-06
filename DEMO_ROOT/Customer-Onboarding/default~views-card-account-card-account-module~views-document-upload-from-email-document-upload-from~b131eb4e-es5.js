@@ -26022,6 +26022,235 @@
     },
 
     /***/
+    "Z5R8":
+    /*!***********************************************************************************************************!*\
+      !*** ./src/app/views/card-account/digital-signing/card-signlater-popup/card-signlater-popup.component.ts ***!
+      \***********************************************************************************************************/
+
+    /*! exports provided: CardSignlaterPopupComponent */
+
+    /***/
+    function Z5R8(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CardSignlaterPopupComponent", function () {
+        return CardSignlaterPopupComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "8Y7J");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "iELJ");
+      /* harmony import */
+
+
+      var app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! app/shared/services/local-store.service */
+      "tZUg");
+      /* harmony import */
+
+
+      var app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! app/shared/services/application-entry-stage.service */
+      "qMRc");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "VDRc");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/material/button */
+      "Dxy4");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "Tj54");
+
+      var CardSignlaterPopupComponent = /*#__PURE__*/function () {
+        function CardSignlaterPopupComponent(dialogRef, ls, appApiService) {
+          _classCallCheck(this, CardSignlaterPopupComponent);
+
+          this.dialogRef = dialogRef;
+          this.ls = ls;
+          this.appApiService = appApiService;
+          this.isDone = false;
+        }
+
+        _createClass(CardSignlaterPopupComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.accountId = this.ls.getItem('cardId');
+            this.fetchingEmailData();
+          }
+        }, {
+          key: "Yes",
+          value: function Yes() {
+            this.dialogRef.close("Yes");
+          }
+        }, {
+          key: "close1",
+          value: function close1() {
+            this.dialogRef.close(true);
+          }
+        }, {
+          key: "fetchingEmailData",
+          value: function fetchingEmailData() {
+            var _this83 = this;
+
+            this.cifNumber = this.ls.getItem('cId');
+            this.appApiService.fetchByCif(this.cifNumber).subscribe(function (res) {
+              console.log(res);
+              console.log(res.customerInfoList[0].primaryEmailAdress);
+              _this83.email = res.customerInfoList[0].primaryEmailAdress;
+            }, function (err) {
+              console.error(err);
+            });
+          }
+        }]);
+
+        return CardSignlaterPopupComponent;
+      }();
+
+      CardSignlaterPopupComponent.ɵfac = function CardSignlaterPopupComponent_Factory(t) {
+        return new (t || CardSignlaterPopupComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationEntryStageService"]));
+      };
+
+      CardSignlaterPopupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: CardSignlaterPopupComponent,
+        selectors: [["app-card-signlater-popup"]],
+        decls: 21,
+        vars: 1,
+        consts: [["fxLayout", "row wrap"], ["fxFlex", "100", "fxLayoutAlign", "end center"], ["mat-icon-button", "", 3, "click"], ["fxFlex", "100"], ["fxLayout", "row", "fxLayoutAlign", "center center"], ["fxFlex", "50", "fxFlexOffset", "20px", 1, "text-center"], [1, "propic", "text-center"], ["src", "assets/images/esignlater.png", "alt", ""], [1, "text-center"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "click"]],
+        template: function CardSignlaterPopupComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardSignlaterPopupComponent_Template_button_click_2_listener() {
+              return ctx.close1();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "close");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "img", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h1");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Sign Link on your Email!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "An email has been sent to ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "b");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, " with the sign link.");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "button", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CardSignlaterPopupComponent_Template_button_click_19_listener() {
+              return ctx.close1();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, " Done ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.email);
+          }
+        },
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultFlexDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutAlignDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultFlexOffsetDirective"]],
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjYXJkLXNpZ25sYXRlci1wb3B1cC5jb21wb25lbnQuc2NzcyJ9 */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CardSignlaterPopupComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-card-signlater-popup',
+            templateUrl: './card-signlater-popup.component.html',
+            styleUrls: ['./card-signlater-popup.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]
+          }, {
+            type: app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__["LocalStoreService"]
+          }, {
+            type: app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationEntryStageService"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "Z85s":
     /*!********************************************************************************************************************************************************************!*\
       !*** ./src/app/views/card-account/cardaccount-application-assessment/card-account-app-assessment-viewsummary/card-account-app-assessment-viewsummary.component.ts ***!
@@ -26134,16 +26363,16 @@
         }, {
           key: "getCardAssessmentDetails",
           value: function getCardAssessmentDetails() {
-            var _this83 = this;
+            var _this84 = this;
 
             this.apiService.fetchcardAssessmentDetailsById(this.cardId) //this.apiService.fetchcardAssessmentDetails()
             .subscribe(function (resp) {
               console.log(resp);
-              _this83.approvedCardLimit = resp.approvedCardLimit;
-              _this83.recommendedCardLimit = resp.recommendedCardLimit;
-              _this83.requestedCardLimit = resp.requestedCardLimit;
-              _this83.systemRecommendation = resp.systemRecommendation;
-              _this83.userRecommendation = resp.userRecommendation;
+              _this84.approvedCardLimit = resp.approvedCardLimit;
+              _this84.recommendedCardLimit = resp.recommendedCardLimit;
+              _this84.requestedCardLimit = resp.requestedCardLimit;
+              _this84.systemRecommendation = resp.systemRecommendation;
+              _this84.userRecommendation = resp.userRecommendation;
             });
           }
         }]);
@@ -26534,7 +26763,7 @@
         _createClass(AccountCreateSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this84 = this;
+            var _this85 = this;
 
             this.loanaccountID = localStorage.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -26545,7 +26774,7 @@
             }
 
             setTimeout(function () {
-              _this84.getAccountCreateDetails();
+              _this85.getAccountCreateDetails();
             }, 10);
           }
         }, {
@@ -26562,11 +26791,11 @@
         }, {
           key: "getAccountCreateDetails",
           value: function getAccountCreateDetails() {
-            var _this85 = this;
+            var _this86 = this;
 
             this.api.getAccountCreateDetails(this.loanaccountID).subscribe(function (accountCreateDetails) {
               console.log(accountCreateDetails);
-              _this85.accountCreateValue = accountCreateDetails;
+              _this86.accountCreateValue = accountCreateDetails;
             });
           }
         }]);
@@ -27169,7 +27398,7 @@
         _createClass(AcceptOfferAcceptRejectSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this86 = this;
+            var _this87 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -27180,17 +27409,17 @@
             }
 
             setTimeout(function () {
-              _this86.fetchOfferAcceptRejectDetails(_this86.loanaccountID);
+              _this87.fetchOfferAcceptRejectDetails(_this87.loanaccountID);
             }, 10);
           }
         }, {
           key: "fetchOfferAcceptRejectDetails",
           value: function fetchOfferAcceptRejectDetails(loanaccountID) {
-            var _this87 = this;
+            var _this88 = this;
 
             this.apiService.getofferDetails(loanaccountID).subscribe(function (data) {
-              _this87.offerDetails = data;
-              console.log(_this87.offerDetails);
+              _this88.offerDetails = data;
+              console.log(_this88.offerDetails);
             });
           }
         }, {
@@ -28018,11 +28247,11 @@
         _createClass(CustomerInfoViewComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this88 = this;
+            var _this89 = this;
 
             this.api.getApprovedStatus().subscribe(function (resp) {
               console.log("message", resp);
-              _this88.isApprovedSreen = resp;
+              _this89.isApprovedSreen = resp;
             });
             console.log('customerInfo :: ', this.customerInfo);
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -28038,12 +28267,12 @@
         }, {
           key: "loadData",
           value: function loadData(customerInfo) {
-            var _this89 = this;
+            var _this90 = this;
 
             if (customerInfo == null) {
               this.appEntrySummaryView = false;
               setTimeout(function () {
-                _this89.getCustomerInfoDetails();
+                _this90.getCustomerInfoDetails();
               }, 10);
             } else {
               if (customerInfo.isAppEntryView) {
@@ -28057,19 +28286,19 @@
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails() {
-            var _this90 = this;
+            var _this91 = this;
 
             this.loader.open();
             this.appApiService.fetchCustomersByLoanAccId(this.loanaccountID, 'loan').subscribe(function (customerInfoDetails) {
               if (customerInfoDetails.data) {
-                _this90.loader.close();
+                _this91.loader.close();
 
-                _this90.customerInfoDetails = customerInfoDetails.data;
-                _this90.ownership = _this90.customerInfoDetails[0].ownership;
-                _this90.noOfApplicants = _this90.customerInfoDetails[0].numOfApplicants;
+                _this91.customerInfoDetails = customerInfoDetails.data;
+                _this91.ownership = _this91.customerInfoDetails[0].ownership;
+                _this91.noOfApplicants = _this91.customerInfoDetails[0].numOfApplicants;
               }
             }, function (err) {
-              _this90.loader.close();
+              _this91.loader.close();
             });
           }
         }, {
@@ -29424,10 +29653,10 @@
         }, {
           key: "getDocumentType",
           value: function getDocumentType() {
-            var _this91 = this;
+            var _this92 = this;
 
             this.apiService.getDropDownValues('document_type').subscribe(function (res) {
-              return _this91.docType = res;
+              return _this92.docType = res;
             });
           }
         }, {
@@ -30456,12 +30685,12 @@
         }, {
           key: "loadData",
           value: function loadData(collateralInfo) {
-            var _this92 = this;
+            var _this93 = this;
 
             if (collateralInfo == null) {
               this.appEntrySummaryView = false;
               setTimeout(function () {
-                _this92.getCollateralDetails();
+                _this93.getCollateralDetails();
               }, 10);
             } else {
               if (collateralInfo.isAppEntryView) {
@@ -30479,21 +30708,21 @@
         }, {
           key: "getCollateralDetails",
           value: function getCollateralDetails() {
-            var _this93 = this;
+            var _this94 = this;
 
             // this.loader.open();
             this.apiService.getCollateralByLoanAccId(this.loanaccountID).subscribe(function (collateralDetails) {
-              _this93.loader.close();
+              _this94.loader.close();
 
-              _this93.collateralDetails = collateralDetails;
+              _this94.collateralDetails = collateralDetails;
               console.log("collateralDetails::", collateralDetails);
-              _this93.collateralInfo = collateralDetails;
-              console.log("collateralDetails:", _this93.collateralInfo);
-              console.log(_this93.collateralDetails.collateralDetails.length);
+              _this94.collateralInfo = collateralDetails;
+              console.log("collateralDetails:", _this94.collateralInfo);
+              console.log(_this94.collateralDetails.collateralDetails.length);
               console.log("saved response", collateralDetails);
-              _this93.collateralDetailsArray = collateralDetails.collateralDetails;
+              _this94.collateralDetailsArray = collateralDetails.collateralDetails;
 
-              _this93.loader.close();
+              _this94.loader.close();
             });
           }
         }, {
@@ -30653,7 +30882,7 @@
 
     /***/
     function fIT2(module, exports) {
-      var _this94 = this;
+      var _this95 = this;
 
       var logging = false;
       exports.logging = logging;
@@ -30667,7 +30896,7 @@
           args[_key3] = arguments[_key3];
         }
 
-        return logging ? console.log.apply(_this94, args) : null;
+        return logging ? console.log.apply(_this95, args) : null;
       };
       /***/
 
@@ -30896,13 +31125,13 @@
         }, {
           key: "getCardPrefrenceDetails",
           value: function getCardPrefrenceDetails() {
-            var _this95 = this;
+            var _this96 = this;
 
             this.apiService.getCardPrefrence(this.cardId).subscribe(function (cardDetails) {
               console.log(cardDetails);
 
               if (cardDetails) {
-                _this95.cardPrefrenceDetails = cardDetails;
+                _this96.cardPrefrenceDetails = cardDetails;
               }
             }, function (err) {});
           }
@@ -31148,7 +31377,7 @@
         _createClass(ScoreboardDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this96 = this;
+            var _this97 = this;
 
             this.accountId = this.ls.getItem('accountId');
             this.accountInfo = this.ls.getItem('EDIT-CREATEACCCIF');
@@ -31159,18 +31388,18 @@
 
             console.log(this.accountId, "AccountId");
             setTimeout(function () {
-              _this96.getAllData(_this96.accountId);
+              _this97.getAllData(_this97.accountId);
             }, 1);
           }
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this97 = this;
+            var _this98 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getAssessmentReportDetails(id).subscribe(function (response) {
-              _this97.assessmentReportSummary = response;
-              console.log(_this97.assessmentReportSummary);
+              _this98.assessmentReportSummary = response;
+              console.log(_this98.assessmentReportSummary);
             });
           }
         }, {
@@ -31639,7 +31868,7 @@
         _createClass(LoanDetailsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this98 = this;
+            var _this99 = this;
 
             console.log("loanDetailsInfo :: ", this.loanDetailsInfo);
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -31652,7 +31881,7 @@
 
             console.log("this.loanaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this98.loadData(_this98.loanDetailsInfo);
+              _this99.loadData(_this99.loanDetailsInfo);
             }, 1);
           }
         }, {
@@ -31683,13 +31912,13 @@
         }, {
           key: "getLoanDetails",
           value: function getLoanDetails() {
-            var _this99 = this;
+            var _this100 = this;
 
             //this.apiService.getAssetValuation(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this99.accountDetails = accountDetails;
-              console.log("this.accountDetails", _this99.accountDetails);
+              _this100.accountDetails = accountDetails;
+              console.log("this.accountDetails", _this100.accountDetails);
             });
           }
         }]);
@@ -32440,11 +32669,11 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this100 = this;
+            var _this101 = this;
 
             this.api.getApprovedStatus().subscribe(function (resp) {
               console.log("message", resp);
-              _this100.isApprovedSreen = resp;
+              _this101.isApprovedSreen = resp;
             });
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -32456,40 +32685,40 @@
 
             console.log("this.loanaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this100.getLoanEntryStageInfo(_this100.loanaccountID);
+              _this101.getLoanEntryStageInfo(_this101.loanaccountID);
             }, 10);
           }
         }, {
           key: "getLoanEntryStageInfo",
           value: function getLoanEntryStageInfo(loanaccountID) {
-            var _this101 = this;
+            var _this102 = this;
 
             this.appEntryService.getLoanEntryStageInfo(loanaccountID).subscribe(function (loanResp) {
-              _this101.loantype = loanResp.loanInfo.accountType;
-              _this101.data = loanResp;
+              _this102.loantype = loanResp.loanInfo.accountType;
+              _this102.data = loanResp;
 
-              if (_this101.data != null) {
-                console.log('data :: ', _this101.data);
+              if (_this102.data != null) {
+                console.log('data :: ', _this102.data);
 
-                _this101.setData(loanResp);
+                _this102.setData(loanResp);
 
-                _this101.fetchCustomersByLoanAccIdForViewSummary(loanaccountID);
+                _this102.fetchCustomersByLoanAccIdForViewSummary(loanaccountID);
               }
             });
           }
         }, {
           key: "fetchCustomersByLoanAccIdForViewSummary",
           value: function fetchCustomersByLoanAccIdForViewSummary(loanaccountID) {
-            var _this102 = this;
+            var _this103 = this;
 
             this.appApiService.fetchCustomersByLoanAccId(this.loanaccountID, 'loan').subscribe(function (custResp) {
               console.log('custResp :: ', custResp);
-              _this102.customerInfoResp = custResp;
+              _this103.customerInfoResp = custResp;
 
-              if (_this102.customerInfoResp != null) {
-                _this102.customerInfo = {
+              if (_this103.customerInfoResp != null) {
+                _this103.customerInfo = {
                   'isAppEntryView': true,
-                  'data': _this102.customerInfoResp.data
+                  'data': _this103.customerInfoResp.data
                 };
               } // this.cdk.markForCheck();
               // this.cdk.detectChanges();
@@ -32708,7 +32937,7 @@
         _createClass(OfferAssessmentSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this103 = this;
+            var _this104 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
 
@@ -32717,7 +32946,7 @@
             }
 
             setTimeout(function () {
-              _this103.getAccountDetails();
+              _this104.getAccountDetails();
             }, 10);
           }
         }, {
@@ -32736,12 +32965,12 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this104 = this;
+            var _this105 = this;
 
             this.apiService.getAssesmentDetails("520").subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this104.accountDetails = accountDetails;
-              console.log("this.offerissuedetail", _this104.accountDetails);
+              _this105.accountDetails = accountDetails;
+              console.log("this.offerissuedetail", _this105.accountDetails);
             });
           }
         }]);
@@ -33360,7 +33589,7 @@
         }, {
           key: "scan",
           value: function scan() {
-            var _this105 = this;
+            var _this106 = this;
 
             var dialogRef = this.dialog.open(_new_scan_new_scan_component__WEBPACK_IMPORTED_MODULE_5__["NewScanComponent"], {
               data: {},
@@ -33374,18 +33603,18 @@
               console.log(res);
 
               if (res == 'close') {
-                _this105.dialogRef.close('close');
+                _this106.dialogRef.close('close');
 
                 return;
               }
 
               if (res.resImage) {
-                _this105.faceImage = res.resImage;
-                _this105.isScanned = true;
-                _this105.isFaliure = false;
+                _this106.faceImage = res.resImage;
+                _this106.isScanned = true;
+                _this106.isFaliure = false;
               } else {
-                _this105.isFaliure = true;
-                _this105.isScanned = false;
+                _this106.isFaliure = true;
+                _this106.isScanned = false;
               }
             }); // const obj = {
             //   fileUrl: `${API_URL}/rest/upload/downloadDocs/?fileName=face_biometric.jpg`
@@ -33395,7 +33624,7 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId) {
-            var _this106 = this;
+            var _this107 = this;
 
             cId = this.customerId;
             console.log('save biometric');
@@ -33404,21 +33633,21 @@
               console.log("after save ", data);
 
               if (data) {
-                _this106.isScanned = true;
+                _this107.isScanned = true;
 
-                _this106.ls.setItem('imageURLFace', data.fileUrl); // this.cdr.markForCheck();
+                _this107.ls.setItem('imageURLFace', data.fileUrl); // this.cdr.markForCheck();
 
 
-                _this106.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
+                _this107.snack.open('Captured ' + fingerName + ' Finger', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
               } else {
-                _this106.isFaliure = true;
+                _this107.isFaliure = true;
               }
             }, function (err) {
-              return _this106.isFaliure = true;
+              return _this107.isFaliure = true;
             });
           }
         }, {
@@ -33718,7 +33947,7 @@
         _createClass(AdmissionDetailsViewComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this107 = this;
+            var _this108 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -33729,18 +33958,18 @@
             }
 
             setTimeout(function () {
-              _this107.loadData(_this107.admissionInfo);
+              _this108.loadData(_this108.admissionInfo);
             }, 10);
           }
         }, {
           key: "loadData",
           value: function loadData(admissionInfo) {
-            var _this108 = this;
+            var _this109 = this;
 
             if (admissionInfo == null) {
               this.appEntrySummaryView = false;
               this.apiService.getAdmissionDetailsByLoanAccId(this.loanaccountID).subscribe(function (addmissionDetails) {
-                _this108.addmissionDetailsResp = addmissionDetails;
+                _this109.addmissionDetailsResp = addmissionDetails;
               });
             } else {
               if (admissionInfo.isAppEntryView) {
@@ -34706,11 +34935,11 @@
         _createClass(CardCustomerInfoSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this109 = this;
+            var _this110 = this;
 
             this.api.getAppViewSummary().subscribe(function (resp) {
               console.log("message", resp);
-              _this109.isApprovedSreen = resp;
+              _this110.isApprovedSreen = resp;
             });
             this.cardId = this.ls.getItem('cardId');
             console.log(" this.cardId", this.cardId);
@@ -34738,20 +34967,20 @@
         }, {
           key: "getCustomerInfoDetails",
           value: function getCustomerInfoDetails() {
-            var _this110 = this;
+            var _this111 = this;
 
             // this.loader.open();
             this.appApiService.fetchCardCustomersByCardId(this.cardId, 'cardOrigin').subscribe(function (customerInfoDetails) {
               if (customerInfoDetails.data) {
                 //   this.loader.close();
-                _this110.customerInfoDetails = customerInfoDetails.data;
-                _this110.ownership = _this110.customerInfoDetails[0].ownership;
-                _this110.noOfApplicants = _this110.customerInfoDetails[0].numOfApplicants;
-                _this110.ownership = _this110.ls.getItem("cardownership_value");
-                _this110.noOfApplicants = _this110.ls.getItem("CardNoOfApplicants");
+                _this111.customerInfoDetails = customerInfoDetails.data;
+                _this111.ownership = _this111.customerInfoDetails[0].ownership;
+                _this111.noOfApplicants = _this111.customerInfoDetails[0].numOfApplicants;
+                _this111.ownership = _this111.ls.getItem("cardownership_value");
+                _this111.noOfApplicants = _this111.ls.getItem("CardNoOfApplicants");
               }
             }, function (err) {
-              _this110.loader.close();
+              _this111.loader.close();
             });
           }
         }, {
@@ -35636,6 +35865,12 @@
       var app_views_card_account_supervisor_approval_stage_approval_details_card_approval_view_summary_card_approval_view_summary_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(
       /*! app/views/card-account/supervisor-approval-stage/approval-details/card-approval-view-summary/card-approval-view-summary.component */
       "97QS");
+      /* harmony import */
+
+
+      var app_views_card_account_digital_signing_card_signlater_popup_card_signlater_popup_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(
+      /*! app/views/card-account/digital-signing/card-signlater-popup/card-signlater-popup.component */
+      "Z5R8");
 
       var DialogService = /*#__PURE__*/function () {
         function DialogService(dialog, apiService, _document) {
@@ -35974,6 +36209,17 @@
           key: "alertForLoanSignLater",
           value: function alertForLoanSignLater() {
             var dialogRef = this.dialog.open(app_views_loan_account_digital_signing_sign_later_loan_sign_later_loan_component__WEBPACK_IMPORTED_MODULE_54__["SignLaterLoanComponent"], {
+              width: '50%',
+              height: '60%',
+              backdropClass: 'dialog-bg-trans',
+              disableClose: true
+            });
+            return dialogRef.afterClosed();
+          }
+        }, {
+          key: "alertForcardSignLater",
+          value: function alertForcardSignLater() {
+            var dialogRef = this.dialog.open(app_views_card_account_digital_signing_card_signlater_popup_card_signlater_popup_component__WEBPACK_IMPORTED_MODULE_57__["CardSignlaterPopupComponent"], {
               width: '50%',
               height: '60%',
               backdropClass: 'dialog-bg-trans',
@@ -37518,11 +37764,11 @@
         }, {
           key: "gettingallnomineeDetail",
           value: function gettingallnomineeDetail(accountId) {
-            var _this111 = this;
+            var _this112 = this;
 
             this.apiService.gettingNomineeDetails(this.productAccountId).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp, allTransactionResp.nominees[0].isNomineeMinor);
-              _this111.allNominee = allTransactionResp.nominees;
+              _this112.allNominee = allTransactionResp.nominees;
             });
           }
         }, {
@@ -37735,13 +37981,13 @@
         }, {
           key: "fetchingEmailData",
           value: function fetchingEmailData() {
-            var _this112 = this;
+            var _this113 = this;
 
             this.cifNumber = this.ls.getItem('cId');
             this.appApiService.fetchByCif(this.cifNumber).subscribe(function (res) {
               console.log(res);
               console.log(res.customerInfoList[0].primaryEmailAdress);
-              _this112.email = res.customerInfoList[0].primaryEmailAdress;
+              _this113.email = res.customerInfoList[0].primaryEmailAdress;
             }, function (err) {
               console.error(err);
             });
@@ -38306,7 +38552,7 @@
         }, {
           key: "getCustomerInformationDetails",
           value: function getCustomerInformationDetails() {
-            var _this113 = this;
+            var _this114 = this;
 
             var accountType = 'savings';
             this.loader.open();
@@ -38316,16 +38562,16 @@
             }
 
             this.apiService.fetchAccountDependentInfo(this.productAccountIdCust, this.productAccountType).subscribe(function (allCustomernResp) {
-              _this113.loader.close();
+              _this114.loader.close();
 
-              _this113.customerSummary = allCustomernResp.data;
-              _this113.customerId = allCustomernResp.data[0].customerId;
-              _this113.Custownership = allCustomernResp.data[0].ownership;
-              _this113.CustnumOfApplicants = allCustomernResp.data[0].numOfApplicants;
-              _this113.customerDetails = allCustomernResp.data;
+              _this114.customerSummary = allCustomernResp.data;
+              _this114.customerId = allCustomernResp.data[0].customerId;
+              _this114.Custownership = allCustomernResp.data[0].ownership;
+              _this114.CustnumOfApplicants = allCustomernResp.data[0].numOfApplicants;
+              _this114.customerDetails = allCustomernResp.data;
 
-              for (var i = 0; i < _this113.customerDetails.length; i++) {
-                var userAddress = _this113.customerDetails[i].userAddress;
+              for (var i = 0; i < _this114.customerDetails.length; i++) {
+                var userAddress = _this114.customerDetails[i].userAddress;
                 var pickOneAddress = void 0;
                 var Address = "";
 
@@ -38338,10 +38584,10 @@
                 }
 
                 Address = pickOneAddress.city + "," + pickOneAddress.state + "," + pickOneAddress.zipCode + "," + pickOneAddress.country;
-                _this113.customerDetails[i].userAddress = Address;
+                _this114.customerDetails[i].userAddress = Address;
               }
             }, function (err) {
-              _this113.loader.close();
+              _this114.loader.close();
             });
           }
         }, {
@@ -38784,13 +39030,13 @@
         _createClass(CardAccountSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this114 = this;
+            var _this115 = this;
 
             this.cardId = this.localstore.getItem('cardId');
             console.log("Account ID from Local Storage", this.productAccountId);
             this.apiService.getAppViewSummary().subscribe(function (resp) {
               console.log("message", resp);
-              _this114.isApprovedSreen = resp;
+              _this115.isApprovedSreen = resp;
             });
             this.gettingallAccountService();
             this.loadData(this.accountServiceInfo);
@@ -38846,33 +39092,33 @@
         }, {
           key: "gettingallAccountService",
           value: function gettingallAccountService() {
-            var _this115 = this;
+            var _this116 = this;
 
             this.apiService.gettingCardAccountServiceDetails(this.cardId).subscribe(function (allAccountServiceResp) {
               console.log("All Account Service", allAccountServiceResp);
-              _this115.accountServiceInfo = allAccountServiceResp.data;
-              _this115.accountStatement = allAccountServiceResp.statementFrequency;
-              _this115.statementPreferenceFetched = allAccountServiceResp.statementPref;
+              _this116.accountServiceInfo = allAccountServiceResp.data;
+              _this116.accountStatement = allAccountServiceResp.statementFrequency;
+              _this116.statementPreferenceFetched = allAccountServiceResp.statementPref;
 
-              for (var index = 0; index < _this115.statementPreferenceFetched.length; index++) {
-                var element = _this115.statementPreferenceFetched[index];
+              for (var index = 0; index < _this116.statementPreferenceFetched.length; index++) {
+                var element = _this116.statementPreferenceFetched[index];
 
                 if (element.checked) {
-                  !_this115.statementPreference.includes(element.name) && _this115.statementPreference.push(element.name);
+                  !_this116.statementPreference.includes(element.name) && _this116.statementPreference.push(element.name);
                 }
               }
 
-              _this115.commChannelFetched = allAccountServiceResp.commChannelPref;
+              _this116.commChannelFetched = allAccountServiceResp.commChannelPref;
 
-              for (var _index2 = 0; _index2 < _this115.commChannelFetched.length; _index2++) {
-                var _element2 = _this115.commChannelFetched[_index2];
+              for (var _index2 = 0; _index2 < _this116.commChannelFetched.length; _index2++) {
+                var _element2 = _this116.commChannelFetched[_index2];
 
                 if (_element2.checked) {
-                  !_this115.commChannel.includes(_element2.name) && _this115.commChannel.push(_element2.name);
+                  !_this116.commChannel.includes(_element2.name) && _this116.commChannel.push(_element2.name);
                 }
               }
 
-              _this115.summaryResponse = allAccountServiceResp;
+              _this116.summaryResponse = allAccountServiceResp;
             });
           }
         }, {
@@ -39437,9 +39683,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PhonenumberDetailsPopupComponent_mat_card_10_Template_button_click_51_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
 
+            var customer_r7 = ctx.$implicit;
+
             var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r14.Continue();
+            return ctx_r14.Continue("accept", customer_r7);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "Accept");
@@ -39547,9 +39795,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PhonenumberDetailsPopupComponent_mat_card_10_Template_button_click_77_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
 
+            var customer_r7 = ctx.$implicit;
+
             var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r18.Continue();
+            return ctx_r18.Continue("submit", customer_r7);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, "Submit");
@@ -39565,9 +39815,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PhonenumberDetailsPopupComponent_mat_card_10_Template_button_click_80_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
 
+            var customer_r7 = ctx.$implicit;
+
             var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r19.Continue();
+            return ctx_r19.Continue("cancel", customer_r7);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "back");
@@ -39670,8 +39922,28 @@
           }
         }, {
           key: "Continue",
-          value: function Continue() {
-            this.dialogRef.close("Yes");
+          value: function Continue(action, customer) {
+            var _a, _b;
+
+            var payload = {
+              phoneNumber: customer.phoneNumber,
+              primaryEmailAdress: customer.primaryEmailAdress,
+              address: ((_a = customer.userAddress[0]) === null || _a === void 0 ? void 0 : _a.address1) + ((_b = customer.userAddress[0]) === null || _b === void 0 ? void 0 : _b.address2),
+              relationship: customer.relationshipType,
+              remarks: customer.remark,
+              isReKyc: action == 'accept' ? 'false' : 'true'
+            };
+
+            if (action == 'accept' || action == 'submit') {
+              this.apiService.updateKyc(payload).subscribe(function (resp) {
+                console.log("resp=------>", resp);
+              });
+            }
+
+            this.dialogRef.close({
+              customerId: customer.customerId,
+              isDialogClose: true
+            });
           }
         }, {
           key: "Cancel",
@@ -39699,16 +39971,16 @@
         }, {
           key: "getRelationShipType",
           value: function getRelationShipType(key) {
-            var _this116 = this;
+            var _this117 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this116.arrayRelationshipType = data; // console.log("-->", this.arrayCountry)
+              _this117.arrayRelationshipType = data; // console.log("-->", this.arrayCountry)
             });
           }
         }, {
           key: "Rekyc",
           value: function Rekyc() {
-            var _this117 = this;
+            var _this118 = this;
 
             var dialogRef = this.dialog.open(_kyc_screening_kyc_screening_newcustomer_kyc_screening_newcustomer_component__WEBPACK_IMPORTED_MODULE_3__["KycScreeningNewcustomerComponent"], {
               data: {
@@ -39721,7 +39993,7 @@
             });
             dialogRef.afterClosed().subscribe(function (res) {
               if (res != 'skip') {
-                var verficationDialog = _this117.dialog.open(_verification_completed_verification_completed_component__WEBPACK_IMPORTED_MODULE_4__["VerificationCompletedComponent"], {
+                var verficationDialog = _this118.dialog.open(_verification_completed_verification_completed_component__WEBPACK_IMPORTED_MODULE_4__["VerificationCompletedComponent"], {
                   data: {
                     rekyc: false,
                     popupClose: true
@@ -39731,10 +40003,10 @@
                 });
 
                 verficationDialog.afterClosed().subscribe(function (done) {
-                  _this117.dialogRef.close("Yes");
+                  _this118.dialogRef.close("Yes");
                 });
               } else {
-                _this117.dialogRef.close("Yes");
+                _this118.dialogRef.close("Yes");
               }
             });
           }
@@ -40097,46 +40369,46 @@
         }, {
           key: "gettingallAccountService",
           value: function gettingallAccountService(productAccountId) {
-            var _this118 = this;
+            var _this119 = this;
 
             this.apiService.gettingAccountServiceDetails(this.productAccountId).subscribe(function (allAccountServiceResp) {
               console.log("All Account Service", allAccountServiceResp);
-              _this118.accountStatement = allAccountServiceResp.statementFrequency;
-              _this118.checkBook = allAccountServiceResp.chequebookNeeded;
-              _this118.bankChannel = allAccountServiceResp.bankChannelPref;
-              _this118.debitCardType = allAccountServiceResp.debitCardType;
+              _this119.accountStatement = allAccountServiceResp.statementFrequency;
+              _this119.checkBook = allAccountServiceResp.chequebookNeeded;
+              _this119.bankChannel = allAccountServiceResp.bankChannelPref;
+              _this119.debitCardType = allAccountServiceResp.debitCardType;
 
-              for (var index = 0; index < _this118.bankChannel.length; index++) {
-                var element = _this118.bankChannel[index];
+              for (var index = 0; index < _this119.bankChannel.length; index++) {
+                var element = _this119.bankChannel[index];
 
                 if (element.checked) {
-                  _this118.bankPreference.push(element.name);
+                  _this119.bankPreference.push(element.name);
                 }
               }
 
-              _this118.passBook = allAccountServiceResp.passbookNeeded;
-              _this118.debitCardRequired = allAccountServiceResp.debitCardRequired;
-              _this118.statementPreferenceFetched = allAccountServiceResp.statementPref;
+              _this119.passBook = allAccountServiceResp.passbookNeeded;
+              _this119.debitCardRequired = allAccountServiceResp.debitCardRequired;
+              _this119.statementPreferenceFetched = allAccountServiceResp.statementPref;
 
-              for (var _index3 = 0; _index3 < _this118.statementPreferenceFetched.length; _index3++) {
-                var _element3 = _this118.statementPreferenceFetched[_index3];
+              for (var _index3 = 0; _index3 < _this119.statementPreferenceFetched.length; _index3++) {
+                var _element3 = _this119.statementPreferenceFetched[_index3];
 
                 if (_element3.checked) {
-                  _this118.statementPreference.push(_element3.name);
+                  _this119.statementPreference.push(_element3.name);
                 }
               }
 
-              _this118.commChannelFetched = allAccountServiceResp.commChannelPref;
+              _this119.commChannelFetched = allAccountServiceResp.commChannelPref;
 
-              for (var _index4 = 0; _index4 < _this118.commChannelFetched.length; _index4++) {
-                var _element4 = _this118.commChannelFetched[_index4];
+              for (var _index4 = 0; _index4 < _this119.commChannelFetched.length; _index4++) {
+                var _element4 = _this119.commChannelFetched[_index4];
 
                 if (_element4.checked) {
-                  _this118.commChannel.push(_element4.name);
+                  _this119.commChannel.push(_element4.name);
                 }
               }
 
-              _this118.summaryResponse = allAccountServiceResp;
+              _this119.summaryResponse = allAccountServiceResp;
             });
           }
         }, {
@@ -40570,7 +40842,7 @@
         _createClass(OfferIssueSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this119 = this;
+            var _this120 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -40580,7 +40852,7 @@
             }
 
             setTimeout(function () {
-              _this119.getAccountDetails();
+              _this120.getAccountDetails();
             }, 10);
           }
         }, {
@@ -40599,12 +40871,12 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this120 = this;
+            var _this121 = this;
 
             this.apiService.getOfferIssueDetails(this.loanaccountID).subscribe(function (offerissuedetail) {
               console.log("All Account Service", offerissuedetail);
-              _this120.offerissuedetail = offerissuedetail;
-              console.log("this.offerissuedetail", _this120.offerissuedetail);
+              _this121.offerissuedetail = offerissuedetail;
+              console.log("this.offerissuedetail", _this121.offerissuedetail);
             });
           }
         }]);
@@ -41549,7 +41821,7 @@
 
       var ApplicationEntryStageService = /*#__PURE__*/function () {
         function ApplicationEntryStageService(http, showMessageService) {
-          var _this121 = this;
+          var _this122 = this;
 
           _classCallCheck(this, ApplicationEntryStageService);
 
@@ -41560,7 +41832,7 @@
             console.error('Error : ' + errorResp.message);
             console.error('status : ' + errorResp.status);
 
-            _this121.showMessageService.errorMessage(errorResp.status, errorResp);
+            _this122.showMessageService.errorMessage(errorResp.status, errorResp);
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(errorResp);
           };
@@ -42186,13 +42458,13 @@
         }, {
           key: "saveBiometric",
           value: function saveBiometric(capFingerPrint, fingerName, cId, screen) {
-            var _this122 = this;
+            var _this123 = this;
 
             this.CallingSGIFPCapture().subscribe(function (data) {
               capFingerPrint.BMPBase64 = data.BMPBase64;
               console.log("base64 is " + capFingerPrint.BMPBase64);
 
-              _this122.uploadBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (resp) {
+              _this123.uploadBiometric(capFingerPrint, fingerName, cId, screen).subscribe(function (resp) {
                 console.log('upload biometric resp:: ', resp);
                 return resp;
               });
@@ -42630,7 +42902,7 @@
         _createClass(ReportDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this123 = this;
+            var _this124 = this;
 
             this.accountId = this.ls.getItem('accountId');
             this.accountInfo = this.ls.getItem('EDIT-CREATEACCCIF');
@@ -42641,19 +42913,19 @@
 
             console.log(this.accountId, "AccountId");
             setTimeout(function () {
-              _this123.getAllData(_this123.accountId);
+              _this124.getAllData(_this124.accountId);
             }, 1);
           }
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this124 = this;
+            var _this125 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getQualitativeScorecardDetails(id).subscribe(function (response) {
-              _this124.qualitativeScoreboardSummary = response;
-              console.log(_this124.qualitativeScoreboardSummary);
-              console.log(_this124.qualitativeScoreboardSummary.scoreCardMapping);
+              _this125.qualitativeScoreboardSummary = response;
+              console.log(_this125.qualitativeScoreboardSummary);
+              console.log(_this125.qualitativeScoreboardSummary.scoreCardMapping);
             });
           }
         }, {
@@ -42985,7 +43257,7 @@
         _createClass(LoanQualitativeScoreboardDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this125 = this;
+            var _this126 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -42997,19 +43269,19 @@
 
             console.log("LOAN ACCOUNT ID:: ", this.loanaccountID);
             setTimeout(function () {
-              _this125.getAllData(_this125.loanaccountID);
+              _this126.getAllData(_this126.loanaccountID);
             }, 10);
           }
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this126 = this;
+            var _this127 = this;
 
             // id == '' || id == null ? id = 1234 : id;
             this.apiService.getLoanQualitativeScorecardDetails(this.loanaccountID).subscribe(function (response) {
-              _this126.qualitativeScoreboardSummary = response;
-              console.log(_this126.qualitativeScoreboardSummary);
-              console.log(_this126.qualitativeScoreboardSummary.scoreCardMapping);
+              _this127.qualitativeScoreboardSummary = response;
+              console.log(_this127.qualitativeScoreboardSummary);
+              console.log(_this127.qualitativeScoreboardSummary.scoreCardMapping);
             });
           }
         }, {
@@ -43651,37 +43923,37 @@
         }, {
           key: "getPrefix",
           value: function getPrefix() {
-            var _this127 = this;
+            var _this128 = this;
 
             this.apiService.getDropDownValues('prefix').subscribe(function (resp) {
-              _this127.prefixes = resp;
+              _this128.prefixes = resp;
             });
           }
         }, {
           key: "getGender",
           value: function getGender() {
-            var _this128 = this;
+            var _this129 = this;
 
             this.apiService.getDropDownValues('gender').subscribe(function (resp) {
-              _this128.genders = resp;
+              _this129.genders = resp;
             });
           }
         }, {
           key: "getNationality",
           value: function getNationality() {
-            var _this129 = this;
+            var _this130 = this;
 
             this.apiService.getDropDownValues('nationality').subscribe(function (resp) {
-              _this129.nationality = resp;
+              _this130.nationality = resp;
             });
           }
         }, {
           key: "getMaritalStatus",
           value: function getMaritalStatus() {
-            var _this130 = this;
+            var _this131 = this;
 
             this.apiService.getDropDownValues('maritial_Status').subscribe(function (resp) {
-              _this130.MaritalStatus = resp;
+              _this131.MaritalStatus = resp;
             });
           }
         }, {
@@ -43719,7 +43991,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this131 = this;
+            var _this132 = this;
 
             if (this.basicInfoUpdateForm.invalid) {
               return;
@@ -43727,15 +43999,15 @@
 
             this.basicInfoUpdateForm.value.dateOfBirth = new _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"]('en-US').transform(this.basicInfoUpdateForm.value.dateOfBirth, 'yyyy-MMM-dd');
             this.apiService.kycScreenBasicinfo(this.basicInfoUpdateForm.value).subscribe(function (resp) {
-              _this131.snack.open("Basic Information Details Updated!", "OK", {
+              _this132.snack.open("Basic Information Details Updated!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this131.dialogRef.close({
+              _this132.dialogRef.close({
                 status: "INITIATED",
-                resp: _this131.basicInfoUpdateForm.value
+                resp: _this132.basicInfoUpdateForm.value
               });
             }), function (err) {
               console.log("error", err);
@@ -44298,7 +44570,7 @@
         _createClass(OfferAcceptRejectSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this132 = this;
+            var _this133 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -44309,7 +44581,7 @@
             }
 
             setTimeout(function () {
-              _this132.getOfferAcceptReject();
+              _this133.getOfferAcceptReject();
             }, 10);
           }
         }, {
@@ -44326,11 +44598,11 @@
         }, {
           key: "getOfferAcceptReject",
           value: function getOfferAcceptReject() {
-            var _this133 = this;
+            var _this134 = this;
 
             this.api.getOfferAcceptReject('200').subscribe(function (offerAcceptReject) {
               console.log(offerAcceptReject);
-              _this133.offerAcceptRejectvalue = offerAcceptReject;
+              _this134.offerAcceptRejectvalue = offerAcceptReject;
             });
           }
         }]);
@@ -45261,11 +45533,11 @@
         }, {
           key: "getApprovalDetails",
           value: function getApprovalDetails() {
-            var _this134 = this;
+            var _this135 = this;
 
             this.apiService.getApprovalDetails(this.cardId).subscribe(function (resp) {
               console.log("data", resp);
-              _this134.approvalDetails = resp;
+              _this135.approvalDetails = resp;
             });
           }
         }, {
@@ -45703,7 +45975,7 @@
         _createClass(AcceptOfferIssueSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this135 = this;
+            var _this136 = this;
 
             this.loanInfo = this.localstore.getItem('LOAN_ACC_ARRAY');
             console.log(this.loanInfo);
@@ -45713,7 +45985,7 @@
             }
 
             setTimeout(function () {
-              _this135.getAccountDetails();
+              _this136.getAccountDetails();
             }, 10);
           }
         }, {
@@ -45732,12 +46004,12 @@
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this136 = this;
+            var _this137 = this;
 
             this.apiService.getOfferIssueDetails(this.loanaccountID ? this.loanaccountID : 44444).subscribe(function (accountDetails) {
               console.log("All Account Service", accountDetails);
-              _this136.accountDetails = accountDetails;
-              console.log("this.offerissuedetail", _this136.offerissuedetail);
+              _this137.accountDetails = accountDetails;
+              console.log("this.offerissuedetail", _this137.offerissuedetail);
             });
           }
         }]);
@@ -46339,7 +46611,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this137 = this;
+            var _this138 = this;
 
             this.popupClose = this.data.popupClose;
             this.rekyc = this.data.rekyc;
@@ -46351,15 +46623,15 @@
               this.customerStatus = sessionStorage.getItem('cust_status');
               console.log(this.customerStatus);
               this.api.getId().subscribe(function (info) {
-                console.log("info from other component", _this137.customerId);
+                console.log("info from other component", _this138.customerId);
 
-                _this137.assign(info.id);
+                _this138.assign(info.id);
               }); //   setTimeout(() => {
               //     document.getElementById('kychide').click();
               //    }, 500);
 
               setTimeout(function () {
-                _this137.updateKycStatus();
+                _this138.updateKycStatus();
               }, 3000);
             }
           }
@@ -46399,7 +46671,7 @@
         }, {
           key: "updateKycStatus",
           value: function updateKycStatus() {
-            var _this138 = this;
+            var _this139 = this;
 
             console.log('customerId :: ', this.customer_Id);
             console.log(this.customerStatus);
@@ -46411,7 +46683,7 @@
             }
 
             this.api.updateKycStatusByCustId(this.customer_Id, this.customerStatus, "").subscribe(function (data) {
-              _this138.kycData = data;
+              _this139.kycData = data;
               console.log('update response :: ', data);
             });
           }
@@ -46794,7 +47066,7 @@
         _createClass(AssetDetailsSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this139 = this;
+            var _this140 = this;
 
             console.log('assetInfo :: ', this.assetInfo);
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -46807,7 +47079,7 @@
 
             console.log("this.productaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this139.loadData(_this139.assetInfo);
+              _this140.loadData(_this140.assetInfo);
             }, 10);
           }
         }, {
@@ -46826,13 +47098,13 @@
         }, {
           key: "getAssetDetails",
           value: function getAssetDetails() {
-            var _this140 = this;
+            var _this141 = this;
 
             //this.apiService.getAssetValuation(this.loanAccountId).subscribe((accountDetails : any) => {
             this.apiService.getAssetails(this.loanaccountID).subscribe(function (assetDetails) {
               console.log("All Account Service", assetDetails);
-              _this140.assetDetails = assetDetails;
-              console.log("this.assetDetails", _this140.assetDetails);
+              _this141.assetDetails = assetDetails;
+              console.log("this.assetDetails", _this141.assetDetails);
             });
           }
         }, {
@@ -49693,12 +49965,12 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this141 = this;
+            var _this142 = this;
 
             this.customerId = localStorage.getItem('customerId');
             this.kycStatus = localStorage.getItem('kycStatus');
             setTimeout(function () {
-              _this141.goToKycSummary();
+              _this142.goToKycSummary();
             }, 500); // let kyc = new KycTaskSummaryComponent();
           } // getKycTaskSummary(customerId){
           //   this.apiService.getKycTaskSummary(this.customerId).subscribe((response) => {
@@ -49713,7 +49985,7 @@
         }, {
           key: "goToKycSummary",
           value: function goToKycSummary() {
-            var _this142 = this;
+            var _this143 = this;
 
             this.loading = true;
             this.customerColorCode = localStorage.getItem('CustomerColorCode');
@@ -49721,63 +49993,63 @@
             this.apiService.getKycTaskSummary(this.customerId).subscribe(function (response) {
               console.log(response);
 
-              _this142.cdr.markForCheck();
+              _this143.cdr.markForCheck();
 
-              _this142.cdr.detectChanges();
+              _this143.cdr.detectChanges();
 
-              _this142.loading = false;
-              _this142.customerDetails = response;
-              _this142.customerCif = _this142.customerDetails[0].cifNumber;
-              _this142.custMobile = _this142.customerDetails[0].phoneNumber;
-              _this142.emailAddress = _this142.customerDetails[0].primaryEmailAdress;
-              console.log("Summry", _this142.customerDetails);
-              _this142.firstName = _this142.customerDetails[0].firstName;
-              _this142.phoneNum = _this142.customerDetails[0].phoneNumber;
-              _this142.email = _this142.customerDetails[0].primaryEmailAdress;
-              console.log("Summry", _this142.phoneNum);
-              console.log("Summry", _this142.email); // console.log(this.customerDetails,"customerDetails")
+              _this143.loading = false;
+              _this143.customerDetails = response;
+              _this143.customerCif = _this143.customerDetails[0].cifNumber;
+              _this143.custMobile = _this143.customerDetails[0].phoneNumber;
+              _this143.emailAddress = _this143.customerDetails[0].primaryEmailAdress;
+              console.log("Summry", _this143.customerDetails);
+              _this143.firstName = _this143.customerDetails[0].firstName;
+              _this143.phoneNum = _this143.customerDetails[0].phoneNumber;
+              _this143.email = _this143.customerDetails[0].primaryEmailAdress;
+              console.log("Summry", _this143.phoneNum);
+              console.log("Summry", _this143.email); // console.log(this.customerDetails,"customerDetails")
               // console.log(this.customerDetails[0].customerAdditionalInfo.kycStatus);
 
-              _this142.kycStatusVal = _this142.customerDetails[0].customerAdditionalInfo.kycStatus;
+              _this143.kycStatusVal = _this143.customerDetails[0].customerAdditionalInfo.kycStatus;
 
-              if (_this142.customerDetails[0].customerAdditionalInfo.kycStatus === 'REJECTED') {
-                _this142.rejectedStatus = true;
-                _this142.approvedStatus = true;
-                _this142.editScreen = false;
-                _this142.continueStatus = true;
-              } else if (_this142.customerDetails[0].customerAdditionalInfo.kycStatus === 'INITIATED') {
-                _this142.rejectedStatus = false;
-                _this142.approvedStatus = false;
-                _this142.editScreen = false;
-                _this142.continueStatus = true;
-              } else if (_this142.customerDetails[0].customerAdditionalInfo.kycStatus === 'APPROVED') {
-                _this142.rejectedStatus = true;
-                _this142.approvedStatus = true;
-                _this142.editScreen = true;
-                _this142.continueStatus = true;
-              } else if (_this142.customerDetails[0].customerAdditionalInfo.kycStatus === 'UNDER_PROCESS') {
-                _this142.rejectedStatus = false;
-                _this142.approvedStatus = true;
-                _this142.editScreen = false;
-                _this142.continueStatus = false;
+              if (_this143.customerDetails[0].customerAdditionalInfo.kycStatus === 'REJECTED') {
+                _this143.rejectedStatus = true;
+                _this143.approvedStatus = true;
+                _this143.editScreen = false;
+                _this143.continueStatus = true;
+              } else if (_this143.customerDetails[0].customerAdditionalInfo.kycStatus === 'INITIATED') {
+                _this143.rejectedStatus = false;
+                _this143.approvedStatus = false;
+                _this143.editScreen = false;
+                _this143.continueStatus = true;
+              } else if (_this143.customerDetails[0].customerAdditionalInfo.kycStatus === 'APPROVED') {
+                _this143.rejectedStatus = true;
+                _this143.approvedStatus = true;
+                _this143.editScreen = true;
+                _this143.continueStatus = true;
+              } else if (_this143.customerDetails[0].customerAdditionalInfo.kycStatus === 'UNDER_PROCESS') {
+                _this143.rejectedStatus = false;
+                _this143.approvedStatus = true;
+                _this143.editScreen = false;
+                _this143.continueStatus = false;
               }
 
-              localStorage.setItem('kycStatus', _this142.customerDetails[0].customerAdditionalInfo.kycStatus);
+              localStorage.setItem('kycStatus', _this143.customerDetails[0].customerAdditionalInfo.kycStatus);
 
-              _this142.getProfileImage(_this142.customerId);
+              _this143.getProfileImage(_this143.customerId);
 
-              _this142.getAdditionalDocumentsDetails(_this142.customerId);
+              _this143.getAdditionalDocumentsDetails(_this143.customerId);
 
-              _this142.getCustomerDocumentsDetails(_this142.customerId);
+              _this143.getCustomerDocumentsDetails(_this143.customerId);
 
-              _this142.getBiometricDetails(_this142.customerId); // this.phoneNum= 9876789876;
+              _this143.getBiometricDetails(_this143.customerId); // this.phoneNum= 9876789876;
               // this.email="test@gmail.com";
 
 
-              _this142.email = _this142.customerDetails[0].primaryEmailAdress;
-              console.log(_this142.customerDetails[0].phoneNumber);
+              _this143.email = _this143.customerDetails[0].primaryEmailAdress;
+              console.log(_this143.customerDetails[0].phoneNumber);
 
-              _this142.getVideoVerification(_this142.phoneNum, _this142.email);
+              _this143.getVideoVerification(_this143.phoneNum, _this143.email);
             }); // console.log(this.customerDetails,"customerDetails")
           }
         }, {
@@ -49807,24 +50079,24 @@
         }, {
           key: "getVideoVerification",
           value: function getVideoVerification(phoneNum, email) {
-            var _this143 = this;
+            var _this144 = this;
 
             console.log(this.email + this.phoneNum);
             this.apiService.getVideoTaskSummary(phoneNum, email).subscribe(function (response) {
               console.log("Vdio summry", response); // this.disableVideo = false;
 
               if (response && response.length > 0) {
-                _this143.videoVerificationDetails = response;
+                _this144.videoVerificationDetails = response;
               }
 
-              _this143.cdr.detectChanges(); // console.log(this.videoVerificationDetails,"customerDetails")
+              _this144.cdr.detectChanges(); // console.log(this.videoVerificationDetails,"customerDetails")
 
             });
           }
         }, {
           key: "approveDetails",
           value: function approveDetails(stat) {
-            var _this144 = this;
+            var _this145 = this;
 
             // updateApplicationStatus(formData, stat){
             this.kycStatus = localStorage.getItem('kycStatus'); // this.customerId = localStorage.getItem('CustomerId');
@@ -49853,13 +50125,13 @@
               console.log(response);
 
               if (response) {
-                _this144.close();
+                _this145.close();
 
-                _this144.cdr.markForCheck();
+                _this145.cdr.markForCheck();
 
-                _this144.cdr.detectChanges();
+                _this145.cdr.detectChanges();
 
-                _this144.snack.open("Successfully ".concat(kycStat, "!"), 'OK', {
+                _this145.snack.open("Successfully ".concat(kycStat, "!"), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -49867,9 +50139,9 @@
               }
             }, function (error) {
               console.log('error resp :: ', error);
-              _this144.errorStatus = kycStat;
+              _this145.errorStatus = kycStat;
 
-              _this144.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this145.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -49887,21 +50159,21 @@
         }, {
           key: "getAdditionalDocumentsDetails",
           value: function getAdditionalDocumentsDetails(customerId) {
-            var _this145 = this;
+            var _this146 = this;
 
             this.document_type = "2";
             this.apiService.getCustomerDocuments(customerId, this.document_type).subscribe(function (result) {
               console.log("result additional::", result);
 
               if (result != null) {
-                _this145.custOtherDoc_array = result;
+                _this146.custOtherDoc_array = result;
               }
             });
           }
         }, {
           key: "getBiometricDetails",
           value: function getBiometricDetails(customerId) {
-            var _this146 = this;
+            var _this147 = this;
 
             var arr = ["4", "5", "11", "12"];
 
@@ -49935,9 +50207,9 @@
 
                     };
 
-                    _this146.custBiometric.push(obj);
+                    _this147.custBiometric.push(obj);
 
-                    console.log('bio info :: ', _this146.custBiometric);
+                    console.log('bio info :: ', _this147.custBiometric);
                   }
                 });
               }
@@ -49946,7 +50218,7 @@
         }, {
           key: "getCustomerDocumentsDetails",
           value: function getCustomerDocumentsDetails(customerId) {
-            var _this147 = this;
+            var _this148 = this;
 
             // this.document_type = "3";
             var arr = ["2", "3", "6", "7", "8"];
@@ -49956,9 +50228,9 @@
                 var element = arr[key];
                 this.apiService.getCustomerDocuments(customerId, element).subscribe(function (result) {
                   if (result) {
-                    _this147.custOtherDoc_array.push(result);
+                    _this148.custOtherDoc_array.push(result);
 
-                    console.log("uploaded doc::", _this147.custOtherDoc_array);
+                    console.log("uploaded doc::", _this148.custOtherDoc_array);
                   } //if endng
 
                 });
@@ -49974,13 +50246,13 @@
         }, {
           key: "getProfileImage",
           value: function getProfileImage(customerId) {
-            var _this148 = this;
+            var _this149 = this;
 
             this.apiService.getProfileDetails(customerId).subscribe(function (data) {
               if (data.profileImage != null) {
-                _this148.imageUrl = data.profileImage;
+                _this149.imageUrl = data.profileImage;
                 var objectURL = data.profileImage.fileUrl;
-                _this148.image = _this148.sanitizer.bypassSecurityTrustUrl(objectURL);
+                _this149.image = _this149.sanitizer.bypassSecurityTrustUrl(objectURL);
               }
             }, function (error) {
               console.log(error);
@@ -49996,7 +50268,7 @@
         }, {
           key: "updateStatusOnEdit",
           value: function updateStatusOnEdit(status) {
-            var _this149 = this;
+            var _this150 = this;
 
             var jsonObject = {
               customerId: this.customerId,
@@ -50005,16 +50277,16 @@
             };
             this.apiService.updateKycStatus(jsonObject).subscribe(function (response) {
               if (response) {
-                _this149.snack.open("Successfully ".concat(status, "!"), 'OK', {
+                _this150.snack.open("Successfully ".concat(status, "!"), 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
               }
             }, function (error) {
-              _this149.errorStatus = status;
+              _this150.errorStatus = status;
 
-              _this149.snack.open("".concat(error.error.message, " "), 'OK', {
+              _this150.snack.open("".concat(error.error.message, " "), 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -50024,7 +50296,7 @@
         }, {
           key: "openEditScreen",
           value: function openEditScreen(screen, data) {
-            var _this150 = this;
+            var _this151 = this;
 
             this.kycStatus = "UNDER_PROCESS";
             this.updateStatusOnEdit("UNDER_PROCESS");
@@ -50036,29 +50308,29 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               console.log(submit);
-              _this150.kycStatus = submit.status;
+              _this151.kycStatus = submit.status;
 
               if (submit.status == 'INITIATED') {
-                _this150.updateStatusOnEdit('INITIATED');
+                _this151.updateStatusOnEdit('INITIATED');
 
                 if (!submit.screen) {
                   Object.assign(data, submit.resp);
                 }
 
                 if (submit.screen == 'appointmentSchedule') {
-                  _this150.getVideoVerification(_this150.phoneNum, _this150.email);
+                  _this151.getVideoVerification(_this151.phoneNum, _this151.email);
                 }
 
                 if (submit.screen == 'documentUpload') {
-                  _this150.getCustomerDocumentsDetails(_this150.customerId);
+                  _this151.getCustomerDocumentsDetails(_this151.customerId);
                 }
 
                 if (submit.screen == 'biometric') {
-                  _this150.getBiometricDetails(_this150.customerId);
+                  _this151.getBiometricDetails(_this151.customerId);
                 }
               }
 
-              _this150.cdr.detectChanges();
+              _this151.cdr.detectChanges();
             });
           }
         }, {
@@ -50171,7 +50443,7 @@
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_16__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_17__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_18__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_17__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_19__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_18__["NgForOf"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_20__["MatSpinner"], _angular_material_card__WEBPACK_IMPORTED_MODULE_21__["MatCardAvatar"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_17__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_21__["MatCard"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_22__["MatDivider"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__["MatHint"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_17__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_18__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_24__["DefaultClassDirective"]],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_18__["SlicePipe"], _angular_common__WEBPACK_IMPORTED_MODULE_18__["UpperCasePipe"]],
-        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.center[_ngcontent-%COMP%] {\n  margin-top: 50%;\n  align-self: center;\n}\n\n.closeIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n}\n\n.num[_ngcontent-%COMP%] {\n  background-color: #fff;\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  margin-top: 15px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 1%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.labelval1[_ngcontent-%COMP%] {\n  font-size: 11px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.KYCtxt[_ngcontent-%COMP%] {\n  text-transform: uppercase;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n  border-radius: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n  width: 180px;\n  height: 180px;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 300px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  margin-left: -10px;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 3rem 2.7rem;\n  color: white;\n}\n\n.dwnld[_ngcontent-%COMP%] {\n  color: blue !important;\n  text-decoration: underline !important;\n  margin-right: 10px;\n}\n\n.rejectButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  \n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.cancelIcon[_ngcontent-%COMP%] {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  \n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectlabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 175px;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon[_ngcontent-%COMP%] {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  \n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel[_ngcontent-%COMP%] {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.hint[_ngcontent-%COMP%] {\n  font: normal normal 600 12px/17px Manrope;\n  letter-spacing: -0.24px;\n  color: #102245;\n  opacity: 0.64;\n  padding-left: 12px;\n}\n\n.mat12[_ngcontent-%COMP%] {\n  color: var(--unnamed-color-102245);\n  font: normal normal medium 16px/19px Montserrat;\n  letter-spacing: 0px;\n  color: #102245;\n  opacity: 1;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid blue;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.continuelabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: blue;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxca3ljLWJyYW5jaC12ZXJpZnktc3VtbWFyeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVHLFlBQVc7RUFDWCxhQUFZO0FBQWY7O0FBRUE7RUFFSSxrQkFBaUI7RUFDakIsY0FBYztFQUNkLHlCQUF3QjtVQUF4Qix3QkFBd0I7QUFBNUI7O0FBR0E7RUFDQSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQWxCOztBQUVBO0VBQ0ksZUFBZTtBQUNuQjs7QUFDQTtFQUNJLGNBQXVCO0VBRXZCLGVBQWU7QUFDbkI7O0FBVUE7RUFFSSxzQkFBc0I7RUFDdEIseUJBQXdCO0VBQ3hCLGtCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBUnBCOztBQVdBO0VBRUksWUFBVztBQVRmOztBQVdBO0VBRUksa0JBQWtCO0FBVHRCOztBQVdBO0VBRUksV0FBVTtFQUNWLGVBQWU7QUFUbkI7O0FBV0E7RUFFRSxjQUFhO0VBQ2IsaUJBQWlCO0FBVG5COztBQWVBO0VBR0csZUFBYztBQWRqQjs7QUFnQkE7RUFDSSxjQUFhO0VBQ2IsMEJBQTBCO0FBYjlCOztBQWdCQTtFQUVJLHlCQUF5QjtBQWQ3Qjs7QUFnQkE7RUFFSSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFkNUI7O0FBZ0JBO0VBRUksWUFBVztFQUNYLGtCQUFrQjtBQWR0Qjs7QUFnQkE7RUFFSSx1QkFBc0I7QUFkMUI7O0FBZ0JBO0VBRUksWUFBWTtFQUNaLGNBQWE7RUFFYixrQkFBa0I7QUFmdEI7O0FBaUJBO0VBRUcseUJBQXdCO0FBZjNCOztBQWlCQTtFQUVJLGNBQWE7RUFDYixZQUFZO0VBQ1osYUFBYTtBQWZqQjs7QUFpQkE7RUFFSSxZQUFZO0VBQ1osOEJBQThCO0VBQzlCLGdCQUFnQjtBQWZwQjs7QUFpQkE7RUFDSSx5QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQWRmOztBQWlCQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBZGY7O0FBaUJBO0VBQ0ksV0FBVztFQUNYLHlCQUFvQztFQUNwQyxlQUFlO0FBZG5COztBQWlCQTtFQUNJLFVBQVU7RUFDVix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixtQ0FBbUM7RUFDbkMsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQWRoQjs7QUFpQkE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsbUNBQW1DO0VBQ25DLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBZGY7O0FBa0JBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFmZjs7QUFrQkE7RUFDSSxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQWZmOztBQWtCQTtFQUNJLFdBQVU7RUFDVixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLHlCQUFrQztFQUNsQyxZQUFZO0VBQ1osa0JBQWtCO0FBZnRCOztBQW1CQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBaEJuQjs7QUFvQkE7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQWpCdEI7O0FBb0JBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWE7RUFDYixZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFqQm5COztBQW1CQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQWhCdEI7O0FBcUJFO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBbEJoQjs7QUFvQkU7RUFFSSxzQkFBcUI7RUFDckIscUNBQXFDO0VBQ3JDLGtCQUFpQjtBQWxCdkI7O0FBcUJFO0VBQ0UsV0FBVztFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGtCQUFBO0VBQ0EseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQWxCbkI7O0FBb0JBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFBO0VBQ0EsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQWpCZjs7QUFtQkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQWpCZjs7QUFtQkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLCtDQUErQztFQUMvQyxVQUFVO0VBQ1YsbUJBQW1CO0VBQ2YsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFoQm5COztBQW1CQTtFQUNJLFdBQVc7RUFDZixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBQTtFQUNBLFlBQVk7RUFDWixVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFoQmY7O0FBbUJBO0VBQ0ksV0FBVztFQUNYLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ3BCLGVBQWU7QUFqQmY7O0FBbUJDO0VBQ0cseUNBQXlDO0VBQ3pDLHVCQUF1QjtFQUN2QixjQUFjO0VBQ2QsYUFBYTtFQUNiLGtCQUFrQjtBQWhCdEI7O0FBa0JDO0VBRUQsa0NBQWtDO0VBQ2xDLCtDQUErQztFQUMvQyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7QUFoQlY7O0FBa0JDO0VBQ0csV0FBVztFQUNiLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixVQUFVO0VBQ1YsbUJBQW1CO0VBQ2pCLHVCQUF1QjtFQUN2QixlQUFlO0FBZm5COztBQWtCRTtFQUNFLFdBQVc7RUFDYixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFFWixnQkFBZ0I7RUFDaEIsNENBQTRDO0VBQzVDLG1CQUFtQjtFQUNuQixXQUFXO0VBQ1gsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBaEJqQiIsImZpbGUiOiJreWMtYnJhbmNoLXZlcmlmeS1zdW1tYXJ5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGltZ1xyXG57XHJcbiAgIHdpZHRoOjEwMHB4O1xyXG4gICBoZWlnaHQ6MTAwcHg7XHJcbn1cclxuLmltZ2RpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUlO1xyXG4gICAgbWFyZ2luLWlubGluZS1zdGFydDogMTglO1xyXG59XHJcblxyXG4uY2VudGVye1xyXG5tYXJnaW4tdG9wOiA1MCU7XHJcbmFsaWduLXNlbGY6IGNlbnRlcjtcclxufVxyXG4uY2xvc2VJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5lZGl0YnRue1xyXG4gICAgY29sb3I6cmdiKDE0LCAxMjQsIDE5NykgO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIC8vIG91dGxpbmU6IG5vbmU7XHJcbiAgICAvLyBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgLy8gdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICAvLyBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICAvLyB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICAvLyBib3JkZXItY29sb3I6ICMwZTU3YzU7XHJcbiAgICAvLyBoZWlnaHQ6NDFweDtcclxuICAgIC8vIHdpZHRoOjE1MHB4O1xyXG4gIH1cclxuLm51bVxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gICAgaGVpZ2h0OiA3MHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDI1cHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG4uaW1nZGl2IGRpdlxyXG57XHJcbiAgICBtYXJnaW46YXV0bztcclxufVxyXG4uYXBwcmRpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLmFwcHJkaXYgaDJcclxue1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAxJTtcclxufVxyXG4ubGFiZWxcclxue1xyXG4gIGNvbG9yOiM5QUExQjA7XHJcbiAgZm9udC1zaXplOiAwLjdyZW07XHJcbn1cclxuLy8gLmxhYmVsdmFsXHJcbi8vIHtcclxuLy8gICAgY29sb3I6IzJGMkYyRjtcclxuLy8gfVxyXG4ubGFiZWx2YWwxXHJcbntcclxuICAgLy9jb2xvcjojMkYyRjJGO1xyXG4gICBmb250LXNpemU6MTFweDtcclxufVxyXG4ubGlua0NvbG9ye1xyXG4gICAgY29sb3I6IzRBNTZFMjtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBcclxufVxyXG5cclxuLktZQ3R4dFxyXG57XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG59XHJcbi5yb3dib3JkXHJcbntcclxuICAgIC8qYm9yZGVyLWJvdHRvbToycHggc29saWQgIzcwNzA3MDsgKi9cclxuICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICBwYWRkaW5nOjEwcHggMCAxMHB4IDEwcHg7XHJcbn1cclxuLm10Y2Rcclxue1xyXG4gICAgcGFkZGluZzowcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHg7IFxyXG59XHJcbi5ub2JvcmRcclxue1xyXG4gICAgYm9yZGVyOm5vbmUgIWltcG9ydGFudDtcclxufVxyXG4ubWFpblxyXG57XHJcbiAgICBoZWlnaHQ6IDg1dmg7XHJcbiAgICBvdmVyZmxvdzphdXRvO1xyXG4gICAgLy8gaGVpZ2h0OiBhdXRvO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG59XHJcbi5hcHBlcnNvbmluZm9jYXJkXHJcbntcclxuICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG59XHJcbi5jbHJcclxue1xyXG4gICAgY29sb3I6I0IyQjJCMjsgIFxyXG4gICAgd2lkdGg6IDE4MHB4O1xyXG4gICAgaGVpZ2h0OiAxODBweDtcclxufVxyXG4uYm9yZG51bVxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBtYXJnaW4tbGVmdDogMjQlO1xyXG59XHJcbi5STmJ0bntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzRBNTZFMjtcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDozMDBweDtcclxufVxyXG5cclxuLmJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbn1cclxuXHJcbi5jYW5jZWxidG57XHJcbiAgICBjb2xvcjpncmV5IDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBcclxufVxyXG5cclxuLnNxZnRidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uYWNidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uY2lyY2xle1xyXG4gICAgd2lkdGg6NzVweDtcclxuICAgIGhlaWdodDo3NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgXHJcbn1cclxuXHJcbi5jb250ZW50MXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOmluaGVyaXQ7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5jaXJjbGUxe1xyXG4gICAgd2lkdGg6MjVweDtcclxuICAgIGhlaWdodDoyNXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uY29udGVudDJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG4uZGVmYXVsdEltYWdle1xyXG4gICAgd2lkdGg6IDEyMHB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMTBweDtcclxuICAgIC8vIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6ICMxOWMyOGY7XHJcbiAgfVxyXG4gIFxyXG4gIC5pbWFnZVRleHR7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAzcmVtIDIuN3JlbTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgLmR3bmxkXHJcbiAge1xyXG4gICAgICBjb2xvcjpibHVlICFpbXBvcnRhbnQ7XHJcbiAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lICFpbXBvcnRhbnQ7XHJcbiAgICAgIG1hcmdpbi1yaWdodDoxMHB4O1xyXG4gIH1cclxuICBcclxuICAucmVqZWN0QnV0dG9ue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDc2MnB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxuLyogVUkgUHJvcGVydGllcyAqL1xyXG5ib3JkZXI6IDJweCBzb2xpZCAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4uY2FuY2VsSWNvbntcclxuICAgIHRvcDogNjcyMHB4O1xyXG5sZWZ0OiA4MTJweDtcclxud2lkdGg6IDIwcHg7XHJcbmhlaWdodDogMjBweDtcclxuLyogVUkgUHJvcGVydGllcyAqL1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5yZWplY3RsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5hcHByb3ZlQnV0dG9ue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDk2OXB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxubWFyZ2luLXJpZ2h0OiAxNzVweDtcclxuYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVJY29ue1xyXG4gICAgdG9wOiA2NzE2cHg7XHJcbmxlZnQ6IDEwMDlweDtcclxud2lkdGg6IDI0cHg7XHJcbmhlaWdodDogMjRweDtcclxuLyogVUkgUHJvcGVydGllcyAqL1xyXG5jb2xvcjogd2hpdGU7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVsYWJlbHtcclxuICAgIHRvcDogNjcxN3B4O1xyXG4gICAgbGVmdDogMTA0OXB4O1xyXG4gICAgd2lkdGg6IDYycHg7XHJcbiAgICBoZWlnaHQ6IDIycHg7XHJcbiAgICBcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBmb250OiBub3JtYWwgbm9ybWFsIG5vcm1hbCAxOHB4LzIycHggQ2FsaWJyaTtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICBwYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuIC5oaW50e1xyXG4gICAgZm9udDogbm9ybWFsIG5vcm1hbCA2MDAgMTJweC8xN3B4IE1hbnJvcGU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogLTAuMjRweDtcclxuICAgIGNvbG9yOiAjMTAyMjQ1O1xyXG4gICAgb3BhY2l0eTogMC42NDtcclxuICAgIHBhZGRpbmctbGVmdDogMTJweDtcclxuIH1cclxuIC5tYXQxMntcclxuICBcclxuY29sb3I6IHZhcigtLXVubmFtZWQtY29sb3ItMTAyMjQ1KTtcclxuZm9udDogbm9ybWFsIG5vcm1hbCBtZWRpdW0gMTZweC8xOXB4IE1vbnRzZXJyYXQ7XHJcbmxldHRlci1zcGFjaW5nOiAwcHg7XHJcbmNvbG9yOiAjMTAyMjQ1O1xyXG5vcGFjaXR5OiAxO1xyXG4gfVxyXG4gLmNvbnRpbnVlQnRue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbiAgbGVmdDogNzYycHg7XHJcbiAgd2lkdGg6IDE4M3B4O1xyXG4gIGhlaWdodDogNDFweDtcclxuICBib3JkZXI6IDJweCBzb2xpZCBibHVlO1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgYm9yZGVyLXJhZGl1czogMjRweDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIH1cclxuICBcclxuICAuY29udGludWVsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG4gIGxlZnQ6IDg0MnB4O1xyXG4gIHdpZHRoOiA0NXB4O1xyXG4gIGhlaWdodDogMjJweDtcclxuICBcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgY29sb3I6IGJsdWU7XHJcbiAgb3BhY2l0eTogMTtcclxuICBwYWRkaW5nLXRvcDogN3B4O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcblxyXG4iXX0= */"]
+        styles: [".appimg[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n}\n\n.imgdiv[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 5%;\n  -webkit-margin-start: 18%;\n          margin-inline-start: 18%;\n}\n\n.center[_ngcontent-%COMP%] {\n  margin-top: 50%;\n  align-self: center;\n}\n\n.closeIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n\n.editbtn[_ngcontent-%COMP%] {\n  color: #0e7cc5;\n  cursor: pointer;\n}\n\n.num[_ngcontent-%COMP%] {\n  background-color: #fff;\n  border: 1px solid #4A56E2;\n  border-radius: 50%;\n  text-align: center;\n  width: 50%;\n  height: 70px;\n  padding-top: 25px;\n  margin-top: 15px;\n}\n\n.imgdiv[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  margin: auto;\n}\n\n.apprdiv[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\n.apprdiv[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-left: 1%;\n}\n\n.label[_ngcontent-%COMP%] {\n  color: #9AA1B0;\n  font-size: 0.7rem;\n}\n\n.labelval1[_ngcontent-%COMP%] {\n  font-size: 11px;\n}\n\n.linkColor[_ngcontent-%COMP%] {\n  color: #4A56E2;\n  text-decoration: underline;\n}\n\n.KYCtxt[_ngcontent-%COMP%] {\n  text-transform: uppercase;\n}\n\n.rowbord[_ngcontent-%COMP%] {\n  \n  border-bottom: 2px solid #f5f5f5;\n  padding: 10px 0 10px 10px;\n}\n\n.mtcd[_ngcontent-%COMP%] {\n  padding: 0px;\n  border-radius: 0px;\n}\n\n.nobord[_ngcontent-%COMP%] {\n  border: none !important;\n}\n\n.main[_ngcontent-%COMP%] {\n  height: 85vh;\n  overflow: auto;\n  overflow-x: hidden;\n}\n\n.appersoninfocard[_ngcontent-%COMP%] {\n  background-color: #E5E5E5;\n}\n\n.clr[_ngcontent-%COMP%] {\n  color: #B2B2B2;\n  width: 180px;\n  height: 180px;\n}\n\n.bordnum[_ngcontent-%COMP%] {\n  height: 100%;\n  border-left: 1px solid #4A56E2;\n  margin-left: 24%;\n}\n\n.RNbtn[_ngcontent-%COMP%] {\n  background-color: #4A56E2;\n  color: white;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 300px;\n}\n\n.btn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.cancelbtn[_ngcontent-%COMP%] {\n  color: grey;\n  background-color: #f3ecec;\n  cursor: pointer;\n}\n\n.rejectbtn[_ngcontent-%COMP%] {\n  color: red;\n  background-color: white;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  border-color: red;\n  size: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.approvebtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: #0ec588;\n  cursor: pointer;\n  outline: none;\n  outline-style: none;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid transparent;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 30px;\n  width: 150px;\n}\n\n.sqftbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.acbtn[_ngcontent-%COMP%] {\n  color: white;\n  background-color: grey;\n  cursor: pointer;\n  text-align: center;\n  border-radius: 20px;\n  border-style: 1px solid;\n  -webkit-text-size-adjust: 20px;\n     -moz-text-size-adjust: 20px;\n          text-size-adjust: 20px;\n  height: 20px;\n  width: 100px;\n}\n\n.circle[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content1[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.circle1[_ngcontent-%COMP%] {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background-color: #0ec588;\n  margin: auto;\n  position: relative;\n}\n\n.content2[_ngcontent-%COMP%] {\n  position: absolute;\n  width: inherit;\n  height: auto;\n  top: 50%;\n  transform: translateY(-50%);\n  text-align: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n.defaultImage[_ngcontent-%COMP%] {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  margin-left: -10px;\n}\n\n.imageText[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 3rem 2.7rem;\n  color: white;\n}\n\n.dwnld[_ngcontent-%COMP%] {\n  color: blue !important;\n  text-decoration: underline !important;\n  margin-right: 10px;\n}\n\n.rejectButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  \n  border: 2px solid #FF0000;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.cancelIcon[_ngcontent-%COMP%] {\n  top: 6720px;\n  left: 812px;\n  width: 20px;\n  height: 20px;\n  \n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.rejectlabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FF0000;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approveButton[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 969px;\n  width: 183px;\n  height: 41px;\n  margin-right: 175px;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.approveIcon[_ngcontent-%COMP%] {\n  top: 6716px;\n  left: 1009px;\n  width: 24px;\n  height: 24px;\n  \n  color: white;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.approvelabel[_ngcontent-%COMP%] {\n  top: 6717px;\n  left: 1049px;\n  width: 62px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: #FFFFFF;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n\n.hint[_ngcontent-%COMP%] {\n  font: normal normal 600 12px/17px Manrope;\n  letter-spacing: -0.24px;\n  color: #102245;\n  opacity: 0.64;\n  padding-left: 14px;\n}\n\n.mat12[_ngcontent-%COMP%] {\n  color: var(--unnamed-color-102245);\n  font: normal normal medium 16px/19px Montserrat;\n  letter-spacing: 0px;\n  color: #102245;\n  opacity: 1;\n}\n\n.continueBtn[_ngcontent-%COMP%] {\n  top: 6705px;\n  left: 762px;\n  width: 183px;\n  height: 41px;\n  border: 2px solid blue;\n  opacity: 1;\n  border-radius: 24px;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.continuelabel[_ngcontent-%COMP%] {\n  top: 6718px;\n  left: 842px;\n  width: 45px;\n  height: 22px;\n  text-align: left;\n  font: normal normal normal 18px/22px Calibri;\n  letter-spacing: 0px;\n  color: blue;\n  opacity: 1;\n  padding-top: 7px;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxca3ljLWJyYW5jaC12ZXJpZnktc3VtbWFyeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVHLFlBQVc7RUFDWCxhQUFZO0FBQWY7O0FBRUE7RUFFSSxrQkFBaUI7RUFDakIsY0FBYztFQUNkLHlCQUF3QjtVQUF4Qix3QkFBd0I7QUFBNUI7O0FBR0E7RUFDQSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQWxCOztBQUVBO0VBQ0ksZUFBZTtBQUNuQjs7QUFDQTtFQUNJLGNBQXVCO0VBRXZCLGVBQWU7QUFDbkI7O0FBVUE7RUFFSSxzQkFBc0I7RUFDdEIseUJBQXdCO0VBQ3hCLGtCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBUnBCOztBQVdBO0VBRUksWUFBVztBQVRmOztBQVdBO0VBRUksa0JBQWtCO0FBVHRCOztBQVdBO0VBRUksV0FBVTtFQUNWLGVBQWU7QUFUbkI7O0FBV0E7RUFFRSxjQUFhO0VBQ2IsaUJBQWlCO0FBVG5COztBQWVBO0VBR0csZUFBYztBQWRqQjs7QUFnQkE7RUFDSSxjQUFhO0VBQ2IsMEJBQTBCO0FBYjlCOztBQWdCQTtFQUVJLHlCQUF5QjtBQWQ3Qjs7QUFnQkE7RUFFSSxvQ0FBQTtFQUNBLGdDQUErQjtFQUMvQix5QkFBd0I7QUFkNUI7O0FBZ0JBO0VBRUksWUFBVztFQUNYLGtCQUFrQjtBQWR0Qjs7QUFnQkE7RUFFSSx1QkFBc0I7QUFkMUI7O0FBZ0JBO0VBRUksWUFBWTtFQUNaLGNBQWE7RUFFYixrQkFBa0I7QUFmdEI7O0FBaUJBO0VBRUcseUJBQXdCO0FBZjNCOztBQWlCQTtFQUVJLGNBQWE7RUFDYixZQUFZO0VBQ1osYUFBYTtBQWZqQjs7QUFpQkE7RUFFSSxZQUFZO0VBQ1osOEJBQThCO0VBQzlCLGdCQUFnQjtBQWZwQjs7QUFpQkE7RUFDSSx5QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQWRmOztBQWlCQTtFQUNJLFlBQVk7RUFDWix5QkFBa0M7RUFDbEMsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBZGY7O0FBaUJBO0VBQ0ksV0FBVztFQUNYLHlCQUFvQztFQUNwQyxlQUFlO0FBZG5COztBQWlCQTtFQUNJLFVBQVU7RUFDVix1QkFBdUI7RUFDdkIsZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixtQ0FBbUM7RUFDbkMsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixZQUFXO0VBQ1gsWUFBWTtBQWRoQjs7QUFpQkE7RUFDSSxZQUFZO0VBQ1oseUJBQWtDO0VBQ2xDLGVBQWU7RUFDZixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGtCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsbUNBQW1DO0VBQ25DLDhCQUFxQjtLQUFyQiwyQkFBcUI7VUFBckIsc0JBQXFCO0VBQ3JCLFlBQVc7RUFDWCxZQUFXO0FBZGY7O0FBa0JBO0VBQ0ksWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixlQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsOEJBQXFCO0tBQXJCLDJCQUFxQjtVQUFyQixzQkFBcUI7RUFDckIsWUFBVztFQUNYLFlBQVc7QUFmZjs7QUFrQkE7RUFDSSxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixrQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixZQUFXO0VBQ1gsWUFBVztBQWZmOztBQWtCQTtFQUNJLFdBQVU7RUFDVixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLHlCQUFrQztFQUNsQyxZQUFZO0VBQ1osa0JBQWtCO0FBZnRCOztBQW1CQTtFQUNJLGtCQUFrQjtFQUNsQixjQUFhO0VBQ2IsWUFBWTtFQUNaLFFBQVE7RUFDUiwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxlQUFlO0FBaEJuQjs7QUFvQkE7RUFDSSxXQUFVO0VBQ1YsWUFBVztFQUNYLGtCQUFpQjtFQUNqQix5QkFBa0M7RUFDbEMsWUFBWTtFQUNaLGtCQUFrQjtBQWpCdEI7O0FBb0JBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWE7RUFDYixZQUFZO0VBQ1osUUFBUTtFQUNSLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGVBQWU7QUFqQm5COztBQW1CQTtFQUNJLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQWhCdEI7O0FBcUJFO0VBQ0Usa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixZQUFZO0FBbEJoQjs7QUFvQkU7RUFFSSxzQkFBcUI7RUFDckIscUNBQXFDO0VBQ3JDLGtCQUFpQjtBQWxCdkI7O0FBcUJFO0VBQ0UsV0FBVztFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGtCQUFBO0VBQ0EseUJBQXlCO0VBQ3pCLFVBQVU7RUFDVixtQkFBbUI7RUFDZix1QkFBdUI7RUFDdkIsZUFBZTtBQWxCbkI7O0FBb0JBO0VBQ0ksV0FBVztFQUNmLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFBO0VBQ0EsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQWpCZjs7QUFtQkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBRVosZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsZUFBZTtBQWpCZjs7QUFtQkE7RUFDSSxXQUFXO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLCtDQUErQztFQUMvQyxVQUFVO0VBQ1YsbUJBQW1CO0VBQ2YsdUJBQXVCO0VBQ3ZCLGVBQWU7QUFoQm5COztBQW1CQTtFQUNJLFdBQVc7RUFDZixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBQTtFQUNBLFlBQVk7RUFDWixVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFoQmY7O0FBbUJBO0VBQ0ksV0FBVztFQUNYLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUVaLGdCQUFnQjtFQUNoQiw0Q0FBNEM7RUFDNUMsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ3BCLGVBQWU7QUFqQmY7O0FBbUJDO0VBQ0cseUNBQXlDO0VBQ3pDLHVCQUF1QjtFQUN2QixjQUFjO0VBQ2QsYUFBYTtFQUNiLGtCQUFrQjtBQWhCdEI7O0FBa0JDO0VBRUQsa0NBQWtDO0VBQ2xDLCtDQUErQztFQUMvQyxtQkFBbUI7RUFDbkIsY0FBYztFQUNkLFVBQVU7QUFoQlY7O0FBa0JDO0VBQ0csV0FBVztFQUNiLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixVQUFVO0VBQ1YsbUJBQW1CO0VBQ2pCLHVCQUF1QjtFQUN2QixlQUFlO0FBZm5COztBQWtCRTtFQUNFLFdBQVc7RUFDYixXQUFXO0VBQ1gsV0FBVztFQUNYLFlBQVk7RUFFWixnQkFBZ0I7RUFDaEIsNENBQTRDO0VBQzVDLG1CQUFtQjtFQUNuQixXQUFXO0VBQ1gsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixlQUFlO0FBaEJqQiIsImZpbGUiOiJreWMtYnJhbmNoLXZlcmlmeS1zdW1tYXJ5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGltZ1xyXG57XHJcbiAgIHdpZHRoOjEwMHB4O1xyXG4gICBoZWlnaHQ6MTAwcHg7XHJcbn1cclxuLmltZ2RpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUlO1xyXG4gICAgbWFyZ2luLWlubGluZS1zdGFydDogMTglO1xyXG59XHJcblxyXG4uY2VudGVye1xyXG5tYXJnaW4tdG9wOiA1MCU7XHJcbmFsaWduLXNlbGY6IGNlbnRlcjtcclxufVxyXG4uY2xvc2VJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5lZGl0YnRue1xyXG4gICAgY29sb3I6cmdiKDE0LCAxMjQsIDE5NykgO1xyXG4gICAgLy8gYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTQsIDEyNCwgMTk3KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIC8vIG91dGxpbmU6IG5vbmU7XHJcbiAgICAvLyBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgLy8gdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICAvLyBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICAvLyB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICAvLyBib3JkZXItY29sb3I6ICMwZTU3YzU7XHJcbiAgICAvLyBoZWlnaHQ6NDFweDtcclxuICAgIC8vIHdpZHRoOjE1MHB4O1xyXG4gIH1cclxuLm51bVxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCAjNEE1NkUyO1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gICAgaGVpZ2h0OiA3MHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDI1cHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG4uaW1nZGl2IGRpdlxyXG57XHJcbiAgICBtYXJnaW46YXV0bztcclxufVxyXG4uYXBwcmRpdlxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLmFwcHJkaXYgaDJcclxue1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAxJTtcclxufVxyXG4ubGFiZWxcclxue1xyXG4gIGNvbG9yOiM5QUExQjA7XHJcbiAgZm9udC1zaXplOiAwLjdyZW07XHJcbn1cclxuLy8gLmxhYmVsdmFsXHJcbi8vIHtcclxuLy8gICAgY29sb3I6IzJGMkYyRjtcclxuLy8gfVxyXG4ubGFiZWx2YWwxXHJcbntcclxuICAgLy9jb2xvcjojMkYyRjJGO1xyXG4gICBmb250LXNpemU6MTFweDtcclxufVxyXG4ubGlua0NvbG9ye1xyXG4gICAgY29sb3I6IzRBNTZFMjtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBcclxufVxyXG5cclxuLktZQ3R4dFxyXG57XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG59XHJcbi5yb3dib3JkXHJcbntcclxuICAgIC8qYm9yZGVyLWJvdHRvbToycHggc29saWQgIzcwNzA3MDsgKi9cclxuICAgIGJvcmRlci1ib3R0b206MnB4IHNvbGlkICNmNWY1ZjU7XHJcbiAgICBwYWRkaW5nOjEwcHggMCAxMHB4IDEwcHg7XHJcbn1cclxuLm10Y2Rcclxue1xyXG4gICAgcGFkZGluZzowcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHg7IFxyXG59XHJcbi5ub2JvcmRcclxue1xyXG4gICAgYm9yZGVyOm5vbmUgIWltcG9ydGFudDtcclxufVxyXG4ubWFpblxyXG57XHJcbiAgICBoZWlnaHQ6IDg1dmg7XHJcbiAgICBvdmVyZmxvdzphdXRvO1xyXG4gICAgLy8gaGVpZ2h0OiBhdXRvO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG59XHJcbi5hcHBlcnNvbmluZm9jYXJkXHJcbntcclxuICAgYmFja2dyb3VuZC1jb2xvcjojRTVFNUU1O1xyXG59XHJcbi5jbHJcclxue1xyXG4gICAgY29sb3I6I0IyQjJCMjsgIFxyXG4gICAgd2lkdGg6IDE4MHB4O1xyXG4gICAgaGVpZ2h0OiAxODBweDtcclxufVxyXG4uYm9yZG51bVxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkICM0QTU2RTI7XHJcbiAgICBtYXJnaW4tbGVmdDogMjQlO1xyXG59XHJcbi5STmJ0bntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzRBNTZFMjtcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlci1zdHlsZTogMXB4IHNvbGlkO1xyXG4gICAgdGV4dC1zaXplLWFkanVzdDoyMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICB3aWR0aDozMDBweDtcclxufVxyXG5cclxuLmJ0bntcclxuICAgIGNvbG9yOndoaXRlIDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6cmdiKDE0LCAxOTcsIDEzNik7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbn1cclxuXHJcbi5jYW5jZWxidG57XHJcbiAgICBjb2xvcjpncmV5IDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDMsIDIzNiwgMjM2KTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLnJlamVjdGJ0bntcclxuICAgIGNvbG9yOnJlZCA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBvdXRsaW5lLXN0eWxlOiBub25lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBib3JkZXItY29sb3I6IHJlZDtcclxuICAgIHNpemU6IDIwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuLmFwcHJvdmVidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIG91dGxpbmUtc3R5bGU6IG5vbmU7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtc2l6ZS1hZGp1c3Q6MjBweDtcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgd2lkdGg6MTUwcHg7XHJcbiAgICBcclxufVxyXG5cclxuLnNxZnRidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uYWNidG57XHJcbiAgICBjb2xvcjp3aGl0ZSA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiAxcHggc29saWQ7XHJcbiAgICB0ZXh0LXNpemUtYWRqdXN0OjIwcHg7XHJcbiAgICBoZWlnaHQ6MjBweDtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG59XHJcblxyXG4uY2lyY2xle1xyXG4gICAgd2lkdGg6NzVweDtcclxuICAgIGhlaWdodDo3NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgXHJcbn1cclxuXHJcbi5jb250ZW50MXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOmluaGVyaXQ7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5jaXJjbGUxe1xyXG4gICAgd2lkdGg6MjVweDtcclxuICAgIGhlaWdodDoyNXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czo1MCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigxNCwgMTk3LCAxMzYpO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uY29udGVudDJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDppbmhlcml0O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG4uZGVmYXVsdEltYWdle1xyXG4gICAgd2lkdGg6IDEyMHB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMTBweDtcclxuICAgIC8vIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vIGJhY2tncm91bmQtY29sb3I6ICMxOWMyOGY7XHJcbiAgfVxyXG4gIFxyXG4gIC5pbWFnZVRleHR7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAzcmVtIDIuN3JlbTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcbiAgLmR3bmxkXHJcbiAge1xyXG4gICAgICBjb2xvcjpibHVlICFpbXBvcnRhbnQ7XHJcbiAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lICFpbXBvcnRhbnQ7XHJcbiAgICAgIG1hcmdpbi1yaWdodDoxMHB4O1xyXG4gIH1cclxuICBcclxuICAucmVqZWN0QnV0dG9ue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDc2MnB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxuLyogVUkgUHJvcGVydGllcyAqL1xyXG5ib3JkZXI6IDJweCBzb2xpZCAjRkYwMDAwO1xyXG5vcGFjaXR5OiAxO1xyXG5ib3JkZXItcmFkaXVzOiAyNHB4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4uY2FuY2VsSWNvbntcclxuICAgIHRvcDogNjcyMHB4O1xyXG5sZWZ0OiA4MTJweDtcclxud2lkdGg6IDIwcHg7XHJcbmhlaWdodDogMjBweDtcclxuLyogVUkgUHJvcGVydGllcyAqL1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5yZWplY3RsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG5sZWZ0OiA4NDJweDtcclxud2lkdGg6IDQ1cHg7XHJcbmhlaWdodDogMjJweDtcclxuXHJcbnRleHQtYWxpZ246IGxlZnQ7XHJcbmZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG5sZXR0ZXItc3BhY2luZzogMHB4O1xyXG5jb2xvcjogI0ZGMDAwMDtcclxub3BhY2l0eTogMTtcclxucGFkZGluZy10b3A6IDdweDtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5hcHByb3ZlQnV0dG9ue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbmxlZnQ6IDk2OXB4O1xyXG53aWR0aDogMTgzcHg7XHJcbmhlaWdodDogNDFweDtcclxubWFyZ2luLXJpZ2h0OiAxNzVweDtcclxuYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbm9wYWNpdHk6IDE7XHJcbmJvcmRlci1yYWRpdXM6IDI0cHg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVJY29ue1xyXG4gICAgdG9wOiA2NzE2cHg7XHJcbmxlZnQ6IDEwMDlweDtcclxud2lkdGg6IDI0cHg7XHJcbmhlaWdodDogMjRweDtcclxuLyogVUkgUHJvcGVydGllcyAqL1xyXG5jb2xvcjogd2hpdGU7XHJcbm9wYWNpdHk6IDE7XHJcbnBhZGRpbmctdG9wOiA3cHg7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxuXHJcbn1cclxuLmFwcHJvdmVsYWJlbHtcclxuICAgIHRvcDogNjcxN3B4O1xyXG4gICAgbGVmdDogMTA0OXB4O1xyXG4gICAgd2lkdGg6IDYycHg7XHJcbiAgICBoZWlnaHQ6IDIycHg7XHJcbiAgICBcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBmb250OiBub3JtYWwgbm9ybWFsIG5vcm1hbCAxOHB4LzIycHggQ2FsaWJyaTtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICBwYWRkaW5nLXRvcDogN3B4O1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuIC5oaW50e1xyXG4gICAgZm9udDogbm9ybWFsIG5vcm1hbCA2MDAgMTJweC8xN3B4IE1hbnJvcGU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogLTAuMjRweDtcclxuICAgIGNvbG9yOiAjMTAyMjQ1O1xyXG4gICAgb3BhY2l0eTogMC42NDtcclxuICAgIHBhZGRpbmctbGVmdDogMTRweDtcclxuIH1cclxuIC5tYXQxMntcclxuICBcclxuY29sb3I6IHZhcigtLXVubmFtZWQtY29sb3ItMTAyMjQ1KTtcclxuZm9udDogbm9ybWFsIG5vcm1hbCBtZWRpdW0gMTZweC8xOXB4IE1vbnRzZXJyYXQ7XHJcbmxldHRlci1zcGFjaW5nOiAwcHg7XHJcbmNvbG9yOiAjMTAyMjQ1O1xyXG5vcGFjaXR5OiAxO1xyXG4gfVxyXG4gLmNvbnRpbnVlQnRue1xyXG4gICAgdG9wOiA2NzA1cHg7XHJcbiAgbGVmdDogNzYycHg7XHJcbiAgd2lkdGg6IDE4M3B4O1xyXG4gIGhlaWdodDogNDFweDtcclxuICBib3JkZXI6IDJweCBzb2xpZCBibHVlO1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgYm9yZGVyLXJhZGl1czogMjRweDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIH1cclxuICBcclxuICAuY29udGludWVsYWJlbHtcclxuICAgIHRvcDogNjcxOHB4O1xyXG4gIGxlZnQ6IDg0MnB4O1xyXG4gIHdpZHRoOiA0NXB4O1xyXG4gIGhlaWdodDogMjJweDtcclxuICBcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQ6IG5vcm1hbCBub3JtYWwgbm9ybWFsIDE4cHgvMjJweCBDYWxpYnJpO1xyXG4gIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgY29sb3I6IGJsdWU7XHJcbiAgb3BhY2l0eTogMTtcclxuICBwYWRkaW5nLXRvcDogN3B4O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcblxyXG4iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -51211,7 +51483,7 @@
         }, {
           key: "UploadFrontDoc",
           value: function UploadFrontDoc(event, documentName, index, side) {
-            var _this151 = this;
+            var _this152 = this;
 
             console.log(event, documentName, index, side);
             this.selectedFiles = event.target.files[0];
@@ -51261,14 +51533,14 @@
               reader.readAsText(this.selectedFiles);
 
               reader.onload = function (event2) {
-                _this151.fileUrl = reader.result;
+                _this152.fileUrl = reader.result;
               };
             }
           }
         }, {
           key: "fun2",
           value: function fun2(event, url, docName, side) {
-            var _this152 = this;
+            var _this153 = this;
 
             // this.image = event.target.result;
             // const cId: string = this.customerId;
@@ -51280,16 +51552,16 @@
               reader.readAsDataURL(event.target.files[0]);
 
               reader.onload = function (event) {
-                _this152.urlback = event.target.result;
+                _this153.urlback = event.target.result;
 
-                _this152.doOCR(_this152.urlback, side, docName, event);
+                _this153.doOCR(_this153.urlback, side, docName, event);
               };
             }
           }
         }, {
           key: "fun1",
           value: function fun1(event, url, docName, side) {
-            var _this153 = this;
+            var _this154 = this;
 
             // console.log(event);
             // this.image = event.target.result;
@@ -51305,9 +51577,9 @@
 
               reader.onload = function (event) {
                 console.log(event.target.result);
-                _this153.url = event.target.result;
+                _this154.url = event.target.result;
 
-                _this153.doOCR(_this153.url, side, docName, event);
+                _this154.doOCR(_this154.url, side, docName, event);
               };
             }
           }
@@ -51315,7 +51587,7 @@
           key: "doOCR",
           value: function doOCR(img, side, docName, event) {
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
-              var _this154 = this;
+              var _this155 = this;
 
               var worker;
               return regeneratorRuntime.wrap(function _callee16$(_context16) {
@@ -51327,7 +51599,7 @@
                       });
 
                       (function () {
-                        return __awaiter(_this154, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
+                        return __awaiter(_this155, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
                           var _yield$worker$recogni, text, aadharDetails, split, filenameFrontSide, extension, address, filenameBackSide;
 
                           return regeneratorRuntime.wrap(function _callee15$(_context15) {
@@ -51484,7 +51756,7 @@
         }, {
           key: "uploadBackType",
           value: function uploadBackType(event) {
-            var _this155 = this;
+            var _this156 = this;
 
             console.log("event", event); //this.console.log("i=",i);
 
@@ -51502,25 +51774,25 @@
             console.log("data", data);
             this.apiService.uploadOfferDocument(uploadData).subscribe(function (res) {
               console.log("Document Resp", res, res.fileUrl);
-              _this155.docUrl = res.fileUrl;
+              _this156.docUrl = res.fileUrl;
 
               if (res && res.fileUrl) {
-                _this155.showSpinn = false;
+                _this156.showSpinn = false;
 
-                _this155.snack.open('Document Saved Successfully!', 'OK', {
+                _this156.snack.open('Document Saved Successfully!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this155.documentUploaded = true;
+                _this156.documentUploaded = true;
               }
             });
           }
         }, {
           key: "onScan",
           value: function onScan(document_name, document_no, docSide) {
-            var _this156 = this;
+            var _this157 = this;
 
             var dialogRef = this.dialog.open(_new_scan_new_scan_component__WEBPACK_IMPORTED_MODULE_4__["NewScanComponent"], {
               data: {},
@@ -51536,19 +51808,19 @@
 
               if (submit.resImage) {
                 if (docSide == 'frontSide') {
-                  _this156.isFrontScaned = true;
+                  _this157.isFrontScaned = true;
                 } else if (docSide == 'backSide') {
-                  _this156.isBackScaned = true;
+                  _this157.isBackScaned = true;
                 } else if (docSide == 'other') {
-                  _this156.isOtherScaned = true;
+                  _this157.isOtherScaned = true;
                 } else {
-                  _this156.isFrontScaned = false;
-                  _this156.isBackScaned = false;
-                  _this156.isOtherScaned = false;
+                  _this157.isFrontScaned = false;
+                  _this157.isBackScaned = false;
+                  _this157.isOtherScaned = false;
                 }
 
-                if (_this156.isFrontScaned && _this156.isBackScaned) {
-                  _this156.onUpload.emit(true);
+                if (_this157.isFrontScaned && _this157.isBackScaned) {
+                  _this157.onUpload.emit(true);
                 }
               } // this.doOCR(localStorage.getItem('imageForScan'),docSide,document_name)
 
