@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18.997" viewBox="0 0 18 18.997">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.827" x2="1" y2="0.864" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#051a2d"/>
+      <stop offset="1" stop-color="#004c97"/>
+    </linearGradient>
+  </defs>
+  <path id="Exclusion_6" data-name="Exclusion 6" d="M14235.848,11571h-11.682a3.094,3.094,0,0,1-3.166-3.01v-8.977a2.927,2.927,0,0,1,.877-2.078,3.221,3.221,0,0,1,2.125-.931v5.586a2.279,2.279,0,0,0,2.108,2.412h7.786a1.947,1.947,0,0,0,1.383-.6,2.568,2.568,0,0,0,.723-1.818V11556h0c-.044,0-.095,0-.16,0h-11.682l-.157,0v-1.594a2.274,2.274,0,0,1,2.1-2.408h7.787a2.276,2.276,0,0,1,2.108,2.408V11556h0a3.076,3.076,0,0,1,3,3.008v8.97a2.913,2.913,0,0,1-.867,2.077A3.248,3.248,0,0,1,14235.848,11571Z" transform="translate(-14221 -11552.002)" fill="url(#linear-gradient)"/>
+</svg>

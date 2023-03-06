@@ -105,7 +105,7 @@ const routes = [
     },
     {
         path: 'transaction-popup',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("src_app_pages_transaction-popup_transaction-popup_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/transaction-popup/transaction-popup.module */ 28886)).then((m) => m.TransactionPopupPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("src_app_pages_transaction-popup_transaction-popup_module_ts-src_app_services_toast_service_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/transaction-popup/transaction-popup.module */ 28886)).then((m) => m.TransactionPopupPageModule),
     },
     {
         path: 'operation',
@@ -117,7 +117,7 @@ const routes = [
     },
     {
         path: 'wallet',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("src_app_pages_wallet_wallet_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/wallet/wallet.module */ 33632)).then((m) => m.WalletModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-src_app_pages_appointmentpopup_appointmentpopup_page_ts"), __webpack_require__.e("src_app_pages_wallet_wallet_module_ts-src_app_services_toast_service_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/wallet/wallet.module */ 33632)).then((m) => m.WalletModule),
     }, {
         path: 'notification',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_notification_notification_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/notification/notification.module */ 89770)).then((m) => m.NotificationPageModule),
@@ -176,7 +176,7 @@ const routes = [
     },
     {
         path: 'token-v2',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("src_app_pages_token-v2_token-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/token-v2/token-v2.module */ 43218)).then(m => m.TokenV2PageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("src_app_pages_token-v2_token-v2_module_ts-src_app_services_toast_service_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/token-v2/token-v2.module */ 43218)).then(m => m.TokenV2PageModule)
     },
     {
         path: 'cashwithdrawal',
@@ -187,12 +187,12 @@ const routes = [
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_currencyconverter_currencyconverter_page_ts"), __webpack_require__.e("default-src_app_pages_v2_forex-cash-v2_forex-cash-v2_page_ts"), __webpack_require__.e("src_app_pages_v2_cash-deposit-v2_cash-deposit-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/cash-deposit-v2/cash-deposit-v2.module */ 72251)).then(m => m.CashDepositV2PageModule)
     },
     {
-        path: 'loan-payment',
+        path: 'loanrepayment',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_pages_v2_loan-repayment-v2_loan-repayment-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/loan-repayment-v2/loan-repayment-v2.module */ 71610)).then(m => m.LoanRepaymentV2PageModule)
     },
     {
-        path: 'loan-disbursement',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_pages_v2_loan-disbursement-v2_loan-disbursement-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/loan-disbursement-v2/loan-disbursement-v2.module */ 45406)).then(m => m.LoanDisbursementV2PageModule)
+        path: 'loandisbursement',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("default-src_app_pages_currencyconverter_currencyconverter_page_ts"), __webpack_require__.e("default-src_app_pages_v2_forex-cash-v2_forex-cash-v2_page_ts"), __webpack_require__.e("src_app_pages_v2_loan-disbursement-v2_loan-disbursement-v2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/loan-disbursement-v2/loan-disbursement-v2.module */ 45406)).then(m => m.LoanDisbursementV2PageModule)
     },
     {
         path: 'chequedeposit',
@@ -661,6 +661,42 @@ AlertInternetComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
+/***/ 39982:
+/*!*******************************************************!*\
+  !*** ./src/app/directives/alphabet-only.directive.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AlphabetOnlyDirective": () => (/* binding */ AlphabetOnlyDirective)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let AlphabetOnlyDirective = class AlphabetOnlyDirective {
+    onKeydown(event) {
+        this.key = event.keyCode;
+        if ((this.key >= 15 && this.key <= 64) || (this.key >= 123) || (this.key >= 96 && this.key <= 105)) {
+            event.preventDefault();
+        }
+    }
+};
+AlphabetOnlyDirective.propDecorators = {
+    onKeydown: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['keydown', ['$event'],] }]
+};
+AlphabetOnlyDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive)({
+        selector: '[appAlphabetOnly]'
+    })
+], AlphabetOnlyDirective);
+
+
+
+/***/ }),
+
 /***/ 95701:
 /*!****************************************************!*\
   !*** ./src/app/directives/auto-focus.directive.ts ***!
@@ -766,12 +802,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DirectiveModule": () => (/* binding */ DirectiveModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _auto_focus_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auto-focus.directive */ 95701);
 /* harmony import */ var _separator_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./separator.directive */ 80536);
 /* harmony import */ var _decimal_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./decimal.directive */ 88544);
+/* harmony import */ var _alphabet_only_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./alphabet-only.directive */ 39982);
+/* harmony import */ var _numbers_only_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./numbers-only.directive */ 96096);
+/* harmony import */ var _trim_input_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./trim-input.directive */ 19322);
+/* harmony import */ var _special_text_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./special-text.directive */ 49390);
+
+
+
+
 
 
 
@@ -781,24 +825,79 @@ __webpack_require__.r(__webpack_exports__);
 const directives = [
     _auto_focus_directive__WEBPACK_IMPORTED_MODULE_0__.AutoFocusDirective,
     _separator_directive__WEBPACK_IMPORTED_MODULE_1__.SeparatorDirective,
-    _decimal_directive__WEBPACK_IMPORTED_MODULE_2__.TwoDigitDecimaNumberDirective
+    _decimal_directive__WEBPACK_IMPORTED_MODULE_2__.TwoDigitDecimaNumberDirective,
+    _alphabet_only_directive__WEBPACK_IMPORTED_MODULE_3__.AlphabetOnlyDirective,
+    _numbers_only_directive__WEBPACK_IMPORTED_MODULE_4__.NumberDirective,
+    _trim_input_directive__WEBPACK_IMPORTED_MODULE_5__.TrimInputDirective,
+    _special_text_directive__WEBPACK_IMPORTED_MODULE_6__.SpecialTextDirective
 ];
 let DirectiveModule = class DirectiveModule {
 };
-DirectiveModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
+DirectiveModule = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.NgModule)({
         declarations: [directives],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule
+            _angular_common__WEBPACK_IMPORTED_MODULE_9__.CommonModule
         ],
         exports: directives,
         providers: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CurrencyPipe,
-            _angular_common__WEBPACK_IMPORTED_MODULE_5__.DecimalPipe,
-            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_4__.DEFAULT_CURRENCY_CODE, useValue: 'INR' }
+            _angular_common__WEBPACK_IMPORTED_MODULE_9__.CurrencyPipe,
+            _angular_common__WEBPACK_IMPORTED_MODULE_9__.DecimalPipe,
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_8__.DEFAULT_CURRENCY_CODE, useValue: 'INR' }
         ]
     })
 ], DirectiveModule);
+
+
+
+/***/ }),
+
+/***/ 96096:
+/*!******************************************************!*\
+  !*** ./src/app/directives/numbers-only.directive.ts ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NumberDirective": () => (/* binding */ NumberDirective)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let NumberDirective = class NumberDirective {
+    constructor(_el) {
+        this._el = _el;
+    }
+    onInputChange(event) {
+        const initalValue = this._el.nativeElement.value;
+        this._el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+        if (initalValue !== this._el.nativeElement.value) {
+            event.stopPropagation();
+        }
+    }
+    onIonInputChange(event) {
+        const initalValue = this._el.nativeElement.value;
+        this._el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+        if (initalValue !== this._el.nativeElement.value) {
+            event.stopPropagation();
+        }
+    }
+};
+NumberDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef }
+];
+NumberDirective.propDecorators = {
+    onInputChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['ion-input', ['$event'],] }],
+    onIonInputChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['input', ['$event'],] }]
+};
+NumberDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive)({
+        selector: 'ion-input[numbersOnly], input[numbersOnly]'
+    })
+], NumberDirective);
 
 
 
@@ -826,25 +925,17 @@ let SeparatorDirective = class SeparatorDirective {
     onInput(event) {
         if (this._inputEl.nativeElement.value === '-')
             return;
-        console.log("commasRemoved before", this._inputEl.nativeElement.value);
         let commasRemoved = this._inputEl.nativeElement.value.replace(/,/g, '');
-        console.log("commasRemoved after", commasRemoved);
         let toInt;
         let toLocale;
-        console.log("check one?", commasRemoved.split('.'));
         if (commasRemoved.split('.').length > 1) {
             let decimal = isNaN(parseInt(commasRemoved.split('.')[1])) ? '' : parseInt(commasRemoved.split('.')[1]);
             toInt = parseInt(commasRemoved);
-            console.log("decimal", decimal);
-            console.log("toInt", toInt);
             toLocale = toInt.toLocaleString('en-IN') + '.' + decimal;
-            console.log("toLocale", toLocale);
         }
         else {
             toInt = parseInt(commasRemoved);
             toLocale = toInt.toLocaleString('en-IN');
-            console.log("toInt else", toInt);
-            console.log("toLocale else", toLocale);
         }
         if (toLocale === 'NaN') {
             this._inputEl.nativeElement.value = '';
@@ -865,6 +956,100 @@ SeparatorDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
         selector: 'input[separator]',
     })
 ], SeparatorDirective);
+
+
+
+/***/ }),
+
+/***/ 49390:
+/*!******************************************************!*\
+  !*** ./src/app/directives/special-text.directive.ts ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SpecialTextDirective": () => (/* binding */ SpecialTextDirective)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let SpecialTextDirective = class SpecialTextDirective {
+    constructor(el) {
+        this.el = el;
+        this.regexStr = '^[a-zA-Z ]*$';
+    }
+    onKeyPress(event) {
+        return new RegExp(this.regexStr).test(event.key);
+    }
+    blockPaste(event) {
+        this.validateFields(event);
+    }
+    validateFields(event) {
+        setTimeout(() => {
+            this.el.nativeElement.value = this.el.nativeElement.value
+                .replace(/[^A-Za-z ]/g, '')
+                .replace(/\s/g, '');
+            event.preventDefault();
+        }, 100);
+    }
+};
+SpecialTextDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef }
+];
+SpecialTextDirective.propDecorators = {
+    isAlphaNumeric: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input }],
+    onKeyPress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['keypress', ['$event'],] }],
+    blockPaste: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['paste', ['$event'],] }]
+};
+SpecialTextDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive)({
+        selector: '[specialText]',
+    })
+], SpecialTextDirective);
+
+
+
+/***/ }),
+
+/***/ 19322:
+/*!****************************************************!*\
+  !*** ./src/app/directives/trim-input.directive.ts ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TrimInputDirective": () => (/* binding */ TrimInputDirective)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let TrimInputDirective = class TrimInputDirective {
+    constructor() {
+        this.ngModelChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    }
+    onInputChange($event) {
+        var _a;
+        const currentValue = (_a = $event.target) === null || _a === void 0 ? void 0 : _a.value;
+        const trimmedValue = currentValue === null || currentValue === void 0 ? void 0 : currentValue.trim();
+        this.ngModelChange.emit(trimmedValue);
+    }
+};
+TrimInputDirective.propDecorators = {
+    ngModelChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output }],
+    onInputChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostListener, args: ['input', ['$event'],] }]
+};
+TrimInputDirective = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive)({
+        // tslint:disable-next-line: directive-selector
+        selector: 'input[trim]'
+    })
+], TrimInputDirective);
 
 
 
@@ -1161,9 +1346,15 @@ let ApiService = class ApiService {
         let url = `https://api.apilayer.com/exchangerates_data/latest?symbols=${symbols}&base=${base}`;
         return this.http.get(url, { 'headers': headers }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
-    getLoanAccounts(phoneNo) {
-        return this.http.get(`${API_URL}/customerdata/fetchLoanRepaymentInfo?phoneNumber=${phoneNo}`)
+    getLoanAccounts(phoneNo, module) {
+        return this.http.get(`${API_URL}/customerdata/fetchLoanInfo?phoneNumber=${phoneNo}&module=${module}`)
             .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    addNewAccountToDisburse(model) {
+        return this.http.post(`${API_URL}/cash-deposit/api/saveDisbursementAccInfo`, model).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
+    }
+    fetchDisbursementAccInfo(customerId) {
+        return this.http.get(`${API_URL}/cash-deposit/api/fetchDisbursementAccInfo?customerId=${customerId}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(this.errorHandler));
     }
     // SIMULATE
     uploadAndProgress(file) {
@@ -2048,7 +2239,7 @@ module.exports = ".box {\n  width: 60px;\n  height: 60px;\n  background: #FFEDED
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.23</h6>\r\n          <p class=\"app-font version-color\">Build 23</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\" menuId=\"slidingMenu\" swipe-gesture=\"false\">\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container *ngIf=\"avatar == null || avatar == undefined; else showAvatar\">\r\n              <div class=\"profile-image mx-2\" [style.background]=\"dataService.getRandomColor(i+3)\">\r\n                {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                          | uppercase | slice:0:1}}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\"/>\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n             <h2>{{currentUser?.firstName}}</h2>\r\n             <p><small>{{currentUser?.primaryEmailAdress}}</small></p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\">\r\n            <ion-label class=\"label\">My Transaction<br>\r\n              <small class=\"text-muted\">Quick Modify For Your Appointment</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\">\r\n            <ion-label class=\"label\">Appointment History <br>\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\">\r\n            <ion-label class=\"label\">Foreign exchange <br>\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\">\r\n            <ion-label class=\"label\">Notifications <br>\r\n              <small class=\"text-muted\">Change your notification settings</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\">\r\n            <ion-label class=\"label\">Logout <br>\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n          <h6 class=\"app-font version-color\">Ver 0.0.24</h6>\r\n          <p class=\"app-font version-color\">Build 24</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 
