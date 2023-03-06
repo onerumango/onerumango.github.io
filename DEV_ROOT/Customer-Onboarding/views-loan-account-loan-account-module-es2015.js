@@ -2382,13 +2382,13 @@ class PostOfferAmendmentComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanAccountId = this.ls.getItem('loanAccountId');
         console.log(this.loanAccountId);
@@ -2549,11 +2549,11 @@ class PostOfferAmendmentComponent {
         //this.PostOfferAmendmentForm.value['offerExpiryDate'] = expiryDate;
         // let amendDate = this.convertDate(this.PostOfferAmendmentForm.controls.offerAmendDate.value);
         //this.PostOfferAmendmentForm.value['offerAmendDate'] = amendDate;
-        const renewData = this.PostOfferAmendmentForm.value.year +
+        const renewData = this.PostOfferAmendmentForm.value.year + "year" +
             "-" +
-            this.PostOfferAmendmentForm.value.month +
+            this.PostOfferAmendmentForm.value.month + "month" +
             "-" +
-            this.PostOfferAmendmentForm.value.day;
+            this.PostOfferAmendmentForm.value.day + "day";
         this.PostOfferAmendmentForm.get("loanTenure").setValue(renewData);
         this.PostOfferAmendmentForm.value.loanTenure = renewData;
         // delete this.PostOfferAmendmentForm.value.year;
@@ -2647,11 +2647,11 @@ class PostOfferAmendmentComponent {
             console.log(res.approvedLoanAmount);
             this.PostOfferAmendmentForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
             console.log(res.loanTenure);
-            this.year = res.loanTenure.split("-")[0];
+            this.year = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
             console.log(this.year);
-            this.month = res.loanTenure.split("-")[1];
+            this.month = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
             console.log(this.month);
-            this.day = res.loanTenure.split("-")[2];
+            this.day = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             console.log(this.day);
             this.PostOfferAmendmentForm.get('year').setValue(this.year);
             this.PostOfferAmendmentForm.get('month').setValue(this.month);
@@ -4863,14 +4863,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function LoanDetailsComponent_form_15_mat_option_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const businessProductName_r17 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", businessProductName_r17);
+    const businessProductName_r18 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", businessProductName_r18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", businessProductName_r17, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", businessProductName_r18, " ");
 } }
 function LoanDetailsComponent_form_15_mat_error_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
@@ -4888,82 +4888,87 @@ function LoanDetailsComponent_form_15_mat_error_27_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function LoanDetailsComponent_form_15_small_33_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Loan Amount should not be greater than Estimated Cost! ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function LoanDetailsComponent_form_15_mat_option_47_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const array_r18 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", array_r18.branchName);
+    const array_r19 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", array_r19.branchName);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](array_r18.branchName);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](array_r19.branchName);
 } }
 function LoanDetailsComponent_form_15_mat_error_53_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Account Currency is Required! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function LoanDetailsComponent_form_15_mat_error_59_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Account Type is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function LoanDetailsComponent_form_15_small_60_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 40);
+function LoanDetailsComponent_form_15_small_66_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Customer Contribution should not be greater than Estimated Cost! ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function LoanDetailsComponent_form_15_mat_option_69_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+function LoanDetailsComponent_form_15_mat_option_75_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const year_r19 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", year_r19);
+    const year_r20 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", year_r20);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](year_r19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](year_r20);
 } }
-function LoanDetailsComponent_form_15_mat_option_74_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+function LoanDetailsComponent_form_15_mat_option_80_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const month_r20 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", month_r20);
+    const month_r21 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", month_r21);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](month_r20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](month_r21);
 } }
-function LoanDetailsComponent_form_15_mat_option_79_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+function LoanDetailsComponent_form_15_mat_option_85_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const day_r21 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", day_r21);
+    const day_r22 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", day_r22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](day_r21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](day_r22);
 } }
-function LoanDetailsComponent_form_15_mat_error_80_Template(rf, ctx) { if (rf & 1) {
+function LoanDetailsComponent_form_15_mat_error_86_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Loan Tenure is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function LoanDetailsComponent_form_15_mat_error_81_Template(rf, ctx) { if (rf & 1) {
+function LoanDetailsComponent_form_15_mat_error_87_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Loan Tenure is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function LoanDetailsComponent_form_15_mat_error_82_Template(rf, ctx) { if (rf & 1) {
+function LoanDetailsComponent_form_15_mat_error_88_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Loan Tenure is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function LoanDetailsComponent_form_15_mat_error_83_Template(rf, ctx) { if (rf & 1) {
+function LoanDetailsComponent_form_15_mat_error_89_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Please Input Valid Loan Tenure!");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
-    const _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 15);
@@ -4973,7 +4978,7 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Business Product Name*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-select", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function LoanDetailsComponent_form_15_Template_mat_select_selectionChange_7_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r22.getAccountType($event.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function LoanDetailsComponent_form_15_Template_mat_select_selectionChange_7_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r23.getAccountType($event.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-option");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Select");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5001,7 +5006,7 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Estimated Cost*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "input", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_26_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r24._keyPress($event); })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r25.calculateLoanAmmount(ctx_r25.loanForm.value); })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r26.calculateestimatedCost(ctx_r26.loanForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_26_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r25._keyPress($event); })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r26.calculateLoanAmmount(ctx_r26.loanForm.value); })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r27.calculateestimatedCost(ctx_r27.loanForm.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, LoanDetailsComponent_form_15_mat_error_27_Template, 2, 0, "mat-error", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5012,7 +5017,7 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Loan Amount *");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "input", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r27.calculatCustomerContri(ctx_r27.loanForm.value); })("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r28.calculateestimatedCost(ctx_r28.loanForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r28.calculatCustomerContri(ctx_r28.loanForm.value); })("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r29.calculateestimatedCost(ctx_r29.loanForm.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, LoanDetailsComponent_form_15_small_33_Template, 2, 0, "small", 27);
@@ -5033,7 +5038,7 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "Account Branch");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "mat-select", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function LoanDetailsComponent_form_15_Template_mat_select_selectionChange_44_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r29.onChangeBranch($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function LoanDetailsComponent_form_15_Template_mat_select_selectionChange_44_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r30.onChangeBranch($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "mat-option");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Select");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5044,7 +5049,7 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "mat-form-field", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Account Type*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Account Currency*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "input", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](53, LoanDetailsComponent_form_15_mat_error_53_Template, 2, 0, "mat-error", 20);
@@ -5053,48 +5058,57 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "div", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "mat-form-field", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Customer Contribution");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Account Type*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "input", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_58_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r30._keyPress($event); })("input", function LoanDetailsComponent_form_15_Template_input_input_58_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r31.calculatCustomerContri(ctx_r31.loanForm.value); })("input", function LoanDetailsComponent_form_15_Template_input_input_58_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23); const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r32.calculateLoanAmmount(ctx_r32.loanForm.value); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](59, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](60, LoanDetailsComponent_form_15_small_60_Template, 2, 0, "small", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "mat-hint", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "Loan Tenure *");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "mat-form-field", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Year*");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "mat-select", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](69, LoanDetailsComponent_form_15_mat_option_69_Template, 2, 2, "mat-option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](58, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](59, LoanDetailsComponent_form_15_mat_error_59_Template, 2, 0, "mat-error", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "mat-form-field", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Month*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "mat-form-field", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Customer Contribution");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "mat-select", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](74, LoanDetailsComponent_form_15_mat_option_74_Template, 2, 2, "mat-option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "input", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_64_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r31._keyPress($event); })("input", function LoanDetailsComponent_form_15_Template_input_input_64_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r32.calculatCustomerContri(ctx_r32.loanForm.value); })("input", function LoanDetailsComponent_form_15_Template_input_input_64_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24); const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r33.calculateLoanAmmount(ctx_r33.loanForm.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](66, LoanDetailsComponent_form_15_small_66_Template, 2, 0, "small", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "mat-hint", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "Loan Tenure *");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "mat-form-field", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "Year*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "mat-select", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](75, LoanDetailsComponent_form_15_mat_option_75_Template, 2, 2, "mat-option", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "mat-form-field", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "Day*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "mat-form-field", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, "Month*");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "mat-select", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](79, LoanDetailsComponent_form_15_mat_option_79_Template, 2, 2, "mat-option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "mat-select", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](80, LoanDetailsComponent_form_15_mat_option_80_Template, 2, 2, "mat-option", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](80, LoanDetailsComponent_form_15_mat_error_80_Template, 2, 0, "mat-error", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](81, LoanDetailsComponent_form_15_mat_error_81_Template, 2, 0, "mat-error", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](82, LoanDetailsComponent_form_15_mat_error_82_Template, 2, 0, "mat-error", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](83, LoanDetailsComponent_form_15_mat_error_83_Template, 2, 0, "mat-error", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "mat-form-field", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, "Day*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "mat-select", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](85, LoanDetailsComponent_form_15_mat_option_85_Template, 2, 2, "mat-option", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](86, LoanDetailsComponent_form_15_mat_error_86_Template, 2, 0, "mat-error", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](87, LoanDetailsComponent_form_15_mat_error_87_Template, 2, 0, "mat-error", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](88, LoanDetailsComponent_form_15_mat_error_88_Template, 2, 0, "mat-error", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](89, LoanDetailsComponent_form_15_mat_error_89_Template, 2, 0, "mat-error", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5120,6 +5134,10 @@ function LoanDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.flag1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.screenArray);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.loanForm.get("accountCurrency").hasError("required"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -5205,13 +5223,13 @@ class LoanDetailsComponent {
         //   "Dec",
         // ];
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.getAccountBranchDetails();
         this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -5274,7 +5292,7 @@ class LoanDetailsComponent {
         });
     }
     getAccountBranchDetails() {
-        //
+        //debugger
         this.api.getAccountBranch().subscribe((data) => {
             console.log("data:: AccountBranch ", data);
             this.screenArray = data;
@@ -5309,11 +5327,12 @@ class LoanDetailsComponent {
             customerContribution: [data ? data.customerContribution : ''],
             loanAmount: [data ? data.loanAmount : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             purposeOfLoan: [data ? data.purposeOfLoan : ''],
-            accountCurrency: [data ? data.accountCurrency : ''],
+            accountCurrency: [data ? data.accountCurrency : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            // accountCurrency:[data ? data.accountCurrency:''],
             loanTenure: [data ? data.loanTenure : ''],
-            day: [data ? (data.loanTenure.split("-")[2]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            month: [data ? data.loanTenure.split("-")[1] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            year: [data ? (data.loanTenure.split("-")[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
     }
     goBack() {
@@ -5365,11 +5384,11 @@ class LoanDetailsComponent {
         pk = parseInt(pk);
         var prSize = this.loanForm.value.estimatedCost;
         prSize = parseInt(prSize);
-        const renewData = this.loanForm.value.year +
+        const renewData = this.loanForm.value.year + "year" +
             "-" +
-            this.loanForm.value.month +
+            this.loanForm.value.month + "month" +
             "-" +
-            this.loanForm.value.day;
+            this.loanForm.value.day + "day";
         this.loanForm.get("loanTenure").setValue(renewData);
         delete this.loanForm.value.year;
         delete this.loanForm.value.month;
@@ -5542,7 +5561,7 @@ class LoanDetailsComponent {
     }
 }
 LoanDetailsComponent.ɵfac = function LoanDetailsComponent_Factory(t) { return new (t || LoanDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_6__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_app_loader_app_loader_service__WEBPACK_IMPORTED_MODULE_5__["AppLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_account_service__WEBPACK_IMPORTED_MODULE_8__["AccountService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
-LoanDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanDetailsComponent, selectors: [["app-loan-details"]], decls: 21, vars: 2, consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Group 673.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], [1, "alignChange"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], ["name", "account_branch", "placeholder", "Select ", "formControlName", "businessProductName", "disableOptionCentering", "", 3, "selectionChange"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "name", "date", "formControlName", "applicationDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min", "max"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], ["matInput", "", "formControlName", "estimatedCost", "name", "a_sig", "autocomplete", "off", "placeholder", "Estimated Cost", 1, "alignment", 3, "keypress", "input"], ["matInput", "", "formControlName", "loanAmount", "autocomplete", "off", "name", "a_sig", "placeholder", "Loan Amount", 1, "alignment", 3, "input"], ["style", "color:red;", 4, "ngIf"], ["matInput", "", "formControlName", "purposeOfLoan", "name", "remark", "placeholder", "Purpose of Loan", 1, "alignment"], ["name", "mod", "placeholder", "Select", "formControlName", "accountBranch", "disableOptionCentering", "", 3, "selectionChange"], ["matInput", "", "name", "accountType", "placeholder", "Account Type", "formControlName", "accountType", 1, "alignment", 3, "readonly"], ["matInput", "", "formControlName", "customerContribution", "name", "a_sig", "placeholder", "Customer Contribution", "autocomplete", "off", 1, "alignment", 3, "keypress", "input"], [1, "tenre"], ["appearance", "outline", "fxFlex", "24.4%", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4%", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4", 1, "full-width", "tenure2"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], [3, "value"], [2, "color", "red"]], template: function LoanDetailsComponent_Template(rf, ctx) { if (rf & 1) {
+LoanDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoanDetailsComponent, selectors: [["app-loan-details"]], decls: 21, vars: 2, consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Group 673.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], [1, "alignChange"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], ["name", "account_branch", "placeholder", "Select ", "formControlName", "businessProductName", "disableOptionCentering", "", 3, "selectionChange"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "name", "date", "formControlName", "applicationDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min", "max"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], ["matInput", "", "formControlName", "estimatedCost", "name", "a_sig", "autocomplete", "off", "placeholder", "Estimated Cost", 1, "alignment", 3, "keypress", "input"], ["matInput", "", "formControlName", "loanAmount", "autocomplete", "off", "name", "a_sig", "placeholder", "Loan Amount", 1, "alignment", 3, "input"], ["style", "color:red;", 4, "ngIf"], ["matInput", "", "formControlName", "purposeOfLoan", "name", "remark", "placeholder", "Purpose of Loan", 1, "alignment"], ["name", "mod", "placeholder", "Select", "formControlName", "accountBranch", "disableOptionCentering", "", 3, "selectionChange"], ["matInput", "", "name", "currency", "placeholder", "Account Currency", "formControlName", "accountCurrency", 1, "alignment", 3, "readonly"], ["matInput", "", "name", "accountType", "placeholder", "Account Type", "formControlName", "accountType", 1, "alignment", 3, "readonly"], ["matInput", "", "formControlName", "customerContribution", "name", "a_sig", "placeholder", "Customer Contribution", "autocomplete", "off", 1, "alignment", 3, "keypress", "input"], [1, "tenre"], ["appearance", "outline", "fxFlex", "24.4%", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4%", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4", 1, "full-width", "tenure2"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], [3, "value"], [2, "color", "red"]], template: function LoanDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -5566,7 +5585,7 @@ LoanDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-card-content");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, LoanDetailsComponent_form_15_Template, 84, 21, "form", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, LoanDetailsComponent_form_15_Template, 90, 23, "form", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 10);
@@ -5778,13 +5797,13 @@ class OfferissueComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanaccountID = this.ls.getItem('loanAccountId');
         this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -5898,9 +5917,9 @@ class OfferissueComponent {
             principal: [data ? data.principal : ''],
             interest: [data ? data.interest : ''],
             charges: [data ? data.charges : ''],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : ''],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             installmentType: [data ? data.installmentType : '']
         });
     }
@@ -5918,11 +5937,11 @@ class OfferissueComponent {
         aprloan = parseInt(aprloan);
         var rate = this.OfferIssueForm.value.rateOfInterest;
         rate = parseInt(rate);
-        const renewData = this.OfferIssueForm.value.year +
+        const renewData = this.OfferIssueForm.value.year + "year" +
             "-" +
-            this.OfferIssueForm.value.month +
+            this.OfferIssueForm.value.month + "month" +
             "-" +
-            this.OfferIssueForm.value.day;
+            this.OfferIssueForm.value.day + "day";
         this.OfferIssueForm.get("loanTenure").setValue(renewData);
         delete this.OfferIssueForm.value.year;
         delete this.OfferIssueForm.value.month;
@@ -6016,9 +6035,9 @@ class OfferissueComponent {
         console.log(this.loanaccountID);
         this.apiService.fetchByLoanAccountId(this.loanaccountID).subscribe((res) => {
             this.OfferIssueForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
-            let dataYear = res.loanTenure.split("-")[0];
-            let dataMonth = res.loanTenure.split("-")[1];
-            let dataDay = res.loanTenure.split("-")[2];
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             this.OfferIssueForm.get('year').setValue(dataYear);
             this.OfferIssueForm.get('month').setValue(dataMonth);
             this.OfferIssueForm.get('day').setValue(dataDay);
@@ -9380,13 +9399,13 @@ class AccountCreateDetailsComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanaccountID = this.ls.getItem('loanAccountId');
         this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -9437,9 +9456,9 @@ class AccountCreateDetailsComponent {
             interest: [data ? data.interest : ''],
             charges: [data ? data.charges : ''],
             repaymentAmount: [data ? data.repaymentAmount : ''],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : '']
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
         console.log("this.accountForm", this.accountForm);
     }
@@ -9472,11 +9491,11 @@ class AccountCreateDetailsComponent {
         aprloan = parseInt(aprloan);
         var rate = this.accountForm.value.rateOfInterest;
         rate = parseInt(rate);
-        const renewData = this.accountForm.value.year +
+        const renewData = this.accountForm.value.year + "year" +
             "-" +
-            this.accountForm.value.month +
+            this.accountForm.value.month + "month" +
             "-" +
-            this.accountForm.value.day;
+            this.accountForm.value.day + "day";
         this.accountForm.get("loanTenure").setValue(renewData);
         this.accountForm.value.loanTenure = renewData;
         let payload = {
@@ -9537,12 +9556,9 @@ class AccountCreateDetailsComponent {
             console.log(res);
             this.accountForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
             console.log(res.loanTenure);
-            let dataYear = res.loanTenure.split("-")[0];
-            console.log(dataYear);
-            let dataMonth = res.loanTenure.split("-")[1];
-            console.log(dataMonth);
-            let dataDay = res.loanTenure.split("-")[2];
-            console.log(dataDay);
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             this.accountForm.get('year').setValue(dataYear);
             this.accountForm.get('month').setValue(dataMonth);
             this.accountForm.get('day').setValue(dataDay);
@@ -10039,13 +10055,13 @@ class AcceptOfferAcceptRejectComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.loanaccountID = this.ls.getItem('loanAccountId');
         this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -10095,9 +10111,9 @@ class AcceptOfferAcceptRejectComponent {
             offerIssueDate: [data ? data.offerIssueDate : ''],
             generateOffer: [data ? data.generateOffer : ''],
             offerExpiryDate: [data ? data.offerExpiryDate : ''],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : ''],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             installmentType: [data ? data.installmentType : ''],
             dateOfOfferAcceptOrReject: [data ? data.dateOfOfferAcceptOrReject : ''],
             customerResponse: [data ? data.customerResponse : ''],
@@ -10129,11 +10145,11 @@ class AcceptOfferAcceptRejectComponent {
         aprloan = parseInt(aprloan);
         var rate = this.offeracceptForm.value.rateOfInterest;
         rate = parseInt(rate);
-        const renewData = this.offeracceptForm.value.year +
+        const renewData = this.offeracceptForm.value.year + "year" +
             "-" +
-            this.offeracceptForm.value.month +
+            this.offeracceptForm.value.month + "month" +
             "-" +
-            this.offeracceptForm.value.day;
+            this.offeracceptForm.value.day + "day";
         this.offeracceptForm.get("loanTenure").setValue(renewData);
         delete this.offeracceptForm.value.year;
         delete this.offeracceptForm.value.month;
@@ -10228,12 +10244,9 @@ class AcceptOfferAcceptRejectComponent {
             console.log(res);
             this.offeracceptForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
             console.log(res.loanTenure);
-            let dataYear = res.loanTenure.split("-")[0];
-            console.log(dataYear);
-            let dataMonth = res.loanTenure.split("-")[1];
-            console.log(dataMonth);
-            let dataDay = res.loanTenure.split("-")[2];
-            console.log(dataDay);
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
             this.offeracceptForm.get('year').setValue(dataYear);
             this.offeracceptForm.get('month').setValue(dataMonth);
             this.offeracceptForm.get('day').setValue(dataDay);
@@ -10260,7 +10273,7 @@ class AcceptOfferAcceptRejectComponent {
     }
 }
 AcceptOfferAcceptRejectComponent.ɵfac = function AcceptOfferAcceptRejectComponent_Factory(t) { return new (t || AcceptOfferAcceptRejectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_6__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_app_loader_app_loader_service__WEBPACK_IMPORTED_MODULE_5__["AppLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_application_entry_stage_service__WEBPACK_IMPORTED_MODULE_9__["ApplicationEntryStageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_account_service__WEBPACK_IMPORTED_MODULE_8__["AccountService"])); };
-AcceptOfferAcceptRejectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AcceptOfferAcceptRejectComponent, selectors: [["app-offer-accept-reject"]], decls: 118, vars: 24, consts: [["fxLayout", "column"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "column", 3, "formGroup"], [1, "alignChange"], ["visible", "true"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], [1, "hint"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "applicantName", "placeholder", "Applicant Name", "readonly", "", 1, "alignment"], [4, "ngIf"], ["matInput", "", "type", "text", "name", "approvedLoanAmount", "placeholder", "Approved Loan Account", "formControlName", "approvedLoanAmount", "maxlength", "16", "maxlength", "16", "readonly", "", 1, "alignment", 3, "keypress", "keyup"], ["fxLayout", "row wrap"], [1, "size"], ["appearance", "outline", "fxFlex", "23", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "disableOptionCentering", "", "formControlName", "year"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "22", 1, "full-width", "tenure1"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], ["formControlName", "installmentType", "placeholder", "Select", "disableOptionCentering", "", "required", "", 1, "alignment"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "installmentFrequency", "maxlength", "2", "placeholder", "Installment Frequency", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "name", "loanAmmount", "maxlength", "2", "formControlName", "rateOfInterest", "placeholder", "Rate Of Interest", 1, "alignment", 3, "keypress"], ["matInput", "", "id", "dob", "name", "offerIssueDate", "readonly", "", "formControlName", "offerIssueDate", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "id", "generateOffer", "name", "generateOffer", "readonly", "", "formControlName", "generateOffer", "value", "generateOffer", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "max"], ["picker3", ""], ["name", "customerResponse", "formControlName", "customerResponse", "disableOptionCenteringplaceholder", "Select"], ["value", " "], ["matInput", "", "id", "dob", "name", "dateOfOfferAcceptOrReject", "readonly", "", "formControlName", "dateOfOfferAcceptOrReject", "value", "dateOfOfferAcceptOrReject", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker1", ""], ["matInput", "", "id", "dobss", "name", "offerExpiryDate", "readonly", "", "formControlName", "offerExpiryDate", "value", "Date", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker2", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]], template: function AcceptOfferAcceptRejectComponent_Template(rf, ctx) { if (rf & 1) {
+AcceptOfferAcceptRejectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AcceptOfferAcceptRejectComponent, selectors: [["app-offer-accept-reject"]], decls: 118, vars: 24, consts: [["fxLayout", "column"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "column", 3, "formGroup"], [1, "alignChange"], ["visible", "true"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], [1, "hint"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "applicantName", "placeholder", "Applicant Name", "readonly", "", 1, "alignment"], [4, "ngIf"], ["matInput", "", "type", "text", "name", "approvedLoanAmount", "placeholder", "Approved Loan Account", "formControlName", "approvedLoanAmount", "maxlength", "16", "maxlength", "16", "readonly", "", 1, "alignment", 3, "keypress", "keyup"], ["fxLayout", "row wrap"], [1, "size"], ["appearance", "outline", "fxFlex", "23", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "disableOptionCentering", "", "formControlName", "year"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "22", 1, "full-width", "tenure1"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], ["formControlName", "installmentType", "placeholder", "Select", "disableOptionCentering", "", "required", "", 1, "alignment"], ["matInput", "", "type", "text", "name", "installmentFrequency", "formControlName", "installmentFrequency", "placeholder", "Installment Frequency", 1, "alignment"], ["matInput", "", "type", "text", "name", "loanAmmount", "maxlength", "2", "formControlName", "rateOfInterest", "placeholder", "Rate Of Interest", 1, "alignment", 3, "keypress"], ["matInput", "", "id", "dob", "name", "offerIssueDate", "readonly", "", "formControlName", "offerIssueDate", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "id", "generateOffer", "name", "generateOffer", "readonly", "", "formControlName", "generateOffer", "value", "generateOffer", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "max"], ["picker3", ""], ["name", "customerResponse", "formControlName", "customerResponse", "disableOptionCenteringplaceholder", "Select"], ["value", " "], ["matInput", "", "id", "dob", "name", "dateOfOfferAcceptOrReject", "readonly", "", "formControlName", "dateOfOfferAcceptOrReject", "value", "dateOfOfferAcceptOrReject", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker1", ""], ["matInput", "", "id", "dobss", "name", "offerExpiryDate", "readonly", "", "formControlName", "offerExpiryDate", "value", "Date", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker2", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]], template: function AcceptOfferAcceptRejectComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -10357,9 +10370,7 @@ AcceptOfferAcceptRejectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "mat-label", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "Installment Frequency");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "input", 26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function AcceptOfferAcceptRejectComponent_Template_input_keypress_60_listener($event) { return ctx._keyPress1($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](60, "input", 26);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 10);
@@ -11441,9 +11452,9 @@ LoanAccountComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](84, _c9))("ngClass", ctx.isGuarantorDetails ? "enable" : "disable");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isAccountApproveStageDone ? "active" : "notActive");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isLoanApplicationEntryDone ? "active" : "notActive");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isAccountApproveStageDone ? "active" : "notActive");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isLoanApplicationEntryDone ? "active" : "notActive");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](85, _c10));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
@@ -11978,7 +11989,7 @@ class AssetDetailsComponent {
         this.assetForm.get('zipCode').setValue('');
     }
     getAccountBranchDetails() {
-        //
+        //debugger
         this.apiService.getAccountBranch().subscribe((data) => {
             console.log("data:: AccountBranch ", data);
             this.arrayAccountBranch = data;
@@ -12322,7 +12333,7 @@ class UploadSignOrEsignComponent {
                 console.log("dismiss res", res);
                 if (res) {
                     this.ls.setItem('enable', true);
-                    this.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                    this.imageURL1 = (res === null || res === void 0 ? void 0 : res.image) ? res === null || res === void 0 ? void 0 : res.image : 'not_available';
                     this.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true;
                     console.log(this.show);
                     //this.isDone=true;
@@ -14855,13 +14866,13 @@ class LoanAssessmentDetailsComponent {
     ngOnInit() {
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         this.accountId = this.ls.getItem('accountId');
         let applicantId = this.route.snapshot.params['id'];
@@ -15015,11 +15026,11 @@ class LoanAssessmentDetailsComponent {
         this.apiService.fetchLoanAssessment(this.loanaccountID).subscribe((accountDetails) => {
             this.rateOfInterest = accountDetails.rateOfInterest;
             this.loanTenure = accountDetails.loanTenure;
-            var day = (this.loanTenure.split("-")[2]);
+            var day = Number(this.loanTenure.split("-")[2].match(/\d+/)[0]);
             console.log(day);
-            var month = (this.loanTenure.split("-")[1]);
+            var month = Number(this.loanTenure.split("-")[1].match(/\d+/)[0]);
             console.log(month);
-            var year = (this.loanTenure.split("-")[0]);
+            var year = Number(this.loanTenure.split("-")[0].match(/\d+/)[0]);
             console.log(year);
             // this.loanAmountRecommendation=accountDetails.loanAmountRecommendation;
             console.log("LoanAccountId:", accountDetails.loanAccountId);
@@ -15069,9 +15080,9 @@ class LoanAssessmentDetailsComponent {
             userRecommendation: [data ? data.userRecommendation : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             systemRecommendation: [data ? data.systemRecommendation : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
             requestedLoanAmount: [data ? data.requestedLoanAmount : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            year: [data ? data.loanTenure.split("-")[0] : ''],
-            month: [data ? data.loanTenure.split("-")[1] : ''],
-            day: [data ? data.loanTenure.split("-")[2] : ''],
+            day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
     }
     // fetchByCif(cifNumber, isExistingCustomer) {
@@ -19177,16 +19188,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RepaymentScheduleComponent_div_16_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td", 7);
+function RepaymentScheduleComponent_tr_14_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](7, "currency");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -19196,7 +19208,7 @@ function RepaymentScheduleComponent_div_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r1.paymentDate);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r1.principalPaid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](7, 3, data_r1.principalPaid, " "));
 } }
 class RepaymentScheduleComponent {
     constructor(fb, ls, router, formBuilder, dialogRef, apiService) {
@@ -19230,7 +19242,7 @@ class RepaymentScheduleComponent {
     }
 }
 RepaymentScheduleComponent.ɵfac = function RepaymentScheduleComponent_Factory(t) { return new (t || RepaymentScheduleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_5__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"])); };
-RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RepaymentScheduleComponent, selectors: [["app-repayment-schedule"]], decls: 17, vars: 1, consts: [["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "cart-table", "default-bg", "mat-elevation-z0"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "heading"], [1, "label"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "headingText1"], [1, "headingText2"], [1, "headingText3"]], template: function RepaymentScheduleComponent_Template(rf, ctx) { if (rf & 1) {
+RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RepaymentScheduleComponent, selectors: [["app-repayment-schedule"]], decls: 15, vars: 1, consts: [["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "table", "table-bordered"], ["scope", "col"], [4, "ngFor", "ngForOf"], [1, "headingText1"], [1, "headingText2"], [1, "headingText3"]], template: function RepaymentScheduleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RepaymentScheduleComponent_Template_mat_icon_click_1_listener() { return ctx.close(); });
@@ -19239,32 +19251,28 @@ RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "form");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "table", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "thead");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "th", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Payment Number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "th", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Payment Number");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "th", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Payment Date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "th", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Payment Date");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "th", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Principal To Be Paid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "th", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "EMI To Be Paid");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, RepaymentScheduleComponent_div_16_Template, 7, 3, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, RepaymentScheduleComponent_tr_14_Template, 8, 6, "tr", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.scheduleStatus);
-    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]], styles: [".contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.headingText1[_ngcontent-%COMP%] {\n  padding-left: 10%;\n}\n\n.headingText2[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n\n.headingText3[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxyZXBheW1lbnQtc2NoZWR1bGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBMEI7QUFDOUI7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZixjQUFjO0FBRWxCOztBQUNBO0VBQ0UsaUJBQWlCO0FBRW5COztBQUFBO0VBQ0UsaUJBQWlCO0FBR25COztBQURBO0VBQ0UsaUJBQWlCO0FBSW5CIiwiZmlsZSI6InJlcGF5bWVudC1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWlue1xyXG4gICAganVzdGlmeS1jb250ZW50OiAgZmxleC1lbmQ7XHJcbn1cclxuLmJhY2tJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgcGFkZGluZzogMCUgMCUgMCUgMCU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBjb2xvcjogIzZlNmU2ZTtcclxufVxyXG5cclxuLmhlYWRpbmdUZXh0MXtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxufVxyXG4uaGVhZGluZ1RleHQye1xyXG4gIHBhZGRpbmctcmlnaHQ6IDAlO1xyXG59XHJcbi5oZWFkaW5nVGV4dDN7XHJcbiAgcGFkZGluZy1yaWdodDogMCU7XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["CurrencyPipe"]], styles: [".contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.headingText1[_ngcontent-%COMP%] {\n  padding-left: 10%;\n}\n\n.headingText2[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n\n.headingText3[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxyZXBheW1lbnQtc2NoZWR1bGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBMEI7QUFDOUI7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZixjQUFjO0FBRWxCOztBQUNBO0VBQ0UsaUJBQWlCO0FBRW5COztBQUFBO0VBQ0UsaUJBQWlCO0FBR25COztBQURBO0VBQ0UsaUJBQWlCO0FBSW5CIiwiZmlsZSI6InJlcGF5bWVudC1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWlue1xyXG4gICAganVzdGlmeS1jb250ZW50OiAgZmxleC1lbmQ7XHJcbn1cclxuLmJhY2tJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgcGFkZGluZzogMCUgMCUgMCUgMCU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBjb2xvcjogIzZlNmU2ZTtcclxufVxyXG5cclxuLmhlYWRpbmdUZXh0MXtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxufVxyXG4uaGVhZGluZ1RleHQye1xyXG4gIHBhZGRpbmctcmlnaHQ6IDAlO1xyXG59XHJcbi5oZWFkaW5nVGV4dDN7XHJcbiAgcGFkZGluZy1yaWdodDogMCU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RepaymentScheduleComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -21570,63 +21578,73 @@ function LoanRepaymentComponentComponent_form_14_mat_error_45_Template(rf, ctx) 
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Moratorium Period is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function LoanRepaymentComponentComponent_form_14_mat_error_54_Template(rf, ctx) { if (rf & 1) {
+function LoanRepaymentComponentComponent_form_14_mat_option_52_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const item_r15 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", item_r15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](item_r15);
+} }
+function LoanRepaymentComponentComponent_form_14_mat_error_53_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Repayment Frequency is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function LoanRepaymentComponentComponent_form_14_mat_option_65_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+function LoanRepaymentComponentComponent_form_14_mat_option_64_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const year_r14 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", year_r14);
+    const year_r16 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", year_r16);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](year_r14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](year_r16);
 } }
-function LoanRepaymentComponentComponent_form_14_mat_option_70_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+function LoanRepaymentComponentComponent_form_14_mat_option_69_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const month_r15 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", month_r15);
+    const month_r17 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", month_r17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](month_r15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](month_r17);
 } }
-function LoanRepaymentComponentComponent_form_14_mat_option_75_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+function LoanRepaymentComponentComponent_form_14_mat_option_74_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const day_r16 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", day_r16);
+    const day_r18 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", day_r18);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](day_r16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](day_r18);
 } }
-function LoanRepaymentComponentComponent_form_14_mat_error_76_Template(rf, ctx) { if (rf & 1) {
+function LoanRepaymentComponentComponent_form_14_mat_error_75_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Loan Tenure is Required!");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-function LoanRepaymentComponentComponent_form_14_div_77_Template(rf, ctx) { if (rf & 1) {
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 44);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "a", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function LoanRepaymentComponentComponent_form_14_div_77_Template_a_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r18); const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r17.openPopup(); });
+function LoanRepaymentComponentComponent_form_14_div_76_Template(rf, ctx) { if (rf & 1) {
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "a", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function LoanRepaymentComponentComponent_form_14_div_76_Template_a_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r20); const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r19.openPopup(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Show Repayment Schedule");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r13.loanRepaymentForm);
+    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r14.loanRepaymentForm);
 } }
 function LoanRepaymentComponentComponent_form_14_Template(rf, ctx) { if (rf & 1) {
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 14);
@@ -21701,51 +21719,49 @@ function LoanRepaymentComponentComponent_form_14_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](50, "Repayment Frequency*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "mat-select", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "mat-option", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](53, "opinion");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](52, LoanRepaymentComponentComponent_form_14_mat_option_52_Template, 2, 2, "mat-option", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](53, LoanRepaymentComponentComponent_form_14_mat_error_53_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](54, LoanRepaymentComponentComponent_form_14_mat_error_54_Template, 2, 0, "mat-error", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "div", 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "mat-hint", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "b");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, "Loan Tenure *");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "div", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "mat-hint", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](59, "b");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](60, "Loan Tenure *");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](60, "mat-form-field", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](62, "Year*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](63, "mat-select", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](64, LoanRepaymentComponentComponent_form_14_mat_option_64_Template, 2, 2, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "mat-form-field", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](62, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](63, "Year*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](65, "mat-form-field", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](67, "Month*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "mat-select", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](65, LoanRepaymentComponentComponent_form_14_mat_option_65_Template, 2, 2, "mat-option", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "mat-form-field", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](67, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](68, "Month*");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](69, "mat-select", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](70, LoanRepaymentComponentComponent_form_14_mat_option_70_Template, 2, 2, "mat-option", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](68, "mat-select", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](69, LoanRepaymentComponentComponent_form_14_mat_option_69_Template, 2, 2, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](71, "mat-form-field", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](72, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](73, "Day*");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](70, "mat-form-field", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](71, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](72, "Day*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](74, "mat-select", 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function LoanRepaymentComponentComponent_form_14_Template_mat_select_selectionChange_74_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r20); const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r19.getDays(ctx_r19.loanRepaymentForm.get("month").value, ctx_r19.loanRepaymentForm.get("year").value, ctx_r19.loanRepaymentForm.get("day").value); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](75, LoanRepaymentComponentComponent_form_14_mat_option_75_Template, 2, 2, "mat-option", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](73, "mat-select", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function LoanRepaymentComponentComponent_form_14_Template_mat_select_selectionChange_73_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r22); const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r21.getDays(ctx_r21.loanRepaymentForm.get("month").value, ctx_r21.loanRepaymentForm.get("year").value, ctx_r21.loanRepaymentForm.get("day").value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](74, LoanRepaymentComponentComponent_form_14_mat_option_74_Template, 2, 2, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](76, LoanRepaymentComponentComponent_form_14_mat_error_76_Template, 2, 0, "mat-error", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](75, LoanRepaymentComponentComponent_form_14_mat_error_75_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](77, LoanRepaymentComponentComponent_form_14_div_77_Template, 5, 1, "div", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](76, LoanRepaymentComponentComponent_form_14_div_76_Template, 5, 1, "div", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -21770,7 +21786,9 @@ function LoanRepaymentComponentComponent_form_14_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r0.loanRepaymentForm.get("maturityDate").valid && ctx_r0.loanRepaymentForm.get("maturityDate").touched);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r0.loanRepaymentForm.get("moraturioumPeriod").valid && ctx_r0.loanRepaymentForm.get("moraturioumPeriod").touched);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r0.repaymentFreq);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r0.loanRepaymentForm.get("repaymentFrequency").valid && ctx_r0.loanRepaymentForm.get("repaymentFrequency").touched);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](11);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r0.years);
@@ -21784,14 +21802,14 @@ function LoanRepaymentComponentComponent_form_14_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r0.scheduleLink);
 } }
 function LoanRepaymentComponentComponent_form_19_mat_option_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const accNo_r29 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", accNo_r29);
+    const accNo_r31 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", accNo_r31);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](accNo_r29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](accNo_r31);
 } }
 function LoanRepaymentComponentComponent_form_19_mat_error_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
@@ -21833,18 +21851,18 @@ function LoanRepaymentComponentComponent_form_19_div_26_Template(rf, ctx) { if (
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-hint");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "IFSC Code*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-card", 50);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 51);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-card", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, LoanRepaymentComponentComponent_form_19_div_26_mat_error_5_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r28.internalAccount.get("ifscCode").valid && ctx_r28.internalAccount.get("ifscCode").touched);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r30.internalAccount.get("ifscCode").valid && ctx_r30.internalAccount.get("ifscCode").touched);
 } }
 function LoanRepaymentComponentComponent_form_19_Template(rf, ctx) { if (rf & 1) {
-    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 14);
@@ -21853,8 +21871,8 @@ function LoanRepaymentComponentComponent_form_19_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Customer Account Number*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "mat-select", 46);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, LoanRepaymentComponentComponent_form_19_mat_option_8_Template, 2, 2, "mat-option", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "mat-select", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, LoanRepaymentComponentComponent_form_19_mat_option_8_Template, 2, 2, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](9, LoanRepaymentComponentComponent_form_19_mat_error_9_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, LoanRepaymentComponentComponent_form_19_mat_error_10_Template, 2, 0, "mat-error", 22);
@@ -21865,8 +21883,8 @@ function LoanRepaymentComponentComponent_form_19_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14, "Bank Name*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "input", 47);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function LoanRepaymentComponentComponent_form_19_Template_input_keypress_15_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r32); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r31.letterOnly($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "input", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function LoanRepaymentComponentComponent_form_19_Template_input_keypress_15_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r34); const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r33.letterOnly($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, LoanRepaymentComponentComponent_form_19_mat_error_16_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](17, LoanRepaymentComponentComponent_form_19_mat_error_17_Template, 2, 0, "mat-error", 22);
@@ -21879,14 +21897,14 @@ function LoanRepaymentComponentComponent_form_19_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Branch Code*");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "input", 48);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function LoanRepaymentComponentComponent_form_19_Template_input_keypress_23_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r32); const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r33._keyPress($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "input", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function LoanRepaymentComponentComponent_form_19_Template_input_keypress_23_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r34); const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r35._keyPress($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](24, LoanRepaymentComponentComponent_form_19_mat_error_24_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](25, LoanRepaymentComponentComponent_form_19_mat_error_25_Template, 2, 0, "mat-error", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](26, LoanRepaymentComponentComponent_form_19_div_26_Template, 6, 1, "div", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](26, LoanRepaymentComponentComponent_form_19_div_26_Template, 6, 1, "div", 48);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -21940,13 +21958,13 @@ class LoanRepaymentComponentComponent {
         }
         this.selectedYear = new Date().getFullYear();
         for (let year = 0; year <= 50; year++) {
-            this.years.push(year + " year");
+            this.years.push(year);
         }
         for (let month = 0; month <= 11; month++) {
-            this.months.push(month + " month");
+            this.months.push(month);
         }
         for (let day = 0; day <= 30; day++) {
-            this.days.push(day + " day");
+            this.days.push(day);
         }
         // this.months = [
         //   "Jan",
@@ -21962,7 +21980,8 @@ class LoanRepaymentComponentComponent {
         //   "Nov",
         //   "Dec",
         // ];
-        let isLoanDisbursementDetails = this.ls.getItem("LOAN_DISBURSEMENT_DETAIL_DONE");
+        this.getRepaymentFreqDetails('loan_repayment_frequency');
+        let isLoanDisbursementDetails = this.ls.getItem("LOAN_REPAYMENT_DETAIL_DONE");
         // setTimeout(() => {
         // }, 10);
         if (this.loanaccountId != null && isLoanDisbursementDetails) {
@@ -21976,6 +21995,12 @@ class LoanRepaymentComponentComponent {
         this.fetchByCif();
         this.loanData();
         this.lastUpdateByCif();
+    }
+    getRepaymentFreqDetails(loan_repayment_frequency) {
+        this.api.getRepaymentFreq(loan_repayment_frequency).subscribe((resp) => {
+            this.repaymentFreq = resp;
+            console.log(this.repaymentFreq);
+        });
     }
     getRepaymenttDetails() {
         //this.loader.open();
@@ -22015,14 +22040,16 @@ class LoanRepaymentComponentComponent {
             ],
             repaymentMode: [item ? item.repaymentMode : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             typeOfRepayment: [item ? item.typeOfRepayment : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            day: [item ? item.loanTenure.split("-")[2] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            month: [item ? item.loanTenure.split("-")[1] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            year: [item ? item.loanTenure.split("-")[0] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            day: [item ? Number(item.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            month: [item ? Number(item.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            year: [item ? Number(item.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
         });
         console.log(this.loanRepaymentForm.value);
         this.scheduleLink = this.formBuilder.group({
             firstRepaymentDate: this.loanRepaymentForm.get("firstRepaymentDate"),
             loanAccountId: this.loanaccountId,
+            repaymentFrequency: this.loanRepaymentForm.get("repaymentFrequency"),
+            loanTenure: this.loanRepaymentForm.get("loanTenure")
         });
         this.internalAccount = this.formBuilder.group({
             branchCode: [item ? item.branchCode : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(".*[a-zA-Z0-9].*")]],
@@ -22031,11 +22058,16 @@ class LoanRepaymentComponentComponent {
         });
     }
     getDays(year1, month1, day1) {
-        var yr = moment__WEBPACK_IMPORTED_MODULE_11__(new Date()).add(parseInt(year1.split(" ")[0]), 'months').format('LLL');
-        var month = moment__WEBPACK_IMPORTED_MODULE_11__(yr).add(parseInt(month1.split(" ")[0]), 'year').format('LLL');
-        var finalDate = moment__WEBPACK_IMPORTED_MODULE_11__(month).add(parseInt(day1.split(" ")[0]), 'days').format('LLL');
+        var yr = moment__WEBPACK_IMPORTED_MODULE_11__(new Date()).add(parseInt(year1), 'months').format('LLL');
+        var month = moment__WEBPACK_IMPORTED_MODULE_11__(yr).add(parseInt(month1), 'year').format('LLL');
+        var finalDate = moment__WEBPACK_IMPORTED_MODULE_11__(month).add(parseInt(day1), 'days').format('LLL');
         console.log("finalDate--->", finalDate);
         this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate));
+        // var yr=moment(new Date()).add(parseInt(year1.split(" ")[0]), 'months').format('LLL');
+        // var month=moment(yr).add(parseInt(month1.split(" ")[0]), 'year').format('LLL');
+        // var finalDate=moment(month).add(parseInt(day1.split(" ")[0]), 'days').format('LLL');
+        // console.log("finalDate--->",finalDate);
+        // this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate));
     }
     openPopup() {
         console.log(this.loanRepaymentForm.value);
@@ -22046,6 +22078,12 @@ class LoanRepaymentComponentComponent {
         let payload = {
             firstRepaymentDate: latest_date,
             loanAccountId: this.loanaccountId,
+            loanTenure: this.loanRepaymentForm.value.year + "month" +
+                "-" +
+                this.loanRepaymentForm.value.month + "year" +
+                "-" +
+                this.loanRepaymentForm.value.day + "day",
+            repaymentFrequency: this.loanRepaymentForm.value.repaymentFrequency,
         };
         console.log("payload", payload);
         this.api.scheduleLink(payload).subscribe((resp) => {
@@ -22071,11 +22109,11 @@ class LoanRepaymentComponentComponent {
     submit() {
         let latest_date = this.datepipe.transform(this.loanRepaymentForm.value.firstRepaymentDate, 'yyyy-MMM-dd');
         let latest_dateMaturity = this.datepipe.transform(this.loanRepaymentForm.value.maturityDate, "yyyy-MMM-dd");
-        const renewData = this.loanRepaymentForm.value.year +
+        const renewData = this.loanRepaymentForm.value.year + "month" +
             "-" +
-            this.loanRepaymentForm.value.month +
+            this.loanRepaymentForm.value.month + "year" +
             "-" +
-            this.loanRepaymentForm.value.day;
+            this.loanRepaymentForm.value.day + "day";
         // this.loanRepaymentForm.get("loanTenure").setValue(renewData);
         this.loanRepaymentForm.value.loanTenure = renewData;
         this.loanRepaymentForm.value.firstRepaymentDate = latest_date;
@@ -22157,9 +22195,10 @@ class LoanRepaymentComponentComponent {
     }
     loanData() {
         this.apiService.fetchByLoanAccountId(this.loanaccountId).subscribe((res) => {
-            let dataYear = res.loanTenure.split("-")[0];
-            let dataMonth = res.loanTenure.split("-")[1];
-            let dataDay = res.loanTenure.split("-")[2];
+            let dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+            let dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+            let dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
+            console.log(dataYear);
             this.loanRepaymentForm.get("year").setValue(dataYear);
             this.loanRepaymentForm.get('month').setValue(dataMonth);
             this.loanRepaymentForm.get('day').setValue(dataDay);
@@ -22176,7 +22215,7 @@ class LoanRepaymentComponentComponent {
     }
 }
 LoanRepaymentComponentComponent.ɵfac = function LoanRepaymentComponentComponent_Factory(t) { return new (t || LoanRepaymentComponentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_7__["LocalStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](app_shared_services_app_loader_app_loader_service__WEBPACK_IMPORTED_MODULE_10__["AppLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_account_service__WEBPACK_IMPORTED_MODULE_9__["AccountService"])); };
-LoanRepaymentComponentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: LoanRepaymentComponentComponent, selectors: [["app-loan-repayment-component"]], decls: 25, vars: 3, consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_Payments_re_77x0.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "flex-grow-2"], ["appearance", "outline", 1, "full-width"], ["disableOptionCentering", "", "placeholder", "Repayment Mode", "name", "repaymentMode", "formControlName", "repaymentMode"], ["value", "Internal"], ["value", "External"], ["disableOptionCentering", "", "placeholder", "Type of Repayment", "name", "opinion", "formControlName", "typeOfRepayment"], ["value", "EMI"], [4, "ngIf"], ["matInput", "", "placeholder", "DD/MM/YYYY", "name", "firstRepaymentDate", "formControlName", "firstRepaymentDate", "readonly", "", 1, "alignment", 3, "min", "matDatepicker"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker1", ""], ["placeholder", "DD/MM/YYYY", "matInput", "", "name", "valuationDate", "formControlName", "maturityDate", "readonly", "", 1, "alignment", 3, "matDatepicker", "max"], ["appDatepicker", ""], [1, "flex-grow-1"], ["matInput", "", "placeholder", "Moratorium Period", "formControlName", "moraturioumPeriod", "type", "number", "name", "MarketValueofAsset", "min", "0", 1, "alignment"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["disableOptionCentering", "", "placeholder", "Repayment Frequency", "name", "opinion", "formControlName", "repaymentFrequency"], ["value", "opinion"], [1, "tenre"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "21.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", "", 3, "selectionChange"], ["fxLayout", "row", "fxLayoutGap", "25px", "class", "showShedule", 3, "formGroup", 4, "ngIf"], [3, "value"], ["fxLayout", "row", "fxLayoutGap", "25px", 1, "showShedule", 3, "formGroup"], ["fxFlex", "100", 1, "pr-1"], [1, "link", 3, "routerLink", "click"], ["formControlName", "customerAccount", "disableOptionCentering", "", "placeholder", "Customer Account"], ["matInput", "", "placeholder", "Bank Name", "formControlName", "bankName", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["matInput", "", "placeholder", "Branch Code", "formControlName", "branchCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["class", "flex-grow-1", 4, "ngIf"], [1, "inputMatName"], ["matInput", "", "placeholder", "IFSC Code", "formControlName", "ifscCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment"]], template: function LoanRepaymentComponentComponent_Template(rf, ctx) { if (rf & 1) {
+LoanRepaymentComponentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: LoanRepaymentComponentComponent, selectors: [["app-loan-repayment-component"]], decls: 25, vars: 3, consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_Payments_re_77x0.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "flex-grow-2"], ["appearance", "outline", 1, "full-width"], ["disableOptionCentering", "", "placeholder", "Repayment Mode", "name", "repaymentMode", "formControlName", "repaymentMode"], ["value", "Internal"], ["value", "External"], ["disableOptionCentering", "", "placeholder", "Type of Repayment", "name", "opinion", "formControlName", "typeOfRepayment"], ["value", "EMI"], [4, "ngIf"], ["matInput", "", "placeholder", "DD/MM/YYYY", "name", "firstRepaymentDate", "formControlName", "firstRepaymentDate", "readonly", "", 1, "alignment", 3, "min", "matDatepicker"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker1", ""], ["placeholder", "DD/MM/YYYY", "matInput", "", "name", "valuationDate", "formControlName", "maturityDate", "readonly", "", 1, "alignment", 3, "matDatepicker", "max"], ["appDatepicker", ""], [1, "flex-grow-1"], ["matInput", "", "placeholder", "Moratorium Period", "formControlName", "moraturioumPeriod", "type", "number", "name", "MarketValueofAsset", "min", "0", 1, "alignment"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["disableOptionCentering", "", "placeholder", "Repayment Frequency", "name", "opinion", "formControlName", "repaymentFrequency"], [3, "value", 4, "ngFor", "ngForOf"], [1, "tenre"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "21.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", "", 3, "selectionChange"], ["fxLayout", "row", "fxLayoutGap", "25px", "class", "showShedule", 3, "formGroup", 4, "ngIf"], [3, "value"], ["fxLayout", "row", "fxLayoutGap", "25px", 1, "showShedule", 3, "formGroup"], ["fxFlex", "100", 1, "pr-1"], [1, "link", 3, "routerLink", "click"], ["formControlName", "customerAccount", "disableOptionCentering", "", "placeholder", "Customer Account"], ["matInput", "", "placeholder", "Bank Name", "formControlName", "bankName", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["matInput", "", "placeholder", "Branch Code", "formControlName", "branchCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["class", "flex-grow-1", 4, "ngIf"], [1, "inputMatName"], ["matInput", "", "placeholder", "IFSC Code", "formControlName", "ifscCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment"]], template: function LoanRepaymentComponentComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -22198,7 +22237,7 @@ LoanRepaymentComponentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-card-content");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, LoanRepaymentComponentComponent_form_14_Template, 78, 17, "form", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, LoanRepaymentComponentComponent_form_14_Template, 77, 18, "form", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "fieldset");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "legend", 7);
@@ -22228,7 +22267,7 @@ LoanRepaymentComponentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.internalAccount);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("disabled", !ctx.loanRepaymentForm.valid && !ctx.internalAccount.valid);
-    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_14__["MatButton"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_input__WEBPACK_IMPORTED_MODULE_18__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerInput"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepicker"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NumberValueAccessor"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatHint"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgForOf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatError"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"]], styles: [".box-holder[_ngcontent-%COMP%] {\n  width: auto;\n  max-width: 190px;\n  background: #F4F8F7 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 6px #00000029;\n  border-radius: 38px;\n  opacity: 1;\n}\n\n#heightRepay[_ngcontent-%COMP%] {\n  height: 44px;\n}\n\n.showShedule[_ngcontent-%COMP%] {\n  margin-top: 4%;\n}\n\n.link[_ngcontent-%COMP%] {\n  text-decoration: underline;\n  color: #456EFE;\n  font-size: small;\n  align-self: center;\n}\n\n#heightDate[_ngcontent-%COMP%] {\n  height: 48px !important;\n}\n\n#toggle[_ngcontent-%COMP%] {\n  margin-top: -3%;\n  margin-left: 6.3cm;\n}\n\n.spinner[_ngcontent-%COMP%] {\n  padding: 20px;\n}\n\n.hintColor[_ngcontent-%COMP%] {\n  color: red;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  pointer-events: none;\n  cursor: default;\n}\n\n.footer[_ngcontent-%COMP%] {\n  position: fixed;\n  left: 0;\n  bottom: 0;\n}\n\n.list-unstyled[_ngcontent-%COMP%] {\n  padding-left: 0;\n  list-style: none;\n  margin-left: 17px !important;\n  margin-top: 10px !important;\n}\n\n.colorRed[_ngcontent-%COMP%] {\n  color: Red;\n  font-size: small;\n}\n\n.avatar-sm[_ngcontent-%COMP%] {\n  width: 32px;\n}\n\n.avatar[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.avatar[_ngcontent-%COMP%] {\n  position: relative;\n  width: 30px;\n  vertical-align: bottom;\n  white-space: nowrap;\n  border-radius: 1000px;\n}\n\n.pull-up[_ngcontent-%COMP%] {\n  transition: all .25s ease;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]    + li[_ngcontent-%COMP%] {\n  margin-left: -8px;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%], .img[_ngcontent-%COMP%] {\n  border: 2px solid #fff;\n  box-shadow: 0 2px 4px 0 #6b6f80;\n}\n\n.avatar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%], .img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 100%;\n  height: auto;\n  border: 0;\n  border-radius: 1000px;\n}\n\n.rounded-circle[_ngcontent-%COMP%] {\n  border-radius: 50% !important;\n}\n\n.img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  font-size: 0.9em;\n  padding: 2px;\n  letter-spacing: -0.36px;\n  color: #FFFFFF;\n  text-align: center;\n  margin-left: -7px;\n}\n\nul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  line-height: 1.8;\n}\n\nul[_ngcontent-%COMP%] {\n  display: block;\n  list-style-type: disc;\n  -webkit-margin-before: 1em;\n          margin-block-start: 1em;\n  -webkit-margin-after: 1em;\n          margin-block-end: 1em;\n  -webkit-margin-start: 0px;\n          margin-inline-start: 0px;\n  -webkit-margin-end: 0px;\n          margin-inline-end: 0px;\n  -webkit-padding-start: 40px;\n          padding-inline-start: 40px;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .badge[_ngcontent-%COMP%] {\n  margin-bottom: 6px;\n  color: #6b6f80;\n  background: rgba(255, 255, 255, 0.8);\n}\n\n.badge[_ngcontent-%COMP%] {\n  color: #fff;\n  font-weight: 400;\n}\n\n.badge-info[_ngcontent-%COMP%] {\n  color: #fff;\n  background-color: #28afd0;\n}\n\n.full-width1[_ngcontent-%COMP%] {\n  width: 100px;\n}\n\n.full-width2[_ngcontent-%COMP%] {\n  width: 335px;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 25px;\n}\n\n.inputMatcard[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n  width: 300px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 15px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.inputMatName1[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 10px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.alignment[_ngcontent-%COMP%] {\n  border-style: none !important;\n  outline: none;\n}\n\n.sqInput1[_ngcontent-%COMP%] {\n  width: 30%;\n  margin-left: -1%;\n  height: 47px;\n}\n\n.sqInput2[_ngcontent-%COMP%] {\n  width: 72%;\n}\n\nmat-hint[_ngcontent-%COMP%] {\n  font-family: 'Manrope';\n}\n\nmat-datepicker-toggle[_ngcontent-%COMP%] {\n  margin-left: 40%;\n}\n\nmat-slide-toggle[_ngcontent-%COMP%] {\n  margin-top: 5%;\n}\n\n.mat-title[_ngcontent-%COMP%] {\n  font-size: 150%;\n  font-weight: 600;\n  width: 50% !important;\n}\n\n.divider-line[_ngcontent-%COMP%] {\n  display: flex;\n  margin-bottom: 0%;\n}\n\n.mat-line-position[_ngcontent-%COMP%] {\n  position: unset !important;\n  left: 100% !important;\n  align-self: center !important;\n}\n\n#mat-line[_ngcontent-%COMP%] {\n  margin-top: 5%;\n  margin-left: 2%;\n  margin-bottom: 5%;\n}\n\n#mat-line2[_ngcontent-%COMP%] {\n  margin-top: 4%;\n  margin-left: 5%;\n  margin-bottom: 3%;\n}\n\nfieldset[_ngcontent-%COMP%] {\n  border-top: 1px solid lightgray;\n  border-bottom: 0px solid lightgray;\n  border-right: 0px solid lightgray;\n  border-left: 0px solid lightgray;\n  margin-left: 20px;\n  margin-right: 20px;\n  margin-top: 20px !important;\n  margin-bottom: 20px !important;\n}\n\n.datechange[_ngcontent-%COMP%] {\n  height: 10px;\n  padding: 0;\n  margin-right: 10px;\n}\n\n.tenure1[_ngcontent-%COMP%] {\n  margin-left: 4.9% !important;\n}\n\n.tenure2[_ngcontent-%COMP%] {\n  margin-left: 4.9% !important;\n}\n\n.tenre[_ngcontent-%COMP%] {\n  margin-top: 19px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGxvYW4tcmVwYXltZW50LWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQVc7RUFDWCxnQkFBZ0I7RUFFaEIsK0NBQStDO0VBQy9DLGlDQUFpQztFQUNqQyxtQkFBbUI7RUFDbkIsVUFBVTtBQUFkOztBQUVBO0VBQ0ksWUFBWTtBQUNoQjs7QUFDQTtFQUNHLGNBQWU7QUFFbEI7O0FBQUE7RUFHSSwwQkFBMEI7RUFDNUIsY0FBYTtFQUNiLGdCQUFnQjtFQUNoQixrQkFBa0I7QUFDcEI7O0FBQ0E7RUFDSSx1QkFBc0I7QUFFMUI7O0FBQUE7RUFFSSxlQUFjO0VBQ2Qsa0JBQWtCO0FBRXRCOztBQUNBO0VBQ0ksYUFBYTtBQUVqQjs7QUFDQTtFQUNJLFVBQVU7QUFFZDs7QUFFQTtFQUNJLG9CQUFvQjtFQUNwQixlQUFlO0FBQ25COztBQUVBO0VBQ0ksZUFBZTtFQUNmLE9BQU87RUFDUCxTQUFTO0FBQ2I7O0FBRUE7RUFDSSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLDRCQUE0QjtFQUM1QiwyQkFBMkI7QUFDL0I7O0FBRUE7RUFDSSxVQUFVO0VBQ1YsZ0JBQWdCO0FBQ3BCOztBQUVBO0VBQ0ksV0FBVztBQUNmOztBQUVBO0VBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0VBQ0ksa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtFQUlJLHlCQUF5QjtBQUM3Qjs7QUFFQTtFQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTs7RUFFSSxzQkFBc0I7RUFDdEIsK0JBQStCO0FBQ25DOztBQUVBOztFQUVJLFdBQVc7RUFDWCxlQUFlO0VBQ2YsWUFBWTtFQUNaLFNBQVM7RUFDVCxxQkFBcUI7QUFDekI7O0FBRUE7RUFDSSw2QkFBNkI7QUFDakM7O0FBRUE7RUFDSSxzQkFBc0I7RUFDdEIsK0NBQStDO0VBQy9DLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLHVCQUF1QjtFQUN2QixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGlCQUFpQjtBQUNyQjs7QUFFQTtFQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtFQUNJLGNBQWM7RUFDZCxxQkFBcUI7RUFDckIsMEJBQXVCO1VBQXZCLHVCQUF1QjtFQUN2Qix5QkFBcUI7VUFBckIscUJBQXFCO0VBQ3JCLHlCQUF3QjtVQUF4Qix3QkFBd0I7RUFDeEIsdUJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QiwyQkFBMEI7VUFBMUIsMEJBQTBCO0FBQzlCOztBQUVBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxvQ0FBbUM7QUFDdkM7O0FBRUE7RUFDSSxXQUFXO0VBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0VBQ0ksV0FBVztFQUNYLHlCQUF5QjtBQUM3Qjs7QUFFQTtFQUNJLFlBQVk7QUFDaEI7O0FBQ0E7RUFDSSxZQUFZO0FBRWhCOztBQUFBO0VBQ0ksV0FBVztFQUNYLFlBQVk7QUFHaEI7O0FBREE7RUFDSSxZQUFZO0VBS1osK0JBQStCO0VBRS9CLHNCQUFzQjtFQUd0QixnQkFBZ0I7RUFDaEIsYUFBYTtFQUViLFlBQVk7QUFKaEI7O0FBTUU7RUFDRSxZQUFZO0VBRVosZ0JBQWdCO0VBR2hCLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFUakI7O0FBYUU7RUFDRSxZQUFZO0VBRVosZ0JBQWdCO0VBR2hCLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFoQmpCOztBQW9CRTtFQUNFLDZCQUE2QjtFQUM3QixhQUFhO0FBakJqQjs7QUFtQkU7RUFDSSxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFoQmxCOztBQWtCRTtFQUNFLFVBQVU7QUFmZDs7QUFrQkE7RUFDSSxzQkFBc0I7QUFmMUI7O0FBaUJBO0VBQ0ksZ0JBQWdCO0FBZHBCOztBQWlCQTtFQUNJLGNBQWM7QUFkbEI7O0FBaUJFO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFkekI7O0FBZ0JFO0VBQ0UsYUFBYTtFQUNiLGlCQUFpQjtBQWJyQjs7QUFnQkU7RUFDRSwwQkFBMEI7RUFDMUIscUJBQXFCO0VBQ3JCLDZCQUE2QjtBQWJqQzs7QUFlRTtFQUNFLGNBQWE7RUFDYixlQUFjO0VBQ2QsaUJBQWlCO0FBWnJCOztBQWNFO0VBQ0UsY0FBYTtFQUNiLGVBQWM7RUFDZCxpQkFBaUI7QUFYckI7O0FBd0JFO0VBQ0UsK0JBQStCO0VBQy9CLGtDQUFrQztFQUNsQyxpQ0FBaUM7RUFDakMsZ0NBQWdDO0VBQ2hDLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsMkJBQTJCO0VBQzNCLDhCQUE4QjtBQXJCbEM7O0FBdUJFO0VBQ0UsWUFBWTtFQUNaLFVBQVU7RUFDVixrQkFBa0I7QUFwQnRCOztBQXNCRTtFQUNFLDRCQUE0QjtBQW5CaEM7O0FBcUJFO0VBQ0UsNEJBQTRCO0FBbEJoQzs7QUFvQkU7RUFDRSxnQkFBZ0I7QUFqQnBCIiwiZmlsZSI6ImxvYW4tcmVwYXltZW50LWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib3gtaG9sZGVyIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgbWF4LXdpZHRoOiAxOTBweDtcclxuICAgIC8vIGhlaWdodDogMTA4cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiAjRjRGOEY3IDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJveC1zaGFkb3c6IDBweCAzcHggNnB4ICMwMDAwMDAyOTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM4cHg7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG59XHJcbiNoZWlnaHRSZXBheXtcclxuICAgIGhlaWdodDogNDRweDtcclxufVxyXG4uc2hvd1NoZWR1bGV7XHJcbiAgIG1hcmdpbi10b3A6IDQlIDtcclxufVxyXG4ubGlua3tcclxuICAgIC8vIGNvbG9yOiAjNDU2ZWZlOyBcclxuICAgIC8vIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmVcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBcclxuICBjb2xvcjojNDU2RUZFO1xyXG4gIGZvbnQtc2l6ZTogc21hbGw7XHJcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xyXG59XHJcbiNoZWlnaHREYXRle1xyXG4gICAgaGVpZ2h0OjQ4cHggIWltcG9ydGFudDtcclxufVxyXG4jdG9nZ2xle1xyXG5cclxuICAgIG1hcmdpbi10b3A6LTMlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDYuM2NtO1xyXG4gIH1cclxuXHJcbi5zcGlubmVyIHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuXHJcbi5oaW50Q29sb3Ige1xyXG4gICAgY29sb3I6IHJlZDtcclxuXHJcbn1cclxuXHJcbi5kaXNhYmxlZCB7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICAgIGN1cnNvcjogZGVmYXVsdDtcclxufVxyXG5cclxuLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG4ubGlzdC11bnN0eWxlZCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE3cHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmNvbG9yUmVkIHtcclxuICAgIGNvbG9yOiBSZWQ7XHJcbiAgICBmb250LXNpemU6IHNtYWxsO1xyXG59XHJcblxyXG4uYXZhdGFyLXNtIHtcclxuICAgIHdpZHRoOiAzMnB4O1xyXG59XHJcblxyXG4uYXZhdGFyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLmF2YXRhciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB3aWR0aDogMzBweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBib3R0b207XHJcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTAwMHB4O1xyXG59XHJcblxyXG4ucHVsbC11cCB7XHJcbiAgICAtd2Via2l0LXRyYW5zaXRpb246IGFsbCAuMjVzIGVhc2U7XHJcbiAgICAtbW96LXRyYW5zaXRpb246IGFsbCAuMjVzIGVhc2U7XHJcbiAgICAtby10cmFuc2l0aW9uOiBhbGwgLjI1cyBlYXNlO1xyXG4gICAgdHJhbnNpdGlvbjogYWxsIC4yNXMgZWFzZTtcclxufVxyXG5cclxuLnVzZXJzLWxpc3QgbGkrbGkge1xyXG4gICAgbWFyZ2luLWxlZnQ6IC04cHg7XHJcbn1cclxuXHJcbi51c2Vycy1saXN0IGxpIGltZyxcclxuLmltZyB7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjZmZmO1xyXG4gICAgYm94LXNoYWRvdzogMCAycHggNHB4IDAgIzZiNmY4MDtcclxufVxyXG5cclxuLmF2YXRhciBpbWcsXHJcbi5pbWcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICBib3JkZXI6IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMDAwcHg7XHJcbn1cclxuXHJcbi5yb3VuZGVkLWNpcmNsZSB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLmltZyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gICAgZm9udC1zaXplOiAwLjllbTtcclxuICAgIHBhZGRpbmc6IDJweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAtMC4zNnB4O1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogLTdweDtcclxufVxyXG5cclxudWwgbGkge1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuODtcclxufVxyXG5cclxudWwge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBsaXN0LXN0eWxlLXR5cGU6IGRpc2M7XHJcbiAgICBtYXJnaW4tYmxvY2stc3RhcnQ6IDFlbTtcclxuICAgIG1hcmdpbi1ibG9jay1lbmQ6IDFlbTtcclxuICAgIG1hcmdpbi1pbmxpbmUtc3RhcnQ6IDBweDtcclxuICAgIG1hcmdpbi1pbmxpbmUtZW5kOiAwcHg7XHJcbiAgICBwYWRkaW5nLWlubGluZS1zdGFydDogNDBweDtcclxufVxyXG5cclxuLnVzZXJzLWxpc3QgbGkgLmJhZGdlIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDZweDtcclxuICAgIGNvbG9yOiAjNmI2ZjgwO1xyXG4gICAgYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAuOCk7XHJcbn1cclxuXHJcbi5iYWRnZSB7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbn1cclxuXHJcbi5iYWRnZS1pbmZvIHtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4YWZkMDtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgxIHtcclxuICAgIHdpZHRoOiAxMDBweDtcclxufVxyXG4uZnVsbC13aWR0aDIge1xyXG4gICAgd2lkdGg6IDMzNXB4O1xyXG59XHJcbi5pbnB1dENhcmR7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMjVweDtcclxufVxyXG4uaW5wdXRNYXRjYXJkIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIC8vIG1hcmdpbi10b3A6IDVweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcblxyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAvLyBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgIHBhZGRpbmc6IDEzcHg7XHJcblxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gIH1cclxuICAuaW5wdXRNYXROYW1lIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQocmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpLFxyXG4gICAgLy8gICAgIHJnYmEoMjQ4LCAyNTAsIDI1NCwgMC41KSk7XHJcbiAgICBib3gtc2hhZG93OiAwIDNwdCA2cHQgIzAwMDAwMDI5O1xyXG5cclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICAvLyAgIG1heC1oZWlnaHQ6IDEwMHB4O1xyXG4gICAgLy8gcGFkZGluZzogMjBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxM3B4O1xyXG5cclxuICAgIC8vIHdpZHRoOiA0NTBweDtcclxuICB9XHJcbiAgLmlucHV0TWF0TmFtZTEge1xyXG4gICAgZmxleC1ncm93OiAxO1xyXG4gICAgLy8gbWF4LXdpZHRoOjUwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcblxyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAvLyBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgIHBhZGRpbmc6IDEzcHg7XHJcblxyXG4gICAgLy8gd2lkdGg6IDQ1MHB4O1xyXG4gIH1cclxuICAuYWxpZ25tZW50IHtcclxuICAgIGJvcmRlci1zdHlsZTogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICB9XHJcbiAgLnNxSW5wdXQxe1xyXG4gICAgICB3aWR0aDogMzAlO1xyXG4gICAgICBtYXJnaW4tbGVmdDogLTElO1xyXG4gICAgICBoZWlnaHQ6IDQ3cHg7XHJcbiAgfVxyXG4gIC5zcUlucHV0MntcclxuICAgIHdpZHRoOiA3MiU7XHJcbn1cclxuXHJcbm1hdC1oaW50e1xyXG4gICAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJztcclxufVxyXG5tYXQtZGF0ZXBpY2tlci10b2dnbGUge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQwJTtcclxuICAgIC8vIG1hcmdpbi10b3A6MTAlO1xyXG59XHJcbm1hdC1zbGlkZS10b2dnbGV7XHJcbiAgICBtYXJnaW4tdG9wOiA1JTtcclxufSBcclxuXHJcbiAgLm1hdC10aXRsZSB7XHJcbiAgICBmb250LXNpemU6IDE1MCU7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgd2lkdGg6IDUwJSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuZGl2aWRlci1saW5lIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwJTtcclxuICAgIC8vbWFyZ2luLXRvcDogNTBweDtcclxuICB9XHJcbiAgLm1hdC1saW5lLXBvc2l0aW9uIHtcclxuICAgIHBvc2l0aW9uOiB1bnNldCAhaW1wb3J0YW50O1xyXG4gICAgbGVmdDogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgYWxpZ24tc2VsZjogY2VudGVyICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gICNtYXQtbGluZSB7XHJcbiAgICBtYXJnaW4tdG9wOjUlO1xyXG4gICAgbWFyZ2luLWxlZnQ6MiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1JTtcclxuICB9XHJcbiAgI21hdC1saW5lMiB7XHJcbiAgICBtYXJnaW4tdG9wOjQlO1xyXG4gICAgbWFyZ2luLWxlZnQ6NSU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzJTtcclxuICB9XHJcbiAgLy8gbGVnZW5kIHtcclxuICAvLyAgIHdpZHRoOiBhdXRvO1xyXG4gIC8vICAgLy9tYXJnaW4tbGVmdDogMjBweDtcclxuICAvLyAgIGNvbG9yOiAjMEYwRjBGO1xyXG4gIC8vICAgb3BhY2l0eTogNzAlICFpbXBvcnRhbnQ7XHJcbiAgLy8gICAvLyBjb2xvcjogZ3JheTtcclxuICAvLyAgIC8vIGZvbnQtc2l6ZTogMjBweDtcclxuICAvLyAgIC8vIHBhZGRpbmctbGVmdDogMzBweDtcclxuICAvLyAgIC8vcGFkZGluZy1yaWdodDogMjBweDtcclxuICAvLyAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIENvdXJpZXIsIG1vbm9zcGFjZTtcclxuICAvLyB9XHJcbiAgZmllbGRzZXQge1xyXG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIGxpZ2h0Z3JheTtcclxuICAgIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItcmlnaHQ6IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItbGVmdDogMHB4IHNvbGlkIGxpZ2h0Z3JheTtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMjBweCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuZGF0ZWNoYW5nZXtcclxuICAgIGhlaWdodDogMTBweDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbiAgfVxyXG4gIC50ZW51cmUxe1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQuOSUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLnRlbnVyZTJ7XHJcbiAgICBtYXJnaW4tbGVmdDogNC45JSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAudGVucmV7XHJcbiAgICBtYXJnaW4tdG9wOiAxOXB4O1xyXG4gIH0iXX0= */"] });
+    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_14__["MatButton"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_input__WEBPACK_IMPORTED_MODULE_18__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerInput"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepicker"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NumberValueAccessor"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgForOf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatHint"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatError"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"]], styles: [".box-holder[_ngcontent-%COMP%] {\n  width: auto;\n  max-width: 190px;\n  background: #F4F8F7 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 6px #00000029;\n  border-radius: 38px;\n  opacity: 1;\n}\n\n#heightRepay[_ngcontent-%COMP%] {\n  height: 44px;\n}\n\n.showShedule[_ngcontent-%COMP%] {\n  margin-top: 4%;\n}\n\n.link[_ngcontent-%COMP%] {\n  text-decoration: underline;\n  color: #456EFE;\n  font-size: small;\n  align-self: center;\n}\n\n#heightDate[_ngcontent-%COMP%] {\n  height: 48px !important;\n}\n\n#toggle[_ngcontent-%COMP%] {\n  margin-top: -3%;\n  margin-left: 6.3cm;\n}\n\n.spinner[_ngcontent-%COMP%] {\n  padding: 20px;\n}\n\n.hintColor[_ngcontent-%COMP%] {\n  color: red;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  pointer-events: none;\n  cursor: default;\n}\n\n.footer[_ngcontent-%COMP%] {\n  position: fixed;\n  left: 0;\n  bottom: 0;\n}\n\n.list-unstyled[_ngcontent-%COMP%] {\n  padding-left: 0;\n  list-style: none;\n  margin-left: 17px !important;\n  margin-top: 10px !important;\n}\n\n.colorRed[_ngcontent-%COMP%] {\n  color: Red;\n  font-size: small;\n}\n\n.avatar-sm[_ngcontent-%COMP%] {\n  width: 32px;\n}\n\n.avatar[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.avatar[_ngcontent-%COMP%] {\n  position: relative;\n  width: 30px;\n  vertical-align: bottom;\n  white-space: nowrap;\n  border-radius: 1000px;\n}\n\n.pull-up[_ngcontent-%COMP%] {\n  transition: all .25s ease;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]    + li[_ngcontent-%COMP%] {\n  margin-left: -8px;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%], .img[_ngcontent-%COMP%] {\n  border: 2px solid #fff;\n  box-shadow: 0 2px 4px 0 #6b6f80;\n}\n\n.avatar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%], .img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 100%;\n  height: auto;\n  border: 0;\n  border-radius: 1000px;\n}\n\n.rounded-circle[_ngcontent-%COMP%] {\n  border-radius: 50% !important;\n}\n\n.img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  font-size: 0.9em;\n  padding: 2px;\n  letter-spacing: -0.36px;\n  color: #FFFFFF;\n  text-align: center;\n  margin-left: -7px;\n}\n\nul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  line-height: 1.8;\n}\n\nul[_ngcontent-%COMP%] {\n  display: block;\n  list-style-type: disc;\n  -webkit-margin-before: 1em;\n          margin-block-start: 1em;\n  -webkit-margin-after: 1em;\n          margin-block-end: 1em;\n  -webkit-margin-start: 0px;\n          margin-inline-start: 0px;\n  -webkit-margin-end: 0px;\n          margin-inline-end: 0px;\n  -webkit-padding-start: 40px;\n          padding-inline-start: 40px;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .badge[_ngcontent-%COMP%] {\n  margin-bottom: 6px;\n  color: #6b6f80;\n  background: rgba(255, 255, 255, 0.8);\n}\n\n.badge[_ngcontent-%COMP%] {\n  color: #fff;\n  font-weight: 400;\n}\n\n.badge-info[_ngcontent-%COMP%] {\n  color: #fff;\n  background-color: #28afd0;\n}\n\n.full-width1[_ngcontent-%COMP%] {\n  width: 100px;\n}\n\n.full-width2[_ngcontent-%COMP%] {\n  width: 335px;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 25px;\n}\n\n.inputMatcard[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n  width: 300px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 15px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.inputMatName1[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 10px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.alignment[_ngcontent-%COMP%] {\n  border-style: none !important;\n  outline: none;\n}\n\n.sqInput1[_ngcontent-%COMP%] {\n  width: 30%;\n  margin-left: -1%;\n  height: 47px;\n}\n\n.sqInput2[_ngcontent-%COMP%] {\n  width: 72%;\n}\n\nmat-hint[_ngcontent-%COMP%] {\n  font-family: 'Manrope';\n}\n\nmat-datepicker-toggle[_ngcontent-%COMP%] {\n  margin-left: 40%;\n}\n\nmat-slide-toggle[_ngcontent-%COMP%] {\n  margin-top: 5%;\n}\n\n.mat-title[_ngcontent-%COMP%] {\n  font-size: 150%;\n  font-weight: 600;\n  width: 50% !important;\n}\n\n.divider-line[_ngcontent-%COMP%] {\n  display: flex;\n  margin-bottom: 0%;\n}\n\n.mat-line-position[_ngcontent-%COMP%] {\n  position: unset !important;\n  left: 100% !important;\n  align-self: center !important;\n}\n\n#mat-line[_ngcontent-%COMP%] {\n  margin-top: 5%;\n  margin-left: 2%;\n  margin-bottom: 5%;\n}\n\n#mat-line2[_ngcontent-%COMP%] {\n  margin-top: 4%;\n  margin-left: 5%;\n  margin-bottom: 3%;\n}\n\nfieldset[_ngcontent-%COMP%] {\n  border-top: 1px solid lightgray;\n  border-bottom: 0px solid lightgray;\n  border-right: 0px solid lightgray;\n  border-left: 0px solid lightgray;\n  margin-left: 20px;\n  margin-right: 20px;\n  margin-top: 20px !important;\n  margin-bottom: 20px !important;\n}\n\n.datechange[_ngcontent-%COMP%] {\n  height: 10px;\n  padding: 0;\n  margin-right: 10px;\n}\n\n.tenure1[_ngcontent-%COMP%] {\n  margin-left: 4.9% !important;\n}\n\n.tenure2[_ngcontent-%COMP%] {\n  margin-left: 4.9% !important;\n}\n\n.tenre[_ngcontent-%COMP%] {\n  margin-top: 19px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGxvYW4tcmVwYXltZW50LWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQVc7RUFDWCxnQkFBZ0I7RUFFaEIsK0NBQStDO0VBQy9DLGlDQUFpQztFQUNqQyxtQkFBbUI7RUFDbkIsVUFBVTtBQUFkOztBQUVBO0VBQ0ksWUFBWTtBQUNoQjs7QUFDQTtFQUNHLGNBQWU7QUFFbEI7O0FBQUE7RUFHSSwwQkFBMEI7RUFDNUIsY0FBYTtFQUNiLGdCQUFnQjtFQUNoQixrQkFBa0I7QUFDcEI7O0FBQ0E7RUFDSSx1QkFBc0I7QUFFMUI7O0FBQUE7RUFFSSxlQUFjO0VBQ2Qsa0JBQWtCO0FBRXRCOztBQUNBO0VBQ0ksYUFBYTtBQUVqQjs7QUFDQTtFQUNJLFVBQVU7QUFFZDs7QUFFQTtFQUNJLG9CQUFvQjtFQUNwQixlQUFlO0FBQ25COztBQUVBO0VBQ0ksZUFBZTtFQUNmLE9BQU87RUFDUCxTQUFTO0FBQ2I7O0FBRUE7RUFDSSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLDRCQUE0QjtFQUM1QiwyQkFBMkI7QUFDL0I7O0FBRUE7RUFDSSxVQUFVO0VBQ1YsZ0JBQWdCO0FBQ3BCOztBQUVBO0VBQ0ksV0FBVztBQUNmOztBQUVBO0VBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0VBQ0ksa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtFQUlJLHlCQUF5QjtBQUM3Qjs7QUFFQTtFQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTs7RUFFSSxzQkFBc0I7RUFDdEIsK0JBQStCO0FBQ25DOztBQUVBOztFQUVJLFdBQVc7RUFDWCxlQUFlO0VBQ2YsWUFBWTtFQUNaLFNBQVM7RUFDVCxxQkFBcUI7QUFDekI7O0FBRUE7RUFDSSw2QkFBNkI7QUFDakM7O0FBRUE7RUFDSSxzQkFBc0I7RUFDdEIsK0NBQStDO0VBQy9DLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLHVCQUF1QjtFQUN2QixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGlCQUFpQjtBQUNyQjs7QUFFQTtFQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtFQUNJLGNBQWM7RUFDZCxxQkFBcUI7RUFDckIsMEJBQXVCO1VBQXZCLHVCQUF1QjtFQUN2Qix5QkFBcUI7VUFBckIscUJBQXFCO0VBQ3JCLHlCQUF3QjtVQUF4Qix3QkFBd0I7RUFDeEIsdUJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QiwyQkFBMEI7VUFBMUIsMEJBQTBCO0FBQzlCOztBQUVBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxvQ0FBbUM7QUFDdkM7O0FBRUE7RUFDSSxXQUFXO0VBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0VBQ0ksV0FBVztFQUNYLHlCQUF5QjtBQUM3Qjs7QUFFQTtFQUNJLFlBQVk7QUFDaEI7O0FBQ0E7RUFDSSxZQUFZO0FBRWhCOztBQUFBO0VBQ0ksV0FBVztFQUNYLFlBQVk7QUFHaEI7O0FBREE7RUFDSSxZQUFZO0VBS1osK0JBQStCO0VBRS9CLHNCQUFzQjtFQUd0QixnQkFBZ0I7RUFDaEIsYUFBYTtFQUViLFlBQVk7QUFKaEI7O0FBTUU7RUFDRSxZQUFZO0VBRVosZ0JBQWdCO0VBR2hCLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFUakI7O0FBYUU7RUFDRSxZQUFZO0VBRVosZ0JBQWdCO0VBR2hCLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFoQmpCOztBQW9CRTtFQUNFLDZCQUE2QjtFQUM3QixhQUFhO0FBakJqQjs7QUFtQkU7RUFDSSxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFoQmxCOztBQWtCRTtFQUNFLFVBQVU7QUFmZDs7QUFrQkE7RUFDSSxzQkFBc0I7QUFmMUI7O0FBaUJBO0VBQ0ksZ0JBQWdCO0FBZHBCOztBQWlCQTtFQUNJLGNBQWM7QUFkbEI7O0FBaUJFO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFkekI7O0FBZ0JFO0VBQ0UsYUFBYTtFQUNiLGlCQUFpQjtBQWJyQjs7QUFnQkU7RUFDRSwwQkFBMEI7RUFDMUIscUJBQXFCO0VBQ3JCLDZCQUE2QjtBQWJqQzs7QUFlRTtFQUNFLGNBQWE7RUFDYixlQUFjO0VBQ2QsaUJBQWlCO0FBWnJCOztBQWNFO0VBQ0UsY0FBYTtFQUNiLGVBQWM7RUFDZCxpQkFBaUI7QUFYckI7O0FBd0JFO0VBQ0UsK0JBQStCO0VBQy9CLGtDQUFrQztFQUNsQyxpQ0FBaUM7RUFDakMsZ0NBQWdDO0VBQ2hDLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsMkJBQTJCO0VBQzNCLDhCQUE4QjtBQXJCbEM7O0FBdUJFO0VBQ0UsWUFBWTtFQUNaLFVBQVU7RUFDVixrQkFBa0I7QUFwQnRCOztBQXNCRTtFQUNFLDRCQUE0QjtBQW5CaEM7O0FBcUJFO0VBQ0UsNEJBQTRCO0FBbEJoQzs7QUFvQkU7RUFDRSxnQkFBZ0I7QUFqQnBCIiwiZmlsZSI6ImxvYW4tcmVwYXltZW50LWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib3gtaG9sZGVyIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgbWF4LXdpZHRoOiAxOTBweDtcclxuICAgIC8vIGhlaWdodDogMTA4cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiAjRjRGOEY3IDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJveC1zaGFkb3c6IDBweCAzcHggNnB4ICMwMDAwMDAyOTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM4cHg7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG59XHJcbiNoZWlnaHRSZXBheXtcclxuICAgIGhlaWdodDogNDRweDtcclxufVxyXG4uc2hvd1NoZWR1bGV7XHJcbiAgIG1hcmdpbi10b3A6IDQlIDtcclxufVxyXG4ubGlua3tcclxuICAgIC8vIGNvbG9yOiAjNDU2ZWZlOyBcclxuICAgIC8vIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmVcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBcclxuICBjb2xvcjojNDU2RUZFO1xyXG4gIGZvbnQtc2l6ZTogc21hbGw7XHJcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xyXG59XHJcbiNoZWlnaHREYXRle1xyXG4gICAgaGVpZ2h0OjQ4cHggIWltcG9ydGFudDtcclxufVxyXG4jdG9nZ2xle1xyXG5cclxuICAgIG1hcmdpbi10b3A6LTMlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDYuM2NtO1xyXG4gIH1cclxuXHJcbi5zcGlubmVyIHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuXHJcbi5oaW50Q29sb3Ige1xyXG4gICAgY29sb3I6IHJlZDtcclxuXHJcbn1cclxuXHJcbi5kaXNhYmxlZCB7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICAgIGN1cnNvcjogZGVmYXVsdDtcclxufVxyXG5cclxuLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG4ubGlzdC11bnN0eWxlZCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE3cHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmNvbG9yUmVkIHtcclxuICAgIGNvbG9yOiBSZWQ7XHJcbiAgICBmb250LXNpemU6IHNtYWxsO1xyXG59XHJcblxyXG4uYXZhdGFyLXNtIHtcclxuICAgIHdpZHRoOiAzMnB4O1xyXG59XHJcblxyXG4uYXZhdGFyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLmF2YXRhciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB3aWR0aDogMzBweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBib3R0b207XHJcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTAwMHB4O1xyXG59XHJcblxyXG4ucHVsbC11cCB7XHJcbiAgICAtd2Via2l0LXRyYW5zaXRpb246IGFsbCAuMjVzIGVhc2U7XHJcbiAgICAtbW96LXRyYW5zaXRpb246IGFsbCAuMjVzIGVhc2U7XHJcbiAgICAtby10cmFuc2l0aW9uOiBhbGwgLjI1cyBlYXNlO1xyXG4gICAgdHJhbnNpdGlvbjogYWxsIC4yNXMgZWFzZTtcclxufVxyXG5cclxuLnVzZXJzLWxpc3QgbGkrbGkge1xyXG4gICAgbWFyZ2luLWxlZnQ6IC04cHg7XHJcbn1cclxuXHJcbi51c2Vycy1saXN0IGxpIGltZyxcclxuLmltZyB7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjZmZmO1xyXG4gICAgYm94LXNoYWRvdzogMCAycHggNHB4IDAgIzZiNmY4MDtcclxufVxyXG5cclxuLmF2YXRhciBpbWcsXHJcbi5pbWcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICBib3JkZXI6IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMDAwcHg7XHJcbn1cclxuXHJcbi5yb3VuZGVkLWNpcmNsZSB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLmltZyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gICAgZm9udC1zaXplOiAwLjllbTtcclxuICAgIHBhZGRpbmc6IDJweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAtMC4zNnB4O1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogLTdweDtcclxufVxyXG5cclxudWwgbGkge1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuODtcclxufVxyXG5cclxudWwge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBsaXN0LXN0eWxlLXR5cGU6IGRpc2M7XHJcbiAgICBtYXJnaW4tYmxvY2stc3RhcnQ6IDFlbTtcclxuICAgIG1hcmdpbi1ibG9jay1lbmQ6IDFlbTtcclxuICAgIG1hcmdpbi1pbmxpbmUtc3RhcnQ6IDBweDtcclxuICAgIG1hcmdpbi1pbmxpbmUtZW5kOiAwcHg7XHJcbiAgICBwYWRkaW5nLWlubGluZS1zdGFydDogNDBweDtcclxufVxyXG5cclxuLnVzZXJzLWxpc3QgbGkgLmJhZGdlIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDZweDtcclxuICAgIGNvbG9yOiAjNmI2ZjgwO1xyXG4gICAgYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAuOCk7XHJcbn1cclxuXHJcbi5iYWRnZSB7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbn1cclxuXHJcbi5iYWRnZS1pbmZvIHtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4YWZkMDtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgxIHtcclxuICAgIHdpZHRoOiAxMDBweDtcclxufVxyXG4uZnVsbC13aWR0aDIge1xyXG4gICAgd2lkdGg6IDMzNXB4O1xyXG59XHJcbi5pbnB1dENhcmR7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMjVweDtcclxufVxyXG4uaW5wdXRNYXRjYXJkIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIC8vIG1hcmdpbi10b3A6IDVweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcblxyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAvLyBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgIHBhZGRpbmc6IDEzcHg7XHJcblxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gIH1cclxuICAuaW5wdXRNYXROYW1lIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQocmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpLFxyXG4gICAgLy8gICAgIHJnYmEoMjQ4LCAyNTAsIDI1NCwgMC41KSk7XHJcbiAgICBib3gtc2hhZG93OiAwIDNwdCA2cHQgIzAwMDAwMDI5O1xyXG5cclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICAvLyAgIG1heC1oZWlnaHQ6IDEwMHB4O1xyXG4gICAgLy8gcGFkZGluZzogMjBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxM3B4O1xyXG5cclxuICAgIC8vIHdpZHRoOiA0NTBweDtcclxuICB9XHJcbiAgLmlucHV0TWF0TmFtZTEge1xyXG4gICAgZmxleC1ncm93OiAxO1xyXG4gICAgLy8gbWF4LXdpZHRoOjUwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcblxyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAvLyBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgIHBhZGRpbmc6IDEzcHg7XHJcblxyXG4gICAgLy8gd2lkdGg6IDQ1MHB4O1xyXG4gIH1cclxuICAuYWxpZ25tZW50IHtcclxuICAgIGJvcmRlci1zdHlsZTogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICB9XHJcbiAgLnNxSW5wdXQxe1xyXG4gICAgICB3aWR0aDogMzAlO1xyXG4gICAgICBtYXJnaW4tbGVmdDogLTElO1xyXG4gICAgICBoZWlnaHQ6IDQ3cHg7XHJcbiAgfVxyXG4gIC5zcUlucHV0MntcclxuICAgIHdpZHRoOiA3MiU7XHJcbn1cclxuXHJcbm1hdC1oaW50e1xyXG4gICAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJztcclxufVxyXG5tYXQtZGF0ZXBpY2tlci10b2dnbGUge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQwJTtcclxuICAgIC8vIG1hcmdpbi10b3A6MTAlO1xyXG59XHJcbm1hdC1zbGlkZS10b2dnbGV7XHJcbiAgICBtYXJnaW4tdG9wOiA1JTtcclxufSBcclxuXHJcbiAgLm1hdC10aXRsZSB7XHJcbiAgICBmb250LXNpemU6IDE1MCU7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgd2lkdGg6IDUwJSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuZGl2aWRlci1saW5lIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwJTtcclxuICAgIC8vbWFyZ2luLXRvcDogNTBweDtcclxuICB9XHJcbiAgLm1hdC1saW5lLXBvc2l0aW9uIHtcclxuICAgIHBvc2l0aW9uOiB1bnNldCAhaW1wb3J0YW50O1xyXG4gICAgbGVmdDogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgYWxpZ24tc2VsZjogY2VudGVyICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gICNtYXQtbGluZSB7XHJcbiAgICBtYXJnaW4tdG9wOjUlO1xyXG4gICAgbWFyZ2luLWxlZnQ6MiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1JTtcclxuICB9XHJcbiAgI21hdC1saW5lMiB7XHJcbiAgICBtYXJnaW4tdG9wOjQlO1xyXG4gICAgbWFyZ2luLWxlZnQ6NSU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzJTtcclxuICB9XHJcbiAgLy8gbGVnZW5kIHtcclxuICAvLyAgIHdpZHRoOiBhdXRvO1xyXG4gIC8vICAgLy9tYXJnaW4tbGVmdDogMjBweDtcclxuICAvLyAgIGNvbG9yOiAjMEYwRjBGO1xyXG4gIC8vICAgb3BhY2l0eTogNzAlICFpbXBvcnRhbnQ7XHJcbiAgLy8gICAvLyBjb2xvcjogZ3JheTtcclxuICAvLyAgIC8vIGZvbnQtc2l6ZTogMjBweDtcclxuICAvLyAgIC8vIHBhZGRpbmctbGVmdDogMzBweDtcclxuICAvLyAgIC8vcGFkZGluZy1yaWdodDogMjBweDtcclxuICAvLyAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIENvdXJpZXIsIG1vbm9zcGFjZTtcclxuICAvLyB9XHJcbiAgZmllbGRzZXQge1xyXG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIGxpZ2h0Z3JheTtcclxuICAgIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItcmlnaHQ6IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItbGVmdDogMHB4IHNvbGlkIGxpZ2h0Z3JheTtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMjBweCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuZGF0ZWNoYW5nZXtcclxuICAgIGhlaWdodDogMTBweDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbiAgfVxyXG4gIC50ZW51cmUxe1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQuOSUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLnRlbnVyZTJ7XHJcbiAgICBtYXJnaW4tbGVmdDogNC45JSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAudGVucmV7XHJcbiAgICBtYXJnaW4tdG9wOiAxOXB4O1xyXG4gIH0iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](LoanRepaymentComponentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
@@ -29651,7 +29690,7 @@ function CollateralDetailsComponent_form_15_mat_error_71_Template(rf, ctx) { if 
 } }
 function CollateralDetailsComponent_form_15_mat_error_78_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u00A0\u00A0 Locality is Required! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u00A0\u00A0Please Enter Correct Locality ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function CollateralDetailsComponent_form_15_mat_option_85_Template(rf, ctx) { if (rf & 1) {
@@ -29966,7 +30005,7 @@ function CollateralDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "Locality");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "input", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CollateralDetailsComponent_form_15_Template_input_keypress_77_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r49.letterOnly($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function CollateralDetailsComponent_form_15_Template_input_keypress_77_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r49.keyPressAlphanumeric($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](78, CollateralDetailsComponent_form_15_mat_error_78_Template, 2, 0, "mat-error", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -30067,7 +30106,7 @@ function CollateralDetailsComponent_form_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.collateralDetailsForm.get("street") && ctx_r0.collateralDetailsForm.get("street").touched && !ctx_r0.collateralDetailsForm.get("street").valid || ctx_r0.collateralDetailsForm.get("street").touched && ctx_r0.collateralDetailsForm.get("street").hasError("pattern"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r0.collateralDetailsForm.get("locality").valid && ctx_r0.collateralDetailsForm.get("locality").touched);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.collateralDetailsForm.get("locality") && ctx_r0.collateralDetailsForm.get("locality").touched && !ctx_r0.collateralDetailsForm.get("locality").valid || ctx_r0.collateralDetailsForm.get("locality").touched && ctx_r0.collateralDetailsForm.get("locality").hasError("pattern"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.arrayCountry);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -30154,7 +30193,7 @@ class CollateralDetailsComponent {
             thirdPartyCollateral: [data ? data.thirdPartyCollateral : false, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             building: [data ? data.building : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
             street: [data ? data.street : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
-            locality: [data ? data.locality : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            locality: [data ? data.locality : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
             city: [data ? data.city : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             state: [data ? data.state : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             country: [data ? data.country : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],

@@ -642,3 +642,8 @@ $altTheme: mat-dark-theme($default-theme-primary, $default-theme-accent, $defaul
   .image_1_traced_ {
     fill:red;
   }
+
+  .egret-navy .mat-form-field-appearance-outline .mat-form-field-outline{
+    background-color: white;
+    border-radius: 6px;
+  }

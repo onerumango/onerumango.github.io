@@ -212,6 +212,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     .mat-input-element{
         box-shadow: 0 0 0 1000px white inset !important; 
+        // margin-bottom: 5px !important;
     }
     .onboarding-dark-background{
         background-color: #F1F1F4;

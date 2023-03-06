@@ -4107,7 +4107,7 @@
           value: function getAccountBranchDetails() {
             var _this16 = this;
 
-            //
+            //debugger
             this.api.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
               _this16.arrayAccountBranch = data;

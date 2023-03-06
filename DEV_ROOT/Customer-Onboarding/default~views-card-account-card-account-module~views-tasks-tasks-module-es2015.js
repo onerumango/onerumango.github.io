@@ -194,7 +194,7 @@ class UploadSignatureOrEsignComponent {
                 console.log("dismiss res", res);
                 if (res) {
                     this.ls.setItem("enable", true);
-                    this.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                    this.imageURL1 = (res === null || res === void 0 ? void 0 : res.image) ? res === null || res === void 0 ? void 0 : res.image : 'not_available';
                     this.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true;
                     //this.res = true;
                     //this.isDone = true;
@@ -248,6 +248,7 @@ class UploadSignatureOrEsignComponent {
         };
         uploadData.append("data", JSON.stringify(data));
         uploadData.append("file", url);
+        debugger;
         this.apiService.uploadDocument(uploadData).subscribe((res) => {
             // console.log(res);
             // this.disableDone = false;

@@ -3458,7 +3458,7 @@ b {
 }
 .header-topnav {
   position: fixed;
-  background: #4A56E2;
+  background: transparent linear-gradient(90deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;
   margin: 0;
   width: 100%;
   top: 0;
@@ -17914,6 +17914,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+.paddingClass {
+  padding: 20px;
 }
 /*---- Session (Sign in, sign up, forgot, lockscreen) -----*/
 .page-wrap {

@@ -397,7 +397,7 @@
                 if (res) {
                   _this.ls.setItem("enable", true);
 
-                  _this.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                  _this.imageURL1 = (res === null || res === void 0 ? void 0 : res.image) ? res === null || res === void 0 ? void 0 : res.image : 'not_available';
                   _this.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true; //this.res = true;
                   //this.isDone = true;
                   // this.getByAccountId(this.accountId);
@@ -455,6 +455,7 @@
             };
             uploadData.append("data", JSON.stringify(data));
             uploadData.append("file", url);
+            debugger;
             this.apiService.uploadDocument(uploadData).subscribe(function (res) {
               // console.log(res);
               // this.disableDone = false;

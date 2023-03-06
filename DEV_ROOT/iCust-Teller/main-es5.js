@@ -723,7 +723,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */
+      /*! F:\muthu-onboard\Icust-Frontend\iCust\src\main.ts */
       "zUnb");
       /***/
     },
@@ -1519,6 +1519,12 @@
           }); // private baseUrl = 'http://192.168.0.14:8081/Icust-Digital-Banking';
 
           this.baseUrl = environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].DESKTOP_URL;
+          this.pauseTrans = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({
+            pauseTrans: false
+          });
+          this.holdTokenVariable = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({
+            holdTokenVariable: ''
+          });
         }
 
         _createClass(TokenService, [{
@@ -1823,6 +1829,26 @@
             return this.httpClient.put("".concat(this.baseUrl, "/tokendata/updateToken/tellerId?tokenNumber=").concat(tokenNumber, "&cancel=").concat(cancel, "&tellerId=").concat(tellerId), '').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(function (result) {
               console.log('result :: ', result);
             }));
+          }
+        }, {
+          key: "getPauseTrans",
+          value: function getPauseTrans() {
+            return this.pauseTrans.asObservable();
+          }
+        }, {
+          key: "setPauseTrans",
+          value: function setPauseTrans(pauseTrans) {
+            this.pauseTrans.next(pauseTrans);
+          }
+        }, {
+          key: "getHoldTokenVariable",
+          value: function getHoldTokenVariable() {
+            return this.holdTokenVariable.asObservable();
+          }
+        }, {
+          key: "setHoldTokenVariable",
+          value: function setHoldTokenVariable(holdTokenVariable) {
+            this.holdTokenVariable.next(holdTokenVariable);
           }
         }]);
 
@@ -2867,7 +2893,8 @@
 
               if (value.length == 10) {
                 this.getCustomerData(this.searchKey, value);
-              }
+              } // 
+
             } else {
               console.log('else');
 
@@ -2924,6 +2951,30 @@
                     });
                   } else if (_this5.searchKey == 'accountId') {
                     _this5.snack.open("The Account Id is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'phoneNumber') {
+                    _this5.snack.open("Mobile Number is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'customerId') {
+                    _this5.snack.open("Customer Id is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'primaryEmailAdress') {
+                    _this5.snack.open("Email Id is not found :", _this5.searchTerm, {
+                      duration: 4000,
+                      verticalPosition: 'top',
+                      horizontalPosition: 'right'
+                    });
+                  } else if (_this5.searchKey == 'customerName') {
+                    _this5.snack.open("Name is not found :", _this5.searchTerm, {
                       duration: 4000,
                       verticalPosition: 'top',
                       horizontalPosition: 'right'
@@ -3958,7 +4009,7 @@
               _this9.menuItems = mainItems;
             });
             this.user = this.ls.getItem('ICUST_USER');
-            this.apiService.fetchTellerProfileInfo(this.user.userId).subscribe(function (result) {// this.compPermissions = result?.icustRoleInfoModel?.parentPermission
+            this.apiService.fetchTellerProfileInfo(this.user.id).subscribe(function (result) {// this.compPermissions = result?.icustRoleInfoModel?.parentPermission
               //   .split(',')
               // .reduce(
               //   (compArr: String[], comp: String) =>
@@ -4843,79 +4894,85 @@
       /* harmony import */
 
 
-      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! app/shared/services/auth/jwt-auth.service */
+      "nZzT");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/flex-layout/flex */
       "XiUz");
       /* harmony import */
 
 
-      var ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ngx-perfect-scrollbar */
       "Kdsb");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/material/form-field */
       "kmnG");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/input */
       "qFsG");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/material/icon */
       "NFeN");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
       /* harmony import */
 
 
-      var _directives_dropdown_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _directives_dropdown_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../../directives/dropdown.directive */
       "Bp9c");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _directives_dropdown_link_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _directives_dropdown_link_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../../directives/dropdown-link.directive */
       "UGQK");
       /* harmony import */
 
 
-      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/divider */
       "f0Cb");
       /* harmony import */
 
 
-      var _directives_dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _directives_dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../../directives/dropdown-anchor.directive */
       "r/oB");
       /* harmony import */
 
 
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @angular/material/core */
       "FKr1");
       /* harmony import */
 
 
-      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @angular/flex-layout/extended */
       "znSr");
 
@@ -5456,11 +5513,12 @@
       }
 
       var ProfileComponent = /*#__PURE__*/function () {
-        function ProfileComponent(router, apiService) {
+        function ProfileComponent(router, apiService, jwtService) {
           _classCallCheck(this, ProfileComponent);
 
           this.router = router;
           this.apiService = apiService;
+          this.jwtService = jwtService;
           this.menuItems = []; // Dummy notifications
 
           this.notifications = [{
@@ -5498,6 +5556,7 @@
           value: function ngOnInit() {
             var _this10 = this;
 
+            var user = this.jwtService.getUser();
             console.log("need to check api");
             this.menuItems = this.setMenuItem(); // ,{
             //   name: 'Role Maintenance',
@@ -5684,7 +5743,7 @@
                 _this10.profilePanel.close();
               }
             });
-            this.apiService.fetchTellerProfileInfo(1).subscribe(function (result) {
+            this.apiService.fetchTellerProfileInfo(user.id).subscribe(function (result) {
               console.log("result ::", result);
               _this10.tellerprofileresult = result;
             });
@@ -5752,6 +5811,10 @@
                 name: 'Currency Maintenance',
                 type: 'link',
                 state: 'currencyMaint'
+              }, {
+                name: 'Charge Maintenance',
+                type: 'link',
+                state: 'chargeMaint'
               }, {
                 name: 'Customer Category',
                 type: 'link',
@@ -5970,7 +6033,7 @@
       }();
 
       ProfileComponent.ɵfac = function ProfileComponent_Factory(t) {
-        return new (t || ProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]));
+        return new (t || ProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_3__["JwtAuthService"]));
       };
 
       ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -6065,7 +6128,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.flag);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultLayoutDirective"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_4__["PerfectScrollbarDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInput"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatSuffix"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_3__["DefaultFlexDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButton"], _directives_dropdown_directive__WEBPACK_IMPORTED_MODULE_9__["AppDropdownDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _directives_dropdown_link_directive__WEBPACK_IMPORTED_MODULE_11__["DropdownLinkDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkActive"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_12__["MatDivider"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], _directives_dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_13__["DropdownAnchorDirective"], _angular_material_core__WEBPACK_IMPORTED_MODULE_14__["MatRipple"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgStyle"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_15__["DefaultStyleDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatHint"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutDirective"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_5__["PerfectScrollbarDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultLayoutGapDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInput"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatSuffix"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_4__["DefaultFlexDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButton"], _directives_dropdown_directive__WEBPACK_IMPORTED_MODULE_10__["AppDropdownDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["NgIf"], _directives_dropdown_link_directive__WEBPACK_IMPORTED_MODULE_12__["DropdownLinkDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkActive"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__["MatDivider"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], _directives_dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_14__["DropdownAnchorDirective"], _angular_material_core__WEBPACK_IMPORTED_MODULE_15__["MatRipple"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["NgStyle"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_16__["DefaultStyleDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatHint"]],
         styles: [".searchbar[_ngcontent-%COMP%] {\n  width: 200px !important;\n}\n\n.errmsg[_ngcontent-%COMP%] {\n  margin-left: 10%;\n  font-size: small;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxccHJvZmlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHVCQUF1QjtBQUMzQjs7QUFDQTtFQUNJLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFFcEIiLCJmaWxlIjoicHJvZmlsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWFyY2hiYXJ7XHJcbiAgICB3aWR0aDogMjAwcHggIWltcG9ydGFudDtcclxufVxyXG4uZXJybXNne1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcclxuICAgIGZvbnQtc2l6ZTogc21hbGw7XHJcbn0iXX0= */"]
       });
       /*@__PURE__*/
@@ -6083,6 +6146,8 @@
             type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
           }, {
             type: app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+          }, {
+            type: app_shared_services_auth_jwt_auth_service__WEBPACK_IMPORTED_MODULE_3__["JwtAuthService"]
           }];
         }, {
           profilePanel: [{
@@ -8450,7 +8515,7 @@
 
             if (user) {
               this.userRole = user.roleId;
-              this.tellerId = user.userId;
+              this.tellerId = user.id;
             }
 
             this.router.events.subscribe(function (routeChange) {
@@ -12252,10 +12317,36 @@
             return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMaintInfo")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
+          key: "fetchChargeMaintDetails",
+          value: function fetchChargeMaintDetails() {
+            return this.http.get("".concat(API_URL, "/chargeMaint/fetchChargeMaint")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "fetchAccountClassDetails",
+          value: function fetchAccountClassDetails() {
+            return this.http.get("".concat(API_URL, "/rest/data/fetchAccountClassInfo")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "fetchCustomerGroupDetails",
+          value: function fetchCustomerGroupDetails() {
+            return this.http.get("".concat(API_URL, "/maintenance/fetchAuthCustomerCategory")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "fetchTerminalDetails",
+          value: function fetchTerminalDetails() {
+            return this.http.get("".concat(API_URL, "/rest/data/fetchTerminalInfo")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
           key: "editCurrencyMaintById",
           value: function editCurrencyMaintById(currencyCode) {
             console.log(currencyCode);
             return this.http.get("".concat(API_URL, "/currencyMaint-api/fetchCurrencyMaintByCurrencyCode?currencyCode=").concat(currencyCode)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "editChargeMaintById",
+          value: function editChargeMaintById(id) {
+            console.log(id);
+            return this.http.get("".concat(API_URL, "/chargeMaint/fetchChargeMaintById?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "upsertCurrencyMaintDetails",
@@ -12263,14 +12354,29 @@
             return this.http.post("".concat(API_URL, "/currencyMaint-api/upsertCurrencyMaint"), data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
+          key: "upsertChargeMaintDetails",
+          value: function upsertChargeMaintDetails(data) {
+            return this.http.post("".concat(API_URL, "/chargeMaint/upsertChargeMaint"), data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
           key: "updateAuditLogForCurrencyMaint",
           value: function updateAuditLogForCurrencyMaint(payload) {
             return this.http.put("".concat(API_URL, "/currencyMaint-api/updateCurrencyMaintAuditLog"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
+          key: "updateAuditLogForChargeMaint",
+          value: function updateAuditLogForChargeMaint(payload) {
+            return this.http.put("".concat(API_URL, "/chargeMaint/updateChargeMaintAuditLog"), payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
           key: "deleteCurrencyMaint",
           value: function deleteCurrencyMaint(id) {
             return this.http["delete"]("".concat(API_URL, "/currencyMaint-api/deleteCurrencyMaint?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "deleteChargeMaint",
+          value: function deleteChargeMaint(id) {
+            return this.http["delete"]("".concat(API_URL, "/chargeMaint/deleteChargeMaint?id=").concat(id)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "getCurrencyDetails",
@@ -12399,13 +12505,14 @@
           }
         }, {
           key: "getReport",
-          value: function getReport(tellerId, fromDate, endDate) {
-            // console.log("reportid,date",reportid,date)
+          value: function getReport(report, customerId, fromDate, endDate, branch) {
+            var bip;
+            if (report == 'Uc_206') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&txnDate=", '2020-01-01');else if (report == 'Uc_307') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&branch=").concat(branch, "&refNo=", 61757);else if (report == 'Uc_170') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&AccountNo=", 2345);else if (report == 'Uc_185') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&custId=").concat(customerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate);else if (report == 'TransactionDetails1') bip = "http://192.168.0.14:8081/Icust-Digital-Banking/birt/ucreport?fileName=".concat(report, "&tellerId=", 7, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate); // console.log("reportid,date",reportid,date)
             //console.log(data)
             // let reportid = 'HRRATTD';
             // let date = '2022-08-23';
-            var bip = "http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=".concat(tellerId, "&fromDate=").concat(fromDate, "&toDate=").concat(endDate);
-            console.log("in service", bip);
+            // var bip = `http://192.168.0.14:8071/Icust-Digital-Banking/birt/downloadTransactionReport?tellerId=${tellerId}&fromDate=${fromDate}&toDate=${endDate}`;
+
             window.open(bip);
             /*return this.http.get<any>(`http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${reportid}/${date}`).pipe(catchError(this.errorHandler));
              http://192.168.0.14:8071/Datamart/bipTest/getReportIdAndDate/${HRRATTD}/${2022-08-23}
@@ -12535,6 +12642,11 @@
           key: "getRecentTransactionFilterBasedOnDate",
           value: function getRecentTransactionFilterBasedOnDate(tellerId, fromDate, toDate) {
             return this.http.get("".concat(API_URL, "/cash-deposit/api/fetchTellerRecentTrans?tellerId=").concat(tellerId, "&fromDate=").concat(fromDate, "&toDate=").concat(toDate)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
+          }
+        }, {
+          key: "searchRecentTrans",
+          value: function searchRecentTrans(tellerId, search) {
+            return this.http.get("".concat(API_URL, "/cash-deposit/api/searchRecentTransactionInfo?search=").concat(search)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }]);
 

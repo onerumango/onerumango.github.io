@@ -4678,15 +4678,15 @@
             this.selectedYear = new Date().getFullYear();
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             }
 
             this.loanAccountId = this.ls.getItem('loanAccountId');
@@ -4869,7 +4869,7 @@
             // let amendDate = this.convertDate(this.PostOfferAmendmentForm.controls.offerAmendDate.value);
             //this.PostOfferAmendmentForm.value['offerAmendDate'] = amendDate;
 
-            var renewData = this.PostOfferAmendmentForm.value.year + "-" + this.PostOfferAmendmentForm.value.month + "-" + this.PostOfferAmendmentForm.value.day;
+            var renewData = this.PostOfferAmendmentForm.value.year + "year" + "-" + this.PostOfferAmendmentForm.value.month + "month" + "-" + this.PostOfferAmendmentForm.value.day + "day";
             this.PostOfferAmendmentForm.get("loanTenure").setValue(renewData);
             this.PostOfferAmendmentForm.value.loanTenure = renewData; // delete this.PostOfferAmendmentForm.value.year;
             // delete this.PostOfferAmendmentForm.value.month;
@@ -4981,11 +4981,11 @@
               _this14.PostOfferAmendmentForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
 
               console.log(res.loanTenure);
-              _this14.year = res.loanTenure.split("-")[0];
+              _this14.year = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
               console.log(_this14.year);
-              _this14.month = res.loanTenure.split("-")[1];
+              _this14.month = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
               console.log(_this14.month);
-              _this14.day = res.loanTenure.split("-")[2];
+              _this14.day = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
               console.log(_this14.day);
 
               _this14.PostOfferAmendmentForm.get('year').setValue(_this14.year);
@@ -9451,7 +9451,7 @@
 
       function LoanDetailsComponent_form_15_mat_option_10_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -9459,13 +9459,13 @@
         }
 
         if (rf & 2) {
-          var businessProductName_r17 = ctx.$implicit;
+          var businessProductName_r18 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", businessProductName_r17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", businessProductName_r18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", businessProductName_r17, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", businessProductName_r18, " ");
         }
       }
 
@@ -9501,7 +9501,7 @@
 
       function LoanDetailsComponent_form_15_small_33_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Loan Amount should not be greater than Estimated Cost! ");
 
@@ -9511,7 +9511,7 @@
 
       function LoanDetailsComponent_form_15_mat_option_47_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -9519,17 +9519,27 @@
         }
 
         if (rf & 2) {
-          var array_r18 = ctx.$implicit;
+          var array_r19 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", array_r18.branchName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", array_r19.branchName);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](array_r18.branchName);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](array_r19.branchName);
         }
       }
 
       function LoanDetailsComponent_form_15_mat_error_53_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Account Currency is Required! ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function LoanDetailsComponent_form_15_mat_error_59_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -9539,9 +9549,9 @@
         }
       }
 
-      function LoanDetailsComponent_form_15_small_60_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_small_66_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "small", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Customer Contribution should not be greater than Estimated Cost! ");
 
@@ -9549,9 +9559,9 @@
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_option_69_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_option_75_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -9559,19 +9569,19 @@
         }
 
         if (rf & 2) {
-          var year_r19 = ctx.$implicit;
+          var year_r20 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", year_r19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", year_r20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](year_r19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](year_r20);
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_option_74_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_option_80_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -9579,19 +9589,19 @@
         }
 
         if (rf & 2) {
-          var month_r20 = ctx.$implicit;
+          var month_r21 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", month_r20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", month_r21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](month_r20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](month_r21);
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_option_79_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_option_85_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -9599,17 +9609,17 @@
         }
 
         if (rf & 2) {
-          var day_r21 = ctx.$implicit;
+          var day_r22 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", day_r21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", day_r22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](day_r21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](day_r22);
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_error_80_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_error_86_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -9619,7 +9629,7 @@
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_error_81_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_error_87_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -9629,7 +9639,7 @@
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_error_82_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_error_88_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -9639,7 +9649,7 @@
         }
       }
 
-      function LoanDetailsComponent_form_15_mat_error_83_Template(rf, ctx) {
+      function LoanDetailsComponent_form_15_mat_error_89_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -9651,7 +9661,7 @@
 
       function LoanDetailsComponent_form_15_Template(rf, ctx) {
         if (rf & 1) {
-          var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 13);
 
@@ -9672,11 +9682,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-select", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function LoanDetailsComponent_form_15_Template_mat_select_selectionChange_7_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
-            var ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r22.getAccountType($event.value);
+            return ctx_r23.getAccountType($event.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-option");
@@ -9734,23 +9744,23 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "input", 25);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_26_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
-
-            var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r24._keyPress($event);
-          })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
             var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r25.calculateLoanAmmount(ctx_r25.loanForm.value);
+            return ctx_r25._keyPress($event);
           })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
             var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r26.calculateestimatedCost(ctx_r26.loanForm.value);
+            return ctx_r26.calculateLoanAmmount(ctx_r26.loanForm.value);
+          })("input", function LoanDetailsComponent_form_15_Template_input_input_26_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
+
+            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r27.calculateestimatedCost(ctx_r27.loanForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -9774,17 +9784,17 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "input", 26);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
-
-            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-            return ctx_r27.calculatCustomerContri(ctx_r27.loanForm.value);
-          })("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
             var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r28.calculateestimatedCost(ctx_r28.loanForm.value);
+            return ctx_r28.calculatCustomerContri(ctx_r28.loanForm.value);
+          })("input", function LoanDetailsComponent_form_15_Template_input_input_32_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
+
+            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r29.calculateestimatedCost(ctx_r29.loanForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -9828,11 +9838,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "mat-select", 29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function LoanDetailsComponent_form_15_Template_mat_select_selectionChange_44_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
-            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r29.onChangeBranch($event);
+            return ctx_r30.onChangeBranch($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "mat-option");
@@ -9855,7 +9865,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Account Type*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Account Currency*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -9873,107 +9883,125 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Customer Contribution");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Account Type*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "input", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](58, "input", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_58_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](59, LoanDetailsComponent_form_15_mat_error_59_Template, 2, 0, "mat-error", 20);
 
-            var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            return ctx_r30._keyPress($event);
-          })("input", function LoanDetailsComponent_form_15_Template_input_input_58_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "mat-form-field", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Customer Contribution");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "input", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function LoanDetailsComponent_form_15_Template_input_keypress_64_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
             var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r31.calculatCustomerContri(ctx_r31.loanForm.value);
-          })("input", function LoanDetailsComponent_form_15_Template_input_input_58_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
+            return ctx_r31._keyPress($event);
+          })("input", function LoanDetailsComponent_form_15_Template_input_input_64_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
             var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r32.calculateLoanAmmount(ctx_r32.loanForm.value);
+            return ctx_r32.calculatCustomerContri(ctx_r32.loanForm.value);
+          })("input", function LoanDetailsComponent_form_15_Template_input_input_64_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
+
+            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r33.calculateLoanAmmount(ctx_r33.loanForm.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](59, "div");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "div");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](60, LoanDetailsComponent_form_15_small_60_Template, 2, 0, "small", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](66, LoanDetailsComponent_form_15_small_66_Template, 2, 0, "small", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "mat-hint", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "mat-hint", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "Loan Tenure *");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "mat-form-field", 33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Year*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "Loan Tenure *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "mat-select", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "mat-form-field", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](69, LoanDetailsComponent_form_15_mat_option_69_Template, 2, 2, "mat-option", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "mat-form-field", 35);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Month*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "Year*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "mat-select", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "mat-select", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](74, LoanDetailsComponent_form_15_mat_option_74_Template, 2, 2, "mat-option", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](75, LoanDetailsComponent_form_15_mat_option_75_Template, 2, 2, "mat-option", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "mat-form-field", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "mat-form-field", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "Day*");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "mat-select", 38);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](79, LoanDetailsComponent_form_15_mat_option_79_Template, 2, 2, "mat-option", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, "Month*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "mat-select", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](80, LoanDetailsComponent_form_15_mat_option_80_Template, 2, 2, "mat-option", 19);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](80, LoanDetailsComponent_form_15_mat_error_80_Template, 2, 0, "mat-error", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](81, LoanDetailsComponent_form_15_mat_error_81_Template, 2, 0, "mat-error", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "mat-form-field", 38);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](82, LoanDetailsComponent_form_15_mat_error_82_Template, 2, 0, "mat-error", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](83, LoanDetailsComponent_form_15_mat_error_83_Template, 2, 0, "mat-error", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, "Day*");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "mat-select", 39);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](85, LoanDetailsComponent_form_15_mat_option_85_Template, 2, 2, "mat-option", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](86, LoanDetailsComponent_form_15_mat_error_86_Template, 2, 0, "mat-error", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](87, LoanDetailsComponent_form_15_mat_error_87_Template, 2, 0, "mat-error", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](88, LoanDetailsComponent_form_15_mat_error_88_Template, 2, 0, "mat-error", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](89, LoanDetailsComponent_form_15_mat_error_89_Template, 2, 0, "mat-error", 20);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -10024,6 +10052,14 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.screenArray);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("readonly", true);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.loanForm.get("accountCurrency").hasError("required"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -10137,15 +10173,15 @@
             // ];
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             }
 
             this.getAccountBranchDetails();
@@ -10228,7 +10264,7 @@
           value: function getAccountBranchDetails() {
             var _this37 = this;
 
-            //
+            //debugger
             this.api.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
               _this37.screenArray = data;
@@ -10275,11 +10311,12 @@
               customerContribution: [data ? data.customerContribution : ''],
               loanAmount: [data ? data.loanAmount : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
               purposeOfLoan: [data ? data.purposeOfLoan : ''],
-              accountCurrency: [data ? data.accountCurrency : ''],
+              accountCurrency: [data ? data.accountCurrency : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+              // accountCurrency:[data ? data.accountCurrency:''],
               loanTenure: [data ? data.loanTenure : ''],
-              day: [data ? data.loanTenure.split("-")[2] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-              month: [data ? data.loanTenure.split("-")[1] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-              year: [data ? data.loanTenure.split("-")[0] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
+              day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
             });
           }
         }, {
@@ -10343,7 +10380,7 @@
             pk = parseInt(pk);
             var prSize = this.loanForm.value.estimatedCost;
             prSize = parseInt(prSize);
-            var renewData = this.loanForm.value.year + "-" + this.loanForm.value.month + "-" + this.loanForm.value.day;
+            var renewData = this.loanForm.value.year + "year" + "-" + this.loanForm.value.month + "month" + "-" + this.loanForm.value.day + "day";
             this.loanForm.get("loanTenure").setValue(renewData);
             delete this.loanForm.value.year;
             delete this.loanForm.value.month;
@@ -10546,7 +10583,7 @@
         selectors: [["app-loan-details"]],
         decls: 21,
         vars: 2,
-        consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Group 673.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], [1, "alignChange"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], ["name", "account_branch", "placeholder", "Select ", "formControlName", "businessProductName", "disableOptionCentering", "", 3, "selectionChange"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "name", "date", "formControlName", "applicationDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min", "max"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], ["matInput", "", "formControlName", "estimatedCost", "name", "a_sig", "autocomplete", "off", "placeholder", "Estimated Cost", 1, "alignment", 3, "keypress", "input"], ["matInput", "", "formControlName", "loanAmount", "autocomplete", "off", "name", "a_sig", "placeholder", "Loan Amount", 1, "alignment", 3, "input"], ["style", "color:red;", 4, "ngIf"], ["matInput", "", "formControlName", "purposeOfLoan", "name", "remark", "placeholder", "Purpose of Loan", 1, "alignment"], ["name", "mod", "placeholder", "Select", "formControlName", "accountBranch", "disableOptionCentering", "", 3, "selectionChange"], ["matInput", "", "name", "accountType", "placeholder", "Account Type", "formControlName", "accountType", 1, "alignment", 3, "readonly"], ["matInput", "", "formControlName", "customerContribution", "name", "a_sig", "placeholder", "Customer Contribution", "autocomplete", "off", 1, "alignment", 3, "keypress", "input"], [1, "tenre"], ["appearance", "outline", "fxFlex", "24.4%", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4%", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4", 1, "full-width", "tenure2"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], [3, "value"], [2, "color", "red"]],
+        consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/Group 673.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], [1, "alignChange"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], [1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], ["name", "account_branch", "placeholder", "Select ", "formControlName", "businessProductName", "disableOptionCentering", "", 3, "selectionChange"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["matInput", "", "name", "date", "formControlName", "applicationDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min", "max"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker", ""], ["matInput", "", "formControlName", "estimatedCost", "name", "a_sig", "autocomplete", "off", "placeholder", "Estimated Cost", 1, "alignment", 3, "keypress", "input"], ["matInput", "", "formControlName", "loanAmount", "autocomplete", "off", "name", "a_sig", "placeholder", "Loan Amount", 1, "alignment", 3, "input"], ["style", "color:red;", 4, "ngIf"], ["matInput", "", "formControlName", "purposeOfLoan", "name", "remark", "placeholder", "Purpose of Loan", 1, "alignment"], ["name", "mod", "placeholder", "Select", "formControlName", "accountBranch", "disableOptionCentering", "", 3, "selectionChange"], ["matInput", "", "name", "currency", "placeholder", "Account Currency", "formControlName", "accountCurrency", 1, "alignment", 3, "readonly"], ["matInput", "", "name", "accountType", "placeholder", "Account Type", "formControlName", "accountType", 1, "alignment", 3, "readonly"], ["matInput", "", "formControlName", "customerContribution", "name", "a_sig", "placeholder", "Customer Contribution", "autocomplete", "off", 1, "alignment", 3, "keypress", "input"], [1, "tenre"], ["appearance", "outline", "fxFlex", "24.4%", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4%", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "23.4", 1, "full-width", "tenure2"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], [3, "value"], [2, "color", "red"]],
         template: function LoanDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -10595,7 +10632,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, LoanDetailsComponent_form_15_Template, 84, 21, "form", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, LoanDetailsComponent_form_15_Template, 90, 23, "form", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -11024,15 +11061,15 @@
             this.selectedYear = new Date().getFullYear();
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             }
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -11195,9 +11232,9 @@
               principal: [data ? data.principal : ''],
               interest: [data ? data.interest : ''],
               charges: [data ? data.charges : ''],
-              year: [data ? data.loanTenure.split("-")[0] : ''],
-              month: [data ? data.loanTenure.split("-")[1] : ''],
-              day: [data ? data.loanTenure.split("-")[2] : ''],
+              day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
               installmentType: [data ? data.installmentType : '']
             });
           }
@@ -11221,7 +11258,7 @@
             aprloan = parseInt(aprloan);
             var rate = this.OfferIssueForm.value.rateOfInterest;
             rate = parseInt(rate);
-            var renewData = this.OfferIssueForm.value.year + "-" + this.OfferIssueForm.value.month + "-" + this.OfferIssueForm.value.day;
+            var renewData = this.OfferIssueForm.value.year + "year" + "-" + this.OfferIssueForm.value.month + "month" + "-" + this.OfferIssueForm.value.day + "day";
             this.OfferIssueForm.get("loanTenure").setValue(renewData);
             delete this.OfferIssueForm.value.year;
             delete this.OfferIssueForm.value.month;
@@ -11338,9 +11375,9 @@
             this.apiService.fetchByLoanAccountId(this.loanaccountID).subscribe(function (res) {
               _this44.OfferIssueForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
 
-              var dataYear = res.loanTenure.split("-")[0];
-              var dataMonth = res.loanTenure.split("-")[1];
-              var dataDay = res.loanTenure.split("-")[2];
+              var dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+              var dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+              var dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
 
               _this44.OfferIssueForm.get('year').setValue(dataYear);
 
@@ -18024,15 +18061,15 @@
             this.selectedYear = new Date().getFullYear();
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             }
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -18091,9 +18128,9 @@
               interest: [data ? data.interest : ''],
               charges: [data ? data.charges : ''],
               repaymentAmount: [data ? data.repaymentAmount : ''],
-              year: [data ? data.loanTenure.split("-")[0] : ''],
-              month: [data ? data.loanTenure.split("-")[1] : ''],
-              day: [data ? data.loanTenure.split("-")[2] : '']
+              day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
             });
             console.log("this.accountForm", this.accountForm);
           }
@@ -18134,7 +18171,7 @@
             aprloan = parseInt(aprloan);
             var rate = this.accountForm.value.rateOfInterest;
             rate = parseInt(rate);
-            var renewData = this.accountForm.value.year + "-" + this.accountForm.value.month + "-" + this.accountForm.value.day;
+            var renewData = this.accountForm.value.year + "year" + "-" + this.accountForm.value.month + "month" + "-" + this.accountForm.value.day + "day";
             this.accountForm.get("loanTenure").setValue(renewData);
             this.accountForm.value.loanTenure = renewData;
             var payload = {
@@ -18210,12 +18247,9 @@
               _this66.accountForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
 
               console.log(res.loanTenure);
-              var dataYear = res.loanTenure.split("-")[0];
-              console.log(dataYear);
-              var dataMonth = res.loanTenure.split("-")[1];
-              console.log(dataMonth);
-              var dataDay = res.loanTenure.split("-")[2];
-              console.log(dataDay);
+              var dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+              var dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+              var dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
 
               _this66.accountForm.get('year').setValue(dataYear);
 
@@ -19230,15 +19264,15 @@
             this.selectedYear = new Date().getFullYear();
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             }
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -19299,9 +19333,9 @@
               offerIssueDate: [data ? data.offerIssueDate : ''],
               generateOffer: [data ? data.generateOffer : ''],
               offerExpiryDate: [data ? data.offerExpiryDate : ''],
-              year: [data ? data.loanTenure.split("-")[0] : ''],
-              month: [data ? data.loanTenure.split("-")[1] : ''],
-              day: [data ? data.loanTenure.split("-")[2] : ''],
+              day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
               installmentType: [data ? data.installmentType : ''],
               dateOfOfferAcceptOrReject: [data ? data.dateOfOfferAcceptOrReject : ''],
               customerResponse: [data ? data.customerResponse : '']
@@ -19339,7 +19373,7 @@
             aprloan = parseInt(aprloan);
             var rate = this.offeracceptForm.value.rateOfInterest;
             rate = parseInt(rate);
-            var renewData = this.offeracceptForm.value.year + "-" + this.offeracceptForm.value.month + "-" + this.offeracceptForm.value.day;
+            var renewData = this.offeracceptForm.value.year + "year" + "-" + this.offeracceptForm.value.month + "month" + "-" + this.offeracceptForm.value.day + "day";
             this.offeracceptForm.get("loanTenure").setValue(renewData);
             delete this.offeracceptForm.value.year;
             delete this.offeracceptForm.value.month;
@@ -19459,12 +19493,9 @@
               _this75.offeracceptForm.get('approvedLoanAmount').setValue(res.approvedLoanAmount);
 
               console.log(res.loanTenure);
-              var dataYear = res.loanTenure.split("-")[0];
-              console.log(dataYear);
-              var dataMonth = res.loanTenure.split("-")[1];
-              console.log(dataMonth);
-              var dataDay = res.loanTenure.split("-")[2];
-              console.log(dataDay);
+              var dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+              var dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+              var dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
 
               _this75.offeracceptForm.get('year').setValue(dataYear);
 
@@ -19519,7 +19550,7 @@
         selectors: [["app-offer-accept-reject"]],
         decls: 118,
         vars: 24,
-        consts: [["fxLayout", "column"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "column", 3, "formGroup"], [1, "alignChange"], ["visible", "true"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], [1, "hint"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "applicantName", "placeholder", "Applicant Name", "readonly", "", 1, "alignment"], [4, "ngIf"], ["matInput", "", "type", "text", "name", "approvedLoanAmount", "placeholder", "Approved Loan Account", "formControlName", "approvedLoanAmount", "maxlength", "16", "maxlength", "16", "readonly", "", 1, "alignment", 3, "keypress", "keyup"], ["fxLayout", "row wrap"], [1, "size"], ["appearance", "outline", "fxFlex", "23", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "disableOptionCentering", "", "formControlName", "year"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "22", 1, "full-width", "tenure1"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], ["formControlName", "installmentType", "placeholder", "Select", "disableOptionCentering", "", "required", "", 1, "alignment"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "installmentFrequency", "maxlength", "2", "placeholder", "Installment Frequency", 1, "alignment", 3, "keypress"], ["matInput", "", "type", "text", "name", "loanAmmount", "maxlength", "2", "formControlName", "rateOfInterest", "placeholder", "Rate Of Interest", 1, "alignment", 3, "keypress"], ["matInput", "", "id", "dob", "name", "offerIssueDate", "readonly", "", "formControlName", "offerIssueDate", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "id", "generateOffer", "name", "generateOffer", "readonly", "", "formControlName", "generateOffer", "value", "generateOffer", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "max"], ["picker3", ""], ["name", "customerResponse", "formControlName", "customerResponse", "disableOptionCenteringplaceholder", "Select"], ["value", " "], ["matInput", "", "id", "dob", "name", "dateOfOfferAcceptOrReject", "readonly", "", "formControlName", "dateOfOfferAcceptOrReject", "value", "dateOfOfferAcceptOrReject", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker1", ""], ["matInput", "", "id", "dobss", "name", "offerExpiryDate", "readonly", "", "formControlName", "offerExpiryDate", "value", "Date", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker2", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
+        consts: [["fxLayout", "column"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_approve_qwp7.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], ["fxLayout", "column", 3, "formGroup"], [1, "alignChange"], ["visible", "true"], ["fxFlex", "70%", "fxLayoutGap", "10px"], ["fxFlex", "50%", 1, "flex-grow-1"], ["appearance", "outline", 1, "full-width"], [1, "hint"], ["matInput", "", "type", "text", "name", "applicantName", "formControlName", "applicantName", "placeholder", "Applicant Name", "readonly", "", 1, "alignment"], [4, "ngIf"], ["matInput", "", "type", "text", "name", "approvedLoanAmount", "placeholder", "Approved Loan Account", "formControlName", "approvedLoanAmount", "maxlength", "16", "maxlength", "16", "readonly", "", 1, "alignment", 3, "keypress", "keyup"], ["fxLayout", "row wrap"], [1, "size"], ["appearance", "outline", "fxFlex", "23", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "disableOptionCentering", "", "formControlName", "year"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "22", 1, "full-width", "tenure1"], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", ""], ["formControlName", "installmentType", "placeholder", "Select", "disableOptionCentering", "", "required", "", 1, "alignment"], ["matInput", "", "type", "text", "name", "installmentFrequency", "formControlName", "installmentFrequency", "placeholder", "Installment Frequency", 1, "alignment"], ["matInput", "", "type", "text", "name", "loanAmmount", "maxlength", "2", "formControlName", "rateOfInterest", "placeholder", "Rate Of Interest", 1, "alignment", 3, "keypress"], ["matInput", "", "id", "dob", "name", "offerIssueDate", "readonly", "", "formControlName", "offerIssueDate", "value", "offerIssueDate", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "id", "generateOffer", "name", "generateOffer", "readonly", "", "formControlName", "generateOffer", "value", "generateOffer", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "max"], ["picker3", ""], ["name", "customerResponse", "formControlName", "customerResponse", "disableOptionCenteringplaceholder", "Select"], ["value", " "], ["matInput", "", "id", "dob", "name", "dateOfOfferAcceptOrReject", "readonly", "", "formControlName", "dateOfOfferAcceptOrReject", "value", "dateOfOfferAcceptOrReject", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker1", ""], ["matInput", "", "id", "dobss", "name", "offerExpiryDate", "readonly", "", "formControlName", "offerExpiryDate", "value", "Date", "placeholder", "DD/MM/YYYY", 1, "alignment", 3, "matDatepicker", "min"], ["picker2", ""], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "value"]],
         template: function AcceptOfferAcceptRejectComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -19718,13 +19749,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "input", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function AcceptOfferAcceptRejectComponent_Template_input_keypress_60_listener($event) {
-              return ctx._keyPress1($event);
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](60, "input", 26);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -21718,11 +21743,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isAccountApproveStageDone ? "active" : "notActive");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isLoanApplicationEntryDone ? "active" : "notActive");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isAccountApproveStageDone ? "active" : "notActive");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.isLoanApplicationEntryDone ? "active" : "notActive");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
@@ -22783,7 +22808,7 @@
           value: function getAccountBranchDetails() {
             var _this83 = this;
 
-            //
+            //debugger
             this.apiService.getAccountBranch().subscribe(function (data) {
               console.log("data:: AccountBranch ", data);
               _this83.arrayAccountBranch = data;
@@ -23433,7 +23458,7 @@
                 if (res) {
                   _this87.ls.setItem('enable', true);
 
-                  _this87.imageURL1 = res === null || res === void 0 ? void 0 : res.image;
+                  _this87.imageURL1 = (res === null || res === void 0 ? void 0 : res.image) ? res === null || res === void 0 ? void 0 : res.image : 'not_available';
                   _this87.disableDone = (res === null || res === void 0 ? void 0 : res.image) ? false : true;
                   console.log(_this87.show); //this.isDone=true;
                   // this.getByAccountId(this.accountId);
@@ -28258,15 +28283,15 @@
             this.selectedYear = new Date().getFullYear();
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             }
 
             this.accountId = this.ls.getItem('accountId');
@@ -28438,17 +28463,11 @@
             this.apiService.fetchLoanAssessment(this.loanaccountID).subscribe(function (accountDetails) {
               _this102.rateOfInterest = accountDetails.rateOfInterest;
               _this102.loanTenure = accountDetails.loanTenure;
-
-              var day = _this102.loanTenure.split("-")[2];
-
+              var day = Number(_this102.loanTenure.split("-")[2].match(/\d+/)[0]);
               console.log(day);
-
-              var month = _this102.loanTenure.split("-")[1];
-
+              var month = Number(_this102.loanTenure.split("-")[1].match(/\d+/)[0]);
               console.log(month);
-
-              var year = _this102.loanTenure.split("-")[0];
-
+              var year = Number(_this102.loanTenure.split("-")[0].match(/\d+/)[0]);
               console.log(year); // this.loanAmountRecommendation=accountDetails.loanAmountRecommendation;
 
               console.log("LoanAccountId:", accountDetails.loanAccountId);
@@ -28503,9 +28522,9 @@
               userRecommendation: [data ? data.userRecommendation : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
               systemRecommendation: [data ? data.systemRecommendation : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
               requestedLoanAmount: [data ? data.requestedLoanAmount : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-              year: [data ? data.loanTenure.split("-")[0] : ''],
-              month: [data ? data.loanTenure.split("-")[1] : ''],
-              day: [data ? data.loanTenure.split("-")[2] : '']
+              day: [data ? Number(data.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              month: [data ? Number(data.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+              year: [data ? Number(data.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
             });
           } // fetchByCif(cifNumber, isExistingCustomer) {
           //   this.appApiService.fetchByCif(cifNumber).subscribe((res: any) => {
@@ -36200,25 +36219,27 @@
       /*! @angular/common */
       "SVse");
 
-      function RepaymentScheduleComponent_div_16_Template(rf, ctx) {
+      function RepaymentScheduleComponent_tr_14_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td", 5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td", 6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](7, "currency");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36238,7 +36259,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r1.principalPaid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](7, 3, data_r1.principalPaid, " "));
         }
       }
 
@@ -36292,9 +36313,9 @@
       RepaymentScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: RepaymentScheduleComponent,
         selectors: [["app-repayment-schedule"]],
-        decls: 17,
+        decls: 15,
         vars: 1,
-        consts: [["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "cart-table", "default-bg", "mat-elevation-z0"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 1, "heading"], [1, "label"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", 4, "ngFor", "ngForOf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], [1, "headingText1"], [1, "headingText2"], [1, "headingText3"]],
+        consts: [["fxLayout", "row", 1, "contain"], [1, "backIcon", 3, "click"], [1, "table", "table-bordered"], ["scope", "col"], [4, "ngFor", "ngForOf"], [1, "headingText1"], [1, "headingText2"], [1, "headingText3"]],
         template: function RepaymentScheduleComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -36315,43 +36336,35 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "table", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "thead");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "th", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "th", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Payment Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Payment Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "th", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "th", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Payment Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Payment Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "th", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "th", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Principal To Be Paid");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "EMI To Be Paid");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, RepaymentScheduleComponent_div_16_Template, 7, 3, "div", 5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "tbody");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, RepaymentScheduleComponent_tr_14_Template, 8, 6, "tr", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -36361,12 +36374,13 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.scheduleStatus);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutAlignDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_6__["DefaultLayoutDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["CurrencyPipe"]],
         styles: [".contain[_ngcontent-%COMP%] {\n  justify-content: flex-end;\n}\n\n.backIcon[_ngcontent-%COMP%] {\n  cursor: pointer;\n  padding: 0% 0% 0% 0%;\n  font-size: 20px;\n  color: #6e6e6e;\n}\n\n.headingText1[_ngcontent-%COMP%] {\n  padding-left: 10%;\n}\n\n.headingText2[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n\n.headingText3[_ngcontent-%COMP%] {\n  padding-right: 0%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxyZXBheW1lbnQtc2NoZWR1bGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBMEI7QUFDOUI7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7RUFDZixjQUFjO0FBRWxCOztBQUNBO0VBQ0UsaUJBQWlCO0FBRW5COztBQUFBO0VBQ0UsaUJBQWlCO0FBR25COztBQURBO0VBQ0UsaUJBQWlCO0FBSW5CIiwiZmlsZSI6InJlcGF5bWVudC1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWlue1xyXG4gICAganVzdGlmeS1jb250ZW50OiAgZmxleC1lbmQ7XHJcbn1cclxuLmJhY2tJY29ue1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgcGFkZGluZzogMCUgMCUgMCUgMCU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBjb2xvcjogIzZlNmU2ZTtcclxufVxyXG5cclxuLmhlYWRpbmdUZXh0MXtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxufVxyXG4uaGVhZGluZ1RleHQye1xyXG4gIHBhZGRpbmctcmlnaHQ6IDAlO1xyXG59XHJcbi5oZWFkaW5nVGV4dDN7XHJcbiAgcGFkZGluZy1yaWdodDogMCU7XHJcbn1cclxuIl19 */"]
       });
       /*@__PURE__*/
@@ -41086,7 +41100,27 @@
         }
       }
 
-      function LoanRepaymentComponentComponent_form_14_mat_error_54_Template(rf, ctx) {
+      function LoanRepaymentComponentComponent_form_14_mat_option_52_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var item_r15 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", item_r15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](item_r15);
+        }
+      }
+
+      function LoanRepaymentComponentComponent_form_14_mat_error_53_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
 
@@ -41096,9 +41130,9 @@
         }
       }
 
-      function LoanRepaymentComponentComponent_form_14_mat_option_65_Template(rf, ctx) {
+      function LoanRepaymentComponentComponent_form_14_mat_option_64_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -41106,19 +41140,19 @@
         }
 
         if (rf & 2) {
-          var year_r14 = ctx.$implicit;
+          var year_r16 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", year_r14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", year_r16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](year_r14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](year_r16);
         }
       }
 
-      function LoanRepaymentComponentComponent_form_14_mat_option_70_Template(rf, ctx) {
+      function LoanRepaymentComponentComponent_form_14_mat_option_69_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -41126,19 +41160,19 @@
         }
 
         if (rf & 2) {
-          var month_r15 = ctx.$implicit;
+          var month_r17 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", month_r15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", month_r17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](month_r15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](month_r17);
         }
       }
 
-      function LoanRepaymentComponentComponent_form_14_mat_option_75_Template(rf, ctx) {
+      function LoanRepaymentComponentComponent_form_14_mat_option_74_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -41146,17 +41180,17 @@
         }
 
         if (rf & 2) {
-          var day_r16 = ctx.$implicit;
+          var day_r18 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", day_r16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", day_r18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](day_r16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](day_r18);
         }
       }
 
-      function LoanRepaymentComponentComponent_form_14_mat_error_76_Template(rf, ctx) {
+      function LoanRepaymentComponentComponent_form_14_mat_error_75_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
 
@@ -41166,22 +41200,22 @@
         }
       }
 
-      function LoanRepaymentComponentComponent_form_14_div_77_Template(rf, ctx) {
+      function LoanRepaymentComponentComponent_form_14_div_76_Template(rf, ctx) {
         if (rf & 1) {
-          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 42);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "a", 45);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function LoanRepaymentComponentComponent_form_14_div_77_Template_a_click_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function LoanRepaymentComponentComponent_form_14_div_76_Template_a_click_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r20);
 
-            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-            return ctx_r17.openPopup();
+            return ctx_r19.openPopup();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Show Repayment Schedule");
@@ -41196,15 +41230,15 @@
         }
 
         if (rf & 2) {
-          var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r13.loanRepaymentForm);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r14.loanRepaymentForm);
         }
       }
 
       function LoanRepaymentComponentComponent_form_14_Template(rf, ctx) {
         if (rf & 1) {
-          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 12);
 
@@ -41354,87 +41388,83 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "mat-select", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "mat-option", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](52, LoanRepaymentComponentComponent_form_14_mat_option_52_Template, 2, 2, "mat-option", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](53, "opinion");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](53, LoanRepaymentComponentComponent_form_14_mat_error_53_Template, 2, 0, "mat-error", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](54, LoanRepaymentComponentComponent_form_14_mat_error_54_Template, 2, 0, "mat-error", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "div", 29);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "div", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "mat-hint", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "b");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, "Loan Tenure *");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "div", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](60, "mat-form-field", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "div");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](62, "Year*");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "mat-hint", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](59, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](63, "mat-select", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](60, "Loan Tenure *");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](64, LoanRepaymentComponentComponent_form_14_mat_option_64_Template, 2, 2, "mat-option", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "mat-form-field", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](65, "mat-form-field", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](62, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](63, "Year*");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "mat-select", 36);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](65, LoanRepaymentComponentComponent_form_14_mat_option_65_Template, 2, 2, "mat-option", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](67, "Month*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](68, "mat-select", 38);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "mat-form-field", 38);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](67, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](68, "Month*");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](69, "mat-select", 39);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](70, LoanRepaymentComponentComponent_form_14_mat_option_70_Template, 2, 2, "mat-option", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](69, LoanRepaymentComponentComponent_form_14_mat_option_69_Template, 2, 2, "mat-option", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](71, "mat-form-field", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](70, "mat-form-field", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](72, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](71, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](73, "Day*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](72, "Day*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](74, "mat-select", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](73, "mat-select", 39);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function LoanRepaymentComponentComponent_form_14_Template_mat_select_selectionChange_74_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function LoanRepaymentComponentComponent_form_14_Template_mat_select_selectionChange_73_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r22);
 
-            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r19.getDays(ctx_r19.loanRepaymentForm.get("month").value, ctx_r19.loanRepaymentForm.get("year").value, ctx_r19.loanRepaymentForm.get("day").value);
+            return ctx_r21.getDays(ctx_r21.loanRepaymentForm.get("month").value, ctx_r21.loanRepaymentForm.get("year").value, ctx_r21.loanRepaymentForm.get("day").value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](75, LoanRepaymentComponentComponent_form_14_mat_option_75_Template, 2, 2, "mat-option", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](74, LoanRepaymentComponentComponent_form_14_mat_option_74_Template, 2, 2, "mat-option", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -41444,11 +41474,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](76, LoanRepaymentComponentComponent_form_14_mat_error_76_Template, 2, 0, "mat-error", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](75, LoanRepaymentComponentComponent_form_14_mat_error_75_Template, 2, 0, "mat-error", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](77, LoanRepaymentComponentComponent_form_14_div_77_Template, 5, 1, "div", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](76, LoanRepaymentComponentComponent_form_14_div_76_Template, 5, 1, "div", 40);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -41498,7 +41528,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r0.loanRepaymentForm.get("moraturioumPeriod").valid && ctx_r0.loanRepaymentForm.get("moraturioumPeriod").touched);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r0.repaymentFreq);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r0.loanRepaymentForm.get("repaymentFrequency").valid && ctx_r0.loanRepaymentForm.get("repaymentFrequency").touched);
 
@@ -41526,7 +41560,7 @@
 
       function LoanRepaymentComponentComponent_form_19_mat_option_8_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -41534,13 +41568,13 @@
         }
 
         if (rf & 2) {
-          var accNo_r29 = ctx.$implicit;
+          var accNo_r31 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", accNo_r29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", accNo_r31);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](accNo_r29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](accNo_r31);
         }
       }
 
@@ -41624,9 +41658,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-card", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-card", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -41636,17 +41670,17 @@
         }
 
         if (rf & 2) {
-          var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r28.internalAccount.get("ifscCode").valid && ctx_r28.internalAccount.get("ifscCode").touched);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r30.internalAccount.get("ifscCode").valid && ctx_r30.internalAccount.get("ifscCode").touched);
         }
       }
 
       function LoanRepaymentComponentComponent_form_19_Template(rf, ctx) {
         if (rf & 1) {
-          var _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 12);
 
@@ -41664,9 +41698,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "mat-select", 46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "mat-select", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, LoanRepaymentComponentComponent_form_19_mat_option_8_Template, 2, 2, "mat-option", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, LoanRepaymentComponentComponent_form_19_mat_option_8_Template, 2, 2, "mat-option", 33);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -41688,14 +41722,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "input", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "input", 46);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function LoanRepaymentComponentComponent_form_19_Template_input_keypress_15_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r34);
 
-            var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r31.letterOnly($event);
+            return ctx_r33.letterOnly($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -41722,14 +41756,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "input", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "input", 47);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keypress", function LoanRepaymentComponentComponent_form_19_Template_input_keypress_23_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r34);
 
-            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r33._keyPress($event);
+            return ctx_r35._keyPress($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -41742,7 +41776,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](26, LoanRepaymentComponentComponent_form_19_div_26_Template, 6, 1, "div", 49);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](26, LoanRepaymentComponentComponent_form_19_div_26_Template, 6, 1, "div", 48);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -41828,15 +41862,15 @@
             this.selectedYear = new Date().getFullYear();
 
             for (var year = 0; year <= 50; year++) {
-              this.years.push(year + " year");
+              this.years.push(year);
             }
 
             for (var month = 0; month <= 11; month++) {
-              this.months.push(month + " month");
+              this.months.push(month);
             }
 
             for (var day = 0; day <= 30; day++) {
-              this.days.push(day + " day");
+              this.days.push(day);
             } // this.months = [
             //   "Jan",
             //   "Feb",
@@ -41853,7 +41887,8 @@
             // ];
 
 
-            var isLoanDisbursementDetails = this.ls.getItem("LOAN_DISBURSEMENT_DETAIL_DONE"); // setTimeout(() => {
+            this.getRepaymentFreqDetails('loan_repayment_frequency');
+            var isLoanDisbursementDetails = this.ls.getItem("LOAN_REPAYMENT_DETAIL_DONE"); // setTimeout(() => {
             // }, 10);
 
             if (this.loanaccountId != null && isLoanDisbursementDetails) {
@@ -41869,18 +41904,28 @@
             this.lastUpdateByCif();
           }
         }, {
+          key: "getRepaymentFreqDetails",
+          value: function getRepaymentFreqDetails(loan_repayment_frequency) {
+            var _this134 = this;
+
+            this.api.getRepaymentFreq(loan_repayment_frequency).subscribe(function (resp) {
+              _this134.repaymentFreq = resp;
+              console.log(_this134.repaymentFreq);
+            });
+          }
+        }, {
           key: "getRepaymenttDetails",
           value: function getRepaymenttDetails() {
-            var _this134 = this;
+            var _this135 = this;
 
             //this.loader.open();
             this.api.loanRepaymentFetchById(this.loanaccountId).subscribe(function (repaymentDetails) {
               // this.loader.close();
-              _this134.repaymentDetails = repaymentDetails;
+              _this135.repaymentDetails = repaymentDetails;
 
-              _this134.buildAccountForm(_this134.repaymentDetails);
+              _this135.buildAccountForm(_this135.repaymentDetails);
             }, function (err) {
-              _this134.loader.close();
+              _this135.loader.close();
             });
           }
         }, {
@@ -41899,14 +41944,16 @@
               repaymentFrequency: [item ? item.repaymentFrequency : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
               repaymentMode: [item ? item.repaymentMode : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
               typeOfRepayment: [item ? item.typeOfRepayment : "", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-              day: [item ? item.loanTenure.split("-")[2] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-              month: [item ? item.loanTenure.split("-")[1] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-              year: [item ? item.loanTenure.split("-")[0] : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
+              day: [item ? Number(item.loanTenure.split("-")[2].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              month: [item ? Number(item.loanTenure.split("-")[1].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              year: [item ? Number(item.loanTenure.split("-")[0].match(/\d+/)[0]) : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
             });
             console.log(this.loanRepaymentForm.value);
             this.scheduleLink = this.formBuilder.group({
               firstRepaymentDate: this.loanRepaymentForm.get("firstRepaymentDate"),
-              loanAccountId: this.loanaccountId
+              loanAccountId: this.loanaccountId,
+              repaymentFrequency: this.loanRepaymentForm.get("repaymentFrequency"),
+              loanTenure: this.loanRepaymentForm.get("loanTenure")
             });
             this.internalAccount = this.formBuilder.group({
               branchCode: [item ? item.branchCode : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(".*[a-zA-Z0-9].*")]],
@@ -41917,16 +41964,20 @@
         }, {
           key: "getDays",
           value: function getDays(year1, month1, day1) {
-            var yr = moment__WEBPACK_IMPORTED_MODULE_11__(new Date()).add(parseInt(year1.split(" ")[0]), 'months').format('LLL');
-            var month = moment__WEBPACK_IMPORTED_MODULE_11__(yr).add(parseInt(month1.split(" ")[0]), 'year').format('LLL');
-            var finalDate = moment__WEBPACK_IMPORTED_MODULE_11__(month).add(parseInt(day1.split(" ")[0]), 'days').format('LLL');
+            var yr = moment__WEBPACK_IMPORTED_MODULE_11__(new Date()).add(parseInt(year1), 'months').format('LLL');
+            var month = moment__WEBPACK_IMPORTED_MODULE_11__(yr).add(parseInt(month1), 'year').format('LLL');
+            var finalDate = moment__WEBPACK_IMPORTED_MODULE_11__(month).add(parseInt(day1), 'days').format('LLL');
             console.log("finalDate--->", finalDate);
-            this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate));
+            this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate)); // var yr=moment(new Date()).add(parseInt(year1.split(" ")[0]), 'months').format('LLL');
+            // var month=moment(yr).add(parseInt(month1.split(" ")[0]), 'year').format('LLL');
+            // var finalDate=moment(month).add(parseInt(day1.split(" ")[0]), 'days').format('LLL');
+            // console.log("finalDate--->",finalDate);
+            // this.loanRepaymentForm.get("maturityDate").setValue(new Date(finalDate));
           }
         }, {
           key: "openPopup",
           value: function openPopup() {
-            var _this135 = this;
+            var _this136 = this;
 
             console.log(this.loanRepaymentForm.value);
             console.log(this.internalAccount.value);
@@ -41935,17 +41986,19 @@
             console.log(latest_date);
             var payload = {
               firstRepaymentDate: latest_date,
-              loanAccountId: this.loanaccountId
+              loanAccountId: this.loanaccountId,
+              loanTenure: this.loanRepaymentForm.value.year + "month" + "-" + this.loanRepaymentForm.value.month + "year" + "-" + this.loanRepaymentForm.value.day + "day",
+              repaymentFrequency: this.loanRepaymentForm.value.repaymentFrequency
             };
             console.log("payload", payload);
             this.api.scheduleLink(payload).subscribe(function (resp) {
-              _this135.fetchRescheduleData = resp;
-              console.log(_this135.fetchRescheduleData);
-              _this135.loanaccountId = _this135.ls.getItem("loanAccountId");
-              localStorage.setItem("fetchRescheduleData", JSON.stringify(_this135.fetchRescheduleData));
-              console.log(_this135.fetchRescheduleData);
+              _this136.fetchRescheduleData = resp;
+              console.log(_this136.fetchRescheduleData);
+              _this136.loanaccountId = _this136.ls.getItem("loanAccountId");
+              localStorage.setItem("fetchRescheduleData", JSON.stringify(_this136.fetchRescheduleData));
+              console.log(_this136.fetchRescheduleData);
 
-              var dialogRef = _this135.dialog.open(_repayment_schedule_repayment_schedule_component__WEBPACK_IMPORTED_MODULE_8__["RepaymentScheduleComponent"], {
+              var dialogRef = _this136.dialog.open(_repayment_schedule_repayment_schedule_component__WEBPACK_IMPORTED_MODULE_8__["RepaymentScheduleComponent"], {
                 width: "55%",
                 backdropClass: "dialog-bg-trans",
                 height: "55%",
@@ -41964,11 +42017,11 @@
         }, {
           key: "submit",
           value: function submit() {
-            var _this136 = this;
+            var _this137 = this;
 
             var latest_date = this.datepipe.transform(this.loanRepaymentForm.value.firstRepaymentDate, 'yyyy-MMM-dd');
             var latest_dateMaturity = this.datepipe.transform(this.loanRepaymentForm.value.maturityDate, "yyyy-MMM-dd");
-            var renewData = this.loanRepaymentForm.value.year + "-" + this.loanRepaymentForm.value.month + "-" + this.loanRepaymentForm.value.day; // this.loanRepaymentForm.get("loanTenure").setValue(renewData);
+            var renewData = this.loanRepaymentForm.value.year + "month" + "-" + this.loanRepaymentForm.value.month + "year" + "-" + this.loanRepaymentForm.value.day + "day"; // this.loanRepaymentForm.get("loanTenure").setValue(renewData);
 
             this.loanRepaymentForm.value.loanTenure = renewData;
             this.loanRepaymentForm.value.firstRepaymentDate = latest_date;
@@ -41985,15 +42038,15 @@
 
             console.log(this.loanRepaymentForm.value);
             this.api.loanRepaymentSave(this.loanRepaymentForm.value).subscribe(function (resp) {
-              _this136.snack.open("Loan Repayment Details Saved!", "OK", {
+              _this137.snack.open("Loan Repayment Details Saved!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this136.next();
+              _this137.next();
             }, function (err) {
-              _this136.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
+              _this137.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -42037,49 +42090,50 @@
         }, {
           key: "fetchByCif",
           value: function fetchByCif() {
-            var _this137 = this;
+            var _this138 = this;
 
             this.cifNumber = this.ls.getItem('cId');
             this.api.fetchAccountIdByCustId(this.cifNumber).subscribe(function (accountNo) {
               var _a;
 
-              _this137.accountNoArr = accountNo;
-              console.log(_this137.accountNoArr);
+              _this138.accountNoArr = accountNo;
+              console.log(_this138.accountNoArr);
 
-              _this137.internalAccount.get('customerAccount').setValue((_a = _this137.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
+              _this138.internalAccount.get('customerAccount').setValue((_a = _this138.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
 
-              _this137.fetchByValue();
+              _this138.fetchByValue();
             });
           }
         }, {
           key: "fetchByValue",
           value: function fetchByValue() {
-            var _this138 = this;
+            var _this139 = this;
 
             console.log(this.internalAccount.get('customerAccount').value);
             this.api.fetchByBranchCode(this.internalAccount.get('customerAccount').value).subscribe(function (resp) {
               console.log(resp);
 
-              _this138.internalAccount.get('branchCode').setValue(resp.branchCode);
+              _this139.internalAccount.get('branchCode').setValue(resp.branchCode);
 
-              _this138.internalAccount.get('bankName').setValue(resp.bankName);
+              _this139.internalAccount.get('bankName').setValue(resp.bankName);
             });
           }
         }, {
           key: "loanData",
           value: function loanData() {
-            var _this139 = this;
+            var _this140 = this;
 
             this.apiService.fetchByLoanAccountId(this.loanaccountId).subscribe(function (res) {
-              var dataYear = res.loanTenure.split("-")[0];
-              var dataMonth = res.loanTenure.split("-")[1];
-              var dataDay = res.loanTenure.split("-")[2];
+              var dataYear = Number(res.loanTenure.split("-")[0].match(/\d+/)[0]);
+              var dataMonth = Number(res.loanTenure.split("-")[1].match(/\d+/)[0]);
+              var dataDay = Number(res.loanTenure.split("-")[2].match(/\d+/)[0]);
+              console.log(dataYear);
 
-              _this139.loanRepaymentForm.get("year").setValue(dataYear);
+              _this140.loanRepaymentForm.get("year").setValue(dataYear);
 
-              _this139.loanRepaymentForm.get('month').setValue(dataMonth);
+              _this140.loanRepaymentForm.get('month').setValue(dataMonth);
 
-              _this139.loanRepaymentForm.get('day').setValue(dataDay);
+              _this140.loanRepaymentForm.get('day').setValue(dataDay);
             }, function (err) {
               console.error(err);
             });
@@ -42087,10 +42141,10 @@
         }, {
           key: "lastUpdateByCif",
           value: function lastUpdateByCif() {
-            var _this140 = this;
+            var _this141 = this;
 
             this.apiService.getLoanDetails(this.loanaccountId).subscribe(function (resp) {
-              _this140.fRepayment = _this140.datepipe.transform(resp.applicationDate, "yyyy-MM-dd");
+              _this141.fRepayment = _this141.datepipe.transform(resp.applicationDate, "yyyy-MM-dd");
             }, function (err) {
               console.error(err);
             });
@@ -42109,7 +42163,7 @@
         selectors: [["app-loan-repayment-component"]],
         decls: 25,
         vars: 3,
-        consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_Payments_re_77x0.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "flex-grow-2"], ["appearance", "outline", 1, "full-width"], ["disableOptionCentering", "", "placeholder", "Repayment Mode", "name", "repaymentMode", "formControlName", "repaymentMode"], ["value", "Internal"], ["value", "External"], ["disableOptionCentering", "", "placeholder", "Type of Repayment", "name", "opinion", "formControlName", "typeOfRepayment"], ["value", "EMI"], [4, "ngIf"], ["matInput", "", "placeholder", "DD/MM/YYYY", "name", "firstRepaymentDate", "formControlName", "firstRepaymentDate", "readonly", "", 1, "alignment", 3, "min", "matDatepicker"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker1", ""], ["placeholder", "DD/MM/YYYY", "matInput", "", "name", "valuationDate", "formControlName", "maturityDate", "readonly", "", 1, "alignment", 3, "matDatepicker", "max"], ["appDatepicker", ""], [1, "flex-grow-1"], ["matInput", "", "placeholder", "Moratorium Period", "formControlName", "moraturioumPeriod", "type", "number", "name", "MarketValueofAsset", "min", "0", 1, "alignment"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["disableOptionCentering", "", "placeholder", "Repayment Frequency", "name", "opinion", "formControlName", "repaymentFrequency"], ["value", "opinion"], [1, "tenre"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", "fxFlex", "21.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", "", 3, "selectionChange"], ["fxLayout", "row", "fxLayoutGap", "25px", "class", "showShedule", 3, "formGroup", 4, "ngIf"], [3, "value"], ["fxLayout", "row", "fxLayoutGap", "25px", 1, "showShedule", 3, "formGroup"], ["fxFlex", "100", 1, "pr-1"], [1, "link", 3, "routerLink", "click"], ["formControlName", "customerAccount", "disableOptionCentering", "", "placeholder", "Customer Account"], ["matInput", "", "placeholder", "Bank Name", "formControlName", "bankName", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["matInput", "", "placeholder", "Branch Code", "formControlName", "branchCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["class", "flex-grow-1", 4, "ngIf"], [1, "inputMatName"], ["matInput", "", "placeholder", "IFSC Code", "formControlName", "ifscCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment"]],
+        consts: [["fxLayout", "row wrap"], ["fxFlex", "100"], [1, "propic", "text-center"], ["src", "assets/images/svg/undraw_Payments_re_77x0.svg", "alt", "", 1, "w-90"], [1, "profile-title", "text-center", "mt-8"], [1, "main-title1"], [1, "p-0"], ["visible", "true"], [3, "formGroup", 4, "ngIf"], ["fxLayout", "row", "fxLayoutAlign", "space-between center", "fxLayoutGap", "16px", 1, "mt-32"], ["mat-button", "", "rounded", "", 1, "Backbtn", 3, "click"], ["mat-raised-button", "", "color", "primary", 1, "Nextbtn", 3, "disabled", "click"], [3, "formGroup"], ["fxLayout", "row", "fxLayoutGap", "25px"], ["fxFlex", "100", "fxFlex.gt-xs", "50", 1, "pr-1"], [1, "flex-grow-2"], ["appearance", "outline", 1, "full-width"], ["disableOptionCentering", "", "placeholder", "Repayment Mode", "name", "repaymentMode", "formControlName", "repaymentMode"], ["value", "Internal"], ["value", "External"], ["disableOptionCentering", "", "placeholder", "Type of Repayment", "name", "opinion", "formControlName", "typeOfRepayment"], ["value", "EMI"], [4, "ngIf"], ["matInput", "", "placeholder", "DD/MM/YYYY", "name", "firstRepaymentDate", "formControlName", "firstRepaymentDate", "readonly", "", 1, "alignment", 3, "min", "matDatepicker"], ["fxFlex", "8%", "id", "toggle", 1, "datechange"], ["matSuffix", "", 3, "for"], ["appDatepicker1", ""], ["placeholder", "DD/MM/YYYY", "matInput", "", "name", "valuationDate", "formControlName", "maturityDate", "readonly", "", 1, "alignment", 3, "matDatepicker", "max"], ["appDatepicker", ""], [1, "flex-grow-1"], ["matInput", "", "placeholder", "Moratorium Period", "formControlName", "moraturioumPeriod", "type", "number", "name", "MarketValueofAsset", "min", "0", 1, "alignment"], ["fxFlex", "100", "fxFlex.gt-xs", "50"], ["disableOptionCentering", "", "placeholder", "Repayment Frequency", "name", "opinion", "formControlName", "repaymentFrequency"], [3, "value", 4, "ngFor", "ngForOf"], [1, "tenre"], ["appearance", "outline", "fxFlex", "22.5", 1, "full-width", "tenure1"], ["name", "year", "placeholder", "Year", "formControlName", "year", "disableOptionCentering", ""], ["appearance", "outline", "fxFlex", "21.5", 1, "full-width", "tenure1"], ["name", "month", "placeholder", "Month", "formControlName", "month", "disableOptionCentering", ""], ["name", "day", "placeholder", "Day", "formControlName", "day", "disableOptionCentering", "", 3, "selectionChange"], ["fxLayout", "row", "fxLayoutGap", "25px", "class", "showShedule", 3, "formGroup", 4, "ngIf"], [3, "value"], ["fxLayout", "row", "fxLayoutGap", "25px", 1, "showShedule", 3, "formGroup"], ["fxFlex", "100", 1, "pr-1"], [1, "link", 3, "routerLink", "click"], ["formControlName", "customerAccount", "disableOptionCentering", "", "placeholder", "Customer Account"], ["matInput", "", "placeholder", "Bank Name", "formControlName", "bankName", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["matInput", "", "placeholder", "Branch Code", "formControlName", "branchCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment", 3, "keypress"], ["class", "flex-grow-1", 4, "ngIf"], [1, "inputMatName"], ["matInput", "", "placeholder", "IFSC Code", "formControlName", "ifscCode", "type", "text", "name", "MarketValueofAsset", 1, "alignment"]],
         template: function LoanRepaymentComponentComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -42154,7 +42208,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-card-content");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, LoanRepaymentComponentComponent_form_14_Template, 78, 17, "form", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, LoanRepaymentComponentComponent_form_14_Template, 77, 18, "form", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -42219,7 +42273,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("disabled", !ctx.loanRepaymentForm.valid && !ctx.internalAccount.valid);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_14__["MatButton"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_input__WEBPACK_IMPORTED_MODULE_18__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerInput"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepicker"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NumberValueAccessor"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatHint"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgForOf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatError"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgIf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutAlignDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_12__["DefaultLayoutGapDirective"], _angular_material_button__WEBPACK_IMPORTED_MODULE_14__["MatButton"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_input__WEBPACK_IMPORTED_MODULE_18__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerInput"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepicker"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NumberValueAccessor"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgForOf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatHint"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatError"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"]],
         styles: [".box-holder[_ngcontent-%COMP%] {\n  width: auto;\n  max-width: 190px;\n  background: #F4F8F7 0% 0% no-repeat padding-box;\n  box-shadow: 0px 3px 6px #00000029;\n  border-radius: 38px;\n  opacity: 1;\n}\n\n#heightRepay[_ngcontent-%COMP%] {\n  height: 44px;\n}\n\n.showShedule[_ngcontent-%COMP%] {\n  margin-top: 4%;\n}\n\n.link[_ngcontent-%COMP%] {\n  text-decoration: underline;\n  color: #456EFE;\n  font-size: small;\n  align-self: center;\n}\n\n#heightDate[_ngcontent-%COMP%] {\n  height: 48px !important;\n}\n\n#toggle[_ngcontent-%COMP%] {\n  margin-top: -3%;\n  margin-left: 6.3cm;\n}\n\n.spinner[_ngcontent-%COMP%] {\n  padding: 20px;\n}\n\n.hintColor[_ngcontent-%COMP%] {\n  color: red;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  pointer-events: none;\n  cursor: default;\n}\n\n.footer[_ngcontent-%COMP%] {\n  position: fixed;\n  left: 0;\n  bottom: 0;\n}\n\n.list-unstyled[_ngcontent-%COMP%] {\n  padding-left: 0;\n  list-style: none;\n  margin-left: 17px !important;\n  margin-top: 10px !important;\n}\n\n.colorRed[_ngcontent-%COMP%] {\n  color: Red;\n  font-size: small;\n}\n\n.avatar-sm[_ngcontent-%COMP%] {\n  width: 32px;\n}\n\n.avatar[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.avatar[_ngcontent-%COMP%] {\n  position: relative;\n  width: 30px;\n  vertical-align: bottom;\n  white-space: nowrap;\n  border-radius: 1000px;\n}\n\n.pull-up[_ngcontent-%COMP%] {\n  transition: all .25s ease;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]    + li[_ngcontent-%COMP%] {\n  margin-left: -8px;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%], .img[_ngcontent-%COMP%] {\n  border: 2px solid #fff;\n  box-shadow: 0 2px 4px 0 #6b6f80;\n}\n\n.avatar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%], .img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 100%;\n  height: auto;\n  border: 0;\n  border-radius: 1000px;\n}\n\n.rounded-circle[_ngcontent-%COMP%] {\n  border-radius: 50% !important;\n}\n\n.img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  background: #24CCA7 0% 0% no-repeat padding-box;\n  opacity: 1;\n  font-size: 0.9em;\n  padding: 2px;\n  letter-spacing: -0.36px;\n  color: #FFFFFF;\n  text-align: center;\n  margin-left: -7px;\n}\n\nul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  line-height: 1.8;\n}\n\nul[_ngcontent-%COMP%] {\n  display: block;\n  list-style-type: disc;\n  -webkit-margin-before: 1em;\n          margin-block-start: 1em;\n  -webkit-margin-after: 1em;\n          margin-block-end: 1em;\n  -webkit-margin-start: 0px;\n          margin-inline-start: 0px;\n  -webkit-margin-end: 0px;\n          margin-inline-end: 0px;\n  -webkit-padding-start: 40px;\n          padding-inline-start: 40px;\n}\n\n.users-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .badge[_ngcontent-%COMP%] {\n  margin-bottom: 6px;\n  color: #6b6f80;\n  background: rgba(255, 255, 255, 0.8);\n}\n\n.badge[_ngcontent-%COMP%] {\n  color: #fff;\n  font-weight: 400;\n}\n\n.badge-info[_ngcontent-%COMP%] {\n  color: #fff;\n  background-color: #28afd0;\n}\n\n.full-width1[_ngcontent-%COMP%] {\n  width: 100px;\n}\n\n.full-width2[_ngcontent-%COMP%] {\n  width: 335px;\n}\n\n.inputCard[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 25px;\n}\n\n.inputMatcard[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n  width: 300px;\n}\n\n.inputMatName[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 15px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.inputMatName1[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  margin-top: 10px;\n  box-shadow: 0 3pt 6pt #00000029;\n  box-sizing: border-box;\n  margin-left: 0px;\n  padding: 13px;\n}\n\n.alignment[_ngcontent-%COMP%] {\n  border-style: none !important;\n  outline: none;\n}\n\n.sqInput1[_ngcontent-%COMP%] {\n  width: 30%;\n  margin-left: -1%;\n  height: 47px;\n}\n\n.sqInput2[_ngcontent-%COMP%] {\n  width: 72%;\n}\n\nmat-hint[_ngcontent-%COMP%] {\n  font-family: 'Manrope';\n}\n\nmat-datepicker-toggle[_ngcontent-%COMP%] {\n  margin-left: 40%;\n}\n\nmat-slide-toggle[_ngcontent-%COMP%] {\n  margin-top: 5%;\n}\n\n.mat-title[_ngcontent-%COMP%] {\n  font-size: 150%;\n  font-weight: 600;\n  width: 50% !important;\n}\n\n.divider-line[_ngcontent-%COMP%] {\n  display: flex;\n  margin-bottom: 0%;\n}\n\n.mat-line-position[_ngcontent-%COMP%] {\n  position: unset !important;\n  left: 100% !important;\n  align-self: center !important;\n}\n\n#mat-line[_ngcontent-%COMP%] {\n  margin-top: 5%;\n  margin-left: 2%;\n  margin-bottom: 5%;\n}\n\n#mat-line2[_ngcontent-%COMP%] {\n  margin-top: 4%;\n  margin-left: 5%;\n  margin-bottom: 3%;\n}\n\nfieldset[_ngcontent-%COMP%] {\n  border-top: 1px solid lightgray;\n  border-bottom: 0px solid lightgray;\n  border-right: 0px solid lightgray;\n  border-left: 0px solid lightgray;\n  margin-left: 20px;\n  margin-right: 20px;\n  margin-top: 20px !important;\n  margin-bottom: 20px !important;\n}\n\n.datechange[_ngcontent-%COMP%] {\n  height: 10px;\n  padding: 0;\n  margin-right: 10px;\n}\n\n.tenure1[_ngcontent-%COMP%] {\n  margin-left: 4.9% !important;\n}\n\n.tenure2[_ngcontent-%COMP%] {\n  margin-left: 4.9% !important;\n}\n\n.tenre[_ngcontent-%COMP%] {\n  margin-top: 19px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGxvYW4tcmVwYXltZW50LWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQVc7RUFDWCxnQkFBZ0I7RUFFaEIsK0NBQStDO0VBQy9DLGlDQUFpQztFQUNqQyxtQkFBbUI7RUFDbkIsVUFBVTtBQUFkOztBQUVBO0VBQ0ksWUFBWTtBQUNoQjs7QUFDQTtFQUNHLGNBQWU7QUFFbEI7O0FBQUE7RUFHSSwwQkFBMEI7RUFDNUIsY0FBYTtFQUNiLGdCQUFnQjtFQUNoQixrQkFBa0I7QUFDcEI7O0FBQ0E7RUFDSSx1QkFBc0I7QUFFMUI7O0FBQUE7RUFFSSxlQUFjO0VBQ2Qsa0JBQWtCO0FBRXRCOztBQUNBO0VBQ0ksYUFBYTtBQUVqQjs7QUFDQTtFQUNJLFVBQVU7QUFFZDs7QUFFQTtFQUNJLG9CQUFvQjtFQUNwQixlQUFlO0FBQ25COztBQUVBO0VBQ0ksZUFBZTtFQUNmLE9BQU87RUFDUCxTQUFTO0FBQ2I7O0FBRUE7RUFDSSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLDRCQUE0QjtFQUM1QiwyQkFBMkI7QUFDL0I7O0FBRUE7RUFDSSxVQUFVO0VBQ1YsZ0JBQWdCO0FBQ3BCOztBQUVBO0VBQ0ksV0FBVztBQUNmOztBQUVBO0VBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0VBQ0ksa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtFQUlJLHlCQUF5QjtBQUM3Qjs7QUFFQTtFQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTs7RUFFSSxzQkFBc0I7RUFDdEIsK0JBQStCO0FBQ25DOztBQUVBOztFQUVJLFdBQVc7RUFDWCxlQUFlO0VBQ2YsWUFBWTtFQUNaLFNBQVM7RUFDVCxxQkFBcUI7QUFDekI7O0FBRUE7RUFDSSw2QkFBNkI7QUFDakM7O0FBRUE7RUFDSSxzQkFBc0I7RUFDdEIsK0NBQStDO0VBQy9DLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLHVCQUF1QjtFQUN2QixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGlCQUFpQjtBQUNyQjs7QUFFQTtFQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtFQUNJLGNBQWM7RUFDZCxxQkFBcUI7RUFDckIsMEJBQXVCO1VBQXZCLHVCQUF1QjtFQUN2Qix5QkFBcUI7VUFBckIscUJBQXFCO0VBQ3JCLHlCQUF3QjtVQUF4Qix3QkFBd0I7RUFDeEIsdUJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QiwyQkFBMEI7VUFBMUIsMEJBQTBCO0FBQzlCOztBQUVBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxvQ0FBbUM7QUFDdkM7O0FBRUE7RUFDSSxXQUFXO0VBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0VBQ0ksV0FBVztFQUNYLHlCQUF5QjtBQUM3Qjs7QUFFQTtFQUNJLFlBQVk7QUFDaEI7O0FBQ0E7RUFDSSxZQUFZO0FBRWhCOztBQUFBO0VBQ0ksV0FBVztFQUNYLFlBQVk7QUFHaEI7O0FBREE7RUFDSSxZQUFZO0VBS1osK0JBQStCO0VBRS9CLHNCQUFzQjtFQUd0QixnQkFBZ0I7RUFDaEIsYUFBYTtFQUViLFlBQVk7QUFKaEI7O0FBTUU7RUFDRSxZQUFZO0VBRVosZ0JBQWdCO0VBR2hCLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFUakI7O0FBYUU7RUFDRSxZQUFZO0VBRVosZ0JBQWdCO0VBR2hCLCtCQUErQjtFQUUvQixzQkFBc0I7RUFHdEIsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFoQmpCOztBQW9CRTtFQUNFLDZCQUE2QjtFQUM3QixhQUFhO0FBakJqQjs7QUFtQkU7RUFDSSxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFoQmxCOztBQWtCRTtFQUNFLFVBQVU7QUFmZDs7QUFrQkE7RUFDSSxzQkFBc0I7QUFmMUI7O0FBaUJBO0VBQ0ksZ0JBQWdCO0FBZHBCOztBQWlCQTtFQUNJLGNBQWM7QUFkbEI7O0FBaUJFO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFkekI7O0FBZ0JFO0VBQ0UsYUFBYTtFQUNiLGlCQUFpQjtBQWJyQjs7QUFnQkU7RUFDRSwwQkFBMEI7RUFDMUIscUJBQXFCO0VBQ3JCLDZCQUE2QjtBQWJqQzs7QUFlRTtFQUNFLGNBQWE7RUFDYixlQUFjO0VBQ2QsaUJBQWlCO0FBWnJCOztBQWNFO0VBQ0UsY0FBYTtFQUNiLGVBQWM7RUFDZCxpQkFBaUI7QUFYckI7O0FBd0JFO0VBQ0UsK0JBQStCO0VBQy9CLGtDQUFrQztFQUNsQyxpQ0FBaUM7RUFDakMsZ0NBQWdDO0VBQ2hDLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsMkJBQTJCO0VBQzNCLDhCQUE4QjtBQXJCbEM7O0FBdUJFO0VBQ0UsWUFBWTtFQUNaLFVBQVU7RUFDVixrQkFBa0I7QUFwQnRCOztBQXNCRTtFQUNFLDRCQUE0QjtBQW5CaEM7O0FBcUJFO0VBQ0UsNEJBQTRCO0FBbEJoQzs7QUFvQkU7RUFDRSxnQkFBZ0I7QUFqQnBCIiwiZmlsZSI6ImxvYW4tcmVwYXltZW50LWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib3gtaG9sZGVyIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgbWF4LXdpZHRoOiAxOTBweDtcclxuICAgIC8vIGhlaWdodDogMTA4cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiAjRjRGOEY3IDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJveC1zaGFkb3c6IDBweCAzcHggNnB4ICMwMDAwMDAyOTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM4cHg7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG59XHJcbiNoZWlnaHRSZXBheXtcclxuICAgIGhlaWdodDogNDRweDtcclxufVxyXG4uc2hvd1NoZWR1bGV7XHJcbiAgIG1hcmdpbi10b3A6IDQlIDtcclxufVxyXG4ubGlua3tcclxuICAgIC8vIGNvbG9yOiAjNDU2ZWZlOyBcclxuICAgIC8vIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmVcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBcclxuICBjb2xvcjojNDU2RUZFO1xyXG4gIGZvbnQtc2l6ZTogc21hbGw7XHJcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xyXG59XHJcbiNoZWlnaHREYXRle1xyXG4gICAgaGVpZ2h0OjQ4cHggIWltcG9ydGFudDtcclxufVxyXG4jdG9nZ2xle1xyXG5cclxuICAgIG1hcmdpbi10b3A6LTMlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDYuM2NtO1xyXG4gIH1cclxuXHJcbi5zcGlubmVyIHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuXHJcbi5oaW50Q29sb3Ige1xyXG4gICAgY29sb3I6IHJlZDtcclxuXHJcbn1cclxuXHJcbi5kaXNhYmxlZCB7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICAgIGN1cnNvcjogZGVmYXVsdDtcclxufVxyXG5cclxuLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG4ubGlzdC11bnN0eWxlZCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE3cHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmNvbG9yUmVkIHtcclxuICAgIGNvbG9yOiBSZWQ7XHJcbiAgICBmb250LXNpemU6IHNtYWxsO1xyXG59XHJcblxyXG4uYXZhdGFyLXNtIHtcclxuICAgIHdpZHRoOiAzMnB4O1xyXG59XHJcblxyXG4uYXZhdGFyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLmF2YXRhciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB3aWR0aDogMzBweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBib3R0b207XHJcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTAwMHB4O1xyXG59XHJcblxyXG4ucHVsbC11cCB7XHJcbiAgICAtd2Via2l0LXRyYW5zaXRpb246IGFsbCAuMjVzIGVhc2U7XHJcbiAgICAtbW96LXRyYW5zaXRpb246IGFsbCAuMjVzIGVhc2U7XHJcbiAgICAtby10cmFuc2l0aW9uOiBhbGwgLjI1cyBlYXNlO1xyXG4gICAgdHJhbnNpdGlvbjogYWxsIC4yNXMgZWFzZTtcclxufVxyXG5cclxuLnVzZXJzLWxpc3QgbGkrbGkge1xyXG4gICAgbWFyZ2luLWxlZnQ6IC04cHg7XHJcbn1cclxuXHJcbi51c2Vycy1saXN0IGxpIGltZyxcclxuLmltZyB7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjZmZmO1xyXG4gICAgYm94LXNoYWRvdzogMCAycHggNHB4IDAgIzZiNmY4MDtcclxufVxyXG5cclxuLmF2YXRhciBpbWcsXHJcbi5pbWcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICBib3JkZXI6IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMDAwcHg7XHJcbn1cclxuXHJcbi5yb3VuZGVkLWNpcmNsZSB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLmltZyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgYmFja2dyb3VuZDogIzI0Q0NBNyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gICAgZm9udC1zaXplOiAwLjllbTtcclxuICAgIHBhZGRpbmc6IDJweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAtMC4zNnB4O1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogLTdweDtcclxufVxyXG5cclxudWwgbGkge1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuODtcclxufVxyXG5cclxudWwge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBsaXN0LXN0eWxlLXR5cGU6IGRpc2M7XHJcbiAgICBtYXJnaW4tYmxvY2stc3RhcnQ6IDFlbTtcclxuICAgIG1hcmdpbi1ibG9jay1lbmQ6IDFlbTtcclxuICAgIG1hcmdpbi1pbmxpbmUtc3RhcnQ6IDBweDtcclxuICAgIG1hcmdpbi1pbmxpbmUtZW5kOiAwcHg7XHJcbiAgICBwYWRkaW5nLWlubGluZS1zdGFydDogNDBweDtcclxufVxyXG5cclxuLnVzZXJzLWxpc3QgbGkgLmJhZGdlIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDZweDtcclxuICAgIGNvbG9yOiAjNmI2ZjgwO1xyXG4gICAgYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAuOCk7XHJcbn1cclxuXHJcbi5iYWRnZSB7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbn1cclxuXHJcbi5iYWRnZS1pbmZvIHtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4YWZkMDtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgxIHtcclxuICAgIHdpZHRoOiAxMDBweDtcclxufVxyXG4uZnVsbC13aWR0aDIge1xyXG4gICAgd2lkdGg6IDMzNXB4O1xyXG59XHJcbi5pbnB1dENhcmR7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMjVweDtcclxufVxyXG4uaW5wdXRNYXRjYXJkIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIC8vIG1hcmdpbi10b3A6IDVweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcblxyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAvLyBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgIHBhZGRpbmc6IDEzcHg7XHJcblxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gIH1cclxuICAuaW5wdXRNYXROYW1lIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIC8vIG1heC13aWR0aDo1MDBweDtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcbiAgICAvLyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQocmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpLFxyXG4gICAgLy8gICAgIHJnYmEoMjQ4LCAyNTAsIDI1NCwgMC41KSk7XHJcbiAgICBib3gtc2hhZG93OiAwIDNwdCA2cHQgIzAwMDAwMDI5O1xyXG5cclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICAvLyAgIG1heC1oZWlnaHQ6IDEwMHB4O1xyXG4gICAgLy8gcGFkZGluZzogMjBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxM3B4O1xyXG5cclxuICAgIC8vIHdpZHRoOiA0NTBweDtcclxuICB9XHJcbiAgLmlucHV0TWF0TmFtZTEge1xyXG4gICAgZmxleC1ncm93OiAxO1xyXG4gICAgLy8gbWF4LXdpZHRoOjUwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSksXHJcbiAgICAvLyAgICAgcmdiYSgyNDgsIDI1MCwgMjU0LCAwLjUpKTtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B0IDZwdCAjMDAwMDAwMjk7XHJcblxyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIC8vICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAvLyBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgIHBhZGRpbmc6IDEzcHg7XHJcblxyXG4gICAgLy8gd2lkdGg6IDQ1MHB4O1xyXG4gIH1cclxuICAuYWxpZ25tZW50IHtcclxuICAgIGJvcmRlci1zdHlsZTogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICB9XHJcbiAgLnNxSW5wdXQxe1xyXG4gICAgICB3aWR0aDogMzAlO1xyXG4gICAgICBtYXJnaW4tbGVmdDogLTElO1xyXG4gICAgICBoZWlnaHQ6IDQ3cHg7XHJcbiAgfVxyXG4gIC5zcUlucHV0MntcclxuICAgIHdpZHRoOiA3MiU7XHJcbn1cclxuXHJcbm1hdC1oaW50e1xyXG4gICAgZm9udC1mYW1pbHk6ICdNYW5yb3BlJztcclxufVxyXG5tYXQtZGF0ZXBpY2tlci10b2dnbGUge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQwJTtcclxuICAgIC8vIG1hcmdpbi10b3A6MTAlO1xyXG59XHJcbm1hdC1zbGlkZS10b2dnbGV7XHJcbiAgICBtYXJnaW4tdG9wOiA1JTtcclxufSBcclxuXHJcbiAgLm1hdC10aXRsZSB7XHJcbiAgICBmb250LXNpemU6IDE1MCU7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgd2lkdGg6IDUwJSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuZGl2aWRlci1saW5lIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwJTtcclxuICAgIC8vbWFyZ2luLXRvcDogNTBweDtcclxuICB9XHJcbiAgLm1hdC1saW5lLXBvc2l0aW9uIHtcclxuICAgIHBvc2l0aW9uOiB1bnNldCAhaW1wb3J0YW50O1xyXG4gICAgbGVmdDogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgYWxpZ24tc2VsZjogY2VudGVyICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gICNtYXQtbGluZSB7XHJcbiAgICBtYXJnaW4tdG9wOjUlO1xyXG4gICAgbWFyZ2luLWxlZnQ6MiU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1JTtcclxuICB9XHJcbiAgI21hdC1saW5lMiB7XHJcbiAgICBtYXJnaW4tdG9wOjQlO1xyXG4gICAgbWFyZ2luLWxlZnQ6NSU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzJTtcclxuICB9XHJcbiAgLy8gbGVnZW5kIHtcclxuICAvLyAgIHdpZHRoOiBhdXRvO1xyXG4gIC8vICAgLy9tYXJnaW4tbGVmdDogMjBweDtcclxuICAvLyAgIGNvbG9yOiAjMEYwRjBGO1xyXG4gIC8vICAgb3BhY2l0eTogNzAlICFpbXBvcnRhbnQ7XHJcbiAgLy8gICAvLyBjb2xvcjogZ3JheTtcclxuICAvLyAgIC8vIGZvbnQtc2l6ZTogMjBweDtcclxuICAvLyAgIC8vIHBhZGRpbmctbGVmdDogMzBweDtcclxuICAvLyAgIC8vcGFkZGluZy1yaWdodDogMjBweDtcclxuICAvLyAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIENvdXJpZXIsIG1vbm9zcGFjZTtcclxuICAvLyB9XHJcbiAgZmllbGRzZXQge1xyXG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIGxpZ2h0Z3JheTtcclxuICAgIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItcmlnaHQ6IDBweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItbGVmdDogMHB4IHNvbGlkIGxpZ2h0Z3JheTtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMjBweCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuZGF0ZWNoYW5nZXtcclxuICAgIGhlaWdodDogMTBweDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbiAgfVxyXG4gIC50ZW51cmUxe1xyXG4gICAgbWFyZ2luLWxlZnQ6IDQuOSUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLnRlbnVyZTJ7XHJcbiAgICBtYXJnaW4tbGVmdDogNC45JSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAudGVucmV7XHJcbiAgICBtYXJnaW4tdG9wOiAxOXB4O1xyXG4gIH0iXX0= */"]
       });
       /*@__PURE__*/
@@ -43975,7 +44029,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this141 = this;
+            var _this142 = this;
 
             this.ls.setItem('isapprovedSupervisor', true);
             this.apiService.sendApprovedStatus(true);
@@ -43988,21 +44042,21 @@
 
             console.log("this.loanaccountID", this.loanaccountID);
             setTimeout(function () {
-              _this141.getLoanEntryStageInfo(_this141.loanaccountID);
+              _this142.getLoanEntryStageInfo(_this142.loanaccountID);
             }, 10); //this.getLoanEnrichmentStageInfo(this.loanaccountID);
           }
         }, {
           key: "getLoanEntryStageInfo",
           value: function getLoanEntryStageInfo(loanaccountID) {
-            var _this142 = this;
+            var _this143 = this;
 
             this.appEntryService.getLoanEntryStageInfo(loanaccountID).subscribe(function (loanResp) {
-              _this142.data = loanResp;
+              _this143.data = loanResp;
 
-              if (_this142.data != null) {
-                console.log('data :: ', _this142.data); //  this.setData(loanResp)
+              if (_this143.data != null) {
+                console.log('data :: ', _this143.data); //  this.setData(loanResp)
 
-                _this142.fetchCustomersByLoanAccIdForViewSummary(loanaccountID);
+                _this143.fetchCustomersByLoanAccIdForViewSummary(loanaccountID);
               }
             });
           }
@@ -44021,16 +44075,16 @@
         }, {
           key: "fetchCustomersByLoanAccIdForViewSummary",
           value: function fetchCustomersByLoanAccIdForViewSummary(loanaccountID) {
-            var _this143 = this;
+            var _this144 = this;
 
             this.appEntryService.fetchCustomersByLoanAccIdForViewSummary(loanaccountID).subscribe(function (custResp) {
               console.log('custResp :: ', custResp);
-              _this143.customerInfoResp = custResp;
+              _this144.customerInfoResp = custResp;
 
-              if (_this143.customerInfoResp != null) {
-                _this143.customerInfo = {
+              if (_this144.customerInfoResp != null) {
+                _this144.customerInfo = {
                   'isAppEntryView': true,
-                  'data': _this143.customerInfoResp.data
+                  'data': _this144.customerInfoResp.data
                 };
               } // this.cdk.markForCheck();
               // this.cdk.detectChanges();
@@ -44403,19 +44457,19 @@
         }, {
           key: "next",
           value: function next() {
-            var _this144 = this;
+            var _this145 = this;
 
             this.apiService.assessmentDetails(this.assessmentForm.value).subscribe(function (data) {
               console.log("data", data);
 
               if (data != null) {
-                _this144.snack.open('Data Saved!', 'OK', {
+                _this145.snack.open('Data Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this144.cdr.markForCheck();
+                _this145.cdr.markForCheck();
               }
             });
             this.router.navigate(["/loan/account-approval/offer-acceptReject-details"]);
@@ -45108,7 +45162,7 @@
         _createClass(OfferAcceptRejectStageComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this145 = this;
+            var _this146 = this;
 
             this.accountId = this.ls.getItem('accountId');
             var overdraftStatus = this.ls.getItem('overDraftByStatus') || null;
@@ -45119,27 +45173,27 @@
             this.isOfferIssueScreen = this.ls.getItem('OfferIssue');
             this.isOfferIssueRejectScreen = this.ls.getItem('OfferIssueRejectScreen');
             this.accountService.refresh.subscribe(function (res) {
-              _this145.accountId = _this145.ls.getItem('accountId');
-              var overdraftStatus = _this145.ls.getItem('overDraftByStatus') || null;
-              _this145.overDraftByStatus = overdraftStatus != null ? overdraftStatus.isActive : false;
-              _this145.isAssessmentStageDone = _this145.ls.getItem('assessmentStage');
-              _this145.isQualitativeScreen = _this145.ls.getItem('ASSESSMENT_QA_DONE');
-              _this145.isAssesmentDetailsScreen = _this145.ls.getItem('assessmentScreen');
-              _this145.isOfferIssueScreen = _this145.ls.getItem('OfferIssue');
-              _this145.isOfferIssueRejectScreen = _this145.ls.getItem('OfferIssueRejectScreen');
+              _this146.accountId = _this146.ls.getItem('accountId');
+              var overdraftStatus = _this146.ls.getItem('overDraftByStatus') || null;
+              _this146.overDraftByStatus = overdraftStatus != null ? overdraftStatus.isActive : false;
+              _this146.isAssessmentStageDone = _this146.ls.getItem('assessmentStage');
+              _this146.isQualitativeScreen = _this146.ls.getItem('ASSESSMENT_QA_DONE');
+              _this146.isAssesmentDetailsScreen = _this146.ls.getItem('assessmentScreen');
+              _this146.isOfferIssueScreen = _this146.ls.getItem('OfferIssue');
+              _this146.isOfferIssueRejectScreen = _this146.ls.getItem('OfferIssueRejectScreen');
 
-              _this145.cdr.markForCheck();
+              _this146.cdr.markForCheck();
             });
             this.getData(this.accountId);
           }
         }, {
           key: "getData",
           value: function getData(id) {
-            var _this146 = this;
+            var _this147 = this;
 
             this.apiService.getApplnAssessmentDetails(id).subscribe(function (response) {
-              _this146.assessmentReportSummary = response;
-              console.log(_this146.assessmentReportSummary);
+              _this147.assessmentReportSummary = response;
+              console.log(_this147.assessmentReportSummary);
             });
           }
         }, {
@@ -46112,7 +46166,7 @@
         _createClass(LoanRepaymentSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this147 = this;
+            var _this148 = this;
 
             this.loanAccountId = this.ls.getItem("loanAccountId");
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -46123,9 +46177,9 @@
             }
 
             setTimeout(function () {
-              _this147.api.loanRepaymentFetchById(_this147.loanAccountId).subscribe(function (resp) {
-                _this147.resp = resp;
-                console.log(_this147.resp);
+              _this148.api.loanRepaymentFetchById(_this148.loanAccountId).subscribe(function (resp) {
+                _this148.resp = resp;
+                console.log(_this148.resp);
               });
             }, 10);
           }
@@ -46481,7 +46535,7 @@
         _createClass(LoanChargeDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this148 = this;
+            var _this149 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -46496,18 +46550,18 @@
               chargeInfo: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormArray"]([])
             });
             this.api.getFlexcubeDetails("chargeDetails", this.accountType).subscribe(function (response) {
-              _this148.onChangeInterest(response.length);
+              _this149.onChangeInterest(response.length);
 
-              _this148["in"].patchValue(response);
+              _this149["in"].patchValue(response);
             });
             setTimeout(function () {
-              _this148.api.loanCahrgeFetchById(_this148.loanaccountID).subscribe(function (resp) {
-                console.log("resp from backend ", _this148.resp);
-                _this148.resp = resp;
+              _this149.api.loanCahrgeFetchById(_this149.loanaccountID).subscribe(function (resp) {
+                console.log("resp from backend ", _this149.resp);
+                _this149.resp = resp;
 
-                _this148.onChangeInterest(_this148.resp.length);
+                _this149.onChangeInterest(_this149.resp.length);
 
-                _this148["in"].patchValue(_this148.resp);
+                _this149["in"].patchValue(_this149.resp);
               });
             }, 10);
           }
@@ -46571,26 +46625,26 @@
         }, {
           key: "onSubmit",
           value: function onSubmit(form) {
-            var _this149 = this;
+            var _this150 = this;
 
             console.log("form", form.chargeInfo);
             form.chargeInfo = form.chargeInfo.map(function (chargeInfo) {
               return Object.assign(Object.assign({}, chargeInfo), {
-                loanAccountId: _this149.loanaccountID
+                loanAccountId: _this150.loanaccountID
               });
             });
             this.api.loanchargeSave(form).subscribe(function (resp) {
-              _this149.snack.open("Charge Details Saved!", "OK", {
+              _this150.snack.open("Charge Details Saved!", "OK", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
               });
 
-              _this149.next();
+              _this150.next();
 
               console.log("backend response from intrest saving", resp);
             }, function (err) {
-              _this149.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
+              _this150.snack.open("Not able to connect to server!", "INTERNAL SERVER ERROR", {
                 duration: 4000,
                 verticalPosition: "top",
                 horizontalPosition: "right"
@@ -46835,7 +46889,7 @@
         _createClass(LoanDisbursementSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this150 = this;
+            var _this151 = this;
 
             this.loanaccountId = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -46846,9 +46900,9 @@
             }
 
             setTimeout(function () {
-              _this150.api.loanDisbursementFetchById(_this150.loanaccountId).subscribe(function (resp) {
-                _this150.resp = resp;
-                _this150.CheckboxVar = resp.mutipleDisbursementRequired;
+              _this151.api.loanDisbursementFetchById(_this151.loanaccountId).subscribe(function (resp) {
+                _this151.resp = resp;
+                _this151.CheckboxVar = resp.mutipleDisbursementRequired;
               });
             }, 10);
           }
@@ -47470,7 +47524,7 @@
         _createClass(OfferIssueStageComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this151 = this;
+            var _this152 = this;
 
             var overdraftStatus = this.ls.getItem('overDraftByStatus') || null;
             console.log("fetch", overdraftStatus);
@@ -47480,13 +47534,13 @@
             this.isValuationAssetScreen = this.ls.getItem('valuationAsset');
             this.isCreditRatingScreen = this.ls.getItem('CreditRatingDetails');
             this.accountService.refresh.subscribe(function (res) {
-              _this151.islegalOpinionScreen = _this151.ls.getItem('legalScreen');
-              _this151.isValuationAssetScreen = _this151.ls.getItem('valuationAsset');
-              _this151.isAssesmentDetailsScreen = _this151.ls.getItem('assessmentScreen');
-              _this151.isOfferIssueScreen = _this151.ls.getItem('OfferIssue');
-              _this151.isCreditRatingScreen = _this151.ls.getItem('CreditRatingDetails');
+              _this152.islegalOpinionScreen = _this152.ls.getItem('legalScreen');
+              _this152.isValuationAssetScreen = _this152.ls.getItem('valuationAsset');
+              _this152.isAssesmentDetailsScreen = _this152.ls.getItem('assessmentScreen');
+              _this152.isOfferIssueScreen = _this152.ls.getItem('OfferIssue');
+              _this152.isCreditRatingScreen = _this152.ls.getItem('CreditRatingDetails');
 
-              _this151.cdr.markForCheck();
+              _this152.cdr.markForCheck();
             });
           }
         }, {
@@ -47904,7 +47958,7 @@
         _createClass(LoanInterestSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this152 = this;
+            var _this153 = this;
 
             this.loanAccountId = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -47924,13 +47978,13 @@
               loan: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormArray"]([])
             });
             setTimeout(function () {
-              _this152.api.loanInterestFetchById(_this152.loanAccountId).subscribe(function (resp) {
-                console.log("resp from backend ", _this152.resp);
-                _this152.resp = resp;
+              _this153.api.loanInterestFetchById(_this153.loanAccountId).subscribe(function (resp) {
+                console.log("resp from backend ", _this153.resp);
+                _this153.resp = resp;
 
-                _this152.onChangeInterest(_this152.resp.length);
+                _this153.onChangeInterest(_this153.resp.length);
 
-                _this152["in"].patchValue(_this152.resp);
+                _this153["in"].patchValue(_this153.resp);
               });
             }, 10);
           }
@@ -50132,7 +50186,7 @@
         _createClass(FinancialDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this153 = this;
+            var _this154 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -50157,12 +50211,12 @@
             }
 
             setTimeout(function () {
-              if (_this153.loanaccountID && financialDetailscreen) {
-                _this153.showEditOption = true;
+              if (_this154.loanaccountID && financialDetailscreen) {
+                _this154.showEditOption = true;
 
-                _this153.getFinancialDetails();
+                _this154.getFinancialDetails();
               } else {
-                _this153.showEditOption = false;
+                _this154.showEditOption = false;
               }
             }, 10);
             this.fetchByCif();
@@ -50171,7 +50225,7 @@
         }, {
           key: "createFinancialDetail",
           value: function createFinancialDetail(data) {
-            var _this154 = this;
+            var _this155 = this;
 
             return this.fb.group({
               applicantName: [data ? data.applicantName : this.ls.getItem('primaryCustomerName'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
@@ -50221,7 +50275,7 @@
               lands: [data ? data.lands : '']
             }, {
               validator: function validator(formGroup) {
-                return _this154.validateInputGroups(formGroup);
+                return _this155.validateInputGroups(formGroup);
               }
             });
           }
@@ -50269,22 +50323,22 @@
         }, {
           key: "getFinancialDetails",
           value: function getFinancialDetails() {
-            var _this155 = this;
+            var _this156 = this;
 
             this.loader.open();
             this.apiService.getFinancialDetailsByLoanAccId(this.loanaccountID).subscribe(function (financialDetailsList) {
-              _this155.loader.close(); // this.financialDetails_array = this.financialDetailsForm.get('financialDetails_array') as FormArray;
+              _this156.loader.close(); // this.financialDetails_array = this.financialDetailsForm.get('financialDetails_array') as FormArray;
 
 
               for (var index = 0; index < financialDetailsList.length; index++) {
-                _this155.financialDetails_array.patchValue(financialDetailsList);
+                _this156.financialDetails_array.patchValue(financialDetailsList);
 
                 console.log(financialDetailsList[0].employmentStartDate); //financialDetailsList[index].employmentStartDate.patchValue((this.datepipe.transform(financialDetailsList[index].employmentStartDate, 'yyyy-MM-dd')));
                 //const formArray = this.financialDetailsForm.get('financialDetails_array') as FormArray;
                 //formArray.controls[0].get('employmentStartDate').setValue(financialDetailsList[0].employmentStartDate);
               }
             }, function (err) {
-              _this155.loader.close();
+              _this156.loader.close();
             });
           }
         }, {
@@ -50295,7 +50349,7 @@
         }, {
           key: "submitForm",
           value: function submitForm() {
-            var _this156 = this;
+            var _this157 = this;
 
             var payloadArray = [];
             this.financialDetails_array = this.financialDetailsForm.get('financialDetails_array');
@@ -50315,13 +50369,13 @@
               console.log("data", data);
 
               if (data != null) {
-                _this156.snack.open('Financial Details Saved!', 'OK', {
+                _this157.snack.open('Financial Details Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this156.next();
+                _this157.next();
               }
             });
           }
@@ -50335,20 +50389,20 @@
         }, {
           key: "getEmploymentType",
           value: function getEmploymentType(key) {
-            var _this157 = this;
+            var _this158 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
               console.log(data);
-              _this157.arrayEmploymentType = data;
+              _this158.arrayEmploymentType = data;
             });
           }
         }, {
           key: "getEmploymentCategory",
           value: function getEmploymentCategory(key) {
-            var _this158 = this;
+            var _this159 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this158.arrayEmploymentCategory = data;
+              _this159.arrayEmploymentCategory = data;
             });
           }
         }, {
@@ -50410,11 +50464,11 @@
         }, {
           key: "fetchByCif",
           value: function fetchByCif() {
-            var _this159 = this;
+            var _this160 = this;
 
             this.cifNumber = this.ls.getItem('cId');
             this.appApiService.fetchByCif(this.cifNumber).subscribe(function (res) {
-              var formArray = _this159.financialDetailsForm.get('financialDetails_array');
+              var formArray = _this160.financialDetailsForm.get('financialDetails_array');
 
               formArray.controls[0].get('applicantName').setValue(res.customerInfoList[0].firstName + " " + res.customerInfoList[0].lastName);
             }, function (err) {
@@ -50424,10 +50478,10 @@
         }, {
           key: "lastUpdateByCif",
           value: function lastUpdateByCif() {
-            var _this160 = this;
+            var _this161 = this;
 
             this.apiService.getLoanDetails(this.loanaccountID).subscribe(function (resp) {
-              _this160.lastData = _this160.datepipe.transform(resp.applicationDate, "yyyy-MM-dd");
+              _this161.lastData = _this161.datepipe.transform(resp.applicationDate, "yyyy-MM-dd");
             }, function (err) {
               console.error(err);
             });
@@ -51773,13 +51827,13 @@
         _createClass(LoanEnrichmentViewSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this161 = this;
+            var _this162 = this;
 
             //  this.accountId = this.ls.getItem('accountId');
             //this.accountType=this.ls.getItem('accountType');
             this.api.getApprovedStatus().subscribe(function (resp) {
               console.log("message", resp);
-              _this161.isApprovedSreen = resp;
+              _this162.isApprovedSreen = resp;
             });
             this.loanAccountId = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -51790,7 +51844,7 @@
             }
 
             setTimeout(function () {
-              _this161.getLoanEnrichmentDetails(_this161.loanAccountId);
+              _this162.getLoanEnrichmentDetails(_this162.loanAccountId);
             }, 10);
             this.interestForm = this.formBuilder.group({
               interest: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormArray"]([])
@@ -51812,9 +51866,9 @@
             //for Charge Details
 
             this.api.getFlexcubeDetails("chargeDetails", this.accountType).subscribe(function (response) {
-              _this161.onloanCharge(response.length);
+              _this162.onloanCharge(response.length);
 
-              _this161.in2.patchValue(response);
+              _this162.in2.patchValue(response);
             }); // this.api.loanCahrgeFetchById(this.loanAccountId).subscribe((loanChargeResp) => {
             //   console.log("loan charge details resp from backend ", this.loanChargeResp);
             //   this.loanChargeResp = loanChargeResp;
@@ -51825,44 +51879,44 @@
         }, {
           key: "getLoanEnrichmentDetails",
           value: function getLoanEnrichmentDetails(loanAccountId) {
-            var _this162 = this;
+            var _this163 = this;
 
             this.api.getLoanEnrichmentSummmary(this.loanAccountId).subscribe(function (summaryInfo) {
               console.log(summaryInfo);
-              _this162.intererstInfo = summaryInfo.intererstInfo;
-              console.log(_this162.intererstInfo);
+              _this163.intererstInfo = summaryInfo.intererstInfo;
+              console.log(_this163.intererstInfo);
 
-              _this162.onChangeInterest(_this162.intererstInfo.length);
+              _this163.onChangeInterest(_this163.intererstInfo.length);
 
-              _this162["in"].patchValue(_this162.intererstInfo);
+              _this163["in"].patchValue(_this163.intererstInfo);
 
-              _this162.disbursementInfo = summaryInfo.disbursementInfo;
-              _this162.CheckboxVar = _this162.disbursementInfo.mutipleDisbursementRequired;
-              console.log(_this162.disbursementInfo);
-              _this162.repaymentInfo = summaryInfo.repaymentInfo;
-              console.log(_this162.repaymentInfo);
-              _this162.chargeInfo = summaryInfo.chargeInfo;
+              _this163.disbursementInfo = summaryInfo.disbursementInfo;
+              _this163.CheckboxVar = _this163.disbursementInfo.mutipleDisbursementRequired;
+              console.log(_this163.disbursementInfo);
+              _this163.repaymentInfo = summaryInfo.repaymentInfo;
+              console.log(_this163.repaymentInfo);
+              _this163.chargeInfo = summaryInfo.chargeInfo;
 
-              _this162.onloanCharge(_this162.chargeInfo.length);
+              _this163.onloanCharge(_this163.chargeInfo.length);
 
-              _this162.in2.patchValue(_this162.chargeInfo);
+              _this163.in2.patchValue(_this163.chargeInfo);
 
-              _this162.accServiceInfo = summaryInfo.accServiceInfo;
-              _this162.maturity = _this162.accServiceInfo.serviceDetails.find(function (obj) {
+              _this163.accServiceInfo = summaryInfo.accServiceInfo;
+              _this163.maturity = _this163.accServiceInfo.serviceDetails.find(function (obj) {
                 return obj.serviceName === 'Maturity';
               });
-              _this162.revision = _this162.accServiceInfo.serviceDetails.find(function (obj) {
+              _this163.revision = _this163.accServiceInfo.serviceDetails.find(function (obj) {
                 return obj.serviceName === 'Revision';
               });
-              _this162.holiday = _this162.accServiceInfo.serviceDetails.find(function (obj) {
+              _this163.holiday = _this163.accServiceInfo.serviceDetails.find(function (obj) {
                 return obj.serviceName === 'Holiday Preference';
               });
-              _this162.cascadeVarMaturity = _this162.maturity.cascadeSchedules;
-              _this162.cascadeVarRevison = _this162.revision.cascadeSchedules;
-              _this162.cascadeVarHoliday = _this162.holiday.cascadeSchedules;
-              _this162.ignoreHolidayVarMaturity = _this162.maturity.ignoreHolidays;
-              _this162.ignoreHolidayVarRevison = _this162.revision.ignoreHolidays;
-              _this162.ignoreHolidayVarHoliday = _this162.holiday.ignoreHolidays;
+              _this163.cascadeVarMaturity = _this163.maturity.cascadeSchedules;
+              _this163.cascadeVarRevison = _this163.revision.cascadeSchedules;
+              _this163.cascadeVarHoliday = _this163.holiday.cascadeSchedules;
+              _this163.ignoreHolidayVarMaturity = _this163.maturity.ignoreHolidays;
+              _this163.ignoreHolidayVarRevison = _this163.revision.ignoreHolidays;
+              _this163.ignoreHolidayVarHoliday = _this163.holiday.ignoreHolidays;
             });
           } //for loan interest details
 
@@ -53806,7 +53860,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this163 = this;
+            var _this164 = this;
 
             console.log(this.signaturePad.toDataURL());
             var data = {};
@@ -53816,7 +53870,7 @@
               // data.accountId = this.ls.getItem('accountId');
               data.accountId = this.accountId;
               setTimeout(function () {
-                _this163.getByAccountId(data.accountId);
+                _this164.getByAccountId(data.accountId);
               }, 10);
             } else {
               var customerId = this.data.customerId;
@@ -53855,20 +53909,20 @@
               console.log(op);
 
               if (op) {
-                _this163.ls.setItem('signedImage', _this163.imageurl);
+                _this164.ls.setItem('signedImage', _this164.imageurl);
 
-                console.log(_this163.imageurl);
-                console.log(_this163.ls.getItem('signedImage'));
+                console.log(_this164.imageurl);
+                console.log(_this164.ls.getItem('signedImage'));
 
-                _this163.close();
+                _this164.close();
 
-                _this163.show = true;
-                _this163.res = op;
+                _this164.show = true;
+                _this164.res = op;
               }
             }, function (err) {
-              _this163.close();
+              _this164.close();
 
-              _this163.res = false;
+              _this164.res = false;
             });
 
             if (this.data.screen !== "NewCustomerOnboarding") {
@@ -53886,13 +53940,13 @@
         }, {
           key: "getByAccountId",
           value: function getByAccountId(accountId) {
-            var _this164 = this;
+            var _this165 = this;
 
             this.apiService.fetchByLoanAccountId(accountId).subscribe(function (resp) {
               console.log('updateStatus :: ', resp);
-              _this164.accountdetailsForStatusUpdate = resp;
+              _this165.accountdetailsForStatusUpdate = resp;
 
-              _this164.updateAccountStatus(resp);
+              _this165.updateAccountStatus(resp);
             });
           }
         }, {
@@ -54195,13 +54249,13 @@
         }, {
           key: "goNext",
           value: function goNext() {
-            var _this165 = this;
+            var _this166 = this;
 
             this.apiService.updateAssessment(this.offerAssessmentFormGroup.value).subscribe(function (data) {
               console.log("data", data);
 
               if (data != null) {
-                _this165.snack.open('Data Saved!', 'OK', {
+                _this166.snack.open('Data Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -54905,7 +54959,7 @@
         _createClass(MandateDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this166 = this;
+            var _this167 = this;
 
             this.buildformGroup();
             this.noOfApplicants = this.ls.getItem('LoanNoOfApplicants');
@@ -54923,16 +54977,16 @@
 
             var isMandateDetailscreen = JSON.parse(this.ls.getItem('MANDATE_DETAIL_DONE'));
             setTimeout(function () {
-              if (_this166.loanaccountID && isMandateDetailscreen) {
-                _this166.showEditOption = true;
+              if (_this167.loanaccountID && isMandateDetailscreen) {
+                _this167.showEditOption = true;
 
-                _this166.getMandateDetails();
+                _this167.getMandateDetails();
               } else {
-                _this166.addMandate('');
+                _this167.addMandate('');
 
-                _this166.showEditOption = false;
+                _this167.showEditOption = false;
 
-                _this166.buildformGroup();
+                _this167.buildformGroup();
               }
             }, 10);
             console.log("FORM::", this.mandateInfo.get('mandateInfo_array')['controls']);
@@ -54940,24 +54994,24 @@
         }, {
           key: "getMandateDetails",
           value: function getMandateDetails() {
-            var _this167 = this;
+            var _this168 = this;
 
             this.loader.open();
             this.apiService.getMandateDetailsByLoanAccId(this.loanaccountID).subscribe(function (mandateDetails) {
-              _this167.loader.close();
+              _this168.loader.close();
 
-              _this167.mandateDetails = mandateDetails;
-              console.log(_this167.mandateDetails);
+              _this168.mandateDetails = mandateDetails;
+              console.log(_this168.mandateDetails);
 
-              _this167.buildformGroup(_this167.mandateDetails);
+              _this168.buildformGroup(_this168.mandateDetails);
 
               if (mandateDetails) {
                 for (var index = 0; index < mandateDetails.mandateDetails.length; index++) {
-                  _this167.addMandate(mandateDetails.mandateDetails[index]);
+                  _this168.addMandate(mandateDetails.mandateDetails[index]);
                 }
               }
             }, function (err) {
-              _this167.loader.close();
+              _this168.loader.close();
             });
           }
         }, {
@@ -54993,34 +55047,34 @@
         }, {
           key: "applicantNameFetch",
           value: function applicantNameFetch() {
-            var _this168 = this;
+            var _this169 = this;
 
             this.appApiService.fetchCustomersByLoanAccId(this.loanaccountID, 'loan').subscribe(function (resp) {
-              var formArray = _this168.mandateInfo.get('mandateInfo_array');
+              var formArray = _this169.mandateInfo.get('mandateInfo_array');
 
-              switch (_this168.count) {
+              switch (_this169.count) {
                 case 1:
                   console.log(formArray);
                   formArray.controls[0].get('applicantName').setValue(resp.data[0].firstName + " " + resp.data[0].lastName);
                   break;
 
                 case 2:
-                  _this168.mandateInfo_array.controls[1].get('applicantName').setValue(resp.data[1].firstName + " " + resp.data[1].lastName);
+                  _this169.mandateInfo_array.controls[1].get('applicantName').setValue(resp.data[1].firstName + " " + resp.data[1].lastName);
 
                   break;
 
                 case 3:
-                  _this168.mandateInfo_array.controls[2].get('applicantName').setValue(resp.data[2].firstName + " " + resp.data[2].lastName);
+                  _this169.mandateInfo_array.controls[2].get('applicantName').setValue(resp.data[2].firstName + " " + resp.data[2].lastName);
 
                   break;
 
                 case 4:
-                  _this168.mandateInfo_array.controls[3].get('applicantName').setValue(resp.data[3].firstName + " " + resp.data[3].lastName);
+                  _this169.mandateInfo_array.controls[3].get('applicantName').setValue(resp.data[3].firstName + " " + resp.data[3].lastName);
 
                   break;
 
                 default:
-                  _this168.mandateInfo_array.controls[4].get('applicantName').setValue(resp.data[4].firstName + " " + resp.data[4].lastName);
+                  _this169.mandateInfo_array.controls[4].get('applicantName').setValue(resp.data[4].firstName + " " + resp.data[4].lastName);
 
                   break;
               }
@@ -55029,7 +55083,7 @@
         }, {
           key: "removeMandate",
           value: function removeMandate(item) {
-            var _this169 = this;
+            var _this170 = this;
 
             console.log("i", item);
             this.confirmService.confirm({
@@ -55041,11 +55095,11 @@
               console.log("res:: removed ", res);
 
               if (res) {
-                var control = _this169.mandateInfo.controls['mandateInfo_array'];
+                var control = _this170.mandateInfo.controls['mandateInfo_array'];
                 control.removeAt(item);
-                _this169.count--;
+                _this170.count--;
 
-                _this169.cdr.markForCheck();
+                _this170.cdr.markForCheck();
               } else return;
             });
           }
@@ -55057,7 +55111,7 @@
         }, {
           key: "submitForm",
           value: function submitForm() {
-            var _this170 = this;
+            var _this171 = this;
 
             var payload = {};
             this.mandateDetailsForm.get('noOfApplicants').setValue(this.noOfApplicants);
@@ -55077,13 +55131,13 @@
               console.log("data", data);
 
               if (data != null) {
-                _this170.snack.open('Mandate Details Saved!', 'OK', {
+                _this171.snack.open('Mandate Details Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this170.next();
+                _this171.next();
               }
             });
           }
@@ -56084,7 +56138,7 @@
         _createClass(PostOfferAmendmentStageSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this171 = this;
+            var _this172 = this;
 
             this.cdr.markForCheck();
             this.loanAccountId = this.ls.getItem('loanAccountId');
@@ -56096,7 +56150,7 @@
             }
 
             setTimeout(function () {
-              _this171.getViewSummary();
+              _this172.getViewSummary();
             }, 10);
           }
         }, {
@@ -56112,15 +56166,15 @@
         }, {
           key: "getViewSummary",
           value: function getViewSummary() {
-            var _this172 = this;
+            var _this173 = this;
 
             this.apiService.getOfferAmendDetails(this.loanAccountId).subscribe(function (result) {
               console.log("result", result); // this.offerDetailsList=result[3];
 
-              _this172.offerDetails = result[3];
+              _this173.offerDetails = result[3];
               console.log("result", result); // console.log("offerDetails::",this.offerDetailsList);
 
-              console.log("offerDetails::", _this172.offerDetails);
+              console.log("offerDetails::", _this173.offerDetails);
             });
           }
         }]);
@@ -56788,7 +56842,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0\xA0 Locality is Required! ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \xA0\xA0Please Enter Correct Locality ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -57518,7 +57572,7 @@
 
             var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r49.letterOnly($event);
+            return ctx_r49.keyPressAlphanumeric($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -57757,7 +57811,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r0.collateralDetailsForm.get("locality").valid && ctx_r0.collateralDetailsForm.get("locality").touched);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.collateralDetailsForm.get("locality") && ctx_r0.collateralDetailsForm.get("locality").touched && !ctx_r0.collateralDetailsForm.get("locality").valid || ctx_r0.collateralDetailsForm.get("locality").touched && ctx_r0.collateralDetailsForm.get("locality").hasError("pattern"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
@@ -57825,7 +57879,7 @@
         _createClass(CollateralDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this173 = this;
+            var _this174 = this;
 
             this.buildformGroup();
             this.collateralInfo = this.fb.group({
@@ -57847,17 +57901,17 @@
 
             var collateralDetailscreen = JSON.parse(this.ls.getItem('COLLATERAL_DETAIL_DONE'));
             setTimeout(function () {
-              if (_this173.loanaccountID && collateralDetailscreen) {
-                _this173.showEditOption = true;
+              if (_this174.loanaccountID && collateralDetailscreen) {
+                _this174.showEditOption = true;
 
-                _this173.getCollateralDetails();
+                _this174.getCollateralDetails();
               } else {
-                _this173.showEditOption = false;
+                _this174.showEditOption = false;
 
-                _this173.buildformGroup(); //  this.createCollateralDetail();
+                _this174.buildformGroup(); //  this.createCollateralDetail();
 
 
-                _this173.addMandate('');
+                _this174.addMandate('');
               }
             }, 10);
           }
@@ -57880,7 +57934,7 @@
               thirdPartyCollateral: [data ? data.thirdPartyCollateral : false, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
               building: [data ? data.building : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
               street: [data ? data.street : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
-              locality: [data ? data.locality : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+              locality: [data ? data.locality : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(".*[a-zA-Z].*")]],
               city: [data ? data.city : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
               state: [data ? data.state : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
               country: [data ? data.country : '', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
@@ -57910,21 +57964,21 @@
         }, {
           key: "getCollateralDetails",
           value: function getCollateralDetails() {
-            var _this174 = this;
+            var _this175 = this;
 
             this.loader.open();
             this.apiService.getCollateralByLoanAccId(this.loanaccountID).subscribe(function (collateralDetails) {
-              _this174.loader.close();
+              _this175.loader.close();
 
-              _this174.collateralDetails = collateralDetails;
-              console.log(_this174.collateralDetails.collateralDetails.length);
-              console.log(_this174.collateralDetails);
+              _this175.collateralDetails = collateralDetails;
+              console.log(_this175.collateralDetails.collateralDetails.length);
+              console.log(_this175.collateralDetails);
 
-              _this174.buildformGroup(_this174.collateralDetails);
+              _this175.buildformGroup(_this175.collateralDetails);
 
-              _this174.populateCollateral(_this174.collateralDetails);
+              _this175.populateCollateral(_this175.collateralDetails);
             }, function (err) {
-              _this174.loader.close();
+              _this175.loader.close();
             });
           }
         }, {
@@ -57950,19 +58004,19 @@
         }, {
           key: "getCollateralType",
           value: function getCollateralType(key) {
-            var _this175 = this;
+            var _this176 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this175.arrayCollateralType = data;
+              _this176.arrayCollateralType = data;
             });
           }
         }, {
           key: "getRateValue",
           value: function getRateValue(key) {
-            var _this176 = this;
+            var _this177 = this;
 
             this.apiService.getDropDownValues(key).subscribe(function (data) {
-              _this176.arrayRateValue = data;
+              _this177.arrayRateValue = data;
             });
           }
         }, {
@@ -57989,7 +58043,7 @@
         }, {
           key: "submitForm",
           value: function submitForm() {
-            var _this177 = this;
+            var _this178 = this;
 
             var payload = {};
             payload = this.collateralDetailsForm.value;
@@ -58006,13 +58060,13 @@
               console.log("data", data);
 
               if (data != null) {
-                _this177.snack.open('Collateral Details Saved!', 'OK', {
+                _this178.snack.open('Collateral Details Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this177.next();
+                _this178.next();
               }
             });
           }
@@ -58026,14 +58080,14 @@
         }, {
           key: "getCountryName",
           value: function getCountryName(key) {
-            var _this178 = this;
+            var _this179 = this;
 
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].authStatus === 'A') {
-                  _this178.arrayCountry.push(data[i].countryName);
+                  _this179.arrayCountry.push(data[i].countryName);
 
-                  _this178.arrayCountry.sort();
+                  _this179.arrayCountry.sort();
                 }
               }
             });
@@ -58053,7 +58107,7 @@
         }, {
           key: "getStateName",
           value: function getStateName(country, isAdd) {
-            var _this179 = this;
+            var _this180 = this;
 
             if (isAdd) {
               this.collateralDetailsForm.get('zipCode').setValue('');
@@ -58064,8 +58118,8 @@
             this.apiService.getAllCountries().subscribe(function (data) {
               for (var i = 0; i < data.length; i++) {
                 if (data[i].countryName == country) {
-                  _this179.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
-                    _this179.arrayState = resp;
+                  _this180.apiService.getStateByCountryId(data[i].id).subscribe(function (resp) {
+                    _this180.arrayState = resp;
                   });
 
                   break;
@@ -58084,11 +58138,11 @@
         }, {
           key: "getAllAuthCities",
           value: function getAllAuthCities() {
-            var _this180 = this;
+            var _this181 = this;
 
             this.apiService.getAuthorizedCityInfo().subscribe(function (res) {
               return res.map(function (r) {
-                return _this180.arrayCity.push(r.cityName);
+                return _this181.arrayCity.push(r.cityName);
               });
             });
           }
@@ -58142,16 +58196,16 @@
         }, {
           key: "getCityandStateByZipcode",
           value: function getCityandStateByZipcode(countryName, zipcode) {
-            var _this181 = this;
+            var _this182 = this;
 
             if (countryName && zipcode.length >= 6) {
               this.apiService.fetchStateCityByZipcode(countryName, zipcode).subscribe(function (res) {
                 if (res) {
-                  _this181.collateralDetailsForm.get('state').setValue(res.stateName);
+                  _this182.collateralDetailsForm.get('state').setValue(res.stateName);
 
-                  _this181.collateralDetailsForm.get('city').setValue(res.cityName);
+                  _this182.collateralDetailsForm.get('city').setValue(res.cityName);
                 } else {
-                  _this181.snack.open("Entered Zipcode does not exists", "OK", {
+                  _this182.snack.open("Entered Zipcode does not exists", "OK", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -58428,7 +58482,7 @@
         _createClass(DigitalSignInNowOrLaterComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this182 = this;
+            var _this183 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -58440,13 +58494,13 @@
 
             this.accountId = this.ls.getItem('accountId');
             this.urlService.previousUrl$.subscribe(function (previousUrl) {
-              _this182.previousUrl = previousUrl;
+              _this183.previousUrl = previousUrl;
             });
           }
         }, {
           key: "openPopUp",
           value: function openPopUp(data) {
-            var _this183 = this;
+            var _this184 = this;
 
             var response;
 
@@ -58464,16 +58518,16 @@
                 data: data === undefined || data === null ? response : data
               });
               dialogRef.afterClosed().subscribe(function (res) {
-                _this183.loanAccountId = _this183.loanaccountID;
+                _this184.loanAccountId = _this184.loanaccountID;
                 console.log("dismiss res", res);
 
                 if (res) {
-                  _this183.show = _this183.ls.getItem("enable"); // this.show = this.ls.getItem('eSignStage')
+                  _this184.show = _this184.ls.getItem("enable"); // this.show = this.ls.getItem('eSignStage')
 
-                  _this183.show1 = _this183.ls.getItem("enable");
-                  console.log(_this183.show);
+                  _this184.show1 = _this184.ls.getItem("enable");
+                  console.log(_this184.show);
 
-                  _this183.getByAccountId(_this183.loanAccountId);
+                  _this184.getByAccountId(_this184.loanAccountId);
                 }
               });
             }
@@ -58481,12 +58535,12 @@
         }, {
           key: "getByAccountId",
           value: function getByAccountId(loanAccountId) {
-            var _this184 = this;
+            var _this185 = this;
 
             this.api.fetchByLoanAccountId(loanAccountId).subscribe(function (resp) {
-              _this184.accountdetailsForStatusUpdate = resp;
+              _this185.accountdetailsForStatusUpdate = resp;
 
-              _this184.updateAccountStatus(resp);
+              _this185.updateAccountStatus(resp);
             });
           }
         }, {
@@ -58574,7 +58628,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this185 = this;
+            var _this186 = this;
 
             console.log(this.loanaccountID);
             var payload = {
@@ -58585,13 +58639,13 @@
             this.api.signInLater(payload).subscribe(function (data) {
               console.log("data::", data);
 
-              _this185.getByAccountId(_this185.loanaccountID);
+              _this186.getByAccountId(_this186.loanaccountID);
 
-              _this185.ls.setItem('eSignStage', true);
+              _this186.ls.setItem('eSignStage', true);
 
-              _this185.ls.setItem('enable', true);
+              _this186.ls.setItem('enable', true);
 
-              _this185.accountService.refresh.next();
+              _this186.accountService.refresh.next();
 
               var response = {
                 email: data.email,
@@ -58600,13 +58654,13 @@
                 isSignLater: true,
                 screen: 'Loan Account'
               };
-              _this185.isDone = true;
+              _this186.isDone = true;
 
-              _this185.dialogService.alertForLoanSignLater().subscribe(function (response) {
+              _this186.dialogService.alertForLoanSignLater().subscribe(function (response) {
                 console.log("response ::", response);
               });
 
-              _this185.show = _this185.ls.setItem("enable", true);
+              _this186.show = _this186.ls.setItem("enable", true);
             }, function (err) {});
           }
         }]);
@@ -59391,17 +59445,17 @@
         }, {
           key: "getDisbursementDetails",
           value: function getDisbursementDetails() {
-            var _this186 = this;
+            var _this187 = this;
 
             this.loader.open();
             this.api.loanDisbursementFetchById(this.loanaccountId).subscribe(function (disbursementDetails) {
-              _this186.loader.close();
+              _this187.loader.close();
 
-              _this186.disbursementDetails = disbursementDetails;
+              _this187.disbursementDetails = disbursementDetails;
 
-              _this186.buildformGroup(_this186.disbursementDetails);
+              _this187.buildformGroup(_this187.disbursementDetails);
             }, function (err) {
-              _this186.loader.close();
+              _this187.loader.close();
             });
           }
         }, {
@@ -59427,22 +59481,22 @@
         }, {
           key: "submit",
           value: function submit() {
-            var _this187 = this;
+            var _this188 = this;
 
             var latest_date = this.datepipe.transform(this.loanDisbursementForm.value.firstDisbursementDate, 'yyyy-MMM-dd');
             this.loanDisbursementForm.value.branchCode = this.internalAccount.value.branchCode;
             this.loanDisbursementForm.value.customerAccount = this.internalAccount.value.customerAccount;
             this.loanDisbursementForm.value.firstDisbursementDate = latest_date;
             this.api.loanDisbursementSave(this.loanDisbursementForm.value).subscribe(function (resp) {
-              _this187.snack.open('Loan Disbursement Details Saved!', 'OK', {
+              _this188.snack.open('Loan Disbursement Details Saved!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               });
 
-              _this187.next();
+              _this188.next();
             }, function (err) {
-              _this187.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+              _this188.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -59474,31 +59528,31 @@
         }, {
           key: "fetchByCif",
           value: function fetchByCif() {
-            var _this188 = this;
+            var _this189 = this;
 
             this.cifNumber = this.ls.getItem('cId');
             this.api.fetchAccountIdByCustId(this.cifNumber).subscribe(function (accountNo) {
               var _a;
 
-              _this188.accountNoArr = accountNo;
+              _this189.accountNoArr = accountNo;
 
-              _this188.internalAccount.get('customerAccount').setValue((_a = _this188.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
+              _this189.internalAccount.get('customerAccount').setValue((_a = _this189.accountNoArr) === null || _a === void 0 ? void 0 : _a[0]);
 
-              console.log(_this188.internalAccount.get('customerAccount').value);
+              console.log(_this189.internalAccount.get('customerAccount').value);
 
-              _this188.fetchByValue();
+              _this189.fetchByValue();
             });
           }
         }, {
           key: "fetchByValue",
           value: function fetchByValue() {
-            var _this189 = this;
+            var _this190 = this;
 
             console.log(this.internalAccount.get('customerAccount').value);
             this.api.fetchByBranchCode(this.internalAccount.get('customerAccount').value).subscribe(function (resp) {
               console.log(resp);
 
-              _this189.internalAccount.get('branchCode').setValue(resp.branchCode);
+              _this190.internalAccount.get('branchCode').setValue(resp.branchCode);
             });
           }
         }, {
@@ -59865,7 +59919,7 @@
         _createClass(OfferIssueComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this190 = this;
+            var _this191 = this;
 
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
             console.log(this.loanInfo);
@@ -59877,32 +59931,32 @@
             var isOfferIssueScreen = JSON.parse(this.ls.getItem('OfferIssue'));
             setTimeout(function () {
               if (44444 != null && isOfferIssueScreen) {
-                _this190.showEditOption = true;
+                _this191.showEditOption = true;
 
-                _this190.getAccountDetails();
+                _this191.getAccountDetails();
               } else {
                 console.log("else");
-                _this190.showEditOption = false;
+                _this191.showEditOption = false;
 
-                _this190.buildOfferIssueForm();
+                _this191.buildOfferIssueForm();
               }
             }, 10); //this.getAccountType("account_type");
           }
         }, {
           key: "getAccountDetails",
           value: function getAccountDetails() {
-            var _this191 = this;
+            var _this192 = this;
 
             this.loader.open();
             this.apiService.getOfferIssueDetails(this.loanaccountID ? this.loanaccountID : 44444).subscribe(function (accountDetails) {
-              _this191.loader.close();
+              _this192.loader.close();
 
-              _this191.accountDetails = accountDetails;
-              console.log(_this191.accountDetails);
+              _this192.accountDetails = accountDetails;
+              console.log(_this192.accountDetails);
 
-              _this191.buildOfferIssueForm(_this191.accountDetails);
+              _this192.buildOfferIssueForm(_this192.accountDetails);
             }, function (err) {
-              _this191.loader.close();
+              _this192.loader.close();
             });
           }
         }, {
@@ -59927,7 +59981,7 @@
         }, {
           key: "Submit",
           value: function Submit() {
-            var _this192 = this;
+            var _this193 = this;
 
             var details; //details.push(this.legalOpinion.value);
 
@@ -59955,7 +60009,7 @@
               console.log("data", data);
 
               if (data != null) {
-                _this192.snack.open('Data Saved!', 'OK', {
+                _this193.snack.open('Data Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -61312,7 +61366,7 @@
         _createClass(VehicleDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this193 = this;
+            var _this194 = this;
 
             this.loanaccountID = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -61333,15 +61387,15 @@
             var isVehicleDetailsScreen = JSON.parse(this.ls.getItem('VEHICLE_DETAIL_DONE')); //if (this.loanAccountId != null && isVehicleDetailsScreen) {
 
             setTimeout(function () {
-              if (_this193.loanaccountID != null && isVehicleDetailsScreen) {
-                _this193.showEditOption = true;
+              if (_this194.loanaccountID != null && isVehicleDetailsScreen) {
+                _this194.showEditOption = true;
 
-                _this193.getVehicleDetails();
+                _this194.getVehicleDetails();
               } else {
                 console.log('else');
-                _this193.showEditOption = false;
+                _this194.showEditOption = false;
 
-                _this193.buildformGroup();
+                _this194.buildformGroup();
               }
             }, 10); //   this.vehicleForm.get('productName').patchValue(this.productName);
 
@@ -61355,19 +61409,19 @@
         }, {
           key: "getVehicleDetails",
           value: function getVehicleDetails() {
-            var _this194 = this;
+            var _this195 = this;
 
             this.loader.open(); //this.apiService.getAssetValuation(this.loacnAccountId).subscribe((accountDetails) => {
 
             this.apiService.getVehicleDetails(this.loanaccountID).subscribe(function (vehicleDetails) {
-              _this194.loader.close();
+              _this195.loader.close();
 
-              _this194.vehicleDetails = vehicleDetails;
-              console.log(_this194.vehicleDetails);
+              _this195.vehicleDetails = vehicleDetails;
+              console.log(_this195.vehicleDetails);
 
-              _this194.buildformGroup(_this194.vehicleDetails);
+              _this195.buildformGroup(_this195.vehicleDetails);
             }, function (err) {
-              _this194.loader.close();
+              _this195.loader.close();
             });
           }
         }, {
@@ -61408,24 +61462,24 @@
         }, {
           key: "getStateName",
           value: function getStateName() {
-            var _this195 = this;
+            var _this196 = this;
 
             var entityName = 'state';
             this.apiService.getDropDownValues(entityName).subscribe(function (data) {
-              _this195.arrayState = data.sort();
-              console.log('-->', _this195.arrayState);
+              _this196.arrayState = data.sort();
+              console.log('-->', _this196.arrayState);
             });
           }
         }, {
           key: "getCityName",
           value: function getCityName(state) {
-            var _this196 = this;
+            var _this197 = this;
 
             console.log('inside getCityName::', state);
             var entityName = 'city';
             this.apiService.getDropDownValues1(entityName, state).subscribe(function (data) {
-              _this196.arrayCity = data;
-              console.log('-->', _this196.arrayCity);
+              _this197.arrayCity = data;
+              console.log('-->', _this197.arrayCity);
             });
           }
         }, {
@@ -61463,7 +61517,7 @@
         }, {
           key: "submitForm",
           value: function submitForm() {
-            var _this197 = this;
+            var _this198 = this;
 
             var pk = this.vehicleForm.value.expectedSellingPrice;
             pk = parseInt(pk);
@@ -61505,7 +61559,7 @@
               console.log('data', data);
 
               if (data != null) {
-                _this197.snack.open('Vehicle Details saved Successfully', 'OK', {
+                _this198.snack.open('Vehicle Details saved Successfully', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -61513,7 +61567,7 @@
               }
 
               if (data === 500) {
-                _this197.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
+                _this198.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
@@ -61818,7 +61872,7 @@
         _createClass(OfferAcceptRejectComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this198 = this;
+            var _this199 = this;
 
             this.isOfferAcceptReject = this.ls.getItem('OFFER_ACCEPT_REJECT_DONE');
             this.loanaccountID = this.ls.getItem('loanAccountId');
@@ -61830,22 +61884,22 @@
             }
 
             setTimeout(function () {
-              if (_this198.isOfferAcceptReject == false) {
-                _this198.buildofferForm();
+              if (_this199.isOfferAcceptReject == false) {
+                _this199.buildofferForm();
               } else {
-                _this198.getOfferAcceptReject();
+                _this199.getOfferAcceptReject();
               }
             }, 10);
           }
         }, {
           key: "getOfferAcceptReject",
           value: function getOfferAcceptReject() {
-            var _this199 = this;
+            var _this200 = this;
 
             this.api.getOfferAcceptReject('200').subscribe(function (resp) {
               console.log(resp);
 
-              _this199.buildofferForm(resp, true);
+              _this200.buildofferForm(resp, true);
             });
           }
         }, {
@@ -61902,7 +61956,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit() {
-            var _this200 = this;
+            var _this201 = this;
 
             this.offerForm.value.offerIssueDate = moment__WEBPACK_IMPORTED_MODULE_7__(this.offerForm.value.offerIssueDate).format('YYYY-MMM-DD HH:mm:ss');
             this.offerForm.value.generateOffer = moment__WEBPACK_IMPORTED_MODULE_7__(this.offerForm.value.generateOffer).format('YYYY-MMM-DD HH:mm:ss"');
@@ -61912,15 +61966,15 @@
               console.log(data);
 
               if (data === 200 || data !== null) {
-                _this200.snack.open(' Credit Details Saved!', 'OK', {
+                _this201.snack.open(' Credit Details Saved!', 'OK', {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right'
                 });
 
-                _this200.ls.setItem('OFFER_ACCEPT_REJECT_DONE', true);
+                _this201.ls.setItem('OFFER_ACCEPT_REJECT_DONE', true);
 
-                _this200.router.navigate(['loan/account/account-creation-stage/account-create-details']);
+                _this201.router.navigate(['loan/account/account-creation-stage/account-create-details']);
               } // else if (data === 500) {
               //   this.snack.open('Not able to connect to server!', 'INTERNAL SERVER ERROR', {
               //     duration: 4000,
@@ -63134,25 +63188,25 @@
         }, {
           key: "loadData",
           value: function loadData() {
-            var _this201 = this;
+            var _this202 = this;
 
             this.api.getScorecardQuestions(this.accountType).subscribe(function (response) {
               console.log(response);
-              console.log(_this201.no_of_applicants);
+              console.log(_this202.no_of_applicants);
 
-              if (!_this201.no_of_applicants && response) {
-                _this201.no_of_applicants = response.length;
+              if (!_this202.no_of_applicants && response) {
+                _this202.no_of_applicants = response.length;
               }
 
-              for (var n = 0; n < _this201.no_of_applicants; n++) {
-                _this201.scoreboardQuestionsArray.push({
+              for (var n = 0; n < _this202.no_of_applicants; n++) {
+                _this202.scoreboardQuestionsArray.push({
                   scorecardQuestion: response,
                   applicantId: n + 1,
                   scoreCardDetails: response
                 });
 
                 var mapDataAns = [];
-                console.log("data", _this201.scoreCardDetails);
+                console.log("data", _this202.scoreCardDetails);
 
                 for (var p = 0; p < response.length; p++) {
                   mapDataAns.push({
@@ -63162,36 +63216,36 @@
                   });
                 }
 
-                _this201.scoreCardMappingArray.push({
+                _this202.scoreCardMappingArray.push({
                   applicantId: n + 1,
                   scoreCardDetails: mapDataAns
                 });
               }
 
-              console.log("data", _this201.scoreCardDetails);
-              console.log("ques:", _this201.scoreboardQuestionsArray);
+              console.log("data", _this202.scoreCardDetails);
+              console.log("ques:", _this202.scoreboardQuestionsArray);
 
-              _this201.cdr.markForCheck();
+              _this202.cdr.markForCheck();
             });
           }
         }, {
           key: "getAllQualitative",
           value: function getAllQualitative() {
-            var _this202 = this;
+            var _this203 = this;
 
             console.log(this.isQualitativeScreen);
             this.api.getLoanQualitativeScorecardDetails(this.loanaccountID).subscribe(function (response) {
-              _this202.qualitativeScoreboardSummary = response;
-              console.log(_this202.qualitativeScoreboardSummary.scoreCardId + " : " + _this202.qualitativeScoreboardSummary.numberOfApplicant);
+              _this203.qualitativeScoreboardSummary = response;
+              console.log(_this203.qualitativeScoreboardSummary.scoreCardId + " : " + _this203.qualitativeScoreboardSummary.numberOfApplicant);
 
-              _this202.scoreCardId.setValue(_this202.qualitativeScoreboardSummary.scoreCardId);
+              _this203.scoreCardId.setValue(_this203.qualitativeScoreboardSummary.scoreCardId);
 
-              _this202.numberOfApplicant.setValue(_this202.qualitativeScoreboardSummary.numberOfApplicant);
+              _this203.numberOfApplicant.setValue(_this203.qualitativeScoreboardSummary.numberOfApplicant);
 
-              console.log("scorecard id: ", _this202.scoreCardId);
-              console.log("numberOfApplicant : ", _this202.numberOfApplicant);
-              console.log(_this202.qualitativeScoreboardSummary);
-              _this202.scoreboardQuestionsArray = []; // for (let i = 0; i < this.qualitativeScoreboardSummary.scoreCardMapping.length; i++) {
+              console.log("scorecard id: ", _this203.scoreCardId);
+              console.log("numberOfApplicant : ", _this203.numberOfApplicant);
+              console.log(_this203.qualitativeScoreboardSummary);
+              _this203.scoreboardQuestionsArray = []; // for (let i = 0; i < this.qualitativeScoreboardSummary.scoreCardMapping.length; i++) {
               //   if (this.qualitativeScoreboardSummary.scoreCardMapping[i].attributeType == "checkbox") {
               //     var scAns = this.qualitativeScoreboardSummary.scoreCardMapping[i].scorecardAnswer.split(',');
               //     for (let m = 0; m < scAns.length; m++) {
@@ -63204,31 +63258,31 @@
               // }
 
               var _loop = function _loop(i) {
-                console.log("inside for", _this202.qualitativeScoreboardSummary.scoreCardMapping);
+                console.log("inside for", _this203.qualitativeScoreboardSummary.scoreCardMapping);
 
-                _this202.api.getScorecardQuestions(_this202.accountType).subscribe(function (response) {
+                _this203.api.getScorecardQuestions(_this203.accountType).subscribe(function (response) {
                   console.log(response);
-                  console.log(_this202.no_of_applicants);
+                  console.log(_this203.no_of_applicants);
 
-                  if (!_this202.no_of_applicants && response) {
-                    _this202.no_of_applicants = response.length;
+                  if (!_this203.no_of_applicants && response) {
+                    _this203.no_of_applicants = response.length;
                   }
 
-                  for (var n = 0; n < _this202.no_of_applicants; n++) {
-                    _this202.scoreboardQuestionsArray.push({
+                  for (var n = 0; n < _this203.no_of_applicants; n++) {
+                    _this203.scoreboardQuestionsArray.push({
                       scorecardQuestion: response,
                       applicantId: n + 1,
                       scoreCardDetails: response
                     });
 
-                    console.log(_this202.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length);
+                    console.log(_this203.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length);
 
-                    for (var j = 0; j < _this202.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length; j++) {
-                      console.log(_this202.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails);
-                      var scAns = _this202.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails;
+                    for (var j = 0; j < _this203.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails.length; j++) {
+                      console.log(_this203.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails);
+                      var scAns = _this203.qualitativeScoreboardSummary.scoreCardMapping[i].scoreCardDetails;
                       console.log(scAns);
 
-                      _this202.sbMultiSelectAnswer.push(scAns[j].scorecardAnswer); // for(let k=0; k < this.sbMultiSelectAnswer.length; k++){
+                      _this203.sbMultiSelectAnswer.push(scAns[j].scorecardAnswer); // for(let k=0; k < this.sbMultiSelectAnswer.length; k++){
                       //   if(this.sbMultiSelectAnswer[0]){
                       //     this.sbSelectAnswer = this.sbMultiSelectAnswer[2];
                       //     console.log(this.sbSwlwctAnswer);
@@ -63240,27 +63294,27 @@
                       // }
 
 
-                      console.log(_this202.sbMultiSelectAnswer);
+                      console.log(_this203.sbMultiSelectAnswer);
                     }
                   }
 
-                  console.log("data", _this202.scoreCardDetails);
-                  console.log("ques:", _this202.scoreboardQuestionsArray);
+                  console.log("data", _this203.scoreCardDetails);
+                  console.log("ques:", _this203.scoreboardQuestionsArray);
 
-                  _this202.cdr.markForCheck();
+                  _this203.cdr.markForCheck();
                 });
 
-                _this202.scoreCardMappingArray = _this202.scoreboardQuestionsArray;
+                _this203.scoreCardMappingArray = _this203.scoreboardQuestionsArray;
               };
 
-              for (var i = 0; i < _this202.qualitativeScoreboardSummary.scoreCardMapping.length; i++) {
+              for (var i = 0; i < _this203.qualitativeScoreboardSummary.scoreCardMapping.length; i++) {
                 _loop(i);
               }
 
-              console.log(_this202.scoreboardQuestionsArray, "scoreBoardQuestionArray");
-              _this202.disableDoneBtn = false;
+              console.log(_this203.scoreboardQuestionsArray, "scoreBoardQuestionArray");
+              _this203.disableDoneBtn = false;
 
-              _this202.cdr.markForCheck();
+              _this203.cdr.markForCheck();
             });
           }
         }, {
@@ -63415,17 +63469,17 @@
         }, {
           key: "getAllData",
           value: function getAllData(id) {
-            var _this203 = this;
+            var _this204 = this;
 
             this.api.getAssessmentReportDetails(id).subscribe(function (response) {
-              _this203.assessmentReportSummary = response;
-              console.log(_this203.assessmentReportSummary);
+              _this204.assessmentReportSummary = response;
+              console.log(_this204.assessmentReportSummary);
             });
           }
         }, {
           key: "saveQualitativeScore",
           value: function saveQualitativeScore() {
-            var _this204 = this;
+            var _this205 = this;
 
             var submitData = {};
             console.log(this.no_of_applicants);
@@ -63441,18 +63495,18 @@
             this.api.saveQualitativeScorecard(submitData).subscribe(function (resp) {
               console.log("data", submitData.loanaccountID);
 
-              _this204.snack.open('Loan Qualitative Scoreboard Saved!', 'OK', {
+              _this205.snack.open('Loan Qualitative Scoreboard Saved!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
               }); // console.log(resp);
 
 
-              _this204.isDataSaved = true; // this.ls.setItem('LOAN_QUALITATIVE_SCOREBOARD_DONE', true);
+              _this205.isDataSaved = true; // this.ls.setItem('LOAN_QUALITATIVE_SCOREBOARD_DONE', true);
               // this.disableDoneBtn=false
               //  this.accountService.refresh.next();
             }, function (err) {
-              _this204.snack.open('Server Error!', 'OK', {
+              _this205.snack.open('Server Error!', 'OK', {
                 duration: 4000,
                 verticalPosition: 'top',
                 horizontalPosition: 'right'
@@ -64931,7 +64985,7 @@
         _createClass(AccountServiceSummaryComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this205 = this;
+            var _this206 = this;
 
             this.loanAccountId = this.ls.getItem('loanAccountId');
             this.loanInfo = this.ls.getItem('LOAN_ACC_ARRAY');
@@ -64942,26 +64996,26 @@
             }
 
             setTimeout(function () {
-              _this205.api.AccountServicesFetchById(_this205.loanAccountId).subscribe(function (resp) {
+              _this206.api.AccountServicesFetchById(_this206.loanAccountId).subscribe(function (resp) {
                 console.log("resp from backend ", resp);
 
                 if (resp) {
-                  _this205.resp = resp;
-                  _this205.maturity = resp.serviceDetails.find(function (obj) {
+                  _this206.resp = resp;
+                  _this206.maturity = resp.serviceDetails.find(function (obj) {
                     return obj.serviceName === 'Maturity';
                   });
-                  _this205.revision = resp.serviceDetails.find(function (obj) {
+                  _this206.revision = resp.serviceDetails.find(function (obj) {
                     return obj.serviceName === 'Revision';
                   });
-                  _this205.holiday = resp.serviceDetails.find(function (obj) {
+                  _this206.holiday = resp.serviceDetails.find(function (obj) {
                     return obj.serviceName === 'Holiday Preference';
                   });
-                  _this205.cascadeVarMaturity = _this205.maturity.cascadeSchedules;
-                  _this205.cascadeVarRevison = _this205.revision.cascadeSchedules;
-                  _this205.cascadeVarHoliday = _this205.holiday.cascadeSchedules;
-                  _this205.ignoreHolidayVarMaturity = _this205.maturity.cascadeSchedules;
-                  _this205.ignoreHolidayVarRevison = _this205.revision.cascadeSchedules;
-                  _this205.ignoreHolidayVarHoliday = _this205.holiday.cascadeSchedules;
+                  _this206.cascadeVarMaturity = _this206.maturity.cascadeSchedules;
+                  _this206.cascadeVarRevison = _this206.revision.cascadeSchedules;
+                  _this206.cascadeVarHoliday = _this206.holiday.cascadeSchedules;
+                  _this206.ignoreHolidayVarMaturity = _this206.maturity.cascadeSchedules;
+                  _this206.ignoreHolidayVarRevison = _this206.revision.cascadeSchedules;
+                  _this206.ignoreHolidayVarHoliday = _this206.holiday.cascadeSchedules;
                 } //       cascadeSchedules: true
                 // holidayCheck: "Uncheck"
                 // ignoreHolidays: true
