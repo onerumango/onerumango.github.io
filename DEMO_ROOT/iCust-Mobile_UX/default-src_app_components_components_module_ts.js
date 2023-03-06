@@ -1076,12 +1076,22 @@ let TimeSlotsComponent = class TimeSlotsComponent {
         const dt = new Date();
         const currentDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().length < 2 ? '0' + (dt.getMonth() + 1) : (dt.getMonth() + 1)}-${dt.getDate().toString().length < 2 ? ('0' + dt.getDate()) : dt.getDate()}`;
         const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: 'numeric', minute: 'numeric' });
+        console.log("date", date);
+        let today = this.datepipe.transform(new Date(), 'yyyy-MM-dd');
+        console.log("today", today);
+        if (today == date) {
+            this.exclude_past_time = this.TimeSolts.filter(item => (item === null || item === void 0 ? void 0 : item.time) > currentTime);
+        }
+        else {
+            this.exclude_past_time = this.TimeSolts;
+        }
+        console.log(this.exclude_past_time);
         if (new Date(selectedDate) <= new Date(currentDate)) {
-            this.TimeSolts.forEach((ele, i) => {
+            this.exclude_past_time.forEach((ele, i) => {
                 const time = ele.time.split(":")[0].length < 2 ? '0' + ele.time : ele.time;
                 if (time < currentTime) {
-                    this.TimeSolts[i].available = false;
-                    this.TimeSolts[i].booked = true;
+                    this.exclude_past_time[i].available = false;
+                    this.exclude_past_time[i].booked = true;
                 }
             });
         }
@@ -1091,14 +1101,14 @@ let TimeSlotsComponent = class TimeSlotsComponent {
             }
             const newFormatBookedSlots = bookedResp && bookedResp.map(time => this.convertTime12to24(time));
             newFormatBookedSlots && newFormatBookedSlots.forEach(element => {
-                const index = this.TimeSolts.map(x => x.time).indexOf(element);
+                const index = this.exclude_past_time.map(x => x.time).indexOf(element);
                 if (index > -1) {
-                    this.TimeSolts[index].available = false;
-                    this.TimeSolts[index].booked = true;
+                    this.exclude_past_time[index].available = false;
+                    this.exclude_past_time[index].booked = true;
                 }
             });
         });
-        // this.exclude_past_time = this.TimeSolts.filter(item => item?.time > currentTime && !item.booked);
+        // this.exclude_past_time = this.exclude_past_time.filter(item => item?.time > currentTime && !item.booked);
     }
     onSelectiongTimeSlots(event, time) {
         console.log(time);
@@ -1110,29 +1120,29 @@ let TimeSlotsComponent = class TimeSlotsComponent {
         this.count++;
         if (this.count > 1) {
             this.dateCollection = [];
-            console.log(this.TimeSolts, !this.TimeSolts[i].selected);
+            console.log(this.exclude_past_time, !this.exclude_past_time[i].selected);
         }
         console.log("Time", time, i);
-        this.TimeSolts[i].selected = !this.TimeSolts[i].selected;
-        this.TimeSolts[i].available = !this.TimeSolts[i].available;
-        console.log(this.TimeSolts[i].selected);
+        this.exclude_past_time[i].selected = !this.exclude_past_time[i].selected;
+        this.exclude_past_time[i].available = !this.exclude_past_time[i].available;
+        console.log(this.exclude_past_time[i].selected);
         const index = this.dateCollection.indexOf(time);
         console.log("index", this.dateCollection);
-        this.TimeSolts.forEach((element, i) => {
-            console.log(this.TimeSolts, i, element.time);
+        this.exclude_past_time.forEach((element, i) => {
+            console.log(this.exclude_past_time, i, element.time);
         });
-        if (index > -1 && !this.TimeSolts[i].selected) {
+        if (index > -1 && !this.exclude_past_time[i].selected) {
             console.log("in if");
             this.dateCollection.splice(index, 1);
         }
-        else if (index == -1 && this.TimeSolts[i].selected) {
+        else if (index == -1 && this.exclude_past_time[i].selected) {
             console.log("in else");
-            this.TimeSolts.forEach((element, i) => {
+            this.exclude_past_time.forEach((element, i) => {
                 if (!element.booked && element.time == time) {
-                    this.TimeSolts[i].available = false;
+                    this.exclude_past_time[i].available = false;
                 }
                 else if (!element.booked && element.time != time) {
-                    this.TimeSolts[i].available = true;
+                    this.exclude_past_time[i].available = true;
                 }
             });
             this.dateCollection = [];
@@ -2873,7 +2883,7 @@ let TransactionDateComponent = class TransactionDateComponent {
     constructor(modalCtr, datepipe) {
         this.modalCtr = modalCtr;
         this.datepipe = datepipe;
-        // minDate = new Date();
+        this.minDate = new Date();
         this.maxDate = new Date(2050, 11, 31);
         this.disableWeekendsFilter = (d) => {
             let day = new Date(d);
@@ -3524,7 +3534,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar style=\"padding: 4% 0 1%\">\r\n
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" style=\"color:#004C97\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"time_slot_title\">\r\n      <ion-text class=\"header_title\">\r\n        <div>Select Time</div>\r\n        <button class=\"selectedTime\">{{ date |  date:'d MMM y' }}</button>\r\n        <!-- <button class=\"selectedTime\" *ngIf=\"selected != null\">{{ selected }}</button> -->\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <ion-progress-bar type=\"indeterminate\" *ngIf=\"isLoading\"></ion-progress-bar>\r\n  <div class=\"row\">\r\n    <div class=\"col-4 px-2\" *ngFor=\"let slot of TimeSolts;let i=index\">\r\n      <ion-chip\r\n        [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\"\r\n        (click)=\"onSelectTime1(slot.time,i,$event)\">\r\n        <ion-label style=\"font-size: 16px; white-space: nowrap;\"> \r\n          {{format24HrsTo12Hrs(slot.time)}}\r\n        </ion-label>\r\n      </ion-chip>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"note_sec\">\r\n    <div class=\"text-primary mb-3\">Note:</div>\r\n    <div class=\"d-flex justify-content-between align-items-center\">\r\n      <div class=\"px-1 d-flex align-items-center\">\r\n        <ion-icon class=\"small\" src=\"/assets/icon/v2/Exclusion_6.svg\"></ion-icon>\r\n        <ion-text>Available</ion-text>\r\n      </div>\r\n      <div class=\"px-1 d-flex align-items-center\">\r\n        <ion-icon src=\"/assets/icon/v2/Exclusion_5.svg\"></ion-icon>\r\n        <ion-text>Selected</ion-text>\r\n      </div>\r\n      <div class=\"px-1 d-flex align-items-center\">\r\n        <ion-icon src=\"/assets/icon/v2/Exclusion_3.svg\"></ion-icon>\r\n        <ion-text>Already Booked</ion-text>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-footer>\r\n  <div class=\"row p-3\">\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" [disabled]=\"!selected\" class=\"footer_btn\" (click)=\"done()\">Submit</ion-button>\r\n    </div>\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" class=\"footer_btn cancel\" (click)=\"close()\">Back</ion-button>\r\n    </div>\r\n  </div>\r\n</ion-footer>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" style=\"color:#004C97\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"time_slot_title\">\r\n      <ion-text class=\"header_title\">\r\n        <div>Select Time</div>\r\n        <button class=\"selectedTime\">{{ date |  date:'d MMM y' }}</button>\r\n        <!-- <button class=\"selectedTime\" *ngIf=\"selected != null\">{{ selected }}</button> -->\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <ion-progress-bar type=\"indeterminate\" *ngIf=\"isLoading\"></ion-progress-bar>\r\n  <div class=\"row\">\r\n    <div class=\"col-4 px-2\" *ngFor=\"let slot of exclude_past_time;let i=index\">\r\n      <ion-chip\r\n        [ngClass]=\"{'bookedSlot': slot.booked, 'availableSlot' : slot.available,'selectedClass': dateCollection.indexOf(slot.time)!=-1}\"\r\n        (click)=\"onSelectTime1(slot.time,i,$event)\">\r\n        <ion-label style=\"font-size: 16px; white-space: nowrap;\"> \r\n          {{format24HrsTo12Hrs(slot.time)}}\r\n        </ion-label>\r\n      </ion-chip>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"note_sec\">\r\n    <div class=\"text-primary mb-3\">Note:</div>\r\n    <div class=\"d-flex justify-content-between align-items-center\">\r\n      <div class=\"px-1 d-flex align-items-center\">\r\n        <ion-icon class=\"small\" src=\"/assets/icon/v2/Exclusion_6.svg\"></ion-icon>\r\n        <ion-text>Available</ion-text>\r\n      </div>\r\n      <div class=\"px-1 d-flex align-items-center\">\r\n        <ion-icon src=\"/assets/icon/v2/Exclusion_5.svg\"></ion-icon>\r\n        <ion-text>Selected</ion-text>\r\n      </div>\r\n      <div class=\"px-1 d-flex align-items-center\">\r\n        <ion-icon src=\"/assets/icon/v2/Exclusion_3.svg\"></ion-icon>\r\n        <ion-text>Already Booked</ion-text>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-footer>\r\n  <div class=\"row p-3\">\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" [disabled]=\"!selected\" class=\"footer_btn\" (click)=\"done()\">Submit</ion-button>\r\n    </div>\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" class=\"footer_btn cancel\" (click)=\"close()\">Back</ion-button>\r\n    </div>\r\n  </div>\r\n</ion-footer>\r\n";
 
 /***/ }),
 

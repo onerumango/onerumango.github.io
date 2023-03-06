@@ -48,13 +48,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FaqPageModule": () => (/* binding */ FaqPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _faq_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./faq-routing.module */ 20263);
 /* harmony import */ var _faq_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./faq.page */ 28601);
+/* harmony import */ var src_app_pipes_search_filter_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/pipes/search-filter.pipe */ 8572);
+
 
 
 
@@ -64,15 +66,15 @@ __webpack_require__.r(__webpack_exports__);
 
 let FaqPageModule = class FaqPageModule {
 };
-FaqPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
+FaqPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormsModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicModule,
             _faq_routing_module__WEBPACK_IMPORTED_MODULE_0__.FaqPageRoutingModule
         ],
-        declarations: [_faq_page__WEBPACK_IMPORTED_MODULE_1__.FaqPage]
+        declarations: [_faq_page__WEBPACK_IMPORTED_MODULE_1__.FaqPage, src_app_pipes_search_filter_pipe__WEBPACK_IMPORTED_MODULE_2__.SearchFilterPipe]
     })
 ], FaqPageModule);
 
@@ -159,6 +161,42 @@ FaqPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
+/***/ 8572:
+/*!*********************************************!*\
+  !*** ./src/app/pipes/search-filter.pipe.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SearchFilterPipe": () => (/* binding */ SearchFilterPipe)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let SearchFilterPipe = class SearchFilterPipe {
+    transform(value, args) {
+        if (!value)
+            return null;
+        if (!args)
+            return value;
+        args = args.toLowerCase();
+        return value.filter(function (data) {
+            return JSON.stringify(data).toLowerCase().includes(args);
+        });
+    }
+};
+SearchFilterPipe = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Pipe)({
+        name: 'searchFilter'
+    })
+], SearchFilterPipe);
+
+
+
+/***/ }),
+
 /***/ 51114:
 /*!****************************************************!*\
   !*** ./src/app/pages/faq/faq.page.scss?ngResource ***!
@@ -175,7 +213,7 @@ module.exports = ".backIcon {\n  font-size: x-large;\n  margin-bottom: 4%;\n  co
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goToHome()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>FAQ</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"searchbar\">\r\n    <ion-searchbar mode=\"ios\"></ion-searchbar>\r\n  </div>\r\n\r\n  <ion-list *ngFor=\"let item of List\">\r\n    <ion-item Lines=\"none\">\r\n      <ion-text class=\"newCard1\">{{item.title}}</ion-text>\r\n\r\n      <ion-icon\r\n        *ngIf=\"forwardarrow || (downarrow && slno!=item.sno) || slno ==0\"\r\n        slot=\"end\"\r\n        name=\"chevron-forward-outline\"\r\n        class=\"iconCard\"\r\n        (click)=\"rotateforwardarrow(item)\"\r\n      ></ion-icon>\r\n      <ion-icon\r\n        *ngIf=\"downarrow && slno==item.sno\"\r\n        slot=\"end\"\r\n        name=\"chevron-down-outline\"\r\n        class=\"iconCard\"\r\n        (click)=\"rotatedownarrow(item)\"\r\n      ></ion-icon>\r\n    </ion-item>\r\n    <ion-item style=\"margin-top: -4%\">\r\n      <ion-text class=\"newCard2\" *ngIf=\"downarrow && slno==item.sno\">{{item.description}}</ion-text>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goToHome()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>FAQ</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"searchbar\">\r\n    <ion-searchbar [(ngModel)]=\"filterTerm\" mode=\"ios\"></ion-searchbar>\r\n  </div>\r\n\r\n  <ion-list *ngFor=\"let item of List | searchFilter: filterTerm\">\r\n    <ion-item Lines=\"none\">\r\n      <ion-text class=\"newCard1\">{{item.title}}</ion-text>\r\n\r\n      <ion-icon\r\n        *ngIf=\"forwardarrow || (downarrow && slno!=item.sno) || slno ==0\"\r\n        slot=\"end\"\r\n        name=\"chevron-forward-outline\"\r\n        class=\"iconCard\"\r\n        (click)=\"rotateforwardarrow(item)\"\r\n      ></ion-icon>\r\n      <ion-icon\r\n        *ngIf=\"downarrow && slno==item.sno\"\r\n        slot=\"end\"\r\n        name=\"chevron-down-outline\"\r\n        class=\"iconCard\"\r\n        (click)=\"rotatedownarrow(item)\"\r\n      ></ion-icon>\r\n    </ion-item>\r\n    <ion-item style=\"margin-top: -4%\">\r\n      <ion-text class=\"newCard2\" *ngIf=\"downarrow && slno==item.sno\">{{item.description}}</ion-text>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
 
 /***/ })
 

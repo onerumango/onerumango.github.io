@@ -339,7 +339,7 @@ let CashWithdrawV2Page = class CashWithdrawV2Page {
         let toFix = (_a = this.form.get('transactionAmount')) === null || _a === void 0 ? void 0 : _a.value;
         let val = (toFix != "undefined" || toFix != undefined) ? toFix === null || toFix === void 0 ? void 0 : toFix.replace(/,/g, '') : 0;
         if (!isNaN(val)) {
-            let updatedAmount = (val * ((_b = this.form.get('exchangeRate')) === null || _b === void 0 ? void 0 : _b.value)) + this.chargeAmount;
+            let updatedAmount = (Number(val) * (((_b = this.form.get('exchangeRate')) === null || _b === void 0 ? void 0 : _b.value) || 1)) + this.chargeAmount;
             if (!isNaN(updatedAmount)) {
                 let formatedAmount = this.shareDataService.formatCurrency(updatedAmount, (_c = this.form.get('transactionCurrency')) === null || _c === void 0 ? void 0 : _c.value);
                 this.form.get('totalTransactionAmount').patchValue(formatedAmount);
@@ -493,6 +493,7 @@ let CashWithdrawV2Page = class CashWithdrawV2Page {
         this.currentBalance = this.filteredAccount.amount;
         console.log("AM", this.transAmt);
         console.log("CURR", this.currentBalance);
+        this.updateTransAmount();
         if (parseFloat(this.currentBalance) < parseFloat(this.transAmt)) {
             this.showToast();
         }
