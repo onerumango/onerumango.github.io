@@ -60590,7 +60590,7 @@ function GenricDocumentUploadComponent_tbody_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("disabled", ctx_r0.documentForm.get("documentArr")["controls"].length == 1);
 } }
-const _c3 = function (a0, a1) { return { "Next": a0, "Next1": a1 }; };
+const _c3 = function (a0, a1) { return { "Next1": a0, "Next": a1 }; };
 function GenricDocumentUploadComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     const _r143 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 64);

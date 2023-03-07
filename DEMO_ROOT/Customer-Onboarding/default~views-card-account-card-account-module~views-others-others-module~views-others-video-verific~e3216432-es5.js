@@ -4316,8 +4316,12 @@
 
             if (!this.cifFetch) {
               this.api.fetchCustomerDetails(payload).subscribe(function (res) {
-                if (res != null) {
-                  _this20.dialogService.phoneNumberDetailsDialogue(res).subscribe(function (response) {
+                if (res.status == 200) {
+                  console.log("inside if", res);
+
+                  _this20.dialogService.phoneNumberDetailsDialogue(res.data).subscribe(function (response) {
+                    console.log("inside resapi", response);
+
                     if ((response === null || response === void 0 ? void 0 : response.isDialogClose) == true) {
                       _this20.kycVerificationForm.value.customer_id = response.customerId;
 

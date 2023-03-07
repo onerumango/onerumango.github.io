@@ -2460,8 +2460,10 @@ class KycVerificationComponent {
         };
         if (!this.cifFetch) {
             this.api.fetchCustomerDetails(payload).subscribe((res) => {
-                if (res != null) {
-                    this.dialogService.phoneNumberDetailsDialogue(res).subscribe((response) => {
+                if (res.status == 200) {
+                    console.log("inside if", res);
+                    this.dialogService.phoneNumberDetailsDialogue(res.data).subscribe((response) => {
+                        console.log("inside resapi", response);
                         if ((response === null || response === void 0 ? void 0 : response.isDialogClose) == true) {
                             this.kycVerificationForm.value.customer_id = response.customerId;
                             this.nextEnableFunction();
