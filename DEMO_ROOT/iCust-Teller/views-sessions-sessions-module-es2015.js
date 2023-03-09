@@ -267,6 +267,7 @@ class SigninComponent {
                             localStorage.setItem('branchName', res.branchName);
                             localStorage.setItem('userName', res.userName);
                             localStorage.setItem("browserId", this.browserKey);
+                            localStorage.setItem('tellerid', res.id);
                             console.log(this.finalDiff);
                             if (this.finalDiff > 0 && this.finalDiff <= this.notifyPswdExpry && this.security.authStatus == "A") {
                                 this.toastr.error("Your password will expire in " +

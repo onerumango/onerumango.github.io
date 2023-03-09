@@ -466,6 +466,7 @@
                       localStorage.setItem('branchName', res.branchName);
                       localStorage.setItem('userName', res.userName);
                       localStorage.setItem("browserId", _this2.browserKey);
+                      localStorage.setItem('tellerid', res.id);
                       console.log(_this2.finalDiff);
 
                       if (_this2.finalDiff > 0 && _this2.finalDiff <= _this2.notifyPswdExpry && _this2.security.authStatus == "A") {
