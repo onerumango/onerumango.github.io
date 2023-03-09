@@ -9074,30 +9074,30 @@
         }
 
         if (rf & 2) {
-          var mode_r19 = ctx.$implicit;
+          var mode_r20 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", mode_r19.mode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", mode_r20.mode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", mode_r19.mode, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", mode_r20.mode, " ");
         }
       }
 
       function PaymentInformationComponent_mat_form_field_14_mat_option_6_Template(rf, ctx) {
         if (rf & 1) {
-          var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_14_mat_option_6_Template_mat_option_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r25);
 
-            var country_r21 = ctx.$implicit;
+            var country_r22 = ctx.$implicit;
 
-            var ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+            var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-            return ctx_r23.onCountryChange(country_r21);
+            return ctx_r24.onCountryChange(country_r22);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 29);
@@ -9116,19 +9116,19 @@
         }
 
         if (rf & 2) {
-          var country_r21 = ctx.$implicit;
+          var country_r22 = ctx.$implicit;
 
-          var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r21.currencyCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r22.currencyCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r21.currencyCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r22.currencyCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r20.addCurrencyImage(country_r21.currencyCode), " alignImage");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r21.addCurrencyImage(country_r22.currencyCode), " alignImage");
         }
       }
 
@@ -9172,18 +9172,18 @@
 
       function PaymentInformationComponent_mat_form_field_15_mat_option_6_Template(rf, ctx) {
         if (rf & 1) {
-          var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_15_mat_option_6_Template_mat_option_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30);
 
-            var country_r26 = ctx.$implicit;
+            var country_r27 = ctx.$implicit;
 
-            var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-            return ctx_r28.onCountryChange(country_r26);
+            return ctx_r29.onCountryChange(country_r27);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 29);
@@ -9202,19 +9202,19 @@
         }
 
         if (rf & 2) {
-          var country_r26 = ctx.$implicit;
+          var country_r27 = ctx.$implicit;
 
-          var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r26.currencyCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r27.currencyCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r26.currencyCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r27.currencyCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r25.addCurrencyImage(country_r26.currencyCode), " alignImage");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r26.addCurrencyImage(country_r27.currencyCode), " alignImage");
         }
       }
 
@@ -9258,18 +9258,18 @@
 
       function PaymentInformationComponent_mat_form_field_16_mat_option_6_Template(rf, ctx) {
         if (rf & 1) {
-          var _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_form_field_16_mat_option_6_Template_mat_option_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r35);
 
-            var country_r31 = ctx.$implicit;
+            var country_r32 = ctx.$implicit;
 
-            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+            var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-            return ctx_r33.onCountryChange(country_r31);
+            return ctx_r34.onCountryChange(country_r32);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 29);
@@ -9288,19 +9288,19 @@
         }
 
         if (rf & 2) {
-          var country_r31 = ctx.$implicit;
+          var country_r32 = ctx.$implicit;
 
-          var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r31.currencyCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", country_r32.currencyCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r31.currencyCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](country_r32.currencyCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r30.addCurrencyImage(country_r31.currencyCode), " alignImage");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("currency-flag currency-flag-", ctx_r31.addCurrencyImage(country_r32.currencyCode), " alignImage");
         }
       }
 
@@ -9344,7 +9344,7 @@
 
       function PaymentInformationComponent_mat_form_field_17_Template(rf, ctx) {
         if (rf & 1) {
-          var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 33);
 
@@ -9357,11 +9357,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_17_Template_input_keyup_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
 
-            var ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r35.OnInput($event);
+            return ctx_r36.OnInput($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
@@ -9382,7 +9382,7 @@
 
       function PaymentInformationComponent_mat_form_field_18_Template(rf, ctx) {
         if (rf & 1) {
-          var _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 33);
 
@@ -9395,11 +9395,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_18_Template_input_keyup_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r38);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r39);
 
-            var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r37.OnInput($event);
+            return ctx_r38.OnInput($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
@@ -9450,19 +9450,19 @@
         }
 
         if (rf & 2) {
-          var id_r40 = ctx.$implicit;
+          var id_r41 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r40.value);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r41.value);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r40.value, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r41.value, " ");
         }
       }
 
       function PaymentInformationComponent_mat_form_field_20_Template(rf, ctx) {
         if (rf & 1) {
-          var _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 37);
 
@@ -9475,11 +9475,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-select", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function PaymentInformationComponent_mat_form_field_20_Template_mat_select_valueChange_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r42);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r43);
 
-            var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r41.chequeType = $event;
+            return ctx_r42.chequeType = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "mat-select-trigger");
@@ -9532,7 +9532,7 @@
 
       function PaymentInformationComponent_mat_form_field_22_Template(rf, ctx) {
         if (rf & 1) {
-          var _r44 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 42);
 
@@ -9545,11 +9545,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_22_Template_input_keyup_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r44);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r45);
 
-            var ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r43.OnInput($event);
+            return ctx_r44.OnInput($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
@@ -9570,7 +9570,7 @@
 
       function PaymentInformationComponent_mat_form_field_23_Template(rf, ctx) {
         if (rf & 1) {
-          var _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 42);
 
@@ -9583,11 +9583,11 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_mat_form_field_23_Template_input_keyup_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r46);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r47);
 
-            var ctx_r45 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+            var ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-            return ctx_r45.OnInput($event);
+            return ctx_r46.OnInput($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
@@ -9616,11 +9616,11 @@
         }
 
         if (rf & 2) {
-          var ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4);
+          var ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r50.paymentForm.get("accountCurrency").value);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r51.paymentForm.get("accountCurrency").value);
         }
       }
 
@@ -9640,28 +9640,28 @@
         }
 
         if (rf & 2) {
-          var id_r53 = ctx.$implicit;
+          var id_r54 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r53.accountNumber);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", id_r54.accountNumber);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r53.accountNumber, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", id_r54.accountNumber, "");
         }
       }
 
       function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_button_10_Template(rf, ctx) {
         if (rf & 1) {
-          var _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r56 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "button", 57);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_button_10_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r55);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r56);
 
-            var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4);
+            var ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4);
 
-            return ctx_r54.addAccount();
+            return ctx_r55.addAccount();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Add Account ");
@@ -9672,13 +9672,13 @@
 
       function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r58 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 51);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Number*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Number5*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -9689,17 +9689,17 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "mat-select", 54);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template_mat_select_selectionChange_5_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r58);
 
-            var ctx_r56 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+            var ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
 
-            return ctx_r56.fetchByAccountNum($event.value);
+            return ctx_r57.fetchByAccountNum($event.value);
           })("valueChange", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_1_Template_mat_select_valueChange_5_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r58);
 
-            var ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+            var ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
 
-            return ctx_r58.selected2 = $event;
+            return ctx_r59.selected2 = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-select-trigger");
@@ -9722,27 +9722,27 @@
         }
 
         if (rf & 2) {
-          var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+          var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r48.displayFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r49.displayFlag);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r48.selected2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r49.selected2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r48.selected2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r49.selected2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r48.accountList);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r49.accountList);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r48.loanType == "loanDisburshment");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r49.loanType == "loanDisburshment");
         }
       }
 
@@ -9756,21 +9756,23 @@
         }
 
         if (rf & 2) {
-          var ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4);
+          var ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r59.paymentForm.get("accountCurrency").value);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r60.paymentForm.get("accountCurrency").value);
         }
       }
 
       function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_2_Template(rf, ctx) {
         if (rf & 1) {
+          var _r62 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 51);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Number*");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account Number2*");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -9778,7 +9780,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, PaymentInformationComponent_mat_card_24_div_1_mat_form_field_2_span_4_Template, 2, 1, "span", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "input", 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "input", 58);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("change", function PaymentInformationComponent_mat_card_24_div_1_mat_form_field_2_Template_input_change_5_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r62);
+
+            var ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+
+            return ctx_r61.fetchByAccountNum($event.target.value);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -9786,11 +9798,11 @@
         }
 
         if (rf & 2) {
-          var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+          var ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r49.displayFlag);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r50.displayFlag);
         }
       }
 
@@ -9806,15 +9818,15 @@
         }
 
         if (rf & 2) {
-          var ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r47.flag1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r48.flag1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r47.flag1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx_r48.flag1);
         }
       }
 
@@ -9922,11 +9934,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Account number4");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 61);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 62);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -9934,7 +9946,7 @@
 
       function PaymentInformationComponent_div_25_mat_form_field_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 63);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
@@ -9942,7 +9954,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 63);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -9950,9 +9962,9 @@
 
       function PaymentInformationComponent_div_25_mat_form_field_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r70 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 63);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
@@ -9960,14 +9972,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 65);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_div_25_mat_form_field_3_Template_input_keyup_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r66);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r70);
 
-            var ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+            var ctx_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-            return ctx_r65.OnInput($event);
+            return ctx_r69.OnInput($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
@@ -9978,19 +9990,19 @@
         }
 
         if (rf & 2) {
-          var ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r62.transAmt, "2."));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r65.transAmt, "2."));
         }
       }
 
       function PaymentInformationComponent_div_25_mat_form_field_4_Template(rf, ctx) {
         if (rf & 1) {
-          var _r68 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+          var _r72 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 65);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 66);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
@@ -9998,14 +10010,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "input", 67);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keyup", function PaymentInformationComponent_div_25_mat_form_field_4_Template_input_keyup_3_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r68);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r72);
 
-            var ctx_r67 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+            var ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
-            return ctx_r67.OnInput($event);
+            return ctx_r71.OnInput($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "number");
@@ -10016,19 +10028,29 @@
         }
 
         if (rf & 2) {
-          var ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+          var ctx_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r63.transAmt, "2."));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](4, 1, ctx_r66.transAmt, "2."));
         }
       }
 
-      function PaymentInformationComponent_div_25_p_5_Template(rf, ctx) {
+      function PaymentInformationComponent_div_25_mat_error_5_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Denomination total should match with the transaction amount ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+      }
+
+      function PaymentInformationComponent_div_25_p_6_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 68);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 69);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
 
@@ -10036,17 +10058,25 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 70);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Exchange Rate :");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Exchange rate : ", ctx_r68.paymentForm.get("exchangeRate").value, "");
         }
       }
 
@@ -10062,7 +10092,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, PaymentInformationComponent_div_25_mat_form_field_4_Template, 5, 4, "mat-form-field", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, PaymentInformationComponent_div_25_p_5_Template, 7, 0, "p", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, PaymentInformationComponent_div_25_mat_error_5_Template, 2, 0, "mat-error", 61);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, PaymentInformationComponent_div_25_p_6_Template, 7, 1, "p", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -10088,15 +10120,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", (ctx_r12.paymentForm.get("rePaymentMode").value == "Cash" || ctx_r12.paymentForm.get("rePaymentMode").value == "Cheque") && ctx_r12.titleVal == "Disbursement" && ctx_r12.accountCurrency != ctx_r12.paymentForm.get("transactionCurrency").value);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r12.isShowDenomError);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r12.displayNegotiated && (ctx_r12.paymentForm.get("rePaymentMode").value == "Cash" || ctx_r12.paymentForm.get("rePaymentMode").value == "Cheque") && ctx_r12.titleVal == "Disbursement" && ctx_r12.accountCurrency != ctx_r12.paymentForm.get("transactionCurrency").value);
         }
       }
 
       function PaymentInformationComponent_p_27_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 68);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 69);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
 
@@ -10104,25 +10140,33 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 70);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Exchange Rate :");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Exchange rate : ", ctx_r13.paymentForm.get("exchangeRate").value, "");
         }
       }
 
       function PaymentInformationComponent_p_28_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 72);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 72);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 73);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
 
@@ -10130,39 +10174,65 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 70);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Exchange Rate :");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
+
+        if (rf & 2) {
+          var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Exchange rate : ", ctx_r14.paymentForm.get("exchangeRate").value, "");
+        }
       }
 
-      function PaymentInformationComponent_mat_form_field_29_Template(rf, ctx) {
+      function PaymentInformationComponent_p_29_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 73);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p", 72);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-form-field", 73);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Charge amount");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Negotiated Rate");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 70);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "span", 71);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Exchange rate : ", ctx_r15.paymentForm.get("exchangeRate").value, "");
         }
       }
 
       function PaymentInformationComponent_mat_form_field_30_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 74);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
@@ -10170,7 +10240,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 75);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -10178,15 +10248,15 @@
 
       function PaymentInformationComponent_mat_form_field_31_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 73);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 76);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Transaction amount");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Charge amount");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 75);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -10194,7 +10264,7 @@
 
       function PaymentInformationComponent_mat_form_field_32_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 75);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 74);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
 
@@ -10202,7 +10272,23 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 76);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 77);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+      }
+
+      function PaymentInformationComponent_mat_form_field_33_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 76);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total Transaction amount");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "input", 77);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -10270,6 +10356,7 @@
             display: false
           }];
           this.displayNegotiated = false;
+          this.isShowDenomError = false;
 
           this.onChange = function () {};
 
@@ -10305,12 +10392,12 @@
               rePaymentMode: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
               transactionCurrency: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
               loanRepaymentAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
-              loanDisburshmentAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+              loanDisburshmentAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
               chequeType: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
               nameOfTheCheque: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
               negotiatedRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-              totalChargeAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-              totalTransactionAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+              totalChargeAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
+              totalTransactionAmount: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
               exchangeRate: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
               accountNumber: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
               accountBalance: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
@@ -10352,7 +10439,10 @@
                 _this38.getChargeDetails(_this38.loanData[0].loanAccountId, "");
 
                 if (_this38.custValidation == 'New Customer' || _this38.custNameFromLogin != null) {
-                  _this38.setWalkinCustomerData(_this38.loanData);
+                  _this38.setWalkinCustomerData(_this38.loanData); // this.fetchDisbursementAccInfo();
+
+
+                  _this38.showAccountNum = true;
                 }
               }
             });
@@ -10474,6 +10564,7 @@
 
             if (this.accountCurrency != this.paymentForm.controls.transactionCurrency.value) {
               this.displayNegotiated = true;
+              this.fetchExchangeRateForCurrency(currency, this.accountCurrency);
             } else {
               this.displayNegotiated = false;
             }
@@ -10498,7 +10589,8 @@
           value: function fetchByAccountNum(accNum) {
             var _this40 = this;
 
-            this.flag1 = true;
+            console.log(accNum); // this.flag1 = true;
+
             this.displayFlag = true;
             this.ifQRvariable = true;
 
@@ -10657,6 +10749,7 @@
 
               if (parseFloat(this.disbursedTotalAmount) < parseFloat(this.repaymentAmount)) {
                 console.log("Biggerrrr");
+                this.isShowDenomError = true;
                 this.snack.open("Loan Disbursement amount should not exceed Sanctioned outstanding", "OK", {
                   duration: 2000,
                   verticalPosition: "top",
@@ -10679,8 +10772,8 @@
 
               if (this.paymentForm.controls.transactionCurrency.value != this.accountCurrency) {
                 console.log(this.accountCurrency);
-                console.log(this.chargeDetails[0].amount);
-                this.totalTransAmount = Number(this.paymentForm.controls.transactionAmount.value ? this.paymentForm.controls.transactionAmount.value.replace(/\,/g, '') : 0) * Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value) + Number(this.chargeDetails[0].amount);
+                console.log(this.paymentForm.controls.totalChargeAmount.value);
+                this.totalTransAmount = Number(this.paymentForm.controls.loanRepaymentAmount.value ? this.paymentForm.controls.loanRepaymentAmount.value.replace(/\,/g, '') : 0) * Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value) + Number(this.paymentForm.controls.totalChargeAmount.value);
                 console.log("line 786 on input()", this.totalTransAmount); //this.totalTransAmount=this.totalTransAmount * Number(this.transactionForm.controls.negotiatedRate.value?this.transactionForm.controls.negotiatedRate.value:this.transactionForm.controls.exchangeRate.value);
 
                 this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
@@ -10695,9 +10788,8 @@
               }
 
               if (this.paymentForm.controls.transactionCurrency.value != this.accountCurrency) {
-                console.log(this.accountCurrency);
-                console.log(this.chargeDetails[0].amount);
-                this.totalTransAmount = Number(this.paymentForm.controls.transactionAmount.value ? this.paymentForm.controls.transactionAmount.value.replace(/\,/g, '') : 0) * Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value) + Number(this.chargeDetails[0].amount);
+                console.log(this.paymentForm.get('totalChargeAmount').value);
+                this.totalTransAmount = Number(this.paymentForm.controls.loanDisburshmentAmount.value ? this.paymentForm.controls.loanDisburshmentAmount.value.replace(/\,/g, '') : 0) * Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value) + Number(this.paymentForm.get('totalChargeAmount').value);
                 console.log("line 786 on input()", this.totalTransAmount); //this.totalTransAmount=this.totalTransAmount * Number(this.transactionForm.controls.negotiatedRate.value?this.transactionForm.controls.negotiatedRate.value:this.transactionForm.controls.exchangeRate.value);
 
                 this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
@@ -10705,22 +10797,71 @@
             }
           }
         }, {
+          key: "fetchExchangeRateForCurrency",
+          value: function fetchExchangeRateForCurrency(currency, accountCurrency) {
+            var _this41 = this;
+
+            console.log(currency, accountCurrency);
+            this.apiService.fetchExchangeRateForCurrency(currency, accountCurrency).subscribe(function (resp) {
+              console.log(resp);
+              _this41.exchangerateResp = resp;
+              console.log(_this41.exchangerateResp);
+
+              if (_this41.exchangerateResp) {
+                _this41.paymentForm.get('exchangeRate').patchValue(_this41.exchangerateResp[0].buyRate);
+              }
+
+              setTimeout(function () {
+                if (_this41.paymentForm.controls.transactionCurrency.value == _this41.accountCurrency) {
+                  if (_this41.titleVal === 'Disbursement') {
+                    _this41.totalTransAmount = Number(_this41.paymentForm.controls.loanDisburshmentAmount.value ? _this41.paymentForm.controls.loanDisburshmentAmount.value : 0) + Number(_this41.chargeDetails[0].amount);
+
+                    _this41.paymentForm.controls.totalTransactionAmount.setValue(_this41.totalTransAmount);
+                  }
+
+                  if (_this41.titleVal === 'Repayment') {
+                    _this41.totalTransAmount = Number(_this41.paymentForm.controls.loanRepaymentAmount.value ? _this41.paymentForm.controls.loanRepaymentAmount.value : 0) + Number(_this41.chargeDetails[0].amount);
+
+                    _this41.paymentForm.controls.totalTransactionAmount.setValue(_this41.totalTransAmount);
+                  }
+                } else {
+                  _this41.displayWithNegotiate();
+                }
+              }, 10);
+            });
+          }
+        }, {
+          key: "displayWithNegotiate",
+          value: function displayWithNegotiate() {
+            if (this.paymentForm.controls.transactionCurrency.value != this.accountCurrency) {
+              if (this.titleVal === 'Disbursement') {
+                this.totalTransAmount = Number(this.paymentForm.controls.loanDisburshmentAmount.value ? this.paymentForm.controls.loanDisburshmentAmount.value.replace(/\,/g, '') : 0) * Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value) + Number(this.chargeDetails[0].amount);
+                this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+              }
+
+              if (this.titleVal === 'Repayment') {
+                this.totalTransAmount = Number(this.paymentForm.controls.loanRepaymentAmount.value ? this.paymentForm.controls.loanRepaymentAmount.value.replace(/\,/g, '') : 0) * Number(this.paymentForm.controls.negotiatedRate.value ? this.paymentForm.controls.negotiatedRate.value : this.paymentForm.controls.exchangeRate.value) + Number(this.chargeDetails[0].amount);
+                this.paymentForm.controls.totalTransactionAmount.setValue(this.totalTransAmount);
+              }
+            }
+          }
+        }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this41 = this;
+            var _this42 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
               var _a;
 
-              _this41.countryValues = allCountryValues;
-              console.log(_this41.countryValues);
+              _this42.countryValues = allCountryValues;
+              console.log(_this42.countryValues);
 
-              if (_this41.custValidation == 'New Customer' || _this41.custNameFromLogin != null) {
-                _this41.paymentForm.controls.rePaymentMode.patchValue('Cash');
+              if (_this42.custValidation == 'New Customer' || _this42.custNameFromLogin != null) {
+                _this42.paymentForm.controls.rePaymentMode.patchValue('Cash');
               }
 
-              if ((_a = _this41.loanRepaymentFullData) === null || _a === void 0 ? void 0 : _a.appointmentId) {
-                _this41.paymentForm.controls.rePaymentMode.setValue(_this41.loanRepaymentFullData.modeInfo[0].rePaymentMode); // this.setAppointmentIdData(this.loanRepaymentFullData);
+              if ((_a = _this42.loanRepaymentFullData) === null || _a === void 0 ? void 0 : _a.appointmentId) {
+                _this42.paymentForm.controls.rePaymentMode.setValue(_this42.loanRepaymentFullData.modeInfo[0].rePaymentMode); // this.setAppointmentIdData(this.loanRepaymentFullData);
 
               }
             });
@@ -10728,32 +10869,32 @@
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this42 = this;
+            var _this43 = this;
 
             // this.accountCurrency='INR';
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
-              _this42.chargeDetails = resp; // this.chargeDetails=this.chargeDetails ? this.chargeDetails[0].amount : "10"
+              _this43.chargeDetails = resp; // this.chargeDetails=this.chargeDetails ? this.chargeDetails[0].amount : "10"
 
-              console.log(_this42.chargeDetails);
+              console.log(_this43.chargeDetails);
 
-              _this42.paymentForm.controls.totalChargeAmount.setValue(_this42.chargeDetails ? _this42.chargeDetails[0].amount : "10");
+              _this43.paymentForm.controls.totalChargeAmount.setValue(_this43.chargeDetails ? _this43.chargeDetails[0].amount : "10");
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                if (_this42.paymentForm.controls.transactionCurrency.value == _this42.accountCurrency) {
-                  console.log(_this42.accountCurrency);
-                  _this42.totalTransAmount = Number(_this42.cashData.transactionAmount) + Number(10);
+                if (_this43.paymentForm.controls.transactionCurrency.value == _this43.accountCurrency) {
+                  console.log(_this43.accountCurrency);
+                  _this43.totalTransAmount = Number(_this43.cashData.transactionAmount) + Number(10);
 
-                  _this42.paymentForm.controls.totalTransactionAmount.setValue(_this42.totalTransAmount);
+                  _this43.paymentForm.controls.totalTransactionAmount.setValue(_this43.totalTransAmount);
                 }
 
-                if (_this42.paymentForm.controls.transactionCurrency.value != _this42.accountCurrency) {
-                  console.log(_this42.accountCurrency);
-                  _this42.totalTransAmount = Number(_this42.cashData.transactionAmount) * Number(_this42.paymentForm.controls.negotiatedRate.value ? _this42.paymentForm.controls.negotiatedRate.value : _this42.paymentForm.controls.exchangeRate.value) + Number(10);
-                  console.log("line 845 getchrgedetails", _this42.totalTransAmount);
+                if (_this43.paymentForm.controls.transactionCurrency.value != _this43.accountCurrency) {
+                  console.log(_this43.accountCurrency);
+                  _this43.totalTransAmount = Number(_this43.cashData.transactionAmount) * Number(_this43.paymentForm.controls.negotiatedRate.value ? _this43.paymentForm.controls.negotiatedRate.value : _this43.paymentForm.controls.exchangeRate.value) + Number(10);
+                  console.log("line 845 getchrgedetails", _this43.totalTransAmount);
 
-                  _this42.paymentForm.controls.totalTransactionAmount.setValue(_this42.totalTransAmount);
+                  _this43.paymentForm.controls.totalTransactionAmount.setValue(_this43.totalTransAmount);
                 }
               }, 1000);
               this.cdr.markForCheck();
@@ -10763,10 +10904,10 @@
               amount = 0;
               console.log(this.paymentForm.controls.totalChargeAmount.value);
               setTimeout(function () {
-                _this42.totalTransAmount = Number(_this42.paymentForm.controls.loanRepaymentAmount.value ? _this42.paymentForm.controls.loanRepaymentAmount.value : amount) + Number(_this42.chargeDetails ? _this42.chargeDetails[0].amount : "10");
-                console.log(_this42.totalTransAmount);
+                _this43.totalTransAmount = Number(_this43.paymentForm.controls.loanRepaymentAmount.value ? _this43.paymentForm.controls.loanRepaymentAmount.value : amount) + Number(_this43.chargeDetails ? _this43.chargeDetails[0].amount : "10");
+                console.log(_this43.totalTransAmount);
 
-                _this42.paymentForm.controls.totalTransactionAmount.setValue(_this42.totalTransAmount);
+                _this43.paymentForm.controls.totalTransactionAmount.setValue(_this43.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -10776,18 +10917,18 @@
         }, {
           key: "fetchDisbursementAccInfo",
           value: function fetchDisbursementAccInfo() {
-            var _this43 = this;
+            var _this44 = this;
 
             this.apiService.fetchDisbursementAccInfo(this.currentUser).subscribe(function (res) {
               if ((res === null || res === void 0 ? void 0 : res.status) == 200) {
-                _this43.accountList = res === null || res === void 0 ? void 0 : res.data.reverse();
+                _this44.accountList = res === null || res === void 0 ? void 0 : res.data.reverse();
               } else {
-                _this43.accountList = [];
+                _this44.accountList = [];
 
-                _this43.snack.open(res === null || res === void 0 ? void 0 : res.message);
+                _this44.snack.open(res === null || res === void 0 ? void 0 : res.message);
               }
             }, function (err) {
-              _this43.snack.open(err);
+              _this44.snack.open(err);
             });
           }
         }, {
@@ -11009,7 +11150,8 @@
 
             console.log(loanData);
             this.currencyImage = loanData[0].accountCurrency ? "currency-flag-" + loanData[0].accountCurrency.toLowerCase() : "currency-flag-" + loanData[0].accountCurrency.toLowerCase();
-            this.paymentForm.controls.transactionCurrency.setValue(loanData[0].accountCurrency);
+            this.paymentForm.get('transactionCurrency').patchValue(loanData[0].accountCurrency); //  this.paymentForm.controls.transactionCurrency.patchValue(loanData[0].accountCurrency);
+
             this.paymentForm.controls.rePaymentMode.setValue('Cash');
             this.accountCurrency = loanData[0].accountCurrency;
 
@@ -11053,9 +11195,9 @@
           }),
           multi: true
         }])],
-        decls: 33,
-        vars: 21,
-        consts: [[1, "flex", "justify-center"], [2, "flex-direction", "column", 3, "formGroup"], [1, "flex-1", "flex-row"], [1, "accountHeader"], ["fxFlex", "100%", 1, "flex", "flex-row", 2, "margin-left", "-30px"], [2, "font-size", "12px"], ["color", "primary", "formControlName", "rePaymentMode", "aria-label", "Select an option", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [2, "display", "flex", "flex-direction", "column"], [2, "display", "flex", "flex-direction", "row"], ["fxFlex", "110", "fxLayoutGap", "4px", 3, "ngClass"], ["fxFlex", "110", "appearance", "outline", 4, "ngIf"], ["fxFlex", "33", "appearance", "outline", 4, "ngIf"], ["appearance", "outline", "fxFlex", "65", 4, "ngIf"], ["appearance", "outline", "fxFlex", "32.2", 4, "ngIf"], ["appearance", "outline", "fxFlex", "98", 4, "ngIf"], ["class", "accountInfoCard", "fxFlex", "100", 4, "ngIf"], ["style", "\n          display: flex;\n          flex-direction: row;\n          margin-left: 10px;\n          margin-top: 5px;\n        ", "fxLayoutGap", "4px", 4, "ngIf"], ["fxLayoutGap", "4px", 2, "display", "flex", "flex-direction", "row", "margin-left", "10px", "margin-top", "5px"], ["fxLayout", "column", "fxFlex", "33", 4, "ngIf"], ["fxLayout", "column", "fxFlex", "35", 4, "ngIf"], ["fxFlex", "32.2", "style", "font-size: 11px", "appearance", "outline", 4, "ngIf"], ["fxFlex", "31", "style", "font-size: 11px", "appearance", "outline", 4, "ngIf"], [3, "value"], ["fxFlex", "110", "appearance", "outline"], ["fxFlex", "10%"], ["placeholder", "Select Transaction Currency", "formControlName", "transactionCurrency"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "5%", "margin-left", "4%"], ["fxFlex", "33", "appearance", "outline"], ["formControlName", "transactionCurrency"], ["appearance", "outline", "fxFlex", "65"], ["matInput", "", "type", "text", "formControlName", "loanRepaymentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "loanDisburshmentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "chequeNumber", 1, "full-width"], ["appearance", "outline", "fxFlex", "32.2"], ["formControlName", "chequeType", "optionDisableCentering", "", 3, "value", "valueChange"], [1, "selection-icon"], [1, "actionIcon"], ["matInput", "", "type", "text", "formControlName", "nameOfTheCheque", 1, "full-width"], ["appearance", "outline", "fxFlex", "98"], ["fxFlex", "100", 1, "accountInfoCard"], ["style", "font-size: 10px", "fxFlex", "100%", 4, "ngIf"], ["fxLayout", "row", 2, "justify-content", "space-between", "display", "inline"], ["fxLayout", "column"], [1, "totalAmount"], [1, "hint"], ["fxFlex", "100%", 2, "font-size", "10px"], ["appearance", "outline", "style", "border-radius: 12px; line-height: 17px", "fxFlex", "100", 4, "ngIf"], ["appearance", "outline", "fxFlex", "100", 2, "border-radius", "12px", "line-height", "17px"], [2, "display", "flex"], ["class", "currency_code", 4, "ngIf"], ["formControlName", "accountNumber", "optionDisableCentering", "", 3, "value", "selectionChange", "valueChange"], ["class", "buttonStyle", "mat-button", "", "matSuffix", "", "mat-stroked-button", "", 3, "click", 4, "ngIf"], [1, "currency_code"], ["mat-button", "", "matSuffix", "", "mat-stroked-button", "", 1, "buttonStyle", 3, "click"], ["matInput", "", "type", "text", "formControlName", "accountNumber", 1, "full-width"], ["fxFlex", "32.2", "appearance", "outline", 4, "ngIf"], ["fxFlex", "65", "appearance", "outline", 4, "ngIf"], ["matInput", "", "placeholder", "Account number", "formControlName", "accountNumber"], ["fxFlex", "32.2", "appearance", "outline"], ["matInput", "", "placeholder", "Account Bank/Branch", "formControlName", "accountBranch"], ["matInput", "", "placeholder", "Loan Repayment amount", "formControlName", "loanRepaymentAmount", 3, "value", "keyup"], ["fxFlex", "65", "appearance", "outline"], ["matInput", "", "placeholder", "Loan Disbursement amount", "formControlName", "loanDisburshmentAmount", 3, "value", "keyup"], ["fxLayout", "column", "fxFlex", "33"], ["fxFlex", "33", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Negotiated Rate", "formControlName", "negotiatedRate"], [2, "margin-top", "5%", "font-size", "10px", "font-weight", "bold", "margin-left", "8px"], ["fxLayout", "column", "fxFlex", "35"], ["fxFlex", "40", "appearance", "outline", 2, "font-size", "11px"], ["fxFlex", "32.2", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Charge amount", "formControlName", "totalChargeAmount"], ["fxFlex", "31", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Transaction amount", "formControlName", "totalTransactionAmount"]],
+        decls: 34,
+        vars: 22,
+        consts: [[1, "flex", "justify-center"], [2, "flex-direction", "column", 3, "formGroup"], [1, "flex-1", "flex-row"], [1, "accountHeader"], ["fxFlex", "100%", 1, "flex", "flex-row", 2, "margin-left", "-30px"], [2, "font-size", "12px"], ["color", "primary", "formControlName", "rePaymentMode", "aria-label", "Select an option", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [2, "display", "flex", "flex-direction", "column"], [2, "display", "flex", "flex-direction", "row"], ["fxFlex", "110", "fxLayoutGap", "4px", 3, "ngClass"], ["fxFlex", "110", "appearance", "outline", 4, "ngIf"], ["fxFlex", "33", "appearance", "outline", 4, "ngIf"], ["appearance", "outline", "fxFlex", "65", 4, "ngIf"], ["appearance", "outline", "fxFlex", "32.2", 4, "ngIf"], ["appearance", "outline", "fxFlex", "98", 4, "ngIf"], ["class", "accountInfoCard", "fxFlex", "100", 4, "ngIf"], ["style", "\n          display: flex;\n          flex-direction: row;\n          margin-left: 10px;\n          margin-top: 5px;\n        ", "fxLayoutGap", "4px", 4, "ngIf"], ["fxLayoutGap", "4px", 2, "display", "flex", "flex-direction", "row", "margin-left", "10px", "margin-top", "5px"], ["fxLayout", "column", "fxFlex", "33", 4, "ngIf"], ["fxLayout", "column", "fxFlex", "35", 4, "ngIf"], ["fxFlex", "32.2", "style", "font-size: 11px", "appearance", "outline", "class", "mat_form_field_margin", 4, "ngIf"], ["fxFlex", "31", "style", "font-size: 11px", "appearance", "outline", "class", "mat_form_field_margin", 4, "ngIf"], [3, "value"], ["fxFlex", "110", "appearance", "outline"], ["fxFlex", "10%"], ["placeholder", "Select Transaction Currency", "formControlName", "transactionCurrency"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"], ["fxLayout", "row wrap"], [2, "margin-top", "5%", "margin-left", "4%"], ["fxFlex", "33", "appearance", "outline"], ["formControlName", "transactionCurrency"], ["appearance", "outline", "fxFlex", "65"], ["matInput", "", "type", "text", "formControlName", "loanRepaymentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "loanDisburshmentAmount", 1, "full-width", 3, "value", "keyup"], ["matInput", "", "type", "text", "formControlName", "chequeNumber", 1, "full-width"], ["appearance", "outline", "fxFlex", "32.2"], ["formControlName", "chequeType", "optionDisableCentering", "", 3, "value", "valueChange"], [1, "selection-icon"], [1, "actionIcon"], ["matInput", "", "type", "text", "formControlName", "nameOfTheCheque", 1, "full-width"], ["appearance", "outline", "fxFlex", "98"], ["fxFlex", "100", 1, "accountInfoCard"], ["style", "font-size: 10px", "fxFlex", "100%", 4, "ngIf"], ["fxLayout", "row", 2, "justify-content", "space-between", "display", "inline"], ["fxLayout", "column"], [1, "totalAmount"], [1, "hint"], ["fxFlex", "100%", 2, "font-size", "10px"], ["appearance", "outline", "style", "border-radius: 12px; line-height: 17px", "fxFlex", "100", 4, "ngIf"], ["appearance", "outline", "fxFlex", "100", 2, "border-radius", "12px", "line-height", "17px"], [2, "display", "flex"], ["class", "currency_code", 4, "ngIf"], ["formControlName", "accountNumber", "optionDisableCentering", "", 3, "value", "selectionChange", "valueChange"], ["class", "buttonStyle", "mat-button", "", "matSuffix", "", "mat-stroked-button", "", 3, "click", 4, "ngIf"], [1, "currency_code"], ["mat-button", "", "matSuffix", "", "mat-stroked-button", "", 1, "buttonStyle", 3, "click"], ["matInput", "", "type", "text", "formControlName", "accountNumber", 1, "full-width", 3, "change"], ["fxFlex", "32.2", "appearance", "outline", 4, "ngIf"], ["fxFlex", "65", "appearance", "outline", 4, "ngIf"], [4, "ngIf"], ["matInput", "", "placeholder", "Account number", "formControlName", "accountNumber"], ["fxFlex", "32.2", "appearance", "outline"], ["matInput", "", "placeholder", "Account Bank/Branch", "formControlName", "accountBranch"], ["matInput", "", "placeholder", "Loan Repayment amount", "formControlName", "loanRepaymentAmount", 3, "value", "keyup"], ["fxFlex", "65", "appearance", "outline"], ["matInput", "", "placeholder", "Loan Disbursement amount", "formControlName", "loanDisburshmentAmount", 3, "value", "keyup"], ["fxLayout", "column", "fxFlex", "33"], ["fxFlex", "33", "appearance", "outline", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Negotiated Rate", "formControlName", "negotiatedRate"], [2, "margin-top", "5%", "font-size", "10px", "font-weight", "bold", "margin-left", "8px"], ["fxLayout", "column", "fxFlex", "35"], ["fxFlex", "40", "appearance", "outline", 2, "font-size", "11px"], ["fxFlex", "32.2", "appearance", "outline", 1, "mat_form_field_margin", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Charge amount", "formControlName", "totalChargeAmount"], ["fxFlex", "31", "appearance", "outline", 1, "mat_form_field_margin", 2, "font-size", "11px"], ["matInput", "", "placeholder", "Total Transaction amount", "formControlName", "totalTransactionAmount"]],
         template: function PaymentInformationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -11126,21 +11268,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](25, PaymentInformationComponent_div_25_Template, 6, 5, "div", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](25, PaymentInformationComponent_div_25_Template, 7, 6, "div", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "div", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](27, PaymentInformationComponent_p_27_Template, 7, 0, "p", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](27, PaymentInformationComponent_p_27_Template, 7, 1, "p", 19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](28, PaymentInformationComponent_p_28_Template, 7, 0, "p", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](28, PaymentInformationComponent_p_28_Template, 7, 1, "p", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](29, PaymentInformationComponent_mat_form_field_29_Template, 4, 0, "mat-form-field", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](29, PaymentInformationComponent_p_29_Template, 7, 1, "p", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](30, PaymentInformationComponent_mat_form_field_30_Template, 4, 0, "mat-form-field", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](30, PaymentInformationComponent_mat_form_field_30_Template, 4, 0, "mat-form-field", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](31, PaymentInformationComponent_mat_form_field_31_Template, 4, 0, "mat-form-field", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](31, PaymentInformationComponent_mat_form_field_31_Template, 4, 0, "mat-form-field", 22);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](32, PaymentInformationComponent_mat_form_field_32_Template, 4, 0, "mat-form-field", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](32, PaymentInformationComponent_mat_form_field_32_Template, 4, 0, "mat-form-field", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](33, PaymentInformationComponent_mat_form_field_33_Template, 4, 0, "mat-form-field", 22);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -11214,11 +11358,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.displayNegotiated);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.displayNegotiated && ctx.paymentForm.get("rePaymentMode").value != "Cheque");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "Account" && ctx.accountCurrency != ctx.paymentForm.get("transactionCurrency").value);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.displayNegotiated && ctx.paymentForm.get("rePaymentMode").value == "Cheque" && ctx.accountCurrency != ctx.paymentForm.get("transactionCurrency").value);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx.displayNegotiated && ctx.paymentForm.get("rePaymentMode").value == "Account" && ctx.accountCurrency != ctx.paymentForm.get("transactionCurrency").value);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
@@ -11237,7 +11385,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.paymentForm.get("rePaymentMode").value == "Account");
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardTitle"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatLabel"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_12__["DefaultClassDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgIf"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormField"], _angular_material_select__WEBPACK_IMPORTED_MODULE_13__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_14__["MatOption"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutDirective"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_select__WEBPACK_IMPORTED_MODULE_13__["MatSelectTrigger"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatHint"], _angular_material_button__WEBPACK_IMPORTED_MODULE_17__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatSuffix"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardTitle"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultFlexDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatLabel"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgForOf"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutGapDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgClass"], _angular_flex_layout_extended__WEBPACK_IMPORTED_MODULE_12__["DefaultClassDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["NgIf"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormField"], _angular_material_select__WEBPACK_IMPORTED_MODULE_13__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_14__["MatOption"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_9__["DefaultLayoutDirective"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_select__WEBPACK_IMPORTED_MODULE_13__["MatSelectTrigger"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCard"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatHint"], _angular_material_button__WEBPACK_IMPORTED_MODULE_17__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatSuffix"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatError"]],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DecimalPipe"]],
         styles: [".accountHeader[_ngcontent-%COMP%] {\n  font-size: 15px;\n  color: var(--unnamed-color-004c97);\n  text-align: left;\n  font-family: \"Poppins\", Medium;\n  letter-spacing: -0.38px;\n  color: #004C97;\n  opacity: 1;\n  width: 900px;\n}\n\n.trnTypeColorBlue[_ngcontent-%COMP%] {\n  color: #004C97;\n}\n\n.trnTypeColorBlack[_ngcontent-%COMP%] {\n  color: #000000;\n}\n\n .egret-navy .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {\n  border-color: #004C97;\n  font-size: 10px;\n}\n\n .egret-navy .mat-radio-button.mat-primary .mat-radio-inner-circle {\n  background-color: #004C97;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: smaller;\n  color: #102245;\n}\n\n.hint[_ngcontent-%COMP%] {\n  text-transform: capitalize;\n  font-weight: 600;\n  margin-left: 1%;\n  margin-bottom: 0;\n}\n\n.accountInfoCard[_ngcontent-%COMP%] {\n  background: #f2f2f2 0% 0% no-repeat padding-box;\n  border-radius: 18px;\n  box-shadow: unset !important;\n  margin-left: -0.2px;\n  display: flex;\n  flex-direction: column;\n  flex: 1 1 170% !important;\n}\n\n.actionIcon[_ngcontent-%COMP%]:hover {\n  color: #004C97;\n}\n\n.filterDropDown[_ngcontent-%COMP%]:hover   .actionIcon[_ngcontent-%COMP%] {\n  color: #004C97 !important;\n}\n\n.recent_transName[_ngcontent-%COMP%]   .actionIcon[_ngcontent-%COMP%]:hover {\n  color: red;\n}\n\n.selection-icon[_ngcontent-%COMP%] {\n  position: relative;\n  top: 6px;\n  margin-right: 16px;\n  display: none;\n}\n\n.currency_code[_ngcontent-%COMP%] {\n  background-color: #004C9724;\n  border: 2px solid #004c97;\n  border-radius: 4px;\n  padding: 1px 4px;\n  font-size: 9px;\n  color: #004c97;\n  font-weight: 600;\n  margin-left: 13px;\n}\n\n.totalAmount[_ngcontent-%COMP%] {\n  font-size: smaller;\n  color: #102245;\n  opacity: 70%;\n}\n\n.mat-radio-button[_ngcontent-%COMP%]    ~ .mat-radio-button[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.hint[_ngcontent-%COMP%] {\n  text-transform: capitalize;\n  font-weight: 600;\n  margin-left: 1%;\n  margin-bottom: 0;\n  font-size: 11px;\n}\n\n.acBranch[_ngcontent-%COMP%] {\n  margin-right: 55px;\n}\n\n.maincontainer[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n  .mat-form-field-appearance-outline.mat_form_field_margin .mat-form-field-outline {\n  background-color: #F2F2F2;\n}\n\n .mat-form-field-appearance-outline .mat-form-field-wrapper {\n  margin: -0.45em 0 !important;\n}\n\nmat-label[_ngcontent-%COMP%] {\n  font-family: \"Poppins\", Medium !important;\n  color: #707070 !important;\n  margin-left: 3% !important;\n}\n\n.firstWrapper1[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column !important;\n  justify-content: space-around;\n  margin-left: 10px;\n  margin-top: 30px;\n}\n\n.firstWrapper2[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  margin-left: 10px;\n  margin-top: 25px;\n}\n\n.firstWrapper3[_ngcontent-%COMP%] {\n  flex-direction: row;\n  flex-wrap: wrap;\n  margin-left: 10px;\n  width: 100%;\n}\n\n.acBranch[_ngcontent-%COMP%] {\n  margin-right: 55px;\n}\n\n  .egret-navy .mat-radio-button.mat-primary.mat-radio-checked {\n  color: #004C97 !important;\n}\n\n.buttonStyle[_ngcontent-%COMP%] {\n  background-image: linear-gradient(90deg, #051A2D, #004C97) !important;\n  color: white;\n  border-radius: 10px;\n  top: -3px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxccGF5bWVudC1pbmZvcm1hdGlvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGVBQUE7RUFDQSxrQ0FBQTtFQUNBLGdCQUFBO0VBQ0EsOEJBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUNFO0VBQ0UsY0FBQTtBQUVKOztBQUFFO0VBQ0UsY0FBQTtBQUdKOztBQUFFO0VBQ0UscUJBQUE7RUFDQSxlQUFBO0FBR0o7O0FBQUU7RUFFQSx5QkFBQTtBQUVGOztBQUNBO0VBQ0Usa0JBQUE7RUFFQSxjQUFBO0FBQ0Y7O0FBR0E7RUFDRSwwQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0FBQUY7O0FBR0E7RUFDRSwrQ0FBQTtFQUNBLG1CQUFBO0VBQ0EsNEJBQUE7RUFFQSxtQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0FBREY7O0FBSUE7RUFDRSxjQUFBO0FBREY7O0FBSUE7RUFDRSx5QkFBQTtBQURGOztBQUdBO0VBQ0UsVUFBQTtBQUFGOztBQUVBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBQ0E7RUFDRSwyQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFFQSxpQkFBQTtBQUNGOztBQUNBO0VBQ0Usa0JBQUE7RUFFQSxjQUFBO0VBQ0EsWUFBQTtBQUNGOztBQUVBO0VBQ0UsZ0JBQUE7QUFDRjs7QUFDQTtFQUNFLDBCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0FBRUY7O0FBQUE7RUFDRSxrQkFBQTtBQUdGOztBQURBO0VBQ0UsZ0JBQUE7QUFJRjs7QUFGQTtFQUNFLHlCQUFBO0FBS0Y7O0FBSEE7RUFDRSw0QkFBQTtBQU1GOztBQUpBO0VBQ0UseUNBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBT0Y7O0FBTEE7RUFDRSxhQUFBO0VBQ0EsaUNBQUE7RUFFQSw2QkFBQTtFQUVBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFNRjs7QUFIQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUdBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBSUY7O0FBRkE7RUFFRSxtQkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUdBLFdBQUE7QUFFRjs7QUFHQTtFQUNFLGtCQUFBO0FBQUY7O0FBRUE7RUFDRSx5QkFBQTtBQUNGOztBQUdBO0VBQ0UscUVBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSxTQUFBO0FBQUYiLCJmaWxlIjoicGF5bWVudC1pbmZvcm1hdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hY2NvdW50SGVhZGVyIHtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIGNvbG9yOiB2YXIoLS11bm5hbWVkLWNvbG9yLTAwNGM5Nyk7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgTWVkaXVtO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IC0wLjM4cHg7XHJcbiAgICBjb2xvcjogIzAwNEM5NztcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICB3aWR0aDogOTAwcHg7XHJcbiAgfVxyXG4gIC50cm5UeXBlQ29sb3JCbHVle1xyXG4gICAgY29sb3I6ICMwMDRDOTc7XHJcbiAgfVxyXG4gIC50cm5UeXBlQ29sb3JCbGFja3tcclxuICAgIGNvbG9yOiAjMDAwMDAwO1xyXG4gIFxyXG4gIH1cclxuICA6Om5nLWRlZXAuZWdyZXQtbmF2eSAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtcHJpbWFyeS5tYXQtcmFkaW8tY2hlY2tlZCAubWF0LXJhZGlvLW91dGVyLWNpcmNsZXtcclxuICAgIGJvcmRlci1jb2xvcjogIzAwNEM5NztcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICB9XHJcblxyXG4gIDo6bmctZGVlcC5lZ3JldC1uYXZ5IC5tYXQtcmFkaW8tYnV0dG9uLm1hdC1wcmltYXJ5IC5tYXQtcmFkaW8taW5uZXItY2lyY2xlXHJcbntcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Qzk3O1xyXG4gXHJcbn1cclxuLnRvdGFsQW1vdW50IHtcclxuICBmb250LXNpemU6IHNtYWxsZXI7XHJcbiAgLy8gY29sb3I6ICMzMDQxNTY7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcblxyXG4gIC8vIHBhZGRpbmctbGVmdDogMTBweDtcclxufVxyXG4uaGludCB7XHJcbiAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBtYXJnaW4tbGVmdDogMSU7XHJcbiAgbWFyZ2luLWJvdHRvbTogMDtcclxuICAvLyBmb250LXNpemU6IDEzcHg7XHJcbn1cclxuLmFjY291bnRJbmZvQ2FyZCB7XHJcbiAgYmFja2dyb3VuZDogI2YyZjJmMiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICBib3gtc2hhZG93OiB1bnNldCAhaW1wb3J0YW50O1xyXG4gIC8vIG1hcmdpbi10b3A6IC0wLjVweDtcclxuICBtYXJnaW4tbGVmdDogLTAuMnB4O1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBmbGV4OiAxIDEgMTcwJSAhaW1wb3J0YW50O1xyXG4vLyBoZWlnaHQ6IDExMHB4O1xyXG59XHJcbi5hY3Rpb25JY29uOmhvdmVyIHtcclxuICBjb2xvcjogIzAwNEM5NztcclxufVxyXG5cclxuLmZpbHRlckRyb3BEb3duOmhvdmVyIC5hY3Rpb25JY29uIHtcclxuICBjb2xvcjogIzAwNEM5NyAhaW1wb3J0YW50O1xyXG59XHJcbi5yZWNlbnRfdHJhbnNOYW1lIC5hY3Rpb25JY29uOmhvdmVyIHtcclxuICBjb2xvcjogcmVkXHJcbn1cclxuLnNlbGVjdGlvbi1pY29uIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgdG9wOiA2cHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxNnB4O1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuLmN1cnJlbmN5X2NvZGUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDRDOTcyNDtcclxuICBib3JkZXI6IDJweCBzb2xpZCAjMDA0Yzk3O1xyXG4gIGJvcmRlci1yYWRpdXM6IDRweDtcclxuICBwYWRkaW5nOiAxcHggNHB4O1xyXG4gIGZvbnQtc2l6ZTogOXB4O1xyXG4gIGNvbG9yOiAjMDA0Yzk3O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgLy8gbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDEzcHg7XHJcbn1cclxuLnRvdGFsQW1vdW50IHtcclxuICBmb250LXNpemU6IHNtYWxsZXI7XHJcbiAgLy8gY29sb3I6ICMzMDQxNTY7XHJcbiAgY29sb3I6ICMxMDIyNDU7XHJcbiAgb3BhY2l0eTogNzAlO1xyXG4gIC8vIHBhZGRpbmctbGVmdDogMTBweDtcclxufVxyXG4ubWF0LXJhZGlvLWJ1dHRvbiB+IC5tYXQtcmFkaW8tYnV0dG9uIHsgIFxyXG4gIG1hcmdpbi1sZWZ0OiA1cHg7IFxyXG59ICBcclxuLmhpbnQge1xyXG4gIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgbWFyZ2luLWxlZnQ6IDElO1xyXG4gIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgZm9udC1zaXplOiAxMXB4O1xyXG59XHJcbi5hY0JyYW5jaHtcclxuICBtYXJnaW4tcmlnaHQ6IDU1cHg7XHJcbn1cclxuLm1haW5jb250YWluZXJ7XHJcbiAgbWFyZ2luLWxlZnQ6IDVweDtcclxufVxyXG46Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZS5tYXRfZm9ybV9maWVsZF9tYXJnaW4gLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNGMkYyRjI7XHJcbn1cclxuOjpuZy1kZWVwLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZSAubWF0LWZvcm0tZmllbGQtd3JhcHBlciB7XHJcbiAgbWFyZ2luOiAtMC40NWVtIDAgIWltcG9ydGFudDtcclxufVxyXG5tYXQtbGFiZWx7XHJcbiAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgTWVkaXVtICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICM3MDcwNzAgIWltcG9ydGFudDtcclxuICBtYXJnaW4tbGVmdDogMyUgIWltcG9ydGFudDtcclxufVxyXG4uZmlyc3RXcmFwcGVyMXtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW4gIWltcG9ydGFudDtcclxuICAvLyBmbGV4OiBpbml0aWFsO1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gIC8vIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgbWFyZ2luLXRvcDozMHB4O1xyXG5cclxufVxyXG4uZmlyc3RXcmFwcGVyMntcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgLy8gZmxleDogaW5pdGlhbDtcclxuICBcclxuICB3aWR0aDogMTAwJTtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICBtYXJnaW4tdG9wOjI1cHg7XHJcbn1cclxuLmZpcnN0V3JhcHBlcjN7XHJcbiAgLy8gZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAvLyBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgLy8gbWFyZ2luLXRvcDogMjBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG4vLyA6Om5nLWRlZXAubWF0LWZvcm0tZmllbGQtZmxleHtcclxuLy8gICAvLyB3aWR0aDogYXV0byAhaW1wb3J0YW50O1xyXG4vLyB9XHJcbi5hY0JyYW5jaHtcclxuICBtYXJnaW4tcmlnaHQ6IDU1cHg7XHJcbn1cclxuOjpuZy1kZWVwIC5lZ3JldC1uYXZ5IC5tYXQtcmFkaW8tYnV0dG9uLm1hdC1wcmltYXJ5Lm1hdC1yYWRpby1jaGVja2VkIHtcclxuICBjb2xvcjogIzAwNEM5NyAhaW1wb3J0YW50O1xyXG4gXHJcbiAgLy8gYmFja2dyb3VuZC1jb2xvcjogI0ZGRkZGRjtcclxufVxyXG4uYnV0dG9uU3R5bGV7XHJcbiAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxQTJELCAjMDA0Qzk3KSAhaW1wb3J0YW50O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIHRvcDotM3B4O1xyXG59Il19 */"],
         changeDetection: 0
@@ -11833,7 +11981,7 @@
         }, {
           key: "scanChequeFront",
           value: function scanChequeFront() {
-            var _this44 = this;
+            var _this45 = this;
 
             console.log("front click");
             var dialogRef = this.dialog.open(_ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_3__["OcrScanPageComponent"], {
@@ -11841,15 +11989,15 @@
               height: '80%'
             });
             dialogRef.afterClosed().subscribe(function (result) {
-              _this44.capturedImageFront = sessionStorage.getItem('sysImage');
-              _this44.flag = true;
-              console.log("1", _this44.flag);
+              _this45.capturedImageFront = sessionStorage.getItem('sysImage');
+              _this45.flag = true;
+              console.log("1", _this45.flag);
             });
           }
         }, {
           key: "scanChequeBack",
           value: function scanChequeBack() {
-            var _this45 = this;
+            var _this46 = this;
 
             console.log("back click");
             var dialogRef = this.dialog.open(_ocr_scan_page_ocr_scan_page_component__WEBPACK_IMPORTED_MODULE_3__["OcrScanPageComponent"], {
@@ -11857,9 +12005,9 @@
               height: '80%'
             });
             dialogRef.afterClosed().subscribe(function (result) {
-              _this45.capturedImageBack = sessionStorage.getItem('sysImage');
-              _this45.flag1 = true;
-              console.log("1", _this45.flag1);
+              _this46.capturedImageBack = sessionStorage.getItem('sysImage');
+              _this46.flag1 = true;
+              console.log("1", _this46.flag1);
             });
           }
         }, {
@@ -12808,7 +12956,7 @@
         _createClass(CurrencyConverterComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this46 = this;
+            var _this47 = this;
 
             this.currencyForm = this.formBuilder.group({
               amount: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
@@ -12820,17 +12968,17 @@
             this.getCountrynameValues();
             this.dataService.getforexTransTypeData.subscribe(function (data) {
               console.log(data);
-              _this46.forexdata = data;
+              _this47.forexdata = data;
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this47 = this;
+            var _this48 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this47.countryValues = allCountryValues;
-              console.log(_this47.countryValues);
+              _this48.countryValues = allCountryValues;
+              console.log(_this48.countryValues);
             });
           }
         }, {
@@ -12868,31 +13016,31 @@
         }, {
           key: "onForexCountryChange",
           value: function onForexCountryChange(country, typeCurrency) {
-            var _this48 = this;
+            var _this49 = this;
 
             typeCurrency == 'fromCurrency' ? this.fromCurrencyConverter = country.currencyCode : this.toCurrencyConverter = country.currencyCode;
 
             if (this.fromCurrencyConverter && this.toCurrencyConverter) {
               this.apiService.fetchExchangeRateForCurrency(this.fromCurrencyConverter, this.toCurrencyConverter).subscribe(function (resp) {
-                if (_this48.forexdata == 'purchase') {
-                  _this48.currencyForm.get('exchangeRate').setValue(resp[resp.length - 1].buyRate);
+                if (_this49.forexdata == 'purchase') {
+                  _this49.currencyForm.get('exchangeRate').setValue(resp[resp.length - 1].buyRate);
 
-                  var curry = _this48.curr + Number(_this48.currencyForm.get('amount').value) * Number(resp[resp.length - 1].buyRate);
+                  var curry = _this49.curr + Number(_this49.currencyForm.get('amount').value) * Number(resp[resp.length - 1].buyRate);
                   console.log(curry);
 
-                  _this48.currencyForm.get('equivalentAmount').setValue(_this48.curr + Number(_this48.currencyForm.get('amount').value) * Number(resp[resp.length - 1].buyRate));
+                  _this49.currencyForm.get('equivalentAmount').setValue(_this49.curr + Number(_this49.currencyForm.get('amount').value) * Number(resp[resp.length - 1].buyRate));
                 } else {
-                  _this48.currencyForm.get('exchangeRate').setValue(resp[resp.length - 1].sellRate);
+                  _this49.currencyForm.get('exchangeRate').setValue(resp[resp.length - 1].sellRate);
 
-                  var curry = _this48.curr + Number(_this48.currencyForm.get('amount').value) * Number(resp[resp.length - 1].sellRate);
+                  var curry = _this49.curr + Number(_this49.currencyForm.get('amount').value) * Number(resp[resp.length - 1].sellRate);
                   console.log(curry);
 
-                  _this48.currencyForm.get('equivalentAmount').setValue(_this48.curr + Number(_this48.currencyForm.get('amount').value) * Number(resp[resp.length - 1].sellRate));
+                  _this49.currencyForm.get('equivalentAmount').setValue(_this49.curr + Number(_this49.currencyForm.get('amount').value) * Number(resp[resp.length - 1].sellRate));
                 }
 
                 console.log(resp);
-                _this48.midRate = resp[0].midRate;
-                console.log(_this48.midRate);
+                _this49.midRate = resp[0].midRate;
+                console.log(_this49.midRate);
               });
             } // let currency = country.currencyCode;
             // console.log(this.fromCurrencyConverter, this.toCurrencyConverter)
@@ -13195,10 +13343,10 @@
         _createClass(AutoFocusDirective, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this49 = this;
+            var _this50 = this;
 
             setTimeout(function () {
-              _this49.matInput.focus();
+              _this50.matInput.focus();
             }, 100);
           }
         }]);
@@ -13878,7 +14026,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this50 = this;
+            var _this51 = this;
 
             this.phoneNumber = localStorage.getItem('phonenumFromLogin');
             this.appointmentId = this.ls.getItem('TransactionType');
@@ -13895,41 +14043,41 @@
             });
             this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
             setTimeout(function () {
-              if (_this50.qrData != null) {
-                console.log('Account', _this50.qrData);
-                console.log(_this50.accountForm);
-                _this50.hideDetails = true;
-                _this50.hideAccNum = true;
-                _this50.showzero = false;
-                _this50.currencyCode = _this50.qrData.accountCurrency;
-                _this50.userName = _this50.qrData.holderName;
+              if (_this51.qrData != null) {
+                console.log('Account', _this51.qrData);
+                console.log(_this51.accountForm);
+                _this51.hideDetails = true;
+                _this51.hideAccNum = true;
+                _this51.showzero = false;
+                _this51.currencyCode = _this51.qrData.accountCurrency;
+                _this51.userName = _this51.qrData.holderName;
 
-                if (_this50.qrData.accountBalance == 0) {
-                  _this50.accountBal = "00000";
+                if (_this51.qrData.accountBalance == 0) {
+                  _this51.accountBal = "00000";
                 } else {
-                  _this50.accountBal = _this50.qrData.accountBalance;
+                  _this51.accountBal = _this51.qrData.accountBalance;
                 }
 
-                _this50.accountForm.controls.customerId.setValue(_this50.qrData.customerId);
+                _this51.accountForm.controls.customerId.setValue(_this51.qrData.customerId);
 
-                _this50.accountForm.controls.accountType.setValue(_this50.qrData.accountType);
+                _this51.accountForm.controls.accountType.setValue(_this51.qrData.accountType);
 
-                _this50.accountForm.controls.accountNumber.setValue(_this50.qrData.accountId);
+                _this51.accountForm.controls.accountNumber.setValue(_this51.qrData.accountId);
 
-                if (_this50.qrData.accountBalance == 0) {
-                  _this50.accountForm.controls.accountBalance.setValue("00000");
+                if (_this51.qrData.accountBalance == 0) {
+                  _this51.accountForm.controls.accountBalance.setValue("00000");
                 } else {
-                  _this50.accountForm.controls.accountBalance.setValue(_this50.qrData.accountBalance);
+                  _this51.accountForm.controls.accountBalance.setValue(_this51.qrData.accountBalance);
                 }
 
-                _this50.accountForm.controls.holderName.setValue(_this50.qrData.holderName);
+                _this51.accountForm.controls.holderName.setValue(_this51.qrData.holderName);
 
-                _this50.accountForm.controls.accountCurrency.setValue(_this50.qrData.accountCurrency);
+                _this51.accountForm.controls.accountCurrency.setValue(_this51.qrData.accountCurrency);
 
-                _this50.accountForm.controls.accountBranch.setValue(_this50.qrData.accountBranch); // this.accountForm.controls.accountBalance.setValue(this.qrData.accountBalance);
+                _this51.accountForm.controls.accountBranch.setValue(_this51.qrData.accountBranch); // this.accountForm.controls.accountBalance.setValue(this.qrData.accountBalance);
 
 
-                console.log(_this50.accountForm);
+                console.log(_this51.accountForm);
               }
             }, 1000);
             this.custValidation = localStorage.getItem('customerValidation');
@@ -13965,9 +14113,9 @@
             this.gettransactionBranch('account_branch');
             this.getBankInformation('KN');
             this.subscriptions.push(this.accountForm.valueChanges.subscribe(function (value) {
-              _this50.onChange(value);
+              _this51.onChange(value);
 
-              _this50.onTouched();
+              _this51.onTouched();
             }));
           }
         }, {
@@ -14010,38 +14158,38 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this51 = this;
+            var _this52 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this51.denomRequired = resp.denomRequired;
+              _this52.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this51.enableBtn = false;
-                _this51.enableBtn1 = false;
+                _this52.enableBtn = false;
+                _this52.enableBtn1 = false;
               }
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this52 = this;
+            var _this53 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this52.trasactionBranches = branches;
+              _this53.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this53 = this;
+            var _this54 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this53.branchData = data;
-              console.log(_this53.branchData);
+              _this54.branchData = data;
+              console.log(_this54.branchData);
               data.forEach(function (element, index) {
-                _this53.branch = data[index].branchName; // console.log(this.branch);
+                _this54.branch = data[index].branchName; // console.log(this.branch);
                 // this.accountForm.controls.accountBranch.setValue(this.branch);
               });
             });
@@ -14049,92 +14197,92 @@
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this54 = this;
+            var _this55 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this54.countryValues = allCountryValues;
-              console.log(_this54.countryValues);
+              _this55.countryValues = allCountryValues;
+              console.log(_this55.countryValues);
             });
           }
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this55 = this;
+            var _this56 = this;
 
             console.log("gfhg");
             this.phoneNumber = localStorage.getItem('phonenumFromLogin');
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log('All Transaction Details', allTransactionResp);
-              _this55.accountCurrency1 = allTransactionResp.accountCurrency;
-              _this55.currencyCode = allTransactionResp.currencyCode;
-              console.log(_this55.currencyCode);
-              _this55.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this56.accountCurrency1 = allTransactionResp.accountCurrency;
+              _this56.currencyCode = allTransactionResp.currencyCode;
+              console.log(_this56.currencyCode);
+              _this56.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this55.accountForm.controls.holderName.setValue(_this55.userName); // this.setBalance(allTransactionResp.custAccount);
+              _this56.accountForm.controls.holderName.setValue(_this56.userName); // this.setBalance(allTransactionResp.custAccount);
 
 
-              _this55.custID = allTransactionResp.customerId;
+              _this56.custID = allTransactionResp.customerId;
 
-              _this55.accountForm.controls.customerId.setValue(allTransactionResp.customerId);
+              _this56.accountForm.controls.customerId.setValue(allTransactionResp.customerId);
 
-              _this55.accountForm.controls.accountCurrency.setValue(allTransactionResp.accountCurrency);
+              _this56.accountForm.controls.accountCurrency.setValue(allTransactionResp.accountCurrency);
 
-              console.log('Cust', _this55.custID);
-              _this55.custAccountData = allTransactionResp.custAccount;
-              _this55.accounttypeArray = _toConsumableArray(_this55.custAccountData).filter(function (_ref3, index) {
+              console.log('Cust', _this56.custID);
+              _this56.custAccountData = allTransactionResp.custAccount;
+              _this56.accounttypeArray = _toConsumableArray(_this56.custAccountData).filter(function (_ref3, index) {
                 var accountType = _ref3.accountType;
-                return !_toConsumableArray(_this55.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this56.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this55.accounttypeArray);
+              console.log(_this56.accounttypeArray);
 
-              for (var i = 0; i < _this55.custAccountData.length; i++) {
-                if (_this55.custAccountData[i].status == 'APPROVED') {
+              for (var i = 0; i < _this56.custAccountData.length; i++) {
+                if (_this56.custAccountData[i].status == 'APPROVED') {
                   // if(this.custAccountData[i].status == 'APPROVED'){
-                  console.log(_this55.custAccountData[i].primaryAcc);
+                  console.log(_this56.custAccountData[i].primaryAcc);
 
-                  if (_this55.custAccountData[i].primaryAcc) {
-                    console.log(_this55.custAccountData[i]);
+                  if (_this56.custAccountData[i].primaryAcc) {
+                    console.log(_this56.custAccountData[i]);
 
-                    _this55.accountForm.controls.accountNumber.setValue(_this55.custAccountData[i].accountId);
+                    _this56.accountForm.controls.accountNumber.setValue(_this56.custAccountData[i].accountId);
 
-                    _this55.accountForm.controls.accountType.setValue(_this55.custAccountData[i].accountType);
+                    _this56.accountForm.controls.accountType.setValue(_this56.custAccountData[i].accountType);
 
-                    console.log(_this55.accountForm.controls.accountType); //this.cashwithdrawForm.controls..setValue();
+                    console.log(_this56.accountForm.controls.accountType); //this.cashwithdrawForm.controls..setValue();
                   } else {
-                    _this55.accountForm.controls.accountNumber.setValue(_this55.accountNoList[0]);
+                    _this56.accountForm.controls.accountNumber.setValue(_this56.accountNoList[0]);
                   }
 
-                  _this55.accountNoList.push(_this55.custAccountData[i]); // }
+                  _this56.accountNoList.push(_this56.custAccountData[i]); // }
 
 
-                  _this55.accountNoList.push(_this55.custAccountData[i]);
+                  _this56.accountNoList.push(_this56.custAccountData[i]);
                 }
               }
 
-              console.log(_this55.accountNoList);
+              console.log(_this56.accountNoList);
 
-              if (_this55.custAccountData && _this55.accountNoList.length <= 1) {
-                _this55.accountDropdown = false;
-                _this55.hideDetails = true;
-                _this55.hideAccNum = true;
-                _this55.showzero = false;
+              if (_this56.custAccountData && _this56.accountNoList.length <= 1) {
+                _this56.accountDropdown = false;
+                _this56.hideDetails = true;
+                _this56.hideAccNum = true;
+                _this56.showzero = false;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this55.accountForm.controls.accountType.setValue(accTyp);
+                _this56.accountForm.controls.accountType.setValue(accTyp);
 
-                _this55.custAccountNumber(_this55.accountNoList[0]);
+                _this56.custAccountNumber(_this56.accountNoList[0]);
               } else {
-                _this55.accountDropdown = true;
-                _this55.hideDetails = true;
-                _this55.hideAccNum = true;
-                _this55.showzero = false;
+                _this56.accountDropdown = true;
+                _this56.hideDetails = true;
+                _this56.hideAccNum = true;
+                _this56.showzero = false;
                 var _accTyp3 = allTransactionResp.custAccount[0].accountType;
 
-                _this55.accountForm.controls.accountType.setValue(_accTyp3);
+                _this56.accountForm.controls.accountType.setValue(_accTyp3);
 
-                _this55.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this56.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -14212,54 +14360,54 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this56 = this;
+            var _this57 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this56.cashData = resp.data;
-              _this56.custID = resp.data.customerId;
-              _this56.ifQRvariable = true;
-              _this56.hideAccNum = true;
-              _this56.hideDetails = true;
-              _this56.showzero = false;
-              _this56.flag1 = false;
-              _this56.displayFlag = true;
-              _this56.userName = resp.data.holderName;
+              _this57.cashData = resp.data;
+              _this57.custID = resp.data.customerId;
+              _this57.ifQRvariable = true;
+              _this57.hideAccNum = true;
+              _this57.hideDetails = true;
+              _this57.showzero = false;
+              _this57.flag1 = false;
+              _this57.displayFlag = true;
+              _this57.userName = resp.data.holderName;
 
               if (resp.data.accountBalance == 0) {
-                _this56.accountBal = "00000";
+                _this57.accountBal = "00000";
 
-                _this56.accountForm.controls.accountBalance.setValue("00000");
+                _this57.accountForm.controls.accountBalance.setValue("00000");
               } else {
-                _this56.accountBal = resp.data.accountBalance;
+                _this57.accountBal = resp.data.accountBalance;
 
-                _this56.accountForm.controls.accountBalance.setValue(resp.data.accountBalance);
+                _this57.accountForm.controls.accountBalance.setValue(resp.data.accountBalance);
               }
 
-              _this56.currencyCode = resp.data.accountCurrency;
+              _this57.currencyCode = resp.data.accountCurrency;
 
-              _this56.accountForm.controls.accountType.setValue(resp.data.accountType);
+              _this57.accountForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this56.accountForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this57.accountForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this56.accountForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this57.accountForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this56.accountForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this57.accountForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
               console.log(resp.data.accountCurrency); // this.currencyImage =
               //   'currency-flag-' + resp.data.accountCurrency.toLowerCase();
 
-              _this56.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              console.log(_this56.currencyImage);
+              _this57.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              console.log(_this57.currencyImage);
 
-              _this56.dataService.sendaccountFormData(_this56.cashData);
+              _this57.dataService.sendaccountFormData(_this57.cashData);
             });
             console.log(this.cashData); // this.denomRequired='yes';
           }
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this57 = this;
+            var _this58 = this;
 
             console.log('Account Numebr', accNum);
             this.flag1 = true;
@@ -14278,74 +14426,74 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('statement', res);
 
-              _this57.accountForm.controls.accountCurrency.setValue(res === null || res === void 0 ? void 0 : res.currency);
+              _this58.accountForm.controls.accountCurrency.setValue(res === null || res === void 0 ? void 0 : res.currency);
 
               if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
-                _this57.snack.open("Account Number Doesn't Exist", "OK", {
+                _this58.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right',
                   panelClass: ['snackbar']
                 });
 
-                _this57.accountForm.reset();
+                _this58.accountForm.reset();
 
-                _this57.userName = '';
-                _this57.accountBal = '';
-                _this57.curr = '';
+                _this58.userName = '';
+                _this58.accountBal = '';
+                _this58.curr = '';
               } else {
                 console.log('Account Number Rsp', res);
 
-                _this57.dataService.sendaccountFormData(res);
+                _this58.dataService.sendaccountFormData(res);
 
-                _this57.userName = res.accHolderName;
+                _this58.userName = res.accHolderName;
 
                 if (res.accBalance == 0) {
                   console.log("for zero balance 1");
-                  _this57.accountBal = "00000";
-                  _this57.accountForm.value.accountBalance = "00000";
+                  _this58.accountBal = "00000";
+                  _this58.accountForm.value.accountBalance = "00000";
                 } else {
-                  _this57.accountBal = res.accBalance;
-                  _this57.accountForm.value.accountBalance = res.accBalance;
+                  _this58.accountBal = res.accBalance;
+                  _this58.accountForm.value.accountBalance = res.accBalance;
                 }
 
-                _this57.custmerID = res.customerId;
+                _this58.custmerID = res.customerId;
                 localStorage.setItem('AccountBal', res.accBalance);
-                _this57.accountNumber = res.accountId;
-                console.log(_this57.accountForm);
+                _this58.accountNumber = res.accountId;
+                console.log(_this58.accountForm);
 
-                _this57.accountForm.controls.accountBranch.setValue(res.accountBranch);
+                _this58.accountForm.controls.accountBranch.setValue(res.accountBranch);
 
-                _this57.accountForm.controls.customerId.setValue(res.customerId);
+                _this58.accountForm.controls.customerId.setValue(res.customerId);
 
-                _this57.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
+                _this58.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
 
-                _this57.accountForm.controls.accountType.setValue(res.accountType); // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
-
-
-                _this57.accountForm.controls.holderName.setValue(_this57.userName);
-
-                _this57.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this58.accountForm.controls.accountType.setValue(res.accountType); // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
 
 
-                _this57.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-                _this57.accountCurrency1 = res.currency;
-                console.log(_this57.ifQRvariable);
+                _this58.accountForm.controls.holderName.setValue(_this58.userName);
 
-                _this57.custAmountBal(accNum);
+                _this58.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+
+
+                _this58.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                _this58.accountCurrency1 = res.currency;
+                console.log(_this58.ifQRvariable);
+
+                _this58.custAmountBal(accNum);
               }
 
-              _this57.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this57.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this57.phonenum);
+              _this58.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this58.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this58.phonenum);
               });
 
               (function (error) {
                 console.log(error);
-                _this57.errorStatus = error.status;
+                _this58.errorStatus = error.status;
 
-                if (_this57.errorStatus == 204) {
-                  _this57.snack.open("Account Number Doesn't Exist", "OK", {
+                if (_this58.errorStatus == 204) {
+                  _this58.snack.open("Account Number Doesn't Exist", "OK", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right',
@@ -15738,7 +15886,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this58 = this;
+            var _this59 = this;
 
             this.chqPage = localStorage.getItem('chq_page');
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
@@ -15762,23 +15910,23 @@
             this.qrData = JSON.parse(JSON.parse(localStorage.getItem("scannerData"))); //this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
 
             setTimeout(function () {
-              if (_this58.qrData != null) {
-                console.log("Account", _this58.qrData);
+              if (_this59.qrData != null) {
+                console.log("Account", _this59.qrData);
 
-                _this58.getChargeDetails(_this58.qrData.accountId, "");
+                _this59.getChargeDetails(_this59.qrData.accountId, "");
 
-                _this58.transactionForm.controls.transactionAmount.setValue(_this58.qrData.transactionAmount);
+                _this59.transactionForm.controls.transactionAmount.setValue(_this59.qrData.transactionAmount);
 
-                _this58.transactionForm.controls.transactionCurrency.setValue(_this58.qrData.transactionCurrency);
+                _this59.transactionForm.controls.transactionCurrency.setValue(_this59.qrData.transactionCurrency);
 
-                console.log(_this58.accountForm);
-                _this58.customerID = _this58.qrData.customerId;
-                _this58.currencyImage = 'currency-flag-' + _this58.qrData.transactionCurrency.toLowerCase();
+                console.log(_this59.accountForm);
+                _this59.customerID = _this59.qrData.customerId;
+                _this59.currencyImage = 'currency-flag-' + _this59.qrData.transactionCurrency.toLowerCase();
 
-                if (_this58.qrData.transactionBranch != null && _this58.qrData.transactionBranch != '') {
-                  _this58.accountForm.controls.transactionBranch.setValue(_this58.qrData.transactionBranch);
+                if (_this59.qrData.transactionBranch != null && _this59.qrData.transactionBranch != '') {
+                  _this59.accountForm.controls.transactionBranch.setValue(_this59.qrData.transactionBranch);
                 } else {
-                  _this58.transactionForm.controls.transactionBranch.setValue('Kasthuri Nagar');
+                  _this59.transactionForm.controls.transactionBranch.setValue('Kasthuri Nagar');
                 }
 
                 console.log("GetChargeDetails");
@@ -15824,31 +15972,31 @@
 
 
             this.subscriptions.push(this.transactionForm.valueChanges.subscribe(function (value) {
-              _this58.onChange(value);
+              _this59.onChange(value);
 
-              _this58.onTouched();
+              _this59.onTouched();
             }));
             this.dataService.getaccountFormdata.subscribe(function (data) {
               var _a, _b, _c, _d, _e;
 
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 // if(data){
-                _this58.details = data;
-                console.log(_this58.details);
-                _this58.currencyImage = ((_a = _this58.details) === null || _a === void 0 ? void 0 : _a.accountCurrency) ? "currency-flag-" + ((_b = _this58.details) === null || _b === void 0 ? void 0 : _b.accountCurrency.toLowerCase()) : "currency-flag-" + ((_c = _this58.details) === null || _c === void 0 ? void 0 : _c.currency.toLowerCase());
+                _this59.details = data;
+                console.log(_this59.details);
+                _this59.currencyImage = ((_a = _this59.details) === null || _a === void 0 ? void 0 : _a.accountCurrency) ? "currency-flag-" + ((_b = _this59.details) === null || _b === void 0 ? void 0 : _b.accountCurrency.toLowerCase()) : "currency-flag-" + ((_c = _this59.details) === null || _c === void 0 ? void 0 : _c.currency.toLowerCase());
 
-                _this58.transactionForm.controls.transactionCurrency.setValue(((_d = _this58.details) === null || _d === void 0 ? void 0 : _d.accountCurrency) ? _this58.details.accountCurrency : (_e = _this58.details) === null || _e === void 0 ? void 0 : _e.currency);
+                _this59.transactionForm.controls.transactionCurrency.setValue(((_d = _this59.details) === null || _d === void 0 ? void 0 : _d.accountCurrency) ? _this59.details.accountCurrency : (_e = _this59.details) === null || _e === void 0 ? void 0 : _e.currency);
 
-                if (_this58.details.appointmentId) {
-                  _this58.cashWithdrawlData(_this58.details);
+                if (_this59.details.appointmentId) {
+                  _this59.cashWithdrawlData(_this59.details);
                 }
 
-                console.log(_this58.custValidation);
+                console.log(_this59.custValidation);
 
-                if (_this58.custValidation == "New Customer" || _this58.custNameFromLogin != null) {
-                  _this58.showAccountNum = true;
+                if (_this59.custValidation == "New Customer" || _this59.custNameFromLogin != null) {
+                  _this59.showAccountNum = true;
 
-                  _this58.setValueForWalkInCustomer(data);
+                  _this59.setValueForWalkInCustomer(data);
                 } // else{
                 // }
 
@@ -15858,8 +16006,8 @@
             console.log(this.transactionForm.controls.transactionCurrency.value);
             this.dataService.getNavParam.subscribe(function (title) {
               console.log(title);
-              _this58.titleData = title;
-              _this58.trnType = title;
+              _this59.titleData = title;
+              _this59.trnType = title;
             });
           }
         }, {
@@ -15879,7 +16027,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this59 = this;
+            var _this60 = this;
 
             this.transactionForm.controls.transactionAmount.reset();
             this.transactionForm.controls.totalTransactionAmount.setValue(this.transactionForm.controls.totalChargeAmount.value);
@@ -15889,43 +16037,43 @@
               if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
                 console.log('statement');
 
-                _this59.snack.open("Account Number Doesn't Exist", "OK", {
+                _this60.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'bottom',
                   horizontalPosition: 'right'
                 });
 
-                _this59.transactionForm.reset();
+                _this60.transactionForm.reset();
 
-                _this59.userName = '';
-                _this59.accountBal = '';
-                _this59.curr = '';
+                _this60.userName = '';
+                _this60.accountBal = '';
+                _this60.curr = '';
               } else {
                 console.log('Account Number Rsp', res);
 
-                _this59.getChargeDetails(accNum, '');
+                _this60.getChargeDetails(accNum, '');
 
-                _this59.userName = res.accHolderName;
-                _this59.accountBal = res.accBalance;
-                _this59.custmerID = res.customerId;
-                _this59.accountNumber = res.accountId;
-                _this59.accountCurrency = res.accountCurrency;
-                _this59.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, "narrow");
+                _this60.userName = res.accHolderName;
+                _this60.accountBal = res.accBalance;
+                _this60.custmerID = res.customerId;
+                _this60.accountNumber = res.accountId;
+                _this60.accountCurrency = res.accountCurrency;
+                _this60.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, "narrow");
 
-                _this59.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this60.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
 
 
-                _this59.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-                console.log(_this59.ifQRvariable);
+                _this60.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                console.log(_this60.ifQRvariable);
 
-                _this59.custAmountBal(accNum);
+                _this60.custAmountBal(accNum);
 
-                _this59.transactionForm.controls.transactionBranch.setValue('Kasturi Nagar');
+                _this60.transactionForm.controls.transactionBranch.setValue('Kasturi Nagar');
               }
 
-              _this59.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this59.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this59.phonenum);
+              _this60.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this60.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this60.phonenum);
               });
             });
           }
@@ -15957,24 +16105,24 @@
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this60 = this;
+            var _this61 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this60.branchData = data;
-              console.log(_this60.branchData);
+              _this61.branchData = data;
+              console.log(_this61.branchData);
               data.forEach(function (element, index) {
-                _this60.branch = data[index].branchName; // console.log(this.branch);
+                _this61.branch = data[index].branchName; // console.log(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this61 = this;
+            var _this62 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this61.countryValues = allCountryValues;
-              console.log(_this61.countryValues);
+              _this62.countryValues = allCountryValues;
+              console.log(_this62.countryValues);
             });
           }
         }, {
@@ -15989,32 +16137,32 @@
         }, {
           key: "fetchExchangeRateForCurrency",
           value: function fetchExchangeRateForCurrency(currency) {
-            var _this62 = this;
+            var _this63 = this;
 
             this.apiService.fetchExchangeRateForCurrency(currency, this.accountCurrency).subscribe(function (resp) {
               console.log(resp);
-              _this62.exchangerateResp = resp;
-              console.log(_this62.exchangerateResp);
+              _this63.exchangerateResp = resp;
+              console.log(_this63.exchangerateResp);
 
-              if (_this62.exchangerateResp) {
-                if (_this62.chqPage == 'Cash Withdrawal' || _this62.chqPage == 'Cheque Withdrawal') {
-                  console.log(_this62.titleData);
+              if (_this63.exchangerateResp) {
+                if (_this63.chqPage == 'Cash Withdrawal' || _this63.chqPage == 'Cheque Withdrawal') {
+                  console.log(_this63.titleData);
 
-                  _this62.transactionForm.controls.exchangeRate.setValue(_this62.exchangerateResp[0].sellRate);
+                  _this63.transactionForm.controls.exchangeRate.setValue(_this63.exchangerateResp[0].sellRate);
                 }
 
-                if (_this62.chqPage == 'Cash Deposit' || _this62.chqPage == 'Cheque Deposit') {
-                  _this62.transactionForm.controls.exchangeRate.setValue(_this62.exchangerateResp[0].buyRate);
+                if (_this63.chqPage == 'Cash Deposit' || _this63.chqPage == 'Cheque Deposit') {
+                  _this63.transactionForm.controls.exchangeRate.setValue(_this63.exchangerateResp[0].buyRate);
                 }
               }
 
               setTimeout(function () {
-                if (_this62.transactionForm.controls.transactionCurrency.value == _this62.accountCurrency) {
-                  _this62.totalTransAmount = Number(_this62.transactionForm.controls.transactionAmount.value ? _this62.transactionForm.controls.transactionAmount.value : 0) + Number(_this62.chargeDetails[0].amount);
+                if (_this63.transactionForm.controls.transactionCurrency.value == _this63.accountCurrency) {
+                  _this63.totalTransAmount = Number(_this63.transactionForm.controls.transactionAmount.value ? _this63.transactionForm.controls.transactionAmount.value : 0) + Number(_this63.chargeDetails[0].amount);
 
-                  _this62.transactionForm.controls.totalTransactionAmount.setValue(_this62.totalTransAmount);
+                  _this63.transactionForm.controls.totalTransactionAmount.setValue(_this63.totalTransAmount);
                 } else {
-                  _this62.displayWithNegotiate();
+                  _this63.displayWithNegotiate();
                 }
               }, 10); // this.denomRequired = resp?.denomRequired;
               // if (resp?.denomRequired == "yes") {
@@ -16037,15 +16185,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this63 = this;
+            var _this64 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this63.denomRequired = resp.denomRequired;
+              _this64.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == "yes") {
-                _this63.enableBtn = false;
-                _this63.enableBtn1 = false;
+                _this64.enableBtn = false;
+                _this64.enableBtn1 = false;
                 localStorage.setItem("DenominationRequired", resp.denomRequired);
               }
             });
@@ -16053,7 +16201,7 @@
         }, {
           key: "getChequeType",
           value: function getChequeType(screenName) {
-            var _this64 = this;
+            var _this65 = this;
 
             console.log(screenName);
 
@@ -16066,18 +16214,18 @@
             }
 
             this.apiService.fetchChequeType(screenName).subscribe(function (resp) {
-              _this64.chequeTypes = resp;
-              console.log(_this64.chequeTypes);
+              _this65.chequeTypes = resp;
+              console.log(_this65.chequeTypes);
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this65 = this;
+            var _this66 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log("branches :: ", branches);
-              _this65.trasactionBranches = branches;
+              _this66.trasactionBranches = branches;
             });
           }
         }, {
@@ -16112,45 +16260,45 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this66 = this;
+            var _this67 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this66.custID = allTransactionResp.customerId;
-              console.log("Cust", _this66.accountCurrency);
-              _this66.custAccountData = allTransactionResp.custAccount;
-              _this66.accounttypeArray = _toConsumableArray(_this66.custAccountData).filter(function (_ref4, index) {
+              _this67.custID = allTransactionResp.customerId;
+              console.log("Cust", _this67.accountCurrency);
+              _this67.custAccountData = allTransactionResp.custAccount;
+              _this67.accounttypeArray = _toConsumableArray(_this67.custAccountData).filter(function (_ref4, index) {
                 var accountType = _ref4.accountType;
-                return !_toConsumableArray(_this66.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this67.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this66.accounttypeArray);
+              console.log(_this67.accounttypeArray);
 
-              for (var i = 0; i < _this66.custAccountData.length; i++) {
-                if (_this66.custAccountData[i].status == "APPROVED") {
-                  _this66.accountNoList.push(_this66.custAccountData[i]);
+              for (var i = 0; i < _this67.custAccountData.length; i++) {
+                if (_this67.custAccountData[i].status == "APPROVED") {
+                  _this67.accountNoList.push(_this67.custAccountData[i]);
                 }
               }
 
-              _this66.accountCurrency = _this66.accountNoList[0].accountCurrency;
-              console.log(_this66.accountNoList);
+              _this67.accountCurrency = _this67.accountNoList[0].accountCurrency;
+              console.log(_this67.accountNoList);
 
-              if (_this66.custAccountData && _this66.accountNoList.length <= 1) {
-                _this66.accountDropdown = false;
-                _this66.hideDetails = true;
-                _this66.hideAccNum = true;
+              if (_this67.custAccountData && _this67.accountNoList.length <= 1) {
+                _this67.accountDropdown = false;
+                _this67.hideDetails = true;
+                _this67.hideAccNum = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType; // this.transactionForm.controls.accountType.setValue(accTyp);
 
-                _this66.custAccountNumber(_this66.accountNoList[0]);
+                _this67.custAccountNumber(_this67.accountNoList[0]);
               } else {
-                _this66.accountDropdown = true;
-                _this66.hideDetails = true;
-                _this66.hideAccNum = true;
+                _this67.accountDropdown = true;
+                _this67.hideDetails = true;
+                _this67.hideAccNum = true;
                 var _accTyp4 = allTransactionResp.custAccount[0].accountType; // this.transactionForm.controls.accountType.setValue(accTyp);
 
-                _this66.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this67.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -16378,30 +16526,30 @@
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this67 = this;
+            var _this68 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
-              _this67.chargeDetails = resp;
-              console.log(_this67.chargeDetails);
+              _this68.chargeDetails = resp;
+              console.log(_this68.chargeDetails);
 
-              _this67.transactionForm.controls.totalChargeAmount.setValue(_this67.chargeDetails ? _this67.chargeDetails[0].amount : "");
+              _this68.transactionForm.controls.totalChargeAmount.setValue(_this68.chargeDetails ? _this68.chargeDetails[0].amount : "");
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                if (_this67.transactionForm.controls.transactionCurrency.value == _this67.accountCurrency) {
-                  console.log(_this67.accountCurrency);
-                  _this67.totalTransAmount = Number(_this67.cashData.transactionAmount) + Number(_this67.chargeDetails[0].amount);
+                if (_this68.transactionForm.controls.transactionCurrency.value == _this68.accountCurrency) {
+                  console.log(_this68.accountCurrency);
+                  _this68.totalTransAmount = Number(_this68.cashData.transactionAmount) + Number(_this68.chargeDetails[0].amount);
 
-                  _this67.transactionForm.controls.totalTransactionAmount.setValue(_this67.totalTransAmount);
+                  _this68.transactionForm.controls.totalTransactionAmount.setValue(_this68.totalTransAmount);
                 }
 
-                if (_this67.transactionForm.controls.transactionCurrency.value != _this67.accountCurrency) {
-                  console.log(_this67.accountCurrency);
-                  _this67.totalTransAmount = Number(_this67.cashData.transactionAmount) * Number(_this67.transactionForm.controls.negotiatedRate.value ? _this67.transactionForm.controls.negotiatedRate.value : _this67.transactionForm.controls.exchangeRate.value) + Number(_this67.chargeDetails[0].amount);
-                  console.log("line 845 getchrgedetails", _this67.totalTransAmount);
+                if (_this68.transactionForm.controls.transactionCurrency.value != _this68.accountCurrency) {
+                  console.log(_this68.accountCurrency);
+                  _this68.totalTransAmount = Number(_this68.cashData.transactionAmount) * Number(_this68.transactionForm.controls.negotiatedRate.value ? _this68.transactionForm.controls.negotiatedRate.value : _this68.transactionForm.controls.exchangeRate.value) + Number(_this68.chargeDetails[0].amount);
+                  console.log("line 845 getchrgedetails", _this68.totalTransAmount);
 
-                  _this67.transactionForm.controls.totalTransactionAmount.setValue(_this67.totalTransAmount);
+                  _this68.transactionForm.controls.totalTransactionAmount.setValue(_this68.totalTransAmount);
                 }
               }, 1000);
               this.cdr.markForCheck();
@@ -16411,10 +16559,10 @@
               amount = 0;
               console.log(this.transactionForm.controls.totalChargeAmount.value);
               setTimeout(function () {
-                _this67.totalTransAmount = Number(_this67.transactionForm.controls.transactionAmount.value ? _this67.transactionForm.controls.transactionAmount.value : amount) + Number(_this67.chargeDetails ? _this67.chargeDetails[0].amount : "");
-                console.log(_this67.totalTransAmount);
+                _this68.totalTransAmount = Number(_this68.transactionForm.controls.transactionAmount.value ? _this68.transactionForm.controls.transactionAmount.value : amount) + Number(_this68.chargeDetails ? _this68.chargeDetails[0].amount : "");
+                console.log(_this68.totalTransAmount);
 
-                _this67.transactionForm.controls.totalTransactionAmount.setValue(_this67.totalTransAmount);
+                _this68.transactionForm.controls.totalTransactionAmount.setValue(_this68.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -18727,7 +18875,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this68 = this;
+            var _this69 = this;
 
             this.cashwithdrawForm.controls.transactionAmount.reset();
             this.cashwithdrawForm.controls.totalTransactionAmount.setValue(this.cashwithdrawForm.controls.totalChargeAmount.value);
@@ -18738,40 +18886,40 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('Account Number Rsp', res);
 
-              _this68.getChargeDetails(accNum, '');
+              _this69.getChargeDetails(accNum, '');
 
-              _this68.userName = res.accHolderName;
-              _this68.accountBal = res.accBalance;
-              _this68.custmerID = res.customerId;
-              _this68.accountNumber = res.accountId;
-              _this68.accountCurrency = res.accountCurrency;
-              _this68.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["getCurrencySymbol"])(res.currency, "narrow");
+              _this69.userName = res.accHolderName;
+              _this69.accountBal = res.accBalance;
+              _this69.custmerID = res.customerId;
+              _this69.accountNumber = res.accountId;
+              _this69.accountCurrency = res.accountCurrency;
+              _this69.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this68.cashwithdrawForm.controls.accountType.setValue(res.accountType);
+              _this69.cashwithdrawForm.controls.accountType.setValue(res.accountType);
 
-              _this68.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
+              _this69.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this68.cashwithdrawForm.controls.holderName.setValue(_this68.userName);
+              _this69.cashwithdrawForm.controls.holderName.setValue(_this69.userName);
 
-              _this68.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+              _this69.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
 
 
-              _this68.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this69.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-              _this68.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
+              _this69.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this68.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
+              _this69.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
 
-              _this68.accountCurrency = res.currency;
-              console.log(_this68.ifQRvariable);
+              _this69.accountCurrency = res.currency;
+              console.log(_this69.ifQRvariable);
 
-              _this68.custAmountBal(accNum);
+              _this69.custAmountBal(accNum);
 
-              _this68.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
+              _this69.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
 
-              _this68.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this68.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this68.phonenum);
+              _this69.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this69.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this69.phonenum);
               });
             });
           } //  numberWithCommas = (transAmt) => {
@@ -18782,35 +18930,35 @@
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this69 = this;
+            var _this70 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this69.trasactionBranches = branches;
+              _this70.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this70 = this;
+            var _this71 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this70.branchData = data;
-              console.log(_this70.branchData);
+              _this71.branchData = data;
+              console.log(_this71.branchData);
               data.forEach(function (element, index) {
-                _this70.branch = data[index].branchName;
-                console.log(_this70.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
+                _this71.branch = data[index].branchName;
+                console.log(_this71.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this71 = this;
+            var _this72 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this71.countryValues = allCountryValues;
-              console.log(_this71.countryValues);
+              _this72.countryValues = allCountryValues;
+              console.log(_this72.countryValues);
             });
           }
         }, {
@@ -18820,54 +18968,54 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this72 = this;
+            var _this73 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this72.accountCurrency = allTransactionResp.accountCurrency;
-              _this72.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this73.accountCurrency = allTransactionResp.accountCurrency;
+              _this73.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this72.cashwithdrawForm.controls.holderName.setValue(_this72.userName); // this.setBalance(allTransactionResp.custAccount);
+              _this73.cashwithdrawForm.controls.holderName.setValue(_this73.userName); // this.setBalance(allTransactionResp.custAccount);
 
 
-              _this72.custID = allTransactionResp.customerId;
-              console.log("Cust", _this72.custID);
-              _this72.custAccountData = allTransactionResp.custAccount;
-              _this72.accounttypeArray = _toConsumableArray(_this72.custAccountData).filter(function (_ref5, index) {
+              _this73.custID = allTransactionResp.customerId;
+              console.log("Cust", _this73.custID);
+              _this73.custAccountData = allTransactionResp.custAccount;
+              _this73.accounttypeArray = _toConsumableArray(_this73.custAccountData).filter(function (_ref5, index) {
                 var accountType = _ref5.accountType;
-                return !_toConsumableArray(_this72.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this73.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this72.accounttypeArray);
+              console.log(_this73.accounttypeArray);
 
-              for (var i = 0; i < _this72.custAccountData.length; i++) {
-                if (_this72.custAccountData[i].status == 'APPROVED') {
-                  _this72.accountNoList.push(_this72.custAccountData[i]);
+              for (var i = 0; i < _this73.custAccountData.length; i++) {
+                if (_this73.custAccountData[i].status == 'APPROVED') {
+                  _this73.accountNoList.push(_this73.custAccountData[i]);
                 }
               }
 
-              console.log(_this72.accountNoList);
+              console.log(_this73.accountNoList);
 
-              if (_this72.custAccountData && _this72.accountNoList.length <= 1) {
-                _this72.accountDropdown = false;
-                _this72.hideDetails = true;
-                _this72.hideAccNum = true;
+              if (_this73.custAccountData && _this73.accountNoList.length <= 1) {
+                _this73.accountDropdown = false;
+                _this73.hideDetails = true;
+                _this73.hideAccNum = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this72.cashwithdrawForm.controls.accountType.setValue(accTyp);
+                _this73.cashwithdrawForm.controls.accountType.setValue(accTyp);
 
-                _this72.custAccountNumber(_this72.accountNoList[0]);
+                _this73.custAccountNumber(_this73.accountNoList[0]);
               } else {
-                _this72.accountDropdown = true;
-                _this72.hideDetails = true;
-                _this72.hideAccNum = true;
+                _this73.accountDropdown = true;
+                _this73.hideDetails = true;
+                _this73.hideAccNum = true;
                 var _accTyp5 = allTransactionResp.custAccount[0].accountType;
 
-                _this72.cashwithdrawForm.controls.accountType.setValue(_accTyp5);
+                _this73.cashwithdrawForm.controls.accountType.setValue(_accTyp5);
 
-                _this72.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this73.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -19003,7 +19151,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this73 = this;
+            var _this74 = this;
 
             this.cashwithDrwValues = formData;
             this.cashwithDrwType = type;
@@ -19018,9 +19166,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this73.openDialogOTP(_this73.phonenum);
+                  _this74.openDialogOTP(_this74.phonenum);
 
-                  _this73.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this74.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -19034,7 +19182,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this74 = this;
+            var _this75 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_11__["OtpVerifyComponent"], {
               data: {
@@ -19047,14 +19195,14 @@
               console.log("submit", submit);
 
               if (submit) {
-                _this74.getOTPforSave(_this74.cashwithDrwValues, _this74.cashwithDrwType, _this74.cashwithDrwform);
+                _this75.getOTPforSave(_this75.cashwithDrwValues, _this75.cashwithDrwType, _this75.cashwithDrwform);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this75 = this;
+            var _this76 = this;
 
             var denominationData = {};
             var denominationDataArray = [];
@@ -19107,15 +19255,15 @@
             console.log("before api call :: ", formData);
             this.apiService.saveofCashwithdraw(formData).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this75.cashWithdrawResponse = cashWithdrawResp;
-              _this75.tokenNum = _this75.cashWithdrawResponse.tokenNumber;
-              _this75.estimatedTime = _this75.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this75.tokenNum);
-              localStorage.setItem("estimatedTiming", _this75.estimatedTime);
-              _this75.enableContinue = false;
+              _this76.cashWithdrawResponse = cashWithdrawResp;
+              _this76.tokenNum = _this76.cashWithdrawResponse.tokenNumber;
+              _this76.estimatedTime = _this76.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this76.tokenNum);
+              localStorage.setItem("estimatedTiming", _this76.estimatedTime);
+              _this76.enableContinue = false;
 
-              if (_this75.cashWithdrawResponse) {
-                _this75.dialogService.tokenGenerationDialog();
+              if (_this76.cashWithdrawResponse) {
+                _this76.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -19154,14 +19302,14 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this76 = this;
+            var _this77 = this;
 
             form.transactionBranch = this.transBranch;
 
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this76.qrBranchCode = response;
+                  _this77.qrBranchCode = response;
                 });
               }
             }
@@ -19236,15 +19384,15 @@
             console.log("before api call :: ", form);
             this.apiService.saveofCashDeposit(form).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this76.cashWithdrawResponse = cashWithdrawResp;
-              _this76.tokenNum = _this76.cashWithdrawResponse.tokenNumber;
-              _this76.estimatedTime = _this76.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this76.tokenNum);
-              localStorage.setItem("estimatedTiming", _this76.estimatedTime);
-              _this76.enableContinue = false;
+              _this77.cashWithdrawResponse = cashWithdrawResp;
+              _this77.tokenNum = _this77.cashWithdrawResponse.tokenNumber;
+              _this77.estimatedTime = _this77.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this77.tokenNum);
+              localStorage.setItem("estimatedTiming", _this77.estimatedTime);
+              _this77.enableContinue = false;
 
-              if (_this76.cashWithdrawResponse) {
-                _this76.dialogService.tokenGenerationDialog();
+              if (_this77.cashWithdrawResponse) {
+                _this77.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = form.accountNumber;
@@ -19384,53 +19532,53 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this77 = this;
+            var _this78 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this77.cashData = resp.data;
-              _this77.custID = resp.data.customerId;
-              _this77.ifQRvariable = true;
-              _this77.hideAccNum = false;
-              _this77.hideDetails = true;
-              _this77.userName = resp.data.holderName;
-              _this77.accountCurrency = resp.data.accountCurrency;
+              _this78.cashData = resp.data;
+              _this78.custID = resp.data.customerId;
+              _this78.ifQRvariable = true;
+              _this78.hideAccNum = false;
+              _this78.hideDetails = true;
+              _this78.userName = resp.data.holderName;
+              _this78.accountCurrency = resp.data.accountCurrency;
 
-              _this77.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
+              _this78.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this77.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this78.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this77.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this78.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this77.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this78.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this77.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this78.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this77.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this78.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this77.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this78.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this77.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this77.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              _this78.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this78.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
             }); // this.denomRequired='yes';
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this78 = this;
+            var _this79 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this78.chargeDetails = resp;
+              _this79.chargeDetails = resp;
 
-              _this78.cashwithdrawForm.controls.totalChargeAmount.setValue(_this78.chargeDetails ? _this78.chargeDetails[0].amount : '');
+              _this79.cashwithdrawForm.controls.totalChargeAmount.setValue(_this79.chargeDetails ? _this79.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this78.totalTransAmount = Number(_this78.cashData.transactionAmount) + Number(_this78.chargeDetails[0].amount);
+                _this79.totalTransAmount = Number(_this79.cashData.transactionAmount) + Number(_this79.chargeDetails[0].amount);
 
-                _this78.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this78.totalTransAmount);
+                _this79.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this79.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -19439,10 +19587,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this78.totalTransAmount = Number(amount) + Number(_this78.chargeDetails ? _this78.chargeDetails[0].amount : '');
-                console.log(_this78.totalTransAmount);
+                _this79.totalTransAmount = Number(amount) + Number(_this79.chargeDetails ? _this79.chargeDetails[0].amount : '');
+                console.log(_this79.totalTransAmount);
 
-                _this78.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this78.totalTransAmount);
+                _this79.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this79.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -19452,15 +19600,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this79 = this;
+            var _this80 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this79.denomRequired = resp.denomRequired;
+              _this80.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this79.enableBtn = false;
-                _this79.enableBtn1 = false;
+                _this80.enableBtn = false;
+                _this80.enableBtn1 = false;
               }
             });
           }
@@ -20586,7 +20734,7 @@
         _createClass(CdServiceComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this80 = this;
+            var _this81 = this;
 
             // localStorage.setItem('chq_page', this.title)
             this.custValidation = localStorage.getItem("customerValidation");
@@ -20619,29 +20767,29 @@
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
                 console.log("Account component?", transaction);
-                _this80.transactiondata = transaction;
+                _this81.transactiondata = transaction;
 
-                if (_this80.transactiondata.transactionAmount) {
-                  _this80.displayDenom = true;
+                if (_this81.transactiondata.transactionAmount) {
+                  _this81.displayDenom = true;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this80.denominationdata = denomination;
+                _this81.denominationdata = denomination;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 console.log("Account component?", data);
-                _this80.appointmentDetails = data;
-                console.log("Account component?", _this80.appointmentDetails.appointmentId);
+                _this81.appointmentDetails = data;
+                console.log("Account component?", _this81.appointmentDetails.appointmentId);
               }
             });
             this.dataService.getNavParam.subscribe(function (title) {
               console.log(title);
-              _this80.titleData = title;
+              _this81.titleData = title;
             });
           }
         }, {
@@ -20693,7 +20841,7 @@
         }, {
           key: "onSaveofcashDeposit",
           value: function onSaveofcashDeposit(form, type, cdForm) {
-            var _this81 = this;
+            var _this82 = this;
 
             var _a; //formData.transactionBranch = this.transBranch;
 
@@ -20703,7 +20851,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this81.qrBranchCode = response;
+                  _this82.qrBranchCode = response;
                 });
               }
             }
@@ -20808,35 +20956,35 @@
             this.tokendisable = true;
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this81.cashWithdrawResponse = cashWithdrawResp;
-              _this81.tokenNum = _this81.cashWithdrawResponse.tokenNumber;
-              _this81.estimatedTime = _this81.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this81.tokenNum);
-              localStorage.setItem("estimatedTiming", _this81.estimatedTime);
+              _this82.cashWithdrawResponse = cashWithdrawResp;
+              _this82.tokenNum = _this82.cashWithdrawResponse.tokenNumber;
+              _this82.estimatedTime = _this82.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this82.tokenNum);
+              localStorage.setItem("estimatedTiming", _this82.estimatedTime);
 
-              if (_this81.cashWithdrawResponse) {
-                _this81.tokendisable = true;
+              if (_this82.cashWithdrawResponse) {
+                _this82.tokendisable = true;
 
-                _this81.dialogService.tokenGenerationDialog();
+                _this82.dialogService.tokenGenerationDialog();
               }
             }, function (error) {
               console.log(error);
-              _this81.tokendisable = false;
+              _this82.tokendisable = false;
             });
             console.log("no resp");
             setTimeout(function () {
-              if (_this81.cashWithdrawResponse == undefined) {
-                console.log(_this81.cashWithdrawResponse);
-                _this81.tokendisable = false;
+              if (_this82.cashWithdrawResponse == undefined) {
+                console.log(_this82.cashWithdrawResponse);
+                _this82.tokendisable = false;
               }
 
-              console.log("out", _this81.tokendisable);
+              console.log("out", _this82.tokendisable);
             }, 30000);
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this82 = this;
+            var _this83 = this;
 
             console.log("Get Otp", formData, type);
             this.phonenum = this.ls.getItem('phonenumFromLogin');
@@ -20857,9 +21005,9 @@
                 console.log('otp1', otpResp);
 
                 if (otpResp) {
-                  _this82.openDialogOTP(_this82.phonenum);
+                  _this83.openDialogOTP(_this83.phonenum);
 
-                  _this82.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this83.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -20879,7 +21027,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this83 = this;
+            var _this84 = this;
 
             console.log("num", numbr);
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_8__["OtpVerifyComponent"], {
@@ -20891,14 +21039,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this83.getOTPforSave(_this83.cashdepositValues, _this83.cashdepositType, '');
+                _this84.getOTPforSave(_this84.cashdepositValues, _this84.cashdepositType, '');
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this84 = this;
+            var _this85 = this;
 
             console.log(formData);
             var denominationData = {};
@@ -20950,29 +21098,29 @@
             this.tokendisable = true;
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this84.cashDepositResponse = cashDepositResp;
-              _this84.tokenNum = _this84.cashDepositResponse.tokenNumber;
-              _this84.estimatedTime = _this84.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this84.tokenNum);
-              localStorage.setItem("estimatedTiming", _this84.estimatedTime);
+              _this85.cashDepositResponse = cashDepositResp;
+              _this85.tokenNum = _this85.cashDepositResponse.tokenNumber;
+              _this85.estimatedTime = _this85.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this85.tokenNum);
+              localStorage.setItem("estimatedTiming", _this85.estimatedTime);
 
-              if (_this84.cashDepositResponse) {
-                _this84.tokendisable = true;
+              if (_this85.cashDepositResponse) {
+                _this85.tokendisable = true;
 
-                _this84.dialogService.tokenGenerationDialog();
+                _this85.dialogService.tokenGenerationDialog();
               }
             }, function (error) {
               console.log(error);
-              _this84.tokendisable = false;
+              _this85.tokendisable = false;
             });
             console.log("no resp");
             setTimeout(function () {
-              if (_this84.cashDepositResponse == undefined) {
-                console.log(_this84.cashDepositResponse);
-                _this84.tokendisable = false;
+              if (_this85.cashDepositResponse == undefined) {
+                console.log(_this85.cashDepositResponse);
+                _this85.tokendisable = false;
               }
 
-              console.log("out", _this84.tokendisable);
+              console.log("out", _this85.tokendisable);
             }, 30000);
           }
         }, {
@@ -21474,7 +21622,7 @@
         _createClass(HeaderComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this85 = this;
+            var _this86 = this;
 
             console.log("Inside Header", this.back);
             this.chqPage = localStorage.getItem('chq_page');
@@ -21484,29 +21632,29 @@
             this.denominationRequired = localStorage.getItem("DenominationRequired");
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
-                _this85.transactiondata = transaction;
-                console.log(_this85.transactiondata);
+                _this86.transactiondata = transaction;
+                console.log(_this86.transactiondata);
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (account) {
               console.log(Object.keys(account).length === 0, account.constructor === Object);
 
               if (Object.keys(account).length != 0 && account.constructor === Object) {
-                _this85.accountData = account;
+                _this86.accountData = account;
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
-                _this85.denominationdata = denomination;
+                _this86.denominationdata = denomination;
               }
             });
             this.dataService.getNavParam.subscribe(function (title) {
               console.log(title);
-              _this85.titleData = title;
+              _this86.titleData = title;
             });
             this.dataService.getpaymentInfoFormdata.subscribe(function (title) {
               console.log(title);
-              _this85.paymentData = title;
+              _this86.paymentData = title;
             });
           }
         }, {
@@ -21998,7 +22146,7 @@
         _createClass(WebcamComponent, [{
           key: "trigger",
           set: function set(trigger) {
-            var _this86 = this;
+            var _this87 = this;
 
             if (this.triggerSubscription) {
               this.triggerSubscription.unsubscribe();
@@ -22006,7 +22154,7 @@
 
 
             this.triggerSubscription = trigger.subscribe(function () {
-              _this86.takeSnapshot();
+              _this87.takeSnapshot();
             });
           }
           /**
@@ -22020,7 +22168,7 @@
         }, {
           key: "switchCamera",
           set: function set(switchCamera) {
-            var _this87 = this;
+            var _this88 = this;
 
             if (this.switchCameraSubscription) {
               this.switchCameraSubscription.unsubscribe();
@@ -22030,10 +22178,10 @@
             this.switchCameraSubscription = switchCamera.subscribe(function (value) {
               if (typeof value === 'string') {
                 // deviceId was specified
-                _this87.switchToVideoInput(value);
+                _this88.switchToVideoInput(value);
               } else {
                 // direction was specified
-                _this87.rotateVideoInput(value !== false);
+                _this88.rotateVideoInput(value !== false);
               }
             });
           }
@@ -22047,18 +22195,18 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this88 = this;
+            var _this89 = this;
 
             this.detectAvailableDevices().then(function () {
               // start video
-              _this88.switchToVideoInput(null);
+              _this89.switchToVideoInput(null);
             })["catch"](function (err) {
-              _this88.initError.next({
+              _this89.initError.next({
                 message: err
               }); // fallback: still try to load webcam, even if device enumeration failed
 
 
-              _this88.switchToVideoInput(null);
+              _this89.switchToVideoInput(null);
             });
           }
         }, {
@@ -22194,7 +22342,7 @@
         }, {
           key: "initWebcam",
           value: function initWebcam(deviceId, userVideoTrackConstraints) {
-            var _this89 = this;
+            var _this90 = this;
 
             var _video = this.nativeVideoElement;
 
@@ -22204,29 +22352,29 @@
               navigator.mediaDevices.getUserMedia({
                 video: videoTrackConstraints
               }).then(function (stream) {
-                _this89.mediaStream = stream;
+                _this90.mediaStream = stream;
                 _video.srcObject = stream;
 
                 _video.play();
 
-                _this89.activeVideoSettings = stream.getVideoTracks()[0].getSettings();
+                _this90.activeVideoSettings = stream.getVideoTracks()[0].getSettings();
                 var activeDeviceId = WebcamComponent.getDeviceIdFromMediaStreamTrack(stream.getVideoTracks()[0]);
 
-                _this89.cameraSwitched.next(activeDeviceId); // Initial detect may run before user gave permissions, returning no deviceIds. This prevents later camera switches. (#47)
+                _this90.cameraSwitched.next(activeDeviceId); // Initial detect may run before user gave permissions, returning no deviceIds. This prevents later camera switches. (#47)
                 // Run detect once again within getUserMedia callback, to make sure this time we have permissions and get deviceIds.
 
 
-                _this89.detectAvailableDevices().then(function () {
-                  _this89.activeVideoInputIndex = activeDeviceId ? _this89.availableVideoInputs.findIndex(function (mediaDeviceInfo) {
+                _this90.detectAvailableDevices().then(function () {
+                  _this90.activeVideoInputIndex = activeDeviceId ? _this90.availableVideoInputs.findIndex(function (mediaDeviceInfo) {
                     return mediaDeviceInfo.deviceId === activeDeviceId;
                   }) : -1;
-                  _this89.videoInitialized = true;
+                  _this90.videoInitialized = true;
                 })["catch"](function () {
-                  _this89.activeVideoInputIndex = -1;
-                  _this89.videoInitialized = true;
+                  _this90.activeVideoInputIndex = -1;
+                  _this90.videoInitialized = true;
                 });
               })["catch"](function (err) {
-                _this89.initError.next({
+                _this90.initError.next({
                   message: err.message,
                   mediaStreamError: err
                 });
@@ -22313,14 +22461,14 @@
         }, {
           key: "detectAvailableDevices",
           value: function detectAvailableDevices() {
-            var _this90 = this;
+            var _this91 = this;
 
             return new Promise(function (resolve, reject) {
               WebcamUtil.getAvailableVideoInputs().then(function (devices) {
-                _this90.availableVideoInputs = devices;
+                _this91.availableVideoInputs = devices;
                 resolve(devices);
               })["catch"](function (err) {
-                _this90.availableVideoInputs = [];
+                _this91.availableVideoInputs = [];
                 reject(err);
               });
             });
@@ -23004,7 +23152,7 @@
         _createClass(CwServiceComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this91 = this;
+            var _this92 = this;
 
             // localStorage.setItem('chq_page', this.title);
             this.custValidation = localStorage.getItem("customerValidation");
@@ -23032,29 +23180,29 @@
               console.log(Object.keys(transaction).length === 0, transaction.constructor === Object);
 
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
-                _this91.transactiondata = transaction;
-                console.log(_this91.transactiondata);
+                _this92.transactiondata = transaction;
+                console.log(_this92.transactiondata);
 
-                if (_this91.transactiondata.transactionAmount && _this91.denominationRequired == 'yes') {
-                  _this91.displayDenom = true;
+                if (_this92.transactiondata.transactionAmount && _this92.denominationRequired == 'yes') {
+                  _this92.displayDenom = true;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this91.denominationdata = denomination;
+                _this92.denominationdata = denomination;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
-                _this91.appointmentDetails = data;
-                console.log("Account component?", _this91.appointmentDetails.appointmentId);
+                _this92.appointmentDetails = data;
+                console.log("Account component?", _this92.appointmentDetails.appointmentId);
               }
             });
             this.dataService.getNavParam.subscribe(function (title) {
               console.log(title);
-              _this91.titleData = title;
+              _this92.titleData = title;
             });
           }
         }, {
@@ -23103,7 +23251,7 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this92 = this;
+            var _this93 = this;
 
             var _a, _b;
 
@@ -23121,7 +23269,7 @@
               if (this.qrData) {
                 if (this.qrData.transactionBranch) {
                   this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                    _this92.qrBranchCode = response;
+                    _this93.qrBranchCode = response;
                   });
                 }
               }
@@ -23225,20 +23373,20 @@
               this.tokendisable = true;
               this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashWithdrawResp) {
                 console.log("Response Success, Data Saved", cashWithdrawResp);
-                _this92.cashWithdrawResponse = cashWithdrawResp;
-                _this92.tokenNum = _this92.cashWithdrawResponse.tokenNumber;
-                _this92.estimatedTime = _this92.cashWithdrawResponse.estimatedWaitTime;
-                localStorage.setItem("tokenNumer", _this92.tokenNum);
-                localStorage.setItem("estimatedTiming", _this92.estimatedTime);
+                _this93.cashWithdrawResponse = cashWithdrawResp;
+                _this93.tokenNum = _this93.cashWithdrawResponse.tokenNumber;
+                _this93.estimatedTime = _this93.cashWithdrawResponse.estimatedWaitTime;
+                localStorage.setItem("tokenNumer", _this93.tokenNum);
+                localStorage.setItem("estimatedTiming", _this93.estimatedTime);
 
-                if (_this92.cashWithdrawResponse) {
-                  _this92.tokendisable = true;
+                if (_this93.cashWithdrawResponse) {
+                  _this93.tokendisable = true;
 
-                  _this92.dialogService.tokenGenerationDialog();
+                  _this93.dialogService.tokenGenerationDialog();
                 }
               }, function (error) {
                 console.log(error);
-                _this92.tokendisable = false;
+                _this93.tokendisable = false;
               }); //   this.tokenObjects.productCode = this.productCode;
               //   this.tokenObjects.accountNumber = form.accountNumber;
               //   console.log(this.tokenObjects.accountNumber);
@@ -23269,18 +23417,18 @@
 
             console.log("no resp");
             setTimeout(function () {
-              if (_this92.cashWithdrawResponse == undefined) {
-                console.log(_this92.cashWithdrawResponse);
-                _this92.tokendisable = false;
+              if (_this93.cashWithdrawResponse == undefined) {
+                console.log(_this93.cashWithdrawResponse);
+                _this93.tokendisable = false;
               }
 
-              console.log("out", _this92.tokendisable);
+              console.log("out", _this93.tokendisable);
             }, 30000);
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this93 = this;
+            var _this94 = this;
 
             console.log("Get Otp", formData, type);
             this.phonenum = this.ls.getItem('phonenumFromLogin');
@@ -23299,9 +23447,9 @@
               this.tokendisable = true;
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this93.openDialogOTP(_this93.phonenum);
+                  _this94.openDialogOTP(_this94.phonenum);
 
-                  _this93.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this94.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -23316,7 +23464,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this94 = this;
+            var _this95 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__["OtpVerifyComponent"], {
               data: {
@@ -23329,14 +23477,14 @@
               console.log("submit", submit);
 
               if (submit) {
-                _this94.getOTPforSave(_this94.cashwithDrwValues, _this94.cashwithDrwType, '');
+                _this95.getOTPforSave(_this95.cashwithDrwValues, _this95.cashwithDrwType, '');
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this95 = this;
+            var _this96 = this;
 
             console.log(formData);
             var denominationData = {};
@@ -23399,29 +23547,29 @@
             this.tokendisable = true;
             this.apiService.saveofCashwithdraw(this.Token).subscribe(function (cashwithdrawresp) {
               console.log("Response Success, Data Saved", cashwithdrawresp);
-              _this95.cashWithdrawResponse = cashwithdrawresp;
-              _this95.tokenNum = _this95.cashWithdrawResponse.tokenNumber;
-              _this95.estimatedTime = _this95.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this95.tokenNum);
-              localStorage.setItem("estimatedTiming", _this95.estimatedTime);
+              _this96.cashWithdrawResponse = cashwithdrawresp;
+              _this96.tokenNum = _this96.cashWithdrawResponse.tokenNumber;
+              _this96.estimatedTime = _this96.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this96.tokenNum);
+              localStorage.setItem("estimatedTiming", _this96.estimatedTime);
 
-              if (_this95.cashWithdrawResponse) {
-                _this95.tokendisable = true;
+              if (_this96.cashWithdrawResponse) {
+                _this96.tokendisable = true;
 
-                _this95.dialogService.tokenGenerationDialog();
+                _this96.dialogService.tokenGenerationDialog();
               }
             }, function (error) {
               console.log(error);
-              _this95.tokendisable = false;
+              _this96.tokendisable = false;
             });
             console.log("no resp");
             setTimeout(function () {
-              if (_this95.cashWithdrawResponse == undefined) {
-                console.log(_this95.cashWithdrawResponse);
-                _this95.tokendisable = false;
+              if (_this96.cashWithdrawResponse == undefined) {
+                console.log(_this96.cashWithdrawResponse);
+                _this96.tokendisable = false;
               }
 
-              console.log("out", _this95.tokendisable);
+              console.log("out", _this96.tokendisable);
             }, 30000);
           }
         }, {
@@ -24154,10 +24302,10 @@
         }, {
           key: "validateFields",
           value: function validateFields(event) {
-            var _this96 = this;
+            var _this97 = this;
 
             setTimeout(function () {
-              _this96.el.nativeElement.value = _this96.el.nativeElement.value.replace(/[^A-Za-z ]/g, '').replace(/\s/g, '');
+              _this97.el.nativeElement.value = _this97.el.nativeElement.value.replace(/[^A-Za-z ]/g, '').replace(/\s/g, '');
               event.preventDefault();
             }, 100);
           }
@@ -24511,7 +24659,7 @@
         _createClass(LoanRepaymentServiceComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this97 = this;
+            var _this98 = this;
 
             // localStorage.setItem('chq_page', this.title);
             this.custNameFromLogin = localStorage.getItem('FromLogin');
@@ -24538,27 +24686,27 @@
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this97.denominationdata = denomination;
+                _this98.denominationdata = denomination;
               }
             });
             this.dataService.getpaymentInfoFormdata.subscribe(function (payment) {
               console.log(Object.keys(payment).length === 0, payment.constructor === Object);
 
               if (Object.keys(payment).length != 0 && payment.constructor === Object) {
-                _this97.paymentData = payment;
-                console.log(_this97.paymentData, _this97.denominationRequired);
+                _this98.paymentData = payment;
+                console.log(_this98.paymentData, _this98.denominationRequired);
 
-                if (_this97.paymentData.rePaymentMode == 'Cash') {
-                  _this97.displayDenom = true;
+                if (_this98.paymentData.rePaymentMode == 'Cash') {
+                  _this98.displayDenom = true;
                 } else {
-                  _this97.displayDenom = false;
+                  _this98.displayDenom = false;
                 }
               }
             });
             this.dataService.getloanRepaymentData.subscribe(function (data) {
               if (data) {
-                _this97.appointmentDetails = data;
-                console.log("Account component?", _this97.appointmentDetails.appointmentId);
+                _this98.appointmentDetails = data;
+                console.log("Account component?", _this98.appointmentDetails.appointmentId);
               }
             });
           }
@@ -24596,7 +24744,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this98 = this;
+            var _this99 = this;
 
             console.log("Get Otp", formData, cdForm);
             this.phonenum = this.ls.getItem('phonenumFromLogin');
@@ -24616,7 +24764,7 @@
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
                   // this.openDialogOTP(this.phonenum);
-                  _this98.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this99.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -24631,7 +24779,7 @@
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(form, type, cdForm) {
-            var _this99 = this;
+            var _this100 = this;
 
             console.log(form);
             var denominationData = {};
@@ -24662,7 +24810,7 @@
 
               if (form.paymentInfo.rePaymentMode == 'Cheque') {
                 loanRepaymentModeInfo.push({
-                  loanAccountNo: form.loanInfo.loanAccountId,
+                  // loanAccountNo:form.loanInfo.loanAccountId,
                   category: 'Repayment',
                   rePaymentMode: form.paymentInfo.rePaymentMode,
                   accountNumber: form.paymentInfo.accountNumber,
@@ -24673,7 +24821,7 @@
                 });
               } else if (form.paymentInfo.rePaymentMode == 'Account') {
                 loanRepaymentModeInfo.push({
-                  loanAccountNo: form.loanInfo.loanAccountId,
+                  // loanAccountNo:form.loanInfo.loanAccountId,
                   category: 'Repayment',
                   rePaymentMode: form.paymentInfo.rePaymentMode,
                   accountNumber: form.paymentInfo.accountNumber,
@@ -24701,6 +24849,7 @@
 
 
               this.Token.modeInfo = loanRepaymentModeInfo;
+              this.Token.accountNumber = form.loanInfo.loanAccountId;
               this.Token.customerId = form.loanInfo.customerId ? form.loanInfo.customerId : 0, this.Token.transactionCurrency = form.paymentInfo.transactionCurrency, this.Token.negotiatedRate = form.paymentInfo.negotiatedRate, this.Token.totalChargeAmount = form.paymentInfo.totalChargeAmount, this.Token.totalTransactionAmount = form.paymentInfo.totalTransactionAmount, this.Token.accountType = form.loanInfo.loanType, this.Token.accountCurrency = form.loanInfo.accountCurrency, this.Token.holderName = form.loanInfo.customerName, this.Token.transactionBranch = this.transBranch, this.Token.entityCode = this.entityCode, this.Token.bankCode = this.bankCode, this.Token.tokenBranch = this.tokenBranch, this.Token.customerCategory = this.custPref, this.Token.productCode = 'LNR', this.Token.tokenOrigin = this.tokenOrigin, this.Token.tokenNumber = "", this.Token.estimatedWaitTime = "", this.Token.accountAmount = "", this.Token.narrative = "", this.Token.denomination = [], this.Token.totalAmount = "";
               console.log(denominationDataArray);
 
@@ -24713,35 +24862,35 @@
             this.tokendisable = true;
             this.apiService.saveofCashwithdraw(this.Token).subscribe(function (cashwithdrawresp) {
               console.log("Response Success, Data Saved", cashwithdrawresp);
-              _this99.loanRepaymentResp = cashwithdrawresp;
-              _this99.tokenNum = _this99.loanRepaymentResp.tokenNumber;
-              _this99.estimatedTime = _this99.loanRepaymentResp.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this99.tokenNum);
-              localStorage.setItem("estimatedTiming", _this99.estimatedTime);
+              _this100.loanRepaymentResp = cashwithdrawresp;
+              _this100.tokenNum = _this100.loanRepaymentResp.tokenNumber;
+              _this100.estimatedTime = _this100.loanRepaymentResp.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this100.tokenNum);
+              localStorage.setItem("estimatedTiming", _this100.estimatedTime);
 
-              if (_this99.loanRepaymentResp) {
-                _this99.tokendisable = true;
+              if (_this100.loanRepaymentResp) {
+                _this100.tokendisable = true;
 
-                _this99.dialogService.tokenGenerationDialog();
+                _this100.dialogService.tokenGenerationDialog();
               }
             }, function (error) {
               console.log(error);
-              _this99.tokendisable = false;
+              _this100.tokendisable = false;
             });
             console.log("no resp");
             setTimeout(function () {
-              if (_this99.loanRepaymentResp == undefined) {
-                console.log(_this99.loanRepaymentResp);
-                _this99.tokendisable = false;
+              if (_this100.loanRepaymentResp == undefined) {
+                console.log(_this100.loanRepaymentResp);
+                _this100.tokendisable = false;
               }
 
-              console.log("out", _this99.tokendisable);
+              console.log("out", _this100.tokendisable);
             }, 30000);
           }
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this100 = this;
+            var _this101 = this;
 
             var _a;
 
@@ -24759,7 +24908,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this100.qrBranchCode = response;
+                  _this101.qrBranchCode = response;
                 });
               }
             }
@@ -24805,26 +24954,26 @@
 
               if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'Cheque') {
                 loanRepaymentModeInfo.push({
-                  loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                  // loanAccountNo:this.appointmentDetails.modeInfo[0].loanAccountNo,
                   category: 'Repayment',
                   rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
-                  accountNumber: this.appointmentDetails.accountNumber,
+                  // accountNumber:this.appointmentDetails.accountNumber,
                   accountCurrency: this.appointmentDetails.accountCurrency,
                   accountBranch: this.appointmentDetails.modeInfo[0].accountBranch,
-                  chequeType: this.appointmentDetails.chequeType,
-                  nameOfTheCheque: this.appointmentDetails.nameOfTheCheque
+                  chequeType: this.appointmentDetails.modeInfo[0].chequeType,
+                  nameOfTheCheque: this.appointmentDetails.modeInfo[0].nameOfTheCheque
                 });
               } else if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'Account') {
                 loanRepaymentModeInfo.push({
                   loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
                   category: 'Repayment',
                   rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
-                  accountNumber: this.appointmentDetails.accountNumber,
-                  accountCurrency: this.appointmentDetails.accountCurrency,
+                  accountNumber: this.appointmentDetails.modeInfo[0].accountNumber,
+                  accountCurrency: this.appointmentDetails.modeInfo[0].accountCurrency,
                   accountBranch: this.appointmentDetails.modeInfo[0].accountBranch,
-                  accountBalance: this.appointmentDetails.accountBalance,
-                  customerNumber: this.appointmentDetails.holderName,
-                  accountType: this.appointmentDetails.accountType
+                  accountBalance: this.appointmentDetails.modeInfo[0].accountBalance,
+                  customerNumber: this.appointmentDetails.modeInfo[0].holderName,
+                  accountType: this.appointmentDetails.modeInfo[0].accountType
                 });
               } else {
                 loanRepaymentModeInfo.push({
@@ -24835,7 +24984,7 @@
               }
 
               this.Token.modeInfo = loanRepaymentModeInfo;
-              this.Token.holderName = this.appointmentDetails.holderName, this.Token.accountCurrency = this.appointmentDetails.accountCurrency, this.Token.appointmentId = this.appointmentDetails.appointmentId ? this.appointmentDetails.appointmentId : 0, this.Token.appointmentStatus = this.appointmentDetails.appointmentStatus, this.Token.transactionAmount = this.appointmentDetails.transactionAmount, this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0, this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency, this.Token.accountNumber = this.appointmentDetails.accountNumber, this.Token.negotiatedRate = this.appointmentDetails.negotiatedRate, this.Token.totalChargeAmount = this.appointmentDetails.totalChargeAmount, this.Token.totalTransactionAmount = this.appointmentDetails.totalTransactionAmount, this.Token.accountType = this.appointmentDetails.accountType, this.Token.accountBranch = this.appointmentDetails.accountBranch, this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0, console.log("Not a qrvariable", this.Token);
+              this.Token.accountNumber = this.appointmentDetails.accountNumber, this.Token.holderName = this.appointmentDetails.holderName, this.Token.accountCurrency = this.appointmentDetails.accountCurrency, this.Token.appointmentId = this.appointmentDetails.appointmentId ? this.appointmentDetails.appointmentId : 0, this.Token.appointmentStatus = this.appointmentDetails.appointmentStatus, this.Token.transactionAmount = this.appointmentDetails.transactionAmount, this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0, this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency, this.Token.accountNumber = this.appointmentDetails.accountNumber, this.Token.negotiatedRate = this.appointmentDetails.negotiatedRate, this.Token.totalChargeAmount = this.appointmentDetails.totalChargeAmount, this.Token.totalTransactionAmount = this.appointmentDetails.totalTransactionAmount, this.Token.accountType = this.appointmentDetails.accountType, this.Token.accountBranch = this.appointmentDetails.accountBranch, this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0, console.log("Not a qrvariable", this.Token);
               this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency, this.Token.transactionBranch = this.transBranch, this.Token.entityCode = this.entityCode, this.Token.bankCode = this.bankCode, this.Token.tokenBranch = this.tokenBranch, this.Token.customerCategory = this.custPref, this.Token.productCode = 'LNR', this.Token.tokenOrigin = this.tokenOrigin, this.Token.tokenNumber = "", this.Token.estimatedWaitTime = "", this.Token.accountAmount = "", this.Token.narrative = this.appointmentDetails.remarks, this.Token.totalAmount = "";
               this.Token.denomination = [], console.log(denominationDataArray);
 
@@ -24907,15 +25056,15 @@
 
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this100.loanResponse = cashWithdrawResp;
-              _this100.tokenNum = _this100.loanResponse.tokenNumber;
-              _this100.estimatedTime = _this100.loanResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this100.tokenNum);
-              localStorage.setItem("estimatedTiming", _this100.estimatedTime);
-              _this100.enableContinue = false;
+              _this101.loanResponse = cashWithdrawResp;
+              _this101.tokenNum = _this101.loanResponse.tokenNumber;
+              _this101.estimatedTime = _this101.loanResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this101.tokenNum);
+              localStorage.setItem("estimatedTiming", _this101.estimatedTime);
+              _this101.enableContinue = false;
 
-              if (_this100.loanResponse) {
-                _this100.dialogService.tokenGenerationDialog();
+              if (_this101.loanResponse) {
+                _this101.dialogService.tokenGenerationDialog();
               }
             });
 
@@ -25203,7 +25352,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("cancelDisabled", false);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("cancelDisabled", false)("saveDisabled", ctx_r0.loanDisburshmentForm.get("loanInfo").invalid);
         }
       }
 
@@ -25256,7 +25405,7 @@
         _createClass(LoanDisburshmentComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this101 = this;
+            var _this102 = this;
 
             this.custValidation = localStorage.getItem("customerValidation");
             this.transBranch = localStorage.getItem("TRANSACTIONBRANCH");
@@ -25278,28 +25427,32 @@
             this.dataService.getpaymentInfoFormdata.subscribe(function (payment) {
               // console.log(Object.keys(payment).length === 0,payment.constructor === Object)
               if (payment) {
-                _this101.paymentData = payment;
-                console.log(_this101.paymentData, _this101.denominationRequired);
+                _this102.paymentData = payment;
+                console.log(_this102.paymentData, _this102.denominationRequired);
 
-                if (_this101.paymentData.rePaymentMode == 'Cash') {
-                  _this101.displayDenom = true;
+                if (_this102.paymentData.rePaymentMode == 'Cash') {
+                  _this102.displayDenom = true;
                 } else {
-                  _this101.displayDenom = false;
+                  _this102.displayDenom = false;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this101.denominationdata = denomination;
+                _this102.denominationdata = denomination;
               }
             });
             this.dataService.getloanRepaymentData.subscribe(function (payment) {
               // console.log(Object.keys(payment).length === 0,payment.constructor === Object)
               // if(Object.keys(payment).length != 0  && payment.constructor === Object){
               if (payment) {
-                _this101.appointmentDetails = payment;
-                console.log(_this101.appointmentDetails);
+                _this102.appointmentDetails = payment;
+                console.log(_this102.appointmentDetails);
+
+                if (_this102.appointmentDetails.modeInfo[0].rePaymentMode == 'Account') {
+                  _this102.displayDenom = false;
+                }
               }
             });
           }
@@ -25340,9 +25493,9 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this102 = this;
+            var _this103 = this;
 
-            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 
             console.log(form, type, cdForm); // if(Number(this.appointmentDetails?.appointmentId ?this.loanRepaymentForm.value.transaction.transactionAmount:this.loanRepaymentForm.value.transaction.transactionAmount.replace(/,/g,"")) > this.loanRepaymentForm.value.account.accountBalance){
             //   console.log("insufficient_true");
@@ -25358,7 +25511,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this102.qrBranchCode = response;
+                  _this103.qrBranchCode = response;
                 });
               }
             }
@@ -25401,26 +25554,26 @@
 
               if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'Cheque') {
                 loanRepaymentModeInfo.push({
-                  loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                  // loanAccountNo:this.appointmentDetails.modeInfo[0].loanAccountNo,
                   category: 'Disbursement',
                   rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
-                  accountNumber: (_e = this.appointmentDetails) === null || _e === void 0 ? void 0 : _e.accountNumber,
-                  accountCurrency: (_f = this.appointmentDetails) === null || _f === void 0 ? void 0 : _f.accountCurrency,
-                  accountBranch: (_g = this.appointmentDetails) === null || _g === void 0 ? void 0 : _g.accountBranch,
-                  chequeType: (_h = this.appointmentDetails) === null || _h === void 0 ? void 0 : _h.chequeType,
-                  nameOfTheCheque: (_j = this.appointmentDetails) === null || _j === void 0 ? void 0 : _j.nameOnCheque,
-                  customerNumber: (_k = this.appointmentDetails) === null || _k === void 0 ? void 0 : _k.holderName,
-                  accountBalance: (_l = this.appointmentDetails) === null || _l === void 0 ? void 0 : _l.accountBalance
+                  // accountNumber:this.appointmentDetails?.modeInfo[0].accountNumber,
+                  accountCurrency: (_e = this.appointmentDetails) === null || _e === void 0 ? void 0 : _e.modeInfo[0].accountCurrency,
+                  accountBranch: (_f = this.appointmentDetails) === null || _f === void 0 ? void 0 : _f.modeInfo[0].accountBranch,
+                  chequeType: (_g = this.appointmentDetails) === null || _g === void 0 ? void 0 : _g.modeInfo[0].chequeType,
+                  nameOnCheque: (_h = this.appointmentDetails) === null || _h === void 0 ? void 0 : _h.modeInfo[0].nameOnCheque,
+                  customerNumber: (_j = this.appointmentDetails) === null || _j === void 0 ? void 0 : _j.modeInfo[0].holderName,
+                  accountBalance: (_k = this.appointmentDetails) === null || _k === void 0 ? void 0 : _k.modeInfo[0].accountBalance
                 });
               } else if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'Account') {
                 loanRepaymentModeInfo.push({
-                  loanAccountNo: this.appointmentDetails.modeInfo[0].loanAccountNo,
+                  // loanAccountNo:this.appointmentDetails.modeInfo[0].loanAccountNo,
                   category: 'Disbursement',
                   rePaymentMode: this.appointmentDetails.modeInfo[0].rePaymentMode,
-                  accountNumber: this.appointmentDetails.accountNumber,
-                  accountCurrency: this.appointmentDetails.accountCurrency,
-                  accountBranch: this.appointmentDetails.accountBranch,
-                  accountBalance: this.appointmentDetails.accountBalance
+                  accountNumber: this.appointmentDetails.modeInfo[0].accountNumber,
+                  accountCurrency: this.appointmentDetails.modeInfo[0].accountCurrency,
+                  accountBranch: this.appointmentDetails.modeInfo[0].accountBranch,
+                  accountBalance: this.appointmentDetails.modeInfo[0].accountBalance
                 });
               } else {
                 loanRepaymentModeInfo.push({
@@ -25430,7 +25583,7 @@
                 });
               }
 
-              this.Token.modeInfo = loanRepaymentModeInfo, this.Token.holderName = this.appointmentDetails.holderName, this.Token.accountCurrency = this.appointmentDetails.accountCurrency, this.Token.appointmentId = this.appointmentDetails.appointmentId ? this.appointmentDetails.appointmentId : 0, this.Token.appointmentStatus = this.appointmentDetails.appointmentStatus, this.Token.transactionAmount = this.appointmentDetails.transactionAmount, this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0, this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency, this.Token.accountType = this.appointmentDetails.accountType, this.Token.negotiatedRate = this.appointmentDetails.negotiatedRate, this.Token.totalChargeAmount = this.appointmentDetails.totalChargeAmount, this.Token.totalTransactionAmount = this.appointmentDetails.totalTransactionAmount, this.Token.transactionBranch = this.transBranch, this.Token.entityCode = this.entityCode, this.Token.bankCode = this.bankCode, this.Token.tokenBranch = this.tokenBranch, this.Token.customerCategory = this.custPref, this.Token.productCode = 'LND', this.Token.tokenOrigin = this.tokenOrigin, this.Token.tokenNumber = "", this.Token.estimatedWaitTime = "", this.Token.accountAmount = "", this.Token.narrative = this.appointmentDetails.remarks, this.Token.totalAmount = "";
+              this.Token.accountNumber = this.appointmentDetails.accountNumber, this.Token.accountType = this.appointmentDetails.loanType, this.Token.modeInfo = loanRepaymentModeInfo, this.Token.holderName = this.appointmentDetails.holderName, this.Token.accountCurrency = this.appointmentDetails.accountCurrency, this.Token.appointmentId = this.appointmentDetails.appointmentId ? this.appointmentDetails.appointmentId : 0, this.Token.appointmentStatus = this.appointmentDetails.appointmentStatus, this.Token.transactionAmount = this.appointmentDetails.transactionAmount, this.Token.customerId = this.appointmentDetails.customerId ? this.appointmentDetails.customerId : 0, this.Token.transactionCurrency = this.appointmentDetails.transactionCurrency, this.Token.accountType = this.appointmentDetails.accountType, this.Token.negotiatedRate = this.appointmentDetails.negotiatedRate, this.Token.totalChargeAmount = this.appointmentDetails.totalChargeAmount, this.Token.totalTransactionAmount = this.appointmentDetails.totalTransactionAmount, this.Token.transactionBranch = this.transBranch, this.Token.entityCode = this.entityCode, this.Token.bankCode = this.bankCode, this.Token.tokenBranch = this.tokenBranch, this.Token.customerCategory = this.custPref, this.Token.productCode = 'LND', this.Token.tokenOrigin = this.tokenOrigin, this.Token.tokenNumber = "", this.Token.estimatedWaitTime = "", this.Token.accountAmount = "", this.Token.narrative = this.appointmentDetails.remarks, this.Token.totalAmount = "";
               console.log(denominationDataArray);
 
               if (this.appointmentDetails.modeInfo[0].rePaymentMode == 'Cash' && this.denomRequired == 'yes') {
@@ -25444,10 +25597,10 @@
 
               if (form.paymentInfo.rePaymentMode == 'Cheque') {
                 _loanRepaymentModeInfo2.push({
-                  loanAccountNo: form.loanInfo.loanAccountId,
+                  // loanAccountNo:form.loanInfo.loanAccountId,
                   category: 'Disbursement',
                   rePaymentMode: form.paymentInfo.rePaymentMode,
-                  accountNumber: form.paymentInfo.accountNumber,
+                  // accountNumber:form.paymentInfo.accountNumber,
                   accountCurrency: form.loanInfo.accountCurrency,
                   accountBranch: form.paymentInfo.accountBranch,
                   chequeType: form.paymentInfo.chequeType,
@@ -25455,7 +25608,7 @@
                 });
               } else if (form.paymentInfo.rePaymentMode == 'Account') {
                 _loanRepaymentModeInfo2.push({
-                  loanAccountNo: form.loanInfo.loanAccountId,
+                  // loanAccountNo:form.loanInfo.loanAccountId,
                   category: 'Disbursement',
                   rePaymentMode: form.paymentInfo.rePaymentMode,
                   accountNumber: form.paymentInfo.accountNumber,
@@ -25473,7 +25626,8 @@
 
               this.Token.modeInfo = _loanRepaymentModeInfo2;
               this.Token.customerId = form.loanInfo.customerId ? form.loanInfo.customerId : 0, console.log("Not a qrvariable", this.Token);
-              this.Token.transactionCurrency = form.paymentInfo.transactionCurrency, this.Token.negotiatedRate = form.paymentInfo.negotiatedRate, this.Token.totalChargeAmount = form.paymentInfo.totalChargeAmount, this.Token.totalTransactionAmount = form.paymentInfo.totalTransactionAmount, this.Token.accountType = form.loanInfo.accountType, this.Token.holderName = form.loanInfo.holderName, this.Token.transactionBranch = this.transBranch, this.Token.entityCode = this.entityCode, this.Token.bankCode = this.bankCode, this.Token.tokenBranch = this.tokenBranch, this.Token.customerCategory = this.custPref, this.Token.productCode = 'LND', this.Token.tokenOrigin = this.tokenOrigin, this.Token.transactionAmount = form.paymentInfo.loanDisburshmentAmount, this.Token.tokenNumber = "", this.Token.estimatedWaitTime = "", this.Token.accountAmount = "", this.Token.narrative = "", //  this.Token.denomination=[],
+              this.Token.transactionCurrency = form.paymentInfo.transactionCurrency, this.Token.accountNumber = form.loanInfo.loanAccountId;
+              this.Token.negotiatedRate = form.paymentInfo.negotiatedRate, this.Token.totalChargeAmount = form.paymentInfo.totalChargeAmount, this.Token.totalTransactionAmount = form.paymentInfo.totalTransactionAmount, this.Token.accountType = form.loanInfo.accountType, this.Token.holderName = form.loanInfo.holderName, this.Token.transactionBranch = this.transBranch, this.Token.entityCode = this.entityCode, this.Token.bankCode = this.bankCode, this.Token.tokenBranch = this.tokenBranch, this.Token.customerCategory = this.custPref, this.Token.productCode = 'LND', this.Token.tokenOrigin = this.tokenOrigin, this.Token.transactionAmount = form.paymentInfo.loanDisburshmentAmount, this.Token.tokenNumber = "", this.Token.estimatedWaitTime = "", this.Token.accountAmount = "", this.Token.narrative = "", //  this.Token.denomination=[],
               this.Token.totalAmount = "";
               console.log(this.denomRequired);
 
@@ -25487,14 +25641,14 @@
 
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this102.loanResponse = cashWithdrawResp;
-              _this102.tokenNum = _this102.loanResponse.tokenNumber;
-              _this102.estimatedTime = _this102.loanResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this102.tokenNum);
-              localStorage.setItem("estimatedTiming", _this102.estimatedTime);
+              _this103.loanResponse = cashWithdrawResp;
+              _this103.tokenNum = _this103.loanResponse.tokenNumber;
+              _this103.estimatedTime = _this103.loanResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this103.tokenNum);
+              localStorage.setItem("estimatedTiming", _this103.estimatedTime);
 
-              if (_this102.loanResponse) {
-                _this102.dialogService.tokenGenerationDialog();
+              if (_this103.loanResponse) {
+                _this103.dialogService.tokenGenerationDialog();
               }
             });
 
@@ -25517,10 +25671,10 @@
         selectors: [["app-loan-disburshment"]],
         decls: 1,
         vars: 1,
-        consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["titleVal", "Disbursement", "formControlName", "loanInfo"], ["titleVal", "Disbursement", "formControlName", "paymentInfo", "loanType", "loanDisburshment"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]],
+        consts: [[3, "formGroup", 4, "ngIf"], [3, "formGroup"], [2, "margin-top", "-3%"], [3, "title", "back"], ["fxLayout", "row", 2, "justify-content", "center"], ["fxFlex", "70%", 2, "margin-top", "1%", "height", "450px", "box-shadow", "0px 3px 6px #00000029", "border-radius", "10px", "opacity", "1"], ["titleVal", "Disbursement", "formControlName", "loanInfo"], ["titleVal", "Disbursement", "formControlName", "paymentInfo", "loanType", "loanDisburshment"], ["style", "margin-top: 0%; margin-left: -16px; margin-bottom: 7px;", 4, "ngIf"], [2, "margin-top", "-1%", 3, "ngClass"], ["saveText", "Continue", 3, "cancelDisabled", "saveDisabled", "save", "cancel", "exit"], [2, "margin-top", "0%", "margin-left", "-16px", "margin-bottom", "7px"], ["formControlName", "denomination"]],
         template: function LoanDisburshmentComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, LoanDisburshmentComponent_form_0_Template, 10, 5, "form", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, LoanDisburshmentComponent_form_0_Template, 10, 6, "form", 0);
           }
 
           if (rf & 2) {
@@ -27661,7 +27815,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this103 = this;
+            var _this104 = this;
 
             this.cashdepositForm.controls.transactionAmount.reset();
             this.cashdepositForm.controls.totalTransactionAmount.setValue(this.cashdepositForm.controls.totalChargeAmount.value);
@@ -27670,71 +27824,71 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('Account Number Rsp', res);
 
-              _this103.getChargeDetails(accNum, ''); // this.isLoading = false;
+              _this104.getChargeDetails(accNum, ''); // this.isLoading = false;
 
 
-              _this103.userName = res.accHolderName;
-              _this103.accountBal = res.accBalance;
-              _this103.custmerID = res.customerId;
-              _this103.accountNumber = res.accountId;
-              _this103.accountCurrency = res.accountCurrency;
-              _this103.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
+              _this104.userName = res.accHolderName;
+              _this104.accountBal = res.accBalance;
+              _this104.custmerID = res.customerId;
+              _this104.accountNumber = res.accountId;
+              _this104.accountCurrency = res.accountCurrency;
+              _this104.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this103.cashdepositForm.controls.accountType.setValue(res.accountType);
+              _this104.cashdepositForm.controls.accountType.setValue(res.accountType);
 
-              _this103.cashdepositForm.controls.accountCurrency.setValue(res.currency);
+              _this104.cashdepositForm.controls.accountCurrency.setValue(res.currency);
 
-              _this103.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
+              _this104.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this103.cashdepositForm.controls.holderName.setValue(_this103.userName);
+              _this104.cashdepositForm.controls.holderName.setValue(_this104.userName);
 
-              _this103.getCountrynameValues();
+              _this104.getCountrynameValues();
 
-              _this103.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-              _this103.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this104.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this104.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-              _this103.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
+              _this104.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this103.custAmountBal(accNum);
+              _this104.custAmountBal(accNum);
 
-              _this103.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
+              _this104.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
 
-              _this103.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this103.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this103.phonenum);
+              _this104.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this104.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this104.phonenum);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this104 = this;
+            var _this105 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this104.countryValues = allCountryValues;
+              _this105.countryValues = allCountryValues;
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this105 = this;
+            var _this106 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this105.trasactionBranches = branches;
+              _this106.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this106 = this;
+            var _this107 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this106.branchData = data;
-              console.log(_this106.branchData);
+              _this107.branchData = data;
+              console.log(_this107.branchData);
               data.forEach(function (element, index) {
-                _this106.branch = data[index].branchName;
-                console.log(_this106.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
+                _this107.branch = data[index].branchName;
+                console.log(_this107.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
@@ -27772,47 +27926,47 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this107 = this;
+            var _this108 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this107.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this108.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this107.cashdepositForm.controls.holderName.setValue(_this107.userName);
+              _this108.cashdepositForm.controls.holderName.setValue(_this108.userName);
 
-              _this107.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
+              _this108.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
 
-              _this107.custAccountData = allTransactionResp.custAccount;
-              _this107.accounttypeArray = _toConsumableArray(_this107.custAccountData).filter(function (_ref6, index) {
+              _this108.custAccountData = allTransactionResp.custAccount;
+              _this108.accounttypeArray = _toConsumableArray(_this108.custAccountData).filter(function (_ref6, index) {
                 var accountType = _ref6.accountType;
-                return !_toConsumableArray(_this107.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this108.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
 
-              for (var j = 0; j < _this107.custAccountData.length; j++) {
-                if (_this107.custAccountData[j].status == 'APPROVED') {
-                  _this107.accountNoList.push(_this107.custAccountData[j]);
+              for (var j = 0; j < _this108.custAccountData.length; j++) {
+                if (_this108.custAccountData[j].status == 'APPROVED') {
+                  _this108.accountNoList.push(_this108.custAccountData[j]);
                 }
               }
 
-              if (_this107.custAccountData && _this107.accountNoList.length <= 1) {
-                _this107.accountDropdown = false;
-                _this107.hideDetails = true;
+              if (_this108.custAccountData && _this108.accountNoList.length <= 1) {
+                _this108.accountDropdown = false;
+                _this108.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this107.cashdepositForm.controls.accountType.setValue(accTyp);
+                _this108.cashdepositForm.controls.accountType.setValue(accTyp);
 
-                _this107.custAccountNumber(_this107.accountNoList[0]);
+                _this108.custAccountNumber(_this108.accountNoList[0]);
               } else {
-                _this107.accountDropdown = true;
-                _this107.hideDetails = true;
+                _this108.accountDropdown = true;
+                _this108.hideDetails = true;
                 var _accTyp6 = allTransactionResp.custAccount[0].accountType;
 
-                _this107.cashdepositForm.controls.accountType.setValue(_accTyp6);
+                _this108.cashdepositForm.controls.accountType.setValue(_accTyp6);
 
-                _this107.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this108.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -27951,7 +28105,7 @@
         }, {
           key: "onSaveofcashDeposit",
           value: function onSaveofcashDeposit(formData, type, cdForm) {
-            var _this108 = this;
+            var _this109 = this;
 
             formData.transactionBranch = this.transBranch;
             console.log("Data", formData, type, cdForm);
@@ -27959,7 +28113,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this108.qrBranchCode = response;
+                  _this109.qrBranchCode = response;
                 });
               }
             }
@@ -28037,15 +28191,15 @@
 
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this108.cashDepositResponse = cashDepositResp;
-              _this108.tokenNum = _this108.cashDepositResponse.tokenNumber;
-              _this108.estimatedTime = _this108.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this108.tokenNum);
-              localStorage.setItem("estimatedTiming", _this108.estimatedTime);
-              _this108.enableContinue = false;
+              _this109.cashDepositResponse = cashDepositResp;
+              _this109.tokenNum = _this109.cashDepositResponse.tokenNumber;
+              _this109.estimatedTime = _this109.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this109.tokenNum);
+              localStorage.setItem("estimatedTiming", _this109.estimatedTime);
+              _this109.enableContinue = false;
 
-              if (_this108.cashDepositResponse) {
-                _this108.dialogService.tokenGenerationDialog();
+              if (_this109.cashDepositResponse) {
+                _this109.dialogService.tokenGenerationDialog();
               }
             });
           } // OTP And Save
@@ -28053,7 +28207,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this109 = this;
+            var _this110 = this;
 
             this.cashdepositValues = formData;
             this.cashdeposiform = type;
@@ -28068,9 +28222,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this109.openDialogOTP(_this109.phonenum);
+                  _this110.openDialogOTP(_this110.phonenum);
 
-                  _this109.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this110.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -28084,7 +28238,7 @@
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this110 = this;
+            var _this111 = this;
 
             formData.transactionBranch = this.transBranch;
             var denominationData = {};
@@ -28145,22 +28299,22 @@
             console.log(formData.transactionId, formData.transactionStatus);
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this110.cashDepositResponse = cashDepositResp;
-              _this110.tokenNum = _this110.cashDepositResponse.tokenNumber;
-              _this110.estimatedTime = _this110.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this110.tokenNum);
-              localStorage.setItem("estimatedTiming", _this110.estimatedTime);
-              _this110.enableContinue = false;
+              _this111.cashDepositResponse = cashDepositResp;
+              _this111.tokenNum = _this111.cashDepositResponse.tokenNumber;
+              _this111.estimatedTime = _this111.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this111.tokenNum);
+              localStorage.setItem("estimatedTiming", _this111.estimatedTime);
+              _this111.enableContinue = false;
 
-              if (_this110.cashDepositResponse) {
-                _this110.dialogService.tokenGenerationDialog();
+              if (_this111.cashDepositResponse) {
+                _this111.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this111 = this;
+            var _this112 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_9__["OtpVerifyComponent"], {
               data: {
@@ -28171,7 +28325,7 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this111.getOTPforSave(_this111.cashdepositValues, _this111.cashdeposiform, _this111.cashdepositType);
+                _this112.getOTPforSave(_this112.cashdepositValues, _this112.cashdeposiform, _this112.cashdepositType);
               }
             });
           }
@@ -28278,50 +28432,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this112 = this;
+            var _this113 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log("resp ::", resp);
-              _this112.cashData = resp.data;
-              _this112.custID = resp.data.customerId;
-              _this112.ifQRvariable = true;
+              _this113.cashData = resp.data;
+              _this113.custID = resp.data.customerId;
+              _this113.ifQRvariable = true;
 
-              _this112.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
+              _this113.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this112.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this113.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this112.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this113.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this112.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this113.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this112.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this113.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this112.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this113.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this112.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this113.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this112.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this112.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
-              console.log("amount::", _this112.cashdepositForm.controls.transactionAmount.value);
+              _this113.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this113.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              console.log("amount::", _this113.cashdepositForm.controls.transactionAmount.value);
             });
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this113 = this;
+            var _this114 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this113.chargeDetails = resp;
+              _this114.chargeDetails = resp;
 
-              _this113.cashdepositForm.controls.totalChargeAmount.setValue(_this113.chargeDetails ? _this113.chargeDetails[0].amount : '');
+              _this114.cashdepositForm.controls.totalChargeAmount.setValue(_this114.chargeDetails ? _this114.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this113.totalTransAmount = Number(_this113.cashData.transactionAmount) + Number(_this113.chargeDetails[0].amount);
+                _this114.totalTransAmount = Number(_this114.cashData.transactionAmount) + Number(_this114.chargeDetails[0].amount);
 
-                _this113.cashdepositForm.controls.totalTransactionAmount.setValue(_this113.totalTransAmount);
+                _this114.cashdepositForm.controls.totalTransactionAmount.setValue(_this114.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -28330,10 +28484,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this113.totalTransAmount = Number(amount) + Number(_this113.chargeDetails ? _this113.chargeDetails[0].amount : '');
-                console.log(_this113.totalTransAmount);
+                _this114.totalTransAmount = Number(amount) + Number(_this114.chargeDetails ? _this114.chargeDetails[0].amount : '');
+                console.log(_this114.totalTransAmount);
 
-                _this113.cashdepositForm.controls.totalTransactionAmount.setValue(_this113.totalTransAmount);
+                _this114.cashdepositForm.controls.totalTransactionAmount.setValue(_this114.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -28362,15 +28516,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this114 = this;
+            var _this115 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this114.denomRequired = resp.denomRequired;
+              _this115.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this114.enableBtn = false;
-                _this114.enableBtn1 = false;
+                _this115.enableBtn = false;
+                _this115.enableBtn1 = false;
               }
             });
           }
@@ -31864,7 +32018,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this115 = this;
+            var _this116 = this;
 
             console.log(this.cdForm);
             this.chqPage = localStorage.getItem('chq_page');
@@ -31872,26 +32026,26 @@
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (transaction) {
                 console.log("Account component?", transaction);
-                _this115.transactiondata = transaction;
+                _this116.transactiondata = transaction;
               }
             });
             this.dataService.getpaymentInfoFormdata.subscribe(function (transaction) {
               if (transaction) {
                 console.log("Account component?", transaction);
-                _this115.transactiondata = transaction;
+                _this116.transactiondata = transaction;
               }
             });
             this.dataService.getforexTransTypeData.subscribe(function (transaction) {
               if (transaction) {
                 console.log("Account component?", transaction);
-                _this115.forexData = transaction;
+                _this116.forexData = transaction;
               }
             });
             this.dataService.getNavParam.subscribe(function (denomRequired) {
               if (denomRequired) {
                 console.log("Account component?", denomRequired);
-                _this115.denomRequired = denomRequired;
-                console.log(_this115.transactiondata.transactionAmounts);
+                _this116.denomRequired = denomRequired;
+                console.log(_this116.transactiondata.transactionAmounts);
               }
             });
           }
@@ -33234,7 +33388,7 @@
         _createClass(AddAccountDisburshmentComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this116 = this;
+            var _this117 = this;
 
             var _a;
 
@@ -33253,17 +33407,17 @@
               var _a;
 
               if (val === 'Internal') {
-                (_a = _this116.addAccountDisburshment.get('bankCode')) === null || _a === void 0 ? void 0 : _a.patchValue("");
+                (_a = _this117.addAccountDisburshment.get('bankCode')) === null || _a === void 0 ? void 0 : _a.patchValue("");
 
-                _this116.addAccountDisburshment.get('bankCode').clearValidators(); // 6. Clear All Validators
+                _this117.addAccountDisburshment.get('bankCode').clearValidators(); // 6. Clear All Validators
 
 
-                _this116.addAccountDisburshment.get('bankCode').updateValueAndValidity();
+                _this117.addAccountDisburshment.get('bankCode').updateValueAndValidity();
               } else {
-                _this116.addAccountDisburshment.get('bankCode').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]); // Set Required Validator
+                _this117.addAccountDisburshment.get('bankCode').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]); // Set Required Validator
 
 
-                _this116.addAccountDisburshment.get('bankCode').updateValueAndValidity();
+                _this117.addAccountDisburshment.get('bankCode').updateValueAndValidity();
               }
             }); // this.buildAddAccountForm();
           }
@@ -33276,7 +33430,7 @@
         }, {
           key: "onSubmit",
           value: function onSubmit(data) {
-            var _this117 = this;
+            var _this118 = this;
 
             // this.isSubmitted = true;
             if (!this.addAccountDisburshment.valid) {
@@ -33288,14 +33442,14 @@
 
                 if (res.status == 200) {
                   // this.close();
-                  _this117.snack.open(res === null || res === void 0 ? void 0 : res.message); // this.toastService.showToast(res?.message);
+                  _this118.snack.open(res === null || res === void 0 ? void 0 : res.message); // this.toastService.showToast(res?.message);
 
                 } else {
-                  _this117.snack.open(res === null || res === void 0 ? void 0 : res.message); // this.toastService.showToast(res?.message);
+                  _this118.snack.open(res === null || res === void 0 ? void 0 : res.message); // this.toastService.showToast(res?.message);
 
                 }
               }, function (err) {
-                _this117.snack.open(err);
+                _this118.snack.open(err);
               });
             }
           } // buildAddAccountForm(){
@@ -35376,7 +35530,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this118 = this;
+            var _this119 = this;
 
             this.cashdepositForm.controls.transactionAmount.reset();
             this.cashdepositForm.controls.totalTransactionAmount.setValue(this.cashdepositForm.controls.totalChargeAmount.value);
@@ -35385,71 +35539,71 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('Account Number Rsp', res);
 
-              _this118.getChargeDetails(accNum, ''); // this.isLoading = false;
+              _this119.getChargeDetails(accNum, ''); // this.isLoading = false;
 
 
-              _this118.userName = res.accHolderName;
-              _this118.accountBal = res.accBalance;
-              _this118.custmerID = res.customerId;
-              _this118.accountNumber = res.accountId;
-              _this118.accountCurrency = res.accountCurrency;
-              _this118.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
+              _this119.userName = res.accHolderName;
+              _this119.accountBal = res.accBalance;
+              _this119.custmerID = res.customerId;
+              _this119.accountNumber = res.accountId;
+              _this119.accountCurrency = res.accountCurrency;
+              _this119.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this118.cashdepositForm.controls.accountType.setValue(res.accountType);
+              _this119.cashdepositForm.controls.accountType.setValue(res.accountType);
 
-              _this118.cashdepositForm.controls.accountCurrency.setValue(res.currency);
+              _this119.cashdepositForm.controls.accountCurrency.setValue(res.currency);
 
-              _this118.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
+              _this119.cashdepositForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this118.cashdepositForm.controls.holderName.setValue(_this118.userName);
+              _this119.cashdepositForm.controls.holderName.setValue(_this119.userName);
 
-              _this118.getCountrynameValues();
+              _this119.getCountrynameValues();
 
-              _this118.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-              _this118.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this119.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+              _this119.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-              _this118.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
+              _this119.cashdepositForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this118.custAmountBal(accNum);
+              _this119.custAmountBal(accNum);
 
-              _this118.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
+              _this119.cashdepositForm.controls.transactionBranch.setValue('Kasturi Nagar');
 
-              _this118.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this118.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this118.phonenum);
+              _this119.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this119.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this119.phonenum);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this119 = this;
+            var _this120 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this119.countryValues = allCountryValues;
+              _this120.countryValues = allCountryValues;
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this120 = this;
+            var _this121 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this120.trasactionBranches = branches;
+              _this121.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this121 = this;
+            var _this122 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this121.branchData = data;
-              console.log(_this121.branchData);
+              _this122.branchData = data;
+              console.log(_this122.branchData);
               data.forEach(function (element, index) {
-                _this121.branch = data[index].branchName;
-                console.log(_this121.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
+                _this122.branch = data[index].branchName;
+                console.log(_this122.branch); // this.cashdepositForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
@@ -35487,47 +35641,47 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this122 = this;
+            var _this123 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this122.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this123.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this122.cashdepositForm.controls.holderName.setValue(_this122.userName);
+              _this123.cashdepositForm.controls.holderName.setValue(_this123.userName);
 
-              _this122.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
+              _this123.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
 
-              _this122.custAccountData = allTransactionResp.custAccount;
-              _this122.accounttypeArray = _toConsumableArray(_this122.custAccountData).filter(function (_ref7, index) {
+              _this123.custAccountData = allTransactionResp.custAccount;
+              _this123.accounttypeArray = _toConsumableArray(_this123.custAccountData).filter(function (_ref7, index) {
                 var accountType = _ref7.accountType;
-                return !_toConsumableArray(_this122.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this123.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
 
-              for (var j = 0; j < _this122.custAccountData.length; j++) {
-                if (_this122.custAccountData[j].status == 'APPROVED') {
-                  _this122.accountNoList.push(_this122.custAccountData[j]);
+              for (var j = 0; j < _this123.custAccountData.length; j++) {
+                if (_this123.custAccountData[j].status == 'APPROVED') {
+                  _this123.accountNoList.push(_this123.custAccountData[j]);
                 }
               }
 
-              if (_this122.custAccountData && _this122.accountNoList.length <= 1) {
-                _this122.accountDropdown = false;
-                _this122.hideDetails = true;
+              if (_this123.custAccountData && _this123.accountNoList.length <= 1) {
+                _this123.accountDropdown = false;
+                _this123.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this122.cashdepositForm.controls.accountType.setValue(accTyp);
+                _this123.cashdepositForm.controls.accountType.setValue(accTyp);
 
-                _this122.custAccountNumber(_this122.accountNoList[0]);
+                _this123.custAccountNumber(_this123.accountNoList[0]);
               } else {
-                _this122.accountDropdown = true;
-                _this122.hideDetails = true;
+                _this123.accountDropdown = true;
+                _this123.hideDetails = true;
                 var _accTyp7 = allTransactionResp.custAccount[0].accountType;
 
-                _this122.cashdepositForm.controls.accountType.setValue(_accTyp7);
+                _this123.cashdepositForm.controls.accountType.setValue(_accTyp7);
 
-                _this122.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this123.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -35666,7 +35820,7 @@
         }, {
           key: "onSaveofcashDeposit",
           value: function onSaveofcashDeposit(formData, type, cdForm) {
-            var _this123 = this;
+            var _this124 = this;
 
             formData.transactionBranch = this.transBranch;
             console.log("Data", formData, type, cdForm);
@@ -35674,7 +35828,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this123.qrBranchCode = response;
+                  _this124.qrBranchCode = response;
                 });
               }
             }
@@ -35752,15 +35906,15 @@
 
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this123.cashDepositResponse = cashDepositResp;
-              _this123.tokenNum = _this123.cashDepositResponse.tokenNumber;
-              _this123.estimatedTime = _this123.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this123.tokenNum);
-              localStorage.setItem("estimatedTiming", _this123.estimatedTime);
-              _this123.enableContinue = false;
+              _this124.cashDepositResponse = cashDepositResp;
+              _this124.tokenNum = _this124.cashDepositResponse.tokenNumber;
+              _this124.estimatedTime = _this124.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this124.tokenNum);
+              localStorage.setItem("estimatedTiming", _this124.estimatedTime);
+              _this124.enableContinue = false;
 
-              if (_this123.cashDepositResponse) {
-                _this123.dialogService.tokenGenerationDialog();
+              if (_this124.cashDepositResponse) {
+                _this124.dialogService.tokenGenerationDialog();
               }
             });
           } // OTP And Save
@@ -35768,7 +35922,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this124 = this;
+            var _this125 = this;
 
             this.cashdepositValues = formData;
             this.cashdeposiform = type;
@@ -35783,9 +35937,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this124.openDialogOTP(_this124.phonenum);
+                  _this125.openDialogOTP(_this125.phonenum);
 
-                  _this124.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this125.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -35799,7 +35953,7 @@
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this125 = this;
+            var _this126 = this;
 
             formData.transactionBranch = this.transBranch;
             var denominationData = {};
@@ -35860,22 +36014,22 @@
             console.log(formData.transactionId, formData.transactionStatus);
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this125.cashDepositResponse = cashDepositResp;
-              _this125.tokenNum = _this125.cashDepositResponse.tokenNumber;
-              _this125.estimatedTime = _this125.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this125.tokenNum);
-              localStorage.setItem("estimatedTiming", _this125.estimatedTime);
-              _this125.enableContinue = false;
+              _this126.cashDepositResponse = cashDepositResp;
+              _this126.tokenNum = _this126.cashDepositResponse.tokenNumber;
+              _this126.estimatedTime = _this126.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this126.tokenNum);
+              localStorage.setItem("estimatedTiming", _this126.estimatedTime);
+              _this126.enableContinue = false;
 
-              if (_this125.cashDepositResponse) {
-                _this125.dialogService.tokenGenerationDialog();
+              if (_this126.cashDepositResponse) {
+                _this126.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this126 = this;
+            var _this127 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_11__["OtpVerifyComponent"], {
               data: {
@@ -35886,7 +36040,7 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this126.getOTPforSave(_this126.cashdepositValues, _this126.cashdeposiform, _this126.cashdepositType);
+                _this127.getOTPforSave(_this127.cashdepositValues, _this127.cashdeposiform, _this127.cashdepositType);
               }
             });
           }
@@ -35993,50 +36147,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this127 = this;
+            var _this128 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log("resp ::", resp);
-              _this127.cashData = resp.data;
-              _this127.custID = resp.data.customerId;
-              _this127.ifQRvariable = true;
+              _this128.cashData = resp.data;
+              _this128.custID = resp.data.customerId;
+              _this128.ifQRvariable = true;
 
-              _this127.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
+              _this128.cashdepositForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this127.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this128.cashdepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this127.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this128.cashdepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this127.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this128.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this127.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this128.cashdepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this127.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this128.cashdepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this127.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this128.cashdepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this127.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this127.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
-              console.log("amount::", _this127.cashdepositForm.controls.transactionAmount.value);
+              _this128.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this128.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              console.log("amount::", _this128.cashdepositForm.controls.transactionAmount.value);
             });
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this128 = this;
+            var _this129 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this128.chargeDetails = resp;
+              _this129.chargeDetails = resp;
 
-              _this128.cashdepositForm.controls.totalChargeAmount.setValue(_this128.chargeDetails ? _this128.chargeDetails[0].amount : '');
+              _this129.cashdepositForm.controls.totalChargeAmount.setValue(_this129.chargeDetails ? _this129.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this128.totalTransAmount = Number(_this128.cashData.transactionAmount) + Number(_this128.chargeDetails[0].amount);
+                _this129.totalTransAmount = Number(_this129.cashData.transactionAmount) + Number(_this129.chargeDetails[0].amount);
 
-                _this128.cashdepositForm.controls.totalTransactionAmount.setValue(_this128.totalTransAmount);
+                _this129.cashdepositForm.controls.totalTransactionAmount.setValue(_this129.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -36045,10 +36199,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this128.totalTransAmount = Number(amount) + Number(_this128.chargeDetails ? _this128.chargeDetails[0].amount : '');
-                console.log(_this128.totalTransAmount);
+                _this129.totalTransAmount = Number(amount) + Number(_this129.chargeDetails ? _this129.chargeDetails[0].amount : '');
+                console.log(_this129.totalTransAmount);
 
-                _this128.cashdepositForm.controls.totalTransactionAmount.setValue(_this128.totalTransAmount);
+                _this129.cashdepositForm.controls.totalTransactionAmount.setValue(_this129.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -36077,15 +36231,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this129 = this;
+            var _this130 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this129.denomRequired = resp.denomRequired;
+              _this130.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this129.enableBtn = false;
-                _this129.enableBtn1 = false;
+                _this130.enableBtn = false;
+                _this130.enableBtn1 = false;
               }
             });
           }
@@ -37703,7 +37857,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this130 = this;
+            var _this131 = this;
 
             this.chequedepositForm.controls.transactionAmount.reset();
             this.chequedepositForm.controls.totalTransactionAmount.setValue(this.chequedepositForm.controls.totalChargeAmount.value);
@@ -37712,44 +37866,44 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log("Account Number Rsp", res);
 
-              _this130.getChargeDetails(accNum, "");
+              _this131.getChargeDetails(accNum, "");
 
-              _this130.userName = res.accHolderName;
-              _this130.accountBal = res.accBalance;
-              _this130.custmerID = res.customerId;
-              _this130.accountNumber = res.accountId;
-              _this130.accountCurrency = res.accountCurrency;
-              _this130.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
+              _this131.userName = res.accHolderName;
+              _this131.accountBal = res.accBalance;
+              _this131.custmerID = res.customerId;
+              _this131.accountNumber = res.accountId;
+              _this131.accountCurrency = res.accountCurrency;
+              _this131.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["getCurrencySymbol"])(res.currency, "narrow");
 
-              _this130.chequedepositForm.controls.accountType.setValue(res.accountType);
+              _this131.chequedepositForm.controls.accountType.setValue(res.accountType);
 
-              _this130.chequedepositForm.controls.accountCurrency.setValue(res.currency);
+              _this131.chequedepositForm.controls.accountCurrency.setValue(res.currency);
 
-              _this130.chequedepositForm.controls.accountBranch.setValue(res.accountBranch);
+              _this131.chequedepositForm.controls.accountBranch.setValue(res.accountBranch);
 
-              _this130.chequedepositForm.controls.holderName.setValue(_this130.userName);
+              _this131.chequedepositForm.controls.holderName.setValue(_this131.userName);
 
-              _this130.currencyImage = "currency-flag-" + res.currency.toLowerCase();
-              _this130.currencyImage = "currency-flag-" + res.currency.toLowerCase();
+              _this131.currencyImage = "currency-flag-" + res.currency.toLowerCase();
+              _this131.currencyImage = "currency-flag-" + res.currency.toLowerCase();
 
-              _this130.getCountrynameValues();
+              _this131.getCountrynameValues();
 
-              _this130.chequedepositForm.controls.transactionCurrency.setValue(res.currency);
+              _this131.chequedepositForm.controls.transactionCurrency.setValue(res.currency);
 
-              _this130.custAmountBal(accNum);
+              _this131.custAmountBal(accNum);
 
-              _this130.chequedepositForm.controls.transactionBranch.setValue("Kasturi Nagar");
+              _this131.chequedepositForm.controls.transactionBranch.setValue("Kasturi Nagar");
 
-              _this130.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this130.phonenum = resp[0].phoneNumber;
-                localStorage.setItem("otpPhoneNum", _this130.phonenum);
+              _this131.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this131.phonenum = resp[0].phoneNumber;
+                localStorage.setItem("otpPhoneNum", _this131.phonenum);
               });
             });
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this131 = this;
+            var _this132 = this;
 
             this.chequedepositValues = formData;
             this.chequedepositype = type;
@@ -37764,9 +37918,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this131.openDialogOTP(_this131.phonenum);
+                  _this132.openDialogOTP(_this132.phonenum);
 
-                  _this131.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this132.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -37780,7 +37934,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this132 = this;
+            var _this133 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_9__["OtpVerifyComponent"], {
               data: {
@@ -37791,14 +37945,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this132.getOTPforSave(_this132.chequedepositValues, _this132.chequedepositype, _this132.chequedepositform);
+                _this133.getOTPforSave(_this133.chequedepositValues, _this133.chequedepositype, _this133.chequedepositform);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this133 = this;
+            var _this134 = this;
 
             formData.transactionBranch = this.transBranch;
 
@@ -37836,15 +37990,15 @@
             formData.accountBalance = this.accountBal;
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this133.cashDepositResponse = cashDepositResp;
-              _this133.tokenNum = _this133.cashDepositResponse.tokenNumber;
-              _this133.estimatedTime = _this133.cashDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this133.tokenNum);
-              localStorage.setItem("estimatedTiming", _this133.estimatedTime);
-              _this133.enableContinue = false;
+              _this134.cashDepositResponse = cashDepositResp;
+              _this134.tokenNum = _this134.cashDepositResponse.tokenNumber;
+              _this134.estimatedTime = _this134.cashDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this134.tokenNum);
+              localStorage.setItem("estimatedTiming", _this134.estimatedTime);
+              _this134.enableContinue = false;
 
-              if (_this133.cashDepositResponse) {
-                _this133.dialogService.tokenGenerationDialog();
+              if (_this134.cashDepositResponse) {
+                _this134.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -37861,35 +38015,35 @@
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this134 = this;
+            var _this135 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log("branches :: ", branches);
-              _this134.trasactionBranches = branches;
+              _this135.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this135 = this;
+            var _this136 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this135.branchData = data;
-              console.log(_this135.branchData);
+              _this136.branchData = data;
+              console.log(_this136.branchData);
               data.forEach(function (element, index) {
-                _this135.branch = data[index].branchName;
-                console.log(_this135.branch); // this.chequedepositForm.controls.accountBranch.setValue(this.branch);
+                _this136.branch = data[index].branchName;
+                console.log(_this136.branch); // this.chequedepositForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this136 = this;
+            var _this137 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this136.countryValues = allCountryValues;
-              console.log(_this136.countryValues);
+              _this137.countryValues = allCountryValues;
+              console.log(_this137.countryValues);
             });
           }
         }, {
@@ -37930,47 +38084,47 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this137 = this;
+            var _this138 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this137.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + " " : " ") + (allTransactionResp.middleName ? allTransactionResp.middleName + " " : " ") + (allTransactionResp.lastName ? allTransactionResp.lastName : " ");
+              _this138.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + " " : " ") + (allTransactionResp.middleName ? allTransactionResp.middleName + " " : " ") + (allTransactionResp.lastName ? allTransactionResp.lastName : " ");
 
-              _this137.chequedepositForm.controls.holderName.setValue(_this137.userName);
+              _this138.chequedepositForm.controls.holderName.setValue(_this138.userName);
 
-              _this137.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
+              _this138.custID = allTransactionResp.customerId; // this.setBalance(allTransactionResp.custAccount);
 
-              _this137.custAccountData = allTransactionResp.custAccount;
-              _this137.accounttypeArray = _toConsumableArray(_this137.custAccountData).filter(function (_ref8, index) {
+              _this138.custAccountData = allTransactionResp.custAccount;
+              _this138.accounttypeArray = _toConsumableArray(_this138.custAccountData).filter(function (_ref8, index) {
                 var accountType = _ref8.accountType;
-                return !_toConsumableArray(_this137.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this138.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
 
-              for (var j = 0; j < _this137.custAccountData.length; j++) {
-                if (_this137.custAccountData[j].status == "APPROVED") {
-                  _this137.accountNoList.push(_this137.custAccountData[j]);
+              for (var j = 0; j < _this138.custAccountData.length; j++) {
+                if (_this138.custAccountData[j].status == "APPROVED") {
+                  _this138.accountNoList.push(_this138.custAccountData[j]);
                 }
               }
 
-              if (_this137.custAccountData && _this137.accountNoList.length <= 1) {
-                _this137.accountDropdown = false;
-                _this137.hideDetails = true;
+              if (_this138.custAccountData && _this138.accountNoList.length <= 1) {
+                _this138.accountDropdown = false;
+                _this138.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this137.chequedepositForm.controls.accountType.setValue(accTyp);
+                _this138.chequedepositForm.controls.accountType.setValue(accTyp);
 
-                _this137.custAccountNumber(_this137.accountNoList[0]);
+                _this138.custAccountNumber(_this138.accountNoList[0]);
               } else {
-                _this137.accountDropdown = true;
-                _this137.hideDetails = true;
+                _this138.accountDropdown = true;
+                _this138.hideDetails = true;
                 var _accTyp8 = allTransactionResp.custAccount[0].accountType;
 
-                _this137.chequedepositForm.controls.accountType.setValue(_accTyp8);
+                _this138.chequedepositForm.controls.accountType.setValue(_accTyp8);
 
-                _this137.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this138.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -38104,7 +38258,7 @@
         }, {
           key: "onSaveofchequeDeposit",
           value: function onSaveofchequeDeposit(formData, type) {
-            var _this138 = this;
+            var _this139 = this;
 
             formData.transactionBranch = this.transBranch;
             formData.tokenBranch = "KN";
@@ -38112,7 +38266,7 @@
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this138.qrBranchCode = response;
+                  _this139.qrBranchCode = response;
                 });
               }
             }
@@ -38163,15 +38317,15 @@
             console.log(formData.transactionId, formData.transactionStatus);
             this.apiService.saveofCashDeposit(formData).subscribe(function (chequeDepositResp) {
               console.log(" Response Success", chequeDepositResp);
-              _this138.chequeDepositResponse = chequeDepositResp;
-              _this138.tokenNum = _this138.chequeDepositResponse.tokenNumber;
-              _this138.estimatedTime = _this138.chequeDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this138.tokenNum);
-              localStorage.setItem("estimatedTiming", _this138.estimatedTime);
-              _this138.enableContinue = false;
+              _this139.chequeDepositResponse = chequeDepositResp;
+              _this139.tokenNum = _this139.chequeDepositResponse.tokenNumber;
+              _this139.estimatedTime = _this139.chequeDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this139.tokenNum);
+              localStorage.setItem("estimatedTiming", _this139.estimatedTime);
+              _this139.enableContinue = false;
 
-              if (_this138.chequeDepositResponse) {
-                _this138.dialogService.tokenGenerationDialog();
+              if (_this139.chequeDepositResponse) {
+                _this139.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = formData.accountNumber;
@@ -38260,20 +38414,20 @@
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this139 = this;
+            var _this140 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this139.chargeDetails = resp;
+              _this140.chargeDetails = resp;
 
-              _this139.chequedepositForm.controls.totalChargeAmount.setValue(_this139.chargeDetails ? _this139.chargeDetails[0].amount : "");
+              _this140.chequedepositForm.controls.totalChargeAmount.setValue(_this140.chargeDetails ? _this140.chargeDetails[0].amount : "");
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this139.totalTransAmount = Number(_this139.cashData.transactionAmount) + Number(_this139.chargeDetails ? _this139.chargeDetails[0].amount : "");
+                _this140.totalTransAmount = Number(_this140.cashData.transactionAmount) + Number(_this140.chargeDetails ? _this140.chargeDetails[0].amount : "");
 
-                _this139.chequedepositForm.controls.totalTransactionAmount.setValue(_this139.totalTransAmount);
+                _this140.chequedepositForm.controls.totalTransactionAmount.setValue(_this140.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -38282,10 +38436,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this139.totalTransAmount = Number(amount) + Number(_this139.chargeDetails ? _this139.chargeDetails[0].amount : "");
-                console.log(_this139.totalTransAmount);
+                _this140.totalTransAmount = Number(amount) + Number(_this140.chargeDetails ? _this140.chargeDetails[0].amount : "");
+                console.log(_this140.totalTransAmount);
 
-                _this139.chequedepositForm.controls.totalTransactionAmount.setValue(_this139.totalTransAmount);
+                _this140.chequedepositForm.controls.totalTransactionAmount.setValue(_this140.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -38323,32 +38477,32 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this140 = this;
+            var _this141 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this140.cashData = resp.data;
-              _this140.custID = resp.data.customerId;
-              _this140.ifQRvariable = true;
+              _this141.cashData = resp.data;
+              _this141.custID = resp.data.customerId;
+              _this141.ifQRvariable = true;
 
-              _this140.chequedepositForm.controls.accountType.setValue(resp.data.accountType);
+              _this141.chequedepositForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this140.chequedepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this141.chequedepositForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this140.chequedepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this141.chequedepositForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this140.chequedepositForm.controls.chequeNumber.setValue(resp.data.chequeNumber);
+              _this141.chequedepositForm.controls.chequeNumber.setValue(resp.data.chequeNumber);
 
-              _this140.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this141.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this140.chequedepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this141.chequedepositForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this140.chequedepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this141.chequedepositForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this140.chequedepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this141.chequedepositForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this140.currencyImage = "currency-flag-" + resp.data.accountCurrency.toLowerCase();
-              _this140.currencyImage = "currency-flag-" + resp.data.transactionCurrency.toLowerCase();
+              _this141.currencyImage = "currency-flag-" + resp.data.accountCurrency.toLowerCase();
+              _this141.currencyImage = "currency-flag-" + resp.data.transactionCurrency.toLowerCase();
             });
           }
         }]);
@@ -40795,7 +40949,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this141 = this;
+            var _this142 = this;
 
             console.log(this.titleVal);
             this.module = this.titleVal;
@@ -40819,14 +40973,14 @@
             });
             this.qrData = JSON.parse(JSON.parse(localStorage.getItem('scannerData')));
             setTimeout(function () {
-              if (_this141.qrData != null) {
-                console.log('Account', _this141.qrData);
-                _this141.hideDetails = true;
-                _this141.hideAccNum = true;
-                _this141.showzero = false;
-                _this141.currencyCode = _this141.qrData.accountCurrency;
-                _this141.userName = _this141.qrData.holderName;
-                _this141.accountBal = _this141.qrData.accountBalance;
+              if (_this142.qrData != null) {
+                console.log('Account', _this142.qrData);
+                _this142.hideDetails = true;
+                _this142.hideAccNum = true;
+                _this142.showzero = false;
+                _this142.currencyCode = _this142.qrData.accountCurrency;
+                _this142.userName = _this142.qrData.holderName;
+                _this142.accountBal = _this142.qrData.accountBalance;
               }
             }, 1000);
             this.custValidation = localStorage.getItem('customerValidation');
@@ -40861,9 +41015,9 @@
             this.gettransactionBranch('account_branch');
             this.getBankInformation('KN');
             this.subscriptions.push(this.loanForm.valueChanges.subscribe(function (value) {
-              _this141.onChange(value);
+              _this142.onChange(value);
 
-              _this141.onTouched();
+              _this142.onTouched();
             }));
             console.log(this.loanForm);
           }
@@ -40934,39 +41088,39 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this142 = this;
+            var _this143 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this142.denomRequired = resp.denomRequired;
-              localStorage.setItem("DenominationRequired", _this142.denomRequired);
+              _this143.denomRequired = resp.denomRequired;
+              localStorage.setItem("DenominationRequired", _this143.denomRequired);
 
               if (resp.denomRequired == 'yes') {
-                _this142.enableBtn = false;
-                _this142.enableBtn1 = false;
+                _this143.enableBtn = false;
+                _this143.enableBtn1 = false;
               }
             });
           }
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this143 = this;
+            var _this144 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this143.trasactionBranches = branches;
+              _this144.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this144 = this;
+            var _this145 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this144.branchData = data;
-              console.log(_this144.branchData);
+              _this145.branchData = data;
+              console.log(_this145.branchData);
               data.forEach(function (element, index) {
-                _this144.branch = data[index].branchName; // console.log(this.branch);
+                _this145.branch = data[index].branchName; // console.log(this.branch);
                 // this.accountForm.controls.accountBranch.setValue(this.branch);
               });
             });
@@ -40974,17 +41128,17 @@
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this145 = this;
+            var _this146 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this145.countryValues = allCountryValues;
-              console.log(_this145.countryValues);
+              _this146.countryValues = allCountryValues;
+              console.log(_this146.countryValues);
             });
           }
         }, {
           key: "fetchByLoanAccountNum",
           value: function fetchByLoanAccountNum(loanAcc, module) {
-            var _this146 = this;
+            var _this147 = this;
 
             console.log(loanAcc, module); // this.flag1 = true;
 
@@ -41004,47 +41158,47 @@
             this.apiService.fetchByLoanInfoByLoanId(loanAcc, module).subscribe(function (res) {
               var _a, _b, _c, _d, _e;
 
-              _this146.loanAccountDetails = res.data;
-              console.log('statement', _this146.loanAccountDetails);
+              _this147.loanAccountDetails = res.data;
+              console.log('statement', _this147.loanAccountDetails);
 
-              _this146.dataService.sendloanFormData(_this146.loanAccountDetails); // this.loanForm.controls.accountCurrency.setValue(this.loanAccountDetails?.currency);
+              _this147.dataService.sendloanFormData(_this147.loanAccountDetails); // this.loanForm.controls.accountCurrency.setValue(this.loanAccountDetails?.currency);
 
 
-              if (loanAcc != ((_a = _this146.loanAccountDetails[0]) === null || _a === void 0 ? void 0 : _a.loanAccountId) || _this146.loanAccountDetails[0].loanAccountId == null) {
-                _this146.snack.open("Account Number Doesn't Exist", "OK", {
+              if (loanAcc != ((_a = _this147.loanAccountDetails[0]) === null || _a === void 0 ? void 0 : _a.loanAccountId) || _this147.loanAccountDetails[0].loanAccountId == null) {
+                _this147.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right',
                   panelClass: ['snackbar']
                 });
 
-                _this146.loanForm.reset();
+                _this147.loanForm.reset();
 
-                _this146.userName = '';
-                _this146.accountBal = '';
-                _this146.curr = '';
+                _this147.userName = '';
+                _this147.accountBal = '';
+                _this147.curr = '';
               } else {
-                console.log('statement', _this146.loanAccountDetails); // this.dataService.sendPaymentInfoFormData(this.loanAccountDetails);
+                console.log('statement', _this147.loanAccountDetails); // this.dataService.sendPaymentInfoFormData(this.loanAccountDetails);
                 // this.userName = res.accHolderName;
 
-                _this146.loanForm.controls.loanType.setValue((_b = _this146.loanAccountDetails[0]) === null || _b === void 0 ? void 0 : _b.loanType);
+                _this147.loanForm.controls.loanType.setValue((_b = _this147.loanAccountDetails[0]) === null || _b === void 0 ? void 0 : _b.loanType);
 
-                _this146.loanForm.controls.accountCurrency.setValue((_c = _this146.loanAccountDetails[0]) === null || _c === void 0 ? void 0 : _c.accountCurrency);
+                _this147.loanForm.controls.accountCurrency.setValue((_c = _this147.loanAccountDetails[0]) === null || _c === void 0 ? void 0 : _c.accountCurrency);
 
-                _this146.loanForm.controls.accountBranch.setValue((_d = _this146.loanAccountDetails[0]) === null || _d === void 0 ? void 0 : _d.accountBranch);
+                _this147.loanForm.controls.accountBranch.setValue((_d = _this147.loanAccountDetails[0]) === null || _d === void 0 ? void 0 : _d.accountBranch);
 
-                _this146.loanForm.controls.customerName.setValue((_e = _this146.loanAccountDetails[0]) === null || _e === void 0 ? void 0 : _e.customerName);
+                _this147.loanForm.controls.customerName.setValue((_e = _this147.loanAccountDetails[0]) === null || _e === void 0 ? void 0 : _e.customerName);
 
                 if (module == 'Disbursement') {
-                  _this146.loanForm.controls.disbursedAmount.setValue(_this146.loanAccountDetails[0].disbursedAmount ? _this146.loanAccountDetails[0].disbursedAmount : 0);
+                  _this147.loanForm.controls.disbursedAmount.setValue(_this147.loanAccountDetails[0].disbursedAmount ? _this147.loanAccountDetails[0].disbursedAmount : 0);
 
-                  _this146.loanForm.controls.sanctionedAmount.setValue(_this146.loanAccountDetails[0].sanctionedAmount ? _this146.loanAccountDetails[0].sanctionedAmount : 0);
+                  _this147.loanForm.controls.sanctionedAmount.setValue(_this147.loanAccountDetails[0].sanctionedAmount ? _this147.loanAccountDetails[0].sanctionedAmount : 0);
                 } else if (module == 'Repayment') {
-                  _this146.loanForm.controls.currentArrears.setValue(_this146.loanAccountDetails[0].currentArrears ? _this146.loanAccountDetails[0].currentArrears : 0);
+                  _this147.loanForm.controls.currentArrears.setValue(_this147.loanAccountDetails[0].currentArrears ? _this147.loanAccountDetails[0].currentArrears : 0);
 
-                  _this146.loanForm.controls.principalOutstanding.setValue(_this146.loanAccountDetails[0].principalOutstanding ? _this146.loanAccountDetails[0].principalOutstanding : 0);
+                  _this147.loanForm.controls.principalOutstanding.setValue(_this147.loanAccountDetails[0].principalOutstanding ? _this147.loanAccountDetails[0].principalOutstanding : 0);
 
-                  _this146.loanForm.controls.loanBreakupDues.setValue(_this146.loanAccountDetails[0].loanBreakupDues ? _this146.loanAccountDetails[0].loanBreakupDues : 0);
+                  _this147.loanForm.controls.loanBreakupDues.setValue(_this147.loanAccountDetails[0].loanBreakupDues ? _this147.loanAccountDetails[0].loanBreakupDues : 0);
                 } // if(this.loanAccountDetails?.accBalance == 0){
                 //   console.log("for zero balance 1");
                 //   this.accountBal = "00000";
@@ -41062,12 +41216,12 @@
                 // this.loanForm.controls.holderName.setValue(this.userName);
 
 
-                _this146.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this147.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
                 // this.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
                 // this.accountCurrency1 = res.currency;
 
 
-                console.log(_this146.ifQRvariable); // this.custAmountBal(loanAcc);
+                console.log(_this147.ifQRvariable); // this.custAmountBal(loanAcc);
               } //   this.apiService
               //     .fetchByaccDeatilsoncustId(res.customerId)
               //     .subscribe((resp: any) => {
@@ -41093,7 +41247,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this147 = this;
+            var _this148 = this;
 
             console.log('Account Numebr', accNum);
             this.flag1 = true;
@@ -41112,71 +41266,71 @@
             this.apiService.fetchByaccNum(accNum).subscribe(function (res) {
               console.log('statement', res);
 
-              _this147.loanForm.controls.accountCurrency.setValue(res === null || res === void 0 ? void 0 : res.currency);
+              _this148.loanForm.controls.accountCurrency.setValue(res === null || res === void 0 ? void 0 : res.currency);
 
               if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
-                _this147.snack.open("Account Number Doesn't Exist", "OK", {
+                _this148.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'top',
                   horizontalPosition: 'right',
                   panelClass: ['snackbar']
                 });
 
-                _this147.loanForm.reset();
+                _this148.loanForm.reset();
 
-                _this147.userName = '';
-                _this147.accountBal = '';
-                _this147.curr = '';
+                _this148.userName = '';
+                _this148.accountBal = '';
+                _this148.curr = '';
               } else {
                 console.log('Account Number Rsp', res);
 
-                _this147.dataService.sendaccountFormData(res);
+                _this148.dataService.sendloanFormData(res);
 
-                _this147.userName = res.accHolderName;
+                _this148.userName = res.accHolderName;
 
                 if (res.accBalance == 0) {
                   console.log("for zero balance 1");
-                  _this147.accountBal = "00000";
-                  _this147.loanForm.value.accountBalance = "00000";
+                  _this148.accountBal = "00000";
+                  _this148.loanForm.value.accountBalance = "00000";
                 } else {
-                  _this147.accountBal = res.accBalance;
-                  _this147.loanForm.value.accountBalance = res.accBalance;
+                  _this148.accountBal = res.accBalance;
+                  _this148.loanForm.value.accountBalance = res.accBalance;
                 }
 
-                _this147.custmerID = res.customerId;
+                _this148.custmerID = res.customerId;
                 localStorage.setItem('AccountBal', res.accBalance);
-                _this147.accountNumber = res.accountId;
+                _this148.accountNumber = res.accountId;
 
-                _this147.loanForm.controls.accountBranch.setValue(res.accountBranch);
+                _this148.loanForm.controls.accountBranch.setValue(res.accountBranch);
 
-                _this147.loanForm.controls.customerId.setValue(res.customerId);
+                _this148.loanForm.controls.customerId.setValue(res.customerId);
 
-                _this147.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
+                _this148.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(res.currency, 'narrow');
 
-                _this147.loanForm.controls.accountType.setValue(res.accountType); // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
-
-
-                _this147.loanForm.controls.holderName.setValue(_this147.userName);
-
-                _this147.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+                _this148.loanForm.controls.accountType.setValue(res.accountType); // this.accountForm.controls.accountBranch.setValue(res.accountBranch);
 
 
-                _this147.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
-                _this147.accountCurrency1 = res.currency;
-                console.log(_this147.ifQRvariable); // this.custAmountBal(accNum);
+                _this148.loanForm.controls.holderName.setValue(_this148.userName);
+
+                _this148.getCountrynameValues(); // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
+
+
+                _this148.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                _this148.accountCurrency1 = res.currency;
+                console.log(_this148.ifQRvariable); // this.custAmountBal(accNum);
               }
 
-              _this147.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this147.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this147.phonenum);
+              _this148.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this148.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this148.phonenum);
               });
 
               (function (error) {
                 console.log(error);
-                _this147.errorStatus = error.status;
+                _this148.errorStatus = error.status;
 
-                if (_this147.errorStatus == 204) {
-                  _this147.snack.open("Account Number Doesn't Exist", "OK", {
+                if (_this148.errorStatus == 204) {
+                  _this148.snack.open("Account Number Doesn't Exist", "OK", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right',
@@ -41190,12 +41344,12 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this148 = this;
+            var _this149 = this;
 
             this.apiService.gettingTransactionDetails(phoneNumber).subscribe(function (allTransactionResp) {
-              _this148.dataService.sendloanRepaymentData(allTransactionResp);
+              _this149.dataService.sendloanRepaymentData(allTransactionResp);
 
-              _this148.loanForm.controls.customerId.setValue(allTransactionResp.custAccount[0].customerId); //   console.log('All Transaction Details', allTransactionResp);
+              _this149.loanForm.controls.customerId.setValue(allTransactionResp.custAccount[0].customerId); //   console.log('All Transaction Details', allTransactionResp);
               //   // allTransactionResp.loanAccount[0].currentArrears=1000;
               //   // allTransactionResp.loanAccount[0].principalOutstanding=2000
               //   this.dataService.sendloanFormData(allTransactionResp);
@@ -41285,46 +41439,64 @@
         }, {
           key: "getLoanAccountData",
           value: function getLoanAccountData(phonenum, module) {
-            var _this149 = this;
+            var _this150 = this;
 
             this.displayFlag = true;
             this.apiService.gettingLoanAccDetails(phonenum, module).subscribe(function (res) {
+              var _a;
+
               console.log(res);
+              console.log(module);
 
               if ((res === null || res === void 0 ? void 0 : res.status) == 200) {
-                _this149.loanAccounts = res === null || res === void 0 ? void 0 : res.data.filter(function (account) {
-                  return (account === null || account === void 0 ? void 0 : account.disbursementComplete) == false;
-                });
+                if (module == 'Disbursement') {
+                  _this150.loanAccounts = res === null || res === void 0 ? void 0 : res.data.filter(function (account) {
+                    return (account === null || account === void 0 ? void 0 : account.disbursementComplete) == false;
+                  });
 
-                _this149.dataService.sendloanFormData(_this149.loanAccounts);
+                  _this150.loanForm.get('sanctionedAmount').patchValue(_this150.loanAccounts[0].sanctionedAmount);
 
-                _this149.selected2 = _this149.loanAccounts[0].loanAccountId;
-                _this149.selected1 = _this149.loanAccounts[0].loanType;
-                _this149.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(_this149.loanAccounts[0].accountCurrency, 'narrow');
+                  _this150.loanForm.get('disbursedAmount').patchValue(_this150.loanAccounts[0].disbursedAmount);
+                }
 
-                _this149.loanForm.get('loanAccountId').patchValue(_this149.loanAccounts[0].loanAccountId);
+                if (module == 'Repayment') {
+                  _this150.loanAccounts = res === null || res === void 0 ? void 0 : res.data.filter(function (account) {
+                    return (account === null || account === void 0 ? void 0 : account.repaymentAllowed) == false;
+                  });
+                  console.log(module, _this150.loanAccounts);
 
-                _this149.loanForm.get('accountCurrency').patchValue(_this149.loanAccounts[0].accountCurrency);
+                  _this150.loanForm.get('currentArrears').patchValue((_a = _this150.loanAccounts[0]) === null || _a === void 0 ? void 0 : _a.currentArrears);
 
-                _this149.loanForm.get('loanType').patchValue(_this149.loanAccounts[0].loanType);
+                  _this150.loanForm.get('principalOutstanding').patchValue(_this150.loanAccounts[0].principalOutstanding);
+                }
 
-                _this149.loanForm.get('sanctionedAmount').patchValue(_this149.loanAccounts[0].sanctionedAmount);
+                _this150.loanForm.get('loanAccountId').patchValue(_this150.loanAccounts[0].loanAccountId);
 
-                _this149.loanForm.get('disbursedAmount').patchValue(_this149.loanAccounts[0].disbursedAmount);
+                _this150.loanForm.get('accountCurrency').patchValue(_this150.loanAccounts[0].accountCurrency);
 
-                _this149.loanForm.get('customerName').patchValue(_this149.loanAccounts[0].customerName);
+                _this150.loanForm.get('loanType').patchValue(_this150.loanAccounts[0].loanType);
 
-                _this149.loanForm.get('accountBranch').patchValue(_this149.loanAccounts[0].accountBranch);
+                _this150.selected2 = _this150.loanAccounts[0].loanAccountId;
+                _this150.selected1 = _this150.loanAccounts[0].loanType;
 
-                console.log(_this149.loanForm);
+                _this150.loanForm.get('customerName').patchValue(_this150.loanAccounts[0].customerName);
+
+                _this150.loanForm.get('accountBranch').patchValue(_this150.loanAccounts[0].accountBranch);
+
+                _this150.dataService.sendloanFormData(_this150.loanAccounts);
+
+                _this150.selected2 = _this150.loanAccounts[0].loanAccountId;
+                _this150.selected1 = _this150.loanAccounts[0].loanType;
+                _this150.curr = Object(_angular_common__WEBPACK_IMPORTED_MODULE_10__["getCurrencySymbol"])(_this150.loanAccounts[0].accountCurrency, 'narrow');
+                console.log(_this150.loanForm);
               } else {
-                _this149.loanAccounts = [];
+                _this150.loanAccounts = [];
 
-                _this149.snack.open(res === null || res === void 0 ? void 0 : res.message);
+                _this150.snack.open(res === null || res === void 0 ? void 0 : res.message);
               }
             }, function (err) {
               //  this.toastService.showToast(err);
-              _this149.snack.open(err);
+              _this150.snack.open(err);
             });
             this.accounttypeArray = this.accountNoList;
             console.log(this.accounttypeArray); // this.dataService.sendloanFormData(this.accounttypeArray);
@@ -41406,21 +41578,21 @@
         }, {
           key: "setAppointmentIdData",
           value: function setAppointmentIdData() {
-            var _this150 = this;
+            var _this151 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               var _a, _b, _c, _d;
 
               console.log(resp);
-              _this150.cashData = resp.data;
-              _this150.custID = resp.data.customerId;
-              _this150.ifQRvariable = true;
-              _this150.hideAccNum = true;
-              _this150.hideDetails = true;
-              _this150.showzero = false;
-              _this150.flag1 = true;
-              _this150.displayFlag = true;
-              _this150.accountDropdown = true; // if(resp.data.accountBalance == 0){
+              _this151.cashData = resp.data;
+              _this151.custID = resp.data.customerId;
+              _this151.ifQRvariable = true;
+              _this151.hideAccNum = true;
+              _this151.hideDetails = true;
+              _this151.showzero = false;
+              _this151.flag1 = true;
+              _this151.displayFlag = true;
+              _this151.accountDropdown = true; // if(resp.data.accountBalance == 0){
               //   this.accountBal = "00000";
               //   this.loanForm.controls.accountBalance.setValue("00000");
               // }else{
@@ -41430,34 +41602,34 @@
               //   );
               // }
 
-              _this150.currencyCode = resp.data.accountCurrency;
+              _this151.currencyCode = resp.data.accountCurrency;
 
-              _this150.loanForm.controls.loanType.setValue(resp.data.accountType);
+              _this151.loanForm.controls.loanType.setValue(resp.data.accountType);
 
-              _this150.loanForm.controls.loanAccountId.setValue(resp.data.modeInfo[0].loanAccountNo);
+              _this151.loanForm.controls.loanAccountId.setValue(resp.data.modeInfo[0].loanAccountNo);
 
-              _this150.loanForm.controls.customerName.setValue((_a = resp.data) === null || _a === void 0 ? void 0 : _a.holderName);
+              _this151.loanForm.controls.customerName.setValue((_a = resp.data) === null || _a === void 0 ? void 0 : _a.holderName);
 
-              _this150.loanForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this151.loanForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this150.loanForm.controls.accountCurrency.setValue((_b = resp.data) === null || _b === void 0 ? void 0 : _b.accountCurrency);
+              _this151.loanForm.controls.accountCurrency.setValue((_b = resp.data) === null || _b === void 0 ? void 0 : _b.accountCurrency);
 
-              if (_this150.titleVal == 'Repayment') {
-                _this150.loanForm.controls.principalOutstanding.setValue((_c = resp.data.loanInfo[0]) === null || _c === void 0 ? void 0 : _c.principalOutstanding);
+              if (_this151.titleVal == 'Repayment') {
+                _this151.loanForm.controls.principalOutstanding.setValue((_c = resp.data.loanInfo[0]) === null || _c === void 0 ? void 0 : _c.principalOutstanding);
 
-                _this150.loanForm.controls.currentArrears.setValue((_d = resp.data.loanInfo[0]) === null || _d === void 0 ? void 0 : _d.currentArrears);
+                _this151.loanForm.controls.currentArrears.setValue((_d = resp.data.loanInfo[0]) === null || _d === void 0 ? void 0 : _d.currentArrears);
               }
 
-              if (_this150.titleVal == 'Disbursement') {
-                _this150.loanForm.controls.sanctionedAmount.setValue(resp.data.loanInfo[0].sanctionedAmount);
+              if (_this151.titleVal == 'Disbursement') {
+                _this151.loanForm.controls.sanctionedAmount.setValue(resp.data.loanInfo[0].sanctionedAmount);
 
-                _this150.loanForm.controls.disbursedAmount.setValue(resp.data.loanInfo[0].disbursedAmount);
+                _this151.loanForm.controls.disbursedAmount.setValue(resp.data.loanInfo[0].disbursedAmount);
               } // this.loanForm.controls.currentDue.setValue(resp.data.loanInfo[0]?.currentDue);
 
 
               console.log(resp.data.accountCurrency);
 
-              _this150.dataService.sendloanRepaymentData(_this150.cashData);
+              _this151.dataService.sendloanRepaymentData(_this151.cashData);
             });
             console.log(this.cashData); // this.denomRequired='yes';
           }
@@ -42049,7 +42221,7 @@
         }, {
           key: "goToOperations",
           value: function goToOperations(index) {
-            var _this151 = this;
+            var _this152 = this;
 
             console.log(index, this.active);
 
@@ -42073,7 +42245,7 @@
             console.log(this.enableList[0].title);
             localStorage.setItem('trnType', this.enableList[0].title);
             this.timer = setTimeout(function () {
-              _this151.router.navigateByUrl("/".concat(_this151.enableList[0].link));
+              _this152.router.navigateByUrl("/".concat(_this152.enableList[0].link));
             }, 200);
             localStorage.setItem('chq_page', this.enableList[0].title); // this.router.navigateByUrl(`/${this.enableList[0].link}`);
           }
@@ -42536,7 +42708,7 @@
         _createClass(CheqWComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this152 = this;
+            var _this153 = this;
 
             // localStorage.setItem('chq_page', this.title)
             this.custValidation = localStorage.getItem("customerValidation");
@@ -42568,29 +42740,29 @@
             this.dataService.gettransactionFormdata.subscribe(function (transaction) {
               if (Object.keys(transaction).length != 0 && transaction.constructor === Object) {
                 console.log("Account component?", transaction);
-                _this152.transactiondata = transaction;
+                _this153.transactiondata = transaction;
 
-                if (_this152.transactiondata.transactionAmount) {
-                  _this152.displayDenom = true;
+                if (_this153.transactiondata.transactionAmount) {
+                  _this153.displayDenom = true;
                 }
               }
             });
             this.dataService.getdenominationFormdata.subscribe(function (denomination) {
               if (denomination) {
                 console.log("Account component?", denomination);
-                _this152.denominationdata = denomination;
+                _this153.denominationdata = denomination;
               }
             });
             this.dataService.getaccountFormdata.subscribe(function (data) {
               if (Object.keys(data).length != 0 && data.constructor === Object) {
                 console.log("Account component?", data);
-                _this152.appointmentDetails = data;
-                console.log("Account component?", _this152.appointmentDetails.appointmentId);
+                _this153.appointmentDetails = data;
+                console.log("Account component?", _this153.appointmentDetails.appointmentId);
               }
             });
             this.dataService.getNavParam.subscribe(function (title) {
               console.log(title);
-              _this152.titleData = title;
+              _this153.titleData = title;
             });
           }
         }, {
@@ -42628,7 +42800,7 @@
         }, {
           key: "onSaveofchequeDeposit",
           value: function onSaveofchequeDeposit(form, type, cdForm) {
-            var _this153 = this;
+            var _this154 = this;
 
             var _a, _b, _c, _d, _e, _f;
 
@@ -42647,7 +42819,7 @@
               if (this.qrData) {
                 if (this.qrData.transactionBranch) {
                   this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                    _this153.qrBranchCode = response;
+                    _this154.qrBranchCode = response;
                     console.log(response);
                   });
                 }
@@ -42749,37 +42921,37 @@
               this.tokendisable = true;
               this.apiService.saveofCashDeposit(this.Token).subscribe(function (cheqWithdrawResp) {
                 console.log("Response Success, Data Saved", cheqWithdrawResp);
-                _this153.cheqDepositResponse = cheqWithdrawResp;
-                _this153.tokenNum = _this153.cheqDepositResponse.tokenNumber;
-                _this153.estimatedTime = _this153.cheqDepositResponse.estimatedWaitTime;
-                localStorage.setItem("tokenNumer", _this153.tokenNum);
-                localStorage.setItem("estimatedTiming", _this153.estimatedTime);
+                _this154.cheqDepositResponse = cheqWithdrawResp;
+                _this154.tokenNum = _this154.cheqDepositResponse.tokenNumber;
+                _this154.estimatedTime = _this154.cheqDepositResponse.estimatedWaitTime;
+                localStorage.setItem("tokenNumer", _this154.tokenNum);
+                localStorage.setItem("estimatedTiming", _this154.estimatedTime);
 
-                if (_this153.cheqDepositResponse) {
-                  _this153.tokendisable = true;
+                if (_this154.cheqDepositResponse) {
+                  _this154.tokendisable = true;
 
-                  _this153.dialogService.tokenGenerationDialog();
+                  _this154.dialogService.tokenGenerationDialog();
                 }
               }, function (error) {
                 console.log(error);
-                _this153.tokendisable = false;
+                _this154.tokendisable = false;
               });
             }
 
             console.log("no resp");
             setTimeout(function () {
-              if (_this153.cheqDepositResponse == undefined) {
-                console.log(_this153.cheqDepositResponse);
-                _this153.tokendisable = false;
+              if (_this154.cheqDepositResponse == undefined) {
+                console.log(_this154.cheqDepositResponse);
+                _this154.tokendisable = false;
               }
 
-              console.log("out", _this153.tokendisable);
+              console.log("out", _this154.tokendisable);
             }, 30000);
           }
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this154 = this;
+            var _this155 = this;
 
             this.phonenum = this.ls.getItem('phonenumFromLogin');
             this.chequewithdrawValues = formData;
@@ -42797,9 +42969,9 @@
               this.tokendisable = true;
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this154.openDialogOTP(_this154.phonenum);
+                  _this155.openDialogOTP(_this155.phonenum);
 
-                  _this154.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this155.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: "top",
                     horizontalPosition: "right"
@@ -42813,7 +42985,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this155 = this;
+            var _this156 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_10__["OtpVerifyComponent"], {
               data: {
@@ -42824,14 +42996,14 @@
             });
             dialogRef.afterClosed().subscribe(function (submit) {
               if (submit) {
-                _this155.getOTPforSave(_this155.chequewithdrawValues, _this155.chequewithdrawtype, _this155.chequewithdrawalForm);
+                _this156.getOTPforSave(_this156.chequewithdrawValues, _this156.chequewithdrawtype, _this156.chequewithdrawalForm);
               }
             });
           }
         }, {
           key: "getOTPforSave1",
           value: function getOTPforSave1(formData, type, cdForm) {
-            var _this156 = this;
+            var _this157 = this;
 
             formData.transactionBranch = this.transBranch;
 
@@ -42869,22 +43041,22 @@
             formData.accountBalance = this.accountBal;
             this.apiService.saveofCashDeposit(formData).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this156.cheqDepositResponse = cashDepositResp;
-              _this156.tokenNum = _this156.cheqDepositResponse.tokenNumber;
-              _this156.estimatedTime = _this156.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this156.tokenNum);
-              localStorage.setItem("estimatedTiming", _this156.estimatedTime);
-              _this156.enableContinue = false;
+              _this157.cheqDepositResponse = cashDepositResp;
+              _this157.tokenNum = _this157.cheqDepositResponse.tokenNumber;
+              _this157.estimatedTime = _this157.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this157.tokenNum);
+              localStorage.setItem("estimatedTiming", _this157.estimatedTime);
+              _this157.enableContinue = false;
 
-              if (_this156.cheqDepositResponse) {
-                _this156.dialogService.tokenGenerationDialog();
+              if (_this157.cheqDepositResponse) {
+                _this157.dialogService.tokenGenerationDialog();
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this157 = this;
+            var _this158 = this;
 
             console.log(formData);
             var denominationData = {};
@@ -42937,30 +43109,30 @@
             this.tokendisable = true;
             this.apiService.saveofCashDeposit(this.Token).subscribe(function (cashDepositResp) {
               console.log("Response Success", cashDepositResp);
-              _this157.cheqDepositResponse = cashDepositResp;
-              _this157.tokenNum = _this157.cheqDepositResponse.tokenNumber;
-              _this157.estimatedTime = _this157.cheqDepositResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this157.tokenNum);
-              localStorage.setItem("estimatedTiming", _this157.estimatedTime);
-              _this157.enableContinue = false;
+              _this158.cheqDepositResponse = cashDepositResp;
+              _this158.tokenNum = _this158.cheqDepositResponse.tokenNumber;
+              _this158.estimatedTime = _this158.cheqDepositResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this158.tokenNum);
+              localStorage.setItem("estimatedTiming", _this158.estimatedTime);
+              _this158.enableContinue = false;
 
-              if (_this157.cheqDepositResponse) {
-                _this157.tokendisable = true;
+              if (_this158.cheqDepositResponse) {
+                _this158.tokendisable = true;
 
-                _this157.dialogService.tokenGenerationDialog();
+                _this158.dialogService.tokenGenerationDialog();
               }
             }, function (error) {
               console.log(error);
-              _this157.tokendisable = false;
+              _this158.tokendisable = false;
             });
             console.log("no resp");
             setTimeout(function () {
-              if (_this157.cheqDepositResponse == undefined) {
-                console.log(_this157.cheqDepositResponse);
-                _this157.tokendisable = false;
+              if (_this158.cheqDepositResponse == undefined) {
+                console.log(_this158.cheqDepositResponse);
+                _this158.tokendisable = false;
               }
 
-              console.log("out", _this157.tokendisable);
+              console.log("out", _this158.tokendisable);
             }, 30000);
           }
         }, {
@@ -43372,7 +43544,7 @@
         }, {
           key: "validateOtp",
           value: function validateOtp(otpValue) {
-            var _this158 = this;
+            var _this159 = this;
 
             console.log("OTP validaion", otpValue);
 
@@ -43396,21 +43568,21 @@
 
                 if (otpResp.data != null) {
                   if (otpResp.data.userId != '' && otpResp.data.userId != null && otpResp.data.status == 'SUCCESS') {
-                    _this158.afterSubmit.emit(true);
+                    _this159.afterSubmit.emit(true);
 
                     localStorage.setItem('userId', otpResp.data.userId);
 
-                    _this158.snack.open("Validation successful", 'OK', {
+                    _this159.snack.open("Validation successful", 'OK', {
                       duration: 1000,
                       verticalPosition: 'bottom',
                       horizontalPosition: 'right'
                     });
 
-                    _this158.dialogRef.close(true);
+                    _this159.dialogRef.close(true);
                   } else {
-                    _this158.dialogRef.close(false);
+                    _this159.dialogRef.close(false);
 
-                    _this158.snack.open("".concat(otpResp.data.responseMessage), 'OK', {
+                    _this159.snack.open("".concat(otpResp.data.responseMessage), 'OK', {
                       duration: 4000,
                       verticalPosition: 'bottom',
                       horizontalPosition: 'right'
@@ -43420,7 +43592,7 @@
               }, function (error) {
                 console.log("wrong otp", error.status); // this.errorStatus = error.status;
 
-                _this158.snack.open("Incorrect OTP. Please try again.", 'OK', {
+                _this159.snack.open("Incorrect OTP. Please try again.", 'OK', {
                   duration: 4000,
                   verticalPosition: 'bottom',
                   horizontalPosition: 'right'
@@ -45751,7 +45923,7 @@
         }, {
           key: "fetchByAccountNum",
           value: function fetchByAccountNum(accNum) {
-            var _this159 = this;
+            var _this160 = this;
 
             this.cashwithdrawForm.controls.transactionAmount.reset();
             this.cashwithdrawForm.controls.totalTransactionAmount.setValue(this.cashwithdrawForm.controls.totalChargeAmount.value);
@@ -45761,52 +45933,52 @@
               if (accNum != (res === null || res === void 0 ? void 0 : res.accountId) || res.accountId == null) {
                 console.log('statement');
 
-                _this159.snack.open("Account Number Doesn't Exist", "OK", {
+                _this160.snack.open("Account Number Doesn't Exist", "OK", {
                   duration: 4000,
                   verticalPosition: 'bottom',
                   horizontalPosition: 'right'
                 });
 
-                _this159.cashwithdrawForm.reset();
+                _this160.cashwithdrawForm.reset();
 
-                _this159.userName = '';
-                _this159.accountBal = '';
-                _this159.curr = '';
+                _this160.userName = '';
+                _this160.accountBal = '';
+                _this160.curr = '';
               } else {
                 console.log('Account Number Rsp', res);
 
-                _this159.getChargeDetails(accNum, '');
+                _this160.getChargeDetails(accNum, '');
 
-                _this159.userName = res.accHolderName;
-                _this159.accountBal = res.accBalance;
-                _this159.custmerID = res.customerId;
-                _this159.accountNumber = res.accountId;
-                _this159.accountCurrency = res.accountCurrency; // this.curr = getCurrencySymbol(res.currency, "narrow");
+                _this160.userName = res.accHolderName;
+                _this160.accountBal = res.accBalance;
+                _this160.custmerID = res.customerId;
+                _this160.accountNumber = res.accountId;
+                _this160.accountCurrency = res.accountCurrency; // this.curr = getCurrencySymbol(res.currency, "narrow");
 
-                _this159.cashwithdrawForm.controls.accountType.setValue(res.accountType);
+                _this160.cashwithdrawForm.controls.accountType.setValue(res.accountType);
 
-                _this159.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
+                _this160.cashwithdrawForm.controls.accountBranch.setValue(res.accountBranch);
 
-                _this159.cashwithdrawForm.controls.holderName.setValue(_this159.userName); // this.getCountrynameValues();
+                _this160.cashwithdrawForm.controls.holderName.setValue(_this160.userName); // this.getCountrynameValues();
                 // this.currencyImage = 'currency-flag-'+res.currency.toLowerCase();
 
 
-                _this159.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
+                _this160.currencyImage = 'currency-flag-' + res.currency.toLowerCase();
 
-                _this159.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
+                _this160.cashwithdrawForm.controls.transactionCurrency.setValue(res.currency);
 
-                _this159.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
+                _this160.cashwithdrawForm.controls.accountCurrency.setValue(res.currency);
 
-                console.log(_this159.ifQRvariable);
+                console.log(_this160.ifQRvariable);
 
-                _this159.custAmountBal(accNum);
+                _this160.custAmountBal(accNum);
 
-                _this159.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
+                _this160.cashwithdrawForm.controls.transactionBranch.setValue('Kasturi Nagar');
               }
 
-              _this159.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
-                _this159.phonenum = resp[0].phoneNumber;
-                localStorage.setItem('otpPhoneNum', _this159.phonenum);
+              _this160.apiService.fetchByaccDeatilsoncustId(res.customerId).subscribe(function (resp) {
+                _this160.phonenum = resp[0].phoneNumber;
+                localStorage.setItem('otpPhoneNum', _this160.phonenum);
               });
             });
           } //  numberWithCommas = (transAmt) => {
@@ -45817,35 +45989,35 @@
         }, {
           key: "gettransactionBranch",
           value: function gettransactionBranch(key) {
-            var _this160 = this;
+            var _this161 = this;
 
             this.apiService.getTransactionBranch(key).subscribe(function (branches) {
               console.log('branches :: ', branches);
-              _this160.trasactionBranches = branches;
+              _this161.trasactionBranches = branches;
             });
           }
         }, {
           key: "getAccountBranch",
           value: function getAccountBranch() {
-            var _this161 = this;
+            var _this162 = this;
 
             this.apiService.getBranchforKiosk().subscribe(function (data) {
-              _this161.branchData = data;
-              console.log(_this161.branchData);
+              _this162.branchData = data;
+              console.log(_this162.branchData);
               data.forEach(function (element, index) {
-                _this161.branch = data[index].branchName;
-                console.log(_this161.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
+                _this162.branch = data[index].branchName;
+                console.log(_this162.branch); // this.cashwithdrawForm.controls.accountBranch.setValue(this.branch);
               });
             });
           }
         }, {
           key: "getCountrynameValues",
           value: function getCountrynameValues() {
-            var _this162 = this;
+            var _this163 = this;
 
             this.apiService.getCountryValues().subscribe(function (allCountryValues) {
-              _this162.countryValues = allCountryValues;
-              console.log(_this162.countryValues);
+              _this163.countryValues = allCountryValues;
+              console.log(_this163.countryValues);
             });
           }
         }, {
@@ -45855,51 +46027,51 @@
         }, {
           key: "gettingallTansactionDetails",
           value: function gettingallTansactionDetails(phoneNumber) {
-            var _this163 = this;
+            var _this164 = this;
 
             this.phoneNumber = localStorage.getItem("phonenumFromLogin");
             this.apiService.gettingTransactionDetails(this.phoneNumber).subscribe(function (allTransactionResp) {
               console.log("All Transaction Details", allTransactionResp);
-              _this163.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
+              _this164.userName = (allTransactionResp.firstName ? allTransactionResp.firstName + ' ' : ' ') + (allTransactionResp.middleName ? allTransactionResp.middleName + ' ' : ' ') + (allTransactionResp.lastName ? allTransactionResp.lastName : ' ');
 
-              _this163.cashwithdrawForm.controls.holderName.setValue(_this163.userName); // this.setBalance(allTransactionResp.custAccount);
+              _this164.cashwithdrawForm.controls.holderName.setValue(_this164.userName); // this.setBalance(allTransactionResp.custAccount);
 
 
-              _this163.custID = allTransactionResp.customerId;
-              console.log("Cust", _this163.custID);
-              _this163.custAccountData = allTransactionResp.custAccount;
-              _this163.accounttypeArray = _toConsumableArray(_this163.custAccountData).filter(function (_ref9, index) {
+              _this164.custID = allTransactionResp.customerId;
+              console.log("Cust", _this164.custID);
+              _this164.custAccountData = allTransactionResp.custAccount;
+              _this164.accounttypeArray = _toConsumableArray(_this164.custAccountData).filter(function (_ref9, index) {
                 var accountType = _ref9.accountType;
-                return !_toConsumableArray(_this163.custAccountData).map(function (obj) {
+                return !_toConsumableArray(_this164.custAccountData).map(function (obj) {
                   return obj.accountType;
                 }).includes(accountType, index + 1);
               });
-              console.log(_this163.accounttypeArray);
+              console.log(_this164.accounttypeArray);
 
-              for (var i = 0; i < _this163.custAccountData.length; i++) {
-                if (_this163.custAccountData[i].status == 'APPROVED') {
-                  _this163.accountNoList.push(_this163.custAccountData[i]);
+              for (var i = 0; i < _this164.custAccountData.length; i++) {
+                if (_this164.custAccountData[i].status == 'APPROVED') {
+                  _this164.accountNoList.push(_this164.custAccountData[i]);
                 }
               }
 
-              console.log(_this163.accountNoList);
+              console.log(_this164.accountNoList);
 
-              if (_this163.custAccountData && _this163.accountNoList.length <= 1) {
-                _this163.accountDropdown = false;
-                _this163.hideDetails = true;
+              if (_this164.custAccountData && _this164.accountNoList.length <= 1) {
+                _this164.accountDropdown = false;
+                _this164.hideDetails = true;
                 var accTyp = allTransactionResp.custAccount[0].accountType;
 
-                _this163.cashwithdrawForm.controls.accountType.setValue(accTyp);
+                _this164.cashwithdrawForm.controls.accountType.setValue(accTyp);
 
-                _this163.custAccountNumber(_this163.accountNoList[0]);
+                _this164.custAccountNumber(_this164.accountNoList[0]);
               } else {
-                _this163.accountDropdown = true;
-                _this163.hideDetails = true;
+                _this164.accountDropdown = true;
+                _this164.hideDetails = true;
                 var _accTyp9 = allTransactionResp.custAccount[0].accountType;
 
-                _this163.cashwithdrawForm.controls.accountType.setValue(_accTyp9);
+                _this164.cashwithdrawForm.controls.accountType.setValue(_accTyp9);
 
-                _this163.custAccountNumber(allTransactionResp.custAccount[0]);
+                _this164.custAccountNumber(allTransactionResp.custAccount[0]);
               }
             });
           }
@@ -46029,7 +46201,7 @@
         }, {
           key: "getOTP",
           value: function getOTP(formData, type, cdForm) {
-            var _this164 = this;
+            var _this165 = this;
 
             this.cashwithDrwValues = formData;
             this.cashwithDrwType = type;
@@ -46044,9 +46216,9 @@
             if (transamountwithoutcomma > amount) {
               this.apiService.getOtp(this.oTpModel).subscribe(function (otpResp) {
                 if (otpResp) {
-                  _this164.openDialogOTP(_this164.phonenum);
+                  _this165.openDialogOTP(_this165.phonenum);
 
-                  _this164.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
+                  _this165.snack.open("An OTP has been sent to the Registered Mobile Number.", "", {
                     duration: 4000,
                     verticalPosition: 'top',
                     horizontalPosition: 'right'
@@ -46060,7 +46232,7 @@
         }, {
           key: "openDialogOTP",
           value: function openDialogOTP(numbr) {
-            var _this165 = this;
+            var _this166 = this;
 
             var dialogRef = this.dialog.open(_otp_verify_otp_verify_component__WEBPACK_IMPORTED_MODULE_9__["OtpVerifyComponent"], {
               data: {
@@ -46073,14 +46245,14 @@
               console.log("submit", submit);
 
               if (submit) {
-                _this165.getOTPforSave(_this165.cashwithDrwValues, _this165.cashwithDrwType, _this165.cashwithDrwform);
+                _this166.getOTPforSave(_this166.cashwithDrwValues, _this166.cashwithDrwType, _this166.cashwithDrwform);
               }
             });
           }
         }, {
           key: "getOTPforSave",
           value: function getOTPforSave(formData, type, cdForm) {
-            var _this166 = this;
+            var _this167 = this;
 
             var denominationData = {};
             var denominationDataArray = [];
@@ -46133,15 +46305,15 @@
             console.log("before api call :: ", formData);
             this.apiService.saveofCashwithdraw(formData).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this166.cashWithdrawResponse = cashWithdrawResp;
-              _this166.tokenNum = _this166.cashWithdrawResponse.tokenNumber;
-              _this166.estimatedTime = _this166.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this166.tokenNum);
-              localStorage.setItem("estimatedTiming", _this166.estimatedTime);
-              _this166.enableContinue = false;
+              _this167.cashWithdrawResponse = cashWithdrawResp;
+              _this167.tokenNum = _this167.cashWithdrawResponse.tokenNumber;
+              _this167.estimatedTime = _this167.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this167.tokenNum);
+              localStorage.setItem("estimatedTiming", _this167.estimatedTime);
+              _this167.enableContinue = false;
 
-              if (_this166.cashWithdrawResponse) {
-                _this166.dialogService.tokenGenerationDialog();
+              if (_this167.cashWithdrawResponse) {
+                _this167.dialogService.tokenGenerationDialog();
               }
             });
           }
@@ -46178,14 +46350,14 @@
         }, {
           key: "onSaveofCashWithdraw",
           value: function onSaveofCashWithdraw(form, type, cdForm) {
-            var _this167 = this;
+            var _this168 = this;
 
             form.transactionBranch = this.transBranch;
 
             if (this.qrData) {
               if (this.qrData.transactionBranch) {
                 this.apiService.fetchBranchInfoByBranchName(this.qrData.transactionBranch).subscribe(function (response) {
-                  _this167.qrBranchCode = response;
+                  _this168.qrBranchCode = response;
                 });
               }
             }
@@ -46260,15 +46432,15 @@
             console.log("before api call :: ", form);
             this.apiService.saveofCashDeposit(form).subscribe(function (cashWithdrawResp) {
               console.log("Response Success, Data Saved", cashWithdrawResp);
-              _this167.cashWithdrawResponse = cashWithdrawResp;
-              _this167.tokenNum = _this167.cashWithdrawResponse.tokenNumber;
-              _this167.estimatedTime = _this167.cashWithdrawResponse.estimatedWaitTime;
-              localStorage.setItem("tokenNumer", _this167.tokenNum);
-              localStorage.setItem("estimatedTiming", _this167.estimatedTime);
-              _this167.enableContinue = false;
+              _this168.cashWithdrawResponse = cashWithdrawResp;
+              _this168.tokenNum = _this168.cashWithdrawResponse.tokenNumber;
+              _this168.estimatedTime = _this168.cashWithdrawResponse.estimatedWaitTime;
+              localStorage.setItem("tokenNumer", _this168.tokenNum);
+              localStorage.setItem("estimatedTiming", _this168.estimatedTime);
+              _this168.enableContinue = false;
 
-              if (_this167.cashWithdrawResponse) {
-                _this167.dialogService.tokenGenerationDialog();
+              if (_this168.cashWithdrawResponse) {
+                _this168.dialogService.tokenGenerationDialog();
               }
             }); //   this.tokenObjects.productCode = this.productCode;
             //   this.tokenObjects.accountNumber = form.accountNumber;
@@ -46407,50 +46579,50 @@
         }, {
           key: "cashWithdrawlData",
           value: function cashWithdrawlData() {
-            var _this168 = this;
+            var _this169 = this;
 
             this.apiService.getAppointmentId(this.appointmentId.data.appointmentId).subscribe(function (resp) {
               console.log(resp);
-              _this168.cashData = resp.data;
-              _this168.custID = resp.data.customerId;
-              _this168.ifQRvariable = true;
-              _this168.accountCurrency = resp.accountCurrency;
+              _this169.cashData = resp.data;
+              _this169.custID = resp.data.customerId;
+              _this169.ifQRvariable = true;
+              _this169.accountCurrency = resp.accountCurrency;
 
-              _this168.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
+              _this169.cashwithdrawForm.controls.accountType.setValue(resp.data.accountType);
 
-              _this168.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
+              _this169.cashwithdrawForm.controls.accountBranch.setValue(resp.data.accountBranch);
 
-              _this168.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
+              _this169.cashwithdrawForm.controls.accountNumber.setValue(resp.data.accountNumber);
 
-              _this168.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
+              _this169.getChargeDetails(resp.data.accountNumber, resp.data.transactionAmount);
 
-              _this168.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
+              _this169.cashwithdrawForm.controls.accountCurrency.setValue(resp.data.accountCurrency);
 
-              _this168.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
+              _this169.cashwithdrawForm.controls.transactionCurrency.setValue(resp.data.transactionCurrency);
 
-              _this168.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
+              _this169.cashwithdrawForm.controls.transactionAmount.setValue(resp.data.transactionAmount);
 
-              _this168.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
-              _this168.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
+              _this169.currencyImage = 'currency-flag-' + resp.data.accountCurrency.toLowerCase();
+              _this169.currencyImage = 'currency-flag-' + resp.data.transactionCurrency.toLowerCase();
             }); // this.denomRequired='yes';
           }
         }, {
           key: "getChargeDetails",
           value: function getChargeDetails(accountId, amount) {
-            var _this169 = this;
+            var _this170 = this;
 
             this.apiService.fetchChargeDetails(accountId).subscribe(function (resp) {
               console.log(resp);
-              _this169.chargeDetails = resp;
+              _this170.chargeDetails = resp;
 
-              _this169.cashwithdrawForm.controls.totalChargeAmount.setValue(_this169.chargeDetails ? _this169.chargeDetails[0].amount : '');
+              _this170.cashwithdrawForm.controls.totalChargeAmount.setValue(_this170.chargeDetails ? _this170.chargeDetails[0].amount : '');
             });
 
             if (this.cashData) {
               setTimeout(function () {
-                _this169.totalTransAmount = Number(_this169.cashData.transactionAmount) + Number(_this169.chargeDetails[0].amount);
+                _this170.totalTransAmount = Number(_this170.cashData.transactionAmount) + Number(_this170.chargeDetails[0].amount);
 
-                _this169.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this169.totalTransAmount);
+                _this170.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this170.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -46459,10 +46631,10 @@
               amount = 0;
               console.log(amount);
               setTimeout(function () {
-                _this169.totalTransAmount = Number(amount) + Number(_this169.chargeDetails ? _this169.chargeDetails[0].amount : '');
-                console.log(_this169.totalTransAmount);
+                _this170.totalTransAmount = Number(amount) + Number(_this170.chargeDetails ? _this170.chargeDetails[0].amount : '');
+                console.log(_this170.totalTransAmount);
 
-                _this169.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this169.totalTransAmount);
+                _this170.cashwithdrawForm.controls.totalTransactionAmount.setValue(_this170.totalTransAmount);
               }, 1000);
               this.cdr.markForCheck();
               this.cdr.detectChanges();
@@ -46472,15 +46644,15 @@
         }, {
           key: "getBankInformation",
           value: function getBankInformation(branchCode) {
-            var _this170 = this;
+            var _this171 = this;
 
             this.apiService.fetchBankInfoByBranchCode(branchCode).subscribe(function (resp) {
               console.log(resp);
-              _this170.denomRequired = resp.denomRequired;
+              _this171.denomRequired = resp.denomRequired;
 
               if (resp.denomRequired == 'yes') {
-                _this170.enableBtn = false;
-                _this170.enableBtn1 = false;
+                _this171.enableBtn = false;
+                _this171.enableBtn1 = false;
               }
             });
           }
