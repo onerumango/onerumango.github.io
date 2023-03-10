@@ -505,7 +505,6 @@ let LoanDisbursementV2Page = class LoanDisbursementV2Page {
                     loanAccountNo: form === null || form === void 0 ? void 0 : form.loanAccountNumber,
                     rePaymentMode: form === null || form === void 0 ? void 0 : form.paymentMethod,
                     category: this.module,
-                    accountNumber: form === null || form === void 0 ? void 0 : form.accountPaymentNumber,
                     accountCurrency: (_f = this.filteredPaymentAccount) === null || _f === void 0 ? void 0 : _f.accountCurrency,
                     chequeType: form === null || form === void 0 ? void 0 : form.chequeType,
                     nameOnCheque: form === null || form === void 0 ? void 0 : form.chequeName,

@@ -348,14 +348,14 @@ let CashWithdrawV2Page = class CashWithdrawV2Page {
         }
     }
     getHomeBranch() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d;
         this.homeIconToggle = !this.homeIconToggle;
         if (this.homeIconToggle) {
-            console.log((_b = (_a = this.customerDetails) === null || _a === void 0 ? void 0 : _a.custAccount[0]) === null || _b === void 0 ? void 0 : _b.accountBranch, "branch 1");
-            (_c = this.form.get('transactionBranch')) === null || _c === void 0 ? void 0 : _c.patchValue((_e = (_d = this.customerDetails) === null || _d === void 0 ? void 0 : _d.custAccount[0]) === null || _e === void 0 ? void 0 : _e.accountBranch);
+            console.log((_a = this.filteredAccount) === null || _a === void 0 ? void 0 : _a.accountBranch);
+            (_b = this.form.get('transactionBranch')) === null || _b === void 0 ? void 0 : _b.patchValue((_c = this.filteredAccount) === null || _c === void 0 ? void 0 : _c.accountBranch);
         }
         else {
-            (_f = this.form.get('transactionBranch')) === null || _f === void 0 ? void 0 : _f.patchValue("");
+            (_d = this.form.get('transactionBranch')) === null || _d === void 0 ? void 0 : _d.patchValue("");
         }
     }
     upsertAccount(filteredResponseSavingAccount) {
@@ -656,9 +656,16 @@ let CashWithdrawV2Page = class CashWithdrawV2Page {
                 componentProps: {}
             });
             modal.onDidDismiss().then((modelData) => {
+                var _a;
                 if (modelData.data != null || modelData.data != undefined || modelData.data != "undefined") {
                     console.log(modelData.data['data'].branchName, 'branch 4');
                     this.form.get('transactionBranch').patchValue(modelData.data['data'].branchName);
+                    if (this.form.get('transactionBranch').value == ((_a = this.filteredAccount) === null || _a === void 0 ? void 0 : _a.accountBranch)) {
+                        this.homeIconToggle = true;
+                    }
+                    else {
+                        this.homeIconToggle = false;
+                    }
                 }
             });
             return yield modal.present();
