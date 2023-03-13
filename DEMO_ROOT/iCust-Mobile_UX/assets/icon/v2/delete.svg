@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" viewBox="0 0 67 67">
+  <g id="Group_1796" data-name="Group 1796" transform="translate(-181 -362)">
+    <rect id="Rectangle_1474" data-name="Rectangle 1474" width="67" height="67" rx="12" transform="translate(181 362)" fill="#fcefef"/>
+    <g id="trash" transform="translate(195 376)">
+      <path id="Path_4965" data-name="Path 4965" d="M35.048,6.37c-5.929-.588-11.894-.89-17.84-.89a105.17,105.17,0,0,0-10.576.534L3,6.37" transform="translate(0 2.716)" fill="none" stroke="#b20000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      <path id="Path_4966" data-name="Path 4966" d="M8.5,7.288l.392-2.332C9.177,3.264,9.39,2,12.4,2h4.665c3.009,0,3.24,1.335,3.508,2.973l.392,2.315" transform="translate(4.293)" fill="none" stroke="#b20000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      <path id="Path_4967" data-name="Path 4967" d="M29.542,9.14,28.385,27.069c-.2,2.8-.356,4.968-5.324,4.968H11.631c-4.968,0-5.128-2.172-5.324-4.968L5.15,9.14" transform="translate(1.678 5.573)" fill="none" stroke="#b20000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      <path id="Path_4968" data-name="Path 4968" d="M10.33,16.5h5.929" transform="translate(5.721 11.317)" fill="none" stroke="#b20000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      <path id="Path_4969" data-name="Path 4969" d="M9.5,12.5h8.9" transform="translate(5.073 8.195)" fill="none" stroke="#b20000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+    </g>
+  </g>
+</svg>
