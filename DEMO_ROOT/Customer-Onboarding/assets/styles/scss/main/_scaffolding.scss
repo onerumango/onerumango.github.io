@@ -8,7 +8,7 @@ body {
   // height: 100%;
   position: relative;
   // overflow: hidden;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(75, 3, 3, 0.749);
   -webkit-touch-callout: none;
   // min-height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -21,6 +21,8 @@ body {
 body {
   margin: 0;
   padding: 0;
+ // background-color: black;
+  //color:whitesmoke;
   font-weight: $font-weight-base;
   font-size: $font-size-base;
   line-height: 1.5;
@@ -58,6 +60,9 @@ bdo[dir='ltr'] {
 
 .mat-card {
   font-size: 0.875rem;
+//  background-color: gray;
+//  background-image: linear-gradient(rgba(255, 255, 255, 0.5),
+//  rgba(248, 250, 254, 0.5));
 }
 img:not(.mat-card-image) {
   max-width: 100%;
@@ -116,20 +121,20 @@ h6 {
 }
 code {
   padding: 8px;
-  background: rgba(0, 0, 0, 0.08);
+ // background: rgba(0, 0, 0, 0.08);
 }
 /*---- Common -----*/
 .container {
-  // max-width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
 }
 .bg-none {
-  background: transparent !important;
+  background: none !important;
 }
-.bg-white {
-  background: #ffffff !important;
-}
+// .bg-white {
+//   background: #ffffff !important;
+// }
 
 .h-full {
   min-height: 100vh;
@@ -161,10 +166,10 @@ code {
   background-color: #f44336 !important;
   color: #fff !important;
 }
-.mat-indigo {
-  background-color: #3f51b5 !important;
-  color: #fff !important;
-}
+// .mat-indigo {
+//   background-color: #456EFE !important;
+//   color: #fff !important;
+// }
 .mat-brown {
   background-color: #785548 !important;
   color: #fefefe;
@@ -313,6 +318,7 @@ code {
 }
 .doughnut-grid .doughnut-grid-item .chart {
   margin: 0 0 8px;
+  background-color: gray;
 }
 
 .logo-group {
@@ -363,7 +369,8 @@ code {
   border-radius: 50%;
 }
 .mat-sidenav .mat-list-item:hover {
-  background: rgba(0, 0, 0, 0.035) !important;
+  //background: rgba(0, 0, 0, 0.035) !important;
+  background-color: gray;
 }
 .mat-chip {
   position: relative;
@@ -406,6 +413,7 @@ code {
 }
 .chart {
   display: block;
+  background-color: gray;
   width: 100%;
 }
 .form-error-msg {
@@ -604,6 +612,7 @@ body .mat-select-trigger {
 /*-------- Chart js ---------*/
 .chart {
   margin-left: -10px;
+  background-color: gray;
 }
 
 
@@ -652,6 +661,41 @@ body .mat-select-trigger {
     font-size: 100px;
   }
 }
-.show-class{
-  overflow: hidden !important;
+
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #1772FF;
+$color-form-highlight: rgba(245,247,249,1.00);
+
+.table {
+	width:100%;
+	border:1px solid $color-form-highlight;
+}
+
+.table-header {
+	display:flex;
+	width:100%;
+//	background:#ffffff;
+	padding:($half-spacing-unit * 1.5) 0;
+}
+
+.table-row {
+	display:flex;
+	width:100%;
+	padding:($half-spacing-unit * 1.5) 0;
+	
+	&:nth-of-type(odd) {
+		background:$color-form-highlight;
+	}
+}
+
+.table-data, .header__item {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
 }

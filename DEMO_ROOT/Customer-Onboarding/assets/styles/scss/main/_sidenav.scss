@@ -39,9 +39,6 @@
   .sidenav {
     li {
       cursor: pointer;
-      font-size: 14px;
-      padding-bottom: 3px;
-
       ul.submenu {
         max-height: 0;
         overflow: hidden;
@@ -131,10 +128,11 @@
     &.open,
     &.open li.open {
       background: rgba(0, 0, 0, 0.02);
+      width: 275px;
     }
     &.open > div > ul,
     &.open > ul {
-      max-height: 1000px;
+      max-height: 100%;
       background: rgba(0, 0, 0, 0.005);
     }
     &.open > div > a .menu-caret,
@@ -144,6 +142,7 @@
   }
   a {
     height: 48px;
+    width: 275px;
     // padding: 0 16px 0 0;
   }
 }
@@ -203,6 +202,7 @@
     }
   }
 }
+
 .sidebar-compact {
   .icon-menu {
     display: flex;
@@ -236,7 +236,7 @@
       display: block !important;
       padding: 16px 0;
       .item-name.lvl1 {
-        font-size: 1rem;
+        // font-size: 1rem;
       }
     }
     .mat-icon:not(.menu-caret) {
