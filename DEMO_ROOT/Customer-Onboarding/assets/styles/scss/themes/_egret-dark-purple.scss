@@ -21,8 +21,9 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .toolbar-avatar.online>.status-dot,
     .cal-open-day-events,
     div.hopscotch-bubble {
-        background: map-get($mat-primary, 500) !important;
-        color: #ffffff !important;
+      //  background: map-get($mat-primary, 500) !important;
+      background:#1b1b29 ;
+        color: #cdcdde !important;
     }
 
     .mat-color-primary,
@@ -76,8 +77,18 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
     .check-circle {
         color: #24CCA7;
+    } 
+    .mat-input-element {
+        background: #1b1b29;
+        color: #cdcdde; 
+        box-shadow: 0 0 0 1000px #1b1b29 inset !important; 
     }
-
+    .mat-input-element:-webkit-autofill{
+        -webkit-text-fill-color: #cdcdde !important;
+    }
+     .button{
+        background: #000000 ;
+    }
     .active {
         color: #FE6700 !important;
         background: linear-gradient(221deg, #232228 0%, #232228 100%) 0% 0% no-repeat padding-box;
@@ -97,7 +108,8 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     }
     .default-background{
-        background: #0C0B0F 0% 0% no-repeat padding-box;
+ background: #1b1b29 0% 0% no-repeat padding-box;
+        
     }
 
     .sub-text {
@@ -118,6 +130,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     .dark-chip {
         background: transparent linear-gradient(201deg, #183D3F 0%, #1E1F27 100%) 0% 0% no-repeat padding-box;
+        ;
         border-radius: 14px;
         color: #ffffff !important;
         opacity: 1;
@@ -133,7 +146,6 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
 
     .mat-drawer-side {
         border-right: none !important;
-        color: #0C0B0F;
     }
 
     .mat-drawer-container {
@@ -145,11 +157,11 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
 
     .highcharts-title {
-        fill: black;
+        fill: #ffffff;
     }
 
     .mat-card-title {
-        color: #240303 !important;
+        color: #cdcdde !important;
     }
 
     .card-chip {
@@ -176,6 +188,8 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .ngx-pagination a,
     .ngx-pagination button {
         color: white !important;
+        background: #1e1e2d;
+
     }
 
     .text-muted {
@@ -228,7 +242,7 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .cal-week-view .cal-day-headers .cal-drag-over,
     .cal-day-view .cal-hour-segment:hover,
     .cal-day-view .cal-drag-over .cal-hour-segment {
-        background: #1B1A1E 0% 0% no-repeat padding-box;
+        background: #1e1e2d 0% 0% no-repeat padding-box;
         opacity: 1;
     }
 
@@ -311,10 +325,6 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .mat-color-default {
         color: #ffffff;
     }
-    .mat-indigo {
-        background-color: black !important;
-        color: #fff !important;
-    }
 
     .fill-color-accent {
         color: map-get($mat-accent, 500);
@@ -330,51 +340,179 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
             color: #ffffff;
         }
     }
-    .mat-input-element {
-        color: black;
-    }
-    // .dashbaord-card {
-    //     background-color: #0C0B0F;
-    // }
-    .btn{
-        color:#0C0B0F;
-    }
-    // .card-cash-in-cash{
-    //     background-color: #0C0B0F;
-    // }
-    // .change-currency {
-    //     background-color: #0C0B0F;
-    // }
-    // .example-container {
-    //     background:#0C0B0F;
-    // }
-    // .container{
-    //     background:#0C0B0F;
-    // }
-    // .mat-drawer {
-    //     background:#0C0B0F;
-    // }
-    // .navdash {
+    // .mat-form-field-appearance-outline .mat-form-field-outline {
     //     color: black;
-    //   }
-    //   .inputCard{
-    //     background:#0C0B0F;
-    //   }
-    //   .header-topnav{
-    //     background:#0C0B0F;
-    //   }
-    //   .customerOperations {
-    //     background-color: #0C0B0F;
-    //   }
-    //   .tokenCard {
-    //     background-color: #0C0B0F;
-    //     color: white;
     // }
-    // .cash-in-card {
-    //     background-color: #0C0B0F;
-    //     color: white;
+    // // .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    // //     color: #000000;
+    // // }
+    //   .mat-form-field-label {
+    //     color: #000000;
     // }
-    .mat-card {
-       background-color: gray;
+    // .mat-raised-button.mat-primary{
+    //     background-color: #456EFE;
+    // }
+     .mat-card {
+        background: #1e1e2d;
+        color: #cdcdde;
     }
+    .card-title{
+        color: #cdcdde;
+      }
+    .insideTitle{
+      color: #cdcdde;  
+    }
+    .inputMatcard{
+         background: #1b1b29;
+         color: #92929f !important;
+         border-color: #1b1b29 !important;
+    }
+    .inputGender {
+        color: #92929f ;
+        border-color: #1b1b29 ;
+        background: #1b1b29;
+    }
+    .inputMatNew {
+        color: #92929f ;
+        border-color: #1b1b29 ;
+        background: #1b1b29;
+    }
+    .inputMatName {
+        background: #1b1b29;
+    }
+    .inputMatName1 {
+        background: #1b1b29;
+    }
+    .inputMatcardDoc {
+        background: #1b1b29;
+    }
+    .inputMatcardMail {
+        background: #1b1b29;
+    }
+    .inputMatcardMailAdd {
+        background: #1b1b29;
+    }
+    .inputMatcardMarritial {
+        background: #1b1b29;
+    }
+    .inputMatLastName {
+        background: #1b1b29;
+    }
+    .inputMatcardPrefix {
+        background: #1b1b29;
+    }
+    .inputMatcard1 {
+        background: #1b1b29;
+    }
+    .inputMatcardAdd {
+        background: #1b1b29;
+    }
+    .inputMatcard2 {
+        background: #1b1b29;
+    }
+    .inputMatcard3 {
+        background: #1b1b29;
+    }
+    .inputMatcard4 {
+        background: #1b1b29;
+    }
+    .inputClass {
+        background: #1b1b29;
+    }
+    .mat-form-field-flex {
+        background: #1b1b29;
+    }
+    .mat-drawer-inner-container {
+        background: #1b1b29;
+        color: #cdcdde;  
+    }
+    .mat-expansion-panel-header-title {
+        color: #cdcdde;  
+    }
+    .alignment {
+        background: #1b1b29;
+        color: #cdcdde; 
+    }
+    .cart-table thead tr th {
+        background: #1b1b29;
+        color: #cdcdde;  
+    }
+    .cart-table tbody tr td{
+        background: #1b1b29;
+        color: #cdcdde;  
+    }
+    .input{
+        background: #1b1b29;
+    }
+    .egret-dark-purple .mat-stepper-vertical {
+        background: #1b1b29;
+    }
+    .mat-stepper-vertical, .mat-stepper-horizontal {
+        background: #1b1b29;
+      }
+      .valueText{
+        color: #cdcdde; 
+      }
+      .innerMatCard {
+          border: 1px solid;
+      }
+      .paraFont{
+        color: #f5f5f5;
+      }
+      .valueText{
+        color: #cdcdde; 
+      }
+      .fullcard{
+        background-color: #1b1b29;
+    }
+    .bg-light {
+        background-color:#1b1b29;
+    }
+    .num{
+        background: cornflowerblue;
+    }
+    .mat-drawer-transition .mat-drawer-content {
+        background: black;
+    }
+    .flex-grow-2 {
+        background-color: #1b1b29;
+    }
+    .mat-label {
+        color: #cdcdde;
+    }
+    .mt-4 {
+        color:#cdcdde ;
+    }
+    .mr-16 {
+        color:#A6AAB5 ;
+    }
+    .main-head {
+        color: #A6AAB5;
+    }
+    // .mat-form-field {
+    //     background-color: #1b1b29;
+    // }
+    .mat-calendar {
+        background-color:#1b1b29;
+    }
+    .mat-menu-panel {
+        background-color:#1b1b29;
+      }
+    .headingInput{
+        background: #1b1b29;
+        color: #cdcdde; 
+      }
+    .mat-expansion-panel {
+        background-color:#1b1b29;
+        color: #cdcdde; 
+    }
+    .onboarding-dark-background{
+        background-color: #1b1b29;
+    }
+    .onboarding-dark-toggle-btn{
+       background-color: rgb(131, 131, 131)
+    }
+
+
+
 }

@@ -14,8 +14,7 @@ h6,
   margin-top: 0;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
- // color: $headings-color;
-  color:inherit;
+  color: $headings-color;
 }
 
 h1,
@@ -62,14 +61,13 @@ figure {
 
 strong,
 b {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .mat-card-title {
   font: {
-    size: 18px;
+    size: 10px;
     weight: 500;
-    color: black;
   }
 }
 
@@ -112,8 +110,8 @@ b {
   line-height: 1 !important;
 }
 .mat-heading-label {
-  font-weight: bolder;
-  font-size: $font-size-h5;
+  font-weight: 600;
+  font-size: $font-size-h6;
   letter-spacing: .92px;
   text-transform: uppercase;
   margin: 0;

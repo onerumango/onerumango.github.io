@@ -90,7 +90,8 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     }
 
     .highcharts-background {
-        fill: #F5F8FE;
+        // fill: #F5F8FE;
+        fill: #FFFFFF;
     }
 
     .highcharts-title {
@@ -208,6 +209,17 @@ $primary-dark: darken(map-get($mat-primary, 500), 8%);
     .fill-color-success {
         color: map-get(map-get($material-colors, teal), A700);
     }
+
+    .mat-input-element{
+        box-shadow: 0 0 0 1000px white inset !important; 
+        // margin-bottom: 5px !important;
+    }
+    .onboarding-dark-background{
+        background-color: #F1F1F4;
+    }
+    .onboarding-dark-toggle-btn{
+        background-color: #C0C0C0
+     }
 
     @media (max-width: 959px) {
         .default-bg-mobile {

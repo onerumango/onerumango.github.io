@@ -1,25 +1,39 @@
 .app-admin-wrap {
   height: 100vh;
-  overflow: hidden;
+ // overflow: visible;
+}.app-admin-wrap1{
+  height: 100vh;
+ overflow: hidden;
 }
 .app-admin-container {
   max-width: 100%;
-  height: 100vh;
-
+  // height: 100vh;
+   //overflow: visible;
   .rightside-content-hold {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 0.333333rem;
-    overflow-x: hidden;
+   // padding: 50px;
+    padding-top: 50px;
+    // overflow-x: hidden;
     position: relative;
     min-height: 450px;
-    overflow: hidden;
   }
 }
-
-.container-dynamic {
-  overflow: auto;
+.app-admin-container1 {
+  max-width: 100%;
+   height: 100vh;
+   //overflow: visible;
+  .rightside-content-hold {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+ //   padding: 2.333333rem;
+ padding-top: 2.333333rem;
+    // overflow-x: hidden;
+    position: relative;
+    min-height: 450px;
+  }
 }
 
 .sidebar-panel {
@@ -28,16 +42,13 @@
   left: 0;
   min-height: 100vh;
   z-index: 10001;
-  width: 17rem; //$sidebar-width;
+  width: $sidebar-width;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   -webkit-transition: all $sidebarTrnTime $transitionTiming;
   transition: all $sidebarTrnTime $transitionTiming;
   overflow: hidden;
-  background: #ffffff;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  
+  background: url('../../../images/sidebar-bg.jpg') no-repeat;
   .sidebar-hold {
     width: $sidebar-width;
   }
@@ -60,7 +71,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  // float: right;
+  float: right;
   height: 100vh;
   transition: width $sidebarTrnTime $transitionTiming;
   &.ps > .ps__rail-y {
@@ -85,23 +96,20 @@
     opacity: 1;
   }
 }
-.text-large {
-  font-size: 25px;
-}
 
 // --------
 .app-admin-container.sidebar-full:not(.compact-toggle-active) {
   .main-content-wrap {
-    // width: calc(100% - #{$sidebar-width});
+    width: calc(100% - #{$sidebar-width});
   }
   .sidebar-panel {
-    // width: $sidebar-width;
+    width: $sidebar-width;
     overflow: hidden;
   }
 }
 .app-admin-container.compact-toggle-active {
   .main-content-wrap {
-    // width: calc(100% - #{$compact-sidebar-width});
+    width: calc(100% - #{$compact-sidebar-width});
   }
 }
 
@@ -114,7 +122,7 @@
 
 .app-admin-container.sidebar-compact-big {
   .main-content-wrap {
-    // width: calc(100% - #{$compact-big-sidebar-width});
+    width: calc(100% - #{$compact-big-sidebar-width});
   }
   .sidebar-panel {
     width: $compact-big-sidebar-width;
@@ -186,9 +194,13 @@
     // max-width: 1400px;
     // min-width: 70%;
     // margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 48px;
+    // padding-left: 15px;
+    // padding-right: 15px;
+
+    //  padding-left: 100px;
+    // padding-right: 60px;
+
+    padding-top: 40px;  //65px;
   }
   .sidebar-panel {
     overflow: hidden;
@@ -198,6 +210,10 @@
       height: calc(100% - 48px);
     }
   }
+}
+
+.container-dynamic{
+  background-color: white;
 }
 
 
@@ -212,7 +228,7 @@
     }
   }
   .main-content-wrap {
-    // float: left;
+    float: left;
   }
   .sidebar-panel {
     right: 0;

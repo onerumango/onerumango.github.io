@@ -16,9 +16,9 @@
   position: relative;
   width: 100%;
   .breadcrumb {
-    padding: 0 1rem;
+    padding: 0 5rem;
     overflow: hidden;
-    margin-top: .5rem;
+    margin-top: 2rem;
     li {
       line-height: 40px;
       &:not(:first-child):before {
@@ -26,7 +26,8 @@
       }
       a {
         font-weight: 400;
-        font-size: 1rem;
+        font-size: smaller;
+        color: #BFBFC1;
       }
     }
   }

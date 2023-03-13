@@ -25,7 +25,7 @@
 @import "scss/main/main";
 
 // Angular material theme files
-@import "scss/themes/init";
+@import "scss/themes/themes";
 
 @import "scss/utilities/utilities";
 @import "scss/components/components";
@@ -38,22 +38,19 @@
 @import "scss/views/views";
 
 
-.add-text {
-    padding-top: 10px;
+.tabhd
+{
+    font-size:24px;
 }
-.alignright{
-    display: flex !important;
-    justify-content: center;
-   // padding-left: 55px;
+.tbgrp >mat-tab-header>div:nth-child(2)>div>mat-ink-bar
+{
+   color:black;
 }
-.save_btn{
-    color: white;
-    padding: 0.2rem 4rem; 
-    border-radius: 15px;
+.mat-dialog-container{
+    height: auto !important
 }
-.pl-35{
-    padding-left: 35%;
-}
-.pr-35{
-    padding-right: 35%;
-}
+// .submitForm{
+//   top: 0;
+//   scroll-behavior: smooth;
+//     left: 0;
+// }

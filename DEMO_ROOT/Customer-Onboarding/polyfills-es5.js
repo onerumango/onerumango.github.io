@@ -3,13 +3,17 @@
 
   function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+  function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+
+  function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["polyfills-es5"], {
     /***/
@@ -372,7 +376,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
-      /*! D:\Icust-Frontend\iCust\node_modules\@angular-devkit\build-angular\src\webpack\es5-polyfills.js */
+      /*! D:\Customer-OnBoarding\node_modules\@angular-devkit\build-angular\src\webpack\es5-polyfills.js */
       "voQr");
 
       __webpack_require__(
@@ -380,7 +384,7 @@
       "R0gw");
 
       module.exports = __webpack_require__(
-      /*! D:\Icust-Frontend\iCust\src\polyfills.ts */
+      /*! D:\Customer-OnBoarding\src\polyfills.ts */
       "hN/g");
       /***/
     },
@@ -634,9 +638,7 @@
         _NullProtoObject = activeXDocument ? NullProtoObjectViaActiveX(activeXDocument) : NullProtoObjectViaIFrame();
         var length = enumBugKeys.length;
 
-        while (length--) {
-          delete _NullProtoObject[PROTOTYPE][enumBugKeys[length]];
-        }
+        while (length--) delete _NullProtoObject[PROTOTYPE][enumBugKeys[length]];
 
         return _NullProtoObject();
       };
@@ -676,9 +678,7 @@
       "KroJ");
 
       module.exports = function (target, src, safe) {
-        for (var key in src) {
-          redefine(target, key, src[key], safe);
-        }
+        for (var key in src) redefine(target, key, src[key], safe);
 
         return target;
       };
@@ -759,9 +759,7 @@
             if (typeof this != 'function' || !isObject(O)) return false;
             if (!isObject(this.prototype)) return O instanceof this; // for environment w/o native `@@hasInstance` logic enough `instanceof`, but add this:
 
-            while (O = getPrototypeOf(O)) {
-              if (this.prototype === O) return true;
-            }
+            while (O = getPrototypeOf(O)) if (this.prototype === O) return true;
 
             return false;
           }
@@ -1232,9 +1230,7 @@
             var $instance = new C(),
                 index = 5;
 
-            while (index--) {
-              $instance[ADDER](index, index);
-            }
+            while (index--) $instance[ADDER](index, index);
 
             return !$instance.has(-0);
           });
@@ -1472,9 +1468,7 @@
         var index = 0;
         var key;
 
-        while (length > index) {
-          definePropertyModule.f(O, key = keys[index++], Properties[key]);
-        }
+        while (length > index) definePropertyModule.f(O, key = keys[index++], Properties[key]);
 
         return O;
       };
@@ -1946,9 +1940,7 @@
             if ("number" == typeof a) return a;
             var b = {};
 
-            for (var c in a) {
-              b[c] = a[c];
-            }
+            for (var c in a) b[c] = a[c];
 
             return b;
           }
@@ -2244,15 +2236,11 @@
           function f(a) {
             var b = [];
 
-            for (var c in a) {
-              if (!(c in ["easing", "offset", "composite"])) {
-                var d = a[c];
-                Array.isArray(d) || (d = [d]);
+            for (var c in a) if (!(c in ["easing", "offset", "composite"])) {
+              var d = a[c];
+              Array.isArray(d) || (d = [d]);
 
-                for (var e, f = d.length, g = 0; g < f; g++) {
-                  e = {}, e.offset = "offset" in a ? a.offset : 1 == f ? 1 : g / (f - 1), "easing" in a && (e.easing = a.easing), "composite" in a && (e.composite = a.composite), e[c] = d[g], b.push(e);
-                }
-              }
+              for (var e, f = d.length, g = 0; g < f; g++) e = {}, e.offset = "offset" in a ? a.offset : 1 == f ? 1 : g / (f - 1), "easing" in a && (e.easing = a.easing), "composite" in a && (e.composite = a.composite), e[c] = d[g], b.push(e);
             }
 
             return b.sort(function (a, b) {
@@ -2269,9 +2257,7 @@
                 var f = d[e].offset;
 
                 if (null != f) {
-                  for (var g = 1; g < e - b; g++) {
-                    d[b + g].offset = c + (f - c) * g / (e - b);
-                  }
+                  for (var g = 1; g < e - b; g++) d[b + g].offset = c + (f - c) * g / (e - b);
 
                   b = e, c = f;
                 }
@@ -2390,17 +2376,13 @@
 
           !function (a, b, c) {
             function d(a) {
-              for (var b = {}, c = 0; c < a.length; c++) {
-                for (var d in a[c]) {
-                  if ("offset" != d && "easing" != d && "composite" != d) {
-                    var e = {
-                      offset: a[c].offset,
-                      easing: a[c].easing,
-                      value: a[c][d]
-                    };
-                    b[d] = b[d] || [], b[d].push(e);
-                  }
-                }
+              for (var b = {}, c = 0; c < a.length; c++) for (var d in a[c]) if ("offset" != d && "easing" != d && "composite" != d) {
+                var e = {
+                  offset: a[c].offset,
+                  easing: a[c].easing,
+                  value: a[c][d]
+                };
+                b[d] = b[d] || [], b[d].push(e);
               }
 
               for (var f in b) {
@@ -2418,24 +2400,22 @@
             function e(c) {
               var d = [];
 
-              for (var e in c) {
-                for (var f = c[e], g = 0; g < f.length - 1; g++) {
-                  var h = g,
-                      i = g + 1,
-                      j = f[h].offset,
-                      k = f[i].offset,
-                      l = j,
-                      m = k;
-                  0 == g && (l = -1 / 0, 0 == k && (i = h)), g == f.length - 2 && (m = 1 / 0, 1 == j && (h = i)), d.push({
-                    applyFrom: l,
-                    applyTo: m,
-                    startOffset: f[h].offset,
-                    endOffset: f[i].offset,
-                    easingFunction: a.parseEasingFunction(f[h].easing),
-                    property: e,
-                    interpolation: b.propertyInterpolation(e, f[h].value, f[i].value)
-                  });
-                }
+              for (var e in c) for (var f = c[e], g = 0; g < f.length - 1; g++) {
+                var h = g,
+                    i = g + 1,
+                    j = f[h].offset,
+                    k = f[i].offset,
+                    l = j,
+                    m = k;
+                0 == g && (l = -1 / 0, 0 == k && (i = h)), g == f.length - 2 && (m = 1 / 0, 1 == j && (h = i)), d.push({
+                  applyFrom: l,
+                  applyTo: m,
+                  startOffset: f[h].offset,
+                  endOffset: f[i].offset,
+                  easingFunction: a.parseEasingFunction(f[h].easing),
+                  property: e,
+                  interpolation: b.propertyInterpolation(e, f[h].value, f[i].value)
+                });
               }
 
               return d.sort(function (a, b) {
@@ -2455,9 +2435,7 @@
                       f = d.endOffset - d.startOffset,
                       g = 0 == f ? 0 : d.easingFunction(e / f);
                   b.apply(a, d.property, d.interpolation(g));
-                });else for (var d in g) {
-                  "offset" != d && "easing" != d && "composite" != d && b.clear(a, d);
-                }
+                });else for (var d in g) "offset" != d && "easing" != d && "composite" != d && b.clear(a, d);
               };
             };
           }(a, b), function (a, b, c) {
@@ -2651,19 +2629,13 @@
               },
 
               set cssText(a) {
-                for (var b = {}, c = 0; c < this._surrogateStyle.length; c++) {
-                  b[this._surrogateStyle[c]] = !0;
-                }
+                for (var b = {}, c = 0; c < this._surrogateStyle.length; c++) b[this._surrogateStyle[c]] = !0;
 
                 this._surrogateStyle.cssText = a, this._updateIndices();
 
-                for (var c = 0; c < this._surrogateStyle.length; c++) {
-                  b[this._surrogateStyle[c]] = !0;
-                }
+                for (var c = 0; c < this._surrogateStyle.length; c++) b[this._surrogateStyle[c]] = !0;
 
-                for (var d in b) {
-                  this._isAnimatedProperty[d] || this._style.setProperty(d, this._surrogateStyle.getPropertyValue(d));
-                }
+                for (var d in b) this._isAnimatedProperty[d] || this._style.setProperty(d, this._surrogateStyle.getPropertyValue(d));
               },
 
               get length() {
@@ -2675,25 +2647,21 @@
               },
 
               _updateIndices: function _updateIndices() {
-                for (; this._length < this._surrogateStyle.length;) {
-                  Object.defineProperty(this, this._length, {
-                    configurable: !0,
-                    enumerable: !1,
-                    get: function (a) {
-                      return function () {
-                        return this._surrogateStyle[a];
-                      };
-                    }(this._length)
-                  }), this._length++;
-                }
+                for (; this._length < this._surrogateStyle.length;) Object.defineProperty(this, this._length, {
+                  configurable: !0,
+                  enumerable: !1,
+                  get: function (a) {
+                    return function () {
+                      return this._surrogateStyle[a];
+                    };
+                  }(this._length)
+                }), this._length++;
 
-                for (; this._length > this._surrogateStyle.length;) {
-                  this._length--, Object.defineProperty(this, this._length, {
-                    configurable: !0,
-                    enumerable: !1,
-                    value: void 0
-                  });
-                }
+                for (; this._length > this._surrogateStyle.length;) this._length--, Object.defineProperty(this, this._length, {
+                  configurable: !0,
+                  enumerable: !1,
+                  value: void 0
+                });
               },
               _set: function _set(b, c) {
                 this._style[b] = c, this._isAnimatedProperty[b] = !0, this._updateSvgTransformAttr && "transform" == a.unprefixedPropertyName(b) && (null == this._savedTransformAttr && (this._savedTransformAttr = this._element.getAttribute("transform")), this._element.setAttribute("transform", a.transformToSvgMatrix(c)));
@@ -2703,28 +2671,24 @@
               }
             };
 
-            for (var k in i) {
-              e.prototype[k] = function (a, b) {
-                return function () {
-                  var c = this._surrogateStyle[a].apply(this._surrogateStyle, arguments);
+            for (var k in i) e.prototype[k] = function (a, b) {
+              return function () {
+                var c = this._surrogateStyle[a].apply(this._surrogateStyle, arguments);
 
-                  return b && (this._isAnimatedProperty[arguments[0]] || this._style[a].apply(this._style, arguments), this._updateIndices()), c;
-                };
-              }(k, k in j);
-            }
+                return b && (this._isAnimatedProperty[arguments[0]] || this._style[a].apply(this._style, arguments), this._updateIndices()), c;
+              };
+            }(k, k in j);
 
-            for (var l in document.documentElement.style) {
-              l in h || l in i || function (a) {
-                d(e.prototype, a, {
-                  get: function get() {
-                    return this._surrogateStyle[a];
-                  },
-                  set: function set(b) {
-                    this._surrogateStyle[a] = b, this._updateIndices(), this._isAnimatedProperty[a] || (this._style[a] = b);
-                  }
-                });
-              }(l);
-            }
+            for (var l in document.documentElement.style) l in h || l in i || function (a) {
+              d(e.prototype, a, {
+                get: function get() {
+                  return this._surrogateStyle[a];
+                },
+                set: function set(b) {
+                  this._surrogateStyle[a] = b, this._updateIndices(), this._isAnimatedProperty[a] || (this._style[a] = b);
+                }
+              });
+            }(l);
 
             a.apply = function (b, c, d) {
               f(b), b.style._set(a.propertyName(c), d);
@@ -2742,9 +2706,7 @@
               if ("boolean" == typeof a && "boolean" == typeof b) return d < .5 ? a : b;
 
               if (a.length == b.length) {
-                for (var e = [], f = 0; f < a.length; f++) {
-                  e.push(c(a[f], b[f], d));
-                }
+                for (var e = [], f = 0; f < a.length; f++) e.push(c(a[f], b[f], d));
 
                 return e;
               }
@@ -2766,21 +2728,13 @@
               var f = a.dot(b, d);
               f = c(f, -1, 1);
               var g = [];
-              if (1 === f) g = b;else for (var h = Math.acos(f), i = 1 * Math.sin(e * h) / Math.sqrt(1 - f * f), j = 0; j < 4; j++) {
-                g.push(b[j] * (Math.cos(e * h) - f * i) + d[j] * i);
-              }
+              if (1 === f) g = b;else for (var h = Math.acos(f), i = 1 * Math.sin(e * h) / Math.sqrt(1 - f * f), j = 0; j < 4; j++) g.push(b[j] * (Math.cos(e * h) - f * i) + d[j] * i);
               return g;
             }
 
             var e = function () {
               function a(a, b) {
-                for (var c = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], d = 0; d < 4; d++) {
-                  for (var e = 0; e < 4; e++) {
-                    for (var f = 0; f < 4; f++) {
-                      c[d][e] += b[d][f] * a[f][e];
-                    }
-                  }
-                }
+                for (var c = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], d = 0; d < 4; d++) for (var e = 0; e < 4; e++) for (var f = 0; f < 4; f++) c[d][e] += b[d][f] * a[f][e];
 
                 return c;
               }
@@ -2790,15 +2744,9 @@
               }
 
               function c(c, d, e, f, g) {
-                for (var h = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]], i = 0; i < 4; i++) {
-                  h[i][3] = g[i];
-                }
+                for (var h = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]], i = 0; i < 4; i++) h[i][3] = g[i];
 
-                for (var i = 0; i < 3; i++) {
-                  for (var j = 0; j < 3; j++) {
-                    h[3][i] += c[j] * h[j][i];
-                  }
-                }
+                for (var i = 0; i < 3; i++) for (var j = 0; j < 3; j++) h[3][i] += c[j] * h[j][i];
 
                 var k = f[0],
                     l = f[1],
@@ -2809,11 +2757,7 @@
                 var p = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
                 e[2] && (p[2][1] = e[2], h = a(h, p)), e[1] && (p[2][1] = 0, p[2][0] = e[0], h = a(h, p)), e[0] && (p[2][0] = 0, p[1][0] = e[0], h = a(h, p));
 
-                for (var i = 0; i < 3; i++) {
-                  for (var j = 0; j < 3; j++) {
-                    h[i][j] *= d[i];
-                  }
-                }
+                for (var i = 0; i < 3; i++) for (var j = 0; j < 3; j++) h[i][j] *= d[i];
 
                 return b(h) ? [h[0][0], h[0][1], h[1][0], h[1][1], h[3][0], h[3][1]] : h[0].concat(h[1], h[2], h[3]);
               }
@@ -3026,9 +2970,7 @@
             b.timeline = q;
           }(a, b), function (a, b) {
             function c(a, b) {
-              for (var c = 0, d = 0; d < a.length; d++) {
-                c += a[d] * b[d];
-              }
+              for (var c = 0, d = 0; d < a.length; d++) c += a[d] * b[d];
 
               return c;
             }
@@ -3149,9 +3091,7 @@
 
               function b(b) {
                 for (var c = 1 / a(b), d = b[0][0], e = b[0][1], f = b[0][2], g = b[1][0], h = b[1][1], i = b[1][2], j = b[2][0], k = b[2][1], l = b[2][2], m = [[(h * l - i * k) * c, (f * k - e * l) * c, (e * i - f * h) * c, 0], [(i * j - g * l) * c, (d * l - f * j) * c, (f * g - d * i) * c, 0], [(g * k - h * j) * c, (j * e - d * k) * c, (d * h - e * g) * c, 0]], n = [], o = 0; o < 3; o++) {
-                  for (var p = 0, q = 0; q < 3; q++) {
-                    p += b[3][q] * m[q][o];
-                  }
+                  for (var p = 0, q = 0; q < 3; q++) p += b[3][q] * m[q][o];
 
                   n.push(p);
                 }
@@ -3165,9 +3105,7 @@
 
               function e(a, b) {
                 for (var c = [], d = 0; d < 4; d++) {
-                  for (var e = 0, f = 0; f < 4; f++) {
-                    e += a[f] * b[f][d];
-                  }
+                  for (var e = 0, f = 0; f < 4; f++) e += a[f] * b[f][d];
 
                   c.push(e);
                 }
@@ -3196,13 +3134,9 @@
                 var k = [j.slice(0, 4), j.slice(4, 8), j.slice(8, 12), j.slice(12, 16)];
                 if (1 !== k[3][3]) return null;
 
-                for (var l = [], m = 0; m < 4; m++) {
-                  l.push(k[m].slice());
-                }
+                for (var l = [], m = 0; m < 4; m++) l.push(k[m].slice());
 
-                for (var m = 0; m < 3; m++) {
-                  l[m][3] = 0;
-                }
+                for (var m = 0; m < 3; m++) l[m][3] = 0;
 
                 if (0 === a(l)) return null;
                 var n,
@@ -3216,9 +3150,7 @@
                 var s = [];
                 q.push(k[1].slice(0, 3)), s.push(c(q[0], q[1])), q[1] = h(q[1], q[0], 1, -s[0]), r.push(g(q[1])), q[1] = f(q[1]), s[0] /= r[1], q.push(k[2].slice(0, 3)), s.push(c(q[0], q[2])), q[2] = h(q[2], q[0], 1, -s[1]), s.push(c(q[1], q[2])), q[2] = h(q[2], q[1], 1, -s[2]), r.push(g(q[2])), q[2] = f(q[2]), s[1] /= r[2], s[2] /= r[2];
                 var t = i(q[1], q[2]);
-                if (c(q[0], t) < 0) for (var m = 0; m < 3; m++) {
-                  r[m] *= -1, q[m][0] *= -1, q[m][1] *= -1, q[m][2] *= -1;
-                }
+                if (c(q[0], t) < 0) for (var m = 0; m < 3; m++) r[m] *= -1, q[m][0] *= -1, q[m][1] *= -1, q[m][2] *= -1;
                 var u,
                     v,
                     w = q[0][0] + q[1][1] + q[2][2] + 1;
@@ -3253,18 +3185,14 @@
             }
 
             function e(a, b) {
-              for (var c = 0, d = 0; d < b.length && (!/\s|,/.test(b[d]) || 0 != c); d++) {
-                if ("(" == b[d]) c++;else if (")" == b[d] && (c--, 0 == c && d++, c <= 0)) break;
-              }
+              for (var c = 0, d = 0; d < b.length && (!/\s|,/.test(b[d]) || 0 != c); d++) if ("(" == b[d]) c++;else if (")" == b[d] && (c--, 0 == c && d++, c <= 0)) break;
 
               var e = a(b.substr(0, d));
               return void 0 == e ? void 0 : [e, b.substr(d)];
             }
 
             function f(a, b) {
-              for (var c = a, d = b; c && d;) {
-                c > d ? c %= d : d %= c;
-              }
+              for (var c = a, d = b; c && d;) c > d ? c %= d : d %= c;
 
               return c = a * b / (c + d);
             }
@@ -3308,21 +3236,17 @@
             }
 
             function k(a, b, c) {
-              for (var d = [], e = [], f = [], g = 0, h = 0; h < c.length; h++) {
-                if ("function" == typeof c[h]) {
-                  var i = c[h](a[g], b[g++]);
-                  d.push(i[0]), e.push(i[1]), f.push(i[2]);
-                } else !function (a) {
-                  d.push(!1), e.push(!1), f.push(function () {
-                    return c[a];
-                  });
-                }(h);
-              }
+              for (var d = [], e = [], f = [], g = 0, h = 0; h < c.length; h++) if ("function" == typeof c[h]) {
+                var i = c[h](a[g], b[g++]);
+                d.push(i[0]), e.push(i[1]), f.push(i[2]);
+              } else !function (a) {
+                d.push(!1), e.push(!1), f.push(function () {
+                  return c[a];
+                });
+              }(h);
 
               return [d, e, function (a) {
-                for (var b = "", c = 0; c < a.length; c++) {
-                  b += f[c](a[c]);
-                }
+                for (var b = "", c = 0; c < a.length; c++) b += f[c](a[c]);
 
                 return b;
               }];
@@ -3351,17 +3275,13 @@
             }
 
             function d(b, c) {
-              for (; b.lengths.length < Math.max(b.lengths.length, c.lengths.length);) {
-                b.lengths.push({
-                  px: 0
-                });
-              }
+              for (; b.lengths.length < Math.max(b.lengths.length, c.lengths.length);) b.lengths.push({
+                px: 0
+              });
 
-              for (; c.lengths.length < Math.max(b.lengths.length, c.lengths.length);) {
-                c.lengths.push({
-                  px: 0
-                });
-              }
+              for (; c.lengths.length < Math.max(b.lengths.length, c.lengths.length);) c.lengths.push({
+                px: 0
+              });
 
               if (b.inset == c.inset && !!b.color == !!c.color) {
                 for (var d, e = [], f = [[], 0], g = [[], 0], h = 0; h < b.lengths.length; h++) {
@@ -3375,9 +3295,7 @@
                 }
 
                 return [f, g, function (a) {
-                  for (var c = b.inset ? "inset " : " ", f = 0; f < e.length; f++) {
-                    c += e[f](a[0][f]) + " ";
-                  }
+                  for (var c = b.inset ? "inset " : " ", f = 0; f < e.length; f++) c += e[f](a[0][f]) + " ";
 
                   return d && (c += d(a[1])), c;
                 }];
@@ -3500,9 +3418,7 @@
                   return Math.max(0, Math.min(255, a));
                 }
 
-                if (b[3]) for (var d = 0; d < 3; d++) {
-                  b[d] = Math.round(c(b[d] / b[3]));
-                }
+                if (b[3]) for (var d = 0; d < 3; d++) b[d] = Math.round(c(b[d] / b[3]));
                 return b[3] = a.numberToString(a.clamp(0, 1, b[3])), "rgba(" + b.join(",") + ")";
               }];
             }
@@ -3569,9 +3485,7 @@
                   return d[a] = null, "U" + a;
                 });
 
-                for (var e = "U(" + a.source + ")", f = b.replace(/[-+]?(\d*\.)?\d+([Ee][-+]?\d+)?/g, "N").replace(new RegExp("N" + e, "g"), "D").replace(/\s[+-]\s/g, "O").replace(/\s/g, ""), g = [/N\*(D)/g, /(N|D)[*\/]N/g, /(N|D)O\1/g, /\((N|D)\)/g], h = 0; h < g.length;) {
-                  g[h].test(f) ? (f = f.replace(g[h], "$1"), h = 0) : h++;
-                }
+                for (var e = "U(" + a.source + ")", f = b.replace(/[-+]?(\d*\.)?\d+([Ee][-+]?\d+)?/g, "N").replace(new RegExp("N" + e, "g"), "D").replace(/\s[+-]\s/g, "O").replace(/\s/g, ""), g = [/N\*(D)/g, /(N|D)[*\/]N/g, /(N|D)O\1/g, /\((N|D)\)/g], h = 0; h < g.length;) g[h].test(f) ? (f = f.replace(g[h], "$1"), h = 0) : h++;
 
                 if ("D" == f) {
                   for (var i in d) {
@@ -3593,13 +3507,9 @@
               var e,
                   f = [];
 
-              for (e in b) {
-                f.push(e);
-              }
+              for (e in b) f.push(e);
 
-              for (e in c) {
-                f.indexOf(e) < 0 && f.push(e);
-              }
+              for (e in c) f.indexOf(e) < 0 && f.push(e);
 
               return b = f.map(function (a) {
                 return b[a] || 0;
@@ -3757,9 +3667,7 @@
                       if ("number" == typeof a) return l;
                       var b = {};
 
-                      for (var c in a) {
-                        b[c] = l;
-                      }
+                      for (var c in a) b[c] = l;
 
                       return b;
                     })
@@ -3881,9 +3789,7 @@
             function b(a) {
               var b = {};
 
-              for (var c in a) {
-                b[c] = -a[c];
-              }
+              for (var c in a) b[c] = -a[c];
 
               return b;
             }
@@ -4318,9 +4224,7 @@
 
           result = new (Constructor === undefined ? Array : Constructor)(max(fin - k, 0));
 
-          for (n = 0; k < fin; k++, n++) {
-            if (k in O) createProperty(result, n, O[k]);
-          }
+          for (n = 0; k < fin; k++, n++) if (k in O) createProperty(result, n, O[k]);
 
           result.length = n;
           return result;
@@ -4671,9 +4575,7 @@
 
       var construct = function construct(F, len, args) {
         if (!(len in factories)) {
-          for (var n = [], i = 0; i < len; i++) {
-            n[i] = 'a[' + i + ']';
-          }
+          for (var n = [], i = 0; i < len; i++) n[i] = 'a[' + i + ']';
 
           factories[len] = Function('F,a', 'return new F(' + n.join(',') + ')');
         }
@@ -4714,9 +4616,7 @@
       "2MGJ");
 
       module.exports = function (target, src, options) {
-        for (var key in src) {
-          redefine(target, key, src[key], options);
-        }
+        for (var key in src) redefine(target, key, src[key], options);
 
         return target;
       };
@@ -5412,9 +5312,7 @@
           var argumentsLength = arguments.length;
           var result = new (typeof this == 'function' ? this : Array)(argumentsLength);
 
-          while (argumentsLength > index) {
-            createProperty(result, index, arguments[index++]);
-          }
+          while (argumentsLength > index) createProperty(result, index, arguments[index++]);
 
           result.length = argumentsLength;
           return result;
@@ -5616,31 +5514,29 @@
               val,
               res;
 
-          for (; length > index; index++) {
-            if (NO_HOLES || index in self) {
-              val = self[index];
-              res = f(val, index, O);
+          for (; length > index; index++) if (NO_HOLES || index in self) {
+            val = self[index];
+            res = f(val, index, O);
 
-              if (TYPE) {
-                if (IS_MAP) result[index] = res; // map
-                else if (res) switch (TYPE) {
-                  case 3:
-                    return true;
-                  // some
+            if (TYPE) {
+              if (IS_MAP) result[index] = res; // map
+              else if (res) switch (TYPE) {
+                case 3:
+                  return true;
+                // some
 
-                  case 5:
-                    return val;
-                  // find
+                case 5:
+                  return val;
+                // find
 
-                  case 6:
-                    return index;
-                  // findIndex
+                case 6:
+                  return index;
+                // findIndex
 
-                  case 2:
-                    result.push(val);
-                  // filter
-                } else if (IS_EVERY) return false; // every
-              }
+                case 2:
+                  result.push(val);
+                // filter
+              } else if (IS_EVERY) return false; // every
             }
           }
 
@@ -6299,9 +6195,7 @@
 
       var construct = function construct(C, argsLength, args) {
         if (!(argsLength in factories)) {
-          for (var list = [], i = 0; i < argsLength; i++) {
-            list[i] = 'a[' + i + ']';
-          } // eslint-disable-next-line no-new-func
+          for (var list = [], i = 0; i < argsLength; i++) list[i] = 'a[' + i + ']'; // eslint-disable-next-line no-new-func
 
 
           factories[argsLength] = Function('C,a', 'return new C(' + list.join(',') + ')');
@@ -6515,9 +6409,7 @@
         var n = toInteger(count);
         if (n < 0 || n == Infinity) throw RangeError('Wrong number of repetitions');
 
-        for (; n > 0; (n >>>= 1) && (str += str)) {
-          if (n & 1) result += str;
-        }
+        for (; n > 0; (n >>>= 1) && (str += str)) if (n & 1) result += str;
 
         return result;
       };
@@ -6876,9 +6768,7 @@
               len = toLength(E.length);
               if (n + len > MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
 
-              for (k = 0; k < len; k++, n++) {
-                if (k in E) createProperty(A, n, E[k]);
-              }
+              for (k = 0; k < len; k++, n++) if (k in E) createProperty(A, n, E[k]);
             } else {
               if (n >= MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
               createProperty(A, n++, E);
@@ -6921,9 +6811,7 @@
             i = 0,
             P;
 
-        while (length > i) {
-          dP.f(O, P = keys[i++], Properties[P]);
-        }
+        while (length > i) dP.f(O, P = keys[i++], Properties[P]);
 
         return O;
       };
@@ -8647,9 +8535,7 @@
         iframeDocument.close();
         _createDict = iframeDocument.F;
 
-        while (i--) {
-          delete _createDict[PROTOTYPE][enumBugKeys[i]];
-        }
+        while (i--) delete _createDict[PROTOTYPE][enumBugKeys[i]];
 
         return _createDict();
       };
@@ -9143,9 +9029,7 @@
             return a[r].exports;
           }
 
-          for (var o = "function" == typeof require && require, r = 0; r < i.length; r++) {
-            n(i[r]);
-          }
+          for (var o = "function" == typeof require && require, r = 0; r < i.length; r++) n(i[r]);
 
           return n;
         }({
@@ -9165,25 +9049,17 @@
                 if (s) {
                   s = s[1];
 
-                  for (var d = 0; d < r.length; d++) {
-                    r[d] = parseInt(s[d] + s[d], 16);
-                  }
+                  for (var d = 0; d < r.length; d++) r[d] = parseInt(s[d] + s[d], 16);
                 } else if (s = t.match(a)) {
                   s = s[1];
 
-                  for (var d = 0; d < r.length; d++) {
-                    r[d] = parseInt(s.slice(2 * d, 2 * d + 2), 16);
-                  }
+                  for (var d = 0; d < r.length; d++) r[d] = parseInt(s.slice(2 * d, 2 * d + 2), 16);
                 } else if (s = t.match(i)) {
-                  for (var d = 0; d < r.length; d++) {
-                    r[d] = parseInt(s[d + 1]);
-                  }
+                  for (var d = 0; d < r.length; d++) r[d] = parseInt(s[d + 1]);
 
                   l = parseFloat(s[4]);
                 } else if (s = t.match(n)) {
-                  for (var d = 0; d < r.length; d++) {
-                    r[d] = Math.round(2.55 * parseFloat(s[d + 1]));
-                  }
+                  for (var d = 0; d < r.length; d++) r[d] = Math.round(2.55 * parseFloat(s[d + 1]));
 
                   l = parseFloat(s[4]);
                 } else if (s = t.match(o)) {
@@ -9191,9 +9067,7 @@
                   if (r = y[s[1]], !r) return;
                 }
 
-                for (var d = 0; d < r.length; d++) {
-                  r[d] = v(r[d], 0, 255);
-                }
+                for (var d = 0; d < r.length; d++) r[d] = v(r[d], 0, 255);
 
                 return l = l || 0 == l ? v(l, 0, 1) : 1, r[3] = l, r;
               }
@@ -9318,9 +9192,7 @@
             };
             var k = {};
 
-            for (var S in y) {
-              k[y[S]] = S;
-            }
+            for (var S in y) k[y[S]] = S;
           }, {
             6: 6
           }],
@@ -9489,9 +9361,7 @@
                 return !this.dark();
               },
               negate: function negate() {
-                for (var t = [], e = 0; 3 > e; e++) {
-                  t[e] = 255 - this.values.rgb[e];
-                }
+                for (var t = [], e = 0; 3 > e; e++) t[e] = 255 - this.values.rgb[e];
 
                 return this.setValues("rgb", t), this;
               },
@@ -9557,9 +9427,7 @@
                     i = this.values,
                     n = a.values;
 
-                for (var r in i) {
-                  i.hasOwnProperty(r) && (t = i[r], e = {}.toString.call(t), "[object Array]" === e ? n[r] = t.slice(0) : "[object Number]" === e ? n[r] = t : console.error("unexpected color value:", t));
-                }
+                for (var r in i) i.hasOwnProperty(r) && (t = i[r], e = {}.toString.call(t), "[object Array]" === e ? n[r] = t.slice(0) : "[object Number]" === e ? n[r] = t : console.error("unexpected color value:", t));
 
                 return a;
               }
@@ -9576,9 +9444,7 @@
               hwb: [360, 100, 100],
               cmyk: [100, 100, 100, 100]
             }, o.prototype.getValues = function (t) {
-              for (var e = this.values, a = {}, i = 0; i < t.length; i++) {
-                a[t.charAt(i)] = e[t][i];
-              }
+              for (var e = this.values, a = {}, i = 0; i < t.length; i++) a[t.charAt(i)] = e[t][i];
 
               return 1 !== e.alpha && (a.a = e.alpha), a;
             }, o.prototype.setValues = function (t, e) {
@@ -9588,30 +9454,22 @@
                   r = this.maxes,
                   l = 1;
               if ("alpha" === t) l = e;else if (e.length) n[t] = e.slice(0, t.length), l = e[t.length];else if (void 0 !== e[t.charAt(0)]) {
-                for (a = 0; a < t.length; a++) {
-                  n[t][a] = e[t.charAt(a)];
-                }
+                for (a = 0; a < t.length; a++) n[t][a] = e[t.charAt(a)];
 
                 l = e.a;
               } else if (void 0 !== e[o[t][0]]) {
                 var s = o[t];
 
-                for (a = 0; a < t.length; a++) {
-                  n[t][a] = e[s[a]];
-                }
+                for (a = 0; a < t.length; a++) n[t][a] = e[s[a]];
 
                 l = e.alpha;
               }
               if (n.alpha = Math.max(0, Math.min(1, void 0 === l ? n.alpha : l)), "alpha" === t) return !1;
               var d;
 
-              for (a = 0; a < t.length; a++) {
-                d = Math.max(0, Math.min(r[t][a], n[t][a])), n[t][a] = Math.round(d);
-              }
+              for (a = 0; a < t.length; a++) d = Math.max(0, Math.min(r[t][a], n[t][a])), n[t][a] = Math.round(d);
 
-              for (var u in o) {
-                u !== t && (n[u] = i[t][u](n[t]));
-              }
+              for (var u in o) u !== t && (n[u] = i[t][u](n[t]));
 
               return !0;
             }, o.prototype.setSpace = function (t, e) {
@@ -9715,9 +9573,7 @@
               if (0 == l) return o = 255 * s, [o, o, o];
               a = .5 > s ? s * (1 + l) : s + l - s * l, e = 2 * s - a, n = [0, 0, 0];
 
-              for (var d = 0; 3 > d; d++) {
-                i = r + 1 / 3 * -(d - 1), 0 > i && i++, i > 1 && i--, o = 1 > 6 * i ? e + 6 * (a - e) * i : 1 > 2 * i ? a : 2 > 3 * i ? e + (a - e) * (2 / 3 - i) * 6 : e, n[d] = 255 * o;
-              }
+              for (var d = 0; 3 > d; d++) i = r + 1 / 3 * -(d - 1), 0 > i && i++, i > 1 && i--, o = 1 > 6 * i ? e + 6 * (a - e) * i : 1 > 2 * i ? a : 2 > 3 * i ? e + (a - e) * (2 / 3 - i) * 6 : e, n[d] = 255 * o;
 
               return n;
             }
@@ -10172,9 +10028,7 @@
             },
                 Q = {};
 
-            for (var $ in G) {
-              Q[JSON.stringify(G[$])] = $;
-            }
+            for (var $ in G) Q[JSON.stringify(G[$])] = $;
           }, {}],
           5: [function (t, e, a) {
             var i = t(4),
@@ -10198,9 +10052,7 @@
                   var a = i[t](e);
                   if ("string" == typeof a || void 0 === a) return a;
 
-                  for (var n = 0; n < a.length; n++) {
-                    a[n] = Math.round(a[n]);
-                  }
+                  for (var n = 0; n < a.length; n++) a[n] = Math.round(a[n]);
 
                   return a;
                 };
@@ -10650,9 +10502,7 @@
                       a,
                       i = 0;
 
-                  for (a = 0; t > a; ++a) {
-                    e = this.chart.getDatasetMeta(a), e.bar && this.chart.isDatasetVisible(a) && ++i;
-                  }
+                  for (a = 0; t > a; ++a) e = this.chart.getDatasetMeta(a), e.bar && this.chart.isDatasetVisible(a) && ++i;
 
                   return i;
                 },
@@ -10787,9 +10637,7 @@
                           u = d.indexOf(a.borderSkipped, 0);
                       -1 === u && (u = 0), e.moveTo.apply(e, t(0));
 
-                      for (var c = 1; 4 > c; c++) {
-                        e.lineTo.apply(e, t(c));
-                      }
+                      for (var c = 1; 4 > c; c++) e.lineTo.apply(e, t(c));
 
                       e.fill(), a.borderWidth && e.stroke();
                     },
@@ -10998,9 +10846,7 @@
                   var a = t.data,
                       i = a.datasets,
                       n = a.labels;
-                  if (i.length) for (var o = 0; o < i[0].data.length; ++o) {
-                    e.push('<li><span style="background-color:' + i[0].backgroundColor[o] + '"></span>'), n[o] && e.push(n[o]), e.push("</li>");
-                  }
+                  if (i.length) for (var o = 0; o < i[0].data.length; ++o) e.push('<li><span style="background-color:' + i[0].backgroundColor[o] + '"></span>'), n[o] && e.push(n[o]), e.push("</li>");
                   return e.push("</ul>"), e.join("");
                 },
                 legend: {
@@ -11035,9 +10881,7 @@
                         o = e.index,
                         r = this.chart;
 
-                    for (a = 0, i = (r.data.datasets || []).length; i > a; ++a) {
-                      n = r.getDatasetMeta(a), n.data[o].hidden = !n.data[o].hidden;
-                    }
+                    for (a = 0, i = (r.data.datasets || []).length; i > a; ++a) n = r.getDatasetMeta(a), n.data[o].hidden = !n.data[o].hidden;
 
                     r.update();
                   }
@@ -11061,9 +10905,7 @@
                 dataElementType: t.elements.Arc,
                 linkScales: e.noop,
                 getRingIndex: function getRingIndex(t) {
-                  for (var e = 0, a = 0; t > a; ++a) {
-                    this.chart.isDatasetVisible(a) && ++e;
-                  }
+                  for (var e = 0, a = 0; t > a; ++a) this.chart.isDatasetVisible(a) && ++e;
 
                   return e;
                 },
@@ -11235,13 +11077,9 @@
                     scaleTop: h.top,
                     scaleBottom: h.bottom,
                     scaleZero: h.getBasePixel()
-                  }, s.pivot()), i = 0, n = d.length; n > i; ++i) {
-                    r.updateElement(d[i], i, t);
-                  }
+                  }, s.pivot()), i = 0, n = d.length; n > i; ++i) r.updateElement(d[i], i, t);
 
-                  for (g && 0 !== s._model.tension && r.updateBezierControlPoints(), i = 0, n = d.length; n > i; ++i) {
-                    d[i].pivot();
-                  }
+                  for (g && 0 !== s._model.tension && r.updateBezierControlPoints(), i = 0, n = d.length; n > i; ++i) d[i].pivot();
                 },
                 getPointBackgroundColor: function getPointBackgroundColor(t, e) {
                   var i = this.chart.options.elements.point.backgroundColor,
@@ -11298,9 +11136,7 @@
                       h = 0;
 
                   if (u.options.stacked) {
-                    for (n = 0; a > n; n++) {
-                      o = s.data.datasets[n], r = s.getDatasetMeta(n), "line" === r.type && s.isDatasetVisible(n) && (o.data[e] < 0 ? h += o.data[e] || 0 : c += o.data[e] || 0);
-                    }
+                    for (n = 0; a > n; n++) o = s.data.datasets[n], r = s.getDatasetMeta(n), "line" === r.type && s.isDatasetVisible(n) && (o.data[e] < 0 ? h += o.data[e] || 0 : c += o.data[e] || 0);
 
                     return 0 > t ? u.getPixelForValue(h + t) : u.getPixelForValue(c + t);
                   }
@@ -11316,9 +11152,7 @@
                       r = this.getMeta(),
                       l = (this.chart.chartArea, r.data || []);
 
-                  for (t = 0, e = l.length; e > t; ++t) {
-                    i = l[t], n = i._model, o = a.splineCurve(a.previousItem(l, t)._model, n, a.nextItem(l, t)._model, r.dataset._model.tension), n.controlPointPreviousX = o.previous.x, n.controlPointPreviousY = o.previous.y, n.controlPointNextX = o.next.x, n.controlPointNextY = o.next.y;
-                  }
+                  for (t = 0, e = l.length; e > t; ++t) i = l[t], n = i._model, o = a.splineCurve(a.previousItem(l, t)._model, n, a.nextItem(l, t)._model, r.dataset._model.tension), n.controlPointPreviousX = o.previous.x, n.controlPointPreviousY = o.previous.y, n.controlPointNextX = o.next.x, n.controlPointNextY = o.next.y;
                 },
                 draw: function draw(t) {
                   var a,
@@ -11328,13 +11162,9 @@
                       r = o.data || [],
                       l = t || 1;
 
-                  for (a = 0, i = r.length; i > a; ++a) {
-                    r[a].transition(l);
-                  }
+                  for (a = 0, i = r.length; i > a; ++a) r[a].transition(l);
 
-                  for (e(n.getDataset(), n.chart.options) && o.dataset.transition(l).draw(), a = 0, i = r.length; i > a; ++a) {
-                    r[a].draw();
-                  }
+                  for (e(n.getDataset(), n.chart.options) && o.dataset.transition(l).draw(), a = 0, i = r.length; i > a; ++a) r[a].draw();
                 },
                 setHoverStyle: function setHoverStyle(t) {
                   var e = this.chart.data.datasets[t._datasetIndex],
@@ -11375,9 +11205,7 @@
                   var a = t.data,
                       i = a.datasets,
                       n = a.labels;
-                  if (i.length) for (var o = 0; o < i[0].data.length; ++o) {
-                    e.push('<li><span style="background-color:' + i[0].backgroundColor[o] + '">'), n[o] && e.push(n[o]), e.push("</span></li>");
-                  }
+                  if (i.length) for (var o = 0; o < i[0].data.length; ++o) e.push('<li><span style="background-color:' + i[0].backgroundColor[o] + '">'), n[o] && e.push(n[o]), e.push("</span></li>");
                   return e.push("</ul>"), e.join("");
                 },
                 legend: {
@@ -11412,9 +11240,7 @@
                         o = e.index,
                         r = this.chart;
 
-                    for (a = 0, i = (r.data.datasets || []).length; i > a; ++a) {
-                      n = r.getDatasetMeta(a), n.data[o].hidden = !n.data[o].hidden;
-                    }
+                    for (a = 0, i = (r.data.datasets || []).length; i > a; ++a) n = r.getDatasetMeta(a), n.data[o].hidden = !n.data[o].hidden;
 
                     r.update();
                   }
@@ -11445,9 +11271,7 @@
                   });
                 },
                 updateElement: function updateElement(t, a, i) {
-                  for (var n = this, o = n.chart, r = o.chartArea, l = n.getDataset(), s = o.options, d = s.animation, u = (s.elements.arc, t.custom || {}, o.scale), c = e.getValueAtIndexOrDefault, h = o.data.labels, f = n.calculateCircumference(l.data[a]), g = (r.left + r.right) / 2, p = (r.top + r.bottom) / 2, m = 0, b = n.getMeta(), v = 0; a > v; ++v) {
-                    isNaN(l.data[v]) || b.data[v].hidden || ++m;
-                  }
+                  for (var n = this, o = n.chart, r = o.chartArea, l = n.getDataset(), s = o.options, d = s.animation, u = (s.elements.arc, t.custom || {}, o.scale), c = e.getValueAtIndexOrDefault, h = o.data.labels, f = n.calculateCircumference(l.data[a]), g = (r.left + r.right) / 2, p = (r.top + r.bottom) / 2, m = 0, b = n.getMeta(), v = 0; a > v; ++v) isNaN(l.data[v]) || b.data[v].hidden || ++m;
 
                   var x = -.5 * Math.PI,
                       y = t.hidden ? 0 : u.getDistanceFromCenterForValue(l.data[a]),
@@ -11625,9 +11449,7 @@
                   var n = this;
                   i || (t.animating = !0);
 
-                  for (var o = 0; o < n.animations.length; ++o) {
-                    if (n.animations[o].chartInstance === t) return void (n.animations[o].animationObject = e);
-                  }
+                  for (var o = 0; o < n.animations.length; ++o) if (n.animations[o].chartInstance === t) return void (n.animations[o].animationObject = e);
 
                   n.animations.push({
                     chartInstance: t,
@@ -11652,9 +11474,7 @@
                       a = 0;
                   t.dropFrames > 1 && (a = Math.floor(t.dropFrames), t.dropFrames = t.dropFrames % 1);
 
-                  for (var i = 0; i < t.animations.length;) {
-                    null === t.animations[i].animationObject.currentStep && (t.animations[i].animationObject.currentStep = 0), t.animations[i].animationObject.currentStep += 1 + a, t.animations[i].animationObject.currentStep > t.animations[i].animationObject.numSteps && (t.animations[i].animationObject.currentStep = t.animations[i].animationObject.numSteps), t.animations[i].animationObject.render(t.animations[i].chartInstance, t.animations[i].animationObject), t.animations[i].animationObject.onAnimationProgress && t.animations[i].animationObject.onAnimationProgress.call && t.animations[i].animationObject.onAnimationProgress.call(t.animations[i].chartInstance, t.animations[i]), t.animations[i].animationObject.currentStep === t.animations[i].animationObject.numSteps ? (t.animations[i].animationObject.onAnimationComplete && t.animations[i].animationObject.onAnimationComplete.call && t.animations[i].animationObject.onAnimationComplete.call(t.animations[i].chartInstance, t.animations[i]), t.animations[i].chartInstance.animating = !1, t.animations.splice(i, 1)) : ++i;
-                  }
+                  for (var i = 0; i < t.animations.length;) null === t.animations[i].animationObject.currentStep && (t.animations[i].animationObject.currentStep = 0), t.animations[i].animationObject.currentStep += 1 + a, t.animations[i].animationObject.currentStep > t.animations[i].animationObject.numSteps && (t.animations[i].animationObject.currentStep = t.animations[i].animationObject.numSteps), t.animations[i].animationObject.render(t.animations[i].chartInstance, t.animations[i].animationObject), t.animations[i].animationObject.onAnimationProgress && t.animations[i].animationObject.onAnimationProgress.call && t.animations[i].animationObject.onAnimationProgress.call(t.animations[i].chartInstance, t.animations[i]), t.animations[i].animationObject.currentStep === t.animations[i].animationObject.numSteps ? (t.animations[i].animationObject.onAnimationComplete && t.animations[i].animationObject.onAnimationComplete.call && t.animations[i].animationObject.onAnimationComplete.call(t.animations[i].chartInstance, t.animations[i]), t.animations[i].chartInstance.animating = !1, t.animations.splice(i, 1)) : ++i;
 
                   var n = Date.now(),
                       o = (n - e) / t.frameDuration;
@@ -11756,11 +11576,9 @@
                   if (e.each(a.data.datasets, function (e, o) {
                     var r = a.getDatasetMeta(o);
                     r.type || (r.type = e.type || a.config.type), i.push(r.type), r.controller ? r.controller.updateIndex(o) : (r.controller = new t.controllers[r.type](a, o), n.push(r.controller));
-                  }, a), i.length > 1) for (var o = 1; o < i.length; o++) {
-                    if (i[o] !== i[o - 1]) {
-                      a.isCombo = !0;
-                      break;
-                    }
+                  }, a), i.length > 1) for (var o = 1; o < i.length; o++) if (i[o] !== i[o - 1]) {
+                    a.isCombo = !0;
+                    break;
                   }
                   return n;
                 },
@@ -11786,9 +11604,7 @@
                       i = this;
 
                   if (t.plugins.notify("beforeDatasetsUpdate", [i])) {
-                    for (e = 0, a = i.data.datasets.length; a > e; ++e) {
-                      i.getDatasetMeta(e).controller.update();
-                    }
+                    for (e = 0, a = i.data.datasets.length; a > e; ++e) i.getDatasetMeta(e).controller.update();
 
                     t.plugins.notify("afterDatasetsUpdate", [i]);
                   }
@@ -11839,9 +11655,7 @@
                       o = function () {
                     if (a.data.datasets) for (var t = 0; t < a.data.datasets.length; t++) {
                       var e = a.getDatasetMeta(t);
-                      if (a.isDatasetVisible(t)) for (var n = 0; n < e.data.length; n++) {
-                        if (e.data[n].inRange(i.x, i.y)) return e.data[n];
-                      }
+                      if (a.isDatasetVisible(t)) for (var n = 0; n < e.data.length; n++) if (e.data[n].inRange(i.x, i.y)) return e.data[n];
                     }
                   }.call(a);
 
@@ -11889,9 +11703,7 @@
                   }), i;
                 },
                 getVisibleDatasetCount: function getVisibleDatasetCount() {
-                  for (var t = 0, e = 0, a = this.data.datasets.length; a > e; ++e) {
-                    this.isDatasetVisible(e) && t++;
-                  }
+                  for (var t = 0, e = 0, a = this.data.datasets.length; a > e; ++e) this.isDatasetVisible(e) && t++;
 
                   return t;
                 },
@@ -11945,9 +11757,7 @@
                       return;
                   }
 
-                  for (n = 0, o = t.length; o > n; ++n) {
-                    i = t[n], i && this.getDatasetMeta(i._datasetIndex).controller[r](i);
-                  }
+                  for (n = 0, o = t.length; o > n; ++n) i = t[n], i && this.getDatasetMeta(i._datasetIndex).controller[r](i);
                 },
                 eventHandler: function eventHandler(t) {
                   var a = this,
@@ -12021,9 +11831,7 @@
                       n = a.getDataset().data || [],
                       o = i.data;
 
-                  for (t = 0, e = n.length; e > t; ++t) {
-                    o[t] = o[t] || a.createMetaData(i, t);
-                  }
+                  for (t = 0, e = n.length; e > t; ++t) o[t] = o[t] || a.createMetaData(i, t);
 
                   i.dataset = i.dataset || a.createMetaDataset();
                 },
@@ -12037,9 +11845,7 @@
                       e = t.data,
                       a = this.getDataset().data.length,
                       i = e.length;
-                  if (i > a) e.splice(a, i - a);else if (a > i) for (var n = i; a > n; ++n) {
-                    this.addElementAndReset(n);
-                  }
+                  if (i > a) e.splice(a, i - a);else if (a > i) for (var n = i; a > n; ++n) this.addElementAndReset(n);
                 },
                 update: a,
                 draw: function draw(t) {
@@ -12141,17 +11947,11 @@
               o.each = function (t, e, a, i) {
                 var n, r;
                 if (o.isArray(t)) {
-                  if (r = t.length, i) for (n = r - 1; n >= 0; n--) {
-                    e.call(a, t[n], n);
-                  } else for (n = 0; r > n; n++) {
-                    e.call(a, t[n], n);
-                  }
+                  if (r = t.length, i) for (n = r - 1; n >= 0; n--) e.call(a, t[n], n);else for (n = 0; r > n; n++) e.call(a, t[n], n);
                 } else if ("object" == typeof t) {
                   var l = Object.keys(t);
 
-                  for (r = l.length, n = 0; r > n; n++) {
-                    e.call(a, t[l[n]], l[n]);
-                  }
+                  for (r = l.length, n = 0; r > n; n++) e.call(a, t[l[n]], l[n]);
                 }
               }, o.clone = function (t) {
                 var e = {};
@@ -12161,9 +11961,7 @@
               }, o.extend = function (t) {
                 for (var e = function e(_e, a) {
                   t[a] = _e;
-                }, a = 1, i = arguments.length; i > a; a++) {
-                  o.each(arguments[a], e);
-                }
+                }, a = 1, i = arguments.length; i > a; a++) o.each(arguments[a], e);
 
                 return t;
               }, o.configMerge = function (e) {
@@ -12197,9 +11995,7 @@
               }, o.indexOf = Array.prototype.indexOf ? function (t, e) {
                 return t.indexOf(e);
               } : function (t, e) {
-                for (var a = 0, i = t.length; i > a; ++a) {
-                  if (t[a] === e) return a;
-                }
+                for (var a = 0, i = t.length; i > a; ++a) if (t[a] === e) return a;
 
                 return -1;
               }, o.where = function (t, e) {
@@ -12213,9 +12009,7 @@
               } : function (t, e, a) {
                 a = void 0 === a ? t : a;
 
-                for (var i = 0, n = t.length; n > i; ++i) {
-                  if (e.call(a, t[i], i, t)) return i;
-                }
+                for (var i = 0, n = t.length; n > i; ++i) if (e.call(a, t[i], i, t)) return i;
 
                 return -1;
               }, o.findNextWhere = function (t, e, a) {
@@ -12505,9 +12299,7 @@
                 var s = r.length / 2;
 
                 if (s > a.length) {
-                  for (var d = 0; s > d; d++) {
-                    delete n[r[d]];
-                  }
+                  for (var d = 0; s > d; d++) delete n[r[d]];
 
                   r.splice(0, s);
                 }
@@ -12544,11 +12336,9 @@
                 var a, i, n, r;
                 if (!t || !e || t.length != e.length) return !1;
 
-                for (a = 0, i = t.length; i > a; ++a) {
-                  if (n = t[a], r = e[a], n instanceof Array && r instanceof Array) {
-                    if (!o.arrayEquals(n, r)) return !1;
-                  } else if (n != r) return !1;
-                }
+                for (a = 0, i = t.length; i > a; ++a) if (n = t[a], r = e[a], n instanceof Array && r instanceof Array) {
+                  if (!o.arrayEquals(n, r)) return !1;
+                } else if (n != r) return !1;
 
                 return !0;
               }, o.callCallback = function (t, e, a) {
@@ -12595,9 +12385,7 @@
                     var e = [];
                     e.push('<ul class="' + t.id + '-legend">');
 
-                    for (var a = 0; a < t.data.datasets.length; a++) {
-                      e.push('<li><span style="background-color:' + t.data.datasets[a].backgroundColor + '"></span>'), t.data.datasets[a].label && e.push(t.data.datasets[a].label), e.push("</li>");
-                    }
+                    for (var a = 0; a < t.data.datasets.length; a++) e.push('<li><span style="background-color:' + t.data.datasets[a].backgroundColor + '"></span>'), t.data.datasets[a].label && e.push(t.data.datasets[a].label), e.push("</li>");
 
                     return e.push("</ul>"), e.join("");
                   }
@@ -12967,9 +12755,7 @@
                       n = this._plugins,
                       o = n.length;
 
-                  for (a = 0; o > a; ++a) {
-                    if (i = n[a], "function" == typeof i[t] && i[t].apply(i, e || []) === !1) return !1;
-                  }
+                  for (a = 0; o > a; ++a) if (i = n[a], "function" == typeof i[t] && i[t].apply(i, e || []) === !1) return !1;
 
                   return !0;
                 }
@@ -13240,9 +13026,7 @@
                     var F = [];
 
                     if (g) {
-                      if (o = !1, h && (I /= 2), (I + d.autoSkipPadding) * i.ticks.length > i.width - (i.paddingLeft + i.paddingRight) && (o = 1 + Math.floor((I + d.autoSkipPadding) * i.ticks.length / (i.width - (i.paddingLeft + i.paddingRight)))), r && i.ticks.length > r) for (; !o || i.ticks.length / (o || 1) > r;) {
-                        o || (o = 1), o += 1;
-                      }
+                      if (o = !1, h && (I /= 2), (I + d.autoSkipPadding) * i.ticks.length > i.width - (i.paddingLeft + i.paddingRight) && (o = 1 + Math.floor((I + d.autoSkipPadding) * i.ticks.length / (i.width - (i.paddingLeft + i.paddingRight)))), r && i.ticks.length > r) for (; !o || i.ticks.length / (o || 1) > r;) o || (o = 1), o += 1;
                       f || (o = !1);
                     }
 
@@ -13306,9 +13090,7 @@
                       if (u.display && (l.lineWidth = t.glWidth, l.strokeStyle = t.glColor, l.beginPath(), u.drawTicks && (l.moveTo(t.tx1, t.ty1), l.lineTo(t.tx2, t.ty2)), u.drawOnChartArea && (l.moveTo(t.x1, t.y1), l.lineTo(t.x2, t.y2)), l.stroke()), d.display) {
                         l.save(), l.translate(t.labelX, t.labelY), l.rotate(t.rotation), l.font = x, l.textBaseline = t.textBaseline, l.textAlign = t.textAlign;
                         var a = t.label;
-                        if (e.isArray(a)) for (var i = 0, n = 0; i < a.length; ++i) {
-                          l.fillText("" + a[i], 0, n), n += 1.5 * m;
-                        } else l.fillText(a, 0, 0);
+                        if (e.isArray(a)) for (var i = 0, n = 0; i < a.length; ++i) l.fillText("" + a[i], 0, n), n += 1.5 * m;else l.fillText(a, 0, 0);
                         l.restore();
                       }
                     }), c.display) {
@@ -13483,9 +13265,7 @@
                 var l = 0,
                     s = 0;
 
-                for (e = 0, a - i.length; a > e; ++e) {
-                  l += i[e], s += n[e];
-                }
+                for (e = 0, a - i.length; a > e; ++e) l += i[e], s += n[e];
 
                 return {
                   x: Math.round(l / i.length),
@@ -13666,9 +13446,7 @@
                         f = a(d),
                         g = [];
 
-                    for (e = 0, o = d.length; o > e; ++e) {
-                      g.push(i(d[e]));
-                    }
+                    for (e = 0, o = d.length; o > e; ++e) g.push(i(d[e]));
 
                     l.itemSort && (g = g.sort(l.itemSort)), d.length > 1 && n.each(g, function (t) {
                       h.push(l.callbacks.labelColor.call(r, t, c));
@@ -13791,9 +13569,7 @@
                     a.fillStyle = s.alpha(i * s.alpha()).rgbString(), a.font = n.fontString(r, e._titleFontStyle, e._titleFontFamily);
                     var d, u;
 
-                    for (d = 0, u = o.length; u > d; ++d) {
-                      a.fillText(o[d], t.x, t.y), t.y += r + l, d + 1 === o.length && (t.y += e.titleMarginBottom - l);
-                    }
+                    for (d = 0, u = o.length; u > d; ++d) a.fillText(o[d], t.x, t.y), t.y += r + l, d + 1 === o.length && (t.y += e.titleMarginBottom - l);
                   }
                 },
                 drawBody: function drawBody(t, e, a, i) {
@@ -13872,17 +13648,11 @@
                     for (var n = a.getAngleFromPoint(i, {
                       x: t,
                       y: e
-                    }), o = n.angle, r = n.distance, l = i.startAngle, s = i.endAngle; l > s;) {
-                      s += 2 * Math.PI;
-                    }
+                    }), o = n.angle, r = n.distance, l = i.startAngle, s = i.endAngle; l > s;) s += 2 * Math.PI;
 
-                    for (; o > s;) {
-                      o -= 2 * Math.PI;
-                    }
+                    for (; o > s;) o -= 2 * Math.PI;
 
-                    for (; l > o;) {
-                      o += 2 * Math.PI;
-                    }
+                    for (; l > o;) o += 2 * Math.PI;
 
                     var d = o >= l && s >= o,
                         u = r >= i.innerRadius && r <= i.outerRadius;
@@ -14090,9 +13860,7 @@
                       u = d.indexOf(a.borderSkipped, 0);
                   -1 === u && (u = 0), e.moveTo.apply(e, t(0));
 
-                  for (var c = 1; 4 > c; c++) {
-                    e.lineTo.apply(e, t(c));
-                  }
+                  for (var c = 1; 4 > c; c++) e.lineTo.apply(e, t(c));
 
                   e.fill(), a.borderWidth && e.stroke();
                 },
@@ -14324,9 +14092,7 @@
                       h = (c - u) / l;
                   h = e.almostEquals(h, Math.round(h), l / 1e3) ? Math.round(h) : Math.ceil(h), o.push(void 0 !== i.min ? i.min : u);
 
-                  for (var f = 1; h > f; ++f) {
-                    o.push(u + f * l);
-                  }
+                  for (var f = 1; h > f; ++f) o.push(u + f * l);
 
                   o.push(void 0 !== i.max ? i.max : c), t.handleDirectionalChanges(), t.max = e.max(o), t.min = e.min(o), i.reverse ? (o.reverse(), t.start = t.max, t.end = t.min) : (t.start = t.min, t.end = t.max);
                 },
@@ -14522,9 +14288,7 @@
                       y = this.width,
                       k = 0;
 
-                  for (this.ctx.font = v, i = 0; i < this.getValueCount(); i++) {
-                    t = this.getPointPosition(i, x), n = this.ctx.measureText(this.pointLabels[i] ? this.pointLabels[i] : "").width + 5, 0 === i || i === this.getValueCount() / 2 ? (o = n / 2, t.x + o > y && (y = t.x + o, r = i), t.x - o < k && (k = t.x - o, s = i)) : i < this.getValueCount() / 2 ? t.x + n > y && (y = t.x + n, r = i) : i > this.getValueCount() / 2 && t.x - n < k && (k = t.x - n, s = i);
-                  }
+                  for (this.ctx.font = v, i = 0; i < this.getValueCount(); i++) t = this.getPointPosition(i, x), n = this.ctx.measureText(this.pointLabels[i] ? this.pointLabels[i] : "").width + 5, 0 === i || i === this.getValueCount() / 2 ? (o = n / 2, t.x + o > y && (y = t.x + o, r = i), t.x - o < k && (k = t.x - o, s = i)) : i < this.getValueCount() / 2 ? t.x + n > y && (y = t.x + n, r = i) : i > this.getValueCount() / 2 && t.x - n < k && (k = t.x - n, s = i);
 
                   u = k, c = Math.ceil(y - this.width), l = this.getIndexAngle(r), d = this.getIndexAngle(s), h = c / Math.sin(l + Math.PI / 2), f = u / Math.sin(d + Math.PI / 2), h = e.isNumber(h) ? h : 0, f = e.isNumber(f) ? f : 0, this.drawingArea = Math.round(x - (f + h) / 2), this.setCenterPoint(f, h);
                 },
@@ -14738,11 +14502,9 @@
 
                     for (var p = 0, m = a.units[p]; p < a.units.length;) {
                       if (n.unitScale = 1, e.isArray(m.steps) && Math.ceil(n.scaleSizeInUnits / g) < e.max(m.steps)) {
-                        for (var b = 0; b < m.steps.length; ++b) {
-                          if (m.steps[b] >= Math.ceil(n.scaleSizeInUnits / g)) {
-                            n.unitScale = e.getValueOrDefault(n.options.time.unitStepSize, m.steps[b]);
-                            break;
-                          }
+                        for (var b = 0; b < m.steps.length; ++b) if (m.steps[b] >= Math.ceil(n.scaleSizeInUnits / g)) {
+                          n.unitScale = e.getValueOrDefault(n.options.time.unitStepSize, m.steps[b]);
+                          break;
                         }
 
                         break;
@@ -14767,9 +14529,7 @@
                   }
 
                   n.smallestLabelSeparation = n.width, e.each(n.chart.data.datasets, function (t, e) {
-                    for (var a = 1; a < n.labelMoments[e].length; a++) {
-                      n.smallestLabelSeparation = Math.min(n.smallestLabelSeparation, n.labelMoments[e][a].diff(n.labelMoments[e][a - 1], n.tickUnit, !0));
-                    }
+                    for (var a = 1; a < n.labelMoments[e].length; a++) n.smallestLabelSeparation = Math.min(n.smallestLabelSeparation, n.labelMoments[e][a].diff(n.labelMoments[e][a - 1], n.tickUnit, !0));
                   }, n), n.options.time.displayFormat && (n.displayFormat = n.options.time.displayFormat), n.ticks.push(n.firstTick.clone());
 
                   for (var S = 1; S <= n.scaleSizeInUnits; ++S) {
@@ -15690,9 +15450,7 @@
           var args = [];
           var i = 1;
 
-          while (arguments.length > i) {
-            args.push(arguments[i++]);
-          }
+          while (arguments.length > i) args.push(arguments[i++]);
 
           queue[++counter] = function () {
             // eslint-disable-next-line no-new-func
@@ -17218,9 +16976,7 @@
             // the slice polyfill when slicing native arrays) "doesn't work" in safari 9 and
             // causes a crash (https://pastebin.com/N21QzeQA) when trying to debug it.
 
-            for (var j = 1; j < result.length; j++) {
-              captures.push(maybeToString(result[j]));
-            }
+            for (var j = 1; j < result.length; j++) captures.push(maybeToString(result[j]));
 
             var namedCaptures = result.groups;
 
@@ -17851,9 +17607,7 @@
             var index = 1;
             var $replacer;
 
-            while (arguments.length > index) {
-              args.push(arguments[index++]);
-            }
+            while (arguments.length > index) args.push(arguments[index++]);
 
             $replacer = replacer;
             if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
@@ -18143,9 +17897,7 @@
         var keys = getOwnPropertyNames(NativeRegExp);
         var index = 0;
 
-        while (keys.length > index) {
-          proxy(keys[index++]);
-        }
+        while (keys.length > index) proxy(keys[index++]);
 
         RegExpPrototype.constructor = RegExpWrapper;
         RegExpWrapper.prototype = RegExpPrototype;
@@ -20658,9 +20410,7 @@
               j = 0,
               key;
 
-          while (length > j) {
-            if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
-          }
+          while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
         }
 
         return T;
@@ -20903,9 +20653,7 @@
         ,
             key;
 
-        for (key in iterated) {
-          keys.push(key);
-        }
+        for (key in iterated) keys.push(key);
       };
 
       __webpack_require__(
@@ -22004,31 +21752,29 @@
           var target = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
           var value, result;
 
-          for (; length > index; index++) {
-            if (NO_HOLES || index in self) {
-              value = self[index];
-              result = boundFunction(value, index, O);
+          for (; length > index; index++) if (NO_HOLES || index in self) {
+            value = self[index];
+            result = boundFunction(value, index, O);
 
-              if (TYPE) {
-                if (IS_MAP) target[index] = result; // map
-                else if (result) switch (TYPE) {
-                  case 3:
-                    return true;
-                  // some
+            if (TYPE) {
+              if (IS_MAP) target[index] = result; // map
+              else if (result) switch (TYPE) {
+                case 3:
+                  return true;
+                // some
 
-                  case 5:
-                    return value;
-                  // find
+                case 5:
+                  return value;
+                // find
 
-                  case 6:
-                    return index;
-                  // findIndex
+                case 6:
+                  return index;
+                // findIndex
 
-                  case 2:
-                    push.call(target, value);
-                  // filter
-                } else if (IS_EVERY) return false; // every
-              }
+                case 2:
+                  push.call(target, value);
+                // filter
+              } else if (IS_EVERY) return false; // every
             }
           }
 
@@ -22802,9 +22548,7 @@
               while (entry = entry ? entry.next : state.first) {
                 boundFunction(entry.value, entry.key, this); // revert to the last existing entry
 
-                while (entry && entry.removed) {
-                  entry = entry.previous;
-                }
+                while (entry && entry.removed) entry = entry.previous;
               }
             },
             // 23.1.3.7 Map.prototype.has(key)
@@ -22855,9 +22599,7 @@
             var kind = state.kind;
             var entry = state.last; // revert to the last existing entry
 
-            while (entry && entry.removed) {
-              entry = entry.previous;
-            } // get next entry
+            while (entry && entry.removed) entry = entry.previous; // get next entry
 
 
             if (!state.target || !(state.last = entry = entry ? entry.next : state.state.first)) {
@@ -24180,7 +23922,7 @@
       function patchPrototype(prototype, fnNames) {
         var source = prototype.constructor['name'];
 
-        var _loop = function _loop(i) {
+        var _loop = function _loop() {
           var name = fnNames[i];
           var delegate = prototype[name];
 
@@ -24203,7 +23945,7 @@
         };
 
         for (var i = 0; i < fnNames.length; i++) {
-          var _ret = _loop(i);
+          var _ret = _loop();
 
           if (_ret === "continue") continue;
         }
@@ -27958,9 +27700,7 @@
         if (arguments.length > 1) index = min(index, toInteger(arguments[1]));
         if (index < 0) index = length + index;
 
-        for (; index >= 0; index--) {
-          if (index in O && O[index] === searchElement) return index || 0;
-        }
+        for (; index >= 0; index--) if (index in O && O[index] === searchElement) return index || 0;
 
         return -1;
       } : nativeLastIndexOf;
@@ -28373,9 +28113,7 @@
               if (from in O) O[to] = O[from];else delete O[to];
             }
 
-            for (k = len; k > len - actualDeleteCount + insertCount; k--) {
-              delete O[k - 1];
-            }
+            for (k = len; k > len - actualDeleteCount + insertCount; k--) delete O[k - 1];
           } else if (insertCount > actualDeleteCount) {
             for (k = len - actualDeleteCount; k > actualStart; k--) {
               from = k + actualDeleteCount - 1;
@@ -29038,15 +28776,11 @@
         var result = [];
         var key;
 
-        for (key in O) {
-          !has(hiddenKeys, key) && has(O, key) && result.push(key);
-        } // Don't enum bug & hidden keys
+        for (key in O) !has(hiddenKeys, key) && has(O, key) && result.push(key); // Don't enum bug & hidden keys
 
 
-        while (names.length > i) {
-          if (has(O, key = names[i++])) {
-            ~indexOf(result, key) || result.push(key);
-          }
+        while (names.length > i) if (has(O, key = names[i++])) {
+          ~indexOf(result, key) || result.push(key);
         }
 
         return result;
@@ -30107,10 +29841,8 @@
             }
           }
 
-          for (; IS_RIGHT ? index >= 0 : length > index; index += i) {
-            if (index in self) {
-              memo = callbackfn(memo, self[index], index, O);
-            }
+          for (; IS_RIGHT ? index >= 0 : length > index; index += i) if (index in self) {
+            memo = callbackfn(memo, self[index], index, O);
           }
 
           return memo;
@@ -30160,10 +29892,8 @@
           if (IS_INCLUDES && el != el) while (length > index) {
             value = O[index++];
             if (value != value) return true; // Array#toIndex ignores holes, Array#includes - not
-          } else for (; length > index; index++) {
-            if (IS_INCLUDES || index in O) {
-              if (O[index] === el) return IS_INCLUDES || index || 0;
-            }
+          } else for (; length > index; index++) if (IS_INCLUDES || index in O) {
+            if (O[index] === el) return IS_INCLUDES || index || 0;
           }
           return !IS_INCLUDES && -1;
         };
@@ -30260,9 +29990,7 @@
         var end = argumentsLength > 2 ? arguments[2] : undefined;
         var endPos = end === undefined ? length : toAbsoluteIndex(end, length);
 
-        while (endPos > index) {
-          O[index++] = value;
-        }
+        while (endPos > index) O[index++] = value;
 
         return O;
       };
@@ -30589,9 +30317,7 @@
             var $instance = new NativeConstructor();
             var index = 5;
 
-            while (index--) {
-              $instance[ADDER](index, index);
-            }
+            while (index--) $instance[ADDER](index, index);
 
             return !$instance.has(-0);
           });
@@ -30751,9 +30477,7 @@
               while (entry = entry ? entry.n : this._f) {
                 f(entry.v, entry.k, this); // revert to the last existing entry
 
-                while (entry && entry.r) {
-                  entry = entry.p;
-                }
+                while (entry && entry.r) entry = entry.p;
               }
             },
             // 23.1.3.7 Map.prototype.has(key)
@@ -30815,9 +30539,7 @@
                 kind = that._k,
                 entry = that._l; // revert to the last existing entry
 
-            while (entry && entry.r) {
-              entry = entry.p;
-            } // get next entry
+            while (entry && entry.r) entry = entry.p; // get next entry
 
 
             if (!that._t || !(that._l = entry = entry ? entry.n : that._t._f)) {
@@ -31224,15 +30946,11 @@
             result = [],
             key;
 
-        for (key in O) {
-          if (key != IE_PROTO) has(O, key) && result.push(key);
-        } // Don't enum bug & hidden keys
+        for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key); // Don't enum bug & hidden keys
 
 
-        while (names.length > i) {
-          if (has(O, key = names[i++])) {
-            ~arrayIndexOf(result, key) || result.push(key);
-          }
+        while (names.length > i) if (has(O, key = names[i++])) {
+          ~arrayIndexOf(result, key) || result.push(key);
         }
 
         return result;

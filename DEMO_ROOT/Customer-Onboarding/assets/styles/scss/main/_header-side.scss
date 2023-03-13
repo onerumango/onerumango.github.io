@@ -1,21 +1,13 @@
 .topbar {
-  // background-color: #456EFE;
-  color: white;
-  height: 60px;
   &.mat-toolbar {
     position: relative;
     box-shadow: 0 10px 30px 0 rgba(47,60,74,.08);
     z-index: 1001;
-    background-color: #0C0B0F;
   }
   .mat-select-value {
     font-weight: 400;
     color: #ffffff;
   }
-}
-#link:hover{
-  background-color:  #eff2f5;
-  cursor: pointer;
 }
 
 .toggle-collapsed {
