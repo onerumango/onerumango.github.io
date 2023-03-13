@@ -712,6 +712,9 @@ let CashDepositV2Page = class CashDepositV2Page {
                 console.log(modelData);
                 if (modelData.data != null || modelData.data != undefined || modelData.data != "undefined") {
                     this.form.get('transactionBranch').patchValue(modelData.data['data'].branchName);
+                    if (this.form.get('transactionBranch').value != this.form.get('accountBranch').value) {
+                        this.homeIconToggle = false;
+                    }
                 }
             });
             return yield modal.present();
