@@ -723,7 +723,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! D:\Icust-Frontend\iCust\src\main.ts */
+      /*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */
       "zUnb");
       /***/
     },
@@ -2893,12 +2893,6 @@
 
               if (value.length == 10) {
                 this.getCustomerData(this.searchKey, value);
-              } else {
-                this.snack.open("Please enter valid mobile number:", this.searchTerm, {
-                  duration: 4000,
-                  verticalPosition: 'top',
-                  horizontalPosition: 'right'
-                });
               } // 
 
             } else {
@@ -3075,8 +3069,6 @@
             this.actions = [];
 
             for (var i = 0; i < this.serviceList.length; i++) {
-              console.log("service----", this.serviceList);
-
               for (var _i = 0, _Object$entries = Object.entries(folder.servicesInfo); _i < _Object$entries.length; _i++) {
                 var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
                     key = _Object$entries$_i[0],
@@ -12097,7 +12089,7 @@
         }, {
           key: "updateEntityDetails",
           value: function updateEntityDetails(data) {
-            return this.http.post("".concat(API_URL, "/entity/upsertDetails"), data);
+            return this.http.post("".concat(API_URL, "/entity/upsertDetails"), data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "fetchEntityDetails",
@@ -12429,7 +12421,7 @@
         }, {
           key: "saveRole",
           value: function saveRole(data) {
-            return this.http.post("".concat(API_URL, "/role-api/upsertRole"), data);
+            return this.http.post("".concat(API_URL, "/role-api/upsertRole"), data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
           }
         }, {
           key: "fetchRoleSummary",

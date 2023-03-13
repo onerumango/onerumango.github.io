@@ -485,7 +485,7 @@
                 _this2.spinner.hide();
 
                 if (err.error) {
-                  _this2.toastr.error("".concat(err.error), "Error!", {
+                  _this2.toastr.error("".concat(err.error.message), "Error!", {
                     progressAnimation: 'decreasing',
                     progressBar: true,
                     positionClass: 'toast-top-right',

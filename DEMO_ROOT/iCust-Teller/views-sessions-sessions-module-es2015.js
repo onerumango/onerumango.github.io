@@ -283,7 +283,7 @@ class SigninComponent {
                 console.log("err", err);
                 this.spinner.hide();
                 if (err.error) {
-                    this.toastr.error(`${err.error}`, `Error!`, {
+                    this.toastr.error(`${err.error.message}`, `Error!`, {
                         progressAnimation: 'decreasing',
                         progressBar: true,
                         positionClass: 'toast-top-right',

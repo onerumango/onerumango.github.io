@@ -344,7 +344,7 @@ EgretSideNavToggleDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Icust-Frontend\iCust\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! F:\muthu-onboard\Icust-Frontend\icust\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -1528,13 +1528,6 @@ class SearchComponent {
             if (value.length == 10) {
                 this.getCustomerData(this.searchKey, value);
             }
-            else {
-                this.snack.open("Please enter valid mobile number:", this.searchTerm, {
-                    duration: 4000,
-                    verticalPosition: 'top',
-                    horizontalPosition: 'right'
-                });
-            }
             // 
         }
         else {
@@ -1691,7 +1684,6 @@ class SearchComponent {
         this.selectedFolderIndex = index;
         this.actions = [];
         for (let i = 0; i < this.serviceList.length; i++) {
-            console.log("service----", this.serviceList);
             for (const [key, value] of Object.entries(folder.servicesInfo)) {
                 if ((key == this.serviceList[i].serviceName && value == true)) {
                     this.actions.push(this.serviceList[i]);
@@ -7072,7 +7064,8 @@ class ApiService {
     }
     updateEntityDetails(data) {
         return this.http
-            .post(`${API_URL}/entity/upsertDetails`, data);
+            .post(`${API_URL}/entity/upsertDetails`, data)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     fetchEntityDetails() {
         return this.http
@@ -7390,7 +7383,7 @@ class ApiService {
         return this.http.get(`${API_URL}/role-api/fetchScreenInfoByTabId?tabId=${tabId}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     saveRole(data) {
-        return this.http.post(`${API_URL}/role-api/upsertRole`, data);
+        return this.http.post(`${API_URL}/role-api/upsertRole`, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
     }
     fetchRoleSummary() {
         return this.http.get(`${API_URL}/role-api/fetchRoleInfo`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.errorHandler));
