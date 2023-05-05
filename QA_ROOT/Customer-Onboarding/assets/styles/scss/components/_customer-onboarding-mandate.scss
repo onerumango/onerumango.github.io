@@ -1,0 +1,70 @@
+.mandatesign {
+    .cancel {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      box-shadow: 3px 3px 15px #0000000f;
+      border-radius: 35px;
+      color: #b20000;
+      font-family: poppins;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .btnclass {
+      display: flex;
+      justify-content: space-between;
+    }
+    .hidden {
+      display: none;
+      translate: 0px 0px;
+    }
+    .donebtn {
+      background: transparent linear-gradient(91deg, #051a2d 0%, #004c97 100%) 0%
+        0% no-repeat padding-box;
+      color: #ffffff;
+      border-radius: 23px;
+      font-family: poppins;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .headeresign {
+      font-family: poppins;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding-top: 10px;
+      margin-left: -49px;
+    }
+    #imgforped {
+      translate: -18px -30px;
+      max-width: 106%;
+      z-index: 1;
+      position: fixed;
+    }
+    .signcard {
+      height: 160px;
+      width: 600px;
+      margin-left: -140px;
+      border-bottom: 1px solid #0000000F;
+      border-bottom-right-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      box-shadow: none !important;
+      margin-bottom: 50px;
+      background-color: #ffffff !important;
+    }
+    .line {
+      width: 490px;
+      position: relative;
+      right: 85px;
+      border: 1px solid;
+      opacity: 0.2;
+      margin-bottom: 20px;
+    }
+    .widthclass{
+        width: 138px;
+    }
+  }
+  
