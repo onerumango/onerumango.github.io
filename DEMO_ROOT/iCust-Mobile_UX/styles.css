@@ -569,6 +569,13 @@ strong {
 }
 img {
   max-width: 100%;
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
 }
 hr {
   height: 1px;
@@ -664,6 +671,11 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+input[type=checkbox],
+input[type=radio] {
+  padding: 0;
+  box-sizing: border-box;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -1942,15 +1954,15 @@ sub {
   align-items: baseline !important;
 }
 /**
- * Swiper 8.4.7
+ * Swiper 8.4.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
- * Copyright 2014-2023 Vladimir Kharlampidi
+ * Copyright 2014-2022 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: January 30, 2023
+ * Released on: November 21, 2022
  */
 @font-face {
   font-family: "swiper-icons";
@@ -2098,7 +2110,6 @@ sub {
 }
 .swiper-centered > .swiper-wrapper > .swiper-slide {
   scroll-snap-align: center center;
-  scroll-snap-stop: always;
 }
 :root {
   /*
@@ -2269,8 +2280,8 @@ button.swiper-pagination-bullet {
 }
 :root {
   --ion-font-family: "Montserrat";
-  --primary-color: #004C97;
-  --ion-color-bank: #004C97;
+  --primary-color: #004c97;
+  --ion-color-bank: #004c97;
   --ion-color-bank-rgb: 0, 76, 151;
   --ion-color-bank-contrast: #ffffff;
   --ion-color-bank-contrast-rgb: 255, 255, 255;
@@ -2292,13 +2303,13 @@ button.swiper-pagination-bullet {
   color: #102245 !important;
 }
 .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
-  background: #E9ECF5 !important;
+  background: #e9ecf5 !important;
 }
 .mat-select-panel .mat-option.mat-active {
-  color: #004C97 !important;
+  color: #004c97 !important;
 }
 .mat-option-text > span.sub-text {
-  color: #B1B1B1 !important;
+  color: #b1b1b1 !important;
   opacity: 100% !important;
 }
 .mat-select-panel-wrap {
@@ -2323,11 +2334,11 @@ button.swiper-pagination-bullet {
   width: 43px;
   height: 26px;
   background: rgba(0, 76, 151, 0.1411764706);
-  border: 1pt solid #004C97;
+  border: 1pt solid #004c97;
   margin: 0px;
   display: inline-grid;
   padding: 5px;
-  color: #004C97;
+  color: #004c97;
   border-radius: 6px;
   font-size: 10px;
   text-align: center;
@@ -2353,16 +2364,19 @@ button.swiper-pagination-bullet {
 .app-font {
   font-family: "Montserrat" !important;
 }
+.font-size-16 {
+  font-size: 16px !important;
+}
 .secondary {
-  background-image: linear-gradient(90deg, #051A2D, #004C97);
+  background-image: linear-gradient(90deg, #051a2d, #004c97);
   color: #ffffff;
 }
 .inactive-bg {
-  background: #E3E3E3;
+  background: #e3e3e3;
   color: #707070;
 }
 .active-bg {
-  background-image: linear-gradient(90deg, #051A2D, #004C97);
+  background-image: linear-gradient(90deg, #051a2d, #004c97);
   color: #ffffff;
 }
 .action-button {
@@ -2395,6 +2409,23 @@ ion-popover::part(content) {
   border-bottom-left-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
 }
+ion-modal.dup-modal {
+  --height: 40%;
+  padding: 13px;
+  --border-radius: 16px;
+  --box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+  --backdrop-opacity: #dee2e6 !important;
+}
+ion-modal.dup-modal::part(backdrop) {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+ion-modal.dup-modal ion-toolbar {
+  --background: rgb(14 116 144);
+  --color: white;
+}
 ion-segment {
   --background: white;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -2425,7 +2456,8 @@ ion-modal.internet-modal {
   --height: 35%;
   --width: 340px;
   --border-radius: 16px;
-  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
@@ -2446,8 +2478,8 @@ ion-alert.logout-alert .alert-button {
   text-transform: capitalize !important;
 }
 button.alert-button.alert-button-confirm {
-  background-color: #C90303;
-  color: #FFFFFF;
+  background-color: #c90303;
+  color: #ffffff;
   width: 45%;
   border-radius: 50px;
   height: 50px;
@@ -2456,8 +2488,8 @@ button.alert-button.alert-button-confirm {
   justify-content: center !important;
 }
 button.alert-button.alert-button-cancel {
-  background-color: #456EFE;
-  color: #FFFFFF;
+  background-color: #456efe;
+  color: #ffffff;
   width: 45%;
   border-radius: 50px;
   height: 50px;
@@ -2575,15 +2607,15 @@ input[type=date]::-webkit-calendar-picker-indicator {
   max-width: 480px !important;
 }
 :host ::ng-deep .calendar-header {
-  background: #051A2D !important;
+  background: #051a2d !important;
 }
 .calendar-days-of-week {
-  background: #051A2D !important;
+  background: #051a2d !important;
   border-bottom-left-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
 }
 .calendar-action-buttons {
-  background: #051A2D !important;
+  background: #051a2d !important;
 }
 .calendar-action-buttons {
   color: #ffffff !important;
@@ -2593,7 +2625,7 @@ button:focus {
 }
 .mat-calendar-header {
   padding: 8px 8px 0 8px;
-  background: #051A2D;
+  background: #051a2d;
   color: #ffffff;
 }
 .mat-calendar-content {
@@ -2605,7 +2637,7 @@ button:focus {
 }
 .mat-calendar-table-header {
   color: #ffffff !important;
-  background: #051A2D !important;
+  background: #051a2d !important;
   font-family: "Montserrat";
 }
 .mat-calendar-table-header th {
@@ -2628,7 +2660,7 @@ table {
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.0901960784);
 }
 .mat-calendar-body-selected {
-  background-color: #004C97;
+  background-color: #004c97;
   color: #ffffff !important;
 }
 .mat-calendar-body-cell-content {
@@ -2654,7 +2686,7 @@ ion-footer::before {
 }
 .mat-calendar-body-cell.special-date > .mat-calendar-body-cell-content {
   opacity: 100% !important;
-  color: #B20000 !important;
+  color: #b20000 !important;
   font-size: 16px !important;
 }
 /*!**********************************************************************************************************************************************************************************************************************************!*\

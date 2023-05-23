@@ -161,7 +161,7 @@ let AppointmentPage = class AppointmentPage {
         this.quickOptions = [
             {
                 id: 0,
-                options: "Recent Transaction"
+                options: 'Recent Transaction',
             },
             {
                 id: 1,
@@ -224,7 +224,6 @@ let AppointmentPage = class AppointmentPage {
     compareWithFn(o1, o2) {
         return o1 === o2;
     }
-    ;
     ionViewDidEnter() {
         var _a, _b;
         this.slideNo = localStorage.getItem('slideNo') || 0;
@@ -246,11 +245,13 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Completed',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment(this.loggedInCust, 'COMPLETED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'COMPLETED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -263,11 +264,13 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Failed',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment(this.loggedInCust, 'FAILED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'FAILED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -281,11 +284,13 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.apiService.filterAppointment(this.loggedInCust, 'INPROGRESS').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'INPROGRESS')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -299,11 +304,13 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.apiService.filterAppointment(this.loggedInCust, 'SCHEDULED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'SCHEDULED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -315,11 +322,13 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Cancelled',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment(this.loggedInCust, 'CANCELLED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'CANCELLED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.selectAction('CANCELED');
@@ -342,11 +351,11 @@ let AppointmentPage = class AppointmentPage {
         });
     }
     selectAction(action) {
-        console.log(action, "Action");
-        console.log(this.transactionDataArr, "Appointment List");
+        console.log(action, 'Action');
+        console.log(this.transactionDataArr, 'Appointment List');
         console.log(this.transactionDataArr[0].appointmentStatus);
         let filterArray = [];
-        console.log(filterArray, "Before push");
+        console.log(filterArray, 'Before push');
         for (let i = 0; i < this.transactionDataArr.length; i++) {
             // if(this.transactionDataArr[i].appointmentStatus){
             if (action == this.transactionDataArr[i].appointmentStatus) {
@@ -356,9 +365,9 @@ let AppointmentPage = class AppointmentPage {
             // }
         }
         this.trxnArrayList = filterArray;
-        console.log(this.trxnArrayList, "Array list");
+        console.log(this.trxnArrayList, 'Array list');
         // this.transactionDataArr=filterArray;
-        console.log(filterArray, "After push");
+        console.log(filterArray, 'After push');
     }
     OnselectQuickOption(event, val) {
         if (event.target.value.options == 'Select Date Range') {
@@ -384,12 +393,12 @@ let AppointmentPage = class AppointmentPage {
                     customerId: null,
                     filterOption: '',
                     fromDate: modelData.data.fromDate,
-                    toDate: modelData.data.toDate
+                    toDate: modelData.data.toDate,
                 };
                 this.getAppointmentByCustomerId(Value, this.loggedInCust, null);
                 return this.appointmentForm.patchValue({
-                    fromDate: [(new Date(modelData.data)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-                    toDate: [(new Date(modelData.role)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+                    fromDate: [new Date(modelData.data).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+                    toDate: [new Date(modelData.role).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
                 });
             });
             return yield modal.present();
@@ -703,10 +712,17 @@ let AppointmentPage = class AppointmentPage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             localStorage.setItem('AppointmentDetails', JSON.stringify(event));
             let modal = yield this.modalCtrl.create({
-                component: (event.trnType == "Forex Transaction" || event.trnType == "Cash Deposit" || event.trnType == "Cash Withdrawal" || (event === null || event === void 0 ? void 0 : event.trnType) == "Loan Disbursement" || (event === null || event === void 0 ? void 0 : event.trnType) == "Loan Repayment") ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__.TokenV2Page : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
+                component: event.trnType == 'Forex Transaction' ||
+                    event.trnType == 'Cash Deposit' ||
+                    event.trnType == 'Cash Withdrawal' ||
+                    (event === null || event === void 0 ? void 0 : event.trnType) == 'Loan Disbursement' ||
+                    (event === null || event === void 0 ? void 0 : event.trnType) == 'Loan Repayment' ||
+                    (event === null || event === void 0 ? void 0 : event.trnType) == 'Cheque Deposit'
+                    ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__.TokenV2Page
+                    : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
                 componentProps: {
                     value: event,
-                    screen: event === null || event === void 0 ? void 0 : event.trnType
+                    screen: event === null || event === void 0 ? void 0 : event.trnType,
                 },
             });
             modal.onDidDismiss().then((modelData) => {
