@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
-  <g id="Iconly_Light-Outline_Info-Square" data-name="Iconly/Light-Outline/Info-Square" transform="translate(-2 -2)">
-    <g id="Info-Square" transform="translate(2 2)">
-      <path id="Combined-Shape" d="M18.634,0C23.04,0,26,3.091,26,7.691V18.309C26,22.909,23.04,26,18.632,26H7.363C2.959,26,0,22.909,0,18.309V7.691C0,3.091,2.959,0,7.363,0Zm0,1.95H7.363C4.076,1.95,1.95,4.2,1.95,7.691V18.309c0,3.488,2.125,5.741,5.413,5.741H18.632c3.292,0,5.418-2.253,5.418-5.741V7.691C24.05,4.2,21.923,1.95,18.634,1.95ZM12.992,12.025a.975.975,0,0,1,.975.975v5.2a.975.975,0,1,1-1.95,0V13A.975.975,0,0,1,12.992,12.025ZM13,6.765a1.3,1.3,0,1,1-.013,0Z" transform="translate(0)" fill-rule="evenodd"/>
-    </g>
-  </g>
-</svg>
